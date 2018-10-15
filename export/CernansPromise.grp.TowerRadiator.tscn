@@ -2,22 +2,22 @@
 [ext_resource id=1 path="CernansPromise.grp.RadiatorTowerTanksAndPipes.tscn" type="PackedScene"]
 
 
-[ext_resource id=2 path="BloodRed.tres" type="SpatialMaterial"]
+[ext_resource id=2 path="materials/BloodRed.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=3 path="Black.tres" type="SpatialMaterial"]
+[ext_resource id=3 path="materials/Black.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=4 path="Caramel.tres" type="SpatialMaterial"]
+[ext_resource id=4 path="materials/Caramel.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=5 path="Cask.tres" type="SpatialMaterial"]
+[ext_resource id=5 path="materials/Cask.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=6 path="MirrorInsulation.tres" type="SpatialMaterial"]
+[ext_resource id=6 path="materials/MirrorInsulation.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=7 path="Metal-MixedAlloy.tres" type="SpatialMaterial"]
+[ext_resource id=7 path="materials/Metal-MixedAlloy.tres" type="SpatialMaterial"]
 
 [sub_resource id=1 type="ArrayMesh"]
 

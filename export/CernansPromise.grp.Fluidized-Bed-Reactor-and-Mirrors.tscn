@@ -5,43 +5,43 @@
 [ext_resource id=2 path="CernansPromise.grp.STEMP-ParabolicMirrorUnit-Circuit-to-Side.tscn" type="PackedScene"]
 
 
-[ext_resource id=3 path="ClayGray.tres" type="SpatialMaterial"]
+[ext_resource id=3 path="materials/ClayGray.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=4 path="ButterYellow.tres" type="SpatialMaterial"]
+[ext_resource id=4 path="materials/ButterYellow.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=5 path="Blue.tres" type="SpatialMaterial"]
+[ext_resource id=5 path="materials/Blue.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=6 path="Mint.tres" type="SpatialMaterial"]
+[ext_resource id=6 path="materials/Mint.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=7 path="Metal-Steel.tres" type="SpatialMaterial"]
+[ext_resource id=7 path="materials/Metal-Steel.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=8 path="BlueGray.tres" type="SpatialMaterial"]
+[ext_resource id=8 path="materials/BlueGray.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=9 path="Caramel.tres" type="SpatialMaterial"]
+[ext_resource id=9 path="materials/Caramel.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=10 path="Metal-Aluminum.tres" type="SpatialMaterial"]
+[ext_resource id=10 path="materials/Metal-Aluminum.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=11 path="Metal-MixedAlloy.tres" type="SpatialMaterial"]
+[ext_resource id=11 path="materials/Metal-MixedAlloy.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=12 path="MirrorInsulation.tres" type="SpatialMaterial"]
+[ext_resource id=12 path="materials/MirrorInsulation.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=13 path="Black.tres" type="SpatialMaterial"]
+[ext_resource id=13 path="materials/Black.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=14 path="BloodRed.tres" type="SpatialMaterial"]
+[ext_resource id=14 path="materials/BloodRed.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=15 path="Cask.tres" type="SpatialMaterial"]
+[ext_resource id=15 path="materials/Cask.tres" type="SpatialMaterial"]
 
 [sub_resource id=1 type="ArrayMesh"]
 

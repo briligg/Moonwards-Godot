@@ -1,26 +1,26 @@
 [gd_scene load_steps=1 format=2]
-[ext_resource id=1 path="Metal-Galvanized.tres" type="SpatialMaterial"]
+[ext_resource id=1 path="materials/Metal-Galvanized.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=2 path="ButterYellow.tres" type="SpatialMaterial"]
+[ext_resource id=2 path="materials/ButterYellow.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=3 path="MirrorInsulation.tres" type="SpatialMaterial"]
+[ext_resource id=3 path="materials/MirrorInsulation.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=4 path="Yellow.tres" type="SpatialMaterial"]
+[ext_resource id=4 path="materials/Yellow.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=5 path="ClayGray.tres" type="SpatialMaterial"]
+[ext_resource id=5 path="materials/ClayGray.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=6 path="Caramel.tres" type="SpatialMaterial"]
+[ext_resource id=6 path="materials/Caramel.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=7 path="MirrorFlat.tres" type="SpatialMaterial"]
+[ext_resource id=7 path="materials/MirrorFlat.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=8 path="Cask.tres" type="SpatialMaterial"]
+[ext_resource id=8 path="materials/Cask.tres" type="SpatialMaterial"]
 
 [sub_resource id=1 type="ArrayMesh"]
 

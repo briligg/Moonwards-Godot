@@ -2,16 +2,16 @@
 [ext_resource id=1 path="CernansPromise.grp.AirlockNew.tscn" type="PackedScene"]
 
 
-[ext_resource id=2 path="Lavastone2.tres" type="SpatialMaterial"]
+[ext_resource id=2 path="materials/Lavastone2.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=3 path="ButterYellow.tres" type="SpatialMaterial"]
+[ext_resource id=3 path="materials/ButterYellow.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=4 path="SeashellPink.tres" type="SpatialMaterial"]
+[ext_resource id=4 path="materials/SeashellPink.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=5 path="RegolithFused.tres" type="SpatialMaterial"]
+[ext_resource id=5 path="materials/RegolithFused.tres" type="SpatialMaterial"]
 
 [sub_resource id=1 type="ArrayMesh"]
 

@@ -1,14 +1,14 @@
 [gd_scene load_steps=1 format=2]
-[ext_resource id=1 path="CedarGreen.tres" type="SpatialMaterial"]
+[ext_resource id=1 path="materials/CedarGreen.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=2 path="Sage.tres" type="SpatialMaterial"]
+[ext_resource id=2 path="materials/Sage.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=3 path="Glass.tres" type="SpatialMaterial"]
+[ext_resource id=3 path="materials/Glass.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=4 path="Caramel.tres" type="SpatialMaterial"]
+[ext_resource id=4 path="materials/Caramel.tres" type="SpatialMaterial"]
 
 [sub_resource id=1 type="ArrayMesh"]
 

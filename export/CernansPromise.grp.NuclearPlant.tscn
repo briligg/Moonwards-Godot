@@ -8,19 +8,19 @@
 [ext_resource id=3 path="CernansPromise.grp.FreePistonStirlingArray.tscn" type="PackedScene"]
 
 
-[ext_resource id=4 path="ClayGray.tres" type="SpatialMaterial"]
+[ext_resource id=4 path="materials/ClayGray.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=5 path="Caramel.tres" type="SpatialMaterial"]
+[ext_resource id=5 path="materials/Caramel.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=6 path="BloodRed.tres" type="SpatialMaterial"]
+[ext_resource id=6 path="materials/BloodRed.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=7 path="RedDanger.tres" type="SpatialMaterial"]
+[ext_resource id=7 path="materials/RedDanger.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=8 path="RegolithFused.tres" type="SpatialMaterial"]
+[ext_resource id=8 path="materials/RegolithFused.tres" type="SpatialMaterial"]
 
 [sub_resource id=1 type="ArrayMesh"]
 

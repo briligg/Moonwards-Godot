@@ -1,14 +1,14 @@
 [gd_scene load_steps=1 format=2]
-[ext_resource id=1 path="FrostyBlue.tres" type="SpatialMaterial"]
+[ext_resource id=1 path="materials/FrostyBlue.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=2 path="BlueGray.tres" type="SpatialMaterial"]
+[ext_resource id=2 path="materials/BlueGray.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=3 path="Cinnamon.tres" type="SpatialMaterial"]
+[ext_resource id=3 path="materials/Cinnamon.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=4 path="Metal-MixedAlloy.tres" type="SpatialMaterial"]
+[ext_resource id=4 path="materials/Metal-MixedAlloy.tres" type="SpatialMaterial"]
 
 [sub_resource id=1 type="ArrayMesh"]
 
