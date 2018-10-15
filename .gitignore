@@ -1,5 +1,9 @@
-# Temporary files #
-*.swp
-*~
 # blender temporary backup files #
 *.blend1
+
+
+# Godot-specific ignores
+.import/
+*.import
+export.cfg
+export_presets.cfg
