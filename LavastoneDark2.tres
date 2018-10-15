@@ -1,0 +1,12 @@
+[gd_resource type="SpatialMaterial" format=2]
+
+[resource]
+
+params_cull_mode = 2
+resource_name = "LavastoneDark2"
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_transparent = false
+vertex_color_use_as_albedo = false
+albedo_color = Color(0.101879, 0.114934, 0.101116, 1.0)
+subsurf_scatter_enabled = false

@@ -1,0 +1,5 @@
+# Temporary files #
+*.swp
+*~
+# blender temporary backup files #
+*.blend1
