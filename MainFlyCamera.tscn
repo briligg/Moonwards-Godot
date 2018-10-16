@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/maujoe.camera_control/scripts/camera_control.gd" type="Script" id=1]
+[ext_resource path="res://export/CernansPromise.tscn" type="PackedScene" id=2]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.853542, 0, 0.521025, 0, 1, 0, -0.521025, 0, 0.853542, 1680.25, 135.908, -50.0178 )
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = false
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 10000.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+enabled = true
+mouse_mode = 2
+mouselook = true
+sensitivity = 0.5
+smoothness = 0.5
+privot = null
+distance = 5.0
+rotate_privot = false
+collisions = true
+yaw_limit = 360
+pitch_limit = 360
+movement = true
+acceleration = 0.5
+deceleration = 0.5
+max_speed = Vector3( 25, 25, 25 )
+local = true
+forward_action = "ui_up"
+backward_action = "ui_down"
+left_action = "ui_left"
+right_action = "ui_right"
+up_action = "ui_page_up"
+down_action = "ui_page_down"
+ui_mlook = "ui_mlook"
+use_gui = true
+gui_action = "ui_cancel"
+
+[node name="_Scene" parent="." instance=ExtResource( 2 )]
+
