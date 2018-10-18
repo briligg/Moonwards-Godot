@@ -1,5 +1,5 @@
 [gd_scene load_steps=1 format=2]
-[ext_resource id=1 path="CernansPromise.grp.AirlockNew.tscn" type="PackedScene"]
+[ext_resource id=1 path="e.AirlockNew.tscn" type="PackedScene"]
 
 
 [ext_resource id=2 path="materials/Lavastone2.tres" type="SpatialMaterial"]

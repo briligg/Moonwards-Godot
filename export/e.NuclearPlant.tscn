@@ -1,11 +1,11 @@
 [gd_scene load_steps=1 format=2]
-[ext_resource id=1 path="CernansPromise.grp.NuclearCore.tscn" type="PackedScene"]
+[ext_resource id=1 path="e.NuclearCore.tscn" type="PackedScene"]
 
 
-[ext_resource id=2 path="CernansPromise.grp.TowerRadiator.tscn" type="PackedScene"]
+[ext_resource id=2 path="e.TowerRadiator.tscn" type="PackedScene"]
 
 
-[ext_resource id=3 path="CernansPromise.grp.FreePistonStirlingArray.tscn" type="PackedScene"]
+[ext_resource id=3 path="e.FreePistonStirlingArray.tscn" type="PackedScene"]
 
 
 [ext_resource id=4 path="materials/ClayGray.tres" type="SpatialMaterial"]

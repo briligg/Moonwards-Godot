@@ -1,8 +1,8 @@
 [gd_scene load_steps=1 format=2]
-[ext_resource id=1 path="CernansPromise.grp.RadiatorTowerTanksAndPipes.tscn" type="PackedScene"]
+[ext_resource id=1 path="e.RadiatorTowerTanksAndPipes.tscn" type="PackedScene"]
 
 
-[ext_resource id=2 path="CernansPromise.grp.STEMP-ParabolicMirrorUnit-Circuit-to-Side.tscn" type="PackedScene"]
+[ext_resource id=2 path="e.STEMP-ParabolicMirrorUnit-Circuit-to-Side.tscn" type="PackedScene"]
 
 
 [ext_resource id=3 path="materials/ClayGray.tres" type="SpatialMaterial"]

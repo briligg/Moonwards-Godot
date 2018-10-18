@@ -1,5 +1,5 @@
 [gd_scene load_steps=1 format=2]
-[ext_resource id=1 path="CernansPromise.grp.AirlockDoor.tscn" type="PackedScene"]
+[ext_resource id=1 path="e.AirlockDoor.tscn" type="PackedScene"]
 
 
 [ext_resource id=2 path="materials/Mint.tres" type="SpatialMaterial"]
