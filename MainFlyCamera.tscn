@@ -4,6 +4,8 @@
 [ext_resource path="res://export/CernansPromise.tscn" type="PackedScene" id=2]
 
 [node name="Spatial" type="Spatial"]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.853542, 0, 0.521025, 0, 1, 0, -0.521025, 0, 0.853542, 1680.25, 135.908, -50.0178 )
@@ -48,4 +50,751 @@ use_gui = true
 gui_action = "ui_cancel"
 
 [node name="_Scene" parent="." instance=ExtResource( 2 )]
+
+[node name="Teleport" type="Spatial" parent="."]
+
+[node name="0,0,0" type="Spatial" parent="Teleport"]
+transform = Transform( 0.5, -0.866025, 3.64245e-08, 0.866025, 0.5, -5.24717e-08, 2.72296e-08, 5.77803e-08, 1, 0, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="HVAC-Anchors" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1294.41, -148.459, -346.134 )
+
+[node name="RadarTower001" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2425.94, 678.026, -3980.72 )
+
+[node name="NuclearPlant" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2815.31, -41.9707, 796.873 )
+
+[node name="LinerNorthDugout" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1789.81, 157.682, -704.311 )
+
+[node name="Earth001" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1033.67, 40000, -85.449 )
+
+[node name="LinerSouthDugout" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1569.41, 138.338, 334.24 )
+
+[node name="MIP-Station007" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1800.84, 160.128, -126.714 )
+
+[node name="AtriumHabs" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1676.37, 136.957, -49 )
+
+[node name="STEMP-group" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2297.75, 460.845, -2592.65 )
+
+[node name="AthleteRover002" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1776.31, 159.803, -104.171 )
+
+[node name="AthleteRover001" type="Spatial" parent="Teleport"]
+transform = Transform( 1.15164, 0.0817886, -0.957622, -0.106052, 1.49625, 0.000252654, 0.955239, 0.0675113, 1.15454, 1683.61, 151.81, 243.591 )
+
+[node name="InitialColonyGroundsL2" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2172.53, 290.438, -1571.8 )
+
+[node name="Radiator-BoatRad-BI-Mat024" type="Spatial" parent="Teleport"]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1654.87, 132.414, 763.217 )
+
+[node name="Radiator-BoatRad-BI-Mat023" type="Spatial" parent="Teleport"]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1613.76, 133.816, 783.818 )
+
+[node name="Radiator-BoatRad-BI-Mat022" type="Spatial" parent="Teleport"]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1576.43, 146.237, 723.723 )
+
+[node name="Radiator-BoatRad-BI-Mat021" type="Spatial" parent="Teleport"]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1551.52, 148.857, 687.325 )
+
+[node name="Radiator-BoatRad-BI-Mat016" type="Spatial" parent="Teleport"]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1567.51, 169.959, 128.632 )
+
+[node name="Radiator-BoatRad-BI-Mat015" type="Spatial" parent="Teleport"]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1579.92, 169.959, 88.9811 )
+
+[node name="Radiator-BoatRad-BI-Mat014" type="Spatial" parent="Teleport"]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1591.68, 169.959, 46.6517 )
+
+[node name="Radiator-BoatRad-BI-Mat013" type="Spatial" parent="Teleport"]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1921.87, 204.152, -1008.03 )
+
+[node name="Radiator-BoatRad-BI-Mat012" type="Spatial" parent="Teleport"]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1875.67, 204.378, -1009.48 )
+
+[node name="Radiator-BoatRad-BI-Mat011" type="Spatial" parent="Teleport"]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1833.24, 203.658, -1009.48 )
+
+[node name="Radiator-BoatRad-BI-Mat010" type="Spatial" parent="Teleport"]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1938.06, 165.115, -517.739 )
+
+[node name="Radiator-BoatRad-BI-Mat009" type="Spatial" parent="Teleport"]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1892.03, 165.981, -521.575 )
+
+[node name="Radiator-BoatRad-BI-Mat008" type="Spatial" parent="Teleport"]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1849.48, 167.676, -527.154 )
+
+[node name="TubeHabLong-BI-Mat008" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.1418, 1999.31, 369.343 )
+
+[node name="Passage-SouthAtrium-to-Teacup001" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1545.76, 135.954, 132.688 )
+
+[node name="Passage-Mouth-North-BigAtrium-FirstGalley002" type="Spatial" parent="Teleport"]
+transform = Transform( -0.999969, 0.00781728, -3.41704e-10, 0, -4.37114e-08, -1, -0.00781728, -0.999969, 4.37101e-08, 1669.86, 124.951, -297.251 )
+
+[node name="Passage-BigAtrium-FirstGallery001" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1669.12, 126.534, -311.859 )
+
+[node name="Passage-FirstGallery-BigAtrium-BottomFloor" type="Spatial" parent="Teleport"]
+transform = Transform( 2.49722, 0, -0.354413, 0, 2.52224, 0, 0.354413, 0, 2.49722, 1669.11, 118.879, -258.372 )
+
+[node name="Passage-Mouth-North-BigAtrium-FirstGalley" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1664.23, 126.534, -241.495 )
+
+[node name="Passage-BigAtrium-FirstGallery" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1664.23, 126.534, -241.604 )
+
+[node name="SatelliteDish-NearSpaceComms" type="Spatial" parent="Teleport"]
+transform = Transform( 1.89483, -0.517287, -0.376869, 0, 1.17769, -1.61649, 0.640013, 1.53149, 1.11576, 1690.5, 169.042, -115.366 )
+
+[node name="SatelliteDish-EarthComms002" type="Spatial" parent="Teleport"]
+transform = Transform( 30, 0, 0, 0, 30, 0, 0, 0, 30, 2666.89, 26.8257, 380.801 )
+
+[node name="SatelliteDish-EarthComms001" type="Spatial" parent="Teleport"]
+transform = Transform( 12.1708, 0, 0, 0, 12.1708, 0, 0, 0, 12.1708, 1631.94, 163.167, -107.703 )
+
+[node name="SatelliteDish-EarthComms" type="Spatial" parent="Teleport"]
+transform = Transform( 30, 0, 0, 0, 30, 0, 0, 0, 30, 2499.41, 42.157, 223.337 )
+
+[node name="RadioAntenna" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1673.3, 192.089, -107.769 )
+
+[node name="SolarPanelUnit026" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2213.56, 86.2008, 21.0262 )
+
+[node name="FlywheelSolar" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2210.66, 160.168, -561.586 )
+
+[node name="Camera002" type="Camera" parent="Teleport"]
+transform = Transform( -0.852916, -0.105768, 0.511222, 0.000197993, 0.979196, 0.202918, -0.522049, 0.173174, -0.83515, 1976.48, 184.471, -195.227 )
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = false
+fov = 49.1343
+size = 6.0
+near = 0.1
+far = 50000.0
+
+[node name="MIP-Station004" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1891.46, 157.885, -434.477 )
+
+[node name="MIP-Station003" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1933.07, 157.737, -481.868 )
+
+[node name="MIP-Station002" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1839.89, 161.954, -179.508 )
+
+[node name="MIP-Station001" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1937.02, 163.617, -627.274 )
+
+[node name="MIP-Station006" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1941.04, 160.256, -564.019 )
+
+[node name="MIP-Station005" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1932.44, 168.537, -687.84 )
+
+[node name="MIP-Station" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1797.74, 162.164, -227.905 )
+
+[node name="TunnelWindow" type="Spatial" parent="Teleport"]
+transform = Transform( 5.14608, 0, -1.31863, 0, 5.31234, 0, 1.31863, 0, 5.14608, 1576.91, 135.944, -8.82348 )
+
+[node name="AtriumHabsMaster" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1674.23, 130.521, -145.895 )
+
+[node name="Hangars" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2177.72, 38.4134, 794.112 )
+
+[node name="Passage-FirstHab-LosPortales" type="Spatial" parent="Teleport"]
+transform = Transform( 1.98494, 0, 0, 0, 1.98494, 0, 0, 0, 1.98494, 1603.68, 136.35, -43.3274 )
+
+[node name="Passage-SouthAtrium-LosPortales" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1545.76, 135.954, 132.688 )
+
+[node name="Passage-SouthAtrium-to-Teacup" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1545.76, 135.954, 132.688 )
+
+[node name="LosPortales" type="Spatial" parent="Teleport"]
+transform = Transform( 0.968716, -0.248172, 1.0848e-08, 0, -4.37114e-08, -1, 0.248172, 0.968716, -4.23439e-08, 1564.93, 137.311, 59.5255 )
+
+[node name="MainColonyAirlock" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1754.17, 167.526, -315.98 )
+
+[node name="UpperGallery" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1203.69, -46.5899, 247.895 )
+
+[node name="LongDome" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1582.98, -1241.08, -228.486 )
+
+[node name="InitialColonyGrounds008" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3963.28, -1883.17, -2670.6 )
+
+[node name="IrisPlanterBuilding" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1720.95, 102.439, 619.906 )
+
+[node name="BigAtrium" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1648.23, 133.525, -185.014 )
+
+[node name="FirstGallery" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1436.12, 17.9583, -304.337 )
+
+[node name="LowerGalleries" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 530.65, -616.779, -95.7434 )
+
+[node name="SpacePort" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6033.89, 70.9332, -3719.31 )
+
+[node name="Hangars2" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1771.38, 162.996, 72.8933 )
+
+[node name="Fluidized-Bed-Reactor-and-Mirrors007" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1875.45, 128.331, 240.985 )
+
+[node name="Fluidized-Bed-Reactor-and-Mirrors006" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2362.55, 42.5459, 379.835 )
+
+[node name="Fluidized-Bed-Reactor-and-Mirrors005" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2304.53, 56.5381, 283.837 )
+
+[node name="Fluidized-Bed-Reactor-and-Mirrors004" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2246.66, 70.5004, 196.097 )
+
+[node name="Fluidized-Bed-Reactor-and-Mirrors003" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2188.79, 84.8711, 109.291 )
+
+[node name="Fluidized-Bed-Reactor-and-Mirrors002" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2110.59, 70.7629, 461.179 )
+
+[node name="Fluidized-Bed-Reactor-and-Mirrors001" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2471.56, 28.6798, 443.668 )
+
+[node name="Fluidized-Bed-Reactor-and-Mirrors" type="Spatial" parent="Teleport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1870.78, 119.501, 469.461 )
+
+[node name="Lights" type="Spatial" parent="."]
+editor/display_folded = true
+visible = false
+
+[node name="Point021" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -1564.11, -1227.19, -210.423 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Point022" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -1476.66, -1240.6, -473.686 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Point023" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -1645.73, -1209.33, 43.4499 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Point024" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -1786.03, -1160.39, 333.326 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Point025" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -1377.2, -1224.34, -777.421 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Point020" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1790.24, 127.91, 581.171 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Point019" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1740.33, 142.117, 563.957 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Point018" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1669.11, 147.797, 647.847 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Point017" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1724.82, 132.782, 690.542 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Point016" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1780.38, 126.379, 651.395 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Point015" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1649.59, 152.673, 582.251 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Point008" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1625.87, 186.942, -284.592 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Point009" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1666.78, 186.824, -279.275 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Point010" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1580.73, 158.716, -290.511 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Point011" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1536.72, 129.988, -296.199 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Point012" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1484.9, 100.078, -302.961 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Point013" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1506.68, 82.1842, -324.638 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Point014" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1455.36, 69.0756, -306.762 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Point007" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1697.22, 131.25, -393.854 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Point006" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1680.64, 128.58, -336.111 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Point005" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1639.01, 143.079, -102.595 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Point004" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1699.72, 152.693, -158.036 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Point003" type="OmniLight" parent="Lights"]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1650.24, 156.169, -147.447 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Sun" type="DirectionalLight" parent="Lights"]
+transform = Transform( 50, 1.61515e-05, -86.6025, 86.6025, 5.8762e-06, 50, 1.31647e-05, -100, -1.10495e-05, 1690.56, 604.873, -223.826 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.1
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+directional_shadow_mode = 2
+directional_shadow_split_1 = 0.1
+directional_shadow_split_2 = 0.2
+directional_shadow_split_3 = 0.5
+directional_shadow_blend_splits = false
+directional_shadow_normal_bias = 0.8
+directional_shadow_bias_split_scale = 0.25
+directional_shadow_depth_range = 0
+directional_shadow_max_distance = 200.0
 
