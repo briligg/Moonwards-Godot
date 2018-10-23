@@ -1,4 +1,4 @@
-[gd_scene load_steps=1 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://export/meshes/m_e_IrisPlanterBuilding_escn_1.mesh" type="ArrayMesh" id=1]
 [ext_resource path="res://export/meshes/m_e_IrisPlanterBuilding_escn_2.mesh" type="ArrayMesh" id=2]
@@ -30,200 +30,458 @@
 [ext_resource path="res://export/meshes/m_e_IrisPlanterBuilding_escn_28.mesh" type="ArrayMesh" id=28]
 [ext_resource path="res://export/meshes/m_e_IrisPlanterBuilding_escn_29.mesh" type="ArrayMesh" id=29]
 
-[node type="Spatial" name="IrisPlanterBuilding"]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1720.95, -102.439, -623.515)
+[node name="IrisPlanterBuilding" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1720.95, -102.439, -623.515 )
 
 [node name="IrisPlanterRef" type="MeshInstance" parent="."]
-
+transform = Transform( 43.0892, 0, 0, 0, 43.0892, 0, 0, 0, 43.0892, 1720.86, 112.681, 623.501 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 1 )
-visible = true
-transform = Transform(43.0892, 0.0, 0.0, 0.0, 43.0892, 0.0, 0.0, 0.0, 43.0892, 1720.86, 112.681, 623.501)
+skeleton = NodePath("..")
 
 [node name="iris-planter-empty-two" type="Spatial" parent="."]
-
-transform = Transform(0.980785, 0.0, 0.19509, 0.0, 1.0, 0.0, -0.19509, 0.0, 0.980785, 1720.82, 112.683, 623.386)
+transform = Transform( 0.980785, 0, 0.19509, 0, 1, 0, -0.19509, 0, 0.980785, 1720.82, 112.683, 623.386 )
 
 [node name="iris-planter-reference" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1720.86, 112.681, 623.498)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1720.86, 112.681, 623.498 )
 
 [node name="iris-planter-empty" type="Spatial" parent="."]
-
-transform = Transform(0.92388, 0.0, 0.382683, 0.0, 1.0, 0.0, -0.382683, 0.0, 0.92388, 1720.86, 112.681, 623.498)
+transform = Transform( 0.92388, 0, 0.382683, 0, 1, 0, -0.382683, 0, 0.92388, 1720.86, 112.681, 623.498 )
 
 [node name="TunnelWindow002" type="MeshInstance" parent="."]
-
+transform = Transform( 0.999958, -0.00906887, 0.00125397, 0.00905317, 0.999887, 0.0120047, -0.0013627, -0.0119928, 0.999927, 1720.13, 141.682, 623.732 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 2 )
-visible = true
-transform = Transform(0.999958, -0.00906887, 0.00125397, 0.00905317, 0.999887, 0.0120047, -0.0013627, -0.0119928, 0.999927, 1720.13, 141.682, 623.732)
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
+_sections_unfolded = [ "mesh" ]
 
 [node name="Teacup-centertower" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1720.86, 121.958, 623.498 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 3 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1720.86, 121.958, 623.498)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="iris-planter-empty001" type="Spatial" parent="."]
-
-transform = Transform(0.92388, 0.0, 0.382683, 0.0, 1.0, 0.0, -0.382683, 0.0, 0.92388, 1720.86, 134.564, 623.498)
+transform = Transform( 0.92388, 0, 0.382683, 0, 1, 0, -0.382683, 0, 0.92388, 1720.86, 134.564, 623.498 )
 
 [node name="iris-planter-empty-two001" type="Spatial" parent="."]
-
-transform = Transform(0.980785, 0.0, 0.19509, 0.0, 1.0, 0.0, -0.19509, 0.0, 0.980785, 1720.82, 134.564, 623.386)
+transform = Transform( 0.980785, 0, 0.19509, 0, 1, 0, -0.19509, 0, 0.980785, 1720.82, 134.564, 623.386 )
 
 [node name="Teacup-Planters" type="MeshInstance" parent="."]
-
+transform = Transform( 0.999958, -0.00906887, 0.00125397, 0.00905317, 0.999887, 0.0120047, -0.0013627, -0.0119928, 0.999927, 1720.86, 134.564, 623.498 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 4 )
-visible = true
-transform = Transform(0.999958, -0.00906887, 0.00125397, 0.00905317, 0.999887, 0.0120047, -0.0013627, -0.0119928, 0.999927, 1720.86, 134.564, 623.498)
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "material", "mesh" ]
 
 [node name="Teacup-Truss-Triangular004" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( -0.413554, 0.754471, -0.00719807, 0.0118959, -0.00131365, -0.794991, -0.678958, -0.459572, -0.00954455, 34.8375, -41.278, -21.2382 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 5 )
-visible = true
-transform = Transform(-0.413554, 0.754471, -0.00719807, 0.0118959, -0.00131365, -0.794991, -0.678958, -0.459572, -0.00954455, 34.8375, -41.278, -21.2382)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Teacup-Truss-Triangular005" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( 0.074255, 0.661685, -0.00543338, 0.00647736, -0.00698081, -0.600085, -0.595506, 0.0824311, -0.00720466, 39.9159, -41.5664, 4.89044 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 6 )
-visible = true
-transform = Transform(0.074255, 0.661685, -0.00543338, 0.00647736, -0.00698081, -0.600085, -0.595506, 0.0824311, -0.00720466, 39.9159, -41.5664, 4.89044)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Teacup-Truss-Triangular006" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( 0.272896, 0.505936, -0.00480616, 0.00299616, -0.00822054, -0.530818, -0.455358, 0.303154, -0.00637301, 34.9001, -41.7187, 19.5845 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 7 )
-visible = true
-transform = Transform(0.272896, 0.505936, -0.00480616, 0.00299616, -0.00822054, -0.530818, -0.455358, 0.303154, -0.00637301, 34.9001, -41.7187, 19.5845)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Base001" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( -0.667471, 0.00648965, -0.261337, 0.00290502, 0.716757, 0.0103793, 0.261402, 0.00860542, -0.667422, -15.1927, -41.223, -38.5034 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 8 )
-visible = true
-transform = Transform(-0.667471, 0.00648965, -0.261337, 0.00290502, 0.716757, 0.0103793, 0.261402, 0.00860542, -0.667422, -15.1927, -41.223, -38.5034)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Base002" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( -0.908712, 0.00823163, 0.030242, 0.00858956, 0.90915, 0.0106358, -0.0301424, 0.0109152, -0.908687, -0.0334473, -40.8595, -41.4633 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 9 )
-visible = true
-transform = Transform(-0.908712, 0.00823163, 0.030242, 0.00858956, 0.90915, 0.0106358, -0.0301424, 0.0109152, -0.908687, -0.0334473, -40.8595, -41.4633)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Base003" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( -0.847973, 0.00968079, 0.651388, 0.015497, 1.06921, 0.00428352, -0.651276, 0.0128369, -0.848018, 24.9452, -42.3973, -32.933 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 10 )
-visible = true
-transform = Transform(-0.847973, 0.00968079, 0.651388, 0.015497, 1.06921, 0.00428352, -0.651276, 0.0128369, -0.848018, 24.9452, -42.3973, -32.933)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Base004" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( -0.523656, 0.00929898, 0.883594, 0.0153487, 1.02704, -0.00171226, -0.88351, 0.0123306, -0.523736, 34.9598, -43.0668, -21.3769 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 11 )
-visible = true
-transform = Transform(-0.523656, 0.00929898, 0.883594, 0.0153487, 1.02704, -0.00171226, -0.88351, 0.0123306, -0.523736, 34.9598, -43.0668, -21.3769)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Base005" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( 0.0943128, 0.00755258, 0.828864, 0.00909725, 0.834153, -0.00863591, -0.828848, 0.0100149, 0.0942198, 40.0345, -42.9857, 4.9035 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 12 )
-visible = true
-transform = Transform(0.0943128, 0.00755258, 0.828864, 0.00909725, 0.834153, -0.00863591, -0.828848, 0.0100149, 0.0942198, 40.0345, -42.9857, 4.9035)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Base006" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( 0.336646, 0.00613591, 0.588214, 0.00401426, 0.677687, -0.0093667, -0.588232, 0.00813633, 0.336572, 34.9928, -42.9233, 19.629 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 13 )
-visible = true
-transform = Transform(0.336646, 0.00613591, 0.588214, 0.00401426, 0.677687, -0.0093667, -0.588232, 0.00813633, 0.336572, 34.9928, -42.9233, 19.629)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Base007" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( 0.701128, 0.00681157, 0.272897, -0.00307093, 0.752311, -0.010888, -0.272965, 0.00903227, 0.701077, 14.7861, -43.2486, 37.3933 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 14 )
-visible = true
-transform = Transform(0.701128, 0.00681157, 0.272897, -0.00307093, 0.752311, -0.010888, -0.272965, 0.00903227, 0.701077, 14.7861, -43.2486, 37.3933)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Base008" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( 0.869179, 0.00786916, -0.000808721, -0.00787831, 0.869118, -0.0104277, 0.000714256, 0.0104346, 0.869153, -0.332031, -43.675, 40.4373 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 15 )
-visible = true
-transform = Transform(0.869179, 0.00786916, -0.000808721, -0.00787831, 0.869118, -0.0104277, 0.000714256, 0.0104346, 0.869153, -0.332031, -43.675, 40.4373)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Base009" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( 0.686944, 0.00786916, -0.532524, -0.0126121, 0.869118, -0.00342633, 0.532433, 0.0104346, 0.686981, -25.3022, -42.5089, 32.0126 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 16 )
-visible = true
-transform = Transform(0.686944, 0.00786916, -0.532524, -0.0126121, 0.869118, -0.00342633, 0.532433, 0.0104346, 0.686981, -25.3022, -42.5089, 32.0126)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Base010" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( 0.481591, 0.00786916, -0.723563, -0.0130466, 0.869118, 0.00076854, 0.723489, 0.0104346, 0.481655, -35.381, -42.2747, 20.5663 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 17 )
-visible = true
-transform = Transform(0.481591, 0.00786916, -0.723563, -0.0130466, 0.869118, 0.00076854, 0.723489, 0.0104346, 0.481655, -35.381, -42.2747, 20.5663)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Base011" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( -0.0555498, 0.00505075, -0.555103, -0.00616149, 0.557835, 0.0056922, 0.555092, 0.00669739, -0.0554878, -40.5145, -41.4433, -5.81769 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 18 )
-visible = true
-transform = Transform(-0.0555498, 0.00505075, -0.555103, -0.00616149, 0.557835, 0.0056922, 0.555092, 0.00669739, -0.0554878, -40.5145, -41.4433, -5.81769)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Base012" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( -0.29002, 0.00535303, -0.515248, -0.00356037, 0.591221, 0.00814637, 0.515264, 0.00709821, -0.289955, -35.5049, -41.499, -20.624 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 19 )
-visible = true
-transform = Transform(-0.29002, 0.00535303, -0.515248, -0.00356037, 0.591221, 0.00814637, 0.515264, 0.00709821, -0.289955, -35.5049, -41.499, -20.624)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Triangular001" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( -0.724287, 0.035951, -0.00656191, 0.00694336, 0.00933611, -0.724957, -0.0322762, -0.804742, -0.00870365, -0.0306396, -40.7508, -41.2997 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 20 )
-visible = true
-transform = Transform(-0.724287, 0.035951, -0.00656191, 0.00694336, 0.00933611, -0.724957, -0.0322762, -0.804742, -0.00870365, -0.0306396, -40.7508, -41.2997)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Triangular003" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( -0.671254, 0.599572, -0.00779736, 0.0125552, 0.00352647, -0.861197, -0.539525, -0.74588, -0.0103396, 24.8584, -40.4978, -32.7853 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 21 )
-visible = true
-transform = Transform(-0.671254, 0.599572, -0.00779736, 0.0125552, 0.00352647, -0.861197, -0.539525, -0.74588, -0.0103396, 24.8584, -40.4978, -32.7853)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Triangular004" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( -0.520789, -0.214028, -0.00502711, 0.00240205, 0.00888452, -0.555231, 0.192676, -0.578613, -0.00666597, -15.1378, -41.1624, -38.3898 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 22 )
-visible = true
-transform = Transform(-0.520789, -0.214028, -0.00502711, 0.00240205, 0.00888452, -0.555231, 0.192676, -0.578613, -0.00666597, -15.1378, -41.1624, -38.3898)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Triangular007" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( 0.54397, 0.254035, -0.0053422, -0.00217966, -0.00955614, -0.590022, -0.228684, 0.604365, -0.00708383, 14.76, -41.9291, 37.3053 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 23 )
-visible = true
-transform = Transform(0.54397, 0.254035, -0.0053422, -0.00217966, -0.00955614, -0.590022, -0.228684, 0.604365, -0.00708383, 14.76, -41.9291, 37.3053)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Triangular008" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( 0.668225, -0.00923902, -0.00605027, -0.0061492, -0.00883025, -0.668229, 0.00824226, 0.74245, -0.0080228, -0.310791, -42.1447, 40.3235 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 24 )
-visible = true
-transform = Transform(0.668225, -0.00923902, -0.00605027, -0.0061492, -0.00883025, -0.668229, 0.00824226, 0.74245, -0.0080228, -0.310791, -42.1447, 40.3235)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Triangular009" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( 0.537164, -0.474878, -0.00621475, -0.009994, -0.00286656, -0.686396, 0.427319, 0.596882, -0.00824091, -25.1985, -40.952, 31.9105 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 25 )
-visible = true
-transform = Transform(0.537164, -0.474878, -0.00621475, -0.009994, -0.00286656, -0.686396, 0.427319, 0.596882, -0.00824091, -25.1985, -40.952, 31.9105)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Triangular010" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( 0.344037, -0.618299, -0.00592302, -0.00979529, 0.00100796, -0.654185, 0.556415, 0.382319, -0.0078542, -35.2091, -40.7687, 20.426 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 26 )
-visible = true
-transform = Transform(0.344037, -0.618299, -0.00592302, -0.00979529, 0.00100796, -0.654185, 0.556415, 0.382319, -0.0078542, -35.2091, -40.7687, 20.426)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Triangular011" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( -0.053222, -0.466133, -0.00382856, -0.00455479, 0.0049298, -0.422852, 0.419513, -0.059083, -0.00507677, -40.4591, -41.3675, -5.81787 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 27 )
-visible = true
-transform = Transform(-0.053222, -0.466133, -0.00382856, -0.00455479, 0.0049298, -0.422852, 0.419513, -0.059083, -0.00507677, -40.4591, -41.3675, -5.81787)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Triangular012" type="MeshInstance" parent="Teacup-Planters"]
-
+transform = Transform( -0.202193, -0.412681, -0.00382856, -0.00262864, 0.00643311, -0.422852, 0.371423, -0.224606, -0.00507678, -35.4585, -41.3787, -20.6099 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 28 )
-visible = true
-transform = Transform(-0.202193, -0.412681, -0.00382856, -0.00262864, 0.00643311, -0.422852, 0.371423, -0.224606, -0.00507678, -35.4585, -41.3787, -20.6099)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Teacup-watertank" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1720.86, 139.02, 623.498 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 29 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1720.86, 139.02, 623.498)
+skeleton = NodePath("..")
+material/0 = null
+
