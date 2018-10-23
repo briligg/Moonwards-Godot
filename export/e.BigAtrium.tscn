@@ -18,11 +18,11 @@
 
 [node type="Spatial" name="BigAtrium"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1676.84, -133.525, 185.014)
 
 [node name="HexpaneWindow007" type="Spatial" parent="."]
 
-transform = Transform(-1.0, 0.0, -3.25841e-07, 0.0, 1.0, 0.0, 3.25841e-07, 0.0, -1.0, 1701.13, 134.071, -214.965)
+transform = Transform(-1.0, 0.0, -3.25841e-07, 0.0, 1.0, 0.0, 3.25841e-07, 0.0, -1.0, 1701.04, 134.557, -216.556)
 
 [node name="HexpaneWindow" parent="HexpaneWindow007" instance=ExtResource ( 1 )]
 
@@ -30,7 +30,7 @@ instance = ExtResource ( 1 )
 
 [node name="HexpaneWindow006" type="Spatial" parent="."]
 
-transform = Transform(-1.0, 0.0, -3.25841e-07, 0.0, 1.0, 0.0, 3.25841e-07, 0.0, -1.0, 1701.13, 141.813, -214.964)
+transform = Transform(-1.0, 0.0, -3.25841e-07, 0.0, 1.0, 0.0, 3.25841e-07, 0.0, -1.0, 1701.04, 142.299, -216.555)
 
 [node name="HexpaneWindow" parent="HexpaneWindow006" instance=ExtResource ( 1 )]
 
@@ -38,7 +38,7 @@ instance = ExtResource ( 1 )
 
 [node name="HexpaneWindow005" type="Spatial" parent="."]
 
-transform = Transform(-1.0, 0.0, -3.25841e-07, 0.0, 1.0, 0.0, 3.25841e-07, 0.0, -1.0, 1653.12, 137.493, -214.947)
+transform = Transform(-1.0, 0.0, -3.25841e-07, 0.0, 1.0, 0.0, 3.25841e-07, 0.0, -1.0, 1653.03, 137.979, -216.537)
 
 [node name="HexpaneWindow" parent="HexpaneWindow005" instance=ExtResource ( 1 )]
 
@@ -46,7 +46,7 @@ instance = ExtResource ( 1 )
 
 [node name="HexpaneWindow004" type="Spatial" parent="."]
 
-transform = Transform(-1.0, 0.0, -3.25841e-07, 0.0, 1.0, 0.0, 3.25841e-07, 0.0, -1.0, 1653.12, 145.231, -214.947)
+transform = Transform(-1.0, 0.0, -3.25841e-07, 0.0, 1.0, 0.0, 3.25841e-07, 0.0, -1.0, 1653.03, 145.717, -216.537)
 
 [node name="HexpaneWindow" parent="HexpaneWindow004" instance=ExtResource ( 1 )]
 

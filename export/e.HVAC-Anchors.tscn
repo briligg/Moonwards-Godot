@@ -1,0 +1,338 @@
+[gd_scene load_steps=1 format=2]
+
+[ext_resource path="res://export/meshes/m_e_HVAC-Anchors_escn_1.mesh" type="ArrayMesh" id=1]
+[ext_resource path="res://export/meshes/m_e_HVAC-Anchors_escn_2.mesh" type="ArrayMesh" id=2]
+
+[node type="Spatial" name="HVAC-Anchors"]
+
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1294.41, 148.459, 346.134)
+
+[node name="FirstGalleryAnchorsTemplate" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 1 )
+visible = true
+transform = Transform(0.999995, 0.00322661, -6.81032e-07, -0.00322661, 0.999995, -0.000417891, -6.67343e-07, 0.000417891, 1.0, 1628.27, 109.823, -302.56)
+
+[node name="FirstGallery-AnchorUnit054" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 960.611, -455.974, -389.679)
+
+[node name="FirstGallery-AnchorUnit053" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 973.133, -444.542, -388.044)
+
+[node name="FirstGallery-AnchorUnit052" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 998.631, -421.181, -384.714)
+
+[node name="FirstGallery-AnchorUnit051" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 987.929, -431.077, -386.112)
+
+[node name="FirstGallery-AnchorUnit050" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1036.63, -386.76, -379.754)
+
+[node name="FirstGallery-AnchorUnit049" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1011.14, -410.061, -383.081)
+
+[node name="FirstGallery-AnchorUnit048" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1025.99, -396.631, -381.142)
+
+[node name="FirstGallery-AnchorUnit047" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1049.27, -375.667, -378.103)
+
+[node name="FirstGallery-AnchorUnit046" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1062.7, -360.829, -376.346)
+
+[node name="FirstGallery-AnchorUnit045" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1071.6, -349.125, -375.182)
+
+[node name="FirstGallery-AnchorUnit044" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1081.99, -335.669, -373.822)
+
+[node name="FirstGallery-AnchorUnit043" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1094.12, -319.464, -372.233)
+
+[node name="FirstGallery-AnchorUnit042" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1102.81, -307.968, -371.095)
+
+[node name="FirstGallery-AnchorUnit041" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1134.54, -266.642, -366.994)
+
+[node name="FirstGallery-AnchorUnit040" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1113.27, -294.238, -369.732)
+
+[node name="FirstGallery-AnchorUnit039" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1124.51, -279.443, -368.297)
+
+[node name="FirstGallery-AnchorUnit038" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1172.11, -235.789, -362.03)
+
+[node name="FirstGallery-AnchorUnit037" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1144.21, -254.739, -365.705)
+
+[node name="FirstGallery-AnchorUnit036" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1161.6, -243.35, -363.421)
+
+[node name="FirstGallery-AnchorUnit035" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1186.19, -226.428, -360.193)
+
+[node name="FirstGallery-AnchorUnit034" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1213.04, -208.421, -356.693)
+
+[node name="FirstGallery-AnchorUnit033" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1202.86, -215.238, -358.021)
+
+[node name="FirstGallery-AnchorUnit032" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1228.32, -198.503, -354.704)
+
+[node name="FirstGallery-AnchorUnit031" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1244.91, -187.192, -352.543)
+
+[node name="FirstGallery-AnchorUnit030" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1255.21, -180.257, -351.203)
+
+[node name="FirstGallery-AnchorUnit029" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1296.96, -152.2, -345.778)
+
+[node name="FirstGallery-AnchorUnit028" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1270.11, -170.402, -349.263)
+
+[node name="FirstGallery-AnchorUnit027" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1286.79, -159.183, -347.091)
+
+[node name="FirstGallery-AnchorUnit026" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1313.76, -139.925, -343.707)
+
+[node name="FirstGallery-AnchorUnit025" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1327.87, -125.934, -341.921)
+
+[node name="FirstGallery-AnchorUnit024" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1336.31, -116.929, -340.678)
+
+[node name="FirstGallery-AnchorUnit023" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1371.67, -81.2422, -336.061)
+
+[node name="FirstGallery-AnchorUnit022" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1349.14, -104.125, -339.063)
+
+[node name="FirstGallery-AnchorUnit021" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1362.92, -89.6823, -337.331)
+
+[node name="FirstGallery-AnchorUnit020" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1406.2, -46.3381, -331.587)
+
+[node name="FirstGallery-AnchorUnit019" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1382.52, -69.9458, -334.705)
+
+[node name="FirstGallery-AnchorUnit018" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1395.97, -56.3818, -332.888)
+
+[node name="FirstGallery-AnchorUnit017" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1441.37, -10.5584, -327.008)
+
+[node name="FirstGallery-AnchorUnit016" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1417.34, -34.9546, -330.124)
+
+[node name="FirstGallery-AnchorUnit015" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1432.15, -20.1022, -328.193)
+
+[node name="FirstGallery-AnchorUnit014" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1452.84, 1.451, -325.488)
+
+[node name="FirstGallery-AnchorUnit013" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1476.93, 25.5905, -322.329)
+
+[node name="FirstGallery-AnchorUnit012" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1467.61, 16.2309, -323.616)
+
+[node name="FirstGallery-AnchorUnit011" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1513.1, 55.5473, -317.61)
+
+[node name="FirstGallery-AnchorUnit010" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1488.65, 37.1635, -320.795)
+
+[node name="FirstGallery-AnchorUnit009" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1503.44, 50.6283, -318.826)
+
+[node name="FirstGallery-AnchorUnit008" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1525.75, 61.6957, -315.955)
+
+[node name="FirstGallery-AnchorUnit007" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1545.0, 71.0298, -313.419)
+
+[node name="FirstGallery-AnchorUnit006" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1570.38, 83.7862, -310.149)
+
+[node name="FirstGallery-AnchorUnit005" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1589.17, 92.9774, -307.677)
+
+[node name="FirstGallery-AnchorUnit004" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1614.81, 105.541, -304.395)
+
+[node name="FirstGallery-AnchorUnit003" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1558.95, 78.0247, -311.6)
+
+[node name="FirstGallery-AnchorUnit002" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1600.94, 98.528, -306.149)
+
+[node name="FirstGallery-AnchorUnit001" type="MeshInstance" parent="."]
+
+mesh = ExtResource( 2 )
+visible = true
+transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1628.27, 109.823, -302.56)

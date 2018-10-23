@@ -11,7 +11,7 @@
 
 [node type="Spatial" name="LightTube-Straight"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0453738, -10.5239, 2.56603)
 
 [node name="LT-Small-Pole" type="MeshInstance" parent="."]
 

@@ -28,11 +28,11 @@
 
 [node type="Spatial" name="SpacePort"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -5998.62, -70.9332, 3712.54)
 
 [node name="ShuttleProp" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 6010.13, 69.1358, -3740.54)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 6012.49, 68.6827, -3755.4)
 
 [node name="ShuttleProp" parent="ShuttleProp" instance=ExtResource ( 1 )]
 
@@ -40,7 +40,7 @@ instance = ExtResource ( 1 )
 
 [node name="ShuttleProp001" type="Spatial" parent="."]
 
-transform = Transform(-4.37114e-08, 0.0, 1.0, 0.0, 1.0, 0.0, -1.0, 0.0, -4.37114e-08, 5930.75, 77.7989, -3737.14)
+transform = Transform(-4.37114e-08, 0.0, 1.0, 0.0, 1.0, 0.0, -1.0, 0.0, -4.37114e-08, 5915.89, 77.3458, -3739.5)
 
 [node name="ShuttleProp" parent="ShuttleProp001" instance=ExtResource ( 1 )]
 
@@ -48,7 +48,7 @@ instance = ExtResource ( 1 )
 
 [node name="AirlockNew002" type="Spatial" parent="."]
 
-transform = Transform(-4.37114e-08, 0.0, 1.0, 0.0, 1.0, 0.0, -1.0, 0.0, -4.37114e-08, 5929.68, 63.9784, -3702.11)
+transform = Transform(-4.37114e-08, 0.0, 1.0, 0.0, 1.0, 0.0, -1.0, 0.0, -4.37114e-08, 5934.03, 79.5339, -3702.11)
 
 [node name="AirlockNew" parent="AirlockNew002" instance=ExtResource ( 3 )]
 
@@ -56,7 +56,7 @@ instance = ExtResource ( 3 )
 
 [node name="AirlockNew003" type="Spatial" parent="."]
 
-transform = Transform(-4.37114e-08, 0.0, 1.0, 0.0, 1.0, 0.0, -1.0, 0.0, -4.37114e-08, 5929.68, 63.9784, -3692.11)
+transform = Transform(-4.37114e-08, 0.0, 1.0, 0.0, 1.0, 0.0, -1.0, 0.0, -4.37114e-08, 5934.03, 79.5339, -3692.11)
 
 [node name="AirlockNew" parent="AirlockNew003" instance=ExtResource ( 3 )]
 
@@ -64,7 +64,7 @@ instance = ExtResource ( 3 )
 
 [node name="AirlockNew004" type="Spatial" parent="."]
 
-transform = Transform(-4.37114e-08, 0.0, 1.0, 0.0, 1.0, 0.0, -1.0, 0.0, -4.37114e-08, 5929.68, 63.9784, -3682.11)
+transform = Transform(-4.37114e-08, 0.0, 1.0, 0.0, 1.0, 0.0, -1.0, 0.0, -4.37114e-08, 5934.03, 79.5339, -3682.11)
 
 [node name="AirlockNew" parent="AirlockNew004" instance=ExtResource ( 3 )]
 
@@ -72,7 +72,7 @@ instance = ExtResource ( 3 )
 
 [node name="AirlockNew005" type="Spatial" parent="."]
 
-transform = Transform(-4.37114e-08, 0.0, 1.0, 0.0, 1.0, 0.0, -1.0, 0.0, -4.37114e-08, 5929.68, 63.9784, -3672.11)
+transform = Transform(-4.37114e-08, 0.0, 1.0, 0.0, 1.0, 0.0, -1.0, 0.0, -4.37114e-08, 5934.03, 79.5339, -3672.11)
 
 [node name="AirlockNew" parent="AirlockNew005" instance=ExtResource ( 3 )]
 
@@ -86,7 +86,7 @@ transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 5993.22, 79.6
 
 [node name="AirlockNew" type="Spatial" parent="SpacePortMain"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 5.13184, -14.5915, -30.8147)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 7.60986, 0.964104, -26.4636)
 
 [node name="AirlockNew" parent="SpacePortMain/AirlockNew" instance=ExtResource ( 3 )]
 
@@ -94,7 +94,7 @@ instance = ExtResource ( 3 )
 
 [node name="AirlockNew001" type="Spatial" parent="SpacePortMain"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -4.375, -14.5915, -30.8147)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1.89697, 0.964104, -26.4636)
 
 [node name="AirlockNew" parent="SpacePortMain/AirlockNew001" instance=ExtResource ( 3 )]
 
@@ -102,7 +102,7 @@ instance = ExtResource ( 3 )
 
 [node name="AirlockNew006" type="Spatial" parent="SpacePortMain"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.383789, -6.46893, -30.8218)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2.86182, 9.08662, -26.4707)
 
 [node name="AirlockNew" parent="SpacePortMain/AirlockNew006" instance=ExtResource ( 3 )]
 
@@ -238,7 +238,7 @@ transform = Transform(34.6667, 0.0, 0.0, 0.0, 8.33333, 0.0, 0.0, 0.0, 0.0333333,
 
 [node name="HexpaneWindow009" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 5993.22, 88.6242, -3674.6)
+transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 5993.32, 90.2146, -3675.09)
 
 [node name="HexpaneWindow" parent="HexpaneWindow009" instance=ExtResource ( 2 )]
 
@@ -246,7 +246,7 @@ instance = ExtResource ( 2 )
 
 [node name="ShuttleProp002" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 5989.36, 69.1358, -3731.36)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 5991.72, 68.6827, -3746.22)
 
 [node name="ShuttleProp" parent="ShuttleProp002" instance=ExtResource ( 1 )]
 

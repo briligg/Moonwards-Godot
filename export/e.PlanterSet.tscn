@@ -10,7 +10,7 @@
 
 [node type="Spatial" name="PlanterSet"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -0.0680106, -0.0678297, -0.00270844)
 
 [node name="PlanterFrame000" type="MeshInstance" parent="."]
 

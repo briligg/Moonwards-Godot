@@ -6,7 +6,7 @@
 
 [node type="Spatial" name="RadiatorTowerTanksAndPipes"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -16.234, 7.35592, -8.9258e-05)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -16.2026, 2.21189, -0.0270085)
 
 [node name="TowerRadMaster-Outletpipe" type="MeshInstance" parent="."]
 

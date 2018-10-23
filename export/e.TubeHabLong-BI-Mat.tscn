@@ -6,7 +6,7 @@
 
 [node type="Spatial" name="TubeHabLong-BI-Mat"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.69832, 0.694771, -6.52886)
 
 [node name="TubeHabWindowArrayGuide005" type="Spatial" parent="."]
 

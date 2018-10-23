@@ -9,7 +9,7 @@
 
 [node type="Spatial" name="AirlockDoor"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -5991.13, -13.1971, 3695.27)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -5991.13, -36.5304, 3696.16)
 
 [node name="AirlockDoor" type="MeshInstance" parent="."]
 

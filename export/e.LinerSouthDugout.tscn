@@ -5,7 +5,7 @@
 
 [node type="Spatial" name="LinerSouthDugout"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1569.41, -138.338, -334.24)
 
 [node name="RadBlindBeam" type="MeshInstance" parent="."]
 

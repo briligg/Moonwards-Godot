@@ -4,7 +4,7 @@
 
 [node type="Spatial" name="LargeLavaTank"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1682.21, -169.025, -41.2484)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1682.21, -170.946, -41.2484)
 
 [node name="basalt-fiber-lava-tank001" type="MeshInstance" parent="."]
 

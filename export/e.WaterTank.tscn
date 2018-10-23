@@ -4,7 +4,7 @@
 
 [node type="Spatial" name="WaterTank"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1655.83, -148.37, 46.2257)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1654.41, -148.37, 38.333)
 
 [node name="Water-Tank001" type="MeshInstance" parent="."]
 

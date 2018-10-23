@@ -1,11 +1,11 @@
 [gd_scene load_steps=1 format=2]
 
-[ext_resource id=1 path="e.RecHab1-BI-Mat.tscn" type="PackedScene"]
-[ext_resource id=2 path="e.LightTubeLarge.tscn" type="PackedScene"]
+[ext_resource id=1 path="e.TubeHab-BI-Mat.tscn" type="PackedScene"]
+[ext_resource id=2 path="e.RecHab1-BI-Mat.tscn" type="PackedScene"]
 [ext_resource id=3 path="e.GreenMan.tscn" type="PackedScene"]
-[ext_resource id=4 path="e.BoatRadiator.tscn" type="PackedScene"]
-[ext_resource id=5 path="e.LightTubeLarge-Setof3.tscn" type="PackedScene"]
-[ext_resource id=6 path="e.TubeHab-BI-Mat.tscn" type="PackedScene"]
+[ext_resource id=4 path="e.LightTubeLarge-Setof3.tscn" type="PackedScene"]
+[ext_resource id=5 path="e.LightTubeLarge.tscn" type="PackedScene"]
+[ext_resource id=6 path="e.BoatRadiator.tscn" type="PackedScene"]
 [ext_resource path="res://export/meshes/m_e_FirstGallery_escn_1.mesh" type="ArrayMesh" id=7]
 [ext_resource path="res://export/meshes/m_e_FirstGallery_escn_2.mesh" type="ArrayMesh" id=8]
 [ext_resource path="res://export/meshes/m_e_FirstGallery_escn_3.mesh" type="ArrayMesh" id=9]
@@ -104,40 +104,26 @@
 [ext_resource path="res://export/meshes/m_e_FirstGallery_escn_96.mesh" type="ArrayMesh" id=102]
 [ext_resource path="res://export/meshes/m_e_FirstGallery_escn_97.mesh" type="ArrayMesh" id=103]
 [ext_resource path="res://export/meshes/m_e_FirstGallery_escn_98.mesh" type="ArrayMesh" id=104]
-[ext_resource path="res://export/meshes/m_e_FirstGallery_escn_99.mesh" type="ArrayMesh" id=105]
-[ext_resource path="res://export/meshes/m_e_FirstGallery_escn_100.mesh" type="ArrayMesh" id=106]
 
 [node type="Spatial" name="FirstGallery"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
-
-[node name="FirstGalleryAnchorsTemplate" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 7 )
-visible = true
-transform = Transform(0.999995, 0.00322661, -6.81032e-07, -0.00322661, 0.999995, -0.000417891, -6.67343e-07, 0.000417891, 1.0, 1628.27, 109.823, -302.56)
-
-[node name="FirstGallery-AnchorUnit" type="MeshInstance" parent="FirstGalleryAnchorsTemplate"]
-
-mesh = ExtResource( 8 )
-visible = true
-transform = Transform(0.943942, -0.241345, 0.225225, 0.247455, 0.968899, 0.00113387, -0.218494, 0.0546627, 0.974306, 0.0, 1.52588e-05, 9.15527e-05)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1436.12, -17.9583, 300.521)
 
 [node name="LightOutlet005" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 9 )
+mesh = ExtResource( 7 )
 visible = true
 transform = Transform(-0.0964317, 0.0, -0.99534, 0.0, 1.0, 0.0, 0.99534, 0.0, -0.0964317, 1615.54, 149.535, -270.289)
 
 [node name="LightOutlet006" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 9 )
+mesh = ExtResource( 7 )
 visible = true
 transform = Transform(-0.0944882, 0.0, -0.995526, 0.0, 1.0, 0.0, 0.995526, 0.0, -0.0944882, 1592.88, 138.822, -273.255)
 
 [node name="FirstGalleryOverlay" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 10 )
+mesh = ExtResource( 8 )
 visible = true
 transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1608.43, 0.0, -206.209)
 
@@ -152,1147 +138,1147 @@ transform = Transform(-0.041754, -0.118445, 0.992082, -5.44263e-05, 0.992949, 0.
 
 [node name="Cylinder099" type="MeshInstance" parent="FirstGalleryOverlay"]
 
-mesh = ExtResource( 11 )
+mesh = ExtResource( 9 )
 visible = true
 transform = Transform(0.63589, 0.764059, -0.108897, -0.76863, 0.639694, -1.01843e-10, 0.0696606, 0.0837014, 0.994053, -319.084, -123.033, -121.187)
 
 [node name="Cylinder100" type="MeshInstance" parent="FirstGalleryOverlay"]
 
-mesh = ExtResource( 12 )
+mesh = ExtResource( 10 )
 visible = true
 transform = Transform(0.63589, 0.764059, -0.108897, -0.76863, 0.639694, -1.01843e-10, 0.0696606, 0.0837014, 0.994053, -319.084, -123.033, -121.187)
 
 [node name="FirstGalleryConduitTop" type="MeshInstance" parent="FirstGalleryOverlay"]
 
-mesh = ExtResource( 13 )
+mesh = ExtResource( 11 )
 visible = true
 transform = Transform(0.991896, -9.79436e-10, -0.127055, 9.79381e-10, 1.0, -6.29001e-11, 0.127055, -6.20445e-11, 0.991896, -300.943, -198.564, -120.205)
 
 [node name="FirstGalleryFloor-Sculpt" type="MeshInstance" parent="FirstGalleryOverlay"]
 
-mesh = ExtResource( 14 )
+mesh = ExtResource( 12 )
 visible = true
 transform = Transform(0.991896, -9.79436e-10, -0.127055, 9.79381e-10, 1.0, -6.29001e-11, 0.127055, -6.20445e-11, 0.991896, -300.943, -147.356, -120.205)
 
 [node name="FirstGalleryWalls" type="MeshInstance" parent="FirstGalleryOverlay"]
 
-mesh = ExtResource( 15 )
+mesh = ExtResource( 13 )
 visible = true
 transform = Transform(0.991896, -9.79436e-10, -0.127055, 9.79381e-10, 1.0, -6.29001e-11, 0.127055, -6.20445e-11, 0.991896, -300.943, -146.114, -120.205)
 
 [node name="FirstGalleryColumns-A" type="MeshInstance" parent="FirstGalleryOverlay/FirstGalleryWalls"]
 
-mesh = ExtResource( 16 )
+mesh = ExtResource( 14 )
 visible = true
 transform = Transform(0.99189, 0.00325356, 0.127054, -0.0032266, 0.999995, -0.000417887, -0.127055, 4.54793e-06, 0.991896, 316.416, 315.373, -17.3339)
 
 [node name="FirstGalleryConduitMain" type="MeshInstance" parent="FirstGalleryOverlay/FirstGalleryWalls"]
 
-mesh = ExtResource( 17 )
+mesh = ExtResource( 15 )
 visible = true
 transform = Transform(1.0, 0.0, -1.49012e-08, 1.72125e-08, 1.0, 1.67604e-09, 2.98023e-08, 0.0, 1.0, -0.00012207, 0.0437927, 0.0)
 
 [node name="GalleryRoof-Top-Beams000" type="MeshInstance" parent="FirstGalleryOverlay/FirstGalleryWalls"]
 
-mesh = ExtResource( 18 )
+mesh = ExtResource( 16 )
 visible = true
 transform = Transform(0.999998, 9.79381e-10, -0.00173295, 1.62361e-08, 1.0, 1.7108e-09, 0.00173298, -6.29e-11, 0.999999, 183.453, 229.144, 0.783508)
 
 [node name="GalleryRoof-TopCap001" type="MeshInstance" parent="FirstGalleryOverlay/FirstGalleryWalls"]
 
-mesh = ExtResource( 19 )
+mesh = ExtResource( 17 )
 visible = true
 transform = Transform(0.999998, 9.79381e-10, -0.00173295, 1.62361e-08, 1.0, 1.7108e-09, 0.00173298, -6.29e-11, 0.999999, 183.453, 229.144, 0.783508)
 
 [node name="GalleryRoof-TopEnd001" type="MeshInstance" parent="FirstGalleryOverlay/FirstGalleryWalls"]
 
-mesh = ExtResource( 20 )
+mesh = ExtResource( 18 )
 visible = true
 transform = Transform(0.999998, 9.79381e-10, -0.00173295, 1.62361e-08, 1.0, 1.7108e-09, 0.00173298, -6.29e-11, 0.999999, 340.706, 315.339, 1.03897)
 
 [node name="UpperGalleryRoof-Bottom-Beams001" type="MeshInstance" parent="FirstGalleryOverlay/FirstGalleryWalls"]
 
-mesh = ExtResource( 21 )
+mesh = ExtResource( 19 )
 visible = true
 transform = Transform(0.999998, 9.79381e-10, -0.00173295, 1.62361e-08, 1.0, 1.7108e-09, 0.00173298, -6.29e-11, 0.999999, -382.946, -278.433, -0.149475)
 
 [node name="UpperGalleryRoof-Bottom000" type="MeshInstance" parent="FirstGalleryOverlay/FirstGalleryWalls"]
 
-mesh = ExtResource( 22 )
+mesh = ExtResource( 20 )
 visible = true
 transform = Transform(0.999998, 9.79381e-10, -0.00173295, 1.62361e-08, 1.0, 1.7108e-09, 0.00173298, -6.29e-11, 0.999999, -382.946, -278.433, -0.149475)
 
 [node name="UpperGalleryRoof-Middle-Beams003" type="MeshInstance" parent="FirstGalleryOverlay/FirstGalleryWalls"]
 
-mesh = ExtResource( 23 )
+mesh = ExtResource( 21 )
 visible = true
 transform = Transform(0.999998, 9.79381e-10, -0.00173295, 1.62361e-08, 1.0, 1.7108e-09, 0.00173298, -6.29e-11, 0.999999, -124.502, -30.0278, 0.249817)
 
 [node name="UpperGalleryRoof-Middle001" type="MeshInstance" parent="FirstGalleryOverlay/FirstGalleryWalls"]
 
-mesh = ExtResource( 24 )
+mesh = ExtResource( 22 )
 visible = true
 transform = Transform(0.999998, 9.79381e-10, -0.00173295, 1.62361e-08, 1.0, 1.7108e-09, 0.00173298, -6.29e-11, 0.999999, -124.502, -30.0278, 0.249817)
 
 [node name="UpperGalleryRoof-Top-Beams003" type="MeshInstance" parent="FirstGalleryOverlay/FirstGalleryWalls"]
 
-mesh = ExtResource( 25 )
+mesh = ExtResource( 23 )
 visible = true
 transform = Transform(0.999998, 9.79381e-10, -0.00173295, 1.62361e-08, 1.0, 1.7108e-09, 0.00173298, -6.29e-11, 0.999999, 222.785, 257.889, 0.851685)
 
 [node name="UpperGalleryRoof-Top001" type="MeshInstance" parent="FirstGalleryOverlay/FirstGalleryWalls"]
 
-mesh = ExtResource( 26 )
+mesh = ExtResource( 24 )
 visible = true
 transform = Transform(0.999998, 9.79381e-10, -0.00173295, 1.62361e-08, 1.0, 1.7108e-09, 0.00173298, -6.29e-11, 0.999999, 222.785, 257.889, 0.851685)
 
 [node name="UpperGalleryRoof-TopMiddleCap001" type="MeshInstance" parent="FirstGalleryOverlay/FirstGalleryWalls"]
 
-mesh = ExtResource( 27 )
+mesh = ExtResource( 25 )
 visible = true
 transform = Transform(0.999998, 9.79381e-10, -0.00173295, 1.62361e-08, 1.0, 1.7108e-09, 0.00173298, -6.29e-11, 0.999999, -161.48, -62.4499, 0.18573)
 
 [node name="Floor-FG-Top-3" type="MeshInstance" parent="FirstGalleryOverlay"]
 
-mesh = ExtResource( 28 )
+mesh = ExtResource( 26 )
 visible = true
 transform = Transform(-3.14231, 0.0, 0.992956, 0.0, 3.29546, 0.0, -0.992956, 0.0, -3.14231, -75.6653, 80.9407, -91.6274)
 
 [node name="FloorFG-Top-4" type="MeshInstance" parent="FirstGalleryOverlay"]
 
-mesh = ExtResource( 29 )
+mesh = ExtResource( 27 )
 visible = true
 transform = Transform(0.281144, 0.0, 3.27726, 0.0, 3.2893, 0.0, -3.27726, 0.0, 0.281144, -98.3228, 68.0, -96.1996)
 
 [node name="GreenMan1002" type="MeshInstance" parent="FirstGalleryOverlay"]
 
-mesh = ExtResource( 30 )
+mesh = ExtResource( 28 )
 visible = true
 transform = Transform(-0.0624128, 0.0, 0.99805, 0.0, 1.0, 0.0, -0.99805, 0.0, -0.0624128, -95.7585, 112.154, -83.6851)
 
 [node name="GreenMan1010" type="MeshInstance" parent="FirstGalleryOverlay"]
 
-mesh = ExtResource( 30 )
+mesh = ExtResource( 28 )
 visible = true
 transform = Transform(0.0787399, 0.0, -0.996895, 0.0, 1.0, 0.0, 0.996895, 0.0, 0.0787399, -43.9426, 140.015, -89.3179)
 
 [node name="LightTubeLarge-Setof3" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -81.9846, 136.28, -91.3239)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -84.8447, 148.883, -88.8945)
 
-[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3" instance=ExtResource ( 5 )]
+[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 5 )
+instance = ExtResource ( 4 )
 
 [node name="LightTubeLarge-Setof3001" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -122.166, 108.196, -96.6108)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -125.026, 120.8, -94.1814)
 
-[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3001" instance=ExtResource ( 5 )]
+[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3001" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 5 )
+instance = ExtResource ( 4 )
 
 [node name="LightTubeLarge-Setof3002" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -160.953, 77.8142, -101.617)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -163.813, 90.4178, -99.188)
 
-[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3002" instance=ExtResource ( 5 )]
+[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3002" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 5 )
+instance = ExtResource ( 4 )
 
 [node name="LightTubeLarge-Setof3003" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -198.781, 45.4998, -106.472)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -201.641, 58.1034, -104.042)
 
-[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3003" instance=ExtResource ( 5 )]
+[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3003" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 5 )
+instance = ExtResource ( 4 )
 
 [node name="LightTubeLarge-Setof3004" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -237.215, 14.087, -111.427)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -240.075, 26.6906, -108.998)
 
-[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3004" instance=ExtResource ( 5 )]
+[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3004" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 5 )
+instance = ExtResource ( 4 )
 
 [node name="LightTubeLarge-Setof3005" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -275.599, -18.7751, -116.491)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -278.459, -6.17146, -114.062)
 
-[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3005" instance=ExtResource ( 5 )]
+[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3005" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 5 )
+instance = ExtResource ( 4 )
 
 [node name="LightTubeLarge-Setof3006" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -313.191, -50.5056, -121.378)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -316.051, -37.902, -118.949)
 
-[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3006" instance=ExtResource ( 5 )]
+[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3006" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 5 )
+instance = ExtResource ( 4 )
 
 [node name="LightTubeLarge-Setof3007" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -353.141, -84.8969, -126.483)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -356.001, -72.2933, -124.054)
 
-[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3007" instance=ExtResource ( 5 )]
+[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3007" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 5 )
+instance = ExtResource ( 4 )
 
 [node name="LightTubeLarge-Setof3008" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -392.247, -117.364, -131.577)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -395.107, -104.761, -129.147)
 
-[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3008" instance=ExtResource ( 5 )]
+[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3008" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 5 )
+instance = ExtResource ( 4 )
 
 [node name="LightTubeLarge-Setof3009" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -430.569, -150.557, -136.629)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -433.429, -137.953, -134.199)
 
-[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3009" instance=ExtResource ( 5 )]
+[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3009" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 5 )
+instance = ExtResource ( 4 )
 
 [node name="LightTubeLarge-Setof3010" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -468.983, -181.577, -141.522)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -471.844, -168.974, -139.092)
 
-[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3010" instance=ExtResource ( 5 )]
+[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3010" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 5 )
+instance = ExtResource ( 4 )
 
 [node name="LightTubeLarge-Setof3011" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -504.677, -216.661, -146.162)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -507.537, -204.057, -143.732)
 
-[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3011" instance=ExtResource ( 5 )]
+[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3011" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 5 )
+instance = ExtResource ( 4 )
 
 [node name="LightTubeLarge-Setof3012" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -542.011, -253.658, -151.08)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -544.871, -241.055, -148.651)
 
-[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3012" instance=ExtResource ( 5 )]
+[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3012" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 5 )
+instance = ExtResource ( 4 )
 
 [node name="LightTubeLarge-Setof3013" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -578.879, -289.197, -155.732)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -581.739, -276.593, -153.302)
 
-[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3013" instance=ExtResource ( 5 )]
+[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3013" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 5 )
+instance = ExtResource ( 4 )
 
 [node name="LightTubeLarge-Setof3014" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -615.78, -325.224, -160.525)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -618.64, -312.62, -158.095)
 
-[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3014" instance=ExtResource ( 5 )]
+[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3014" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 5 )
+instance = ExtResource ( 4 )
 
 [node name="LightTubeLarge-Setof3015" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -652.237, -361.359, -165.253)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -655.097, -348.755, -162.823)
 
-[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3015" instance=ExtResource ( 5 )]
+[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3015" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 5 )
+instance = ExtResource ( 4 )
 
 [node name="LightTubeLarge-Setof3016" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -685.816, -393.989, -169.583)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -688.676, -381.385, -167.154)
 
-[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3016" instance=ExtResource ( 5 )]
+[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3016" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 5 )
+instance = ExtResource ( 4 )
 
 [node name="LightTubeLarge-Setof3017" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -37.1632, 167.421, -84.6127)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1568.4, 180.024, -288.392)
 
-[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3017" instance=ExtResource ( 5 )]
+[node name="LightTubeLarge-Setof3" parent="FirstGalleryOverlay/LightTubeLarge-Setof3017" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 5 )
+instance = ExtResource ( 4 )
 
 [node name="LightTubeLarge001" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, 5.32458, 161.729, -49.1073)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, 3.48596, 174.784, -41.2408)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge001" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge001" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge004" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -17.2231, 148.43, -52.6874)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -19.0618, 161.486, -44.8208)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge004" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge004" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge005" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -38.5453, 134.558, -55.1326)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -40.3839, 147.613, -47.266)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge005" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge005" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge006" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -62.0192, 121.394, -58.3016)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -63.8578, 134.449, -50.435)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge006" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge006" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge007" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -85.0237, 104.908, -61.4705)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -86.8623, 117.964, -53.6039)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge007" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge007" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge008" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -107.206, 91.8078, -65.109)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -109.045, 104.863, -57.2424)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge008" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge008" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge009" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -130.211, 71.7328, -68.1606)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -132.049, 84.7883, -60.294)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge009" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge009" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge010" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -152.286, 52.3299, -70.1304)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -154.124, 65.3854, -62.2638)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge010" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge010" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge011" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -174.39, 30.9367, -72.8298)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -176.229, 43.9921, -64.9633)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge011" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge011" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge012" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -197.512, 13.5396, -75.7641)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -199.35, 26.5951, -67.8975)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge012" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge012" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge013" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -221.807, -8.70258, -79.6373)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -223.646, 4.3529, -71.7707)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge013" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge013" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge014" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -244.108, -25.6847, -82.6889)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -245.946, -12.6292, -74.8223)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge014" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge014" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge015" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -265.703, -42.5935, -86.4447)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -267.542, -29.538, -78.5781)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge015" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge015" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge016" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -284.189, -51.5472, -88.7725)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -286.028, -38.4918, -80.9059)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge016" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge016" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge017" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -277.872, -41.2746, -46.7742)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -279.711, -28.2191, -38.9076)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge017" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge017" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge018" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -281.881, -41.2746, -14.405)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -283.72, -28.2191, -6.53841)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge018" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge018" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge019" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -285.904, -41.2746, 17.7209)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -287.742, -28.2191, 25.5874)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge019" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge019" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge020" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -317.65, -79.9183, -94.7252)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -319.488, -66.8628, -86.8586)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge020" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge020" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge021" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -337.276, -99.5457, -97.342)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -339.114, -86.4902, -89.4754)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge021" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge021" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge022" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -360.5, -116.725, -101.104)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -362.339, -103.669, -93.2371)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge022" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge022" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge023" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -384.705, -135.994, -104.211)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -386.544, -122.938, -96.3445)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge023" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge023" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge024" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -407.193, -156.726, -106.801)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -409.032, -143.671, -98.9341)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge024" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge024" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge025" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -427.917, -177.38, -108.637)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -429.755, -164.324, -100.77)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge025" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge025" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge026" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -449.014, -194.243, -112.351)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -450.853, -181.187, -104.484)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge026" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge026" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge027" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -470.16, -208.208, -115.478)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -471.999, -195.152, -107.611)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge027" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge027" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge028" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -489.706, -234.471, -117.799)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -491.545, -221.416, -109.932)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge028" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge028" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge029" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -510.695, -252.822, -120.116)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -512.534, -239.767, -112.249)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge029" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge029" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge030" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -531.003, -275.577, -122.16)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -532.841, -262.522, -114.294)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge030" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge030" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge031" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -551.583, -295.563, -124.205)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -553.421, -282.508, -116.338)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge031" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge031" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge032" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -572.708, -314.619, -127.067)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -574.547, -301.563, -119.2)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge032" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge032" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge033" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -593.288, -336.222, -129.52)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -595.127, -323.166, -121.653)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge033" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge033" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge034" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -615.231, -354.084, -132.791)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -617.07, -341.029, -124.924)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge034" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge034" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge035" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -636.493, -377.84, -135.789)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -638.331, -364.785, -127.923)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge035" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge035" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge036" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -658.981, -400.639, -138.106)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -660.819, -387.584, -130.24)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge036" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge036" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge037" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -681.158, -420.471, -141.246)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -682.997, -407.416, -133.38)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge037" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge037" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge038" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -500.292, -232.181, -69.8695)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -502.13, -219.126, -62.0029)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge038" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge038" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge039" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -504.494, -232.418, -39.2038)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -506.333, -219.363, -31.3373)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge039" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge039" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge040" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -427.986, -189.751, -207.955)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -429.824, -176.695, -200.088)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge040" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge040" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge041" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -423.784, -189.514, -238.62)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -425.622, -176.458, -230.754)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge041" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge041" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge042" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -88.219, 104.066, -191.024)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -90.0576, 117.121, -183.157)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge042" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge042" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge043" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -92.4211, 103.829, -160.358)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -94.2598, 116.885, -152.492)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge043" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge043" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge044" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(0.999199, -0.00111705, 0.0399933, 0.00111956, 0.999999, -4.02985e-05, 0.0399932, -8.5041e-05, -0.9992, -695.447, -411.817, -218.968)
+transform = Transform(0.999199, -0.00111705, 0.0399933, 0.00111956, 0.999999, -4.02985e-05, 0.0399932, -8.5041e-05, -0.9992, -697.614, -398.763, -211.182)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge044" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge044" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge045" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(0.999199, -0.00111705, 0.0399933, 0.00111956, 0.999999, -4.02985e-05, 0.0399932, -8.5041e-05, -0.9992, -690.143, -411.814, -250.907)
+transform = Transform(0.999199, -0.00111705, 0.0399933, 0.00111956, 0.999999, -4.02985e-05, 0.0399932, -8.5041e-05, -0.9992, -692.31, -398.76, -243.121)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge045" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge045" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge046" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(0.999199, -0.00111705, 0.0399933, 0.00111956, 0.999999, -4.02985e-05, 0.0399932, -8.5041e-05, -0.9992, -684.843, -411.811, -283.09)
+transform = Transform(0.999199, -0.00111705, 0.0399933, 0.00111956, 0.999999, -4.02985e-05, 0.0399932, -8.5041e-05, -0.9992, -687.009, -398.757, -275.304)
 
-[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge046" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="FirstGalleryOverlay/LightTubeLarge046" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="TubeHab-BI-Mat2002" type="Spatial" parent="FirstGalleryOverlay"]
 
-transform = Transform(1.48116, 0.0, -0.236974, 0.0, 1.5, 0.0, 0.236974, 0.0, 1.48116, -697.569, -447.274, -235.963)
+transform = Transform(1.48116, 0.0, -0.236974, 0.0, 1.5, 0.0, 0.236974, 0.0, 1.48116, -693.603, -445.19, -228.506)
 
-[node name="TubeHab-BI-Mat" parent="FirstGalleryOverlay/TubeHab-BI-Mat2002" instance=ExtResource ( 6 )]
+[node name="TubeHab-BI-Mat" parent="FirstGalleryOverlay/TubeHab-BI-Mat2002" instance=ExtResource ( 1 )]
 
-instance = ExtResource ( 6 )
+instance = ExtResource ( 1 )
 
 [node name="TubeHab-Entrance002" type="MeshInstance" parent="FirstGalleryOverlay"]
 
-mesh = ExtResource( 31 )
+mesh = ExtResource( 29 )
 visible = true
 transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -492.0, -254.0, -126.07)
 
 [node name="TubeHab-Entrance003" type="MeshInstance" parent="FirstGalleryOverlay"]
 
-mesh = ExtResource( 32 )
+mesh = ExtResource( 30 )
 visible = true
 transform = Transform(20.8466, 3.06787, 1.34101e-07, 0.0, 9.21048e-07, -21.0711, 3.06787, -20.8466, -9.11234e-07, -278.069, -70.7058, -79.8333)
 
 [node name="TubeHab-Entrance014" type="MeshInstance" parent="FirstGalleryOverlay"]
 
-mesh = ExtResource( 33 )
+mesh = ExtResource( 31 )
 visible = true
 transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -699.735, -445.493, -188.624)
 
 [node name="TubeHab-Entrance021" type="MeshInstance" parent="FirstGalleryOverlay"]
 
-mesh = ExtResource( 34 )
+mesh = ExtResource( 32 )
 visible = true
 transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -434.62, -212.911, -155.493)
 
 [node name="Vert029" type="MeshInstance" parent="FirstGalleryOverlay"]
 
-mesh = ExtResource( 35 )
+mesh = ExtResource( 33 )
 visible = true
 transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -103.155, 77.261, -112.24)
 
 [node name="Floor-FG-Entrance-2" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 36 )
+mesh = ExtResource( 34 )
 visible = true
 transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1667.11, 151.974, -297.544)
 
 [node name="Plane028" type="MeshInstance" parent="Floor-FG-Entrance-2"]
 
-mesh = ExtResource( 37 )
+mesh = ExtResource( 35 )
 visible = true
 transform = Transform(-0.820276, 0.4357, -0.320721, 0.5, 0.796743, 1.00871e-07, 0.277753, -0.147532, -0.947174, -92.5654, -10.4218, 19.4742)
 
 [node name="ShimmyPole1013" type="MeshInstance" parent="Floor-FG-Entrance-2"]
 
-mesh = ExtResource( 38 )
+mesh = ExtResource( 36 )
 visible = true
 transform = Transform(-0.0711158, -1.00009e-09, 0.997468, -1.00009e-09, 1.0, 9.31323e-10, -0.997468, -9.31322e-10, -0.0711158, -59.3511, 0.848969, 18.879)
 
 [node name="ShimmyPole1023" type="MeshInstance" parent="Floor-FG-Entrance-2"]
 
-mesh = ExtResource( 39 )
+mesh = ExtResource( 37 )
 visible = true
 transform = Transform(-0.0711158, -1.00009e-09, 0.997468, -1.00009e-09, 1.0, 9.31323e-10, -0.997468, -9.31322e-10, -0.0711158, 13.4026, 0.848969, 16.1906)
 
 [node name="ShimmyStair-Rails013" type="MeshInstance" parent="Floor-FG-Entrance-2"]
 
-mesh = ExtResource( 40 )
+mesh = ExtResource( 38 )
 visible = true
 transform = Transform(0.0744229, 0.0, 0.997227, 0.0, 1.0, 0.0, -0.997227, 0.0, 0.0744229, -59.3164, 0.842163, 18.4236)
 
 [node name="ShimmyStair-Rails023" type="MeshInstance" parent="Floor-FG-Entrance-2"]
 
-mesh = ExtResource( 41 )
+mesh = ExtResource( 39 )
 visible = true
 transform = Transform(0.0744229, 0.0, 0.997227, 0.0, 1.0, 0.0, -0.997227, 0.0, 0.0744229, 13.4373, 0.842163, 15.7351)
 
 [node name="ShimmyStair-Steps013" type="MeshInstance" parent="Floor-FG-Entrance-2"]
 
-mesh = ExtResource( 42 )
+mesh = ExtResource( 40 )
 visible = true
 transform = Transform(0.154751, 0.0, 0.997227, 0.0, 1.0, 0.0, -2.07357, 0.0, 0.0744231, -59.8726, 1.52588e-05, 18.8403)
 
 [node name="ShimmyStair-SafetyRungs003" type="MeshInstance" parent="Floor-FG-Entrance-2/ShimmyStair-Steps013"]
 
-mesh = ExtResource( 43 )
+mesh = ExtResource( 41 )
 visible = true
 transform = Transform(100.892, 0.0, 3.72529e-09, 1.23506e-07, 1.0, 7.97368e-09, 3.8147e-06, 0.0, 1.01005, 0.257828, -1.58047, -0.0202637)
 
 [node name="ShimmyStair-Steps023" type="MeshInstance" parent="Floor-FG-Entrance-2"]
 
-mesh = ExtResource( 44 )
+mesh = ExtResource( 42 )
 visible = true
 transform = Transform(0.154751, 0.0, 0.997227, 0.0, 1.0, 0.0, -2.07357, 0.0, 0.0744231, 12.881, 1.52588e-05, 16.1519)
 
 [node name="ShimmyStair-SafetyRungs013" type="MeshInstance" parent="Floor-FG-Entrance-2/ShimmyStair-Steps023"]
 
-mesh = ExtResource( 45 )
+mesh = ExtResource( 43 )
 visible = true
 transform = Transform(100.892, 0.0, 3.72529e-09, 7.17898e-09, 1.0, 4.69071e-10, 3.8147e-06, 0.0, 1.01005, 0.257843, -1.58047, -0.0203857)
 
 [node name="LightTubeLarge047" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, 1621.98, 185.222, -262.575)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, 1620.14, 198.278, -254.709)
 
-[node name="LightTubeLarge" parent="LightTubeLarge047" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="LightTubeLarge047" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge048" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, 1645.47, 185.222, -261.036)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, 1643.64, 198.278, -253.17)
 
-[node name="LightTubeLarge" parent="LightTubeLarge048" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="LightTubeLarge048" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge049" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, 1669.13, 185.222, -260.793)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, 1667.3, 198.278, -252.927)
 
-[node name="LightTubeLarge" parent="LightTubeLarge049" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="LightTubeLarge049" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge050" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1679.5, 185.36, -299.55)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1677.67, 198.416, -307.417)
 
-[node name="LightTubeLarge" parent="LightTubeLarge050" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="LightTubeLarge050" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge051" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1651.3, 185.36, -302.69)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1649.46, 198.416, -310.556)
 
-[node name="LightTubeLarge" parent="LightTubeLarge051" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="LightTubeLarge051" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="LightTubeLarge052" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1626.51, 185.36, -305.674)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1624.67, 198.416, -313.54)
 
-[node name="LightTubeLarge" parent="LightTubeLarge052" instance=ExtResource ( 2 )]
+[node name="LightTubeLarge" parent="LightTubeLarge052" instance=ExtResource ( 5 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 5 )
 
 [node name="Floor-FG-Entrance-1" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 46 )
+mesh = ExtResource( 44 )
 visible = true
 transform = Transform(10.2312, 0.0, -12.0538, 0.0, 16.1175, 0.0, 8.67189, 0.0, 14.2212, 1672.65, 163.974, -277.62)
 
 [node name="Plane029" type="MeshInstance" parent="Floor-FG-Entrance-1"]
 
-mesh = ExtResource( 47 )
+mesh = ExtResource( 45 )
 visible = true
 transform = Transform(-0.0486307, 0.0261396, 0.049051, 0.0310223, 0.0500246, 0.0, -0.0305611, 0.016427, -0.040399, -4.89101, -0.649045, 1.50043)
 
 [node name="ShimmyPole1010" type="MeshInstance" parent="Floor-FG-Entrance-1"]
 
-mesh = ExtResource( 48 )
+mesh = ExtResource( 46 )
 visible = true
 transform = Transform(0.0532567, -4.68093e-11, 0.0521822, -2.08442e-12, 0.0620445, 5.77835e-11, -0.0375417, -3.69446e-11, 0.0383147, -3.64571, 0.0526714, 2.08331)
 
 [node name="ShimmyPole1020" type="MeshInstance" parent="Floor-FG-Entrance-1"]
 
-mesh = ExtResource( 49 )
+mesh = ExtResource( 47 )
 visible = true
 transform = Transform(0.0532567, -4.68093e-11, 0.0521822, -2.08442e-12, 0.0620445, 5.77835e-11, -0.0375417, -3.69446e-11, 0.0383147, 0.362778, 0.0526714, -0.550049)
 
 [node name="ShimmyStair-Rails010" type="MeshInstance" parent="Floor-FG-Entrance-1"]
 
-mesh = ExtResource( 50 )
+mesh = ExtResource( 48 )
 visible = true
 transform = Transform(0.0602671, 0.0, 0.0438992, 0.0, 0.0620445, 0.0, -0.0315826, 0.0, 0.0433582, -3.61814, 0.052249, 2.0689)
 
 [node name="ShimmyStair-Rails020" type="MeshInstance" parent="Floor-FG-Entrance-1"]
 
-mesh = ExtResource( 51 )
+mesh = ExtResource( 49 )
 visible = true
 transform = Transform(0.0602671, 0.0, 0.0438992, 0.0, 0.0620445, 0.0, -0.0315826, 0.0, 0.0433582, 0.390343, 0.052249, -0.564453)
 
 [node name="ShimmyStair-Steps010" type="MeshInstance" parent="Floor-FG-Entrance-1"]
 
-mesh = ExtResource( 52 )
+mesh = ExtResource( 50 )
 visible = true
 transform = Transform(0.125316, 0.0, 0.0438992, 0.0, 0.0620445, 0.0, -0.0656709, 0.0, 0.0433582, -3.66866, -1.90735e-06, 2.06063)
 
 [node name="ShimmyStair-SafetyRungs" type="MeshInstance" parent="Floor-FG-Entrance-1/ShimmyStair-Steps010"]
 
-mesh = ExtResource( 53 )
+mesh = ExtResource( 51 )
 visible = true
 transform = Transform(100.892, 0.0, 7.45058e-09, 1.4358e-08, 1.0, 9.38141e-10, 0.0, 0.0, 1.01005, 0.257874, -1.58049, -0.0202332)
 
 [node name="ShimmyStair-Steps020" type="MeshInstance" parent="Floor-FG-Entrance-1"]
 
-mesh = ExtResource( 54 )
+mesh = ExtResource( 52 )
 visible = true
 transform = Transform(0.125316, 0.0, 0.0438992, 0.0, 0.0620445, 0.0, -0.0656709, 0.0, 0.0433582, 0.339813, -1.90735e-06, -0.572723)
 
 [node name="ShimmyStair-SafetyRungs010" type="MeshInstance" parent="Floor-FG-Entrance-1/ShimmyStair-Steps020"]
 
-mesh = ExtResource( 55 )
+mesh = ExtResource( 53 )
 visible = true
 transform = Transform(100.892, 0.0, 7.45058e-09, -1.55165e-06, 1.0, 1.02209e-09, 0.0, 0.0, 1.01005, 0.257874, -1.58049, -0.0202637)
 
 [node name="Floor-FG-Entrance-3" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 56 )
+mesh = ExtResource( 54 )
 visible = true
 transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1667.11, 139.974, -297.544)
 
 [node name="Plane025" type="MeshInstance" parent="Floor-FG-Entrance-3"]
 
-mesh = ExtResource( 57 )
+mesh = ExtResource( 55 )
 visible = true
 transform = Transform(0.820212, -0.435192, 0.320942, 0.5, 0.795877, 3.22707e-09, -0.277944, 0.147473, 0.947099, -94.3085, -10.3779, -2.30988)
 
 [node name="ShimmyPole1018" type="MeshInstance" parent="Floor-FG-Entrance-3"]
 
-mesh = ExtResource( 58 )
+mesh = ExtResource( 56 )
 visible = true
 transform = Transform(0.997401, -3.35955e-11, 0.0720521, -3.35955e-11, 1.0, 9.31323e-10, -0.0720521, -9.31323e-10, 0.997401, -56.8719, 0.848953, 17.9366)
 
 [node name="ShimmyPole1021" type="MeshInstance" parent="Floor-FG-Entrance-3"]
 
-mesh = ExtResource( 59 )
+mesh = ExtResource( 57 )
 visible = true
 transform = Transform(0.997401, -3.35955e-11, 0.0720521, -3.35955e-11, 1.0, 9.31323e-10, -0.0720521, -9.31323e-10, 0.997401, 10.5764, 0.848953, 12.8153)
 
 [node name="ShimmyStair-Rails018" type="MeshInstance" parent="Floor-FG-Entrance-3"]
 
-mesh = ExtResource( 60 )
+mesh = ExtResource( 58 )
 visible = true
 transform = Transform(0.997296, 0.0, -0.0734868, 0.0, 1.0, 0.0, 0.0734868, 0.0, 0.997296, -56.4163, 0.842148, 17.9708)
 
 [node name="ShimmyStair-Rails021" type="MeshInstance" parent="Floor-FG-Entrance-3"]
 
-mesh = ExtResource( 61 )
+mesh = ExtResource( 59 )
 visible = true
 transform = Transform(0.997296, 0.0, -0.0734868, 0.0, 1.0, 0.0, 0.0734868, 0.0, 0.997296, 11.0321, 0.842148, 12.8495)
 
 [node name="ShimmyStair-Steps018" type="MeshInstance" parent="Floor-FG-Entrance-3"]
 
-mesh = ExtResource( 62 )
+mesh = ExtResource( 60 )
 visible = true
 transform = Transform(2.07372, 0.0, -0.0734868, 0.0, 1.0, 0.0, 0.152804, 0.0, 0.997296, -56.8335, 0.0, 17.415)
 
 [node name="ShimmyStair-SafetyRungs008" type="MeshInstance" parent="Floor-FG-Entrance-3/ShimmyStair-Steps018"]
 
-mesh = ExtResource( 63 )
+mesh = ExtResource( 61 )
 visible = true
 transform = Transform(100.892, 0.0, 7.45058e-09, 0.0, 1.0, 0.0, -2.86102e-06, 0.0, 1.01005, 0.257935, -1.58049, -0.0203247)
 
 [node name="ShimmyStair-Steps021" type="MeshInstance" parent="Floor-FG-Entrance-3"]
 
-mesh = ExtResource( 64 )
+mesh = ExtResource( 62 )
 visible = true
 transform = Transform(2.07372, 0.0, -0.0734868, 0.0, 1.0, 0.0, 0.152804, 0.0, 0.997296, 10.6149, 0.0, 12.2938)
 
 [node name="ShimmyStair-SafetyRungs011" type="MeshInstance" parent="Floor-FG-Entrance-3/ShimmyStair-Steps021"]
 
-mesh = ExtResource( 65 )
+mesh = ExtResource( 63 )
 visible = true
 transform = Transform(100.892, 0.0, 3.72529e-09, 0.0, 1.0, 0.0, 2.86102e-06, 0.0, 1.01005, 0.257874, -1.58049, -0.0202942)
 
 [node name="Floor-FG-Entrance-4" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 66 )
+mesh = ExtResource( 64 )
 visible = true
 transform = Transform(0.172925, 0.0, -4.63835, 0.0, 1.68356, 0.0, 1.29988, 0.0, 0.617047, 1599.7, 127.974, -288.297)
 
 [node name="Plane030" type="MeshInstance" parent="Floor-FG-Entrance-4"]
 
-mesh = ExtResource( 67 )
+mesh = ExtResource( 65 )
 visible = true
 transform = Transform(-0.207885, 0.102379, 0.723815, 0.296989, 0.438784, 6.81926e-09, -0.175671, 0.0865142, -0.067272, -3.71419, -5.675, 6.60605)
 
 [node name="ShimmyPole1015" type="MeshInstance" parent="Floor-FG-Entrance-4"]
 
-mesh = ExtResource( 68 )
+mesh = ExtResource( 66 )
 visible = true
 transform = Transform(-0.761159, -8.04577e-10, 0.046549, -1.39225e-09, 0.593979, -1.44427e-08, -0.0130452, 1.85616e-10, -0.213312, 8.09102, 0.504257, -1.43625)
 
 [node name="ShimmyPole1024" type="MeshInstance" parent="Floor-FG-Entrance-4"]
 
-mesh = ExtResource( 69 )
+mesh = ExtResource( 67 )
 visible = true
 transform = Transform(-0.761159, -8.04577e-10, 0.046549, -1.39225e-09, 0.593979, -1.44427e-08, -0.0130452, 1.85616e-10, -0.213312, 11.0025, 0.504257, -15.8692)
 
 [node name="ShimmyStair-Rails015" type="MeshInstance" parent="Floor-FG-Entrance-4"]
 
-mesh = ExtResource( 70 )
+mesh = ExtResource( 68 )
 visible = true
 transform = Transform(-0.746341, 0.0, 0.15654, -2.96647e-09, 0.593979, -1.47212e-08, -0.04387, 0.0, -0.20916, 7.75024, 0.500214, -1.45639)
 
 [node name="ShimmyStair-Rails024" type="MeshInstance" parent="Floor-FG-Entrance-4"]
 
-mesh = ExtResource( 71 )
+mesh = ExtResource( 69 )
 visible = true
 transform = Transform(-0.746341, 0.0, 0.15654, -2.96647e-09, 0.593979, -1.47212e-08, -0.04387, 0.0, -0.20916, 10.6617, 0.500214, -15.8893)
 
 [node name="ShimmyStair-Steps015" type="MeshInstance" parent="Floor-FG-Entrance-4"]
 
-mesh = ExtResource( 72 )
+mesh = ExtResource( 70 )
 visible = true
 transform = Transform(-1.5519, 0.0, 0.156541, -6.1683e-09, 0.593979, -1.47212e-08, -0.0912207, 0.0, -0.20916, 8.00932, -7.62939e-06, -1.32684)
 
 [node name="ShimmyStair-SafetyRungs005" type="MeshInstance" parent="Floor-FG-Entrance-4/ShimmyStair-Steps015"]
 
-mesh = ExtResource( 73 )
+mesh = ExtResource( 71 )
 visible = true
 transform = Transform(100.892, 0.0, -1.86265e-08, 8.22411e-09, 1.0, 2.85666e-09, 0.0, 0.0, 1.01005, 0.25798, -1.58051, -0.0202637)
 
 [node name="ShimmyStair-Steps024" type="MeshInstance" parent="Floor-FG-Entrance-4"]
 
-mesh = ExtResource( 74 )
+mesh = ExtResource( 72 )
 visible = true
 transform = Transform(-1.5519, 0.0, 0.156541, -6.1683e-09, 0.593979, -1.47212e-08, -0.0912207, 0.0, -0.20916, 10.9208, -7.62939e-06, -15.7598)
 
 [node name="ShimmyStair-SafetyRungs014" type="MeshInstance" parent="Floor-FG-Entrance-4/ShimmyStair-Steps024"]
 
-mesh = ExtResource( 75 )
+mesh = ExtResource( 73 )
 visible = true
 transform = Transform(100.892, 0.0, 1.11759e-08, 1.24551e-07, 1.0, 1.03613e-08, 9.53674e-07, 0.0, 1.01005, 0.258026, -1.58049, -0.0203857)
 
 [node name="Floor-FG-Entrance-5" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 76 )
+mesh = ExtResource( 74 )
 visible = true
 transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1599.71, 116.974, -288.297)
 
 [node name="Plane031" type="MeshInstance" parent="Floor-FG-Entrance-5"]
 
-mesh = ExtResource( 77 )
+mesh = ExtResource( 75 )
 visible = true
 transform = Transform(0.861227, -0.463418, 0.10512, 0.5, 0.807136, -1.6364e-09, -0.0910366, 0.0489859, 0.99446, -26.231, -10.5228, -16.423)
 
 [node name="ShimmyPole1012" type="MeshInstance" parent="Floor-FG-Entrance-5"]
 
-mesh = ExtResource( 78 )
+mesh = ExtResource( 76 )
 visible = true
 transform = Transform(0.997401, -3.35955e-11, 0.0720521, -3.35955e-11, 1.0, 9.31323e-10, -0.0720521, -9.31323e-10, 0.997401, 10.5305, 0.848938, 8.68878)
 
 [node name="ShimmyPole1022" type="MeshInstance" parent="Floor-FG-Entrance-5"]
 
-mesh = ExtResource( 79 )
+mesh = ExtResource( 77 )
 visible = true
 transform = Transform(0.997401, -3.35955e-11, 0.0720521, -3.35955e-11, 1.0, 9.31323e-10, -0.0720521, -9.31323e-10, 0.997401, 77.9789, 0.848938, 3.56754)
 
 [node name="ShimmyStair-Rails012" type="MeshInstance" parent="Floor-FG-Entrance-5"]
 
-mesh = ExtResource( 80 )
+mesh = ExtResource( 78 )
 visible = true
 transform = Transform(0.997296, 0.0, -0.0734868, 0.0, 1.0, 0.0, 0.0734868, 0.0, 0.997296, 10.9862, 0.842133, 8.72299)
 
 [node name="ShimmyStair-Rails022" type="MeshInstance" parent="Floor-FG-Entrance-5"]
 
-mesh = ExtResource( 81 )
+mesh = ExtResource( 79 )
 visible = true
 transform = Transform(0.997296, 0.0, -0.0734868, 0.0, 1.0, 0.0, 0.0734868, 0.0, 0.997296, 78.4346, 0.842133, 3.60175)
 
 [node name="ShimmyStair-Steps012" type="MeshInstance" parent="Floor-FG-Entrance-5"]
 
-mesh = ExtResource( 82 )
+mesh = ExtResource( 80 )
 visible = true
 transform = Transform(2.07372, 0.0, -0.0734868, 0.0, 1.0, 0.0, 0.152804, 0.0, 0.997296, 10.569, -1.52588e-05, 8.16721)
 
 [node name="ShimmyStair-SafetyRungs002" type="MeshInstance" parent="Floor-FG-Entrance-5/ShimmyStair-Steps012"]
 
-mesh = ExtResource( 83 )
+mesh = ExtResource( 81 )
 visible = true
 transform = Transform(100.892, 0.0, 3.72529e-09, 3.11765e-06, 1.0, -1.10605e-09, 6.67572e-06, 0.0, 1.01005, 0.257935, -1.03897, -0.0202942)
 
 [node name="ShimmyStair-Steps022" type="MeshInstance" parent="Floor-FG-Entrance-5"]
 
-mesh = ExtResource( 84 )
+mesh = ExtResource( 82 )
 visible = true
 transform = Transform(2.07372, 0.0, -0.0734868, 0.0, 1.0, 0.0, 0.152804, 0.0, 0.997296, 78.0173, -1.52588e-05, 3.04596)
 
 [node name="ShimmyStair-SafetyRungs012" type="MeshInstance" parent="Floor-FG-Entrance-5/ShimmyStair-Steps022"]
 
-mesh = ExtResource( 85 )
+mesh = ExtResource( 83 )
 visible = true
 transform = Transform(100.892, 0.0, 3.72529e-09, 0.0, 1.0, 0.0, 0.0, 0.0, 1.01005, 0.257935, -1.03898, -0.0203552)
 
 [node name="Floor-FG-Top-1" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 86 )
+mesh = ExtResource( 84 )
 visible = true
 transform = Transform(1.76919, 0.0, -0.171589, 0.0, 1.36857, 0.0, 0.223581, 0.0, 1.35778, 1563.26, 104.974, -281.706)
 
 [node name="Floor-FG-Top-2" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 87 )
+mesh = ExtResource( 85 )
 visible = true
 transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1582.56, 92.974, -281.706)
 
 [node name="ShimmyStair-SafetyRungs001" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 88 )
+mesh = ExtResource( 86 )
 visible = true
 transform = Transform(209.222, 0.0, -0.0742255, 0.0, 1.0, 0.0, 15.4167, 0.0, 1.00732, 1610.81, 138.394, -280.11)
 
 [node name="ShimmyStair-SafetyRungs004" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 89 )
+mesh = ExtResource( 87 )
 visible = true
 transform = Transform(209.222, 0.0, -0.0742255, 0.0, 1.0, 0.0, 15.4167, 0.0, 1.00732, 1610.81, 162.394, -280.11)
 
 [node name="ShimmyStair-SafetyRungs006" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 90 )
+mesh = ExtResource( 88 )
 visible = true
 transform = Transform(209.222, 0.0, -0.0742255, 0.0, 1.0, 0.0, 15.4167, 0.0, 1.00732, 1610.81, 162.394, -280.11)
 
 [node name="ShimmyStair-SafetyRungs007" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 91 )
+mesh = ExtResource( 89 )
 visible = true
 transform = Transform(209.222, 0.0, -0.0742255, 0.0, 1.0, 0.0, 15.4167, 0.0, 1.00732, 1610.81, 115.935, -280.11)
 
 [node name="ShimmyStair-SafetyRungs009" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 92 )
+mesh = ExtResource( 90 )
 visible = true
 transform = Transform(209.222, 0.0, -0.0742255, 0.0, 1.0, 0.0, 15.4167, 0.0, 1.00732, 1610.81, 162.394, -280.11)
 
 [node name="MoonwardsBoothMain" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 93 )
+mesh = ExtResource( 91 )
 visible = true
 transform = Transform(1.25, 0.0, 0.0, 0.0, 1.25, 0.0, 0.0, 0.0, 1.25, 1621.15, 143.012, -285.002)
 
 [node name="Circle010" type="MeshInstance" parent="MoonwardsBoothMain"]
 
-mesh = ExtResource( 94 )
+mesh = ExtResource( 92 )
 visible = true
 transform = Transform(1.1587, 0.0, 0.0, 0.0, 1.1587, 0.0, 4.3165e-08, 0.0, 1.1587, -0.00012207, -1.91856, 6.10352e-05)
 
 [node name="Circle013" type="MeshInstance" parent="MoonwardsBoothMain"]
 
-mesh = ExtResource( 95 )
+mesh = ExtResource( 93 )
 visible = true
 transform = Transform(0.0981428, 0.0, 0.793957, 0.0, 0.8, 0.0, -0.793957, 0.0, 0.0981428, -0.000244141, 2.4, 9.15527e-05)
 
 [node name="MoonwardsDecorativeArches" type="MeshInstance" parent="MoonwardsBoothMain"]
 
-mesh = ExtResource( 96 )
+mesh = ExtResource( 94 )
 visible = true
 transform = Transform(0.8, 0.0, 0.0, 0.0, 0.8, 0.0, 2.98023e-08, 0.0, 0.8, -0.00012207, 0.0414429, 6.10352e-05)
 
 [node name="MoonwardsOfficeSublevel" type="MeshInstance" parent="MoonwardsBoothMain"]
 
-mesh = ExtResource( 97 )
+mesh = ExtResource( 95 )
 visible = true
 transform = Transform(0.792042, 0.0, -0.112561, 0.0, 0.8, 0.0, 0.112561, 0.0, 0.792042, 0.440796, -3.20927, -1.62149)
 
 [node name="MoonwardsOfficeSublevel001" type="MeshInstance" parent="MoonwardsBoothMain"]
 
-mesh = ExtResource( 98 )
+mesh = ExtResource( 96 )
 visible = true
 transform = Transform(0.792042, 0.0, -0.112561, 0.0, 0.8, 0.0, 0.112561, 0.0, 0.792042, 0.441528, -2.96082, -1.62672)
 
 [node name="MWBooth-Bench" type="MeshInstance" parent="MoonwardsBoothMain"]
 
-mesh = ExtResource( 99 )
+mesh = ExtResource( 97 )
 visible = true
 transform = Transform(1.1587, 0.0, 0.0, 0.0, 1.1587, 0.0, 4.3165e-08, 0.0, 1.1587, -0.00012207, -1.91856, 6.10352e-05)
 
 [node name="MWBooth-Shelves" type="MeshInstance" parent="MoonwardsBoothMain"]
 
-mesh = ExtResource( 100 )
+mesh = ExtResource( 98 )
 visible = true
 transform = Transform(0.960994, 0.0, 0.0, 0.0, 0.960995, 0.0, 3.57998e-08, 0.0, 0.960995, 0.196289, -2.39911, -0.19635)
 
 [node name="MWBoothRoof" type="MeshInstance" parent="MoonwardsBoothMain"]
 
-mesh = ExtResource( 101 )
+mesh = ExtResource( 99 )
 visible = true
 transform = Transform(0.8, 0.0, 0.0, 0.0, 0.8, 0.0, 2.98023e-08, 0.0, 0.8, -0.00012207, 2.4, 6.10352e-05)
 
 [node name="RemoteOperationBooth001" type="MeshInstance" parent="MoonwardsBoothMain"]
 
-mesh = ExtResource( 102 )
+mesh = ExtResource( 100 )
 visible = true
 transform = Transform(-0.8, 0.0, -1.20797e-07, 0.0, 0.8, 0.0, 9.09943e-08, 0.0, -0.8, 0.00976562, 1.09316, -1.33229)
 
 [node name="RemoteOperationBooth002" type="MeshInstance" parent="MoonwardsBoothMain"]
 
-mesh = ExtResource( 102 )
+mesh = ExtResource( 100 )
 visible = true
 transform = Transform(-0.199791, 0.0, 0.774651, 0.0, 0.8, 0.0, -0.774651, 0.0, -0.199791, 1.29248, 1.09316, -0.323029)
 
 [node name="RemoteOperationBooth" type="MeshInstance" parent="MoonwardsBoothMain"]
 
-mesh = ExtResource( 102 )
+mesh = ExtResource( 100 )
 visible = true
 transform = Transform(-0.181473, 0.0, -0.779145, 0.0, 0.8, 0.0, 0.779145, 0.0, -0.181473, -1.29541, 1.09316, -0.311859)
 
 [node name="Vert030" type="MeshInstance" parent="MoonwardsBoothMain"]
 
-mesh = ExtResource( 103 )
+mesh = ExtResource( 101 )
 visible = true
 transform = Transform(0.8, 0.0, 0.0, 0.0, 0.8, 0.0, 2.98023e-08, 0.0, 0.8, -0.00012207, 7.16946, 6.10352e-05)
 
 [node name="MWBooth-Table" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 104 )
+mesh = ExtResource( 102 )
 visible = true
 transform = Transform(1.20124, 0.0, 0.0, 0.0, 1.20124, 0.0, 0.0, 0.0, 1.20124, 1621.4, 141.002, -285.248)
 
 [node name="MWBooth-Steps" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 105 )
+mesh = ExtResource( 103 )
 visible = true
 transform = Transform(1.38442, 0.0, 0.0, 0.0, 1.38442, 0.0, 0.0, 0.0, 1.38442, 1621.15, 142.362, -285.002)
 
 [node name="RecHab1-SunTubeLamps" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 106 )
+mesh = ExtResource( 104 )
 visible = true
 transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1520.21, 90.7459, -397.232)
 
@@ -1307,27 +1293,27 @@ transform = Transform(-0.0100737, -0.301731, 0.95334, -9.78876e-05, 0.953389, 0.
 
 [node name="Radiator-BoatRad-BI-Mat006" type="Spatial" parent="."]
 
-transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1666.94, 212.248, -282.531)
+transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1668.03, 213.312, -282.764)
 
-[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat006" instance=ExtResource ( 4 )]
+[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat006" instance=ExtResource ( 6 )]
 
-instance = ExtResource ( 4 )
+instance = ExtResource ( 6 )
 
 [node name="Radiator-BoatRad-BI-Mat007" type="Spatial" parent="."]
 
-transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1625.71, 212.248, -287.296)
+transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1626.79, 213.312, -287.53)
 
-[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat007" instance=ExtResource ( 4 )]
+[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat007" instance=ExtResource ( 6 )]
 
-instance = ExtResource ( 4 )
+instance = ExtResource ( 6 )
 
 [node name="RecHab1-BI-Mat001" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1509.67, 79.684, -348.344)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1493.88, 77.797, -367.53)
 
-[node name="RecHab1-BI-Mat" parent="RecHab1-BI-Mat001" instance=ExtResource ( 1 )]
+[node name="RecHab1-BI-Mat" parent="RecHab1-BI-Mat001" instance=ExtResource ( 2 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 2 )
 
 [node name="GreenMan1024" type="Spatial" parent="."]
 
@@ -1371,24 +1357,24 @@ instance = ExtResource ( 3 )
 
 [node name="TubeHab-BI-Mat2001" type="Spatial" parent="."]
 
-transform = Transform(0.989349, 0.0, -0.145565, 0.0, 1.0, 0.0, 0.145565, 0.0, 0.989349, 1177.95, -214.247, -415.427)
+transform = Transform(0.989349, 0.0, -0.145565, 0.0, 1.0, 0.0, 0.145565, 0.0, 0.989349, 1180.65, -212.858, -410.489)
 
-[node name="TubeHab-BI-Mat" parent="TubeHab-BI-Mat2001" instance=ExtResource ( 6 )]
+[node name="TubeHab-BI-Mat" parent="TubeHab-BI-Mat2001" instance=ExtResource ( 1 )]
 
-instance = ExtResource ( 6 )
+instance = ExtResource ( 1 )
 
 [node name="TubeHab-BI-Mat2003" type="Spatial" parent="."]
 
-transform = Transform(0.990803, 0.0, 0.135309, 0.0, 1.0, 0.0, 0.135309, 0.0, -0.990803, 1102.92, -253.996, -262.333)
+transform = Transform(0.990803, 0.0, 0.135309, 0.0, 1.0, 0.0, 0.135309, 0.0, -0.990803, 1106.9, -252.607, -266.324)
 
-[node name="TubeHab-BI-Mat" parent="TubeHab-BI-Mat2003" instance=ExtResource ( 6 )]
+[node name="TubeHab-BI-Mat" parent="TubeHab-BI-Mat2003" instance=ExtResource ( 1 )]
 
-instance = ExtResource ( 6 )
+instance = ExtResource ( 1 )
 
 [node name="TubeHab-BI-Mat2004" type="Spatial" parent="."]
 
-transform = Transform(1.4887, 0.0, 0.18381, 0.0, 1.5, 0.0, 0.18381, 0.0, -1.4887, 1319.4, -70.6075, -221.408)
+transform = Transform(1.4887, 0.0, 0.18381, 0.0, 1.5, 0.0, 0.18381, 0.0, -1.4887, 1325.28, -68.5233, -227.469)
 
-[node name="TubeHab-BI-Mat" parent="TubeHab-BI-Mat2004" instance=ExtResource ( 6 )]
+[node name="TubeHab-BI-Mat" parent="TubeHab-BI-Mat2004" instance=ExtResource ( 1 )]
 
-instance = ExtResource ( 6 )
+instance = ExtResource ( 1 )

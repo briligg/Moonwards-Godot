@@ -1,8 +1,8 @@
 [gd_scene load_steps=1 format=2]
 
-[ext_resource id=1 path="e.NuclearCore.tscn" type="PackedScene"]
-[ext_resource id=2 path="e.TowerRadiator.tscn" type="PackedScene"]
-[ext_resource id=3 path="e.FreePistonStirlingArray.tscn" type="PackedScene"]
+[ext_resource id=1 path="e.TowerRadiator.tscn" type="PackedScene"]
+[ext_resource id=2 path="e.FreePistonStirlingArray.tscn" type="PackedScene"]
+[ext_resource id=3 path="e.NuclearCore.tscn" type="PackedScene"]
 [ext_resource path="res://export/meshes/m_e_NuclearPlant_escn_1.mesh" type="ArrayMesh" id=4]
 [ext_resource path="res://export/meshes/m_e_NuclearPlant_escn_2.mesh" type="ArrayMesh" id=5]
 [ext_resource path="res://export/meshes/m_e_NuclearPlant_escn_3.mesh" type="ArrayMesh" id=6]
@@ -12,23 +12,23 @@
 
 [node type="Spatial" name="NuclearPlant"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -2815.31, 41.9707, -796.873)
 
 [node name="TowerRadiator001" type="Spatial" parent="."]
 
-transform = Transform(-4.37114e-08, 0.0, -1.0, 0.0, 1.0, 0.0, 1.0, 0.0, -4.37114e-08, 2841.16, -27.4191, 793.933)
+transform = Transform(-4.37114e-08, 0.0, -1.0, 0.0, 1.0, 0.0, 1.0, 0.0, -4.37114e-08, 2841.15, -21.339, 793.76)
 
-[node name="TowerRadiator" parent="TowerRadiator001" instance=ExtResource ( 2 )]
+[node name="TowerRadiator" parent="TowerRadiator001" instance=ExtResource ( 1 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 1 )
 
 [node name="TowerRadiator" type="Spatial" parent="."]
 
-transform = Transform(-1.09278e-07, 0.0, -2.5, 0.0, 2.5, 0.0, 2.5, 0.0, -1.09278e-07, 2824.95, -28.9479, 813.994)
+transform = Transform(-1.09278e-07, 0.0, -2.5, 0.0, 2.5, 0.0, 2.5, 0.0, -1.09278e-07, 2824.93, -13.7475, 813.562)
 
-[node name="TowerRadiator" parent="TowerRadiator" instance=ExtResource ( 2 )]
+[node name="TowerRadiator" parent="TowerRadiator" instance=ExtResource ( 1 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 1 )
 
 [node name="NuclearReactorBuilding" type="MeshInstance" parent="."]
 
@@ -38,19 +38,19 @@ transform = Transform(1.84395, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2835.38, 
 
 [node name="NuclearCore" type="Spatial" parent="NuclearReactorBuilding"]
 
-transform = Transform(-2.37053e-08, 0.0, 0.542314, 0.0, 1.0, -1.86265e-09, -1.0, 0.0, -4.37114e-08, 0.00476074, -0.888317, -8.47333)
+transform = Transform(-2.37053e-08, 0.0, 0.542314, 0.0, 1.0, -1.86265e-09, -1.0, 0.0, -4.37114e-08, 30.1761, 12.403, 17.4127)
 
-[node name="NuclearCore" parent="NuclearReactorBuilding/NuclearCore" instance=ExtResource ( 1 )]
+[node name="NuclearCore" parent="NuclearReactorBuilding/NuclearCore" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="NuclearCore001" type="Spatial" parent="NuclearReactorBuilding"]
 
-transform = Transform(1.29341e-08, 0.0, -1.08463, 0.0, 2.0, 3.72529e-09, 2.0, 0.0, 2.38498e-08, -0.0128174, -0.260685, -4.15485)
+transform = Transform(1.29341e-08, 0.0, -1.08463, 0.0, 2.0, 3.72529e-09, 2.0, 0.0, 2.38498e-08, 30.1272, 13.0499, 22.177)
 
-[node name="NuclearCore" parent="NuclearReactorBuilding/NuclearCore001" instance=ExtResource ( 1 )]
+[node name="NuclearCore" parent="NuclearReactorBuilding/NuclearCore001" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="StirlingColdEnd-Large" type="MeshInstance" parent="NuclearReactorBuilding"]
 
@@ -86,14 +86,14 @@ transform = Transform(12.4425, 0.0, 0.0, 0.0, 12.4425, 0.0, 0.0, 0.0, 12.4425, 2
 
 transform = Transform(-1.25475e-08, 0.0, 0.287053, 0.0, 0.287053, 0.0, -0.287053, 0.0, -1.25475e-08, 2833.39, -39.5993, 813.307)
 
-[node name="FreePistonStirlingArray" parent="FreePistonStirlingArray001" instance=ExtResource ( 3 )]
+[node name="FreePistonStirlingArray" parent="FreePistonStirlingArray001" instance=ExtResource ( 2 )]
 
-instance = ExtResource ( 3 )
+instance = ExtResource ( 2 )
 
 [node name="FreePistonStirlingArray000" type="Spatial" parent="."]
 
 transform = Transform(-6.26845e-09, 0.0, -0.143405, 0.0, 0.143405, 0.0, 0.143405, 0.0, -6.26845e-09, 2836.38, -40.0438, 797.453)
 
-[node name="FreePistonStirlingArray" parent="FreePistonStirlingArray000" instance=ExtResource ( 3 )]
+[node name="FreePistonStirlingArray" parent="FreePistonStirlingArray000" instance=ExtResource ( 2 )]
 
-instance = ExtResource ( 3 )
+instance = ExtResource ( 2 )

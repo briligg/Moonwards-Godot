@@ -9,7 +9,7 @@
 
 [node type="Spatial" name="ShuttleProp"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -5989.36, -69.1358, 3731.36)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -5991.72, -68.6827, 3746.22)
 
 [node name="ShuttleMainPod" type="MeshInstance" parent="."]
 

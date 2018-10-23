@@ -11,7 +11,7 @@
 
 [node type="Spatial" name="NuclearCore"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -0.148609, -0.019248, -0.019248)
 
 [node name="HeatPipeIn" type="MeshInstance" parent="."]
 

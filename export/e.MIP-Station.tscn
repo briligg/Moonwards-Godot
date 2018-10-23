@@ -9,7 +9,7 @@
 
 [node type="Spatial" name="MIP-Station"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1799.62, -152.392, 125.513)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1800.84, -160.128, 126.714)
 
 [node name="MIP structure" type="MeshInstance" parent="."]
 

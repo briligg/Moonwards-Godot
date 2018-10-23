@@ -1,8 +1,8 @@
 [gd_scene load_steps=1 format=2]
 
-[ext_resource id=1 path="e.TriangularWindow.tscn" type="PackedScene"]
-[ext_resource id=2 path="e.TubeHabLong-BI-Mat.tscn" type="PackedScene"]
-[ext_resource id=3 path="e.TubeHab-BI-Mat.tscn" type="PackedScene"]
+[ext_resource id=1 path="e.TubeHabLong-BI-Mat.tscn" type="PackedScene"]
+[ext_resource id=2 path="e.TubeHab-BI-Mat.tscn" type="PackedScene"]
+[ext_resource id=3 path="e.TriangularWindow.tscn" type="PackedScene"]
 [ext_resource path="res://export/meshes/m_e_LowerGalleries_escn_1.mesh" type="ArrayMesh" id=4]
 [ext_resource path="res://export/meshes/m_e_LowerGalleries_escn_2.mesh" type="ArrayMesh" id=5]
 [ext_resource path="res://export/meshes/m_e_LowerGalleries_escn_3.mesh" type="ArrayMesh" id=6]
@@ -30,7 +30,7 @@
 
 [node type="Spatial" name="LowerGalleries"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -530.65, 616.779, 95.7434)
 
 [node name="HalfDomeHab-Structural" type="MeshInstance" parent="."]
 
@@ -182,305 +182,305 @@ transform = Transform(1.0, 0.0, -1.49012e-08, 5.87471e-08, 1.0, -1.00745e-08, 1.
 
 transform = Transform(1.5, 0.0, 0.000272974, 8.81233e-08, 1.5, -1.50958e-08, -0.000272974, 0.0, 1.5, -12.5659, -6.5932, -50.3351)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow001" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow001" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow002" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(0.999936, -0.0111488, -0.00200582, 0.0111571, 0.999929, 0.00414856, 0.00195943, -0.00417069, 0.999989, -48.7507, -109.176, -508.089)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow002" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow002" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow003" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(0.999936, -0.0111488, -0.00200582, 0.0111571, 0.999929, 0.00414856, 0.00195943, -0.00417069, 0.999989, -123.501, -156.995, -508.156)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow003" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow003" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow004" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(0.999936, -0.0111488, -0.00200582, 0.0111571, 0.999929, 0.00414856, 0.00195943, -0.00417069, 0.999989, -198.638, -205.222, -508.085)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow004" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow004" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow005" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(0.999936, -0.0111488, -0.00200582, 0.0111571, 0.999929, 0.00414856, 0.00195943, -0.00417069, 0.999989, -262.675, -246.885, -508.12)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow005" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow005" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow006" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(0.999936, -0.0111488, -0.00200582, 0.0111571, 0.999929, 0.00414856, 0.00195943, -0.00417069, 0.999989, -326.803, -287.511, -508.113)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow006" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow006" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow007" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(0.999936, -0.0111488, -0.00200582, 0.0111571, 0.999929, 0.00414856, 0.00195943, -0.00417069, 0.999989, -411.178, -341.162, -508.189)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow007" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow007" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow008" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(0.999936, -0.0111488, -0.00200582, 0.0111571, 0.999929, 0.00414856, 0.00195943, -0.00417069, 0.999989, -483.488, -387.816, -508.098)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow008" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow008" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow009" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(0.999936, -0.0111488, -0.00200582, 0.0111571, 0.999929, 0.00414856, 0.00195943, -0.00417069, 0.999989, -568.388, -443.065, -508.236)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow009" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow009" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow010" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(0.999936, -0.0111488, -0.00200582, 0.0111571, 0.999929, 0.00414856, 0.00195943, -0.00417069, 0.999989, -642.778, -490.396, -508.121)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow010" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow010" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow011" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(0.999936, -0.0111488, -0.00200582, 0.0111571, 0.999929, 0.00414856, 0.00195943, -0.00417069, 0.999989, -704.728, -530.308, -508.069)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow011" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow011" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow012" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(0.999936, -0.0111485, 0.00200583, 0.0111568, 0.999929, -0.00414856, 0.00195944, -0.00417069, -0.999989, -704.835, -530.073, -408.718)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow012" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow012" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow013" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(0.999936, -0.0111485, 0.00200583, 0.0111568, 0.999929, -0.00414856, 0.00195944, -0.00417069, -0.999989, -642.756, -490.238, -408.798)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow013" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow013" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow014" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(0.999936, -0.0111485, 0.00200583, 0.0111568, 0.999929, -0.00414856, 0.00195944, -0.00417069, -0.999989, -568.45, -442.979, -408.697)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow014" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow014" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow015" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(0.999936, -0.0111485, 0.00200583, 0.0111568, 0.999929, -0.00414856, 0.00195944, -0.00417069, -0.999989, -483.624, -387.648, -408.704)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow015" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow015" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow016" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(0.999936, -0.0111485, 0.00200583, 0.0111568, 0.999929, -0.00414856, 0.00195944, -0.00417069, -0.999989, -411.179, -341.072, -408.805)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow016" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow016" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow017" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(0.999936, -0.0111485, 0.00200583, 0.0111568, 0.999929, -0.00414856, 0.00195944, -0.00417069, -0.999989, -326.416, -287.553, -408.683)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow017" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow017" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow018" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(0.999936, -0.0111485, 0.00200583, 0.0111568, 0.999929, -0.00414856, 0.00195944, -0.00417069, -0.999989, -262.527, -246.713, -408.754)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow018" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow018" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow019" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(0.999936, -0.0111485, 0.00200583, 0.0111568, 0.999929, -0.00414856, 0.00195944, -0.00417069, -0.999989, -198.561, -205.294, -408.708)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow019" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow019" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow020" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(0.999936, -0.0111485, 0.00200583, 0.0111568, 0.999929, -0.00414856, 0.00195944, -0.00417069, -0.999989, -123.545, -156.914, -408.752)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow020" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow020" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow022" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(1.5, 0.0, 0.000272974, 8.81233e-08, 1.5, -1.50958e-08, -0.000272974, 0.0, 1.5, -87.3049, -54.3412, -50.3161)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow022" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow022" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow023" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(1.5, 0.0, 0.000272974, 8.81233e-08, 1.5, -1.50958e-08, -0.000272974, 0.0, 1.5, -161.975, -102.6, -50.2624)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow023" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow023" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow024" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(1.5, 0.0, 0.000272974, 8.81233e-08, 1.5, -1.50958e-08, -0.000272974, 0.0, 1.5, -226.125, -143.964, -50.3013)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow024" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow024" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow025" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(1.5, 0.0, 0.000272974, 8.81233e-08, 1.5, -1.50958e-08, -0.000272974, 0.0, 1.5, -290.147, -184.953, -50.372)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow025" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow025" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow026" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(1.5, 0.0, 0.000272974, 8.81233e-08, 1.5, -1.50958e-08, -0.000272974, 0.0, 1.5, -363.992, -231.699, -50.292)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow026" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow026" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow027" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(1.49999, 0.0, -0.00665911, 8.80526e-08, 1.5, -1.55029e-08, 0.00665911, 0.0, 1.49999, -436.252, -278.404, -50.192)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow027" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow027" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow029" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(1.49999, 0.0, -0.00665911, 8.80526e-08, 1.5, -1.55029e-08, 0.00665911, 0.0, 1.49999, -577.795, -386.749, -50.4049)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow029" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow029" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow030" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(1.49999, 0.0, -0.00665911, 8.80526e-08, 1.5, -1.55029e-08, 0.00665911, 0.0, 1.49999, -639.698, -426.525, -50.2375)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow030" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow030" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow031" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(1.49999, -1.31133e-07, 0.00665914, 2.19187e-07, 1.5, 1.55029e-08, 0.00665914, -5.82158e-10, -1.49999, -639.268, -427.1, 50.5278)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow031" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow031" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow032" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(1.49999, -1.31133e-07, 0.00665914, 2.19187e-07, 1.5, 1.55029e-08, 0.00665914, -5.82158e-10, -1.49999, -577.401, -386.861, 50.3687)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow032" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow032" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow033" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(1.49999, -1.31133e-07, 0.00665914, 2.19187e-07, 1.5, 1.55029e-08, 0.00665914, -5.82158e-10, -1.49999, -502.902, -339.661, 50.5062)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow033" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow033" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow034" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(1.49999, -1.31133e-07, 0.00665914, 2.19187e-07, 1.5, 1.55029e-08, 0.00665914, -5.82158e-10, -1.49999, -435.866, -278.223, 50.3617)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow034" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow034" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow035" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(1.5, -1.31134e-07, -0.000272974, 2.19257e-07, 1.5, 1.50958e-08, -0.000272974, 2.38671e-11, -1.5, -363.527, -231.62, 50.4245)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow035" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow035" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow036" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(1.5, -1.31134e-07, -0.000272974, 2.19257e-07, 1.5, 1.50958e-08, -0.000272974, 2.38671e-11, -1.5, -289.713, -184.858, 50.3196)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow036" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow036" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow037" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(1.5, -1.31134e-07, -0.000272974, 2.19257e-07, 1.5, 1.50958e-08, -0.000272974, 2.38671e-11, -1.5, -225.658, -143.991, 50.3745)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow037" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow037" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow038" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(1.5, -1.31134e-07, -0.000272974, 2.19257e-07, 1.5, 1.50958e-08, -0.000272974, 2.38671e-11, -1.5, -161.597, -102.489, 50.453)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow038" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow038" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow039" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(1.5, -1.31134e-07, -0.000272974, 2.19257e-07, 1.5, 1.50958e-08, -0.000272974, 2.38671e-11, -1.5, -86.9091, -54.2457, 50.3363)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow039" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow039" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow040" type="Spatial" parent="LowerGalleriesOverlay"]
 
 transform = Transform(1.5, -1.31134e-07, -0.000272974, 2.19257e-07, 1.5, 1.50958e-08, -0.000272974, 2.38671e-11, -1.5, -12.2111, -6.46216, 50.5544)
 
-[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow040" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="LowerGalleriesOverlay/TriangularWindow040" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="LowerGalleriesOverlay002" type="MeshInstance" parent="."]
 
@@ -498,62 +498,62 @@ transform = Transform(0.996315, 0.0, -0.190809, 0.0, 1.02659, 0.0, 0.193664, 0.0
 
 transform = Transform(1.47728, 0.0, -0.260095, 0.0, 1.5, 0.0, 0.260095, 0.0, 1.47728, 365.743, -670.829, 45.2472)
 
-[node name="TriangularWindow" parent="TriangularWindow028" instance=ExtResource ( 1 )]
+[node name="TriangularWindow" parent="TriangularWindow028" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="TubeHabLong-BI-Mat001" type="Spatial" parent="."]
 
-transform = Transform(1.50516, 0.0, -0.712085, 0.0, 1.6651, 0.0, 0.712085, 0.0, 1.50516, 651.186, -403.761, 399.672)
+transform = Transform(1.50516, 0.0, -0.712085, 0.0, 1.6651, 0.0, 0.712085, 0.0, 1.50516, 643.981, -404.918, 408.29)
 
-[node name="TubeHabLong-BI-Mat" parent="TubeHabLong-BI-Mat001" instance=ExtResource ( 2 )]
+[node name="TubeHabLong-BI-Mat" parent="TubeHabLong-BI-Mat001" instance=ExtResource ( 1 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 1 )
 
 [node name="TubeHabLong-BI-Mat005" type="Spatial" parent="."]
 
-transform = Transform(1.46477, 0.0, -0.791829, 0.0, 1.6651, 0.0, 0.791829, 0.0, 1.46477, 287.954, -656.755, 338.698)
+transform = Transform(1.46477, 0.0, -0.791829, 0.0, 1.6651, 0.0, 0.791829, 0.0, 1.46477, 280.297, -657.912, 346.917)
 
-[node name="TubeHabLong-BI-Mat" parent="TubeHabLong-BI-Mat005" instance=ExtResource ( 2 )]
+[node name="TubeHabLong-BI-Mat" parent="TubeHabLong-BI-Mat005" instance=ExtResource ( 1 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 1 )
 
 [node name="TubeHabLong-BI-Mat006" type="Spatial" parent="."]
 
-transform = Transform(1.56932, 0.0, -0.556583, 0.0, 1.6651, 0.0, 0.556583, 0.0, 1.56932, 151.152, -848.455, -41.8391)
+transform = Transform(1.56932, 0.0, -0.556583, 0.0, 1.6651, 0.0, 0.556583, 0.0, 1.56932, 144.853, -849.612, -32.5385)
 
-[node name="TubeHabLong-BI-Mat" parent="TubeHabLong-BI-Mat006" instance=ExtResource ( 2 )]
+[node name="TubeHabLong-BI-Mat" parent="TubeHabLong-BI-Mat006" instance=ExtResource ( 1 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 1 )
 
 [node name="TubeHab-BI-Mat2005" type="Spatial" parent="."]
 
-transform = Transform(1.48116, 0.0, -0.236974, 0.0, 1.5, 0.0, 0.236974, 0.0, 1.48116, 602.192, -648.993, -459.275)
+transform = Transform(1.48116, 0.0, -0.236974, 0.0, 1.5, 0.0, 0.236974, 0.0, 1.48116, 606.159, -646.909, -451.819)
 
-[node name="TubeHab-BI-Mat" parent="TubeHab-BI-Mat2005" instance=ExtResource ( 3 )]
+[node name="TubeHab-BI-Mat" parent="TubeHab-BI-Mat2005" instance=ExtResource ( 2 )]
 
-instance = ExtResource ( 3 )
+instance = ExtResource ( 2 )
 
 [node name="TubeHab-BI-Mat2006" type="Spatial" parent="."]
 
-transform = Transform(1.47785, 0.0, 0.256801, 0.0, 1.5, 0.0, 0.256801, 0.0, -1.47785, 684.312, -549.256, -180.515)
+transform = Transform(1.47785, 0.0, 0.256801, 0.0, 1.5, 0.0, 0.256801, 0.0, -1.47785, 690.485, -547.172, -186.28)
 
-[node name="TubeHab-BI-Mat" parent="TubeHab-BI-Mat2006" instance=ExtResource ( 3 )]
+[node name="TubeHab-BI-Mat" parent="TubeHab-BI-Mat2006" instance=ExtResource ( 2 )]
 
-instance = ExtResource ( 3 )
+instance = ExtResource ( 2 )
 
 [node name="TubeHab-BI-Mat2007" type="Spatial" parent="."]
 
-transform = Transform(1.47785, 0.0, 0.256801, 0.0, 1.5, 0.0, 0.256801, 0.0, -1.47785, 626.866, -569.562, -21.1066)
+transform = Transform(1.47785, 0.0, 0.256801, 0.0, 1.5, 0.0, 0.256801, 0.0, -1.47785, 633.038, -567.478, -26.8715)
 
-[node name="TubeHab-BI-Mat" parent="TubeHab-BI-Mat2007" instance=ExtResource ( 3 )]
+[node name="TubeHab-BI-Mat" parent="TubeHab-BI-Mat2007" instance=ExtResource ( 2 )]
 
-instance = ExtResource ( 3 )
+instance = ExtResource ( 2 )
 
 [node name="TubeHab-BI-Mat2008" type="Spatial" parent="."]
 
-transform = Transform(1.48949, 0.0, 0.177283, 0.0, 1.5, 0.0, 0.177283, 0.0, -1.48949, 350.764, -788.343, -239.274)
+transform = Transform(1.48949, 0.0, 0.177283, 0.0, 1.5, 0.0, 0.177283, 0.0, -1.48949, 356.619, -786.259, -245.361)
 
-[node name="TubeHab-BI-Mat" parent="TubeHab-BI-Mat2008" instance=ExtResource ( 3 )]
+[node name="TubeHab-BI-Mat" parent="TubeHab-BI-Mat2008" instance=ExtResource ( 2 )]
 
-instance = ExtResource ( 3 )
+instance = ExtResource ( 2 )

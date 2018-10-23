@@ -1,9 +1,9 @@
 [gd_scene load_steps=1 format=2]
 
 [ext_resource id=1 path="e.SmallHangarArchesColumns.tscn" type="PackedScene"]
-[ext_resource id=2 path="e.SpiderCrane-Frame.tscn" type="PackedScene"]
-[ext_resource id=3 path="e.industrial-space-pressurized.tscn" type="PackedScene"]
-[ext_resource id=4 path="e.LargeLavaTank.tscn" type="PackedScene"]
+[ext_resource id=2 path="e.industrial-space-pressurized.tscn" type="PackedScene"]
+[ext_resource id=3 path="e.LargeLavaTank.tscn" type="PackedScene"]
+[ext_resource id=4 path="e.SpiderCrane-Frame.tscn" type="PackedScene"]
 [ext_resource path="res://export/meshes/m_e_Hangars2_escn_1.mesh" type="ArrayMesh" id=5]
 [ext_resource path="res://export/meshes/m_e_Hangars2_escn_2.mesh" type="ArrayMesh" id=6]
 [ext_resource path="res://export/meshes/m_e_Hangars2_escn_3.mesh" type="ArrayMesh" id=7]
@@ -14,11 +14,11 @@
 
 [node type="Spatial" name="Hangars2"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1771.38, -162.996, -72.8933)
 
 [node name="SmallHangarArchesColumns" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, -1.9155e-09, 0.0, 1.0, 0.0, 1.9155e-09, 0.0, 1.0, 1769.39, 165.479, 103.658)
+transform = Transform(1.0, 0.0, -1.9155e-09, 0.0, 1.0, 0.0, 1.9155e-09, 0.0, 1.0, 1742.47, 157.903, 103.638)
 
 [node name="SmallHangarArchesColumns" parent="SmallHangarArchesColumns" instance=ExtResource ( 1 )]
 
@@ -26,7 +26,7 @@ instance = ExtResource ( 1 )
 
 [node name="SmallHangarArchesColumns002" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1769.39, 165.479, 89.6361)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1742.47, 157.903, 89.616)
 
 [node name="SmallHangarArchesColumns" parent="SmallHangarArchesColumns002" instance=ExtResource ( 1 )]
 
@@ -34,7 +34,7 @@ instance = ExtResource ( 1 )
 
 [node name="SmallHangarArchesColumns003" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1769.39, 165.479, 75.6152)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1742.47, 157.903, 75.5951)
 
 [node name="SmallHangarArchesColumns" parent="SmallHangarArchesColumns003" instance=ExtResource ( 1 )]
 
@@ -42,7 +42,7 @@ instance = ExtResource ( 1 )
 
 [node name="SmallHangarArchesColumns004" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1769.39, 165.479, 61.5937)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1742.47, 157.903, 61.5737)
 
 [node name="SmallHangarArchesColumns" parent="SmallHangarArchesColumns004" instance=ExtResource ( 1 )]
 
@@ -50,7 +50,7 @@ instance = ExtResource ( 1 )
 
 [node name="SmallHangarArchesColumns005" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1769.39, 165.479, 47.5723)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1742.47, 157.903, 47.5523)
 
 [node name="SmallHangarArchesColumns" parent="SmallHangarArchesColumns005" instance=ExtResource ( 1 )]
 
@@ -58,7 +58,7 @@ instance = ExtResource ( 1 )
 
 [node name="SmallHangarArchesColumns006" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1769.39, 165.479, 33.5509)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1742.47, 157.903, 33.5308)
 
 [node name="SmallHangarArchesColumns" parent="SmallHangarArchesColumns006" instance=ExtResource ( 1 )]
 
@@ -66,7 +66,7 @@ instance = ExtResource ( 1 )
 
 [node name="SmallHangarArchesColumns007" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1769.39, 165.479, 19.5294)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1742.47, 157.903, 19.5094)
 
 [node name="SmallHangarArchesColumns" parent="SmallHangarArchesColumns007" instance=ExtResource ( 1 )]
 
@@ -74,7 +74,7 @@ instance = ExtResource ( 1 )
 
 [node name="SmallHangarArchesColumns008" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1769.39, 165.479, 5.508)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1742.47, 157.903, 5.48797)
 
 [node name="SmallHangarArchesColumns" parent="SmallHangarArchesColumns008" instance=ExtResource ( 1 )]
 
@@ -82,7 +82,7 @@ instance = ExtResource ( 1 )
 
 [node name="SmallHangarArchesColumns001" type="Spatial" parent="."]
 
-transform = Transform(0.949079, 0.0, 0.0, 0.0, 1.18671, 0.0, 0.0, 0.0, 1.0, 1877.63, 158.801, 133.826)
+transform = Transform(0.949079, 0.0, 0.0, 0.0, 1.18671, 0.0, 0.0, 0.0, 1.0, 1852.08, 149.811, 133.806)
 
 [node name="SmallHangarArchesColumns" parent="SmallHangarArchesColumns001" instance=ExtResource ( 1 )]
 
@@ -90,7 +90,7 @@ instance = ExtResource ( 1 )
 
 [node name="SmallHangarArchesColumns009" type="Spatial" parent="."]
 
-transform = Transform(0.949079, 0.0, 0.0, 0.0, 1.18671, 0.0, 0.0, 0.0, 1.0, 1877.63, 158.801, 105.084)
+transform = Transform(0.949079, 0.0, 0.0, 0.0, 1.18671, 0.0, 0.0, 0.0, 1.0, 1852.08, 149.811, 105.064)
 
 [node name="SmallHangarArchesColumns" parent="SmallHangarArchesColumns009" instance=ExtResource ( 1 )]
 
@@ -98,7 +98,7 @@ instance = ExtResource ( 1 )
 
 [node name="SmallHangarArchesColumns010" type="Spatial" parent="."]
 
-transform = Transform(0.949079, 0.0, 0.0, 0.0, 1.18671, 0.0, 0.0, 0.0, 1.0, 1877.63, 158.801, 76.3423)
+transform = Transform(0.949079, 0.0, 0.0, 0.0, 1.18671, 0.0, 0.0, 0.0, 1.0, 1852.08, 149.811, 76.3222)
 
 [node name="SmallHangarArchesColumns" parent="SmallHangarArchesColumns010" instance=ExtResource ( 1 )]
 
@@ -106,7 +106,7 @@ instance = ExtResource ( 1 )
 
 [node name="SmallHangarArchesColumns011" type="Spatial" parent="."]
 
-transform = Transform(0.949079, 0.0, 0.0, 0.0, 1.18671, 0.0, 0.0, 0.0, 1.0, 1877.63, 158.801, 47.6006)
+transform = Transform(0.949079, 0.0, 0.0, 0.0, 1.18671, 0.0, 0.0, 0.0, 1.0, 1852.08, 149.811, 47.5806)
 
 [node name="SmallHangarArchesColumns" parent="SmallHangarArchesColumns011" instance=ExtResource ( 1 )]
 
@@ -114,7 +114,7 @@ instance = ExtResource ( 1 )
 
 [node name="SmallHangarArchesColumns012" type="Spatial" parent="."]
 
-transform = Transform(0.949079, 0.0, 0.0, 0.0, 1.18671, 0.0, 0.0, 0.0, 1.0, 1877.63, 158.801, 18.8589)
+transform = Transform(0.949079, 0.0, 0.0, 0.0, 1.18671, 0.0, 0.0, 0.0, 1.0, 1852.08, 149.811, 18.8389)
 
 [node name="SmallHangarArchesColumns" parent="SmallHangarArchesColumns012" instance=ExtResource ( 1 )]
 
@@ -140,31 +140,31 @@ transform = Transform(-5.97465, 0.0, 1.94679e-06, 0.0, 5.97465, 0.0, -1.94679e-0
 
 [node name="large lava tank" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1682.27, 168.98, 57.1516)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1682.27, 170.901, 57.1516)
 
-[node name="LargeLavaTank" parent="large lava tank" instance=ExtResource ( 4 )]
+[node name="LargeLavaTank" parent="large lava tank" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 4 )
+instance = ExtResource ( 3 )
 
 [node name="PressureTankStand004" type="MeshInstance" parent="large lava tank"]
 
 mesh = ExtResource( 6 )
 visible = true
-transform = Transform(-6.23395, 0.0, 2.03128e-06, 0.0, 6.23395, 0.0, -2.03128e-06, 0.0, -6.23394, 0.163452, -6.46565, 0.175301)
+transform = Transform(-6.23395, 0.0, 2.03128e-06, -4.64465e-08, 6.23395, 1.51342e-14, -2.03128e-06, 0.0, -6.23394, 0.163452, -6.46564, 0.175301)
 
 [node name="large lava tank001" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1682.46, 169.04, 73.1625)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1682.46, 170.961, 73.1625)
 
-[node name="LargeLavaTank" parent="large lava tank001" instance=ExtResource ( 4 )]
+[node name="LargeLavaTank" parent="large lava tank001" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 4 )
+instance = ExtResource ( 3 )
 
 [node name="PressureTankStand005" type="MeshInstance" parent="large lava tank001"]
 
 mesh = ExtResource( 6 )
 visible = true
-transform = Transform(-6.23395, 0.0, 2.03128e-06, 4.64465e-08, 6.23395, -1.51342e-14, -2.03128e-06, 0.0, -6.23394, 0.119263, -6.42319, 0.178871)
+transform = Transform(-6.23395, 0.0, 2.03128e-06, 0.0, 6.23395, 0.0, -2.03128e-06, 0.0, -6.23394, 0.119263, -6.42319, 0.178871)
 
 [node name="hangar-arches-posts002" type="MeshInstance" parent="."]
 
@@ -186,43 +186,43 @@ transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1769.42, 123.
 
 [node name="large lava tank002" type="Spatial" parent="."]
 
-transform = Transform(-0.547923, 0.0, 0.836529, 0.0, 1.0, 0.0, -0.836529, 0.0, -0.547923, 1814.85, 174.863, 156.026)
+transform = Transform(-0.547923, 0.0, 0.836529, 0.0, 1.0, 0.0, -0.836529, 0.0, -0.547923, 1814.85, 176.784, 156.026)
 
-[node name="LargeLavaTank" parent="large lava tank002" instance=ExtResource ( 4 )]
+[node name="LargeLavaTank" parent="large lava tank002" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 4 )
+instance = ExtResource ( 3 )
 
 [node name="industrial-space-pressurized" type="Spatial" parent="."]
 
-transform = Transform(-9.27284e-08, 0.0, -2.12138, 0.0, 2.12138, 0.0, 2.12138, 0.0, -9.27284e-08, 1816.24, 156.624, 131.913)
+transform = Transform(-9.27284e-08, 0.0, -2.12138, 0.0, 2.12138, 0.0, 2.12138, 0.0, -9.27284e-08, 1795.02, 152.977, 131.913)
 
-[node name="industrial-space-pressurized" parent="industrial-space-pressurized" instance=ExtResource ( 3 )]
+[node name="industrial-space-pressurized" parent="industrial-space-pressurized" instance=ExtResource ( 2 )]
 
-instance = ExtResource ( 3 )
+instance = ExtResource ( 2 )
 
 [node name="industrial-space-pressurized002" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1700.66, 147.074, 18.0507)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1700.66, 145.355, 28.0507)
 
-[node name="industrial-space-pressurized" parent="industrial-space-pressurized002" instance=ExtResource ( 3 )]
+[node name="industrial-space-pressurized" parent="industrial-space-pressurized002" instance=ExtResource ( 2 )]
 
-instance = ExtResource ( 3 )
+instance = ExtResource ( 2 )
 
 [node name="SpiderCrane-Frame002" type="Spatial" parent="."]
 
 transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1897.47, 152.714, 120.622)
 
-[node name="SpiderCrane-Frame" parent="SpiderCrane-Frame002" instance=ExtResource ( 2 )]
+[node name="SpiderCrane-Frame" parent="SpiderCrane-Frame002" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 4 )
 
 [node name="LargeLavaTank" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1682.21, 169.025, 41.2484)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1682.21, 170.946, 41.2484)
 
-[node name="LargeLavaTank" parent="LargeLavaTank" instance=ExtResource ( 4 )]
+[node name="LargeLavaTank" parent="LargeLavaTank" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 4 )
+instance = ExtResource ( 3 )
 
 [node name="PressureTankStand003" type="MeshInstance" parent="."]
 

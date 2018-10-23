@@ -11,7 +11,7 @@
 
 [node type="Spatial" name="LightTubeLarge"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -3.06562, 0.672489, -9.99177)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1.22695, -12.383, -2.12524)
 
 [node name="LightTubeLarge-DishPivot" type="MeshInstance" parent="."]
 

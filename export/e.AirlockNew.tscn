@@ -5,11 +5,11 @@
 
 [node type="Spatial" name="AirlockNew"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -5991.13, -23.1971, 3705.42)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -5991.13, -38.7526, 3701.07)
 
 [node name="AirlockDoor001" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 5991.13, 23.1971, -3705.61)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 5991.13, 46.5304, -3706.5)
 
 [node name="AirlockDoor" parent="AirlockDoor001" instance=ExtResource ( 1 )]
 
@@ -23,7 +23,7 @@ transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, -1.0, 0.0, 1.0, -4.37114
 
 [node name="AirlockDoor002" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 5991.13, 23.1971, -3695.27)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 5991.13, 46.5304, -3696.16)
 
 [node name="AirlockDoor" parent="AirlockDoor002" instance=ExtResource ( 1 )]
 

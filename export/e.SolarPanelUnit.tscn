@@ -9,7 +9,7 @@
 
 [node type="Spatial" name="SolarPanelUnit"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -2214.92, 32.6689, -33.0111)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -2213.56, -86.2008, -21.0262)
 
 [node name="SolarPanelRotation" type="Spatial" parent="."]
 

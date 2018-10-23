@@ -6,7 +6,7 @@
 
 [node type="Spatial" name="Flywheel-Tower-Simple"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 6.63102e-07, 9.84528, 1.21444e-06)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1.17084e-06, -5.82609, -4.33327e-07)
 
 [node name="FlywheelTower" type="MeshInstance" parent="."]
 

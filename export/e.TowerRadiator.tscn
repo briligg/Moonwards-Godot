@@ -7,11 +7,11 @@
 
 [node type="Spatial" name="TowerRadiator"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -16.234, 7.35592, -8.9258e-05)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -16.0611, 1.27575, -0.00681913)
 
 [node name="RadiatorTowerTanksAndPipes001" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 16.234, -7.35592, 8.9258e-05)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 16.2026, -2.21189, 0.0270085)
 
 [node name="RadiatorTowerTanksAndPipes" parent="RadiatorTowerTanksAndPipes001" instance=ExtResource ( 1 )]
 

@@ -10,7 +10,7 @@
 
 [node type="Spatial" name="BoatRadiator"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2.57698, 2.20815, -52.7826)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.03129, 0.688154, -52.449)
 
 [node name="BoatRad-Tower" type="MeshInstance" parent="."]
 

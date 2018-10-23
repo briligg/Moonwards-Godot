@@ -13,7 +13,7 @@
 
 [node type="Spatial" name="STEMP-ParabolicMirrorUnit"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -99.9746, -42.5601, 11.3118)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -91.0139, -40.9195, 3.26749)
 
 [node name="sodium-reservoir-2001" type="MeshInstance" parent="."]
 

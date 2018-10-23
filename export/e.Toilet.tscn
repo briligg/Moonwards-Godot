@@ -25,7 +25,7 @@
 
 [node type="Spatial" name="Toilet"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.00191299, 0.170845, -0.0562929)
 
 [node name="Toilet-Floor005" type="MeshInstance" parent="."]
 

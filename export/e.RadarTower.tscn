@@ -9,7 +9,7 @@
 
 [node type="Spatial" name="RadarTower"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -2425.94, -678.026, 3980.72)
 
 [node name="RadarInsulationSphere" type="MeshInstance" parent="."]
 

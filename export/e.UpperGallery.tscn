@@ -1,9 +1,9 @@
 [gd_scene load_steps=1 format=2]
 
-[ext_resource id=1 path="e.BoatRadiator.tscn" type="PackedScene"]
+[ext_resource id=1 path="e.TubeHabLong-BI-Mat.tscn" type="PackedScene"]
 [ext_resource id=2 path="e.TriangularWindow.tscn" type="PackedScene"]
-[ext_resource id=3 path="e.TubeHabLong-BI-Mat.tscn" type="PackedScene"]
-[ext_resource id=4 path="e.GreenMan.tscn" type="PackedScene"]
+[ext_resource id=3 path="e.GreenMan.tscn" type="PackedScene"]
+[ext_resource id=4 path="e.BoatRadiator.tscn" type="PackedScene"]
 [ext_resource path="res://export/meshes/m_e_UpperGallery_escn_1.mesh" type="ArrayMesh" id=5]
 [ext_resource path="res://export/meshes/m_e_UpperGallery_escn_2.mesh" type="ArrayMesh" id=6]
 [ext_resource path="res://export/meshes/m_e_UpperGallery_escn_3.mesh" type="ArrayMesh" id=7]
@@ -31,7 +31,7 @@
 
 [node type="Spatial" name="UpperGallery"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1203.69, 46.5899, -247.895)
 
 [node name="TubeHab-Entrance020" type="MeshInstance" parent="."]
 
@@ -188,83 +188,83 @@ transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1432.81, 192.
 
 [node name="TubeHabLong-BI-Mat000" type="Spatial" parent="."]
 
-transform = Transform(1.43634, 0.0, -0.444951, 0.0, 1.50368, 0.0, 0.444951, 0.0, 1.43634, 1206.74, -39.0416, 316.977)
+transform = Transform(1.43634, 0.0, -0.444951, 0.0, 1.50368, 0.0, 0.444951, 0.0, 1.43634, 1201.4, -40.0863, 325.599)
 
-[node name="TubeHabLong-BI-Mat" parent="TubeHabLong-BI-Mat000" instance=ExtResource ( 3 )]
+[node name="TubeHabLong-BI-Mat" parent="TubeHabLong-BI-Mat000" instance=ExtResource ( 1 )]
 
-instance = ExtResource ( 3 )
+instance = ExtResource ( 1 )
 
 [node name="TubeHabLong-BI-Mat002" type="Spatial" parent="."]
 
-transform = Transform(1.35775, 0.0, -0.646199, 0.0, 1.50368, 0.0, 0.646199, 0.0, 1.35775, 1196.97, 66.0134, 654.46)
+transform = Transform(1.35775, 0.0, -0.646199, 0.0, 1.50368, 0.0, 0.646199, 0.0, 1.35775, 1190.45, 64.9687, 662.227)
 
-[node name="TubeHabLong-BI-Mat" parent="TubeHabLong-BI-Mat002" instance=ExtResource ( 3 )]
+[node name="TubeHabLong-BI-Mat" parent="TubeHabLong-BI-Mat002" instance=ExtResource ( 1 )]
 
-instance = ExtResource ( 3 )
+instance = ExtResource ( 1 )
 
 [node name="TubeHabLong-BI-Mat004" type="Spatial" parent="."]
 
-transform = Transform(1.59053, 0.0, -0.492717, 0.0, 1.6651, 0.0, 0.492717, 0.0, 1.59053, 936.061, -257.67, 244.534)
+transform = Transform(1.59053, 0.0, -0.492717, 0.0, 1.6651, 0.0, 0.492717, 0.0, 1.59053, 930.143, -258.827, 254.081)
 
-[node name="TubeHabLong-BI-Mat" parent="TubeHabLong-BI-Mat004" instance=ExtResource ( 3 )]
+[node name="TubeHabLong-BI-Mat" parent="TubeHabLong-BI-Mat004" instance=ExtResource ( 1 )]
 
-instance = ExtResource ( 3 )
+instance = ExtResource ( 1 )
 
 [node name="TubeHabLong-BI-Mat003" type="Spatial" parent="."]
 
-transform = Transform(1.43634, 0.0, -0.444951, 0.0, 1.50368, 0.0, 0.444951, 0.0, 1.43634, 1082.25, -218.384, -36.5928)
+transform = Transform(1.43634, 0.0, -0.444951, 0.0, 1.50368, 0.0, 0.444951, 0.0, 1.43634, 1076.9, -219.429, -27.9708)
 
-[node name="TubeHabLong-BI-Mat" parent="TubeHabLong-BI-Mat003" instance=ExtResource ( 3 )]
+[node name="TubeHabLong-BI-Mat" parent="TubeHabLong-BI-Mat003" instance=ExtResource ( 1 )]
 
-instance = ExtResource ( 3 )
+instance = ExtResource ( 1 )
 
 [node name="Radiator-BoatRad-BI-Mat017" type="Spatial" parent="."]
 
-transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1463.57, 148.02, 156.901)
+transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1464.65, 149.084, 156.667)
 
-[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat017" instance=ExtResource ( 1 )]
+[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat017" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 4 )
 
 [node name="Radiator-BoatRad-BI-Mat018" type="Spatial" parent="."]
 
-transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1502.52, 148.02, 167.395)
+transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1503.6, 149.084, 167.161)
 
-[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat018" instance=ExtResource ( 1 )]
+[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat018" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 4 )
 
 [node name="Radiator-BoatRad-BI-Mat019" type="Spatial" parent="."]
 
-transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1412.69, 201.482, 501.092)
+transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1413.77, 202.546, 500.858)
 
-[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat019" instance=ExtResource ( 1 )]
+[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat019" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 4 )
 
 [node name="Radiator-BoatRad-BI-Mat020" type="Spatial" parent="."]
 
-transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1451.37, 200.893, 514.882)
+transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1452.45, 201.957, 514.648)
 
-[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat020" instance=ExtResource ( 1 )]
+[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat020" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 4 )
 
 [node name="GreenMan1028" type="Spatial" parent="."]
 
 transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 925.481, -259.584, 300.369)
 
-[node name="GreenMan" parent="GreenMan1028" instance=ExtResource ( 4 )]
+[node name="GreenMan" parent="GreenMan1028" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 4 )
+instance = ExtResource ( 3 )
 
 [node name="GreenMan1030" type="Spatial" parent="."]
 
 transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 925.947, -259.686, 299.846)
 
-[node name="GreenMan" parent="GreenMan1030" instance=ExtResource ( 4 )]
+[node name="GreenMan" parent="GreenMan1030" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 4 )
+instance = ExtResource ( 3 )
 
 [node name="TriangularWindow021" type="Spatial" parent="."]
 

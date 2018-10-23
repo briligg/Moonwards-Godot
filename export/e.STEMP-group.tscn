@@ -1,8 +1,8 @@
 [gd_scene load_steps=1 format=2]
 
-[ext_resource id=1 path="e.Stirling-FreePiston.tscn" type="PackedScene"]
+[ext_resource id=1 path="e.STeMP-VisibleTankBits.tscn" type="PackedScene"]
 [ext_resource id=2 path="e.STEMP-ParabolicMirrorUnit.tscn" type="PackedScene"]
-[ext_resource id=3 path="e.STeMP-VisibleTankBits.tscn" type="PackedScene"]
+[ext_resource id=3 path="e.Stirling-FreePiston.tscn" type="PackedScene"]
 [ext_resource id=4 path="e.BoatRadiator.tscn" type="PackedScene"]
 [ext_resource path="res://export/meshes/m_e_STEMP-group_escn_1.mesh" type="ArrayMesh" id=5]
 [ext_resource path="res://export/meshes/m_e_STEMP-group_escn_2.mesh" type="ArrayMesh" id=6]
@@ -65,7 +65,7 @@
 
 [node type="Spatial" name="STEMP-group"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -2297.75, -460.845, 2592.65)
 
 [node name="Pipes-Mirrors-to-Tank000" type="MeshInstance" parent="."]
 
@@ -309,17 +309,17 @@ transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2403.29, 448.
 
 transform = Transform(0.300041, 0.0341447, 0.740817, -0.038249, 0.798801, -0.0213258, -0.740616, -0.0274211, 0.301223, 2393.89, 444.885, -2501.89)
 
-[node name="Stirling-FreePiston" parent="Stirling-FreePiston" instance=ExtResource ( 1 )]
+[node name="Stirling-FreePiston" parent="Stirling-FreePiston" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="Stirling-FreePiston001" type="Spatial" parent="."]
 
 transform = Transform(0.300041, 0.0341447, 0.740817, -0.038249, 0.798801, -0.0213258, -0.740616, -0.0274211, 0.301223, 2401.18, 444.885, -2501.96)
 
-[node name="Stirling-FreePiston" parent="Stirling-FreePiston001" instance=ExtResource ( 1 )]
+[node name="Stirling-FreePiston" parent="Stirling-FreePiston001" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="Stirling-Outgoing-Pipes002" type="MeshInstance" parent="."]
 
@@ -349,65 +349,65 @@ transform = Transform(1.12548, 0.0, 0.304942, 0.0, 1.05737, 0.0, -0.299422, 0.0,
 
 transform = Transform(0.300041, 0.0341447, 0.740817, -0.038249, 0.798801, -0.0213258, -0.740616, -0.0274211, 0.301223, 2404.76, 463.999, -2630.7)
 
-[node name="Stirling-FreePiston" parent="Stirling-FreePiston002" instance=ExtResource ( 1 )]
+[node name="Stirling-FreePiston" parent="Stirling-FreePiston002" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="Stirling-FreePiston003" type="Spatial" parent="."]
 
 transform = Transform(0.300041, 0.0341447, 0.740817, -0.038249, 0.798801, -0.0213258, -0.740616, -0.0274211, 0.301223, 2398.39, 463.999, -2630.39)
 
-[node name="Stirling-FreePiston" parent="Stirling-FreePiston003" instance=ExtResource ( 1 )]
+[node name="Stirling-FreePiston" parent="Stirling-FreePiston003" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="Stirling-FreePiston004" type="Spatial" parent="."]
 
 transform = Transform(0.300041, 0.0341447, 0.740817, -0.038249, 0.798801, -0.0213258, -0.740616, -0.0274211, 0.301223, 2411.0, 479.573, -2746.63)
 
-[node name="Stirling-FreePiston" parent="Stirling-FreePiston004" instance=ExtResource ( 1 )]
+[node name="Stirling-FreePiston" parent="Stirling-FreePiston004" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="Stirling-FreePiston005" type="Spatial" parent="."]
 
 transform = Transform(0.300041, 0.0341447, 0.740817, -0.038249, 0.798801, -0.0213258, -0.740616, -0.0274211, 0.301223, 2418.29, 479.573, -2746.7)
 
-[node name="Stirling-FreePiston" parent="Stirling-FreePiston005" instance=ExtResource ( 1 )]
+[node name="Stirling-FreePiston" parent="Stirling-FreePiston005" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="Stirling-FreePiston006" type="Spatial" parent="."]
 
 transform = Transform(0.300041, 0.0341447, 0.740817, -0.038249, 0.798801, -0.0213258, -0.740616, -0.0274211, 0.301223, 2425.2, 490.264, -2867.56)
 
-[node name="Stirling-FreePiston" parent="Stirling-FreePiston006" instance=ExtResource ( 1 )]
+[node name="Stirling-FreePiston" parent="Stirling-FreePiston006" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="Stirling-FreePiston007" type="Spatial" parent="."]
 
 transform = Transform(0.300041, 0.0341447, 0.740817, -0.038249, 0.798801, -0.0213258, -0.740616, -0.0274211, 0.301223, 2417.92, 490.264, -2867.49)
 
-[node name="Stirling-FreePiston" parent="Stirling-FreePiston007" instance=ExtResource ( 1 )]
+[node name="Stirling-FreePiston" parent="Stirling-FreePiston007" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="Stirling-FreePiston008" type="Spatial" parent="."]
 
 transform = Transform(0.300384, 0.019788, 0.7412, 0.0, 0.799715, -0.0213502, -0.741464, 0.00801658, 0.300277, 2440.31, 498.433, -2984.72)
 
-[node name="Stirling-FreePiston" parent="Stirling-FreePiston008" instance=ExtResource ( 1 )]
+[node name="Stirling-FreePiston" parent="Stirling-FreePiston008" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="Stirling-FreePiston009" type="Spatial" parent="."]
 
 transform = Transform(0.300384, 0.019788, 0.7412, 0.0, 0.799715, -0.0213502, -0.741464, 0.00801658, 0.300277, 2447.6, 498.433, -2984.79)
 
-[node name="Stirling-FreePiston" parent="Stirling-FreePiston009" instance=ExtResource ( 1 )]
+[node name="Stirling-FreePiston" parent="Stirling-FreePiston009" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 3 )
 
 [node name="Pipes-Mirrors-to-Tank016" type="MeshInstance" parent="."]
 
@@ -495,7 +495,7 @@ transform = Transform(5.62745e-15, 0.989523, 0.0894386, -0.666667, -1.24634e-08,
 
 [node name="STEMP-ParabolicMirrorUnit" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2333.23, 474.615, -2519.56)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2324.27, 472.975, -2511.52)
 
 [node name="STEMP-ParabolicMirrorUnit" parent="STEMP-ParabolicMirrorUnit" instance=ExtResource ( 2 )]
 
@@ -503,7 +503,7 @@ instance = ExtResource ( 2 )
 
 [node name="STEMP-ParabolicMirrorUnit001" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2332.98, 482.747, -2566.83)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2324.02, 481.107, -2558.78)
 
 [node name="STEMP-ParabolicMirrorUnit" parent="STEMP-ParabolicMirrorUnit001" instance=ExtResource ( 2 )]
 
@@ -511,7 +511,7 @@ instance = ExtResource ( 2 )
 
 [node name="STEMP-ParabolicMirrorUnit002" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2337.35, 503.541, -2646.95)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2328.39, 501.9, -2638.9)
 
 [node name="STEMP-ParabolicMirrorUnit" parent="STEMP-ParabolicMirrorUnit002" instance=ExtResource ( 2 )]
 
@@ -519,7 +519,7 @@ instance = ExtResource ( 2 )
 
 [node name="STEMP-ParabolicMirrorUnit003" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2337.12, 508.453, -2694.21)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2328.16, 506.813, -2686.17)
 
 [node name="STEMP-ParabolicMirrorUnit" parent="STEMP-ParabolicMirrorUnit003" instance=ExtResource ( 2 )]
 
@@ -527,7 +527,7 @@ instance = ExtResource ( 2 )
 
 [node name="STEMP-ParabolicMirrorUnit004" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2350.29, 519.092, -2764.32)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2341.33, 517.451, -2756.28)
 
 [node name="STEMP-ParabolicMirrorUnit" parent="STEMP-ParabolicMirrorUnit004" instance=ExtResource ( 2 )]
 
@@ -535,7 +535,7 @@ instance = ExtResource ( 2 )
 
 [node name="STEMP-ParabolicMirrorUnit005" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2350.07, 520.804, -2811.59)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2341.11, 519.164, -2803.54)
 
 [node name="STEMP-ParabolicMirrorUnit" parent="STEMP-ParabolicMirrorUnit005" instance=ExtResource ( 2 )]
 
@@ -543,7 +543,7 @@ instance = ExtResource ( 2 )
 
 [node name="STEMP-ParabolicMirrorUnit006" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2357.2, 525.993, -2885.15)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2348.24, 524.352, -2877.11)
 
 [node name="STEMP-ParabolicMirrorUnit" parent="STEMP-ParabolicMirrorUnit006" instance=ExtResource ( 2 )]
 
@@ -551,7 +551,7 @@ instance = ExtResource ( 2 )
 
 [node name="STEMP-ParabolicMirrorUnit007" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2356.97, 527.705, -2932.42)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2348.01, 526.065, -2924.37)
 
 [node name="STEMP-ParabolicMirrorUnit" parent="STEMP-ParabolicMirrorUnit007" instance=ExtResource ( 2 )]
 
@@ -559,7 +559,7 @@ instance = ExtResource ( 2 )
 
 [node name="STEMP-ParabolicMirrorUnit008" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2379.57, 538.019, -3002.38)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2370.61, 536.378, -2994.33)
 
 [node name="STEMP-ParabolicMirrorUnit" parent="STEMP-ParabolicMirrorUnit008" instance=ExtResource ( 2 )]
 
@@ -567,7 +567,7 @@ instance = ExtResource ( 2 )
 
 [node name="STEMP-ParabolicMirrorUnit009" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2379.34, 539.731, -3049.64)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2370.38, 538.091, -3041.59)
 
 [node name="STEMP-ParabolicMirrorUnit" parent="STEMP-ParabolicMirrorUnit009" instance=ExtResource ( 2 )]
 
@@ -575,7 +575,7 @@ instance = ExtResource ( 2 )
 
 [node name="STEMP-ParabolicMirrorUnit010" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2505.29, 535.722, -3020.42)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2496.33, 534.082, -3012.37)
 
 [node name="STEMP-ParabolicMirrorUnit" parent="STEMP-ParabolicMirrorUnit010" instance=ExtResource ( 2 )]
 
@@ -583,7 +583,7 @@ instance = ExtResource ( 2 )
 
 [node name="STEMP-ParabolicMirrorUnit011" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2505.48, 533.005, -2973.09)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2496.52, 531.364, -2965.04)
 
 [node name="STEMP-ParabolicMirrorUnit" parent="STEMP-ParabolicMirrorUnit011" instance=ExtResource ( 2 )]
 
@@ -591,7 +591,7 @@ instance = ExtResource ( 2 )
 
 [node name="STEMP-ParabolicMirrorUnit012" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2482.92, 528.709, -2903.2)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2473.96, 527.068, -2895.15)
 
 [node name="STEMP-ParabolicMirrorUnit" parent="STEMP-ParabolicMirrorUnit012" instance=ExtResource ( 2 )]
 
@@ -599,7 +599,7 @@ instance = ExtResource ( 2 )
 
 [node name="STEMP-ParabolicMirrorUnit013" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2483.11, 525.534, -2855.87)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2474.15, 523.893, -2847.82)
 
 [node name="STEMP-ParabolicMirrorUnit" parent="STEMP-ParabolicMirrorUnit013" instance=ExtResource ( 2 )]
 
@@ -607,7 +607,7 @@ instance = ExtResource ( 2 )
 
 [node name="STEMP-ParabolicMirrorUnit014" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2476.02, 524.201, -2782.37)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2467.06, 522.56, -2774.32)
 
 [node name="STEMP-ParabolicMirrorUnit" parent="STEMP-ParabolicMirrorUnit014" instance=ExtResource ( 2 )]
 
@@ -615,7 +615,7 @@ instance = ExtResource ( 2 )
 
 [node name="STEMP-ParabolicMirrorUnit015" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2476.21, 515.067, -2735.04)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2467.25, 513.427, -2726.99)
 
 [node name="STEMP-ParabolicMirrorUnit" parent="STEMP-ParabolicMirrorUnit015" instance=ExtResource ( 2 )]
 
@@ -623,7 +623,7 @@ instance = ExtResource ( 2 )
 
 [node name="STEMP-ParabolicMirrorUnit016" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2463.07, 508.65, -2664.99)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2454.11, 507.01, -2656.95)
 
 [node name="STEMP-ParabolicMirrorUnit" parent="STEMP-ParabolicMirrorUnit016" instance=ExtResource ( 2 )]
 
@@ -631,7 +631,7 @@ instance = ExtResource ( 2 )
 
 [node name="STEMP-ParabolicMirrorUnit017" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2463.26, 495.81, -2617.66)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2454.3, 494.17, -2609.62)
 
 [node name="STEMP-ParabolicMirrorUnit" parent="STEMP-ParabolicMirrorUnit017" instance=ExtResource ( 2 )]
 
@@ -639,7 +639,7 @@ instance = ExtResource ( 2 )
 
 [node name="STEMP-ParabolicMirrorUnit018" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2458.93, 481.487, -2537.61)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2449.97, 479.847, -2529.56)
 
 [node name="STEMP-ParabolicMirrorUnit" parent="STEMP-ParabolicMirrorUnit018" instance=ExtResource ( 2 )]
 
@@ -647,7 +647,7 @@ instance = ExtResource ( 2 )
 
 [node name="STEMP-ParabolicMirrorUnit019" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2459.12, 474.175, -2490.27)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2450.16, 472.534, -2482.23)
 
 [node name="STEMP-ParabolicMirrorUnit" parent="STEMP-ParabolicMirrorUnit019" instance=ExtResource ( 2 )]
 
@@ -661,7 +661,7 @@ transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2379.56, 584.
 
 [node name="Radiator-BoatRad-BI-Mat001" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2400.87, 441.562, -2473.64)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2402.42, 443.082, -2473.97)
 
 [node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat001" instance=ExtResource ( 4 )]
 
@@ -669,7 +669,7 @@ instance = ExtResource ( 4 )
 
 [node name="Radiator-BoatRad-BI-Mat002" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2397.64, 462.403, -2608.21)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2399.19, 463.923, -2608.54)
 
 [node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat002" instance=ExtResource ( 4 )]
 
@@ -677,7 +677,7 @@ instance = ExtResource ( 4 )
 
 [node name="Radiator-BoatRad-BI-Mat003" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2410.59, 478.437, -2722.3)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2412.14, 479.957, -2722.63)
 
 [node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat003" instance=ExtResource ( 4 )]
 
@@ -685,7 +685,7 @@ instance = ExtResource ( 4 )
 
 [node name="Radiator-BoatRad-BI-Mat004" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2417.49, 491.404, -2843.13)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2419.04, 492.924, -2843.46)
 
 [node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat004" instance=ExtResource ( 4 )]
 
@@ -693,7 +693,7 @@ instance = ExtResource ( 4 )
 
 [node name="Radiator-BoatRad-BI-Mat005" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2439.86, 499.498, -2960.35)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2441.41, 501.018, -2960.69)
 
 [node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat005" instance=ExtResource ( 4 )]
 
@@ -701,40 +701,40 @@ instance = ExtResource ( 4 )
 
 [node name="STeMP-VisibleTankBits" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2403.29, 448.32, -2521.29)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2399.94, 452.738, -2524.77)
 
-[node name="STeMP-VisibleTankBits" parent="STeMP-VisibleTankBits" instance=ExtResource ( 3 )]
+[node name="STeMP-VisibleTankBits" parent="STeMP-VisibleTankBits" instance=ExtResource ( 1 )]
 
-instance = ExtResource ( 3 )
+instance = ExtResource ( 1 )
 
 [node name="STeMP-VisibleTankBits004" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2407.43, 467.471, -2648.68)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2404.08, 471.889, -2652.15)
 
-[node name="STeMP-VisibleTankBits" parent="STeMP-VisibleTankBits004" instance=ExtResource ( 3 )]
+[node name="STeMP-VisibleTankBits" parent="STeMP-VisibleTankBits004" instance=ExtResource ( 1 )]
 
-instance = ExtResource ( 3 )
+instance = ExtResource ( 1 )
 
 [node name="STeMP-VisibleTankBits005" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2420.38, 483.022, -2766.05)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2417.03, 487.439, -2769.53)
 
-[node name="STeMP-VisibleTankBits" parent="STeMP-VisibleTankBits005" instance=ExtResource ( 3 )]
+[node name="STeMP-VisibleTankBits" parent="STeMP-VisibleTankBits005" instance=ExtResource ( 1 )]
 
-instance = ExtResource ( 3 )
+instance = ExtResource ( 1 )
 
 [node name="STeMP-VisibleTankBits006" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2427.28, 493.854, -2886.88)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2423.93, 498.272, -2890.36)
 
-[node name="STeMP-VisibleTankBits" parent="STeMP-VisibleTankBits006" instance=ExtResource ( 3 )]
+[node name="STeMP-VisibleTankBits" parent="STeMP-VisibleTankBits006" instance=ExtResource ( 1 )]
 
-instance = ExtResource ( 3 )
+instance = ExtResource ( 1 )
 
 [node name="STeMP-VisibleTankBits007" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2449.65, 501.949, -3004.11)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2446.3, 506.367, -3007.58)
 
-[node name="STeMP-VisibleTankBits" parent="STeMP-VisibleTankBits007" instance=ExtResource ( 3 )]
+[node name="STeMP-VisibleTankBits" parent="STeMP-VisibleTankBits007" instance=ExtResource ( 1 )]
 
-instance = ExtResource ( 3 )
+instance = ExtResource ( 1 )

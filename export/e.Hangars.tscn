@@ -1,8 +1,8 @@
 [gd_scene load_steps=1 format=2]
 
-[ext_resource id=1 path="e.LargeLavaTank.tscn" type="PackedScene"]
-[ext_resource id=2 path="e.HangarArchWithColumnsSimple.tscn" type="PackedScene"]
-[ext_resource id=3 path="e.industrial-space-pressurized.tscn" type="PackedScene"]
+[ext_resource id=1 path="e.industrial-space-pressurized.tscn" type="PackedScene"]
+[ext_resource id=2 path="e.LargeLavaTank.tscn" type="PackedScene"]
+[ext_resource id=3 path="e.HangarArchWithColumnsSimple.tscn" type="PackedScene"]
 [ext_resource path="res://export/meshes/m_e_Hangars_escn_1.mesh" type="ArrayMesh" id=4]
 [ext_resource path="res://export/meshes/m_e_Hangars_escn_2.mesh" type="ArrayMesh" id=5]
 [ext_resource path="res://export/meshes/m_e_Hangars_escn_3.mesh" type="ArrayMesh" id=6]
@@ -17,15 +17,15 @@
 
 [node type="Spatial" name="Hangars"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -2095.26, -106.159, -811.163)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -2135.55, -68.4253, -818.16)
 
 [node name="industrial-space-pressurized001" type="Spatial" parent="."]
 
-transform = Transform(5.49779, 0.0, 0.0, 0.0, 5.49779, 0.0, 0.0, 0.0, 5.49779, 2377.7, 32.7897, 583.657)
+transform = Transform(5.49779, 0.0, 0.0, 0.0, 5.49779, 0.0, 0.0, 0.0, 5.49779, 2377.7, 23.3385, 638.635)
 
-[node name="industrial-space-pressurized" parent="industrial-space-pressurized001" instance=ExtResource ( 3 )]
+[node name="industrial-space-pressurized" parent="industrial-space-pressurized001" instance=ExtResource ( 1 )]
 
-instance = ExtResource ( 3 )
+instance = ExtResource ( 1 )
 
 [node name="BigHangarReflectiveRoof005" type="MeshInstance" parent="."]
 
@@ -41,259 +41,259 @@ transform = Transform(1.87904, 0.0, 0.0, 0.0, 1.01567, 0.0, 0.0, 0.0, 2.13057, 2
 
 [node name="HangarArchWithColumns031" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.92, 77.9722, 810.258)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.91, 66.8893, 810.26)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns031" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns031" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns030" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.92, 77.9722, 781.498)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.91, 66.8893, 781.499)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns030" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns030" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns029" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.92, 77.9722, 752.737)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.91, 66.8893, 752.738)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns029" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns029" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns028" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.92, 77.9722, 723.976)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.91, 66.8893, 723.977)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns028" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns028" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns027" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.92, 77.9722, 695.215)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.91, 66.8893, 695.216)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns027" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns027" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns026" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.92, 77.9722, 666.454)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.91, 66.8893, 666.455)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns026" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns026" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns025" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.92, 77.9722, 637.694)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.91, 66.8893, 637.695)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns025" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns025" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns003" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.92, 77.9722, 608.931)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.91, 66.8893, 608.933)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns003" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns003" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns024" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 106.906, 810.258)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 95.8234, 810.26)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns024" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns024" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns002" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 106.906, 608.931)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 95.8234, 608.933)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns002" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns002" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns023" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 106.906, 781.498)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 95.8234, 781.499)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns023" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns023" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns022" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 106.906, 752.737)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 95.8234, 752.738)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns022" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns022" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns021" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 106.906, 723.976)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 95.8234, 723.977)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns021" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns021" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns020" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 106.906, 695.215)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 95.8234, 695.216)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns020" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns020" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns019" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 106.906, 666.454)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 95.8234, 666.455)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns019" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns019" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns018" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 106.906, 637.694)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 95.8234, 637.695)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns018" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns018" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns017" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 51.9874, 813.08)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 40.9045, 813.081)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns017" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns017" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns001" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 51.9874, 1015.4)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 40.9045, 1015.4)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns001" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns001" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns016" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 51.9874, 841.983)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 40.9045, 841.984)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns016" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns016" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns015" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 51.9874, 870.886)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 40.9045, 870.887)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns015" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns015" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns014" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 51.9874, 899.789)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 40.9045, 899.791)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns014" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns014" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns013" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 51.9874, 928.692)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 40.9045, 928.694)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns013" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns013" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns012" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 51.9874, 957.595)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 40.9045, 957.597)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns012" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns012" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns011" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 51.9874, 986.497)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 40.9045, 986.499)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns011" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns011" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 77.4808, 1015.4)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 66.3979, 1015.4)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns010" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 77.4808, 813.077)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 66.3979, 813.078)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns010" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns010" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns009" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 77.4808, 841.98)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 66.3979, 841.982)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns009" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns009" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns008" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 77.4808, 870.883)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 66.3979, 870.885)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns008" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns008" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns007" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 77.4808, 899.786)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 66.3979, 899.788)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns007" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns007" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns006" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 77.4808, 928.689)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 66.3979, 928.691)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns006" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns006" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns005" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 77.4808, 957.592)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 66.3979, 957.594)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns005" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns005" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="HangarArchWithColumns004" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 77.4808, 986.494)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 66.3979, 986.496)
 
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns004" instance=ExtResource ( 2 )]
+[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns004" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 3 )
 
 [node name="Hangar3ColumnMirrorEmpty" type="Spatial" parent="."]
 
@@ -313,17 +313,17 @@ transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1970.28, -155
 
 [node name="large lava tank007" type="Spatial" parent="."]
 
-transform = Transform(0.177758, 0.0, -2.01735, 0.0, 2.02517, 0.0, 2.01735, 0.0, 0.177758, 2087.12, 117.388, 598.419)
+transform = Transform(0.177758, 0.0, -2.01735, 0.0, 2.02517, 0.0, 2.01735, 0.0, 0.177758, 2087.12, 121.278, 598.419)
 
-[node name="LargeLavaTank" parent="large lava tank007" instance=ExtResource ( 1 )]
+[node name="LargeLavaTank" parent="large lava tank007" instance=ExtResource ( 2 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 2 )
 
 [node name="PressureTankStand007" type="MeshInstance" parent="large lava tank007"]
 
 mesh = ExtResource( 8 )
 visible = true
-transform = Transform(-0.529776, 0.0, -6.01235, 2.27675e-08, 6.03565, -2.84594e-09, 6.01235, 0.0, -0.529777, 0.216736, -6.28885, -0.105225)
+transform = Transform(-0.529776, 0.0, -6.01235, 2.27675e-08, 6.03565, 2.84593e-09, 6.01235, 0.0, -0.529777, 0.216736, -6.28885, -0.105225)
 
 [node name="BigHangarReflectiveRoof003" type="MeshInstance" parent="."]
 
@@ -353,11 +353,11 @@ transform = Transform(-11.1766, 0.0, 3.6418e-06, 0.0, 11.1766, 0.0, -3.6418e-06,
 
 [node name="large lava tank005" type="Spatial" parent="PressureTankStand010"]
 
-transform = Transform(-0.162476, 0.0, -5.29415e-08, 0.0, 0.162476, 0.0, 6.88263e-08, 0.0, -0.162476, 0.0273895, 1.03885, 0.0333023)
+transform = Transform(-0.162476, 0.0, -5.29415e-08, 0.0, 0.162476, 0.0, 6.88263e-08, 0.0, -0.162476, 0.0273895, 1.35098, 0.0333099)
 
-[node name="LargeLavaTank" parent="PressureTankStand010/large lava tank005" instance=ExtResource ( 1 )]
+[node name="LargeLavaTank" parent="PressureTankStand010/large lava tank005" instance=ExtResource ( 2 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 2 )
 
 [node name="PressureTankStand009" type="MeshInstance" parent="."]
 
@@ -367,11 +367,11 @@ transform = Transform(-11.1766, 0.0, 3.6418e-06, 0.0, 11.1766, 0.0, -3.6418e-06,
 
 [node name="large lava tank004" type="Spatial" parent="PressureTankStand009"]
 
-transform = Transform(-0.162476, 0.0, -5.29415e-08, 8.4561e-10, 0.162476, 0.0, 4.17668e-08, 0.0, -0.162476, 0.0313568, 1.03893, 0.0331955)
+transform = Transform(-0.162476, 0.0, -5.29415e-08, 8.4561e-10, 0.162476, 0.0, 4.17668e-08, 0.0, -0.162476, 0.0313568, 1.43468, 0.0331993)
 
-[node name="LargeLavaTank" parent="PressureTankStand009/large lava tank004" instance=ExtResource ( 1 )]
+[node name="LargeLavaTank" parent="PressureTankStand009/large lava tank004" instance=ExtResource ( 2 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 2 )
 
 [node name="PressureTankStand008" type="MeshInstance" parent="."]
 
@@ -381,11 +381,11 @@ transform = Transform(-12.2232, 0.0, 3.98282e-06, 0.0, 12.2232, 0.0, -3.98282e-0
 
 [node name="large lava tank006" type="Spatial" parent="PressureTankStand008"]
 
-transform = Transform(-0.017595, 0.0, 0.164745, 0.0, 0.165682, 0.0, -0.164745, 0.0, -0.017595, 0.0237122, 1.04199, 0.0427094)
+transform = Transform(-0.017595, 0.0, 0.164745, 0.0, 0.165682, 0.0, -0.164745, 0.0, -0.017595, 0.0237122, 1.91226, 0.0427094)
 
-[node name="LargeLavaTank" parent="PressureTankStand008/large lava tank006" instance=ExtResource ( 1 )]
+[node name="LargeLavaTank" parent="PressureTankStand008/large lava tank006" instance=ExtResource ( 2 )]
 
-instance = ExtResource ( 1 )
+instance = ExtResource ( 2 )
 
 [node name="RadPanel018" type="MeshInstance" parent="."]
 

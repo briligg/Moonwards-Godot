@@ -7,7 +7,7 @@
 
 [node type="Spatial" name="TubeHab-BI-Mat"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -3.39642, -1.38949, -4.49101)
 
 [node name="TubeHab-Cap" type="MeshInstance" parent="."]
 

@@ -5,7 +5,7 @@
 
 [node type="Spatial" name="Shimmy-Stairs"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1672.62, -150.281, 43.9687)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1672.9, -150.41, 43.9941)
 
 [node name="ShimmyStair-Pole001" type="MeshInstance" parent="."]
 

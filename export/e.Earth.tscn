@@ -4,7 +4,7 @@
 
 [node type="Spatial" name="Earth"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1033.67, -40000.0, 85.449)
 
 [node name="Earth" type="MeshInstance" parent="."]
 

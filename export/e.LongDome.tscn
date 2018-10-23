@@ -37,7 +37,7 @@
 
 [node type="Spatial" name="LongDome"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1582.98, 1241.08, 228.486)
 
 [node name="LongDomeArches1068" type="MeshInstance" parent="."]
 

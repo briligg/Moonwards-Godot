@@ -6,7 +6,7 @@
 
 [node type="Spatial" name="LinerNorthDugout"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1789.81, -157.682, 704.311)
 
 [node name="NorthDugoutLiner" type="MeshInstance" parent="."]
 

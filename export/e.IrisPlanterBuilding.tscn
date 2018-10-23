@@ -32,7 +32,7 @@
 
 [node type="Spatial" name="IrisPlanterBuilding"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1720.95, -102.439, -623.515)
 
 [node name="IrisPlanterRef" type="MeshInstance" parent="."]
 

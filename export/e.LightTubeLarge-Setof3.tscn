@@ -4,11 +4,11 @@
 
 [node type="Spatial" name="LightTubeLarge-Setof3"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2.86012, -12.6036, -2.42943)
 
 [node name="LightTubeLarge" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -4.63879, -1.35564, 7.87621)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -6.47747, 11.6998, 15.7428)
 
 [node name="LightTubeLarge" parent="LightTubeLarge" instance=ExtResource ( 1 )]
 
@@ -16,7 +16,7 @@ instance = ExtResource ( 1 )
 
 [node name="LightTubeLarge002" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -3.06433, -1.35861, -7.87621)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -4.903, 11.6969, -15.7427)
 
 [node name="LightTubeLarge" parent="LightTubeLarge002" instance=ExtResource ( 1 )]
 
@@ -24,7 +24,7 @@ instance = ExtResource ( 1 )
 
 [node name="LightTubeLarge003" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, 4.63879, 1.35861, -0.578293)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, 2.80012, 14.4141, 7.28827)
 
 [node name="LightTubeLarge" parent="LightTubeLarge003" instance=ExtResource ( 1 )]
 

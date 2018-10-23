@@ -11,7 +11,7 @@
 
 [node type="Spatial" name="InitialColonyGrounds"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 3963.28, 1883.17, 2670.6)
 
 [node name="InitialColonyGrounds007" type="MeshInstance" parent="."]
 

@@ -28,7 +28,7 @@
 
 [node type="Spatial" name="InitialColonyGroundsL2"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -2172.53, -272.575, 1571.8)
 
 [node name="SatelliteDishBase" type="MeshInstance" parent="."]
 

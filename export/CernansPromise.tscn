@@ -1,75 +1,65 @@
 [gd_scene load_steps=1 format=2]
 
-[ext_resource id=1 path="e.LargeLavaTank.tscn" type="PackedScene"]
-[ext_resource id=2 path="e.AtriumHabs.tscn" type="PackedScene"]
-[ext_resource id=3 path="e.HangarArchWithColumnsSimple.tscn" type="PackedScene"]
-[ext_resource id=4 path="e.RadarTower.tscn" type="PackedScene"]
-[ext_resource id=5 path="e.AirlockNew.tscn" type="PackedScene"]
-[ext_resource id=6 path="e.IrisPlanterBuilding.tscn" type="PackedScene"]
-[ext_resource id=7 path="e.FlywheelSolar.tscn" type="PackedScene"]
-[ext_resource id=8 path="e.SpacePort.tscn" type="PackedScene"]
-[ext_resource id=9 path="e.LinerNorthDugout.tscn" type="PackedScene"]
-[ext_resource id=10 path="e.Hangars.tscn" type="PackedScene"]
-[ext_resource id=11 path="e.SolarPanelUnit.tscn" type="PackedScene"]
-[ext_resource id=12 path="e.Earth.tscn" type="PackedScene"]
-[ext_resource id=13 path="e.NuclearPlant.tscn" type="PackedScene"]
-[ext_resource id=14 path="e.BigAtrium.tscn" type="PackedScene"]
-[ext_resource id=15 path="e.InitialColonyGrounds.tscn" type="PackedScene"]
-[ext_resource id=16 path="e.AthleteRover.tscn" type="PackedScene"]
-[ext_resource id=17 path="e.InitialColonyGrounds.L2.tscn" type="PackedScene"]
-[ext_resource id=18 path="e.SatelliteDish-EarthComms.tscn" type="PackedScene"]
-[ext_resource id=19 path="e.Fluidized-Bed-Reactor-and-Mirrors.tscn" type="PackedScene"]
-[ext_resource id=20 path="e.SatelliteDish-NearSpaceComms.tscn" type="PackedScene"]
-[ext_resource id=21 path="e.industrial-space-pressurized.tscn" type="PackedScene"]
-[ext_resource id=22 path="e.MIP-Station.tscn" type="PackedScene"]
-[ext_resource id=23 path="e.LowerGalleries.tscn" type="PackedScene"]
-[ext_resource id=24 path="e.MainColonyAirlock.tscn" type="PackedScene"]
-[ext_resource id=25 path="e.UpperGallery.tscn" type="PackedScene"]
-[ext_resource id=26 path="e.LongDome.tscn" type="PackedScene"]
-[ext_resource id=27 path="e.STEMP-group.tscn" type="PackedScene"]
-[ext_resource id=28 path="e.Hangars2.tscn" type="PackedScene"]
-[ext_resource id=29 path="e.TubeHabLong-BI-Mat.tscn" type="PackedScene"]
-[ext_resource id=30 path="e.BoatRadiator.tscn" type="PackedScene"]
-[ext_resource id=31 path="e.LinerSouthDugout.tscn" type="PackedScene"]
-[ext_resource id=32 path="e.FirstGallery.tscn" type="PackedScene"]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_1.mesh" type="ArrayMesh" id=33]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_2.mesh" type="ArrayMesh" id=34]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_3.mesh" type="ArrayMesh" id=35]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_4.mesh" type="ArrayMesh" id=36]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_5.mesh" type="ArrayMesh" id=37]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_6.mesh" type="ArrayMesh" id=38]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_7.mesh" type="ArrayMesh" id=39]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_8.mesh" type="ArrayMesh" id=40]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_9.mesh" type="ArrayMesh" id=41]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_10.mesh" type="ArrayMesh" id=42]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_11.mesh" type="ArrayMesh" id=43]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_12.mesh" type="ArrayMesh" id=44]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_13.mesh" type="ArrayMesh" id=45]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_14.mesh" type="ArrayMesh" id=46]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_15.mesh" type="ArrayMesh" id=47]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_16.mesh" type="ArrayMesh" id=48]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_17.mesh" type="ArrayMesh" id=49]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_18.mesh" type="ArrayMesh" id=50]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_19.mesh" type="ArrayMesh" id=51]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_20.mesh" type="ArrayMesh" id=52]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_21.mesh" type="ArrayMesh" id=53]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_22.mesh" type="ArrayMesh" id=54]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_23.mesh" type="ArrayMesh" id=55]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_24.mesh" type="ArrayMesh" id=56]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_25.mesh" type="ArrayMesh" id=57]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_26.mesh" type="ArrayMesh" id=58]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_27.mesh" type="ArrayMesh" id=59]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_28.mesh" type="ArrayMesh" id=60]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_29.mesh" type="ArrayMesh" id=61]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_30.mesh" type="ArrayMesh" id=62]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_31.mesh" type="ArrayMesh" id=63]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_32.mesh" type="ArrayMesh" id=64]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_33.mesh" type="ArrayMesh" id=65]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_34.mesh" type="ArrayMesh" id=66]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_35.mesh" type="ArrayMesh" id=67]
-[ext_resource path="res://export/meshes/m_CernansPromise_escn_36.mesh" type="ArrayMesh" id=68]
+[ext_resource id=1 path="e.InitialColonyGrounds.L2.tscn" type="PackedScene"]
+[ext_resource id=2 path="e.NuclearPlant.tscn" type="PackedScene"]
+[ext_resource id=3 path="e.Fluidized-Bed-Reactor-and-Mirrors.tscn" type="PackedScene"]
+[ext_resource id=4 path="e.SolarPanelUnit.tscn" type="PackedScene"]
+[ext_resource id=5 path="e.LongDome.tscn" type="PackedScene"]
+[ext_resource id=6 path="e.MainColonyAirlock.tscn" type="PackedScene"]
+[ext_resource id=7 path="e.BigAtrium.tscn" type="PackedScene"]
+[ext_resource id=8 path="e.Hangars2.tscn" type="PackedScene"]
+[ext_resource id=9 path="e.SpacePort.tscn" type="PackedScene"]
+[ext_resource id=10 path="e.FlywheelSolar.tscn" type="PackedScene"]
+[ext_resource id=11 path="e.LowerGalleries.tscn" type="PackedScene"]
+[ext_resource id=12 path="e.InitialColonyGrounds.tscn" type="PackedScene"]
+[ext_resource id=13 path="e.FirstGallery.tscn" type="PackedScene"]
+[ext_resource id=14 path="e.Earth.tscn" type="PackedScene"]
+[ext_resource id=15 path="e.AthleteRover.tscn" type="PackedScene"]
+[ext_resource id=16 path="e.LinerNorthDugout.tscn" type="PackedScene"]
+[ext_resource id=17 path="e.UpperGallery.tscn" type="PackedScene"]
+[ext_resource id=18 path="e.MIP-Station.tscn" type="PackedScene"]
+[ext_resource id=19 path="e.SatelliteDish-EarthComms.tscn" type="PackedScene"]
+[ext_resource id=20 path="e.TubeHabLong-BI-Mat.tscn" type="PackedScene"]
+[ext_resource id=21 path="e.LinerSouthDugout.tscn" type="PackedScene"]
+[ext_resource id=22 path="e.STEMP-group.tscn" type="PackedScene"]
+[ext_resource id=23 path="e.SatelliteDish-NearSpaceComms.tscn" type="PackedScene"]
+[ext_resource id=24 path="e.RadarTower.tscn" type="PackedScene"]
+[ext_resource id=25 path="e.IrisPlanterBuilding.tscn" type="PackedScene"]
+[ext_resource id=26 path="e.AtriumHabs.tscn" type="PackedScene"]
+[ext_resource id=27 path="e.HVAC-Anchors.tscn" type="PackedScene"]
+[ext_resource id=28 path="e.Hangars.tscn" type="PackedScene"]
+[ext_resource id=29 path="e.BoatRadiator.tscn" type="PackedScene"]
+[ext_resource path="res://export/meshes/m_CernansPromise_escn_1.mesh" type="ArrayMesh" id=30]
+[ext_resource path="res://export/meshes/m_CernansPromise_escn_2.mesh" type="ArrayMesh" id=31]
+[ext_resource path="res://export/meshes/m_CernansPromise_escn_3.mesh" type="ArrayMesh" id=32]
+[ext_resource path="res://export/meshes/m_CernansPromise_escn_4.mesh" type="ArrayMesh" id=33]
+[ext_resource path="res://export/meshes/m_CernansPromise_escn_5.mesh" type="ArrayMesh" id=34]
+[ext_resource path="res://export/meshes/m_CernansPromise_escn_6.mesh" type="ArrayMesh" id=35]
+[ext_resource path="res://export/meshes/m_CernansPromise_escn_7.mesh" type="ArrayMesh" id=36]
+[ext_resource path="res://export/meshes/m_CernansPromise_escn_8.mesh" type="ArrayMesh" id=37]
+[ext_resource path="res://export/meshes/m_CernansPromise_escn_9.mesh" type="ArrayMesh" id=38]
+[ext_resource path="res://export/meshes/m_CernansPromise_escn_10.mesh" type="ArrayMesh" id=39]
+[ext_resource path="res://export/meshes/m_CernansPromise_escn_11.mesh" type="ArrayMesh" id=40]
+[ext_resource path="res://export/meshes/m_CernansPromise_escn_12.mesh" type="ArrayMesh" id=41]
+[ext_resource path="res://export/meshes/m_CernansPromise_escn_13.mesh" type="ArrayMesh" id=42]
+[ext_resource path="res://export/meshes/m_CernansPromise_escn_14.mesh" type="ArrayMesh" id=43]
+[ext_resource path="res://export/meshes/m_CernansPromise_escn_15.mesh" type="ArrayMesh" id=44]
+[ext_resource path="res://export/meshes/m_CernansPromise_escn_16.mesh" type="ArrayMesh" id=45]
+[ext_resource path="res://export/meshes/m_CernansPromise_escn_17.mesh" type="ArrayMesh" id=46]
+[ext_resource path="res://export/meshes/m_CernansPromise_escn_18.mesh" type="ArrayMesh" id=47]
+[ext_resource path="res://export/meshes/m_CernansPromise_escn_19.mesh" type="ArrayMesh" id=48]
+[ext_resource path="res://export/meshes/m_CernansPromise_escn_20.mesh" type="ArrayMesh" id=49]
+[ext_resource path="res://export/meshes/m_CernansPromise_escn_21.mesh" type="ArrayMesh" id=50]
 
 [node type="Spatial" name="_Scene"]
+
+[node name="HVAC-Anchors" type="Spatial" parent="."]
+
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1294.41, -148.459, -346.134)
+
+[node name="HVAC-Anchors" parent="HVAC-Anchors" instance=ExtResource ( 27 )]
+
+instance = ExtResource ( 27 )
 
 [node name="Point021" type="OmniLight" parent="."]
 
@@ -191,698 +181,6 @@ omni_range = 25.0
 transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1649.59, 152.673, 582.251)
 shadow_enabled = false
 light_negative = false
-
-[node name="industrial-space-pressurized001" type="Spatial" parent="."]
-
-transform = Transform(5.49779, 0.0, 0.0, 0.0, 5.49779, 0.0, 0.0, 0.0, 5.49779, 2377.7, 32.7897, 583.657)
-
-[node name="industrial-space-pressurized" parent="industrial-space-pressurized001" instance=ExtResource ( 21 )]
-
-instance = ExtResource ( 21 )
-
-[node name="BigHangarReflectiveRoof005" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 33 )
-visible = true
-transform = Transform(1.87904, 0.0, 0.0, 0.0, 1.01567, 0.0, 0.0, 0.0, 2.13057, 2201.82, 37.4746, 812.529)
-
-[node name="BigHangarReflectiveRoof004" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 34 )
-visible = true
-transform = Transform(1.87904, 0.0, 0.0, 0.0, 1.01567, 0.0, 0.0, 0.0, 2.13057, 2202.97, 11.704, 1016.44)
-
-[node name="HangarArchWithColumns031" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.92, 77.9722, 810.258)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns031" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns030" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.92, 77.9722, 781.498)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns030" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns029" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.92, 77.9722, 752.737)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns029" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns028" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.92, 77.9722, 723.976)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns028" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns027" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.92, 77.9722, 695.215)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns027" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns026" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.92, 77.9722, 666.454)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns026" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns025" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.92, 77.9722, 637.694)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns025" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns003" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2201.92, 77.9722, 608.931)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns003" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns024" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 106.906, 810.258)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns024" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns002" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 106.906, 608.931)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns002" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns023" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 106.906, 781.498)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns023" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns022" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 106.906, 752.737)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns022" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns021" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 106.906, 723.976)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns021" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns020" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 106.906, 695.215)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns020" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns019" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 106.906, 666.454)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns019" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns018" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 106.906, 637.694)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns018" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns017" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 51.9874, 813.08)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns017" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns001" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 51.9874, 1015.4)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns001" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns016" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 51.9874, 841.983)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns016" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns015" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 51.9874, 870.886)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns015" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns014" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 51.9874, 899.789)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns014" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns013" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 51.9874, 928.692)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns013" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns012" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 51.9874, 957.595)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns012" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns011" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2202.92, 51.9874, 986.497)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns011" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 77.4808, 1015.4)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns010" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 77.4808, 813.077)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns010" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns009" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 77.4808, 841.98)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns009" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns008" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 77.4808, 870.883)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns008" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns007" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 77.4808, 899.786)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns007" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns006" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 77.4808, 928.689)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns006" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns005" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 77.4808, 957.592)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns005" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="HangarArchWithColumns004" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.52, 77.4808, 986.494)
-
-[node name="HangarArchWithColumnsSimple" parent="HangarArchWithColumns004" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
-
-[node name="Hangar3ColumnMirrorEmpty" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1995.98, 37.4746, 1016.65)
-
-[node name="HangarColumnsCapital" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 35 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1970.28, -155.8, 1073.14)
-
-[node name="HangarColumnBase" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 36 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1970.28, -155.8, 1073.14)
-
-[node name="large lava tank007" type="Spatial" parent="."]
-
-transform = Transform(0.177758, 0.0, -2.01735, 0.0, 2.02517, 0.0, 2.01735, 0.0, 0.177758, 2087.12, 117.388, 598.419)
-
-[node name="LargeLavaTank" parent="large lava tank007" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
-
-[node name="PressureTankStand007" type="MeshInstance" parent="large lava tank007"]
-
-mesh = ExtResource( 37 )
-visible = true
-transform = Transform(-0.529776, 0.0, -6.01235, 2.27675e-08, 6.03565, -2.84594e-09, 6.01235, 0.0, -0.529777, 0.216736, -6.28885, -0.105225)
-
-[node name="BigHangarReflectiveRoof003" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 38 )
-visible = true
-transform = Transform(1.89355, 0.0, 0.0, 0.0, 1.01567, 0.0, 0.0, 0.0, -2.13057, 1996.47, 66.3404, 606.899)
-
-[node name="BigHangarReflectiveRoof" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 39 )
-visible = true
-transform = Transform(1.87904, 0.0, 0.0, 0.0, 1.01567, 0.0, 0.0, 0.0, 2.13057, 1996.56, 37.4746, 1016.65)
-
-[node name="BigHanger002" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2203.13, 66.8037, 812.111)
-
-[node name="BigHanger" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1996.47, 109.266, 812.333)
-
-[node name="PressureTankStand010" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 40 )
-visible = true
-transform = Transform(-11.1766, 0.0, 3.6418e-06, 0.0, 11.1766, 0.0, -3.6418e-06, 0.0, -11.1766, 2456.31, 54.7171, 971.721)
-
-[node name="large lava tank005" type="Spatial" parent="PressureTankStand010"]
-
-transform = Transform(-0.162476, 0.0, -5.29415e-08, 0.0, 0.162476, 0.0, 6.88263e-08, 0.0, -0.162476, 0.0273895, 1.03885, 0.0333023)
-
-[node name="LargeLavaTank" parent="PressureTankStand010/large lava tank005" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
-
-[node name="PressureTankStand009" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 41 )
-visible = true
-transform = Transform(-11.1766, 0.0, 3.6418e-06, 0.0, 11.1766, 0.0, -3.6418e-06, 0.0, -11.1766, 2456.56, 54.4589, 653.25)
-
-[node name="large lava tank004" type="Spatial" parent="PressureTankStand009"]
-
-transform = Transform(-0.162476, 0.0, -5.29415e-08, 8.4561e-10, 0.162476, 0.0, 4.17668e-08, 0.0, -0.162476, 0.0313568, 1.03893, 0.0331955)
-
-[node name="LargeLavaTank" parent="PressureTankStand009/large lava tank004" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
-
-[node name="PressureTankStand008" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 42 )
-visible = true
-transform = Transform(-12.2232, 0.0, 3.98282e-06, 0.0, 12.2232, 0.0, -3.98282e-06, 0.0, -12.2232, 2275.21, 68.0633, 599.27)
-
-[node name="large lava tank006" type="Spatial" parent="PressureTankStand008"]
-
-transform = Transform(-0.017595, 0.0, 0.164745, 0.0, 0.165682, 0.0, -0.164745, 0.0, -0.017595, 0.0237122, 1.04199, 0.0427094)
-
-[node name="LargeLavaTank" parent="PressureTankStand008/large lava tank006" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
-
-[node name="FirstGallery-AnchorUnit054" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 960.611, -455.974, -389.679)
-
-[node name="FirstGallery-AnchorUnit053" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 973.133, -444.542, -388.044)
-
-[node name="FirstGallery-AnchorUnit052" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 998.631, -421.181, -384.714)
-
-[node name="FirstGallery-AnchorUnit051" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 987.929, -431.077, -386.112)
-
-[node name="FirstGallery-AnchorUnit050" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1036.63, -386.76, -379.754)
-
-[node name="FirstGallery-AnchorUnit049" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1011.14, -410.061, -383.081)
-
-[node name="FirstGallery-AnchorUnit048" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1025.99, -396.631, -381.142)
-
-[node name="FirstGallery-AnchorUnit047" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1049.27, -375.667, -378.103)
-
-[node name="FirstGallery-AnchorUnit046" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1062.7, -360.829, -376.346)
-
-[node name="FirstGallery-AnchorUnit045" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1071.6, -349.125, -375.182)
-
-[node name="FirstGallery-AnchorUnit044" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1081.99, -335.669, -373.822)
-
-[node name="FirstGallery-AnchorUnit043" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1094.12, -319.464, -372.233)
-
-[node name="FirstGallery-AnchorUnit042" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1102.81, -307.968, -371.095)
-
-[node name="FirstGallery-AnchorUnit041" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1134.54, -266.642, -366.994)
-
-[node name="FirstGallery-AnchorUnit040" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1113.27, -294.238, -369.732)
-
-[node name="FirstGallery-AnchorUnit039" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1124.51, -279.443, -368.297)
-
-[node name="FirstGallery-AnchorUnit038" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1172.11, -235.789, -362.03)
-
-[node name="FirstGallery-AnchorUnit037" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1144.21, -254.739, -365.705)
-
-[node name="FirstGallery-AnchorUnit036" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1161.6, -243.35, -363.421)
-
-[node name="FirstGallery-AnchorUnit035" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1186.19, -226.428, -360.193)
-
-[node name="FirstGallery-AnchorUnit034" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1213.04, -208.421, -356.693)
-
-[node name="FirstGallery-AnchorUnit033" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1202.86, -215.238, -358.021)
-
-[node name="FirstGallery-AnchorUnit032" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1228.32, -198.503, -354.704)
-
-[node name="FirstGallery-AnchorUnit031" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1244.91, -187.192, -352.543)
-
-[node name="FirstGallery-AnchorUnit030" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1255.21, -180.257, -351.203)
-
-[node name="FirstGallery-AnchorUnit029" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1296.96, -152.2, -345.778)
-
-[node name="FirstGallery-AnchorUnit028" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1270.11, -170.402, -349.263)
-
-[node name="FirstGallery-AnchorUnit027" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1286.79, -159.183, -347.091)
-
-[node name="FirstGallery-AnchorUnit026" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1313.76, -139.925, -343.707)
-
-[node name="FirstGallery-AnchorUnit025" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1327.87, -125.934, -341.921)
-
-[node name="FirstGallery-AnchorUnit024" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1336.31, -116.929, -340.678)
-
-[node name="FirstGallery-AnchorUnit023" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1371.67, -81.2422, -336.061)
-
-[node name="FirstGallery-AnchorUnit022" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1349.14, -104.125, -339.063)
-
-[node name="FirstGallery-AnchorUnit021" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1362.92, -89.6823, -337.331)
-
-[node name="FirstGallery-AnchorUnit020" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1406.2, -46.3381, -331.587)
-
-[node name="FirstGallery-AnchorUnit019" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1382.52, -69.9458, -334.705)
-
-[node name="FirstGallery-AnchorUnit018" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1395.97, -56.3818, -332.888)
-
-[node name="FirstGallery-AnchorUnit017" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1441.37, -10.5584, -327.008)
-
-[node name="FirstGallery-AnchorUnit016" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1417.34, -34.9546, -330.124)
-
-[node name="FirstGallery-AnchorUnit015" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1432.15, -20.1022, -328.193)
-
-[node name="FirstGallery-AnchorUnit014" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1452.84, 1.451, -325.488)
-
-[node name="FirstGallery-AnchorUnit013" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1476.93, 25.5905, -322.329)
-
-[node name="FirstGallery-AnchorUnit012" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1467.61, 16.2309, -323.616)
-
-[node name="FirstGallery-AnchorUnit011" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1513.1, 55.5473, -317.61)
-
-[node name="FirstGallery-AnchorUnit010" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1488.65, 37.1635, -320.795)
-
-[node name="FirstGallery-AnchorUnit009" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1503.44, 50.6283, -318.826)
-
-[node name="FirstGallery-AnchorUnit008" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1525.75, 61.6957, -315.955)
-
-[node name="FirstGallery-AnchorUnit007" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1545.0, 71.0298, -313.419)
-
-[node name="FirstGallery-AnchorUnit006" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1570.38, 83.7862, -310.149)
-
-[node name="FirstGallery-AnchorUnit005" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1589.17, 92.9774, -307.677)
-
-[node name="FirstGallery-AnchorUnit004" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1614.81, 105.541, -304.395)
-
-[node name="FirstGallery-AnchorUnit003" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1558.95, 78.0247, -311.6)
-
-[node name="FirstGallery-AnchorUnit002" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1600.94, 98.528, -306.149)
-
-[node name="FirstGallery-AnchorUnit001" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(0.944736, -0.238217, 0.225227, 0.244499, 0.969649, -6.08424e-10, -0.218391, 0.0550678, 0.974306, 1628.27, 109.823, -302.56)
 
 [node name="Point008" type="OmniLight" parent="."]
 
@@ -1016,225 +314,59 @@ transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114
 shadow_enabled = false
 light_negative = false
 
-[node name="MainColonyAirlocks002" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 44 )
-visible = true
-transform = Transform(0.995062, 0.0, 0.0, 0.0, 0.995062, 0.0, 0.0, 0.0, 0.995062, 1669.48, 150.41, -296.891)
-
-[node name="MainColonyAirlocks" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 45 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1756.41, 150.424, -318.714)
-
-[node name="AirlockNew007" type="Spatial" parent="MainColonyAirlocks"]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 30.019, 3.37895, -15.2498)
-
-[node name="AirlockNew" parent="MainColonyAirlocks/AirlockNew007" instance=ExtResource ( 5 )]
-
-instance = ExtResource ( 5 )
-
-[node name="AirlockNew008" type="Spatial" parent="MainColonyAirlocks"]
-
-transform = Transform(-1.31134e-07, 0.0, -3.0, 0.0, 3.0, 0.0, 3.0, 0.0, -1.31134e-07, 78.4048, 0.0, -0.00384521)
-
-[node name="AirlockNew" parent="MainColonyAirlocks/AirlockNew008" instance=ExtResource ( 5 )]
-
-instance = ExtResource ( 5 )
-
-[node name="AirlockNew009" type="Spatial" parent="MainColonyAirlocks"]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 10.019, 3.38393, -15.2459)
-
-[node name="AirlockNew" parent="MainColonyAirlocks/AirlockNew009" instance=ExtResource ( 5 )]
-
-instance = ExtResource ( 5 )
-
-[node name="AirlockNew010" type="Spatial" parent="MainColonyAirlocks"]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -9.98096, 3.38393, -15.2459)
-
-[node name="AirlockNew" parent="MainColonyAirlocks/AirlockNew010" instance=ExtResource ( 5 )]
-
-instance = ExtResource ( 5 )
-
-[node name="AirlockNew011" type="Spatial" parent="MainColonyAirlocks"]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -29.981, 3.38393, -15.2459)
-
-[node name="AirlockNew" parent="MainColonyAirlocks/AirlockNew011" instance=ExtResource ( 5 )]
-
-instance = ExtResource ( 5 )
-
-[node name="AirlockNew012" type="Spatial" parent="MainColonyAirlocks"]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -49.981, 3.38393, -15.2459)
-
-[node name="AirlockNew" parent="MainColonyAirlocks/AirlockNew012" instance=ExtResource ( 5 )]
-
-instance = ExtResource ( 5 )
-
-[node name="AirlockNew013" type="Spatial" parent="MainColonyAirlocks"]
-
-transform = Transform(1.0, 8.74228e-08, 0.0, -8.74228e-08, 1.0, 0.0, 0.0, 0.0, -1.0, -39.9438, 3.38393, 15.4499)
-
-[node name="AirlockNew" parent="MainColonyAirlocks/AirlockNew013" instance=ExtResource ( 5 )]
-
-instance = ExtResource ( 5 )
-
-[node name="AirlockNew014" type="Spatial" parent="MainColonyAirlocks"]
-
-transform = Transform(1.0, 8.74228e-08, 0.0, -8.74228e-08, 1.0, 0.0, 0.0, 0.0, -1.0, 0.019043, 3.38393, 15.4499)
-
-[node name="AirlockNew" parent="MainColonyAirlocks/AirlockNew014" instance=ExtResource ( 5 )]
-
-instance = ExtResource ( 5 )
-
-[node name="AirlockNew015" type="Spatial" parent="MainColonyAirlocks"]
-
-transform = Transform(1.0, 8.74228e-08, 0.0, -8.74228e-08, 1.0, 0.0, 0.0, 0.0, -1.0, 20.019, 3.38393, 15.4499)
-
-[node name="AirlockNew" parent="MainColonyAirlocks/AirlockNew015" instance=ExtResource ( 5 )]
-
-instance = ExtResource ( 5 )
-
-[node name="AirlockNew016" type="Spatial" parent="MainColonyAirlocks"]
-
-transform = Transform(1.0, 8.74228e-08, 0.0, -8.74228e-08, 1.0, 0.0, 0.0, 0.0, -1.0, 40.019, 3.38393, 15.4499)
-
-[node name="AirlockNew" parent="MainColonyAirlocks/AirlockNew016" instance=ExtResource ( 5 )]
-
-instance = ExtResource ( 5 )
-
-[node name="AirlockNew017" type="Spatial" parent="MainColonyAirlocks"]
-
-transform = Transform(1.0, 8.74228e-08, 0.0, -8.74228e-08, 1.0, 0.0, 0.0, 0.0, -1.0, -19.9438, 3.38393, 15.4499)
-
-[node name="AirlockNew" parent="MainColonyAirlocks/AirlockNew017" instance=ExtResource ( 5 )]
-
-instance = ExtResource ( 5 )
-
-[node name="MainColonyAirlocksOverlay005" type="MeshInstance" parent="MainColonyAirlocks"]
-
-mesh = ExtResource( 46 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, -1.0, 0.0, 1.0, -4.37114e-08, 40.0, 3.38393, 15.4537)
-
 [node name="Passage-HalfDome-LongDome" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 47 )
+mesh = ExtResource( 30 )
 visible = true
 transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1608.43, -15.0, -206.209)
 
 [node name="RadarTower001" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2425.94, 678.026, -3980.72)
 
-[node name="RadarTower" parent="RadarTower001" instance=ExtResource ( 4 )]
+[node name="RadarTower" parent="RadarTower001" instance=ExtResource ( 24 )]
 
-instance = ExtResource ( 4 )
-
-[node name="RadPanel018" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 48 )
-visible = true
-transform = Transform(-1.31134e-07, 0.0, -3.0, 0.0, 3.0, 0.0, 3.0, 0.0, -1.31134e-07, 2366.84, 124.071, 984.016)
-
-[node name="RadPanel017" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 48 )
-visible = true
-transform = Transform(-1.31134e-07, 0.0, -3.0, 0.0, 3.0, 0.0, 3.0, 0.0, -1.31134e-07, 2374.2, 124.071, 984.016)
-
-[node name="RadPanel016" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 48 )
-visible = true
-transform = Transform(-1.31134e-07, 0.0, -3.0, 0.0, 3.0, 0.0, 3.0, 0.0, -1.31134e-07, 2381.55, 124.071, 984.016)
-
-[node name="RadPanel015" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 48 )
-visible = true
-transform = Transform(-1.31134e-07, 0.0, -3.0, 0.0, 3.0, 0.0, 3.0, 0.0, -1.31134e-07, 2388.9, 124.071, 984.016)
-
-[node name="RadPanel014" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 48 )
-visible = true
-transform = Transform(-1.31134e-07, 0.0, 3.0, 0.0, 3.0, 0.0, 3.0, 0.0, 1.31134e-07, 1933.81, 127.363, 784.018)
-
-[node name="RadPanel013" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 48 )
-visible = true
-transform = Transform(-1.31134e-07, 0.0, 3.0, 0.0, 3.0, 0.0, 3.0, 0.0, 1.31134e-07, 1925.73, 124.563, 784.018)
-
-[node name="RadPanel012" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 48 )
-visible = true
-transform = Transform(-1.31134e-07, 0.0, 3.0, 0.0, 3.0, 0.0, 3.0, 0.0, 1.31134e-07, 1942.17, 129.379, 784.018)
-
-[node name="RadPanel011" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 48 )
-visible = true
-transform = Transform(-1.31134e-07, 0.0, -3.0, 0.0, 3.0, 0.0, 3.0, 0.0, -1.31134e-07, 2050.34, 129.379, 784.018)
-
-[node name="RadPanel010" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 48 )
-visible = true
-transform = Transform(-1.31134e-07, 0.0, -3.0, 0.0, 3.0, 0.0, 3.0, 0.0, -1.31134e-07, 2066.79, 124.563, 784.018)
-
-[node name="RadPanel009" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 48 )
-visible = true
-transform = Transform(-1.31134e-07, 0.0, -3.0, 0.0, 3.0, 0.0, 3.0, 0.0, -1.31134e-07, 2058.71, 127.363, 784.018)
+instance = ExtResource ( 24 )
 
 [node name="NuclearPlant" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2815.31, -41.9707, 796.873)
 
-[node name="NuclearPlant" parent="NuclearPlant" instance=ExtResource ( 13 )]
+[node name="NuclearPlant" parent="NuclearPlant" instance=ExtResource ( 2 )]
 
-instance = ExtResource ( 13 )
+instance = ExtResource ( 2 )
 
 [node name="LinerNorthDugout" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1789.81, 157.682, -704.311)
 
-[node name="LinerNorthDugout" parent="LinerNorthDugout" instance=ExtResource ( 9 )]
+[node name="LinerNorthDugout" parent="LinerNorthDugout" instance=ExtResource ( 16 )]
 
-instance = ExtResource ( 9 )
+instance = ExtResource ( 16 )
 
 [node name="Earth001" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1033.67, 40000.0, -85.449)
 
-[node name="Earth" parent="Earth001" instance=ExtResource ( 12 )]
+[node name="Earth" parent="Earth001" instance=ExtResource ( 14 )]
 
-instance = ExtResource ( 12 )
+instance = ExtResource ( 14 )
 
 [node name="LinerSouthDugout" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1569.41, 138.338, 334.24)
 
-[node name="LinerSouthDugout" parent="LinerSouthDugout" instance=ExtResource ( 31 )]
+[node name="LinerSouthDugout" parent="LinerSouthDugout" instance=ExtResource ( 21 )]
 
-instance = ExtResource ( 31 )
+instance = ExtResource ( 21 )
 
 [node name="MIP-Station007" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1799.62, 152.392, -125.513)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1800.84, 160.128, -126.714)
 
-[node name="MIP-Station" parent="MIP-Station007" instance=ExtResource ( 22 )]
+[node name="MIP-Station" parent="MIP-Station007" instance=ExtResource ( 18 )]
 
-instance = ExtResource ( 22 )
+instance = ExtResource ( 18 )
 
 [node name="Empty-LightTubeSmall" type="Spatial" parent="."]
 
@@ -1242,49 +374,49 @@ transform = Transform(0.5, -0.866025, 3.64245e-08, 0.866025, 0.5, -5.24717e-08, 
 
 [node name="AtriumHabs" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1691.22, 115.371, -66.841)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1676.37, 136.957, -49.0)
 
-[node name="AtriumHabs" parent="AtriumHabs" instance=ExtResource ( 2 )]
+[node name="AtriumHabs" parent="AtriumHabs" instance=ExtResource ( 26 )]
 
-instance = ExtResource ( 2 )
+instance = ExtResource ( 26 )
 
 [node name="colinear-antenna-element-LongRange" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 49 )
+mesh = ExtResource( 31 )
 visible = true
 transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2378.67, 639.718, -3097.38)
 
 [node name="STEMP-group" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2297.75, 460.845, -2592.65)
 
-[node name="STEMP-group" parent="STEMP-group" instance=ExtResource ( 27 )]
+[node name="STEMP-group" parent="STEMP-group" instance=ExtResource ( 22 )]
 
-instance = ExtResource ( 27 )
+instance = ExtResource ( 22 )
 
 [node name="AthleteRover002" type="Spatial" parent="."]
 
 transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1776.31, 159.803, -104.171)
 
-[node name="AthleteRover" parent="AthleteRover002" instance=ExtResource ( 16 )]
+[node name="AthleteRover" parent="AthleteRover002" instance=ExtResource ( 15 )]
 
-instance = ExtResource ( 16 )
+instance = ExtResource ( 15 )
 
 [node name="AthleteRover001" type="Spatial" parent="."]
 
 transform = Transform(1.15164, 0.0817886, -0.957622, -0.106052, 1.49625, 0.000252654, 0.955239, 0.0675113, 1.15454, 1683.61, 151.81, 243.591)
 
-[node name="AthleteRover" parent="AthleteRover001" instance=ExtResource ( 16 )]
+[node name="AthleteRover" parent="AthleteRover001" instance=ExtResource ( 15 )]
 
-instance = ExtResource ( 16 )
+instance = ExtResource ( 15 )
 
 [node name="InitialColonyGroundsL2" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2172.53, 272.575, -1571.8)
 
-[node name="InitialColonyGrounds.L2" parent="InitialColonyGroundsL2" instance=ExtResource ( 17 )]
+[node name="InitialColonyGrounds.L2" parent="InitialColonyGroundsL2" instance=ExtResource ( 1 )]
 
-instance = ExtResource ( 17 )
+instance = ExtResource ( 1 )
 
 [node name="Empty-MirrorFrame-MirrorObject" type="Spatial" parent="."]
 
@@ -1292,163 +424,163 @@ transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -0.0350037, 4
 
 [node name="Radiator-BoatRad-BI-Mat024" type="Spatial" parent="."]
 
-transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1653.79, 131.35, 763.451)
+transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1654.87, 132.414, 763.217)
 
-[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat024" instance=ExtResource ( 30 )]
-
-instance = ExtResource ( 30 )
-
-[node name="Radiator-BoatRad-BI-Mat023" type="Spatial" parent="."]
-
-transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1612.68, 132.752, 784.051)
-
-[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat023" instance=ExtResource ( 30 )]
-
-instance = ExtResource ( 30 )
-
-[node name="Radiator-BoatRad-BI-Mat022" type="Spatial" parent="."]
-
-transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1575.35, 145.173, 723.957)
-
-[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat022" instance=ExtResource ( 30 )]
-
-instance = ExtResource ( 30 )
-
-[node name="Radiator-BoatRad-BI-Mat021" type="Spatial" parent="."]
-
-transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1550.43, 147.793, 687.559)
-
-[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat021" instance=ExtResource ( 30 )]
-
-instance = ExtResource ( 30 )
-
-[node name="Radiator-BoatRad-BI-Mat016" type="Spatial" parent="."]
-
-transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1566.43, 168.895, 128.866)
-
-[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat016" instance=ExtResource ( 30 )]
-
-instance = ExtResource ( 30 )
-
-[node name="Radiator-BoatRad-BI-Mat015" type="Spatial" parent="."]
-
-transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1578.84, 168.895, 89.2146)
-
-[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat015" instance=ExtResource ( 30 )]
-
-instance = ExtResource ( 30 )
-
-[node name="Radiator-BoatRad-BI-Mat014" type="Spatial" parent="."]
-
-transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1590.6, 168.895, 46.8852)
-
-[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat014" instance=ExtResource ( 30 )]
-
-instance = ExtResource ( 30 )
-
-[node name="Radiator-BoatRad-BI-Mat013" type="Spatial" parent="."]
-
-transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1920.79, 203.088, -1007.79)
-
-[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat013" instance=ExtResource ( 30 )]
-
-instance = ExtResource ( 30 )
-
-[node name="Radiator-BoatRad-BI-Mat012" type="Spatial" parent="."]
-
-transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1874.59, 203.314, -1009.25)
-
-[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat012" instance=ExtResource ( 30 )]
-
-instance = ExtResource ( 30 )
-
-[node name="Radiator-BoatRad-BI-Mat011" type="Spatial" parent="."]
-
-transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1832.16, 202.594, -1009.25)
-
-[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat011" instance=ExtResource ( 30 )]
-
-instance = ExtResource ( 30 )
-
-[node name="Radiator-BoatRad-BI-Mat010" type="Spatial" parent="."]
-
-transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1936.98, 164.051, -517.505)
-
-[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat010" instance=ExtResource ( 30 )]
-
-instance = ExtResource ( 30 )
-
-[node name="Radiator-BoatRad-BI-Mat009" type="Spatial" parent="."]
-
-transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1890.95, 164.917, -521.341)
-
-[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat009" instance=ExtResource ( 30 )]
-
-instance = ExtResource ( 30 )
-
-[node name="Radiator-BoatRad-BI-Mat008" type="Spatial" parent="."]
-
-transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1848.4, 166.612, -526.921)
-
-[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat008" instance=ExtResource ( 30 )]
-
-instance = ExtResource ( 30 )
-
-[node name="TubeHabLong-BI-Mat008" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -44.4435, 2000.0, 362.814)
-
-[node name="TubeHabLong-BI-Mat" parent="TubeHabLong-BI-Mat008" instance=ExtResource ( 29 )]
+[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat024" instance=ExtResource ( 29 )]
 
 instance = ExtResource ( 29 )
 
+[node name="Radiator-BoatRad-BI-Mat023" type="Spatial" parent="."]
+
+transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1613.76, 133.816, 783.818)
+
+[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat023" instance=ExtResource ( 29 )]
+
+instance = ExtResource ( 29 )
+
+[node name="Radiator-BoatRad-BI-Mat022" type="Spatial" parent="."]
+
+transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1576.43, 146.237, 723.723)
+
+[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat022" instance=ExtResource ( 29 )]
+
+instance = ExtResource ( 29 )
+
+[node name="Radiator-BoatRad-BI-Mat021" type="Spatial" parent="."]
+
+transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1551.52, 148.857, 687.325)
+
+[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat021" instance=ExtResource ( 29 )]
+
+instance = ExtResource ( 29 )
+
+[node name="Radiator-BoatRad-BI-Mat016" type="Spatial" parent="."]
+
+transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1567.51, 169.959, 128.632)
+
+[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat016" instance=ExtResource ( 29 )]
+
+instance = ExtResource ( 29 )
+
+[node name="Radiator-BoatRad-BI-Mat015" type="Spatial" parent="."]
+
+transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1579.92, 169.959, 88.9811)
+
+[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat015" instance=ExtResource ( 29 )]
+
+instance = ExtResource ( 29 )
+
+[node name="Radiator-BoatRad-BI-Mat014" type="Spatial" parent="."]
+
+transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1591.68, 169.959, 46.6517)
+
+[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat014" instance=ExtResource ( 29 )]
+
+instance = ExtResource ( 29 )
+
+[node name="Radiator-BoatRad-BI-Mat013" type="Spatial" parent="."]
+
+transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1921.87, 204.152, -1008.03)
+
+[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat013" instance=ExtResource ( 29 )]
+
+instance = ExtResource ( 29 )
+
+[node name="Radiator-BoatRad-BI-Mat012" type="Spatial" parent="."]
+
+transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1875.67, 204.378, -1009.48)
+
+[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat012" instance=ExtResource ( 29 )]
+
+instance = ExtResource ( 29 )
+
+[node name="Radiator-BoatRad-BI-Mat011" type="Spatial" parent="."]
+
+transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1833.24, 203.658, -1009.48)
+
+[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat011" instance=ExtResource ( 29 )]
+
+instance = ExtResource ( 29 )
+
+[node name="Radiator-BoatRad-BI-Mat010" type="Spatial" parent="."]
+
+transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1938.06, 165.115, -517.739)
+
+[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat010" instance=ExtResource ( 29 )]
+
+instance = ExtResource ( 29 )
+
+[node name="Radiator-BoatRad-BI-Mat009" type="Spatial" parent="."]
+
+transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1892.03, 165.981, -521.575)
+
+[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat009" instance=ExtResource ( 29 )]
+
+instance = ExtResource ( 29 )
+
+[node name="Radiator-BoatRad-BI-Mat008" type="Spatial" parent="."]
+
+transform = Transform(0.7, 0.0, 0.0, 0.0, 0.7, 0.0, 0.0, 0.0, 0.7, 1849.48, 167.676, -527.154)
+
+[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat008" instance=ExtResource ( 29 )]
+
+instance = ExtResource ( 29 )
+
+[node name="TubeHabLong-BI-Mat008" type="Spatial" parent="."]
+
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -46.1418, 1999.31, 369.343)
+
+[node name="TubeHabLong-BI-Mat" parent="TubeHabLong-BI-Mat008" instance=ExtResource ( 20 )]
+
+instance = ExtResource ( 20 )
+
 [node name="Passage-SouthAtrium-to-Teacup001" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 50 )
+mesh = ExtResource( 32 )
 visible = true
 transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1545.76, 135.954, 132.688)
 
 [node name="MIP-Station006" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1939.81, 152.52, -562.818)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1941.04, 160.256, -564.019)
 
-[node name="MIP-Station" parent="MIP-Station006" instance=ExtResource ( 22 )]
+[node name="MIP-Station" parent="MIP-Station006" instance=ExtResource ( 18 )]
 
-instance = ExtResource ( 22 )
+instance = ExtResource ( 18 )
 
 [node name="Passage-Mouth-North-BigAtrium-FirstGalley002" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 51 )
+mesh = ExtResource( 33 )
 visible = true
 transform = Transform(-0.999969, 0.00781728, -3.41704e-10, 0.0, -4.37114e-08, -1.0, -0.00781728, -0.999969, 4.37101e-08, 1669.86, 124.951, -297.251)
 
 [node name="Passage-BigAtrium-FirstGallery001" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 52 )
+mesh = ExtResource( 34 )
 visible = true
 transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, -1.0, 0.0, 1.0, -4.37114e-08, 1669.12, 126.534, -311.859)
 
 [node name="Passage-FirstGallery-BigAtrium-BottomFloor" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 53 )
+mesh = ExtResource( 35 )
 visible = true
 transform = Transform(2.49722, 0.0, -0.354413, 0.0, 2.52224, 0.0, 0.354413, 0.0, 2.49722, 1669.11, 118.879, -258.372)
 
 [node name="Passage-Mouth-North-BigAtrium-FirstGalley" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 54 )
+mesh = ExtResource( 36 )
 visible = true
 transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, -1.0, 0.0, 1.0, -4.37114e-08, 1664.23, 126.534, -241.495)
 
 [node name="Passage-BigAtrium-FirstGallery" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 55 )
+mesh = ExtResource( 37 )
 visible = true
 transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, -1.0, 0.0, 1.0, -4.37114e-08, 1664.23, 126.534, -241.604)
 
 [node name="Satellite-Dish-Base003" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 56 )
+mesh = ExtResource( 38 )
 visible = true
 transform = Transform(1.99826, 0.0, 0.0834464, 0.0, 2.0, 0.0, -0.0834464, 0.0, 1.99826, 1678.34, 171.722, -109.265)
 
@@ -1456,33 +588,33 @@ transform = Transform(1.99826, 0.0, 0.0834464, 0.0, 2.0, 0.0, -0.0834464, 0.0, 1
 
 transform = Transform(1.99826, -0.0462762, 0.0694393, 0.0, 1.66428, 1.10912, -0.0834464, -1.10816, 1.66284, 1678.34, 171.959, -109.265)
 
-[node name="SatelliteDish-NearSpaceComms" parent="SatelliteDish-NearSpaceComms002" instance=ExtResource ( 20 )]
+[node name="SatelliteDish-NearSpaceComms" parent="SatelliteDish-NearSpaceComms002" instance=ExtResource ( 23 )]
 
-instance = ExtResource ( 20 )
+instance = ExtResource ( 23 )
 
 [node name="SatelliteDish-NearSpaceComms001" type="Spatial" parent="."]
 
 transform = Transform(-0.274813, 0.605242, 1.88631, 1.46183e-08, 1.90437, -0.611038, -1.98103, -0.0839608, -0.261673, 1695.07, 168.23, -105.283)
 
-[node name="SatelliteDish-NearSpaceComms" parent="SatelliteDish-NearSpaceComms001" instance=ExtResource ( 20 )]
+[node name="SatelliteDish-NearSpaceComms" parent="SatelliteDish-NearSpaceComms001" instance=ExtResource ( 23 )]
 
-instance = ExtResource ( 20 )
+instance = ExtResource ( 23 )
 
 [node name="Satellite-Dish-Base002" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 57 )
+mesh = ExtResource( 39 )
 visible = true
 transform = Transform(-0.274813, 0.0, 1.98103, 0.0, 2.0, 0.0, -1.98103, 0.0, -0.274813, 1695.07, 167.994, -105.283)
 
 [node name="Satellite-Dish-Base001" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 58 )
+mesh = ExtResource( 40 )
 visible = true
 transform = Transform(1.89483, 0.0, -0.640013, 0.0, 2.0, 0.0, 0.640013, 0.0, 1.89483, 1690.5, 168.805, -115.366)
 
 [node name="Satellite-Dish-Base" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 59 )
+mesh = ExtResource( 41 )
 visible = true
 transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 7.71299, 0.0298052, 4.59944)
 
@@ -1490,81 +622,81 @@ transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 7.71299, 0.02
 
 transform = Transform(1.89483, -0.517287, -0.376869, 0.0, 1.17769, -1.61649, 0.640013, 1.53149, 1.11576, 1690.5, 169.042, -115.366)
 
-[node name="SatelliteDish-NearSpaceComms" parent="SatelliteDish-NearSpaceComms" instance=ExtResource ( 20 )]
+[node name="SatelliteDish-NearSpaceComms" parent="SatelliteDish-NearSpaceComms" instance=ExtResource ( 23 )]
 
-instance = ExtResource ( 20 )
+instance = ExtResource ( 23 )
 
 [node name="SatelliteDish-EarthComms002" type="Spatial" parent="."]
 
-transform = Transform(30.0, 0.0, 0.0, 0.0, 30.0, 0.0, 0.0, 0.0, 30.0, 2666.89, 11.6409, 380.798)
+transform = Transform(30.0, 0.0, 0.0, 0.0, 30.0, 0.0, 0.0, 0.0, 30.0, 2666.89, 26.8257, 380.801)
 
-[node name="SatelliteDish-EarthComms" parent="SatelliteDish-EarthComms002" instance=ExtResource ( 18 )]
+[node name="SatelliteDish-EarthComms" parent="SatelliteDish-EarthComms002" instance=ExtResource ( 19 )]
 
-instance = ExtResource ( 18 )
+instance = ExtResource ( 19 )
 
 [node name="SatelliteDish-EarthComms001" type="Spatial" parent="."]
 
-transform = Transform(12.1708, 0.0, 0.0, 0.0, 12.1708, 0.0, 0.0, 0.0, 12.1708, 1631.94, 157.007, -107.704)
+transform = Transform(12.1708, 0.0, 0.0, 0.0, 12.1708, 0.0, 0.0, 0.0, 12.1708, 1631.94, 163.167, -107.703)
 
-[node name="SatelliteDish-EarthComms" parent="SatelliteDish-EarthComms001" instance=ExtResource ( 18 )]
+[node name="SatelliteDish-EarthComms" parent="SatelliteDish-EarthComms001" instance=ExtResource ( 19 )]
 
-instance = ExtResource ( 18 )
+instance = ExtResource ( 19 )
 
 [node name="SatelliteDish-EarthComms" type="Spatial" parent="."]
 
-transform = Transform(30.0, 0.0, 0.0, 0.0, 30.0, 0.0, 0.0, 0.0, 30.0, 2499.41, 26.9723, 223.335)
+transform = Transform(30.0, 0.0, 0.0, 0.0, 30.0, 0.0, 0.0, 0.0, 30.0, 2499.41, 42.157, 223.337)
 
-[node name="SatelliteDish-EarthComms" parent="SatelliteDish-EarthComms" instance=ExtResource ( 18 )]
+[node name="SatelliteDish-EarthComms" parent="SatelliteDish-EarthComms" instance=ExtResource ( 19 )]
 
-instance = ExtResource ( 18 )
+instance = ExtResource ( 19 )
 
 [node name="RadioAntenna" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 60 )
+mesh = ExtResource( 42 )
 visible = true
 transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1673.3, 192.089, -107.769)
 
 [node name="colinear-antenna-element" type="MeshInstance" parent="RadioAntenna"]
 
-mesh = ExtResource( 61 )
+mesh = ExtResource( 43 )
 visible = true
 transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -0.884399, 3.11041, 0.0)
 
 [node name="MIP-Station005" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1931.22, 160.801, -686.639)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1932.44, 168.537, -687.84)
 
-[node name="MIP-Station" parent="MIP-Station005" instance=ExtResource ( 22 )]
+[node name="MIP-Station" parent="MIP-Station005" instance=ExtResource ( 18 )]
 
-instance = ExtResource ( 22 )
+instance = ExtResource ( 18 )
 
 [node name="StandTop" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 62 )
+mesh = ExtResource( 44 )
 visible = true
 transform = Transform(-8.21074, 0.0, 2.6754e-06, 0.0, 8.21074, 0.0, -2.6754e-06, 0.0, -8.21073, 1869.39, 116.626, 239.719)
 
 [node name="Truss-Triangular-End-SolarPanels" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 63 )
+mesh = ExtResource( 45 )
 visible = true
 transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, -1.0, 0.0, 1.0, -4.37114e-08, 2214.11, -91.9474, 39.183)
 
 [node name="SolarPanelUnit026" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2214.92, -32.6689, 33.0111)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2213.56, 86.2008, 21.0262)
 
-[node name="SolarPanelUnit" parent="SolarPanelUnit026" instance=ExtResource ( 11 )]
+[node name="SolarPanelUnit" parent="SolarPanelUnit026" instance=ExtResource ( 4 )]
 
-instance = ExtResource ( 11 )
+instance = ExtResource ( 4 )
 
 [node name="FlywheelSolar" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2210.66, 160.168, -561.586)
 
-[node name="FlywheelSolar" parent="FlywheelSolar" instance=ExtResource ( 7 )]
+[node name="FlywheelSolar" parent="FlywheelSolar" instance=ExtResource ( 10 )]
 
-instance = ExtResource ( 7 )
+instance = ExtResource ( 10 )
 
 [node name="Sun" type="DirectionalLight" parent="."]
 
@@ -1587,47 +719,47 @@ transform = Transform(-0.852916, -0.105768, 0.511222, 0.000197993, 0.979196, 0.2
 
 [node name="MIP-Station004" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1890.24, 150.149, -433.276)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1891.46, 157.885, -434.477)
 
-[node name="MIP-Station" parent="MIP-Station004" instance=ExtResource ( 22 )]
+[node name="MIP-Station" parent="MIP-Station004" instance=ExtResource ( 18 )]
 
-instance = ExtResource ( 22 )
+instance = ExtResource ( 18 )
 
 [node name="MIP-Station003" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1931.84, 150.002, -480.667)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1933.07, 157.737, -481.868)
 
-[node name="MIP-Station" parent="MIP-Station003" instance=ExtResource ( 22 )]
+[node name="MIP-Station" parent="MIP-Station003" instance=ExtResource ( 18 )]
 
-instance = ExtResource ( 22 )
+instance = ExtResource ( 18 )
 
 [node name="MIP-Station002" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1838.66, 154.218, -178.307)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1839.89, 161.954, -179.508)
 
-[node name="MIP-Station" parent="MIP-Station002" instance=ExtResource ( 22 )]
+[node name="MIP-Station" parent="MIP-Station002" instance=ExtResource ( 18 )]
 
-instance = ExtResource ( 22 )
+instance = ExtResource ( 18 )
 
 [node name="MIP-Station001" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1935.8, 155.881, -626.073)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1937.02, 163.617, -627.274)
 
-[node name="MIP-Station" parent="MIP-Station001" instance=ExtResource ( 22 )]
+[node name="MIP-Station" parent="MIP-Station001" instance=ExtResource ( 18 )]
 
-instance = ExtResource ( 22 )
+instance = ExtResource ( 18 )
 
 [node name="MIP-Station" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1796.52, 154.428, -226.704)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1797.74, 162.164, -227.905)
 
-[node name="MIP-Station" parent="MIP-Station" instance=ExtResource ( 22 )]
+[node name="MIP-Station" parent="MIP-Station" instance=ExtResource ( 18 )]
 
-instance = ExtResource ( 22 )
+instance = ExtResource ( 18 )
 
 [node name="TunnelWindow" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 64 )
+mesh = ExtResource( 46 )
 visible = true
 transform = Transform(5.14608, 0.0, -1.31863, 0.0, 5.31234, 0.0, 1.31863, 0.0, 5.14608, 1576.91, 135.944, -8.82348)
 
@@ -1637,176 +769,176 @@ transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1674.23, 130.
 
 [node name="Hangars" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2094.69, 106.108, 808.242)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2134.98, 68.3741, 815.239)
 
-[node name="Hangars" parent="Hangars" instance=ExtResource ( 10 )]
+[node name="Hangars" parent="Hangars" instance=ExtResource ( 28 )]
 
-instance = ExtResource ( 10 )
+instance = ExtResource ( 28 )
 
 [node name="Passage-FirstHab-LosPortales" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 65 )
+mesh = ExtResource( 47 )
 visible = true
 transform = Transform(1.98494, 0.0, 0.0, 0.0, 1.98494, 0.0, 0.0, 0.0, 1.98494, 1603.68, 136.35, -43.3274)
 
 [node name="Passage-SouthAtrium-LosPortales" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 66 )
+mesh = ExtResource( 48 )
 visible = true
 transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1545.76, 135.954, 132.688)
 
 [node name="Passage-SouthAtrium-to-Teacup" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 67 )
+mesh = ExtResource( 49 )
 visible = true
 transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1545.76, 135.954, 132.688)
 
 [node name="LosPortales" type="MeshInstance" parent="."]
 
-mesh = ExtResource( 68 )
+mesh = ExtResource( 50 )
 visible = true
 transform = Transform(0.968716, -0.248172, 1.0848e-08, 0.0, -4.37114e-08, -1.0, 0.248172, 0.968716, -4.23439e-08, 1564.93, 137.311, 59.5255)
 
 [node name="MainColonyAirlock" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1754.17, 167.526, -315.98)
 
-[node name="MainColonyAirlock" parent="MainColonyAirlock" instance=ExtResource ( 24 )]
-
-instance = ExtResource ( 24 )
-
-[node name="UpperGallery" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
-
-[node name="UpperGallery" parent="UpperGallery" instance=ExtResource ( 25 )]
-
-instance = ExtResource ( 25 )
-
-[node name="LongDome" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
-
-[node name="LongDome" parent="LongDome" instance=ExtResource ( 26 )]
-
-instance = ExtResource ( 26 )
-
-[node name="InitialColonyGrounds008" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
-
-[node name="InitialColonyGrounds" parent="InitialColonyGrounds008" instance=ExtResource ( 15 )]
-
-instance = ExtResource ( 15 )
-
-[node name="IrisPlanterBuilding" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
-
-[node name="IrisPlanterBuilding" parent="IrisPlanterBuilding" instance=ExtResource ( 6 )]
+[node name="MainColonyAirlock" parent="MainColonyAirlock" instance=ExtResource ( 6 )]
 
 instance = ExtResource ( 6 )
 
+[node name="UpperGallery" type="Spatial" parent="."]
+
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1203.69, -46.5899, 247.895)
+
+[node name="UpperGallery" parent="UpperGallery" instance=ExtResource ( 17 )]
+
+instance = ExtResource ( 17 )
+
+[node name="LongDome" type="Spatial" parent="."]
+
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1582.98, -1241.08, -228.486)
+
+[node name="LongDome" parent="LongDome" instance=ExtResource ( 5 )]
+
+instance = ExtResource ( 5 )
+
+[node name="InitialColonyGrounds008" type="Spatial" parent="."]
+
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -3963.28, -1883.17, -2670.6)
+
+[node name="InitialColonyGrounds" parent="InitialColonyGrounds008" instance=ExtResource ( 12 )]
+
+instance = ExtResource ( 12 )
+
+[node name="IrisPlanterBuilding" type="Spatial" parent="."]
+
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1720.95, 102.439, 623.515)
+
+[node name="IrisPlanterBuilding" parent="IrisPlanterBuilding" instance=ExtResource ( 25 )]
+
+instance = ExtResource ( 25 )
+
 [node name="BigAtrium" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1676.84, 133.525, -185.014)
 
-[node name="BigAtrium" parent="BigAtrium" instance=ExtResource ( 14 )]
+[node name="BigAtrium" parent="BigAtrium" instance=ExtResource ( 7 )]
 
-instance = ExtResource ( 14 )
+instance = ExtResource ( 7 )
 
 [node name="FirstGallery" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1436.12, 17.9583, -300.521)
 
-[node name="FirstGallery" parent="FirstGallery" instance=ExtResource ( 32 )]
+[node name="FirstGallery" parent="FirstGallery" instance=ExtResource ( 13 )]
 
-instance = ExtResource ( 32 )
+instance = ExtResource ( 13 )
 
 [node name="LowerGalleries" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 530.65, -616.779, -95.7434)
 
-[node name="LowerGalleries" parent="LowerGalleries" instance=ExtResource ( 23 )]
+[node name="LowerGalleries" parent="LowerGalleries" instance=ExtResource ( 11 )]
 
-instance = ExtResource ( 23 )
+instance = ExtResource ( 11 )
 
 [node name="SpacePort" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 5998.62, 70.9332, -3712.54)
 
-[node name="SpacePort" parent="SpacePort" instance=ExtResource ( 8 )]
+[node name="SpacePort" parent="SpacePort" instance=ExtResource ( 9 )]
 
-instance = ExtResource ( 8 )
+instance = ExtResource ( 9 )
 
 [node name="Hangars2" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1771.38, 162.996, 72.8933)
 
-[node name="Hangars2" parent="Hangars2" instance=ExtResource ( 28 )]
+[node name="Hangars2" parent="Hangars2" instance=ExtResource ( 8 )]
 
-instance = ExtResource ( 28 )
+instance = ExtResource ( 8 )
 
 [node name="Fluidized-Bed-Reactor-and-Mirrors007" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1898.9, 113.341, 234.864)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1875.45, 128.331, 240.985)
 
-[node name="Fluidized-Bed-Reactor-and-Mirrors" parent="Fluidized-Bed-Reactor-and-Mirrors007" instance=ExtResource ( 19 )]
+[node name="Fluidized-Bed-Reactor-and-Mirrors" parent="Fluidized-Bed-Reactor-and-Mirrors007" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 19 )
+instance = ExtResource ( 3 )
 
 [node name="Fluidized-Bed-Reactor-and-Mirrors006" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2386.0, 27.5556, 373.713)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2362.55, 42.5459, 379.835)
 
-[node name="Fluidized-Bed-Reactor-and-Mirrors" parent="Fluidized-Bed-Reactor-and-Mirrors006" instance=ExtResource ( 19 )]
+[node name="Fluidized-Bed-Reactor-and-Mirrors" parent="Fluidized-Bed-Reactor-and-Mirrors006" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 19 )
+instance = ExtResource ( 3 )
 
 [node name="Fluidized-Bed-Reactor-and-Mirrors005" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2327.98, 41.5478, 277.715)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2304.53, 56.5381, 283.837)
 
-[node name="Fluidized-Bed-Reactor-and-Mirrors" parent="Fluidized-Bed-Reactor-and-Mirrors005" instance=ExtResource ( 19 )]
+[node name="Fluidized-Bed-Reactor-and-Mirrors" parent="Fluidized-Bed-Reactor-and-Mirrors005" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 19 )
+instance = ExtResource ( 3 )
 
 [node name="Fluidized-Bed-Reactor-and-Mirrors004" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2270.11, 55.5102, 189.975)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2246.66, 70.5004, 196.097)
 
-[node name="Fluidized-Bed-Reactor-and-Mirrors" parent="Fluidized-Bed-Reactor-and-Mirrors004" instance=ExtResource ( 19 )]
+[node name="Fluidized-Bed-Reactor-and-Mirrors" parent="Fluidized-Bed-Reactor-and-Mirrors004" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 19 )
+instance = ExtResource ( 3 )
 
 [node name="Fluidized-Bed-Reactor-and-Mirrors003" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2212.24, 69.8809, 103.169)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2188.79, 84.8711, 109.291)
 
-[node name="Fluidized-Bed-Reactor-and-Mirrors" parent="Fluidized-Bed-Reactor-and-Mirrors003" instance=ExtResource ( 19 )]
+[node name="Fluidized-Bed-Reactor-and-Mirrors" parent="Fluidized-Bed-Reactor-and-Mirrors003" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 19 )
+instance = ExtResource ( 3 )
 
 [node name="Fluidized-Bed-Reactor-and-Mirrors002" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2134.04, 55.7727, 455.058)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2110.59, 70.7629, 461.179)
 
-[node name="Fluidized-Bed-Reactor-and-Mirrors" parent="Fluidized-Bed-Reactor-and-Mirrors002" instance=ExtResource ( 19 )]
+[node name="Fluidized-Bed-Reactor-and-Mirrors" parent="Fluidized-Bed-Reactor-and-Mirrors002" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 19 )
+instance = ExtResource ( 3 )
 
 [node name="Fluidized-Bed-Reactor-and-Mirrors001" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2495.01, 13.6896, 437.547)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2471.56, 28.6798, 443.668)
 
-[node name="Fluidized-Bed-Reactor-and-Mirrors" parent="Fluidized-Bed-Reactor-and-Mirrors001" instance=ExtResource ( 19 )]
+[node name="Fluidized-Bed-Reactor-and-Mirrors" parent="Fluidized-Bed-Reactor-and-Mirrors001" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 19 )
+instance = ExtResource ( 3 )
 
 [node name="Fluidized-Bed-Reactor-and-Mirrors" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1894.23, 104.511, 463.34)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1870.78, 119.501, 469.461)
 
-[node name="Fluidized-Bed-Reactor-and-Mirrors" parent="Fluidized-Bed-Reactor-and-Mirrors" instance=ExtResource ( 19 )]
+[node name="Fluidized-Bed-Reactor-and-Mirrors" parent="Fluidized-Bed-Reactor-and-Mirrors" instance=ExtResource ( 3 )]
 
-instance = ExtResource ( 19 )
+instance = ExtResource ( 3 )

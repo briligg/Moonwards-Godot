@@ -6,7 +6,7 @@
 
 [node type="Spatial" name="SmallHangarArchesColumns"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1769.38, -94.3699, -103.563)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1742.46, -86.7945, -103.543)
 
 [node name="HangarArchCurve001" type="Spatial" parent="."]
 

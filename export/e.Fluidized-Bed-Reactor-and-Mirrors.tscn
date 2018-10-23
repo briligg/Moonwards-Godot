@@ -15,7 +15,7 @@
 
 [node type="Spatial" name="Fluidized-Bed-Reactor-and-Mirrors"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1898.9, -113.341, -234.864)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1875.45, -128.331, -240.985)
 
 [node name="ReactorTank" type="MeshInstance" parent="."]
 
@@ -49,7 +49,7 @@ transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1889.78, 128.
 
 [node name="ParabolicMirrorUnit-Circuit-to-Side" type="Spatial" parent="."]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1899.36, 149.282, 272.969)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1898.68, 157.088, 245.427)
 
 [node name="STEMP-ParabolicMirrorUnit-Circuit-to-Side" parent="ParabolicMirrorUnit-Circuit-to-Side" instance=ExtResource ( 2 )]
 
@@ -63,7 +63,7 @@ transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1898.72, 148.
 
 [node name="RadiatorTowerTanksAndPipes" type="Spatial" parent="."]
 
-transform = Transform(-9.92013e-08, 0.0, -2.26946, 0.0, 2.26946, 0.0, 2.26946, 0.0, -9.92013e-08, 1859.36, 114.214, 242.648)
+transform = Transform(-9.92013e-08, 0.0, -2.26946, 0.0, 2.26946, 0.0, 2.26946, 0.0, -9.92013e-08, 1859.3, 125.888, 242.577)
 
 [node name="RadiatorTowerTanksAndPipes" parent="RadiatorTowerTanksAndPipes" instance=ExtResource ( 1 )]
 
@@ -73,7 +73,7 @@ instance = ExtResource ( 1 )
 
 mesh = ExtResource( 9 )
 visible = true
-transform = Transform(1.0, 0.0, 8.00714e-09, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -0.219894, 6.95811, 0.000305176)
+transform = Transform(1.0, 0.0, 8.00714e-09, 0.0, 1.0, 0.0, 3.55271e-15, 0.0, 1.0, -0.21991, 6.95811, 0.000244141)
 
 [node name="WaterTankInsulation" type="MeshInstance" parent="."]
 

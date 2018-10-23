@@ -6,7 +6,7 @@
 
 [node type="Spatial" name="HangarArchWithColumnsSimple"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.00138346, 11.0829, -0.00156657)
 
 [node name="HangarArch" type="MeshInstance" parent="."]
 

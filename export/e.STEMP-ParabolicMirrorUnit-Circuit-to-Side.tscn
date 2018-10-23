@@ -14,7 +14,7 @@
 
 [node type="Spatial" name="STEMP-ParabolicMirrorUnit-Circuit-to-Side"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.672518, -7.8056, 27.5414)
 
 [node name="MirrorTowerCables000" type="MeshInstance" parent="."]
 

@@ -5,7 +5,7 @@
 
 [node type="Spatial" name="industrial-space-pressurized"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1700.66, -147.074, -18.0507)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1700.66, -145.355, -28.0507)
 
 [node name="basalt-fiber-silo" type="MeshInstance" parent="."]
 

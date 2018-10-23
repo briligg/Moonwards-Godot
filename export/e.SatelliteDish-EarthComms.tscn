@@ -6,7 +6,7 @@
 
 [node type="Spatial" name="SatelliteDish-EarthComms"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -7.71304, -0.216729, 14.1542)
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -7.71299, -0.722887, 14.1541)
 
 [node name="Satellite-Dish" type="MeshInstance" parent="."]
 
