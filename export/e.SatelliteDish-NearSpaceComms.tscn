@@ -1,13 +1,40 @@
-[gd_scene load_steps=1 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://export/meshes/m_e_SatelliteDish-NearSpaceComms_escn_1.mesh" type="ArrayMesh" id=1]
 
-[node type="Spatial" name="SatelliteDish-NearSpaceComms"]
+[sub_resource type="CylinderShape" id=1]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -7.71541, -0.147479, -4.59944)
+margin = 0.04
+radius = 0.748272
+height = 0.182659
+
+[node name="SatelliteDish-NearSpaceComms" type="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.71541, -0.147479, -4.59944 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="Satellite-Dish-NearComm" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.71541, 0.147479, 4.59944 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 1 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 7.71541, 0.147479, 4.59944)
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.71541, 0.374966, 4.59944 )
+shape = SubResource( 1 )
+disabled = false
+_sections_unfolded = [ "shape" ]
+
