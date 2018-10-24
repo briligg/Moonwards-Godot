@@ -1,0 +1,396 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://img/AtriumHabOutside550.jpg" type="Texture" id=2]
+[ext_resource path="res://fonts/djv_mono.tres" type="DynamicFont" id=3]
+[ext_resource path="res://fonts/djv_bold_italic.tres" type="DynamicFont" id=4]
+[ext_resource path="res://fonts/djv_italic.tres" type="DynamicFont" id=5]
+[ext_resource path="res://fonts/djv_bold.tres" type="DynamicFont" id=6]
+[ext_resource path="res://fonts/djv_sans.tres" type="DynamicFont" id=7]
+[ext_resource path="res://fonts/dejavu/DejaVuSans-BoldOblique.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="CanvasItemMaterial" id=6]
+
+render_priority = 0
+blend_mode = 0
+light_mode = 0
+
+[sub_resource type="GradientTexture" id=5]
+
+flags = 4
+width = 2048
+
+[sub_resource type="SpatialMaterial" id=4]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+flags_do_not_receive_shadows = false
+flags_disable_ambient_light = false
+flags_ensure_correct_normals = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_billboard_keep_scale = false
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 0.654902, 0.129412, 0.129412, 1 )
+albedo_texture = SubResource( 5 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 1.0
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = false
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_mode = 0
+_sections_unfolded = [ "Albedo" ]
+
+[sub_resource type="CanvasItemMaterial" id=3]
+
+render_priority = 0
+next_pass = SubResource( 4 )
+blend_mode = 1
+light_mode = 0
+_sections_unfolded = [ "Resource", "Script" ]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+render_priority = 0
+blend_mode = 2
+light_mode = 0
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 60
+outline_size = 0
+outline_color = Color( 1, 1, 1, 1 )
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 8 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Resource", "Script", "Settings" ]
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 19.0
+margin_bottom = 10.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Anchor", "Margin" ]
+
+[node name="ui" type="Control" parent="."]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="main" type="Control" parent="ui"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="pHelp" type="Panel" parent="ui/main"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.588235 )
+material = SubResource( 6 )
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = 270.0
+margin_top = 50.0
+margin_right = 760.0
+margin_bottom = 650.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Margin", "Material", "Visibility", "material" ]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ui/main/pHelp"]
+self_modulate = Color( 0.929412, 0.862745, 0.862745, 1 )
+material = SubResource( 3 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/mono_font = ExtResource( 3 )
+custom_fonts/bold_italics_font = ExtResource( 4 )
+custom_fonts/italics_font = ExtResource( 5 )
+custom_fonts/bold_font = ExtResource( 6 )
+custom_fonts/normal_font = ExtResource( 7 )
+bbcode_enabled = true
+bbcode_text = "[b]To move use your keyboard and mouse[/b]
+        [b]W[/b] or [i]Up arrow[/i] - Forward
+        [b]S[/b] or [i]Down arrow[/i] - Backward
+        [b]A[/b] or [i]Left arrow[/i] - Sideways left
+        [b]D[/b] or [i]Right arrow[/i] - Sideways right
+        [b]Q[/b] or [i]Page Up[/i] - Move Up
+        [b]E[/b] or [i]Page Down[/i] - Move Down
+		
+[b]Scroll wheel[/b]
+         - scroll up - move faster
+         - scroll down - move slower
+
+[b]In game[/b]
+Press Esc to see a menu with options for your mouse, general speed, and others.
+If the app is running slowly, try reducing the setting for Far. This limits how far away the camera can see.
+
+Press Esc again to close the menu.
+"
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "To move use your keyboard and mouse
+        W or Up arrow - Forward
+        S or Down arrow - Backward
+        A or Left arrow - Sideways left
+        D or Right arrow - Sideways right
+        Q or Page Up - Move Up
+        E or Page Down - Move Down
+		
+Scroll wheel
+         - scroll up - move faster
+         - scroll down - move slower
+
+In game
+Press Esc to see a menu with options for your mouse, general speed, and others.
+If the app is running slowly, try reducing the setting for Far. This limits how far away the camera can see.
+
+Press Esc again to close the menu.
+"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "Material", "Size Flags", "Theme", "Visibility", "custom_fonts/normal_font", "custom_styles", "material" ]
+
+[node name="Panel" type="Panel" parent="ui/main"]
+material = SubResource( 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 90.0
+margin_top = 250.0
+margin_right = 300.0
+margin_bottom = 450.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Margin", "Material" ]
+
+[node name="Run" type="Button" parent="ui/main/Panel"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Run"
+flat = false
+align = 1
+_sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_fonts" ]
+
+[node name="Options" type="Button" parent="ui/main/Panel"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = 1.0
+margin_top = 50.0
+margin_bottom = 90.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Options"
+flat = false
+align = 1
+_sections_unfolded = [ "Anchor", "Margin" ]
+
+[node name="Help" type="Button" parent="ui/main/Panel"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_top = 100.0
+margin_bottom = 140.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Help"
+flat = false
+align = 1
+_sections_unfolded = [ "Anchor", "Margin" ]
+
+[node name="Display" type="Button" parent="ui/main/Panel"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_top = 150.0
+margin_bottom = 190.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Display"
+flat = false
+align = 1
+_sections_unfolded = [ "Anchor", "Margin" ]
+
+[node name="loading" type="Control" parent="ui"]
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 273.0
+margin_bottom = 79.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Label" type="Label" parent="ui/loading"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 241.0
+margin_bottom = 65.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "Loading ..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Script", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[node name="load_timer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 0.2
+one_shot = false
+autostart = false
+
+[connection signal="pressed" from="ui/main/Panel/Run" to="." method="_on_Run_pressed"]
+[connection signal="pressed" from="ui/main/Panel/Help" to="." method="_on_Help_pressed"]
+[connection signal="timeout" from="load_timer" to="." method="_on_Timer_timeout"]
