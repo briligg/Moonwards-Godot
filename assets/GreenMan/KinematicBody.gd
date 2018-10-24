@@ -17,8 +17,7 @@ export(float) var JumpHeight = 7.0
 export(bool) var AllowChangeCamera = false
 export(bool) var FPSCamera = true
 export(bool) var thRDPersCamera = false
-export(bool) var RPGCamera = false
-export(bool) var TopDownCamera = false
+
 var translationcamera
 
 
@@ -29,7 +28,6 @@ var up
 #Options
 export(float) var WALKSPEED = 3.1
 export(float) var RUNSPEED = 4.5
-export(bool) var active=true
 export(float) var view_sensitivity = 5
 export var weight= 1
 
@@ -196,23 +194,15 @@ func _physics_process(delta):
 
 
 	if AllowChangeCamera:
-		if Input.is_action_pressed("cameraFPS"):
+		if Input.is_action_pressed("cameraFPS"): #Not implemented yet
 			$Pivot/FPSCamera.make_current()
 			$Pivot/FPSCamera.restrictaxis = false
 
 
-		if Input.is_action_pressed("camera3RD"):
+		if Input.is_action_pressed("camera3RD"): #Not implemented yet
 			get_node("Pivot/3RDPersCamera").make_current()
 			$Pivot/FPSCamera.restrictaxis = false
 
-		#if Input.is_action_pressed("cameraPlat"):
-		#	get_node("target/camera").make_current()
-		#	$Pivot/FPSCamera.restrictaxis = true
-
-
-		if Input.is_action_pressed("cameraTop"):
-			$TopDownCamera.make_current()
-			$Pivot/FPSCamera.restrictaxis = true
 
 	aimrotation = $Pivot/FPSCamera.rotation_degrees
 	translationcamera=$Pivot/FPSCamera.get_global_transform().origin
@@ -220,3 +210,4 @@ func _ready():
 	CHAR_SCALE = scale
 	set_process_input(true)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	$Pivot/FPSCamera.view_sensitiviy = view_sensitivity

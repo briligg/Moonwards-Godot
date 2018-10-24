@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/GreenMan/KinematicBody.gd" type="Script" id=1]
 [ext_resource path="res://assets/maujoe.camera_control/scripts/camera_control.gd" type="Script" id=2]
+[ext_resource path="res://assets/GreenMan/FPSCamera.gd" type="Script" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -103,31 +104,11 @@ JumpHeight = 7.0
 AllowChangeCamera = false
 FPSCamera = true
 thRDPersCamera = false
-RPGCamera = false
-TopDownCamera = false
 WALKSPEED = 3.1
 RUNSPEED = 4.5
-active = true
 view_sensitivity = 5
 weight = 1
 grav = 1.6
-
-[node name="Pivot" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.793444, -0.0896399 )
-
-[node name="FPSCamera" type="Camera" parent="Pivot"]
-keep_aspect = 1
-cull_mask = 1048575
-environment = null
-h_offset = 0.0
-v_offset = 0.0
-doppler_tracking = 0
-projection = 0
-current = false
-fov = 70.0
-size = 1.0
-near = 0.05
-far = 100.0
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.850653, 0.525727, 0, -0.525727, 0.850653, 0, 1.304, 0.809999 )
@@ -211,4 +192,36 @@ _sections_unfolded = [ "Transform" ]
 transform = Transform( -1, 0, -3.25841e-007, -3.25841e-007, -4.37114e-008, 1, -1.4243e-014, 1, 4.37114e-008, 0, -0.0770048, 0 )
 shape = SubResource( 3 )
 disabled = false
+
+[node name="Pivot" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.793444, -0.0896399 )
+
+[node name="FPSCamera" type="Camera" parent="Pivot"]
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = false
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 100.0
+script = ExtResource( 3 )
+
+[node name="3RDPersCamera" type="Camera" parent="Pivot"]
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = false
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 100.0
 
