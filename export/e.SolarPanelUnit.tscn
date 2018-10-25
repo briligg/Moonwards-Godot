@@ -1,52 +1,133 @@
-[gd_scene load_steps=1 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://export/meshes/m_e_SolarPanelUnit_escn_1.mesh" type="ArrayMesh" id=1]
 [ext_resource path="res://export/meshes/m_e_SolarPanelUnit_escn_2.mesh" type="ArrayMesh" id=2]
 [ext_resource path="res://export/meshes/m_e_SolarPanelUnit_escn_3.mesh" type="ArrayMesh" id=3]
-[ext_resource path="res://export/meshes/m_e_SolarPanelUnit_escn_4.mesh" type="ArrayMesh" id=4]
-[ext_resource path="res://export/meshes/m_e_SolarPanelUnit_escn_5.mesh" type="ArrayMesh" id=5]
-[ext_resource path="res://export/meshes/m_e_SolarPanelUnit_escn_6.mesh" type="ArrayMesh" id=6]
+[ext_resource path="res://export/meshes.collision/SolarPanel.tres" type="Shape" id=4]
+[ext_resource path="res://export/meshes/m_e_SolarPanelUnit_escn_4.mesh" type="ArrayMesh" id=5]
+[ext_resource path="res://export/meshes/m_e_SolarPanelUnit_escn_5.mesh" type="ArrayMesh" id=6]
+[ext_resource path="res://export/meshes/m_e_SolarPanelUnit_escn_6.mesh" type="ArrayMesh" id=7]
+[ext_resource path="res://export/meshes.collision/Truss-Triangular-Solar.shape" type="Shape" id=8]
 
-[node type="Spatial" name="SolarPanelUnit"]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -2213.56, -86.2008, -21.0262)
+[node name="SolarPanelUnit" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2213.56, -86.2008, -21.0262 )
 
 [node name="SolarPanelRotation" type="Spatial" parent="."]
-
-transform = Transform(0.5, -0.866025, 0.0, 0.866025, 0.5, 0.0, 0.0, 0.0, 1.0, 2214.92, -32.6689, 33.0111)
+transform = Transform( 0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 2214.92, -32.6689, 33.0111 )
 
 [node name="SolarPanel" type="MeshInstance" parent="SolarPanelRotation"]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00476074, 1.56702, -24.0737 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 1 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -0.00476074, 1.56702, -24.0737)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Triangular-End-SolarPanels002" type="MeshInstance" parent="SolarPanelRotation/SolarPanel"]
-
+transform = Transform( 0.833333, 0, 0, 0, 1, 0, -1.68031e-010, -1.16415e-010, 1, -0.00012207, -0.00012207, -9.53674e-007 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 2 )
-visible = true
-transform = Transform(0.833333, 0.0, 0.0, 0.0, 1.0, 0.0, -1.68031e-10, -1.16415e-10, 1.0, -0.00012207, -0.00012207, -9.53674e-07)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder" type="MeshInstance" parent="SolarPanelRotation/SolarPanel/Truss-Triangular-End-SolarPanels002"]
-
+transform = Transform( 1, -1.77636e-015, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0.000244141, -1.4895, -9.53674e-007 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 3 )
-visible = true
-transform = Transform(1.0, -1.77636e-15, 0.0, 0.0, -4.37114e-08, -1.0, 0.0, 1.0, -4.37114e-08, 0.000244141, -1.4895, -9.53674e-07)
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="SolarPanelRotation/SolarPanel"]
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="SolarPanelRotation/SolarPanel/StaticBody"]
+shape = ExtResource( 4 )
+disabled = false
+_sections_unfolded = [ "shape" ]
 
 [node name="SolarPanel001" type="MeshInstance" parent="SolarPanelRotation"]
-
-mesh = ExtResource( 4 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -0.00476074, 1.58704, -24.0737)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00476074, 1.58704, -24.0737 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 5 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="SolarPanelCounterweight" type="MeshInstance" parent="SolarPanelRotation/SolarPanel001"]
-
-mesh = ExtResource( 5 )
-visible = true
-transform = Transform(0.833333, 1.78814e-07, 0.0, -2.08616e-07, 1.0, 0.0, -1.68095e-10, 3.4926e-10, 1.0, 0.0, -5.39929, 0.0)
+transform = Transform( 0.833333, 1.78814e-007, 0, -2.08616e-007, 1, 0, -1.68095e-010, 3.4926e-010, 1, 0, -5.39929, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 6 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Truss-Triangular-SolarPanels" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 2214.99, -51.7423, 33.0111 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 7 )
+skeleton = NodePath("..")
+material/0 = null
 
-mesh = ExtResource( 6 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, -1.0, 0.0, 1.0, -4.37114e-08, 2214.99, -51.7423, 33.0111)
+[node name="StaticBody" type="StaticBody" parent="Truss-Triangular-SolarPanels"]
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Truss-Triangular-SolarPanels/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0783653, -9.49358 )
+shape = ExtResource( 8 )
+disabled = false
+

@@ -4,7 +4,7 @@ extends Camera
 # var a = 2
 var yaw = 0.0
 var pitch = 0.0
-var view_sensitivity 
+var view_sensitivity = 0
 var restrictaxis = false
 var originaltranslation = Vector3()
 var originalrotation = Vector3()

@@ -173,7 +173,7 @@ omni_attenuation = 1.0
 omni_shadow_mode = 1
 omni_shadow_detail = 1
 
-[node name="greenMenGeorge000" type="MeshInstance" parent="."]
+[node name="Model" type="MeshInstance" parent="."]
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -204,7 +204,7 @@ h_offset = 0.0
 v_offset = 0.0
 doppler_tracking = 0
 projection = 0
-current = false
+current = true
 fov = 70.0
 size = 1.0
 near = 0.05
