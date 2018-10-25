@@ -1,140 +1,140 @@
-[gd_scene load_steps=1 format=2]
+[gd_scene load_steps=167 format=2]
 
-[ext_resource id=1 path="e.AtriumHab-PlanterSet.tscn" type="PackedScene"]
-[ext_resource id=2 path="e.HexpaneWindow.tscn" type="PackedScene"]
-[ext_resource id=3 path="e.WaterTank.tscn" type="PackedScene"]
-[ext_resource id=4 path="e.Toilet.tscn" type="PackedScene"]
-[ext_resource id=5 path="e.LightTube-Straight.tscn" type="PackedScene"]
-[ext_resource id=6 path="e.Shimmy-Stairs.tscn" type="PackedScene"]
-[ext_resource id=7 path="e.BoatRadiator.tscn" type="PackedScene"]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_1.mesh" type="ArrayMesh" id=8]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_2.mesh" type="ArrayMesh" id=9]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_3.mesh" type="ArrayMesh" id=10]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_4.mesh" type="ArrayMesh" id=11]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_5.mesh" type="ArrayMesh" id=12]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_6.mesh" type="ArrayMesh" id=13]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_7.mesh" type="ArrayMesh" id=14]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_8.mesh" type="ArrayMesh" id=15]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_9.mesh" type="ArrayMesh" id=16]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_10.mesh" type="ArrayMesh" id=17]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_11.mesh" type="ArrayMesh" id=18]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_12.mesh" type="ArrayMesh" id=19]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_13.mesh" type="ArrayMesh" id=20]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_14.mesh" type="ArrayMesh" id=21]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_15.mesh" type="ArrayMesh" id=22]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_16.mesh" type="ArrayMesh" id=23]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_17.mesh" type="ArrayMesh" id=24]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_18.mesh" type="ArrayMesh" id=25]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_19.mesh" type="ArrayMesh" id=26]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_20.mesh" type="ArrayMesh" id=27]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_21.mesh" type="ArrayMesh" id=28]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_22.mesh" type="ArrayMesh" id=29]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_23.mesh" type="ArrayMesh" id=30]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_24.mesh" type="ArrayMesh" id=31]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_25.mesh" type="ArrayMesh" id=32]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_26.mesh" type="ArrayMesh" id=33]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_27.mesh" type="ArrayMesh" id=34]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_28.mesh" type="ArrayMesh" id=35]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_29.mesh" type="ArrayMesh" id=36]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_30.mesh" type="ArrayMesh" id=37]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_31.mesh" type="ArrayMesh" id=38]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_32.mesh" type="ArrayMesh" id=39]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_33.mesh" type="ArrayMesh" id=40]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_34.mesh" type="ArrayMesh" id=41]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_35.mesh" type="ArrayMesh" id=42]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_36.mesh" type="ArrayMesh" id=43]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_37.mesh" type="ArrayMesh" id=44]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_38.mesh" type="ArrayMesh" id=45]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_39.mesh" type="ArrayMesh" id=46]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_40.mesh" type="ArrayMesh" id=47]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_41.mesh" type="ArrayMesh" id=48]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_42.mesh" type="ArrayMesh" id=49]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_43.mesh" type="ArrayMesh" id=50]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_44.mesh" type="ArrayMesh" id=51]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_45.mesh" type="ArrayMesh" id=52]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_46.mesh" type="ArrayMesh" id=53]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_47.mesh" type="ArrayMesh" id=54]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_48.mesh" type="ArrayMesh" id=55]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_49.mesh" type="ArrayMesh" id=56]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_50.mesh" type="ArrayMesh" id=57]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_51.mesh" type="ArrayMesh" id=58]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_52.mesh" type="ArrayMesh" id=59]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_53.mesh" type="ArrayMesh" id=60]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_54.mesh" type="ArrayMesh" id=61]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_55.mesh" type="ArrayMesh" id=62]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_56.mesh" type="ArrayMesh" id=63]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_57.mesh" type="ArrayMesh" id=64]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_58.mesh" type="ArrayMesh" id=65]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_59.mesh" type="ArrayMesh" id=66]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_60.mesh" type="ArrayMesh" id=67]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_61.mesh" type="ArrayMesh" id=68]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_62.mesh" type="ArrayMesh" id=69]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_63.mesh" type="ArrayMesh" id=70]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_64.mesh" type="ArrayMesh" id=71]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_65.mesh" type="ArrayMesh" id=72]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_66.mesh" type="ArrayMesh" id=73]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_67.mesh" type="ArrayMesh" id=74]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_68.mesh" type="ArrayMesh" id=75]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_69.mesh" type="ArrayMesh" id=76]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_70.mesh" type="ArrayMesh" id=77]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_71.mesh" type="ArrayMesh" id=78]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_72.mesh" type="ArrayMesh" id=79]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_73.mesh" type="ArrayMesh" id=80]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_74.mesh" type="ArrayMesh" id=81]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_75.mesh" type="ArrayMesh" id=82]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_76.mesh" type="ArrayMesh" id=83]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_77.mesh" type="ArrayMesh" id=84]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_78.mesh" type="ArrayMesh" id=85]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_79.mesh" type="ArrayMesh" id=86]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_80.mesh" type="ArrayMesh" id=87]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_81.mesh" type="ArrayMesh" id=88]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_82.mesh" type="ArrayMesh" id=89]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_83.mesh" type="ArrayMesh" id=90]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_84.mesh" type="ArrayMesh" id=91]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_85.mesh" type="ArrayMesh" id=92]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_86.mesh" type="ArrayMesh" id=93]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_87.mesh" type="ArrayMesh" id=94]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_88.mesh" type="ArrayMesh" id=95]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_89.mesh" type="ArrayMesh" id=96]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_90.mesh" type="ArrayMesh" id=97]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_91.mesh" type="ArrayMesh" id=98]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_92.mesh" type="ArrayMesh" id=99]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_93.mesh" type="ArrayMesh" id=100]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_94.mesh" type="ArrayMesh" id=101]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_95.mesh" type="ArrayMesh" id=102]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_96.mesh" type="ArrayMesh" id=103]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_97.mesh" type="ArrayMesh" id=104]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_98.mesh" type="ArrayMesh" id=105]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_99.mesh" type="ArrayMesh" id=106]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_100.mesh" type="ArrayMesh" id=107]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_101.mesh" type="ArrayMesh" id=108]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_102.mesh" type="ArrayMesh" id=109]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_103.mesh" type="ArrayMesh" id=110]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_104.mesh" type="ArrayMesh" id=111]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_105.mesh" type="ArrayMesh" id=112]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_106.mesh" type="ArrayMesh" id=113]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_107.mesh" type="ArrayMesh" id=114]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_108.mesh" type="ArrayMesh" id=115]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_109.mesh" type="ArrayMesh" id=116]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_110.mesh" type="ArrayMesh" id=117]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_111.mesh" type="ArrayMesh" id=118]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_112.mesh" type="ArrayMesh" id=119]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_113.mesh" type="ArrayMesh" id=120]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_114.mesh" type="ArrayMesh" id=121]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_115.mesh" type="ArrayMesh" id=122]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_116.mesh" type="ArrayMesh" id=123]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_117.mesh" type="ArrayMesh" id=124]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_118.mesh" type="ArrayMesh" id=125]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_119.mesh" type="ArrayMesh" id=126]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_120.mesh" type="ArrayMesh" id=127]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_121.mesh" type="ArrayMesh" id=128]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_122.mesh" type="ArrayMesh" id=129]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_123.mesh" type="ArrayMesh" id=130]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_124.mesh" type="ArrayMesh" id=131]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_125.mesh" type="ArrayMesh" id=132]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_126.mesh" type="ArrayMesh" id=133]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_127.mesh" type="ArrayMesh" id=134]
-[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_128.mesh" type="ArrayMesh" id=135]
+[ext_resource path="res://export/e.LightTube-Straight.tscn" type="PackedScene" id=1]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_1.mesh" type="ArrayMesh" id=2]
+[ext_resource path="res://export/e.BoatRadiator.tscn" type="PackedScene" id=3]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_2.mesh" type="ArrayMesh" id=4]
+[ext_resource path="res://export/e.Toilet.tscn" type="PackedScene" id=5]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_3.mesh" type="ArrayMesh" id=6]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_4.mesh" type="ArrayMesh" id=7]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_5.mesh" type="ArrayMesh" id=8]
+[ext_resource path="res://export/e.HexpaneWindow.tscn" type="PackedScene" id=9]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_6.mesh" type="ArrayMesh" id=10]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_7.mesh" type="ArrayMesh" id=11]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_8.mesh" type="ArrayMesh" id=12]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_9.mesh" type="ArrayMesh" id=13]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_10.mesh" type="ArrayMesh" id=14]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_11.mesh" type="ArrayMesh" id=15]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_12.mesh" type="ArrayMesh" id=16]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_13.mesh" type="ArrayMesh" id=17]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_14.mesh" type="ArrayMesh" id=18]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_15.mesh" type="ArrayMesh" id=19]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_16.mesh" type="ArrayMesh" id=20]
+[ext_resource path="res://export/e.Shimmy-Stairs.tscn" type="PackedScene" id=21]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_17.mesh" type="ArrayMesh" id=22]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_18.mesh" type="ArrayMesh" id=23]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_19.mesh" type="ArrayMesh" id=24]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_20.mesh" type="ArrayMesh" id=25]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_21.mesh" type="ArrayMesh" id=26]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_22.mesh" type="ArrayMesh" id=27]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_23.mesh" type="ArrayMesh" id=28]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_24.mesh" type="ArrayMesh" id=29]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_25.mesh" type="ArrayMesh" id=30]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_26.mesh" type="ArrayMesh" id=31]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_27.mesh" type="ArrayMesh" id=32]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_28.mesh" type="ArrayMesh" id=33]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_29.mesh" type="ArrayMesh" id=34]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_30.mesh" type="ArrayMesh" id=35]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_31.mesh" type="ArrayMesh" id=36]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_32.mesh" type="ArrayMesh" id=37]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_33.mesh" type="ArrayMesh" id=38]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_34.mesh" type="ArrayMesh" id=39]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_35.mesh" type="ArrayMesh" id=40]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_36.mesh" type="ArrayMesh" id=41]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_37.mesh" type="ArrayMesh" id=42]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_38.mesh" type="ArrayMesh" id=43]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_39.mesh" type="ArrayMesh" id=44]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_40.mesh" type="ArrayMesh" id=45]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_41.mesh" type="ArrayMesh" id=46]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_42.mesh" type="ArrayMesh" id=47]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_43.mesh" type="ArrayMesh" id=48]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_44.mesh" type="ArrayMesh" id=49]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_45.mesh" type="ArrayMesh" id=50]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_46.mesh" type="ArrayMesh" id=51]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_47.mesh" type="ArrayMesh" id=52]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_48.mesh" type="ArrayMesh" id=53]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_49.mesh" type="ArrayMesh" id=54]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_50.mesh" type="ArrayMesh" id=55]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_51.mesh" type="ArrayMesh" id=56]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_52.mesh" type="ArrayMesh" id=57]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_53.mesh" type="ArrayMesh" id=58]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_54.mesh" type="ArrayMesh" id=59]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_55.mesh" type="ArrayMesh" id=60]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_56.mesh" type="ArrayMesh" id=61]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_57.mesh" type="ArrayMesh" id=62]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_58.mesh" type="ArrayMesh" id=63]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_59.mesh" type="ArrayMesh" id=64]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_60.mesh" type="ArrayMesh" id=65]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_61.mesh" type="ArrayMesh" id=66]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_62.mesh" type="ArrayMesh" id=67]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_63.mesh" type="ArrayMesh" id=68]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_64.mesh" type="ArrayMesh" id=69]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_65.mesh" type="ArrayMesh" id=70]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_66.mesh" type="ArrayMesh" id=71]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_67.mesh" type="ArrayMesh" id=72]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_68.mesh" type="ArrayMesh" id=73]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_69.mesh" type="ArrayMesh" id=74]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_70.mesh" type="ArrayMesh" id=75]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_71.mesh" type="ArrayMesh" id=76]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_72.mesh" type="ArrayMesh" id=77]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_73.mesh" type="ArrayMesh" id=78]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_74.mesh" type="ArrayMesh" id=79]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_75.mesh" type="ArrayMesh" id=80]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_76.mesh" type="ArrayMesh" id=81]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_77.mesh" type="ArrayMesh" id=82]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_78.mesh" type="ArrayMesh" id=83]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_79.mesh" type="ArrayMesh" id=84]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_80.mesh" type="ArrayMesh" id=85]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_81.mesh" type="ArrayMesh" id=86]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_82.mesh" type="ArrayMesh" id=87]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_83.mesh" type="ArrayMesh" id=88]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_84.mesh" type="ArrayMesh" id=89]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_85.mesh" type="ArrayMesh" id=90]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_86.mesh" type="ArrayMesh" id=91]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_87.mesh" type="ArrayMesh" id=92]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_88.mesh" type="ArrayMesh" id=93]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_89.mesh" type="ArrayMesh" id=94]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_90.mesh" type="ArrayMesh" id=95]
+[ext_resource path="res://export/e.WaterTank.tscn" type="PackedScene" id=96]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_91.mesh" type="ArrayMesh" id=97]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_92.mesh" type="ArrayMesh" id=98]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_93.mesh" type="ArrayMesh" id=99]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_94.mesh" type="ArrayMesh" id=100]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_95.mesh" type="ArrayMesh" id=101]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_96.mesh" type="ArrayMesh" id=102]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_97.mesh" type="ArrayMesh" id=103]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_98.mesh" type="ArrayMesh" id=104]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_99.mesh" type="ArrayMesh" id=105]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_100.mesh" type="ArrayMesh" id=106]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_101.mesh" type="ArrayMesh" id=107]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_102.mesh" type="ArrayMesh" id=108]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_103.mesh" type="ArrayMesh" id=109]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_104.mesh" type="ArrayMesh" id=110]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_105.mesh" type="ArrayMesh" id=111]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_106.mesh" type="ArrayMesh" id=112]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_107.mesh" type="ArrayMesh" id=113]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_108.mesh" type="ArrayMesh" id=114]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_109.mesh" type="ArrayMesh" id=115]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_110.mesh" type="ArrayMesh" id=116]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_111.mesh" type="ArrayMesh" id=117]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_112.mesh" type="ArrayMesh" id=118]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_113.mesh" type="ArrayMesh" id=119]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_114.mesh" type="ArrayMesh" id=120]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_115.mesh" type="ArrayMesh" id=121]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_116.mesh" type="ArrayMesh" id=122]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_117.mesh" type="ArrayMesh" id=123]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_118.mesh" type="ArrayMesh" id=124]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_119.mesh" type="ArrayMesh" id=125]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_120.mesh" type="ArrayMesh" id=126]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_121.mesh" type="ArrayMesh" id=127]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_122.mesh" type="ArrayMesh" id=128]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_123.mesh" type="ArrayMesh" id=129]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_124.mesh" type="ArrayMesh" id=130]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_125.mesh" type="ArrayMesh" id=131]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_126.mesh" type="ArrayMesh" id=132]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_127.mesh" type="ArrayMesh" id=133]
+[ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_128.mesh" type="ArrayMesh" id=134]
+[ext_resource path="res://export/meshes.collision/eAH_Circle015.shape" type="Shape" id=135]
 [ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_129.mesh" type="ArrayMesh" id=136]
 [ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_130.mesh" type="ArrayMesh" id=137]
 [ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_131.mesh" type="ArrayMesh" id=138]
@@ -165,1611 +165,3366 @@
 [ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_156.mesh" type="ArrayMesh" id=163]
 [ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_157.mesh" type="ArrayMesh" id=164]
 [ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_158.mesh" type="ArrayMesh" id=165]
+[ext_resource path="res://export/e.AtriumHab-PlanterSet.tscn" type="PackedScene" id=166]
 
-[node type="Spatial" name="AtriumHabs"]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1676.37, -136.957, 49.0)
+[node name="AtriumHabs" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1676.37, -136.957, 49 )
 
 [node name="LightTube-Straight326" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1638.47, 168.129, -54.9016 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1638.47, 168.129, -54.9016)
-
-[node name="LightTube-Straight" parent="LightTube-Straight326" instance=ExtResource ( 5 )]
-
-instance = ExtResource ( 5 )
+[node name="LightTube-Straight" parent="LightTube-Straight326" instance=ExtResource( 1 )]
 
 [node name="LightTube-Straight327" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1652.12, 167.555, -62.0133 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1652.12, 167.555, -62.0133)
-
-[node name="LightTube-Straight" parent="LightTube-Straight327" instance=ExtResource ( 5 )]
-
-instance = ExtResource ( 5 )
+[node name="LightTube-Straight" parent="LightTube-Straight327" instance=ExtResource( 1 )]
 
 [node name="LightTube-Straight328" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1638.47, 168.129, -68.2064 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1638.47, 168.129, -68.2064)
-
-[node name="LightTube-Straight" parent="LightTube-Straight328" instance=ExtResource ( 5 )]
-
-instance = ExtResource ( 5 )
+[node name="LightTube-Straight" parent="LightTube-Straight328" instance=ExtResource( 1 )]
 
 [node name="LightTube-Straight329" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1620.75, 170.572, -61.9892 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1620.75, 170.572, -61.9892)
-
-[node name="LightTube-Straight" parent="LightTube-Straight329" instance=ExtResource ( 5 )]
-
-instance = ExtResource ( 5 )
+[node name="LightTube-Straight" parent="LightTube-Straight329" instance=ExtResource( 1 )]
 
 [node name="UpperHabsMainTanksTarp" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 8 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1659.24, 156.342, -41.3954)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1659.24, 156.342, -41.3954 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 2 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Radiator-BoatRad-BI-Mat025" type="Spatial" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1635.04, 161.665, -33.6676 )
 
-transform = Transform(0.5, 0.0, 0.0, 0.0, 0.5, 0.0, 0.0, 0.0, 0.5, 1635.04, 161.665, -33.6676)
-
-[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat025" instance=ExtResource ( 7 )]
-
-instance = ExtResource ( 7 )
+[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat025" instance=ExtResource( 3 )]
 
 [node name="Radiator-BoatRad-BI-Mat026" type="Spatial" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1663.02, 161.643, -34.0262 )
 
-transform = Transform(0.5, 0.0, 0.0, 0.0, 0.5, 0.0, 0.0, 0.0, 0.5, 1663.02, 161.643, -34.0262)
-
-[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat026" instance=ExtResource ( 7 )]
-
-instance = ExtResource ( 7 )
+[node name="BoatRadiator" parent="Radiator-BoatRad-BI-Mat026" instance=ExtResource( 3 )]
 
 [node name="ToiletStalls-3" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 9 )
-visible = true
-transform = Transform(1.91069e-15, -4.37114e-08, 1.0, -1.0, -4.37114e-08, 0.0, 4.37114e-08, -1.0, -4.37114e-08, 1655.22, 134.96, -49.524)
+transform = Transform( 1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 1655.22, 134.96, -49.524 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 4 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Toilet023" type="Spatial" parent="."]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 1655.46, 134.206, -48.2763 )
 
-transform = Transform(-1.0, 0.0, -3.25841e-07, 0.0, 1.0, 0.0, 3.25841e-07, 0.0, -1.0, 1655.46, 134.206, -48.2763)
-
-[node name="Toilet" parent="Toilet023" instance=ExtResource ( 4 )]
-
-instance = ExtResource ( 4 )
+[node name="Toilet" parent="Toilet023" instance=ExtResource( 5 )]
 
 [node name="Cylinder206" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 10 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1621.22, 140.36, -58.9279)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1621.22, 140.36, -58.9279 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 6 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder205" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 11 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1621.22, 139.76, -58.9279)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1621.22, 139.76, -58.9279 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 7 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
 
 [node name="Plane099" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 12 )
-visible = true
-transform = Transform(-0.452078, 0.0, -0.891978, 0.0, 1.0, 0.0, 0.891978, 0.0, -0.452078, 1631.94, 139.76, -53.5402)
+transform = Transform( -0.452078, 0, -0.891978, 0, 1, 0, 0.891978, 0, -0.452078, 1631.94, 139.76, -53.5402 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 8 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="HexpaneWindow003" type="Spatial" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1603.9, 138.743, -50.602 )
 
-transform = Transform(-4.37114e-08, 0.0, -1.0, 0.0, 1.0, 0.0, 1.0, 0.0, -4.37114e-08, 1603.9, 138.743, -50.602)
-
-[node name="HexpaneWindow" parent="HexpaneWindow003" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="HexpaneWindow" parent="HexpaneWindow003" instance=ExtResource( 9 )]
 
 [node name="HexpaneWindow002" type="Spatial" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1603.9, 138.742, -67.1178 )
 
-transform = Transform(-4.37114e-08, 0.0, -1.0, 0.0, 1.0, 0.0, 1.0, 0.0, -4.37114e-08, 1603.9, 138.742, -67.1178)
-
-[node name="HexpaneWindow" parent="HexpaneWindow002" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="HexpaneWindow" parent="HexpaneWindow002" instance=ExtResource( 9 )]
 
 [node name="HexpaneWindow001" type="Spatial" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1603.9, 141.89, -58.9337 )
 
-transform = Transform(-4.37114e-08, 0.0, -1.0, 0.0, 1.0, 0.0, 1.0, 0.0, -4.37114e-08, 1603.9, 141.89, -58.9337)
-
-[node name="HexpaneWindow" parent="HexpaneWindow001" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="HexpaneWindow" parent="HexpaneWindow001" instance=ExtResource( 9 )]
 
 [node name="HexpaneWindow" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1679.41, 147.395, -40.9638 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1679.41, 147.395, -40.9638)
-
-[node name="HexpaneWindow" parent="HexpaneWindow" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="HexpaneWindow" parent="HexpaneWindow" instance=ExtResource( 9 )]
 
 [node name="AirCirculationDuctsS001" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 13 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, 1698.03, 150.281, -34.9437)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, 1698.03, 150.281, -34.9437 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 10 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="AirCirculationDuctsN002" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 13 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1682.51, 150.281, -82.4756)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1682.51, 150.281, -82.4756 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 10 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Light-AtriumSouthSconceTop1074" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 0, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1686.05, 122.183, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(0.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1686.05, 122.183, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1073" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1695.81, 122.183, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1695.81, 122.183, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1072" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1705.47, 122.183, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1705.47, 122.183, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1071" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1705.47, 126.03, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1705.47, 126.03, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1070" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1695.81, 126.03, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1695.81, 126.03, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1069" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 0, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1686.05, 126.03, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(0.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1686.05, 126.03, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1068" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 0, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1686.05, 129.452, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(0.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1686.05, 129.452, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1067" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1695.81, 129.452, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1695.81, 129.452, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1066" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1705.47, 129.452, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1705.47, 129.452, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconce2ndFl017" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 0, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1673.05, 131.438, -34.0858 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(0.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1673.05, 131.438, -34.0858)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconce2ndFl016" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1676.23, 134.705, -34.0858 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1676.23, 134.705, -34.0858)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconce2ndFl015" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 0, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1673.05, 134.705, -34.0858 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(0.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1673.05, 134.705, -34.0858)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconce2ndFl014" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 0, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1673.05, 138.652, -34.0858 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(0.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1673.05, 138.652, -34.0858)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconce2ndFl013" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 0, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1673.05, 142.158, -34.0858 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(0.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1673.05, 142.158, -34.0858)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1065" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 0, 0, 0, 0, 0, 0, 0, -1, -4.37114e-08, 1686.05, 145.162, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0, -4.37114e-08, 1686.05, 145.162, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1064" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 1, 0, 0, 0, 0, 0, 0, -1, -4.37114e-08, 1692.05, 145.162, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0, -4.37114e-08, 1692.05, 145.162, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1063" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 1, 0, 0, 0, 0, 0, 0, -1, -4.37114e-08, 1700.51, 145.107, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0, -4.37114e-08, 1700.51, 145.107, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1062" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1705.47, 132.568, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1705.47, 132.568, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1061" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1695.81, 132.568, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1695.81, 132.568, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1060" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 0, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1686.05, 132.568, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(0.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1686.05, 132.568, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1059" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 0, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1686.05, 135.684, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(0.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1686.05, 135.684, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1058" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1695.81, 135.684, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1695.81, 135.684, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1057" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1705.47, 135.684, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1705.47, 135.684, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1056" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1705.47, 138.743, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1705.47, 138.743, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1055" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1695.81, 138.743, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1695.81, 138.743, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1054" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 0, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1686.05, 138.743, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(0.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1686.05, 138.743, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1053" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 0, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1686.05, 142.012, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(0.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1686.05, 142.012, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1052" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1695.81, 142.012, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1695.81, 142.012, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1051" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1705.47, 142.012, -34.1079 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1705.47, 142.012, -34.1079)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconce2ndFl012" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 0, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1673.05, 145.708, -34.0858 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(0.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1673.05, 145.708, -34.0858)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop2002" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1700.5, 149.029, -34.1333 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1700.5, 149.029, -34.1333)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Light-AtriumSouthSconceTop1050" type="OmniLight" parent="."]
-
-light_specular = 1.0
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1686.96, 149.029, -34.1333 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
-light_color = Color(1.0, 1.0, 1.0, 1.0)
-shadow_color = Color(0.0, 0.0, 0.0, 1.0)
-omni_range = 25.0
-transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 1686.96, 149.029, -34.1333)
-shadow_enabled = false
+light_indirect_energy = 1.0
 light_negative = false
+light_specular = 1.0
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 25.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
 
 [node name="Tunnel-MezzannineFrostedGlass002" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 14 )
-visible = true
-transform = Transform(4.98992, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 8.17622, 1659.72, 139.753, -58.9501)
+transform = Transform( 4.98992, 0, 0, 0, 1, 0, 0, 0, 8.17622, 1659.72, 139.753, -58.9501 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 11 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="TunnelMezanine-FrostLIght002" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 15 )
-visible = true
-transform = Transform(4.98992, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 8.17622, 1659.72, 139.753, -58.9501)
+transform = Transform( 4.98992, 0, 0, 0, 1, 0, 0, 0, 8.17622, 1659.72, 139.753, -58.9501 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 12 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="TunnelTopFloor-FrostedGlass002" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 16 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 6.13646, 1624.77, 142.0, -58.9501)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 6.13646, 1624.77, 142, -58.9501 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 13 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="HealthCentrifuge-Stowed002" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1621.22, 140.36, -58.9279)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1621.22, 140.36, -58.9279 )
 
 [node name="2ndFloor-FrostLight002" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 17 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1673.11, 146.998, -39.119)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1673.11, 146.998, -39.119 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 14 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="2ndFloor-FrostedGlass002" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 18 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1673.11, 146.998, -39.119)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1673.11, 146.998, -39.119 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 15 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="TopFloor-FrostedGlass002" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 19 )
-visible = true
-transform = Transform(2.07934, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1692.16, 149.281, -25.2051)
+transform = Transform( 2.07934, 0, 0, 0, 1, 0, 0, 0, 1, 1692.16, 149.281, -25.2051 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 16 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube047" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 20 )
-visible = true
-transform = Transform(9.33333, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 22.9458, 1698.64, 120.645, -63.8477)
+transform = Transform( 9.33333, 0, 0, 0, 1, 0, 0, 0, 22.9458, 1698.64, 120.645, -63.8477 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 17 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="TunnelTopFloor-FrostLight002" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 21 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 6.13646, 1624.77, 142.0, -58.9501)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 6.13646, 1624.77, 142, -58.9501 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 18 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="TopFloor-FrostLIght002" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 22 )
-visible = true
-transform = Transform(2.07934, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1692.16, 149.281, -25.2051)
+transform = Transform( 2.07934, 0, 0, 0, 1, 0, 0, 0, 1, 1692.16, 149.281, -25.2051 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 19 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Mouth-SouthHall002" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 23 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1671.95, 135.703, -58.9501)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1671.95, 135.703, -58.9501 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 20 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Shimmy-Stairs011" type="Spatial" parent="."]
+transform = Transform( 4.37114e-08, 0, 1, 0, 1, 0, 1, 0, -4.37114e-08, 1645.62, 137.745, -66.7242 )
 
-transform = Transform(4.37114e-08, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, -4.37114e-08, 1645.62, 137.745, -66.7242)
-
-[node name="Shimmy-Stairs" parent="Shimmy-Stairs011" instance=ExtResource ( 6 )]
-
-instance = ExtResource ( 6 )
+[node name="Shimmy-Stairs" parent="Shimmy-Stairs011" instance=ExtResource( 21 )]
 
 [node name="ShimmyStair-Step1011" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 24 )
-visible = true
-transform = Transform(-2.07934, 0.0, 3.25841e-07, 0.0, 1.0, 0.0, 6.77535e-07, 0.0, 1.0, 1645.68, 137.227, -66.5168)
+transform = Transform( -2.07934, 0, 3.25841e-07, 0, 1, 0, 6.77535e-07, 0, 1, 1645.68, 137.227, -66.5168 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 22 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
 
 [node name="Shimmy-Stairs010" type="Spatial" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1648.54, 142.105, -64.7422 )
 
-transform = Transform(-4.37114e-08, 0.0, 1.0, 0.0, 1.0, 0.0, -1.0, 0.0, -4.37114e-08, 1648.54, 142.105, -64.7422)
-
-[node name="Shimmy-Stairs" parent="Shimmy-Stairs010" instance=ExtResource ( 6 )]
-
-instance = ExtResource ( 6 )
+[node name="Shimmy-Stairs" parent="Shimmy-Stairs010" instance=ExtResource( 21 )]
 
 [node name="ShimmyStair-Step1010" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 25 )
-visible = true
-transform = Transform(-2.07934, 0.0, -3.25841e-07, 0.0, 1.0, 0.0, 6.77535e-07, 0.0, -1.0, 1648.61, 141.587, -64.9496)
+transform = Transform( -2.07934, 0, -3.25841e-07, 0, 1, 0, 6.77535e-07, 0, -1, 1648.61, 141.587, -64.9496 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 23 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
 
 [node name="Cube046" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 26 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1700.03, 120.846, -82.1605)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1700.03, 120.846, -82.1605 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 24 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Toilet022" type="Spatial" parent="."]
+transform = Transform( 4.37114e-08, 0, -1, 0, 1, 0, -1, 0, -4.37114e-08, 1694.98, 120.178, -82.1586 )
 
-transform = Transform(4.37114e-08, 0.0, -1.0, 0.0, 1.0, 0.0, -1.0, 0.0, -4.37114e-08, 1694.98, 120.178, -82.1586)
-
-[node name="Toilet" parent="Toilet022" instance=ExtResource ( 4 )]
-
-instance = ExtResource ( 4 )
+[node name="Toilet" parent="Toilet022" instance=ExtResource( 5 )]
 
 [node name="Toilet021" type="Spatial" parent="."]
+transform = Transform( -1.19249e-08, 0, -1, 0, 1, 0, -1, 0, 1.19249e-08, 1695.98, 120.178, -82.1586 )
 
-transform = Transform(-1.19249e-08, 0.0, -1.0, 0.0, 1.0, 0.0, -1.0, 0.0, 1.19249e-08, 1695.98, 120.178, -82.1586)
-
-[node name="Toilet" parent="Toilet021" instance=ExtResource ( 4 )]
-
-instance = ExtResource ( 4 )
+[node name="Toilet" parent="Toilet021" instance=ExtResource( 5 )]
 
 [node name="Toilet020" type="Spatial" parent="."]
+transform = Transform( -1.19249e-08, 0, -1, 0, 1, 0, -1, 0, 1.19249e-08, 1696.98, 120.178, -82.1586 )
 
-transform = Transform(-1.19249e-08, 0.0, -1.0, 0.0, 1.0, 0.0, -1.0, 0.0, 1.19249e-08, 1696.98, 120.178, -82.1586)
-
-[node name="Toilet" parent="Toilet020" instance=ExtResource ( 4 )]
-
-instance = ExtResource ( 4 )
+[node name="Toilet" parent="Toilet020" instance=ExtResource( 5 )]
 
 [node name="Toilet019" type="Spatial" parent="."]
+transform = Transform( -1.19249e-08, 0, -1, 0, 1, 0, -1, 0, 1.19249e-08, 1697.98, 120.178, -82.1586 )
 
-transform = Transform(-1.19249e-08, 0.0, -1.0, 0.0, 1.0, 0.0, -1.0, 0.0, 1.19249e-08, 1697.98, 120.178, -82.1586)
-
-[node name="Toilet" parent="Toilet019" instance=ExtResource ( 4 )]
-
-instance = ExtResource ( 4 )
+[node name="Toilet" parent="Toilet019" instance=ExtResource( 5 )]
 
 [node name="Toilet018" type="Spatial" parent="."]
+transform = Transform( -1.19249e-08, 0, -1, 0, 1, 0, -1, 0, 1.19249e-08, 1698.98, 120.178, -82.1586 )
 
-transform = Transform(-1.19249e-08, 0.0, -1.0, 0.0, 1.0, 0.0, -1.0, 0.0, 1.19249e-08, 1698.98, 120.178, -82.1586)
-
-[node name="Toilet" parent="Toilet018" instance=ExtResource ( 4 )]
-
-instance = ExtResource ( 4 )
+[node name="Toilet" parent="Toilet018" instance=ExtResource( 5 )]
 
 [node name="Plane098" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 27 )
-visible = true
-transform = Transform(7.54979e-08, -1.0, 3.25841e-07, -1.0, -7.54979e-08, 2.46003e-14, 0.0, 3.25841e-07, 1.0, 1697.67, 120.94, -82.4046)
+transform = Transform( 7.54979e-08, -1, 3.25841e-07, -1, -7.54979e-08, 2.46003e-14, 0, 3.25841e-07, 1, 1697.67, 120.94, -82.4046 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 25 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube045" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 28 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1672.7, 151.017, -40.1828)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1672.7, 151.017, -40.1828 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 26 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="wash-driers002" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 29 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1672.55, 151.209, -35.0912)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1672.55, 151.209, -35.0912 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 27 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
+material/2 = null
 
 [node name="Plane097" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 30 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1655.85, 135.929, -48.1171)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1655.85, 135.929, -48.1171 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 28 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Plane096" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 31 )
-visible = true
-transform = Transform(1.91069e-15, -4.37114e-08, -1.0, -1.0, -4.37114e-08, 0.0, 4.37114e-08, -1.0, 4.37114e-08, 1652.09, 134.96, -49.3785)
+transform = Transform( 1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, 4.37114e-08, -1, 4.37114e-08, 1652.09, 134.96, -49.3785 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 29 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder204" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 32 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1696.03, 119.473, -83.7607)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1696.03, 119.473, -83.7607 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 30 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder203" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 33 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1697.97, 119.473, -83.7607)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1697.97, 119.473, -83.7607 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 31 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="NorthEastBath-Floor002" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 34 )
-visible = true
-transform = Transform(4.12335, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1699.83, 120.349, -83.8066)
+transform = Transform( 4.12335, 0, 0, 0, 1, 0, 0, 0, 1, 1699.83, 120.349, -83.8066 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 32 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Toilet017" type="Spatial" parent="."]
+transform = Transform( -1.19249e-08, 0, -1, 0, 1, 0, -1, 0, 1.19249e-08, 1699.98, 120.178, -82.1586 )
 
-transform = Transform(-1.19249e-08, 0.0, -1.0, 0.0, 1.0, 0.0, -1.0, 0.0, 1.19249e-08, 1699.98, 120.178, -82.1586)
-
-[node name="Toilet" parent="Toilet017" instance=ExtResource ( 4 )]
-
-instance = ExtResource ( 4 )
+[node name="Toilet" parent="Toilet017" instance=ExtResource( 5 )]
 
 [node name="RadBlindBeam006" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 35 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1689.8, 156.028, -34.3582)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1689.8, 156.028, -34.3582 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 33 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube044" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 36 )
-visible = true
-transform = Transform(9.33333, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 22.9458, 1698.64, 120.645, -63.8477)
+transform = Transform( 9.33333, 0, 0, 0, 1, 0, 0, 0, 22.9458, 1698.64, 120.645, -63.8477 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 34 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube043" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 37 )
-visible = true
-transform = Transform(9.33333, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 22.9458, 1698.64, 120.645, -63.8477)
+transform = Transform( 9.33333, 0, 0, 0, 1, 0, 0, 0, 22.9458, 1698.64, 120.645, -63.8477 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 35 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube042" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 38 )
-visible = true
-transform = Transform(9.33333, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 22.9458, 1698.64, 119.613, -63.8477)
+transform = Transform( 9.33333, 0, 0, 0, 1, 0, 0, 0, 22.9458, 1698.64, 119.613, -63.8477 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 36 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube041" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 39 )
-visible = true
-transform = Transform(9.33333, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 22.9458, 1698.64, 119.613, -63.8477)
+transform = Transform( 9.33333, 0, 0, 0, 1, 0, 0, 0, 22.9458, 1698.64, 119.613, -63.8477 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 37 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube040" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 40 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 6.35804, 0.0, 0.0, 0.0, 1.0, 1701.05, 151.87, -84.5468)
+transform = Transform( 1, 0, 0, 0, 6.35804, 0, 0, 0, 1, 1701.05, 151.87, -84.5468 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 38 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube039" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 41 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1672.51, 153.157, -84.3627)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1672.51, 153.157, -84.3627 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 39 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder202" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 42 )
-visible = true
-transform = Transform(0.933333, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1686.84, 153.331, -84.5665)
+transform = Transform( 0.933333, 0, 0, 0, 1, 0, 0, 0, 1, 1686.84, 153.331, -84.5665 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 40 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube038" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 43 )
-visible = true
-transform = Transform(5.16889, 0.0, 0.0, 0.0, 0.499146, 0.0, 0.0, 0.0, 18.8538, 1682.89, 119.161, -59.6356)
+transform = Transform( 5.16889, 0, 0, 0, 0.499146, 0, 0, 0, 18.8538, 1682.89, 119.161, -59.6356 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 41 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube037" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 44 )
-visible = true
-transform = Transform(5.17773, 0.0, 0.0, 0.0, 0.5, 0.0, 0.0, 0.0, 18.886, 1682.89, 119.259, -59.6356)
+transform = Transform( 5.17773, 0, 0, 0, 0.5, 0, 0, 0, 18.886, 1682.89, 119.259, -59.6356 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 42 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Plane095" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 45 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 6.13646, 1624.77, 142.0, -58.9501)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 6.13646, 1624.77, 142, -58.9501 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 43 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Tunnel-MezzanineStairs002" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 46 )
-visible = true
-transform = Transform(4.98992, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 8.17622, 1659.72, 139.753, -58.9501)
+transform = Transform( 4.98992, 0, 0, 0, 1, 0, 0, 0, 8.17622, 1659.72, 139.753, -58.9501 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 44 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="ToiletStalls-3001" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 47 )
-visible = true
-transform = Transform(1.91069e-15, -4.37114e-08, 1.0, -1.0, -4.37114e-08, 0.0, 4.37114e-08, -1.0, -4.37114e-08, 1655.22, 134.96, -49.5738)
+transform = Transform( 1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 1655.22, 134.96, -49.5738 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 45 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Plane094" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 48 )
-visible = true
-transform = Transform(4.69043, 0.0, 0.0, 0.0, 4.69043, 0.0, 0.0, 0.0, 4.69043, 1595.65, 139.181, -59.1105)
+transform = Transform( 4.69043, 0, 0, 0, 4.69043, 0, 0, 0, 4.69043, 1595.65, 139.181, -59.1105 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 46 )
+skeleton = NodePath("..")
 
 [node name="RadBarrier-TunnnelWindows002" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 49 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 4.88801, 1572.27, 142.21, -58.9501)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 4.88801, 1572.27, 142.21, -58.9501 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 47 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
 
 [node name="Cylinder201" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 50 )
-visible = true
-transform = Transform(0.911949, 0.0, -0.410304, 0.0, 1.0, 0.0, 0.410304, 0.0, 0.911949, 1672.47, 146.842, -38.9882)
+transform = Transform( 0.911949, 0, -0.410304, 0, 1, 0, 0.410304, 0, 0.911949, 1672.47, 146.842, -38.9882 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 48 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder063" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 51 )
-visible = true
-transform = Transform(0.707411, 0.0, 0.706803, 0.0, 1.0, 0.0, -0.706803, 0.0, 0.707411, 1654.29, 137.902, -31.1332)
+transform = Transform( 0.707411, 0, 0.706803, 0, 1, 0, -0.706803, 0, 0.707411, 1654.29, 137.902, -31.1332 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 49 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder062" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 52 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1654.51, 138.006, -45.9354)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1654.51, 138.006, -45.9354 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 50 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder061" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 53 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1654.51, 137.697, -45.8677)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1654.51, 137.697, -45.8677 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 51 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube036" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 54 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 92.2773, 1672.19, 153.13, -44.0858)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 92.2773, 1672.19, 153.13, -44.0858 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 52 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube035" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 55 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1673.49, 149.989, -34.3284)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1673.49, 149.989, -34.3284 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 53 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube034" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 56 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.79809, 1673.27, 149.645, -40.8659)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.79809, 1673.27, 149.645, -40.8659 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 54 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube033" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 57 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1672.49, 147.39, -37.2298)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1672.49, 147.39, -37.2298 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 55 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
 
 [node name="Cube032" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 58 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1673.76, 147.494, -34.3023)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1673.76, 147.494, -34.3023 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 56 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
 
 [node name="Plane093" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 59 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1672.1, 147.441, -36.2012)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1672.1, 147.441, -36.2012 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 57 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Plane092" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 60 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1696.85, 134.83, -84.0123)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1696.85, 134.83, -84.0123 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 58 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Plane091" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 61 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1676.66, 149.844, -80.3625)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1676.66, 149.844, -80.3625 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 59 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder060" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 62 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1673.49, 135.293, -78.3767)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1673.49, 135.293, -78.3767 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 60 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder059" type="MeshInstance" parent="Cylinder060"]
-
-mesh = ExtResource( 63 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.00012207, -12.3364, 0.0)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -12.3364, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 61 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder058" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 64 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1678.77, 135.293, -83.7996)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1678.77, 135.293, -83.7996 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 62 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder057" type="MeshInstance" parent="Cylinder058"]
-
-mesh = ExtResource( 65 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, -3.72529e-09, 0.0, 1.0, 0.00012207, -13.0238, -7.62939e-06)
+transform = Transform( 1, 0, 0, 0, 1, 0, -3.72529e-09, 0, 1, 0.00012207, -13.0238, -7.62939e-06 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 63 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder056" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 66 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1673.93, 135.284, -83.0635)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1673.93, 135.284, -83.0635 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 64 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder055" type="MeshInstance" parent="Cylinder056"]
-
-mesh = ExtResource( 67 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 1.49012e-08, 1.0, 0.0, 0.0, 0.0, 1.0, -0.00012207, -11.51, 7.62939e-06)
+transform = Transform( 1, 0, 0, 1.49012e-08, 1, 0, 0, 0, 1, -0.00012207, -11.51, 7.62939e-06 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 65 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Circle037" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 68 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1672.14, 121.084, -84.8431)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1672.14, 121.084, -84.8431 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 66 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Circle024" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 69 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1672.14, 121.084, -84.8431)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1672.14, 121.084, -84.8431 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 67 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Circle023" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 70 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1672.14, 120.602, -84.8431)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1672.14, 120.602, -84.8431 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 68 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Circle022" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 71 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1672.14, 121.084, -84.8431)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1672.14, 121.084, -84.8431 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 69 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Plane090" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 72 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1705.79, 133.259, -35.8879)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1705.79, 133.259, -35.8879 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 70 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="shimmyMirror2002" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1672.64, 146.998, -47.9474)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1672.64, 146.998, -47.9474 )
 
 [node name="ShimmyStair-Step1008" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 73 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1673.13, 146.619, -47.9473)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1673.13, 146.619, -47.9473 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 71 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
 
 [node name="Shimmy-Stairs009" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1672.91, 143.636, -40.9766 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1672.91, 143.636, -40.9766)
-
-[node name="Shimmy-Stairs" parent="Shimmy-Stairs009" instance=ExtResource ( 6 )]
-
-instance = ExtResource ( 6 )
+[node name="Shimmy-Stairs" parent="Shimmy-Stairs009" instance=ExtResource( 21 )]
 
 [node name="ShimmyStair-Step1009" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 74 )
-visible = true
-transform = Transform(-9.08909e-08, 0.0, 1.0, 0.0, 1.0, 0.0, -2.07934, 0.0, -4.37114e-08, 1673.11, 143.118, -40.9139)
+transform = Transform( -9.08909e-08, 0, 1, 0, 1, 0, -2.07934, 0, -4.37114e-08, 1673.11, 143.118, -40.9139 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 72 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
 
 [node name="Plane089" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 75 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1654.34, 137.574, -47.2232)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1654.34, 137.574, -47.2232 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 73 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Shimmy-Stairs008" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1672.9, 147.127, -47.9727 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1672.9, 147.127, -47.9727)
-
-[node name="Shimmy-Stairs" parent="Shimmy-Stairs008" instance=ExtResource ( 6 )]
-
-instance = ExtResource ( 6 )
+[node name="Shimmy-Stairs" parent="Shimmy-Stairs008" instance=ExtResource( 21 )]
 
 [node name="ShimmyStair-Steps001" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 76 )
-visible = true
-transform = Transform(-9.08909e-08, 0.0, 1.0, 0.0, 1.0, 0.0, -2.07934, 0.0, -4.37114e-08, 1673.14, 149.894, -43.968)
+transform = Transform( -9.08909e-08, 0, 1, 0, 1, 0, -2.07934, 0, -4.37114e-08, 1673.14, 149.894, -43.968 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 74 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
 
 [node name="Plane088" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 77 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1705.79, 123.671, -35.8879)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1705.79, 123.671, -35.8879 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 75 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Plane087" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 78 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1705.79, 126.866, -35.8879)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1705.79, 126.866, -35.8879 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 76 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Plane086" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 79 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1705.79, 130.059, -35.8879)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1705.79, 130.059, -35.8879 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 77 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Plane085" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 80 )
-visible = true
-transform = Transform(1.80009, 0.0, 0.0, 0.0, 1.80009, 0.0, 0.0, 0.0, 1.80009, 1705.79, 133.259, -35.8879)
+transform = Transform( 1.80009, 0, 0, 0, 1.80009, 0, 0, 0, 1.80009, 1705.79, 133.259, -35.8879 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 78 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Plane084" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 81 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1705.79, 136.448, -35.8879)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1705.79, 136.448, -35.8879 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 79 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Plane044" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 82 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1705.79, 139.645, -35.8879)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1705.79, 139.645, -35.8879 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 80 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Plane043" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 83 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1705.79, 142.839, -35.8879)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1705.79, 142.839, -35.8879 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 81 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Plane042" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 84 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1678.85, 135.574, -35.1062)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1678.85, 135.574, -35.1062 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 82 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Plane041" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 85 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1675.46, 140.0, -37.2777)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1675.46, 140, -37.2777 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 83 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Plane040" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 86 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1675.37, 143.507, -35.1934)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1675.37, 143.507, -35.1934 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 84 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Plane039" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 87 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1705.79, 146.037, -35.8879)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1705.79, 146.037, -35.8879 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 85 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Plane038" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 88 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1673.11, 146.998, -39.119)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1673.11, 146.998, -39.119 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 86 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Stair-Cables-short002" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 89 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1690.95, 138.774, -38.0971)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1690.95, 138.774, -38.0971 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 87 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Stair-Cables005" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 90 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1705.44, 138.775, -38.9847)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1705.44, 138.775, -38.9847 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 88 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Stair-Cables004" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 91 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1686.81, 138.775, -38.9847)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1686.81, 138.775, -38.9847 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 89 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder054" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 92 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1654.42, 137.859, -46.0019)
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 1654.42, 137.859, -46.0019 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 90 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder053" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 93 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1654.3, 137.938, -45.9157)
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 1654.3, 137.938, -45.9157 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 91 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder052" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 94 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1654.51, 138.006, -45.9354)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1654.51, 138.006, -45.9354 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 92 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder051" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 95 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1654.36, 137.843, -46.0196)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1654.36, 137.843, -46.0196 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 93 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder050" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 95 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1654.47, 137.833, -46.0244)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1654.47, 137.833, -46.0244 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 93 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder049" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 96 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1654.41, 143.59, -38.2166)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1654.41, 143.59, -38.2166 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 94 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder048" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 97 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1654.41, 150.595, -38.333)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1654.41, 150.595, -38.333 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 95 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="WaterTank006" type="Spatial" parent="."]
+transform = Transform( -1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 1661.16, 152.372, -48.0754 )
 
-transform = Transform(-1.74846e-08, 0.0, -0.4, 0.0, 0.4, 0.0, 0.4, 0.0, -1.74846e-08, 1661.16, 152.372, -48.0754)
-
-[node name="WaterTank" parent="WaterTank006" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
+[node name="WaterTank" parent="WaterTank006" instance=ExtResource( 96 )]
 
 [node name="WaterTank005" type="Spatial" parent="."]
+transform = Transform( -1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 1661.16, 152.372, -42.8791 )
 
-transform = Transform(-1.74846e-08, 0.0, -0.4, 0.0, 0.4, 0.0, 0.4, 0.0, -1.74846e-08, 1661.16, 152.372, -42.8791)
-
-[node name="WaterTank" parent="WaterTank005" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )
+[node name="WaterTank" parent="WaterTank005" instance=ExtResource( 96 )]
 
 [node name="Cylinder047" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 98 )
-visible = true
-transform = Transform(1.5, 0.0, 0.0, 0.0, 1.875, 0.0, 0.0, 0.0, 1.5, 1660.49, 147.385, -30.5572)
+transform = Transform( 1.5, 0, 0, 0, 1.875, 0, 0, 0, 1.5, 1660.49, 147.385, -30.5572 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 97 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder046" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 99 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1668.47, 148.705, -36.5512)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1668.47, 148.705, -36.5512 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 98 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder045" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 100 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, -4.37114e-08, -1.0, 0.0, 1.0, -4.37114e-08, 1674.67, 149.149, -33.5673)
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1674.67, 149.149, -33.5673 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 99 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
+material/2 = null
 
 [node name="Plane037" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 101 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.36768, 1656.06, 132.01, -56.6418)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.36768, 1656.06, 132.01, -56.6418 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 100 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder044" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 102 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, -6.55671e-08, -1.0, 0.0, 1.5, -4.37114e-08, 1653.59, 132.538, -56.2566)
+transform = Transform( 1, 0, 0, 0, -6.55671e-08, -1, 0, 1.5, -4.37114e-08, 1653.59, 132.538, -56.2566 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 101 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder043" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 103 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1653.19, 133.372, -47.9662)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1653.19, 133.372, -47.9662 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 102 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder042" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 104 )
-visible = true
-transform = Transform(-4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 0.0, 0.0, 0.0, 1.0, 1653.6, 132.815, -48.0129)
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1653.6, 132.815, -48.0129 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 103 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Toilet016" type="Spatial" parent="."]
+transform = Transform( -1, 0, 6.51683e-07, 0, 1, 0, 6.51683e-07, 0, 1, 1655.46, 134.206, -47.1637 )
 
-transform = Transform(-1.0, 0.0, 6.51683e-07, 0.0, 1.0, 0.0, 6.51683e-07, 0.0, 1.0, 1655.46, 134.206, -47.1637)
-
-[node name="Toilet" parent="Toilet016" instance=ExtResource ( 4 )]
-
-instance = ExtResource ( 4 )
+[node name="Toilet" parent="Toilet016" instance=ExtResource( 5 )]
 
 [node name="Toilet015" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1651.85, 134.206, -48.9587 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1651.85, 134.206, -48.9587)
-
-[node name="Toilet" parent="Toilet015" instance=ExtResource ( 4 )]
-
-instance = ExtResource ( 4 )
+[node name="Toilet" parent="Toilet015" instance=ExtResource( 5 )]
 
 [node name="Toilet014" type="Spatial" parent="."]
+transform = Transform( 1, 0, 6.51683e-07, 0, 1, 0, -6.51683e-07, 0, 1, 1651.85, 134.206, -47.9587 )
 
-transform = Transform(1.0, 0.0, 6.51683e-07, 0.0, 1.0, 0.0, -6.51683e-07, 0.0, 1.0, 1651.85, 134.206, -47.9587)
-
-[node name="Toilet" parent="Toilet014" instance=ExtResource ( 4 )]
-
-instance = ExtResource ( 4 )
+[node name="Toilet" parent="Toilet014" instance=ExtResource( 5 )]
 
 [node name="Toilet013" type="Spatial" parent="."]
+transform = Transform( 1, 0, 6.51683e-07, 0, 1, 0, -6.51683e-07, 0, 1, 1651.85, 134.206, -46.9587 )
 
-transform = Transform(1.0, 0.0, 6.51683e-07, 0.0, 1.0, 0.0, -6.51683e-07, 0.0, 1.0, 1651.85, 134.206, -46.9587)
-
-[node name="Toilet" parent="Toilet013" instance=ExtResource ( 4 )]
-
-instance = ExtResource ( 4 )
+[node name="Toilet" parent="Toilet013" instance=ExtResource( 5 )]
 
 [node name="Cube031" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 105 )
-visible = true
-transform = Transform(15.3056, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, 1636.17, 132.184, -53.5602)
+transform = Transform( 15.3056, 0, 0, 0, 1, 0, 0, 0, -1, 1636.17, 132.184, -53.5602 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 104 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube030" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 106 )
-visible = true
-transform = Transform(4.31966, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, -1.0, 1648.69, 132.971, -48.4356)
+transform = Transform( 4.31966, 0, 0, 0, 1, 0, 0, 0, -1, 1648.69, 132.971, -48.4356 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 105 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Stair005" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 107 )
-visible = true
-transform = Transform(0.857143, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1686.93, 128.503, -38.0971)
+transform = Transform( 0.857143, 0, 0, 0, 1, 0, 0, 0, 1, 1686.93, 128.503, -38.0971 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 106 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Stair004" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 108 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1687.57, 121.275, -39.7481)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1687.57, 121.275, -39.7481 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 107 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
 
 [node name="AtriumWalls005" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 109 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1689.42, 136.189, -56.8838)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1689.42, 136.189, -56.8838 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 108 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="WhippleGlazingAtrium002" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 110 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1689.8, 115.371, -34.3582)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1689.8, 115.371, -34.3582 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 109 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="GlazingAtriuim002" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 111 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1689.8, 115.429, -34.3582)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1689.8, 115.429, -34.3582 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 110 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="RadBlindBeam005" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 112 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1689.8, 115.371, -34.4832)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1689.8, 115.371, -34.4832 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 111 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube029" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 113 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1708.11, 154.609, -59.0847)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1708.11, 154.609, -59.0847 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 112 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Plane036" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 114 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1708.05, 124.89, -36.4781)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1708.05, 124.89, -36.4781 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 113 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
 
 [node name="Plane035" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 115 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1712.24, 123.201, -38.9452)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1712.24, 123.201, -38.9452 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 114 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Plane034" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 116 )
-visible = true
-transform = Transform(3.59589, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 25.4918, 1711.22, 123.201, -59.5444)
+transform = Transform( 3.59589, 0, 0, 0, 1, 0, 0, 0, 25.4918, 1711.22, 123.201, -59.5444 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 115 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Circle021" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 117 )
-visible = true
-transform = Transform(-4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 0.0, 0.0, 0.0, 1.0, 1694.97, 152.405, -19.9202)
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1694.97, 152.405, -19.9202 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 116 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="WindowWellandShield002" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 118 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1692.22, 156.967, -21.5149)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1692.22, 156.967, -21.5149 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 117 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
 
 [node name="Circle020" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 119 )
-visible = true
-transform = Transform(-4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 0.0, 0.0, 0.0, 1.0, 1694.97, 152.405, -19.9202)
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1694.97, 152.405, -19.9202 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 118 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Circle019" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 120 )
-visible = true
-transform = Transform(-4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 0.0, 0.0, 0.0, 1.0, 1696.2, 152.405, -19.9202)
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1696.2, 152.405, -19.9202 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 119 )
+skeleton = NodePath("..")
 
 [node name="Circle018" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 121 )
-visible = true
-transform = Transform(-4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 0.0, 0.0, 0.0, 1.0, 1696.2, 152.405, -19.9202)
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1696.2, 152.405, -19.9202 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 120 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Circle017" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 122 )
-visible = true
-transform = Transform(-4.37114e-08, 1.0, 0.0, -1.0, -4.37114e-08, 0.0, 0.0, 0.0, 1.0, 1696.2, 152.405, -19.9202)
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1696.2, 152.405, -19.9202 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 121 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="PlanterFrames002" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 123 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1697.48, 140.462, -61.7932)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1697.48, 140.462, -61.7932 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 122 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube028" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 124 )
-visible = true
-transform = Transform(2.07934, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1692.16, 149.281, -25.2051)
+transform = Transform( 2.07934, 0, 0, 0, 1, 0, 0, 0, 1, 1692.16, 149.281, -25.2051 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 123 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube027" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 125 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 0.0825749, 0.0, 0.0, 0.0, 1.0, 1692.19, 150.276, -12.8284)
+transform = Transform( 1, 0, 0, 0, 0.0825749, 0, 0, 0, 1, 1692.19, 150.276, -12.8284 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 124 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder041" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 126 )
-visible = true
-transform = Transform(-4.37114e-08, 0.0, 1.0, 0.0, 1.0, 0.0, -1.0, 0.0, -4.37114e-08, 1692.22, 153.197, -18.8803)
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1692.22, 153.197, -18.8803 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 125 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="AirlockRibs--South002" type="MeshInstance" parent="Cylinder041"]
-
-mesh = ExtResource( 127 )
-visible = true
-transform = Transform(1.0, 0.0, -6.07727e-11, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -0.000133514, 0.0, 0.0)
+transform = Transform( 1, 0, -6.07727e-11, 0, 1, 0, 0, 0, 1, -0.000133514, 0, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 126 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="AirlockW-DoorOutside004" type="MeshInstance" parent="Cylinder041"]
-
-mesh = ExtResource( 128 )
-visible = true
-transform = Transform(0.758863, 0.0, -5.3166e-06, 0.0, 0.888519, 0.0, 5.57868e-06, 0.0, 0.723206, 5.07457, -0.497238, 0.00012207)
+transform = Transform( 0.758863, 0, -5.3166e-06, 0, 0.888519, 0, 5.57868e-06, 0, 0.723206, 5.07457, -0.497238, 0.00012207 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 127 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="AirlockW-DoorOutside005" type="MeshInstance" parent="Cylinder041"]
-
-mesh = ExtResource( 128 )
-visible = true
-transform = Transform(0.758863, 0.0, -5.3166e-06, 0.0, 0.888519, 0.0, 5.57868e-06, 0.0, 0.723206, -4.66542, -0.497238, 0.0)
+transform = Transform( 0.758863, 0, -5.3166e-06, 0, 0.888519, 0, 5.57868e-06, 0, 0.723206, -4.66542, -0.497238, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 127 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="AirlockW-Hardware1008" type="MeshInstance" parent="Cylinder041"]
-
-mesh = ExtResource( 129 )
-visible = true
-transform = Transform(-1.0, 0.0, -7.35143e-06, 0.0, 1.0, 0.0, -7.35137e-06, 0.0, 1.0, -4.90895, -1.52139, -0.91626)
+transform = Transform( -1, 0, -7.35143e-06, 0, 1, 0, -7.35137e-06, 0, 1, -4.90895, -1.52139, -0.91626 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 128 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="AirlockW-Hardware1009" type="MeshInstance" parent="Cylinder041"]
-
-mesh = ExtResource( 129 )
-visible = true
-transform = Transform(1.0, 0.0, 7.35143e-06, 0.0, 1.0, 0.0, 7.35137e-06, 0.0, -1.0, 5.35729, -1.52139, 0.91626)
+transform = Transform( 1, 0, 7.35143e-06, 0, 1, 0, 7.35137e-06, 0, -1, 5.35729, -1.52139, 0.91626 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 128 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="AirlockW-Hardware1010" type="MeshInstance" parent="Cylinder041"]
-
-mesh = ExtResource( 129 )
-visible = true
-transform = Transform(1.0, 0.0, -7.35143e-06, 0.0, 1.0, 0.0, 7.35137e-06, 0.0, 1.0, -4.33363, -1.52139, -0.91626)
+transform = Transform( 1, 0, -7.35143e-06, 0, 1, 0, 7.35137e-06, 0, 1, -4.33363, -1.52139, -0.91626 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 128 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="AirlockW-Hardware1011" type="MeshInstance" parent="Cylinder041"]
-
-mesh = ExtResource( 129 )
-visible = true
-transform = Transform(-1.0, 0.0, 7.35143e-06, 0.0, 1.0, 0.0, -7.35137e-06, 0.0, -1.0, 4.80223, -1.52139, 0.91626)
+transform = Transform( -1, 0, 7.35143e-06, 0, 1, 0, -7.35137e-06, 0, -1, 4.80223, -1.52139, 0.91626 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 128 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube014" type="MeshInstance" parent="Cylinder041"]
-
-mesh = ExtResource( 130 )
-visible = true
-transform = Transform(4.92968, 0.0, -6.10934e-12, 0.0, 0.418793, 0.0, 0.0, 0.0, 0.100524, -0.000133514, -3.66753, 2.04736)
+transform = Transform( 4.92968, 0, -6.10934e-12, 0, 0.418793, 0, 0, 0, 0.100524, -0.000133514, -3.66753, 2.04736 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 129 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube015" type="MeshInstance" parent="Cylinder041"]
-
-mesh = ExtResource( 130 )
-visible = true
-transform = Transform(4.92968, 0.0, 6.10934e-12, 0.0, 0.418793, 0.0, 0.0, 0.0, -0.100524, -0.000133514, -3.66753, -2.04749)
+transform = Transform( 4.92968, 0, 6.10934e-12, 0, 0.418793, 0, 0, 0, -0.100524, -0.000133514, -3.66753, -2.04749 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 129 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder038" type="MeshInstance" parent="Cylinder041"]
-
-mesh = ExtResource( 131 )
-visible = true
-transform = Transform(1.0, 0.0, -6.07727e-11, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 4.99987, 0.0, 0.0)
+transform = Transform( 1, 0, -6.07727e-11, 0, 1, 0, 0, 0, 1, 4.99987, 0, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 130 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder039" type="MeshInstance" parent="Cylinder041"]
-
-mesh = ExtResource( 132 )
-visible = true
-transform = Transform(1.0, 0.0, -6.07727e-11, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 4.99987, 0.0, -0.164307)
+transform = Transform( 1, 0, -6.07727e-11, 0, 1, 0, 0, 0, 1, 4.99987, 0, -0.164307 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 131 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder040" type="MeshInstance" parent="Cylinder041"]
-
-mesh = ExtResource( 133 )
-visible = true
-transform = Transform(1.0, 0.0, -6.07727e-11, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 7.99987, 0.0, 0.0)
+transform = Transform( 1, 0, -6.07727e-11, 0, 1, 0, 0, 0, 1, 7.99987, 0, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 132 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Circle016" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 134 )
-visible = true
-transform = Transform(2.00304, 0.0, 0.0, 0.0, 1.01332, 0.0, 0.0, 0.0, 1.01332, 1672.32, 135.703, -58.9501)
+transform = Transform( 2.00304, 0, 0, 0, 1.01332, 0, 0, 0, 1.01332, 1672.32, 135.703, -58.9501 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 133 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Circle015" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.08263, 1671.95, 135.703, -58.9501 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 134 )
+skeleton = NodePath("..")
+material/0 = null
 
-mesh = ExtResource( 135 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.08263, 1671.95, 135.703, -58.9501)
+[node name="StaticBody" type="StaticBody" parent="Circle015"]
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Circle015/StaticBody"]
+shape = ExtResource( 135 )
+disabled = false
 
 [node name="TunnelCornerPipes002" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1628.16, 133.752, -72.6811 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 136 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1628.16, 133.752, -72.6811)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Circle014" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1666.45, 135.703, -58.9501 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 137 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1666.45, 135.703, -58.9501)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder037" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1628.16, 133.752, -45.2192 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 136 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1628.16, 133.752, -45.2192)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="TunnelWalls002" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1671.95, 135.703, -58.9501 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 138 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1671.95, 135.703, -58.9501)
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
 
 [node name="AnchorBeamAtrium002" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1707.37, 119.174, -58.9406 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 139 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1707.37, 119.174, -58.9406)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube013" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1689.42, 136.189, -56.8838 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 140 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1689.42, 136.189, -56.8838)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="AtriumWalls004" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1689.42, 136.189, -56.8838 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 141 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1689.42, 136.189, -56.8838)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Template-AnchorBolt004" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1707.37, 118.827, -32.5636 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 142 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1707.37, 118.827, -32.5636)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="AnchorBolt002" type="MeshInstance" parent="Template-AnchorBolt004"]
-
+transform = Transform( 1, 0, 9.38656e-10, 0, 1, 0, -9.38656e-10, 0, 1, 0, 0, -3.8147e-06 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 143 )
-visible = true
-transform = Transform(1.0, 0.0, 9.38656e-10, 0.0, 1.0, 0.0, -9.38656e-10, 0.0, 1.0, 0.0, 0.0, -3.8147e-06)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Toilet-Floor001" type="MeshInstance" parent="."]
-
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 1655.46, 134.38, -49.22 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 144 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, -8.74228e-08, 0.0, 8.74228e-08, 1.0, 1655.46, 134.38, -49.22)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Toilet-SeatUpper001" type="MeshInstance" parent="."]
-
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 1655.43, 134.868, -49.22 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 145 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, -8.74228e-08, 0.0, 8.74228e-08, 1.0, 1655.43, 134.868, -49.22)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Toilet-SeatLower001" type="MeshInstance" parent="."]
-
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 1655.43, 134.868, -49.22 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 146 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, -8.74228e-08, 0.0, 8.74228e-08, 1.0, 1655.43, 134.868, -49.22)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Toilet-HeatPump001" type="MeshInstance" parent="."]
-
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 1655.7, 134.221, -49.2207 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 147 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, -8.74228e-08, 0.0, 8.74228e-08, 1.0, 1655.7, 134.221, -49.2207)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Toilet-pipes001" type="MeshInstance" parent="."]
-
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 1655.63, 134.042, -49.2181 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 148 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, -8.74228e-08, 0.0, 8.74228e-08, 1.0, 1655.63, 134.042, -49.2181)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Toilet-AirFilter001" type="MeshInstance" parent="."]
-
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 1655.28, 133.946, -49.0167 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 149 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, -8.74228e-08, 0.0, 8.74228e-08, 1.0, 1655.28, 133.946, -49.0167)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Toilet-Shelf001" type="MeshInstance" parent="."]
-
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 1655.3, 134.168, -49.2203 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 150 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, -8.74228e-08, 0.0, 8.74228e-08, 1.0, 1655.3, 134.168, -49.2203)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Toilet-PeeTreat001" type="MeshInstance" parent="."]
-
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 1655.4, 134.218, -49.22 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 151 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, -8.74228e-08, 0.0, 8.74228e-08, 1.0, 1655.4, 134.218, -49.22)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Toilet-PeeTank001" type="MeshInstance" parent="."]
-
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 1655.28, 133.882, -49.3724 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 152 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, -8.74228e-08, 0.0, 8.74228e-08, 1.0, 1655.28, 133.882, -49.3724)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Toilet-Bidet001" type="MeshInstance" parent="."]
-
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 1655.46, 134.38, -49.22 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 153 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, -8.74228e-08, 0.0, 8.74228e-08, 1.0, 1655.46, 134.38, -49.22)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Toilet-pipe001" type="MeshInstance" parent="."]
-
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 1655.54, 133.945, -49.0645 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 154 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, -8.74228e-08, 0.0, 8.74228e-08, 1.0, 1655.54, 133.945, -49.0645)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Toilet-BidetSwitch001" type="MeshInstance" parent="."]
-
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 1655.43, 134.798, -49.0891 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 155 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, -8.74228e-08, 0.0, 8.74228e-08, 1.0, 1655.43, 134.798, -49.0891)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="ToiletPedal001" type="MeshInstance" parent="."]
-
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 1655.43, 134.32, -49.0855 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 156 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, -8.74228e-08, 0.0, 8.74228e-08, 1.0, 1655.43, 134.32, -49.0855)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="PooFlap-Bottom001" type="MeshInstance" parent="."]
-
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 1655.43, 134.227, -49.22 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 157 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, -8.74228e-08, 0.0, 8.74228e-08, 1.0, 1655.43, 134.227, -49.22)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="PooFlap-Top001" type="MeshInstance" parent="."]
-
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 1655.43, 134.798, -49.0791 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 158 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, -8.74228e-08, 0.0, 8.74228e-08, 1.0, 1655.43, 134.798, -49.0791)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="PooFlap-Handle001" type="MeshInstance" parent="."]
-
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 1655.43, 134.798, -49.0691 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 159 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, -8.74228e-08, 0.0, 8.74228e-08, 1.0, 1655.43, 134.798, -49.0691)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="ToiletMain001" type="MeshInstance" parent="."]
-
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 1655.45, 134.367, -49.22 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 160 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, -8.74228e-08, 0.0, 8.74228e-08, 1.0, 1655.45, 134.367, -49.22)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Toilet-Frame001" type="MeshInstance" parent="."]
-
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 1655.51, 133.635, -49.0976 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 161 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, -8.74228e-08, 0.0, 8.74228e-08, 1.0, 1655.51, 133.635, -49.0976)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="WheelSmall-FecalTank001" type="MeshInstance" parent="."]
-
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 1655.51, 133.635, -49.0976 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 162 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, -8.74228e-08, 0.0, 8.74228e-08, 1.0, 1655.51, 133.635, -49.0976)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Wheel-FecalTank001" type="MeshInstance" parent="."]
-
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 1655.5, 133.631, -49.1055 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 163 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, -8.74228e-08, 0.0, 8.74228e-08, 1.0, 1655.5, 133.631, -49.1055)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Motor-FecalTank001" type="MeshInstance" parent="."]
-
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 1655.5, 133.631, -49.1055 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 164 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, -8.74228e-08, 0.0, 8.74228e-08, 1.0, 1655.5, 133.631, -49.1055)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Toilet-FecalTank001" type="MeshInstance" parent="."]
-
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 1655.67, 133.764, -49.22 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 165 )
-visible = true
-transform = Transform(-1.0, 0.0, 0.0, 0.0, 1.0, -8.74228e-08, 0.0, 8.74228e-08, 1.0, 1655.67, 133.764, -49.22)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="AtriumHab-PlanterSet" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1697.48, 139.368, -59.4588 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1697.48, 139.368, -59.4588)
-
-[node name="AtriumHab-PlanterSet" parent="AtriumHab-PlanterSet" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="AtriumHab-PlanterSet" parent="AtriumHab-PlanterSet" instance=ExtResource( 166 )]
 
 [node name="HexpaneWindow008" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1679.41, 139.652, -40.9638 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1679.41, 139.652, -40.9638)
-
-[node name="HexpaneWindow" parent="HexpaneWindow008" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="HexpaneWindow" parent="HexpaneWindow008" instance=ExtResource( 9 )]
 
 [node name="Shimmy-Stairs" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1672.9, 150.41, -43.9941 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1672.9, 150.41, -43.9941)
-
-[node name="Shimmy-Stairs" parent="Shimmy-Stairs" instance=ExtResource ( 6 )]
-
-instance = ExtResource ( 6 )
+[node name="Shimmy-Stairs" parent="Shimmy-Stairs" instance=ExtResource( 21 )]
 
 [node name="WaterTank001" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1654.41, 148.37, -38.333 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1654.41, 148.37, -38.333)
+[node name="WaterTank" parent="WaterTank001" instance=ExtResource( 96 )]
 
-[node name="WaterTank" parent="WaterTank001" instance=ExtResource ( 3 )]
-
-instance = ExtResource ( 3 )

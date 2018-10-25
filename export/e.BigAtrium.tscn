@@ -1,6 +1,6 @@
-[gd_scene load_steps=1 format=2]
+[gd_scene load_steps=18 format=2]
 
-[ext_resource id=1 path="e.HexpaneWindow.tscn" type="PackedScene"]
+[ext_resource path="res://export/e.HexpaneWindow.tscn" type="PackedScene" id=1]
 [ext_resource path="res://export/meshes/m_e_BigAtrium_escn_1.mesh" type="ArrayMesh" id=2]
 [ext_resource path="res://export/meshes/m_e_BigAtrium_escn_2.mesh" type="ArrayMesh" id=3]
 [ext_resource path="res://export/meshes/m_e_BigAtrium_escn_3.mesh" type="ArrayMesh" id=4]
@@ -11,131 +11,279 @@
 [ext_resource path="res://export/meshes/m_e_BigAtrium_escn_8.mesh" type="ArrayMesh" id=9]
 [ext_resource path="res://export/meshes/m_e_BigAtrium_escn_9.mesh" type="ArrayMesh" id=10]
 [ext_resource path="res://export/meshes/m_e_BigAtrium_escn_10.mesh" type="ArrayMesh" id=11]
-[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_11.mesh" type="ArrayMesh" id=12]
-[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_12.mesh" type="ArrayMesh" id=13]
-[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_13.mesh" type="ArrayMesh" id=14]
-[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_14.mesh" type="ArrayMesh" id=15]
+[ext_resource path="res://export/meshes.collision/eBA_Plane002.shape" type="Shape" id=12]
+[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_11.mesh" type="ArrayMesh" id=13]
+[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_12.mesh" type="ArrayMesh" id=14]
+[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_13.mesh" type="ArrayMesh" id=15]
+[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_14.mesh" type="ArrayMesh" id=16]
 
-[node type="Spatial" name="BigAtrium"]
+[sub_resource type="PlaneShape" id=1]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1676.84, -133.525, 185.014)
+margin = 0.04
+plane = Plane( 0, 1, 0, 0 )
+_sections_unfolded = [ "Resource" ]
+
+[node name="BigAtrium" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1676.84, -133.525, 185.014 )
 
 [node name="HexpaneWindow007" type="Spatial" parent="."]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 1701.04, 134.557, -216.556 )
 
-transform = Transform(-1.0, 0.0, -3.25841e-07, 0.0, 1.0, 0.0, 3.25841e-07, 0.0, -1.0, 1701.04, 134.557, -216.556)
-
-[node name="HexpaneWindow" parent="HexpaneWindow007" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="HexpaneWindow" parent="HexpaneWindow007" instance=ExtResource( 1 )]
 
 [node name="HexpaneWindow006" type="Spatial" parent="."]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 1701.04, 142.299, -216.555 )
 
-transform = Transform(-1.0, 0.0, -3.25841e-07, 0.0, 1.0, 0.0, 3.25841e-07, 0.0, -1.0, 1701.04, 142.299, -216.555)
-
-[node name="HexpaneWindow" parent="HexpaneWindow006" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="HexpaneWindow" parent="HexpaneWindow006" instance=ExtResource( 1 )]
 
 [node name="HexpaneWindow005" type="Spatial" parent="."]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 1653.03, 137.979, -216.537 )
 
-transform = Transform(-1.0, 0.0, -3.25841e-07, 0.0, 1.0, 0.0, 3.25841e-07, 0.0, -1.0, 1653.03, 137.979, -216.537)
-
-[node name="HexpaneWindow" parent="HexpaneWindow005" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="HexpaneWindow" parent="HexpaneWindow005" instance=ExtResource( 1 )]
 
 [node name="HexpaneWindow004" type="Spatial" parent="."]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 1653.03, 145.717, -216.537 )
 
-transform = Transform(-1.0, 0.0, -3.25841e-07, 0.0, 1.0, 0.0, 3.25841e-07, 0.0, -1.0, 1653.03, 145.717, -216.537)
-
-[node name="HexpaneWindow" parent="HexpaneWindow004" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="HexpaneWindow" parent="HexpaneWindow004" instance=ExtResource( 1 )]
 
 [node name="BigAtriumWalls002" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1674.23, 130.498, -146.01 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 2 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1674.23, 130.498, -146.01)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="RadBlindBeam004" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1698.21, 151.229, -127.88 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 3 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1698.21, 151.229, -127.88)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="RadBlindBeam003" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.5, 1698.21, 110.569, -127.88 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 4 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.5, 1698.21, 110.569, -127.88)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="EarthViewBox3000" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1702.09, 145.559, -232.527 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 5 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1702.09, 145.559, -232.527)
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
 
 [node name="EarthViewBox2000" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1654.14, 149.007, -232.512 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 6 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1654.14, 149.007, -232.512)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="GlazingBigAtriumEast000" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1698.21, 110.596, -127.918 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 7 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1698.21, 110.596, -127.918)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube001" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1716.42, 149.82, -176.221 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 8 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1716.42, 149.82, -176.221)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="GlazingBigAtriumWest000" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1650.27, 114.085, -128.301 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 9 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1650.27, 114.085, -128.301)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cube000" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1668.49, 153.299, -176.221 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 10 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1668.49, 153.299, -176.221)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Plane002" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1674.23, 106.604, -175.538 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 11 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1674.23, 106.604, -175.538)
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
+
+[node name="StaticBody" type="StaticBody" parent="Plane002"]
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Plane002/StaticBody"]
+shape = ExtResource( 12 )
+disabled = false
 
 [node name="Plane001" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.865385, 0, 0, 0, 1, 1665.93, 126.066, -174.629 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 13 )
+skeleton = NodePath("..")
+material/0 = null
 
-mesh = ExtResource( 12 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 0.865385, 0.0, 0.0, 0.0, 1.0, 1665.93, 126.066, -174.629)
+[node name="StaticBody" type="StaticBody" parent="Plane001"]
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Plane001/StaticBody"]
+transform = Transform( -1.31134e-07, -1, 0, 3, -4.37114e-08, 0, 0, 0, 3, 0, 0, 0 )
+shape = SubResource( 1 )
+disabled = false
+_sections_unfolded = [ "Matrix", "Transform" ]
 
 [node name="Passage-Mouth-South-BigAtrium-FirstGalley" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 13 )
-visible = true
-transform = Transform(0.993099, 0.117277, 5.12634e-09, 0.0, 4.37114e-08, -1.0, 0.117277, -0.993099, -4.34097e-08, 1664.18, 123.708, -223.989)
+transform = Transform( 0.993099, 0.117277, 5.12634e-09, 0, 4.37114e-08, -1, 0.117277, -0.993099, -4.34097e-08, 1664.18, 123.708, -223.989 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 14 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="BigAtrium001" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1662.86, 123.266, -223.941)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1662.86, 123.266, -223.941 )
 
 [node name="BigAtriumWalls000" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 14 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1649.78, 134.513, -246.382)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1649.78, 134.513, -246.382 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 15 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="BigAtriumCenterBeam001" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1674.25, 149.552, -135.493 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 16 )
+skeleton = NodePath("..")
+material/0 = null
 
-mesh = ExtResource( 15 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1674.25, 149.552, -135.493)
