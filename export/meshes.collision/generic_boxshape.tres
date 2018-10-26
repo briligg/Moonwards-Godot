@@ -1,0 +1,7 @@
+[gd_resource type="BoxShape" format=2]
+
+[resource]
+
+margin = 0.04
+extents = Vector3( 0.282513, 1.20821, 0.60215 )
+

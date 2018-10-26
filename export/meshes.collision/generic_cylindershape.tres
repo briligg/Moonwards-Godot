@@ -1,0 +1,8 @@
+[gd_resource type="CylinderShape" format=2]
+
+[resource]
+
+margin = 0.04
+radius = 1.41445
+height = 3.57573
+

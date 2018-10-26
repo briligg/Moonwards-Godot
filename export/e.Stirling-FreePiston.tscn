@@ -1,27 +1,76 @@
-[gd_scene load_steps=1 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://export/meshes/m_e_Stirling-FreePiston_escn_1.mesh" type="ArrayMesh" id=1]
-[ext_resource path="res://export/meshes/m_e_Stirling-FreePiston_escn_2.mesh" type="ArrayMesh" id=2]
-[ext_resource path="res://export/meshes/m_e_Stirling-FreePiston_escn_3.mesh" type="ArrayMesh" id=3]
+[ext_resource path="res://export/meshes.collision/generic_cylindershape.tres" type="Shape" id=1]
+[ext_resource path="res://export/meshes.collision/generic_boxshape2.shape" type="Shape" id=2]
+[ext_resource path="res://export/meshes/m_e_Stirling-FreePiston_escn_1.mesh" type="ArrayMesh" id=3]
+[ext_resource path="res://export/meshes/m_e_Stirling-FreePiston_escn_2.mesh" type="ArrayMesh" id=4]
+[ext_resource path="res://export/meshes/m_e_Stirling-FreePiston_escn_3.mesh" type="ArrayMesh" id=5]
 
-[node type="Spatial" name="Stirling-FreePiston"]
+[node name="Stirling-FreePiston" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.90858, -6.45135, -7.7197 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 4.90858, -6.45135, -7.7197)
+[node name="StaticBody" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.90858, 6.45135, 7.7197 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0, 1, 1.30913, 0, 0 )
+shape = ExtResource( 1 )
+disabled = false
+
+[node name="CollisionShape2" type="CollisionShape" parent="StaticBody"]
+transform = Transform( -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0, 1, -2.39105, -0.423321, 0 )
+shape = ExtResource( 2 )
+disabled = false
+_sections_unfolded = [ "shape" ]
 
 [node name="StirlingFrame" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 1 )
-visible = true
-transform = Transform(7.54979e-08, 1.0, 0.0, -1.0, 7.54979e-08, 0.0, 0.0, 0.0, 1.0, -4.90858, 6.45135, 7.7197)
+transform = Transform( 7.54979e-008, 1, 0, -1, 7.54979e-008, 0, 0, 0, 1, -4.90858, 6.45135, 7.7197 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 3 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="StirlingFrameBraces" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 2 )
-visible = true
-transform = Transform(7.54979e-08, 1.0, 0.0, -1.0, 7.54979e-08, 0.0, 0.0, 0.0, 1.0, -4.90858, 6.45135, 7.7197)
+transform = Transform( 7.54979e-008, 1, 0, -1, 7.54979e-008, 0, 0, 0, 1, -4.90858, 6.45135, 7.7197 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 4 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Stirling-FreePIston-Single" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.90858, 6.45135, 7.7197 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 5 )
+skeleton = NodePath("..")
+material/0 = null
 
-mesh = ExtResource( 3 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -4.90858, 6.45135, 7.7197)

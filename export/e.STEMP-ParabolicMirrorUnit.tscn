@@ -1,4 +1,4 @@
-[gd_scene load_steps=1 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://export/meshes/m_e_STEMP-ParabolicMirrorUnit_escn_1.mesh" type="ArrayMesh" id=1]
 [ext_resource path="res://export/meshes/m_e_STEMP-ParabolicMirrorUnit_escn_2.mesh" type="ArrayMesh" id=2]
@@ -10,71 +10,217 @@
 [ext_resource path="res://export/meshes/m_e_STEMP-ParabolicMirrorUnit_escn_8.mesh" type="ArrayMesh" id=8]
 [ext_resource path="res://export/meshes/m_e_STEMP-ParabolicMirrorUnit_escn_9.mesh" type="ArrayMesh" id=9]
 [ext_resource path="res://export/meshes/m_e_STEMP-ParabolicMirrorUnit_escn_10.mesh" type="ArrayMesh" id=10]
+[ext_resource path="res://export/meshes.collision/ParabolicMirror1.shape" type="Shape" id=11]
+[ext_resource path="res://export/meshes.collision/ParabollicMirror2.shape" type="Shape" id=12]
+[ext_resource path="res://export/meshes.collision/ParabollicMirror_box.shape" type="Shape" id=13]
+[ext_resource path="res://export/meshes.collision/ParabollicMirror_tube.shape" type="Shape" id=14]
 
-[node type="Spatial" name="STEMP-ParabolicMirrorUnit"]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -91.0139, -40.9195, 3.26749)
+[node name="STEMP-ParabolicMirrorUnit" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -91.0139, -40.9195, 3.26749 )
 
 [node name="sodium-reservoir-2001" type="MeshInstance" parent="."]
-
+transform = Transform( 1.35668, 0, 0, 0, 1, 0, 0, 0, 1.35668, 99.996, 43.9747, -11.4701 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 1 )
-visible = true
-transform = Transform(1.35668, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.35668, 99.996, 43.9747, -11.4701)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="excess-sodium-tank000" type="MeshInstance" parent="."]
-
+transform = Transform( 4.98376, 0, 0, 0, 4.98376, 0, 0, 0, 4.98376, 101.379, 23.1488, -11.3347 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 2 )
-visible = true
-transform = Transform(4.98376, 0.0, 0.0, 0.0, 4.98376, 0.0, 0.0, 0.0, 4.98376, 101.379, 23.1488, -11.3347)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="PipeMirrorEmpty" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 99.9746, 42.5601, -11.3118)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 99.9746, 42.5601, -11.3118 )
 
 [node name="HeatPipe-MirrorUnit002" type="MeshInstance" parent="."]
-
+transform = Transform( 1, -2.91038e-011, 0, 2.91038e-011, 1, 0, 0, 0, 1, 99.9746, 42.5601, 0.0182538 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 3 )
-visible = true
-transform = Transform(1.0, -2.91038e-11, 0.0, 2.91038e-11, 1.0, 0.0, 0.0, 0.0, 1.0, 99.9746, 42.5601, 0.0182538)
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
 
 [node name="StartPipeHolder001" type="MeshInstance" parent="."]
-
+transform = Transform( 1.78722, 5.00406e-008, -9.65588e-009, -5.00406e-008, 1.78722, 1.97116e-009, 1.72572e-008, -3.5229e-009, 1, 99.9831, 42.5601, 11.0285 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 4 )
-visible = true
-transform = Transform(1.78722, 5.00406e-08, -9.65588e-09, -5.00406e-08, 1.78722, 1.97116e-09, 1.72572e-08, -3.5229e-09, 1.0, 99.9831, 42.5601, 11.0285)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="MiddleMirrorPipeHolder002" type="MeshInstance" parent="."]
-
+transform = Transform( 1.78722, 5.00406e-008, -9.65588e-009, -5.00406e-008, 1.78722, 1.97116e-009, 1.72572e-008, -3.5229e-009, 1, 99.9746, 42.5601, -11.3118 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 5 )
-visible = true
-transform = Transform(1.78722, 5.00406e-08, -9.65588e-09, -5.00406e-08, 1.78722, 1.97116e-09, 1.72572e-08, -3.5229e-09, 1.0, 99.9746, 42.5601, -11.3118)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="MirrorTowerFrame002" type="MeshInstance" parent="."]
-
+transform = Transform( 1, -2.91038e-011, 0, 2.91038e-011, 1, 0, 0, 0, 1, 99.9738, 42.5353, 11.0306 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 6 )
-visible = true
-transform = Transform(1.0, -2.91038e-11, 0.0, 2.91038e-11, 1.0, 0.0, 0.0, 0.0, 1.0, 99.9738, 42.5353, 11.0306)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="MirrorFrame002" type="MeshInstance" parent="."]
-
+transform = Transform( 0.5, -0.866025, 9.40431e-008, 0.866025, 0.5, -1.16084e-008, -3.69683e-008, 8.72479e-008, 1, 99.9746, 42.5601, 10.0383 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 7 )
-visible = true
-transform = Transform(0.5, -0.866025, 9.40431e-08, 0.866025, 0.5, -1.16084e-08, -3.69683e-08, 8.72479e-08, 1.0, 99.9746, 42.5601, 10.0383)
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
 
 [node name="ParabolicMirrors002" type="MeshInstance" parent="MirrorFrame002"]
-
+transform = Transform( 9.29027, -9.53674e-007, 1.22015e-007, 9.53674e-007, 9.29027, -6.57416e-008, 1.83943e-007, -1.0115e-007, 3.46545, 0, 0, -10.02 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 8 )
-visible = true
-transform = Transform(9.29027, -9.53674e-07, 1.22015e-07, 9.53674e-07, 9.29027, -6.57416e-08, 1.83943e-07, -1.0115e-07, 3.46545, 0.0, 0.0, -10.02)
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
 
 [node name="EndMirrorPipeHolder001" type="MeshInstance" parent="."]
-
+transform = Transform( 1.78722, 5.00406e-008, -9.65588e-009, -5.00406e-008, 1.78722, 1.97116e-009, 1.72572e-008, -3.5229e-009, 1, 99.9746, 42.5601, -33.6784 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 9 )
-visible = true
-transform = Transform(1.78722, 5.00406e-08, -9.65588e-09, -5.00406e-08, 1.78722, 1.97116e-09, 1.72572e-08, -3.5229e-09, 1.0, 99.9746, 42.5601, -33.6784)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="MirrorTowerCables002" type="MeshInstance" parent="."]
-
+transform = Transform( 1, -2.91038e-011, 0, 2.91038e-011, 1, 0, 0, 0, 1, 99.9738, 42.5353, 11.0306 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 10 )
-visible = true
-transform = Transform(1.0, -2.91038e-11, 0.0, 2.91038e-11, 1.0, 0.0, 0.0, 0.0, 1.0, 99.9738, 42.5353, 11.0306)
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.103, 7.78845, -11.3075 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 0.5, -0.866025, 9.40431e-008, 0.866025, 0.5, -1.16084e-008, -3.69683e-008, 8.72479e-008, 1, -0.128082, 34.7717, 21.3458 )
+shape = ExtResource( 11 )
+disabled = false
+
+[node name="CollisionShape6" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 4.64513, -8.04561, 4.43843e-007, 8.04561, 4.64513, 3.25689e-008, -1.59502e-007, 7.09407e-007, 3.46545, -0.128083, 34.7717, 11.3258 )
+shape = ExtResource( 12 )
+disabled = false
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102568, 12.8618, 0 )
+shape = ExtResource( 13 )
+disabled = false
+
+[node name="CollisionShape4" type="CollisionShape" parent="StaticBody"]
+transform = Transform( -4.37114e-008, 4.37114e-008, -1, 1, 1.91069e-015, -4.37114e-008, 0, -1, -4.37114e-008, -13.3381, 41.4157, 0 )
+shape = ExtResource( 13 )
+disabled = false
+
+[node name="CollisionShape5" type="CollisionShape" parent="StaticBody"]
+transform = Transform( -4.37114e-008, 4.37114e-008, -1, 1, 1.91069e-015, -4.37114e-008, 0, -1, -4.37114e-008, -0.187214, 33.5367, 0 )
+shape = ExtResource( 13 )
+disabled = false
+
+[node name="CollisionShape8" type="CollisionShape" parent="StaticBody"]
+transform = Transform( -4.37114e-008, 4.37114e-008, -1, 1, 1.91069e-015, -4.37114e-008, 0, -1, -4.37114e-008, -0.136066, 12.0331, 0 )
+shape = ExtResource( 14 )
+disabled = false
+_sections_unfolded = [ "shape" ]
+
+[node name="CollisionShape3" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102568, 12.8618, -22.3513 )
+shape = ExtResource( 13 )
+disabled = false
+
+[node name="CollisionShape2" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102568, 12.8618, 22.3872 )
+shape = ExtResource( 13 )
+disabled = false
+
