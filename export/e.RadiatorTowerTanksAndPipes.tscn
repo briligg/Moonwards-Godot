@@ -1,29 +1,61 @@
-[gd_scene load_steps=1 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource id=1 path="e.Pump-Impeller.tscn" type="PackedScene"]
-[ext_resource path="res://export/meshes/m_e_RadiatorTowerTanksAndPipes_escn_1.mesh" type="ArrayMesh" id=2]
-[ext_resource path="res://export/meshes/m_e_RadiatorTowerTanksAndPipes_escn_2.mesh" type="ArrayMesh" id=3]
+[ext_resource path="res://export/meshes/m_e_RadiatorTowerTanksAndPipes_escn_1.mesh" type="ArrayMesh" id=1]
+[ext_resource path="res://export/meshes/m_e_RadiatorTowerTanksAndPipes_escn_2.mesh" type="ArrayMesh" id=2]
+[ext_resource path="res://export/meshes.collision/generic_cylinder_3.shape" type="Shape" id=3]
+[ext_resource path="res://export/e.Pump-Impeller.tscn" type="PackedScene" id=4]
 
-[node type="Spatial" name="RadiatorTowerTanksAndPipes"]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -16.2026, 2.21189, -0.0270085)
+[node name="RadiatorTowerTanksAndPipes" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2026, 2.21189, -0.0270085 )
 
 [node name="TowerRadMaster-Outletpipe" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 2 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 16.1359, -1.35483, 1.24176e-09)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1359, -1.35483, 1.24176e-009 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder084" type="MeshInstance" parent="."]
+transform = Transform( 5, 0, 0, 0, 2.85225, 0, 0, 0, 5, 16.234, -2.74025, 8.92563e-005 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 2 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
+material/2 = null
 
-mesh = ExtResource( 3 )
-visible = true
-transform = Transform(5.0, 0.0, 0.0, 0.0, 2.85225, 0.0, 0.0, 0.0, 5.0, 16.234, -2.74025, 8.92563e-05)
+[node name="StaticBody" type="StaticBody" parent="Cylinder084"]
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Cylinder084/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.616589, 0 )
+shape = ExtResource( 3 )
+disabled = false
+_sections_unfolded = [ "shape" ]
 
 [node name="Pump-Impeller001" type="Spatial" parent="."]
+transform = Transform( 0.3399, 0, 0, 0, -1.48575e-008, -0.3399, 0, 0.3399, -1.48575e-008, 16.2378, -2.54057, 0.0809361 )
 
-transform = Transform(0.3399, 0.0, 0.0, 0.0, -1.48575e-08, -0.3399, 0.0, 0.3399, -1.48575e-08, 16.2378, -2.54057, 0.0809361)
+[node name="Pump-Impeller" parent="Pump-Impeller001" instance=ExtResource( 4 )]
 
-[node name="Pump-Impeller" parent="Pump-Impeller001" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=1 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://export/meshes/m_e_STEMP-ParabolicMirrorUnit-Circuit-to-Side_escn_1.mesh" type="ArrayMesh" id=1]
 [ext_resource path="res://export/meshes/m_e_STEMP-ParabolicMirrorUnit-Circuit-to-Side_escn_2.mesh" type="ArrayMesh" id=2]
@@ -11,77 +11,183 @@
 [ext_resource path="res://export/meshes/m_e_STEMP-ParabolicMirrorUnit-Circuit-to-Side_escn_9.mesh" type="ArrayMesh" id=9]
 [ext_resource path="res://export/meshes/m_e_STEMP-ParabolicMirrorUnit-Circuit-to-Side_escn_10.mesh" type="ArrayMesh" id=10]
 [ext_resource path="res://export/meshes/m_e_STEMP-ParabolicMirrorUnit-Circuit-to-Side_escn_11.mesh" type="ArrayMesh" id=11]
+[ext_resource path="res://export/meshes.collision/ParabolicMirror_generic_collision.tscn" type="PackedScene" id=12]
 
-[node type="Spatial" name="STEMP-ParabolicMirrorUnit-Circuit-to-Side"]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.672518, -7.8056, 27.5414)
+[node name="STEMP-ParabolicMirrorUnit-Circuit-to-Side" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.672518, -7.8056, 27.5414 )
 
 [node name="MirrorTowerCables000" type="MeshInstance" parent="."]
-
+transform = Transform( 1, -2.91038e-011, 0, 2.91038e-011, 1, 0, 0, 0, 1, -0.674401, 7.81189, -29.4208 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 1 )
-visible = true
-transform = Transform(1.0, -2.91038e-11, 0.0, 2.91038e-11, 1.0, 0.0, 0.0, 0.0, 1.0, -0.674401, 7.81189, -29.4208)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="EndMirrorPipeHolder000" type="MeshInstance" parent="."]
-
+transform = Transform( 1.78722, 5.00406e-008, -9.65588e-009, -5.00406e-008, 1.78722, 1.97116e-009, 1.72572e-008, -3.5229e-009, 1, -0.674401, 7.81189, -29.4208 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 2 )
-visible = true
-transform = Transform(1.78722, 5.00406e-08, -9.65588e-09, -5.00406e-08, 1.78722, 1.97116e-09, 1.72572e-08, -3.5229e-09, 1.0, -0.674401, 7.81189, -29.4208)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="MirrorFrame000" type="MeshInstance" parent="."]
-
+transform = Transform( 0.5, -0.866025, 9.40431e-008, 0.866025, 0.5, -1.16084e-008, -3.69683e-008, 8.72479e-008, 1, -0.674401, 7.81189, -29.4208 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 3 )
-visible = true
-transform = Transform(0.5, -0.866025, 9.40431e-08, 0.866025, 0.5, -1.16084e-08, -3.69683e-08, 8.72479e-08, 1.0, -0.674401, 7.81189, -29.4208)
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
 
 [node name="ParabolicMirrors000" type="MeshInstance" parent="MirrorFrame000"]
-
+transform = Transform( 9.29027, 4.76837e-007, 1.09906e-007, -4.76837e-007, 9.29027, 5.38138e-008, -1.61491e-007, -1.0415e-007, 3.46545, 4.76837e-007, -1.43051e-006, -1.90735e-006 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 4 )
-visible = true
-transform = Transform(9.29027, 4.76837e-07, 1.09906e-07, -4.76837e-07, 9.29027, 5.38138e-08, -1.61491e-07, -1.0415e-07, 3.46545, 4.76837e-07, -1.43051e-06, -1.90735e-06)
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
 
 [node name="MirrorTowerFrame000" type="MeshInstance" parent="."]
-
+transform = Transform( 1, -2.91038e-011, 0, 2.91038e-011, 1, 0, 0, 0, 1, -0.674401, 7.81189, -29.4208 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 5 )
-visible = true
-transform = Transform(1.0, -2.91038e-11, 0.0, 2.91038e-11, 1.0, 0.0, 0.0, 0.0, 1.0, -0.674401, 7.81189, -29.4208)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="MiddleMirrorPipeHolder000" type="MeshInstance" parent="."]
-
+transform = Transform( 1.78722, 5.00406e-008, -9.65588e-009, -5.00406e-008, 1.78722, 1.97116e-009, 1.72572e-008, -3.5229e-009, 1, -0.674401, 7.81189, -29.4208 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 6 )
-visible = true
-transform = Transform(1.78722, 5.00406e-08, -9.65588e-09, -5.00406e-08, 1.78722, 1.97116e-09, 1.72572e-08, -3.5229e-09, 1.0, -0.674401, 7.81189, -29.4208)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="StartPipeHolder000" type="MeshInstance" parent="."]
-
+transform = Transform( 1.78722, 5.00406e-008, -9.65588e-009, -5.00406e-008, 1.78722, 1.97116e-009, 1.72572e-008, -3.5229e-009, 1, -0.674401, 7.81189, -29.4208 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 7 )
-visible = true
-transform = Transform(1.78722, 5.00406e-08, -9.65588e-09, -5.00406e-08, 1.78722, 1.97116e-09, 1.72572e-08, -3.5229e-09, 1.0, -0.674401, 7.81189, -29.4208)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="PipeMirrorEmpty001" type="Spatial" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -0.651805, 7.73641, -6.86869)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.651805, 7.73641, -6.86869 )
 
 [node name="HeatPipe-MirrorUnit003" type="MeshInstance" parent="."]
-
+transform = Transform( 1, -2.91038e-011, 0, 2.91038e-011, 1, 0, 0, 0, 1, -0.674401, 7.81189, -29.4208 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 8 )
-visible = true
-transform = Transform(1.0, -2.91038e-11, 0.0, 2.91038e-11, 1.0, 0.0, 0.0, 0.0, 1.0, -0.674401, 7.81189, -29.4208)
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
 
 [node name="excess-sodium-tank001" type="MeshInstance" parent="."]
-
+transform = Transform( 4.98376, 0, 0, 0, 4.98376, 0, 0, 0, 4.98376, -0.674401, 7.81189, -29.4208 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 9 )
-visible = true
-transform = Transform(4.98376, 0.0, 0.0, 0.0, 4.98376, 0.0, 0.0, 0.0, 4.98376, -0.674401, 7.81189, -29.4208)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="sodium-reservoir-2000" type="MeshInstance" parent="."]
-
+transform = Transform( 1.35668, 0, 0, 0, 1, 0, 0, 0, 1.35668, -0.674401, 7.81189, -29.4208 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 10 )
-visible = true
-transform = Transform(1.35668, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.35668, -0.674401, 7.81189, -29.4208)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="HeatPipe-MirrorUnit000" type="MeshInstance" parent="."]
-
+transform = Transform( 1, -2.91038e-011, 0, 2.91038e-011, 1, 0, 0, 0, 1, -0.674401, 7.81189, -29.4208 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 11 )
-visible = true
-transform = Transform(1.0, -2.91038e-11, 0.0, 2.91038e-11, 1.0, 0.0, 0.0, 0.0, 1.0, -0.674401, 7.81189, -29.4208)
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
+
+[node name="STEMP-ParabolicMirrorUnit" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -100.617, -34.8195, 4.42834 )
+

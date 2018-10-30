@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://export/meshes.collision/ParabolicMirror1.shape" type="Shape" id=1]
+[ext_resource path="res://export/meshes.collision/ParabollicMirror2.shape" type="Shape" id=2]
+[ext_resource path="res://export/meshes.collision/ParabollicMirror_box.shape" type="Shape" id=3]
+[ext_resource path="res://export/meshes.collision/ParabollicMirror_tube.shape" type="Shape" id=4]
+
+[node name="STEMP-ParabolicMirrorUnit" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -91.0139, -40.9195, 3.26749 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.103, 7.78845, -11.3075 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 0.5, -0.866025, 9.40431e-008, 0.866025, 0.5, -1.16084e-008, -3.69683e-008, 8.72479e-008, 1, -0.128082, 34.7717, 21.3458 )
+shape = ExtResource( 1 )
+disabled = false
+
+[node name="CollisionShape6" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 4.64513, -8.04561, 4.43843e-007, 8.04561, 4.64513, 3.25689e-008, -1.59502e-007, 7.09407e-007, 3.46545, -0.128083, 34.7717, 11.3258 )
+shape = ExtResource( 2 )
+disabled = false
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102568, 12.8618, 0 )
+shape = ExtResource( 3 )
+disabled = false
+
+[node name="CollisionShape4" type="CollisionShape" parent="StaticBody"]
+transform = Transform( -4.37114e-008, 4.37114e-008, -1, 1, 1.91069e-015, -4.37114e-008, 0, -1, -4.37114e-008, -13.3381, 41.4157, 0 )
+shape = ExtResource( 3 )
+disabled = false
+
+[node name="CollisionShape5" type="CollisionShape" parent="StaticBody"]
+transform = Transform( -4.37114e-008, 4.37114e-008, -1, 1, 1.91069e-015, -4.37114e-008, 0, -1, -4.37114e-008, -0.187214, 33.5367, 0 )
+shape = ExtResource( 3 )
+disabled = false
+
+[node name="CollisionShape8" type="CollisionShape" parent="StaticBody"]
+transform = Transform( -4.37114e-008, 4.37114e-008, -1, 1, 1.91069e-015, -4.37114e-008, 0, -1, -4.37114e-008, -0.136066, 12.0331, 0 )
+shape = ExtResource( 4 )
+disabled = false
+_sections_unfolded = [ "shape" ]
+
+[node name="CollisionShape3" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102568, 12.8618, -22.3513 )
+shape = ExtResource( 3 )
+disabled = false
+
+[node name="CollisionShape2" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102568, 12.8618, 22.3872 )
+shape = ExtResource( 3 )
+disabled = false
+

@@ -1,98 +1,269 @@
-[gd_scene load_steps=1 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource id=1 path="e.RadiatorTowerTanksAndPipes.tscn" type="PackedScene"]
-[ext_resource id=2 path="e.STEMP-ParabolicMirrorUnit-Circuit-to-Side.tscn" type="PackedScene"]
-[ext_resource path="res://export/meshes/m_e_Fluidized-Bed-Reactor-and-Mirrors_escn_1.mesh" type="ArrayMesh" id=3]
-[ext_resource path="res://export/meshes/m_e_Fluidized-Bed-Reactor-and-Mirrors_escn_2.mesh" type="ArrayMesh" id=4]
-[ext_resource path="res://export/meshes/m_e_Fluidized-Bed-Reactor-and-Mirrors_escn_3.mesh" type="ArrayMesh" id=5]
-[ext_resource path="res://export/meshes/m_e_Fluidized-Bed-Reactor-and-Mirrors_escn_4.mesh" type="ArrayMesh" id=6]
-[ext_resource path="res://export/meshes/m_e_Fluidized-Bed-Reactor-and-Mirrors_escn_5.mesh" type="ArrayMesh" id=7]
+[ext_resource path="res://export/meshes/m_e_Fluidized-Bed-Reactor-and-Mirrors_escn_1.mesh" type="ArrayMesh" id=1]
+[ext_resource path="res://export/meshes.collision/Generic_cylinder_2.shape" type="Shape" id=2]
+[ext_resource path="res://export/meshes/m_e_Fluidized-Bed-Reactor-and-Mirrors_escn_2.mesh" type="ArrayMesh" id=3]
+[ext_resource path="res://export/meshes/m_e_Fluidized-Bed-Reactor-and-Mirrors_escn_3.mesh" type="ArrayMesh" id=4]
+[ext_resource path="res://export/meshes/m_e_Fluidized-Bed-Reactor-and-Mirrors_escn_4.mesh" type="ArrayMesh" id=5]
+[ext_resource path="res://export/meshes/m_e_Fluidized-Bed-Reactor-and-Mirrors_escn_5.mesh" type="ArrayMesh" id=6]
+[ext_resource path="res://export/e.STEMP-ParabolicMirrorUnit-Circuit-to-Side.tscn" type="PackedScene" id=7]
 [ext_resource path="res://export/meshes/m_e_Fluidized-Bed-Reactor-and-Mirrors_escn_6.mesh" type="ArrayMesh" id=8]
-[ext_resource path="res://export/meshes/m_e_Fluidized-Bed-Reactor-and-Mirrors_escn_7.mesh" type="ArrayMesh" id=9]
-[ext_resource path="res://export/meshes/m_e_Fluidized-Bed-Reactor-and-Mirrors_escn_8.mesh" type="ArrayMesh" id=10]
-[ext_resource path="res://export/meshes/m_e_Fluidized-Bed-Reactor-and-Mirrors_escn_9.mesh" type="ArrayMesh" id=11]
-[ext_resource path="res://export/meshes/m_e_Fluidized-Bed-Reactor-and-Mirrors_escn_10.mesh" type="ArrayMesh" id=12]
+[ext_resource path="res://export/e.RadiatorTowerTanksAndPipes.tscn" type="PackedScene" id=9]
+[ext_resource path="res://export/meshes/m_e_Fluidized-Bed-Reactor-and-Mirrors_escn_7.mesh" type="ArrayMesh" id=10]
+[ext_resource path="res://export/meshes/m_e_Fluidized-Bed-Reactor-and-Mirrors_escn_8.mesh" type="ArrayMesh" id=11]
+[ext_resource path="res://export/meshes.collision/Concave_protection.shape" type="Shape" id=12]
+[ext_resource path="res://export/meshes/m_e_Fluidized-Bed-Reactor-and-Mirrors_escn_9.mesh" type="ArrayMesh" id=13]
+[ext_resource path="res://export/meshes.collision/PressureTankStand.shape" type="Shape" id=14]
+[ext_resource path="res://export/meshes/m_e_Fluidized-Bed-Reactor-and-Mirrors_escn_10.mesh" type="ArrayMesh" id=15]
+[ext_resource path="res://export/meshes.collision/Stand.shape" type="Shape" id=16]
 
-[node type="Spatial" name="Fluidized-Bed-Reactor-and-Mirrors"]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1875.45, -128.331, -240.985)
+[node name="Fluidized-Bed-Reactor-and-Mirrors" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1875.45, -128.331, -240.985 )
 
 [node name="ReactorTank" type="MeshInstance" parent="."]
+transform = Transform( 8.21053, 0, 0.0584473, 0, 8.21074, 0, -0.0584473, 0, 8.21053, 1898.39, 138.793, 234.243 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
+material/2 = null
+__meta__ = {
+"_edit_lock_": true
+}
 
-mesh = ExtResource( 3 )
-visible = true
-transform = Transform(8.21053, 0.0, 0.0584473, 0.0, 8.21074, 0.0, -0.0584473, 0.0, 8.21053, 1898.39, 138.793, 234.243)
+[node name="StaticBody" type="StaticBody" parent="ReactorTank"]
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="ReactorTank/StaticBody"]
+transform = Transform( 0.999999, 0, -3.25963e-009, 0, 1, 0, 3.25963e-009, 0, 0.999999, 0.037004, 0.120544, 0.0602194 )
+shape = ExtResource( 2 )
+disabled = false
+_sections_unfolded = [ "shape" ]
+
+[node name="CollisionShape3" type="CollisionShape" parent="ReactorTank/StaticBody"]
+transform = Transform( 0.493614, 0, -2.56114e-009, 0, 0.493615, 0, 2.56114e-009, 0, 0.493614, -3.53991, -1.42783, 0.669941 )
+shape = ExtResource( 2 )
+disabled = false
+_sections_unfolded = [ "shape" ]
+
+[node name="CollisionShape2" type="CollisionShape" parent="ReactorTank/StaticBody"]
+transform = Transform( 0.229471, 0, -1.39698e-009, 0, 0.229472, 0, 1.39698e-009, 0, 0.229471, 0.642733, -1.70459, -0.032184 )
+shape = ExtResource( 2 )
+disabled = false
+_sections_unfolded = [ "shape" ]
 
 [node name="ReactorTankConnections" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 4 )
-visible = true
-transform = Transform(9.79121e-08, 0.0, 8.21073, 0.0, 8.21074, 0.0, -8.21074, 0.0, 9.7912e-08, 1900.57, 123.527, 234.408)
+transform = Transform( 9.79121e-008, 0, 8.21073, 0, 8.21074, 0, -8.21074, 0, 9.7912e-008, 1900.57, 123.527, 234.408 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 3 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
+material/2 = null
 
 [node name="PresssureTank" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 5 )
-visible = true
-transform = Transform(9.79109e-08, -8.21074, -3.59371e-07, 0.0392967, -3.58899e-07, 8.21064, -8.21064, -9.96298e-08, 0.0392966, 1903.7, 123.789, 233.808)
+transform = Transform( 9.79109e-008, -8.21074, -3.59371e-007, 0.0392967, -3.58899e-007, 8.21064, -8.21064, -9.96298e-008, 0.0392966, 1903.7, 123.789, 233.808 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 4 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
+material/2 = null
 
 [node name="WaterTank" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 6 )
-visible = true
-transform = Transform(8.21074, 0.0, -1.95759e-06, 0.0, 8.21074, 0.0, 1.95759e-06, 0.0, 8.21073, 1869.23, 121.775, 242.171)
+transform = Transform( 8.21074, 0, -1.95759e-006, 0, 8.21074, 0, 1.95759e-006, 0, 8.21073, 1869.23, 121.775, 242.171 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 5 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
+material/2 = null
 
 [node name="FBReactor-HeatExchangerPipe" type="MeshInstance" parent="."]
-
-mesh = ExtResource( 7 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1889.78, 128.288, 235.72)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1889.78, 128.288, 235.72 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 6 )
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="ParabolicMirrorUnit-Circuit-to-Side" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1898.68, 157.088, 245.427 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1898.68, 157.088, 245.427)
-
-[node name="STEMP-ParabolicMirrorUnit-Circuit-to-Side" parent="ParabolicMirrorUnit-Circuit-to-Side" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="STEMP-ParabolicMirrorUnit-Circuit-to-Side" parent="ParabolicMirrorUnit-Circuit-to-Side" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.672518, -7.8056, 27.5414 )
 
 [node name="FBReactor-Insulation-on-Pipes" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1898.72, 148.901, 239.313 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 8 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1898.72, 148.901, 239.313)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="RadiatorTowerTanksAndPipes" type="Spatial" parent="."]
+transform = Transform( -9.92013e-008, 0, -2.26946, 0, 2.26946, 0, 2.26946, 0, -9.92013e-008, 1859.3, 125.888, 242.577 )
 
-transform = Transform(-9.92013e-08, 0.0, -2.26946, 0.0, 2.26946, 0.0, 2.26946, 0.0, -9.92013e-08, 1859.3, 125.888, 242.577)
-
-[node name="RadiatorTowerTanksAndPipes" parent="RadiatorTowerTanksAndPipes" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="RadiatorTowerTanksAndPipes" parent="RadiatorTowerTanksAndPipes" instance=ExtResource( 9 )]
 
 [node name="RadPanel001" type="MeshInstance" parent="RadiatorTowerTanksAndPipes"]
-
-mesh = ExtResource( 9 )
-visible = true
-transform = Transform(1.0, 0.0, 8.00714e-09, 0.0, 1.0, 0.0, 3.55271e-15, 0.0, 1.0, -0.21991, 6.95811, 0.000244141)
+transform = Transform( 1, 0, 8.00714e-009, 0, 1, 0, 3.55271e-015, 0, 1, -0.21991, 6.95811, 0.000244141 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 10 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
 
 [node name="WaterTankInsulation" type="MeshInstance" parent="."]
+transform = Transform( 2.96524, 0, 0, 0, 6.21927, 0, 0, 0, 2.96524, 1869.36, 127.228, 239.228 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 11 )
+skeleton = NodePath("..")
+material/0 = null
 
-mesh = ExtResource( 10 )
-visible = true
-transform = Transform(2.96524, 0.0, 0.0, 0.0, 6.21927, 0.0, 0.0, 0.0, 2.96524, 1869.36, 127.228, 239.228)
+[node name="StaticBody" type="StaticBody" parent="WaterTankInsulation"]
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="WaterTankInsulation/StaticBody"]
+shape = ExtResource( 12 )
+disabled = false
+
+[node name="CollisionShape2" type="CollisionShape" parent="WaterTankInsulation/StaticBody"]
+transform = Transform( 0.431168, 0, 0, 0, 2.66748, 0, 0, 0, 0.47722, -3.43307, 4.94352, 1.43217 )
+shape = ExtResource( 12 )
+disabled = false
 
 [node name="FBReactor-PipestoRadTank" type="Spatial" parent="."]
-
-transform = Transform(0.862119, 0.0, 0.506706, 0.0, 1.0, 0.0, -0.506706, 0.0, 0.862119, 1863.75, 123.918, 241.472)
+transform = Transform( 0.862119, 0, 0.506706, 0, 1, 0, -0.506706, 0, 0.862119, 1863.75, 123.918, 241.472 )
 
 [node name="PressureTankStand001" type="MeshInstance" parent="."]
+transform = Transform( -8.21074, 0, 2.6754e-006, 0, 8.21074, 0, -2.6754e-006, 0, -8.21073, 1898.9, 121.514, 234.864 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 13 )
+skeleton = NodePath("..")
+material/0 = null
 
-mesh = ExtResource( 11 )
-visible = true
-transform = Transform(-8.21074, 0.0, 2.6754e-06, 0.0, 8.21074, 0.0, -2.6754e-06, 0.0, -8.21073, 1898.9, 121.514, 234.864)
+[node name="StaticBody" type="StaticBody" parent="PressureTankStand001"]
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="PressureTankStand001/StaticBody"]
+shape = ExtResource( 14 )
+disabled = false
 
 [node name="Stand" type="MeshInstance" parent="."]
+transform = Transform( -8.21074, 0, 2.6754e-006, 0, 8.21074, 0, -2.6754e-006, 0, -8.21073, 1869.39, 114.161, 239.719 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 15 )
+skeleton = NodePath("..")
+material/0 = null
 
-mesh = ExtResource( 12 )
-visible = true
-transform = Transform(-8.21074, 0.0, 2.6754e-06, 0.0, 8.21074, 0.0, -2.6754e-06, 0.0, -8.21073, 1869.39, 114.161, 239.719)
+[node name="StaticBody" type="StaticBody" parent="Stand"]
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Stand/StaticBody"]
+shape = ExtResource( 16 )
+disabled = false
+

@@ -1,13 +1,33 @@
-[gd_scene load_steps=1 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://export/meshes/m_e_Pump-Impeller_escn_1.mesh" type="ArrayMesh" id=1]
+[ext_resource path="res://export/meshes.collision/Pump-Impeller.shape" type="Shape" id=2]
 
-[node type="Spatial" name="Pump-Impeller"]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+[node name="Pump-Impeller" type="Spatial"]
 
 [node name="Pump-Impeller" type="MeshInstance" parent="."]
-
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 1 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Pump-Impeller"]
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Pump-Impeller/StaticBody"]
+shape = ExtResource( 2 )
+disabled = false
+
