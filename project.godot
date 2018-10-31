@@ -28,6 +28,10 @@ formats/gzip/compression_level=5
 
 window/size/height=700
 
+[editor]
+
+convert_text_resources_to_binary_on_export=true
+
 [input]
 
 ui_left={
