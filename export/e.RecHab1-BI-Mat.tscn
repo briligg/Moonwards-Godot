@@ -13,9 +13,9 @@
 [ext_resource path="res://export/meshes/m_e_RecHab1-BI-Mat_escn_10.mesh" type="ArrayMesh" id=11]
 [ext_resource path="res://export/meshes/m_e_RecHab1-BI-Mat_escn_11.mesh" type="ArrayMesh" id=12]
 [ext_resource path="res://export/meshes/m_e_RecHab1-BI-Mat_escn_12.mesh" type="ArrayMesh" id=13]
-[ext_resource path="res://export/meshes/m_e_RecHab1-BI-Mat_escn_13.mesh" type="ArrayMesh" id=14]
-[ext_resource path="res://export/meshes/m_e_RecHab1-BI-Mat_escn_14.mesh" type="ArrayMesh" id=15]
-[ext_resource path="res://export/meshes/m_e_RecHab1-BI-Mat_escn_15.mesh" type="ArrayMesh" id=16]
+[ext_resource path="res://export/meshes/m_e_RecHab1-BI-Mat_escn_14.mesh" type="ArrayMesh" id=14]
+[ext_resource path="res://export/meshes/m_e_RecHab1-BI-Mat_escn_15.mesh" type="ArrayMesh" id=15]
+[ext_resource path="res://export/meshes/m_e_RecHab1-BI-Mat_escn_13.mesh" type="ArrayMesh" id=16]
 [ext_resource path="res://export/meshes/m_e_RecHab1-BI-Mat_escn_16.mesh" type="ArrayMesh" id=17]
 [ext_resource path="res://export/meshes/m_e_RecHab1-BI-Mat_escn_17.mesh" type="ArrayMesh" id=18]
 [ext_resource path="res://export/meshes/m_e_RecHab1-BI-Mat_escn_18.mesh" type="ArrayMesh" id=19]
@@ -120,7 +120,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1508.43, 77.4168, -340.433 )
 
 [node name="GreenMan" parent="GreenMan1027" instance=ExtResource( 1 )]
 
-[node name="LightTube-FiberoptCable-Armature004" type="MeshInstance" parent="."]
+[node name="LightTube-FiberoptCable-Armature004" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 1, 0, 0, 0, 1, -1.06173e-008, 0, 1.06173e-008, 1, 1.17347e-007, 10.7244, 1.13865e-007 )
 layers = 1
 material_override = null
@@ -138,7 +140,9 @@ material/0 = null
 [node name="Empty001" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00794183, 12.0243, -0.15308 )
 
-[node name="PoolRadiatorPIpe" type="MeshInstance" parent="."]
+[node name="PoolRadiatorPIpe" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1513.1, 72.9398, -404.63 )
 layers = 1
 material_override = null
@@ -153,7 +157,9 @@ mesh = ExtResource( 3 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="Tap2" type="MeshInstance" parent="."]
+[node name="Tap2" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1525.11, 84.0867, -372.032 )
 layers = 1
 material_override = null
@@ -168,7 +174,9 @@ mesh = ExtResource( 4 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="Tap1" type="MeshInstance" parent="."]
+[node name="Tap1" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1525.07, 84.0867, -371.726 )
 layers = 1
 material_override = null
@@ -183,7 +191,9 @@ mesh = ExtResource( 5 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="WaterMain-RecHab1" type="MeshInstance" parent="."]
+[node name="WaterMain-RecHab1" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1507.93, 89.0566, -344.518 )
 layers = 1
 material_override = null
@@ -198,7 +208,9 @@ mesh = ExtResource( 6 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="BathroomS-WaterPipes" type="MeshInstance" parent="."]
+[node name="BathroomS-WaterPipes" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1507.93, 89.0566, -344.518 )
 layers = 1
 material_override = null
@@ -212,7 +224,9 @@ lod_max_hysteresis = 0.0
 mesh = ExtResource( 7 )
 skeleton = NodePath("..")
 
-[node name="WaterPipes" type="MeshInstance" parent="."]
+[node name="WaterPipes" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1507.93, 89.0566, -344.518 )
 layers = 1
 material_override = null
@@ -227,7 +241,9 @@ mesh = ExtResource( 8 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="BalanceBars" type="MeshInstance" parent="."]
+[node name="BalanceBars" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1509.24, 71.9961, -351.014 )
 layers = 1
 material_override = null
@@ -242,7 +258,9 @@ mesh = ExtResource( 9 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="TightropePole" type="MeshInstance" parent="."]
+[node name="TightropePole" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1518.86, 75.0566, -353.146 )
 layers = 1
 material_override = null
@@ -257,7 +275,9 @@ mesh = ExtResource( 10 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="Tightrope" type="MeshInstance" parent="."]
+[node name="Tightrope" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1509.79, 72.8825, -354.47 )
 layers = 1
 material_override = null
@@ -272,7 +292,9 @@ mesh = ExtResource( 11 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="PoolBenchFrames" type="MeshInstance" parent="."]
+[node name="PoolBenchFrames" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1499.89, 78.3955, -355.988 )
 layers = 1
 material_override = null
@@ -287,7 +309,9 @@ mesh = ExtResource( 12 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="DivingBoardFrame" type="MeshInstance" parent="."]
+[node name="DivingBoardFrame" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1512.53, 83.9672, -405.385 )
 layers = 1
 material_override = null
@@ -302,8 +326,10 @@ mesh = ExtResource( 13 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="TubeHab-InteriorWalls-LocalGroup" type="MeshInstance" parent="."]
-transform = Transform( 0.989399, 0, -0.14522, 0, 1, 0, 0.14522, 0, 0.989399, 1509.67, 79.684, -348.344 )
+[node name="Truss-TubeHab-LocalGroup" type="MeshInstance" parent="." groups=[
+"exterior",
+]]
+transform = Transform( 0.989399, 0, -0.14522, 0, 1, 0, 0.14522, 0, 0.989399, 1509.72, 79.684, -348.701 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -316,9 +342,12 @@ lod_max_hysteresis = 0.0
 mesh = ExtResource( 14 )
 skeleton = NodePath("..")
 material/0 = null
+material/1 = null
 
-[node name="Truss-TubeHab-LocalGroup" type="MeshInstance" parent="TubeHab-InteriorWalls-LocalGroup"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00012207, 0, -0.360779 )
+[node name="TubeHab-RetainingWalls-LocalGroup" type="MeshInstance" parent="." groups=[
+"exterior",
+]]
+transform = Transform( 0.989399, 0, -0.14522, 0, 1, 0, 0.14522, 0, 0.989399, 1509.67, 79.684, -348.344 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -331,10 +360,12 @@ lod_max_hysteresis = 0.0
 mesh = ExtResource( 15 )
 skeleton = NodePath("..")
 material/0 = null
-material/1 = null
 
-[node name="TubeHab-RetainingWalls-LocalGroup" type="MeshInstance" parent="TubeHab-InteriorWalls-LocalGroup"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00012207, 0, 0 )
+[node name="TubeHab-InteriorWalls-LocalGroup" type="MeshInstance" parent="." groups=[
+"interior",
+"wall",
+]]
+transform = Transform( 0.989399, 0, -0.14522, 0, 1, 0, 0.14522, 0, 0.989399, 1509.67, 79.684, -348.344 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -348,7 +379,9 @@ mesh = ExtResource( 16 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="TubeHab-Entrance" type="MeshInstance" parent="."]
+[node name="TubeHab-Entrance" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1505.32, 79.6032, -319.37 )
 layers = 1
 material_override = null
@@ -363,7 +396,9 @@ mesh = ExtResource( 17 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="TubeHab-Entrance015" type="MeshInstance" parent="."]
+[node name="TubeHab-Entrance015" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989344, -0.145596, 6.3642e-009, 0, -4.37114e-008, -1, 0.145596, 0.989344, -4.32456e-008, 1505.32, 79.6032, -319.37 )
 layers = 1
 material_override = null
@@ -378,7 +413,9 @@ mesh = ExtResource( 18 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="TubeHab-Cap010" type="MeshInstance" parent="."]
+[node name="TubeHab-Cap010" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1519.77, 79.736, -417.407 )
 layers = 1
 material_override = null
@@ -393,7 +430,9 @@ mesh = ExtResource( 19 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="ToiletStalls-3002" type="MeshInstance" parent="."]
+[node name="ToiletStalls-3002" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 7.54979e-008, -0.989409, 0.145154, -1, -7.46983e-008, 1.09588e-008, 0, -0.145154, -0.989409, 1512.44, 73.633, -415.598 )
 layers = 1
 material_override = null
@@ -408,7 +447,9 @@ mesh = ExtResource( 20 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="ToiletStalls-3005" type="MeshInstance" parent="."]
+[node name="ToiletStalls-3005" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 7.54979e-008, 0.989409, -0.145155, -1, 7.46983e-008, -1.09589e-008, 0, 0.145155, 0.989409, 1522.69, 73.633, -411.577 )
 layers = 1
 material_override = null
@@ -578,7 +619,9 @@ transform = Transform( -0.145153, 0, -0.989409, 0, 1, 0, 0.989409, 0, -0.145153,
 
 [node name="Toilet" parent="Toilet042" instance=ExtResource( 22 )]
 
-[node name="SwimmingPool-Water" type="MeshInstance" parent="."]
+[node name="SwimmingPool-Water" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989399, 0, -0.14522, 0, 1, 0, 0.14522, 0, 0.989399, 1509.67, 74.4672, -380.006 )
 layers = 1
 material_override = null
@@ -593,7 +636,9 @@ mesh = ExtResource( 23 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="SwimmingPool-Frame" type="MeshInstance" parent="."]
+[node name="SwimmingPool-Frame" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989392, 0, -0.145272, 0, 1, 0, 0.145272, 0, 0.989392, 1509.68, 74.4672, -380.025 )
 layers = 1
 material_override = null
@@ -608,7 +653,9 @@ mesh = ExtResource( 24 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="Pool-Diving-edge" type="MeshInstance" parent="SwimmingPool-Frame"]
+[node name="Pool-Diving-edge" type="MeshInstance" parent="SwimmingPool-Frame" groups=[
+"interior",
+]]
 transform = Transform( 1, 0, -6.61612e-006, -3.75342e-009, 1, 8.04849e-011, 6.64592e-006, 0, 1, 4.01733, 1.71987, 25.1434 )
 layers = 1
 material_override = null
@@ -623,7 +670,10 @@ mesh = ExtResource( 25 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="PoolViewingLevel" type="MeshInstance" parent="SwimmingPool-Frame"]
+[node name="PoolViewingLevel" type="MeshInstance" parent="SwimmingPool-Frame" groups=[
+"floor",
+"interior",
+]]
 transform = Transform( 1.41296, 0, 0.00125067, -5.30353e-009, 1.41296, 1.08992e-010, -0.00125062, 0, 1.41296, 2.30811, -2.47113, -4.84033 )
 layers = 1
 material_override = null
@@ -638,7 +688,9 @@ mesh = ExtResource( 26 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="SwimmingPool-Glass-TopFringe" type="MeshInstance" parent="SwimmingPool-Frame"]
+[node name="SwimmingPool-Glass-TopFringe" type="MeshInstance" parent="SwimmingPool-Frame" groups=[
+"interior",
+]]
 transform = Transform( 1, 0, 0, -6.76477e-011, 1, -4.60721e-010, -2.98023e-008, 0, 1, -0.000366211, 0, -6.10352e-005 )
 layers = 1
 material_override = null
@@ -653,7 +705,9 @@ mesh = ExtResource( 27 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="SwimmingPool-PerimeterDrains" type="MeshInstance" parent="SwimmingPool-Frame"]
+[node name="SwimmingPool-PerimeterDrains" type="MeshInstance" parent="SwimmingPool-Frame" groups=[
+"interior",
+]]
 transform = Transform( 0.990967, 0, -6.61612e-006, -3.71951e-009, 1, 8.03433e-011, 6.57141e-006, 0, 0.998241, -0.00292969, -0.00543213, 0.031311 )
 layers = 1
 material_override = null
@@ -668,7 +722,9 @@ mesh = ExtResource( 28 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="SwimmingPool-Supports" type="MeshInstance" parent="SwimmingPool-Frame"]
+[node name="SwimmingPool-Supports" type="MeshInstance" parent="SwimmingPool-Frame" groups=[
+"interior",
+]]
 transform = Transform( 1, 0, -6.63102e-006, -3.75342e-009, 1, 8.04849e-011, 6.66082e-006, 0, 1, 0.986206, 0.2621, 25.1435 )
 layers = 1
 material_override = null
@@ -683,7 +739,9 @@ mesh = ExtResource( 29 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="SwimmingPool-Walls" type="MeshInstance" parent="SwimmingPool-Frame"]
+[node name="SwimmingPool-Walls" type="MeshInstance" parent="SwimmingPool-Frame" groups=[
+"interior",
+]]
 transform = Transform( 1, 0, 0, -6.76477e-011, 1, -4.60721e-010, -2.98023e-008, 0, 1, -0.00012207, -0.0166931, -6.10352e-005 )
 layers = 1
 material_override = null
@@ -740,7 +798,9 @@ omni_attenuation = 1.0
 omni_shadow_mode = 1
 omni_shadow_detail = 1
 
-[node name="ShimmyStair-Steps" type="MeshInstance" parent="."]
+[node name="ShimmyStair-Steps" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 2.05732, 0, -0.145153, 0, 1, 0, 0.301823, 0, 0.989409, 1505.03, 75.6871, -345.983 )
 layers = 1
 material_override = null
@@ -757,7 +817,9 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="ShimmyStair-Rails" type="MeshInstance" parent="ShimmyStair-Steps"]
+[node name="ShimmyStair-Rails" type="MeshInstance" parent="ShimmyStair-Steps" groups=[
+"interior",
+]]
 transform = Transform( 3.63086e-008, 2.98023e-008, 0.480922, 1, -8.00109e-011, -7.17445e-008, 1.77636e-015, 1, -2.98023e-008, 0.219727, 0.842148, 0.523621 )
 layers = 1
 material_override = null
@@ -772,7 +834,9 @@ mesh = ExtResource( 32 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="ShimmyPole1" type="MeshInstance" parent="ShimmyStair-Steps/ShimmyStair-Rails"]
+[node name="ShimmyPole1" type="MeshInstance" parent="ShimmyStair-Steps/ShimmyStair-Rails" groups=[
+"interior",
+]]
 transform = Transform( -2.97978e-010, 1, -7.80327e-008, 1, -4.46911e-015, -5.96046e-008, -7.45058e-008, -7.54979e-008, -1, 0.00682068, -0.000671387, -0.456787 )
 layers = 1
 material_override = null
@@ -787,7 +851,9 @@ mesh = ExtResource( 33 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="ShimmyStair-Steps009" type="MeshInstance" parent="."]
+[node name="ShimmyStair-Steps009" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.301822, 0, 0.989409, 0, 1, 0, -2.05732, 0, 0.145153, 1515.46, 71.9961, -408.787 )
 layers = 1
 material_override = null
@@ -804,7 +870,9 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="ShimmyPole1009" type="MeshInstance" parent="ShimmyStair-Steps009"]
+[node name="ShimmyPole1009" type="MeshInstance" parent="ShimmyStair-Steps009" groups=[
+"interior",
+]]
 transform = Transform( 9.68575e-008, -3.607e-008, -0.480922, -6.80868e-008, 1, -7.55426e-008, 1, 7.54979e-008, 2.08616e-007, 3.05176e-005, 0.850578, 0.536377 )
 layers = 1
 material_override = null
@@ -819,7 +887,9 @@ mesh = ExtResource( 35 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="ShimmyStair-Rails009" type="MeshInstance" parent="ShimmyStair-Steps009"]
+[node name="ShimmyStair-Rails009" type="MeshInstance" parent="ShimmyStair-Steps009" groups=[
+"interior",
+]]
 transform = Transform( -1.77636e-015, 1.63913e-007, 0.480922, 1, -6.80868e-008, 5.40763e-010, 7.54979e-008, 1, -3.57628e-007, 0.219757, 0.843765, 0.536987 )
 layers = 1
 material_override = null
@@ -834,7 +904,9 @@ mesh = ExtResource( 36 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="ShimmyStair-Steps008" type="MeshInstance" parent="."]
+[node name="ShimmyStair-Steps008" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 2.05732, 0, -0.145153, 0, 1, 0, 0.301823, 0, 0.989409, 1506.51, 75.6871, -345.765 )
 layers = 1
 material_override = null
@@ -851,7 +923,9 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="ShimmyPole1008" type="MeshInstance" parent="ShimmyStair-Steps008"]
+[node name="ShimmyPole1008" type="MeshInstance" parent="ShimmyStair-Steps008" groups=[
+"interior",
+]]
 transform = Transform( -1.49012e-008, 2.38561e-010, -0.480922, -3.47328e-010, 1, 6.31233e-010, 1, -5.74131e-010, -1.49012e-008, 0.00012207, 0.848961, 0.52301 )
 layers = 1
 material_override = null
@@ -866,7 +940,9 @@ mesh = ExtResource( 38 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="ShimmyStair-Rails008" type="MeshInstance" parent="ShimmyStair-Steps008"]
+[node name="ShimmyStair-Rails008" type="MeshInstance" parent="ShimmyStair-Steps008" groups=[
+"interior",
+]]
 transform = Transform( 3.63086e-008, 2.23517e-008, 0.480922, 1, -4.60733e-010, -7.55655e-008, 0, 1, -4.47035e-008, 0.219788, 0.842148, 0.523621 )
 layers = 1
 material_override = null
@@ -881,7 +957,9 @@ mesh = ExtResource( 39 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="ShimmyStair-Steps007" type="MeshInstance" parent="."]
+[node name="ShimmyStair-Steps007" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.301822, 0, 0.989409, 0, 1, 0, -2.05732, 0, 0.145153, 1516.67, 86.9528, -343.562 )
 layers = 1
 material_override = null
@@ -898,7 +976,9 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="ShimmyStair-Rails007" type="MeshInstance" parent="ShimmyStair-Steps007"]
+[node name="ShimmyStair-Rails007" type="MeshInstance" parent="ShimmyStair-Steps007" groups=[
+"interior",
+]]
 transform = Transform( 0, 1.86265e-007, 0.480922, 1, -7.93189e-008, 3.80753e-010, 7.54979e-008, 1, -3.42727e-007, 0.219788, 0.843758, 0.536743 )
 layers = 1
 material_override = null
@@ -913,7 +993,9 @@ mesh = ExtResource( 41 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="ShimmyPole1007" type="MeshInstance" parent="ShimmyStair-Steps007/ShimmyStair-Rails007"]
+[node name="ShimmyPole1007" type="MeshInstance" parent="ShimmyStair-Steps007/ShimmyStair-Rails007" groups=[
+"interior",
+]]
 transform = Transform( -3.10943e-009, 1, -7.51398e-008, 1, -1.86265e-009, -1.49012e-007, -1.49012e-007, -7.50019e-008, -1, 0.00682831, -0.000610352, -0.45697 )
 layers = 1
 material_override = null
@@ -928,7 +1010,9 @@ mesh = ExtResource( 42 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="ShimmyStair-Steps006" type="MeshInstance" parent="."]
+[node name="ShimmyStair-Steps006" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.301822, 0, 0.989409, 0, 1, 0, -2.05732, 0, 0.145153, 1516.89, 86.9559, -345.046 )
 layers = 1
 material_override = null
@@ -945,7 +1029,9 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="ShimmyStair-Rails006" type="MeshInstance" parent="ShimmyStair-Steps006"]
+[node name="ShimmyStair-Rails006" type="MeshInstance" parent="ShimmyStair-Steps006" groups=[
+"interior",
+]]
 transform = Transform( -1.77636e-015, 1.71363e-007, 0.480922, 1, -8.30048e-008, -1.59982e-010, 7.54979e-008, 1, -3.42727e-007, 0.219757, 0.843758, 0.536743 )
 layers = 1
 material_override = null
@@ -960,7 +1046,9 @@ mesh = ExtResource( 44 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="ShimmyPole1006" type="MeshInstance" parent="ShimmyStair-Steps006/ShimmyStair-Rails006"]
+[node name="ShimmyPole1006" type="MeshInstance" parent="ShimmyStair-Steps006/ShimmyStair-Rails006" groups=[
+"interior",
+]]
 transform = Transform( 8.46775e-010, 1, -7.38376e-008, 1, -1.86266e-009, -1.49012e-007, -1.49012e-007, -7.50019e-008, -1, 0.00682068, -0.000732422, -0.45697 )
 layers = 1
 material_override = null
@@ -975,7 +1063,9 @@ mesh = ExtResource( 45 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="ShimmyStair-Steps005" type="MeshInstance" parent="."]
+[node name="ShimmyStair-Steps005" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 2.05732, 0, -0.145153, 0, 1, 0, 0.301823, 0, 0.989409, 1517.38, 86.9335, -414.953 )
 layers = 1
 material_override = null
@@ -992,7 +1082,9 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="ShimmyStair-Rails005" type="MeshInstance" parent="ShimmyStair-Steps005"]
+[node name="ShimmyStair-Rails005" type="MeshInstance" parent="ShimmyStair-Steps005" groups=[
+"interior",
+]]
 transform = Transform( -7.45058e-009, 0, -0.480922, 3.80722e-010, 1, -3.82102e-009, 1, 0, -2.98023e-008, 0.219727, 0.843758, 0.536865 )
 layers = 1
 material_override = null
@@ -1007,7 +1099,9 @@ mesh = ExtResource( 47 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="ShimmyPole1005" type="MeshInstance" parent="ShimmyStair-Steps005/ShimmyStair-Rails005"]
+[node name="ShimmyPole1005" type="MeshInstance" parent="ShimmyStair-Steps005/ShimmyStair-Rails005" groups=[
+"interior",
+]]
 transform = Transform( -0.145153, 0, 0.989409, 0, 1, -1.86265e-009, -0.989409, 0, -0.145153, -0.000610352, 0.00682068, 0.456909 )
 layers = 1
 material_override = null
@@ -1022,7 +1116,9 @@ mesh = ExtResource( 48 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="ShimmyStair-Steps004" type="MeshInstance" parent="."]
+[node name="ShimmyStair-Steps004" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.301822, 0, 0.989409, 0, 1, 0, -2.05732, 0, 0.145153, 1511.34, 82.9637, -411.688 )
 layers = 1
 material_override = null
@@ -1039,7 +1135,9 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="ShimmyStair-Rails004" type="MeshInstance" parent="ShimmyStair-Steps004"]
+[node name="ShimmyStair-Rails004" type="MeshInstance" parent="ShimmyStair-Steps004" groups=[
+"interior",
+]]
 transform = Transform( -1.33227e-015, 1.71363e-007, 0.480922, 1, -7.93189e-008, 3.80753e-010, 7.54979e-008, 1, -3.42727e-007, 0.219757, 0.84375, 0.536621 )
 layers = 1
 material_override = null
@@ -1066,7 +1164,9 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 shape = ExtResource( 51 )
 disabled = false
 
-[node name="ShimmyStair-Steps003" type="MeshInstance" parent="."]
+[node name="ShimmyStair-Steps003" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.301822, 0, 0.989409, 0, 1, 0, -2.05732, 0, 0.145153, 1508.98, 78.4317, -407.856 )
 layers = 1
 material_override = null
@@ -1083,7 +1183,9 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="ShimmyPole1002" type="MeshInstance" parent="ShimmyStair-Steps003"]
+[node name="ShimmyPole1002" type="MeshInstance" parent="ShimmyStair-Steps003" groups=[
+"interior",
+]]
 transform = Transform( 1.2666e-007, -3.607e-008, -0.480922, -7.17726e-008, 1, -7.50019e-008, 1, 7.54979e-008, 2.08616e-007, 6.10352e-005, 0.850571, 0.536377 )
 layers = 1
 material_override = null
@@ -1098,7 +1200,9 @@ mesh = ExtResource( 53 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="ShimmyStair-Rails002" type="MeshInstance" parent="ShimmyStair-Steps003"]
+[node name="ShimmyStair-Rails002" type="MeshInstance" parent="ShimmyStair-Steps003" groups=[
+"interior",
+]]
 transform = Transform( 0, 1.93715e-007, 0.480922, 1, -7.17726e-008, 2.79493e-014, 7.54979e-008, 1, -3.57628e-007, 0.219788, 0.843758, 0.536865 )
 layers = 1
 material_override = null
@@ -1113,7 +1217,9 @@ mesh = ExtResource( 54 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="ShimmyStair-Steps002" type="MeshInstance" parent="."]
+[node name="ShimmyStair-Steps002" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.301822, 0, 0.989409, 0, 1, 0, -2.05732, 0, 0.145153, 1511.56, 82.9637, -413.172 )
 layers = 1
 material_override = null
@@ -1130,7 +1236,9 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="ShimmyPole1003" type="MeshInstance" parent="ShimmyStair-Steps002"]
+[node name="ShimmyPole1003" type="MeshInstance" parent="ShimmyStair-Steps002" groups=[
+"interior",
+]]
 transform = Transform( 1.19209e-007, -3.607e-008, -0.480922, -6.8222e-008, 1, -7.64641e-008, 1, 7.54979e-008, 1.93715e-007, 9.15527e-005, 0.850578, 0.536377 )
 layers = 1
 material_override = null
@@ -1145,7 +1253,9 @@ mesh = ExtResource( 56 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="ShimmyPole1004" type="MeshInstance" parent="ShimmyStair-Steps002"]
+[node name="ShimmyPole1004" type="MeshInstance" parent="ShimmyStair-Steps002" groups=[
+"interior",
+]]
 transform = Transform( 1.19209e-007, -3.607e-008, -0.480922, -6.8222e-008, 1, -7.64641e-008, 1, 7.54979e-008, 1.93715e-007, -0.721313, 0.850578, 0.536499 )
 layers = 1
 material_override = null
@@ -1160,7 +1270,9 @@ mesh = ExtResource( 57 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="ShimmyStair-Rails003" type="MeshInstance" parent="ShimmyStair-Steps002"]
+[node name="ShimmyStair-Rails003" type="MeshInstance" parent="ShimmyStair-Steps002" groups=[
+"interior",
+]]
 transform = Transform( 0, 1.93715e-007, 0.480922, 1, -6.8222e-008, 1.46222e-009, 7.54979e-008, 1, -3.27826e-007, 0.219818, 0.843765, 0.536987 )
 layers = 1
 material_override = null
@@ -1187,7 +1299,9 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 shape = ExtResource( 51 )
 disabled = false
 
-[node name="ShimmyStair-Steps011" type="MeshInstance" parent="."]
+[node name="ShimmyStair-Steps011" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.301822, 0, 0.989409, 0, 1, 0, -2.05732, 0, 0.145153, 1500.27, 78.4371, -348.51 )
 layers = 1
 material_override = null
@@ -1204,7 +1318,9 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="ShimmyPole1001" type="MeshInstance" parent="ShimmyStair-Steps011"]
+[node name="ShimmyPole1001" type="MeshInstance" parent="ShimmyStair-Steps011" groups=[
+"interior",
+]]
 transform = Transform( 9.68575e-008, -3.607e-008, -0.480922, -6.79516e-008, 1, -7.46211e-008, 1, 7.54979e-008, 2.08616e-007, 3.05176e-005, 0.850578, 0.536255 )
 layers = 1
 material_override = null
@@ -1219,7 +1335,9 @@ mesh = ExtResource( 60 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="ShimmyStair-Rails001" type="MeshInstance" parent="ShimmyStair-Steps011"]
+[node name="ShimmyStair-Rails001" type="MeshInstance" parent="ShimmyStair-Steps011" groups=[
+"interior",
+]]
 transform = Transform( -1.77636e-015, 1.63913e-007, 0.480922, 1, -6.79516e-008, -3.80696e-010, 7.54979e-008, 1, -3.57628e-007, 0.219757, 0.843765, 0.536987 )
 layers = 1
 material_override = null
@@ -1264,7 +1382,9 @@ size = 6.0
 near = 0.1
 far = 50000.0
 
-[node name="RecHab1TopFloorsSupportTemplate" type="MeshInstance" parent="."]
+[node name="RecHab1TopFloorsSupportTemplate" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1522.76, 86.9672, -389.758 )
 layers = 1
 material_override = null
@@ -1278,7 +1398,9 @@ lod_max_hysteresis = 0.0
 mesh = ExtResource( 62 )
 skeleton = NodePath("..")
 
-[node name="RecHab1-TopFloorSupports" type="MeshInstance" parent="RecHab1TopFloorsSupportTemplate"]
+[node name="RecHab1-TopFloorSupports" type="MeshInstance" parent="RecHab1TopFloorsSupportTemplate" groups=[
+"interior",
+]]
 transform = Transform( 1, 0, -1.49012e-008, -3.94538e-011, 1, -5.40737e-010, -1.49012e-008, 0, 1, -0.00012207, 0, 0 )
 layers = 1
 material_override = null
@@ -1293,7 +1415,10 @@ mesh = ExtResource( 63 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="RecHab1-UpperFloor" type="MeshInstance" parent="."]
+[node name="RecHab1-UpperFloor" type="MeshInstance" parent="." groups=[
+"floor",
+"interior",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1523.9, 82.9672, -406.058 )
 layers = 1
 material_override = null
@@ -1308,7 +1433,9 @@ mesh = ExtResource( 64 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="RecHab1-SunTubeLamps001" type="MeshInstance" parent="."]
+[node name="RecHab1-SunTubeLamps001" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1520.21, 90.7459, -397.232 )
 layers = 1
 material_override = null
@@ -1323,7 +1450,9 @@ mesh = ExtResource( 65 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="RecHab1-Monkeybars-Hoops" type="MeshInstance" parent="."]
+[node name="RecHab1-Monkeybars-Hoops" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1520.04, 75.3319, -378.462 )
 layers = 1
 material_override = null
@@ -1338,7 +1467,9 @@ mesh = ExtResource( 66 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="RecHab1-Monkeybars" type="MeshInstance" parent="."]
+[node name="RecHab1-Monkeybars" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1520.04, 75.3319, -378.462 )
 layers = 1
 material_override = null
@@ -1353,7 +1484,9 @@ mesh = ExtResource( 67 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="RecHab1-FloorCablesTemplate" type="MeshInstance" parent="."]
+[node name="RecHab1-FloorCablesTemplate" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1504.85, 78.4371, -376.474 )
 layers = 1
 material_override = null
@@ -1367,7 +1500,9 @@ lod_max_hysteresis = 0.0
 mesh = ExtResource( 68 )
 skeleton = NodePath("..")
 
-[node name="Poolside-level-cables" type="MeshInstance" parent="RecHab1-FloorCablesTemplate"]
+[node name="Poolside-level-cables" type="MeshInstance" parent="RecHab1-FloorCablesTemplate" groups=[
+"interior",
+]]
 transform = Transform( 1, -1.86265e-009, 0, 5.58794e-009, 1, 0, 0, 0, 1, 0, -7.62939e-006, 0 )
 layers = 1
 material_override = null
@@ -1382,7 +1517,10 @@ mesh = ExtResource( 69 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="RecHab1-EntranceStairs" type="MeshInstance" parent="."]
+[node name="RecHab1-EntranceStairs" type="MeshInstance" parent="." groups=[
+"floor",
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1508.49, 77.4168, -340.428 )
 layers = 1
 material_override = null
@@ -1397,7 +1535,9 @@ mesh = ExtResource( 70 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="RecHab1-BoothStairs" type="MeshInstance" parent="."]
+[node name="RecHab1-BoothStairs" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1524.12, 81.3171, -405.967 )
 layers = 1
 material_override = null
@@ -1559,7 +1699,9 @@ omni_attenuation = 1.0
 omni_shadow_mode = 1
 omni_shadow_detail = 1
 
-[node name="GymAreaEmitterLamp" type="MeshInstance" parent="."]
+[node name="GymAreaEmitterLamp" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989351, 0, -12.8533, 0, 1, 0, 0.145551, 0, 87.3674, 1518.11, 75.6271, -379.047 )
 layers = 1
 material_override = null
@@ -1574,7 +1716,9 @@ mesh = ExtResource( 72 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="PoolBenchBack" type="MeshInstance" parent="."]
+[node name="PoolBenchBack" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -17.4184, 0, 1, 0, 0.145153, 0, 118.729, 1502.99, 79.0896, -376.753 )
 layers = 1
 material_override = null
@@ -1589,7 +1733,9 @@ mesh = ExtResource( 73 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="PoolRadiatorInsulationPanels" type="MeshInstance" parent="."]
+[node name="PoolRadiatorInsulationPanels" type="MeshInstance" parent="." groups=[
+"exterior",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1498.77, 94.1804, -413.738 )
 layers = 1
 material_override = null
@@ -1604,7 +1750,9 @@ mesh = ExtResource( 74 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="PoolRadiator" type="MeshInstance" parent="."]
+[node name="PoolRadiator" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1494.97, 93.0955, -382.929 )
 layers = 1
 material_override = null
@@ -1619,7 +1767,9 @@ mesh = ExtResource( 75 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="KitchenCounterSinks" type="MeshInstance" parent="."]
+[node name="KitchenCounterSinks" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1525.22, 83.9941, -371.859 )
 layers = 1
 material_override = null
@@ -1635,7 +1785,10 @@ skeleton = NodePath("..")
 material/0 = null
 material/1 = null
 
-[node name="BathroomN-Stairs" type="MeshInstance" parent="."]
+[node name="BathroomN-Stairs" type="MeshInstance" parent="." groups=[
+"floor",
+"interior",
+]]
 transform = Transform( 0.989409, 0, 0.145153, 0, 1, 0, 0.145153, 0, -0.989409, 1520.66, 73.0339, -414.118 )
 layers = 1
 material_override = null
@@ -1650,7 +1803,9 @@ mesh = ExtResource( 77 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="PoolBench" type="MeshInstance" parent="."]
+[node name="PoolBench" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -17.4184, 0, 1, 0, 0.145153, 0, 118.729, 1502.94, 78.9371, -376.753 )
 layers = 1
 material_override = null
@@ -1665,7 +1820,9 @@ mesh = ExtResource( 78 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="TopFloorCableTemplate" type="MeshInstance" parent="."]
+[node name="TopFloorCableTemplate" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1511.84, 86.9672, -382.079 )
 layers = 1
 material_override = null
@@ -1679,7 +1836,9 @@ lod_max_hysteresis = 0.0
 mesh = ExtResource( 79 )
 skeleton = NodePath("..")
 
-[node name="RecHab1-TopFloorSupports001" type="MeshInstance" parent="TopFloorCableTemplate"]
+[node name="RecHab1-TopFloorSupports001" type="MeshInstance" parent="TopFloorCableTemplate" groups=[
+"interior",
+]]
 transform = Transform( 1, 0, 0, -1.35184e-010, 1, -9.21459e-010, -1.49012e-008, 0, 1, 0, 0, -6.10352e-005 )
 layers = 1
 material_override = null
@@ -1694,7 +1853,10 @@ mesh = ExtResource( 80 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="TrampolineStrip" type="MeshInstance" parent="."]
+[node name="TrampolineStrip" type="MeshInstance" parent="." groups=[
+"floor",
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1501.72, 67.6379, -355.621 )
 layers = 1
 material_override = null
@@ -1709,7 +1871,9 @@ mesh = ExtResource( 81 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="PicnicBooths" type="MeshInstance" parent="."]
+[node name="PicnicBooths" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1515.79, 75.6921, -349.106 )
 layers = 1
 material_override = null
@@ -1725,7 +1889,9 @@ skeleton = NodePath("..")
 material/0 = null
 material/1 = null
 
-[node name="Cylinder101" type="MeshInstance" parent="PicnicBooths"]
+[node name="Cylinder101" type="MeshInstance" parent="PicnicBooths" groups=[
+"interior",
+]]
 transform = Transform( 0.989409, -1.86265e-009, -0.145153, -5.50903e-009, 1, 9.45571e-010, 0.145153, -1.35904e-010, 0.989409, -0.76355, 10.0742, 2.28598 )
 layers = 1
 material_override = null
@@ -1740,7 +1906,9 @@ mesh = ExtResource( 83 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="DivingBoard" type="MeshInstance" parent="."]
+[node name="DivingBoard" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1523.9, 82.9672, -406.058 )
 layers = 1
 material_override = null
@@ -1755,7 +1923,10 @@ mesh = ExtResource( 84 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="BathroomS-Stairs" type="MeshInstance" parent="."]
+[node name="BathroomS-Stairs" type="MeshInstance" parent="." groups=[
+"floor",
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1514.12, 73.0339, -343.033 )
 layers = 1
 material_override = null
@@ -1770,7 +1941,10 @@ mesh = ExtResource( 85 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="TopFloor" type="MeshInstance" parent="."]
+[node name="TopFloor" type="MeshInstance" parent="." groups=[
+"floor",
+"interior",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1520.67, 86.9672, -384.089 )
 layers = 1
 material_override = null
@@ -1786,7 +1960,10 @@ skeleton = NodePath("..")
 material/0 = null
 material/1 = null
 
-[node name="BottomPadding" type="MeshInstance" parent="."]
+[node name="BottomPadding" type="MeshInstance" parent="." groups=[
+"floor",
+"interior",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1501.72, 67.6379, -355.621 )
 layers = 1
 material_override = null
@@ -1801,7 +1978,10 @@ mesh = ExtResource( 87 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="BottomFloor" type="MeshInstance" parent="."]
+[node name="BottomFloor" type="MeshInstance" parent="." groups=[
+"floor",
+"interior",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1505.02, 67.6379, -355.136 )
 layers = 1
 material_override = null
@@ -1816,7 +1996,10 @@ mesh = ExtResource( 88 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="MainFloor" type="MeshInstance" parent="."]
+[node name="MainFloor" type="MeshInstance" parent="." groups=[
+"floor",
+"interior",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1511.65, 75.6871, -354.164 )
 layers = 1
 material_override = null
@@ -1831,7 +2014,9 @@ mesh = ExtResource( 89 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="LightOutlet001" type="MeshInstance" parent="."]
+[node name="LightOutlet001" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1516.01, 86.1886, -366.567 )
 layers = 1
 material_override = null
@@ -1846,7 +2031,9 @@ mesh = ExtResource( 90 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="LightOutlet002" type="MeshInstance" parent="."]
+[node name="LightOutlet002" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1520.21, 86.1886, -397.232 )
 layers = 1
 material_override = null
@@ -1861,7 +2048,9 @@ mesh = ExtResource( 90 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="BeverageCooler" type="MeshInstance" parent="."]
+[node name="BeverageCooler" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1525.23, 84.1842, -373.619 )
 layers = 1
 material_override = null
@@ -1878,7 +2067,9 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="MainWaterTank" type="MeshInstance" parent="."]
+[node name="MainWaterTank" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1507.93, 90.8066, -344.518 )
 layers = 1
 material_override = null
@@ -1893,7 +2084,9 @@ mesh = ExtResource( 92 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="Table" type="MeshInstance" parent="."]
+[node name="Table" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1525.5, 83.2665, -374.54 )
 layers = 1
 material_override = null
@@ -1908,7 +2101,9 @@ mesh = ExtResource( 93 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="Freezer" type="MeshInstance" parent="."]
+[node name="Freezer" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1524.7, 83.2688, -368.397 )
 layers = 1
 material_override = null
@@ -1923,7 +2118,9 @@ mesh = ExtResource( 94 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="GarbageCan" type="MeshInstance" parent="."]
+[node name="GarbageCan" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1524.82, 83.2161, -370.463 )
 layers = 1
 material_override = null
@@ -1938,7 +2135,9 @@ mesh = ExtResource( 95 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="Fridge-4door" type="MeshInstance" parent="."]
+[node name="Fridge-4door" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1524.77, 83.2161, -370.109 )
 layers = 1
 material_override = null
@@ -1954,7 +2153,9 @@ skeleton = NodePath("..")
 material/0 = null
 material/1 = null
 
-[node name="KitchenSink-WaterHeaterTaps" type="MeshInstance" parent="."]
+[node name="KitchenSink-WaterHeaterTaps" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1525.24, 84.6619, -371.857 )
 layers = 1
 material_override = null
@@ -1969,7 +2170,9 @@ mesh = ExtResource( 97 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="BathroomN-AirFiltration" type="MeshInstance" parent="."]
+[node name="BathroomN-AirFiltration" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.591008, 0, -0.0867049, 0, 0.597335, 0, 0.0867049, 0, 0.591008, 1511.29, 75.8305, -341.596 )
 layers = 1
 material_override = null
@@ -1984,7 +2187,11 @@ mesh = ExtResource( 98 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="BathroomN" type="MeshInstance" parent="."]
+[node name="BathroomN" type="MeshInstance" parent="." groups=[
+"floor",
+"interior",
+"wall",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1516.83, 74.1128, -412.186 )
 layers = 1
 material_override = null
@@ -1999,7 +2206,11 @@ mesh = ExtResource( 99 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="BathroomS" type="MeshInstance" parent="."]
+[node name="BathroomS" type="MeshInstance" parent="." groups=[
+"floor",
+"interior",
+"wall",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1511.99, 74.1128, -342.264 )
 layers = 1
 material_override = null
@@ -2014,7 +2225,9 @@ mesh = ExtResource( 100 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="BathroomS-AirFiltration" type="MeshInstance" parent="."]
+[node name="BathroomS-AirFiltration" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.591008, 0, -0.0867049, 0, 0.597335, 0, 0.0867049, 0, 0.591008, 1511.34, 75.8305, -341.958 )
 layers = 1
 material_override = null
@@ -2029,7 +2242,9 @@ mesh = ExtResource( 101 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="Pool-EquipmentHousing" type="MeshInstance" parent="."]
+[node name="Pool-EquipmentHousing" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 3.29803, 0, -0.145153, 0, 1, 0, 0.483844, 0, 0.989409, 1504.04, 75.4913, -355.057 )
 layers = 1
 material_override = null
@@ -2044,7 +2259,9 @@ mesh = ExtResource( 102 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="Platform" type="MeshInstance" parent="."]
+[node name="Platform" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 0.989409, 0, -0.145153, 0, 1, 0, 0.145153, 0, 0.989409, 1518.85, 72.9705, -353.127 )
 layers = 1
 material_override = null
@@ -2122,7 +2339,9 @@ omni_attenuation = 1.0
 omni_shadow_mode = 1
 omni_shadow_detail = 1
 
-[node name="AirCirculationDuctsS" type="MeshInstance" parent="."]
+[node name="AirCirculationDuctsS" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1503.62, 97.4144, -342.382 )
 layers = 1
 material_override = null
@@ -2142,7 +2361,9 @@ transform = Transform( -0.144356, 0, -0.989526, 0, 1, 0, 0.989526, 0, -0.144356,
 
 [node name="Toilet" parent="Toilet043" instance=ExtResource( 22 )]
 
-[node name="GarbageCan001" type="MeshInstance" parent="."]
+[node name="GarbageCan001" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1525.25, 83.2161, -373.134 )
 layers = 1
 material_override = null
@@ -2157,7 +2378,9 @@ mesh = ExtResource( 105 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="BeverageCooler001" type="MeshInstance" parent="."]
+[node name="BeverageCooler001" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1525.29, 84.1842, -373.99 )
 layers = 1
 material_override = null
@@ -2300,7 +2523,9 @@ omni_attenuation = 1.0
 omni_shadow_mode = 1
 omni_shadow_detail = 1
 
-[node name="LightOutlet007" type="MeshInstance" parent="."]
+[node name="LightOutlet007" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1520.21, 86.1886, -397.232 )
 layers = 1
 material_override = null
@@ -2315,7 +2540,9 @@ mesh = ExtResource( 107 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="LightOutlet008" type="MeshInstance" parent="."]
+[node name="LightOutlet008" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1516.01, 86.1886, -366.567 )
 layers = 1
 material_override = null
@@ -2372,7 +2599,9 @@ omni_attenuation = 1.0
 omni_shadow_mode = 1
 omni_shadow_detail = 1
 
-[node name="ToiletStalls-4001" type="MeshInstance" parent="."]
+[node name="ToiletStalls-4001" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 7.54979e-008, -0.989409, 0.145154, -1, -7.46983e-008, 1.09588e-008, 0, -0.145154, -0.989409, 1507.91, 73.633, -345.809 )
 layers = 1
 material_override = null
@@ -2387,7 +2616,9 @@ mesh = ExtResource( 108 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="ToiletStalls-4" type="MeshInstance" parent="."]
+[node name="ToiletStalls-4" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 7.54979e-008, -0.989409, 0.145154, -1, -7.46983e-008, 1.09588e-008, 0, -0.145154, -0.989409, 1500.06, 73.633, -346.959 )
 layers = 1
 material_override = null
@@ -2402,7 +2633,9 @@ mesh = ExtResource( 109 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="ToiletStalls-8" type="MeshInstance" parent="."]
+[node name="ToiletStalls-8" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 7.54979e-008, 0.989409, -0.145154, -1, 7.46983e-008, -1.09588e-008, 0, 0.145154, 0.989409, 1507.81, 73.633, -342.49 )
 layers = 1
 material_override = null
@@ -2438,7 +2671,9 @@ omni_attenuation = 1.0
 omni_shadow_mode = 1
 omni_shadow_detail = 1
 
-[node name="ToiletStalls-4002" type="MeshInstance" parent="."]
+[node name="ToiletStalls-4002" type="MeshInstance" parent="." groups=[
+"interior",
+]]
 transform = Transform( 7.54979e-008, 0.989409, -0.145154, -1, 7.46983e-008, -1.09588e-008, 0, 0.145154, 0.989409, 1503.28, 73.633, -343.155 )
 layers = 1
 material_override = null

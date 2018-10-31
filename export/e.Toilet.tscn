@@ -1,4 +1,4 @@
-[gd_scene load_steps=1 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://export/meshes/m_e_Toilet_escn_1.mesh" type="ArrayMesh" id=1]
 [ext_resource path="res://export/meshes/m_e_Toilet_escn_2.mesh" type="ArrayMesh" id=2]
@@ -23,138 +23,380 @@
 [ext_resource path="res://export/meshes/m_e_Toilet_escn_21.mesh" type="ArrayMesh" id=21]
 [ext_resource path="res://export/meshes/m_e_Toilet_escn_22.mesh" type="ArrayMesh" id=22]
 
-[node type="Spatial" name="Toilet"]
+[node name="Toilet" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00191299, 0.170845, -0.0562929 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.00191299, 0.170845, -0.0562929)
-
-[node name="Toilet-Floor005" type="MeshInstance" parent="."]
-
+[node name="Toilet-Floor005" type="MeshInstance" parent="." groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00313823, 0.00354534, -6.02274e-008 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 1 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.00313823, 0.00354534, -6.02274e-08)
+skeleton = NodePath("..")
+material/0 = null
 
-[node name="Motor-FecalTank005" type="MeshInstance" parent="Toilet-Floor005"]
-
+[node name="Motor-FecalTank005" type="MeshInstance" parent="Toilet-Floor005" groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0452661, -0.748832, 0.114494 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 2 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -0.0452661, -0.748832, 0.114494)
+skeleton = NodePath("..")
+material/0 = null
 
-[node name="PooFlap-Bottom005" type="MeshInstance" parent="Toilet-Floor005"]
-
+[node name="PooFlap-Bottom005" type="MeshInstance" parent="Toilet-Floor005" groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0246413, -0.153135, 3.86383e-008 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 3 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0246413, -0.153135, 3.86383e-08)
+skeleton = NodePath("..")
+material/0 = null
 
-[node name="PooFlap-Handle003" type="MeshInstance" parent="Toilet-Floor005"]
-
+[node name="PooFlap-Handle003" type="MeshInstance" parent="Toilet-Floor005" groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0325021, 0.418045, 0.150896 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 4 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0325021, 0.418045, 0.150896)
+skeleton = NodePath("..")
+material/0 = null
 
-[node name="PooFlap-Top005" type="MeshInstance" parent="Toilet-Floor005"]
-
+[node name="PooFlap-Top005" type="MeshInstance" parent="Toilet-Floor005" groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0325022, 0.418045, 0.140896 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 5 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0325022, 0.418045, 0.140896)
+skeleton = NodePath("..")
+material/0 = null
 
-[node name="Toilet-AirFilter005" type="MeshInstance" parent="Toilet-Floor005"]
-
+[node name="Toilet-AirFilter005" type="MeshInstance" parent="Toilet-Floor005" groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1744, -0.434049, 0.203367 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 6 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.1744, -0.434049, 0.203367)
+skeleton = NodePath("..")
+material/0 = null
 
-[node name="Toilet-Bidet005" type="MeshInstance" parent="Toilet-Floor005"]
-
+[node name="Toilet-Bidet005" type="MeshInstance" parent="Toilet-Floor005" groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.00595e-012 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 7 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, -7.00595e-12)
+skeleton = NodePath("..")
+material/0 = null
 
-[node name="Toilet-BidetSwitch005" type="MeshInstance" parent="Toilet-Floor005"]
-
+[node name="Toilet-BidetSwitch005" type="MeshInstance" parent="Toilet-Floor005" groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0325022, 0.418045, 0.130896 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 8 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0325022, 0.418045, 0.130896)
+skeleton = NodePath("..")
+material/0 = null
 
-[node name="Toilet-FecalTank005" type="MeshInstance" parent="Toilet-Floor005"]
-
+[node name="Toilet-FecalTank005" type="MeshInstance" parent="Toilet-Floor005" groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.215753, -0.616423, -2.21182e-008 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 9 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -0.215753, -0.616423, -2.21182e-08)
+skeleton = NodePath("..")
+material/0 = null
 
-[node name="Toilet-Frame005" type="MeshInstance" parent="Toilet-Floor005"]
-
+[node name="Toilet-Frame005" type="MeshInstance" parent="Toilet-Floor005" groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0476012, -0.744787, 0.122375 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 10 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -0.0476012, -0.744787, 0.122375)
+skeleton = NodePath("..")
+material/0 = null
 
-[node name="Toilet-HeatPump005" type="MeshInstance" parent="Toilet-Floor005"]
-
+[node name="Toilet-HeatPump005" type="MeshInstance" parent="Toilet-Floor005" groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.243528, -0.158829, -0.000638452 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 11 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -0.243528, -0.158829, -0.000638452)
+skeleton = NodePath("..")
+material/0 = null
 
-[node name="Toilet-PeeTank005" type="MeshInstance" parent="Toilet-Floor005"]
-
+[node name="Toilet-PeeTank005" type="MeshInstance" parent="Toilet-Floor005" groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1744, -0.498067, -0.152335 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 12 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.1744, -0.498067, -0.152335)
+skeleton = NodePath("..")
+material/0 = null
 
-[node name="Toilet-PeeTreat005" type="MeshInstance" parent="Toilet-Floor005"]
-
+[node name="Toilet-PeeTreat005" type="MeshInstance" parent="Toilet-Floor005" groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0598032, -0.161624, -1.69454e-008 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 13 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0598032, -0.161624, -1.69454e-08)
+skeleton = NodePath("..")
+material/0 = null
 
-[node name="Toilet-pipe005" type="MeshInstance" parent="Toilet-Floor005"]
-
+[node name="Toilet-pipe005" type="MeshInstance" parent="Toilet-Floor005" groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0784788, -0.434807, 0.1555 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 14 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -0.0784788, -0.434807, 0.1555)
+skeleton = NodePath("..")
+material/0 = null
 
-[node name="Toilet-pipes005" type="MeshInstance" parent="Toilet-Floor005"]
-
+[node name="Toilet-pipes005" type="MeshInstance" parent="Toilet-Floor005" groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.175664, -0.338095, 0.00189365 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 15 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -0.175664, -0.338095, 0.00189365)
+skeleton = NodePath("..")
+material/0 = null
 
-[node name="Toilet-SeatLower005" type="MeshInstance" parent="Toilet-Floor005"]
-
+[node name="Toilet-SeatLower005" type="MeshInstance" parent="Toilet-Floor005" groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0322395, 0.488356, 1.36189e-008 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 16 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0322395, 0.488356, 1.36189e-08)
+skeleton = NodePath("..")
+material/0 = null
 
-[node name="Toilet-SeatUpper005" type="MeshInstance" parent="Toilet-Floor005"]
-
+[node name="Toilet-SeatUpper005" type="MeshInstance" parent="Toilet-Floor005" groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0322395, 0.488356, 1.36189e-008 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 17 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0322395, 0.488356, 1.36189e-08)
+skeleton = NodePath("..")
+material/0 = null
 
-[node name="Toilet-Shelf005" type="MeshInstance" parent="Toilet-Floor005"]
-
+[node name="Toilet-Shelf005" type="MeshInstance" parent="Toilet-Floor005" groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.161399, -0.212451, -0.000275652 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 18 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.161399, -0.212451, -0.000275652)
+skeleton = NodePath("..")
+material/0 = null
 
-[node name="ToiletMain005" type="MeshInstance" parent="Toilet-Floor005"]
-
+[node name="ToiletMain005" type="MeshInstance" parent="Toilet-Floor005" groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00676203, -0.0125815, -2.1602e-008 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 19 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.00676203, -0.0125815, -2.1602e-08)
+skeleton = NodePath("..")
+material/0 = null
 
-[node name="ToiletPedal005" type="MeshInstance" parent="Toilet-Floor005"]
-
+[node name="ToiletPedal005" type="MeshInstance" parent="Toilet-Floor005" groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0246413, -0.0601285, 0.134508 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 20 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0246413, -0.0601285, 0.134508)
+skeleton = NodePath("..")
+material/0 = null
 
-[node name="Wheel-FecalTank005" type="MeshInstance" parent="Toilet-Floor005"]
-
+[node name="Wheel-FecalTank005" type="MeshInstance" parent="Toilet-Floor005" groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0452661, -0.748832, 0.114494 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 21 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -0.0452661, -0.748832, 0.114494)
+skeleton = NodePath("..")
+material/0 = null
 
-[node name="WheelSmall-FecalTank005" type="MeshInstance" parent="Toilet-Floor005"]
-
+[node name="WheelSmall-FecalTank005" type="MeshInstance" parent="Toilet-Floor005" groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0476012, -0.744787, 0.122375 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 22 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -0.0476012, -0.744787, 0.122375)
+skeleton = NodePath("..")
+material/0 = null
+
