@@ -8,7 +8,9 @@
 
 [node name="AthleteRover" type="Spatial"]
 
-[node name="AthleteRover" type="MeshInstance" parent="."]
+[node name="AthleteRover" type="MeshInstance" parent="." groups=[
+"cs_manual",
+]]
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -32,7 +34,7 @@ constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="AthleteRover/StaticBody"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 9.01849, -7.19068, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 9.01849, -7.19068, 0 )
 shape = ExtResource( 2 )
 disabled = false
 
@@ -48,7 +50,7 @@ disabled = false
 _sections_unfolded = [ "shape" ]
 
 [node name="CollisionShape4" type="CollisionShape" parent="AthleteRover/StaticBody"]
-transform = Transform( 0.736653, 0.676271, 2.95607e-008, 0, -4.37114e-008, 1, 0.676271, -0.736653, -3.22001e-008, 6.85363, -7.19068, 6.72418 )
+transform = Transform( 0.736653, 0.676271, 2.95607e-08, 0, -4.37114e-08, 1, 0.676271, -0.736653, -3.22001e-08, 6.85363, -7.19068, 6.72418 )
 shape = ExtResource( 2 )
 disabled = false
 
@@ -64,7 +66,7 @@ disabled = false
 _sections_unfolded = [ "shape" ]
 
 [node name="CollisionShape7" type="CollisionShape" parent="AthleteRover/StaticBody"]
-transform = Transform( 0.754426, -0.656385, -2.86915e-008, 0, -4.37114e-008, 1, -0.656385, -0.754426, -3.2977e-008, 7.43501, -7.19068, -5.79891 )
+transform = Transform( 0.754426, -0.656385, -2.86915e-08, 0, -4.37114e-08, 1, -0.656385, -0.754426, -3.2977e-08, 7.43501, -7.19068, -5.79891 )
 shape = ExtResource( 2 )
 disabled = false
 
@@ -80,7 +82,7 @@ disabled = false
 _sections_unfolded = [ "shape" ]
 
 [node name="CollisionShape10" type="CollisionShape" parent="AthleteRover/StaticBody"]
-transform = Transform( -1, -0.000388812, -1.69955e-011, 0, -4.37114e-008, 1, -0.000388812, 1, 4.37114e-008, -8.95128, -7.19068, 0.0533938 )
+transform = Transform( -1, -0.000388812, -1.69955e-11, 0, -4.37114e-08, 1, -0.000388812, 1, 4.37114e-08, -8.95128, -7.19068, 0.0533938 )
 shape = ExtResource( 2 )
 disabled = false
 
@@ -96,7 +98,7 @@ disabled = false
 _sections_unfolded = [ "shape" ]
 
 [node name="CollisionShape13" type="CollisionShape" parent="AthleteRover/StaticBody"]
-transform = Transform( -0.814913, -0.579582, -2.53344e-008, 0, -4.37114e-008, 1, -0.579582, 0.814913, 3.5621e-008, -7.30665, -7.19068, -5.63025 )
+transform = Transform( -0.814913, -0.579582, -2.53344e-08, 0, -4.37114e-08, 1, -0.579582, 0.814913, 3.5621e-08, -7.30665, -7.19068, -5.63025 )
 shape = ExtResource( 2 )
 disabled = false
 
@@ -112,7 +114,7 @@ disabled = false
 _sections_unfolded = [ "shape" ]
 
 [node name="CollisionShape16" type="CollisionShape" parent="AthleteRover/StaticBody"]
-transform = Transform( -0.681804, 0.731535, 3.19764e-008, 0, -4.37114e-008, 1, 0.731535, 0.681804, 2.98026e-008, -6.6056, -7.19068, 6.4793 )
+transform = Transform( -0.681804, 0.731535, 3.19764e-08, 0, -4.37114e-08, 1, 0.731535, 0.681804, 2.98026e-08, -6.6056, -7.19068, 6.4793 )
 shape = ExtResource( 2 )
 disabled = false
 

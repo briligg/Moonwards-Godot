@@ -1,4 +1,4 @@
-[gd_scene load_steps=1 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://export/meshes/m_e_HexpaneWindow_escn_1.mesh" type="ArrayMesh" id=1]
 [ext_resource path="res://export/meshes/m_e_HexpaneWindow_escn_2.mesh" type="ArrayMesh" id=2]
@@ -12,76 +12,193 @@
 [ext_resource path="res://export/meshes/m_e_HexpaneWindow_escn_10.mesh" type="ArrayMesh" id=10]
 [ext_resource path="res://export/meshes/m_e_HexpaneWindow_escn_11.mesh" type="ArrayMesh" id=11]
 
-[node type="Spatial" name="HexpaneWindow"]
+[sub_resource type="BoxShape" id=1]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1679.41, -139.652, 40.9638)
+margin = 0.04
+extents = Vector3( 1, 3.35992, 3.55797 )
 
-[node name="WindowHexpane005" type="Spatial" parent="."]
+[node name="HexpaneWindow" type="Spatial" groups=[
+"cs_manual",
+"exterior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1679.41, -139.652, 40.9638 )
 
-transform = Transform(-4.37114e-08, 0.0, -1.0, 0.0, 1.0, 0.0, 1.0, 0.0, -4.37114e-08, 1679.32, 139.166, -42.5542)
+[node name="StaticBody" type="StaticBody" parent="."]
+transform = Transform( -4.37079e-08, 5.50425e-10, -1, 0.0125923, 0.999921, 0, 0.999921, -0.0125923, -4.37114e-08, 1679.87, 142.098, -33.0153 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 2.22045e-16, 1, -0.0319571, -2.53777, 0.525214 )
+shape = SubResource( 1 )
+disabled = false
 
 [node name="GlassHexagons001" type="MeshInstance" parent="."]
-
+transform = Transform( -4.37079e-08, 5.50425e-10, -1, 0.0125923, 0.999921, 0, 0.999921, -0.0125923, -4.37114e-08, 1679.32, 139.162, -42.5535 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 1 )
-visible = true
-transform = Transform(-4.37079e-08, 5.50425e-10, -1.0, 0.0125923, 0.999921, 0.0, 0.999921, -0.0125923, -4.37114e-08, 1679.32, 139.162, -42.5535)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="GlassTriangles002" type="MeshInstance" parent="."]
-
+transform = Transform( -4.37079e-08, 5.50425e-10, -1, 0.0125923, 0.999921, 0, 0.999921, -0.0125923, -4.37114e-08, 1679.32, 139.162, -42.5535 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 2 )
-visible = true
-transform = Transform(-4.37079e-08, 5.50425e-10, -1.0, 0.0125923, 0.999921, 0.0, 0.999921, -0.0125923, -4.37114e-08, 1679.32, 139.162, -42.5535)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="WindowPaneMesh002" type="MeshInstance" parent="."]
-
+transform = Transform( -4.37079e-08, 5.50425e-10, -1, 0.0125923, 0.999921, 0, 0.999921, -0.0125923, -4.37114e-08, 1679.87, 142.098, -33.0153 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 3 )
-visible = true
-transform = Transform(-4.37079e-08, 5.50425e-10, -1.0, 0.0125923, 0.999921, 0.0, 0.999921, -0.0125923, -4.37114e-08, 1679.87, 142.098, -33.0153)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="PaneFrames-Outside002" type="MeshInstance" parent="."]
-
+transform = Transform( -4.37079e-08, 5.50425e-10, -1, 0.0125923, 0.999921, 0, 0.999921, -0.0125923, -4.37114e-08, 1679.32, 139.162, -42.5535 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 4 )
-visible = true
-transform = Transform(-4.37079e-08, 5.50425e-10, -1.0, 0.0125923, 0.999921, 0.0, 0.999921, -0.0125923, -4.37114e-08, 1679.32, 139.162, -42.5535)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="OuterFrame005" type="MeshInstance" parent="."]
-
+transform = Transform( -4.37079e-08, 5.50425e-10, -1, 0.0125923, 0.999921, 0, 0.999921, -0.0125923, -4.37114e-08, 1679.32, 139.162, -42.5535 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 5 )
-visible = true
-transform = Transform(-4.37079e-08, 5.50425e-10, -1.0, 0.0125923, 0.999921, 0.0, 0.999921, -0.0125923, -4.37114e-08, 1679.32, 139.162, -42.5535)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="OuterFrame006" type="MeshInstance" parent="."]
-
+transform = Transform( -4.37079e-08, 5.50425e-10, -1, 0.0125923, 0.999921, 0, 0.999921, -0.0125923, -4.37114e-08, 1679.32, 139.162, -42.5535 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 6 )
-visible = true
-transform = Transform(-4.37079e-08, 5.50425e-10, -1.0, 0.0125923, 0.999921, 0.0, 0.999921, -0.0125923, -4.37114e-08, 1679.32, 139.162, -42.5535)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="PaneFrames-Outside003" type="MeshInstance" parent="."]
-
+transform = Transform( -4.37079e-08, 5.50425e-10, -1, 0.0125923, 0.999921, 0, 0.999921, -0.0125923, -4.37114e-08, 1679.32, 139.162, -42.5535 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 7 )
-visible = true
-transform = Transform(-4.37079e-08, 5.50425e-10, -1.0, 0.0125923, 0.999921, 0.0, 0.999921, -0.0125923, -4.37114e-08, 1679.32, 139.162, -42.5535)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="WindowPaneMesh003" type="MeshInstance" parent="."]
-
+transform = Transform( -4.37079e-08, 5.50425e-10, -1, 0.0125923, 0.999921, 0, 0.999921, -0.0125923, -4.37114e-08, 1679.87, 142.098, -33.0153 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 8 )
-visible = true
-transform = Transform(-4.37079e-08, 5.50425e-10, -1.0, 0.0125923, 0.999921, 0.0, 0.999921, -0.0125923, -4.37114e-08, 1679.87, 142.098, -33.0153)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="PaneFrames003" type="MeshInstance" parent="."]
-
+transform = Transform( -4.37079e-08, 5.50425e-10, -1, 0.0125923, 0.999921, 0, 0.999921, -0.0125923, -4.37114e-08, 1679.32, 139.162, -42.5535 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 9 )
-visible = true
-transform = Transform(-4.37079e-08, 5.50425e-10, -1.0, 0.0125923, 0.999921, 0.0, 0.999921, -0.0125923, -4.37114e-08, 1679.32, 139.162, -42.5535)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="OuterFrame007" type="MeshInstance" parent="."]
-
+transform = Transform( -4.37079e-08, 5.50425e-10, -1, 0.0125923, 0.999921, 0, 0.999921, -0.0125923, -4.37114e-08, 1679.32, 139.162, -42.5535 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 10 )
-visible = true
-transform = Transform(-4.37079e-08, 5.50425e-10, -1.0, 0.0125923, 0.999921, 0.0, 0.999921, -0.0125923, -4.37114e-08, 1679.32, 139.162, -42.5535)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="GlassHexagons003" type="MeshInstance" parent="."]
-
+transform = Transform( -4.37079e-08, 5.50425e-10, -1, 0.0125923, 0.999921, 0, 0.999921, -0.0125923, -4.37114e-08, 1679.32, 139.162, -42.5535 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 11 )
-visible = true
-transform = Transform(-4.37079e-08, 5.50425e-10, -1.0, 0.0125923, 0.999921, 0.0, 0.999921, -0.0125923, -4.37114e-08, 1679.32, 139.162, -42.5535)
+skeleton = NodePath("..")
+material/0 = null
+

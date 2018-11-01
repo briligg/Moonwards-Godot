@@ -1,13 +1,22 @@
-[gd_scene load_steps=1 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://export/meshes/m_e_BaseBlock_escn_1.mesh" type="ArrayMesh" id=1]
 
-[node type="Spatial" name="BaseBlock"]
+[node name="BaseBlock" type="Spatial"]
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
-
-[node name="BaseBlock" type="MeshInstance" parent="."]
-
+[node name="BaseBlock" type="MeshInstance" parent="." groups=[
+"cs",
+]]
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 1 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
+skeleton = NodePath("..")
+material/0 = null
+

@@ -1,17 +1,68 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://export/meshes.collision/FlywheelTorus.shape" type="Shape" id=1]
-[ext_resource path="res://export/meshes.collision/FlywheelSpokes.shape" type="Shape" id=2]
-[ext_resource path="res://export/meshes.collision/FlywheelTowe.shape" type="Shape" id=3]
-[ext_resource path="res://export/meshes/m_e_Flywheel-Tower-Simple_escn_1.mesh" type="ArrayMesh" id=4]
-[ext_resource path="res://export/meshes/m_e_Flywheel-Tower-Simple_escn_2.mesh" type="ArrayMesh" id=5]
-[ext_resource path="res://export/meshes/m_e_Flywheel-Tower-Simple_escn_3.mesh" type="ArrayMesh" id=6]
+[ext_resource path="res://export/meshes/m_e_Flywheel-Tower-Simple_escn_1.mesh" type="ArrayMesh" id=1]
+[ext_resource path="res://export/meshes/m_e_Flywheel-Tower-Simple_escn_2.mesh" type="ArrayMesh" id=2]
+[ext_resource path="res://export/meshes/m_e_Flywheel-Tower-Simple_escn_3.mesh" type="ArrayMesh" id=3]
+
+[sub_resource type="CapsuleShape" id=1]
+
+margin = 0.04
+radius = 1.1
+height = 7.0
 
 [node name="Flywheel-Tower-Simple" type="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17084e-006, -5.82609, -4.33327e-007 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17084e-06, -5.82609, -4.33327e-07 )
 
-[node name="StaticBody" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72812e-006, 8.73914, 7.17198e-007 )
+[node name="FlywheelTower" type="MeshInstance" parent="." groups=[
+"cs_manual",
+"exterior",
+]]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 5.62787e-08, 0, -1.34414e-07 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="FlywheelSpokes" type="MeshInstance" parent="FlywheelTower"]
+transform = Transform( 0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, 5.5728e-07, 2.91305, 2.83871e-07 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 2 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "LOD", "Visibility" ]
+
+[node name="FlywheelTorus" type="MeshInstance" parent="FlywheelTower"]
+transform = Transform( 0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, 5.5728e-07, 2.91305, 2.83871e-07 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 3 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="FlywheelTower"]
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -19,61 +70,9 @@ collision_mask = 1
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
-shape = ExtResource( 1 )
+[node name="CollisionShape" type="CollisionShape" parent="FlywheelTower/StaticBody"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 4.21604e-05, -0.640887, -0.000517497 )
+shape = SubResource( 1 )
 disabled = false
-
-[node name="CollisionShape2" type="CollisionShape" parent="StaticBody"]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -1.67184e-006, -8.73914, -8.51612e-007 )
-shape = ExtResource( 2 )
-disabled = false
-
-[node name="CollisionShape3" type="CollisionShape" parent="StaticBody"]
-shape = ExtResource( 3 )
-disabled = false
-
-[node name="FlywheelTower" type="MeshInstance" parent="."]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 5.62787e-008, 0, -1.34414e-007 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = ExtResource( 4 )
-skeleton = NodePath("..")
-material/0 = null
-
-[node name="FlywheelSpokes" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72812e-006, 8.73914, 7.17198e-007 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = ExtResource( 5 )
-skeleton = NodePath("..")
-material/0 = null
-
-[node name="FlywheelTorus" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72812e-006, 8.73914, 7.17198e-007 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = ExtResource( 6 )
-skeleton = NodePath("..")
-material/0 = null
+_sections_unfolded = [ "Transform", "shape" ]
 

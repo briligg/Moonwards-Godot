@@ -1,655 +1,414 @@
-[gd_scene load_steps=1 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource id=1 path="e.PlanterSet.tscn" type="PackedScene"]
+[ext_resource path="res://export/e.PlanterSet.tscn" type="PackedScene" id=1]
 
-[node type="Spatial" name="AtriumHab-PlanterSet"]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1697.48, -139.368, 59.4588)
+[node name="AtriumHab-PlanterSet" type="Spatial" groups=[
+"interior",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1697.48, -139.368, 59.4588 )
 
 [node name="PlanterSet162" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1705.82, 152.21, -78.6441 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1705.82, 152.21, -78.6441)
-
-[node name="PlanterSet" parent="PlanterSet162" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet162" instance=ExtResource( 1 )]
 
 [node name="PlanterSet161" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1705.82, 152.21, -73.8471 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1705.82, 152.21, -73.8471)
-
-[node name="PlanterSet" parent="PlanterSet161" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet161" instance=ExtResource( 1 )]
 
 [node name="PlanterSet160" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1705.82, 152.21, -69.0501 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1705.82, 152.21, -69.0501)
-
-[node name="PlanterSet" parent="PlanterSet160" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet160" instance=ExtResource( 1 )]
 
 [node name="PlanterSet159" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1705.82, 152.21, -64.2531 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1705.82, 152.21, -64.2531)
-
-[node name="PlanterSet" parent="PlanterSet159" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet159" instance=ExtResource( 1 )]
 
 [node name="PlanterSet158" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1705.82, 152.21, -59.4561 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1705.82, 152.21, -59.4561)
-
-[node name="PlanterSet" parent="PlanterSet158" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet158" instance=ExtResource( 1 )]
 
 [node name="PlanterSet157" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1705.82, 152.21, -54.6591 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1705.82, 152.21, -54.6591)
-
-[node name="PlanterSet" parent="PlanterSet157" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet157" instance=ExtResource( 1 )]
 
 [node name="PlanterSet156" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1705.82, 152.21, -49.8621 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1705.82, 152.21, -49.8621)
-
-[node name="PlanterSet" parent="PlanterSet156" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet156" instance=ExtResource( 1 )]
 
 [node name="PlanterSet155" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1705.82, 152.21, -45.0651 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1705.82, 152.21, -45.0651)
-
-[node name="PlanterSet" parent="PlanterSet155" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet155" instance=ExtResource( 1 )]
 
 [node name="PlanterSet154" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1705.82, 152.21, -40.2681 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1705.82, 152.21, -40.2681)
-
-[node name="PlanterSet" parent="PlanterSet154" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet154" instance=ExtResource( 1 )]
 
 [node name="PlanterSet153" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1703.75, 149.017, -78.6441 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1703.75, 149.017, -78.6441)
-
-[node name="PlanterSet" parent="PlanterSet153" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet153" instance=ExtResource( 1 )]
 
 [node name="PlanterSet152" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1703.75, 149.017, -73.8471 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1703.75, 149.017, -73.8471)
-
-[node name="PlanterSet" parent="PlanterSet152" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet152" instance=ExtResource( 1 )]
 
 [node name="PlanterSet151" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1703.75, 149.017, -69.0501 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1703.75, 149.017, -69.0501)
-
-[node name="PlanterSet" parent="PlanterSet151" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet151" instance=ExtResource( 1 )]
 
 [node name="PlanterSet150" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1703.75, 149.017, -64.2531 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1703.75, 149.017, -64.2531)
-
-[node name="PlanterSet" parent="PlanterSet150" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet150" instance=ExtResource( 1 )]
 
 [node name="PlanterSet149" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1703.75, 149.017, -59.4561 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1703.75, 149.017, -59.4561)
-
-[node name="PlanterSet" parent="PlanterSet149" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet149" instance=ExtResource( 1 )]
 
 [node name="PlanterSet148" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1703.75, 149.017, -54.6591 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1703.75, 149.017, -54.6591)
-
-[node name="PlanterSet" parent="PlanterSet148" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet148" instance=ExtResource( 1 )]
 
 [node name="PlanterSet147" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1703.75, 149.017, -49.8621 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1703.75, 149.017, -49.8621)
-
-[node name="PlanterSet" parent="PlanterSet147" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet147" instance=ExtResource( 1 )]
 
 [node name="PlanterSet146" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1703.75, 149.017, -45.0651 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1703.75, 149.017, -45.0651)
-
-[node name="PlanterSet" parent="PlanterSet146" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet146" instance=ExtResource( 1 )]
 
 [node name="PlanterSet145" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1703.75, 149.017, -40.2681 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1703.75, 149.017, -40.2681)
-
-[node name="PlanterSet" parent="PlanterSet145" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet145" instance=ExtResource( 1 )]
 
 [node name="PlanterSet144" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1701.68, 145.823, -78.6441 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1701.68, 145.823, -78.6441)
-
-[node name="PlanterSet" parent="PlanterSet144" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet144" instance=ExtResource( 1 )]
 
 [node name="PlanterSet143" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1701.68, 145.823, -73.8471 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1701.68, 145.823, -73.8471)
-
-[node name="PlanterSet" parent="PlanterSet143" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet143" instance=ExtResource( 1 )]
 
 [node name="PlanterSet142" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1701.68, 145.823, -69.0501 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1701.68, 145.823, -69.0501)
-
-[node name="PlanterSet" parent="PlanterSet142" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet142" instance=ExtResource( 1 )]
 
 [node name="PlanterSet141" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1701.68, 145.823, -64.2531 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1701.68, 145.823, -64.2531)
-
-[node name="PlanterSet" parent="PlanterSet141" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet141" instance=ExtResource( 1 )]
 
 [node name="PlanterSet140" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1701.68, 145.823, -59.4561 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1701.68, 145.823, -59.4561)
-
-[node name="PlanterSet" parent="PlanterSet140" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet140" instance=ExtResource( 1 )]
 
 [node name="PlanterSet139" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1701.68, 145.823, -54.6591 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1701.68, 145.823, -54.6591)
-
-[node name="PlanterSet" parent="PlanterSet139" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet139" instance=ExtResource( 1 )]
 
 [node name="PlanterSet138" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1701.68, 145.823, -49.8621 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1701.68, 145.823, -49.8621)
-
-[node name="PlanterSet" parent="PlanterSet138" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet138" instance=ExtResource( 1 )]
 
 [node name="PlanterSet137" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1701.68, 145.823, -45.0651 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1701.68, 145.823, -45.0651)
-
-[node name="PlanterSet" parent="PlanterSet137" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet137" instance=ExtResource( 1 )]
 
 [node name="PlanterSet136" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1701.68, 145.823, -40.2681 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1701.68, 145.823, -40.2681)
-
-[node name="PlanterSet" parent="PlanterSet136" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet136" instance=ExtResource( 1 )]
 
 [node name="PlanterSet135" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1699.61, 142.629, -78.6441 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1699.61, 142.629, -78.6441)
-
-[node name="PlanterSet" parent="PlanterSet135" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet135" instance=ExtResource( 1 )]
 
 [node name="PlanterSet134" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1699.61, 142.629, -73.8471 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1699.61, 142.629, -73.8471)
-
-[node name="PlanterSet" parent="PlanterSet134" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet134" instance=ExtResource( 1 )]
 
 [node name="PlanterSet133" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1699.61, 142.629, -69.0501 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1699.61, 142.629, -69.0501)
-
-[node name="PlanterSet" parent="PlanterSet133" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet133" instance=ExtResource( 1 )]
 
 [node name="PlanterSet132" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1699.61, 142.629, -64.2531 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1699.61, 142.629, -64.2531)
-
-[node name="PlanterSet" parent="PlanterSet132" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet132" instance=ExtResource( 1 )]
 
 [node name="PlanterSet131" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1699.61, 142.629, -59.4561 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1699.61, 142.629, -59.4561)
-
-[node name="PlanterSet" parent="PlanterSet131" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet131" instance=ExtResource( 1 )]
 
 [node name="PlanterSet130" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1699.61, 142.629, -54.6591 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1699.61, 142.629, -54.6591)
-
-[node name="PlanterSet" parent="PlanterSet130" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet130" instance=ExtResource( 1 )]
 
 [node name="PlanterSet129" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1699.61, 142.629, -49.8621 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1699.61, 142.629, -49.8621)
-
-[node name="PlanterSet" parent="PlanterSet129" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet129" instance=ExtResource( 1 )]
 
 [node name="PlanterSet128" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1699.61, 142.629, -45.0651 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1699.61, 142.629, -45.0651)
-
-[node name="PlanterSet" parent="PlanterSet128" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet128" instance=ExtResource( 1 )]
 
 [node name="PlanterSet127" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1699.61, 142.629, -40.2681 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1699.61, 142.629, -40.2681)
-
-[node name="PlanterSet" parent="PlanterSet127" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet127" instance=ExtResource( 1 )]
 
 [node name="PlanterSet126" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1697.54, 139.436, -78.6441 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1697.54, 139.436, -78.6441)
-
-[node name="PlanterSet" parent="PlanterSet126" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet126" instance=ExtResource( 1 )]
 
 [node name="PlanterSet125" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1697.54, 139.436, -73.8471 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1697.54, 139.436, -73.8471)
-
-[node name="PlanterSet" parent="PlanterSet125" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet125" instance=ExtResource( 1 )]
 
 [node name="PlanterSet124" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1697.54, 139.436, -69.0501 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1697.54, 139.436, -69.0501)
-
-[node name="PlanterSet" parent="PlanterSet124" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet124" instance=ExtResource( 1 )]
 
 [node name="PlanterSet123" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1697.54, 139.436, -64.2531 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1697.54, 139.436, -64.2531)
-
-[node name="PlanterSet" parent="PlanterSet123" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet123" instance=ExtResource( 1 )]
 
 [node name="PlanterSet122" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1697.54, 139.436, -59.4561 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1697.54, 139.436, -59.4561)
-
-[node name="PlanterSet" parent="PlanterSet122" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet122" instance=ExtResource( 1 )]
 
 [node name="PlanterSet121" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1697.54, 139.436, -54.6591 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1697.54, 139.436, -54.6591)
-
-[node name="PlanterSet" parent="PlanterSet121" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet121" instance=ExtResource( 1 )]
 
 [node name="PlanterSet120" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1697.54, 139.436, -49.8621 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1697.54, 139.436, -49.8621)
-
-[node name="PlanterSet" parent="PlanterSet120" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet120" instance=ExtResource( 1 )]
 
 [node name="PlanterSet119" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1697.54, 139.436, -45.0651 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1697.54, 139.436, -45.0651)
-
-[node name="PlanterSet" parent="PlanterSet119" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet119" instance=ExtResource( 1 )]
 
 [node name="PlanterSet118" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1697.54, 139.436, -40.2681 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1697.54, 139.436, -40.2681)
-
-[node name="PlanterSet" parent="PlanterSet118" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet118" instance=ExtResource( 1 )]
 
 [node name="PlanterSet117" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1695.48, 136.242, -78.6441 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1695.48, 136.242, -78.6441)
-
-[node name="PlanterSet" parent="PlanterSet117" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet117" instance=ExtResource( 1 )]
 
 [node name="PlanterSet116" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1695.48, 136.242, -73.8471 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1695.48, 136.242, -73.8471)
-
-[node name="PlanterSet" parent="PlanterSet116" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet116" instance=ExtResource( 1 )]
 
 [node name="PlanterSet115" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1695.48, 136.242, -69.0501 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1695.48, 136.242, -69.0501)
-
-[node name="PlanterSet" parent="PlanterSet115" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet115" instance=ExtResource( 1 )]
 
 [node name="PlanterSet114" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1695.48, 136.242, -64.2531 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1695.48, 136.242, -64.2531)
-
-[node name="PlanterSet" parent="PlanterSet114" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet114" instance=ExtResource( 1 )]
 
 [node name="PlanterSet113" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1695.48, 136.242, -59.4561 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1695.48, 136.242, -59.4561)
-
-[node name="PlanterSet" parent="PlanterSet113" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet113" instance=ExtResource( 1 )]
 
 [node name="PlanterSet112" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1695.48, 136.242, -54.6591 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1695.48, 136.242, -54.6591)
-
-[node name="PlanterSet" parent="PlanterSet112" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet112" instance=ExtResource( 1 )]
 
 [node name="PlanterSet111" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1695.48, 136.242, -49.8621 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1695.48, 136.242, -49.8621)
-
-[node name="PlanterSet" parent="PlanterSet111" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet111" instance=ExtResource( 1 )]
 
 [node name="PlanterSet110" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1695.48, 136.242, -45.0651 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1695.48, 136.242, -45.0651)
-
-[node name="PlanterSet" parent="PlanterSet110" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet110" instance=ExtResource( 1 )]
 
 [node name="PlanterSet109" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1695.48, 136.242, -40.2681 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1695.48, 136.242, -40.2681)
-
-[node name="PlanterSet" parent="PlanterSet109" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet109" instance=ExtResource( 1 )]
 
 [node name="PlanterSet108" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1693.41, 133.049, -78.6441 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1693.41, 133.049, -78.6441)
-
-[node name="PlanterSet" parent="PlanterSet108" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet108" instance=ExtResource( 1 )]
 
 [node name="PlanterSet107" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1693.41, 133.049, -73.8471 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1693.41, 133.049, -73.8471)
-
-[node name="PlanterSet" parent="PlanterSet107" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet107" instance=ExtResource( 1 )]
 
 [node name="PlanterSet106" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1693.41, 133.049, -69.0501 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1693.41, 133.049, -69.0501)
-
-[node name="PlanterSet" parent="PlanterSet106" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet106" instance=ExtResource( 1 )]
 
 [node name="PlanterSet105" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1693.41, 133.049, -64.2531 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1693.41, 133.049, -64.2531)
-
-[node name="PlanterSet" parent="PlanterSet105" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet105" instance=ExtResource( 1 )]
 
 [node name="PlanterSet104" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1693.41, 133.049, -59.4561 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1693.41, 133.049, -59.4561)
-
-[node name="PlanterSet" parent="PlanterSet104" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet104" instance=ExtResource( 1 )]
 
 [node name="PlanterSet103" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1693.41, 133.049, -54.6591 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1693.41, 133.049, -54.6591)
-
-[node name="PlanterSet" parent="PlanterSet103" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet103" instance=ExtResource( 1 )]
 
 [node name="PlanterSet102" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1693.41, 133.049, -49.8621 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1693.41, 133.049, -49.8621)
-
-[node name="PlanterSet" parent="PlanterSet102" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet102" instance=ExtResource( 1 )]
 
 [node name="PlanterSet101" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1693.41, 133.049, -45.0651 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1693.41, 133.049, -45.0651)
-
-[node name="PlanterSet" parent="PlanterSet101" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet101" instance=ExtResource( 1 )]
 
 [node name="PlanterSet100" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1693.41, 133.049, -40.2681 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1693.41, 133.049, -40.2681)
-
-[node name="PlanterSet" parent="PlanterSet100" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet100" instance=ExtResource( 1 )]
 
 [node name="PlanterSet099" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1691.34, 129.855, -40.2681 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1691.34, 129.855, -40.2681)
-
-[node name="PlanterSet" parent="PlanterSet099" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet099" instance=ExtResource( 1 )]
 
 [node name="PlanterSet098" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1691.34, 129.855, -45.0651 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1691.34, 129.855, -45.0651)
-
-[node name="PlanterSet" parent="PlanterSet098" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet098" instance=ExtResource( 1 )]
 
 [node name="PlanterSet097" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1691.34, 129.855, -49.8621 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1691.34, 129.855, -49.8621)
-
-[node name="PlanterSet" parent="PlanterSet097" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet097" instance=ExtResource( 1 )]
 
 [node name="PlanterSet096" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1691.34, 129.855, -54.6591 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1691.34, 129.855, -54.6591)
-
-[node name="PlanterSet" parent="PlanterSet096" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet096" instance=ExtResource( 1 )]
 
 [node name="PlanterSet095" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1691.34, 129.855, -59.4561 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1691.34, 129.855, -59.4561)
-
-[node name="PlanterSet" parent="PlanterSet095" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet095" instance=ExtResource( 1 )]
 
 [node name="PlanterSet094" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1691.34, 129.855, -64.2531 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1691.34, 129.855, -64.2531)
-
-[node name="PlanterSet" parent="PlanterSet094" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet094" instance=ExtResource( 1 )]
 
 [node name="PlanterSet093" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1691.34, 129.855, -69.0501 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1691.34, 129.855, -69.0501)
-
-[node name="PlanterSet" parent="PlanterSet093" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet093" instance=ExtResource( 1 )]
 
 [node name="PlanterSet092" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1691.34, 129.855, -73.8471 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1691.34, 129.855, -73.8471)
-
-[node name="PlanterSet" parent="PlanterSet092" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet092" instance=ExtResource( 1 )]
 
 [node name="PlanterSet091" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1691.34, 129.855, -78.6441 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1691.34, 129.855, -78.6441)
-
-[node name="PlanterSet" parent="PlanterSet091" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet091" instance=ExtResource( 1 )]
 
 [node name="PlanterSet090" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1689.27, 126.661, -78.6441 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1689.27, 126.661, -78.6441)
-
-[node name="PlanterSet" parent="PlanterSet090" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet090" instance=ExtResource( 1 )]
 
 [node name="PlanterSet089" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1689.27, 126.661, -73.8471 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1689.27, 126.661, -73.8471)
-
-[node name="PlanterSet" parent="PlanterSet089" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet089" instance=ExtResource( 1 )]
 
 [node name="PlanterSet088" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1689.27, 126.661, -69.0501 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1689.27, 126.661, -69.0501)
-
-[node name="PlanterSet" parent="PlanterSet088" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet088" instance=ExtResource( 1 )]
 
 [node name="PlanterSet087" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1689.27, 126.661, -64.2531 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1689.27, 126.661, -64.2531)
-
-[node name="PlanterSet" parent="PlanterSet087" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet087" instance=ExtResource( 1 )]
 
 [node name="PlanterSet086" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1689.27, 126.661, -59.4561 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1689.27, 126.661, -59.4561)
-
-[node name="PlanterSet" parent="PlanterSet086" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet086" instance=ExtResource( 1 )]
 
 [node name="PlanterSet085" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1689.27, 126.661, -54.6591 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1689.27, 126.661, -54.6591)
-
-[node name="PlanterSet" parent="PlanterSet085" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet085" instance=ExtResource( 1 )]
 
 [node name="PlanterSet084" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1689.27, 126.661, -49.8621 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1689.27, 126.661, -49.8621)
-
-[node name="PlanterSet" parent="PlanterSet084" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet084" instance=ExtResource( 1 )]
 
 [node name="PlanterSet083" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1689.27, 126.661, -45.0651 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1689.27, 126.661, -45.0651)
-
-[node name="PlanterSet" parent="PlanterSet083" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="PlanterSet" parent="PlanterSet083" instance=ExtResource( 1 )]
 
 [node name="PlanterSet082" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1689.27, 126.661, -40.2681 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1689.27, 126.661, -40.2681)
+[node name="PlanterSet" parent="PlanterSet082" instance=ExtResource( 1 )]
 
-[node name="PlanterSet" parent="PlanterSet082" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=1 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://export/meshes/m_e_LightTube-Straight_escn_1.mesh" type="ArrayMesh" id=1]
 [ext_resource path="res://export/meshes/m_e_LightTube-Straight_escn_2.mesh" type="ArrayMesh" id=2]
@@ -9,101 +9,166 @@
 [ext_resource path="res://export/meshes/m_e_LightTube-Straight_escn_7.mesh" type="ArrayMesh" id=7]
 [ext_resource path="res://export/meshes/m_e_LightTube-Straight_escn_8.mesh" type="ArrayMesh" id=8]
 
-[node type="Spatial" name="LightTube-Straight"]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0453738, -10.5239, 2.56603)
+[node name="LightTube-Straight" type="Spatial" groups=[
+"cs_none",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0453738, -10.5239, 2.56603 )
 
 [node name="LT-Small-Pole" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.136121, -7.83642, -2.65448 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 1 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -0.136121, -7.83642, -2.65448)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="LightTube-DishPivot" type="MeshInstance" parent="."]
-
+transform = Transform( 0.5, -0.866025, 6.3654e-08, 0.866025, 0.5, -5.30867e-09, -2.72296e-08, 5.77803e-08, 1, -0.136121, 10.6989, -5.68117 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 2 )
-visible = true
-transform = Transform(0.5, -0.866025, 6.3654e-08, 0.866025, 0.5, -5.30867e-09, -2.72296e-08, 5.77803e-08, 1.0, -0.136121, 10.6989, -5.68117)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Cylinder009" type="MeshInstance" parent="LightTube-DishPivot"]
-
+transform = Transform( 1, 0, 2.72296e-08, 0, 1, 1.48628e-08, -4.90464e-08, -2.36411e-08, 1, 0, 4.44848, 0.000608444 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 3 )
-visible = true
-transform = Transform(1.0, 0.0, 2.72296e-08, 0.0, 1.0, 1.48628e-08, -4.90464e-08, -2.36411e-08, 1.0, 0.0, 4.44848, 0.000608444)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="LightTube-FiberoptCable-Armature" type="MeshInstance" parent="LightTube-DishPivot"]
-
+transform = Transform( 1, 0, -2.72296e-08, 0, 1, 4.24548e-09, 5.41274e-09, -1.30238e-08, 1, 9.53674e-07, 0.209442, 3.02669 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 4 )
-visible = true
-transform = Transform(1.0, 0.0, -2.72296e-08, 0.0, 1.0, 4.24548e-09, 5.41274e-09, -1.30238e-08, 1.0, 9.53674e-07, 0.209442, 3.02669)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Parabola_cone001" type="MeshInstance" parent="LightTube-DishPivot"]
-
+transform = Transform( 1, 0, 2.72296e-08, 0, 1, 1.48628e-08, -4.90464e-08, -2.36411e-08, 1, 0, 4.32543, 0.000673771 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 5 )
-visible = true
-transform = Transform(1.0, 0.0, 2.72296e-08, 0.0, 1.0, 1.48628e-08, -4.90464e-08, -2.36411e-08, 1.0, 0.0, 4.32543, 0.000673771)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Parabola_cone002" type="MeshInstance" parent="LightTube-DishPivot"]
-
+transform = Transform( 1, 0, 2.72296e-08, 0, 1, 1.48628e-08, -4.90464e-08, -2.36411e-08, 1, 0, 4.32543, 0.000673771 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 6 )
-visible = true
-transform = Transform(1.0, 0.0, 2.72296e-08, 0.0, 1.0, 1.48628e-08, -4.90464e-08, -2.36411e-08, 1.0, 0.0, 4.32543, 0.000673771)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Parabola_cone003" type="MeshInstance" parent="LightTube-DishPivot"]
-
+transform = Transform( 1, 0, 2.72296e-08, 0, 1, 1.48628e-08, -4.90464e-08, -2.36411e-08, 1, 0, 4.32543, 0.000673771 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 7 )
-visible = true
-transform = Transform(1.0, 0.0, 2.72296e-08, 0.0, 1.0, 1.48628e-08, -4.90464e-08, -2.36411e-08, 1.0, 0.0, 4.32543, 0.000673771)
+skeleton = NodePath("..")
+material/0 = null
 
 [node name="Armature" type="Skeleton" parent="."]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -0.136121, 10.9196, -2.65448)
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.136121, 10.9196, -2.65448 )
 bones/0/name = "Bone"
 bones/0/parent = -1
-bones/0/rest = Transform(0.999947, 0.000251281, -0.0102529, -0.0102541, 0.00504884, -0.999935, -0.000199496, 0.999987, 0.00505132, -0.00134641, -0.00875168, -3.9533e-09)
-bones/0/pose = Transform(1.0, 1.81899e-12, -4.65661e-10, -1.81899e-12, 1.0, 0.0, 4.65661e-10, 0.0, 1.0, -1.16415e-10, 3.63798e-12, 0.0)
+bones/0/rest = Transform( 0.999947, 0.000251281, -0.0102529, -0.0102541, 0.00504884, -0.999935, -0.000199496, 0.999987, 0.00505132, -0.00134641, -0.00875168, -3.9533e-09 )
 bones/0/enabled = true
-bones/0/bound_children = []
+bones/0/bound_children = [  ]
 bones/1/name = "Bone.001"
 bones/1/parent = 0
-bones/1/rest = Transform(0.999928, 0.0117811, -0.00224533, -0.00410006, 0.15986, -0.987131, -0.0112705, 0.987069, 0.159897, 8.78638e-11, -1.6013e-10, -0.13132)
-bones/1/pose = Transform(0.941687, -0.259707, -0.213956, 0.291673, 0.947062, 0.134167, 0.167786, -0.188748, 0.967585, 0.0, 0.0, 0.0)
+bones/1/rest = Transform( 0.999928, 0.0117811, -0.00224533, -0.00410006, 0.15986, -0.987131, -0.0112705, 0.987069, 0.159897, 8.78638e-11, -1.6013e-10, -0.13132 )
 bones/1/enabled = true
-bones/1/bound_children = []
+bones/1/bound_children = [  ]
 bones/2/name = "Bone.002"
 bones/2/parent = 1
-bones/2/rest = Transform(0.999985, -0.00538378, 0.00140535, 0.00332844, 0.781186, 0.624289, -0.00445888, -0.624275, 0.781192, -5.82077e-11, -1.2044e-09, -0.288239)
-bones/2/pose = Transform(0.958225, -0.245221, -0.14721, 0.253964, 0.966232, 0.0435715, 0.131554, -0.0791374, 0.988145, 0.0, 0.0, 0.0)
+bones/2/rest = Transform( 0.999985, -0.00538378, 0.00140535, 0.00332844, 0.781186, 0.624289, -0.00445888, -0.624275, 0.781192, -5.82077e-11, -1.2044e-09, -0.288239 )
 bones/2/enabled = true
-bones/2/bound_children = []
+bones/2/bound_children = [  ]
 bones/3/name = "Bone.003"
 bones/3/parent = 2
-bones/3/rest = Transform(0.99998, -0.00463962, -0.00428201, 0.00624114, 0.62394, 0.781447, -0.000953898, -0.781458, 0.623957, -5.82077e-11, 3.79764e-08, -0.271731)
-bones/3/pose = Transform(0.968038, -0.159463, -0.193579, 0.14325, 0.985103, -0.095138, 0.205866, 0.0643671, 0.976461, 0.0, 0.0, 0.0)
+bones/3/rest = Transform( 0.99998, -0.00463962, -0.00428201, 0.00624114, 0.62394, 0.781447, -0.000953898, -0.781458, 0.623957, -5.82077e-11, 3.79764e-08, -0.271731 )
 bones/3/enabled = true
-bones/3/bound_children = []
+bones/3/bound_children = [  ]
 bones/4/name = "Bone.004"
 bones/4/parent = 3
-bones/4/rest = Transform(0.999993, -0.000766071, 0.00373622, -0.00161981, 0.801574, 0.597893, -0.00345289, -0.597895, 0.801567, -2.32831e-10, 6.57992e-08, -0.261872)
-bones/4/pose = Transform(0.98491, -0.0350494, -0.169484, 0.0121057, 0.990832, -0.134556, 0.172646, 0.130473, 0.976304, 0.0, 0.0, 0.0)
+bones/4/rest = Transform( 0.999993, -0.000766071, 0.00373622, -0.00161981, 0.801574, 0.597893, -0.00345289, -0.597895, 0.801567, -2.32831e-10, 6.57992e-08, -0.261872 )
 bones/4/enabled = true
-bones/4/bound_children = []
+bones/4/bound_children = [  ]
 bones/5/name = "Bone.005"
 bones/5/parent = 4
-bones/5/rest = Transform(0.999987, -0.00381688, 0.00330352, 0.00388531, 0.999773, -0.0209621, -0.00322276, 0.0209746, 0.999775, 0.0, 3.42561e-09, -0.303818)
-bones/5/pose = Transform(0.995704, -0.00283633, -0.092555, -0.00363113, 0.997566, -0.0696337, 0.0925272, 0.0696706, 0.99327, 0.0, 0.0, 0.0)
+bones/5/rest = Transform( 0.999987, -0.00381688, 0.00330352, 0.00388531, 0.999773, -0.0209621, -0.00322276, 0.0209746, 0.999775, 0, 3.42561e-09, -0.303818 )
 bones/5/enabled = true
-bones/5/bound_children = []
+bones/5/bound_children = [  ]
 bones/6/name = "Bone.006"
 bones/6/parent = 5
-bones/6/rest = Transform(0.999861, 0.00828394, -0.0144775, -0.0113064, 0.974725, -0.223122, 0.0122632, 0.223254, 0.974683, -4.0859e-10, 9.13678e-09, -0.28472)
-bones/6/pose = Transform(0.999217, -0.00111845, -0.0395395, 0.000564909, 0.999902, -0.014008, 0.0395513, 0.0139747, 0.99912, 0.0, 0.0, 0.0)
+bones/6/rest = Transform( 0.999861, 0.00828394, -0.0144775, -0.0113064, 0.974725, -0.223122, 0.0122632, 0.223254, 0.974683, -4.0859e-10, 9.13678e-09, -0.28472 )
 bones/6/enabled = true
-bones/6/bound_children = []
+bones/6/bound_children = [  ]
 
 [node name="LightTube-FiberoptCable-Armature001" type="MeshInstance" parent="Armature"]
-
-skeleton = NodePath("..:")
+transform = Transform( 1, 9.31323e-10, 0, 0, 1, -1.06173e-08, 0, 1.06173e-08, 1, 1.49012e-08, -0.0111694, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 8 )
-visible = true
-transform = Transform(1.0, 9.31323e-10, 0.0, 0.0, 1.0, -1.06173e-08, 0.0, 1.06173e-08, 1.0, 1.49012e-08, -0.0111694, 0.0)
+skeleton = NodePath("..")
+material/0 = null
+

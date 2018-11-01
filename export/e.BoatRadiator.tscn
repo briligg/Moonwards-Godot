@@ -1,20 +1,20 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://export/meshes/m_e_BoatRadiator_escn_1.mesh" type="ArrayMesh" id=1]
 [ext_resource path="res://export/meshes/m_e_BoatRadiator_escn_2.mesh" type="ArrayMesh" id=2]
 [ext_resource path="res://export/meshes/m_e_BoatRadiator_escn_3.mesh" type="ArrayMesh" id=3]
 [ext_resource path="res://export/meshes/m_e_BoatRadiator_escn_4.mesh" type="ArrayMesh" id=4]
-[ext_resource path="res://export/meshes.collision/Parabola.shape" type="Shape" id=5]
-[ext_resource path="res://export/meshes.collision/Parabolla_generic_boxshape.shape" type="Shape" id=6]
-[ext_resource path="res://export/meshes/m_e_BoatRadiator_escn_5.mesh" type="ArrayMesh" id=7]
-[ext_resource path="res://export/meshes/m_e_BoatRadiator_escn_6.mesh" type="ArrayMesh" id=8]
-[ext_resource path="res://export/meshes/m_e_BoatRadiator_escn_7.mesh" type="ArrayMesh" id=9]
+[ext_resource path="res://export/meshes/m_e_BoatRadiator_escn_5.mesh" type="ArrayMesh" id=5]
+[ext_resource path="res://export/meshes/m_e_BoatRadiator_escn_6.mesh" type="ArrayMesh" id=6]
+[ext_resource path="res://export/meshes/m_e_BoatRadiator_escn_7.mesh" type="ArrayMesh" id=7]
 
 [node name="BoatRadiator" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03129, 0.688154, -52.449 )
 
-[node name="BoatRad-Tower" type="MeshInstance" parent="."]
-transform = Transform( 0.961936, -1.93483e-009, 0.273276, -1.93483e-009, 1, 1.38908e-008, -0.273276, -1.38908e-008, 0.961936, -2.57698, -4.94771, 52.7826 )
+[node name="BoatRad-Tower" type="MeshInstance" parent="." groups=[
+"cs_convex",
+]]
+transform = Transform( 0.961936, -1.93483e-09, 0.273276, -1.93483e-09, 1, 1.38908e-08, -0.273276, -1.38908e-08, 0.961936, -2.57698, -4.94771, 52.7826 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -29,7 +29,7 @@ skeleton = NodePath("..")
 material/0 = null
 
 [node name="BoatRad-HeatPipes000" type="MeshInstance" parent="."]
-transform = Transform( 1.5403, 1.57357e-010, -1.02201, -3.27652e-011, 1.84852, 2.35232e-010, 1.02201, -1.77894e-010, 1.5403, -2.57698, -2.20815, 52.7826 )
+transform = Transform( 1.5403, 1.57357e-10, -1.02201, -3.27652e-11, 1.84852, 2.35232e-10, 1.02201, -1.77894e-10, 1.5403, -2.57698, -2.20815, 52.7826 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -44,7 +44,7 @@ skeleton = NodePath("..")
 material/0 = null
 
 [node name="BoatRadCompressor000" type="MeshInstance" parent="BoatRad-HeatPipes000"]
-transform = Transform( -0.671882, 4.33119e-009, -1.6644, -1.15854e-007, 1.79489, -2.54841e-007, 1.6644, 9.34026e-009, -0.671878, 0.00130939, 2.2036, -0.00357819 )
+transform = Transform( -0.671882, 4.33119e-09, -1.6644, -1.15854e-07, 1.79489, -2.54841e-07, 1.6644, 9.34026e-09, -0.671878, 0.00130939, 2.2036, -0.00357819 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -58,8 +58,10 @@ mesh = ExtResource( 3 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="parabolaTroughDeep000" type="MeshInstance" parent="BoatRad-HeatPipes000"]
-transform = Transform( -16.2173, -2.4175e-008, 1.47029, -2.58163e-006, 23.2136, 2.64945e-007, -1.02919, -4.04298e-009, -23.167, 6.07561, 5.73694, 0.399597 )
+[node name="parabolaTroughDeep000" type="MeshInstance" parent="BoatRad-HeatPipes000" groups=[
+"cs_convex",
+]]
+transform = Transform( -16.2173, -2.4175e-08, 1.47029, -2.58163e-06, 23.2136, 2.64945e-07, -1.02919, -4.04298e-09, -23.167, 6.07561, 5.73694, 0.399597 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -73,32 +75,8 @@ mesh = ExtResource( 4 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="BoatRad-HeatPipes000/parabolaTroughDeep000"]
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
-
-[node name="CollisionShape" type="CollisionShape" parent="BoatRad-HeatPipes000/parabolaTroughDeep000/StaticBody"]
-shape = ExtResource( 5 )
-disabled = false
-
-[node name="CollisionShape2" type="CollisionShape" parent="BoatRad-HeatPipes000/parabolaTroughDeep000/StaticBody"]
-transform = Transform( -8.26828e-005, -0.0024376, -0.0332013, 2.36189e-012, 0.0232416, -0.00170637, 0.0233041, -4.23862e-006, -5.77327e-005, 0.555784, -0.134872, 0.000966206 )
-shape = ExtResource( 6 )
-disabled = false
-_sections_unfolded = [ "shape" ]
-
-[node name="CollisionShape3" type="CollisionShape" parent="BoatRad-HeatPipes000/parabolaTroughDeep000/StaticBody"]
-transform = Transform( -8.26828e-005, 0.00197343, -0.0332321, 2.35789e-012, 0.0232632, 0.00138144, 0.0233041, 3.43152e-006, -5.77858e-005, 0.195348, -0.1325, 0.000339024 )
-shape = ExtResource( 6 )
-disabled = false
-_sections_unfolded = [ "shape" ]
-
 [node name="RadPanel020" type="MeshInstance" parent="BoatRad-HeatPipes000"]
-transform = Transform( 0.0356046, 1.14825e-011, 0.5398, 6.44268e-009, 0.540973, 8.53494e-008, -0.5398, -1.25532e-012, 0.0356035, -0.10153, 0.648408, -0.00781631 )
+transform = Transform( 0.0356046, 1.14825e-11, 0.5398, 6.44268e-09, 0.540973, 8.53494e-08, -0.5398, -1.25532e-12, 0.0356035, -0.10153, 0.648408, -0.00781631 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -108,12 +86,12 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 7 )
+mesh = ExtResource( 5 )
 skeleton = NodePath("..")
 material/0 = null
 
 [node name="BoatRad-Tank000" type="MeshInstance" parent="."]
-transform = Transform( -0.0126008, -7.33302e-011, -0.999921, 5.36783e-011, 1, -7.40125e-011, 0.999921, -5.46067e-011, -0.0126008, -2.57697, -3.05689, 52.7826 )
+transform = Transform( -0.0126008, -7.33302e-11, -0.999921, 5.36783e-11, 1, -7.40125e-11, 0.999921, -5.46067e-11, -0.0126008, -2.57697, -3.05689, 52.7826 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -123,7 +101,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 8 )
+mesh = ExtResource( 6 )
 skeleton = NodePath("..")
 material/0 = null
 
@@ -138,7 +116,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 9 )
+mesh = ExtResource( 7 )
 skeleton = NodePath("..")
 material/0 = null
 
