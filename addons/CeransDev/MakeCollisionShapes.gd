@@ -52,8 +52,24 @@ func shapes_save(nodes, path = "res://shapes/"):
 			else:
 				print("already saved")
 		shapes_save(obj.get_children())
-
+		
+func get_all_meshes(node):
+	var meshes = []
+	for child in node.get_children():
+		print(child)
+		if child is MeshInstance:
+			meshes.append(child)
+		if child.get_child_count() > 0:
+			var array2 = get_all_meshes(child)
+			for element in array2:
+				meshes.append(element)
+	if meshes.size() != 0:
+		return meshes
+	else: 
+		print("Non fatal array error: Array is empty")
+		
 func _run():
 	var scene = get_scene()
-	make_collision_shapes(scene.get_children())
-	shapes_save(scene.get_children())
+	make_collision_shapes(get_all_meshes(scene))
+	shapes_save(get_all_meshes(scene))
+	

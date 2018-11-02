@@ -34,6 +34,10 @@ window/stretch/aspect="expand"
 
 convert_text_resources_to_binary_on_export=true
 
+[editor_plugins]
+
+enabled=PoolStringArray( "CeransDev" )
+
 [input]
 
 ui_left={
