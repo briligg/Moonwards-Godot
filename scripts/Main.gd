@@ -1,4 +1,4 @@
-extends Spatial
+extends Control
 
 # Declare member variables here. Examples:
 # var a = 2
