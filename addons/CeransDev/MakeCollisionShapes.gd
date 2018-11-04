@@ -55,12 +55,13 @@ func shapes_save(nodes, path = "res://shapes/"):
 		
 func get_all_meshes(node):
 	var meshes = []
+	var array2 =[]
 	for child in node.get_children():
 		print(child)
 		if child is MeshInstance:
 			meshes.append(child)
 		if child.get_child_count() > 0:
-			var array2 = get_all_meshes(child)
+			array2 = get_all_meshes(child)
 			for element in array2:
 				meshes.append(element)
 	if meshes.size() != 0:
