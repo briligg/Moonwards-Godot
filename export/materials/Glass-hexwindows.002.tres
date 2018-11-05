@@ -28,7 +28,7 @@ params_billboard_mode = 0
 params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
-albedo_color = Color( 0.558836, 0.777115, 0.8, 1 )
+albedo_color = Color( 0.556863, 0.776471, 0.8, 0.00784314 )
 metallic = 0.0
 metallic_specular = 0.5
 metallic_texture_channel = 0
@@ -55,5 +55,5 @@ uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_mode = 0
-_sections_unfolded = [ "Parameters" ]
+_sections_unfolded = [ "Albedo" ]
 
