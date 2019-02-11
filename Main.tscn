@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://img/TEST_MainBG.png" type="Texture" id=2]
@@ -86,7 +86,10 @@ render_priority = 0
 blend_mode = 2
 light_mode = 0
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="Theme" id=6]
+
+
+[sub_resource type="DynamicFont" id=7]
 
 size = 60
 use_mipmaps = false
@@ -111,6 +114,10 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
 _sections_unfolded = [ "Margin" ]
+__meta__ = {
+"_edit_horizontal_guides_": [ 658.72, 237.199 ],
+"_edit_vertical_guides_": [ 38.6555, 290.409 ]
+}
 SceneToLoad = "res://World.tscn"
 SceneOptions = "res://assets/UI/Options.tscn"
 
@@ -135,8 +142,6 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -6.0
-margin_top = -1.0
 margin_right = 973.0
 margin_bottom = 662.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -148,7 +153,7 @@ size_flags_vertical = 1
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 6
-_sections_unfolded = [ "Material", "Pause" ]
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Mouse", "Pause", "Rect", "Visibility" ]
 
 [node name="main" type="Control" parent="ui" index="1"]
 
@@ -164,6 +169,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Mouse" ]
 
 [node name="pHelp" type="Panel" parent="ui/main" index="0"]
 
@@ -174,17 +180,17 @@ anchor_left = 1.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 0.0
-margin_left = 376.0
-margin_top = 71.0
-margin_right = 866.0
-margin_bottom = 671.0
+margin_left = 408.0
+margin_top = 238.0
+margin_right = 952.0
+margin_bottom = 659.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Material" ]
+size_flags_horizontal = 8
+size_flags_vertical = 0
+_sections_unfolded = [ "Grow Direction", "Hint", "Margin", "Material", "Rect", "Size Flags" ]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ui/main/pHelp" index="0"]
 
@@ -194,8 +200,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 12.0
-margin_top = 9.0
+margin_left = 16.0
+margin_top = 10.0
+margin_right = -25.0
+margin_bottom = -10.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
@@ -208,76 +216,88 @@ custom_fonts/italics_font = ExtResource( 5 )
 custom_fonts/bold_font = ExtResource( 6 )
 custom_fonts/normal_font = ExtResource( 7 )
 bbcode_enabled = true
-bbcode_text = "[b]To move use your keyboard and mouse[/b]
+bbcode_text = "[b]To move use your keyboard and mouse[/b] 
         [b]W[/b] or [i]Up arrow[/i] - Forward
-        [b]S[/b] or [i]Down arrow[/i] - Backward
+	    [b]S[/b] or [i]Down arrow[/i] - Backward
         [b]A[/b] or [i]Left arrow[/i] - Sideways left
         [b]D[/b] or [i]Right arrow[/i] - Sideways right
         [b]Q[/b] or [i]Page Up[/i] - Move Up
         [b]E[/b] or [i]Page Down[/i] - Move Down
 		
 [b]Scroll wheel[/b]
-         - scroll up - move faster
-         - scroll down - move slower
-
+		- scroll up - move faster
+		- scroll down - move slower
+		
 [b]In game[/b]
-Press Esc to see a menu with options for your mouse, general speed, and others.
-If the app is running slowly, try reducing the setting for Far. This limits how far away the camera can see.
-
-Press Esc again to close the menu.
-"
+		Press Esc to see a menu with options for your mouse, 
+		general speed, and others.
+		If the app is running slowly, try reducing the setting
+		for Far. This limits how far away the camera can see.
+		
+		Press Esc again to close the menu.
+		"
 visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = "To move use your keyboard and mouse
+text = "To move use your keyboard and mouse 
         W or Up arrow - Forward
-        S or Down arrow - Backward
+	    S or Down arrow - Backward
         A or Left arrow - Sideways left
         D or Right arrow - Sideways right
         Q or Page Up - Move Up
         E or Page Down - Move Down
 		
 Scroll wheel
-         - scroll up - move faster
-         - scroll down - move slower
-
+		- scroll up - move faster
+		- scroll down - move slower
+		
 In game
-Press Esc to see a menu with options for your mouse, general speed, and others.
-If the app is running slowly, try reducing the setting for Far. This limits how far away the camera can see.
-
-Press Esc again to close the menu.
-"
+		Press Esc to see a menu with options for your mouse, 
+		general speed, and others.
+		If the app is running slowly, try reducing the setting
+		for Far. This limits how far away the camera can see.
+		
+		Press Esc again to close the menu.
+		"
 scroll_active = true
-scroll_following = false
+scroll_following = true
 selection_enabled = false
 override_selected_font_color = false
-_sections_unfolded = [ "Margin", "Rect" ]
+_sections_unfolded = [ "BBCode", "Margin", "Rect" ]
 
 [node name="Panel" type="Panel" parent="ui/main" index="1"]
 
+self_modulate = Color( 0, 0, 0, 1 )
 material = SubResource( 5 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 178.0
-margin_top = 374.0
-margin_right = 388.0
-margin_bottom = 674.0
+margin_left = 35.0
+margin_top = 239.0
+margin_right = 283.0
+margin_bottom = 534.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = SubResource( 6 )
+_sections_unfolded = [ "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility", "custom_styles" ]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ui/main/Panel" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -2.0
+margin_top = -1.0
+margin_right = -2.0
+margin_bottom = -6.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -286,7 +306,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_constants/separation = 10
 alignment = 0
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Theme", "custom_constants" ]
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Theme", "Visibility", "custom_constants" ]
 
 [node name="Instructions" type="Button" parent="ui/main/Panel/VBoxContainer" index="0"]
 
@@ -294,9 +314,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = -33.0
-margin_right = 210.0
-margin_bottom = 7.0
+margin_right = 248.0
+margin_bottom = 40.0
 rect_min_size = Vector2( 0, 40 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -320,9 +339,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 17.0
-margin_right = 210.0
-margin_bottom = 57.0
+margin_top = 50.0
+margin_right = 248.0
+margin_bottom = 90.0
 rect_min_size = Vector2( 0, 40 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -347,9 +366,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 67.0
-margin_right = 210.0
-margin_bottom = 107.0
+margin_top = 100.0
+margin_right = 248.0
+margin_bottom = 140.0
 rect_min_size = Vector2( 0, 40 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -373,9 +392,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 117.0
-margin_right = 210.0
-margin_bottom = 157.0
+margin_top = 150.0
+margin_right = 248.0
+margin_bottom = 190.0
 rect_min_size = Vector2( 0, 40 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -400,9 +419,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 167.0
-margin_right = 210.0
-margin_bottom = 207.0
+margin_top = 200.0
+margin_right = 248.0
+margin_bottom = 240.0
 rect_min_size = Vector2( 0, 40 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -427,9 +446,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 217.0
-margin_right = 210.0
-margin_bottom = 257.0
+margin_top = 250.0
+margin_right = 248.0
+margin_bottom = 290.0
 rect_min_size = Vector2( 0, 40 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -480,7 +499,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "Loading ..."
 percent_visible = 1.0
 lines_skipped = 0

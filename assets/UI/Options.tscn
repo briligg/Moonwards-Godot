@@ -249,7 +249,6 @@ _sections_unfolded = [ "Anchor", "Grow Direction", "Hint", "Margin", "Rect", "Si
 
 [node name="Player" type="Tabs" parent="Panel/TabContainer" index="0"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -486,6 +485,7 @@ scrolling_enabled = true
 
 [node name="GameState" type="Tabs" parent="Panel/TabContainer" index="3"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0

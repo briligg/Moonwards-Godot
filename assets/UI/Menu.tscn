@@ -1,6 +1,7 @@
 [gd_scene format=2]
 
 [node name="Menu" type="WindowDialog"]
+
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -20,7 +21,8 @@ window_title = "Pause Menu"
 resizable = false
 _sections_unfolded = [ "Popup" ]
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="." index="1"]
+
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -36,7 +38,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer"]
+[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer" index="0"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -55,7 +58,8 @@ split_offset = 0
 collapsed = false
 dragger_visibility = 0
 
-[node name="Tabs" type="TabContainer" parent="PanelContainer/VSplitContainer"]
+[node name="Tabs" type="TabContainer" parent="PanelContainer/VSplitContainer" index="0"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -70,9 +74,9 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 tab_align = 1
 tabs_visible = true
-drag_to_rearrange_enabled = false
 
-[node name="Main" type="Tabs" parent="PanelContainer/VSplitContainer/Tabs"]
+[node name="Main" type="Tabs" parent="PanelContainer/VSplitContainer/Tabs" index="0"]
+
 editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
@@ -80,8 +84,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
 margin_top = 32.0
-margin_right = -34.0
-margin_bottom = 17.0
+margin_right = -4.0
+margin_bottom = -4.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -90,9 +94,9 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 tab_align = 1
 scrolling_enabled = true
-drag_to_rearrange_enabled = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VSplitContainer/Tabs/Main"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VSplitContainer/Tabs/Main" index="0"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -108,7 +112,8 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 1
 
-[node name="Main" type="Button" parent="PanelContainer/VSplitContainer/Tabs/Main/VBoxContainer"]
+[node name="Main" type="Button" parent="PanelContainer/VSplitContainer/Tabs/Main/VBoxContainer" index="0"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -130,7 +135,8 @@ text = "Main Menu"
 flat = false
 align = 1
 
-[node name="Button2" type="Button" parent="PanelContainer/VSplitContainer/Tabs/Main/VBoxContainer"]
+[node name="Button2" type="Button" parent="PanelContainer/VSplitContainer/Tabs/Main/VBoxContainer" index="1"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -153,7 +159,8 @@ text = "Help"
 flat = false
 align = 1
 
-[node name="Button3" type="Button" parent="PanelContainer/VSplitContainer/Tabs/Main/VBoxContainer"]
+[node name="Button3" type="Button" parent="PanelContainer/VSplitContainer/Tabs/Main/VBoxContainer" index="2"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -176,7 +183,8 @@ text = "Quit"
 flat = false
 align = 1
 
-[node name="Options" type="Tabs" parent="PanelContainer/VSplitContainer/Tabs"]
+[node name="Options" type="Tabs" parent="PanelContainer/VSplitContainer/Tabs" index="1"]
+
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -194,9 +202,9 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 tab_align = 1
 scrolling_enabled = true
-drag_to_rearrange_enabled = false
 
-[node name="Button" type="MenuButton" parent="PanelContainer/VSplitContainer/Tabs/Options"]
+[node name="Button" type="MenuButton" parent="PanelContainer/VSplitContainer/Tabs/Options" index="0"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -220,7 +228,8 @@ align = 1
 items = [  ]
 _sections_unfolded = [ "group" ]
 
-[node name="About" type="Tabs" parent="PanelContainer/VSplitContainer/Tabs"]
+[node name="About" type="Tabs" parent="PanelContainer/VSplitContainer/Tabs" index="2"]
+
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -238,5 +247,5 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 tab_align = 1
 scrolling_enabled = true
-drag_to_rearrange_enabled = false
+
 
