@@ -7,14 +7,14 @@ var Updater
 
 signal update_finished(result)
 
-func AddLogMessage(var text):
+func AddLogMessage(var text:String):
 	if not self.visible:
 		self.visible = true
 	$"HBoxContainer/TabContainer/Update log/VBoxContainer3/Panel/ScrollContainer/RichTextLabel".text += text + "\n"
 	
 func set_state(text):
 	
-	AddLogMessage(text)
+	AddLogMessage(str(text))
 
 func set_progress_state(text):
 
