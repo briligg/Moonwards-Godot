@@ -83,7 +83,7 @@ func check_for_update():
 	emit_signal("Update_finished", result)
 	
 	
-func _on_update_finished(result:int):
+func _on_update_finished(result : int):
 	var Status = $VBoxContainer/UpdateUI/VBoxContainer/Header
 	if not Status is Label:
 		yield(get_node("/root/UIManager"), "back_to_base_ui")
