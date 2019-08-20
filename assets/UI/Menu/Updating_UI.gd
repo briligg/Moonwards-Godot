@@ -7,7 +7,7 @@ var Updater
 
 signal update_finished(result)
 
-func AddLogMessage(var text:String):
+func AddLogMessage(var text : String):
 	if not self.visible:
 		self.visible = true
 	$"HBoxContainer/TabContainer/Update log/VBoxContainer3/Panel/ScrollContainer/RichTextLabel".text += text + "\n"
