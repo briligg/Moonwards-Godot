@@ -1,8 +1,8 @@
 extends Control
 
-var SceneOptions = preload("res://assets/UI/Options/Options.tscn")
-var SceneMenu = preload("res://assets/UI/Menu/Main_menu.tscn")
-var SceneDiagram = preload("res://assets/UI/Diagram.tscn")
+var SceneOptions : PackedScene = preload("res://assets/UI/Options/Options.tscn")
+var SceneMenu : PackedScene = preload("res://assets/UI/Menu/Main_menu.tscn")
+var SceneDiagram : PackedScene = preload("res://assets/UI/Diagram.tscn")
 var Options = null
 var added_menu_ui = false
 var diagram_visible = false
