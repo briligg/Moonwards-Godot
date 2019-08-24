@@ -1,196 +1,230 @@
 extends Node
 
-var ui_history_queue = []
-var ui_future_queue = []
-var current_ui = null
-var on_queued_ui = false
-var base_ui = null
+var _ui_history_queue = []
+var _ui_future_queue = []
+var _current_ui = null
+var _on_queued_ui = false
+var _base_ui = null
 var has_ui = false
+
 signal back_to_base_ui
-enum ui_events{
-	back,
-	create_ui,
-	queue_ui,
-	set_setting,
-	dismiss,
-	load_level,
-	join_server,
-	run_locally,
-	exit,
-	update
+
+enum UI_EVENTS{
+		BACK,
+		CREATE_UI,
+		QUEUE_UI,
+		SET_SETTING,
+		DISMISS,
+		LOAD_LEVEL,
+		JOIN_SERVER,
+		RUN_LOCALLY,
+		EXIT,
+		UPDATE
 }
-const ui_events_text = ["back", "create_ui", "queue_ui", "set_setting", "dismiss",
-						"load_level", "join_server", "run_locally", "exit", "update" ]
-func ui_event_to_text(ui_event):
+
+const UI_EVENT_TO_TEXT = ["back", "create_ui", "queue_ui", "set_setting", "dismiss",
+		"load_level", "join_server", "run_locally", "exit", "update" ]
+
+func ui_event_to_text(ui_event: int) -> String:
 	var text = "none"
-	if ui_events_text.size() - 1  > ui_event:
+	if UI_EVENT_TO_TEXT.size() - 1  > ui_event:
 		text = "unknown ui_event(%s)" % ui_event
 	else:
-		text = ui_events_text[ui_event]
+		text = UI_EVENT_TO_TEXT[ui_event]
 	return text
 
-func _ready():
-	gamestate.connect("scene_change", self, "SceneChange")
 
-func UIEvent(ui_event, resource=null):
+func _ready() -> void:
+	gamestate.connect("scene_change", self, "_change_scene")
+
+
+func ui_event(ui_event : int, resource = null) -> void:
+	assert(UI_EVENTS.values().has(ui_event)) # Replace with error
+	
 	match ui_event:
-		ui_events.create_ui:
-			NextUI(resource)
-		ui_events.queue_ui:
-			QueueUI(resource)
-		ui_events.back:
-			Back()
-		ui_events.set_setting:
-			SetSetting()
-		ui_events.dismiss:
-			DismissUI()
-		ui_events.load_level:
-			LoadLevel(resource)
-		ui_events.join_server:
+		UI_EVENTS.CREATE_UI:
+			next_ui(resource)
+		UI_EVENTS.QUEUE_UI:
+			queue_ui(resource)
+		UI_EVENTS.BACK:
+			back()
+		UI_EVENTS.SET_SETTING:
+			set_setting()
+		UI_EVENTS.DISMISS:
+			dismiss_ui()
+		UI_EVENTS.LOAD_LEVEL:
+			load_level(resource)
+		UI_EVENTS.JOIN_SERVER:
 			join_server(resource)
-		ui_events.run_locally:
+		UI_EVENTS.RUN_LOCALLY:
 			run_local(resource)
-		ui_events.exit:
-			Exit()
-		ui_events.update:
-			QueueUI(resource)
+		UI_EVENTS.EXIT:
+			exit()
+		UI_EVENTS.UDPATE:
+			queue_ui(resource)
 		_:
 			print("UIManager, no action for %s resource(%s)" % [ui_event_to_text(ui_event), resource])
 
-func SetSetting():
+
+func set_setting() -> void:
 	print("**implement me UIManager::SetSetting")
 
-func SceneChange():
-	ui_history_queue.clear()
-	ui_future_queue.clear()
+
+func _change_scene() -> void:
+	_ui_history_queue.clear()
+	_ui_future_queue.clear()
 	has_ui = false
 
-func CanGoBack():
-	
-	return (ui_history_queue.size() > 0)
 
-func Back():
-	if ui_history_queue.size()==1:
+func can_go_back() -> bool:
+	return (_ui_history_queue.size() > 0)
+
+
+func back() -> void:
+	if _ui_history_queue.size() == 1:
 		emit_signal("back_to_base_ui")
-	if not CanGoBack():
+	
+	if not can_go_back():
 		return
+	
 	#Delete the current UI before going back.
-	if is_instance_valid(current_ui):
-		current_ui.queue_free()
-		
-	AddPreviousUI()
+	if is_instance_valid(_current_ui):
+		_current_ui.queue_free()
+	
+	_add_previous_ui()
 
-func AddPreviousUI():
-	base_ui.add_child(ui_history_queue.front())
-	SetCurrentUI(ui_history_queue.pop_front())
 
-func FreeMouse():
+func _add_previous_ui() -> void:
+	_base_ui.add_child(_ui_history_queue.front())
+	_set_current_ui(_ui_history_queue.pop_front())
+
+
+func free_mouse() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-func LockMouse():
+
+func lock_mouse() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-func QueueCurrentUI():
-	if is_instance_valid(current_ui):
-		current_ui.get_parent().remove_child(current_ui)
-		ui_history_queue.append(current_ui)
 
-func QueueUI(var resource):
-	if ui_future_queue.empty() and not on_queued_ui:
-		NextUI(resource)
-		on_queued_ui = true
+func _queue_current_ui() -> void:
+	if is_instance_valid(_current_ui):
+		_current_ui.get_parent().remove_child(_current_ui)
+		_ui_history_queue.append(_current_ui)
+
+
+func queue_ui(var resource) -> void:
+	if _ui_future_queue.empty() and not _on_queued_ui:
+		next_ui(resource)
+		_on_queued_ui = true
 	else:
-		ui_future_queue.append(resource)
+		_ui_future_queue.append(resource)
 
-func DismissUI():
+
+func dismiss_ui():
 	# Continue showing the queued UIs.
-	if not ui_future_queue.empty():
-		ClearUI()
-		SwitchUI(ui_future_queue.pop_back())
-		on_queued_ui = true
+	if not _ui_future_queue.empty():
+		clear_ui()
+		_switch_ui(_ui_future_queue.pop_back())
+		_on_queued_ui = true
 	# If there are no other UIs queued then go back to the previous UI.
-	elif CanGoBack():
-		Back()
-		on_queued_ui = false
+	elif can_go_back():
+		back()
+		_on_queued_ui = false
 	# When there is no history then the UI can be removed completely.
 	else:
-		ClearUI()
-		on_queued_ui = false
-	
+		clear_ui()
+		_on_queued_ui = false
 
-func CreateUI(var resource):
+
+func create_ui(var resource) -> Node:
 	if resource is String:
 		resource = ResourceLoader.load(resource)
 	var new_ui = resource.instance()
 	return new_ui
 
-func ClearUI():
-	if is_instance_valid(current_ui):
-		current_ui.queue_free()
-	current_ui = null
+
+func clear_ui() -> void:
+	if is_instance_valid(_current_ui):
+		_current_ui.queue_free()
+	
+	_current_ui = null
 	has_ui = false
-	LockMouse()
+	lock_mouse()
 
-func NextUI(var next_ui):
-	QueueCurrentUI()
-	SwitchUI(next_ui)
 
-func SwitchUI(var next_ui):
-	var new_ui = CreateUI(next_ui)
-	base_ui.add_child(new_ui)
-	SetCurrentUI(new_ui)
+func next_ui(var next_ui) -> void:
+	_queue_current_ui()
+	_switch_ui(next_ui)
+
+
+func _switch_ui(var next_ui) -> void:
+	var new_ui = create_ui(next_ui)
+	_base_ui.add_child(new_ui)
+	_set_current_ui(new_ui)
 	has_ui = true
-	FreeMouse()
+	free_mouse()
 
-func RegisterBaseUI(var new_base_ui):
+
+func register_base_ui(var new_base_ui: Node) -> void:
 	# The base UI is the upper most Control Node.
-	base_ui = new_base_ui
+	_base_ui = new_base_ui
 
-func SetCurrentUI(var new_ui):
+
+func _set_current_ui(var new_ui: Node) -> void:
 	# This Node is used to attach all future UI to.
-	current_ui = new_ui
+	_current_ui = new_ui
 
-func _input(event):
+
+func _input(event) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		# When pressing escape the future UI queue is used before going back.
-		if not ui_future_queue.empty() and on_queued_ui:
-			DismissUI()
+		if not _ui_future_queue.empty() and _on_queued_ui:
+			dismiss_ui()
 		else:
-			Back()
+			back()
 
-func RequestFocus():
+
+func request_focus() -> bool:
 	if has_ui:
 		return false
 	else:
 		has_ui = true
 		return true
 
-func ReleaseFocus():
+
+func release_focus() -> void:
 	has_ui = false
 
-func LoadLevel(var resource):
+
+func load_level(var resource) -> void:
 	gamestate.load_level(resource)
 
-func join_server(scene):
+
+func join_server(scene: String) -> void:
 	if scene == null or scene == "":
 		scene = options.scenes.default_multiplayer_join_server
 
 	var player_data = {
 		username = options.username
 	}
+	
 	gamestate.player_register(player_data, true, "avatar") #local player
 	gamestate.load_level(scene)
 	gamestate.client_server_connect(options.join_server_host)
 
-func run_local(scene):
+
+func run_local(scene: String) -> void:
 	if scene == null or scene == "":
 		scene = options.scenes.default_run_scene
 
 	var player_data = {
 		username = options.username
 	}
+	
 	gamestate.player_register(player_data, true, "avatar_local") #local player
 	gamestate.load_level(scene)
 
-func Exit():
+
+func exit() -> void:
 	get_tree().quit()

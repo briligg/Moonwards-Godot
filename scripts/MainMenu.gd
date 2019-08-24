@@ -18,13 +18,13 @@ func _ready_headless():
 	gamestate.change_scene(worldscene)
 
 func _ready():
-	UIManager.RegisterBaseUI(self)
+	UIManager.register_base_ui(self)
 
 	if utils.feature_check_updater():
-		UIManager.UIEvent(UIManager.ui_events.update, "res://core/update/scenes/UpdateUI.tscn")
+		UIManager.UIEvent(UIManager.UI_EVENTS.QUEUE_UI, "res://core/update/scenes/UpdateUI.tscn")
 		yield(get_tree(), "idle_frame")
 		printd("Set updater server")
-		options.Updater = UIManager.current_ui.RunUpdateServer()
+		options.Updater = UIManager._current_ui.RunUpdateServer()
 		return
 
 	if utils.feature_check_server():
@@ -33,7 +33,7 @@ func _ready():
 
 	if options.get("updater/client", "check_at_startup", true):
 		$VBoxContainer/UpdateUI.visible = true
-		UIManager.SetCurrentUI($VBoxContainer)
+		UIManager._set_current_ui($VBoxContainer)
 		$VBoxContainer/UpdateUI.connect("continue_pressed",self,"_on_continue_pressed")
 		var checker = options.get("Update info", "available", false)
 		connect("Update_finished",self,"_on_update_finished")

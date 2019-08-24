@@ -1,13 +1,13 @@
 extends Control
 
-func _ready():
-	gamestate.connect("loading_progress", self, "SetProgressBar")
-	gamestate.connect("loading_error", self, "LoadingError")
-	UIManager.RegisterBaseUI(self)
-	UIManager.SetCurrentUI($Control)
+func _ready() -> void:
+	gamestate.connect("loading_progress", self, "_set_progress_bar")
+	gamestate.connect("loading_error", self, "_loading_error")
+	UIManager.register_base_ui(self)
+	UIManager._set_current_ui($Control)
 
-func SetProgressBar(var progress):
+func _set_progress_bar(var progress: float) -> void:
 	$Control/ProgressBar.value = progress
 
-func LoadingError(var message):
+func _loading_error(var message: String) -> void:
 	$Control/Label.text += str(message)

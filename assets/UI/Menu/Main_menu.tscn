@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://img/MoonwardsLogo2018-1200.png" type="Texture" id=1]
 [ext_resource path="res://scripts/UIElement.gd" type="Script" id=2]
@@ -7,18 +7,17 @@
 [ext_resource path="res://assets/UI/Options/Options.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/UI/Menu/About.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/UI/Menu/Attention_icon.png" type="Texture" id=7]
+[ext_resource path="res://core/update/scenes/UpdateUI.tscn" type="PackedScene" id=8]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends VBoxContainer
 
-func _ready():
+func _ready() -> void:
 	if get_parent().name == \"MainMenu\":
 		$UI/MainUI/ButtonsContainer/Return.hide()
 	else:
 		$UI/MainUI/ButtonsContainer/Join.hide()
 		$UI/MainUI/ButtonsContainer/RunNet.hide()
-		
-	UIManager.SetCurrentUI(self)
 "
 
 [node name="VBoxContainer" type="VBoxContainer"]
@@ -74,8 +73,8 @@ margin_bottom = 73.0
 rect_min_size = Vector2( 0, 40 )
 text = "Main Menu"
 script = ExtResource( 2 )
-ui_event = 5
-resource_path = "res://ui/MainMenu.tscn"
+_ui_event = 5
+_resource_string = "res://ui/MainMenu.tscn"
 
 [node name="Instructions" type="Button" parent="UI/MainUI/ButtonsContainer"]
 margin_top = 83.0
@@ -84,8 +83,8 @@ margin_bottom = 123.0
 rect_min_size = Vector2( 0, 40 )
 text = "Instructions"
 script = ExtResource( 2 )
-ui_event = 1
-resource = ExtResource( 3 )
+_ui_event = 1
+_resource = ExtResource( 3 )
 
 [node name="Join" type="Button" parent="UI/MainUI/ButtonsContainer"]
 margin_top = 133.0
@@ -94,7 +93,7 @@ margin_bottom = 173.0
 rect_min_size = Vector2( 0, 40 )
 text = "Join Server"
 script = ExtResource( 2 )
-ui_event = 6
+_ui_event = 6
 
 [node name="RunNet" type="Button" parent="UI/MainUI/ButtonsContainer"]
 margin_top = 183.0
@@ -103,8 +102,8 @@ margin_bottom = 223.0
 rect_min_size = Vector2( 0, 40 )
 text = "Custom Game"
 script = ExtResource( 2 )
-ui_event = 1
-resource = ExtResource( 4 )
+_ui_event = 1
+_resource = ExtResource( 4 )
 
 [node name="Options" type="Button" parent="UI/MainUI/ButtonsContainer"]
 margin_top = 233.0
@@ -113,8 +112,8 @@ margin_bottom = 273.0
 rect_min_size = Vector2( 0, 40 )
 text = "Options"
 script = ExtResource( 2 )
-ui_event = 1
-resource = ExtResource( 5 )
+_ui_event = 1
+_resource = ExtResource( 5 )
 
 [node name="About" type="Button" parent="UI/MainUI/ButtonsContainer"]
 margin_top = 283.0
@@ -123,8 +122,8 @@ margin_bottom = 323.0
 rect_min_size = Vector2( 0, 40 )
 text = "About"
 script = ExtResource( 2 )
-ui_event = 1
-resource = ExtResource( 6 )
+_ui_event = 1
+_resource = ExtResource( 6 )
 
 [node name="UpdateAvailable" type="TextureRect" parent="UI/MainUI/ButtonsContainer/About"]
 visible = false
@@ -145,7 +144,7 @@ margin_bottom = 373.0
 rect_min_size = Vector2( 0, 40 )
 text = "Quit"
 script = ExtResource( 2 )
-ui_event = 8
+_ui_event = 8
 
 [node name="Update" type="Button" parent="UI/MainUI/ButtonsContainer"]
 margin_top = 383.0
@@ -154,8 +153,8 @@ margin_bottom = 423.0
 rect_min_size = Vector2( 0, 40 )
 text = "Update_debug"
 script = ExtResource( 2 )
-ui_event = 9
-resource_path = "res://core/update/scenes/UpdateUI.tscn"
+_ui_event = 1
+_resource = ExtResource( 8 )
 
 [node name="Display" type="Button" parent="UI/MainUI/ButtonsContainer"]
 visible = false

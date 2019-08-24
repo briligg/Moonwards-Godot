@@ -43,8 +43,8 @@ func Activate():
 	
 	camera.current = true
 	
-	UIManager.RequestFocus()
-	UIManager.FreeMouse()
+	UIManager.request_focus()
+	UIManager.free_mouse()
 	current_stage = 1
 	GoToCurrentStage()
 	$Control.visible = true
@@ -54,8 +54,8 @@ func DeActivate():
 	camera.current = false
 	current_stage = 0
 	$Control.visible = false
-	UIManager.ReleaseFocus()
-	UIManager.LockMouse()
+	UIManager.release_focus()
+	UIManager.lock_mouse()
 
 func StartBladesAnimation():
 	$Rocket/RocketBody/ThrustFanBlades_Opt/AnimationPlayer.play("BladesRotate")

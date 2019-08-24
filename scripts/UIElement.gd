@@ -1,34 +1,27 @@
 extends Node
 
-export(UIManager.ui_events) var ui_event
-export (PackedScene) var resource
-export (String) var resource_path
+export(UIManager.UI_EVENTS) var _ui_event
+export(PackedScene) var _resource: PackedScene = null
+export(String) var _resource_string: String = ""
 
-func _ready():
-# 	if resource == null and resource_path != null:
-# 		resource = ResourceLoader.load(resource_path)
+func _ready() -> void:
 	var node = self
 	if node is Button:
-		self.connect("pressed", self, "ButtonPressed")
+		self.connect("pressed", self, "button_pressed")
 	elif node is CheckBox:
-		self.connect("toggled", self, "CheckBoxToggled")
+		self.connect("toggled", self, "check_box_toggled")
 
-func ButtonPressed():
-	UIEvent()
+func button_pressed() -> void:
+	ui_event()
 
-func CheckBoxToggled(var value):
-	UIEvent()
+func check_box_toggled(var value) -> void:
+	ui_event()
 
-func CheckBoxToggle(var value):
-	UIEvent()
+func drop_down_choice(var value) -> void:
+	ui_event()
 
-func DropDownChoice(var value):
-	UIEvent()
-
-func UIEvent():
-	if resource != null:
-		UIManager.UIEvent(ui_event, resource)
+func ui_event() -> void:
+	if _resource != null:
+		UIManager.ui_event(_ui_event, _resource)
 	else:
-		UIManager.UIEvent(ui_event, resource_path)
-
-
+		UIManager.ui_event(_ui_event, _resource_string)

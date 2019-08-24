@@ -8,29 +8,29 @@ var added_menu_ui = false
 var diagram_visible = false
 
 func _ready():
-	UIManager.RegisterBaseUI(self)
+	UIManager.register_base_ui(self)
 
 func _input(event):
 	if event.is_action_pressed("ui_menu_options"):
 		if added_menu_ui:
-			UIManager.ClearUI()
+			UIManager.clear_ui()
 			added_menu_ui = false
-		elif UIManager.RequestFocus():
-			UIManager.NextUI(SceneOptions)
+		elif UIManager.request_focus():
+			UIManager.next_ui(SceneOptions)
 			added_menu_ui = true
 	if event.is_action_pressed("ui_cancel"):
 		if added_menu_ui:
-			UIManager.ClearUI()
+			UIManager.clear_ui()
 			added_menu_ui = false
-		elif UIManager.RequestFocus():
-			UIManager.NextUI(SceneMenu)
+		elif UIManager.request_focus():
+			UIManager.next_ui(SceneMenu)
 			added_menu_ui = true
 	if event.is_action_pressed("show_diagram"):
 		if diagram_visible:
-			UIManager.ClearUI()
+			UIManager.clear_ui()
 			diagram_visible = false
-		elif UIManager.RequestFocus():
-			UIManager.NextUI(SceneDiagram)
+		elif UIManager.request_focus():
+			UIManager.next_ui(SceneDiagram)
 			diagram_visible = true
 
 func OptionsPanel():

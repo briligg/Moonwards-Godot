@@ -46,12 +46,12 @@ func _input(event):
 	yield(get_tree(),"idle_frame")
 	yield(get_tree(),"idle_frame")
 	if event.is_action_pressed("toggle_chat"):
-		if UIManager.RequestFocus():
+		if UIManager.request_focus():
 			ShowChat()
 			if not $VBoxContainer/ChatInput.has_focus():
 				$VBoxContainer/ChatInput.grab_focus()
 		elif chat_visible:
-			UIManager.ReleaseFocus()
+			UIManager.release_focus()
 			if not $VBoxContainer/ChatInput.text == "":
 				rpc('display_message', gamestate.player_get("name"), $VBoxContainer/ChatInput.text)
 			$VBoxContainer/ChatInput.release_focus()
