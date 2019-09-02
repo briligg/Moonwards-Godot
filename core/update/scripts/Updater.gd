@@ -444,7 +444,7 @@ func toServer(command, data=null):
 	printd("toServer: %s" % command)
 	rpc_id(1, "UpdateProtocolServer", root_tree.get_network_unique_id(), command, data)
 
-func RunUpdateServer():
+func _run_update_server():
 	SetState("role", "server")
 
 	LoadPackages(server_package_path, true)
@@ -452,13 +452,13 @@ func RunUpdateServer():
 	root_tree.connect("network_peer_connected", self, "ServerPeerConnected")
 	root_tree.connect("network_peer_disconnected", self, "ServerPeerDisconnected")
 	
-	printd("RunUpdateServer, multiplayer %s, network_peer %s" % [get_tree().multiplayer, get_tree().network_peer])
+	printd("_run_update_server, multiplayer %s, network_peer %s" % [get_tree().multiplayer, get_tree().network_peer])
 	
 	peer = NetworkedMultiplayerENet.new()
 	peer.set_bind_ip(IP.resolve_hostname("localhost", 1))
 	var error = peer.create_server(SERVER_PORT, MAX_PLAYERS)
 	root_tree.set_network_peer(peer)
-	printd("RunUpdateServer 2, multiplayer %s, network_peer %s" % [get_tree().multiplayer, get_tree().network_peer])
+	printd("_run_update_server 2, multiplayer %s, network_peer %s" % [get_tree().multiplayer, get_tree().network_peer])
 	
 	Log("Create server. " + "Error code : " + str(error))
 	Log("Getting MD5 List...")

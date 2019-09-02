@@ -24,7 +24,7 @@ func _ready() -> void:
 		UIManager.UIEvent(UIManager.UI_EVENTS.QUEUE_UI, "res://core/update/scenes/UpdateUI.tscn")
 		yield(get_tree(), "idle_frame")
 		printd("Set updater server")
-		options.Updater = UIManager._current_ui.RunUpdateServer()
+		options.Updater = UIManager._current_ui._run_update_server()
 		return
 
 	if utils.feature_check_server():
