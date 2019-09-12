@@ -1,4 +1,5 @@
 extends Tabs
+
 var resolutions : Array = [
 	Vector2(640, 480),
 	Vector2(800, 600),
@@ -30,12 +31,12 @@ func _ready() -> void:
 	
 	for resolution_index in resolutions.size():
 		var resolution = resolutions[resolution_index]
-		Resolution.get_popup().add_item(str(resolution.x) + " x " + str(resolution.y))
+		Resolution.get_popup().add_item(str(resolution.x, " x ", resolution.y))
 		if resolution.x == res_width and resolution.y == res_height:
 			current_resolution = resolution_index
 	
 	if current_resolution == -1:
-		Resolution.get_popup().add_item(str(res_width) + " x " + str(res_height))
+		Resolution.get_popup().add_item(str(res_width, " x ", res_height))
 		resolutions.append(Vector2(res_width, res_height))
 		current_resolution = resolutions.size() - 1
 	
