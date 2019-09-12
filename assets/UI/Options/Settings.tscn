@@ -98,11 +98,11 @@ text = "Resolution:"
 
 [node name="Resolution" type="MenuButton" parent="Main/Row3/Video/Resolution"]
 margin_left = 76.0
-margin_right = 159.0
+margin_right = 340.0
 margin_bottom = 20.0
+size_flags_horizontal = 3
 text = "1366 x 768"
 align = 0
-items = [ "800 x 680", null, 0, false, false, -1, 0, null, "", false, "1366 x 768", null, 0, false, false, -1, 0, null, "", false ]
 
 [node name="VSync" type="CheckButton" parent="Main/Row3/Video"]
 margin_top = 50.0
