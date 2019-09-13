@@ -52,6 +52,7 @@ var hair_color : Color = Color(0,0,0,1)
 var shoes_color : Color = Color(0,0,0,1)
 var savefile_json
 
+#FIXME Writing and reading should be done with a ConfigFile instead of writing a dictionary using File.
 var OptionsFile : String = "user://gameoptions.save"
 var User_file : String = "user://settings.save"
 
