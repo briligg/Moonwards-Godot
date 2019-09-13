@@ -1,5 +1,11 @@
 extends Tabs
 
+onready var Quality : MenuButton = $Main/Row3/Video/ModelQuality/Quality
+onready var Resolution : MenuButton = $Main/Row3/Video/Resolution/Resolution
+onready var UpdateCheck : CheckBox = $Main/Row1/Updating/UpdateCheck
+onready var FPSSlider : HSlider = $Main/Row3/Video/FPSLimit/FPSSlider
+onready var FPSSpin : SpinBox = $Main/Row3/Video/FPSLimit/FPSSpin
+
 var resolutions : Array = [
 	Vector2(640, 480),
 	Vector2(800, 600),
@@ -12,14 +18,7 @@ var resolutions : Array = [
 	Vector2(1920, 1080),
 	Vector2(2560, 1440)
 	]
-
 var current_resolution : int = -1
-
-onready var Quality : MenuButton = $Main/Row3/Video/ModelQuality/Quality
-onready var Resolution : MenuButton = $Main/Row3/Video/Resolution/Resolution
-onready var UpdateCheck : CheckBox = $Main/Row1/Updating/UpdateCheck
-onready var FPSSlider : HSlider = $Main/Row3/Video/FPSLimit/FPSSlider
-onready var FPSSpin : SpinBox = $Main/Row3/Video/FPSLimit/FPSSpin
 
 func _ready() -> void:
 	Resolution.get_popup().connect("id_pressed", self, "_on_Resolution_change")
