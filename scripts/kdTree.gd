@@ -408,4 +408,3 @@ class BinaryHeap:
 			_scoreFunction = funcref(self, "sf_max")
 		scoreFunction = _scoreFunction
 		content = []
-

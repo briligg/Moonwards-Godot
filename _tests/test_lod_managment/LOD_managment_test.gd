@@ -45,7 +45,3 @@ func _input(event):
 		hide_all = !hide_all
 	if event.is_action_pressed("ui_focus_next"):
 		$LodManager.enabled = ! $LodManager.enabled
-		
-
-	
-		

@@ -59,5 +59,3 @@ func get_meshlist_lod(lodset=true):
 			if obj.lod_min_distance == 0 and obj.lod_max_distance == 0:
 				nodes.append(p)
 	return nodes
-
-

@@ -52,3 +52,4 @@ func _on_ClassicControls_resized():
 func update_shaders():
 	if $Hider/Viewport/ColorPicker != null: 
 		$Hider/Viewport/ColorPicker.update_shaders()
+	

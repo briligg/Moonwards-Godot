@@ -124,4 +124,3 @@ func _on_continue_pressed() -> void:
 
 func printd(s):
 	logg.print_fd(debug_id, s)
-	

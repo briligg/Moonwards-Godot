@@ -93,5 +93,3 @@ func _on_PopupPanel_about_to_show():
 func _on_PopupPanel_popup_hide():
 	#Disconnect from the hue picker
 	$PopupPanel/HuePicker.disconnect('color_changed', self, "get_color_from_popup")
-	
-	

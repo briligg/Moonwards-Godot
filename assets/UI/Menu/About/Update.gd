@@ -117,4 +117,3 @@ func _on_Update_check_pressed() -> void:
     
 func _on_Change_log_confirmed() -> void:
 	$Change_log.hide()
-	

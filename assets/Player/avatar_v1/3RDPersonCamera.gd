@@ -67,4 +67,3 @@ func _process(delta):
 	#		translation.z = translation.z - delta	
 		else:
 			linear_velocity = move_and_slide(linear_velocity, gravity.normalized())
-	

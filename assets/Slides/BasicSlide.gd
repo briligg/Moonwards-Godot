@@ -29,4 +29,3 @@ func _on_Button_pressed():
 func _on_Prev_pressed():
 	index -= 1
 	update_slides()
-

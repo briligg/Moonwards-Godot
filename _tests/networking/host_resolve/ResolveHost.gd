@@ -21,4 +21,3 @@ func _on_Button_pressed():
 	print($Panel/LineEdit.text)
 	$Panel/LineEdit/Label.text = IP.resolve_hostname($Panel/LineEdit.text)
 	print($Panel/LineEdit/Label.text)
-	
