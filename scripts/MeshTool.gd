@@ -7,7 +7,7 @@ var mesh_cache = {}
 var root
 
 func printd(s):
-	logg.print_fd(id, s)
+	logg.print_filtered_message(id, s)
 
 func cache_has_id(id):
 	if id == null:

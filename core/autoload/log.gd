@@ -6,7 +6,7 @@ extends Node
 #verbose levels - -3:-1 errors, 0 - info, 1-3 - verbose info, 4-6 - debug
 export(int, -1, 6) var _dd_verbosity: int = 4
 
-const DD_FILTER: Dictionary = {
+var DD_FILTER: Dictionary = {
 	"options.gd" : [
 		{ vl = 9, enabled = true, key = "options set TreeManagerCache"},
 		{ vl = 9, enabled = true, key = "get: TreeManagerCache"},
@@ -158,7 +158,7 @@ const DD_FILTER: Dictionary = {
 
 
 	# TODO: Type and rename these vars
-func test_fd(id, s) -> int:
+func _filter_message(id, s) -> int:
 	var found: int = 1
 	
 	if DD_FILTER.has(id):
@@ -183,8 +183,8 @@ func test_fd(id, s) -> int:
 
 
 	# TODO: Type and rename these vars
-func print_fd(id, s):
-	var pp = test_fd(id, s)
+func print_filtered_message(id, s):
+	var pp = _filter_message(id, s)
 	
 	match pp:
 		1:
@@ -196,26 +196,3 @@ func print_fd(id, s):
 		
 		3:
 			print("%-12s:: " % id, s)
-		
-#		-1:
-# 			pass #found but no need to print for enabled/verbosity level reasons
-
-
-	# TODO: Is this code dead? If so, remove it.
-# func print_fd(id, s):
-# 	if not debug:
-# 		return
-# 	if DD_FILTER.has(id):
-# 		var FILTER = DD_FILTER[id]
-# 		if FILTER.size() > 0:
-# 			var found = false
-# 			for dl in FILTER:
-# 				if s.begins_with(dl.key):
-# 					if dl.enabled and dl.vl <= _dd_verbosity:
-# 						print("%-12s:: " % id, s)
-# 					found = true
-# 					break
-# 			if not found:
-# 				print(id, "***", s)
-# 	else:
-# 		print("*=*", id, "***", s)

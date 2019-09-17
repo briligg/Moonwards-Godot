@@ -164,7 +164,7 @@ func get_node_root(node):
 #########################
 var debug_id = "utils.gd"
 func printd(s):
-	logg.print_fd(debug_id, s)
+	logg.print_filtered_message(debug_id, s)
 	
 	
 func get_safe_bool(obj, propetry):

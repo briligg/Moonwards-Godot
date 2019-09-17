@@ -583,4 +583,4 @@ func SaveRPoints(delta):
 
 var debug_id = "Player2.gd"
 func printd(s):
-	logg.print_fd(debug_id, s)
+	logg.print_filtered_message(debug_id, s)

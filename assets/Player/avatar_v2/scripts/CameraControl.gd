@@ -80,4 +80,4 @@ func DrawLine(var from, var to):
 	im.end()
 
 func printd(s):
-	logg.print_fd(id, s)
+	logg.print_filtered_message(id, s)

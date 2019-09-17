@@ -13,7 +13,7 @@ var nodes_hs
 var id_path
 
 func printd(s):
-	logg.print_fd(id, s)
+	logg.print_filtered_message(id, s)
 
 func array_add(a, b):
 	for i in b:

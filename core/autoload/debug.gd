@@ -13,7 +13,7 @@ var hidden_nodes_prob : float
 var debug_id : String = "debug.gd"
 
 func printd(s) -> void:
-	logg.print_fd(debug_id, s)
+	logg.print_filtered_message(debug_id, s)
 
 func _input(event : InputEvent) -> void:
 	#print("debug event: %s" % event)

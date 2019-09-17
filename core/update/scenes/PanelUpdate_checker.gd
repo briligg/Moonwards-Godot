@@ -109,7 +109,7 @@ func _on_Button_pressed():
 
 var debug_id = "PanelUpdate"
 func printd(s):
-	logg.print_fd(debug_id, s)
+	logg.print_filtered_message(debug_id, s)
 
 
 #checksum noise

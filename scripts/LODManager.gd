@@ -11,7 +11,7 @@ var mesh_collection = []
 var id_collection = {}
 
 func printd(s):
-	logg.print_fd(id, s)
+	logg.print_filtered_message(id, s)
 
 func _ready():
 	printd("_ready, enabled(%s)" % enabled)

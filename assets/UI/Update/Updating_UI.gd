@@ -140,4 +140,5 @@ func update_data() -> void:
 
 
 func printd(s) -> void:
-	logg.print_fd(debug_id, s)
+	logg.print_filtered_message(debug_id, s)
+	

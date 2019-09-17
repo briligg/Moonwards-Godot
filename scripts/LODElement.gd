@@ -3,7 +3,7 @@ extends MeshInstance
 export (NodePath) var substitute
 const id = "LODElement"
 func printd(s):
-	logg.print_fd(id, s)
+	logg.print_filtered_message(id, s)
 
 var state
 

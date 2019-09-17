@@ -60,7 +60,7 @@ var User_file : String = "user://settings.save"
 #       debug function      #
 #############################
 func printd(s):
-	logg.print_fd(id, s)
+	logg.print_filtered_message(id, s)
 
 #############################
 # load scene options

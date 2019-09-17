@@ -661,7 +661,7 @@ func end_game():
 
 
 func printd(s):
-	logg.print_fd(debug_id, s)
+	logg.print_filtered_message(debug_id, s)
 
 func log_all_signals():
 	var sg_ignore = ["gslog"]

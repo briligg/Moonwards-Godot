@@ -36,7 +36,7 @@ func _ready() -> void:
 	connect("update_finished",self,"_on_update_finished")
 	
 func printd(s) -> void:
-	logg.print_fd(debug_id, s)
+	logg.print_filtered_message(debug_id, s)
 
 func check_for_update() -> void:
 	$HBoxContainer2/VBoxContainer3/Version3.text = "Gathering update information"
