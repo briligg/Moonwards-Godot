@@ -33,4 +33,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.78204, 0 )
 script = ExtResource( 5 )
 step = 6
 count = 3
-

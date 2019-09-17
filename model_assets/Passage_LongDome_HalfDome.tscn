@@ -2,21 +2,8 @@
 
 [ext_resource path="res://model_assets/meshes/Passage_LongDome_HalfDome__Passage-HalfDome-LongDome.mesh" type="ArrayMesh" id=1]
 
-[node name="Scene" type="Spatial" index="0"]
+[node name="Scene" type="Spatial"]
 
-[node name="Passage-HalfDome-LongDome" type="MeshInstance" parent="." index="0"]
-
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
+[node name="Passage-HalfDome-LongDome" type="MeshInstance" parent="."]
 mesh = ExtResource( 1 )
-skeleton = NodePath("..")
 material/0 = null
-
-

@@ -40,4 +40,3 @@ material/0 = null
 material/1 = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-

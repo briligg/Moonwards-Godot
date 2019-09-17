@@ -17,7 +17,7 @@ material/0 = null
 [node name="NorthDugoutLiner" type="MeshInstance" parent="RadBlindBeam000" groups=[
 "wall",
 ]]
-transform = Transform( 0.999635, -0.0270297, -1.64117e-08, 0.0270297, 0.999635, -1.1891e-09, 1.64378e-08, 7.45059e-10, 1, -0.981629, 0.985668, 0.0250015 )
+transform = Transform( 0.999635, -0.0270297, -1.64117e-008, 0.0270297, 0.999635, -1.1891e-009, 1.64378e-008, 7.45059e-010, 1, -0.981629, 0.985668, 0.0250015 )
 mesh = ExtResource( 2 )
 material/0 = null
 
@@ -29,7 +29,7 @@ shape = ExtResource( 3 )
 [node name="Passage_FirstGallery_NorthLongAtrium" type="MeshInstance" parent="RadBlindBeam000" groups=[
 "wall",
 ]]
-transform = Transform( 0.999635, -0.0270297, -1.64117e-08, 0.0270297, 0.999635, -1.1891e-09, 1.64378e-08, 7.45059e-10, 1, -0.981598, 0.985791, 0.0248985 )
+transform = Transform( 0.999635, -0.0270297, -1.64117e-008, 0.0270297, 0.999635, -1.1891e-009, 1.64378e-008, 7.45059e-010, 1, -0.981598, 0.985791, 0.0248985 )
 mesh = ExtResource( 4 )
 material/0 = null
 
@@ -39,6 +39,6 @@ material/0 = null
 shape = ExtResource( 5 )
 
 [node name="RadBlindBeam" type="MeshInstance" parent="RadBlindBeam000"]
-transform = Transform( 1, 9.87202e-08, -1.63956e-08, -9.87202e-08, 1, -1.41094e-09, 1.63956e-08, 1.41094e-09, 1, 4.71309, 0.00215024, -0.09058 )
+transform = Transform( 1, 9.87202e-008, -1.63956e-008, -9.87202e-008, 1, -1.41094e-009, 1.63956e-008, 1.41094e-009, 1, 4.71309, 0.00215024, -0.09058 )
 mesh = ExtResource( 6 )
 material/0 = null

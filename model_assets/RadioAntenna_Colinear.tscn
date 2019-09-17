@@ -3,37 +3,13 @@
 [ext_resource path="res://model_assets/meshes/RadioAntenna_Colinear__RadioAntenna.mesh" type="ArrayMesh" id=1]
 [ext_resource path="res://model_assets/meshes/RadioAntenna_Colinear__RadioAntenna_colinear-antenna-element.mesh" type="ArrayMesh" id=2]
 
-[node name="Scene" type="Spatial" index="0"]
+[node name="Scene" type="Spatial"]
 
-[node name="RadioAntenna" type="MeshInstance" parent="." index="0"]
-
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
+[node name="RadioAntenna" type="MeshInstance" parent="."]
 mesh = ExtResource( 1 )
-skeleton = NodePath("..")
 material/0 = null
 
-[node name="colinear-antenna-element" type="MeshInstance" parent="RadioAntenna" index="0"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.088871, 0.310913, 9.53674e-07 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
+[node name="colinear-antenna-element" type="MeshInstance" parent="RadioAntenna"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.088871, 0.310913, 9.53674e-007 )
 mesh = ExtResource( 2 )
-skeleton = NodePath("..")
 material/0 = null
-
-

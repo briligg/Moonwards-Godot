@@ -164,7 +164,7 @@ surfaces/7 = {
 [node name="Scene" type="Spatial"]
 
 [node name="Exterior_Basic" type="MeshInstance" parent="."]
-transform = Transform( 0.789173, -7.62939e-06, -0.614171, 4.41242e-06, 1, -6.75256e-06, 0.614171, 2.61895e-06, 0.789173, -9.53674e-07, 0.202271, 1.52588e-05 )
+transform = Transform( 0.789173, -7.62939e-006, -0.614171, 4.41242e-006, 1, -6.75256e-006, 0.614171, 2.61895e-006, 0.789173, -9.53674e-007, 0.202271, 1.52588e-005 )
 mesh = SubResource( 1 )
 material/0 = null
 material/1 = null
@@ -172,7 +172,7 @@ material/2 = null
 material/3 = null
 
 [node name="Exterior_Details" type="MeshInstance" parent="."]
-transform = Transform( 9.89238e-07, -0.0621199, 0.112351, -0.12838, -1.92151e-06, 6.7955e-08, 1.6487e-06, -0.112351, -0.0621199, -0.0110407, -0.11499, -0.0204926 )
+transform = Transform( 9.89238e-007, -0.0621199, 0.112351, -0.12838, -1.92151e-006, 6.7955e-008, 1.6487e-006, -0.112351, -0.0621199, -0.0110407, -0.11499, -0.0204926 )
 mesh = SubResource( 2 )
 material/0 = null
 material/1 = null
@@ -182,4 +182,3 @@ material/4 = null
 material/5 = null
 material/6 = null
 material/7 = null
-

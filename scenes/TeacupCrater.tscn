@@ -25,42 +25,42 @@ editor/display_folded = true
 transform = Transform( -0.247258, 0, -0.96895, 0, 1, 0, 0.96895, 0, -0.247258, -3.56214, 0.976831, -2.10276 )
 
 [node name="Scene" parent="Trusses/Empty_TriangleTruss010" instance=ExtResource( 1 )]
-transform = Transform( 0.930534, 0, -0.366205, 0, 1, 0, 0.366205, 0, 0.930534, 2.38419e-07, 0, 0 )
+transform = Transform( 0.930534, 0, -0.366205, 0, 1, 0, 0.366205, 0, 0.930534, 2.38419e-007, 0, 0 )
 
 [node name="Empty_TriangleTruss009" type="Spatial" parent="Trusses"]
 editor/display_folded = true
 transform = Transform( -0.113041, 0, -0.99359, 0, 1, 0, 0.99359, 0, -0.113041, -1.45292, 0.772363, -3.9272 )
 
 [node name="Scene" parent="Trusses/Empty_TriangleTruss009" instance=ExtResource( 1 )]
-transform = Transform( 0.507689, 0, -0.86154, 0, 1, 0, 0.861541, 0, 0.507689, -2.38419e-07, 0, 2.38419e-07 )
+transform = Transform( 0.507689, 0, -0.86154, 0, 1, 0, 0.861541, 0, 0.507689, -2.38419e-007, 0, 2.38419e-007 )
 
 [node name="Empty_TriangleTruss008" type="Spatial" parent="Trusses"]
 editor/display_folded = true
 transform = Transform( -0.200368, 0, -0.979721, 0, 1, 0, 0.979721, 0, -0.200368, 0.122454, 0.528955, -4.22541 )
 
 [node name="Scene" parent="Trusses/Empty_TriangleTruss008" instance=ExtResource( 1 )]
-transform = Transform( 0.148488, 0, -0.988915, 0, 1, 0, 0.988914, 0, 0.148488, 3.42727e-07, 0, 0 )
+transform = Transform( 0.148488, 0, -0.988915, 0, 1, 0, 0.988914, 0, 0.148488, 3.42727e-007, 0, 0 )
 
 [node name="Empty_TriangleTruss007" type="Spatial" parent="Trusses"]
 editor/display_folded = true
 transform = Transform( -0.190407, 0, -0.981705, 0, 1, 0, 0.981705, 0, -0.190407, 2.63588, 0.00563931, -3.4047 )
 
 [node name="Scene" parent="Trusses/Empty_TriangleTruss007" instance=ExtResource( 1 )]
-transform = Transform( -0.488349, 0, -0.872649, 0, 1, 0, 0.872649, 0, -0.488349, -2.38419e-07, 0, 7.15256e-07 )
+transform = Transform( -0.488349, 0, -0.872649, 0, 1, 0, 0.872649, 0, -0.488349, -2.38419e-007, 0, 7.15256e-007 )
 
 [node name="Empty_TriangleTruss006" type="Spatial" parent="Trusses"]
 editor/display_folded = true
 transform = Transform( -0.211007, 0, -0.977485, 0, 1, 0, 0.977485, 0, -0.211007, 3.72075, -0.294654, -2.15075 )
 
 [node name="Scene" parent="Trusses/Empty_TriangleTruss006" instance=ExtResource( 1 )]
-transform = Transform( -0.768701, 0, -0.639608, 0, 1, 0, 0.639608, 0, -0.768701, 0, 0, 4.76837e-07 )
+transform = Transform( -0.768701, 0, -0.639608, 0, 1, 0, 0.639608, 0, -0.768701, 0, 0, 4.76837e-007 )
 
 [node name="Empty_TriangleTruss005" type="Spatial" parent="Trusses"]
 editor/display_folded = true
 transform = Transform( -0.197491, 0, -0.980305, 0, 1, 0, 0.980305, 0, -0.197491, 4.26067, -0.623389, 0.500825 )
 
 [node name="Scene" parent="Trusses/Empty_TriangleTruss005" instance=ExtResource( 1 )]
-transform = Transform( -0.998181, 0, -0.0602984, 0, 1, 0, 0.0602984, 0, -0.998181, 0, 0, 4.17233e-07 )
+transform = Transform( -0.998181, 0, -0.0602984, 0, 1, 0, 0.0602984, 0, -0.998181, 0, 0, 4.17233e-007 )
 
 [node name="Empty_TriangleTruss004" type="Spatial" parent="Trusses"]
 editor/display_folded = true
@@ -74,21 +74,21 @@ editor/display_folded = true
 transform = Transform( -0.128195, 0, -0.991749, 0, 1, 0, 0.991749, 0, -0.128195, 1.64129, -0.463599, 3.87208 )
 
 [node name="Scene" parent="Trusses/Empty_TriangleTruss003" instance=ExtResource( 1 )]
-transform = Transform( -0.509141, 0, 0.860684, 0, 1, 0, -0.860684, 0, -0.509141, -1.19209e-07, 0, 4.76837e-07 )
+transform = Transform( -0.509141, 0, 0.860684, 0, 1, 0, -0.860684, 0, -0.509141, -1.19209e-007, 0, 4.76837e-007 )
 
 [node name="Empty_TriangleTruss002" type="Spatial" parent="Trusses"]
 editor/display_folded = true
 transform = Transform( -0.179759, 0, -0.98371, 0, 1, 0, 0.98371, 0, -0.179759, 0.0355401, -0.212867, 4.16149 )
 
 [node name="Scene" parent="Trusses/Empty_TriangleTruss002" instance=ExtResource( 1 )]
-transform = Transform( -0.150342, 0, 0.988634, 0, 1, 0, -0.988634, 0, -0.150342, -4.32134e-07, 0, 7.07339e-07 )
+transform = Transform( -0.150342, 0, 0.988634, 0, 1, 0, -0.988634, 0, -0.150342, -4.32134e-007, 0, 7.07339e-007 )
 
 [node name="Empty_TriangleTruss001" type="Spatial" parent="Trusses"]
 editor/display_folded = true
 transform = Transform( -0.766295, 0, -0.642488, 0, 1, 0, 0.642488, 0, -0.766295, -2.4933, 0.315698, 3.31178 )
 
 [node name="Scene" parent="Trusses/Empty_TriangleTruss001" instance=ExtResource( 1 )]
-transform = Transform( -0.182713, 0, 0.983167, 0, 1, 0, -0.983167, 0, -0.182713, 0, 0, -1.19209e-07 )
+transform = Transform( -0.182713, 0, 0.983167, 0, 1, 0, -0.983167, 0, -0.182713, 0, 0, -1.19209e-007 )
 
 [node name="Empty_TriangleTruss" type="Spatial" parent="Trusses"]
 editor/display_folded = true
@@ -98,7 +98,7 @@ transform = Transform( 0.999076, 0, 0.0429899, 0, 1, 0, -0.0429899, 0, 0.999076,
 transform = Transform( 0.510478, 0, -0.859891, 0, 1, 0, 0.859891, 0, 0.510478, 0, 0, 0 )
 
 [node name="Truss-Triangular-67m" type="MeshInstance" parent="Trusses"]
-transform = Transform( 1, -2.10821e-09, 1.42027e-08, 4.58086e-07, 1, 3.41795e-07, 1.12923e-08, 4.19095e-08, 1, -4.17753, 0.949707, -0.524887 )
+transform = Transform( 1, -2.10821e-009, 1.42027e-008, 4.58086e-007, 1, 3.41795e-007, 1.12923e-008, 4.19095e-008, 1, -4.17753, 0.949707, -0.524887 )
 mesh = ExtResource( 2 )
 material/0 = null
 
@@ -109,7 +109,7 @@ material/0 = null
 material/1 = null
 
 [node name="TeacupCraterRoof_Col" type="StaticBody" parent="TeacupCraterRoof2"]
-transform = Transform( 1, -1.09685e-09, 0, 7.34872e-10, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1, -1.09685e-009, 0, 7.34872e-010, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="TeacupCraterRoof2/TeacupCraterRoof_Col"]
 transform = Transform( 0.999958, 0.00905317, -0.00136271, -0.00906887, 0.999887, -0.0119928, 0.00125397, 0.0120047, 0.999927, 0.00172043, 0.190014, 0.00228131 )
@@ -121,12 +121,12 @@ mesh = ExtResource( 4 )
 material/0 = null
 
 [node name="Teacup-centertower" type="MeshInstance" parent="TeacupCraterRoof2/Teacup-watertank"]
-transform = Transform( 10, -2.34228e-06, -8.68386e-08, -2.26777e-06, 10, -1.7276e-06, -8.68388e-08, -1.67172e-06, 10, -1.78814e-07, -17.063, -4.47035e-08 )
+transform = Transform( 10, -2.34228e-006, -8.68386e-008, -2.26777e-006, 10, -1.7276e-006, -8.68388e-008, -1.67172e-006, 10, -1.78814e-007, -17.063, -4.47035e-008 )
 mesh = ExtResource( 5 )
 material/0 = null
 
 [node name="Teacup_Planters_MA" type="MeshInstance" parent="TeacupCraterRoof2/Teacup-watertank"]
-transform = Transform( 0.999958, -0.0090691, 0.00125397, 0.00905295, 0.999887, 0.0120045, -0.00136271, -0.011993, 0.999927, -2.38419e-07, -4.45679, 0 )
+transform = Transform( 0.999958, -0.0090691, 0.00125397, 0.00905295, 0.999887, 0.0120045, -0.00136271, -0.011993, 0.999927, -2.38419e-007, -4.45679, 0 )
 mesh = ExtResource( 6 )
 material/0 = null
 material/1 = null
@@ -137,7 +137,7 @@ mesh = ExtResource( 7 )
 material/0 = null
 
 [node name="TeacupCraterFloor" type="MeshInstance" parent="."]
-transform = Transform( 1, -2.10821e-09, 1.42027e-08, 4.58086e-07, 1, 3.41795e-07, 1.12923e-08, 4.19095e-08, 1, 0.0732422, -5.11169, -0.0234147 )
+transform = Transform( 1, -2.10821e-009, 1.42027e-008, 4.58086e-007, 1, 3.41795e-007, 1.12923e-008, 4.19095e-008, 1, 0.0732422, -5.11169, -0.0234147 )
 mesh = ExtResource( 8 )
 material/0 = null
 
@@ -146,4 +146,3 @@ material/0 = null
 [node name="CollisionShape" type="CollisionShape" parent="TeacupCraterFloor/StaticBody"]
 transform = Transform( 0.999997, 0.00197681, 0.00138652, -0.0019933, 0.999926, 0.0119901, -0.00136271, -0.0119928, 0.999927, -0.0827732, 0.110532, 0.0234147 )
 shape = SubResource( 2 )
-

@@ -107,7 +107,6 @@
 [ext_resource path="res://scenes/cshapes/AtriumHab__Interior_ShimmyStair-Step1011_ShimmyStair-Step1011_col_CollisionShape.shape" type="Shape" id=105]
 [ext_resource path="res://scripts/AreaLod.gd" type="Script" id=106]
 
-
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.306531, 0.340695, 0.219678 )
 
@@ -328,7 +327,7 @@ material/0 = null
 material/1 = null
 
 [node name="RadBarrier_TunnelOutlet" type="StaticBody" parent="Exterior/Tunnel/RadBarrier_TunnelEnd"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.53674e-07, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.53674e-007, 0, 0 )
 
 [node name="CollisionPolygon" type="CollisionPolygon" parent="Exterior/Tunnel/RadBarrier_TunnelEnd/RadBarrier_TunnelOutlet"]
 depth = 4.5
@@ -515,7 +514,7 @@ mesh = ExtResource( 15 )
 material/0 = null
 
 [node name="CoolingTanks_Col" type="StaticBody" parent="Exterior/ExteriorTanks/CoolingTanks"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.49394, 0.58612, -0.83017 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.49394, 0.58612, -0.83017 )
 
 [node name="CollisionPolygon" type="CollisionPolygon" parent="Exterior/ExteriorTanks/CoolingTanks/CoolingTanks_Col"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0096302, -0.0385206, 0.385742 )
@@ -653,7 +652,7 @@ mesh = ExtResource( 30 )
 material/0 = null
 
 [node name="BlackWaterTank_col" type="StaticBody" parent="Interior/PlumbingAndWaste/BlackWaterTank"]
-transform = Transform( 7.54979e-09, 0.1, 0, -0.1, 7.54979e-09, 0, 0, 0, 0.1, -4.76837e-07, 0, 0 )
+transform = Transform( 7.54979e-009, 0.1, 0, -0.1, 7.54979e-009, 0, 0, 0, 0.1, -4.76837e-007, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Interior/PlumbingAndWaste/BlackWaterTank/BlackWaterTank_col"]
 shape = ExtResource( 31 )
@@ -665,7 +664,7 @@ mesh = ExtResource( 32 )
 material/0 = null
 
 [node name="ComposterPlatform_col" type="StaticBody" parent="Interior/PlumbingAndWaste/ComposterPlatform"]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.136768, -2.38419e-07, 0, -4.06802e-06 )
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.136768, -2.38419e-007, 0, -4.06802e-006 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Interior/PlumbingAndWaste/ComposterPlatform/ComposterPlatform_col"]
 shape = ExtResource( 33 )
@@ -676,7 +675,7 @@ mesh = ExtResource( 34 )
 material/0 = null
 
 [node name="MainComposter_col" type="StaticBody" parent="Interior/PlumbingAndWaste/MainComposter"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.98023e-08, -2.16067e-07 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 2.98023e-008, -2.16067e-007 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Interior/PlumbingAndWaste/MainComposter/MainComposter_col"]
 shape = ExtResource( 35 )
@@ -733,7 +732,7 @@ mesh = ExtResource( 45 )
 material/0 = null
 
 [node name="WasteWaterPurification_col" type="StaticBody" parent="Interior/PlumbingAndWaste/WasteWaterPurification"]
-transform = Transform( -1, -1.50996e-07, 0, 1.50996e-07, -1, 0, 0, 0, 1, 0, 0, -2.98023e-08 )
+transform = Transform( -1, -1.50996e-007, 0, 1.50996e-007, -1, 0, 0, 0, 1, 0, 0, -2.98023e-008 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Interior/PlumbingAndWaste/WasteWaterPurification/WasteWaterPurification_col"]
 shape = ExtResource( 46 )
@@ -745,7 +744,7 @@ mesh = ExtResource( 47 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="Interior/PlumbingAndWaste/WasteWaterFirstTanks"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.842009, 0, 0 )
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 0.842009, 0, 0 )
 
 [node name="CollisionPolygon" type="CollisionPolygon" parent="Interior/PlumbingAndWaste/WasteWaterFirstTanks/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.167421 )
@@ -786,7 +785,7 @@ material/1 = null
 material/2 = null
 
 [node name="AlgaeTubes_col" type="StaticBody" parent="Interior/Atrium_Objects/AlgaeTubes_Opt"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19209e-07, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19209e-007, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Interior/Atrium_Objects/AlgaeTubes_Opt/AlgaeTubes_col"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.119308, 0 )
@@ -815,7 +814,7 @@ mesh = ExtResource( 53 )
 material/0 = null
 
 [node name="AtriumRamp_col" type="StaticBody" parent="Interior/Atrium_Objects/AtriumRamp"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.98023e-08, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.98023e-008, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Interior/Atrium_Objects/AtriumRamp/AtriumRamp_col"]
 shape = ExtResource( 54 )
@@ -873,10 +872,10 @@ material/2 = null
 material/3 = null
 
 [node name="PondLevelGlass_col" type="StaticBody" parent="Interior/Atrium_Objects/PondStructures"]
-transform = Transform( 0.933334, 0, 0, 0, -4.37114e-09, 0.1, 0, -2.29458, -1.00299e-07, 0, 0.10314, 0 )
+transform = Transform( 0.933334, 0, 0, 0, -4.37114e-009, 0.1, 0, -2.29458, -1.00299e-007, 0, 0.10314, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Interior/Atrium_Objects/PondStructures/PondLevelGlass_col"]
-transform = Transform( 0.752091, 0, 0, 0, 0.747227, -1.68824e-08, 0, -1.68824e-08, 1.13345, 0, -0.00628862, -0.569849 )
+transform = Transform( 0.752091, 0, 0, 0, 0.747227, -1.68824e-008, 0, -1.68824e-008, 1.13345, 0, -0.00628862, -0.569849 )
 shape = SubResource( 22 )
 
 [node name="LongStairs2" type="MeshInstance" parent="Interior/Atrium_Objects"]
@@ -939,12 +938,12 @@ mesh = ExtResource( 65 )
 material/0 = null
 
 [node name="AirlockW-DoorOutside002" type="MeshInstance" parent="Interior/Airlock"]
-transform = Transform( 5.4851e-06, 0, 0.723207, 0, 10.7602, 0, -0.758863, 0, 5.22738e-06, 0.02442, 29.3442, -1.3867 )
+transform = Transform( 5.4851e-006, 0, 0.723207, 0, 10.7602, 0, -0.758863, 0, 5.22738e-006, 0.02442, 29.3442, -1.3867 )
 mesh = ExtResource( 66 )
 material/0 = null
 
 [node name="AirlockRamp" type="StaticBody" parent="Interior/Airlock"]
-transform = Transform( -4.37114e-07, 0, 10, 0, 121.102, 0, -10, 0, -4.37114e-07, -0.10879, -11.9673, 0.148903 )
+transform = Transform( -4.37114e-007, 0, 10, 0, 121.102, 0, -10, 0, -4.37114e-007, -0.10879, -11.9673, 0.148903 )
 
 [node name="CollisionPolygon" type="CollisionPolygon" parent="Interior/Airlock/AirlockRamp"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00872386 )
@@ -959,24 +958,24 @@ editor/display_folded = true
 
 [node name="ToiletA" type="Spatial" parent="Interior/Bathrooms/Toilets"]
 editor/display_folded = true
-transform = Transform( -0.1, 0, -3.89414e-08, 0, 0.1, 0, 3.89414e-08, 0, -0.1, -3.39648, -0.18103, 0.766357 )
+transform = Transform( -0.1, 0, -3.89414e-008, 0, 0.1, 0, 3.89414e-008, 0, -0.1, -3.39648, -0.18103, 0.766357 )
 
 [node name="toiletA" parent="Interior/Bathrooms/Toilets/ToiletA" instance=ExtResource( 67 )]
-transform = Transform( 1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0, 0, -1.25072e-07 )
+transform = Transform( 1, 0, 2.84217e-014, 0, 1, 0, -2.84217e-014, 0, 1, 0, 0, -1.25072e-007 )
 
 [node name="ToiletD" type="Spatial" parent="Interior/Bathrooms/Toilets"]
 editor/display_folded = true
-transform = Transform( 0.1, 0, 6.51683e-08, 0, 0.1, 0, -6.51683e-08, 0, 0.1, -3.75732, -0.181396, 0.987061 )
+transform = Transform( 0.1, 0, 6.51683e-008, 0, 0.1, 0, -6.51683e-008, 0, 0.1, -3.75732, -0.181396, 0.987061 )
 
 [node name="toiletD" parent="Interior/Bathrooms/Toilets/ToiletD" instance=ExtResource( 67 )]
-transform = Transform( 1, 0, 5.68434e-14, 0, 1, 0, -5.68434e-14, 0, 1, 0, 0, 3.09718e-07 )
+transform = Transform( 1, 0, 5.68434e-014, 0, 1, 0, -5.68434e-014, 0, 1, 0, 0, 3.09718e-007 )
 
 [node name="ToiletE" type="Spatial" parent="Interior/Bathrooms/Toilets"]
 editor/display_folded = true
-transform = Transform( 0.1, 0, 6.51683e-08, 0, 0.1, 0, -6.51683e-08, 0, 0.1, -3.75732, -0.181396, 0.886963 )
+transform = Transform( 0.1, 0, 6.51683e-008, 0, 0.1, 0, -6.51683e-008, 0, 0.1, -3.75732, -0.181396, 0.886963 )
 
 [node name="toiletE" parent="Interior/Bathrooms/Toilets/ToiletE" instance=ExtResource( 67 )]
-transform = Transform( 1, 0, 5.68434e-14, 0, 1, 0, -5.68434e-14, 0, 1, 0, 0, 3.09718e-07 )
+transform = Transform( 1, 0, 5.68434e-014, 0, 1, 0, -5.68434e-014, 0, 1, 0, 0, 3.09718e-007 )
 
 [node name="ToiletF" type="Spatial" parent="Interior/Bathrooms/Toilets"]
 editor/display_folded = true
@@ -986,59 +985,59 @@ transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -3.75732, -0.181396, 0.7
 
 [node name="ToiletC" type="Spatial" parent="Interior/Bathrooms/Toilets"]
 editor/display_folded = true
-transform = Transform( -0.1, 9.84014e-15, 6.51683e-08, 0, 0.1, -1.50996e-08, 6.51683e-08, 1.50996e-08, 0.1, -3.39648, -0.181396, 0.966553 )
+transform = Transform( -0.1, 9.84014e-015, 6.51683e-008, 0, 0.1, -1.50996e-008, 6.51683e-008, 1.50996e-008, 0.1, -3.39648, -0.181396, 0.966553 )
 
 [node name="toiletC" parent="Interior/Bathrooms/Toilets/ToiletC" instance=ExtResource( 67 )]
-transform = Transform( 1, 0, -5.68434e-14, 6.77626e-21, 1, 0, 5.68434e-14, 0, 1, 0, 0, 7.41275e-08 )
+transform = Transform( 1, 0, -5.68434e-014, 6.77626e-021, 1, 0, 5.68434e-014, 0, 1, 0, 0, 7.41275e-008 )
 
 [node name="ToiletB" type="Spatial" parent="Interior/Bathrooms/Toilets"]
 editor/display_folded = true
-transform = Transform( -0.1, 0, -3.89414e-08, 0, 0.1, 0, 3.89414e-08, 0, -0.1, -3.39648, -0.181396, 0.866455 )
+transform = Transform( -0.1, 0, -3.89414e-008, 0, 0.1, 0, 3.89414e-008, 0, -0.1, -3.39648, -0.181396, 0.866455 )
 
 [node name="toiletB" parent="Interior/Bathrooms/Toilets/ToiletB" instance=ExtResource( 67 )]
-transform = Transform( 1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0, 0, -1.25072e-07 )
+transform = Transform( 1, 0, 2.84217e-014, 0, 1, 0, -2.84217e-014, 0, 1, 0, 0, -1.25072e-007 )
 
 [node name="Toilet1" type="Spatial" parent="Interior/Bathrooms/Toilets"]
 editor/display_folded = true
-transform = Transform( 4.37114e-09, -1.50996e-08, -0.1, 0, 0.1, -1.50996e-08, -0.1, -1.16245e-15, -4.37114e-09, 1.06104, -1.58411, -2.52759 )
+transform = Transform( 4.37114e-009, -1.50996e-008, -0.1, 0, 0.1, -1.50996e-008, -0.1, -1.16245e-015, -4.37114e-009, 1.06104, -1.58411, -2.52759 )
 
 [node name="toilet1" parent="Interior/Bathrooms/Toilets/Toilet1" instance=ExtResource( 67 )]
-transform = Transform( 1, 8.47033e-22, 3.55271e-15, 4.23516e-22, 1, 2.88506e-22, -3.55271e-15, 5.08123e-22, 1, 4.63795e-07, 0, 0 )
+transform = Transform( 1, 8.47033e-022, 3.55271e-015, 4.23516e-022, 1, 2.88506e-022, -3.55271e-015, 5.08123e-022, 1, 4.63795e-007, 0, 0 )
 
 [node name="Toilet2" type="Spatial" parent="Interior/Bathrooms/Toilets"]
 editor/display_folded = true
-transform = Transform( 4.37114e-09, -1.50996e-08, -0.1, 0, 0.1, -1.50996e-08, -0.1, -1.16245e-15, -4.37114e-09, 0.960938, -1.58411, -2.52759 )
+transform = Transform( 4.37114e-009, -1.50996e-008, -0.1, 0, 0.1, -1.50996e-008, -0.1, -1.16245e-015, -4.37114e-009, 0.960938, -1.58411, -2.52759 )
 
 [node name="toilet2" parent="Interior/Bathrooms/Toilets/Toilet2" instance=ExtResource( 67 )]
-transform = Transform( 1, 8.47033e-22, 3.55271e-15, 4.23516e-22, 1, 2.88506e-22, -3.55271e-15, 5.08123e-22, 1, 4.20039e-07, 0, 0 )
+transform = Transform( 1, 8.47033e-022, 3.55271e-015, 4.23516e-022, 1, 2.88506e-022, -3.55271e-015, 5.08123e-022, 1, 4.20039e-007, 0, 0 )
 
 [node name="Toilet3" type="Spatial" parent="Interior/Bathrooms/Toilets"]
 editor/display_folded = true
-transform = Transform( 4.37114e-09, -1.50996e-08, -0.1, 0, 0.1, -1.50996e-08, -0.1, -1.16245e-15, -4.37114e-09, 0.86084, -1.58411, -2.52759 )
+transform = Transform( 4.37114e-009, -1.50996e-008, -0.1, 0, 0.1, -1.50996e-008, -0.1, -1.16245e-015, -4.37114e-009, 0.86084, -1.58411, -2.52759 )
 
 [node name="toilet3" parent="Interior/Bathrooms/Toilets/Toilet3" instance=ExtResource( 67 )]
-transform = Transform( 1, 8.47033e-22, 3.55271e-15, 4.23516e-22, 1, 2.88506e-22, -3.55271e-15, 5.08123e-22, 1, 3.76285e-07, 0, 0 )
+transform = Transform( 1, 8.47033e-022, 3.55271e-015, 4.23516e-022, 1, 2.88506e-022, -3.55271e-015, 5.08123e-022, 1, 3.76285e-007, 0, 0 )
 
 [node name="Toilet4" type="Spatial" parent="Interior/Bathrooms/Toilets"]
 editor/display_folded = true
-transform = Transform( 4.37114e-09, -1.50996e-08, -0.1, 0, 0.1, -1.50996e-08, -0.1, -1.16245e-15, -4.37114e-09, 0.760742, -1.58411, -2.52759 )
+transform = Transform( 4.37114e-009, -1.50996e-008, -0.1, 0, 0.1, -1.50996e-008, -0.1, -1.16245e-015, -4.37114e-009, 0.760742, -1.58411, -2.52759 )
 
 [node name="toilet4" parent="Interior/Bathrooms/Toilets/Toilet4" instance=ExtResource( 67 )]
-transform = Transform( 1, 8.47033e-22, 3.55271e-15, 4.23516e-22, 1, 2.88506e-22, -3.55271e-15, 5.08123e-22, 1, 3.32531e-07, 0, 0 )
+transform = Transform( 1, 8.47033e-022, 3.55271e-015, 4.23516e-022, 1, 2.88506e-022, -3.55271e-015, 5.08123e-022, 1, 3.32531e-007, 0, 0 )
 
 [node name="Toilet5" type="Spatial" parent="Interior/Bathrooms/Toilets"]
 editor/display_folded = true
-transform = Transform( 4.37114e-09, -1.50996e-08, -0.1, 0, 0.1, -1.50996e-08, -0.1, -1.16245e-15, -4.37114e-09, 0.660645, -1.58411, -2.52759 )
+transform = Transform( 4.37114e-009, -1.50996e-008, -0.1, 0, 0.1, -1.50996e-008, -0.1, -1.16245e-015, -4.37114e-009, 0.660645, -1.58411, -2.52759 )
 
 [node name="toilet5" parent="Interior/Bathrooms/Toilets/Toilet5" instance=ExtResource( 67 )]
-transform = Transform( 1, 8.47033e-22, 3.55271e-15, 4.23516e-22, 1, 2.88506e-22, -3.55271e-15, 5.08123e-22, 1, 2.88777e-07, 0, 0 )
+transform = Transform( 1, 8.47033e-022, 3.55271e-015, 4.23516e-022, 1, 2.88506e-022, -3.55271e-015, 5.08123e-022, 1, 2.88777e-007, 0, 0 )
 
 [node name="Toilet6" type="Spatial" parent="Interior/Bathrooms/Toilets"]
 editor/display_folded = true
-transform = Transform( 4.37114e-09, 1.50996e-08, -0.1, 0, 0.1, 1.50996e-08, -0.1, 1.16245e-15, -4.37114e-09, 0.561035, -1.58411, -2.52759 )
+transform = Transform( 4.37114e-009, 1.50996e-008, -0.1, 0, 0.1, 1.50996e-008, -0.1, 1.16245e-015, -4.37114e-009, 0.561035, -1.58411, -2.52759 )
 
 [node name="toilet6" parent="Interior/Bathrooms/Toilets/Toilet6" instance=ExtResource( 67 )]
-transform = Transform( 1, 1.16245e-14, -4.9738e-14, -8.47033e-21, 1, 1.42109e-14, 4.9738e-14, 3.7025e-28, 1, -5.47681e-06, -9.53674e-07, 4.76837e-07 )
+transform = Transform( 1, 1.16245e-014, -4.9738e-014, -8.47033e-021, 1, 1.42109e-014, 4.9738e-014, 3.7025e-028, 1, -5.47681e-006, -9.53674e-007, 4.76837e-007 )
 
 [node name="EastBathroom" type="MeshInstance" parent="Interior/Bathrooms"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.35791, -0.026123, 0.876709 )
@@ -1133,7 +1132,7 @@ material/0 = null
 shape = ExtResource( 80 )
 
 [node name="OmniLight" type="OmniLight" parent="Interior"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.233729, 2.02002, 3.79549 )
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 0.233729, 2.02002, 3.79549 )
 light_energy = 0.3
 light_indirect_energy = 0.8
 light_bake_mode = 2
@@ -1141,7 +1140,7 @@ shadow_enabled = true
 omni_range = 1.96985
 
 [node name="OmniLight2" type="OmniLight" parent="Interior"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.267897, 2.02002, 2.75763 )
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 0.267897, 2.02002, 2.75763 )
 light_energy = 0.6
 light_bake_mode = 2
 shadow_enabled = true
@@ -1563,42 +1562,42 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.207031, -0.319336, -3.83765
 [node name="Scene" parent="Interior/PlanterSetTopSouth/PlanterSet153" instance=ExtResource( 84 )]
 
 [node name="PlanterSet155" type="Spatial" parent="Interior/PlanterSetTopSouth"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-07, -2.38419e-07, -0.479736 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-007, -2.38419e-007, -0.479736 )
 
 [node name="Scene" parent="Interior/PlanterSetTopSouth/PlanterSet155" instance=ExtResource( 84 )]
 
 [node name="PlanterSet156" type="Spatial" parent="Interior/PlanterSetTopSouth"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-07, -2.38419e-07, -0.959473 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-007, -2.38419e-007, -0.959473 )
 
 [node name="Scene" parent="Interior/PlanterSetTopSouth/PlanterSet156" instance=ExtResource( 84 )]
 
 [node name="PlanterSet157" type="Spatial" parent="Interior/PlanterSetTopSouth"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-07, -2.38419e-07, -1.43896 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-007, -2.38419e-007, -1.43896 )
 
 [node name="Scene" parent="Interior/PlanterSetTopSouth/PlanterSet157" instance=ExtResource( 84 )]
 
 [node name="PlanterSet158" type="Spatial" parent="Interior/PlanterSetTopSouth"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-07, -2.38419e-07, -1.9187 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-007, -2.38419e-007, -1.9187 )
 
 [node name="Scene" parent="Interior/PlanterSetTopSouth/PlanterSet158" instance=ExtResource( 84 )]
 
 [node name="PlanterSet159" type="Spatial" parent="Interior/PlanterSetTopSouth"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-07, -2.38419e-07, -2.39844 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-007, -2.38419e-007, -2.39844 )
 
 [node name="Scene" parent="Interior/PlanterSetTopSouth/PlanterSet159" instance=ExtResource( 84 )]
 
 [node name="PlanterSet160" type="Spatial" parent="Interior/PlanterSetTopSouth"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-07, -2.38419e-07, -2.87817 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-007, -2.38419e-007, -2.87817 )
 
 [node name="Scene" parent="Interior/PlanterSetTopSouth/PlanterSet160" instance=ExtResource( 84 )]
 
 [node name="PlanterSet161" type="Spatial" parent="Interior/PlanterSetTopSouth"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-07, -2.38419e-07, -3.35791 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-007, -2.38419e-007, -3.35791 )
 
 [node name="Scene" parent="Interior/PlanterSetTopSouth/PlanterSet161" instance=ExtResource( 84 )]
 
 [node name="PlanterSet162" type="Spatial" parent="Interior/PlanterSetTopSouth"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-07, -2.38419e-07, -3.83765 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-007, -2.38419e-007, -3.83765 )
 
 [node name="Scene" parent="Interior/PlanterSetTopSouth/PlanterSet162" instance=ExtResource( 84 )]
 
@@ -1616,13 +1615,13 @@ editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01025, 0.297607, 1.43335 )
 
 [node name="HexpaneWindow2" parent="Interior/Windows" instance=ExtResource( 86 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.39307, 0.206665, 0.619141 )
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -8.39307, 0.206665, 0.619141 )
 
 [node name="HexpaneWindow3" parent="Interior/Windows" instance=ExtResource( 86 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.39307, 0.206543, -1.03247 )
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -8.39307, 0.206543, -1.03247 )
 
 [node name="HexpaneWindow4" parent="Interior/Windows" instance=ExtResource( 86 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.39307, 0.521362, -0.214111 )
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -8.39307, 0.521362, -0.214111 )
 
 [node name="HexpaneWindow5" parent="Interior/Windows" instance=ExtResource( 86 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01025, 1.0719, 1.43042 )
@@ -1664,7 +1663,7 @@ material/0 = null
 material/1 = null
 
 [node name="StaticBody" type="StaticBody" parent="Interior/KitchenAndLaundry/KitchenLowCabinets"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.00889885, 0, 0 )
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -0.00889885, 0, 0 )
 
 [node name="CollisionPolygon" type="CollisionPolygon" parent="Interior/KitchenAndLaundry/KitchenLowCabinets/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0439448, 0, -0.0107323 )
@@ -1729,7 +1728,7 @@ material/2 = null
 
 [node name="ShimmyStair-Steps001_col" type="StaticBody" parent="Interior/ShimmyStairs/ShimmyStairs1"]
 editor/display_folded = true
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Interior/ShimmyStairs/ShimmyStairs1/ShimmyStair-Steps001_col"]
 shape = ExtResource( 96 )
@@ -1779,7 +1778,7 @@ material/1 = null
 material/2 = null
 
 [node name="ShimmyStair-Step1009_col" type="StaticBody" parent="Interior/ShimmyStairs/ShimmyStairs3"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -5.96046e-08, 0 )
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 0, -5.96046e-008, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Interior/ShimmyStairs/ShimmyStairs3/ShimmyStair-Step1009_col"]
 shape = ExtResource( 101 )
@@ -1804,13 +1803,13 @@ material/1 = null
 material/2 = null
 
 [node name="ShimmyStair-Step1010_col" type="StaticBody" parent="Interior/ShimmyStairs/ShimmyStairs4"]
-transform = Transform( -1, 0, -3.89414e-07, 0, 1, 0, 3.89414e-07, 0, -1, 0, 0, 0 )
+transform = Transform( -1, 0, -3.89414e-007, 0, 1, 0, 3.89414e-007, 0, -1, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Interior/ShimmyStairs/ShimmyStairs4/ShimmyStair-Step1010_col"]
 shape = ExtResource( 103 )
 
 [node name="StairsArea" parent="Interior/ShimmyStairs/ShimmyStairs4" instance=ExtResource( 97 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.00878143, -0.390394, 0.0461864 )
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -0.00878143, -0.390394, 0.0461864 )
 
 [node name="Area" parent="Interior/ShimmyStairs/ShimmyStairs4/StairsArea" index="0"]
 height = 0.217
@@ -1829,13 +1828,13 @@ material/1 = null
 material/2 = null
 
 [node name="ShimmyStair-Step1011_col" type="StaticBody" parent="Interior/ShimmyStairs/ShimmyStairs6"]
-transform = Transform( 1, -4.92007e-14, -3.25841e-07, 0, -1, 1.50996e-07, -3.25841e-07, -1.50996e-07, -1, 0, 0, 0 )
+transform = Transform( 1, -4.92007e-014, -3.25841e-007, 0, -1, 1.50996e-007, -3.25841e-007, -1.50996e-007, -1, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Interior/ShimmyStairs/ShimmyStairs6/ShimmyStair-Step1011_col"]
 shape = ExtResource( 105 )
 
 [node name="StairsArea" parent="Interior/ShimmyStairs/ShimmyStairs6" instance=ExtResource( 97 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.00149345, -0.28214, -0.0462177 )
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 0.00149345, -0.28214, -0.0462177 )
 
 [node name="Area" parent="Interior/ShimmyStairs/ShimmyStairs6/StairsArea" index="0"]
 height = 0.162

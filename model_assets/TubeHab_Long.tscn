@@ -11,7 +11,7 @@ data = PoolVector3Array( 0.2056, 0.2056, 0.9995, 0, 0.2907, 0.9995, 0, 1.2078, 0
 [node name="Scene" type="Spatial"]
 
 [node name="TubeTrussLong_LOD" type="MeshInstance" parent="."]
-transform = Transform( 1.97088e-08, -0.00784669, 0.0996917, 1.27823e-09, 0.0996917, 0.00784669, -0.101223, -2.68913e-10, 1.95098e-08, 0.325976, 0.143157, -3.26839 )
+transform = Transform( 1.97088e-008, -0.00784669, 0.0996917, 1.27823e-009, 0.0996917, 0.00784669, -0.101223, -2.68913e-010, 1.95098e-008, 0.325976, 0.143157, -3.26839 )
 mesh = ExtResource( 1 )
 material/0 = null
 script = ExtResource( 2 )
@@ -34,4 +34,3 @@ visible = false
 mesh = ExtResource( 4 )
 material/0 = null
 material/1 = null
-

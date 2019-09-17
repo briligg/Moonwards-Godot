@@ -207,7 +207,7 @@ material/0 = SubResource( 5 )
 
 [node name="Block15" type="StaticBody" parent="."]
 editor/display_folded = true
-transform = Transform( -2.95442, 0.173648, -2.62268e-07, 0.520945, 0.984808, 0, 2.58284e-07, -1.51808e-08, -3, 9.56779, -0.48921, -22 )
+transform = Transform( -2.95442, 0.173648, -2.62268e-007, 0.520945, 0.984808, 0, 2.58284e-007, -1.51808e-008, -3, 9.56779, -0.48921, -22 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Block15"]
 shape = SubResource( 3 )
@@ -221,4 +221,3 @@ material/0 = SubResource( 5 )
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.422618, 0.851651, -0.309976, 0, 0.34202, 0.939693, 0.906308, -0.397131, 0.144544, 0, 3, 0 )
 shadow_enabled = true
-

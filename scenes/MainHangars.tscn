@@ -25,47 +25,45 @@ data = PoolVector3Array( -8.6503, 7.2869, -40.7748, -9.7362, 6.5975, -40.7777, -
 
 [node name="Empty_LavaTank_Large004" type="Spatial" parent="Set_LavaTanks"]
 editor/display_folded = true
-transform = Transform( 2, -3.61768e-06, 2.3062e-07, 3.61768e-06, 2, 2.08577e-13, -2.3062e-07, 2.08578e-13, 2, 39.2872, 4.67107, -43.9082 )
+transform = Transform( 2, -3.61768e-006, 2.3062e-007, 3.61768e-006, 2, 2.08577e-013, -2.3062e-007, 2.08578e-013, 2, 39.2872, 4.67107, -43.9082 )
 
 [node name="Scene" parent="Set_LavaTanks/Empty_LavaTank_Large004" instance=ExtResource( 1 )]
 
 [node name="Empty_LavaTank_Large005" type="Spatial" parent="Set_LavaTanks"]
 editor/display_folded = true
-transform = Transform( 2, -3.61768e-06, 2.3062e-07, 3.61768e-06, 2, 2.08577e-13, -2.3062e-07, 2.08578e-13, 2, 20.5026, 7.62073, -43.9514 )
+transform = Transform( 2, -3.61768e-006, 2.3062e-007, 3.61768e-006, 2, 2.08577e-013, -2.3062e-007, 2.08578e-013, 2, 20.5026, 7.62073, -43.9514 )
 
 [node name="Scene" parent="Set_LavaTanks/Empty_LavaTank_Large005" instance=ExtResource( 1 )]
 
 [node name="Empty_LavaTank_Talll000" type="Spatial" parent="Set_LavaTanks"]
 editor/display_folded = true
-transform = Transform( 1.8, -3.25591e-06, 2.07558e-07, 3.25591e-06, 1.8, 1.87719e-13, -2.07558e-07, 1.8772e-13, 1.8, 57.3971, 2.62732, -6.66304 )
+transform = Transform( 1.8, -3.25591e-006, 2.07558e-007, 3.25591e-006, 1.8, 1.87719e-013, -2.07558e-007, 1.8772e-013, 1.8, 57.3971, 2.62732, -6.66304 )
 
 [node name="Scene" parent="Set_LavaTanks/Empty_LavaTank_Talll000" instance=ExtResource( 1 )]
 
 [node name="Empty_LavaTank_Talll001" type="Spatial" parent="Set_LavaTanks"]
 editor/display_folded = true
-transform = Transform( 1.8, -3.25591e-06, 2.07558e-07, 3.25591e-06, 1.8, 1.87719e-13, -2.07558e-07, 1.8772e-13, 1.8, 57.4215, 2.60156, -38.5102 )
+transform = Transform( 1.8, -3.25591e-006, 2.07558e-007, 3.25591e-006, 1.8, 1.87719e-013, -2.07558e-007, 1.8772e-013, 1.8, 57.4215, 2.60156, -38.5102 )
 
 [node name="Scene" parent="Set_LavaTanks/Empty_LavaTank_Talll001" instance=ExtResource( 1 )]
 
 [node name="Empty_PressurizedHangar_Giant" type="Spatial" parent="."]
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, 49.5363, 0.43457, -45.4694 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, 49.5363, 0.43457, -45.4694 )
 
 [node name="Scene" parent="Empty_PressurizedHangar_Giant" instance=ExtResource( 2 )]
-transform = Transform( 1, -1.20256e-20, 0, -1.20255e-20, 1, 0, 0, 0, 1, 0, 0, -1.13509 )
+transform = Transform( 1, -1.20256e-020, 0, -1.20255e-020, 1, 0, 0, 0, 1, 0, 0, -1.13509 )
 
 [node name="MainHangarsGrounds" type="MeshInstance" parent="." groups=[
 "floor",
 ]]
 visible = false
-lod_max_distance = 0.0
 mesh = ExtResource( 3 )
 material/0 = null
 
 [node name="MainHangar1" type="MeshInstance" parent="MainHangarsGrounds" groups=[
 "wall",
 ]]
-transform = Transform( -1, 1.58151e-06, 1.1531e-07, -1.58151e-06, -1, 1.12994e-13, 1.1531e-07, -6.93692e-14, 1, 11.4131, 3.79956, -43.1472 )
-lod_max_distance = 0.0
+transform = Transform( -1, 1.58151e-006, 1.1531e-007, -1.58151e-006, -1, 1.12994e-013, 1.1531e-007, -6.93692e-014, 1, 11.4131, 3.79956, -43.1472 )
 mesh = ExtResource( 4 )
 material/0 = null
 material/1 = null
@@ -76,8 +74,7 @@ material/4 = null
 [node name="MainHangar2" type="MeshInstance" parent="MainHangarsGrounds" groups=[
 "wall",
 ]]
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, 31.9473, 0.913086, -22.5842 )
-lod_max_distance = 0.0
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, 31.9473, 0.913086, -22.5842 )
 mesh = ExtResource( 5 )
 material/0 = null
 material/1 = null
@@ -88,8 +85,7 @@ material/4 = null
 [node name="MainHangar3" type="MeshInstance" parent="MainHangarsGrounds" groups=[
 "wall",
 ]]
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, 11.4214, 0.912964, -2.17212 )
-lod_max_distance = 0.0
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, 11.4214, 0.912964, -2.17212 )
 mesh = ExtResource( 6 )
 material/0 = null
 material/1 = null
@@ -99,8 +95,7 @@ material/3 = null
 [node name="MainHangar4" type="MeshInstance" parent="MainHangarsGrounds" groups=[
 "wall",
 ]]
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, 32.063, -1.66394, -2.19312 )
-lod_max_distance = 0.0
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, 32.063, -1.66394, -2.19312 )
 mesh = ExtResource( 7 )
 material/0 = null
 material/1 = null
@@ -124,115 +119,115 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.9571, 4.96265, -28.5634 )
 
 [node name="HangarArchWithColumns" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, -20.5396, -0.0490799, 26.2663 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, -20.5396, -0.0490799, 26.2663 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns" instance=ExtResource( 8 )]
 
 [node name="HangarArchWithColumns001" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, 0.100498, -2.59827, 26.2665 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, 0.100498, -2.59827, 26.2665 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns001" instance=ExtResource( 8 )]
 
 [node name="HangarArchWithColumns002" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, -20.544, 2.89355, -14.3807 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, -20.544, 2.89355, -14.3807 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns002" instance=ExtResource( 8 )]
 
 [node name="HangarArchWithColumns003" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, -9.91821e-05, 0.000240326, -14.3807 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, -9.91821e-005, 0.000240326, -14.3807 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns003" instance=ExtResource( 8 )]
 
 [node name="HangarArchWithColumns004" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, -20.5396, -0.0490799, 23.3757 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, -20.5396, -0.0490799, 23.3757 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns004" instance=ExtResource( 8 )]
 
 [node name="HangarArchWithColumns005" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, -20.5396, -0.0490799, 20.4855 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, -20.5396, -0.0490799, 20.4855 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns005" instance=ExtResource( 8 )]
 
 [node name="HangarArchWithColumns006" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, -20.5396, -0.0490799, 17.5951 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, -20.5396, -0.0490799, 17.5951 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns006" instance=ExtResource( 8 )]
 
 [node name="HangarArchWithColumns007" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, -20.5396, -0.0490799, 14.7048 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, -20.5396, -0.0490799, 14.7048 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns007" instance=ExtResource( 8 )]
 
 [node name="HangarArchWithColumns008" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, -20.5396, -0.0490799, 11.8146 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, -20.5396, -0.0490799, 11.8146 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns008" instance=ExtResource( 8 )]
 
 [node name="HangarArchWithColumns009" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, -20.5396, -0.0490799, 8.9242 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, -20.5396, -0.0490799, 8.9242 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns009" instance=ExtResource( 8 )]
 
 [node name="HangarArchWithColumns010" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, -20.5396, -0.0490799, 6.0339 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, -20.5396, -0.0490799, 6.0339 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns010" instance=ExtResource( 8 )]
 
 [node name="HangarArchWithColumns011" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, 0.100498, -2.59827, 23.3759 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, 0.100498, -2.59827, 23.3759 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns011" instance=ExtResource( 8 )]
 
 [node name="HangarArchWithColumns012" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, 0.100498, -2.59827, 20.4858 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, 0.100498, -2.59827, 20.4858 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns012" instance=ExtResource( 8 )]
 
 [node name="HangarArchWithColumns013" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, 0.100498, -2.59827, 17.5954 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, 0.100498, -2.59827, 17.5954 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns013" instance=ExtResource( 8 )]
 
 [node name="HangarArchWithColumns014" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, 0.100498, -2.59827, 14.7052 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, 0.100498, -2.59827, 14.7052 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns014" instance=ExtResource( 8 )]
 
 [node name="HangarArchWithColumns015" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, 0.100498, -2.59827, 11.8149 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, 0.100498, -2.59827, 11.8149 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns015" instance=ExtResource( 8 )]
 
 [node name="HangarArchWithColumns016" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, 0.100498, -2.59827, 8.9245 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, 0.100498, -2.59827, 8.9245 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns016" instance=ExtResource( 8 )]
 
 [node name="HangarArchWithColumns017" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, 0.100498, -2.59827, 6.0341 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, 0.100498, -2.59827, 6.0341 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns017" instance=ExtResource( 8 )]
 
 [node name="HangarArchWithColumns018" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, -20.544, 2.89355, -11.5045 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, -20.544, 2.89355, -11.5045 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns018" instance=ExtResource( 8 )]
 
@@ -262,19 +257,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5439, 2.89343, 0 )
 
 [node name="HangarArchWithColumns023" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, -20.544, 2.89355, 2.8759 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, -20.544, 2.89355, 2.8759 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns023" instance=ExtResource( 8 )]
 
 [node name="HangarArchWithColumns024" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, -20.544, 2.89355, 5.7521 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, -20.544, 2.89355, 5.7521 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns024" instance=ExtResource( 8 )]
 
 [node name="HangarArchWithColumns025" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, -9.91821e-05, 0.000240326, -11.5045 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, -9.91821e-005, 0.000240326, -11.5045 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns025" instance=ExtResource( 8 )]
 
@@ -309,71 +304,71 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.876 )
 
 [node name="HangarArchWithColumns031" type="Spatial" parent="Set_HangarArchWithColumns"]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, -9.91821e-05, 0.000240326, 5.7521 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, -9.91821e-005, 0.000240326, 5.7521 )
 
 [node name="Scene" parent="Set_HangarArchWithColumns/HangarArchWithColumns031" instance=ExtResource( 8 )]
 
 [node name="Set_TowerRadiator" type="Spatial" parent="."]
 editor/display_folded = true
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, 18.445, 9.61182, -25.4333 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, 18.445, 9.61182, -25.4333 )
 
 [node name="Empty_TowerRadiator3x" type="Spatial" parent="Set_TowerRadiator"]
 editor/display_folded = true
-transform = Transform( 1, -1.20256e-20, 0, -1.20255e-20, 1, 0, 0, 0, 1, 32.2114, -0.0491381, 19.9998 )
+transform = Transform( 1, -1.20256e-020, 0, -1.20255e-020, 1, 0, 0, 0, 1, 32.2114, -0.0491381, 19.9998 )
 
 [node name="Scene" parent="Set_TowerRadiator/Empty_TowerRadiator3x" instance=ExtResource( 9 )]
 
 [node name="Empty_TowerRadiator3x001" type="Spatial" parent="Set_TowerRadiator"]
 editor/display_folded = true
-transform = Transform( 1, -1.20256e-20, 0, -1.20255e-20, 1, 0, 0, 0, 1, 31.4755, -0.0491371, 19.9998 )
+transform = Transform( 1, -1.20256e-020, 0, -1.20255e-020, 1, 0, 0, 0, 1, 31.4755, -0.0491371, 19.9998 )
 
 [node name="Scene" parent="Set_TowerRadiator/Empty_TowerRadiator3x001" instance=ExtResource( 9 )]
 
 [node name="Empty_TowerRadiator3x002" type="Spatial" parent="Set_TowerRadiator"]
 editor/display_folded = true
-transform = Transform( 1, -1.20256e-20, 0, -1.20255e-20, 1, 0, 0, 0, 1, 30.7402, -0.0491352, 19.9998 )
+transform = Transform( 1, -1.20256e-020, 0, -1.20255e-020, 1, 0, 0, 0, 1, 30.7402, -0.0491352, 19.9998 )
 
 [node name="Scene" parent="Set_TowerRadiator/Empty_TowerRadiator3x002" instance=ExtResource( 9 )]
 
 [node name="Empty_TowerRadiator3x003" type="Spatial" parent="Set_TowerRadiator"]
 editor/display_folded = true
-transform = Transform( 1, -1.20256e-20, 0, -1.20255e-20, 1, 0, 0, 0, 1, 30.0048, -0.0491343, 19.9998 )
+transform = Transform( 1, -1.20256e-020, 0, -1.20255e-020, 1, 0, 0, 0, 1, 30.0048, -0.0491343, 19.9998 )
 
 [node name="Scene" parent="Set_TowerRadiator/Empty_TowerRadiator3x003" instance=ExtResource( 9 )]
 
 [node name="Empty_TowerRadiator3x004" type="Spatial" parent="Set_TowerRadiator"]
 editor/display_folded = true
-transform = Transform( 1, -1.20256e-20, 0, -1.20255e-20, 1, 0, 0, 0, 1, 0, 0, 2.19545e-07 )
+transform = Transform( 1, -1.20256e-020, 0, -1.20255e-020, 1, 0, 0, 0, 1, 0, 0, 2.19545e-007 )
 
 [node name="Scene" parent="Set_TowerRadiator/Empty_TowerRadiator3x004" instance=ExtResource( 9 )]
 
 [node name="Empty_TowerRadiator3x005" type="Spatial" parent="Set_TowerRadiator"]
 editor/display_folded = true
-transform = Transform( 1, -1.20256e-20, 0, -1.20255e-20, 1, 0, 0, 0, 1, -0.808599, 0.280032, 1.26306e-07 )
+transform = Transform( 1, -1.20256e-020, 0, -1.20255e-020, 1, 0, 0, 0, 1, -0.808599, 0.280032, 1.26306e-007 )
 
 [node name="Scene" parent="Set_TowerRadiator/Empty_TowerRadiator3x005" instance=ExtResource( 9 )]
 
 [node name="Empty_TowerRadiator3x006" type="Spatial" parent="Set_TowerRadiator"]
 editor/display_folded = true
-transform = Transform( 1, -1.20256e-20, 0, -1.20255e-20, 1, 0, 0, 0, 1, -1.6451, 0.481583, 2.98489e-08 )
+transform = Transform( 1, -1.20256e-020, 0, -1.20255e-020, 1, 0, 0, 0, 1, -1.6451, 0.481583, 2.98489e-008 )
 
 [node name="Scene" parent="Set_TowerRadiator/Empty_TowerRadiator3x006" instance=ExtResource( 9 )]
 
 [node name="Empty_TowerRadiator3x007" type="Spatial" parent="Set_TowerRadiator"]
 editor/display_folded = true
-transform = Transform( 1, -1.20256e-20, 0, -1.20255e-20, 1, 0, 0, 0, 1, -12.4615, 0.481603, -1.21739e-06 )
+transform = Transform( 1, -1.20256e-020, 0, -1.20255e-020, 1, 0, 0, 0, 1, -12.4615, 0.481603, -1.21739e-006 )
 
 [node name="Scene" parent="Set_TowerRadiator/Empty_TowerRadiator3x007" instance=ExtResource( 9 )]
 
 [node name="Empty_TowerRadiator3x008" type="Spatial" parent="Set_TowerRadiator"]
 editor/display_folded = true
-transform = Transform( 1, -1.20256e-20, 0, -1.20255e-20, 1, 0, 0, 0, 1, -13.2984, 0.280054, -1.31389e-06 )
+transform = Transform( 1, -1.20256e-020, 0, -1.20255e-020, 1, 0, 0, 0, 1, -13.2984, 0.280054, -1.31389e-006 )
 
 [node name="Scene" parent="Set_TowerRadiator/Empty_TowerRadiator3x008" instance=ExtResource( 9 )]
 
 [node name="Empty_TowerRadiator3x009" type="Spatial" parent="Set_TowerRadiator"]
 editor/display_folded = true
-transform = Transform( 1, -1.20256e-20, 0, -1.20255e-20, 1, 0, 0, 0, 1, -14.1065, 2.57492e-05, -1.40707e-06 )
+transform = Transform( 1, -1.20256e-020, 0, -1.20255e-020, 1, 0, 0, 0, 1, -14.1065, 2.57492e-005, -1.40707e-006 )
 
 [node name="Scene" parent="Set_TowerRadiator/Empty_TowerRadiator3x009" instance=ExtResource( 9 )]
 
@@ -411,10 +406,9 @@ script = ExtResource( 11 )
 substitute = NodePath("../MainHangarsGrounds")
 
 [node name="MainHangar_LOD" type="MeshInstance" parent="."]
-transform = Transform( 1, -1.80884e-06, 1.1531e-07, 1.80884e-06, 1, 1.04289e-13, -1.1531e-07, 1.04289e-13, 1, 11.4214, 0.912964, -2.17212 )
+transform = Transform( 1, -1.80884e-006, 1.1531e-007, 1.80884e-006, 1, 1.04289e-013, -1.1531e-007, 1.04289e-013, 1, 11.4214, 0.912964, -2.17212 )
 mesh = ExtResource( 12 )
 material/0 = null
 material/1 = null
 material/2 = null
 material/3 = null
-

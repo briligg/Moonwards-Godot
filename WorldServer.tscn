@@ -41,4 +41,3 @@ transform = Transform( -0.997314, 0, 0.0732408, 0, 1, 0, -0.0732408, 0, -0.99731
 
 [node name="10" type="Position3D" parent="spawn_points"]
 transform = Transform( -0.997314, 0, 0.0732408, 0, 1, 0, -0.0732408, 0, -0.997314, -59.4707, -1929.86, -12.2348 )
-

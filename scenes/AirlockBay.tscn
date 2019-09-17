@@ -15,80 +15,80 @@ data = PoolVector3Array( -3.8585, 0.1358, 1.5453, -3.7601, 0.1489, 1.5453, -3.95
 [node name="Scene" type="Spatial"]
 
 [node name="ExtraLargeAirlock" type="Spatial" parent="."]
-transform = Transform( -1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 0, 0, 0 )
+transform = Transform( -1.31134e-007, 0, -3, 0, 3, 0, 3, 0, -1.31134e-007, 0, 0, 0 )
 
 [node name="AirlockNew007" type="Spatial" parent="ExtraLargeAirlock"]
 editor/display_folded = true
-transform = Transform( -1.49012e-08, 0, 0.333333, 0, 0.333333, 0, -0.333333, 0, -1.45705e-08, -0.50822, 0.11263, 1.61279 )
+transform = Transform( -1.49012e-008, 0, 0.333333, 0, 0.333333, 0, -0.333333, 0, -1.45705e-008, -0.50822, 0.11263, 1.61279 )
 
 [node name="Scene" parent="ExtraLargeAirlock/AirlockNew007" instance=ExtResource( 1 )]
 
 [node name="AirlockNew009" type="Spatial" parent="ExtraLargeAirlock"]
 editor/display_folded = true
-transform = Transform( -1.49012e-08, 0, 0.333333, 0, 0.333333, 0, -0.333333, 0, -1.45705e-08, -0.508057, 0.112793, 2.27946 )
+transform = Transform( -1.49012e-008, 0, 0.333333, 0, 0.333333, 0, -0.333333, 0, -1.45705e-008, -0.508057, 0.112793, 2.27946 )
 
 [node name="Scene" parent="ExtraLargeAirlock/AirlockNew009" instance=ExtResource( 1 )]
 
 [node name="AirlockNew010" type="Spatial" parent="ExtraLargeAirlock"]
 editor/display_folded = true
-transform = Transform( -1.49012e-08, 0, 0.333333, 0, 0.333333, 0, -0.333333, 0, -1.45705e-08, -0.508057, 0.112793, 2.94613 )
+transform = Transform( -1.49012e-008, 0, 0.333333, 0, 0.333333, 0, -0.333333, 0, -1.45705e-008, -0.508057, 0.112793, 2.94613 )
 
 [node name="Scene2" parent="ExtraLargeAirlock/AirlockNew010" instance=ExtResource( 1 )]
 editor/display_folded = true
 
 [node name="AirlockDoor2" parent="ExtraLargeAirlock/AirlockNew010/Scene2/AirlockStructure" index="1"]
-transform = Transform( -0.990567, 0, 0.137028, 0, 1, 0, -0.137028, 0, -0.990567, 0.158664, -1.78814e-07, 1.05709 )
+transform = Transform( -0.990567, 0, 0.137028, 0, 1, 0, -0.137028, 0, -0.990567, 0.158664, -1.78814e-007, 1.05709 )
 
 [node name="AirlockDoor1" parent="ExtraLargeAirlock/AirlockNew010/Scene2/AirlockStructure" index="2"]
 transform = Transform( 0.19081, 0, 0.981627, 0, 1, 0, -0.981627, 0, 0.19081, 0.158664, 0.000121951, 0.0237398 )
 
 [node name="AirlockNew011" type="Spatial" parent="ExtraLargeAirlock"]
 editor/display_folded = true
-transform = Transform( -1.49012e-08, 0, 0.333333, 0, 0.333333, 0, -0.333333, 0, -1.45705e-08, -0.508057, 0.112793, 3.61279 )
+transform = Transform( -1.49012e-008, 0, 0.333333, 0, 0.333333, 0, -0.333333, 0, -1.45705e-008, -0.508057, 0.112793, 3.61279 )
 
 [node name="Scene" parent="ExtraLargeAirlock/AirlockNew011" instance=ExtResource( 1 )]
 
 [node name="AirlockNew012" type="Spatial" parent="ExtraLargeAirlock"]
 editor/display_folded = true
-transform = Transform( -1.49012e-08, 0, 0.333333, 0, 0.333333, 0, -0.333333, 0, -1.45705e-08, -0.508057, 0.112793, 4.27946 )
+transform = Transform( -1.49012e-008, 0, 0.333333, 0, 0.333333, 0, -0.333333, 0, -1.45705e-008, -0.508057, 0.112793, 4.27946 )
 
 [node name="Scene" parent="ExtraLargeAirlock/AirlockNew012" instance=ExtResource( 1 )]
 
 [node name="AirlockNew013" type="Spatial" parent="ExtraLargeAirlock"]
 editor/display_folded = true
-transform = Transform( -1.45704e-08, -2.20007e-15, -0.333333, -5.03319e-08, 0.333333, 9.35045e-21, -0.333333, -5.03319e-08, 1.45704e-08, 0.515137, 0.112793, 3.94482 )
+transform = Transform( -1.45704e-008, -2.20007e-015, -0.333333, -5.03319e-008, 0.333333, 9.35045e-021, -0.333333, -5.03319e-008, 1.45704e-008, 0.515137, 0.112793, 3.94482 )
 
 [node name="Scene" parent="ExtraLargeAirlock/AirlockNew013" instance=ExtResource( 1 )]
-transform = Transform( 1, -4.26326e-14, 0, 4.26326e-14, 1, 0, -2.22045e-16, 0, 1, 0, 0, -1.05111e-12 )
+transform = Transform( 1, -4.26326e-014, 0, 4.26326e-014, 1, 0, -2.22045e-016, 0, 1, 0, 0, -1.05111e-012 )
 
 [node name="AirlockNew014" type="Spatial" parent="ExtraLargeAirlock"]
 editor/display_folded = true
-transform = Transform( -9.40432e-08, -2.46205e-14, -0.333333, -8.72664e-08, 0.333333, 0, -0.333333, -8.72664e-08, 9.40433e-08, 0.515137, 0.112793, 2.61279 )
+transform = Transform( -9.40432e-008, -2.46205e-014, -0.333333, -8.72664e-008, 0.333333, 0, -0.333333, -8.72664e-008, 9.40433e-008, 0.515137, 0.112793, 2.61279 )
 
 [node name="Scene" parent="ExtraLargeAirlock/AirlockNew014" instance=ExtResource( 1 )]
 
 [node name="AirlockNew015" type="Spatial" parent="ExtraLargeAirlock"]
 editor/display_folded = true
-transform = Transform( -1.45704e-08, -2.20007e-15, -0.333333, -5.03319e-08, 0.333333, 9.35045e-21, -0.333333, -5.03319e-08, 1.45704e-08, 0.515136, 0.112793, 1.94613 )
+transform = Transform( -1.45704e-008, -2.20007e-015, -0.333333, -5.03319e-008, 0.333333, 9.35045e-021, -0.333333, -5.03319e-008, 1.45704e-008, 0.515136, 0.112793, 1.94613 )
 
 [node name="Scene" parent="ExtraLargeAirlock/AirlockNew015" instance=ExtResource( 1 )]
 
 [node name="AirlockNew016" type="Spatial" parent="ExtraLargeAirlock"]
 editor/display_folded = true
-transform = Transform( -1.45704e-08, -2.20007e-15, -0.333333, -5.03319e-08, 0.333333, 9.35045e-21, -0.333333, -5.03319e-08, 1.45704e-08, 0.515136, 0.112793, 1.27946 )
+transform = Transform( -1.45704e-008, -2.20007e-015, -0.333333, -5.03319e-008, 0.333333, 9.35045e-021, -0.333333, -5.03319e-008, 1.45704e-008, 0.515136, 0.112793, 1.27946 )
 
 [node name="Scene" parent="ExtraLargeAirlock/AirlockNew016" instance=ExtResource( 1 )]
 
 [node name="AirlockNew017" type="Spatial" parent="ExtraLargeAirlock"]
 editor/display_folded = true
-transform = Transform( -1.45704e-08, -2.20007e-15, -0.333333, -5.03319e-08, 0.333333, 9.35045e-21, -0.333333, -5.03319e-08, 1.45704e-08, 0.515137, 0.112793, 3.27816 )
+transform = Transform( -1.45704e-008, -2.20007e-015, -0.333333, -5.03319e-008, 0.333333, 9.35045e-021, -0.333333, -5.03319e-008, 1.45704e-008, 0.515137, 0.112793, 3.27816 )
 
 [node name="Scene" parent="ExtraLargeAirlock/AirlockNew017" instance=ExtResource( 1 )]
 
 [node name="Scene" parent="ExtraLargeAirlock" instance=ExtResource( 1 )]
 
 [node name="SpotLight" type="SpotLight" parent="."]
-transform = Transform( 0.982396, 2.94605e-08, -0.186811, 0.186811, -1.60238e-07, 0.982396, -9.92308e-10, -1, -1.62921e-07, -3.44733, 0.64897, 0.0140755 )
+transform = Transform( 0.982396, 2.94605e-008, -0.186811, 0.186811, -1.60238e-007, 0.982396, -9.92308e-010, -1, -1.62921e-007, -3.44733, 0.64897, 0.0140755 )
 light_energy = 1.5
 shadow_enabled = true
 shadow_bias = 0.02
@@ -96,25 +96,25 @@ spot_range = 1.76615
 spot_angle = 46.5622
 
 [node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 9.92309e-10, 0, 1, 0, -9.92309e-10, 0, 1, -11.9848, 0.421841, 0.000487328 )
+transform = Transform( 1, 0, 9.92309e-010, 0, 1, 0, -9.92309e-010, 0, 1, -11.9848, 0.421841, 0.000487328 )
 shadow_enabled = true
 shadow_bias = 0.02
 omni_range = 1.45152
 
 [node name="OmniLight3" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 9.92309e-10, 0, 1, 0, -9.92309e-10, 0, 1, -8.94403, 0.421841, 0.000487328 )
+transform = Transform( 1, 0, 9.92309e-010, 0, 1, 0, -9.92309e-010, 0, 1, -8.94403, 0.421841, 0.000487328 )
 shadow_enabled = true
 shadow_bias = 0.02
 omni_range = 1.45152
 
 [node name="OmniLight4" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 9.92309e-10, 0, 1, 0, -9.92309e-10, 0, 1, -15.2858, 0.421841, 0.733787 )
+transform = Transform( 1, 0, 9.92309e-010, 0, 1, 0, -9.92309e-010, 0, 1, -15.2858, 0.421841, 0.733787 )
 shadow_enabled = true
 shadow_bias = 0.02
 omni_range = 1.45152
 
 [node name="OmniLight2" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 9.92309e-10, 0, 1, 0, -9.92309e-10, 0, 1, -5.37973, 0.470091, 0.000487328 )
+transform = Transform( 1, 0, 9.92309e-010, 0, 1, 0, -9.92309e-010, 0, 1, -5.37973, 0.470091, 0.000487328 )
 shadow_enabled = true
 shadow_bias = 0.02
 omni_range = 1.4666

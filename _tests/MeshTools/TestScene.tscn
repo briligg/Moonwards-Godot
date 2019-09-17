@@ -79,4 +79,3 @@ material/0 = null
 [node name="bMeshInstance" type="MeshInstance" parent="."]
 mesh = SubResource( 3 )
 material/0 = SubResource( 4 )
-

@@ -13,200 +13,66 @@
 [ext_resource path="res://model_assets/meshes/NuclearCore__NuclearCore_NuclearCoreFuelRods.mesh" type="ArrayMesh" id=11]
 [ext_resource path="res://model_assets/meshes/NuclearCore__NuclearCore_NuclearCoreStand.mesh" type="ArrayMesh" id=12]
 
-[node name="Scene" type="Spatial" index="0"]
+[node name="Scene" type="Spatial"]
 
-[node name="NuclearCore" type="MeshInstance" parent="." index="0"]
-
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
+[node name="NuclearCore" type="MeshInstance" parent="."]
 mesh = ExtResource( 1 )
-skeleton = NodePath("..")
 material/0 = null
 
-[node name="ControlRod002" type="MeshInstance" parent="NuclearCore" index="0"]
-
+[node name="ControlRod002" type="MeshInstance" parent="NuclearCore"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.028 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = ExtResource( 2 )
-skeleton = NodePath("..")
 material/0 = null
 material/1 = null
 
-[node name="ControlRod003" type="MeshInstance" parent="NuclearCore" index="1"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05995e-09, 0.0242487, -0.014 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
+[node name="ControlRod003" type="MeshInstance" parent="NuclearCore"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05995e-009, 0.0242487, -0.014 )
 mesh = ExtResource( 3 )
-skeleton = NodePath("..")
 material/0 = null
 material/1 = null
 
-[node name="ControlRod004" type="MeshInstance" parent="NuclearCore" index="2"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05995e-09, 0.0242487, 0.014 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
+[node name="ControlRod004" type="MeshInstance" parent="NuclearCore"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05995e-009, 0.0242487, 0.014 )
 mesh = ExtResource( 4 )
-skeleton = NodePath("..")
 material/0 = null
 material/1 = null
 
-[node name="ControlRod005" type="MeshInstance" parent="NuclearCore" index="3"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.44784e-09, 0.028 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
+[node name="ControlRod005" type="MeshInstance" parent="NuclearCore"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.44784e-009, 0.028 )
 mesh = ExtResource( 5 )
-skeleton = NodePath("..")
 material/0 = null
 material/1 = null
 
-[node name="ControlRod006" type="MeshInstance" parent="NuclearCore" index="4"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05995e-09, -0.0242487, 0.014 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
+[node name="ControlRod006" type="MeshInstance" parent="NuclearCore"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05995e-009, -0.0242487, 0.014 )
 mesh = ExtResource( 6 )
-skeleton = NodePath("..")
 material/0 = null
 material/1 = null
 
-[node name="ControlRod007" type="MeshInstance" parent="NuclearCore" index="5"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05995e-09, -0.0242487, -0.014 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
+[node name="ControlRod007" type="MeshInstance" parent="NuclearCore"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05995e-009, -0.0242487, -0.014 )
 mesh = ExtResource( 7 )
-skeleton = NodePath("..")
 material/0 = null
 material/1 = null
 
-[node name="HeatPipeIn" type="MeshInstance" parent="NuclearCore" index="6"]
-
+[node name="HeatPipeIn" type="MeshInstance" parent="NuclearCore"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0459096, 0.0076992, 0.00769921 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = ExtResource( 8 )
-skeleton = NodePath("..")
 material/0 = null
 
-[node name="HeatPipesOut" type="MeshInstance" parent="NuclearCore" index="7"]
-
+[node name="HeatPipesOut" type="MeshInstance" parent="NuclearCore"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0729778, 0.0076992, 0.00769921 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = ExtResource( 9 )
-skeleton = NodePath("..")
 material/0 = null
 
-[node name="HeatPipeSystem" type="MeshInstance" parent="NuclearCore" index="8"]
-
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
+[node name="HeatPipeSystem" type="MeshInstance" parent="NuclearCore"]
 mesh = ExtResource( 10 )
-skeleton = NodePath("..")
 material/0 = null
 
-[node name="NuclearCoreFuelRods" type="MeshInstance" parent="NuclearCore" index="9"]
-
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
+[node name="NuclearCoreFuelRods" type="MeshInstance" parent="NuclearCore"]
 mesh = ExtResource( 11 )
-skeleton = NodePath("..")
 material/0 = null
 
-[node name="NuclearCoreStand" type="MeshInstance" parent="NuclearCore" index="10"]
-
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
+[node name="NuclearCoreStand" type="MeshInstance" parent="NuclearCore"]
 mesh = ExtResource( 12 )
-skeleton = NodePath("..")
 material/0 = null
-
-

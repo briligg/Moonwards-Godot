@@ -32,4 +32,3 @@ material/1 = null
 material/2 = null
 script = ExtResource( 3 )
 substitute = NodePath("../LavaTank_Opt")
-

@@ -37,4 +37,3 @@ transform = Transform( -0.997314, 0, 0.0732408, 0, 1, 0, -0.0732408, 0, -0.99731
 
 [node name="AthleteControlled" parent="." instance=ExtResource( 3 )]
 transform = Transform( -0.997314, 0, 0.0732408, 0, 1, 0, -0.0732408, 0, -0.997314, -48.6707, -1931.95, 47.991 )
-

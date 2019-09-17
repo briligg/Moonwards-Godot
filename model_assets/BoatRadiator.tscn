@@ -12,7 +12,7 @@ data = PoolVector3Array( -2.123, 1.2113, 1.1306, -0.7957, 0.0662, 1.1306, -0.795
 [node name="Scene" type="Spatial"]
 
 [node name="MirroredTrough_Opt" type="MeshInstance" parent="."]
-transform = Transform( -0.79657, 2.19918e-08, 0.604548, -7.56344e-08, 1, -1.36035e-07, -0.604548, -1.54086e-07, -0.79657, 0.894975, 1.22497, 0.682364 )
+transform = Transform( -0.79657, 2.19918e-008, 0.604548, -7.56344e-008, 1, -1.36035e-007, -0.604548, -1.54086e-007, -0.79657, 0.894975, 1.22497, 0.682364 )
 mesh = ExtResource( 1 )
 material/0 = null
 material/1 = null
@@ -20,20 +20,19 @@ material/2 = null
 material/3 = null
 
 [node name="BoatRadiator_Opt" type="MeshInstance" parent="MirroredTrough_Opt"]
-transform = Transform( -0.594462, -7.55428e-08, 0.804124, -1.54297e-07, 1, -2.01223e-08, -0.804124, -1.36036e-07, -0.594462, 1.12545, -1.14514, 0.00247602 )
+transform = Transform( -0.594462, -7.55428e-008, 0.804124, -1.54297e-007, 1, -2.01223e-008, -0.804124, -1.36036e-007, -0.594462, 1.12545, -1.14514, 0.00247602 )
 mesh = ExtResource( 2 )
 material/0 = null
 material/1 = null
 material/2 = null
 
 [node name="StaticBody" type="StaticBody" parent="MirroredTrough_Opt"]
-transform = Transform( -0.594462, -7.55428e-08, 0.804124, -1.54297e-07, 1, -2.01223e-08, -0.804124, -1.36036e-07, -0.594462, 1.12545, -1.14514, 0.00247604 )
+transform = Transform( -0.594462, -7.55428e-008, 0.804124, -1.54297e-007, 1, -2.01223e-008, -0.804124, -1.36036e-007, -0.594462, 1.12545, -1.14514, 0.00247604 )
 
 [node name="CollisionShape" type="CollisionShape" parent="MirroredTrough_Opt/StaticBody"]
-transform = Transform( -0.012601, 5.36783e-11, 0.99992, -7.33302e-11, 1, -5.46067e-11, -0.99992, -7.40125e-11, -0.012601, -2.29175e-06, 0.0516662, -3.04911e-05 )
+transform = Transform( -0.012601, 5.36783e-011, 0.99992, -7.33302e-011, 1, -5.46067e-011, -0.99992, -7.40125e-011, -0.012601, -2.29175e-006, 0.0516662, -3.04911e-005 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="MirroredTrough_Opt/StaticBody"]
-transform = Transform( -0.809017, 0, 0.587785, 1.04083e-17, 1, -1.38778e-17, -0.587785, 3.08998e-18, -0.809017, -2.29175e-06, 0.0614624, -3.04911e-05 )
+transform = Transform( -0.809017, 0, 0.587785, 1.04083e-017, 1, -1.38778e-017, -0.587785, 3.08998e-018, -0.809017, -2.29175e-006, 0.0614624, -3.04911e-005 )
 shape = SubResource( 2 )
-

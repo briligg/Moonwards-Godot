@@ -6,7 +6,6 @@
 [ext_resource path="res://assets/themes/MainMenu.tres" type="Theme" id=4]
 [ext_resource path="res://UserInterface.gd" type="Script" id=5]
 
-
 [sub_resource type="SphereMesh" id=1]
 flip_faces = true
 radius = 2000.0

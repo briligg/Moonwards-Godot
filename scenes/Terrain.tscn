@@ -153,7 +153,7 @@ mesh = ExtResource( 23 )
 material/0 = null
 
 [node name="RockMediumG" type="MeshInstance" parent="GroundsNearBuildings"]
-transform = Transform( -0.699793, 2.45652e-10, 0.714346, 1.42653e-10, 1, -2.04136e-10, -0.714346, -4.09494e-11, -0.699793, 703.072, 231.638, 245.834 )
+transform = Transform( -0.699793, 2.45652e-010, 0.714346, 1.42653e-010, 1, -2.04136e-010, -0.714346, -4.09494e-011, -0.699793, 703.072, 231.638, 245.834 )
 mesh = ExtResource( 24 )
 material/0 = null
 
@@ -196,4 +196,3 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -770.685, -2161.27, -231.606 )
 mesh = ExtResource( 32 )
 material/0 = null
-

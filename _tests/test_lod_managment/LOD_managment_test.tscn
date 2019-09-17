@@ -54,4 +54,3 @@ script = ExtResource( 9 )
 script = ExtResource( 10 )
 grid_step = 1.0
 enabled = false
-

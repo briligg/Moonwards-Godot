@@ -9,4 +9,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24948, 0.148898, 0.305298 )
 mesh = ExtResource( 1 )
 material/0 = null
 material/1 = null
-

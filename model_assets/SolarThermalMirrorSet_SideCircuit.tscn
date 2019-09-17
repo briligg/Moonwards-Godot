@@ -10,13 +10,13 @@ data = PoolVector3Array( -0.1892, -4.2879, -2.3269, -0.1892, -4.2879, -2.1441, -
 [node name="Scene" type="Spatial"]
 
 [node name="HeatPipe-MirrorUnit" type="MeshInstance" parent="."]
-transform = Transform( 1, -9.30703e-10, -1.97291e-08, 9.30703e-10, 1, 0, 1.97291e-08, 0, 1, -0.000488281, 0, 1.13257 )
+transform = Transform( 1, -9.30703e-010, -1.97291e-008, 9.30703e-010, 1, 0, 1.97291e-008, 0, 1, -0.000488281, 0, 1.13257 )
 mesh = ExtResource( 1 )
 material/0 = null
 material/1 = null
 
 [node name="Mirrors" type="MeshInstance" parent="."]
-transform = Transform( 0.5, -0.866026, 7.4314e-08, 0.866026, 0.5, -2.1782e-10, -3.69684e-08, 6.44667e-08, 1, 0, 0, 2.13477 )
+transform = Transform( 0.5, -0.866026, 7.4314e-008, 0.866026, 0.5, -2.1782e-010, -3.69684e-008, 6.44667e-008, 1, 0, 0, 2.13477 )
 mesh = ExtResource( 2 )
 material/0 = null
 material/1 = null
@@ -24,7 +24,7 @@ material/2 = null
 material/3 = null
 
 [node name="MirrorTowerFrame" type="MeshInstance" parent="."]
-transform = Transform( 1, 6.54642e-10, -1.10265e-09, -6.54642e-10, 1, 0, 1.10265e-09, 0, 1, -7.53403e-05, -0.00247526, 2.23424 )
+transform = Transform( 1, 6.54642e-010, -1.10265e-009, -6.54642e-010, 1, 0, 1.10265e-009, 0, 1, -7.53403e-005, -0.00247526, 2.23424 )
 mesh = ExtResource( 3 )
 material/0 = null
 material/1 = null
@@ -33,6 +33,5 @@ material/2 = null
 [node name="StaticBody" type="StaticBody" parent="MirrorTowerFrame"]
 
 [node name="CollisionShape" type="CollisionShape" parent="MirrorTowerFrame/StaticBody"]
-transform = Transform( 1, -6.54642e-10, 1.10265e-09, 6.54642e-10, 1, 7.21841e-19, -1.10265e-09, 7.21841e-19, 1, 7.53403e-05, 0.00247526, 0.00113368 )
+transform = Transform( 1, -6.54642e-010, 1.10265e-009, 6.54642e-010, 1, 7.21841e-019, -1.10265e-009, 7.21841e-019, 1, 7.53403e-005, 0.00247526, 0.00113368 )
 shape = SubResource( 1 )
-

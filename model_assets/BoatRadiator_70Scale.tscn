@@ -12,14 +12,14 @@ data = PoolVector3Array( -0.2077, 0.104, 0.2077, -0.2077, -0.104, 0.2077, -0.207
 [node name="Scene" type="Spatial"]
 
 [node name="BoatRadiator_Opt" type="MeshInstance" parent="."]
-transform = Transform( -0.00882068, -5.13312e-11, -0.699944, 3.75748e-11, 0.7, -5.18088e-11, 0.699944, -3.82247e-11, -0.00882068, -2.13623e-05, 0.0558838, 1.33514e-06 )
+transform = Transform( -0.00882068, -5.13312e-011, -0.699944, 3.75748e-011, 0.7, -5.18088e-011, 0.699944, -3.82247e-011, -0.00882068, -2.13623e-005, 0.0558838, 1.33514e-006 )
 mesh = ExtResource( 1 )
 material/0 = null
 material/1 = null
 material/2 = null
 
 [node name="MirroredTrough_Opt" type="MeshInstance" parent="BoatRadiator_Opt"]
-transform = Transform( -0.594462, -1.54297e-07, -0.804124, -7.5543e-08, 1, -1.36036e-07, 0.804124, -2.01224e-08, -0.594462, 0.67103, 1.14514, -0.903532 )
+transform = Transform( -0.594462, -1.54297e-007, -0.804124, -7.5543e-008, 1, -1.36036e-007, 0.804124, -2.01224e-008, -0.594462, 0.67103, 1.14514, -0.903532 )
 mesh = ExtResource( 2 )
 material/0 = null
 material/1 = null
@@ -29,10 +29,9 @@ material/3 = null
 [node name="StaticBody" type="StaticBody" parent="BoatRadiator_Opt"]
 
 [node name="CollisionShape" type="CollisionShape" parent="BoatRadiator_Opt/StaticBody"]
-transform = Transform( -1.14743, 7.66834e-11, 0.851008, -1.39303e-12, 1.42857, -1.30605e-10, -0.851008, -1.05732e-10, -1.14743, -2.29174e-06, 0.0576695, -3.04911e-05 )
+transform = Transform( -1.14743, 7.66834e-011, 0.851008, -1.39303e-012, 1.42857, -1.30605e-010, -0.851008, -1.05732e-010, -1.14743, -2.29174e-006, 0.0576695, -3.04911e-005 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="BoatRadiator_Opt/StaticBody"]
-transform = Transform( -0.0180014, 7.66834e-11, 1.42846, -1.04758e-10, 1.42857, -7.80096e-11, -1.42846, -1.05732e-10, -0.0180014, -2.29174e-06, 0.0576804, -3.04911e-05 )
+transform = Transform( -0.0180014, 7.66834e-011, 1.42846, -1.04758e-010, 1.42857, -7.80096e-011, -1.42846, -1.05732e-010, -0.0180014, -2.29174e-006, 0.0576804, -3.04911e-005 )
 shape = SubResource( 2 )
-

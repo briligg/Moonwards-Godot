@@ -31,12 +31,12 @@ omni_range = 30.0
 [node name="Model" type="Spatial" parent="."]
 
 [node name="Model" type="MeshInstance" parent="Model"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( -1, 0, -3.25841e-07, -3.25841e-07, -4.37114e-08, 1, -1.4243e-14, 1, 4.37114e-08, 0, 0.0838549, 0 )
+transform = Transform( -1, 0, -3.25841e-007, -3.25841e-007, -4.37114e-008, 1, -1.4243e-014, 1, 4.37114e-008, 0, 0.0838549, 0 )
 shape = SubResource( 3 )
 
 [node name="Pivot" type="Position3D" parent="."]

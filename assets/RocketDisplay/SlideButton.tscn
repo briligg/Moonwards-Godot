@@ -3,7 +3,6 @@
 [ext_resource path="res://assets/RocketDisplay/SlideButton.gd" type="Script" id=1]
 [ext_resource path="res://image_textures/MoonwardsLogo-SimpleMoonOnBlack800.png" type="Texture" id=2]
 
-
 [node name="Button1" type="VBoxContainer"]
 margin_left = 433.0
 margin_top = 64.0

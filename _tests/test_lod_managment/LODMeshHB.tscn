@@ -53,4 +53,3 @@ material/0 = SubResource( 6 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.5 )
 mesh = SubResource( 7 )
 material/0 = SubResource( 8 )
-

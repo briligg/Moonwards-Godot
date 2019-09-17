@@ -40,4 +40,3 @@ visible = false
 lod_min_distance = 10.0
 mesh = SubResource( 5 )
 material/0 = SubResource( 6 )
-

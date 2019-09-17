@@ -4,7 +4,6 @@
 [ext_resource path="res://assets/UI/Update/Updating_UI.gd" type="Script" id=2]
 [ext_resource path="res://scripts/UIElement.gd" type="Script" id=3]
 
-
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 10.0
 content_margin_right = 10.0
@@ -234,7 +233,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Not now"
 script = ExtResource( 3 )
-ui_event = 4
 
 [node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer"]
 margin_top = 317.0
@@ -247,5 +245,4 @@ margin_right = 191.0
 margin_bottom = 367.0
 text = "Stand-by"
 align = 1
-
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_update"]
