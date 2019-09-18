@@ -39,7 +39,7 @@ func switch_slot() -> void:
 		get_node(hue_picker).color = options.hair_color
 	elif current_slot == SLOTS.SHOES:
 		get_node(hue_picker).color = options.shoes_color
-	get_node(avatar_preview).SetColors(options.pants_color, options.shirt_color, options.skin_color, options.hair_color, options.shoes_color)
+	get_node(avatar_preview).set_colors(options.pants_color, options.shirt_color, options.skin_color, options.hair_color, options.shoes_color)
 
 func _on_HuePicker_Hue_Selected(color : Color) -> void:
 	if current_slot == SLOTS.PANTS:
@@ -52,7 +52,7 @@ func _on_HuePicker_Hue_Selected(color : Color) -> void:
 		options.hair_color = color
 	elif current_slot == SLOTS.SHOES:
 		options.shoes_color = color
-	get_node(avatar_preview).SetColors(options.pants_color, options.shirt_color, options.skin_color, options.hair_color, options.shoes_color)
+	get_node(avatar_preview).set_colors(options.pants_color, options.shirt_color, options.skin_color, options.hair_color, options.shoes_color)
 
 func _on_CfgPlayer_pressed() -> void:
 	$WindowDialog.popup_centered()
@@ -70,7 +70,7 @@ func _on_SlotOption_item_selected(ID : int) -> void:
 
 func _on_Gender_item_selected(ID : int) -> void:
 	options.gender = ID
-	get_node(avatar_preview).SetGender(options.gender)
+	get_node(avatar_preview).set_gender(options.gender)
 	if ID == 0:
 		get_node(button_containter).get_node("Female").show()
 		get_node(button_containter).get_node("Male").hide()
