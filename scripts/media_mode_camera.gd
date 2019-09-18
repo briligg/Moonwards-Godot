@@ -1,30 +1,26 @@
 extends Camera
 
-func _ready():
-	look_direction = rotation_degrees
+const MAX_UP_AIM_ANGLE : float = 80.0
+const MAX_DOWN_AIM_ANGLE : float = 80.0
+const MOUSE_SENSITIVITY : float = 0.10
+const VELOCITY_DAMP : float = 0.9
+const LOOK_ACCELERATION : float = 0.2
 
-var look_direction = Vector3()
-var max_up_aim_angle = 80.0
-var max_down_aim_angle = 80.0
-var mouse_sensitivity = 0.10
-var velocity = Vector3()
-var look_velocity = Vector3()
-var mouse_down = false
+var velocity : Vector3 = Vector3()
+var look_velocity : Vector3 = Vector3()
+var mouse_down : bool = false
+var movement_acceleration : float = 0.2
 
-var velocity_damp = 0.9
-var look_acceleration = 0.2
-var movement_acceleration = 0.2
-
-func _process(delta):
+func _process(delta) -> void:
 	if not UIManager.has_ui:
-		UIManager.RequestFocus()
+		UIManager.request_focus()
 	
 	var forward_direction = global_transform.basis.z
 	var right_direction = global_transform.basis.x
 	global_transform.origin += velocity
 	
-	velocity = velocity * velocity_damp
-	look_velocity = look_velocity * velocity_damp
+	velocity = velocity * VELOCITY_DAMP
+	look_velocity = look_velocity * VELOCITY_DAMP
 	
 	rotation_degrees += look_velocity
 	
@@ -33,10 +29,10 @@ func _process(delta):
 	else:
 		mouse_down = false
 	
-	if rotation_degrees.x > max_up_aim_angle:
-		rotation_degrees.x = max_up_aim_angle
-	elif rotation_degrees.x < -max_down_aim_angle:
-		rotation_degrees.x = -max_down_aim_angle
+	if rotation_degrees.x > MAX_UP_AIM_ANGLE:
+		rotation_degrees.x = MAX_UP_AIM_ANGLE
+	elif rotation_degrees.x < -MAX_DOWN_AIM_ANGLE:
+		rotation_degrees.x = -MAX_DOWN_AIM_ANGLE
 	
 	if Input.is_action_pressed("move_forwards"):
 		if Input.is_action_pressed("shift"):
@@ -56,11 +52,11 @@ func _process(delta):
 	if Input.is_action_pressed("move_right"):
 		velocity += right_direction * delta * movement_acceleration
 
-func _input(event):
+func _input(event) -> void:
 	if event is InputEventMouseMotion:
 		if mouse_down:
-			look_velocity.y -= event.relative.x * mouse_sensitivity * look_acceleration
-			look_velocity.x -= event.relative.y * mouse_sensitivity * look_acceleration
+			look_velocity.y -= event.relative.x * MOUSE_SENSITIVITY * LOOK_ACCELERATION
+			look_velocity.x -= event.relative.y * MOUSE_SENSITIVITY * LOOK_ACCELERATION
 	
 	if event.is_action_pressed("scroll_up"):
 		movement_acceleration = min(2.0, movement_acceleration + 0.05)
@@ -68,7 +64,7 @@ func _input(event):
 	if event.is_action_pressed("scroll_down"):
 		movement_acceleration = max(0.0, movement_acceleration - 0.05)
 
-func _notification(message): 
+func _notification(message) -> void:
 	if message == NOTIFICATION_PREDELETE: 
 		# Release the focus when this node is being freed.
-		UIManager.ReleaseFocus()
+		UIManager.release_focus()
