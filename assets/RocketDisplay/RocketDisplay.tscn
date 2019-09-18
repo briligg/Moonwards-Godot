@@ -1,17 +1,14 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://assets/RocketDisplay/RocketDisplay.gd" type="Script" id=1]
 [ext_resource path="res://assets/themes/MainMenu.tres" type="Theme" id=2]
 [ext_resource path="res://fonts/Exo2-Medium.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/themes/Display.tres" type="Theme" id=4]
-[ext_resource path="res://assets/RocketDisplay/SlideButton.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/RocketDisplay/CameraControl.gd" type="Script" id=6]
-[ext_resource path="res://sounds/RocketEngines.wav" type="AudioStream" id=7]
-[ext_resource path="res://model_assets/Contributions/SCTR_Bucknell_Opt.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/RocketDisplay/fire_particle.png" type="Texture" id=9]
-[ext_resource path="res://assets/RocketDisplay/FireParticleMesh.obj" type="ArrayMesh" id=10]
-
-
+[ext_resource path="res://assets/RocketDisplay/CameraControl.gd" type="Script" id=5]
+[ext_resource path="res://sounds/RocketEngines.wav" type="AudioStream" id=6]
+[ext_resource path="res://model_assets/Contributions/SCTR_Bucknell_Opt.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/RocketDisplay/fire_particle.png" type="Texture" id=8]
+[ext_resource path="res://assets/RocketDisplay/FireParticleMesh.obj" type="ArrayMesh" id=9]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 10, 5, 10 )
@@ -487,7 +484,7 @@ tracks/9/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "StartBladesAnimation"
+"method": "start_blades_animation"
 } ]
 }
 tracks/10/type = "value"
@@ -978,7 +975,7 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "StopBladesAnimation"
+"method": "stop_blades_animation"
 } ]
 }
 tracks/8/type = "value"
@@ -1142,7 +1139,7 @@ flags_unshaded = true
 vertex_color_use_as_albedo = true
 params_specular_mode = 4
 params_cull_mode = 2
-albedo_texture = ExtResource( 9 )
+albedo_texture = ExtResource( 8 )
 proximity_fade_enable = true
 proximity_fade_distance = 0.1
 
@@ -1294,43 +1291,9 @@ rect_min_size = Vector2( 100, 50 )
 size_flags_vertical = 4
 text = "Next"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Controller/Control/VBoxContainer"]
-visible = false
-margin_top = 504.0
-margin_right = 1024.0
-margin_bottom = 700.0
-mouse_filter = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-alignment = 1
-
-[node name="Button1" parent="Controller/Control/VBoxContainer/HBoxContainer" instance=ExtResource( 5 )]
-margin_left = 406.0
-margin_right = 456.0
-control_path = NodePath("../../../../../Controller")
-stage = 1
-
-[node name="Button2" parent="Controller/Control/VBoxContainer/HBoxContainer" instance=ExtResource( 5 )]
-margin_left = 460.0
-margin_right = 510.0
-control_path = NodePath("../../../../../Controller")
-stage = 2
-
-[node name="Button3" parent="Controller/Control/VBoxContainer/HBoxContainer" instance=ExtResource( 5 )]
-margin_left = 514.0
-margin_right = 564.0
-control_path = NodePath("../../../../../Controller")
-stage = 3
-
-[node name="Button4" parent="Controller/Control/VBoxContainer/HBoxContainer" instance=ExtResource( 5 )]
-margin_left = 568.0
-margin_right = 618.0
-control_path = NodePath("../../../../../Controller")
-stage = 4
-
 [node name="CameraPivot" type="Spatial" parent="Controller"]
 transform = Transform( 0.707106, -0.40558, 0.579227, 0, 0.819152, 0.573576, -0.707106, -0.40558, 0.579227, 0, 12.8123, 0.245176 )
-script = ExtResource( 6 )
+script = ExtResource( 5 )
 camera_path = NodePath("CameraPosition/Camera")
 
 [node name="CameraPosition" type="Spatial" parent="Controller/CameraPivot"]
@@ -1351,10 +1314,10 @@ anims/Stage5 = SubResource( 11 )
 
 [node name="EngineSound" type="AudioStreamPlayer3D" parent="Controller"]
 transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0 )
-stream = ExtResource( 7 )
+stream = ExtResource( 6 )
 unit_db = -30.0
 
-[node name="Rocket" parent="Controller" instance=ExtResource( 8 )]
+[node name="Rocket" parent="Controller" instance=ExtResource( 7 )]
 transform = Transform( 0.75, 0, 0, 0, 0.53033, -0.53033, 0, 0.53033, 0.53033, 0, 0, 0 )
 
 [node name="AnimationPlayer" parent="Controller/Rocket/RocketBody/PYBB_Nozzle_Opt" index="0"]
@@ -1391,8 +1354,8 @@ lifetime = 0.2
 visibility_aabb = AABB( -4, -4, -4, 8, 8, 80.18 )
 local_coords = false
 process_material = SubResource( 23 )
-draw_pass_1 = ExtResource( 10 )
-[connection signal="pressed" from="Controller/Control/VBoxContainer/MainWindow/PreviousButton" to="Controller" method="PreviousStage"]
-[connection signal="pressed" from="Controller/Control/VBoxContainer/MainWindow/NextButton" to="Controller" method="NextStage"]
+draw_pass_1 = ExtResource( 9 )
+[connection signal="pressed" from="Controller/Control/VBoxContainer/MainWindow/PreviousButton" to="Controller" method="previous_stage"]
+[connection signal="pressed" from="Controller/Control/VBoxContainer/MainWindow/NextButton" to="Controller" method="next_stage"]
 
 [editable path="Controller/Rocket"]
