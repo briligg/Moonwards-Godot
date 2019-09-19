@@ -42,7 +42,7 @@ const MAX_PEERS : int = 12
 # remote players in id:player_data format
 var players : Dictionary = {}
 var network_id : int 
-var local_id : String
+var local_id : int = 0
 var chat_ui_resource : PackedScene = preload("res://assets/UI/chat/ChatUI.tscn")
 var chat_ui = null
 
@@ -85,7 +85,7 @@ var debug_id : String = "gamestate"
 func _ready():
 	#get_tree().connect("network_peer_connected", self, "_player_connected")
 
-	local_id = "local_%s_%s" % [randi(), randi()]
+	local_id = 0
 
 	bindgg("network_log")
 	bindgg("gslog")
