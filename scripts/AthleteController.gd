@@ -18,7 +18,7 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	_movement_direction = global_transform.basis.z
 
-func _physics_process(delta) -> void:
+func _physics_process(delta : float) -> void:
 	var target_transform = $KinematicBody/CameraPivot/CameraPosition.global_transform
 	$Camera.global_transform = $Camera.global_transform.interpolate_with(target_transform, delta * CAMERA_SPEED)
 	
@@ -49,7 +49,11 @@ func _physics_process(delta) -> void:
 		_jump_force = Vector3(0.0, 150.0, 0.0)
 		$AnimationTree.set("parameters/Transition/current", "Jump")
 	
-	$KinematicBody.move_and_slide((_movement_force * MOVEMENT_SPEED * delta) + (_jump_force * delta) + (Vector3(0.0, -1.62, 0.0)))
+	var movement_velocity = _movement_force * MOVEMENT_SPEED * delta
+	var jump_velocity = _jump_force * delta
+	var gravity_velocity = Vector3(0.0, -1.62, 0.0)
+	$KinematicBody.move_and_slide(movement_velocity + jump_velocity + gravity_velocity)
+	
 	_movement_force *= 0.95
 	_jump_force *= 0.95
 	
@@ -65,7 +69,7 @@ func _physics_process(delta) -> void:
 			_model_quat = _model_quat.slerp(Quat(model_target_transform.basis), delta * TURN_SPEED)
 			model.global_transform.basis = Basis(_model_quat)
 
-func _input(event) -> void:
+func _input(event : InputEvent) -> void:
 	if event.is_action_pressed("scroll_up"):
 		$KinematicBody/CameraPivot/CameraPosition.translation.z -= 1.0
 		if $KinematicBody/CameraPivot/CameraPosition.translation.z < 0.0:

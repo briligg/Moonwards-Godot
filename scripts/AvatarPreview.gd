@@ -2,6 +2,10 @@ extends Spatial
 
 export(SpatialMaterial) var base_material : SpatialMaterial
 
+onready var avatar_female : Node = $AvatarRig/FemaleRig/Skeleton/AvatarFemale
+onready var avatar_skeleton_female : Node = $AvatarRig/FemaleRig/Skeleton
+onready var avatar_male : Node = $AvatarRig/FemaleRig/Skeleton/AvatarMale
+
 var _pants_mat : SpatialMaterial
 var _shirt_mat : SpatialMaterial
 var _skin_mat : SpatialMaterial
@@ -17,25 +21,25 @@ func _ready() -> void:
 	_hair_mat = base_material.duplicate()
 	_shoes_mat = base_material.duplicate()
 	
-	$AvatarRig/FemaleRig/Skeleton/AvatarFemale.set_surface_material(1, _pants_mat)
-	$AvatarRig/FemaleRig/Skeleton/AvatarFemale.set_surface_material(0, _shirt_mat)
-	$AvatarRig/FemaleRig/Skeleton/AvatarFemale.set_surface_material(2, _skin_mat)
-	$AvatarRig/FemaleRig/Skeleton/AvatarFemale.set_surface_material(4, _hair_mat)
-	$AvatarRig/FemaleRig/Skeleton/AvatarFemale.set_surface_material(3, _shoes_mat)
+	avatar_female.set_surface_material(1, _pants_mat)
+	avatar_female.set_surface_material(0, _shirt_mat)
+	avatar_female.set_surface_material(2, _skin_mat)
+	avatar_female.set_surface_material(4, _hair_mat)
+	avatar_female.set_surface_material(3, _shoes_mat)
 	
-	$AvatarRig/FemaleRig/Skeleton/AvatarMale.set_surface_material(2, _pants_mat)
-	$AvatarRig/FemaleRig/Skeleton/AvatarMale.set_surface_material(3, _shirt_mat)
-	$AvatarRig/FemaleRig/Skeleton/AvatarMale.set_surface_material(4, _skin_mat)
-	$AvatarRig/FemaleRig/Skeleton/AvatarMale.set_surface_material(1, _hair_mat)
-	$AvatarRig/FemaleRig/Skeleton/AvatarMale.set_surface_material(0, _shoes_mat)
+	avatar_male.set_surface_material(2, _pants_mat)
+	avatar_male.set_surface_material(3, _shirt_mat)
+	avatar_male.set_surface_material(4, _skin_mat)
+	avatar_male.set_surface_material(1, _hair_mat)
+	avatar_male.set_surface_material(0, _shoes_mat)
 	
 func clean_selected() -> void:
-	for genders in $AvatarRig/FemaleRig/Skeleton.get_children():
+	for genders in avatar_skeleton_female.get_children():
 		for selector in genders.get_children():
 			selector.set_surface_material(0, _unselected_mat)
 
 func set_selected(idx : int) -> void:
-	for genders in $AvatarRig/FemaleRig/Skeleton.get_children():
+	for genders in avatar_skeleton_female.get_children():
 		genders.get_child(idx).set_surface_material(0, _selected_mat)
 
 func set_colors(pants : Color, shirt : Color, skin : Color, hair : Color, shoes : Color) -> void:
@@ -47,8 +51,8 @@ func set_colors(pants : Color, shirt : Color, skin : Color, hair : Color, shoes 
 
 func set_gender(gender : int) -> void:
 	if gender == 0:
-		$AvatarRig/FemaleRig/Skeleton/AvatarFemale.show()
-		$AvatarRig/FemaleRig/Skeleton/AvatarMale.hide()
+		avatar_female.show()
+		avatar_male.hide()
 	else:
-		$AvatarRig/FemaleRig/Skeleton/AvatarFemale.hide()
-		$AvatarRig/FemaleRig/Skeleton/AvatarMale.show()
+		avatar_female.hide()
+		avatar_male.show()

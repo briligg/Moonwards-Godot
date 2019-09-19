@@ -11,7 +11,7 @@ var look_velocity : Vector3 = Vector3()
 var mouse_down : bool = false
 var movement_acceleration : float = 0.2
 
-func _process(delta) -> void:
+func _process(delta : float) -> void:
 	if not UIManager.has_ui:
 		UIManager.request_focus()
 	
@@ -52,7 +52,7 @@ func _process(delta) -> void:
 	if Input.is_action_pressed("move_right"):
 		velocity += right_direction * delta * movement_acceleration
 
-func _input(event) -> void:
+func _input(event : InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		if mouse_down:
 			look_velocity.y -= event.relative.x * MOUSE_SENSITIVITY * LOOK_ACCELERATION
@@ -64,7 +64,7 @@ func _input(event) -> void:
 	if event.is_action_pressed("scroll_down"):
 		movement_acceleration = max(0.0, movement_acceleration - 0.05)
 
-func _notification(message) -> void:
+func _notification(message : int) -> void:
 	if message == NOTIFICATION_PREDELETE: 
 		# Release the focus when this node is being freed.
 		UIManager.release_focus()
