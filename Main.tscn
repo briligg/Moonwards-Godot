@@ -9,9 +9,8 @@
 [ext_resource path="res://fonts/djv_italic.tres" type="DynamicFont" id=7]
 [ext_resource path="res://fonts/djv_bold.tres" type="DynamicFont" id=8]
 [ext_resource path="res://fonts/djv_sans.tres" type="DynamicFont" id=9]
-[ext_resource path="res://assets/UI/Menu/User_Settings.tscn" type="PackedScene" id=10]
-[ext_resource path="res://assets/UI/Menu/Options.tscn" type="PackedScene" id=11]
-
+[ext_resource path="res://assets/UI/Options/User_Settings.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/UI/Options/Options.tscn" type="PackedScene" id=11]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0 )

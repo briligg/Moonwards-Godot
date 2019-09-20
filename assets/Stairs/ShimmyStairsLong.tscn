@@ -3,7 +3,6 @@
 [ext_resource path="res://assets/Stairs/Stairs.gd" type="Script" id=1]
 [ext_resource path="res://scenes/meshes/FirstGalleryUpper__Interior_ShimmyStairs_ShimmyStairs_1.mesh" type="ArrayMesh" id=2]
 
-
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.05, 0.599655, 0.05 )
 

@@ -2,7 +2,6 @@
 
 [ext_resource path="res://assets/Player/avatar_v1/3RDPersonCamera.gd" type="Script" id=1]
 
-
 [sub_resource type="SphereShape" id=1]
 radius = 0.0291546
 
@@ -10,11 +9,9 @@ radius = 0.0291546
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0378248, 0.235295 )
 script = ExtResource( 1 )
 Target = NodePath("../../Model")
-origin = NodePath("../FPSCamera/Origin")
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
 
 [node name="3RDPersCamera" type="Camera" parent="."]
 current = true
-

@@ -54,17 +54,17 @@ mesh = ExtResource( 4 )
 material/0 = null
 
 [node name="StirlingColdEnd-Small" type="MeshInstance" parent="."]
-transform = Transform( 1, 9.31322e-10, 0, -9.31322e-10, 1, 0, 0, 0, 1, 0.00146484, -0.0114746, -1.3606 )
+transform = Transform( 1, 9.31322e-010, 0, -9.31322e-010, 1, 0, 0, 0, 1, 0.00146484, -0.0114746, -1.3606 )
 mesh = ExtResource( 5 )
 material/0 = null
 
 [node name="StirlingHotEnd-Small" type="MeshInstance" parent="."]
-transform = Transform( 1, 9.31322e-10, 0, -9.31322e-10, 1, 0, 0, 0, 1, 0.000976562, -0.0321045, -1.31201 )
+transform = Transform( 1, 9.31322e-010, 0, -9.31322e-010, 1, 0, 0, 0, 1, 0.000976562, -0.0321045, -1.31201 )
 mesh = ExtResource( 6 )
 material/0 = null
 
 [node name="StirlingHotEndLarge" type="MeshInstance" parent="."]
-transform = Transform( 1, 9.31322e-10, 0, -9.31322e-10, 1, 0, 0, 0, 1, -0.00244141, 0.0928955, 0.183105 )
+transform = Transform( 1, 9.31322e-010, 0, -9.31322e-010, 1, 0, 0, 0, 1, -0.00244141, 0.0928955, 0.183105 )
 mesh = ExtResource( 7 )
 material/0 = null
 
@@ -74,26 +74,26 @@ material/0 = null
 
 [node name="FreePistonStirlingArray000" type="Spatial" parent="Interior"]
 editor/display_folded = true
-transform = Transform( -6.11959e-09, 0, -0.14, 0, 0.14, 0, 0.14, 0, -6.11959e-09, 0.097969, -0.106445, -1.34319 )
+transform = Transform( -6.11959e-009, 0, -0.14, 0, 0.14, 0, 0.14, 0, -6.11959e-009, 0.097969, -0.106445, -1.34319 )
 
 [node name="Scene" parent="Interior/FreePistonStirlingArray000" instance=ExtResource( 8 )]
 
 [node name="FreePistonStirlingArray001" type="Spatial" parent="Interior"]
 editor/display_folded = true
-transform = Transform( -1.22392e-08, 0, 0.28, 0, 0.28, 0, -0.28, 0, -1.22392e-08, -0.195844, -0.0620117, 0.174135 )
+transform = Transform( -1.22392e-008, 0, 0.28, 0, 0.28, 0, -0.28, 0, -1.22392e-008, -0.195844, -0.0620117, 0.174135 )
 
 [node name="Scene" parent="Interior/FreePistonStirlingArray001" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2432, 0, 5.96046e-08 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2432, 0, 5.96046e-008 )
 
 [node name="NuclearCore" type="Spatial" parent="Interior"]
 editor/display_folded = true
-transform = Transform( -4.37114e-08, 9.31322e-10, 1, 9.31323e-10, 1, -9.31322e-10, -1, 9.31323e-10, -4.37114e-08, 0.000976562, -0.0889893, -0.847168 )
+transform = Transform( -4.37114e-008, 9.31322e-010, 1, 9.31323e-010, 1, -9.31322e-010, -1, 9.31323e-010, -4.37114e-008, 0.000976562, -0.0889893, -0.847168 )
 
 [node name="Scene" parent="Interior/NuclearCore" instance=ExtResource( 9 )]
 
 [node name="NuclearCore2x" type="Spatial" parent="Interior"]
 editor/display_folded = true
-transform = Transform( -8.74228e-08, 1.86265e-09, -2, 1.86265e-09, 2, 1.86265e-09, 2, -1.86265e-09, -8.74228e-08, -0.00244141, -0.0262451, -0.415283 )
+transform = Transform( -8.74228e-008, 1.86265e-009, -2, 1.86265e-009, 2, 1.86265e-009, 2, -1.86265e-009, -8.74228e-008, -0.00244141, -0.0262451, -0.415283 )
 
 [node name="Scene" parent="Interior/NuclearCore2x" instance=ExtResource( 9 )]
 
@@ -128,4 +128,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.578259, 1.146, -1.69257 )
 
 [node name="Scene" parent="Empty_TowerRadiator001" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0136719, 0.678528, -0.0135498 )
-

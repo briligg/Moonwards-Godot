@@ -3,368 +3,104 @@
 [ext_resource path="res://assets/maujoe.camera_control/scripts/camera_control.gd" type="Script" id=1]
 [ext_resource path="res://scripts/AreaLod.gd" type="Script" id=2]
 
-
 [sub_resource type="CubeMesh" id=1]
 
-custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
-size = Vector3( 2, 2, 2 )
-subdivide_width = 0
-subdivide_height = 0
-subdivide_depth = 0
-
 [sub_resource type="CylinderMesh" id=2]
-
-custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 top_radius = 0.8
 bottom_radius = 0.5
 height = 3.0
-radial_segments = 64
-rings = 4
 
 [sub_resource type="SphereShape" id=3]
 
-radius = 1.0
-
 [sub_resource type="SpatialMaterial" id=4]
-
-render_priority = 0
-flags_transparent = false
-flags_unshaded = false
-flags_vertex_lighting = false
-flags_no_depth_test = false
-flags_use_point_size = false
-flags_world_triplanar = false
-flags_fixed_size = false
-flags_albedo_tex_force_srgb = false
-vertex_color_use_as_albedo = false
-vertex_color_is_srgb = false
-params_diffuse_mode = 0
-params_specular_mode = 0
-params_blend_mode = 0
-params_cull_mode = 0
-params_depth_draw_mode = 0
-params_line_width = 1.0
-params_point_size = 1.0
-params_billboard_mode = 0
-params_grow = false
-params_use_alpha_scissor = false
 albedo_color = Color( 0.305882, 0.380392, 0.678431, 1 )
-metallic = 0.0
-metallic_specular = 0.5
-metallic_texture_channel = 0
 roughness = 0.0
-roughness_texture_channel = 0
-emission_enabled = false
-normal_enabled = false
-rim_enabled = false
-clearcoat_enabled = false
-anisotropy_enabled = false
-ao_enabled = false
-depth_enabled = false
-subsurf_scatter_enabled = false
-transmission_enabled = false
-refraction_enabled = false
-detail_enabled = false
-uv1_scale = Vector3( 1, 1, 1 )
-uv1_offset = Vector3( 0, 0, 0 )
-uv1_triplanar = false
-uv1_triplanar_sharpness = 1.0
-uv2_scale = Vector3( 1, 1, 1 )
-uv2_offset = Vector3( 0, 0, 0 )
-uv2_triplanar = false
-uv2_triplanar_sharpness = 1.0
-proximity_fade_enable = false
-distance_fade_enable = false
 
 [sub_resource type="SphereMesh" id=5]
-
 material = SubResource( 4 )
-custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 radius = 0.1
 height = 0.2
-radial_segments = 64
-rings = 32
-is_hemisphere = false
 
 [sub_resource type="BoxShape" id=6]
-
 extents = Vector3( 5, 5, 5 )
 
 [node name="Spatial" type="Spatial"]
 
-[node name="MeshInstance" type="MeshInstance" parent="." index="0" groups=[
+[node name="MeshInstance" type="MeshInstance" parent="." groups=[
 "in",
 ]]
-
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
 lod_min_distance = 5.0
-lod_min_hysteresis = 0.0
 lod_max_distance = 10.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 1 )
-skeleton = NodePath("..")
 material/0 = null
 
-[node name="MeshInstance2" type="MeshInstance" parent="." index="1" groups=[
+[node name="MeshInstance2" type="MeshInstance" parent="." groups=[
 "out",
 ]]
-
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
 lod_min_distance = 10.0
-lod_min_hysteresis = 0.0
 lod_max_distance = 20.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 2 )
-skeleton = NodePath("..")
 material/0 = null
 
-[node name="Camera" type="Camera" parent="." index="2"]
-
+[node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.76172 )
-keep_aspect = 1
-cull_mask = 1048575
-environment = null
-h_offset = 0.0
-v_offset = 0.0
-doppler_tracking = 0
-projection = 0
-current = false
-fov = 70.0
-size = 1.0
-near = 0.05
-far = 100.0
 script = ExtResource( 1 )
-enabled = true
-mouse_mode = 2
-mouselook = true
-sensitivity = 0.5
-smoothness = 0.5
-privot = null
-distance = 5.0
-rotate_privot = false
-collisions = true
-yaw_limit = 360
-pitch_limit = 360
-movement = true
 acceleration = 0.5
-deceleration = 0.5
-max_speed = Vector3( 1, 1, 1 )
-local = true
-forward_action = "move_forwards"
-backward_action = "move_backwards"
-left_action = "move_left"
-right_action = "move_right"
-up_action = "ui_page_up"
-down_action = "ui_page_down"
-ui_mlook = "ui_mlook"
-use_gui = true
-gui_action = "ui_cancel"
 
-[node name="Area" type="Area" parent="Camera" index="0" groups=[
+[node name="Area" type="Area" parent="Camera" groups=[
 "player",
 ]]
-
 input_ray_pickable = false
-input_capture_on_drag = false
-space_override = 0
-gravity_point = false
-gravity_distance_scale = 0.0
-gravity_vec = Vector3( 0, -1, 0 )
-gravity = 9.8
-linear_damp = 0.1
-angular_damp = 1.0
-priority = 0.0
-monitoring = true
-monitorable = true
-collision_layer = 1
-collision_mask = 1
-audio_bus_override = false
-audio_bus_name = "Master"
-reverb_bus_enable = false
-reverb_bus_name = "Master"
-reverb_bus_amount = 0.0
-reverb_bus_uniformity = 0.0
 
-[node name="CollisionShape" type="CollisionShape" parent="Camera/Area" index="0"]
-
+[node name="CollisionShape" type="CollisionShape" parent="Camera/Area"]
 shape = SubResource( 3 )
-disabled = false
 
-[node name="SpotLight" type="SpotLight" parent="." index="3"]
-
+[node name="SpotLight" type="SpotLight" parent="."]
 transform = Transform( 0.834511, 0, 0.550991, 0, 1, 0, -0.550991, 0, 0.834511, 1.9945, 1.55495, 3.59668 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
-light_specular = 0.5
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
-spot_range = 5.0
-spot_attenuation = 1.0
-spot_angle = 45.0
-spot_angle_attenuation = 1.0
 
-[node name="MeshInstance3" type="MeshInstance" parent="." index="4"]
-
+[node name="MeshInstance3" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 5 )
-skeleton = NodePath("..")
 material/0 = null
 
-[node name="MeshInstance4" type="MeshInstance" parent="." index="5"]
-
+[node name="MeshInstance4" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 5 )
-skeleton = NodePath("..")
 material/0 = null
 
-[node name="MeshInstance5" type="MeshInstance" parent="." index="6"]
-
+[node name="MeshInstance5" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 5 )
-skeleton = NodePath("..")
 material/0 = null
 
-[node name="showhide" type="MeshInstance" parent="." index="7" groups=[
+[node name="showhide" type="MeshInstance" parent="." groups=[
 "interior",
 ]]
-
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0382588, 0.796561, 3.54702 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 5 )
-skeleton = NodePath("..")
 material/0 = null
 
-[node name="showhide2" type="MeshInstance" parent="showhide" index="0"]
-
+[node name="showhide2" type="MeshInstance" parent="showhide"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.581672, 0, 0 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 5 )
-skeleton = NodePath("..")
 material/0 = null
 
-[node name="hideshow" type="MeshInstance" parent="." index="8" groups=[
+[node name="hideshow" type="MeshInstance" parent="." groups=[
 "exterior",
 ]]
-
 transform = Transform( -0.00211362, -0.999998, 0, 0.999998, -0.00211362, 0, 0, 0, 1, -0.374116, 1.09122, 3.29677 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 5 )
-skeleton = NodePath("..")
 material/0 = null
 
-[node name="hideshow2" type="MeshInstance" parent="hideshow" index="0"]
-
+[node name="hideshow2" type="MeshInstance" parent="hideshow"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.581672, 0, 0 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 5 )
-skeleton = NodePath("..")
 material/0 = null
 
-[node name="Area" type="Area" parent="." index="9"]
-
+[node name="Area" type="Area" parent="."]
 input_ray_pickable = false
-input_capture_on_drag = false
-space_override = 0
-gravity_point = false
-gravity_distance_scale = 0.0
-gravity_vec = Vector3( 0, -1, 0 )
-gravity = 9.8
-linear_damp = 0.1
-angular_damp = 1.0
-priority = 0.0
-monitoring = true
-monitorable = true
-collision_layer = 1
-collision_mask = 1
-audio_bus_override = false
-audio_bus_name = "Master"
-reverb_bus_enable = false
-reverb_bus_name = "Master"
-reverb_bus_amount = 0.0
-reverb_bus_uniformity = 0.0
 script = ExtResource( 2 )
 RootNode = NodePath("..")
-showhide = "interior"
-hideshow = "exterior"
-bygroup = "player"
 
-[node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
-
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
 shape = SubResource( 6 )
-disabled = false

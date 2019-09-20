@@ -268,4 +268,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, -12 )
 
 [node name="LODMesh65" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, 6 )
-

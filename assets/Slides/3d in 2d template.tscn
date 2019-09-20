@@ -10,6 +10,7 @@ script = ExtResource( 1 )
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1000.0
 margin_bottom = 600.0
+rect_scale = Vector2( 0.749634, 0.911458 )
 color = Color( 0.25708, 0.33283, 0.40625, 1 )
 
 [node name="ViewportContainer" type="ViewportContainer" parent="ColorRect"]

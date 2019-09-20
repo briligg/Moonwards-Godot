@@ -75,4 +75,3 @@ material/2 = null
 material/3 = null
 script = ExtResource( 3 )
 substitute = NodePath("../LightTube_Large_Opt001")
-

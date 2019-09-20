@@ -499,4 +499,3 @@ editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.434985, 1.05713, 4.8187 )
 
 [node name="Scene" parent="Group1/Empty_SolarPanelUnit025" instance=ExtResource( 2 )]
-

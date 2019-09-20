@@ -9,42 +9,19 @@
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-
 [sub_resource type="StyleBoxFlat" id=2]
-
 content_margin_left = 0.0
 content_margin_right = 0.0
 content_margin_top = 5.0
 content_margin_bottom = 5.0
 bg_color = Color( 1, 0, 1, 1 )
-draw_center = true
-border_width_left = 0
-border_width_top = 0
-border_width_right = 0
-border_width_bottom = 0
-border_color = Color( 0.8, 0.8, 0.8, 1 )
-border_blend = false
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
 anti_aliasing = false
-anti_aliasing_size = 1
-_sections_unfolded = [ "Border Width", "Content Margin", "Corner Radius", "Expand Margin", "Resource" ]
 
 [sub_resource type="Theme" id=3]
-
 HSlider/icons/grabber = ExtResource( 3 )
 HSlider/icons/grabber_disabled = null
 HSlider/icons/grabber_highlight = ExtResource( 3 )
@@ -54,37 +31,26 @@ HSlider/styles/grabber_area = SubResource( 1 )
 HSlider/styles/grabber_disabled = null
 HSlider/styles/grabber_highlight = null
 HSlider/styles/slider = SubResource( 2 )
-_sections_unfolded = [ "ColorPicker", "ColorPicker/icons", "HSlider", "HSlider/icons", "HSlider/styles" ]
 
 [sub_resource type="ShaderMaterial" id=4]
-
 resource_local_to_scene = true
-render_priority = 0
 shader = ExtResource( 5 )
 shader_param/color1 = Color( 0, 1, 1, 1 )
 shader_param/color2 = Color( 1, 1, 1, 1 )
-_sections_unfolded = [ "Resource", "shader_param" ]
 
 [sub_resource type="ShaderMaterial" id=5]
-
 resource_local_to_scene = true
-render_priority = 0
 shader = ExtResource( 5 )
 shader_param/color1 = Color( 1, 0, 1, 1 )
 shader_param/color2 = Color( 1, 1, 1, 1 )
-_sections_unfolded = [ "Resource", "shader_param" ]
 
 [sub_resource type="ShaderMaterial" id=6]
-
 resource_local_to_scene = true
-render_priority = 0
 shader = ExtResource( 5 )
 shader_param/color1 = Color( 1, 1, 0, 1 )
 shader_param/color2 = Color( 1, 1, 1, 1 )
-_sections_unfolded = [ "Resource", "shader_param" ]
 
 [sub_resource type="Shader" id=7]
-
 code = "shader_type canvas_item;
 
 bool approx_equal(vec3 a, vec3 b, float threshold){
@@ -109,112 +75,52 @@ void fragment() {
 }"
 
 [sub_resource type="ShaderMaterial" id=8]
-
-render_priority = 0
 shader = SubResource( 7 )
 
 [sub_resource type="ShaderMaterial" id=9]
-
 resource_local_to_scene = true
-render_priority = 0
 shader = ExtResource( 5 )
 shader_param/color1 = Color( 1, 1, 1, 0 )
 shader_param/color2 = Color( 1, 1, 1, 1 )
-_sections_unfolded = [ "Resource", "shader_param" ]
 
 [node name="ClassicControls" type="Container"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 304.0
 margin_bottom = 178.0
 rect_min_size = Vector2( 300, 160 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 script = ExtResource( 1 )
-_sections_unfolded = [ "Anchor", "Rect" ]
 __meta__ = {
 "_editor_icon": ExtResource( 2 )
 }
 color = Color( 1, 1, 1, 1 )
 
-[node name="Hider" type="ViewportContainer" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="Hider" type="ViewportContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 stretch = true
-stretch_shrink = 1
-_sections_unfolded = [ "Rect" ]
 
-[node name="Viewport" type="Viewport" parent="Hider" index="0"]
-
-arvr = false
+[node name="Viewport" type="Viewport" parent="Hider"]
 size = Vector2( 304, 178 )
 own_world = true
-world = null
 transparent_bg = true
-msaa = 0
-hdr = true
-disable_3d = false
+handle_input_locally = false
 usage = 0
-debug_draw = 0
-render_target_v_flip = false
-render_target_clear_mode = 0
 render_target_update_mode = 3
-audio_listener_enable_2d = false
-audio_listener_enable_3d = false
-physics_object_picking = false
-gui_disable_input = false
-gui_snap_controls_to_pixels = true
-shadow_atlas_size = 0
-shadow_atlas_quad_0 = 2
-shadow_atlas_quad_1 = 2
-shadow_atlas_quad_2 = 3
-shadow_atlas_quad_3 = 4
-_sections_unfolded = [ "GUI", "Render Target", "Rendering" ]
 
-[node name="ColorPicker" type="ColorPicker" parent="Hider/Viewport" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="ColorPicker" type="ColorPicker" parent="Hider/Viewport"]
 anchor_right = 1.0
-anchor_bottom = 0.0
 margin_left = 4.0
-margin_top = -284.0
-margin_bottom = 174.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+margin_top = 4.0
+margin_right = 4.0
+margin_bottom = 4.0
 theme = SubResource( 3 )
-alignment = 0
-color = Color( 1, 1, 1, 1 )
-edit_alpha = true
-raw_mode = false
 script = ExtResource( 4 )
 _sections_unfolded = [ "Mouse", "Theme", "custom_constants", "custom_icons" ]
 
-[node name="R_Prev" type="PanelContainer" parent="Hider/Viewport" index="1"]
-
+[node name="R_Prev" type="PanelContainer" parent="Hider/Viewport"]
 material = SubResource( 4 )
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 16.0
@@ -222,19 +128,10 @@ margin_top = -2.0
 margin_right = -124.0
 margin_bottom = -146.0
 rect_min_size = Vector2( 164, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Material", "Mouse", "Rect" ]
 
-[node name="G_Prev" type="PanelContainer" parent="Hider/Viewport" index="2"]
-
+[node name="G_Prev" type="PanelContainer" parent="Hider/Viewport"]
 material = SubResource( 5 )
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 16.0
@@ -242,19 +139,10 @@ margin_top = 20.0
 margin_right = -124.0
 margin_bottom = -124.0
 rect_min_size = Vector2( 164, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Material", "Mouse", "Rect" ]
 
-[node name="B_Prev" type="PanelContainer" parent="Hider/Viewport" index="3"]
-
+[node name="B_Prev" type="PanelContainer" parent="Hider/Viewport"]
 material = SubResource( 6 )
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 16.0
@@ -262,48 +150,29 @@ margin_top = 42.0
 margin_right = -124.0
 margin_bottom = -102.0
 rect_min_size = Vector2( 164, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Material", "Mouse", "Rect" ]
 
-[node name="PanelContainer" type="TextureRect" parent="Hider/Viewport" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="PanelContainer" type="TextureRect" parent="Hider/Viewport"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 17.0
 margin_top = 70.0
 margin_right = -124.0
 margin_bottom = -81.0
-rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 stretch_mode = 2
-_sections_unfolded = [ "Anchor", "Material", "Mouse", "Rect", "custom_styles" ]
 
-[node name="TransBG" type="Sprite" parent="Hider/Viewport/PanelContainer" index="0"]
-
+[node name="TransBG" type="Sprite" parent="Hider/Viewport/PanelContainer"]
 material = SubResource( 8 )
 position = Vector2( 0, -3 )
 texture = ExtResource( 6 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 304, 16 )
-_sections_unfolded = [ "Anchor", "Material", "Offset", "Rect", "Region", "Transform" ]
 
-[node name="A_Prev" type="PanelContainer" parent="Hider/Viewport" index="5"]
-
+[node name="A_Prev" type="PanelContainer" parent="Hider/Viewport"]
 material = SubResource( 9 )
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 16.0
@@ -311,28 +180,15 @@ margin_top = 64.0
 margin_right = -124.0
 margin_bottom = -70.0
 rect_min_size = Vector2( 164, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Material", "Mouse", "Rect" ]
 
-[node name="BackBufferCopy" type="BackBufferCopy" parent="." index="1"]
-
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
 position = Vector2( -8, -8 )
 scale = Vector2( 0.06, 0.06 )
 copy_mode = 2
-rect = Rect2( -100, -100, 200, 200 )
 __meta__ = {
 "_edit_lock_": true
 }
-
 [connection signal="color_changed" from="Hider/Viewport/ColorPicker" to="Hider/Viewport/ColorPicker" method="_on_ColorPicker_color_changed"]
-
 [connection signal="focus_entered" from="Hider/Viewport/ColorPicker" to="Hider/Viewport/ColorPicker" method="_on_ColorPicker_focus_entered"]
-
 [connection signal="focus_exited" from="Hider/Viewport/ColorPicker" to="Hider/Viewport/ColorPicker" method="_on_ColorPicker_focus_exited"]
-
-

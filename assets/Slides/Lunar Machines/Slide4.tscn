@@ -1,64 +1,18 @@
 [gd_scene format=2]
 
-[node name="Slide1" type="Control" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Slide1" type="Control"]
 margin_right = 1025.0
 margin_bottom = 702.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="ColorRect" type="ColorRect" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1020.0
 margin_bottom = 706.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 color = Color( 0.25708, 0.33283, 0.40625, 1 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
 margin_left = 11.0
 margin_top = 133.0
 margin_right = 346.0
 margin_bottom = 284.0
 rect_scale = Vector2( 3, 3 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-bbcode_enabled = false
-bbcode_text = ""
-visible_characters = -1
-percent_visible = 1.0
-meta_underlined = true
-tab_size = 4
 text = "The Crossroads crew takes over a large chunk of the remote operations, as the signal delay between them and the robots is imperceptible. After that, the robots build the first permanent habitat and its infrastructure without anyone on-site. (There could be more missions from Crossroads to the surface, but only if there are failures that make it necessary.) Once that hab is near completion, again a crew arrives. They test everything, maybe make some minor final touches. Then they stay. "
-scroll_active = true
-scroll_following = false
-selection_enabled = false
-override_selected_font_color = false
-_sections_unfolded = [ "Rect" ]
-
-

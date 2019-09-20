@@ -16,4 +16,3 @@ func _process(delta):
 			$Panel/x.text = str(ORIGIN.x)
 			$Panel/y.text = str(ORIGIN.y)
 			$Panel/z.text = str(ORIGIN.z)
-	

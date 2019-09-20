@@ -15,4 +15,3 @@ func set_current(value):
 
 func get_current():
 	return get_camera().current
-

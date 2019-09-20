@@ -316,4 +316,3 @@ func _in_hsb_deceleration_value_changed(value):
 func _in_hsb_far_value_changed(value):
 	camera.far = value
 	lbl_far.set_text("Far " + String(camera.far))
-	

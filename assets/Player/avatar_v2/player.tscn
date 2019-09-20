@@ -60,7 +60,7 @@ filter_enabled = true
 filters = [ "FemaleRig", "FemaleRig/Skeleton:Elbow_Pole.L", "FemaleRig/Skeleton:Elbow_Pole.R", "FemaleRig/Skeleton:forearm.L", "FemaleRig/Skeleton:forearm.R", "FemaleRig/Skeleton:hand.L", "FemaleRig/Skeleton:hand.R", "FemaleRig/Skeleton:hand_IK.L", "FemaleRig/Skeleton:hand_IK.R", "FemaleRig/Skeleton:shoulder.L", "FemaleRig/Skeleton:shoulder.R", "FemaleRig/Skeleton:spine.001", "FemaleRig/Skeleton:spine.002", "FemaleRig/Skeleton:spine.003", "FemaleRig/Skeleton:spine.005", "FemaleRig/Skeleton:spine.006", "FemaleRig/Skeleton:upper_arm.L", "FemaleRig/Skeleton:upper_arm.R" ]
 
 [sub_resource type="AnimationNodeOneShot" id=14]
-autorestart_random_delay = 1.38329e-26
+autorestart_random_delay = 1.38329e-026
 
 [sub_resource type="AnimationNodeTimeScale" id=15]
 
@@ -158,13 +158,13 @@ enabled = true
 cast_to = Vector3( 0, -0.1, 0 )
 
 [node name="PlayerCamera" parent="KinematicBody" instance=ExtResource( 3 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.144089, 0 )
+transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 0.144089, 0 )
 kinematic_body_path = NodePath("..")
 kinematic_body_camera = NodePath("../../Camera")
 enabled = true
 
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.0828768, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0.0828768, 0 )
 shape = SubResource( 4 )
 
 [node name="AnimationTree" type="AnimationTree" parent="KinematicBody"]

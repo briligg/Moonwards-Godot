@@ -19,7 +19,7 @@ script = ExtResource( 2 )
 substitute = NodePath("../FlywheelTower_Opt")
 
 [node name="FlywheelSpokes_LOD" type="MeshInstance" parent="FlywheelTower_LOD"]
-transform = Transform( 1, 2.66454e-15, 0, -2.66454e-15, 1, 0, 0, 0, 1, 2.31672e-07, 1.90944, 1.5498e-07 )
+transform = Transform( 1, 2.66454e-015, 0, -2.66454e-015, 1, 0, 0, 0, 1, 2.31672e-007, 1.90944, 1.5498e-007 )
 mesh = ExtResource( 3 )
 material/0 = null
 material/1 = null
@@ -34,8 +34,7 @@ material/0 = null
 shape = SubResource( 1 )
 
 [node name="FlywheelSpokes_Opt" type="MeshInstance" parent="FlywheelTower_Opt"]
-transform = Transform( 1, 2.66454e-15, 0, -2.66454e-15, 1, 0, 0, 0, 1, 2.31672e-07, 1.87253, 1.5498e-07 )
+transform = Transform( 1, 2.66454e-015, 0, -2.66454e-015, 1, 0, 0, 0, 1, 2.31672e-007, 1.87253, 1.5498e-007 )
 mesh = ExtResource( 5 )
 material/0 = null
 material/1 = null
-

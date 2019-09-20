@@ -448,5 +448,3 @@ func toggle_chatting():
 		chatting = false
 	else:
 		chatting = true
-		
-		

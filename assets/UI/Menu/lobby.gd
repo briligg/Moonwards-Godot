@@ -194,5 +194,3 @@ func bindgs(_signal, _sub = null):
 		_sub = "sg_%s" % _signal
 	if obj.is_connected(_signal, obj2, _sub):
 		obj.disconnect(_signal, obj2, _sub)
-
-

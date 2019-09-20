@@ -14,4 +14,3 @@ sync func _process(delta):
 	
 
 	#rect_scale = int(3/(camera.translation.distance_to(pos)))*Vector2(1,1)
-	

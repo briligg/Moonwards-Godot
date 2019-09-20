@@ -55,7 +55,7 @@ usage = 0
 [node name="Area" type="Area" parent="."]
 
 [node name="Quad" type="MeshInstance" parent="Area"]
-transform = Transform( 1, -1.74846e-07, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, -1.74846e-07, -1, -5.73206e-15, 0, 0, 0 )
+transform = Transform( 1, -1.74846e-007, 4.37114e-008, -4.37114e-008, 1.91069e-015, 1, -1.74846e-007, -1, -5.73206e-015, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 3 )
 

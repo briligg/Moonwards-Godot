@@ -16,7 +16,7 @@ material/0 = null
 [node name="Passage-SouthAtrium-to-Teacup" type="MeshInstance" parent="SouthLongAtrium_RadBlind" groups=[
 "wall",
 ]]
-transform = Transform( 0.994354, -0.106116, -3.39313e-08, 0.106116, 0.994354, 1.99853e-09, 3.35276e-08, -5.58791e-09, 1, -1.93172, 1.14388, -0.147975 )
+transform = Transform( 0.994354, -0.106116, -3.39313e-008, 0.106116, 0.994354, 1.99853e-009, 3.35276e-008, -5.58791e-009, 1, -1.93172, 1.14388, -0.147975 )
 mesh = ExtResource( 2 )
 material/0 = null
 
@@ -28,7 +28,7 @@ shape = ExtResource( 3 )
 [node name="Walls" type="MeshInstance" parent="SouthLongAtrium_RadBlind" groups=[
 "wall",
 ]]
-transform = Transform( 0.994354, -0.106116, -3.39313e-08, 0.106116, 0.994354, 1.99853e-09, 3.35276e-08, -5.58791e-09, 1, 1.81162, 2.66199, -22.055 )
+transform = Transform( 0.994354, -0.106116, -3.39313e-008, 0.106116, 0.994354, 1.99853e-009, 3.35276e-008, -5.58791e-009, 1, 1.81162, 2.66199, -22.055 )
 mesh = ExtResource( 4 )
 material/0 = null
 

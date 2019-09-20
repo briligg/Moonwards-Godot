@@ -2,12 +2,12 @@
 
 [ext_resource path="res://materials/Earth.tres" type="Material" id=1]
 
-[sub_resource type="SphereMesh" id=4]
+[sub_resource type="SphereMesh" id=1]
 radius = 300.0
 height = 600.0
 
 [node name="Scene" type="Spatial"]
 
 [node name="Earth" type="MeshInstance" parent="."]
-mesh = SubResource( 4 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )

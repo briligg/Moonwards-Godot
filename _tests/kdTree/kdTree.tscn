@@ -6,9 +6,7 @@
 
 [sub_resource type="ProceduralSky" id=1]
 
-
 [sub_resource type="Environment" id=2]
-
 background_mode = 2
 background_sky = SubResource( 1 )
 
@@ -26,6 +24,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.84217, 0, -3.65825 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
-
 
 [editable path="Spatial"]

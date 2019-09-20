@@ -73,4 +73,3 @@ func _run():
 	var scene = get_scene()
 	make_collision_shapes(get_all_meshes(scene))
 	shapes_save(get_all_meshes(scene))
-	

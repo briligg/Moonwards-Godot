@@ -2,7 +2,6 @@
 
 [ext_resource path="res://assets/UI/chat/Chat.gd" type="Script" id=1]
 
-
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
 
@@ -55,7 +54,6 @@ text = "5000"
 margin_top = 450.0
 margin_right = 500.0
 margin_bottom = 500.0
-
 [connection signal="pressed" from="Connection_Buttons/Connect" to="." method="_on_Connect_pressed"]
 [connection signal="pressed" from="Connection_Buttons/Listen" to="." method="_on_Listen_pressed"]
 [connection signal="text_entered" from="Message_Input" to="." method="_on_Message_Input_text_entered"]

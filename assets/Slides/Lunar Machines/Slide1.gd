@@ -10,4 +10,3 @@ func _ready():
 func _on_size_changed():
 	var Newsize = get_viewport().get_visible_rect().size
 	$ColorRect.rect_scale = Newsize/Vector2(1366,768)
-

@@ -7,4 +7,3 @@ func _ready():
 	var mt = MeshTool.new(get_tree().current_scene, test_mesh)
 
 	print("hit box: %s, %s" % [test_mesh, mt.get_hitbox()])
-	

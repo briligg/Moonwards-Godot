@@ -3,39 +3,15 @@
 [ext_resource path="res://model_assets/meshes/RadioDish_Earth__Satellite-Dish001.mesh" type="ArrayMesh" id=1]
 [ext_resource path="res://model_assets/meshes/RadioDish_Earth__Satellite-Dish001_RadioDish-Earth.mesh" type="ArrayMesh" id=2]
 
-[node name="Scene" type="Spatial" index="0"]
+[node name="Scene" type="Spatial"]
 
-[node name="Satellite-Dish001" type="MeshInstance" parent="." index="0"]
-
-transform = Transform( 3.32652, 0, 0, 0, 3.32652, 0, 0, 0, 3.32652, 0, -7.45058e-08, 0 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
+[node name="Satellite-Dish001" type="MeshInstance" parent="."]
+transform = Transform( 3.32652, 0, 0, 0, 3.32652, 0, 0, 0, 3.32652, 0, -7.45058e-008, 0 )
 mesh = ExtResource( 1 )
-skeleton = NodePath("..")
 material/0 = null
 
-[node name="RadioDish-Earth" type="MeshInstance" parent="Satellite-Dish001" index="0"]
-
-transform = Transform( 0.299858, 0.0212985, 0.000937638, -0.0213021, 0.299857, 0.00115508, -0.000853436, -0.00121862, 0.300611, 0, 2.23975e-08, 0 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
+[node name="RadioDish-Earth" type="MeshInstance" parent="Satellite-Dish001"]
+transform = Transform( 0.299858, 0.0212985, 0.000937638, -0.0213021, 0.299857, 0.00115508, -0.000853436, -0.00121862, 0.300611, 0, 2.23975e-008, 0 )
 mesh = ExtResource( 2 )
-skeleton = NodePath("..")
 material/0 = null
 material/1 = null
-
-

@@ -80,4 +80,3 @@ custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 4 )
 placeholder_text = "Chat..."
 caret_blink = true
-

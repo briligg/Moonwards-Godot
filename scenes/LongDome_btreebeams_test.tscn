@@ -399,14 +399,14 @@ material/0 = null
 shape = ExtResource( 3 )
 
 [node name="LongDome-GlassReinforcment" type="MeshInstance" parent="LongDome-RegolithOverlay"]
-transform = Transform( 1, 7.06117e-08, 1.05268e-08, -7.06117e-08, 1, 1.74708e-08, -1.05268e-08, -1.74708e-08, 1, 2.53516, -3.09619, 0.124023 )
+transform = Transform( 1, 7.06117e-008, 1.05268e-008, -7.06117e-008, 1, 1.74708e-008, -1.05268e-008, -1.74708e-008, 1, 2.53516, -3.09619, 0.124023 )
 mesh = ExtResource( 4 )
 material/0 = null
 
 [node name="LongDome-GlassWalls" type="MeshInstance" parent="LongDome-RegolithOverlay" groups=[
 "wall",
 ]]
-transform = Transform( 1, 7.06117e-08, 1.05268e-08, -7.06117e-08, 1, 1.74708e-08, -1.05268e-08, -1.74708e-08, 1, 2.53516, -3.09619, 0.124023 )
+transform = Transform( 1, 7.06117e-008, 1.05268e-008, -7.06117e-008, 1, 1.74708e-008, -1.05268e-008, -1.74708e-008, 1, 2.53516, -3.09619, 0.124023 )
 mesh = ExtResource( 5 )
 material/0 = null
 
@@ -423,7 +423,7 @@ material/0 = null
 
 [node name="LongDomeArch-1007" type="MeshInstance" parent="LongDome-RegolithOverlay/LongDomeArch-1"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.72205e-06, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.72205e-006, 0, 0 )
 mesh = ExtResource( 8 )
 material/0 = null
 
@@ -2297,14 +2297,14 @@ mesh = ExtResource( 364 )
 material/0 = null
 
 [node name="LongDomeBase" type="MeshInstance" parent="LongDome-RegolithOverlay"]
-transform = Transform( 1, 7.06117e-08, 1.05268e-08, -7.06117e-08, 1, 1.74708e-08, -1.05268e-08, -1.74708e-08, 1, 2.07178, -11.25, -1.13696 )
+transform = Transform( 1, 7.06117e-008, 1.05268e-008, -7.06117e-008, 1, 1.74708e-008, -1.05268e-008, -1.74708e-008, 1, 2.07178, -11.25, -1.13696 )
 mesh = ExtResource( 365 )
 material/0 = null
 
 [node name="LongDomeGround" type="MeshInstance" parent="LongDome-RegolithOverlay" groups=[
 "cs",
 ]]
-transform = Transform( 1, 0, 0, 2.98023e-08, 1, 0, -2.98023e-08, 0, 1, 7.98486, -28.762, 14.583 )
+transform = Transform( 1, 0, 0, 2.98023e-008, 1, 0, -2.98023e-008, 0, 1, 7.98486, -28.762, 14.583 )
 mesh = ExtResource( 366 )
 material/0 = null
 material/1 = null
@@ -2338,43 +2338,43 @@ omni_range = 13.3692
 shape = ExtResource( 367 )
 
 [node name="LongDomeOverhang" type="MeshInstance" parent="LongDome-RegolithOverlay"]
-transform = Transform( 1, 7.06117e-08, 1.05268e-08, -7.06117e-08, 1, 1.74708e-08, -1.05268e-08, -1.74708e-08, 1, -0.0498047, -2.7688, -0.010498 )
+transform = Transform( 1, 7.06117e-008, 1.05268e-008, -7.06117e-008, 1, 1.74708e-008, -1.05268e-008, -1.74708e-008, 1, -0.0498047, -2.7688, -0.010498 )
 mesh = ExtResource( 368 )
 material/0 = null
 
 [node name="LongDomeRoofEnds" type="MeshInstance" parent="LongDome-RegolithOverlay"]
-transform = Transform( 1, 7.06117e-08, 1.05268e-08, -7.06117e-08, 1, 1.74708e-08, -1.05268e-08, -1.74708e-08, 1, 2.71631, 0.161133, -0.194336 )
+transform = Transform( 1, 7.06117e-008, 1.05268e-008, -7.06117e-008, 1, 1.74708e-008, -1.05268e-008, -1.74708e-008, 1, 2.71631, 0.161133, -0.194336 )
 mesh = ExtResource( 369 )
 material/0 = null
 
 [node name="OmniLight" type="OmniLight" parent="LongDome-RegolithOverlay/LongDomeRoofEnds"]
-transform = Transform( 1, -7.06117e-08, -1.05268e-08, 7.06117e-08, 1, -1.74708e-08, 1.05268e-08, 1.74708e-08, 1, -24.6486, 6.30521, 75.6315 )
+transform = Transform( 1, -7.06117e-008, -1.05268e-008, 7.06117e-008, 1, -1.74708e-008, 1.05268e-008, 1.74708e-008, 1, -24.6486, 6.30521, 75.6315 )
 omni_range = 20.7606
 
 [node name="OmniLight2" type="OmniLight" parent="LongDome-RegolithOverlay/LongDomeRoofEnds"]
-transform = Transform( 1, -7.06117e-08, -1.05268e-08, 7.06117e-08, 1, -1.74708e-08, 1.05268e-08, 1.74708e-08, 1, 26.9714, -2.18405, -75.848 )
+transform = Transform( 1, -7.06117e-008, -1.05268e-008, 7.06117e-008, 1, -1.74708e-008, 1.05268e-008, 1.74708e-008, 1, 26.9714, -2.18405, -75.848 )
 omni_range = 21.4061
 
 [node name="OmniLight3" type="OmniLight" parent="LongDome-RegolithOverlay/LongDomeRoofEnds"]
-transform = Transform( 1, 1.83912e-16, 0, 1.83912e-16, 1, 0, 0, 0, 1, -2.90893, -1.39793, 65.567 )
+transform = Transform( 1, 1.83912e-016, 0, 1.83912e-016, 1, 0, 0, 0, 1, -2.90893, -1.39793, 65.567 )
 light_color = Color( 0.974693, 0.996094, 0.871582, 1 )
 light_energy = 0.6
 omni_range = 10.0
 
 [node name="OmniLight4" type="OmniLight" parent="LongDome-RegolithOverlay/LongDomeRoofEnds"]
-transform = Transform( 1, 1.83912e-16, 0, 1.83912e-16, 1, 0, 0, 0, 1, -43.9357, 1.36747, 66.8985 )
+transform = Transform( 1, 1.83912e-016, 0, 1.83912e-016, 1, 0, 0, 0, 1, -43.9357, 1.36747, 66.8985 )
 light_color = Color( 0.974693, 0.996094, 0.871582, 1 )
 light_energy = 0.6
 omni_range = 10.0
 
 [node name="OmniLight5" type="OmniLight" parent="LongDome-RegolithOverlay/LongDomeRoofEnds"]
-transform = Transform( 1, 1.83912e-16, 0, 1.83912e-16, 1, 0, 0, 0, 1, 7.11941, -8.89274, -71.6157 )
+transform = Transform( 1, 1.83912e-016, 0, 1.83912e-016, 1, 0, 0, 0, 1, 7.11941, -8.89274, -71.6157 )
 light_color = Color( 0.974693, 0.996094, 0.871582, 1 )
 light_energy = 0.6
 omni_range = 10.0
 
 [node name="OmniLight6" type="OmniLight" parent="LongDome-RegolithOverlay/LongDomeRoofEnds"]
-transform = Transform( 1, 1.83912e-16, 0, 1.83912e-16, 1, 0, 0, 0, 1, 44.0954, -8.02555, -75.6563 )
+transform = Transform( 1, 1.83912e-016, 0, 1.83912e-016, 1, 0, 0, 0, 1, 44.0954, -8.02555, -75.6563 )
 light_color = Color( 0.974693, 0.996094, 0.871582, 1 )
 light_energy = 0.6
 omni_range = 10.0
@@ -2438,4 +2438,3 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="LongDome-RegolithOverlay/RockSmallD001/RockSmallD001_col"]
 shape = ExtResource( 379 )
-

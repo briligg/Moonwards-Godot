@@ -23,8 +23,9 @@ material/0 = SubResource( 2 )
 shape = SubResource( 3 )
 
 [node name="Screen" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, -8.74228e-08, 8.74228e-08, 8.74228e-08, 1, 8.74228e-08, -8.74228e-08, -8.74228e-08, 1, -0.383868, 1.12469, -0.432728 )
+transform = Transform( 1, -8.74228e-008, 8.74228e-008, 8.74228e-008, 1, 8.74228e-008, -8.74228e-008, -8.74228e-008, 1, -0.383868, 1.12469, -0.432728 )
 Content = ExtResource( 2 )
+Size = Vector2( 1024, 700 )
 Hologram = true
 
 [node name="LocalPlayer" parent="." instance=ExtResource( 3 )]

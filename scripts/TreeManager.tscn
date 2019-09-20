@@ -7,11 +7,8 @@
 script = ExtResource( 1 )
 enable_areamanager = false
 LodManager = NodePath("LodManager")
-debug = true
 
 [node name="LodManager" type="Node" parent="."]
 script = ExtResource( 2 )
 grid_step = 1.0
 enabled = false
-debug = true
-

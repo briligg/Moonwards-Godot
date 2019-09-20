@@ -7,4 +7,3 @@
 [node name="Truss-Triangular_67m_Opt" type="MeshInstance" parent="."]
 mesh = ExtResource( 1 )
 material/0 = null
-

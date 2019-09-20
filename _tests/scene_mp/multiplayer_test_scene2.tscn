@@ -2,7 +2,6 @@
 
 [ext_resource path="res://assets/Player/avatar_v1/player.tscn" type="PackedScene" id=1]
 
-
 [sub_resource type="SpatialMaterial" id=1]
 roughness = 0.0
 
@@ -42,4 +41,3 @@ transform = Transform( -0.997314, 0, 0.0732408, 0, 1, 0, -0.0732408, 0, -0.99731
 
 [node name="KinematicBody" parent="players" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.35952, 0 )
-

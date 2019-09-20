@@ -17,4 +17,3 @@ substitute = NodePath("../HangarArchColumnsSmall")
 mesh = ExtResource( 3 )
 material/0 = null
 material/1 = null
-

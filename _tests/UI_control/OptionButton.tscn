@@ -1,45 +1,13 @@
 [gd_scene format=2]
 
-[node name="Control" type="Control" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Control" type="Control"]
 margin_right = 610.0
 margin_bottom = 363.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="OptionButton" type="OptionButton" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="OptionButton" type="OptionButton" parent="."]
 margin_right = 202.0
 margin_bottom = 20.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-action_mode = 0
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Item 0"
-flat = false
-align = 0
 items = [ "Item 0", null, false, -1, null, "Item 1", null, false, -1, null, "Item 2", null, false, -1, null ]
 selected = 0
-_sections_unfolded = [ "Theme", "custom_colors", "custom_constants", "custom_fonts", "custom_icons", "custom_styles" ]
-
-

@@ -7,11 +7,9 @@
 [ext_resource path="res://_tests/test_lod_2/LODMesh.gd" type="Script" id=5]
 
 [sub_resource type="PlaneMesh" id=1]
-
 size = Vector2( 50, 50 )
 
 [sub_resource type="SpatialMaterial" id=2]
-
 flags_world_triplanar = true
 albedo_texture = ExtResource( 3 )
 uv1_triplanar = true
@@ -32,4 +30,3 @@ shadow_enabled = true
 
 [node name="LODMesh" parent="." instance=ExtResource( 4 )]
 script = ExtResource( 5 )
-

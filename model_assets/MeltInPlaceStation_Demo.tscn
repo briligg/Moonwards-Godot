@@ -69,12 +69,12 @@ mesh = ExtResource( 8 )
 material/0 = null
 
 [node name="MIP_hopper" type="MeshInstance" parent="MIP_structure"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.146606, 0.0118074, 3.58348e-06 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.146606, 0.0118074, 3.58348e-006 )
 mesh = ExtResource( 9 )
 material/0 = null
 
 [node name="Regolith_in_Hopper" type="MeshInstance" parent="MIP_structure/MIP_hopper"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000748321, 0.0142894, -4.06437e-07 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000748321, 0.0142894, -4.06437e-007 )
 mesh = ExtResource( 10 )
 material/0 = null
 
@@ -88,7 +88,7 @@ mesh = ExtResource( 12 )
 material/0 = null
 
 [node name="MIP_round_lens" type="MeshInstance" parent="MIP_structure/MIP_round_lens_Arm"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.16974e-06, 4.27309e-05, -0.0232051 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.16974e-006, 4.27309e-005, -0.0232051 )
 mesh = ExtResource( 13 )
 material/0 = null
 material/1 = null
@@ -99,7 +99,7 @@ mesh = ExtResource( 14 )
 material/0 = null
 
 [node name="MIP_round_lens001" type="MeshInstance" parent="MIP_structure/MIP_round_lens_Arm001"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17347e-06, 4.27309e-05, -0.0232051 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17347e-006, 4.27309e-005, -0.0232051 )
 mesh = ExtResource( 15 )
 material/0 = null
 material/1 = null
@@ -120,24 +120,24 @@ mesh = ExtResource( 18 )
 material/0 = null
 
 [node name="MIP_square_lens" type="MeshInstance" parent="MIP_structure/MIP_square_lens_arms"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2708e-05, 0.0107091, -0.000995776 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2708e-005, 0.0107091, -0.000995776 )
 mesh = ExtResource( 19 )
 material/0 = null
 material/1 = null
 material/2 = null
 
 [node name="MIP_square_lens_shutter_Middle" type="MeshInstance" parent="MIP_structure/MIP_square_lens_arms/MIP_square_lens"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69631e-05, 0.000150368, -0.001202 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69631e-005, 0.000150368, -0.001202 )
 mesh = ExtResource( 20 )
 material/0 = null
 
 [node name="MIP_square_lens_shutter_N" type="MeshInstance" parent="MIP_structure/MIP_square_lens_arms/MIP_square_lens"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6965e-05, 0.000150368, -0.0168545 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6965e-005, 0.000150368, -0.0168545 )
 mesh = ExtResource( 21 )
 material/0 = null
 
 [node name="MIP_square_lens_shutter_S" type="MeshInstance" parent="MIP_structure/MIP_square_lens_arms/MIP_square_lens"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69631e-05, 0.000150368, 0.0154057 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69631e-005, 0.000150368, 0.0154057 )
 mesh = ExtResource( 22 )
 material/0 = null
 
@@ -154,7 +154,7 @@ mesh = ExtResource( 24 )
 material/0 = null
 
 [node name="Sun" type="MeshInstance" parent="MIP_structure"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.20303e-05, 0.0774555, 4.47035e-08 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.20303e-005, 0.0774555, 4.47035e-008 )
 mesh = ExtResource( 25 )
 material/0 = null
 
@@ -162,4 +162,3 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000109233, 0.00483524, -0.000763456 )
 mesh = ExtResource( 26 )
 material/0 = null
-

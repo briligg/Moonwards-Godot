@@ -52,7 +52,7 @@ mesh = ExtResource( 5 )
 material/0 = null
 
 [node name="LongDomeGround_Opt" type="MeshInstance" parent="LongDome_Opt"]
-transform = Transform( 1, -2.98023e-08, 2.98023e-08, 2.98023e-08, 1, 0, -2.98023e-08, 8.88177e-16, 1, 7.98486, -28.762, 14.583 )
+transform = Transform( 1, -2.98023e-008, 2.98023e-008, 2.98023e-008, 1, 0, -2.98023e-008, 8.88177e-016, 1, 7.98486, -28.762, 14.583 )
 mesh = ExtResource( 6 )
 material/0 = null
 material/1 = null
@@ -62,11 +62,11 @@ material/3 = null
 [node name="StaticBody" type="StaticBody" parent="LongDome_Opt/LongDomeGround_Opt"]
 
 [node name="CollisionShape" type="CollisionShape" parent="LongDome_Opt/LongDomeGround_Opt/StaticBody"]
-transform = Transform( 1, -2.64697e-23, 0, -2.64697e-23, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1, -2.64697e-023, 0, -2.64697e-023, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="LongDomeStructures_Opt" type="MeshInstance" parent="LongDome_Opt"]
-transform = Transform( 1, 7.06117e-08, 1.05268e-08, -7.06117e-08, 1, 1.74708e-08, -1.05268e-08, -1.74708e-08, 1, 2.07178, -11.25, -1.13696 )
+transform = Transform( 1, 7.06117e-008, 1.05268e-008, -7.06117e-008, 1, 1.74708e-008, -1.05268e-008, -1.74708e-008, 1, 2.07178, -11.25, -1.13696 )
 mesh = ExtResource( 7 )
 material/0 = null
 material/1 = null
@@ -77,19 +77,19 @@ material/5 = null
 material/6 = null
 
 [node name="OmniLight" type="OmniLight" parent="LongDome_Opt/LongDomeStructures_Opt"]
-transform = Transform( 1, 1.83912e-16, 8.88178e-16, 1.83912e-16, 1, 0, 0, 0, 1, 18.3975, 7, -79.4615 )
+transform = Transform( 1, 1.83912e-016, 8.88178e-016, 1.83912e-016, 1, 0, 0, 0, 1, 18.3975, 7, -79.4615 )
 light_energy = 1.7
 omni_range = 21.7266
 
 [node name="OmniLight2" type="OmniLight" parent="LongDome_Opt/LongDomeStructures_Opt"]
-transform = Transform( 1, 1.83912e-16, 8.88178e-16, 1.83912e-16, 1, 0, 0, 0, 1, -25.0738, 17.1863, 79.5708 )
+transform = Transform( 1, 1.83912e-016, 8.88178e-016, 1.83912e-016, 1, 0, 0, 0, 1, -25.0738, 17.1863, 79.5708 )
 light_energy = 1.7
 omni_range = 21.7266
 
 [node name="StaticBody" type="StaticBody" parent="LongDome_Opt/LongDomeStructures_Opt"]
 
 [node name="CollisionShape" type="CollisionShape" parent="LongDome_Opt/LongDomeStructures_Opt/StaticBody"]
-transform = Transform( 1, 1.83912e-16, 0, 1.83912e-16, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1, 1.83912e-016, 0, 1.83912e-016, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="LongDome_LOD" type="MeshInstance" parent="."]
@@ -108,14 +108,14 @@ mesh = ExtResource( 10 )
 material/0 = null
 
 [node name="LongDomeGround_LOD" type="MeshInstance" parent="LongDome_LOD"]
-transform = Transform( 1, 0, 0, 2.98023e-08, 1, 0, -2.98023e-08, 0, 1, 7.98486, -28.762, 14.583 )
+transform = Transform( 1, 0, 0, 2.98023e-008, 1, 0, -2.98023e-008, 0, 1, 7.98486, -28.762, 14.583 )
 mesh = ExtResource( 11 )
 material/0 = null
 material/1 = null
 material/2 = null
 
 [node name="LongDomeStructures_LOD" type="MeshInstance" parent="LongDome_LOD"]
-transform = Transform( 1, 7.06117e-08, 1.05268e-08, -7.06117e-08, 1, 1.74708e-08, -1.05268e-08, -1.74708e-08, 1, 2.07178, -11.25, -1.13696 )
+transform = Transform( 1, 7.06117e-008, 1.05268e-008, -7.06117e-008, 1, 1.74708e-008, -1.05268e-008, -1.74708e-008, 1, 2.07178, -11.25, -1.13696 )
 mesh = ExtResource( 12 )
 material/0 = null
 material/1 = null
@@ -137,4 +137,3 @@ material/0 = null
 transform = Transform( -0.0798123, 0.501107, -0.861697, -0.668424, 0.614393, 0.419202, 0.739486, 0.609437, 0.285916, 42.3989, -13.8274, -68.5557 )
 mesh = ExtResource( 15 )
 material/0 = null
-

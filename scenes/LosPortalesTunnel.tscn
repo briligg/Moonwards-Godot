@@ -20,74 +20,74 @@ material/0 = null
 
 [node name="Empty_TunnelWindow" type="Spatial" parent="LosPortalesOuterWall"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 1.79865e-06, 1, 0, -2.34479e-08, 0, 1, 2.06051, -0.182617, -6.08326 )
+transform = Transform( 1, 0, 0, 1.79865e-006, 1, 0, -2.34479e-008, 0, 1, 2.06051, -0.182617, -6.08326 )
 
 [node name="Scene" parent="LosPortalesOuterWall/Empty_TunnelWindow" instance=ExtResource( 2 )]
 
 [node name="Empty_TunnelWindow001" type="Spatial" parent="LosPortalesOuterWall"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 1.79865e-06, 1, 0, -2.34479e-08, 0, 1, 1.72222, -0.182617, -4.76307 )
+transform = Transform( 1, 0, 0, 1.79865e-006, 1, 0, -2.34479e-008, 0, 1, 1.72222, -0.182617, -4.76307 )
 
 [node name="Scene" parent="LosPortalesOuterWall/Empty_TunnelWindow001" instance=ExtResource( 2 )]
 
 [node name="Empty_TunnelWindow002" type="Spatial" parent="LosPortalesOuterWall"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 1.79865e-06, 1, 0, -2.34479e-08, 0, 1, 1.38393, -0.182617, -3.44288 )
+transform = Transform( 1, 0, 0, 1.79865e-006, 1, 0, -2.34479e-008, 0, 1, 1.38393, -0.182617, -3.44288 )
 
 [node name="Scene" parent="LosPortalesOuterWall/Empty_TunnelWindow002" instance=ExtResource( 2 )]
 
 [node name="Empty_TunnelWindow003" type="Spatial" parent="LosPortalesOuterWall"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 1.79865e-06, 1, 0, -2.34479e-08, 0, 1, 1.04565, -0.182617, -2.12269 )
+transform = Transform( 1, 0, 0, 1.79865e-006, 1, 0, -2.34479e-008, 0, 1, 1.04565, -0.182617, -2.12269 )
 
 [node name="Scene" parent="LosPortalesOuterWall/Empty_TunnelWindow003" instance=ExtResource( 2 )]
 
 [node name="Empty_TunnelWindow004" type="Spatial" parent="LosPortalesOuterWall"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 1.79865e-06, 1, 0, -2.34479e-08, 0, 1, 0.707367, -0.182617, -0.8025 )
+transform = Transform( 1, 0, 0, 1.79865e-006, 1, 0, -2.34479e-008, 0, 1, 0.707367, -0.182617, -0.8025 )
 
 [node name="Scene" parent="LosPortalesOuterWall/Empty_TunnelWindow004" instance=ExtResource( 2 )]
 
 [node name="Empty_TunnelWindow005" type="Spatial" parent="LosPortalesOuterWall"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 1.79865e-06, 1, 0, -2.34479e-08, 0, 1, 0.369087, -0.182617, 0.517691 )
+transform = Transform( 1, 0, 0, 1.79865e-006, 1, 0, -2.34479e-008, 0, 1, 0.369087, -0.182617, 0.517691 )
 
 [node name="Scene" parent="LosPortalesOuterWall/Empty_TunnelWindow005" instance=ExtResource( 2 )]
 
 [node name="Empty_TunnelWindow006" type="Spatial" parent="LosPortalesOuterWall"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 1.79865e-06, 1, 0, -2.34479e-08, 0, 1, 0.0307999, -0.182617, 1.83788 )
+transform = Transform( 1, 0, 0, 1.79865e-006, 1, 0, -2.34479e-008, 0, 1, 0.0307999, -0.182617, 1.83788 )
 
 [node name="Scene" parent="LosPortalesOuterWall/Empty_TunnelWindow006" instance=ExtResource( 2 )]
 
 [node name="Empty_TunnelWindow007" type="Spatial" parent="LosPortalesOuterWall"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 1.79865e-06, 1, 0, -2.34479e-08, 0, 1, -0.307487, -0.182617, 3.15807 )
+transform = Transform( 1, 0, 0, 1.79865e-006, 1, 0, -2.34479e-008, 0, 1, -0.307487, -0.182617, 3.15807 )
 
 [node name="Scene" parent="LosPortalesOuterWall/Empty_TunnelWindow007" instance=ExtResource( 2 )]
 
 [node name="Empty_TunnelWindow008" type="Spatial" parent="LosPortalesOuterWall"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 1.79865e-06, 1, 0, -2.34479e-08, 0, 1, -0.645775, -0.182617, 4.47826 )
+transform = Transform( 1, 0, 0, 1.79865e-006, 1, 0, -2.34479e-008, 0, 1, -0.645775, -0.182617, 4.47826 )
 
 [node name="Scene" parent="LosPortalesOuterWall/Empty_TunnelWindow008" instance=ExtResource( 2 )]
 
 [node name="Empty_TunnelWindow009" type="Spatial" parent="LosPortalesOuterWall"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 1.79865e-06, 1, 0, -2.34479e-08, 0, 1, -0.984062, -0.182617, 5.79845 )
+transform = Transform( 1, 0, 0, 1.79865e-006, 1, 0, -2.34479e-008, 0, 1, -0.984062, -0.182617, 5.79845 )
 
 [node name="Scene" parent="LosPortalesOuterWall/Empty_TunnelWindow009" instance=ExtResource( 2 )]
 
 [node name="Empty_TunnelWindow010" type="Spatial" parent="LosPortalesOuterWall"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 1.79865e-06, 1, 0, -2.34479e-08, 0, 1, -1.32234, -0.182617, 7.11864 )
+transform = Transform( 1, 0, 0, 1.79865e-006, 1, 0, -2.34479e-008, 0, 1, -1.32234, -0.182617, 7.11864 )
 
 [node name="Scene" parent="LosPortalesOuterWall/Empty_TunnelWindow010" instance=ExtResource( 2 )]
 
 [node name="LosPortales" type="MeshInstance" parent="LosPortalesOuterWall" groups=[
 "wall",
 ]]
-transform = Transform( 0.968716, -0.248173, 3.11018e-08, 1.76329e-06, -4.90087e-07, -1, 0.248172, 0.968716, -3.71551e-08, 0.862297, -0.0458984, 0.751711 )
+transform = Transform( 0.968716, -0.248173, 3.11018e-008, 1.76329e-006, -4.90087e-007, -1, 0.248172, 0.968716, -3.71551e-008, 0.862297, -0.0458984, 0.751711 )
 mesh = ExtResource( 3 )
 material/0 = null
 
@@ -99,7 +99,7 @@ shape = ExtResource( 4 )
 [node name="Passage-FirstHab-LosPortales" type="MeshInstance" parent="LosPortalesOuterWall" groups=[
 "wall",
 ]]
-transform = Transform( 1, 0, 0, 1.79865e-06, 1, 0, -2.34479e-08, 0, 1, 4.73779, -0.14209, -9.53369 )
+transform = Transform( 1, 0, 0, 1.79865e-006, 1, 0, -2.34479e-008, 0, 1, 4.73779, -0.14209, -9.53369 )
 mesh = ExtResource( 5 )
 material/0 = null
 
@@ -115,7 +115,7 @@ shape = SubResource( 1 )
 [node name="Passage-SouthAtrium-LosPortales" type="MeshInstance" parent="LosPortalesOuterWall" groups=[
 "wall",
 ]]
-transform = Transform( 1, 0, 0, 1.79865e-06, 1, 0, -2.34479e-08, 0, 1, -1.0547, -0.181641, 8.05959 )
+transform = Transform( 1, 0, 0, 1.79865e-006, 1, 0, -2.34479e-008, 0, 1, -1.0547, -0.181641, 8.05959 )
 mesh = ExtResource( 7 )
 material/0 = null
 

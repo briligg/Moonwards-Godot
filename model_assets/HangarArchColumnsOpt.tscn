@@ -7,7 +7,7 @@
 [node name="Scene" type="Spatial"]
 
 [node name="HangarArch_Large_LOD" type="MeshInstance" parent="."]
-transform = Transform( 0.999999, -0.00147265, -1.97863e-10, 0.00147265, 0.999999, -1.52791e-13, 1.97863e-10, -1.38591e-13, 1, -0.016181, -0.000189126, 0 )
+transform = Transform( 0.999999, -0.00147265, -1.97863e-010, 0.00147265, 0.999999, -1.52791e-013, 1.97863e-010, -1.38591e-013, 1, -0.016181, -0.000189126, 0 )
 mesh = ExtResource( 1 )
 material/0 = null
 material/1 = null
@@ -15,8 +15,7 @@ script = ExtResource( 2 )
 substitute = NodePath("../HangarArch_Large_Opt")
 
 [node name="HangarArch_Large_Opt" type="MeshInstance" parent="."]
-transform = Transform( 0.999999, -0.00147265, -1.97863e-10, 0.00147265, 0.999999, -1.52791e-13, 1.97863e-10, -1.38591e-13, 1, -0.016181, -0.000189126, 0 )
+transform = Transform( 0.999999, -0.00147265, -1.97863e-010, 0.00147265, 0.999999, -1.52791e-013, 1.97863e-010, -1.38591e-013, 1, -0.016181, -0.000189126, 0 )
 mesh = ExtResource( 3 )
 material/0 = null
 material/1 = null
-

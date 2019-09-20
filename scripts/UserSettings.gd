@@ -85,4 +85,3 @@ func _on_UsernameTextEdit_text_changed(new_text : String) -> void:
 func _on_UsernameTextEdit2_text_changed(new_text : String) -> void:
 	options.username = new_text
 	get_node(text_edit1).text = new_text
-

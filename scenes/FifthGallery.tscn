@@ -33,61 +33,61 @@ data = PoolVector3Array( -0.3872, -0.0865, -0.199, -0.2167, -0.3689, -0.1183, -0
 editor/display_folded = true
 
 [node name="OmniLight" type="OmniLight" parent="Lights"]
-transform = Transform( -0.889875, 4.89863e-07, -0.456204, -5.50485e-07, -1, 2.84217e-14, -0.456204, 2.51133e-07, 0.889875, -7.31822, -5.62975, -3.15042 )
+transform = Transform( -0.889875, 4.89863e-007, -0.456204, -5.50485e-007, -1, 2.84217e-014, -0.456204, 2.51133e-007, 0.889875, -7.31822, -5.62975, -3.15042 )
 shadow_enabled = true
 omni_range = 12.667
 
 [node name="OmniLight2" type="OmniLight" parent="Lights"]
-transform = Transform( -0.889875, 4.89862e-07, -0.456204, -5.50484e-07, -1, 1.42109e-14, -0.456204, 2.51133e-07, 0.889875, -24.416, -22.4403, -7.94061 )
+transform = Transform( -0.889875, 4.89862e-007, -0.456204, -5.50484e-007, -1, 1.42109e-014, -0.456204, 2.51133e-007, 0.889875, -24.416, -22.4403, -7.94061 )
 shadow_enabled = true
 omni_range = 12.667
 
 [node name="OmniLight3" type="OmniLight" parent="Lights"]
-transform = Transform( -0.889875, 4.89862e-07, -0.456204, -5.50484e-07, -1, 0, -0.456204, 2.51133e-07, 0.889875, -42.8702, -33.7731, -13.5256 )
+transform = Transform( -0.889875, 4.89862e-007, -0.456204, -5.50484e-007, -1, 0, -0.456204, 2.51133e-007, 0.889875, -42.8702, -33.7731, -13.5256 )
 shadow_enabled = true
 omni_range = 12.667
 
 [node name="OmniLight4" type="OmniLight" parent="Lights"]
-transform = Transform( -0.889875, 4.89861e-07, -0.456204, -5.50483e-07, -1, 1.42109e-14, -0.456204, 2.51132e-07, 0.889875, -21.7609, -8.32207, 8.28987 )
+transform = Transform( -0.889875, 4.89861e-007, -0.456204, -5.50483e-007, -1, 1.42109e-014, -0.456204, 2.51132e-007, 0.889875, -21.7609, -8.32207, 8.28987 )
 shadow_enabled = true
 omni_range = 7.9477
 
 [node name="OmniLight5" type="OmniLight" parent="Lights"]
-transform = Transform( -0.889875, 4.8986e-07, -0.456204, -5.50482e-07, -1, 1.42109e-14, -0.456204, 2.51132e-07, 0.889875, -22.0564, -18.9124, -24.1755 )
+transform = Transform( -0.889875, 4.8986e-007, -0.456204, -5.50482e-007, -1, 1.42109e-014, -0.456204, 2.51132e-007, 0.889875, -22.0564, -18.9124, -24.1755 )
 shadow_enabled = true
 omni_range = 7.9477
 
 [node name="OmniLight6" type="OmniLight" parent="Lights"]
-transform = Transform( -0.889875, 4.89859e-07, -0.456204, -5.50481e-07, -1, 0, -0.456204, 2.51132e-07, 0.889875, -48.4711, -40.6022, -33.5609 )
+transform = Transform( -0.889875, 4.89859e-007, -0.456204, -5.50481e-007, -1, 0, -0.456204, 2.51132e-007, 0.889875, -48.4711, -40.6022, -33.5609 )
 shadow_enabled = true
 omni_range = 9.9468
 
 [node name="OmniLight7" type="OmniLight" parent="Lights"]
-transform = Transform( -0.889875, 4.89858e-07, -0.456204, -5.5048e-07, -1, 1.42109e-14, -0.456204, 2.51131e-07, 0.889875, -56.2236, -47.4303, -22.1084 )
+transform = Transform( -0.889875, 4.89858e-007, -0.456204, -5.5048e-007, -1, 1.42109e-014, -0.456204, 2.51131e-007, 0.889875, -56.2236, -47.4303, -22.1084 )
 shadow_enabled = true
 omni_range = 9.9468
 
 [node name="Empty_TubeHab_Long001" type="Spatial" parent="."]
 editor/display_folded = true
-transform = Transform( 1.43664, -6.16066e-07, -0.445045, 6.4495e-07, 1.504, -4.27463e-14, 0.445045, -1.90846e-07, 1.43664, -24.0239, -20.8384, -20.0154 )
+transform = Transform( 1.43664, -6.16066e-007, -0.445045, 6.4495e-007, 1.504, -4.27463e-014, 0.445045, -1.90846e-007, 1.43664, -24.0239, -20.8384, -20.0154 )
 
 [node name="Scene" parent="Empty_TubeHab_Long001" instance=ExtResource( 1 )]
-transform = Transform( 1, 3.55271e-14, 5.96046e-08, 1.06581e-14, 1, 0, -5.96046e-08, 2.84217e-14, 1, 0, 0, 0 )
+transform = Transform( 1, 3.55271e-014, 5.96046e-008, 1.06581e-014, 1, 0, -5.96046e-008, 2.84217e-014, 1, 0, 0, 0 )
 
 [node name="Empty_TubeHab_Long002" type="Spatial" parent="."]
 editor/display_folded = true
-transform = Transform( 1.59044, -6.82015e-07, -0.492688, 7.13991e-07, 1.665, -4.73222e-14, 0.492688, -2.11276e-07, 1.59044, -51.0923, -42.7013, -27.2598 )
+transform = Transform( 1.59044, -6.82015e-007, -0.492688, 7.13991e-007, 1.665, -4.73222e-014, 0.492688, -2.11276e-007, 1.59044, -51.0923, -42.7013, -27.2598 )
 
 [node name="Scene" parent="Empty_TubeHab_Long002" instance=ExtResource( 1 )]
 
 [node name="Empty_TubeHab_Long003" type="Spatial" parent="."]
 editor/display_folded = true
-transform = Transform( 1.35804, -5.50492e-07, -0.646339, 6.0966e-07, 1.504, -6.41194e-14, 0.646339, -2.61999e-07, 1.35804, -25.001, -10.3329, 13.7329 )
+transform = Transform( 1.35804, -5.50492e-007, -0.646339, 6.0966e-007, 1.504, -6.41194e-014, 0.646339, -2.61999e-007, 1.35804, -25.001, -10.3329, 13.7329 )
 
 [node name="Scene" parent="Empty_TubeHab_Long003" instance=ExtResource( 1 )]
 
 [node name="TubeHab-Cap009" type="MeshInstance" parent="."]
-transform = Transform( 0.140318, -2.1033e-08, 0.0664742, 8.64375e-08, 0.155268, 2.94813e-08, 0.0664741, -1.03634e-08, -0.140318, -26.5528, -10.1216, 18.1956 )
+transform = Transform( 0.140318, -2.1033e-008, 0.0664742, 8.64375e-008, 0.155268, 2.94813e-008, 0.0664741, -1.03634e-008, -0.140318, -26.5528, -10.1216, 18.1956 )
 mesh = ExtResource( 2 )
 material/0 = null
 
@@ -100,12 +100,12 @@ material/1 = null
 [node name="GalleryRoof-Middle-Beams" type="MeshInstance" parent="." groups=[
 "interior",
 ]]
-transform = Transform( 0.949971, 0, -0.312335, 4.26469e-07, 1, -1.40216e-07, 0.312335, 0, 0.949971, -46.8286, -35.2793, -15.4189 )
+transform = Transform( 0.949971, 0, -0.312335, 4.26469e-007, 1, -1.40216e-007, 0.312335, 0, 0.949971, -46.8286, -35.2793, -15.4189 )
 mesh = ExtResource( 4 )
 material/0 = null
 
 [node name="GalleryRoof-Middle" type="MeshInstance" parent="."]
-transform = Transform( 0.949971, 0, -0.312335, 4.26469e-07, 1, -1.40216e-07, 0.312335, 0, 0.949971, -46.8286, -35.2793, -15.4189 )
+transform = Transform( 0.949971, 0, -0.312335, 4.26469e-007, 1, -1.40216e-007, 0.312335, 0, 0.949971, -46.8286, -35.2793, -15.4189 )
 mesh = ExtResource( 5 )
 material/0 = null
 material/1 = null
@@ -113,12 +113,12 @@ material/1 = null
 [node name="GalleryRoof-Top-Beams" type="MeshInstance" parent="." groups=[
 "interior",
 ]]
-transform = Transform( 0.123496, 0, -0.0406053, 5.54407e-08, 0.13, -1.82289e-08, 0.0406053, 0, 0.123496, -18.2988, -10.0038, -6.0476 )
+transform = Transform( 0.123496, 0, -0.0406053, 5.54407e-008, 0.13, -1.82289e-008, 0.0406053, 0, 0.123496, -18.2988, -10.0038, -6.0476 )
 mesh = ExtResource( 6 )
 material/0 = null
 
 [node name="GalleryRoof-Top" type="MeshInstance" parent="."]
-transform = Transform( 0.949971, 0, -0.312335, 4.26469e-07, 1, -1.40216e-07, 0.312335, 0, 0.949971, -18.2988, -10.0038, -6.0476 )
+transform = Transform( 0.949971, 0, -0.312335, 4.26469e-007, 1, -1.40216e-007, 0.312335, 0, 0.949971, -18.2988, -10.0038, -6.0476 )
 mesh = ExtResource( 7 )
 material/0 = null
 material/1 = null
@@ -139,23 +139,23 @@ shape = SubResource( 2 )
 
 [node name="FifthGalleryWalls_Opt" type="MeshInstance" parent="."]
 editor/display_folded = true
-transform = Transform( 1, -2.24464e-07, 1.49012e-08, 2.24464e-07, 1, 1.67239e-15, -1.49012e-08, 1.67239e-15, 1, -21.168, -8.31604, 5.84962 )
+transform = Transform( 1, -2.24464e-007, 1.49012e-008, 2.24464e-007, 1, 1.67239e-015, -1.49012e-008, 1.67239e-015, 1, -21.168, -8.31604, 5.84962 )
 mesh = ExtResource( 9 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="FifthGalleryWalls_Opt"]
 
 [node name="CollisionShape" type="CollisionShape" parent="FifthGalleryWalls_Opt/StaticBody"]
-transform = Transform( 1, -2.49206e-23, 0, -2.49207e-23, 1, 0, 0, 0, 1, -4.51093, -12.3236, -19.1587 )
+transform = Transform( 1, -2.49206e-023, 0, -2.49207e-023, 1, 0, 0, 0, 1, -4.51093, -12.3236, -19.1587 )
 shape = SubResource( 3 )
 
 [node name="FifthGalleryFloor_Opt" type="MeshInstance" parent="."]
-transform = Transform( -0.889875, 4.15243e-07, -0.456204, -3.89414e-07, -1, -1.50618e-07, -0.456204, 4.36208e-08, 0.889875, -24.8345, -23.9004, -8.15771 )
+transform = Transform( -0.889875, 4.15243e-007, -0.456204, -3.89414e-007, -1, -1.50618e-007, -0.456204, 4.36208e-008, 0.889875, -24.8345, -23.9004, -8.15771 )
 mesh = ExtResource( 10 )
 material/0 = null
 
 [node name="TubeHab-Entrance-Bottom" type="MeshInstance" parent="."]
-transform = Transform( 0.1, -2.24464e-08, 1.49012e-09, 2.24464e-08, 0.1, 0, -1.49012e-09, 0, 0.1, -52.1011, -42.4702, -22.062 )
+transform = Transform( 0.1, -2.24464e-008, 1.49012e-009, 2.24464e-008, 0.1, 0, -1.49012e-009, 0, 0.1, -52.1011, -42.4702, -22.062 )
 mesh = ExtResource( 11 )
 material/0 = null
 
@@ -170,12 +170,11 @@ material/0 = null
 shape = SubResource( 4 )
 
 [node name="TubeHab-Entrance-Top" type="MeshInstance" parent="."]
-transform = Transform( 0.951229, -2.25415e-07, -0.308486, 2.03549e-07, 1, -1.03063e-07, 0.308486, 3.5245e-08, 0.951229, -17.0684, -10.1267, -1.30883 )
+transform = Transform( 0.951229, -2.25415e-007, -0.308486, 2.03549e-007, 1, -1.03063e-007, 0.308486, 3.5245e-008, 0.951229, -17.0684, -10.1267, -1.30883 )
 mesh = ExtResource( 13 )
 material/0 = null
 
 [node name="TubeHab-Entrance-Middle" type="MeshInstance" parent="."]
-transform = Transform( 0.951229, -2.25415e-07, -0.308486, 2.03549e-07, 1, -1.03063e-07, 0.308486, 3.5245e-08, 0.951229, -25.6772, -20.6293, -13.3135 )
+transform = Transform( 0.951229, -2.25415e-007, -0.308486, 2.03549e-007, 1, -1.03063e-007, 0.308486, 3.5245e-008, 0.951229, -25.6772, -20.6293, -13.3135 )
 mesh = ExtResource( 14 )
 material/0 = null
-

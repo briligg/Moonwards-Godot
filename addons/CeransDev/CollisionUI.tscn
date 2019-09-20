@@ -2,703 +2,212 @@
 
 [ext_resource path="res://addons/CeransDev/CollisionUI.gd" type="Script" id=1]
 
-[node name="Dev" type="Control" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="Dev" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 script = ExtResource( 1 )
 
-[node name="CenterContainer" type="CenterContainer" parent="." index="0"]
-
+[node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_left = 0.5
-anchor_top = 0.0
 anchor_right = 0.5
-anchor_bottom = 0.0
 margin_left = -82.0
 margin_right = 127.0
 margin_bottom = 290.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-use_top_left = false
 
-[node name="VSplitContainer2" type="VSplitContainer" parent="CenterContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="VSplitContainer2" type="VSplitContainer" parent="CenterContainer"]
 margin_left = 23.0
 margin_right = 186.0
 margin_bottom = 384.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-split_offset = 0
-collapsed = false
-dragger_visibility = 0
 
-[node name="VSplitContainer" type="VSplitContainer" parent="CenterContainer/VSplitContainer2" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="VSplitContainer" type="VSplitContainer" parent="CenterContainer/VSplitContainer2"]
 margin_right = 163.0
 margin_bottom = 384.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-split_offset = 0
-collapsed = false
-dragger_visibility = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VSplitContainer2/VSplitContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VSplitContainer2/VSplitContainer"]
 margin_right = 163.0
 margin_bottom = 310.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Label" type="Label" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
 margin_right = 163.0
 margin_bottom = 14.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Collision Management"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Create" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer" index="1"]
-
+[node name="Create" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 18.0
 margin_right = 166.0
 margin_bottom = 38.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Create for selected only"
-flat = false
-align = 1
 
-[node name="Createall" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer" index="2"]
-
+[node name="Createall" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 18.0
 margin_right = 166.0
 margin_bottom = 38.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Create collisions for all "
-flat = false
-align = 1
 
-[node name="LG_scale" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LG_scale" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
 margin_top = 18.0
 margin_right = 163.0
 margin_bottom = 38.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Light Scale Down/Up"
-flat = false
-align = 1
 
-[node name="BL_scale" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="BL_scale" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
 margin_top = 42.0
 margin_right = 163.0
 margin_bottom = 62.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Baklight BBox scale"
-flat = false
-align = 1
 
-[node name="BL_save" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="BL_save" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
 margin_top = 66.0
 margin_right = 163.0
 margin_bottom = 86.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Save BakedLight Data"
-flat = false
-align = 1
 
-[node name="ListGrp" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer" index="6"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ListGrp" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
 margin_top = 90.0
 margin_right = 163.0
 margin_bottom = 110.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 hint_tooltip = "print statistics about grous in scenes, so as overall groups"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "List Groups"
-flat = false
-align = 1
 
-[node name="CS_list" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer" index="7"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="CS_list" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
 margin_top = 114.0
 margin_right = 163.0
 margin_bottom = 134.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "List Collision shapes"
-flat = false
-align = 1
 
-[node name="CS_make" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer" index="8"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="CS_make" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
 margin_top = 138.0
 margin_right = 163.0
 margin_bottom = 158.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Make Collision shapes"
-flat = false
-align = 1
 
-[node name="CS_delete" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer" index="9"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="CS_delete" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
 margin_top = 162.0
 margin_right = 163.0
 margin_bottom = 182.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Delete Collision shapes"
-flat = false
-align = 1
 
-[node name="CS_save" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer" index="10"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="CS_save" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
 margin_top = 186.0
 margin_right = 163.0
 margin_bottom = 206.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Save Collision shapes"
-flat = false
-align = 1
 
-[node name="opt_selected" type="CheckBox" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer" index="11"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="opt_selected" type="CheckBox" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
 margin_top = 210.0
 margin_right = 163.0
 margin_bottom = 234.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 hint_tooltip = "apply action only to selected objects"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Only Selected"
-flat = false
-align = 0
 
-[node name="opt_recurent" type="CheckBox" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer" index="12"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="opt_recurent" type="CheckBox" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
 margin_top = 238.0
 margin_right = 163.0
 margin_bottom = 262.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 hint_tooltip = "apply action to onle current scene or to all child scenes"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "All sub scenes"
-flat = false
-align = 0
 
-[node name="FX_Mat" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer" index="13"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="FX_Mat" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
 margin_top = 266.0
 margin_right = 163.0
 margin_bottom = 286.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Fix materials"
-flat = false
-align = 1
 
-[node name="MH_Save" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer" index="14"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="MH_Save" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
 margin_top = 290.0
 margin_right = 163.0
 margin_bottom = 310.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Save Mesh"
-flat = false
-align = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/VSplitContainer2/VSplitContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/VSplitContainer2/VSplitContainer"]
 margin_top = 322.0
 margin_right = 163.0
 margin_bottom = 384.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Label2" type="Label" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer2" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label2" type="Label" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer2"]
 margin_right = 163.0
 margin_bottom = 14.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Danger zone"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Delete" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer2" index="1"]
-
+[node name="Delete" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer2"]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 18.0
 margin_right = 166.0
 margin_bottom = 38.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Delete for selected only"
-flat = false
-align = 1
 
-[node name="Deleteall" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer2" index="2"]
-
+[node name="Deleteall" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer2"]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 42.0
 margin_right = 166.0
 margin_bottom = 62.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Delete collisions for all "
-flat = false
-align = 1
 
-[node name="Tree" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer2" index="3"]
-
+[node name="Tree" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer2"]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 66.0
 margin_right = 166.0
 margin_bottom = 86.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Print all tree"
-flat = false
-align = 1
 
-[node name="Reload" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer2" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Reload" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer2"]
 margin_top = 18.0
 margin_right = 163.0
 margin_bottom = 38.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 hint_tooltip = "Reload scripts"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Reload"
-flat = false
-align = 1
 
-[node name="Run" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer2" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Run" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer2"]
 margin_top = 42.0
 margin_right = 163.0
 margin_bottom = 62.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 hint_tooltip = "run test function"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Test run"
-flat = false
-align = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VSplitContainer2" index="1"]
-
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VSplitContainer2"]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 172.0
 margin_right = 166.0
 margin_bottom = 290.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Label" type="Label" parent="CenterContainer/VSplitContainer2/VBoxContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="CenterContainer/VSplitContainer2/VBoxContainer"]
 margin_right = 166.0
 margin_bottom = 14.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Plugin Output"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Panel" type="Panel" parent="CenterContainer/VSplitContainer2/VBoxContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Panel" type="Panel" parent="CenterContainer/VSplitContainer2/VBoxContainer"]
 margin_top = 18.0
 margin_right = 166.0
 margin_bottom = 118.0
 rect_min_size = Vector2( 100, 100 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/VSplitContainer2/VBoxContainer/Panel" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/VSplitContainer2/VBoxContainer/Panel"]
 margin_top = 4.0
 margin_right = 166.0
 margin_bottom = 104.0
 rect_min_size = Vector2( 100, 100 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-bbcode_enabled = false
-bbcode_text = ""
-visible_characters = -1
-percent_visible = 1.0
-meta_underlined = true
-tab_size = 4
 text = "
 "
-scroll_active = true
-scroll_following = false
-selection_enabled = false
-override_selected_font_color = false
 
-[node name="WindowDialog" type="WindowDialog" parent="." index="1"]
-
-visible = false
+[node name="WindowDialog" type="WindowDialog" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -707,42 +216,18 @@ margin_left = -60.0
 margin_top = -20.0
 margin_right = 60.0
 margin_bottom = 20.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-popup_exclusive = false
 window_title = "Click!"
-resizable = false
-
 [connection signal="pressed" from="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer/Create" to="." method="_on_Create_pressed"]
-
 [connection signal="pressed" from="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer/LG_scale" to="." method="_on_LG_scale_pressed"]
-
 [connection signal="pressed" from="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer/BL_scale" to="." method="_on_BL_scale_pressed"]
-
 [connection signal="pressed" from="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer/BL_save" to="." method="_on_BL_save_pressed"]
-
 [connection signal="pressed" from="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer/ListGrp" to="." method="_on_ListGrp_pressed"]
-
 [connection signal="pressed" from="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer/CS_list" to="." method="_on_CS_list_pressed"]
-
 [connection signal="pressed" from="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer/CS_make" to="." method="_on_CS_make_pressed"]
-
 [connection signal="pressed" from="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer/CS_delete" to="." method="_on_CS_delete_pressed"]
-
 [connection signal="pressed" from="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer/CS_save" to="." method="_on_CS_save_pressed"]
-
 [connection signal="toggled" from="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer/FX_Mat" to="." method="_on_FX_Mat_toggled"]
-
 [connection signal="toggled" from="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer/MH_Save" to="." method="_on_MH_Save_toggled"]
-
 [connection signal="pressed" from="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer2/Tree" to="." method="_on_Tree_pressed"]
-
 [connection signal="pressed" from="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer2/Reload" to="." method="_on_Reload_pressed"]
-
 [connection signal="pressed" from="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer2/Run" to="." method="_on_Run_pressed"]
-
-
