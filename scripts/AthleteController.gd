@@ -8,6 +8,13 @@ const MAX_DOWN_AIM_ANGLE : float = 55.0
 const MOUSE_SENSITIVITY : float = 0.10
 const TURN_SPEED : float = 5.0
 
+onready var camera_position : Node = $KinematicBody/CameraPivot/CameraPosition
+onready var camera : Node = $Camera
+onready var animation_tree : Node = $AnimationTree
+onready var model : Node = $KinematicBody/Scene
+onready var kinematic_body : Node = $KinematicBody
+onready var camera_pivot : Node = $KinematicBody/CameraPivot
+
 var _movement_force : Vector3 = Vector3()
 var _jump_force : Vector3 = Vector3()
 var _look_direction : Vector2 = Vector2()
@@ -19,13 +26,13 @@ func _ready() -> void:
 	_movement_direction = global_transform.basis.z
 
 func _physics_process(delta : float) -> void:
-	var target_transform = $KinematicBody/CameraPivot/CameraPosition.global_transform
-	$Camera.global_transform = $Camera.global_transform.interpolate_with(target_transform, delta * CAMERA_SPEED)
+	var target_transform = camera_position.global_transform
+	camera.global_transform = camera.global_transform.interpolate_with(target_transform, delta * CAMERA_SPEED)
 	
 	var _movement_direction = Vector3()
-	var forward_direction = -$Camera.global_transform.basis.z
+	var forward_direction = -camera.global_transform.basis.z
 	forward_direction.y = 0.0
-	var right_direction = $Camera.global_transform.basis.x
+	var right_direction = camera.global_transform.basis.x
 	right_direction.y = 0.0
 	
 	if Input.is_action_pressed("move_forwards"):
@@ -45,21 +52,20 @@ func _physics_process(delta : float) -> void:
 	else:
 		_movement_force += _movement_direction
 	
-	if Input.is_action_just_pressed("jump") and $KinematicBody.is_on_wall():
+	if Input.is_action_just_pressed("jump") and kinematic_body.is_on_wall():
 		_jump_force = Vector3(0.0, 150.0, 0.0)
-		$AnimationTree.set("parameters/Transition/current", "Jump")
+		animation_tree.set("parameters/Transition/current", "Jump")
 	
 	var movement_velocity = _movement_force * MOVEMENT_SPEED * delta
 	var jump_velocity = _jump_force * delta
 	var gravity_velocity = Vector3(0.0, -1.62, 0.0)
-	$KinematicBody.move_and_slide(movement_velocity + jump_velocity + gravity_velocity)
+	kinematic_body.move_and_slide(movement_velocity + jump_velocity + gravity_velocity)
 	
 	_movement_force *= 0.95
 	_jump_force *= 0.95
 	
-	$KinematicBody/CameraPivot.rotation_degrees = Vector3(_look_direction.y, _look_direction.x, 0)
+	camera_pivot.rotation_degrees = Vector3(_look_direction.y, _look_direction.x, 0)
 	
-	var model = $KinematicBody/Scene
 	if _movement_force.length() > 0.2:
 		var flat_force = _movement_force
 		flat_force.y = 0.0
@@ -71,12 +77,12 @@ func _physics_process(delta : float) -> void:
 
 func _input(event : InputEvent) -> void:
 	if event.is_action_pressed("scroll_up"):
-		$KinematicBody/CameraPivot/CameraPosition.translation.z -= 1.0
-		if $KinematicBody/CameraPivot/CameraPosition.translation.z < 0.0:
-			$KinematicBody/CameraPivot/CameraPosition.translation.z = 0.0
+		camera_position.translation.z -= 1.0
+		if camera_position.translation.z < 0.0:
+			camera_position.translation.z = 0.0
 	
 	if event.is_action_pressed("scroll_down"):
-		$KinematicBody/CameraPivot/CameraPosition.translation.z += 1.0
+		camera_position.translation.z += 1.0
 	
 	if (event is InputEventMouseMotion):
 		_look_direction.x -= event.relative.x * MOUSE_SENSITIVITY
