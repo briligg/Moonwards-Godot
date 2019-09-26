@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://scripts/media_mode_camera.gd" type="Script" id=1]
+[ext_resource path="res://assets/Player/MediaModeCamera/media_mode_camera.gd" type="Script" id=1]
 
 [node name="MediaModeCamera" type="Camera"]
 keep_aspect = 0

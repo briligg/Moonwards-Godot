@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/maujoe.camera_control/scripts/camera_control.gd" type="Script" id=1]
+
+[node name="FlyCamera" type="Camera"]
+transform = Transform( -0.997314, 0, 0.0732408, 0, 1, 0, -0.0732408, 0, -0.997314, 0, 0, 0 )
+far = 20000.0
+script = ExtResource( 1 )
+max_speed = Vector3( 10, 10, 10 )

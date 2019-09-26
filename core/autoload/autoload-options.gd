@@ -94,8 +94,8 @@ var scenes : Dictionary = {
 }
 
 var fly_cameras : Array = [
-	{ "label" : "Fly Camera", 	"path" : "res://assets/Player/flycamera/player.tscn"},
-	{ "label" : "Media Camera", "path" : "res://assets/Player/flycamera_ac/player.tscn" }
+	{ "label" : "Fly Camera", 	"path" : "res://assets/Player/flycamera/FlyCamera.tscn"},
+	{ "label" : "Media Camera", "path" : "res://assets/Player/MediaModeCamera/media_mode_camera.tscn" }
 ]
 
 #############################

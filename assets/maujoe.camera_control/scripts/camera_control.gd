@@ -52,7 +52,8 @@ var _total_pitch : float = 0.0
 var _direction : Vector3 = Vector3(0.0, 0.0, 0.0)
 var _speed : Vector3 = Vector3(0.0, 0.0, 0.0)
 var _gui 
-
+var _camera setget set_camera, get_camera
+var _current setget set_current, get_current
 
 func _ready() -> void:
 
@@ -69,6 +70,19 @@ func _ready() -> void:
 		_gui = preload("camera_control_gui.gd")
 		_gui = _gui.new(self, gui_action)
 		add_child(_gui)
+
+func set_camera(value):
+	#idk probably needs replacing and stuff, no need it that atm
+	pass
+
+func get_camera():
+	return self
+
+func set_current(value):
+	get_camera().current = value
+
+func get_current():
+	return get_camera().current
 
 func _input(event : InputEvent) -> void:
 	if event.is_action_pressed(ui_mlook):
