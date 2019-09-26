@@ -2,7 +2,8 @@
 
 [ext_resource path="res://world_environments/NASA-Goddard-SVS-starmap-LevelledDesat-8k.jpg" type="Texture" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://assets/Player/athlete_rover/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/Player/athlete_rover/AthleteRover.tscn" type="PackedScene" id=3]
+
 
 [sub_resource type="PanoramaSky" id=1]
 radiance_size = 0
