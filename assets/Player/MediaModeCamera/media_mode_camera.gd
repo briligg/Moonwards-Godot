@@ -10,21 +10,6 @@ var velocity : Vector3 = Vector3()
 var look_velocity : Vector3 = Vector3()
 var mouse_down : bool = false
 var movement_acceleration : float = 0.2
-var _camera setget set_camera, get_camera
-var _current setget set_current, get_current
-
-func set_camera(value):
-	#idk probably needs replacing and stuff, no need it that atm
-	pass
-
-func get_camera():
-	return self
-
-func set_current(value):
-	get_camera().current = value
-
-func get_current():
-	return get_camera().current
 
 func _process(delta : float) -> void:
 	if not UIManager.has_ui:
