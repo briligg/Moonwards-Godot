@@ -111,19 +111,21 @@ func bind_signal(_signal : String, method : String, obj : Object, obj2 : Object,
 	# toggles connect and disconnect signal. 
 		if obj.is_connected(_signal, obj2, method):
 			obj.disconnect(_signal, obj2, method)
-			emit_signal("gamestate_log", "disconnect signal %s, from %s to %s::%s" % [_signal, obj, obj2, method])
+			emit_signal("gamestate_log", "disconnect signal", _signal," from ", str(obj)," to ", str(obj2), "::", method)
 		else:
 			obj.connect(_signal, obj2, method)
-			emit_signal("gamestate_log", "connect signal %s, from %s to %s::%s" % [_signal, obj, obj2, method])
+			emit_signal("gamestate_log", "connect signal", _signal," from ", str(obj)," to ", str(obj2), "::", method)
 	elif mode == MODE.CONNECT : #connect
 		if not obj.is_connected(_signal, obj2, method):
 			obj.connect(_signal, obj2, method)
+		else:
+			emit_signal("gamestate_log", "tried to connect already connected signal", _signal," from ", str(obj)," to ", str(obj2), "::", method)
 	elif mode == MODE.DISCONNECT : #disconnect
 		if obj.is_connected(_signal, obj2, method):
 			obj.disconnect(_signal, obj2, method)
-			emit_signal("gamestate_log", "disconnect signal %s, from %s to %s::%s" % [_signal, obj, obj2, method])
+			emit_signal("gamestate_log", "disconnect signal", _signal," from ", str(obj)," to ", str(obj2), "::", method)
 		else:
-			emit_signal("gamestate_log", "tried to disconnect a disconnected signal %s, from %s to %s::%s" % [_signal, obj, obj2, method])
+			emit_signal("gamestate_log", "tried to disconnect a disconnected signal", _signal," from ", str(obj)," to ", str(obj2), "::", method)
 
 
 #################
@@ -211,18 +213,7 @@ func queue_attach_on_tree_change():
 #################
 # signal logging functions
 
-func _on_network_log(msg):
-	printd("Server log: %s" % msg)
 
-func _on_gamestate_log(msg):
-	printd("gamestate log: %s" % msg)
-
-func _on_scene_change_log():
-	printd("===gs on_scene_change")
-	printd("get_tree: %s" % get_tree())
-	if get_tree():
-		if get_tree().current_scene :
-			printd("current scene: %s" % get_tree().current_scene)
 
 
 #################
@@ -362,19 +353,7 @@ func server_tree_user_disconnected(id):
 #Client functions
 
 
-func _on_connection_failed():
-	emit_signal("gamestate_log", "client connection failed to %s(%s):%s" % [player_get("host"), player_get("ip"), player_get("port")])
-	bind_signal("connection_failed", '', get_tree(), self, MODE.DISCONNECT)
-	bind_signal("connected_to_server", '', get_tree(), self, MODE.DISCONNECT)
-	RoleClient = false
-	emit_signal("network_error", "Error connecting to server %s(%s):%s" % [player_get("host"), player_get("ip"), player_get("port")])
 
-func _on_connected_to_server():
-	emit_signal("gamestate_log", "client connected to %s(%s):%s" % [player_get("host"), player_get("ip"), player_get("port")])
-	bind_signal("connection_failed", '', get_tree(), self, MODE.DISCONNECT)
-	bind_signal("connected_to_server", '', get_tree(), self, MODE.DISCONNECT)
-	RoleClient = true
-	emit_signal("server_connected")
 
 func client_server_connect(host, port=DEFAULT_PORT):
 	if RoleClient :
@@ -429,21 +408,6 @@ func change_scene(scene):
 	else:
 		emit_signal("gamestate_log", "error changing scene %s" % error)
 
-func _on_player_scene():
-	emit_signal("gamestate_log", "scene is player ready, checking players(%s)" % players.size())
-	if options.debug:
-		for p in players:
-			emit_signal("gamestate_log", "player %s" % players[p])
-	for p in players:
-		create_player(p)
-	
-	#The ChatUI should only be added when there is networking going on.
-	if RoleClient or RoleServer:
-		add_chat_ui()
-	
-	if RoleClient:
-		#report client to server
-		rpc_id(1, "register_client", network_id, players[local_id].data)
 
 
 func is_player_scene():
@@ -499,12 +463,6 @@ func player_register(pdata, localplayer=false, opt_id = "avatar"):
 		create_player(id)
 
 #local player recieved network id
-func _on_player_id(id):
-	if not players.has(local_id):
-		return
-	player_remap_id(local_id, id)
-	local_id = id
-	#scene is not active yet, payers are redistered after scene is changes sucessefully
 
 remote func register_client(id, pdata):
 	printd("remote register_client, local_id(%s): %s %s" % [local_id, id, pdata])
@@ -624,14 +582,6 @@ func player_noinput(enable = false):
 		players[local_id].obj.input_processing = enable
 
 # Callback from SceneTree, only for clients (not server)
-func _server_disconnected():
-	emit_signal("game_error", "Server disconnected")
-	end_game()
-
-# Callback from SceneTree, only for clients (not server)
-func _connected_fail():
-	get_tree().set_network_peer(null) # Remove peer
-	emit_signal("connection_failed")
 
 # Lobby management functions
 
@@ -737,3 +687,64 @@ func add_chat_ui():
 	if not is_instance_valid(chat_ui):
 		chat_ui = chat_ui_resource.instance()
 		get_tree().root.add_child(chat_ui)
+
+func _on_player_scene():
+	emit_signal("gamestate_log", "scene is player ready, checking players(%s)" % players.size())
+	if options.debug:
+		for p in players:
+			emit_signal("gamestate_log", "player %s" % players[p])
+	for p in players:
+		create_player(p)
+	
+	#The ChatUI should only be added when there is networking going on.
+	if RoleClient or RoleServer:
+		add_chat_ui()
+	
+	if RoleClient:
+		#report client to server
+		rpc_id(1, "register_client", network_id, players[local_id].data)
+
+
+func _on_player_id(id):
+	if not players.has(local_id):
+		return
+	player_remap_id(local_id, id)
+	local_id = id
+	#scene is not active yet, payers are redistered after scene is changes sucessefully
+
+
+func _server_disconnected():
+	emit_signal("game_error", "Server disconnected")
+	end_game()
+
+# Callback from SceneTree, only for clients (not server)
+func _connected_fail():
+	get_tree().set_network_peer(null) # Remove peer
+	emit_signal("connection_failed")
+
+func _on_connection_failed():
+	emit_signal("gamestate_log", "client connection failed to %s(%s):%s" % [player_get("host"), player_get("ip"), player_get("port")])
+	bind_signal("connection_failed", '', get_tree(), self, MODE.DISCONNECT)
+	bind_signal("connected_to_server", '', get_tree(), self, MODE.DISCONNECT)
+	RoleClient = false
+	emit_signal("network_error", "Error connecting to server %s(%s):%s" % [player_get("host"), player_get("ip"), player_get("port")])
+
+func _on_connected_to_server():
+	emit_signal("gamestate_log", "client connected to %s(%s):%s" % [player_get("host"), player_get("ip"), player_get("port")])
+	bind_signal("connection_failed", '', get_tree(), self, MODE.DISCONNECT)
+	bind_signal("connected_to_server", '', get_tree(), self, MODE.DISCONNECT)
+	RoleClient = true
+	emit_signal("server_connected")
+
+func _on_network_log(msg):
+	printd("Server log: %s" % msg)
+
+func _on_gamestate_log(msg):
+	printd("gamestate log: %s" % msg)
+
+func _on_scene_change_log():
+	printd("===gs on_scene_change")
+	printd("get_tree: %s" % get_tree())
+	if get_tree():
+		if get_tree().current_scene :
+			printd("current scene: %s" % get_tree().current_scene)
