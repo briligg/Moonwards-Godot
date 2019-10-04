@@ -107,19 +107,21 @@ func _ready():
 func bind_signal(_signal : String, method : String, obj : Object, obj2 : Object, mode : int = 0) -> void:
 	if method == '':
 		method = str("_on_", _signal)
-	if mode == MODE.TOGGLE: 
-	# toggles connect and disconnect signal. 
+		
+	if mode == MODE.TOGGLE:  
 		if obj.is_connected(_signal, obj2, method):
 			obj.disconnect(_signal, obj2, method)
 			emit_signal("gamestate_log", "disconnect signal", _signal," from ", str(obj)," to ", str(obj2), "::", method)
 		else:
 			obj.connect(_signal, obj2, method)
 			emit_signal("gamestate_log", "connect signal", _signal," from ", str(obj)," to ", str(obj2), "::", method)
+	
 	elif mode == MODE.CONNECT : #connect
 		if not obj.is_connected(_signal, obj2, method):
 			obj.connect(_signal, obj2, method)
 		else:
 			emit_signal("gamestate_log", "tried to connect already connected signal", _signal," from ", str(obj)," to ", str(obj2), "::", method)
+	
 	elif mode == MODE.DISCONNECT : #disconnect
 		if obj.is_connected(_signal, obj2, method):
 			obj.disconnect(_signal, obj2, method)
@@ -132,14 +134,14 @@ func bind_signal(_signal : String, method : String, obj : Object, obj2 : Object,
 #Track scene changes and add nodes or emit signals functions
 
 
-func queue_attach(path, node, permanent = false):
-	emit_signal("gamestate_log", "attach queue(permanent %s): %s(%s)" % [permanent, path, node])
+func queue_attach(path, node, permanent : bool = false) -> void:
+	emit_signal("gamestate_log", str("attach queue(permanent: ", str(permanent),"): ", path, "(", node, ")")) 
 	var packedscene
 	if node.get_class() == "String":
 		packedscene = ResourceLoader.load(node)
-		emit_signal("gamestate_log", "loading resource in queue_attach(%s, %s, %s)" % [path, node, permanent])
+		emit_signal("gamestate_log", str("loading resource in queue_attach(", path, ", ", node, ", ", permanent,")"))
 		if not packedscene:
-			emit_signal("gamestate_log", "error loading resource in queue_attach(%s, %s, %s)" % [path, node, permanent])
+			emit_signal("gamestate_log", str("error loading resource in queue_attach(", path, ", ", node, ", ", permanent,")"))
 			return
 	if not packedscene:
 		packedscene = node
@@ -150,133 +152,44 @@ func queue_attach(path, node, permanent = false):
 			packedscene = packedscene
 		}
 	print("+++", _queue_attach[path].packedscene)
-	if not get_tree().is_connected("tree_changed", self, "queue_attach_on_tree_change") :
-		get_tree().connect("tree_changed", self, "queue_attach_on_tree_change")
+	bind_signal("tree_changed","_on_queue_attach_on_tree_change", get_tree(), self, MODE.CONNECT) 
 
-func queue_tree_signal(path, sig, permanent = false):
-	emit_signal("gamestate_log", "signal queue(permanent %s): %s(%s)" % [permanent, path, sig])
+func queue_tree_signal(path, signal_, permanent = false):
+	emit_signal("gamestate_log", "signal queue(permanent %s): %s(%s)" % [permanent, path, signal_])
 	_queue_attach[path] = {
 			path = path,
 			permanent = permanent,
-			signal = sig,
+			signal = signal_,
 		}
-	if not get_tree().is_connected("tree_changed", self, "queue_attach_on_tree_change") :
-		get_tree().connect("tree_changed", self, "queue_attach_on_tree_change")
-	
-
-
-func queue_attach_on_tree_change():
-	if _queue_attach_on_tree_change_lock:
-		return
-	if get_tree():
-		if _queue_attach_on_tree_change_prev_scene != str(get_tree().current_scene):
-			_queue_attach_on_tree_change_prev_scene = str(get_tree().current_scene)
-			emit_signal("gamestate_log", "qatc: Scene changed %s" % _queue_attach_on_tree_change_prev_scene)
-			for p in _queue_attach:
-				if _queue_attach[p].has("node"):
-					emit_signal("gamestate_log", "qatc: node %s(%s) permanent %s" % [p, _queue_attach[p].node, _queue_attach[p].permanent])
-				if _queue_attach[p].has("signal"):
-					emit_signal("gamestate_log", "qatc: signal %s(%s) permanent %s" % [p, _queue_attach[p].signal, _queue_attach[p].permanent])
-		else:
-			return #if scene is the same skip notifications
-		if get_tree().current_scene:
-			var scene = get_tree().current_scene
-			for p in _queue_attach:
-				if _queue_attach[p].has("scene") and _queue_attach[p].scene == scene:
-					continue
-				var obj = scene.get_node(p)
-				if obj:
-					#if signal emit and continue
-					if _queue_attach[p].has("signal"):
-						var sig = _queue_attach[p].signal
-						if not _queue_attach[p].permanent:
-							emit_signal("gamestate_log", "qatc, emit and remove: %s(%s) permanent %s" % [p, _queue_attach[p].signal, _queue_attach[p].permanent])
-							_queue_attach.erase(p)
-							emit_signal(sig)
-						else:
-							_queue_attach[p]["scene"] = scene
-							emit_signal(sig)
-						continue
-					print("==qaotc== object at(%s) - %s" % [p, obj])
-					var obj2 = _queue_attach[p].packedscene
-					_queue_attach_on_tree_change_lock = true
-					obj.add_child(obj2.instance())
-					_queue_attach_on_tree_change_lock = false
-					if not _queue_attach[p].permanent:
-						emit_signal("gamestate_log", "qatc, attached and removed: %s(%s) permanent %s" % [p, _queue_attach[p].node, _queue_attach[p].permanent])
-						_queue_attach.erase(p)
-						scene.print_tree_pretty()
-					else:
-						_queue_attach[p]["scene"] = scene
-
-
-#################
-# signal logging functions
-
-
+	bind_signal("tree_changed", "_on_queue_attach_on_tree_change", get_tree(), self, MODE.CONNECT)
 
 
 #################
 # general network functions
 
-func net_getsocket():
-	var ns = NetworkedMultiplayerENet.new()
+func net_getsocket() -> NetworkedMultiplayerENet:
+	var ns : NetworkedMultiplayerENet = NetworkedMultiplayerENet.new()
 	return ns
 
-func net_tree_connect(bind=true):
+func net_tree_connect(bind : bool = true) -> void:
 	var tree = get_tree()
 	
 	var signals = [
-		["connected_to_server", "net_server_connected", tree],
-		["server_disconnected", "net_server_disconnected", tree],
-		["connection_failed", "net_connection_fail", tree],
-		["network_peer_connected", "net_client_connected", tree],
-		["network_peer_disconnected", "net_client_disconnected", tree],
-		["server_up", "net_server_up", self]
+		["connected_to_server", "_on_net_server_connected", tree],
+		["server_disconnected", "_on_net_server_disconnected", tree],
+		["connection_failed", "_on_net_connection_fail", tree],
+		["network_peer_connected", "_on_net_client_connected", tree],
+		["network_peer_disconnected", "_on_net_client_disconnected", tree],
+		["server_up", "_on_net_server_up", self]
 	]
-	#connected_to_server()Emitted whenever this SceneTree's network_peer successfully connected to a server. Only emitted on clients.
-	#server_disconnected()Emitted whenever this SceneTree's network_peer disconnected from server. Only emitted on clients.
-
-	#connection_failed()Emitted whenever this SceneTree's network_peer fails to establish a connection to a server. Only emitted on clients.
-
-	#network_peer_connected( int id )Emitted whenever this SceneTree's network_peer connects with a new peer. ID is the peer ID of the new peer. Clients get notified when other clients connect to the same server. Upon connecting to a server, a client also receives this signal for the server (with ID being 1).
-	#network_peer_disconnected( int id )Emitted whenever this SceneTree's network_peer disconnects from a peer. Clients get notified when other clients disconnect from the same server.
 	for sg in signals:
-		printd("net_tree_connect %s -> %s" % [sg[0], sg[1]])
+		printd(str("net_tree_connect", sg[0], " -> " , sg[1]))
 		if bind:
-			sg[2].connect(sg[0], self, sg[1])
+			bind_signal(sg[0], sg[1], sg[2], self, MODE.CONNECT)
 		else:
-			sg[2].disconnect(sg[0], self, sg[1])
+			bind_signal(sg[0], sg[1], sg[2], self, MODE.DISCONNECT)
 
-func net_connection_fail():
-	printd("***********net_connection_fail")
-	NetworkUP = false
 
-func net_client_connected(id):
-	printd("***********net_client_connected(%s)" % id)
-	net_client(id, true)
-
-func net_client_disconnected(id):
-	printd("***********net_client_disconnected(%s)" % id)
-	net_client(id, false)
-
-func net_server_connected():
-	printd("***********net_server_connected")
-	if not NetworkUP:
-		NetworkUP = true
-		net_up()
-
-func net_server_disconnected():
-	printd("***********net_server_disconnected")
-	if NetworkUP:
-		NetworkUP = false
-		net_down()
-
-func net_server_up():
-	printd("***********net_server_up")
-	if not NetworkUP:
-		NetworkUP = true
-		net_up()
 
 #################
 #Server functions
@@ -431,8 +344,8 @@ func player_apply_opt(pdata, player, id):
 			printd("disable input for player avatar %s" % id)
 			player.set_process_input(false)
 
-func player_register(pdata, localplayer=false, opt_id = "avatar"):
-	var id
+func player_register(pdata : Dictionary, localplayer : bool = false, opt_id : String = "avatar") -> void:
+	var id : int
 	if localplayer:
 		pdata["options"] = options.player_opt(opt_id, pdata) #merge name with rest of options for Avatar
 		if network_id:
@@ -445,7 +358,7 @@ func player_register(pdata, localplayer=false, opt_id = "avatar"):
 		emit_signal("gamestate_log", "player data should have id or be a local")
 		return
 	
-	emit_signal("gamestate_log", "registered player(%s): %s" % [id, pdata])
+	emit_signal("gamestate_log", "registered player(", str(id), "): ", str(pdata))
 	var player = {}
 	player["data"] = pdata
 	player["obj"] = options.player_scene.instance()
@@ -687,6 +600,80 @@ func add_chat_ui():
 	if not is_instance_valid(chat_ui):
 		chat_ui = chat_ui_resource.instance()
 		get_tree().root.add_child(chat_ui)
+		
+func _on_queue_attach_on_tree_change():
+	if _queue_attach_on_tree_change_lock:
+		return
+	if get_tree():
+		if _queue_attach_on_tree_change_prev_scene != str(get_tree().current_scene):
+			_queue_attach_on_tree_change_prev_scene = str(get_tree().current_scene)
+			emit_signal("gamestate_log", "qatc: Scene changed %s" % _queue_attach_on_tree_change_prev_scene)
+			for p in _queue_attach:
+				if _queue_attach[p].has("node"):
+					emit_signal("gamestate_log", "qatc: node %s(%s) permanent %s" % [p, _queue_attach[p].node, _queue_attach[p].permanent])
+				if _queue_attach[p].has("signal"):
+					emit_signal("gamestate_log", "qatc: signal %s(%s) permanent %s" % [p, _queue_attach[p].signal, _queue_attach[p].permanent])
+		else:
+			return #if scene is the same skip notifications
+		if get_tree().current_scene:
+			var scene = get_tree().current_scene
+			for p in _queue_attach:
+				if _queue_attach[p].has("scene") and _queue_attach[p].scene == scene:
+					continue
+				var obj = scene.get_node(p)
+				if obj:
+					#if signal emit and continue
+					if _queue_attach[p].has("signal"):
+						var sig = _queue_attach[p].signal
+						if not _queue_attach[p].permanent:
+							emit_signal("gamestate_log", "qatc, emit and remove: %s(%s) permanent %s" % [p, _queue_attach[p].signal, _queue_attach[p].permanent])
+							_queue_attach.erase(p)
+							emit_signal(sig)
+						else:
+							_queue_attach[p]["scene"] = scene
+							emit_signal(sig)
+						continue
+					print("==qaotc== object at(%s) - %s" % [p, obj])
+					var obj2 = _queue_attach[p].packedscene
+					_queue_attach_on_tree_change_lock = true
+					obj.add_child(obj2.instance())
+					_queue_attach_on_tree_change_lock = false
+					if not _queue_attach[p].permanent:
+						emit_signal("gamestate_log", "qatc, attached and removed: %s(%s) permanent %s" % [p, _queue_attach[p].node, _queue_attach[p].permanent])
+						_queue_attach.erase(p)
+						scene.print_tree_pretty()
+					else:
+						_queue_attach[p]["scene"] = scene
+
+func _on_net_connection_fail() -> void:
+	printd("***********net_connection_fail")
+	NetworkUP = false
+
+func _on_net_client_connected(id : int) -> void:
+	printd("***********net_client_connected(%s)" % id)
+	net_client(id, true)
+
+func _on_net_client_disconnected(id : int) -> void:
+	printd("***********net_client_disconnected(%s)" % id)
+	net_client(id, false)
+
+func _on_net_server_connected() -> void:
+	printd("***********net_server_connected")
+	if not NetworkUP:
+		NetworkUP = true
+		net_up()
+
+func _on_net_server_disconnected() -> void:
+	printd("***********net_server_disconnected")
+	if NetworkUP:
+		NetworkUP = false
+		net_down()
+
+func _on_net_server_up() -> void:
+	printd("***********net_server_up")
+	if not NetworkUP:
+		NetworkUP = true
+		net_up()
 
 func _on_player_scene():
 	emit_signal("gamestate_log", "scene is player ready, checking players(%s)" % players.size())
