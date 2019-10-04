@@ -7,7 +7,7 @@ enum MODE {
 	}
 
 #global signals
-signal _on_gamestate_log(msg)
+signal gamestate_log(msg)
 # network user related
 signal user_join #emit when user is fully registered
 signal user_leave #emit on leave of registered user
@@ -93,10 +93,10 @@ func _ready():
 
 	local_id = 0
 
-	bind_signal("network_log", '', self, self, MODE.TOGGLE)
-	bind_signal("_on_gamestate_log", '', self, self, MODE.TOGGLE)
-	bind_signal("player_scene", '', self, self, MODE.TOGGLE)
-	bind_signal("player_id", '', self, self, MODE.TOGGLE)
+	bind_signal("network_log", "", self, self, MODE.TOGGLE)
+	bind_signal("gamestate_log", "", self, self, MODE.TOGGLE)
+	bind_signal("player_scene", "", self, self, MODE.TOGGLE)
+	bind_signal("player_id", "", self, self, MODE.TOGGLE)
 	
 	queue_tree_signal(options.scene_id, "player_scene", true)
 	log_all_signals()
@@ -105,7 +105,7 @@ func _ready():
 	net_tree_connect()
 
 func bind_signal(_signal : String, method : String, obj : Object, obj2 : Object, mode : int = 0) -> void:
-	if method == '':
+	if method == "":
 		method = str("_on_", _signal)
 		
 	if mode == MODE.TOGGLE:  
