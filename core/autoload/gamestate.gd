@@ -437,7 +437,7 @@ func player_remap_id(old_id : int, new_id : int) -> void:
 			player["path"] = world.get_path_to(node)
 			node.set_network_master(new_id)
 
-func create_player(id):
+func create_player(id : int) -> void:
 	var world = get_tree().current_scene
 	if players[id].has("world") and players[id]["world"] == str(world):
 		emit_signal("_on_gamestate_log", "player(%s) already added, %s" % [id, players[id]])
@@ -466,11 +466,11 @@ func create_player(id):
 	emit_signal("user_name_connected", player_get("name", id))
 
 #set current camera to local player
-func player_local_camera(activate = true):
+func player_local_camera(activate : bool = true) -> void:
 	if players.has(local_id):
 		players[local_id].obj.nocamera = !activate
 
-func player_noinput(enable = false):
+func player_noinput(enable : bool = false) -> void:
 	if players.has(local_id):
 		players[local_id].obj.input_processing = enable
 
@@ -478,7 +478,7 @@ func player_noinput(enable = false):
 
 # Lobby management functions
 
-func end_game():
+func end_game() -> void:
 	if (has_node("/root/world")): # Game is in progress
 		# End it
 		get_node("/root/world").queue_free()
@@ -491,10 +491,10 @@ func end_game():
 # debug functions
 
 
-func printd(s):
+func printd(s : String) -> void:
 	logg.print_filtered_message(debug_id, s)
 
-func log_all_signals():
+func log_all_signals() -> void:
 	var sg_ignore = ["_on_gamestate_log"]
 	var sg_added = ""
 	for sg in get_signal_list():
@@ -505,14 +505,14 @@ func log_all_signals():
 		connect(sg.name, self, "log_all_signals_print_%s" % (sg.args.size()+1), ["%s" % sg.name])
 	printd("log_all_signals: %s" % sg_added)
 		
-func log_all_signals_print_1(sg):
-	printd("==========signal0 %s ================" % sg)
-func log_all_signals_print_2(a1, sg):
-	printd("==========signal1 %s ================" % sg)
-	printd("%s" % a1)
-func log_all_signals_print_3(a1, a2, sg):
-	printd("==========signal2 %s ================" % sg)
-	printd("%s, %s" % [a1, a2])
+func log_all_signals_print_1(signal_ : String):
+	printd(str("==========signal0 ", signal_," ================"))
+func log_all_signals_print_2(a1 : int, signal_ : String):
+	printd(str("==========signal1 ", signal_," ================"))
+	printd(str(a1))
+func log_all_signals_print_3(a1 : int, a2 : int, signal_ : String):
+	printd(str("==========signal2 ", signal_," ================"))
+	printd(str(a1, a2))
 
 #################
 # New UI functions
@@ -655,7 +655,7 @@ func _on_net_server_up() -> void:
 		NetworkUP = true
 		net_up()
 
-func _on_server_tree_changed():
+func _on_server_tree_changed() -> void:
 	if not RoleServer or not server.up:
 		return
 	var root = get_tree()
@@ -663,16 +663,16 @@ func _on_server_tree_changed():
 		root.set_network_peer(server.connection)
 		emit_signal("network_log", "reconnect server to tree")
 
-func _on_server_user_connected(id):
+func _on_server_user_connected(id : int) -> void:
 	emit_signal("_on_gamestate_log", "user connected %s" % id)
 
-func _on_server_user_disconnected(id):
+func _on_server_user_disconnected(id : int) -> void:
 	emit_signal("_on_gamestate_log", "user disconnected %s" % id)
 
-func _on_server_tree_user_connected(id):
+func _on_server_tree_user_connected(id : int) -> void:
 	emit_signal("_on_gamestate_log", "tree user connected %s" % id)
 
-func _on_server_tree_user_disconnected(id):
+func _on_server_tree_user_disconnected(id : int) -> void:
 	emit_signal("_on_gamestate_log", "tree user disconnected %s" % id)
 	unregister_client(id)
 
@@ -694,7 +694,7 @@ func _on_player_scene() -> void:
 		rpc_id(1, "register_client", network_id, players[local_id].data)
 
 
-func _on_player_id(id) -> void:
+func _on_player_id(id : int) -> void:
 	if not players.has(local_id):
 		return
 	player_remap_id(local_id, id)
