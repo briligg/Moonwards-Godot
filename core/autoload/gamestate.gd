@@ -134,10 +134,10 @@ func bind_signal(_signal : String, method : String, obj : Object, obj2 : Object,
 #Track scene changes and add nodes or emit signals functions
 
 
-func queue_attach(path, node, permanent : bool = false) -> void:
+func queue_attach(path : String, node, permanent : bool = false) -> void: #node is variant
 	emit_signal("_on_gamestate_log", str("attach queue(permanent: ", str(permanent),"): ", path, "(", node, ")")) 
 	var packedscene
-	if node.get_class() == "String":
+	if node is String:
 		packedscene = ResourceLoader.load(node)
 		emit_signal("_on_gamestate_log", str("loading resource in queue_attach(", path, ", ", node, ", ", permanent,")"))
 		if not packedscene:
@@ -154,7 +154,7 @@ func queue_attach(path, node, permanent : bool = false) -> void:
 	print("+++", _queue_attach[path].packedscene)
 	bind_signal("tree_changed","_on_queue_attach_on_tree_change", get_tree(), self, MODE.CONNECT) 
 
-func queue_tree_signal(path, signal_, permanent = false):
+func queue_tree_signal(path : String, signal_ : String, permanent : bool = false) -> void:
 	emit_signal("_on_gamestate_log", "signal queue(permanent %s): %s(%s)" % [permanent, path, signal_])
 	_queue_attach[path] = {
 			path = path,
@@ -195,7 +195,7 @@ func net_tree_connect(bind : bool = true) -> void:
 #Server functions
 
 
-func server_set_mode(host="localhost"):
+func server_set_mode(host : String = "localhost"):
 	if RoleClient :
 		emit_signal("network_error", "Currently in client mode")
 		return
@@ -219,18 +219,19 @@ func server_set_mode(host="localhost"):
 	emit_signal("network_log", "prepare to listen on %s:%s" % [server.ip,DEFAULT_PORT])
 	server.connection = net_getsocket()
 	server.connection.set_bind_ip(server.ip)
-	var error = server.connection.create_server(DEFAULT_PORT, MAX_PEERS)
+	var error : int = server.connection.create_server(DEFAULT_PORT, MAX_PEERS)
 	if error == 0:
 		get_tree().set_network_peer(server.connection)
 		emit_signal("network_log", "server up on %s:%s" % [server.ip,DEFAULT_PORT])
 		server.up = true
-		bind_signal("tree_changed", "server_tree_changed", get_tree(), self, MODE.CONNECT)
+		bind_signal("tree_changed", "_on_server_tree_changed", get_tree(), self, MODE.CONNECT)
 		emit_signal("server_up")
-		server.connection.connect("peer_connected", self, "server_user_connected")
-		server.connection.connect("peer_disconnected", self, "server_user_disconnected")
-# 		emit_signal("connection_succeeded")
-		get_tree().connect("network_peer_connected", self, "server_tree_user_connected")
-		get_tree().connect("network_peer_disconnected", self, "server_tree_user_disconnected")
+		
+		bind_signal("peer_disconnected", "_on_server_user_disconnected", server.connection, self, MODE.CONNECT) 
+		bind_signal("peer_connected", "_on_server_user_connected", server.connection, self, MODE.CONNECT) 
+		
+		bind_signal("network_peer_connected", "_on_server_tree_user_connected", get_tree(), self, MODE.CONNECT)
+		bind_signal("network_peer_disconnected", "_on_server_tree_user_disconnected", get_tree(), self, MODE.CONNECT)
 
 		emit_signal("_on_gamestate_log", "network server id %s" % server.connection.get_unique_id())
 		network_id = server.connection.get_unique_id()
@@ -241,34 +242,13 @@ func server_set_mode(host="localhost"):
 		RoleServer = false
 # 		emit_signal("connection_failed")
 
-func server_tree_changed():
-	if not RoleServer or not server.up:
-		return
-	var root = get_tree()
-	if root != null and root.get_network_unique_id() == 0:
-		root.set_network_peer(server.connection)
-		emit_signal("network_log", "reconnect server to tree")
-
-func server_user_connected(id):
-	emit_signal("_on_gamestate_log", "user connected %s" % id)
-
-func server_user_disconnected(id):
-	emit_signal("_on_gamestate_log", "user disconnected %s" % id)
-
-func server_tree_user_connected(id):
-	emit_signal("_on_gamestate_log", "tree user connected %s" % id)
-
-func server_tree_user_disconnected(id):
-	emit_signal("_on_gamestate_log", "tree user disconnected %s" % id)
-	unregister_client(id)
-
 ################
 #Client functions
 
 
 
 
-func client_server_connect(host, port=DEFAULT_PORT):
+func client_server_connect(host : String, port : int = DEFAULT_PORT):
 	if RoleClient :
 		emit_signal("network_error", "Already in client mode")
 		return
@@ -304,7 +284,7 @@ func client_server_connect(host, port=DEFAULT_PORT):
 
 ################
 # Scene functions
-func change_scene(scene):
+func change_scene(scene : String):
 	var scenes = options.scenes
 	if not scene in scenes:
 		emit_signal("scene_change_error", "No such scene %s" % scene)
@@ -323,8 +303,8 @@ func change_scene(scene):
 
 
 
-func is_player_scene():
-	var result = false
+func is_player_scene() -> bool:
+	var result : bool = false
 	if get_tree() and get_tree().current_scene:
 		if get_tree().current_scene.has_node(options.scene_id):
 			result = true
@@ -332,7 +312,7 @@ func is_player_scene():
 
 ################
 # Player functions
-func player_apply_opt(pdata, player, id):
+func player_apply_opt(pdata : Dictionary, player : Spatial, id : int):
 	#apply options, given in register dictionary under ::options
 	if pdata.has("options"):
 		printd("player_apply_opt to %s with %s" % [id, pdata])
@@ -377,7 +357,7 @@ func player_register(pdata : Dictionary, localplayer : bool = false, opt_id : St
 
 #local player recieved network id
 
-remote func register_client(id, pdata):
+remote func register_client(id : int, pdata : Dictionary) -> void:
 	printd("remote register_client, local_id(%s): %s %s" % [local_id, id, pdata])
 	if id == local_id:
 		printd("Local player, skipp")
@@ -402,7 +382,7 @@ remote func register_client(id, pdata):
 			if pid != id:
 				rpc_id(id, "register_client", pid, players[p].data)
 
-remote func unregister_client(id):
+remote func unregister_client(id : int) -> void:
 	emit_signal("_on_gamestate_log", "unregister client (%s)" % id)
 	if players.has(id):
 		emit_signal("user_name_disconnected", "%s" % player_get("name", id))
@@ -418,10 +398,10 @@ remote func unregister_client(id):
 				rpc_id(pid, "unregister_client", id)
 
 
-func player_get(prop, id=null):
-	if id == null:
+func player_get(prop, id : int = -1): #prop and result are variants
+	if id == -1:
 		id = local_id
-	var error = false
+	var error : bool = false
 	var result = null
 	if not players.has(id):
 		return result
@@ -442,7 +422,7 @@ func player_get(prop, id=null):
 	return result
 
 #remap local user for its network id, when he gets it
-func player_remap_id(old_id, new_id):
+func player_remap_id(old_id : int, new_id : int) -> void:
 	if players.has(old_id):
 		var player = players[old_id]
 		players.erase(old_id)
@@ -674,6 +654,28 @@ func _on_net_server_up() -> void:
 	if not NetworkUP:
 		NetworkUP = true
 		net_up()
+
+func _on_server_tree_changed():
+	if not RoleServer or not server.up:
+		return
+	var root = get_tree()
+	if root != null and root.get_network_unique_id() == 0:
+		root.set_network_peer(server.connection)
+		emit_signal("network_log", "reconnect server to tree")
+
+func _on_server_user_connected(id):
+	emit_signal("_on_gamestate_log", "user connected %s" % id)
+
+func _on_server_user_disconnected(id):
+	emit_signal("_on_gamestate_log", "user disconnected %s" % id)
+
+func _on_server_tree_user_connected(id):
+	emit_signal("_on_gamestate_log", "tree user connected %s" % id)
+
+func _on_server_tree_user_disconnected(id):
+	emit_signal("_on_gamestate_log", "tree user disconnected %s" % id)
+	unregister_client(id)
+
 
 func _on_player_scene() -> void:
 	emit_signal("_on_gamestate_log", "scene is player ready, checking players(%s)" % players.size())
