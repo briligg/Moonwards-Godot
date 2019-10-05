@@ -154,12 +154,12 @@ func queue_attach(path : String, node, permanent : bool = false) -> void: #node 
 	print("+++", _queue_attach[path].packedscene)
 	bind_signal("tree_changed","_on_queue_attach_on_tree_change", get_tree(), self, MODE.CONNECT) 
 
-func queue_tree_signal(path : String, signal_ : String, permanent : bool = false) -> void:
-	emit_signal("log_gamestate", "signal queue(permanent %s): %s(%s)" % [permanent, path, signal_])
+func queue_tree_signal(path : String, signal_name : String, permanent : bool = false) -> void:
+	emit_signal("log_gamestate", "signal queue(permanent %s): %s(%s)" % [permanent, path, signal_name])
 	_queue_attach[path] = {
 			path = path,
 			permanent = permanent,
-			signal = signal_,
+			signal = signal_name,
 		}
 	bind_signal("tree_changed", "_on_queue_attach_on_tree_change", get_tree(), self, MODE.CONNECT)
 
