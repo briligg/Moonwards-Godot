@@ -118,41 +118,9 @@ var DD_FILTER: Dictionary = {
 		{ vl = 4, enabled = true, key = "add avatar"},
 		{ vl = -2, enabled = true, key = "UpdateNetworking: not a remote player"},
 		],
-	"UpdaterServer": [
-		{ vl = 9, enabled = true, key = "skip"},
-		{ vl = 9, enabled = true, key = "res://"},
-		{ vl = 8, enabled = true, key = "GetMD5FromDirectory"},
-		{ vl = 1, enabled = true, key = "Create server"},
-		{ vl = 0, enabled = true, key = "Getting MD5 List"},
-		{ vl = 2, enabled = true, key = "GetMD5List total"},
-		{ vl = 2, enabled = true, key = "get md5id, dict"},
-		{ vl = 0, enabled = true, key = "Done"},
-		{ vl = 0, enabled = true, key = ""}
-		],
-	"UpdaterClient": [
-		{ vl = 9, enabled = true, key = "skip"},
-		{ vl = 9, enabled = true, key = "res://"},
-		{ vl = 8, enabled = true, key = "GetMD5FromDirectory"},
-		{ vl = 5, enabled = true, key = "Found File"},
-		{ vl = 3, enabled = true, key = "Loading File"},
-		{ vl = 3, enabled = true, key = "Update files FILTER list"},
-		{ vl = 0, enabled = true, key = "Get tree checksum"},
-		{ vl = 4, enabled = true, key = "ClientReceiveUpdate"},
-		{ vl = 4, enabled = true, key = "chain_"},
-		{ vl = 5, enabled = true, key = "GetState:"},
-		{ vl = 0, enabled = true, key = ""}
-		],
-	"Updater": [
-		{ vl = 0, enabled = true, key = ""}
-		],
 	"Main Menu": [
 		{ vl = 4, enabled = true, key = "end gathering"},
 		{ vl = 0, enabled = true, key = ""}
-		],
-	"UpdaterUI": [
-		{ vl = 4, enabled = true, key = "disconnect"},
-		{ vl = 4, enabled = true, key = "connect"},
-		{ vl = 0, enabled = true, key = ""},
 		]
 	}
 

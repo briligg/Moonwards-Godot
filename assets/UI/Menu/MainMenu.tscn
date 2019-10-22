@@ -1,11 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/themes/MainMenu.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=2]
 [ext_resource path="res://img/MainBG.jpg" type="Texture" id=3]
 [ext_resource path="res://assets/UI/Menu/Main_menu.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/UI/Update/UpdatePanel.tscn" type="PackedScene" id=5]
-[ext_resource path="res://core/update/scenes/PanelUpdate_checker.tscn" type="PackedScene" id=6]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -22,27 +20,6 @@ stretch_mode = 7
 
 [node name="VBoxContainer" parent="." instance=ExtResource( 4 )]
 
-[node name="UpdateUI" parent="VBoxContainer" instance=ExtResource( 5 )]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 415.0
-margin_top = 598.0
-margin_right = 568.0
-margin_bottom = 678.0
-
 [node name="Options" type="Node" parent="."]
 
 [node name="NoCamera" type="Node" parent="Options"]
-
-[node name="MainMenu" parent="." instance=ExtResource( 6 )]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -512.0
-margin_top = 112.0
-margin_right = -138.0
-margin_bottom = 323.0

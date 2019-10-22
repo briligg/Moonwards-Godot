@@ -281,7 +281,6 @@ func features_list(enabled_only : bool = true) -> void:
 		{ opt = "s3tc", hint = "Textures using S3TC (DXT/BC) compression are supported" },
 		{ opt = "pvrtc", hint = "Textures using PVRTC compression are supported" },
 		# custom features, Moonwards specific
-		{ opt = "updater", hint = "serve as data updater server for clients" }
 		
 	]
 

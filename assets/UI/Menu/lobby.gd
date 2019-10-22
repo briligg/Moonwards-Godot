@@ -134,7 +134,7 @@ func _on_join_pressed() -> void:
 			$connect/error_label.text="Invalid name!"
 			return
 
-		set_state(STATE.client_connect)
+		set_state(STATE.CLIENT_CONNECT)
 		var player_data = {
 			username = $connect/name.text,
 			gender = options.gender,

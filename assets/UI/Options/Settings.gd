@@ -6,12 +6,11 @@ const modes : Array = [
 	"Fullscreen"
 	]
 	
-onready var Quality : MenuButton = $Main/Row3/Video/ModelQuality/Quality
-onready var Resolution : MenuButton = $Main/Row3/Video/Resolution/Resolution
-onready var UpdateCheck : CheckBox = $Main/Row1/Updating/UpdateCheck
-onready var FPSSlider : HSlider = $Main/Row3/Video/FPSLimit/FPSSlider
-onready var FPSSpin : SpinBox = $Main/Row3/Video/FPSLimit/FPSSpin
-onready var ScreenMode : MenuButton =  $Main/Row3/Video/Resolution/ScreenMode
+onready var Quality : MenuButton = $Main/Row2/Video/ModelQuality/Quality
+onready var Resolution : MenuButton = $Main/Row2/Video/Resolution/Resolution
+onready var FPSSlider : HSlider = $Main/Row2/Video/FPSLimit/FPSSlider
+onready var FPSSpin : SpinBox = $Main/Row2/Video/FPSLimit/FPSSpin
+onready var ScreenMode : MenuButton =  $Main/Row2/Video/Resolution/ScreenMode
 
 var resolutions : Array = [
 	Vector2(640, 480),
@@ -32,7 +31,6 @@ func _ready() -> void:
 	Resolution.get_popup().connect("id_pressed", self, "_on_Resolution_change")
 	ScreenMode.get_popup().connect("id_pressed", self, "_on_ScreenMode_change")
 	Quality.get_popup().connect("id_pressed", self, "_on_Detail_change")
-	UpdateCheck.pressed = options.get("updater/client", "check_at_startup", true)
 	
 	var res_width = options.get("resolution", "width", resolutions[current_resolution].x)
 	var res_height = options.get("resolution", "height", resolutions[current_resolution].y)
@@ -70,12 +68,6 @@ func _on_Resolution_change(id : int) -> void:
 	yield(get_tree(),"idle_frame")
 	options.load_graphics_settings()
 	options.save()
-	
-func _on_UpdateCheck_pressed() -> void:
-	if UpdateCheck.pressed:
-		options.set("updater/client", true, "check_at_startup")
-	else:
-		options.set("updater/client", false, "check_at_startup")
 
 func _on_ScreenMode_change(id : int) -> void:
 	

@@ -16,12 +16,6 @@ const id : String = "options.gd"
 
 var debug : bool = true
 
-var Updater : Node 
-
-
-var scripts : Dictionary = {
-	Updater = preload("res://core/update/scripts/Updater.gd")
-}
 # scene for players, node name wich serves an indicator
 var scene_id : String= "scene_id_30160"
 
@@ -186,8 +180,6 @@ func player_opt(type, opt : Dictionary = {}) -> Dictionary:
 
 
 func _ready() -> void:
-	Updater = scripts.Updater.new()
-	Updater.set_root_tree(get_tree())
 # 	print("debug set FPS to 3")
 # 	Engine.target_fps = 3
 	printd("load options and settings")

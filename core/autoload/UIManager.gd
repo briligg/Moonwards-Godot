@@ -19,12 +19,11 @@ enum UI_EVENTS{
 		LOAD_LEVEL,
 		JOIN_SERVER,
 		RUN_LOCALLY,
-		EXIT,
-		UPDATE
+		EXIT
 }
 
 const UI_EVENT_TO_TEXT = ["back", "create_ui", "queue_ui", "set_setting", "dismiss",
-		"load_level", "join_server", "run_locally", "exit", "update" ]
+		"load_level", "join_server", "run_locally", "exit" ]
 
 func ui_event_to_text(ui_event: int) -> String:
 	var text : String = "none"
