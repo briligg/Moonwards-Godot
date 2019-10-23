@@ -228,10 +228,10 @@ func _input(event):
 		else:
 			StopStairsClimb()
 	
-	if event.is_action("scroll_up") and not Input.is_action_pressed("move_run"):
+	if event.is_action("zoom_in") and not Input.is_action_pressed("move_run"):
 		camera_control.DecreaseDistance()
 	
-	if event.is_action("scroll_down") and not Input.is_action_pressed("move_run"):
+	if event.is_action("zoom_out") and not Input.is_action_pressed("move_run"):
 		camera_control.IncreaseDistance()
 	
 	if event.is_action_pressed("scroll_up") and Input.is_action_pressed("move_run") and animation_speed < 3.0:

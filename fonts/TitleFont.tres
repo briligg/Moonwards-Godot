@@ -3,8 +3,7 @@
 [ext_resource path="res://fonts/Exo2-Medium.otf" type="DynamicFontData" id=1]
 
 [resource]
-size = 14
-outline_color = Color( 0, 0, 0, 1 )
+size = 20
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )

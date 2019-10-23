@@ -44,9 +44,9 @@ func set_enabled(enabled : bool) -> void:
 	set_process_input(enabled)
 
 func _input(event : InputEvent) -> void:
-	if event.is_action("scroll_down"):
+	if event.is_action("zoom_out"):
 		increase_distance()
-	if event.is_action("scroll_up"):
+	if event.is_action("zoom_in"):
 		decrease_distance()
 
 	if Input.is_action_pressed("left_click"):

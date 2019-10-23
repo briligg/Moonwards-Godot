@@ -58,10 +58,10 @@ func _input(event : InputEvent) -> void:
 			look_velocity.y -= event.relative.x * MOUSE_SENSITIVITY * LOOK_ACCELERATION
 			look_velocity.x -= event.relative.y * MOUSE_SENSITIVITY * LOOK_ACCELERATION
 	
-	if event.is_action_pressed("scroll_up"):
+	if event.is_action_pressed("zoom_in"):
 		movement_acceleration = min(2.0, movement_acceleration + 0.05)
 		
-	if event.is_action_pressed("scroll_down"):
+	if event.is_action_pressed("zoom_out"):
 		movement_acceleration = max(0.0, movement_acceleration - 0.05)
 
 func _notification(message : int) -> void:

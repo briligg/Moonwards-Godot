@@ -76,12 +76,12 @@ func _physics_process(delta : float) -> void:
 			model.global_transform.basis = Basis(_model_quat)
 
 func _input(event : InputEvent) -> void:
-	if event.is_action_pressed("scroll_up"):
+	if event.is_action_pressed("zoom_in"):
 		camera_position.translation.z -= 1.0
 		if camera_position.translation.z < 0.0:
 			camera_position.translation.z = 0.0
 	
-	if event.is_action_pressed("scroll_down"):
+	if event.is_action_pressed("zoom_out"):
 		camera_position.translation.z += 1.0
 	
 	if (event is InputEventMouseMotion):
