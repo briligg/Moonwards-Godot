@@ -1,27 +1,28 @@
-[gd_resource type="ShaderMaterial" load_steps=17 format=2]
+[gd_resource type="ShaderMaterial" load_steps=18 format=2]
 
 [ext_resource path="res://_tests/Terrain/Lalande_splatmap.shader" type="Shader" id=1]
 [ext_resource path="res://image_textures/Regolith_test_normal2.png" type="Texture" id=2]
-[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/LalandeUpperWallTexture1_n.jpg" type="Texture" id=3]
-[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/LalandeUpperWallTexture2_n.jpg" type="Texture" id=4]
-[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/LalandeUpperWallTexture3_n.jpg" type="Texture" id=5]
-[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/FloorNormal1.jpg" type="Texture" id=6]
-[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/FloorNormal2.jpg" type="Texture" id=7]
-[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/FloorNormal3.jpg" type="Texture" id=8]
-[ext_resource path="res://_tests/Terrain/Splat_1.jpg" type="Texture" id=9]
-[ext_resource path="res://_tests/Terrain/terrain_splatmap2.png" type="Texture" id=10]
-[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/LalandeUpperWallTexture1.jpg" type="Texture" id=11]
-[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/LalandeUpperWallTexture2.jpg" type="Texture" id=12]
-[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/LalandeUpperWallTexture3.jpg" type="Texture" id=13]
-[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/LalandeFloorTexture1.jpg" type="Texture" id=14]
-[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/LalandeFloorTexture2.jpg" type="Texture" id=15]
-[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/LalandeFloorTexture3.jpg" type="Texture" id=16]
+[ext_resource path="res://image_textures/Colored-Lalande2.jpg" type="Texture" id=3]
+[ext_resource path="res://image_textures/Normal-Lalande.jpg" type="Texture" id=4]
+[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/LalandeUpperWallTexture1_n.jpg" type="Texture" id=5]
+[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/LalandeUpperWallTexture2_n.jpg" type="Texture" id=6]
+[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/LalandeUpperWallTexture3_n.jpg" type="Texture" id=7]
+[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/FloorNormal1.jpg" type="Texture" id=8]
+[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/FloorNormal2.jpg" type="Texture" id=9]
+[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/FloorNormal3.jpg" type="Texture" id=10]
+[ext_resource path="res://_tests/Terrain/Splat_1.jpg" type="Texture" id=11]
+[ext_resource path="res://_tests/Terrain/terrain_splatmap2.png" type="Texture" id=12]
+[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/LalandeUpperWallTexture1.jpg" type="Texture" id=13]
+[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/LalandeUpperWallTexture2.jpg" type="Texture" id=14]
+[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/LalandeFloorTexture3.jpg" type="Texture" id=15]
+[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/LalandeFloorTexture1.jpg" type="Texture" id=16]
+[ext_resource path="res://image_textures/TerrainTextures_fromPhotos/LalandeFloorTexture2.jpg" type="Texture" id=17]
 
 [resource]
 shader = ExtResource( 1 )
 shader_param/show_splatmap = false
-shader_param/double_filter = false
-shader_param/double_filter_blend = 0.6
+shader_param/double_filter = true
+shader_param/double_filter_blend = 1.0
 shader_param/detail_enabled = false
 shader_param/normal_depth0 = 1.0
 shader_param/normal_depth1 = 1.0
@@ -33,7 +34,7 @@ shader_param/detail_normal_depht = 1.0
 shader_param/normal_depth = 1.0
 shader_param/specular = 1.0
 shader_param/metallic = 0.0
-shader_param/subsurface_scattering_strength = null
+shader_param/subsurface_scattering_strength = 0.0
 shader_param/uv1_blend_sharpness = 1.0
 shader_param/uv2_blend_sharpness = 1.0
 shader_param/uv3_blend_sharpness = 1.0
@@ -52,19 +53,21 @@ shader_param/uv5_scale = 0.1
 shader_param/uv5_offset = null
 shader_param/uv6_scale = 0.1
 shader_param/uv6_offset = null
-shader_param/blend = 1.0
-shader_param/splatmap = ExtResource( 9 )
-shader_param/splatmap_2 = ExtResource( 10 )
-shader_param/texture0 = ExtResource( 11 )
-shader_param/normal_tex0 = ExtResource( 3 )
-shader_param/texture1 = ExtResource( 12 )
-shader_param/normal_tex1 = ExtResource( 4 )
-shader_param/texture2 = ExtResource( 13 )
-shader_param/normal_tex2 = ExtResource( 5 )
-shader_param/texture3 = ExtResource( 14 )
-shader_param/normal_tex3 = ExtResource( 6 )
-shader_param/texture4 = ExtResource( 15 )
-shader_param/normal_tex4 = ExtResource( 7 )
-shader_param/texture5 = ExtResource( 16 )
-shader_param/normal_tex5 = ExtResource( 8 )
+shader_param/blend = 0.0
+shader_param/splatmap = ExtResource( 11 )
+shader_param/splatmap_2 = ExtResource( 12 )
+shader_param/global_normal = ExtResource( 4 )
+shader_param/global_albedo = ExtResource( 3 )
+shader_param/texture0 = ExtResource( 13 )
+shader_param/normal_tex0 = ExtResource( 5 )
+shader_param/texture1 = ExtResource( 14 )
+shader_param/normal_tex1 = ExtResource( 6 )
+shader_param/texture2 = ExtResource( 15 )
+shader_param/normal_tex2 = ExtResource( 7 )
+shader_param/texture3 = ExtResource( 16 )
+shader_param/normal_tex3 = ExtResource( 8 )
+shader_param/texture4 = ExtResource( 17 )
+shader_param/normal_tex4 = ExtResource( 9 )
+shader_param/texture5 = ExtResource( 15 )
+shader_param/normal_tex5 = ExtResource( 10 )
 shader_param/detail_normal = ExtResource( 2 )
