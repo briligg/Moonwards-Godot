@@ -8,6 +8,10 @@ var current_ui = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if OS.has_feature("Server"):
+		_ready_headless()
+		return
+	
 	_on_size_changed()
 	get_viewport().connect("size_changed",self,"_on_size_changed")
 
