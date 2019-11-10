@@ -488,8 +488,8 @@ func DoInteractiveObjectCheck():
 			for index in stairs.climb_points.size():
 				if climb_point == -1 or stairs.climb_points[index].distance_to(kb_pos) < stairs.climb_points[climb_point].distance_to(kb_pos):
 					climb_point = index
-		elif closest_object.has_method("Activate"):
-			closest_object.Activate()
+		elif closest_object.has_method("activate"):
+			closest_object.activate()
 
 #################################
 # networking functions
