@@ -5,22 +5,19 @@ extends Control
 """
 enum LEVEL {HINT, WARNING, ERROR}
 const LOG_LEVEL: int = LEVEL.ERROR
+const log_data : Array = []
 
 var log_ui_resource = preload("res://assets/UI/Log/LogUI.tscn")
 var log_ui : Node = null
-const log_data : Array = []
 
 static func hint(emitter: Object, message: String) -> void:
 	_log(emitter, message, LEVEL.HINT)
 
-
 static func warning(emitter: Object, message: String) -> void:
 	_log(emitter, message, LEVEL.WARNING)
 
-
 static func error(emitter: Object, message: String) -> void:
 	_log(emitter, message, LEVEL.ERROR)
-
 
 static func _log(emitter: Object, message: String, level: int) -> void:
 	var script = emitter.get_script().get_path().get_file()
@@ -46,7 +43,7 @@ static func _log(emitter: Object, message: String, level: int) -> void:
 		if Log.log_ui != null:
 			Log.log_ui.add_message(log_data.back())
 
-func _input(var event : InputEvent):
+func _input(event : InputEvent) -> void:
 	if event.is_action_pressed("toggle_log"):
 		if log_ui == null:
 			log_ui = log_ui_resource.instance()
