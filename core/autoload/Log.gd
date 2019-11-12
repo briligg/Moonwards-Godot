@@ -51,3 +51,13 @@ func _input(event : InputEvent) -> void:
 		else:
 			log_ui.queue_free()
 			log_ui = null
+
+func write_log_to_file() -> void:
+	var log_file = File.new()
+	var date_time = OS.get_datetime()
+	var unique_name = "%s-%s-%s_%s:%s:%s" % [date_time.year, date_time.month, date_time.day, date_time.hour, date_time.minute, date_time.second]
+	
+	log_file.open("user://Log_" + unique_name + ".txt", File.WRITE)
+	for message in Log.log_data:
+		log_file.store_line(message.log_message)
+	log_file.close()
