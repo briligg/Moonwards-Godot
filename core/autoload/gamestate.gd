@@ -179,7 +179,7 @@ func net_tree_connect(bind : bool = true) -> void:
 		["server_up", "_on_net_server_up", self]
 	]
 	for sg in signals:
-		printd(str("net_tree_connect", sg[0], " -> " , sg[1]))
+		Log.hint(self, str("net_tree_connect", sg[0], " -> " , sg[1]))
 		if bind:
 			bind_signal(sg[0], sg[1], sg[2], self, MODE.CONNECT)
 		else:
@@ -311,13 +311,13 @@ func is_player_scene() -> bool:
 func player_apply_opt(pdata : Dictionary, player : Spatial, id : int):
 	#apply options, given in register dictionary under ::options
 	if pdata.has("options"):
-		printd("player_apply_opt to %s with %s" % [id, pdata])
+		Log.hint(self, "player_apply_opt to %s with %s" % [id, pdata])
 		var opt = pdata.options
-		printd("create_player Apply options to id %s : %s" % [id, opt])
+		Log.hint(self, "create_player Apply options to id %s : %s" % [id, opt])
 		for k in opt:
 			player.set(k, opt[k])
 		if opt.has("input_processing") and opt["input_processing"] == false:
-			printd("disable input for player avatar %s" % id)
+			Log.hint(self, "disable input for player avatar %s" % id)
 			player.set_process_input(false)
 
 func player_register(pdata : Dictionary, localplayer : bool = false, opt_id : String = "avatar") -> void:
@@ -354,14 +354,14 @@ func player_register(pdata : Dictionary, localplayer : bool = false, opt_id : St
 #local player recieved network id
 
 remote func register_client(id : int, pdata : Dictionary) -> void:
-	printd("remote register_client, local_id(%s): %s %s" % [local_id, id, pdata])
+	Log.hint(self, "remote register_client, local_id(%s): %s %s" % [local_id, id, pdata])
 	if id == local_id:
-		printd("Local player, skipp")
+		Log.hint(self, "Local player, skipp")
 		return
 	if players.has(id):
-		printd("register client(%s): already exists(%s)" % [local_id, id])
+		Log.hint(self, "register client(%s): already exists(%s)" % [local_id, id])
 		return
-	printd("register_client: id(%s), data: %s" % [id, pdata])
+	Log.hint(self, "register_client: id(%s), data: %s" % [id, pdata])
 	pdata["id"] = id
 	if pdata.has("options"):
 		pdata["options"] = options.player_opt("puppet", pdata["options"])
@@ -373,7 +373,7 @@ remote func register_client(id : int, pdata : Dictionary) -> void:
 		#sync existing players
 		rpc("register_client", id, pdata)
 		for p in players:
-			printd("**** %s" % players[p])
+			Log.hint(self, "**** %s" % players[p])
 			var pid = players[p].id
 			if pid != id:
 				rpc_id(id, "register_client", pid, players[p].data)
@@ -450,9 +450,9 @@ func create_player(id : int) -> void:
 	if players[id].data.has("network"):
 		player.nonetwork = !players[id].data.network
 	
-	printd("cp set_network will set(%s) %s %s" % [players[id].has("id") and not player.nonetwork, players[id].has("id"), not player.nonetwork])
+	Log.hint(self, "cp set_network will set(%s) %s %s" % [players[id].has("id") and not player.nonetwork, players[id].has("id"), not player.nonetwork])
 	if players[id].has("id") and not player.nonetwork:
-		printd("create player set_network_master player id(%s) network id(%s)" % [id, players[id].id])
+		Log.hint(self, "create player set_network_master player id(%s) network id(%s)" % [id, players[id].id])
 		player.set_network_master(players[id].id) #set unique id as master
 	
 	emit_signal("gamestate_log", "==create player(%s) %s; name(%s)" % [id, players[id], players[id].data.username])
@@ -486,10 +486,6 @@ func end_game() -> void:
 #################
 # debug functions
 
-
-func printd(s : String) -> void:
-	logg.print_filtered_message(debug_id, s)
-
 func log_all_signals() -> void:
 	var sg_ignore = ["_on_gamestate_log"]
 	var sg_added = ""
@@ -499,16 +495,18 @@ func log_all_signals() -> void:
 		#printd("log all signals connect %s" % sg)
 		sg_added = "%s(%s) %s" % [sg.name, sg.args.size(), sg_added]
 		connect(sg.name, self, "log_all_signals_print_%s" % (sg.args.size()+1), ["%s" % sg.name])
-	printd("log_all_signals: %s" % sg_added)
+	Log.hint(self, "log_all_signals: %s" % sg_added)
 		
 func log_all_signals_print_1(signal_name : String):
-	printd(str("==========signal0 ", signal_name," ================"))
+	Log.hint(self, str("==========signal0 ", signal_name," ================"))
+
 func log_all_signals_print_2(a1, signal_name : String):
-	printd(str("==========signal1 ", signal_name," ================"))
-	printd(str(a1))
+	Log.hint(self, str("==========signal1 ", signal_name," ================"))
+	Log.hint(self, str(a1))
+
 func log_all_signals_print_3(a1, a2, signal_name : String):
-	printd(str("==========signal2 ", signal_name," ================"))
-	printd(str(a1, a2))
+	Log.hint(self, str("==========signal2 ", signal_name," ================"))
+	Log.hint(self, str(a1, a2))
 
 #################
 # New UI functions
@@ -552,24 +550,24 @@ func load_level(var resource) -> void: #Resource is variant
 
 func net_up() -> void: 
 	if PlayerSceneUP:
-		printd("------net_up---enable networking in instanced players--------")
+		Log.hint(self, "------net_up---enable networking in instanced players--------")
 	else:
-		printd("------net_up---do nothing--------")
+		Log.hint(self, "------net_up---do nothing--------")
 
 func net_down() -> void:
 	if PlayerSceneUP:
-		printd("------net_down---players disable netwokring--------")
+		Log.hint(self, "------net_down---players disable netwokring--------")
 	else:
-		printd("------net_down---players do nothing--------")
+		Log.hint(self, "------net_down---players do nothing--------")
 
 func net_client(id : int, connected : bool) -> void:
 	if connected:
-		printd("------net_client(%s)---make stub for %s---------" % [connected, id])
+		Log.hint(self, "------net_client(%s)---make stub for %s---------" % [connected, id])
 	else:
-		printd("------net_client(%s)---disconnect client %s-----" % [connected, id])
+		Log.hint(self, "------net_client(%s)---disconnect client %s-----" % [connected, id])
 
 func player_scene() -> void:
-	printd("------instance avatars with networking(%s) - players count %s" % [NetworkUP, players.size()])
+	Log.hint(self, "------instance avatars with networking(%s) - players count %s" % [NetworkUP, players.size()])
 	PlayerSceneUP = true
 
 func add_chat_ui() -> void:
@@ -622,31 +620,31 @@ func _on_queue_attach_on_tree_change() -> void:
 						_queue_attach[p]["scene"] = scene
 
 func _on_net_connection_fail() -> void:
-	printd("***********net_connection_fail")
+	Log.hint(self, "***********net_connection_fail")
 	NetworkUP = false
 
 func _on_net_client_connected(id : int) -> void:
-	printd("***********net_client_connected(%s)" % id)
+	Log.hint(self, "***********net_client_connected(%s)" % id)
 	net_client(id, true)
 
 func _on_net_client_disconnected(id : int) -> void:
-	printd("***********net_client_disconnected(%s)" % id)
+	Log.hint(self, "***********net_client_disconnected(%s)" % id)
 	net_client(id, false)
 
 func _on_net_server_connected() -> void:
-	printd("***********net_server_connected")
+	Log.hint(self, "***********net_server_connected")
 	if not NetworkUP:
 		NetworkUP = true
 		net_up()
 
 func _on_net_server_disconnected() -> void:
-	printd("***********net_server_disconnected")
+	Log.hint(self, "***********net_server_disconnected")
 	if NetworkUP:
 		NetworkUP = false
 		net_down()
 
 func _on_net_server_up() -> void:
-	printd("***********net_server_up")
+	Log.hint(self, "***********net_server_up")
 	if not NetworkUP:
 		NetworkUP = true
 		net_up()
@@ -722,14 +720,14 @@ func _on_connected_to_server() -> void:
 	emit_signal("server_connected")
 
 func _on_network_log(msg) -> void:
-	printd("Server log: %s" % msg)
+	Log.hint(self, "Server log: %s" % msg)
 
 func _on_gamestate_log(msg) -> void:
-	printd("gamestate log: %s" % msg)
+	Log.hint(self, "gamestate log: %s" % msg)
 
 func _on_scene_change_log() -> void:
-	printd("===gs on_scene_change")
-	printd("get_tree: %s" % get_tree())
+	Log.hint(self, "===gs on_scene_change")
+	Log.hint(self, "get_tree: %s" % get_tree())
 	if get_tree():
 		if get_tree().current_scene :
-			printd("current scene: %s" % get_tree().current_scene)
+			Log.hint(self, "current scene: %s" % get_tree().current_scene)

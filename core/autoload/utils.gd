@@ -137,7 +137,7 @@ func file_mtime(fname):
 		if ff.file_exists(path):
 			cache_flist[path] = { mtime = ff.get_modified_time(path) }
 		else:
-			printd("attempt to get mtime of non existing file '%s'" % path)
+			Log.warning(self, "attempt to get mtime of non existing file '%s'" % path)
 			cache_flist[path] = { mtime = "nofile" }
 	return cache_flist[path].mtime
 
@@ -155,12 +155,6 @@ func get_node_root(node):
 		node = node.get_parent()
 	return node
 
-#########################
-var debug_id = "utils.gd"
-func printd(s):
-	logg.print_filtered_message(debug_id, s)
-	
-	
 func get_safe_bool(obj, propetry):
 	if obj_has_property(obj, propetry):
 		return obj.get(propetry)

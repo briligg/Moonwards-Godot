@@ -8,6 +8,8 @@ func _ready() -> void:
 	else:
 		UIManager.register_base_ui(self)
 		UIManager._set_current_ui(main_ui)
+		
+	Log.hint(self, "Test Message")
 
 func _ready_headless() -> void:
 	print("Setup headless mode")

@@ -12,9 +12,6 @@ var hidden_nodes : Array = []
 var hidden_nodes_prob : float
 var debug_id : String = "debug.gd"
 
-func printd(s) -> void:
-	logg.print_filtered_message(debug_id, s)
-
 func _input(event : InputEvent) -> void:
 	#print("debug event: %s" % event)
 	if event.is_action_pressed("debug_active_cameras"):
@@ -52,17 +49,20 @@ func _ready() -> void:
 	Input.set_use_accumulated_input(false)
 	
 func on_tree_change() -> void:
-	printd("debug treechange")
+	Log.hint(self, "debug treechange")
+
 func on_node_added(node):
-	printd("added node %s" % node.get_path())
+	Log.hint(self, "added node %s" % node.get_path())
+
 func on_node_removed(node):
-	printd("node removed: %s" % node)
+	Log.hint(self, "node removed: %s" % node)
+
 func tree_idle_frame():
-	printd("tree idle frame")
+	Log.hint(self, "tree idle frame")
 
 func debug_apply_options() -> void:
 	yield(get_tree(), "idle_frame")
-	printd("Apply options to new player scene")
+	Log.hint(self, "Apply options to new player scene")
 	e_collision_shapes(options.get("dev", "enable_collision_shapes"))
 	hidden_nodes = []
 	if options.get("dev", "hide_meshes_random"):
@@ -105,12 +105,12 @@ func camera_ready(force : bool = false) -> void:
 		camera_ready_path = root.get_path_to(camera)
 		camera.current = true
 		if active:
-			printd("sync camera position with old camera")
+			Log.hint(self, "sync camera position with old camera")
 			camera.global_transform = camera_ready_oldcamera.global_transform
-		printd("added fly camera to scene, index %s" % camera_used)
+		Log.hint(self, "added fly camera to scene, index %s" % camera_used)
 
 func on_scene_change() -> void:
-	printd("on_scene_change")
+	Log.hint(self, "on_scene_change")
 	options.del_state("set_lod_manager")
 	debug_apply_options()
 
@@ -123,10 +123,10 @@ func print_active_cameras() -> void:
 	var root = get_tree().current_scene
 	var cameras = utils.get_nodes_type(root, "Camera", true)
 	for p in cameras:
-		printd("%s(%s)" % [p, root.get_node(p).current])
+		Log.hint(self, "%s(%s)" % [p, root.get_node(p).current])
 
 func set_active_camera() -> void:
-	printd("set camera to local player: %s" % gamestate.local_id)
+	Log.hint(self, "set camera to local player: %s" % gamestate.local_id)
 	gamestate.player_local_camera()
 
 remote func test_remote_call() -> void:
@@ -134,10 +134,10 @@ remote func test_remote_call() -> void:
 
 func set_3fps(enable : bool, value : int = 3) -> void:
 	if enable:
-		printd("debug set FPS to %s" % round(value))
+		Log.hint(self, "debug set FPS to %s" % round(value))
 		Engine.target_fps = round(value)
 	else:
-		printd("debug set FPS to 0")
+		Log.hint(self, "debug set FPS to 0")
 		Engine.target_fps = 0
 
 func e_area_lod(enable : bool = true) -> void:
@@ -146,7 +146,7 @@ func e_area_lod(enable : bool = true) -> void:
 func e_collision_shapes(enable : bool = true):
 	var root = utils.scene
 	var cs_objects = utils.get_cs_list_cs(root)
-	printd("e_collision_shape(enable=%s), found : %s" % [enable, cs_objects.size()])
+	Log.hint(self, "e_collision_shape(enable=%s), found : %s" % [enable, cs_objects.size()])
 	for p in cs_objects:
 		var obj = root.get_node(p)
 		obj.disabled = !enable
@@ -216,17 +216,17 @@ func set_lod_manager(enable : bool) -> void:
 	var root = get_tree().current_scene
 	if slm == null:
 		#find if lod manager is present in scene
-		printd("Look for existing TreeManager")
+		Log.hint(self, "Look for existing TreeManager")
 		for p in utils.get_nodes_type(root, "Node", true):
 			var obj = root.get_node(p)
 			if obj.script and obj.get("id") and obj.id == "TreeManager":
 				slm = p
 				options.set("_state_", p, "set_lod_manager")
-				printd("found TreeManager at %s" % p)
+				Log.hint(self, "found TreeManager at %s" % p)
 				break
 		if enable == null:
 			#just find if there is lod manager in the tree
-			printd("end search for LodManager")
+			Log.hint(self, "end search for LodManager")
 			return
 
 	if not enable:
@@ -234,12 +234,12 @@ func set_lod_manager(enable : bool) -> void:
 			var tm = root.get_node(slm)
 			tm.enabled = false
 		else:
-			printd("set_lod_manager, attempt to disable notexisting tree manager")
+			Log.hint(self, "set_lod_manager, attempt to disable notexisting tree manager")
 		return #nothing to do here
 		
 	if slm == null:
 		#create/add proper node
-		printd("Load TreeManager")
+		Log.hint(self, "Load TreeManager")
 		var tm_path = options.get("dev", "lod_manager_path", "res://scripts/TreeManager.tscn")
 		var tm = ResourceLoader.load(tm_path)
 		tm = tm.instance()
@@ -285,36 +285,36 @@ func features_list(enabled_only : bool = true) -> void:
 	]
 
 	if enabled_only:
-		printd("OS:: print only enabled features")
+		Log.hint(self, "OS:: print only enabled features")
 	
 	for f in features:
 		if enabled_only:
 			if OS.has_feature(f.opt):
-				printd("OS::%s has %s" % [f.opt, OS.has_feature(f.opt)])
+				Log.hint(self, "OS::%s has %s" % [f.opt, OS.has_feature(f.opt)])
 		else:
-			printd("OS::%s has %s" % [f.opt, OS.has_feature(f.opt)])
+			Log.hint(self, "OS::%s has %s" % [f.opt, OS.has_feature(f.opt)])
 	
 
 func print_current_players() -> void:
-	printd("gamestate players")
+	Log.hint(self, "gamestate players")
 	print(gamestate.players)
 	for p in gamestate.players.keys():
-		printd("player %s" % gamestate.players[p])
-		printd("obj at %s" % gamestate.players[p].obj.get_path())
+		Log.hint(self, "player %s" % gamestate.players[p])
+		Log.hint(self, "obj at %s" % gamestate.players[p].obj.get_path())
 
 func print_groups() -> void:
 	#get_nodes_in_group("LODElement)
-	printd("List of nodes in LODElement group")
+	Log.hint(self, "List of nodes in LODElement group")
 	for obj in get_tree().get_nodes_in_group("LODElement"):
 		print(obj.get_path())
-	printd("List of nodes in wall group")
+	Log.hint(self, "List of nodes in wall group")
 	for obj in get_tree().get_nodes_in_group("wall"):
 		print(obj.get_path())
 # 	for p in get_tree().call_group("LODElement", "get_path"):
-# 		printd(p)
-# 	printd("List of nodes in wall group")
+# 		Log.hint(self, p)
+# 	Log.hint(self, "List of nodes in wall group")
 # 	for p in get_tree().call_group("wall", "get_path"):
-# 		printd(p)
+# 		Log.hint(self, p)
 
 func dir_contents(path : String = "res://") -> void:
 	var dir = Directory.new()
@@ -338,9 +338,9 @@ func mouse_toggle() -> void:
 	match Input.get_mouse_mode():
 		Input.MOUSE_MODE_VISIBLE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-			printd("set cursor to captured")
+			Log.hint(self, "set cursor to captured")
 		Input.MOUSE_MODE_CAPTURED:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			printd("set cursor to visible")
+			Log.hint(self, "set cursor to visible")
 		_:
 			print("mouse_toggle, do not know what to do, current mode %s" % Input.get_mouse_mode())

@@ -23,9 +23,6 @@ var scripts = {
 var MeshTool
 var TreeStats
 
-func printd(s):
-	logg.print_filtered_message(id, s)
-
 #Set root path to manage mesh instances below
 func set_path():
 	pass
@@ -50,14 +47,14 @@ func track_node_added(node):
 	if not node is MeshInstance:
 		return
 	if String(node.get_path()).begins_with("/root/Control"):
-		printd("track_node_added, ignore, part of control %s" % node.get_path())
+		Log.hint(self, "track_node_added, ignore, part of control %s" % node.get_path())
 		return
 	if tree and node:
 		if tree.has_node(node.get_path()):
 			var root = get_tree()
 			root.connect("idle_frame", self, "track_update", [], Node.CONNECT_ONESHOT)
 			update_tree = true
-			printd("TM track node added, set update, cuz %s in %s" % [node.get_path(), tree.get_path()])
+			Log.hint(self, "TM track node added, set update, cuz %s in %s" % [node.get_path(), tree.get_path()])
 
 func track_node_removed(node):
 	if node is MeshInstance and MeshTool:
@@ -71,20 +68,20 @@ func track_node_removed(node):
 			var root = tree.get_tree()
 			root.connect("idle_frame", self, "track_update", [], Node.CONNECT_ONESHOT)
 			update_tree = true
-			printd("TM track node remove, set update, cuz %s in %s" % [node.get_path(), tree.get_path()])
+			Log.hint(self, "TM track node remove, set update, cuz %s in %s" % [node.get_path(), tree.get_path()])
 
 func track_update():
 	update_tree = false
-	printd("TM track_update")
+	Log.hint(self, "TM track_update")
 	if enable_hboxsetlod:
-		printd("TM update hboxsetlod at %s" % tree.get_path())
+		Log.hint(self, "TM update hboxsetlod at %s" % tree.get_path())
 		hboxsetlod(tree)
 		if enable_lodelement:
 			lodelement_set(tree)
 
 
 func track_changes(enable):
-	printd("TM track_changes(%s) at %s" % [enable, tree])
+	Log.hint(self, "TM track_changes(%s) at %s" % [enable, tree])
 	var root = get_tree()
 	if root:
 		if enable:
@@ -94,7 +91,7 @@ func track_changes(enable):
 			root.disconnect("node_added", self, "track_node_added")
 			root.disconnect("node_removed", self, "track_node_removed")
 	else:
-		printd("fail to setup tracking changes, enable(%s), but get_tree is null" % enable)
+		Log.warning(self, "fail to setup tracking changes, enable(%s), but get_tree is null" % enable)
 
 func hboxsetlod_check(node):
 	var to_set = false
@@ -133,17 +130,17 @@ func hboxsetlod(node, children = true):
 		# so it not necessaly and can be removed later to jsut assing values
 		# or track it independantly
 		if round(new_lmd*1000) != round(node.lod_max_distance*1000):
-			#printd("old new %s %s path %s" % [node.lod_max_distance, new_lmd, node.get_path()])
+			#Log.hint(self, "old new %s %s path %s" % [node.lod_max_distance, new_lmd, node.get_path()])
 			node.lod_max_distance = new_lmd
-			printd("%s lod(%s) aspect(%s) size(%s) name: %s " % [node, node.lod_max_distance, lod_aspect_ratio, size, node.name])
+			Log.hint(self, "%s lod(%s) aspect(%s) size(%s) name: %s " % [node, node.lod_max_distance, lod_aspect_ratio, size, node.name])
 	return size
 
 func hboxsetlod_set(root):
 	if enable_hboxsetlod_save_cache:
-		printd("hboxsetlod get cache")
+		Log.hint(self, "hboxsetlod get cache")
 		var cache = options.get("TreeManagerCache")
 		if cache != null:
-			printd("hboxsetlod get cache")
+			Log.hint(self, "hboxsetlod get cache")
 			MeshTool.set_cache(cache)
 	hboxsetlod(root)
 	if enable_lodelement:
@@ -151,7 +148,7 @@ func hboxsetlod_set(root):
 	if enable_hboxsetlod_save_cache:
 		options.set("TreeManagerCache", MeshTool.get_cache())
 		#will accumulate changes in dev settings, fix that :TODO :FIX
-		printd("hboxsetlod save cache")
+		Log.hint(self, "hboxsetlod save cache")
 		options.save()
 
 func lodelement_weight(node, weight = null):
@@ -176,47 +173,47 @@ func lodelement_fixchilds(node):
 	for p in utils.get_nodes_type(node, "MeshInstance", true):
 		var obj = node.get_node(p)
 		if obj.lod_max_distance > node.lod_max_distance:
-			printd("fix child lod max %s %s, %s" % [obj.lod_max_distance, node.lod_max_distance, obj.get_path()])
+			Log.hint(self, "fix child lod max %s %s, %s" % [obj.lod_max_distance, node.lod_max_distance, obj.get_path()])
 			obj.lod_max_distance = node.lod_max_distance
 		if obj.lod_min_distance < node.lod_min_distance:
 			if node.lod_min_distance > obj.lod_max_distance:
-				printd("won't be shown, too small %s" % obj.get_path())
-			printd("fix child lod min %s %s, %s" % [obj.lod_max_distance, node.lod_max_distance, obj.get_path()])
+				Log.hint(self, "won't be shown, too small %s" % obj.get_path())
+			Log.hint(self, "fix child lod min %s %s, %s" % [obj.lod_max_distance, node.lod_max_distance, obj.get_path()])
 			obj.lod_min_distance = node.lod_min_distance
 
 func lodelement_set(root):
 	if root == null:
-		printd("lodelement, root is not defined")
+		Log.warning(self, "lodelement, root is not defined")
 		return
 	var tree = get_tree()
 	if tree == null:
-		printd("lodelement tree is null, fail to adjust tree")
+		Log.warning(self, "lodelement tree is null, fail to adjust tree")
 		return
 	if not enable_hboxsetlod:
-		printd("lodelement, hbox lod is disabled, no data for adjusting")
+		Log.warning(self, "lodelement, hbox lod is disabled, no data for adjusting")
 		return
 	if not tree.has_group(lod_element_group):
-		printd("lodelement, lod_element_group(%s) not found in tree(%s)" % [lod_element_group, tree])
+		Log.warning(self, "lodelement, lod_element_group(%s) not found in tree(%s)" % [lod_element_group, tree])
 		return
 	 
 	var loe = tree.get_nodes_in_group(lod_element_group)
-	printd("lodelement, found %s nodes" % loe.size())
+	Log.hint(self, "lodelement, found %s nodes" % loe.size())
 	for e in loe:
 		if not root.has_node(e.get_path()):
 			loe.erase(e)
-	printd("lodelement, belong to %s %s nodes" % [root.get_path(), loe.size()])
+	Log.hint(self, "lodelement, belong to %s %s nodes" % [root.get_path(), loe.size()])
 	
 	var substitute = "substitute"
 	for e in loe:
-		printd("loe %s" % [e.get_path()])
+		Log.hint(self, "loe %s" % [e.get_path()])
 		var whom = e.get(substitute)
 		if whom:
-			printd("whom %s" % [whom])
+			Log.hint(self, "whom %s" % [whom])
 		else:
 			var nroot = utils.get_node_root(e)
 			var fname = nroot.filename
 			var path = nroot.get_path_to(e)
-			printd("substitutions is not defined '%s' in %s::%s" % [whom, fname, path])
+			Log.warning(self, "substitutions is not defined '%s' in %s::%s" % [whom, fname, path])
 			loe.erase(e)
 		#weight both branches to determine lod_min and max
 		var sweight = lodelement_weight(e.get_sub_node())
@@ -225,11 +222,11 @@ func lodelement_set(root):
 			weight.vcount = 1
 		var proportion = sqrt(sweight.vcount/weight.vcount)
 		if proportion > 50:
-			printd("weights %s %s" % [sweight, weight])
-			printd("node lod %s %s" % [e.get_sub_node().lod_min_distance, e.get_sub_node().lod_max_distance])
-			printd("sub  lod %s %s" % [e.lod_min_distance, e.lod_max_distance])
-			printd("proportion %s" % proportion)
-			printd("proportion is %s in %s, reduced to 50" % [proportion, e.get_path()])
+			Log.hint(self, "weights %s %s" % [sweight, weight])
+			Log.hint(self, "node lod %s %s" % [e.get_sub_node().lod_min_distance, e.get_sub_node().lod_max_distance])
+			Log.hint(self, "sub  lod %s %s" % [e.lod_min_distance, e.lod_max_distance])
+			Log.hint(self, "proportion %s" % proportion)
+			Log.hint(self, "proportion is %s in %s, reduced to 50" % [proportion, e.get_path()])
 			proportion = 50
 		if proportion > 1:
 			e.get_sub_node().lod_max_distance = e.lod_max_distance / proportion
@@ -239,15 +236,15 @@ func lodelement_set(root):
 			e.lod_max_distance = e.get_sub_node().lod_max_distance * proportion
 			e.get_sub_node().lod_min_distance = e.lod_max_distance
 		else:
-			printd("proportion is strange %s, do nothing" % proportion)
+			Log.hint(self, "proportion is strange %s, do nothing" % proportion)
 		lodelement_fixchilds(e)
 		lodelement_fixchilds(e.get_sub_node())
 		
-# 		printd("node lod %s %s" % [e.get_sub_node().lod_min_distance, e.get_sub_node().lod_max_distance])
-# 		printd("sub  lod %s %s" % [e.lod_min_distance, e.lod_max_distance])
+# 		Log.hint(self, "node lod %s %s" % [e.get_sub_node().lod_min_distance, e.get_sub_node().lod_max_distance])
+# 		Log.hint(self, "sub  lod %s %s" % [e.lod_min_distance, e.lod_max_distance])
 
 func set_lod_aspect_ratio(value):
-	printd("TreeManager update lod_aspect_ratio from %s to %s" % [lod_aspect_ratio, value])
+	Log.hint(self, "TreeManager update lod_aspect_ratio from %s to %s" % [lod_aspect_ratio, value])
 	if value > 0:
 		lod_aspect_ratio = value
 	if not enabled:
@@ -256,65 +253,65 @@ func set_lod_aspect_ratio(value):
 		hboxsetlod_set(tree)
 		if enable_lodmanager and get_node(LodManager):
 			var lm = get_node(LodManager)
-			printd("aspect change, Force LodManager to update")
+			Log.hint(self, "aspect change, Force LodManager to update")
 			lm.UpdateLOD(true)
 
 func enable_managment():
 	if tree == null:
-		printd("TreeManagment faield to enable, tree is not set")
+		Log.warning(self, "TreeManagment faield to enable, tree is not set")
 		return false
-	printd("TM TreeManagment enable, tree %s" % tree.get_path())
+	Log.hint(self, "TM TreeManagment enable, tree %s" % tree.get_path())
 	if enable_hboxsetlod:
-		printd("TM start hboxsetlod at %s" % tree.get_path())
+		Log.hint(self, "TM start hboxsetlod at %s" % tree.get_path())
 		hboxsetlod_set(tree)
 	if enable_lodmanager and get_node(LodManager):
 		var lm = get_node(LodManager)
-		printd("found LodManager at %s" % lm.get_path())
+		Log.hint(self, "found LodManager at %s" % lm.get_path())
 		if enable_hboxsetlod:
 			lm.set_scene_path_update(lm.get_path_to(tree), true)
 		else:
 			lm.set_scene_path_update(lm.get_path_to(tree), true)
 		lm.enabled = true
 	else:
-		printd("LodManager disabled: %s %s" % [enable_lodmanager, LodManager])
+		Log.hint(self, "LodManager disabled: %s %s" % [enable_lodmanager, LodManager])
 		var lm = get_node(LodManager)
 		lm.enabled = false
 	track_changes(true)
 	return true
 
 func disable_managment():
-	printd("TreeManagment disable")
+	Log.hint(self, "TreeManagment disable")
 	if get_node(LodManager):
 		var lm = get_node(LodManager)
 		lm.enabled = false
-		printd("Disable LodManager %s" % lm.get_path())
+		Log.hint(self, "Disable LodManager %s" % lm.get_path())
 
 	track_changes(false)
 
 func init_tree():
-	printd("Init Tree manager")
+	Log.hint(self, "Init Tree manager")
 	if tree == null:
 		if get_tree():
 			tree = get_tree().current_scene
-			printd("tree set to: %s" % tree)
-	printd("=tree: %s" % tree)
+			Log.hint(self, "tree set to: %s" % tree)
+	Log.hint(self, "=tree: %s" % tree)
 	if tree:
-		printd("Init meshtool and treestats scripts")
+		Log.hint(self, "Init meshtool and treestats scripts")
 		MeshTool = scripts.MeshTool.new(tree)
 		TreeStats = scripts.TreeStats.new(tree)
 
 func _ready():
-	printd("_ready, enabled(%s)" % enabled)
+	Log.hint(self, "_ready, enabled(%s)" % enabled)
 	if enabled:
 		init_tree()
 		enable_managment()
 
 func tm_enable(enable):
-	printd("Tree manager tm_enable(%s), enabled(%s)" % [enable, enabled])
+	Log.hint(self, "Tree manager tm_enable(%s), enabled(%s)" % [enable, enabled])
 	if tree == null and enable:
 		init_tree()
 		if tree == null:
-			printd("Tree manager can't set tree, disabled")
+			Log.warning(self, "Tree manager can't set tree, disabled")
 			enabled = null
 			return
 		enabled = false

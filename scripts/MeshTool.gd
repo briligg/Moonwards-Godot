@@ -6,9 +6,6 @@ var mesh_info = {}
 var mesh_cache = {}
 var root
 
-func printd(s):
-	logg.print_filtered_message(id, s)
-
 func cache_has_id(id):
 	if id == null:
 		return false
@@ -46,10 +43,10 @@ func reset_vars():
 
 func set_mesh(obj):
 	if obj == null:
-		printd("set_mesh, obj == null")
+		Log.warning(self, "set_mesh, obj == null")
 		return
 	if root == null:
-		printd("scene tree is not defined")
+		Log.warning(self, "scene tree is not defined")
 	
 	cache_vars()
 	mesh = null
@@ -68,7 +65,7 @@ func get_mesh():
 	return mesh
 
 func _init(tree=null, obj=null):
-	printd("init(%s, %s)" % [tree, obj])
+	Log.hint(self, "init(%s, %s)" % [tree, obj])
 	if tree == null:
 		if get_tree():
 			tree = get_tree().current_scene
@@ -102,7 +99,7 @@ func get_median():
 
 func get_hitbox():
 	if mesh == null:
-		printd("get_hitbox mesh is null")
+		Log.warning(self, "get_hitbox mesh is null")
 		return
 	if mesh_info.has("hitbox"):
 		return mesh_info.hitbox
@@ -177,13 +174,13 @@ func hbox_instance():
 func id_mesh(obj):
 	var noid = null
 	if obj == null:
-		printd("id_mesh, object is null")
+		Log.warning(self, "id_mesh, object is null")
 		return noid
 	if obj is MeshInstance:
 		if obj.mesh:
 			obj = obj.mesh
 		else:
-			printd("id_mesh, mesh is null in: %s" % obj.get_path())
+			Log.warning(self, "id_mesh, mesh is null in: %s" % obj.get_path())
 			return noid
 	if not obj.is_class("Resource"):
 		#print("id_mesh obj(%s) not a Resource type" % obj)
@@ -191,5 +188,5 @@ func id_mesh(obj):
 	var path = obj.resource_path
 	var mtime = utils.file_mtime(path)
 	var id = "%s %s" % [mtime, path]
-# 	printd("id_mesh %s" % id)
+# 	Log.hint(self, "id_mesh %s" % id)
 	return id.md5_text()

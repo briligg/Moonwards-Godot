@@ -10,19 +10,16 @@ var camera_position = Vector3()
 var mesh_collection = []
 var id_collection = {}
 
-func printd(s):
-	logg.print_filtered_message(id, s)
-
 func _ready():
-	printd("_ready, enabled(%s)" % enabled)
+	Log.hint(self, "_ready, enabled(%s)" % enabled)
 	if enabled:
 		enabled = false
 		lod_enable(true)
 
 func lod_enable(turn_on):
-	printd("lod_enable: %s %s" % [turn_on, enabled])
+	Log.hint(self, "lod_enable: %s %s" % [turn_on, enabled])
 	if turn_on and not enabled:
-		printd("Enable LodManager, at %s" % get_lodroot().get_path())
+		Log.hint(self, "Enable LodManager, at %s" % get_lodroot().get_path())
 		if get_tree():
 			get_tree().connect("node_added", self, "NodeAddedToTree")
 			enabled = true
@@ -30,7 +27,7 @@ func lod_enable(turn_on):
 		else:
 			print("Failed to enable lod manager, get_tree is null")
 	elif not turn_on and enabled:
-		printd("Disable LodManager")
+		Log.hint(self, "Disable LodManager")
 		if get_tree():
 			get_tree().disconnect("node_added", self, "NodeAddedToTree")
 		enabled = false
@@ -43,15 +40,15 @@ func get_lodroot():
 		return get_parent()
 
 func reset(init=true):
-	printd("reset(%s)" % init)
+	Log.hint(self, "reset(%s)" % init)
 	camera = null
 	camera_position = Vector3()
 	if mesh_collection.size() > 0:
-		printd("Restore state")
+		Log.hint(self, "Restore state")
 		for ref in mesh_collection:
 			var obj = ref.get_ref()
 			var id = obj.get_instance_id()
-			printd("rs_mesh %s %s %s %s" % [id, obj.get_path(), obj.visible, id_collection[id].visible])
+			Log.hint(self, "rs_mesh %s %s %s %s" % [id, obj.get_path(), obj.visible, id_collection[id].visible])
 			if id_collection.has(id) and obj.visible != id_collection[id].visible:
 				obj.visible = id_collection[id].visible
 	
@@ -61,7 +58,7 @@ func reset(init=true):
 		init_scene()
 
 func init_scene():
-	printd("init_scene")
+	Log.hint(self, "init_scene")
 	yield(get_tree(), "idle_frame")
 	GetMeshInstances(get_lodroot(), mesh_collection)
 	camera = get_tree().root.get_viewport().get_camera()
@@ -69,7 +66,7 @@ func init_scene():
 	if camera:
 		UpdateLOD(true)
 	else:
-		printd("init_scene, no camera found")
+		Log.hint(self, "init_scene, no camera found")
 
 func set_scene_path(path):
 	set_scene_path_update(path, false)
@@ -79,7 +76,7 @@ func set_scene_path_update(path, force_update=false):
 		scene_path = path
 		return
 	if scene_path != path:
-		printd("scene_path, path changed %s -> %s" % [scene_path, path])
+		Log.hint(self, "scene_path, path changed %s -> %s" % [scene_path, path])
 		scene_path = path
 		reset(true)
 	else:
@@ -107,7 +104,7 @@ func _process(delta):
 	if camera==null:
 		#as soon as we get camera, force update
 		if UpdateCamera(true):
-			printd("_process, camera found, update first time")
+			Log.hint(self, "_process, camera found, update first time")
 			UpdateLOD(true)
 	elif UpdateCamera():
 		UpdateLOD()
@@ -129,13 +126,13 @@ func UpdateCamera(force=false):
 
 func UpdateLOD(force=false):
 	if force:
-		printd("force UpdateLOD")
+		Log.hint(self, "force UpdateLOD")
 		var uc = UpdateCamera(force)
 		if not uc :
-			printd("UpdateLOD no camera position defined")
+			Log.hint(self, "UpdateLOD no camera position defined")
 			return
 		
-	#printd("LODManager update, collection size %s, position %s" %  [mesh_collection.size(), camera_position])
+	#Log.hint(self, "LODManager update, collection size %s, position %s" %  [mesh_collection.size(), camera_position])
 	var changes = 0
 	var visible = 0
 	var hidden = 0
@@ -145,17 +142,17 @@ func UpdateLOD(force=false):
 			mesh_collection.erase(ref)
 			continue
 		var distance_to_camera = mesh.global_transform.origin.distance_to(camera_position)
-# 		printd("dd %s %s %s %s min/max/distance_to_camera/visible %s " % [mesh.lod_min_distance, mesh.lod_max_distance, distance_to_camera, mesh.visible, mesh.get_path()])
+# 		Log.hint(self, "dd %s %s %s %s min/max/distance_to_camera/visible %s " % [mesh.lod_min_distance, mesh.lod_max_distance, distance_to_camera, mesh.visible, mesh.get_path()])
 		var new_visible = false
 		if distance_to_camera >= mesh.lod_min_distance and (distance_to_camera < mesh.lod_max_distance or mesh.lod_max_distance == 0.0):
 			new_visible = true
 
 		if mesh.visible and not new_visible:
 			changes += 1
-# 			printd("mesh(%s), %s distance(%s) visible(%s, %s) %s %s" % [mesh, mesh.get_path(), distance_to_camera, mesh.visible, new_visible, mesh.lod_min_distance, mesh.lod_max_distance])
+# 			Log.hint(self, "mesh(%s), %s distance(%s) visible(%s, %s) %s %s" % [mesh, mesh.get_path(), distance_to_camera, mesh.visible, new_visible, mesh.lod_min_distance, mesh.lod_max_distance])
 		elif not mesh.visible and new_visible:
 			changes += 1
-# 			printd("mesh(%s), %s distance(%s) visible(%s, %s) %s %s" % [mesh, mesh.get_path(), distance_to_camera, mesh.visible, new_visible, mesh.lod_min_distance, mesh.lod_max_distance])
+# 			Log.hint(self, "mesh(%s), %s distance(%s) visible(%s, %s) %s %s" % [mesh, mesh.get_path(), distance_to_camera, mesh.visible, new_visible, mesh.lod_min_distance, mesh.lod_max_distance])
 
 		if mesh.visible and not new_visible:
 			mesh.visible = false
@@ -166,4 +163,4 @@ func UpdateLOD(force=false):
 		else:
 			hidden += 1
 	if changes > 0:
-		printd("LM %s/%s/%s/%s changes/visible/hidden/total" % [changes, visible, hidden, mesh_collection.size()])
+		Log.hint(self, "LM %s/%s/%s/%s changes/visible/hidden/total" % [changes, visible, hidden, mesh_collection.size()])

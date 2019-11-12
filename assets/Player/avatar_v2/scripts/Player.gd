@@ -161,10 +161,10 @@ func set_player_group(enable=true): # for local only
 		return
 	var pg = options.player_opt.PlayerGroup
 	if puppet == false and not is_in_group(pg):
-		printd("add avatar(%s), puppet(%s) to %s group" % [get_path(), puppet, pg])
+		Log.hint(self, "add avatar(%s), puppet(%s) to %s group" % [get_path(), puppet, pg])
 		add_to_group(pg, true)
 	if puppet == true and is_in_group(pg):
-		printd("remove avatar(%s), puppet(%s) from %s group" % [get_path(), puppet, pg])
+		Log.hint(self, "remove avatar(%s), puppet(%s) from %s group" % [get_path(), puppet, pg])
 		remove_from_group(pg)
 
 func SetID(var _id):
@@ -514,12 +514,12 @@ func UpdateNetworking():
 		rset_unreliable("puppet_jump", jumping)
 		rset_unreliable("puppet_animation_speed", animation_speed)
 	else:
-		printd("UpdateNetworking: not a remote player(%s) and not a network_master and network(%s)" % [get_path(), network])
+		Log.warning(self, "UpdateNetworking: not a remote player(%s) and not a network_master and network(%s)" % [get_path(), network])
 
 func SetNetwork(var enabled):
 	network = enabled
 	nonetwork = ! enabled
-	printd("Player %s enable/disable networking, nonetwork(%s)" % [get_path(), nonetwork])
+	Log.hint(self, "Player %s enable/disable networking, nonetwork(%s)" % [get_path(), nonetwork])
 
 	if network:
 		rset_config("puppet_translation", MultiplayerAPI.RPC_MODE_PUPPET)
@@ -562,25 +562,21 @@ var rp_points = []
 
 func PopRPoint():
 	if rp_points.size() > 0:
-			printd("-----%s %s %s" % [rp_points.size(), get_path(), rp_points[0]])
-			$KinematicBody.global_transform = rp_points.pop_front()
-			rp_time = 0
+		Log.hint(self, "-----%s %s %s" % [rp_points.size(), get_path(), rp_points[0]])
+		$KinematicBody.global_transform = rp_points.pop_front()
+		rp_time = 0
 
 func SaveRPoints(delta):
 	#save position if not in air, and if previous one is more than rp_delta
 	rp_time += delta
 	if not in_air:
-			if rp_points.size() == 0:
-					rp_points.append($KinematicBody.global_transform)
-			if rp_points.size() > rp_max_points:
-					rp_points.pop_back()
-			if rp_time > rp_delta:
-					var kbo = $KinematicBody.global_transform.origin
-					if rp_points[0].origin.distance_to(kbo) > rp_delta_o:
-							rp_time = 0
-							rp_points.push_front($KinematicBody.global_transform)
-							printd("+++++%s %s %s" % [rp_points.size(), get_path(), rp_points[0]])
-
-var debug_id = "Player2.gd"
-func printd(s):
-	logg.print_filtered_message(debug_id, s)
+		if rp_points.size() == 0:
+			rp_points.append($KinematicBody.global_transform)
+		if rp_points.size() > rp_max_points:
+			rp_points.pop_back()
+		if rp_time > rp_delta:
+			var kbo = $KinematicBody.global_transform.origin
+			if rp_points[0].origin.distance_to(kbo) > rp_delta_o:
+				rp_time = 0
+				rp_points.push_front($KinematicBody.global_transform)
+				Log.hint(self, "+++++%s %s %s" % [rp_points.size(), get_path(), rp_points[0]])

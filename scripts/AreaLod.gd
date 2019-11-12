@@ -12,9 +12,6 @@ var nodes_sh
 var nodes_hs
 var id_path
 
-func printd(s):
-	logg.print_filtered_message(id, s)
-
 func array_add(a, b):
 	for i in b:
 		a.append(i)
@@ -45,7 +42,7 @@ func get_node_list(root, groups):
 
 func _ready():
 	if not enabled:
-		printd("AreaLod disabled at %s %s" % [get_path(), utils.get_node_root(self)])
+		Log.hint(self, "AreaLod disabled at %s %s" % [get_path(), utils.get_node_root(self)])
 		return
 	init_all()
 
@@ -61,19 +58,19 @@ func init_all():
 	connect("body_exited", self, "_on_body_exit")
 	connect("body_entered", self, "_on_body_enter")
 	id_path = get_path()
-	printd("Area ready: %s" % id_path)
+	Log.hint(self, "Area ready: %s" % id_path)
 	area_exit("on ready")
 	
 func _on_body_enter(body):
-	printd("body_enter %s" % body)
+	Log.hint(self, "body_enter %s" % body)
 
 func _on_body_exit(body):
-	printd("body_exit %s" % body)
+	Log.hint(self, "body_exit %s" % body)
 
 func _on_Area_area_entered(area):
 	if not bygroup in area.get_groups():
 		return
-	printd("Area enter: %s" % id_path)
+	Log.hint(self, "Area enter: %s" % id_path)
 	for obj in nodes_sh:
 		obj.visible = true
 	for obj in nodes_hs:
@@ -81,7 +78,7 @@ func _on_Area_area_entered(area):
 
 func area_exit(s=""):
 	if s != "on ready":
-		printd("Area exit: %s" % id_path)
+		Log.hint(self, "Area exit: %s" % id_path)
 	for obj in nodes_sh:
 		obj.visible = false
 	for obj in nodes_hs:

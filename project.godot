@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Reference",
+"class": "Log",
+"language": "GDScript",
+"path": "res://core/autoload/Log.gd"
+} ]
 _global_script_class_icons={
-
+"Log": ""
 }
 
 [application]
@@ -23,7 +28,7 @@ boot_splash/main_loop_type=""
 [autoload]
 
 namelist="*res://core/autoload/namelist.gd"
-logg="*res://core/autoload/log.gd"
+logg="*res://core/autoload/Log.gd"
 options="*res://core/autoload/autoload-options.gd"
 gamestate="*res://core/autoload/gamestate.gd"
 utils="*res://core/autoload/utils.gd"

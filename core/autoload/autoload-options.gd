@@ -55,12 +55,6 @@ var OptionsFile : String = "user://gameoptions.save"
 var User_file : String = "user://settings.save"
 
 #############################
-#       debug function      #
-#############################
-func printd(s):
-	logg.print_filtered_message(id, s)
-
-#############################
 # load scene options
 var scenes : Dictionary = {
 	loaded = null,
@@ -167,10 +161,10 @@ func player_opt(type, opt : Dictionary = {}) -> Dictionary:
 			if filter.has(k) and filter[k] or allow_unknown:
 				res[k] = opt[k]
 				if not k in filter:
-					printd("player_filter_opt, default allow unknown option %s %s" % [k, opt[k]])
+					Log.warning(self, "player_filter_opt, default allow unknown option %s %s" % [k, opt[k]])
 
 	if not player_opt.has(type):
-		printd("player_filter_opt, unknown player opt type %s" % type)
+		Log.warning(self, "player_filter_opt, unknown player opt type %s" % type)
 	else:
 		var def_opt : Array = player_opt[type]
 		for k in def_opt:
@@ -182,7 +176,7 @@ func player_opt(type, opt : Dictionary = {}) -> Dictionary:
 func _ready() -> void:
 # 	print("debug set FPS to 3")
 # 	Engine.target_fps = 3
-	printd("load options and settings")
+	Log.hint(self, "load options and settings")
 	self.load()
 	set_defaults()
 	LoadUserSettings()
@@ -191,7 +185,7 @@ func _ready() -> void:
 func load()->void:
 	var savefile : File = File.new()
 	if not savefile.file_exists(OptionsFile):
-		printd("Nothing was saved before")
+		Log.hint(self, "Nothing was saved before")
 	else:
 		savefile.open(OptionsFile, File.READ)
 		var content = str2var(savefile.get_as_text())
@@ -200,7 +194,7 @@ func load()->void:
 			if content.has("_state_"):
 				content.erase("_state_")
 			options = content
-		printd("options loaded from %s" % OptionsFile)
+		Log.hint(self, "options loaded from %s" % OptionsFile)
 
 func save() -> void:
 	var savefile : File = File.new()
@@ -208,7 +202,7 @@ func save() -> void:
 	set("_state_", gamestate.local_id, "game_state_id")
 	savefile.store_line(var2str(options))
 	savefile.close()
-	printd("options saved to %s" % OptionsFile)
+	Log.hint(self, "options saved to %s" % OptionsFile)
 
 func get(category : String, prop = null, default=null):
 	var res 
@@ -227,11 +221,11 @@ func get(category : String, prop = null, default=null):
 		else:
 			options[category] = default
 		res = default
-	printd("get: %s::%s==%s" % [category, prop, res])
+	Log.hint(self, "get: %s::%s==%s" % [category, prop, res])
 	return res
 
 func set(category, value, prop = null):
-	printd("options set %s::%s %s" % [category, prop, value])
+	Log.hint(self, "options set %s::%s %s" % [category, prop, value])
 	if prop == null:
 		options[category] = value
 	else:
@@ -240,7 +234,7 @@ func set(category, value, prop = null):
 		options[category][prop] = value
 
 func del_state(prop):
-	printd("options del_stat ::%s" % prop)
+	Log.hint(self, "options del_stat ::%s" % prop)
 	if options.has("_state_"):
 		if options["_state_"].has(prop):
 			options["_state_"].erase(prop)
