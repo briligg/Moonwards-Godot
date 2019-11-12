@@ -51,15 +51,6 @@ func _ready() -> void:
 func on_tree_change() -> void:
 	Log.hint(self, "debug treechange")
 
-func on_node_added(node):
-	Log.hint(self, "added node %s" % node.get_path())
-
-func on_node_removed(node):
-	Log.hint(self, "node removed: %s" % node)
-
-func tree_idle_frame():
-	Log.hint(self, "tree idle frame")
-
 func debug_apply_options() -> void:
 	yield(get_tree(), "idle_frame")
 	Log.hint(self, "Apply options to new player scene")

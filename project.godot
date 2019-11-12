@@ -8,14 +8,9 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "Reference",
-"class": "Log",
-"language": "GDScript",
-"path": "res://core/autoload/Log.gd"
-} ]
+_global_script_classes=[  ]
 _global_script_class_icons={
-"Log": ""
+
 }
 
 [application]
@@ -28,7 +23,7 @@ boot_splash/main_loop_type=""
 [autoload]
 
 namelist="*res://core/autoload/namelist.gd"
-logg="*res://core/autoload/Log.gd"
+Log="*res://core/autoload/Log.gd"
 options="*res://core/autoload/autoload-options.gd"
 gamestate="*res://core/autoload/gamestate.gd"
 utils="*res://core/autoload/utils.gd"
@@ -254,6 +249,11 @@ zoom_out={
 zoom_in={
 "deadzone": 0.5,
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":4,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+toggle_log={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777246,"unicode":0,"echo":false,"script":null)
  ]
 }
 

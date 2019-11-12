@@ -221,11 +221,9 @@ func get(category : String, prop = null, default=null):
 		else:
 			options[category] = default
 		res = default
-	Log.hint(self, "get: %s::%s==%s" % [category, prop, res])
 	return res
 
 func set(category, value, prop = null):
-	Log.hint(self, "options set %s::%s %s" % [category, prop, value])
 	if prop == null:
 		options[category] = value
 	else:
