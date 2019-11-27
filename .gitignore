@@ -3,8 +3,19 @@
 *~
 *DS_Store
 
+
 # Godot-specific ignores
 .import/
 export.cfg
 # export_presets.cfg
 default_env.tres
+
+
+# server ignores #
+/Godot_v*-stable_linux_headless.64
+
+/_server/backup/
+/_server/backup/*.pck
+/_server/Godot_v*-stable_linux_server.64
+/_server/*.pck
+
