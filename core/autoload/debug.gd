@@ -37,13 +37,10 @@ func _input(event : InputEvent) -> void:
 func _ready() -> void:
 	randomize()
 	id = randi()
-	gamestate.connect("scene_change", self, "on_scene_change")
 	
-	var tree = get_tree()
-# 	tree.connect("tree_changed", self, "on_tree_change")
-	tree.connect("node_added", self, "on_node_added")
-	tree.connect("node_removed", self, "on_node_removed")
-#	tree.connect("idle_frame", self, "tree_idle_frame")
+	utils.bind_signal("scene_change", "on_scene_change", gamestate, self, utils.MODE.CONNECT) 
+	utils.bind_signal("node_added", "_on_node_added", get_tree(), self, utils.MODE.CONNECT) 
+	utils.bind_signal("node_removed", "_on_node_removed", get_tree(), self, utils.MODE.CONNECT) 
 	
 	debug_apply_options()
 	#List Features
