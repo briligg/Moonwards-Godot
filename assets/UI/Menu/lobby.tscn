@@ -27,9 +27,9 @@ stretch_mode = 6
 
 [node name="connect" type="VBoxContainer" parent="."]
 margin_left = 392.0
-margin_top = 354.0
+margin_top = 357.0
 margin_right = 592.0
-margin_bottom = 509.0
+margin_bottom = 506.0
 rect_min_size = Vector2( 200, 0 )
 size_flags_horizontal = 6
 size_flags_vertical = 6
@@ -37,7 +37,7 @@ alignment = 1
 
 [node name="error_label" type="Label" parent="connect"]
 margin_right = 200.0
-margin_bottom = 28.0
+margin_bottom = 22.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/font_color = Color( 0.820312, 0.291595, 0.291595, 1 )
@@ -45,26 +45,26 @@ align = 1
 autowrap = true
 
 [node name="SinglePlayer" type="Button" parent="connect"]
-margin_top = 32.0
+margin_top = 26.0
 margin_right = 200.0
-margin_bottom = 50.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "SinglePlayer"
 script = ExtResource( 4 )
 
 [node name="host" type="Button" parent="connect"]
-margin_top = 54.0
+margin_top = 48.0
 margin_right = 200.0
-margin_bottom = 72.0
+margin_bottom = 66.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Host"
 
 [node name="ipcontainer" type="HBoxContainer" parent="connect"]
-margin_top = 76.0
+margin_top = 70.0
 margin_right = 200.0
-margin_bottom = 104.0
+margin_bottom = 98.0
 alignment = 2
 
 [node name="ip_label" type="Label" parent="connect/ipcontainer"]
@@ -86,9 +86,9 @@ align = 1
 caret_blink = true
 
 [node name="join" type="Button" parent="connect"]
-margin_top = 108.0
+margin_top = 102.0
 margin_right = 200.0
-margin_bottom = 126.0
+margin_bottom = 120.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Join"
@@ -123,9 +123,9 @@ size_flags_vertical = 3
 text = "Another Name"
 
 [node name="Back" type="Button" parent="connect"]
-margin_top = 130.0
+margin_top = 124.0
 margin_right = 200.0
-margin_bottom = 155.0
+margin_bottom = 149.0
 rect_min_size = Vector2( 200, 25 )
 size_flags_horizontal = 0
 text = "Back"

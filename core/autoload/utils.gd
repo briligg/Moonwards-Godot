@@ -1,10 +1,46 @@
 extends Node
 
+enum MODE {
+	TOGGLE = 0,
+	CONNECT = 1,
+	DISCONNECT = 2
+	}
+	
+signal logger(msg)
+
 var scene setget , get_scene
+func _ready():
+	connect("logger", self, "_on_logger_call")
 
 func _input(var event):
 	if event.is_action_pressed("screenshot_key"):
 		CreateScreenshot()
+		
+func bind_signal(signal_name : String, method : String, obj : Object, obj2 : Object, mode : int = 0) -> void:
+	if method == "":
+		method = str("_on_", signal_name)
+		
+	if mode == MODE.TOGGLE:  
+		if obj.is_connected(signal_name, obj2, method):
+			obj.disconnect(signal_name, obj2, method)
+			emit_signal("logger", str("disconnect signal", signal_name," from ", str(obj)," to ", str(obj2), "::", method))
+		else:
+			obj.connect(signal_name, obj2, method)
+			emit_signal("logger", str("connect signal", signal_name," from ", str(obj)," to ", str(obj2), "::", method))
+	
+	elif mode == MODE.CONNECT : #connect
+		if not obj.is_connected(signal_name, obj2, method):
+			obj.connect(signal_name, obj2, method)
+		else:
+			emit_signal("logger", str("tried to connect already connected signal", signal_name," from ", str(obj)," to ", str(obj2), "::", method))
+	
+	elif mode == MODE.DISCONNECT : #disconnect
+		if obj.is_connected(signal_name, obj2, method):
+			obj.disconnect(signal_name, obj2, method)
+			emit_signal("logger", str("disconnect signal", signal_name," from ", str(obj)," to ", str(obj2), "::", method))
+		else:
+			emit_signal("logger", str("tried to disconnect a disconnected signal", signal_name," from ", str(obj)," to ", str(obj2), "::", method))
+
 
 func CreateScreenshot():
 	get_viewport().set_clear_mode(Viewport.CLEAR_MODE_ONLY_NEXT_FRAME)
@@ -155,10 +191,6 @@ func get_node_root(node):
 		node = node.get_parent()
 	return node
 
-#########################
-#var debug_id = "utils.gd"
-#func printd(s):
-#	logg.print_filtered_message(debug_id, s)
 	
 	
 func get_safe_bool(obj, propetry):
@@ -166,3 +198,7 @@ func get_safe_bool(obj, propetry):
 		return obj.get(propetry)
 	else:
 		return false
+
+#########################
+func _on_logger_call(msg):
+	Log.hint(self, "bind_signal", msg)
