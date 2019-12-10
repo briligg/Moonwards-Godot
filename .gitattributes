@@ -17,3 +17,4 @@
 
 # Other
 *.shape filter=lfs diff=lfs merge=lfs -text
+*.mesh filter=lfs diff=lfs merge=lfs -text
