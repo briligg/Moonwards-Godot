@@ -56,7 +56,7 @@ func CreateScreenshot():
 	var date_time = OS.get_datetime()
 	image.save_png("user://screenshot_" + str(date_time.year) + str(date_time.month) + str(date_time.day) + str(date_time.hour) + str(date_time.minute) + str(date_time.second) + ".png")
 
-func array_add(a, b):
+func array_add(a : Array, b : Array) -> Array:
 	for i in b:
 		a.append(i)
 	return a

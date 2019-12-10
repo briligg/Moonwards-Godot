@@ -130,8 +130,6 @@ func set_active_camera() -> void:
 	#printd("set camera to local player: %s" % gamestate.local_id)
 	gamestate.player_local_camera()
 
-remote func test_remote_call() -> void:
-	print("test_remote_call (%s)" % id)
 
 func set_3fps(enable : bool, value : int = 3) -> void:
 	if enable:
@@ -318,23 +316,19 @@ func print_groups() -> void:
 # 	for p in get_tree().call_group("wall", "get_path"):
 # 		#printd(p)
 
-func dir_contents(path : String = "res://") -> void:
+func print_dir_contents(path : String = "res://") -> void:
 	var dir = Directory.new()
-
 	if dir.open(path) == OK:
-
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
-
 		while (file_name != ""):
 			if dir.current_is_dir():
-				print(dir.get_current_dir() + file_name + "/")
+				Log.hint(self, "print_dir_contents", dir.get_current_dir() + file_name + "/")
 			else:
-				print(dir.get_current_dir() + file_name)
-
+				Log.hint(self, "print_dir_contents", dir.get_current_dir() + file_name)
 			file_name = dir.get_next()
 	else:
-		print("An error occurred when trying to access the path.")
+		Log.hint(self, "print_dir_contents", "An error occurred when trying to access the path.")
 
 func mouse_toggle() -> void:
 	match Input.get_mouse_mode():
