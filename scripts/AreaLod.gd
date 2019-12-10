@@ -1,5 +1,4 @@
 extends Area
-#var id = "AreaLod"
 
 export(NodePath) var RootNode
 export(bool) var enabled = false
@@ -12,13 +11,7 @@ var nodes_sh
 var nodes_hs
 var id_path
 
-#func printd(s):
-#	logg.print_filtered_message(id, s)
 
-func array_add(a, b):
-	for i in b:
-		a.append(i)
-	return a
 
 func obj_has_groups(obj, groups):
 	var has = false
@@ -38,7 +31,7 @@ func get_node_list(root, groups):
 	while objects.size():
 		var obj = objects.pop_front()
 		if obj.get_child_count():
-			array_add(objects, obj.get_children())
+			utils.array_add(objects, obj.get_children())
 		if obj_has_groups(obj, groups):
 			match_obj.append(obj)
 	return match_obj
