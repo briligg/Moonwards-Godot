@@ -51,12 +51,12 @@ func _ready() -> void:
 func on_tree_change() -> void:
 	pass
 	#printd("debug treechange")
-func on_node_added(node):
+func _on_node_added(node):
 	pass
 	#printd("added node %s" % node.get_path())
-func on_node_removed(node):
+func _on_node_removed(node):
 	pass
-	#printd("node removed: %s" % node)
+	Log.hint(self, "_on_node_removed", "node removed: %s" % node)
 func tree_idle_frame():
 	pass
 	#printd("tree idle frame")
@@ -180,20 +180,19 @@ func hide_nodes_random(probability : int = -1) -> void:
 		hidden_nodes = []
 		hidden_nodes_prob = 0
 		return
-	
+		
 	var nodes : Array = utils.get_nodes_type(root, "MeshInstance", true)
 	print("hide nodes, total(%s) already hidden(%s) probability(%s)" % [nodes.size(), hidden_nodes.size(), probability])
 	if nodes.size() < 1 :
 		return
 	nodes.shuffle()
-	
 	for p in nodes:
 		if not hidden_nodes.has(p):
 			var hide = (randi() % 100 <= probability)
 			if hide and hide_obj_check(root, p):
 				root.get_node(p).visible = false
 				hidden_nodes.append(p)
-	print("hide nodes, total(%s) already hidden(%s) probability(%s)" % [nodes.size(), hidden_nodes.size(), probability])
+	Log.hint(self, "hide_nodes_random", "hide nodes, total(%s) already hidden(%s) probability(%s)" % [nodes.size(), hidden_nodes.size(), probability])
 
 
 func show_performance_monitor(enable : bool) -> void:
