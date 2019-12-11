@@ -207,7 +207,7 @@ func save() -> void:
 	config.save(Config_File)
 	printd("save","options saved to %s" % Config_File)
 
-func get(category : String, prop : String = '', default=null):
+func get(category : String, prop : String = '', default=""):
 	var res = config.get_value(category, prop, default)
 	return res
 

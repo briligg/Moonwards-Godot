@@ -35,9 +35,9 @@ func _ready() -> void:
 	randomize()
 	id = randi()
 	
-	utils.bind_signal("scene_change", "on_scene_change", gamestate, self, utils.MODE.CONNECT) 
-	utils.bind_signal("node_added", "_on_node_added", get_tree(), self, utils.MODE.CONNECT) 
-	utils.bind_signal("node_removed", "_on_node_removed", get_tree(), self, utils.MODE.CONNECT) 
+	utils.bind_signal("scene_change", "", gamestate, self, utils.MODE.CONNECT) 
+	utils.bind_signal("node_added", "", gamestate, self, utils.MODE.CONNECT) 
+	utils.bind_signal("node_removed", "", gamestate, self, utils.MODE.CONNECT) 
 	
 	debug_apply_options()
 	#List Features
