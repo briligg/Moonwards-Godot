@@ -7,19 +7,19 @@ var camera : Camera
 var camera_path : String
 var camera_used : int
 var active : bool = false
-var pf_path : String 
+var pf_path : String
 var hidden_nodes : Array = []
 var hidden_nodes_prob : float
 
 
 func _input(event : InputEvent) -> void:
-	Log.hint(self, "_input", "debug event: %s" % event)
+#	Log.hint(self, "_input", "debug event: %s" % event)
 	if event.is_action_pressed("debug_active_cameras"):
 		print_active_cameras()
 	if event.is_action_pressed("debug_camera_to_local_player"):
 		set_active_camera()
 	if event.is_action_pressed("debug_test_rpc"):
-		print("call debug remote test")
+#		Log.hint(self, "_input","call debug remote test")
 		rpc("test_remote_call")
 	if event.is_action_pressed("debug_force_camera"):
 		camera_ready(true)
@@ -34,26 +34,26 @@ func _input(event : InputEvent) -> void:
 func _ready() -> void:
 	randomize()
 	id = randi()
-	
-	utils.bind_signal("scene_change", "", gamestate, self, utils.MODE.CONNECT) 
-	utils.bind_signal("node_added", "", gamestate, self, utils.MODE.CONNECT) 
-	utils.bind_signal("node_removed", "", gamestate, self, utils.MODE.CONNECT) 
-	
+
+	utils.bind_signal("scene_change", "", gamestate, self, utils.MODE.CONNECT)
+	utils.bind_signal("node_added", "", gamestate, self, utils.MODE.CONNECT)
+	utils.bind_signal("node_removed", "", gamestate, self, utils.MODE.CONNECT)
+
 	debug_apply_options()
 	#List Features
 	features_list()
 	#removes sticky and unreliable pressing release for key events, at slower FPS
 	Input.set_use_accumulated_input(false)
-	
-	
+
+
 ########## Extra verbose functions ###########
-	
+
 func _on_tree_change() -> void:
 	Log.hint(self, "_on_tree_change", "debug treechange")
-	
+
 func _on_node_added(node) -> void:
 	Log.hint(self, "_on_node_added", "added node %s" % node.get_path())
-	
+
 func _on_node_removed(node) -> void:
 	Log.hint(self, "_on_node_removed", "node removed: %s" % node)
 ################################################
@@ -65,10 +65,10 @@ func debug_apply_options() -> void:
 	hidden_nodes = []
 	if options.get("dev", "hide_meshes_random"):
 		hide_nodes_random(options.get("dev", "decimate_percent"))
-	set_3fps(options.get("dev", "3FPSlimit", false), options.get("dev", "3FPSlimit_value", 30))
+	set_3fps(options.get("dev", "3FPSlimit", true), options.get("dev", "3FPSlimit_value", 30))
 	e_area_lod(options.get("dev", "enable_areas_lod", true))
 	set_lod_manager(options.get("dev", "TreeManager", false))
-	
+
 	#insert some camera
 	if not options.get_tree_opt("NoCamera"):
 		camera_ready()
@@ -77,12 +77,12 @@ func camera_ready(force : bool = false) -> void:
 	#The debug camera can not be spawned when the chat or other UI is active.
 	if UIManager.has_ui and not camera_ready_path:
 		return
-	
+
 	yield(get_tree(), "idle_frame")
 	var root = get_tree().current_scene
 	if camera_ready_path:
 		root.get_node(camera_ready_path).queue_free()
-		
+
 		if camera_ready_oldcamera:
 			camera_ready_oldcamera.current = true
 		camera_ready_oldcamera = null
@@ -90,8 +90,8 @@ func camera_ready(force : bool = false) -> void:
 		yield(get_tree(), "idle_frame")
 		UIManager.clear_ui()
 		return
-	
-	
+
+
 	camera_ready_oldcamera = get_tree().root.get_viewport().get_camera()
 	if camera_ready_oldcamera:
 		active = true
@@ -133,8 +133,8 @@ func set_3fps(enable : bool, value : int = 3) -> void:
 		Log.hint(self, "set_3fps", "debug set FPS to %s" % round(value))
 		Engine.target_fps = round(value)
 	else:
-		Log.hint(self, "set_3fps", "debug set FPS to 0")
-		Engine.target_fps = 0
+		Log.hint(self, "set_3fps", "debug set FPS to 3")
+		Engine.target_fps = 3
 
 func e_area_lod(enable : bool = true) -> void:
 	pass
@@ -175,7 +175,7 @@ func hide_nodes_random(probability : int = -1) -> void:
 		hidden_nodes = []
 		hidden_nodes_prob = 0
 		return
-		
+
 	var nodes : Array = utils.get_nodes_type(root, "MeshInstance", true)
 	print("hide nodes, total(%s) already hidden(%s) probability(%s)" % [nodes.size(), hidden_nodes.size(), probability])
 	if nodes.size() < 1 :
@@ -233,7 +233,7 @@ func set_lod_manager(enable : bool) -> void:
 #		else:
 			Log.hint(self, "set_lod_manager", "set_lod_manager, attempt to disable notexisting tree manager")
 		return #nothing to do here
-		
+
 	if slm == null:
 		#create/add proper node
 		Log.hint(self, "set_lod_manager", "Load TreeManager")
@@ -243,7 +243,7 @@ func set_lod_manager(enable : bool) -> void:
 		root.add_child(tm)
 		slm = root.get_path_to(tm)
 		options.set("_state_", slm, "set_lod_manager")
-	
+
 	var tm = root.get_node(slm)
 	if options.get("LOD", "lod_aspect_ratio"):
 		tm.lod_aspect_ratio = options.get("LOD", "lod_aspect_ratio")
@@ -278,19 +278,19 @@ func features_list(enabled_only : bool = true) -> void:
 		{ opt = "s3tc", hint = "Textures using S3TC (DXT/BC) compression are supported" },
 		{ opt = "pvrtc", hint = "Textures using PVRTC compression are supported" },
 		# custom features, Moonwards specific
-		
+
 	]
-	
+
 	if enabled_only:
 		Log.hint(self, "features_list", "Print only enabled features")
-	
+
 	for f in features:
 		if enabled_only:
 			if OS.has_feature(f.opt):
 				Log.hint(self, "features_list","OS %s has %s" % [f.opt, OS.has_feature(f.opt)])
 		else:
 			Log.hint(self, "features_list", "OS %s has %s" % [f.opt, OS.has_feature(f.opt)])
-	
+
 
 func print_current_players() -> void:
 	Log.hint(self, "print_current_players","gamestate players")
