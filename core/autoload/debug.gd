@@ -13,13 +13,12 @@ var hidden_nodes_prob : float
 
 
 func _input(event : InputEvent) -> void:
-#	Log.hint(self, "_input", "debug event: %s" % event)
+
 	if event.is_action_pressed("debug_active_cameras"):
 		print_active_cameras()
 	if event.is_action_pressed("debug_camera_to_local_player"):
 		set_active_camera()
 	if event.is_action_pressed("debug_test_rpc"):
-#		Log.hint(self, "_input","call debug remote test")
 		rpc("test_remote_call")
 	if event.is_action_pressed("debug_force_camera"):
 		camera_ready(true)
@@ -52,10 +51,10 @@ func _on_tree_change() -> void:
 	Log.hint(self, "_on_tree_change", "debug treechange")
 
 func _on_node_added(node) -> void:
-	Log.hint(self, "_on_node_added", "added node %s" % node.get_path())
+	Log.hint(self, "_on_node_added", str("added node ", node.get_path()))
 
 func _on_node_removed(node) -> void:
-	Log.hint(self, "_on_node_removed", "node removed: %s" % node)
+	Log.hint(self, "_on_node_removed", str("node removed: ", node))
 ################################################
 
 func debug_apply_options() -> void:
@@ -105,7 +104,7 @@ func camera_ready(force : bool = false) -> void:
 		if active:
 			Log.hint(self, "camera_ready", "sync camera position with old camera")
 			camera.global_transform = camera_ready_oldcamera.global_transform
-		Log.hint(self, "camera_ready","added fly camera to scene, index %s" % camera_used)
+		Log.hint(self, "camera_ready",str("added fly camera to scene, index ", camera_used))
 
 func _on_scene_change() -> void:
 	Log.hint(self, "_on_scene_change" ,"")
@@ -121,16 +120,16 @@ func print_active_cameras() -> void:
 	var root = get_tree().current_scene
 	var cameras = utils.get_nodes_type(root, "Camera", true)
 	for p in cameras:
-		Log.hint(self, "print_active_camera", "%s(%s)" % [p, root.get_node(p).current])
+		Log.hint(self, "print_active_camera", str(p, "(", root.get_node(p).current, ")"))
 
 func set_active_camera() -> void:
-	Log.hint(self, "set_active_camera","set camera to local player: %s" % gamestate.local_id)
+	Log.hint(self, "set_active_camera",str("set camera to local player: ", gamestate.local_id))
 	gamestate.player_local_camera()
 
 
 func set_3fps(enable : bool, value : int = 3) -> void:
 	if enable:
-		Log.hint(self, "set_3fps", "debug set FPS to %s" % round(value))
+		Log.hint(self, "set_3fps", str("debug set FPS to ", round(value)))
 		Engine.target_fps = round(value)
 	else:
 		Log.hint(self, "set_3fps", "debug set FPS to 3")
@@ -142,7 +141,7 @@ func e_area_lod(enable : bool = true) -> void:
 func e_collision_shapes(enable : bool = true):
 	var root = utils.scene
 	var cs_objects = utils.get_cs_list_cs(root)
-	Log.hint(self, "e_collision_shapes", "e_collision_shape(enable=%s), found : %s" % [enable, cs_objects.size()])
+	Log.hint(self, "e_collision_shapes", str("e_collision_shape(enable=", enable, "), found : ", cs_objects.size()))
 	for p in cs_objects:
 		var obj = root.get_node(p)
 		obj.disabled = !enable
@@ -169,7 +168,7 @@ func hide_nodes_random(probability : int = -1) -> void:
 		probability = options.get("decimate", "probability", 80)
 	if probability == 0:
 		#unhide all nodes
-		print("unhide nodes (%s)" % hidden_nodes.size())
+		Log.hint(self, "hide_nodes_random", str("unhide nodes (", hidden_nodes.size(), ")" ))
 		for p in hidden_nodes:
 			root.get_node(p).visible = true
 		hidden_nodes = []
@@ -177,7 +176,7 @@ func hide_nodes_random(probability : int = -1) -> void:
 		return
 
 	var nodes : Array = utils.get_nodes_type(root, "MeshInstance", true)
-	print("hide nodes, total(%s) already hidden(%s) probability(%s)" % [nodes.size(), hidden_nodes.size(), probability])
+	Log.hint(self, "hide_nodes_random", str("hide nodes, total(", nodes.size(), ") already hidden(", hidden_nodes.size(), ") probability(", probability, ")" ))
 	if nodes.size() < 1 :
 		return
 	nodes.shuffle()
@@ -187,7 +186,7 @@ func hide_nodes_random(probability : int = -1) -> void:
 			if hide and hide_obj_check(root, p):
 				root.get_node(p).visible = false
 				hidden_nodes.append(p)
-	Log.hint(self, "hide_nodes_random", "hide nodes, total(%s) already hidden(%s) probability(%s)" % [nodes.size(), hidden_nodes.size(), probability])
+	Log.hint(self, "hide_nodes_random", str("hide nodes, total(", nodes.size(), ") already hidden(", hidden_nodes.size(), ") probability(", probability, ")" ))
 
 
 func show_performance_monitor(enable : bool) -> void:
@@ -217,7 +216,7 @@ func set_lod_manager(enable : bool) -> void:
 			if obj.script and obj.get("id") and obj.id == "TreeManager":
 				slm = p
 				options.set("_state_", p, "set_lod_manager")
-				Log.hint(self, "set_lod_manager","found TreeManager at %s" % p)
+				Log.hint(self, "set_lod_manager",str("found TreeManager at ", p))
 				break
 		if enable == null:
 			#just find if there is lod manager in the tree
@@ -287,17 +286,17 @@ func features_list(enabled_only : bool = true) -> void:
 	for f in features:
 		if enabled_only:
 			if OS.has_feature(f.opt):
-				Log.hint(self, "features_list","OS %s has %s" % [f.opt, OS.has_feature(f.opt)])
+				Log.hint(self, "features_list", str("OS ", f.opt, " has ", OS.has_feature(f.opt)))
 		else:
-			Log.hint(self, "features_list", "OS %s has %s" % [f.opt, OS.has_feature(f.opt)])
+			Log.hint(self, "features_list", str("OS ", f.opt, " has ", OS.has_feature(f.opt)))
 
 
 func print_current_players() -> void:
 	Log.hint(self, "print_current_players","gamestate players")
 	print(gamestate.players)
 	for p in gamestate.players.keys():
-		Log.hint(self, "print_current_players","player %s" % gamestate.players[p])
-		Log.hint(self, "print_current_players","obj at %s" % gamestate.players[p].obj.get_path())
+		Log.hint(self, "print_current_players",str("player ", gamestate.players[p]))
+		Log.hint(self, "print_current_players",str("obj at ", gamestate.players[p].obj.get_path()))
 
 func print_groups() -> void:
 	#get_nodes_in_group("LODElement)
@@ -336,4 +335,4 @@ func mouse_toggle() -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			Log.hint(self, "mouse_toggle","set cursor to visible")
 		_:
-			Log.hint(self, "mouse_toggle", "Do not know what to do, current mode %s" % Input.get_mouse_mode())
+			Log.hint(self, "mouse_toggle", str("Do not know what to do, current mode ",  Input.get_mouse_mode()))
