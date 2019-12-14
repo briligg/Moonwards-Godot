@@ -1,13 +1,14 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/themes/MainMenu.tres" type="Theme" id=1]
-[ext_resource path="res://assets/UI/Options/Options.gd" type="Script" id=2]
+[ext_resource path="res://assets/UI/Options/OptionsUI.gd" type="Script" id=2]
 [ext_resource path="res://assets/UI/Options/Settings.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/UI/Options/User_Settings.tscn" type="PackedScene" id=4]
 [ext_resource path="res://utils/control_elements/LabelSliderMix/LabelSliderMix.tscn" type="PackedScene" id=5]
 [ext_resource path="res://utils/control_elements/LabelOptionButton/LabelOptionButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/UI/Options/Controls_settings.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scripts/UIElement.gd" type="Script" id=8]
+
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 0.0

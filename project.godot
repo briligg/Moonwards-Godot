@@ -24,7 +24,7 @@ boot_splash/main_loop_type=""
 
 Log="*res://utility/GlobalLogger.gd"
 Utilities="*res://core/autoload/Utilities.gd"
-Options="*res://core/autoload/autoload-options.gd"
+Options="*res://core/autoload/Options.gd"
 GameState="*res://core/autoload/GameState.gd"
 Debugger="*res://core/autoload/Debugger.gd"
 UIManager="*res://core/autoload/UIManager.gd"
