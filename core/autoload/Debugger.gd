@@ -15,9 +15,9 @@ func _ready() -> void:
 	randomize()
 	id = randi()
 
-	Utilities.bind_signal("scene_change", "", GameState, self, Utilities.MODE.CONNECT)
-	Utilities.bind_signal("node_added", "", get_tree(), self, Utilities.MODE.CONNECT)
-	Utilities.bind_signal("node_removed", "", get_tree(), self, Utilities.MODE.CONNECT)
+	NodeUtilities.bind_signal("scene_change", "", GameState, self, NodeUtilities.MODE.CONNECT)
+	NodeUtilities.bind_signal("node_added", "", get_tree(), self, NodeUtilities.MODE.CONNECT)
+	NodeUtilities.bind_signal("node_removed", "", get_tree(), self, NodeUtilities.MODE.CONNECT)
 
 	debug_apply_options()
 	#List Features
@@ -120,8 +120,8 @@ func e_area_lod(enable : bool = true) -> void:
 	pass
 
 func e_collision_shapes(enable : bool = true):
-	var root = Utilities.scene
-	var cs_objects = Utils.get_cs_list_cs(root)
+	var root = NodeUtilities.scene
+	var cs_objects = Utilities.get_cs_list_cs(root)
 	Log.hint(self, "e_collision_shapes", str("e_collision_shape(enable=", enable, "), found : ", cs_objects.size()))
 	for p in cs_objects:
 		var obj = root.get_node(p)
@@ -130,10 +130,10 @@ func e_collision_shapes(enable : bool = true):
 func hide_obj_check(root : Node, path : NodePath) -> bool:
 	var obj = root.get_node(path)
 	var hide = true
-	if Utilities.obj_has_groups(obj, Utilities.cs_options.hide_protect):
+	if NodeUtilities.obj_has_groups(obj, NodeUtilities.cs_options.hide_protect):
 		hide = false
 	if hide and obj.get_child_count() > 0:
-		var nodes = Utilities.get_nodes_type(obj, "MeshInstance", true)
+		var nodes = NodeUtilities.get_nodes_type(obj, "MeshInstance", true)
 		for p in nodes:
 			if obj.get_node(p).visible:
 				hide = false
@@ -156,7 +156,7 @@ func hide_nodes_random(probability : int = -1) -> void:
 		hidden_nodes_prob = 0
 		return
 
-	var nodes : Array = Utilities.get_nodes_type(root, "MeshInstance", true)
+	var nodes : Array = NodeUtilities.get_nodes_type(root, "MeshInstance", true)
 	Log.hint(self, "hide_nodes_random", str("hide nodes, total(", nodes.size(), ") already hidden(", hidden_nodes.size(), ") probability(", probability, ")" ))
 	if nodes.size() < 1 :
 		return
@@ -192,7 +192,7 @@ func set_lod_manager(enable : bool) -> void:
 	if slm == null:
 		#find if lod manager is present in scene
 		Log.hint(self, "set_lod_manager", "Look for existing TreeManager")
-		for p in Utilities.get_nodes_type(root, "Node", true):
+		for p in NodeUtilities.get_nodes_type(root, "Node", true):
 			var obj = root.get_node(p)
 			if obj.script and obj.get("id") and obj.id == "TreeManager":
 				slm = p
@@ -231,7 +231,7 @@ func set_lod_manager(enable : bool) -> void:
 	
 func log_active_cameras() -> void:
 	var root = get_tree().current_scene
-	var cameras = Utilities.get_nodes_type(root, "Camera", true)
+	var cameras = NodeUtilities.get_nodes_type(root, "Camera", true)
 	for p in cameras:
 		Log.hint(self, "print_active_camera", str(p, "(", root.get_node(p).current, ")"))
 

@@ -87,10 +87,10 @@ func _ready():
 
 	local_id = 0
 
-	Utilities.bind_signal("network_log", "", self, self, Utilities.MODE.TOGGLE)
-	Utilities.bind_signal("gamestate_log", "", self, self, Utilities.MODE.TOGGLE)
-	Utilities.bind_signal("player_scene", "", self, self, Utilities.MODE.TOGGLE)
-	Utilities.bind_signal("player_id", "", self, self, Utilities.MODE.TOGGLE)
+	NodeUtilities.bind_signal("network_log", "", self, self, NodeUtilities.MODE.TOGGLE)
+	NodeUtilities.bind_signal("gamestate_log", "", self, self, NodeUtilities.MODE.TOGGLE)
+	NodeUtilities.bind_signal("player_scene", "", self, self, NodeUtilities.MODE.TOGGLE)
+	NodeUtilities.bind_signal("player_id", "", self, self, NodeUtilities.MODE.TOGGLE)
 	
 	queue_tree_signal(Options.scene_id, "player_scene", true)
 	log_all_signals()
@@ -122,7 +122,7 @@ func queue_attach(path : String, node, permanent : bool = false) -> void: #node 
 			packedscene = packedscene
 		}
 	print("+++", _queue_attach[path].packedscene)
-	Utilities.bind_signal("tree_changed","_on_queue_attach_on_tree_change", get_tree(), self, Utilities.MODE.CONNECT) 
+	NodeUtilities.bind_signal("tree_changed","_on_queue_attach_on_tree_change", get_tree(), self, NodeUtilities.MODE.CONNECT) 
 
 func queue_tree_signal(path : String, signal_name : String, permanent : bool = false) -> void:
 	emit_signal("gamestate_log", "signal queue(permanent %s): %s(%s)" % [permanent, path, signal_name])
@@ -131,7 +131,7 @@ func queue_tree_signal(path : String, signal_name : String, permanent : bool = f
 			permanent = permanent,
 			signal = signal_name,
 		}
-	Utilities.bind_signal("tree_changed", "_on_queue_attach_on_tree_change", get_tree(), self, Utilities.MODE.CONNECT)
+	NodeUtilities.bind_signal("tree_changed", "_on_queue_attach_on_tree_change", get_tree(), self, NodeUtilities.MODE.CONNECT)
 
 
 #################
@@ -151,9 +151,9 @@ func net_tree_connect(bind : bool = true) -> void:
 	for sg in signals:
 		#printd(str("net_tree_connect", sg[0], " -> " , sg[1]))
 		if bind:
-			Utilities.bind_signal(sg[0], sg[1], sg[2], self, Utilities.MODE.CONNECT)
+			NodeUtilities.bind_signal(sg[0], sg[1], sg[2], self, NodeUtilities.MODE.CONNECT)
 		else:
-			Utilities.bind_signal(sg[0], sg[1], sg[2], self, Utilities.MODE.DISCONNECT)
+			NodeUtilities.bind_signal(sg[0], sg[1], sg[2], self, NodeUtilities.MODE.DISCONNECT)
 
 
 
@@ -190,14 +190,14 @@ func server_set_mode(host : String = "localhost"):
 		get_tree().set_network_peer(server.connection)
 		emit_signal("network_log", "server up on %s:%s" % [server.ip,DEFAULT_PORT])
 		server.up = true
-		Utilities.bind_signal("tree_changed", "_on_server_tree_changed", get_tree(), self, Utilities.MODE.CONNECT)
+		NodeUtilities.bind_signal("tree_changed", "_on_server_tree_changed", get_tree(), self, NodeUtilities.MODE.CONNECT)
 		emit_signal("server_up")
 		
-		Utilities.bind_signal("peer_disconnected", "_on_server_user_disconnected", server.connection, self, Utilities.MODE.CONNECT) 
-		Utilities.bind_signal("peer_connected", "_on_server_user_connected", server.connection, self, Utilities.MODE.CONNECT) 
+		NodeUtilities.bind_signal("peer_disconnected", "_on_server_user_disconnected", server.connection, self, NodeUtilities.MODE.CONNECT) 
+		NodeUtilities.bind_signal("peer_connected", "_on_server_user_connected", server.connection, self, NodeUtilities.MODE.CONNECT) 
 		
-		Utilities.bind_signal("network_peer_connected", "_on_server_tree_user_connected", get_tree(), self, Utilities.MODE.CONNECT)
-		Utilities.bind_signal("network_peer_disconnected", "_on_server_tree_user_disconnected", get_tree(), self, Utilities.MODE.CONNECT)
+		NodeUtilities.bind_signal("network_peer_connected", "_on_server_tree_user_connected", get_tree(), self, NodeUtilities.MODE.CONNECT)
+		NodeUtilities.bind_signal("network_peer_disconnected", "_on_server_tree_user_disconnected", get_tree(), self, NodeUtilities.MODE.CONNECT)
 
 		emit_signal("gamestate_log", "network server id %s" % server.connection.get_unique_id())
 		network_id = server.connection.get_unique_id()
@@ -238,8 +238,8 @@ func client_server_connect(host : String, port : int = DEFAULT_PORT):
 	client.port = port
 	emit_signal("network_log", "connect to server %s(%s):%s" % [player_get("host"), player_get("ip"), player_get("port")])
 	
-	Utilities.bind_signal("connection_failed", '', get_tree(), self, Utilities.MODE.CONNECT)
-	Utilities.bind_signal("connected_to_server", "", get_tree(), self, Utilities.MODE.CONNECT)
+	NodeUtilities.bind_signal("connection_failed", '', get_tree(), self, NodeUtilities.MODE.CONNECT)
+	NodeUtilities.bind_signal("connected_to_server", "", get_tree(), self, NodeUtilities.MODE.CONNECT)
 	client.connection = NetworkedMultiplayerENet.new()
 	client.connection.create_client(player_get("ip"), player_get("port"))
 	emit_signal("gamestate_log", "network id %s" % client.connection.get_unique_id())
@@ -685,15 +685,15 @@ func _connected_fail() -> void:
 
 func _on_connection_failed() -> void:
 	emit_signal("gamestate_log", "client connection failed to %s(%s):%s" % [player_get("host"), player_get("ip"), player_get("port")])
-	Utilities.bind_signal("connection_failed", '', get_tree(), self, Utilities.MODE.DISCONNECT)
-	Utilities.bind_signal("connected_to_server", '', get_tree(), self, Utilities.MODE.DISCONNECT)
+	NodeUtilities.bind_signal("connection_failed", '', get_tree(), self, NodeUtilities.MODE.DISCONNECT)
+	NodeUtilities.bind_signal("connected_to_server", '', get_tree(), self, NodeUtilities.MODE.DISCONNECT)
 	RoleClient = false
 	emit_signal("network_error", "Error connecting to server %s(%s):%s" % [player_get("host"), player_get("ip"), player_get("port")])
 
 func _on_connected_to_server() -> void:
 	emit_signal("gamestate_log", "client connected to %s(%s):%s" % [player_get("host"), player_get("ip"), player_get("port")])
-	Utilities.bind_signal("connection_failed", '', get_tree(), self, Utilities.MODE.DISCONNECT)
-	Utilities.bind_signal("connected_to_server", '', get_tree(), self, Utilities.MODE.DISCONNECT)
+	NodeUtilities.bind_signal("connection_failed", '', get_tree(), self, NodeUtilities.MODE.DISCONNECT)
+	NodeUtilities.bind_signal("connected_to_server", '', get_tree(), self, NodeUtilities.MODE.DISCONNECT)
 	RoleClient = true
 	emit_signal("server_connected")
 

@@ -31,7 +31,7 @@ func get_node_list(root, groups):
 	while objects.size():
 		var obj = objects.pop_front()
 		if obj.get_child_count():
-			Utilities.array_add(objects, obj.get_children())
+			NodeUtilities.array_add(objects, obj.get_children())
 		if obj_has_groups(obj, groups):
 			match_obj.append(obj)
 	return match_obj

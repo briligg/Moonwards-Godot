@@ -20,7 +20,7 @@ func set_name(name : String = "") -> void:
 	if name == "":
 		name = Utilities.get_name()
 	$connect/name.text = name
-	
+
 func state_hide() -> void:
 	match state:
 		STATE.INIT:
@@ -45,7 +45,7 @@ func set_state(nstate : int)-> void:
 	state_hide()
 	state = nstate
 	state_show()
-	
+
 func refresh_lobby() -> void:
 	var players = GameState.get_player_list()
 	players.sort()
@@ -77,7 +77,7 @@ func _on_network_error(msg : String) -> void:
 
 func _on_server_connected() -> void:
 	_on_server_up()
-	
+
 func _on_host_pressed() -> void:
 	if not (GameState.RoleServer or GameState.RoleClient):
 		if ($connect/name.text == ""):
@@ -90,12 +90,12 @@ func _on_host_pressed() -> void:
 		}
 		GameState.player_register(player_data, true) #local player
 		self.state = STATE.SERVER_SELECT
-		
-		Utilities.bind_signal("network_log", "", GameState, self, Utilities.MODE.CONNECT)
-		Utilities.bind_signal("server_up", "", GameState, self, Utilities.MODE.CONNECT)
-		Utilities.bind_signal("network_error", "", GameState, self, Utilities.MODE.CONNECT)
-		
-		
+
+		NodeUtilities.bind_signal("network_log", "", GameState, self, NodeUtilities.MODE.CONNECT)
+		NodeUtilities.bind_signal("server_up", "", GameState, self, NodeUtilities.MODE.CONNECT)
+		NodeUtilities.bind_signal("network_error", "", GameState, self, NodeUtilities.MODE.CONNECT)
+
+
 		GameState.server_set_mode()
 	else:
 		emit_signal("network_error", "Already in server or client mode")
@@ -113,14 +113,14 @@ func _on_join_pressed() -> void:
 			colors = {"pants" : Options.pants_color, "shirt" : Options.shirt_color, "skin" : Options.skin_color, "hair" : Options.hair_color, "shoes" : Options.shoes_color}
 		}
 		GameState.player_register(player_data, true) #local player
-		
-		Utilities.bind_signal("network_log", "", GameState, self, Utilities.MODE.CONNECT)
-		Utilities.bind_signal("server_up", "", GameState, self, Utilities.MODE.CONNECT)
-		Utilities.bind_signal("network_error", "", GameState, self, Utilities.MODE.CONNECT)
-		
+
+		NodeUtilities.bind_signal("network_log", "", GameState, self, NodeUtilities.MODE.CONNECT)
+		NodeUtilities.bind_signal("server_up", "", GameState, self, NodeUtilities.MODE.CONNECT)
+		NodeUtilities.bind_signal("network_error", "", GameState, self, NodeUtilities.MODE.CONNECT)
+
 		GameState.client_server_connect($connect/ipcontainer/ip.text)
 		return
-	else: 
+	else:
 		emit_signal("network_error", "Already in server or client mode")
 
 func _on_connection_success() -> void:

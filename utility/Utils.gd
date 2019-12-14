@@ -1,4 +1,4 @@
-class_name Utils
+class_name Utilities
 
 
 static func array_add(a : Array, b : Array) -> Array:
@@ -6,7 +6,7 @@ static func array_add(a : Array, b : Array) -> Array:
 		a.append(i)
 	return a
 
-static func obj_has_groups(obj, groups):
+static func obj_has_groups(obj : Object, groups : Array):
 	var has = false
 	for grp in groups:
 		if obj.get_groups().has(grp):
@@ -14,7 +14,7 @@ static func obj_has_groups(obj, groups):
 			break
 	return has
 
-static func obj_has_property(obj, pstr):
+static func obj_has_property(obj : Object, pstr : String):
 	var has = false
 	if obj == null:
 		return has
@@ -27,7 +27,7 @@ static func obj_has_property(obj, pstr):
 	has = pnames.has(pstr)
 	return has
 
-static func get_nodes(root, recurent=false):
+static func get_nodes(root : Node , recurent : bool = false):
 	var nodes = []
 	var objects = root.get_children()
 	while objects.size():
@@ -40,7 +40,7 @@ static func get_nodes(root, recurent=false):
 		nodes.append(root.get_path_to(obj))
 	return nodes
 
-static func get_nodes_type(root, type, recurent=false):
+static func get_nodes_type(root : Node, type : String, recurent : bool = false):
 	var nodes = get_nodes(root, recurent)
 	var result = []
 	for path in nodes:
@@ -48,7 +48,7 @@ static func get_nodes_type(root, type, recurent=false):
 			result.append(path)
 	return result
 
-static func get_cs_list(root):
+static func get_cs_list(root : Node):
 	var cs_options = {
 	cs_skip_branch = ["cs_none" ],
 	cs_skip = [ "cs_manual" ],
@@ -82,7 +82,7 @@ static func get_cs_list(root):
 			meshes.trimesh.append(root.get_path_to(obj))
 	return meshes
 
-static func get_cs_list_cs(root):
+static func get_cs_list_cs(root : Node):
 	# get collision nodes of meshes marked by us for collision, exclude areas and all that stuff
 	# important for saving of those meshes
 	
@@ -115,7 +115,7 @@ static func file_mtime(fname):
 	return cache_flist[path].mtime
 	
 static func get_node_file(node):
-	node = Utilities.get_node_root(node)
+	node = NodeUtilities.get_node_root(node)
 	var filename
 	if node:
 		filename = node.filename

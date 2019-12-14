@@ -10,12 +10,12 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Reference",
-"class": "Utils",
+"class": "Utilities",
 "language": "GDScript",
 "path": "res://utility/Utils.gd"
 } ]
 _global_script_class_icons={
-"Utils": ""
+"Utilities": ""
 }
 
 [application]
@@ -28,7 +28,7 @@ boot_splash/main_loop_type=""
 [autoload]
 
 Log="*res://utility/GlobalLogger.gd"
-Utilities="*res://core/autoload/Utilities.gd"
+NodeUtilities="*res://core/autoload/Utilities.gd"
 Options="*res://core/autoload/Options.gd"
 GameState="*res://core/autoload/GameState.gd"
 Debugger="*res://core/autoload/Debugger.gd"
