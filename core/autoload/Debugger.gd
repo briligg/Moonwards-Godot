@@ -16,8 +16,8 @@ func _ready() -> void:
 	id = randi()
 
 	Utilities.bind_signal("scene_change", "", GameState, self, Utilities.MODE.CONNECT)
-	Utilities.bind_signal("node_added", "", GameState, self, Utilities.MODE.CONNECT)
-	Utilities.bind_signal("node_removed", "", GameState, self, Utilities.MODE.CONNECT)
+	Utilities.bind_signal("node_added", "", get_tree(), self, Utilities.MODE.CONNECT)
+	Utilities.bind_signal("node_removed", "", get_tree(), self, Utilities.MODE.CONNECT)
 
 	debug_apply_options()
 	#List Features
@@ -121,7 +121,7 @@ func e_area_lod(enable : bool = true) -> void:
 
 func e_collision_shapes(enable : bool = true):
 	var root = Utilities.scene
-	var cs_objects = Utilities.get_cs_list_cs(root)
+	var cs_objects = Utils.get_cs_list_cs(root)
 	Log.hint(self, "e_collision_shapes", str("e_collision_shape(enable=", enable, "), found : ", cs_objects.size()))
 	for p in cs_objects:
 		var obj = root.get_node(p)

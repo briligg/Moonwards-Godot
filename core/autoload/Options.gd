@@ -41,7 +41,7 @@ var Options : Dictionary = {
 signal user_settings_changed
 
 
-var username : String = Utilities.get_name()
+var username : String = Utils.get_name()
 var gender : int = GENDERS.FEMALE
 var pants_color : Color = Color(6.209207/256,17.062728/256,135.632141/256,1)
 var shirt_color : Color = Color(0,233.62642/256,255/256,1)
@@ -230,7 +230,7 @@ func has(category, prop = null) -> bool:
 	return exists
 
 func get_tree_options(tree):
-	var arr = Utilities.get_nodes_type(tree, "Node")
+	var arr = Utils.get_nodes_type(tree, "Node")
 	var Options
 	for p in arr:
 		var obj = tree.get_node(p)
