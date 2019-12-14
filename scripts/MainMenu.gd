@@ -13,7 +13,7 @@ func _ready_headless() -> void:
 	print("Setup headless mode")
 	var player_data : Dictionary = {
 		name = "Server Bot",
-		Options = Options.player_opt("server_bot")
+		options = Options.player_opt("server_bot")
 	}
 	GameState.player_register(player_data, true) #local player
 	GameState.server_set_mode()

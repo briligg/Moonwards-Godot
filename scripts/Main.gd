@@ -11,7 +11,7 @@ func _ready() -> void:
 	if OS.has_feature("Server"):
 		_ready_headless()
 		return
-	
+
 	_on_size_changed()
 	get_viewport().connect("size_changed",self,"_on_size_changed")
 
@@ -19,7 +19,7 @@ func _ready_headless() -> void:
 	print("Setup headless mode")
 	var player_data = {
 		name = "Server Bot",
-		Options = Options.player_opt("server_bot")
+		options = Options.player_opt("server_bot")
 	}
 	GameState.player_register(player_data, true) #local player
 	GameState.server_set_mode()
@@ -55,10 +55,10 @@ func _on_Options_pressed() -> void:
 	if get_tree().get_root().has_node("Options"):
 		get_tree().get_root().get_node("Options").show()
 	else:
-		var Options = ResourceLoader.load(SceneOptions)
-		Options = Options.instance()
-		Options.name = "Options"
-		get_tree().get_root().add_child(Options)
+		var options = ResourceLoader.load(SceneOptions)
+		options = Options.instance()
+		options.name = "Options"
+		get_tree().get_root().add_child(options)
 
 func OnUIEvent(var event : String) -> void:
 	if event == "Back":
