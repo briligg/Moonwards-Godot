@@ -23,13 +23,12 @@ boot_splash/main_loop_type=""
 [autoload]
 
 Log="*res://utility/GlobalLogger.gd"
-namelist="*res://core/autoload/namelist.gd"
-utils="*res://core/autoload/utils.gd"
-options="*res://core/autoload/autoload-options.gd"
-gamestate="*res://core/autoload/gamestate.gd"
-debug="*res://core/autoload/debug.gd"
+Utilities="*res://core/autoload/Utilities.gd"
+Options="*res://core/autoload/autoload-options.gd"
+GameState="*res://core/autoload/GameState.gd"
+Debugger="*res://core/autoload/Debugger.gd"
 UIManager="*res://core/autoload/UIManager.gd"
-Input_Map="*res://core/autoload/input_maping.gd"
+InputMapping="*res://core/autoload/InputMapping.gd"
 
 [compression]
 

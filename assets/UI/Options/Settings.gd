@@ -32,9 +32,9 @@ func _ready() -> void:
 	ScreenMode.get_popup().connect("id_pressed", self, "_on_ScreenMode_change")
 	Quality.get_popup().connect("id_pressed", self, "_on_Detail_change")
 	
-	var res_width = options.get("resolution", "width", resolutions[current_resolution].x)
-	var res_height = options.get("resolution", "height", resolutions[current_resolution].y)
-	var mode = options.get("resolution", "mode", "Windowed")
+	var res_width = Options.get("resolution", "width", resolutions[current_resolution].x)
+	var res_height = Options.get("resolution", "height", resolutions[current_resolution].y)
+	var mode = Options.get("resolution", "mode", "Windowed")
 	
 	for mode_index in modes.size():
 		if modes[mode_index] == mode:
@@ -61,23 +61,23 @@ func _on_Resolution_change(id : int) -> void:
 	
 	current_resolution = id
 	Resolution.text = Resolution.get_popup().get_item_text(current_resolution)
-	options.set("resolution", resolutions[current_resolution].x, "width")
-	options.set("resolution", resolutions[current_resolution].y, "height")
+	Options.set("resolution", resolutions[current_resolution].x, "width")
+	Options.set("resolution", resolutions[current_resolution].y, "height")
 	yield(get_tree(),"idle_frame")
 	yield(get_tree(),"idle_frame")
 	yield(get_tree(),"idle_frame")
-	options.load_graphics_settings()
-	options.save()
+	Options.load_graphics_settings()
+	Options.save()
 
 func _on_ScreenMode_change(id : int) -> void:
 	
-	options.set("resolution", modes[id], "mode")
+	Options.set("resolution", modes[id], "mode")
 	ScreenMode.text = modes[id]
 	yield(get_tree(),"idle_frame")
 	yield(get_tree(),"idle_frame")
 	yield(get_tree(),"idle_frame")
-	options.load_graphics_settings()
-	options.save()
+	Options.load_graphics_settings()
+	Options.save()
 
 func _on_FPSSpin_value_changed(value : int) -> void:
 	FPSSlider.value = value

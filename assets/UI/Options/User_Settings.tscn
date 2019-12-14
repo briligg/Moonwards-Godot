@@ -11,7 +11,7 @@ script/source = "extends HBoxContainer
 signal gender_changed(IDX)
 
 func _ready():
-	if options.gender == 1:
+	if Options.gender == 1:
 		get_node(\"Male\").pressed = true
 	else:
 		get_node(\"Female\").pressed = true

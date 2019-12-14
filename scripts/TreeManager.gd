@@ -129,7 +129,7 @@ func hboxsetlod(node, children = true):
 		# casting to float does not help
 		# which is odd
 		# TODO
-		# comparions needs mostly for being able to print debug changes in sizes
+		# comparions needs mostly for being able to print Debugger changes in sizes
 		# so it not necessaly and can be removed later to jsut assing values
 		# or track it independantly
 		if round(new_lmd*1000) != round(node.lod_max_distance*1000):
@@ -141,7 +141,7 @@ func hboxsetlod(node, children = true):
 func hboxsetlod_set(root):
 	if enable_hboxsetlod_save_cache:
 		#printd("hboxsetlod get cache")
-		var cache = options.get("TreeManagerCache")
+		var cache = Options.get("TreeManagerCache")
 		if cache != null:
 			#printd("hboxsetlod get cache")
 			MeshTool.set_cache(cache)
@@ -149,10 +149,10 @@ func hboxsetlod_set(root):
 	if enable_lodelement:
 		lodelement_set(tree)
 	if enable_hboxsetlod_save_cache:
-		options.set("TreeManagerCache", MeshTool.get_cache())
+		Options.set("TreeManagerCache", MeshTool.get_cache())
 		#will accumulate changes in dev settings, fix that :TODO :FIX
 		#printd("hboxsetlod save cache")
-		options.save()
+		Options.save()
 
 func lodelement_weight(node, weight = null):
 	if weight == null:

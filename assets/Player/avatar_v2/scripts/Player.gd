@@ -92,7 +92,7 @@ func _ready():
 	orientation.origin = Vector3()
 	if not puppet:
 		camera_control = get_node(camera_control_path)
-		options.connect("user_settings_changed", self, "ApplyUserSettings")
+		Options.connect("user_settings_changed", self, "ApplyUserSettings")
 		SetupMaterials()
 		ApplyUserSettings()
 	else:
@@ -128,30 +128,30 @@ func SetPuppetColors(var colors):
 	shoes_mat.albedo_color = colors.shoes
 
 func SetPuppetGender(var gender):
-	$KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.visible = (gender == options.GENDERS.FEMALE)
-	$KinematicBody/Model/FemaleRig/Skeleton/AvatarMale.visible = (gender == options.GENDERS.MALE)
+	$KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.visible = (gender == Options.GENDERS.FEMALE)
+	$KinematicBody/Model/FemaleRig/Skeleton/AvatarMale.visible = (gender == Options.GENDERS.MALE)
 	
-	if options.gender == options.GENDERS.MALE:
+	if Options.gender == Options.GENDERS.MALE:
 		$KinematicBody/Model/FemaleRig/Skeleton.scale = Vector3(1.1, 1.1, 1.1)
 	else:
 		$KinematicBody/Model/FemaleRig/Skeleton.scale = Vector3(1.0, 1.0, 1.0)
 
 func ApplyUserSettings():
-	pants_mat.albedo_color = options.pants_color
-	shirt_mat.albedo_color = options.shirt_color
-	skin_mat.albedo_color = options.skin_color
-	hair_mat.albedo_color = options.hair_color
-	shoes_mat.albedo_color = options.shoes_color
+	pants_mat.albedo_color = Options.pants_color
+	shirt_mat.albedo_color = Options.shirt_color
+	skin_mat.albedo_color = Options.skin_color
+	hair_mat.albedo_color = Options.hair_color
+	shoes_mat.albedo_color = Options.shoes_color
 	
-	$KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.visible = (options.gender == options.GENDERS.FEMALE)
-	$KinematicBody/Model/FemaleRig/Skeleton/AvatarMale.visible = (options.gender == options.GENDERS.MALE)
+	$KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.visible = (Options.gender == Options.GENDERS.FEMALE)
+	$KinematicBody/Model/FemaleRig/Skeleton/AvatarMale.visible = (Options.gender == Options.GENDERS.MALE)
 	
-	if options.gender == options.GENDERS.MALE:
+	if Options.gender == Options.GENDERS.MALE:
 		$KinematicBody/Model/FemaleRig/Skeleton.scale = Vector3(1.1, 1.1, 1.1)
 	else:
 		$KinematicBody/Model/FemaleRig/Skeleton.scale = Vector3(1.0, 1.0, 1.0)
 	
-	SetUsername(options.username)
+	SetUsername(Options.username)
 
 func _enter_tree():
 	set_player_group()
@@ -159,7 +159,7 @@ func _enter_tree():
 func set_player_group(enable=true): # for local only
 	if not  is_inside_tree():
 		return
-	var pg = options.player_opt.PlayerGroup
+	var pg = Options.player_opt.PlayerGroup
 	if puppet == false and not is_in_group(pg):
 		#printd("add avatar(%s), puppet(%s) to %s group" % [get_path(), puppet, pg])
 		add_to_group(pg, true)
@@ -545,7 +545,7 @@ func SetRemotePlayer(enable):
 		$Camera.current = false
 
 #################################
-# debug functions
+# Debugger functions
 func CreateDebugLine(var from, var to):
 	$KinematicBody/ImmediateGeometry.clear()
 	$KinematicBody/ImmediateGeometry.begin(Mesh.PRIMITIVE_LINE_STRIP, null)

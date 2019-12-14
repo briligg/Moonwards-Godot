@@ -9,17 +9,17 @@ func load_config() -> void:
 	for actions in InputMap.get_actions():
 		if actions is InputEventKey:
 			INPUT_ACTIONS.append(actions)
-	if options.get('input', 'test') == null:
+	if Options.get('input', 'test') == null:
 		for action_name in INPUT_ACTIONS:
 			var action_list = InputMap.get_action_list(action_name)
 			# There could be multiple actions in the list, but we save the first one by default
 			var scancode = OS.get_scancode_string(action_list[0].scancode)
-			options.set("input", scancode, action_name)
-			options.save()
+			Options.set("input", scancode, action_name)
+			Options.save()
 	else: # ConfigFile was properly loaded, initialize InputMap
 		for action_name in INPUT_ACTIONS:
 			# Get the key scancode corresponding to the saved human-readable string
-			var scancode = options.get("input", action_name)
+			var scancode = Options.get("input", action_name)
 			# Create a new event object based on the saved scancode
 			var event = InputEventKey.new()
 			event.scancode = scancode
@@ -31,8 +31,8 @@ func load_config() -> void:
 
 func save_to_config(section: String, key : String, value) -> void:
 	"""Helper function to redefine a parameter in the settings file"""
-	options.set(section, value, key)
-	options.save()
+	Options.set(section, value, key)
+	Options.save()
 
 func save_all() -> void:
 	for action in InputMap.get_actions():

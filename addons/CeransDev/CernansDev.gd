@@ -4,7 +4,7 @@ extends EditorPlugin
 signal end_processing
 var dock # A class member to hold the dock during the plugin lifecycle
 
-var options = {
+var Options = {
 	cs_skip_branch = ["cs_none" ],
 	cs_skip = [ "cs_manual" ],
 	cs_groups = [ "cs", "cs_convex", "floor", "wall"],
@@ -161,7 +161,7 @@ func cs_save(dock):
 		var obj = root.get_node(path)
 		print(path, " at ", obj.shape.resource_path)
 		if res_path_is_local(obj.shape.resource_path):
-			var fname = "%s/%s/%s__%s.shape" % [scene_file.get_base_dir(), options["cs_dir"], scene_file.get_file().get_basename(), String(path).replace("/", "_")]
+			var fname = "%s/%s/%s__%s.shape" % [scene_file.get_base_dir(), Options["cs_dir"], scene_file.get_file().get_basename(), String(path).replace("/", "_")]
 			obj.shape = res_save(fname, obj.shape) 
 			save = true
 	if save :
@@ -239,7 +239,7 @@ func bl_save(dock):
 		print("base name ", filename)
 		var id = String(path).hash()
 		obj.light_data.resource_name = "%s_%s_%s" % [filename, id, obj.name]
-		var name_tosave = "%s/%s/%s_%s%s" % [root.filename.get_base_dir(), options.bakedlight.path, filename, id, options.bakedlight.ext]
+		var name_tosave = "%s/%s/%s_%s%s" % [root.filename.get_base_dir(), Options.bakedlight.path, filename, id, Options.bakedlight.ext]
 		var name_toremove
 		var changed = false
 		if res_path_is_local(obj.light_data.resource_path):
@@ -284,7 +284,7 @@ func grp_list(dock):
 
 func fx_mat_replace(obj, name, mindex):
 	var dir = Directory.new()
-	var dir_name = options["material_dir"]
+	var dir_name = Options["material_dir"]
 	var res = false
 	if not dir.dir_exists(dir_name):
 		print("no material directory to look at: %s" % dir_name)
@@ -340,7 +340,7 @@ func mh_save(dock):
 			obj.mesh = meshes[obj.mesh.resource_path]
 		elif res_path_is_local(obj.mesh.resource_path):
 			var dir = Directory.new()
-			var fname = "%s/%s/%s__%s.mesh" % [scene_file.get_base_dir(), options["mesh_dir"], scene_file.get_file().get_basename(), String(path).replace("/", "_")]
+			var fname = "%s/%s/%s__%s.mesh" % [scene_file.get_base_dir(), Options["mesh_dir"], scene_file.get_file().get_basename(), String(path).replace("/", "_")]
 			if not dir.dir_exists(fname.get_base_dir()):
 				dir.make_dir_recursive(fname.get_base_dir())
 			ResourceSaver.save(fname, obj.mesh)
@@ -421,17 +421,17 @@ func get_cs_list(root):
 	var objects = root.get_children()
 	while objects.size():
 		var obj = objects.pop_front()
-		if obj_has_groups(obj, options.cs_skip_branch):
+		if obj_has_groups(obj, Options.cs_skip_branch):
 			continue
 		if obj.filename:
 			continue
 		if obj.get_child_count():
 			array_add(objects, obj.get_children())
-		if obj_has_groups(obj, options.cs_skip):
+		if obj_has_groups(obj, Options.cs_skip):
 			continue
-		if obj_has_groups(obj, options.cs_convex):
+		if obj_has_groups(obj, Options.cs_convex):
 			meshes.convex.append(root.get_path_to(obj))
-		elif obj_has_groups(obj, options.cs_trimesh):
+		elif obj_has_groups(obj, Options.cs_trimesh):
 			meshes.trimesh.append(root.get_path_to(obj))
 	return meshes
 

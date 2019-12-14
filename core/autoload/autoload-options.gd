@@ -12,9 +12,9 @@ enum GENDERS{
 	FEMALE,
 	MALE
 }
-const id : String = "options.gd"
+const id : String = "Options.gd"
 
-var debug : bool = true
+var Debugger : bool = true
 
 # scene for players, node name wich serves an indicator
 var scene_id : String= "scene_id_30160"
@@ -30,18 +30,18 @@ var join_server_host : String = "mainhabs.moonwards.com"
 
 
 ############################
-#       Other options      #
+#       Other Options      #
 ############################
-var options : Dictionary = {
+var Options : Dictionary = {
 }
 
 #############################
-#    user avatar options    #
+#    user avatar Options    #
 #############################
 signal user_settings_changed
 
 
-var username : String = namelist.get_name()
+var username : String = Utilities.get_name()
 var gender : int = GENDERS.FEMALE
 var pants_color : Color = Color(6.209207/256,17.062728/256,135.632141/256,1)
 var shirt_color : Color = Color(0,233.62642/256,255/256,1)
@@ -53,7 +53,7 @@ var savefile_json
 const Config_File : String = "user://settings.cfg"
 var config : ConfigFile = ConfigFile.new()
 #############################
-# load scene options
+# load scene Options
 var scenes : Dictionary = {
 	loaded = null,
 	default = "WorldTest",
@@ -85,21 +85,21 @@ var fly_cameras : Array = [
 ]
 
 #############################
-# player instancing options #
+# player instancing Options #
 #############################
 var player_opt : Dictionary = {
 	player_group = "player",
 	opt_allow_unknown = true,
 	PlayerGroup = "PlayerGroup", #local player group
 	opt_filter = {
-		debug = true,
+		Debugger = true,
 		nocamera = true,
 		username = true,
 		gender = true,
 		colors = true
 	},
 	avatar = {
-		debug = debug,
+		Debugger = Debugger,
 		nocamera = false,
 		input_processing = true,
 		network = true,
@@ -108,7 +108,7 @@ var player_opt : Dictionary = {
 		IN_AIR_DELTA = 0.4
 	},
 	avatar_local = {
-		debug = debug,
+		Debugger = Debugger,
 		nocamera = false,
 		input_processing = true,
 		network = false,
@@ -116,14 +116,14 @@ var player_opt : Dictionary = {
 		physics_scale = 0.1,
 	},
 	puppet = {
-		debug = debug,
+		Debugger = Debugger,
 		nocamera = true,
 		input_processing = false,
 		network = true,
 		puppet = true
 	},
 	server_bot = {
-		debug = debug,
+		Debugger = Debugger,
 		nocamera = true,
 		network = true,
 		puppet = false,
@@ -134,15 +134,15 @@ var player_opt : Dictionary = {
 
 
 func _ready() -> void:
-# 	print("debug set FPS to 3")
+# 	print("Debugger set FPS to 3")
 # 	Engine.target_fps = 3
-	printd("_ready","load options and settings")
+	printd("_ready","load Options and settings")
 	self.load()
 	set_defaults()
 	load_graphics_settings()
 
 #############################
-#       debug function      #
+#       Debugger function      #
 #############################
 func printd(function_name, s):
 	Log.hint(self, function_name, s)
@@ -198,14 +198,14 @@ func load()->void:
 	else:
 		config.load(Config_File)
 		load_user_settings()
-		printd("load", "options loaded from %s" % Config_File)
+		printd("load", "Options loaded from %s" % Config_File)
 		
 
 func save() -> void:
-	set("_state_", gamestate.local_id, "game_state_id")
+	set("_state_", GameState.local_id, "game_state_id")
 	save_user_settings()
 	config.save(Config_File)
-	printd("save","options saved to %s" % Config_File)
+	printd("save","Options saved to %s" % Config_File)
 
 func get(category : String, prop : String = '', default=""):
 	var res = config.get_value(category, prop, default)
@@ -216,10 +216,10 @@ func set(category : String, value, prop : String = '') -> void:
 
 
 func del_state(prop):
-	#printd("options del_stat ::%s" % prop)
-	if options.has("_state_"):
-		if options["_state_"].has(prop):
-			options["_state_"].erase(prop)
+	#printd("Options del_stat ::%s" % prop)
+	if Options.has("_state_"):
+		if Options["_state_"].has(prop):
+			Options["_state_"].erase(prop)
 
 func has(category, prop = null) -> bool:
 	var exists = false
@@ -230,7 +230,7 @@ func has(category, prop = null) -> bool:
 	return exists
 
 func get_tree_options(tree):
-	var arr = utils.get_nodes_type(tree, "Node")
+	var arr = Utilities.get_nodes_type(tree, "Node")
 	var Options
 	for p in arr:
 		var obj = tree.get_node(p)
@@ -244,7 +244,7 @@ func get_tree_opt(opt):
 	var root = get_tree().current_scene
 	if root == null:
 		return res
-	#get options under Node-Options
+	#get Options under Node-Options
 	#
 	var Options = get_tree_options(root)
 	if Options:

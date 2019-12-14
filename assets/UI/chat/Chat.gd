@@ -6,8 +6,8 @@ var show_duration = 5.0
 var timer = show_duration
 
 func _ready():
-	gamestate.connect("user_name_disconnected", self, "_player_disconnected")
-	gamestate.connect("user_name_connected" , self, "_player_connected")
+	GameState.connect("user_name_disconnected", self, "_player_disconnected")
+	GameState.connect("user_name_connected" , self, "_player_connected")
 	$AnimationPlayer.connect("animation_finished", self, "_on_animation_end")
 	
 func _on_animation_end(ANname):
@@ -34,7 +34,7 @@ func _player_disconnected(name):
 
 func _connected_ok():
 	AddMessage('You have joined the room')
-	rpc('announce_user', gamestate.player_get("name"))
+	rpc('announce_user', GameState.player_get("name"))
 
 sync func display_message(player, new_text):
 	AddMessage(player + ' : ' + new_text)
@@ -53,7 +53,7 @@ func _input(event):
 		elif chat_visible:
 			UIManager.release_focus()
 			if not $VBoxContainer/ChatInput.text == "":
-				rpc('display_message', gamestate.player_get("name"), $VBoxContainer/ChatInput.text)
+				rpc('display_message', GameState.player_get("name"), $VBoxContainer/ChatInput.text)
 			$VBoxContainer/ChatInput.release_focus()
 			$VBoxContainer/ChatInput.clear()
 

@@ -21,27 +21,27 @@ onready var tabs = $TabContainer
 
 func _ready() -> void:
 	Log.hint(self, "_ready", "option control ready")
-	t_Areas.pressed = options.get("dev", "enable_areas_lod", true)
-	t_CollisionShapes.pressed = options.get("dev", "enable_collision_shapes", true)
-	t_FPSLimit.pressed = options.get("dev", "3FPSlimit", true)
-	s_FPSLimit.value = options.get("dev", "3FPSlimit_value", 30)
+	t_Areas.pressed = Options.get("dev", "enable_areas_lod", true)
+	t_CollisionShapes.pressed = Options.get("dev", "enable_collision_shapes", true)
+	t_FPSLimit.pressed = Options.get("dev", "3FPSlimit", true)
+	s_FPSLimit.value = Options.get("dev", "3FPSlimit_value", 30)
 	s_FPSLimit.connect("changed", self, "set_fps_limit")
-	t_decimate.pressed = options.get("dev", "hide_meshes_random", false)
-	t_decimate_percent.value = options.get("dev", "decimate_percent", 0)
+	t_decimate.pressed = Options.get("dev", "hide_meshes_random", false)
+	t_decimate_percent.value = Options.get("dev", "decimate_percent", 0)
 	t_decimate_percent.connect("changed", self, "set_decimate_percent")
 	
-	t_Lod_Manager.pressed = options.get("dev", "TreeManager", true)
-	s_HBoxAspect.value = options.get("LOD", "lod_aspect_ratio", 2)
+	t_Lod_Manager.pressed = Options.get("dev", "TreeManager", true)
+	s_HBoxAspect.value = Options.get("LOD", "lod_aspect_ratio", 2)
 	s_HBoxAspect.connect("changed", self, "set_lod_aspect_ratio")
  
-	t_PMonitor.pressed = options.get("_state_", "perf_mon", false)
+	t_PMonitor.pressed = Options.get("_state_", "perf_mon", false)
 	
 	
 	init_playerspeed_control(s_PlayerSpeed)
 	
-	for i in range(options.fly_cameras.size()):
-		t_flycam.add_item(options.fly_cameras[i].label, i)
-	t_flycam.button.selected = options.get("dev", "flycamera", 0)
+	for i in range(Options.fly_cameras.size()):
+		t_flycam.add_item(Options.fly_cameras[i].label, i)
+	t_flycam.button.selected = Options.get("dev", "flycamera", 0)
 	t_flycam.connect("changed", self, "set_fly_camera")
 
 
@@ -53,7 +53,7 @@ func set_tab_index(index : int) -> void:
 	tabs.current_tab = index
 
 func close() -> void:
-	options.set("state", $TabContainer.current_tab, "menu_options_tab")
+	Options.set("state", $TabContainer.current_tab, "menu_options_tab")
 	emit_signal("save")
 	if not signal_close:
 		get_tree().get_root().remove_child(self)
@@ -65,10 +65,10 @@ func close() -> void:
 func get_player() -> Spatial:
 	var res
 	var tree = get_tree()
-	var pg = options.player_opt.player_group
+	var pg = Options.player_opt.player_group
 	if tree.has_group(pg):
 		var player = tree.get_nodes_in_group(pg)[0]
-		if player and utils.obj_has_property(player, "SPEED_SCALE"):
+		if player and Utilities.obj_has_property(player, "SPEED_SCALE"):
 			res = player
 	return res
 
@@ -84,24 +84,24 @@ func init_playerspeed_control(button : Control) -> void:
 		button.value = 0
 
 func set_fps_limit(value : int) -> void:
-	options.set("dev", value, "3FPSlimit_value")
-	debug.set_3fps(t_FPSLimit.pressed, value)
+	Options.set("dev", value, "3FPSlimit_value")
+	Debugger.set_3fps(t_FPSLimit.pressed, value)
 	
 func set_decimate_percent(value : int) -> void:
-	options.set("dev", value, "decimate_percent")
-	if options.get("dev", "hide_meshes_random", false):
-		debug.hide_nodes_random(0)
-		debug.hide_nodes_random(value)
+	Options.set("dev", value, "decimate_percent")
+	if Options.get("dev", "hide_meshes_random", false):
+		Debugger.hide_nodes_random(0)
+		Debugger.hide_nodes_random(value)
 
 func set_lod_aspect_ratio(value : int) -> void:
-	options.set("LOD", value, "lod_aspect_ratio")
-	var lmp = options.get("_state_", "set_lod_manager")
+	Options.set("LOD", value, "lod_aspect_ratio")
+	var lmp = Options.get("_state_", "set_lod_manager")
 	if lmp:
 		var root = get_tree().current_scene
 		root.get_node(lmp).lod_aspect_ratio = value
 
 func set_fly_camera(value : int) -> void:
-	options.set("dev", value, "flycamera")
+	Options.set("dev", value, "flycamera")
 
 func set_player_speed(value: float) -> void:
 	var player = get_player()
@@ -110,35 +110,35 @@ func set_player_speed(value: float) -> void:
 		Log.hint(self, "set_player_speed",str("set_player_speed to value : ", value))
 
 func _on_tAreas_pressed() -> void:
-	debug.e_area_lod(t_Areas.pressed)
-	options.set("dev", t_Areas.pressed, "enable_areas_lod")
+	Debugger.e_area_lod(t_Areas.pressed)
+	Options.set("dev", t_Areas.pressed, "enable_areas_lod")
 
 func _on_tCollisionShapes_pressed() -> void:
-	debug.e_collision_shapes(t_CollisionShapes.pressed)
-	options.set("dev", t_CollisionShapes.pressed, "enable_collision_shapes")
+	Debugger.e_collision_shapes(t_CollisionShapes.pressed)
+	Options.set("dev", t_CollisionShapes.pressed, "enable_collision_shapes")
 
 func _on_tFPSLim_pressed() -> void:
-	debug.set_3fps(t_FPSLimit.pressed, s_FPSLimit.value)
-	options.set("dev", t_FPSLimit.pressed, "3FPSlimit")
+	Debugger.set_3fps(t_FPSLimit.pressed, s_FPSLimit.value)
+	Options.set("dev", t_FPSLimit.pressed, "3FPSlimit")
 
 
 func _on_tDecimate_pressed() -> void:
-	var dp = options.get("dev", "decimate_percent", 90)
+	var dp = Options.get("dev", "decimate_percent", 90)
 	if t_decimate.pressed:
-		debug.hide_nodes_random(dp)
+		Debugger.hide_nodes_random(dp)
 	else:
-		debug.hide_nodes_random(0)
-	options.set("dev", t_decimate.pressed, "hide_meshes_random")
+		Debugger.hide_nodes_random(0)
+	Options.set("dev", t_decimate.pressed, "hide_meshes_random")
 
 func _on_Exit_pressed() -> void:
 	UIManager.Back()
 
 func _on_tPMonitor_pressed() -> void:
-	options.set("dev", t_PMonitor.pressed, "show_performance_monitor")
-	debug.show_performance_monitor(t_PMonitor.pressed)
+	Options.set("dev", t_PMonitor.pressed, "show_performance_monitor")
+	Debugger.show_performance_monitor(t_PMonitor.pressed)
 
 func _on_tLodManager_pressed() -> void:
-	options.set("dev", t_Lod_Manager.pressed, "TreeManager")
-	debug.set_lod_manager(t_Lod_Manager.pressed)
+	Options.set("dev", t_Lod_Manager.pressed, "TreeManager")
+	Debugger.set_lod_manager(t_Lod_Manager.pressed)
 
 

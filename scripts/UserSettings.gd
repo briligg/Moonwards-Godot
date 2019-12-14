@@ -21,44 +21,44 @@ var button_containter : String = "VBoxContainer2/ViewportContainer"
 
 func _ready() -> void:
 	
-	get_node(text_edit1).text = options.username
-	get_node(text_edit2).text = options.username
+	get_node(text_edit1).text = Options.username
+	get_node(text_edit2).text = Options.username
 	switch_slot()
-	_on_Gender_item_selected(options.gender)
-	get_node(gender_edit).selected = int(options.gender)
+	_on_Gender_item_selected(Options.gender)
+	get_node(gender_edit).selected = int(Options.gender)
 	get_node(button_containter).get_node("Viewport").size = get_node(button_containter).rect_size
 
 func switch_slot() -> void:
 	if current_slot == SLOTS.PANTS:
-		get_node(hue_picker).color = options.pants_color
+		get_node(hue_picker).color = Options.pants_color
 	elif current_slot == SLOTS.SHIRT:
-		get_node(hue_picker).color = options.shirt_color
+		get_node(hue_picker).color = Options.shirt_color
 	elif current_slot == SLOTS.SKIN:
-		get_node(hue_picker).color = options.skin_color
+		get_node(hue_picker).color = Options.skin_color
 	elif current_slot == SLOTS.HAIR:
-		get_node(hue_picker).color = options.hair_color
+		get_node(hue_picker).color = Options.hair_color
 	elif current_slot == SLOTS.SHOES:
-		get_node(hue_picker).color = options.shoes_color
-	get_node(avatar_preview).set_colors(options.pants_color, options.shirt_color, options.skin_color, options.hair_color, options.shoes_color)
+		get_node(hue_picker).color = Options.shoes_color
+	get_node(avatar_preview).set_colors(Options.pants_color, Options.shirt_color, Options.skin_color, Options.hair_color, Options.shoes_color)
 
 func _on_HuePicker_Hue_Selected(color : Color) -> void:
 	if current_slot == SLOTS.PANTS:
-		options.pants_color = color
+		Options.pants_color = color
 	elif current_slot == SLOTS.SHIRT:
-		options.shirt_color = color
+		Options.shirt_color = color
 	elif current_slot == SLOTS.SKIN:
-		options.skin_color = color
+		Options.skin_color = color
 	elif current_slot == SLOTS.HAIR:
-		options.hair_color = color
+		Options.hair_color = color
 	elif current_slot == SLOTS.SHOES:
-		options.shoes_color = color
-	get_node(avatar_preview).set_colors(options.pants_color, options.shirt_color, options.skin_color, options.hair_color, options.shoes_color)
+		Options.shoes_color = color
+	get_node(avatar_preview).set_colors(Options.pants_color, Options.shirt_color, Options.skin_color, Options.hair_color, Options.shoes_color)
 
 func _on_CfgPlayer_pressed() -> void:
 	$WindowDialog.popup_centered()
 
 func _on_SaveButton_pressed() -> void:
-	options.save()
+	Options.save()
 	UIManager.back()
 
 func _on_SlotOption_item_selected(ID : int) -> void:
@@ -69,8 +69,8 @@ func _on_SlotOption_item_selected(ID : int) -> void:
 
 
 func _on_Gender_item_selected(ID : int) -> void:
-	options.gender = ID
-	get_node(avatar_preview).set_gender(options.gender)
+	Options.gender = ID
+	get_node(avatar_preview).set_gender(Options.gender)
 	if ID == 0:
 		get_node(button_containter).get_node("Female").show()
 		get_node(button_containter).get_node("Male").hide()
@@ -79,9 +79,9 @@ func _on_Gender_item_selected(ID : int) -> void:
 		get_node(button_containter).get_node("Male").show()
 
 func _on_UsernameTextEdit_text_changed(new_text : String) -> void:
-	options.username = new_text
+	Options.username = new_text
 	get_node(text_edit2).text = new_text
 
 func _on_UsernameTextEdit2_text_changed(new_text : String) -> void:
-	options.username = new_text
+	Options.username = new_text
 	get_node(text_edit1).text = new_text

@@ -34,9 +34,9 @@ func _ready() -> void:
 	randomize()
 	id = randi()
 
-	utils.bind_signal("scene_change", "", gamestate, self, utils.MODE.CONNECT)
-	utils.bind_signal("node_added", "", gamestate, self, utils.MODE.CONNECT)
-	utils.bind_signal("node_removed", "", gamestate, self, utils.MODE.CONNECT)
+	Utilities.bind_signal("scene_change", "", GameState, self, Utilities.MODE.CONNECT)
+	Utilities.bind_signal("node_added", "", GameState, self, Utilities.MODE.CONNECT)
+	Utilities.bind_signal("node_removed", "", GameState, self, Utilities.MODE.CONNECT)
 
 	debug_apply_options()
 	#List Features
@@ -48,7 +48,7 @@ func _ready() -> void:
 ########## Extra verbose functions ###########
 
 func _on_tree_change() -> void:
-	Log.hint(self, "_on_tree_change", "debug treechange")
+	Log.hint(self, "_on_tree_change", "Debugger treechange")
 
 func _on_node_added(node) -> void:
 	Log.hint(self, "_on_node_added", str("added node ", node.get_path()))
@@ -59,21 +59,21 @@ func _on_node_removed(node) -> void:
 
 func debug_apply_options() -> void:
 	yield(get_tree(), "idle_frame")
-	Log.hint(self, "sebug_apply_options", "Apply options to new player scene")
-	e_collision_shapes(options.get("dev", "enable_collision_shapes", false))
+	Log.hint(self, "sebug_apply_options", "Apply Options to new player scene")
+	e_collision_shapes(Options.get("dev", "enable_collision_shapes", false))
 	hidden_nodes = []
-	if options.get("dev", "hide_meshes_random"):
-		hide_nodes_random(options.get("dev", "decimate_percent"))
-	set_3fps(options.get("dev", "3FPSlimit", true), options.get("dev", "3FPSlimit_value", 30))
-	e_area_lod(options.get("dev", "enable_areas_lod", true))
-	set_lod_manager(options.get("dev", "TreeManager", false))
+	if Options.get("dev", "hide_meshes_random"):
+		hide_nodes_random(Options.get("dev", "decimate_percent"))
+	set_3fps(Options.get("dev", "3FPSlimit", true), Options.get("dev", "3FPSlimit_value", 30))
+	e_area_lod(Options.get("dev", "enable_areas_lod", true))
+	set_lod_manager(Options.get("dev", "TreeManager", false))
 
 	#insert some camera
-	if not options.get_tree_opt("NoCamera"):
+	if not Options.get_tree_opt("NoCamera"):
 		camera_ready()
 
 func camera_ready(force : bool = false) -> void:
-	#The debug camera can not be spawned when the chat or other UI is active.
+	#The Debugger camera can not be spawned when the chat or other UI is active.
 	if UIManager.has_ui and not camera_ready_path:
 		return
 
@@ -95,8 +95,8 @@ func camera_ready(force : bool = false) -> void:
 	if camera_ready_oldcamera:
 		active = true
 	if not active or force:
-		camera_used = options.get("dev", "flycamera", 0)
-		camera_path = options.fly_cameras[camera_used].path
+		camera_used = Options.get("dev", "flycamera", 0)
+		camera_path = Options.fly_cameras[camera_used].path
 		camera = load(camera_path).instance()
 		root.add_child(camera)
 		camera_ready_path = root.get_path_to(camera)
@@ -108,7 +108,7 @@ func camera_ready(force : bool = false) -> void:
 
 func _on_scene_change() -> void:
 	Log.hint(self, "_on_scene_change" ,"")
-	options.del_state("set_lod_manager")
+	Options.del_state("set_lod_manager")
 	debug_apply_options()
 
 func user_scene_changed() -> void:
@@ -118,29 +118,29 @@ func user_scene_changed() -> void:
 
 func print_active_cameras() -> void:
 	var root = get_tree().current_scene
-	var cameras = utils.get_nodes_type(root, "Camera", true)
+	var cameras = Utilities.get_nodes_type(root, "Camera", true)
 	for p in cameras:
 		Log.hint(self, "print_active_camera", str(p, "(", root.get_node(p).current, ")"))
 
 func set_active_camera() -> void:
-	Log.hint(self, "set_active_camera",str("set camera to local player: ", gamestate.local_id))
-	gamestate.player_local_camera()
+	Log.hint(self, "set_active_camera",str("set camera to local player: ", GameState.local_id))
+	GameState.player_local_camera()
 
 
 func set_3fps(enable : bool, value : int = 3) -> void:
 	if enable:
-		Log.hint(self, "set_3fps", str("debug set FPS to ", round(value)))
+		Log.hint(self, "set_3fps", str("Debugger set FPS to ", round(value)))
 		Engine.target_fps = round(value)
 	else:
-		Log.hint(self, "set_3fps", "debug set FPS to 3")
+		Log.hint(self, "set_3fps", "Debugger set FPS to 3")
 		Engine.target_fps = 3
 
 func e_area_lod(enable : bool = true) -> void:
 	pass
 
 func e_collision_shapes(enable : bool = true):
-	var root = utils.scene
-	var cs_objects = utils.get_cs_list_cs(root)
+	var root = Utilities.scene
+	var cs_objects = Utilities.get_cs_list_cs(root)
 	Log.hint(self, "e_collision_shapes", str("e_collision_shape(enable=", enable, "), found : ", cs_objects.size()))
 	for p in cs_objects:
 		var obj = root.get_node(p)
@@ -149,10 +149,10 @@ func e_collision_shapes(enable : bool = true):
 func hide_obj_check(root : Node, path : NodePath) -> bool:
 	var obj = root.get_node(path)
 	var hide = true
-	if utils.obj_has_groups(obj, utils.cs_options.hide_protect):
+	if Utilities.obj_has_groups(obj, Utilities.cs_options.hide_protect):
 		hide = false
 	if hide and obj.get_child_count() > 0:
-		var nodes = utils.get_nodes_type(obj, "MeshInstance", true)
+		var nodes = Utilities.get_nodes_type(obj, "MeshInstance", true)
 		for p in nodes:
 			if obj.get_node(p).visible:
 				hide = false
@@ -165,7 +165,7 @@ func hide_obj_check(root : Node, path : NodePath) -> bool:
 func hide_nodes_random(probability : int = -1) -> void:
 	var root = get_tree().current_scene
 	if probability == -1:
-		probability = options.get("decimate", "probability", 80)
+		probability = Options.get("decimate", "probability", 80)
 	if probability == 0:
 		#unhide all nodes
 		Log.hint(self, "hide_nodes_random", str("unhide nodes (", hidden_nodes.size(), ")" ))
@@ -175,7 +175,7 @@ func hide_nodes_random(probability : int = -1) -> void:
 		hidden_nodes_prob = 0
 		return
 
-	var nodes : Array = utils.get_nodes_type(root, "MeshInstance", true)
+	var nodes : Array = Utilities.get_nodes_type(root, "MeshInstance", true)
 	Log.hint(self, "hide_nodes_random", str("hide nodes, total(", nodes.size(), ") already hidden(", hidden_nodes.size(), ") probability(", probability, ")" ))
 	if nodes.size() < 1 :
 		return
@@ -196,26 +196,26 @@ func show_performance_monitor(enable : bool) -> void:
 		var pf : Node = packedscene.instance()
 		root.add_child(pf)
 		pf_path = root.get_path_to(pf)
-		options.set("_state_", true, "perf_mon")
+		Options.set("_state_", true, "perf_mon")
 	if not enable and pf_path:
 		var root = get_tree().current_scene
 		var pf = root.get_node(pf_path)
 		if pf:
 			pf.queue_free()
 		pf_path = ""
-		options.set("_state_", false, "perf_mon")
+		Options.set("_state_", false, "perf_mon")
 
 func set_lod_manager(enable : bool) -> void:
-	var slm = options.get("_state_", "set_lod_manager")
+	var slm = Options.get("_state_", "set_lod_manager")
 	var root = get_tree().current_scene
 	if slm == null:
 		#find if lod manager is present in scene
 		Log.hint(self, "set_lod_manager", "Look for existing TreeManager")
-		for p in utils.get_nodes_type(root, "Node", true):
+		for p in Utilities.get_nodes_type(root, "Node", true):
 			var obj = root.get_node(p)
 			if obj.script and obj.get("id") and obj.id == "TreeManager":
 				slm = p
-				options.set("_state_", p, "set_lod_manager")
+				Options.set("_state_", p, "set_lod_manager")
 				Log.hint(self, "set_lod_manager",str("found TreeManager at ", p))
 				break
 		if enable == null:
@@ -236,16 +236,16 @@ func set_lod_manager(enable : bool) -> void:
 	if slm == null:
 		#create/add proper node
 		Log.hint(self, "set_lod_manager", "Load TreeManager")
-		var tm_path = options.get("dev", "lod_manager_path", "res://scripts/TreeManager.tscn")
+		var tm_path = Options.get("dev", "lod_manager_path", "res://scripts/TreeManager.tscn")
 		var tm = ResourceLoader.load(tm_path)
 		tm = tm.instance()
 		root.add_child(tm)
 		slm = root.get_path_to(tm)
-		options.set("_state_", slm, "set_lod_manager")
+		Options.set("_state_", slm, "set_lod_manager")
 
 	var tm = root.get_node(slm)
-	if options.get("LOD", "lod_aspect_ratio"):
-		tm.lod_aspect_ratio = options.get("LOD", "lod_aspect_ratio")
+	if Options.get("LOD", "lod_aspect_ratio"):
+		tm.lod_aspect_ratio = Options.get("LOD", "lod_aspect_ratio")
 	tm.enabled = enable
 
 func features_list(enabled_only : bool = true) -> void:
@@ -259,7 +259,7 @@ func features_list(enabled_only : bool = true) -> void:
 		{ opt = "Windows", hint = "Running on Windows" },
 		{ opt = "X11", hint = "Running on X11 (Linux/BSD desktop)" },
 		{ opt = "Server", hint = "Running on the headless server platform" },
-		{ opt = "debug", hint = "Running on a debug build (including the editor)" },
+		{ opt = "Debugger", hint = "Running on a Debugger build (including the editor)" },
 		{ opt = "release", hint = "Running on a release build" },
 		{ opt = "editor", hint = "Running on an editor build" },
 		{ opt = "standalone", hint = "Running on a non-editor build" },
@@ -292,11 +292,11 @@ func features_list(enabled_only : bool = true) -> void:
 
 
 func print_current_players() -> void:
-	Log.hint(self, "print_current_players","gamestate players")
-	print(gamestate.players)
-	for p in gamestate.players.keys():
-		Log.hint(self, "print_current_players",str("player ", gamestate.players[p]))
-		Log.hint(self, "print_current_players",str("obj at ", gamestate.players[p].obj.get_path()))
+	Log.hint(self, "print_current_players","GameState players")
+	print(GameState.players)
+	for p in GameState.players.keys():
+		Log.hint(self, "print_current_players",str("player ", GameState.players[p]))
+		Log.hint(self, "print_current_players",str("obj at ", GameState.players[p].obj.get_path()))
 
 func print_groups() -> void:
 	#get_nodes_in_group("LODElement)

@@ -34,7 +34,7 @@ func ui_event_to_text(ui_event: int) -> String:
 	return text
 
 func _ready() -> void:
-	gamestate.connect("scene_change", self, "_change_scene")
+	GameState.connect("scene_change", self, "_change_scene")
 	
 func _input(event) -> void:
 	if event.is_action_pressed("ui_cancel"):
@@ -100,30 +100,30 @@ func release_focus() -> void:
 	has_ui = false
 
 func load_level(var resource) -> void:
-	gamestate.load_level(resource)
+	GameState.load_level(resource)
 
 func join_server(scene: String) -> void:
 	if scene == null or scene == "":
-		scene = options.scenes.default_multiplayer_join_server
+		scene = Options.scenes.default_multiplayer_join_server
 
 	var player_data = {
-		username = options.username
+		username = Options.username
 	}
 	
-	gamestate.player_register(player_data, true, "avatar") #local player
-	gamestate.load_level(scene)
-	gamestate.client_server_connect(options.join_server_host)
+	GameState.player_register(player_data, true, "avatar") #local player
+	GameState.load_level(scene)
+	GameState.client_server_connect(Options.join_server_host)
 
 func run_local(scene: String) -> void:
 	if scene == null or scene == "":
-		scene = options.scenes.default_run_scene
+		scene = Options.scenes.default_run_scene
 
 	var player_data : Dictionary = {
-		username = options.username
+		username = Options.username
 	}
 	
-	gamestate.player_register(player_data, true, "avatar_local") #local player
-	gamestate.load_level(scene)
+	GameState.player_register(player_data, true, "avatar_local") #local player
+	GameState.load_level(scene)
 
 func exit() -> void:
 	get_tree().quit()
