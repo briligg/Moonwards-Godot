@@ -11,25 +11,6 @@ var pf_path : String
 var hidden_nodes : Array = []
 var hidden_nodes_prob : float
 
-
-func _input(event : InputEvent) -> void:
-
-	if event.is_action_pressed("debug_active_cameras"):
-		print_active_cameras()
-	if event.is_action_pressed("debug_camera_to_local_player"):
-		set_active_camera()
-	if event.is_action_pressed("debug_test_rpc"):
-		rpc("test_remote_call")
-	if event.is_action_pressed("debug_force_camera"):
-		camera_ready(true)
-	if event.is_action_pressed("debug_player_list"):
-		print_current_players()
-	if event.is_action_pressed("debug_dir_list"):
-		print_dir_contents()
-		print_groups()
-	if event.is_action_pressed("mouse_toggle"):
-		mouse_toggle()
-
 func _ready() -> void:
 	randomize()
 	id = randi()
@@ -40,22 +21,32 @@ func _ready() -> void:
 
 	debug_apply_options()
 	#List Features
-	features_list()
+	log_features_list()
 	#removes sticky and unreliable pressing release for key events, at slower FPS
 	Input.set_use_accumulated_input(false)
 
+func _input(event : InputEvent) -> void:
 
-########## Extra verbose functions ###########
+	if event.is_action_pressed("debug_active_cameras"):
+		log_active_cameras()
+	if event.is_action_pressed("debug_camera_to_local_player"):
+		set_active_camera()
+	if event.is_action_pressed("debug_test_rpc"):
+		rpc("test_remote_call")
+	if event.is_action_pressed("debug_force_camera"):
+		camera_ready(true)
+	if event.is_action_pressed("debug_player_list"):
+		log_current_players()
+	if event.is_action_pressed("debug_dir_list"):
+		log_dir_contents()
+		log_groups()
+	if event.is_action_pressed("mouse_toggle"):
+		mouse_toggle()
 
-func _on_tree_change() -> void:
-	Log.hint(self, "_on_tree_change", "Debugger treechange")
 
-func _on_node_added(node) -> void:
-	Log.hint(self, "_on_node_added", str("added node ", node.get_path()))
 
-func _on_node_removed(node) -> void:
-	Log.hint(self, "_on_node_removed", str("node removed: ", node))
-################################################
+
+
 
 func debug_apply_options() -> void:
 	yield(get_tree(), "idle_frame")
@@ -106,21 +97,11 @@ func camera_ready(force : bool = false) -> void:
 			camera.global_transform = camera_ready_oldcamera.global_transform
 		Log.hint(self, "camera_ready",str("added fly camera to scene, index ", camera_used))
 
-func _on_scene_change() -> void:
-	Log.hint(self, "_on_scene_change" ,"")
-	Options.del_state("set_lod_manager")
-	debug_apply_options()
-
-func user_scene_changed() -> void:
-	#reset scene specific things
-	pass
 
 
-func print_active_cameras() -> void:
-	var root = get_tree().current_scene
-	var cameras = Utilities.get_nodes_type(root, "Camera", true)
-	for p in cameras:
-		Log.hint(self, "print_active_camera", str(p, "(", root.get_node(p).current, ")"))
+
+
+
 
 func set_active_camera() -> void:
 	Log.hint(self, "set_active_camera",str("set camera to local player: ", GameState.local_id))
@@ -247,8 +228,14 @@ func set_lod_manager(enable : bool) -> void:
 	if Options.get("LOD", "lod_aspect_ratio"):
 		tm.lod_aspect_ratio = Options.get("LOD", "lod_aspect_ratio")
 	tm.enabled = enable
+	
+func log_active_cameras() -> void:
+	var root = get_tree().current_scene
+	var cameras = Utilities.get_nodes_type(root, "Camera", true)
+	for p in cameras:
+		Log.hint(self, "print_active_camera", str(p, "(", root.get_node(p).current, ")"))
 
-func features_list(enabled_only : bool = true) -> void:
+func log_features_list(enabled_only : bool = true) -> void:
 	var features = [
 		{ opt = "Android", hint = "Running on Android" },
 		{ opt = "HTML5", hint = "Running on HTML5" },
@@ -291,14 +278,14 @@ func features_list(enabled_only : bool = true) -> void:
 			Log.hint(self, "features_list", str("OS ", f.opt, " has ", OS.has_feature(f.opt)))
 
 
-func print_current_players() -> void:
+func log_current_players() -> void:
 	Log.hint(self, "print_current_players","GameState players")
 	print(GameState.players)
 	for p in GameState.players.keys():
 		Log.hint(self, "print_current_players",str("player ", GameState.players[p]))
 		Log.hint(self, "print_current_players",str("obj at ", GameState.players[p].obj.get_path()))
 
-func print_groups() -> void:
+func log_groups() -> void:
 	#get_nodes_in_group("LODElement)
 	Log.hint(self, "print_groups", "List of nodes in LODElement group")
 	for obj in get_tree().get_nodes_in_group("LODElement"):
@@ -312,7 +299,7 @@ func print_groups() -> void:
  	for p in get_tree().call_group("wall", "get_path"):
  		Log.hint(self, "print_groups", str(p))
 
-func print_dir_contents(path : String = "res://") -> void:
+func log_dir_contents(path : String = "res://") -> void:
 	var dir = Directory.new()
 	if dir.open(path) == OK:
 		dir.list_dir_begin()
@@ -336,3 +323,20 @@ func mouse_toggle() -> void:
 			Log.hint(self, "mouse_toggle","set cursor to visible")
 		_:
 			Log.hint(self, "mouse_toggle", str("Do not know what to do, current mode ",  Input.get_mouse_mode()))
+			
+########## Extra verbose functions ###########
+
+func _on_tree_change() -> void:
+	Log.hint(self, "_on_tree_change", "Debugger treechange")
+
+func _on_node_added(node) -> void:
+	Log.hint(self, "_on_node_added", str("added node ", node.get_path()))
+
+func _on_node_removed(node) -> void:
+	Log.hint(self, "_on_node_removed", str("node removed: ", node))
+	
+func _on_scene_change() -> void:
+	Log.hint(self, "_on_scene_change" ,"")
+	Options.del_state("set_lod_manager")
+	debug_apply_options()
+################################################
