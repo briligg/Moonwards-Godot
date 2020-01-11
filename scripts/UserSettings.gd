@@ -20,6 +20,8 @@ var button_containter : String = "VBoxContainer2/ViewportContainer"
 
 
 func _ready() -> void:
+	#warning-ignore:return_value_discarded
+	Options.connect( "username_changed", self, "update_name_boxes" )
 	
 	get_node(text_edit1).text = Options.username
 	get_node(text_edit2).text = Options.username
@@ -41,6 +43,15 @@ func switch_slot() -> void:
 		get_node(hue_picker).color = Options.shoes_color
 	get_node(avatar_preview).set_colors(Options.pants_color, Options.shirt_color, Options.skin_color, Options.hair_color, Options.shoes_color)
 
+func update_name_boxes( new_name : String, setting_node : Object ) -> void :
+	#Update the boxes only if they are not the ones setting the username.
+	#This avoids a line edit bug.
+	if setting_node != get_node(text_edit1) :
+		get_node(text_edit1).text = new_name
+	
+	if setting_node != get_node(text_edit2) :
+		get_node(text_edit2).text = new_name
+	
 func _on_HuePicker_Hue_Selected(color : Color) -> void:
 	if current_slot == SLOTS.PANTS:
 		Options.pants_color = color
@@ -79,9 +90,7 @@ func _on_Gender_item_selected(ID : int) -> void:
 		get_node(button_containter).get_node("Male").show()
 
 func _on_UsernameTextEdit_text_changed(new_text : String) -> void:
-	Options.username = new_text
-	get_node(text_edit2).text = new_text
+	Options.set_username( new_text, get_node(text_edit1) )
 
 func _on_UsernameTextEdit2_text_changed(new_text : String) -> void:
-	Options.username = new_text
-	get_node(text_edit1).text = new_text
+	Options.set_username( new_text, get_node(text_edit2) )
