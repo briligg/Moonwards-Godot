@@ -23,7 +23,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_LineEdit_text_entered(new_text: String) -> void:
 	if new_text != "":
-		rpc("_append_text_to_chat", new_text)
+		rpc("_append_text_to_chat", new_text, Options.username)
 	
 	_le.clear()
 	_le.release_focus()
@@ -32,9 +32,14 @@ func _on_LineEdit_text_entered(new_text: String) -> void:
 	set_deferred("_active", false)
 
 
-remotesync func _append_text_to_chat(new_text: String) -> void:
-	# TODO: Add timestap prefix
-	# TODO: Add username prefix
-	# TODO: Add serverside logging
+remotesync func _append_text_to_chat(new_text: String, talkers_name : String) -> void:
 	_rtl.newline()
+	# TODO: Add timestap prefix
+	# TODO: Add serverside logging
+	
+	#Show the player's name next to their input.
+	#warning-ignore:return_value_discarded
+	_rtl.append_bbcode( "[color=#DB7900]" + talkers_name +  ":[/color] " )
+	
+	#warning-ignore:return_value_discarded
 	_rtl.append_bbcode(new_text)
