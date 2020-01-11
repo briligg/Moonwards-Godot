@@ -15,6 +15,33 @@ var binddef : Dictionary = { src = null, dest = null }
 func _ready() -> void:
 	set_name(Options.username)
 
+func bind_to_node_utilities() -> void :
+	#Bind myself to the node utilities so that I can listen to errors and reports.
+	NodeUtilities.bind_signal("network_log", "", GameState, self, NodeUtilities.MODE.CONNECT)
+	NodeUtilities.bind_signal("server_up", "", GameState, self, NodeUtilities.MODE.CONNECT)
+	NodeUtilities.bind_signal("network_error", "", GameState, self, NodeUtilities.MODE.CONNECT)
+
+func is_valid_connection() -> bool :
+	#When trying to connect, check that everything is as it should be.
+	if not (GameState.RoleServer or GameState.RoleClient):
+		if ($connect/name.text == ""):
+			$connect/error_label.text="Invalid name!"
+			return false
+	
+	else:
+		emit_signal("network_error", "Already in server or client mode")
+	
+	#Connection is valid.
+	return true
+
+func register_player_local() -> void :
+	#Register the player with the game state.
+	var player_data = {
+		username = $connect/name.text,
+		gender = Options.gender,
+		colors = {"pants" : Options.pants_color, "shirt" : Options.shirt_color, "skin" : Options.skin_color, "hair" : Options.hair_color, "shoes" : Options.shoes_color}
+	}
+	GameState.player_register(player_data, true) #local player
 
 func set_name(name : String = "") -> void:
 	if name == "":
@@ -79,49 +106,29 @@ func _on_server_connected() -> void:
 	_on_server_up()
 
 func _on_host_pressed() -> void:
-	if not (GameState.RoleServer or GameState.RoleClient):
-		if ($connect/name.text == ""):
-			$connect/error_label.text="Invalid name!"
-			return
-		var player_data = {
-			username = $connect/name.text,
-			gender = Options.gender,
-			colors = {"pants" : Options.pants_color, "shirt" : Options.shirt_color, "skin" : Options.skin_color, "hair" : Options.hair_color, "shoes" : Options.shoes_color}
-		}
-		GameState.player_register(player_data, true) #local player
-		self.state = STATE.SERVER_SELECT
+	if is_valid_connection() == false :
+		return
+	
+	self.register_player_local()
 
-		NodeUtilities.bind_signal("network_log", "", GameState, self, NodeUtilities.MODE.CONNECT)
-		NodeUtilities.bind_signal("server_up", "", GameState, self, NodeUtilities.MODE.CONNECT)
-		NodeUtilities.bind_signal("network_error", "", GameState, self, NodeUtilities.MODE.CONNECT)
+	self.set_state( STATE.SERVER_SELECT )
+	
+	self.bind_to_node_utilities()
 
-
-		GameState.server_set_mode()
-	else:
-		emit_signal("network_error", "Already in server or client mode")
+	GameState.server_set_mode()
 
 func _on_join_pressed() -> void:
-	if not (GameState.RoleServer or GameState.RoleClient):
-		if ($connect/name.text == ""):
-			$connect/error_label.text="Invalid name!"
-			return
-
-		set_state(STATE.CLIENT_CONNECT)
-		var player_data = {
-			username = $connect/name.text,
-			gender = Options.gender,
-			colors = {"pants" : Options.pants_color, "shirt" : Options.shirt_color, "skin" : Options.skin_color, "hair" : Options.hair_color, "shoes" : Options.shoes_color}
-		}
-		GameState.player_register(player_data, true) #local player
-
-		NodeUtilities.bind_signal("network_log", "", GameState, self, NodeUtilities.MODE.CONNECT)
-		NodeUtilities.bind_signal("server_up", "", GameState, self, NodeUtilities.MODE.CONNECT)
-		NodeUtilities.bind_signal("network_error", "", GameState, self, NodeUtilities.MODE.CONNECT)
-
-		GameState.client_server_connect($connect/ipcontainer/ip.text)
+	#Exit out if the connection is not valid.
+	if is_valid_connection() == false :
 		return
-	else:
-		emit_signal("network_error", "Already in server or client mode")
+	
+	self.set_state(STATE.CLIENT_CONNECT)
+	
+	self.register_player_local()
+
+	self.bind_to_node_utilities()
+
+	GameState.client_server_connect($connect/ipcontainer/ip.text)
 
 func _on_connection_success() -> void:
 	$connect.hide()
