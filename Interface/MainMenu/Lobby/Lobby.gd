@@ -17,6 +17,9 @@ var binddef : Dictionary = { src = null, dest = null }
 
 func _ready() -> void:
 	set_name_box(Options.username)
+	
+	#warning-ignore:return_value_discarded
+	Options.connect( "username_changed", self, "update_player_name_box" )
 
 func bind_to_node_utilities() -> void :
 	#Bind myself to the node utilities so that I can listen to errors and reports.
@@ -48,7 +51,7 @@ func register_player_local() -> void :
 
 func save_name( new_name : String ) -> void :
 	#Called whenever the player inputs text in the name box.
-	Options.username = new_name
+	Options.set_username( new_name, player_name_box )
 
 func set_name_box(name : String = "") -> void:
 	if name == "":
@@ -79,6 +82,10 @@ func set_state(nstate : int)-> void:
 	state_hide()
 	state = nstate
 	state_show()
+
+func update_player_name_box( new_name : String, node_setting_name : Object ) -> void :
+	if node_setting_name != player_name_box :
+		player_name_box.text = new_name
 
 func refresh_lobby() -> void:
 	var players = GameState.get_player_list()

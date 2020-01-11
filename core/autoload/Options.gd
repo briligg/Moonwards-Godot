@@ -41,6 +41,7 @@ var Options : Dictionary = {
 #    user avatar Options    #
 #############################
 signal user_settings_changed
+signal username_changed( new_name_string, node_setting_the_name )
 
 
 var username : String = Utilities.get_name()
@@ -297,6 +298,16 @@ func save_user_settings() -> void:
 	set('Pcolor', shoes_color.b*255, "shoesB")
 
 	emit_signal("user_settings_changed")
+
+func set_username( new_name : String, node_that_set_name : Object ) -> void :
+	#Give the player a new name. Let anything listening know the username has been changed.
+	username = new_name
+	self.emit_signal( "username_changed", username, node_that_set_name )
+	"""
+		Please be aware that we have to pass the object that is setting the username.
+		Line edit bugs out if you are currently editing it and the line edit text is changed from
+		code.
+	"""
 
 func load_graphics_settings() -> void:
 	var resolutions : Vector2 = Vector2()

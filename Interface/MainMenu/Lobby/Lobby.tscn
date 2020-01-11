@@ -25,9 +25,9 @@ stretch_mode = 6
 
 [node name="connect" type="VBoxContainer" parent="."]
 margin_left = 840.0
-margin_top = 548.0
+margin_top = 557.0
 margin_right = 1040.0
-margin_bottom = 695.0
+margin_bottom = 686.0
 rect_min_size = Vector2( 200, 0 )
 size_flags_horizontal = 6
 size_flags_vertical = 6
@@ -57,6 +57,7 @@ align = 1
 caret_blink = true
 
 [node name="error_label" type="Label" parent="connect"]
+visible = false
 margin_top = 28.0
 margin_right = 200.0
 margin_bottom = 42.0
@@ -67,17 +68,17 @@ align = 1
 autowrap = true
 
 [node name="host" type="Button" parent="connect"]
-margin_top = 46.0
+margin_top = 28.0
 margin_right = 200.0
-margin_bottom = 66.0
+margin_bottom = 48.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Host"
 
 [node name="ipcontainer" type="HBoxContainer" parent="connect"]
-margin_top = 70.0
+margin_top = 52.0
 margin_right = 200.0
-margin_bottom = 94.0
+margin_bottom = 76.0
 alignment = 2
 
 [node name="ip_label" type="Label" parent="connect/ipcontainer"]
@@ -99,17 +100,17 @@ align = 1
 caret_blink = true
 
 [node name="join" type="Button" parent="connect"]
-margin_top = 98.0
+margin_top = 80.0
 margin_right = 200.0
-margin_bottom = 118.0
+margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Join"
 
 [node name="Back" type="Button" parent="connect"]
-margin_top = 122.0
+margin_top = 104.0
 margin_right = 200.0
-margin_bottom = 147.0
+margin_bottom = 129.0
 rect_min_size = Vector2( 200, 25 )
 size_flags_horizontal = 0
 text = "Back"
