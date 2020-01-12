@@ -23,6 +23,11 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_LineEdit_text_entered(new_text: String) -> void:
 	if new_text != "":
+		#TODO: Make below method call pass local player's id instead of
+		#whole username. We do not want a player that hacked there name
+		#to send a rediculously long string and mess up packets for other
+		#players. When GameState gets a get_local_player_id is when this
+		#todo can be finished.
 		rpc("_append_text_to_chat", new_text, Options.username)
 	
 	_le.clear()
