@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Interface/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Interface/MainMenu/MainBG.png" type="Texture" id=2]
-[ext_resource path="res://assets/UI/Options/Options.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Interface/MainMenu/About/About.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Interface/MainMenu/Lobby/Lobby.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/themes/MainMenu.tres" type="Theme" id=3]
+[ext_resource path="res://assets/UI/Options/Options.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Interface/MainMenu/About/About.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Interface/MainMenu/Lobby/Lobby.tscn" type="PackedScene" id=6]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -20,12 +21,14 @@ expand = true
 stretch_mode = 7
 
 [node name="H" type="HBoxContainer" parent="."]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 64.0
 margin_top = 64.0
 margin_right = -64.0
 margin_bottom = -64.0
+theme = ExtResource( 3 )
 alignment = 1
 
 [node name="V" type="VBoxContainer" parent="H"]
@@ -76,14 +79,14 @@ tabs_visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Options" parent="H/T" instance=ExtResource( 3 )]
+[node name="Options" parent="H/T" instance=ExtResource( 4 )]
 visible = false
 margin_left = 0.0
 margin_top = 0.0
 margin_right = 0.0
 margin_bottom = 0.0
 
-[node name="About" parent="H/T" instance=ExtResource( 4 )]
+[node name="About" parent="H/T" instance=ExtResource( 5 )]
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -94,7 +97,7 @@ margin_top = 0.0
 margin_right = 0.0
 margin_bottom = 0.0
 
-[node name="Lobby" parent="H/T" instance=ExtResource( 5 )]
+[node name="Lobby" parent="H/T" instance=ExtResource( 6 )]
 visible = false
 margin_left = 0.0
 margin_top = 0.0
