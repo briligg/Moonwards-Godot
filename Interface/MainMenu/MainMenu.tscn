@@ -32,42 +32,42 @@ theme = ExtResource( 3 )
 alignment = 1
 
 [node name="V" type="VBoxContainer" parent="H"]
-margin_right = 87.0
+margin_right = 74.0
 margin_bottom = 952.0
 alignment = 1
 
 [node name="bJoinServer" type="Button" parent="H/V"]
-margin_top = 418.0
-margin_right = 87.0
-margin_bottom = 438.0
+margin_top = 423.0
+margin_right = 74.0
+margin_bottom = 441.0
 text = "Join Server"
 
 [node name="bLocalGame" type="Button" parent="H/V"]
-margin_top = 442.0
-margin_right = 87.0
-margin_bottom = 462.0
+margin_top = 445.0
+margin_right = 74.0
+margin_bottom = 463.0
 text = "Local Game"
 
 [node name="bOptions" type="Button" parent="H/V"]
-margin_top = 466.0
-margin_right = 87.0
-margin_bottom = 486.0
+margin_top = 467.0
+margin_right = 74.0
+margin_bottom = 485.0
 text = "Options"
 
 [node name="bAbout" type="Button" parent="H/V"]
-margin_top = 490.0
-margin_right = 87.0
-margin_bottom = 510.0
+margin_top = 489.0
+margin_right = 74.0
+margin_bottom = 507.0
 text = "About"
 
 [node name="bQuit" type="Button" parent="H/V"]
-margin_top = 514.0
-margin_right = 87.0
-margin_bottom = 534.0
+margin_top = 511.0
+margin_right = 74.0
+margin_bottom = 529.0
 text = "Quit"
 
 [node name="T" type="TabContainer" parent="H"]
-margin_left = 91.0
+margin_left = 78.0
 margin_right = 1792.0
 margin_bottom = 952.0
 size_flags_horizontal = 3

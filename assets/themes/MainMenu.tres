@@ -1,9 +1,22 @@
-[gd_resource type="Theme" load_steps=15 format=2]
+[gd_resource type="Theme" load_steps=16 format=2]
 
 [ext_resource path="res://fonts/MainMenuFont.tres" type="DynamicFont" id=1]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0, 0, 0, 0.588235 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.717647, 0.717647, 0.717647, 1 )
+border_blend = true
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+expand_margin_top = 3.0
+expand_margin_bottom = 3.0
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0, 0, 0, 0.784314 )
@@ -63,7 +76,7 @@ Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 Button/constants/hseparation = 20
 Button/fonts/font = ExtResource( 1 )
 Button/styles/disabled = SubResource( 1 )
-Button/styles/focus = null
+Button/styles/focus = SubResource( 14 )
 Button/styles/hover = SubResource( 2 )
 Button/styles/normal = SubResource( 3 )
 Button/styles/pressed = null
