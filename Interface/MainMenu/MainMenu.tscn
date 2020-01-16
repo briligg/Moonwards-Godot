@@ -21,7 +21,6 @@ expand = true
 stretch_mode = 7
 
 [node name="H" type="HBoxContainer" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 64.0
@@ -29,45 +28,8 @@ margin_top = 64.0
 margin_right = -64.0
 margin_bottom = -64.0
 theme = ExtResource( 3 )
-alignment = 1
-
-[node name="V" type="VBoxContainer" parent="H"]
-margin_right = 74.0
-margin_bottom = 952.0
-alignment = 1
-
-[node name="bJoinServer" type="Button" parent="H/V"]
-margin_top = 423.0
-margin_right = 74.0
-margin_bottom = 441.0
-text = "Join Server"
-
-[node name="bLocalGame" type="Button" parent="H/V"]
-margin_top = 445.0
-margin_right = 74.0
-margin_bottom = 463.0
-text = "Local Game"
-
-[node name="bOptions" type="Button" parent="H/V"]
-margin_top = 467.0
-margin_right = 74.0
-margin_bottom = 485.0
-text = "Options"
-
-[node name="bAbout" type="Button" parent="H/V"]
-margin_top = 489.0
-margin_right = 74.0
-margin_bottom = 507.0
-text = "About"
-
-[node name="bQuit" type="Button" parent="H/V"]
-margin_top = 511.0
-margin_right = 74.0
-margin_bottom = 529.0
-text = "Quit"
 
 [node name="T" type="TabContainer" parent="H"]
-margin_left = 78.0
 margin_right = 1792.0
 margin_bottom = 952.0
 size_flags_horizontal = 3
@@ -85,6 +47,7 @@ margin_left = 0.0
 margin_top = 0.0
 margin_right = 0.0
 margin_bottom = 0.0
+theme = null
 
 [node name="About" parent="H/T" instance=ExtResource( 5 )]
 visible = false
@@ -103,8 +66,45 @@ margin_left = 0.0
 margin_top = 0.0
 margin_right = 0.0
 margin_bottom = 0.0
-[connection signal="pressed" from="H/V/bJoinServer" to="." method="_on_bJoinServer_pressed"]
-[connection signal="pressed" from="H/V/bLocalGame" to="." method="_on_bLocalGame_pressed"]
-[connection signal="pressed" from="H/V/bOptions" to="." method="_on_bOptions_pressed"]
-[connection signal="pressed" from="H/V/bAbout" to="." method="_on_bAbout_pressed"]
-[connection signal="pressed" from="H/V/bQuit" to="." method="_on_bQuit_pressed"]
+
+[node name="V" type="VBoxContainer" parent="."]
+margin_left = 366.0
+margin_top = 582.145
+margin_right = 796.0
+margin_bottom = 698.145
+theme = ExtResource( 3 )
+alignment = 1
+
+[node name="bJoinServer" type="Button" parent="V"]
+margin_right = 430.0
+margin_bottom = 20.0
+text = "Join Server"
+
+[node name="bLocalGame" type="Button" parent="V"]
+margin_top = 24.0
+margin_right = 430.0
+margin_bottom = 44.0
+text = "Local Game"
+
+[node name="bOptions" type="Button" parent="V"]
+margin_top = 48.0
+margin_right = 430.0
+margin_bottom = 68.0
+text = "Options"
+
+[node name="bAbout" type="Button" parent="V"]
+margin_top = 72.0
+margin_right = 430.0
+margin_bottom = 92.0
+text = "About"
+
+[node name="bQuit" type="Button" parent="V"]
+margin_top = 96.0
+margin_right = 430.0
+margin_bottom = 116.0
+text = "Quit"
+[connection signal="pressed" from="V/bJoinServer" to="." method="_on_bJoinServer_pressed"]
+[connection signal="pressed" from="V/bLocalGame" to="." method="_on_bLocalGame_pressed"]
+[connection signal="pressed" from="V/bOptions" to="." method="_on_bOptions_pressed"]
+[connection signal="pressed" from="V/bAbout" to="." method="_on_bAbout_pressed"]
+[connection signal="pressed" from="V/bQuit" to="." method="_on_bQuit_pressed"]
