@@ -76,32 +76,33 @@ theme = ExtResource( 3 )
 alignment = 1
 
 [node name="bJoinServer" type="Button" parent="V"]
+margin_top = 5.0
 margin_right = 430.0
-margin_bottom = 20.0
+margin_bottom = 23.0
 text = "Join Server"
 
 [node name="bLocalGame" type="Button" parent="V"]
-margin_top = 24.0
+margin_top = 27.0
 margin_right = 430.0
-margin_bottom = 44.0
+margin_bottom = 45.0
 text = "Local Game"
 
 [node name="bOptions" type="Button" parent="V"]
-margin_top = 48.0
+margin_top = 49.0
 margin_right = 430.0
-margin_bottom = 68.0
+margin_bottom = 67.0
 text = "Options"
 
 [node name="bAbout" type="Button" parent="V"]
-margin_top = 72.0
+margin_top = 71.0
 margin_right = 430.0
-margin_bottom = 92.0
+margin_bottom = 89.0
 text = "About"
 
 [node name="bQuit" type="Button" parent="V"]
-margin_top = 96.0
+margin_top = 93.0
 margin_right = 430.0
-margin_bottom = 116.0
+margin_bottom = 111.0
 text = "Quit"
 [connection signal="pressed" from="V/bJoinServer" to="." method="_on_bJoinServer_pressed"]
 [connection signal="pressed" from="V/bLocalGame" to="." method="_on_bLocalGame_pressed"]
