@@ -119,11 +119,11 @@ func _on_host_pressed() -> void:
 	if is_valid_connection() == false :
 		return
 	
-	self.register_player_local()
+	register_player_local()
 
-	self.set_state( STATE.SERVER_SELECT )
+	set_state( STATE.SERVER_SELECT )
 	
-	self.bind_to_node_utilities()
+	bind_to_node_utilities()
 
 	GameState.server_set_mode()
 
@@ -134,11 +134,11 @@ func _on_join_pressed() -> void:
 	if is_valid_connection() == false :
 		return
 	
-	self.set_state(STATE.CLIENT_CONNECT)
+	set_state(STATE.CLIENT_CONNECT)
 	
-	self.register_player_local()
+	register_player_local()
 
-	self.bind_to_node_utilities()
+	bind_to_node_utilities()
 
 	GameState.client_server_connect($connect/ipcontainer/ip.text)
 
