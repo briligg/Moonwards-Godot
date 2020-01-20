@@ -12,7 +12,6 @@ var current_slot : int = SLOTS.PANTS
 
 # Needs to use the paths before it's ready, so it will crash using onready
 var text_edit1 : String = "VBoxContainer/UsernameContainer/UsernameTextEdit"
-var text_edit2 : String = "VBoxContainer2/UsernameTextEdit2"
 var gender_edit : String = "VBoxContainer/Gender"
 var avatar_preview : String = "VBoxContainer2/ViewportContainer/Viewport/AvatarPreview"
 var hue_picker : String = "VBoxContainer/HuePicker"
@@ -24,7 +23,6 @@ func _ready() -> void:
 	Options.connect( "username_changed", self, "update_name_boxes" )
 	
 	get_node(text_edit1).text = Options.username
-	get_node(text_edit2).text = Options.username
 	switch_slot()
 	_on_Gender_item_selected(Options.gender)
 	get_node(gender_edit).selected = int(Options.gender)
@@ -49,8 +47,6 @@ func update_name_boxes( new_name : String, setting_node : Object ) -> void :
 	if setting_node != get_node(text_edit1) :
 		get_node(text_edit1).text = new_name
 	
-	if setting_node != get_node(text_edit2) :
-		get_node(text_edit2).text = new_name
 	
 func _on_HuePicker_Hue_Selected(color : Color) -> void:
 	if current_slot == SLOTS.PANTS:
@@ -91,6 +87,3 @@ func _on_Gender_item_selected(ID : int) -> void:
 
 func _on_UsernameTextEdit_text_changed(new_text : String) -> void:
 	Options.set_username( new_text, get_node(text_edit1) )
-
-func _on_UsernameTextEdit2_text_changed(new_text : String) -> void:
-	Options.set_username( new_text, get_node(text_edit2) )
