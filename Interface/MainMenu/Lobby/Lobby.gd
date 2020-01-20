@@ -10,7 +10,7 @@ enum STATE {
 onready var ServerWait = $WaitServer/Label.text
 
 #The input field for choosing the player's name.
-onready var player_name_box : LineEdit = get_node( "connect/namecontainer/name_input" )
+onready var _player_name_line_edit_node : LineEdit = get_node( "connect/namecontainer/name_input" )
 
 var state = STATE.INIT setget set_state
 var binddef : Dictionary = { src = null, dest = null }
@@ -19,7 +19,7 @@ func _ready() -> void:
 	set_name_box(Options.username)
 	
 	#warning-ignore:return_value_discarded
-	Options.connect( "username_changed", player_name_box, "set_text" )
+	Options.connect( "username_changed", _player_name_line_edit_node, "set_text" )
 
 func bind_to_node_utilities() -> void :
 	#Bind myself to the node utilities so that I can listen to errors and reports.
@@ -30,7 +30,7 @@ func bind_to_node_utilities() -> void :
 func is_valid_connection() -> bool :
 	#When trying to connect, check that everything is as it should be.
 	if not (GameState.RoleServer or GameState.RoleClient):
-		if (player_name_box.text == ""):
+		if (_player_name_line_edit_node.text == ""):
 			$connect/error_label.text="Invalid name!"
 			return false
 	
@@ -43,7 +43,7 @@ func is_valid_connection() -> bool :
 func register_player_local() -> void :
 	#Register the player with the game state.
 	var player_data = {
-		username = player_name_box.text,
+		username = _player_name_line_edit_node.text,
 		gender = Options.gender,
 		colors = {"pants" : Options.pants_color, "shirt" : Options.shirt_color, "skin" : Options.skin_color, "hair" : Options.hair_color, "shoes" : Options.shoes_color}
 	}
@@ -52,7 +52,7 @@ func register_player_local() -> void :
 func set_name_box(name : String = "") -> void:
 	if name == "":
 		name = Utilities.get_name()
-	player_name_box.text = name
+	_player_name_line_edit_node.text = name
 
 func state_hide() -> void:
 	match state:
@@ -114,7 +114,7 @@ func _on_server_connected() -> void:
 
 func _on_host_pressed() -> void:
 	#Set username options.
-	Options.set_username( player_name_box.text )
+	Options.set_username( _player_name_line_edit_node.text )
 	
 	if is_valid_connection() == false :
 		return
@@ -128,7 +128,7 @@ func _on_host_pressed() -> void:
 	GameState.server_set_mode()
 
 func _on_join_pressed() -> void:
-	Options.set_username( player_name_box.text )
+	Options.set_username( _player_name_line_edit_node.text )
 	
 	#Exit out if the connection is not valid.
 	if is_valid_connection() == false :
@@ -171,7 +171,7 @@ func _on_Sinlgeplayer_pressed() -> void:
 		get_node("connect/error_label").text="Invalid name!"
 		return
 	var player_data = {
-		username = player_name_box.text,
+		username = _player_name_line_edit_node.text,
 		network = false
 	}
 	GameState.RoleNoNetwork = true
