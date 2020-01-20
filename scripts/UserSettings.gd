@@ -20,7 +20,7 @@ var button_containter : String = "VBoxContainer2/ViewportContainer"
 
 func _ready() -> void:
 	#warning-ignore:return_value_discarded
-	Options.connect( "username_changed", self, "update_name_boxes" )
+	Options.connect( "username_changed", get_node( text_edit1 ), "set_text" )
 	
 	get_node(text_edit1).text = Options.username
 	switch_slot()
@@ -41,13 +41,6 @@ func switch_slot() -> void:
 		get_node(hue_picker).color = Options.shoes_color
 	get_node(avatar_preview).set_colors(Options.pants_color, Options.shirt_color, Options.skin_color, Options.hair_color, Options.shoes_color)
 
-func update_name_boxes( new_name : String, setting_node : Object ) -> void :
-	#Update the boxes only if they are not the ones setting the username.
-	#This avoids a line edit bug.
-	if setting_node != get_node(text_edit1) :
-		get_node(text_edit1).text = new_name
-	
-	
 func _on_HuePicker_Hue_Selected(color : Color) -> void:
 	if current_slot == SLOTS.PANTS:
 		Options.pants_color = color
@@ -66,6 +59,10 @@ func _on_CfgPlayer_pressed() -> void:
 
 func _on_SaveButton_pressed() -> void:
 	Options.save()
+	
+	#Let everyone know the name has been changed.
+	Options.set_username( get_node( text_edit1 ).text )
+	
 #	UIManager.back()
 
 func _on_SlotOption_item_selected(ID : int) -> void:
@@ -84,6 +81,3 @@ func _on_Gender_item_selected(ID : int) -> void:
 	else:
 		get_node(button_containter).get_node("Female").hide()
 		get_node(button_containter).get_node("Male").show()
-
-func _on_UsernameTextEdit_text_changed(new_text : String) -> void:
-	Options.set_username( new_text, get_node(text_edit1) )

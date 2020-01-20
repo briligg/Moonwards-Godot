@@ -514,7 +514,6 @@ text = "Save"
 [connection signal="toggled" from="VBoxContainer2/GenderVisual/Male" to="VBoxContainer2/GenderVisual" method="_on_Male_toggled"]
 [connection signal="toggled" from="VBoxContainer2/GenderVisual/Female" to="VBoxContainer2/GenderVisual" method="_on_Female_toggled"]
 [connection signal="Hue_Selected" from="VBoxContainer/HuePicker" to="." method="_on_HuePicker_Hue_Selected"]
-[connection signal="text_changed" from="VBoxContainer/UsernameContainer/UsernameTextEdit" to="." method="_on_UsernameTextEdit_text_changed"]
 [connection signal="item_selected" from="VBoxContainer/Gender" to="." method="_on_Gender_item_selected"]
 [connection signal="item_selected" from="VBoxContainer/SlotOption" to="." method="_on_SlotOption_item_selected"]
 [connection signal="pressed" from="VBoxContainer/SaveButton" to="." method="_on_SaveButton_pressed"]

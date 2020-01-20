@@ -19,7 +19,7 @@ func _ready() -> void:
 	set_name_box(Options.username)
 	
 	#warning-ignore:return_value_discarded
-	Options.connect( "username_changed", self, "update_player_name_box" )
+	Options.connect( "username_changed", player_name_box, "set_text" )
 
 func bind_to_node_utilities() -> void :
 	#Bind myself to the node utilities so that I can listen to errors and reports.
@@ -48,10 +48,6 @@ func register_player_local() -> void :
 		colors = {"pants" : Options.pants_color, "shirt" : Options.shirt_color, "skin" : Options.skin_color, "hair" : Options.hair_color, "shoes" : Options.shoes_color}
 	}
 	GameState.player_register(player_data, true) #local player
-
-func save_name( new_name : String ) -> void :
-	#Called whenever the player inputs text in the name box.
-	Options.set_username( new_name, player_name_box )
 
 func set_name_box(name : String = "") -> void:
 	if name == "":
@@ -83,9 +79,6 @@ func set_state(nstate : int)-> void:
 	state = nstate
 	state_show()
 
-func update_player_name_box( new_name : String, node_setting_name : Object ) -> void :
-	if node_setting_name != player_name_box :
-		player_name_box.text = new_name
 
 func refresh_lobby() -> void:
 	var players = GameState.get_player_list()
@@ -120,6 +113,9 @@ func _on_server_connected() -> void:
 	_on_server_up()
 
 func _on_host_pressed() -> void:
+	#Set username options.
+	Options.set_username( player_name_box.text )
+	
 	if is_valid_connection() == false :
 		return
 	
@@ -132,6 +128,8 @@ func _on_host_pressed() -> void:
 	GameState.server_set_mode()
 
 func _on_join_pressed() -> void:
+	Options.set_username( player_name_box.text )
+	
 	#Exit out if the connection is not valid.
 	if is_valid_connection() == false :
 		return
@@ -158,7 +156,6 @@ func _on_game_ended() -> void:
 	$connect.show()
 	$PlayersList.hide()
 	$connect/host.disabled=false
-	$connect/join.disabled
 
 func _on_game_error(errtxt) -> void:
 	$error.dialog_text = errtxt

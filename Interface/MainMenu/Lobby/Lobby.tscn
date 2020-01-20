@@ -182,7 +182,6 @@ text = "Message
 "
 align = 1
 autowrap = true
-[connection signal="text_changed" from="connect/namecontainer/name_input" to="." method="save_name"]
 [connection signal="pressed" from="connect/host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="connect/join" to="." method="_on_join_pressed"]
 [connection signal="pressed" from="players/start" to="." method="_on_start_pressed"]

@@ -299,14 +299,17 @@ func save_user_settings() -> void:
 
 	emit_signal("user_settings_changed")
 
-func set_username( new_name : String, node_that_set_name : Object ) -> void :
+func set_username( new_name : String ) -> void :
 	#Give the player a new name. Let anything listening know the username has been changed.
 	username = new_name
-	self.emit_signal( "username_changed", username, node_that_set_name )
+	self.emit_signal( "username_changed", username )
+	
+	#Finally save the new options.
+	save()
 	"""
-		Please be aware that we have to pass the object that is setting the username.
-		Line edit bugs out if you are currently editing it and the line edit text is changed from
-		code.
+		Please be aware that you should only pass the username once it is completely
+		filled out. When you emit the new username all line edits will move their carats 
+		back to the beginning of the line.
 	"""
 
 func load_graphics_settings() -> void:
