@@ -68,45 +68,45 @@ margin_right = 0.0
 margin_bottom = 0.0
 
 [node name="V" type="VBoxContainer" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
+anchor_top = 0.95
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -970.0
-margin_top = -180.0
-margin_right = -50.0
-margin_bottom = -54.0
+margin_left = 120.0
+margin_top = 100.0
+margin_right = -120.0
+margin_bottom = -250.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 theme = ExtResource( 3 )
-alignment = 1
 
 [node name="bJoinServer" type="Button" parent="V"]
-margin_right = 920.0
+margin_right = 1680.0
 margin_bottom = 22.0
 text = "Join Server"
 
 [node name="bLocalGame" type="Button" parent="V"]
 margin_top = 26.0
-margin_right = 920.0
+margin_right = 1680.0
 margin_bottom = 48.0
 text = "Local Game"
 
 [node name="bOptions" type="Button" parent="V"]
 margin_top = 52.0
-margin_right = 920.0
+margin_right = 1680.0
 margin_bottom = 74.0
 text = "Options"
 
 [node name="bAbout" type="Button" parent="V"]
 margin_top = 78.0
-margin_right = 920.0
+margin_right = 1680.0
 margin_bottom = 100.0
 text = "About"
 
 [node name="bQuit" type="Button" parent="V"]
 margin_top = 104.0
-margin_right = 920.0
+margin_right = 1680.0
 margin_bottom = 126.0
 text = "Quit"
 [connection signal="pressed" from="V/bJoinServer" to="." method="_on_bJoinServer_pressed"]
