@@ -21,17 +21,18 @@ expand = true
 stretch_mode = 7
 
 [node name="H" type="HBoxContainer" parent="."]
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 64.0
-margin_top = 64.0
+margin_top = -662.463
 margin_right = -64.0
-margin_bottom = -64.0
+margin_bottom = -173.463
 theme = ExtResource( 3 )
 
 [node name="T" type="TabContainer" parent="H"]
 margin_right = 1792.0
-margin_bottom = 952.0
+margin_bottom = 489.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = SubResource( 1 )
