@@ -94,21 +94,22 @@ margin_bottom = 48.0
 text = "Local Game"
 
 [node name="bOptions" type="Button" parent="V"]
+visible = false
 margin_top = 52.0
 margin_right = 1680.0
 margin_bottom = 74.0
 text = "Options"
 
 [node name="bAbout" type="Button" parent="V"]
-margin_top = 78.0
+margin_top = 52.0
 margin_right = 1680.0
-margin_bottom = 100.0
+margin_bottom = 74.0
 text = "About"
 
 [node name="bQuit" type="Button" parent="V"]
-margin_top = 104.0
+margin_top = 78.0
 margin_right = 1680.0
-margin_bottom = 126.0
+margin_bottom = 100.0
 text = "Quit"
 [connection signal="pressed" from="V/bJoinServer" to="." method="_on_bJoinServer_pressed"]
 [connection signal="pressed" from="V/bLocalGame" to="." method="_on_bLocalGame_pressed"]
