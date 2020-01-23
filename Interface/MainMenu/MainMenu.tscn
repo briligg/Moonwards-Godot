@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Interface/MainMenu/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://Interface/MainMenu/MainBG.png" type="Texture" id=2]
+[ext_resource path="res://Interface/MainMenu/Hangars_toHorizon.png" type="Texture" id=2]
 [ext_resource path="res://assets/themes/MainMenu.tres" type="Theme" id=3]
 [ext_resource path="res://assets/UI/Options/Options.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Interface/MainMenu/About/About.tscn" type="PackedScene" id=5]
