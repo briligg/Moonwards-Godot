@@ -23,7 +23,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_LineEdit_text_entered(new_text: String) -> void:
 	if new_text != "":
-		rpc("_append_text_to_chat", new_text, get_tree().get_network_unique_id() )
+		var username : String = "[color=#DB7900]" + Options.username +  ":[/color]: "
+		
+		rpc("_append_text_to_chat", username + new_text )
 	
 	_chat_input_node.clear()
 	_chat_input_node.release_focus()
@@ -32,15 +34,10 @@ func _on_LineEdit_text_entered(new_text: String) -> void:
 	set_deferred("_active", false)
 
 
-remotesync func _append_text_to_chat(new_text: String, talker_id : int) -> void:
+remotesync func _append_text_to_chat(new_text: String) -> void:
 	_chat_display_node.newline()
 	# TODO: Add timestap prefix
 	# TODO: Add serverside logging
-	
-	#Show the player's name next to their input.
-	#warning-ignore:return_value_discarded
-	var talker_name : String = GameState.player_get( "username", talker_id )
-	_chat_display_node.append_bbcode( "[color=#DB7900]" + talker_name +  ":[/color] " )
-	
+
 	#warning-ignore:return_value_discarded
 	_chat_display_node.append_bbcode(new_text)
