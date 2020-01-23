@@ -19,7 +19,7 @@ func _ready() -> void:
 func set_name(name : String = "") -> void:
 	if name == "":
 		name = Utilities.get_name()
-	$connect/name.text = name
+	$connect/namecontainer/name_input.text = name
 
 func state_hide() -> void:
 	match state:

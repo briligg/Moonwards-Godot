@@ -24,9 +24,9 @@ stretch_mode = 6
 
 [node name="connect" type="VBoxContainer" parent="."]
 margin_left = 840.0
-margin_top = 577.0
+margin_top = 563.0
 margin_right = 1040.0
-margin_bottom = 667.0
+margin_bottom = 681.0
 rect_min_size = Vector2( 200, 0 )
 size_flags_horizontal = 6
 size_flags_vertical = 6
@@ -41,18 +41,42 @@ custom_colors/font_color = Color( 0.820312, 0.291595, 0.291595, 1 )
 align = 1
 autowrap = true
 
-[node name="host" type="Button" parent="connect"]
+[node name="namecontainer" type="HBoxContainer" parent="connect"]
 margin_top = 18.0
 margin_right = 200.0
-margin_bottom = 38.0
+margin_bottom = 42.0
+alignment = 2
+
+[node name="name_label" type="Label" parent="connect/namecontainer"]
+margin_right = 76.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Name:"
+
+[node name="name_input" type="LineEdit" parent="connect/namecontainer"]
+margin_left = 80.0
+margin_right = 200.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "127.0.0.1"
+align = 1
+caret_blink = true
+
+[node name="host" type="Button" parent="connect"]
+margin_top = 46.0
+margin_right = 200.0
+margin_bottom = 66.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Host"
 
 [node name="ipcontainer" type="HBoxContainer" parent="connect"]
-margin_top = 42.0
+margin_top = 70.0
 margin_right = 200.0
-margin_bottom = 66.0
+margin_bottom = 94.0
 alignment = 2
 
 [node name="ip_label" type="Label" parent="connect/ipcontainer"]
@@ -74,32 +98,12 @@ align = 1
 caret_blink = true
 
 [node name="join" type="Button" parent="connect"]
-margin_top = 70.0
+margin_top = 98.0
 margin_right = 200.0
-margin_bottom = 90.0
+margin_bottom = 118.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Join"
-
-[node name="username" type="Label" parent="connect"]
-visible = false
-margin_top = 98.0
-margin_right = 200.0
-margin_bottom = 126.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Name:"
-
-[node name="name" type="LineEdit" parent="connect"]
-visible = false
-margin_top = 130.0
-margin_right = 200.0
-margin_bottom = 158.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Player1"
-align = 1
-caret_blink = true
 
 [node name="AnotherName" type="Button" parent="connect"]
 visible = false
