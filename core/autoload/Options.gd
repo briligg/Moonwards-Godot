@@ -41,6 +41,7 @@ var Options : Dictionary = {
 #    user avatar Options    #
 #############################
 signal user_settings_changed
+signal username_changed( new_username_string )
 
 
 var username : String = Utilities.get_name()
@@ -226,6 +227,12 @@ func get(category : String, prop : String = '', default=""):
 
 func set(category : String, value, prop : String = '') -> void:
 	config.set_value(category, prop, value)
+
+
+func set_username( new_username : String ) -> void :
+	#Set the player's username and let other nodes know about it too.
+	username = new_username
+	emit_signal( "username_changed", username )
 
 
 func del_state(prop):

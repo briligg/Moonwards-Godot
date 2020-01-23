@@ -20,6 +20,9 @@ var button_containter : String = "VBoxContainer2/ViewportContainer"
 
 
 func _ready() -> void:
+	#Change the username that is displayed in the username input fields
+	#when another node has changed the username.
+	Options.connect( "username_changed", self, "username_changed" )
 	
 	get_node(text_edit1).text = Options.username
 	get_node(text_edit2).text = Options.username
@@ -40,6 +43,10 @@ func switch_slot() -> void:
 	elif current_slot == SLOTS.SHOES:
 		get_node(hue_picker).color = Options.shoes_color
 	get_node(avatar_preview).set_colors(Options.pants_color, Options.shirt_color, Options.skin_color, Options.hair_color, Options.shoes_color)
+
+func username_changed( new_username : String ) -> void :
+	get_node(text_edit1).text = new_username
+	get_node(text_edit2).text = new_username
 
 func _on_HuePicker_Hue_Selected(color : Color) -> void:
 	if current_slot == SLOTS.PANTS:

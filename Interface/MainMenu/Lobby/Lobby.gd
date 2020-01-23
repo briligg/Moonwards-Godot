@@ -14,6 +14,8 @@ var binddef : Dictionary = { src = null, dest = null }
 
 func _ready() -> void:
 	set_name(Options.username)
+	
+	Options.connect( "username_changed", self, "set_name" )
 
 
 func set_name(name : String = "") -> void:
@@ -67,13 +69,15 @@ func _on_server_connected() -> void:
 
 func _on_host_pressed() -> void:
 	if GameState.NetworkState == GameState.MODE.DISCONNECTED:
-		if ($connect/name.text == ""):
+		if ($connect/namecontainer/name_input.text == ""):
 			$connect/error_label.text="Invalid name!"
 			return
 		
 		NodeUtilities.bind_signal("server_up", "_on_client_connected", GameState, self, NodeUtilities.MODE.CONNECT)
 		
 		GameState.server_set_mode()
+		
+		Options.set_username( $connect/namecontainer/name_input.text ) #Set the username.
 		
 		yield(GameState, "scene_change") #Wait Until the world loads
 		GameState.player_register(Options.player_data, true) #local player
@@ -89,7 +93,7 @@ func _on_host_pressed() -> void:
 
 func _on_join_pressed() -> void:
 	if GameState.NetworkState == GameState.MODE.DISCONNECTED:
-		if ($connect/name.text == ""):
+		if ($connect/namecontainer/name_input.text == ""):
 			$connect/error_label.text="Invalid name!"
 			return
 
@@ -105,6 +109,8 @@ func _on_join_pressed() -> void:
 		#NodeUtilities.bind_signal("client_connected", "", GameState, self, NodeUtilities.MODE.CONNECT)
 		NodeUtilities.bind_signal("server_up", "_on_client_connected", GameState, self, NodeUtilities.MODE.CONNECT)
 
+		Options.set_username( $connect/namecontainer/name_input.text ) #Set the username.
+		
 		GameState.client_server_connect($connect/ipcontainer/ip.text)
 		yield(GameState, "scene_change") #Wait Until the world loads
 		GameState.player_register(player_data, true) #local player
