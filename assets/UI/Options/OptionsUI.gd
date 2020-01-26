@@ -20,6 +20,12 @@ onready var t_flycam = $TabContainer/Dev/VBoxContainer/SelectFlyCamera
 onready var tabs = $TabContainer
 
 func _ready() -> void:
+	#Disable Dev and controls tab.
+	$TabContainer.set_tab_disabled( 2, true )
+	$TabContainer.set_tab_title( 2, "" )
+	$TabContainer.set_tab_disabled( 3, true )
+	$TabContainer.set_tab_title( 3, "" )
+	
 	Log.hint(self, "_ready", "option control ready")
 	t_Areas.pressed = Options.get("dev", "enable_areas_lod", true)
 	t_CollisionShapes.pressed = Options.get("dev", "enable_collision_shapes", true)
