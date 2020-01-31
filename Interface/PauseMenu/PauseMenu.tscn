@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Interface/PauseMenu/PauseMenu.gd" type="Script" id=1]
-[ext_resource path="res://assets/UI/Options/Options.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Interface/MainMenu/About/About.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Themes/MainMenu.tres" type="Theme" id=2]
+[ext_resource path="res://assets/UI/Options/Options.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Interface/MainMenu/About/About.tscn" type="PackedScene" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -21,44 +22,45 @@ script = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 64.0
-margin_top = -5.0
+margin_top = 6.0
 margin_right = -64.0
 margin_bottom = -3.0
+theme = ExtResource( 2 )
 alignment = 1
 
 [node name="V" type="VBoxContainer" parent="H"]
 margin_right = 69.0
-margin_bottom = 1082.0
+margin_bottom = 1071.0
 alignment = 1
 
 [node name="bContinue" type="Button" parent="H/V"]
-margin_top = 495.0
+margin_top = 489.0
 margin_right = 69.0
-margin_bottom = 515.0
+margin_bottom = 509.0
 text = "Continue"
 
 [node name="bOptions" type="Button" parent="H/V"]
-margin_top = 519.0
+margin_top = 513.0
 margin_right = 69.0
-margin_bottom = 539.0
+margin_bottom = 533.0
 text = "Options"
 
 [node name="bAbout" type="Button" parent="H/V"]
-margin_top = 543.0
+margin_top = 537.0
 margin_right = 69.0
-margin_bottom = 563.0
+margin_bottom = 557.0
 text = "About"
 
 [node name="bQuit" type="Button" parent="H/V"]
-margin_top = 567.0
+margin_top = 561.0
 margin_right = 69.0
-margin_bottom = 587.0
+margin_bottom = 581.0
 text = "Quit"
 
 [node name="T" type="TabContainer" parent="H"]
 margin_left = 73.0
 margin_right = 1792.0
-margin_bottom = 1082.0
+margin_bottom = 1071.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = SubResource( 1 )
@@ -68,14 +70,14 @@ tabs_visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Options" parent="H/T" instance=ExtResource( 2 )]
+[node name="Options" parent="H/T" instance=ExtResource( 3 )]
 visible = false
 margin_left = 0.0
 margin_top = 0.0
 margin_right = 0.0
 margin_bottom = 0.0
 
-[node name="About" parent="H/T" instance=ExtResource( 3 )]
+[node name="About" parent="H/T" instance=ExtResource( 4 )]
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
