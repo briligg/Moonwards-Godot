@@ -21,44 +21,44 @@ script = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 64.0
-margin_top = 64.0
+margin_top = -5.0
 margin_right = -64.0
-margin_bottom = -64.0
+margin_bottom = -3.0
 alignment = 1
 
 [node name="V" type="VBoxContainer" parent="H"]
 margin_right = 69.0
-margin_bottom = 952.0
+margin_bottom = 1082.0
 alignment = 1
 
 [node name="bContinue" type="Button" parent="H/V"]
-margin_top = 430.0
+margin_top = 495.0
 margin_right = 69.0
-margin_bottom = 450.0
+margin_bottom = 515.0
 text = "Continue"
 
 [node name="bOptions" type="Button" parent="H/V"]
-margin_top = 454.0
+margin_top = 519.0
 margin_right = 69.0
-margin_bottom = 474.0
+margin_bottom = 539.0
 text = "Options"
 
 [node name="bAbout" type="Button" parent="H/V"]
-margin_top = 478.0
+margin_top = 543.0
 margin_right = 69.0
-margin_bottom = 498.0
+margin_bottom = 563.0
 text = "About"
 
 [node name="bQuit" type="Button" parent="H/V"]
-margin_top = 502.0
+margin_top = 567.0
 margin_right = 69.0
-margin_bottom = 522.0
+margin_bottom = 587.0
 text = "Quit"
 
 [node name="T" type="TabContainer" parent="H"]
 margin_left = 73.0
 margin_right = 1792.0
-margin_bottom = 952.0
+margin_bottom = 1082.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = SubResource( 1 )
