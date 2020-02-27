@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://SharedAssets/Materials/Matte/YellowOrange_Matte.material" type="Material" id=1]
+[ext_resource path="res://Actors/TourPod/PassengerPodPlaceholder.tscn" type="PackedScene" id=2]
+[ext_resource path="res://SharedAssets/Materials/Matte/Black_Matte.material" type="Material" id=3]
+[ext_resource path="res://Actors/Rover/AthleteRover.glb" type="PackedScene" id=4]
+[ext_resource path="res://Actors/Rover/Rover.gd" type="Script" id=5]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.123819
+height = 0.302326
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "Rover_RideLow"
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "Rover_RideHigh"
+
+[sub_resource type="AnimationNodeBlend2" id=4]
+
+[sub_resource type="AnimationNodeBlendTree" id=5]
+graph_offset = Vector2( -9, 45 )
+nodes/Animation/node = SubResource( 3 )
+nodes/Animation/position = Vector2( 220, 260 )
+"nodes/Animation 2/node" = SubResource( 2 )
+"nodes/Animation 2/position" = Vector2( 220, 120 )
+nodes/RideHeight/node = SubResource( 4 )
+nodes/RideHeight/position = Vector2( 520, 140 )
+nodes/output/position = Vector2( 900, 240 )
+node_connections = [ "output", 0, "RideHeight", "RideHeight", 0, "Animation 2", "RideHeight", 1, "Animation" ]
+
+[node name="Rover" type="Spatial"]
+script = ExtResource( 5 )
+
+[node name="KinematicBody" type="KinematicBody" parent="." groups=[
+"no_camera_collide",
+]]
+collision_layer = 4
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.276382, 0 )
+shape = SubResource( 1 )
+
+[node name="AthleteRover" parent="KinematicBody" instance=ExtResource( 4 )]
+
+[node name="AthleteRover003" parent="KinematicBody/AthleteRover/LegsArmature001/Skeleton" index="0"]
+material/0 = ExtResource( 1 )
+material/1 = ExtResource( 3 )
+
+[node name="RootBoneAttachment" type="BoneAttachment" parent="KinematicBody/AthleteRover/LegsArmature001/Skeleton" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.247668, 0.583227, -0.235315 )
+bone_name = "root"
+
+[node name="PassengerPodPlaceholder" parent="KinematicBody/AthleteRover/LegsArmature001/Skeleton/RootBoneAttachment" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.490531, 0 )
+
+[node name="AnimationTree" type="AnimationTree" parent="KinematicBody"]
+tree_root = SubResource( 5 )
+anim_player = NodePath("../AthleteRover/AnimationPlayer")
+active = true
+parameters/RideHeight/blend_amount = 0.0
+
+[editable path="KinematicBody/AthleteRover"]

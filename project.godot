@@ -1564,6 +1564,13 @@ chat_toggle_size={
 file_logging/enable_file_logging=true
 file_logging/max_log_files=30
 
+[layer_names]
+
+3d_physics/layer_1="Environment"
+3d_physics/layer_2="TourPod"
+3d_physics/layer_3="Rover"
+3d_physics/layer_4="Character"
+
 [physics]
 
 3d/default_gravity=1.6
