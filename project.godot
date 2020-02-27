@@ -293,6 +293,13 @@ mainmenu_toggle={
  ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Environment"
+3d_physics/layer_2="TourPod"
+3d_physics/layer_3="Rover"
+3d_physics/layer_4="Character"
+
 [physics]
 
 common/physics_fps=30

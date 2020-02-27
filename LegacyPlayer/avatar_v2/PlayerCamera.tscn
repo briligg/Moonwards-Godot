@@ -5,7 +5,9 @@
 [node name="PlayerCamera" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="Lines" type="ImmediateGeometry" parent="."]
+[node name="RayCast" type="RayCast" parent="."]
+enabled = true
+collision_mask = 15
 
 [node name="Pivot" type="Spatial" parent="."]
 

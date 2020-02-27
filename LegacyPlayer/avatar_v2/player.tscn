@@ -11,7 +11,6 @@
 [ext_resource path="res://SharedAssets/Materials/Miscellaneous/Eggplant.tres" type="Material" id=9]
 [ext_resource path="res://LegacyPlayer/avatar_v2/interactor/Interactor.tscn" type="PackedScene" id=10]
 
-
 [sub_resource type="SpatialMaterial" id=1]
 flags_unshaded = true
 albedo_color = Color( 1, 0, 0, 1 )
@@ -132,7 +131,7 @@ nodes/MovementState/position = Vector2( 740, 80 )
 nodes/Walk/node = SubResource( 22 )
 nodes/Walk/position = Vector2( 260, 80 )
 nodes/output/position = Vector2( 1380, 100 )
-node_connections = [ "output", 0, "Land", "Land", 0, "JumpAmount", "Land", 1, "Animation 2", "MovementSpeed", 0, "Walk", "MovementState", 0, "MovementSpeed", "MovementState", 1, "Animation 3", "MovementState", 2, "ClimbDirection", "ClimbDirection", 0, "ClimbProgressUp", "ClimbDirection", 1, "ClimbProgressDown", "JumpAmount", 0, "MovementState", "JumpAmount", 1, "Animation", "ClimbProgressDown", 0, "Animation 4", "ClimbProgressUp", 0, "Animation 5" ]
+node_connections = [ "output", 0, "Land", "ClimbDirection", 0, "ClimbProgressUp", "ClimbDirection", 1, "ClimbProgressDown", "ClimbProgressDown", 0, "Animation 4", "ClimbProgressUp", 0, "Animation 5", "JumpAmount", 0, "MovementState", "JumpAmount", 1, "Animation", "MovementSpeed", 0, "Walk", "MovementState", 0, "MovementSpeed", "MovementState", 1, "Animation 3", "MovementState", 2, "ClimbDirection", "Land", 0, "JumpAmount", "Land", 1, "Animation 2" ]
 
 [node name="LocalPlayer" type="Spatial"]
 script = ExtResource( 5 )
@@ -140,6 +139,8 @@ script = ExtResource( 5 )
 [node name="Camera" type="Camera" parent="."]
 
 [node name="KinematicBody" type="KinematicBody" parent="."]
+collision_layer = 8
+collision_mask = 11
 
 [node name="ImmediateGeometry" type="ImmediateGeometry" parent="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.001, 0 )
@@ -158,6 +159,7 @@ material/0 = SubResource( 3 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, 0 )
 enabled = true
 cast_to = Vector3( 0, -0.1, 0 )
+collision_mask = 11
 
 [node name="PlayerCamera" parent="KinematicBody" instance=ExtResource( 1 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.144089, 0 )

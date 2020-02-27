@@ -68,6 +68,17 @@ var id setget SetID
 var nocamera = false
 var jump_timer = 0.0
 onready var model = $KinematicBody/Model
+onready var skeleton = $KinematicBody/Model/FemaleRig/Skeleton
+onready var avatar_male = $KinematicBody/Model/FemaleRig/Skeleton/AvatarMale
+onready var avatar_female = $KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale
+onready var animation_tree = $KinematicBody/AnimationTree
+onready var on_ground = $KinematicBody/OnGround
+onready var kinematic_body = $KinematicBody
+onready var nametag = $KinematicBody/Nametag
+onready var username_label = $KinematicBody/Nametag/Viewport/Username
+onready var immediate_geometry = $KinematicBody/ImmediateGeometry
+
+var frozen : bool = false
 
 const walking = 0
 const flailing = 1
@@ -129,23 +140,23 @@ func _ready():
 		pick_random()
 	print("A player has been created with id: ", get_network_master(), " 4/4 Server Correctly set up")
 func SetupMaterials():
-	shirt_mat = $KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.get_surface_material(0).duplicate()
-	pants_mat = $KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.get_surface_material(1).duplicate()
-	skin_mat = $KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.get_surface_material(2).duplicate()
-	shoes_mat = $KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.get_surface_material(3).duplicate()
-	hair_mat = $KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.get_surface_material(3).duplicate()
+	shirt_mat = avatar_female.get_surface_material(0).duplicate()
+	pants_mat = avatar_female.get_surface_material(1).duplicate()
+	skin_mat = avatar_female.get_surface_material(2).duplicate()
+	shoes_mat = avatar_female.get_surface_material(3).duplicate()
+	hair_mat = avatar_female.get_surface_material(3).duplicate()
 
-	$KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.set_surface_material(0, shirt_mat)
-	$KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.set_surface_material(1, pants_mat)
-	$KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.set_surface_material(2, skin_mat)
-	$KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.set_surface_material(3, shoes_mat)
-	$KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.set_surface_material(4, hair_mat)
+	avatar_female.set_surface_material(0, shirt_mat)
+	avatar_female.set_surface_material(1, pants_mat)
+	avatar_female.set_surface_material(2, skin_mat)
+	avatar_female.set_surface_material(3, shoes_mat)
+	avatar_female.set_surface_material(4, hair_mat)
 
-	$KinematicBody/Model/FemaleRig/Skeleton/AvatarMale.set_surface_material(0, shoes_mat)
-	$KinematicBody/Model/FemaleRig/Skeleton/AvatarMale.set_surface_material(1, hair_mat)
-	$KinematicBody/Model/FemaleRig/Skeleton/AvatarMale.set_surface_material(2, pants_mat)
-	$KinematicBody/Model/FemaleRig/Skeleton/AvatarMale.set_surface_material(3, shirt_mat)
-	$KinematicBody/Model/FemaleRig/Skeleton/AvatarMale.set_surface_material(4, skin_mat)
+	avatar_male.set_surface_material(0, shoes_mat)
+	avatar_male.set_surface_material(1, hair_mat)
+	avatar_male.set_surface_material(2, pants_mat)
+	avatar_male.set_surface_material(3, shirt_mat)
+	avatar_male.set_surface_material(4, skin_mat)
 
 func SetPuppetColors(var colors):
 	SetupMaterials()
@@ -157,13 +168,13 @@ func SetPuppetColors(var colors):
 	shoes_mat.albedo_color = colors.shoes
 
 func SetPuppetGender(var gender):
-	$KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.visible = (gender == Options.GENDERS.FEMALE)
-	$KinematicBody/Model/FemaleRig/Skeleton/AvatarMale.visible = (gender == Options.GENDERS.MALE)
+	avatar_female.visible = (gender == Options.GENDERS.FEMALE)
+	avatar_male.visible = (gender == Options.GENDERS.MALE)
 
 	if Options.gender == Options.GENDERS.MALE:
-		$KinematicBody/Model/FemaleRig/Skeleton.scale = Vector3(1.1, 1.1, 1.1)
+		skeleton.scale = Vector3(1.1, 1.1, 1.1)
 	else:
-		$KinematicBody/Model/FemaleRig/Skeleton.scale = Vector3(1.0, 1.0, 1.0)
+		skeleton.scale = Vector3(1.0, 1.0, 1.0)
 
 func ApplyUserSettings():
 	pants_mat.albedo_color = Options.pants_color
@@ -172,13 +183,13 @@ func ApplyUserSettings():
 	hair_mat.albedo_color = Options.hair_color
 	shoes_mat.albedo_color = Options.shoes_color
 
-	$KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.visible = (Options.gender == Options.GENDERS.FEMALE)
-	$KinematicBody/Model/FemaleRig/Skeleton/AvatarMale.visible = (Options.gender == Options.GENDERS.MALE)
+	avatar_female.visible = (Options.gender == Options.GENDERS.FEMALE)
+	avatar_male.visible = (Options.gender == Options.GENDERS.MALE)
 
 	if Options.gender == Options.GENDERS.MALE:
-		$KinematicBody/Model/FemaleRig/Skeleton.scale = Vector3(1.1, 1.1, 1.1)
+		skeleton.scale = Vector3(1.1, 1.1, 1.1)
 	else:
-		$KinematicBody/Model/FemaleRig/Skeleton.scale = Vector3(1.0, 1.0, 1.0)
+		skeleton.scale = Vector3(1.0, 1.0, 1.0)
 
 	SetUsername(Options.username)
 
@@ -201,7 +212,7 @@ func SetID(var _id):
 
 func SetUsername(var _username):
 	username = _username
-	$KinematicBody/Nametag/Viewport/Username.text = username
+	username_label.text = username
 
 func SetPScale(scale):
 	if scale < 0.01 or scale > 100:
@@ -214,24 +225,8 @@ func SetPScale(scale):
 #################################
 # _process functions
 func _unhandled_input(event):
-	# FIXME: This should be dealt with elsewhere
 	if PauseMenu.is_open() or bot:
 		return
-	
-	if (event is InputEventMouseMotion):
-		look_direction.x -= event.relative.x * mouse_sensitivity
-		look_direction.y -= event.relative.y * mouse_sensitivity
-
-		if look_direction.x > 360:
-			look_direction.x = 0
-		elif look_direction.x < 0:
-			look_direction.x = 360
-		if look_direction.y > max_up_aim_angle:
-			look_direction.y = max_up_aim_angle
-		elif look_direction.y < -max_down_aim_angle:
-			look_direction.y = -max_down_aim_angle
-
-		camera_control.Rotate(look_direction)
 
 	if event.is_action_pressed("move_right"):
 		motion_target.x = motion_target.x + 1.0
@@ -258,13 +253,7 @@ func _unhandled_input(event):
 			DoInteractiveObjectCheck()
 		else:
 			StopStairsClimb()
-
-	if event.is_action("zoom_in") and not Input.is_action_pressed("move_run"):
-		camera_control.DecreaseDistance()
-
-	if event.is_action("zoom_out") and not Input.is_action_pressed("move_run"):
-		camera_control.IncreaseDistance()
-
+	
 	if event.is_action_pressed("scroll_up") and Input.is_action_pressed("move_run") and animation_speed < 3.0:
 		animation_speed += 0.25
 	elif event.is_action_pressed("scroll_down") and Input.is_action_pressed("move_run") and animation_speed > 0.5:
@@ -294,7 +283,7 @@ func _physics_process(delta):
 		else:
 			motion_target = Vector2(0,1)
 		camera_control.look_at((current_point), Vector3(0,1,0))
-		global_character_position = to_global($KinematicBody.translation)
+		global_character_position = to_global(kinematic_body.translation)
 		bot_movement(delta)
 	HandleOnGround(delta)
 	HandleMovement()
@@ -328,7 +317,7 @@ func bot_update_path(to : Vector3) -> void:
 func bot_movement(delta : float) -> void:
 	cumulative_delta = cumulative_delta+delta
 	if has_destination:
-		if (to_local(current_point)-$KinematicBody.translation).length() < 0.5:
+		if (to_local(current_point)-kinematic_body.translation).length() < 0.5:
 			cumulative_delta = 0
 			if point_number < AI_PATH.size()-1:
 				point_number += 1
@@ -344,23 +333,23 @@ func bot_movement(delta : float) -> void:
 			pick_random()
 
 func HandleOnGround(delta):
-	if $KinematicBody/OnGround.is_colliding() and in_air:
+	if on_ground.is_colliding() and in_air:
 		in_air = false
 		land = true
 		in_air_accomulate = 0
-		$KinematicBody/OnGround.cast_to.y = -0.1
-	elif not $KinematicBody/OnGround.is_colliding() and not in_air and not climbing_stairs:
+		on_ground.cast_to.y = -0.1
+	elif not on_ground.is_colliding() and not in_air and not climbing_stairs:
 		in_air_accomulate += delta
 		if in_air_accomulate >= IN_AIR_DELTA:
 			in_air = true
-			$KinematicBody/OnGround.cast_to.y = -0.04
+			on_ground.cast_to.y = -0.04
 
 func HandleMovement():
-	$KinematicBody/AnimationTree["parameters/Walk/blend_position"] = motion
-	$KinematicBody/AnimationTree["parameters/MovementSpeed/scale"] = animation_speed
+	animation_tree["parameters/Walk/blend_position"] = motion
+	animation_tree["parameters/MovementSpeed/scale"] = animation_speed
 
 func HandleControls(var delta):
-	if puppet:# and not bot:
+	if puppet or frozen:# and not bot:
 		return
 	
 	# FIXME: controls need to be dealt with elsewhere
@@ -372,24 +361,24 @@ func HandleControls(var delta):
 		jump = Input.is_action_pressed("jump")
 		input_direction = (Input.get_action_strength("move_forwards") - Input.get_action_strength("move_backwards"))
 	if bot:
-		input_direction = 1# to_local(current_point) - $KinematicBody.translation
+		input_direction = 1# to_local(current_point) - kinematic_body.translation
 	if jump_timeout > 0.0:
 		jump_timeout -= delta
 		if jump_timeout <= 0.0:
-			$KinematicBody/AnimationTree["parameters/JumpAmount/blend_amount"] = 0.0
+			animation_tree["parameters/JumpAmount/blend_amount"] = 0.0
 			is_jumping = false
 		else:
-			$KinematicBody/AnimationTree["parameters/JumpAmount/blend_amount"] = jump_timeout / 2.0
+			animation_tree["parameters/JumpAmount/blend_amount"] = jump_timeout / 2.0
 	elif jump and not in_air and not climbing_stairs and jump_timer < MAX_JUMP_TIMER:
 		jump = false
 		jump_timer += delta
-		$KinematicBody/AnimationTree["parameters/JumpAmount/blend_amount"] = jump_timer / MAX_JUMP_TIMER
+		animation_tree["parameters/JumpAmount/blend_amount"] = jump_timer / MAX_JUMP_TIMER
 		if not is_jumping:
 			is_jumping = true
 	elif is_jumping:
 		Jump(jump_timer)
 		jump_timer = 0.0
-		$KinematicBody/AnimationTree["parameters/MovementState/current"] = flailing
+		animation_tree["parameters/MovementState/current"] = flailing
 		movementstate = flailing
 
 	if climbing_stairs:
@@ -397,14 +386,14 @@ func HandleControls(var delta):
 		return
 
 	if in_air and movementstate == walking:
-		$KinematicBody/AnimationTree["parameters/MovementState/current"] = flailing
+		animation_tree["parameters/MovementState/current"] = flailing
 		movementstate = flailing
 	elif not in_air and movementstate == flailing and jump_timeout <= 0.0:
-		$KinematicBody/AnimationTree["parameters/MovementState/current"] = walking
+		animation_tree["parameters/MovementState/current"] = walking
 		movementstate = walking
 
 	if land:
-		$KinematicBody/AnimationTree["parameters/Land/active"] = true
+		animation_tree["parameters/Land/active"] = true
 		land = false
 
 	#Only control the character when it is on the floor.
@@ -414,7 +403,7 @@ func HandleControls(var delta):
 	else:
 		pass
 
-	ground_normal = $KinematicBody/OnGround.get_collision_normal()
+	ground_normal = on_ground.get_collision_normal()
 
 	#Update the model rotation based on the camera look direction.
 	var target_direction = -camera_control.camera.global_transform.basis.z
@@ -425,13 +414,13 @@ func HandleControls(var delta):
 
 	if not in_air and not is_jumping:
 		#Retrieve the root motion from the animationtree so it can be applied to the KinematicBody.
-		root_motion = $KinematicBody/AnimationTree.get_root_motion_transform()
+		root_motion = animation_tree.get_root_motion_transform()
 		orientation *= root_motion
 
 		var h_velocity = (orientation.origin / delta) * 0.1 * SPEED_SCALE
 		if bot:
-			h_velocity.x *= abs((to_local(current_point)-$KinematicBody.translation).normalized().x )
-			h_velocity.z *=abs((to_local(current_point)-$KinematicBody.translation).normalized().z)
+			h_velocity.x *= abs((to_local(current_point)-kinematic_body.translation).normalized().x )
+			h_velocity.z *=abs((to_local(current_point)-kinematic_body.translation).normalized().z)
 			
 		
 		var velocity_direction = h_velocity.normalized()
@@ -454,7 +443,7 @@ func HandleControls(var delta):
 		#When in the air or jumping apply the normal gravity to the character.
 		velocity += GRAVITY * delta
 
-	velocity = $KinematicBody.move_and_slide(velocity, Vector3(0,1,0), motion_target == Vector2())
+	velocity = kinematic_body.move_and_slide(velocity, Vector3(0,1,0), motion_target == Vector2())
 
 	orientation.origin = Vector3()
 	orientation = orientation.orthonormalized()
@@ -464,7 +453,7 @@ func HandleControls(var delta):
 		model.global_transform.basis = orientation.basis
 
 func UpdateClimbingStairs(var delta):
-	var kb_pos = $KinematicBody.global_transform.origin
+	var kb_pos = kinematic_body.global_transform.origin
 
 	if climb_point % 2 == 0:
 		climb_progress = abs((2.0 if climb_direction > 0.0 else 0.0) - abs((kb_pos.y - stairs.climb_points[climb_point].y) / stairs.step_size))
@@ -479,7 +468,7 @@ func UpdateClimbingStairs(var delta):
 		climb_point -= 1
 
 	if climb_point == stairs.climb_points.size() - 1 and kb_pos.y > stairs.climb_points[climb_point].y and not input_direction <= 0.0:
-		$KinematicBody/AnimationTree["parameters/MovementState/current"] = walking
+		animation_tree["parameters/MovementState/current"] = walking
 
 		motion = motion.linear_interpolate(motion_target, MOTION_INTERPOLATE_SPEED * delta)
 
@@ -491,7 +480,7 @@ func UpdateClimbingStairs(var delta):
 		orientation.basis = model.global_transform.basis.slerp(target_transform.basis, delta * ROTATION_INTERPOLATE_SPEED)
 
 		#Retrieve the root motion from the animationtree so it can be applied to the KinematicBody.
-		root_motion = $KinematicBody/AnimationTree.get_root_motion_transform()
+		root_motion = animation_tree.get_root_motion_transform()
 		orientation *= root_motion
 
 		var h_velocity = (orientation.origin / delta) * 0.1 * SPEED_SCALE
@@ -511,7 +500,7 @@ func UpdateClimbingStairs(var delta):
 		if kb_pos.distance_to(stairs.climb_points[climb_point]) > 0.12:
 			StopStairsClimb()
 	else:
-		$KinematicBody/AnimationTree["parameters/MovementState/current"] = climbing
+		animation_tree["parameters/MovementState/current"] = climbing
 		#Automatically move towards the climbing point horizontally.
 		var flat_velocity = (stairs.climb_points[climb_point] - kb_pos) * delta * 150.0
 		flat_velocity.y = 0.0
@@ -526,32 +515,32 @@ func UpdateClimbingStairs(var delta):
 		StopStairsClimb()
 
 	if input_direction > 0.0:
-		if $KinematicBody/AnimationTree["parameters/ClimbDirection/current"] == 1:
-			$KinematicBody/AnimationTree["parameters/ClimbDirection/current"] = 0
+		if animation_tree["parameters/ClimbDirection/current"] == 1:
+			animation_tree["parameters/ClimbDirection/current"] = 0
 			climb_direction = 1.0
 	elif input_direction < 0.0:
-		if $KinematicBody/AnimationTree["parameters/ClimbDirection/current"] == 0:
+		if animation_tree["parameters/ClimbDirection/current"] == 0:
 			climb_direction = -1.0
-			$KinematicBody/AnimationTree["parameters/ClimbDirection/current"] = 1
+			animation_tree["parameters/ClimbDirection/current"] = 1
 
 	if climb_direction == 1.0:
-		$KinematicBody/AnimationTree["parameters/ClimbProgressUp/seek_position"] = climb_progress
+		animation_tree["parameters/ClimbProgressUp/seek_position"] = climb_progress
 	else:
-		$KinematicBody/AnimationTree["parameters/ClimbProgressDown/seek_position"] = climb_progress
+		animation_tree["parameters/ClimbProgressDown/seek_position"] = climb_progress
 
-	velocity = $KinematicBody.move_and_slide(velocity, Vector3(0,1,0), false)
+	velocity = kinematic_body.move_and_slide(velocity, Vector3(0,1,0), false)
 
 func StopStairsClimb():
 	climbing_stairs = false
 	stairs = null
 	climb_point = -1
-	$KinematicBody/AnimationTree["parameters/MovementState/current"] = walking
+	animation_tree["parameters/MovementState/current"] = walking
 
 func DoInteractiveObjectCheck():
 	var space_state = get_world().direct_space_state
 	var params = PhysicsShapeQueryParameters.new()
 	var sphere = SphereShape.new()
-	var kb_pos = $KinematicBody.global_transform.origin
+	var kb_pos = kinematic_body.global_transform.origin
 
 	sphere.radius = 0.03
 	params.set_shape(sphere)
@@ -587,7 +576,7 @@ func UpdateNetworking():
 		return
 	if puppet:
 		if puppet_translation != null:
-			$KinematicBody.global_transform.origin = puppet_translation
+			kinematic_body.global_transform.origin = puppet_translation
 		if puppet_rotation != null:
 			model.global_transform.basis = puppet_rotation
 		if puppet_jump != null:
@@ -597,22 +586,22 @@ func UpdateNetworking():
 		if puppet_animation_speed != null:
 			animation_speed = puppet_animation_speed
 		if puppet_jump_blend != null:
-			$KinematicBody/AnimationTree["parameters/JumpAmount/blend_amount"] = puppet_jump_blend
+			animation_tree["parameters/JumpAmount/blend_amount"] = puppet_jump_blend
 		if puppet_anim_state != null:
-			$KinematicBody/AnimationTree["parameters/MovementState/current"] = puppet_anim_state
+			animation_tree["parameters/MovementState/current"] = puppet_anim_state
 		if puppet_climb_dir != null:
-			$KinematicBody/AnimationTree["parameters/ClimbDirection/current"] = puppet_climb_dir
+			animation_tree["parameters/ClimbDirection/current"] = puppet_climb_dir
 		if puppet_climb_progress_up != null:
-			$KinematicBody/AnimationTree["parameters/ClimbProgressUp/seek_position"] = puppet_climb_progress_up
+			animation_tree["parameters/ClimbProgressUp/seek_position"] = puppet_climb_progress_up
 		if puppet_climb_progress_down != null:
-			$KinematicBody/AnimationTree["parameters/ClimbProgressDown/seek_position"] = puppet_climb_progress_down
+			animation_tree["parameters/ClimbProgressDown/seek_position"] = puppet_climb_progress_down
 	elif is_network_master() or (bot and not puppet):
-		rset_unreliable("puppet_climb_progress_down", $KinematicBody/AnimationTree["parameters/ClimbProgressDown/seek_position"])
-		rset_unreliable("puppet_climb_progress_up", $KinematicBody/AnimationTree["parameters/ClimbProgressUp/seek_position"] )
-		rset_unreliable("puppet_climb_dir", $KinematicBody/AnimationTree["parameters/ClimbDirection/current"])
-		rset_unreliable("puppet_anim_state", $KinematicBody/AnimationTree["parameters/MovementState/current"])
-		rset_unreliable("puppet_jump_blend", $KinematicBody/AnimationTree["parameters/JumpAmount/blend_amount"])
-		rset_unreliable("puppet_translation", $KinematicBody.global_transform.origin)
+		rset_unreliable("puppet_climb_progress_down", animation_tree["parameters/ClimbProgressDown/seek_position"])
+		rset_unreliable("puppet_climb_progress_up", animation_tree["parameters/ClimbProgressUp/seek_position"] )
+		rset_unreliable("puppet_climb_dir", animation_tree["parameters/ClimbDirection/current"])
+		rset_unreliable("puppet_anim_state", animation_tree["parameters/MovementState/current"])
+		rset_unreliable("puppet_jump_blend", animation_tree["parameters/JumpAmount/blend_amount"])
+		rset_unreliable("puppet_translation", kinematic_body.global_transform.origin)
 		rset_unreliable("puppet_rotation", model.global_transform.basis)
 		rset_unreliable("puppet_motion", motion)
 		rset_unreliable("puppet_jump", jump)
@@ -652,20 +641,20 @@ func SetRemotePlayer(enable):
 	puppet = enable
 	set_player_group()
 	if not puppet:
-		$KinematicBody/Nametag.visible = false
+		nametag.visible = false
 		$Camera.current = true
 	else:
 		$Camera.current = false
 	if puppet or bot:
-		$KinematicBody/Nametag.visible = true
+		nametag.visible = true
 #################################
 # Debugger functions
 func CreateDebugLine(var from, var to):
-	$KinematicBody/ImmediateGeometry.clear()
-	$KinematicBody/ImmediateGeometry.begin(Mesh.PRIMITIVE_LINE_STRIP, null)
-	$KinematicBody/ImmediateGeometry.add_vertex(from)
-	$KinematicBody/ImmediateGeometry.add_vertex(to)
-	$KinematicBody/ImmediateGeometry.end()
+	immediate_geometry.clear()
+	immediate_geometry.begin(Mesh.PRIMITIVE_LINE_STRIP, null)
+	immediate_geometry.add_vertex(from)
+	immediate_geometry.add_vertex(to)
+	immediate_geometry.end()
 
 ## Restore Positions
 var rp_max_points = 100
@@ -677,7 +666,7 @@ var rp_points = []
 func PopRPoint():
 	if rp_points.size() > 0:
 			#printd("-----%s %s %s" % [rp_points.size(), get_path(), rp_points[0]])
-			$KinematicBody.global_transform = rp_points.pop_front()
+			kinematic_body.global_transform = rp_points.pop_front()
 			rp_time = 0
 
 func SaveRPoints(delta):
@@ -685,14 +674,14 @@ func SaveRPoints(delta):
 	rp_time += delta
 	if not in_air:
 			if rp_points.size() == 0:
-					rp_points.append($KinematicBody.global_transform)
+					rp_points.append(kinematic_body.global_transform)
 			if rp_points.size() > rp_max_points:
 					rp_points.pop_back()
 			if rp_time > rp_delta:
-					var kbo = $KinematicBody.global_transform.origin
+					var kbo = kinematic_body.global_transform.origin
 					if rp_points[0].origin.distance_to(kbo) > rp_delta_o:
 							rp_time = 0
-							rp_points.push_front($KinematicBody.global_transform)
+							rp_points.push_front(kinematic_body.global_transform)
 							#printd("+++++%s %s %s" % [rp_points.size(), get_path(), rp_points[0]])
 
 #var debug_id = "Player2.gd"
