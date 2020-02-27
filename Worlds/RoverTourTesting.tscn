@@ -56,10 +56,10 @@ polygons = [ PoolIntArray( 2, 1, 0 ), PoolIntArray( 6, 5, 3 ), PoolIntArray( 3, 
 agent/height = 0.1
 agent/radius = 1.0
 
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape" id=4]
 extents = Vector3( 25, 1, 25 )
 
-[sub_resource type="CubeMesh" id=4]
+[sub_resource type="CubeMesh" id=5]
 material = ExtResource( 3 )
 size = Vector3( 50, 2, 50 )
 
@@ -80,10 +80,10 @@ navmesh = SubResource( 3 )
 [node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/StaticBody"]
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="Floor" type="MeshInstance" parent="Navigation/NavigationMeshInstance/StaticBody/CollisionShape"]
-mesh = SubResource( 4 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="Scene" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 1 )]
@@ -337,7 +337,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.7028, 6.01446, 0 )
 [node name="Rover" parent="." instance=ExtResource( 41 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.45107, 0.988699, 0 )
 pod_path = NodePath("../TourPod")
-nav_path = NodePath("../Navigation")
 
 [node name="LocalPlayer" parent="." instance=ExtResource( 40 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12156, 0 )

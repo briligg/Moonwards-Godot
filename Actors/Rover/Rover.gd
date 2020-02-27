@@ -15,8 +15,7 @@ onready var attachment_position : Spatial = $KinematicBody/AthleteRover/LegsArma
 
 export(NodePath) var pod_path
 onready var pod = get_node(pod_path)
-export(NodePath) var nav_path
-onready var navigation : Navigation = get_node(nav_path)
+onready var navigation : Navigation = null
 
 const idle = 0
 const moving = 1
@@ -47,12 +46,79 @@ var _at_target_height : bool = false
 var _current_height : float = 0.0
 var _target_height : float = 0.0
 var _height_movement_speed : float = 0.25
+export(bool) var bot : bool = false
+
+#################################
+##Networking
+export(bool) var puppet = false setget _set_remote_player
+puppet var puppet_translation
+puppet var puppet_rotation
+puppet var puppet_jump
+puppet var puppet_jump_blend
+puppet var puppet_animation_speed
+puppet var puppet_motion
+puppet var puppet_anim_state
+puppet var puppet_climb_dir
+puppet var puppet_climb_progress_up
+puppet var puppet_climb_progress_down 
+
+var network = false setget _set_network
+var nonetwork = ! network
 
 func _ready() -> void:
 	_movement_direction = global_transform.basis.z
+	_set_remote_player(puppet)
+	if bot and puppet:
+		set_network_master(1)
+		_set_network(true)
+	if bot and not puppet:
+		_set_network(true)
+
+func _set_remote_player(enable):
+	puppet = enable
+	set_player_group()
+
+func _set_network(var enabled : bool) -> void:
+	network = enabled
+	nonetwork = ! enabled
+
+	if network:
+		rset_config("puppet_translation", MultiplayerAPI.RPC_MODE_PUPPET)
+		rset_config("puppet_rotation",  MultiplayerAPI.RPC_MODE_PUPPET)
+		rset_config("puppet_motion",  MultiplayerAPI.RPC_MODE_PUPPET)
+		rset_config("puppet_jump",  MultiplayerAPI.RPC_MODE_PUPPET)
+		rset_config("puppet_jump_blend",  MultiplayerAPI.RPC_MODE_PUPPET)
+		rset_config("puppet_run",  MultiplayerAPI.RPC_MODE_PUPPET)
+		rset_config("puppet_climb_progress_down",  MultiplayerAPI.RPC_MODE_PUPPET)
+		rset_config("puppet_climb_progress_up",  MultiplayerAPI.RPC_MODE_PUPPET)
+		rset_config("puppet_climb_dir",  MultiplayerAPI.RPC_MODE_PUPPET)
+		rset_config("puppet_anim_state",  MultiplayerAPI.RPC_MODE_PUPPET)
+	else:
+		rset_config("puppet_translation", MultiplayerAPI.RPC_MODE_DISABLED)
+		rset_config("puppet_rotation",  MultiplayerAPI.RPC_MODE_DISABLED)
+		rset_config("puppet_motion",  MultiplayerAPI.RPC_MODE_DISABLED)
+		rset_config("puppet_jump", MultiplayerAPI.RPC_MODE_DISABLED)
+		rset_config("puppet_jump_blend", MultiplayerAPI.RPC_MODE_DISABLED)
+		rset_config("puppet_run", MultiplayerAPI.RPC_MODE_DISABLED)
+		rset_config("puppet_climb_progress_down",  MultiplayerAPI.RPC_MODE_DISABLED)
+		rset_config("puppet_climb_progress_up",  MultiplayerAPI.RPC_MODE_DISABLED)
+		rset_config("puppet_climb_dir",  MultiplayerAPI.RPC_MODE_DISABLED)
+		rset_config("puppet_anim_state",  MultiplayerAPI.RPC_MODE_DISABLED)
+
+func set_player_group(enable=true): # for local only
+	if not  is_inside_tree():
+		return
+	var pg = Options.player_opt.PlayerGroup
+	if puppet == false and not is_in_group(pg):
+		add_to_group(pg, true)
+	if puppet == true and is_in_group(pg):
+		remove_from_group(pg)
 
 func _physics_process(delta : float) -> void:
 	_update_height(delta)
+	if navigation == null:
+		navigation = WorldManager.current_world
+		return
 	_update_state(delta)
 
 func _set_target_height(var new_target_height):
