@@ -140,23 +140,23 @@ func _ready():
 		pick_random()
 	print("A player has been created with id: ", get_network_master(), " 4/4 Server Correctly set up")
 func SetupMaterials():
-	shirt_mat = avatar_female.get_surface_material(0).duplicate()
-	pants_mat = avatar_female.get_surface_material(1).duplicate()
-	skin_mat = avatar_female.get_surface_material(2).duplicate()
-	shoes_mat = avatar_female.get_surface_material(3).duplicate()
-	hair_mat = avatar_female.get_surface_material(3).duplicate()
+	shirt_mat = $KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.get_surface_material(0).duplicate()
+	pants_mat = $KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.get_surface_material(1).duplicate()
+	skin_mat = $KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.get_surface_material(2).duplicate()
+	shoes_mat = $KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.get_surface_material(3).duplicate()
+	hair_mat = $KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.get_surface_material(3).duplicate()
 
-	avatar_female.set_surface_material(0, shirt_mat)
-	avatar_female.set_surface_material(1, pants_mat)
-	avatar_female.set_surface_material(2, skin_mat)
-	avatar_female.set_surface_material(3, shoes_mat)
-	avatar_female.set_surface_material(4, hair_mat)
+	$KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.set_surface_material(0, shirt_mat)
+	$KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.set_surface_material(1, pants_mat)
+	$KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.set_surface_material(2, skin_mat)
+	$KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.set_surface_material(3, shoes_mat)
+	$KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.set_surface_material(4, hair_mat)
 
-	avatar_male.set_surface_material(0, shoes_mat)
-	avatar_male.set_surface_material(1, hair_mat)
-	avatar_male.set_surface_material(2, pants_mat)
-	avatar_male.set_surface_material(3, shirt_mat)
-	avatar_male.set_surface_material(4, skin_mat)
+	$KinematicBody/Model/FemaleRig/Skeleton/AvatarMale.set_surface_material(0, shoes_mat)
+	$KinematicBody/Model/FemaleRig/Skeleton/AvatarMale.set_surface_material(1, hair_mat)
+	$KinematicBody/Model/FemaleRig/Skeleton/AvatarMale.set_surface_material(2, pants_mat)
+	$KinematicBody/Model/FemaleRig/Skeleton/AvatarMale.set_surface_material(3, shirt_mat)
+	$KinematicBody/Model/FemaleRig/Skeleton/AvatarMale.set_surface_material(4, skin_mat)
 
 func SetPuppetColors(var colors):
 	SetupMaterials()
@@ -168,13 +168,13 @@ func SetPuppetColors(var colors):
 	shoes_mat.albedo_color = colors.shoes
 
 func SetPuppetGender(var gender):
-	avatar_female.visible = (gender == Options.GENDERS.FEMALE)
-	avatar_male.visible = (gender == Options.GENDERS.MALE)
+	$KinematicBody/Model/FemaleRig/Skeleton/AvatarFemale.visible = (gender == Options.GENDERS.FEMALE)
+	$KinematicBody/Model/FemaleRig/Skeleton/AvatarMale.visible = (gender == Options.GENDERS.MALE)
 
 	if Options.gender == Options.GENDERS.MALE:
-		skeleton.scale = Vector3(1.1, 1.1, 1.1)
+		$KinematicBody/Model/FemaleRig/Skeleton.scale = Vector3(1.1, 1.1, 1.1)
 	else:
-		skeleton.scale = Vector3(1.0, 1.0, 1.0)
+		$KinematicBody/Model/FemaleRig/Skeleton.scale = Vector3(1.0, 1.0, 1.0)
 
 func ApplyUserSettings():
 	pants_mat.albedo_color = Options.pants_color
@@ -212,7 +212,7 @@ func SetID(var _id):
 
 func SetUsername(var _username):
 	username = _username
-	username_label.text = username
+	$KinematicBody/Nametag/Viewport/Username.text = username
 
 func SetPScale(scale):
 	if scale < 0.01 or scale > 100:
@@ -641,12 +641,12 @@ func SetRemotePlayer(enable):
 	puppet = enable
 	set_player_group()
 	if not puppet:
-		nametag.visible = false
+		$KinematicBody/Nametag.visible = false
 		$Camera.current = true
 	else:
 		$Camera.current = false
 	if puppet or bot:
-		nametag.visible = true
+		$KinematicBody/Nametag.visible = true
 #################################
 # Debugger functions
 func CreateDebugLine(var from, var to):
