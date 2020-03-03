@@ -52,7 +52,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.247668, 0.583227, -0.235315 
 bone_name = "root"
 
 [node name="PassengerPodPlaceholder" parent="KinematicBody/AthleteRover/LegsArmature001/Skeleton/RootBoneAttachment" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.490531, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.485435, 0 )
 
 [node name="AnimationTree" type="AnimationTree" parent="KinematicBody"]
 tree_root = SubResource( 5 )

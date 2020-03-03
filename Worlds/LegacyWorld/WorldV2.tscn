@@ -6,8 +6,9 @@
 [ext_resource path="res://Core/WorldNavigation.gd" type="Script" id=4]
 [ext_resource path="res://LegacyPlayer/avatar_v2/player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Actors/Rover/Rover.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Actors/TourPod/PassengerPodPlaceholder.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Actors/TourPod/PassengerPodDocking.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Actors/TourPod/TourPod.tscn" type="PackedScene" id=8]
+
 
 [sub_resource type="SphereMesh" id=1]
 flip_faces = true
