@@ -6,7 +6,7 @@
 [ext_resource path="res://Worlds/MoonTown/Assets/Airlock/Airlock.tscn" type="PackedScene" id=7]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.123321, 0.130295, 0.487466 )
+extents = Vector3( 0.123321, 0.130295, 0.589991 )
 
 [node name="PassengerPodDocking" type="Spatial"]
 script = ExtResource( 2 )

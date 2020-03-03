@@ -150,6 +150,7 @@ func _update_state(delta : float) -> void:
 			pod = docking_node.tour_pod
 			#Go get the pod if assigned one.
 			_calculate_path(pod.body.global_transform)
+			_set_target_height(1.0)
 			state = retrieve_pod
 	elif state == done:
 		pass
@@ -158,6 +159,8 @@ func _update_state(delta : float) -> void:
 			if !pod.rover_present:
 				pod.rover_present = true
 			if pod.ready_to_leave:
+				docking_node.passenger_pod_leave()
+				docking_node = pod.next_docking_node
 				_set_target_height(0.0)
 				state = picking_up_pod
 	elif state == picking_up_pod:
@@ -179,6 +182,8 @@ func _update_state(delta : float) -> void:
 	elif state == placing_pod:
 		_update_movement(delta)
 		if abs(_target_location.origin.y - pod.body.global_transform.origin.y) < 0.01 or _at_target_height:
+			docking_node.passenger_pod_arrive()
+			docking_node.tour_pod = pod
 			var old_transform = pod.body.global_transform
 			root_bone_attachment.remove_child(pod.body)
 			pod.add_child(pod.body)

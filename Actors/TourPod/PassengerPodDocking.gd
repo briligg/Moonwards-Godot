@@ -28,6 +28,8 @@ func _ready() -> void:
 			
 			tour_pod.locations = locations
 			add_child(tour_pod)
+		else:
+			airlock_animation_player.play("InsideDoorClose")
 		$PassengerPodPlaceholder.queue_free()
 		$Ground_Passenger_Pod.queue_free()
 
@@ -38,10 +40,13 @@ func _set_preview_pod(var _occupied : bool):
 		$Ground_Passenger_Pod.visible = occupied
 
 func passenger_pod_leave():
-	pass
+	occupied = false
+	airlock_animation_player.play("OutsideDoorClose")
 
 func passenger_pod_arrive():
-	pass
+	occupied = true
+	airlock_animation_player.play("OutsideDoorOpen")
+	_state = AIRLOCK_STATE.OUTSIDE_OPEN
 
 func _process(delta):
 	if _timer_started:
