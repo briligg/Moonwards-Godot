@@ -92,6 +92,7 @@ func _lock_passengers():
 	query.set_shape(passenger_check.shape)
 	query.transform = passenger_check.global_transform
 	var results = space_state.intersect_shape(query)
+	_transition_camera = false
 	
 	for result in results:
 		var object = result.collider
@@ -118,11 +119,12 @@ func free_passengers() -> void:
 func delivered() -> void:
 	ready_to_leave = false
 	
-	_transition_transform_from = camera.global_transform
-	_transition_transform_to_object = _return_camera
+	if _transition_camera:
+		_transition_transform_from = camera.global_transform
+		_transition_transform_to_object = _return_camera
+		_transition_timer = 0.0
+		yield(self, "_camera_transition_done")
 	
-	_transition_timer = 0.0
-	yield(self, "_camera_transition_done")
 	body.set_collision_layer_bit(1, true)
 	free_passengers()
 	camera_control.set_camera_control(false)
