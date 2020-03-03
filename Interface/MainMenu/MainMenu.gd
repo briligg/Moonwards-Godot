@@ -14,6 +14,10 @@ func show() -> void:
 	PauseMenu.set_openable(false)
 	Hud.set_active(false)
 
+func _input(event):
+	if event.is_action_pressed("ui_menu_options"):
+		self.hide()
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func hide() -> void:
 	for i in get_children():
