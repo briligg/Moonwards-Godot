@@ -6,7 +6,7 @@ onready var airlock_animation_player : AnimationPlayer = get_node("Airlock/Anima
 export(bool) var occupied : bool = false setget _set_preview_pod
 var tour_pod : Node = null
 export(Array, NodePath) var location_paths
-var _state = AIRLOCK_STATE.INSIDE_OPEN
+var _state = AIRLOCK_STATE.BOTH_CLOSED
 var _timer : float = 0.0
 var _timer_started : bool = false
 const _timeout_duration : float = 2.0
@@ -15,12 +15,15 @@ enum AIRLOCK_STATE {
 	INSIDE_OPEN,
 	OUTSIDE_OPEN,
 	BOTH_CLOSED_GOING_OUTSIDE,
-	BOTH_CLOSED_GOING_INSIDE
+	BOTH_CLOSED_GOING_INSIDE,
+	BOTH_CLOSED
 }
 
 func _ready() -> void:
 	if !Engine.editor_hint:
 		if occupied:
+			_state = AIRLOCK_STATE.INSIDE_OPEN
+			airlock_animation_player.play("InsideDoorOpen")
 			tour_pod = tour_pod_resource.instance()
 			var locations = []
 			for location_path in location_paths:
@@ -41,12 +44,16 @@ func _set_preview_pod(var _occupied : bool):
 
 func passenger_pod_leave():
 	occupied = false
-	airlock_animation_player.play("OutsideDoorClose")
+	if _state == AIRLOCK_STATE.OUTSIDE_OPEN:
+		airlock_animation_player.play("OutsideDoorClose")
 
 func passenger_pod_arrive():
 	occupied = true
-	airlock_animation_player.play("OutsideDoorOpen")
-	_state = AIRLOCK_STATE.OUTSIDE_OPEN
+	if _state == AIRLOCK_STATE.INSIDE_OPEN:
+		_timer_started = true
+	else:
+		airlock_animation_player.play("OutsideDoorOpen")
+		_state = AIRLOCK_STATE.OUTSIDE_OPEN
 
 func _process(delta):
 	if _timer_started:
