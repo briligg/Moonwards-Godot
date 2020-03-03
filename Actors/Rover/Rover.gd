@@ -13,8 +13,10 @@ onready var kinematic_body : Node = $KinematicBody
 onready var root_bone_attachment : BoneAttachment = $KinematicBody/AthleteRover/LegsArmature001/Skeleton/RootBoneAttachment
 onready var attachment_position : Spatial = $KinematicBody/AthleteRover/LegsArmature001/Skeleton/RootBoneAttachment/PassengerPodPlaceholder
 
-export(NodePath) var pod_path
-onready var pod = get_node(pod_path)
+export(NodePath) var override_navigation = null
+export(NodePath) var docking_path
+onready var docking_node : Node = get_node(docking_path)
+onready var pod : Node = null
 onready var navigation : Navigation = null
 
 const idle = 0
@@ -66,6 +68,7 @@ var network = false setget _set_network
 var nonetwork = ! network
 
 func _ready() -> void:
+	attachment_position.hide()
 	_movement_direction = global_transform.basis.z
 	_set_remote_player(puppet)
 	if bot and puppet:
@@ -118,6 +121,8 @@ func _physics_process(delta : float) -> void:
 	_update_height(delta)
 	if navigation == null:
 		navigation = WorldManager.current_world
+		if override_navigation != null:
+			navigation = get_node(override_navigation)
 		return
 	_update_state(delta)
 
@@ -141,7 +146,8 @@ func _update_height(delta):
 
 func _update_state(delta : float) -> void:
 	if state == idle:
-		if pod != null:
+		if docking_node != null and docking_node.occupied:
+			pod = docking_node.tour_pod
 			#Go get the pod if assigned one.
 			_calculate_path(pod.body.global_transform)
 			state = retrieve_pod

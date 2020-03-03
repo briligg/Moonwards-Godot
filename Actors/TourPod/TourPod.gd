@@ -5,7 +5,6 @@ onready var animaton_player : Node = $MainBody/AnimationPlayer
 onready var passenger_check : Node = $MainBody/PassengerCheck
 onready var body : Node = $MainBody
 onready var camera_control : Node = $MainBody/PlayerCamera
-export(Array, NodePath) var location_paths
 
 var passengers = []
 var ready_to_leave : bool = false
@@ -18,8 +17,6 @@ var locations = []
 onready var target_transform : Transform
 
 func _ready():
-	for location_path in location_paths:
-		locations.append(get_node(location_path))
 	_set_target_location()
 
 func _set_target_location():
