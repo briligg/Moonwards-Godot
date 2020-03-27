@@ -94,7 +94,7 @@ func _on_game_ended() -> void:
 	$connect.show()
 	$PlayersList.hide()
 	$connect/host.disabled=false
-	$connect/join.disabled
+	$connect/join.disabled=false
 
 func _on_game_error(errtxt) -> void:
 	$error.dialog_text = errtxt

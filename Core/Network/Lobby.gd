@@ -9,7 +9,6 @@ enum MODE {
 	
 # warning-ignore-all:return_value_discarded
 
-
 ### Singals to interface with (not to be used inside this script ###
 
 signal user_disconnected(name) #emit when user is joined, for chat
@@ -118,17 +117,7 @@ remote func assert_user_connection(id : int) -> bool:
 
 ################################################################################
 #Track scene changes and add nodes or emit signals functions
-func connect_to_server(player_data : Dictionary, as_host: bool = true, server : String = "localhost") -> void:
-	if NetworkState == MODE.DISCONNECTED:
-		NodeUtilities.bind_signal("server_up", "_on_successful_connection", self, self, NodeUtilities.MODE.CONNECT)
-		if as_host:
-			server_set_mode()
-		else:
-			client_server_connect(server)
-			NodeUtilities.bind_signal("client_connected", "_on_successful_connection", self, self, NodeUtilities.MODE.CONNECT)
-		yield(WorldManager, "scene_change") #Wait Until the world loads
-		print("World loaded, setting up server bot 3/4")
-		player_register(player_data, true) #local player
+
 
 
 func unreliable_call(delta : float, function : String, args : Dictionary = {}, id : int = -1):
@@ -187,42 +176,49 @@ func queue_tree_signal(path : String, signal_name : String, permanent : bool = f
 	NodeUtilities.bind_signal("tree_changed", "_on_queue_attach_on_tree_change", get_tree(), self, NodeUtilities.MODE.CONNECT)
 
 #################
-#Server functions
+#Connection functions
+
+func connect_to_server(player_data : Dictionary, as_host: bool = true, server : String = "localhost", port : int = DEFAULT_PORT) -> void:
+	NodeUtilities.bind_signal("server_up", "_on_successful_connection", self, self, NodeUtilities.MODE.CONNECT)
+	if as_host:
+		server_set_mode(port)
+	else:
+		client_server_connect(server)
+		NodeUtilities.bind_signal("client_connected", "_on_successful_connection", self, self, NodeUtilities.MODE.CONNECT)
+
+	yield(WorldManager, "scene_change") #Wait Until the world loads
+	print("World loaded, setting up server bot 3/4")
+
+	player_register(player_data, true) #local player
+
+func verify_connection_mode(mode_to_check : int) -> bool:
+	if MODE.DISCONNECTED or mode_to_check:
+		NetworkState = mode_to_check
+		return true
+	else:
+		Log.error(self, "verify_connection_mode", "Connection mode was already set to a different Mode")
+		return false
 
 
-func server_set_mode(host : String = "localhost"):
-	match NetworkState:
-		MODE.CLIENT:
-			Log.error(self, "server_set_mode", "Currently in client mode")
-			return
-		MODE.SERVER:
-			Log.error(self, "server_set_mode", "Already in server mode")
-			return
-		MODE.NONETWORK:
-			Log.error(self, "server_set_mode", "No-network-mode enabled")
-			return
-		MODE.DISCONNECTED:
-			continue
-
-	NetworkState = MODE.SERVER
-
-	self.host = host
-	ip = IP.resolve_hostname(host, IP.TYPE_ANY) #Resolve any IP
-	print("The current ip is valid: ", ip.is_valid_ip_address()) 
-#	if not ip.is_valid_ip_address():
-#		Log.hint(self, "server_set_mode",  str("fail to resolve host(",host,") to ip adress"))
-#		NetworkState = MODE.DISCONNECTED
-#		return
+func server_set_mode(port : int = DEFAULT_PORT):
+	
+	if not verify_connection_mode(MODE.SERVER):
+		return
+		
 	Log.hint(self, "server_set_mode", str("prepare to listen on ", ip, ":", DEFAULT_PORT))
-	connection = NetworkedMultiplayerENet.new()
-	connection.set_compression_mode(NetworkedMultiplayerENet.COMPRESS_FASTLZ)
+	
+	connection = NetworkedMultiplayerENet.new() #Create Connection resource
+	connection.set_compression_mode(NetworkedMultiplayerENet.COMPRESS_FASTLZ) #Set compression mode for the connection
 	connection.set_bind_ip("*") # Temporary debug stuff, use all available interfaces
-	var error : int = connection.create_server(DEFAULT_PORT, MAX_PEERS)
+	
+	var error : int = connection.create_server(DEFAULT_PORT, MAX_PEERS) #Establish a connection
+	
+	
 	print("Current connection status: " + Log.error_to_string(error))
+	
 	if error == OK:
 		print("Server has been connected: 2/4")
 		emit_signal("server_up")
-		
 		yield(WorldManager, "scene_change")
 		get_tree().set_network_peer(connection)
 		Log.hint(self, "server_set_mode", str("server up on ", ip, ":", DEFAULT_PORT))
@@ -243,39 +239,31 @@ func server_set_mode(host : String = "localhost"):
 ################ #Client functions
 
 func client_server_connect(host : String, port : int = DEFAULT_PORT):
-	match NetworkState:
-		MODE.CLIENT:
-			Log.error(self, "client_server_connect", "Already in client mode")
-			return
-		MODE.SERVER:
-			Log.error(self, "client_server_connect", "Currently in server mode")
-			return
-		MODE.NONETWORK:
-			Log.error(self, "client_server_connect", "No-network-mode enabled")
-			return
-		MODE.DISCONNECTED:
-			continue
+	
+	if not verify_connection_mode(MODE.CLIENT):
+		return
 
-	NetworkState = MODE.CLIENT
-
-	host = host
-	ip = IP.resolve_hostname(host,IP.TYPE_ANY) #TYPE_ANY, allows IPv4 and IPv6
-	print("Ip is: ", ip)
+	ip = IP.resolve_hostname(host, IP.TYPE_ANY) #TYPE_ANY, allows IPv4 and IPv6
+	
 	if not ip.is_valid_ip_address():
-		var msg = str("fail to resolve host(", host, ") to ip adress")
-		Log.error(self, "client_server_connect", msg)
+		Log.error(self, "client_server_connect", str("fail to resolve host(", host, ") to ip adress"))
 		NetworkState = MODE.DISCONNECTED
 		return
-	self.port = port
+		
 	Log.hint(self, "client_server_connect", "connect to server %s(%s):%s" % [host, ip, port])
-#
-#	NodeUtilities.bind_signal("connection_failed", "", get_tree(), self, NodeUtilities.MODE.CONNECT)
-#	NodeUtilities.bind_signal("connected_to_server", "", get_tree(), self, NodeUtilities.MODE.CONNECT)
+	NodeUtilities.bind_signal("connection_failed", "", get_tree(), self, NodeUtilities.MODE.CONNECT)
+	NodeUtilities.bind_signal("connected_to_server", "", get_tree(), self, NodeUtilities.MODE.CONNECT)
+	
+	
 	connection = NetworkedMultiplayerENet.new()
 	connection.set_compression_mode(NetworkedMultiplayerENet.COMPRESS_FASTLZ) #Use lss bandwidth
 	var err = connection.create_client(ip, port)
+	
+	
 	print("Current connection status: " + Log.error_to_string(err))
+	
 	emit_signal("server_up")
+	
 	Log.hint(self, "client_server_connect", str("network id ", connection.get_unique_id()))
 	network_id = connection.get_unique_id()
 	emit_signal("player_id", network_id)
@@ -293,6 +281,7 @@ func client_server_connect(host : String, port : int = DEFAULT_PORT):
 		Input.MOUSE_MODE_VISIBLE
 		yield(get_tree().create_timer(5), "timeout")
 		end_game()
+
 
 ################
 # Scene functions
