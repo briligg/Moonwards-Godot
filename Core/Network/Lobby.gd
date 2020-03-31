@@ -67,6 +67,7 @@ var port : int = DEFAULT_PORT
 var NetworkState : int = MODE.DISCONNECTED # 0 disconnected. 1 Connected as client. 2 Connected as server -1 Error
 
 var currently_check_id_is_connected : bool = false
+onready var has_player_scene : bool = false
 signal recieved_check_id
 signal check_or_timeout
 
@@ -299,13 +300,10 @@ func has_player_scene() -> bool:
 ################
 # Player functions
 
-
-
 func player_register(player_data : Dictionary, localplayer : bool = false) -> void:
 	#print("registering a player, id: ", player_data.id)
 	var id : int = 0
 	if localplayer and network_id:
-#		player_data["Options"] = Options.player_opt(opt_id, player_data) #merge name with rest of Options for Avatar
 		id = network_id
 	elif localplayer:
 		id = local_id
@@ -557,9 +555,6 @@ func _on_server_tree_user_disconnected(id : int) -> void:
 func _on_player_scene() -> void:
 	print("Entered _on_player_scene")
 	Log.hint(self, "_on_player_scene", "scene is player ready, checking players(%s)" % players.size())
-	if Options.Debugger:
-		for p in players:
-			Log.hint(self, "_on_player_scene",  "player %s" % players[p])
 	for p in players:
 		WorldManager.create_player(players[p])
 

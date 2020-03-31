@@ -29,7 +29,7 @@ func _on_bJoinServer_pressed() -> void:
 			gender = Options.gender,
 			colors = {"pants" : Options.pants_color, "shirt" : Options.shirt_color, "skin" : Options.skin_color, "hair" : Options.hair_color, "shoes" : Options.shoes_color}
 		}
-		Lobby.connect_to_server(player_data, false, "game.moonwards.com")
+		Lobby.connect_to_server(player_data, false, "34.70.91.191")
 
 func _on_bLocalGame_pressed() -> void:
 	tabs.current_tab = 3

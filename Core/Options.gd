@@ -1,7 +1,5 @@
 extends Node
 
-#TODO: refactor
-
 enum SLOTS{
 	PANTS,
 	SHIRT,
@@ -9,35 +7,28 @@ enum SLOTS{
 	HAIR,
 	SHOES
 }
-
 enum GENDERS{
 	FEMALE,
 	MALE
 }
-const id : String = "Options.gd"
 
-var Debugger : bool = true
+signal user_settings_changed()
 
-# scene for players, node name wich serves an indicator
-var scene_id : String= "scene_id_30160"
+const opt_filter : Dictionary = {
+		nocamera = true,
+		network = true,
+		input = true,
+		username = true,
+		gender = true,
+		colors = true
+	}
 
 # scene we instance for each player
 var player_scene : PackedScene = preload("res://LegacyPlayer/avatar_v2/player.tscn")
 
-var join_server_host : String = "mainhabs.moonwards.com"
-
-
-############################
-#       Other Options      #
-############################
-var Options : Dictionary = {
-}
-
 #############################
 #    user avatar Options    #
 #############################
-signal user_settings_changed
-
 
 var username : String = NameGenerator.get_name()
 var gender : int = GENDERS.FEMALE
@@ -46,12 +37,15 @@ var shirt_color : Color = Color(0,233.62642/256,255/256,1)
 var skin_color : Color = Color(186.98631/256,126.435381/256,47.515679/256,1)
 var hair_color : Color = Color(0,0,0,1)
 var shoes_color : Color = Color(0,0,0,1)
-var savefile_json
+##############################
+var scene_id = "scene_id_30160"
 
-const Config_File : String = "user://settings.cfg"
+const config_path : String = "user://settings.cfg"
 var config : ConfigFile = ConfigFile.new()
 #############################
-# load scene Options
+#    load scene Options     #
+#############################
+
 var scenes : Dictionary = {
 	loaded = null,
 	default = "WorldV2",
@@ -71,10 +65,15 @@ onready var player_data : Dictionary = {
 	instance = null,
 	username = self.username,
 	gender = self.gender,
-	colors = {"pants" : pants_color, "shirt" : shirt_color, "skin" : skin_color, "hair" : hair_color, "shoes" : shoes_color},
+	colors = {
+		"pants" : pants_color, 
+		"shirt" : shirt_color, 
+		"skin" : skin_color, 
+		"hair" : hair_color, 
+		"shoes" : shoes_color
+		},
 	id = 0,
 	avatar = {
-		Debugger = Debugger,
 		nocamera = false,
 		input_processing = true,
 		network = true,
@@ -88,15 +87,7 @@ var player_opt : Dictionary = {
 	player_group = "player",
 	opt_allow_unknown = true,
 	PlayerGroup = "PlayerGroup", #local player group
-	opt_filter = {
-		Debugger = true,
-		nocamera = true,
-		username = true,
-		gender = true,
-		colors = true
-	},
 	avatar = {
-		Debugger = Debugger,
 		nocamera = false,
 		input_processing = true,
 		network = true,
@@ -105,22 +96,19 @@ var player_opt : Dictionary = {
 		IN_AIR_DELTA = 0.4
 	},
 	avatar_local = {
-		Debugger = Debugger,
 		nocamera = false,
 		input_processing = true,
 		network = false,
 		puppet = false,
 		physics_scale = 0.1,
 	},
-	puppet = {
-		Debugger = Debugger,
+	remote_puppet = {
 		nocamera = true,
 		input_processing = false,
 		network = true,
 		puppet = true
 	},
 	server_bot = {
-		Debugger = Debugger,
 		nocamera = true,
 		network = true,
 		puppet = false,
@@ -131,20 +119,9 @@ var player_opt : Dictionary = {
 
 
 func _ready() -> void:
-# 	print("Debugger set FPS to 3")
-# 	Engine.target_fps = 3
-	printd("_ready","load Options and settings")
-	self.load()
+	print_debug("Options Singleton initializated")
+	self.load_saved_config()
 	set_defaults()
-	load_graphics_settings()
-
-
-#############################
-#       Debugger function      #
-#############################
-func printd(function_name, s):
-	Log.hint(self, function_name, s)
-
 
 
 #############################
@@ -159,26 +136,19 @@ func set_defaults() -> void:
 	get("dev", "decimate_percent", 90)
 	get("dev", "TreeManager", true)
 	get("LOD", "lod_aspect_ratio", 150)
-	# get("dev", "lod_manager_path", "res://scripts/TreeManager.tscn")
 
 func player_opt(type, opt : Dictionary = {}) -> Dictionary:
 	var res : Dictionary= {}
 	var filter : Dictionary = player_opt.opt_filter
-	var filter_id : String = "opt_filter_%s" % type
-	if player_opt.has(filter_id):
-		filter = player_opt[filter_id]
+	if (opt_filter.has(type)):
+		if opt.has(type):
+			return opt[type]
 
 	var allow_unknown : bool = player_opt.opt_allow_unknown
 	if opt != {}:
 		for k in opt:
 			if filter.has(k) and filter[k] or allow_unknown:
 				res[k] = opt[k]
-#				if not k in filter:
-#					printd("player_filter_opt, default allow unknown option %s %s" % [k, opt[k]])
-
-#	if not player_opt.has(type):
-#		printd("player_filter_opt, unknown player opt type %s" % type)
-
 	if player_opt.has(type):
 		print("player has type: ", type)
 		var def_opt : Dictionary = player_opt[type]
@@ -198,23 +168,21 @@ func update_player_data():
 
 
 
-func load()->void:
+func load_saved_config()->void:
 	var savefile : File = File.new()
-	if not savefile.file_exists(Config_File):
-		printd("load", "Nothing was saved before")
+	if not savefile.file_exists(config_path):
 		config = ConfigFile.new()
 	else:
-		config.load(Config_File)
+		config.load(config_path)
 		load_user_settings()
-		printd("load", "Options loaded from %s" % Config_File)
 	update_player_data()
+	load_graphics_settings()
 
 
 func save() -> void:
 	set("_state_", Lobby.local_id, "game_state_id")
 	save_user_settings()
-	config.save(Config_File)
-	printd("save","Options saved to %s" % Config_File)
+	config.save(config_path)
 	update_player_data()
 
 func get(category : String, prop : String = '', default=""):
