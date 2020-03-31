@@ -338,10 +338,10 @@ remote func register_client(id : int, pdata : Dictionary = Options.player_data) 
 		return
 #	print("register_client: id(%s), data: %s" % [id, pdata])
 	pdata["id"] = id
-	if pdata.has("Options"):
-		pdata["Options"] = Options.player_opt("puppet", pdata["Options"])
+	if pdata.has("options"):
+		pdata["options"] = Options.player_data_set_pattern("puppet", pdata["options"])
 	else:
-		pdata["Options"] = Options.player_opt("puppet")
+		pdata["options"] = Options.player_data_set_pattern("puppet")
 	player_register(pdata)
 	if NetworkState == MODE.SERVER:
 		#sync existing players

@@ -49,6 +49,7 @@ var fly_cameras : Array = [
 #############################
 # player instancing Options #
 #############################
+
 onready var player_data : Dictionary = {
 	player_group = "player", #deprecated soon
 	allow_unknown_options = true,
@@ -63,7 +64,7 @@ onready var player_data : Dictionary = {
 		"shoes" : shoes_color
 		},
 	id = 0,
-	avatar = {
+	options = {
 		nocamera = false,
 		input_processing = true,
 		network = true,
@@ -77,43 +78,24 @@ onready var player_data : Dictionary = {
 func _ready() -> void:
 	print_debug("Options Singleton initializated")
 	self.load_saved_config()
-#	set_defaults()
-#
-#
-##############################
-## functions and variable to sort
-#func set_defaults() -> void:
-#	# set some default values, probably improve that
-#	get("dev", "enable_areas_lod", true)
-#	get("dev", "enable_collision_shapes", true)
-#	get("dev", "3FPSlimit", true)
-#	get("dev", "3FPSlimit_value", 30)
-#	get("dev", "hide_meshes_random", false)
-#	get("dev", "decimate_percent", 90)
-#	get("dev", "TreeManager", true)
-#	get("LOD", "lod_aspect_ratio", 150)
 
-func player_opt(type : String, opt : Dictionary = {}) -> Dictionary:
+func player_data_set_pattern(type : String, opt : Dictionary = {}) -> Dictionary:
+	
 	var res : Dictionary = {}
-	var filter : Dictionary = opt_filter
-	if (opt_filter.has(type)):
-		if opt.has(type):
-			return opt[type]
-
-	var allow_unknown : bool = player_data.allow_unknown_options
-	if opt != {}:
-		for k in opt:
-			if filter.has(k) and filter[k] or allow_unknown:
-				res[k] = opt[k]
-	if player_data.has(type):
-		print("player has type: ", type)
-		var def_opt : Dictionary = player_data[type]
-		print("currently, player_opt = ", player_data)
-		print("currently, def_opt = ", def_opt)
-		for k in def_opt:
-			if def_opt.has(k):
-				print(k, " default value is ", def_opt[k])
-				res[k] = def_opt[k]
+	
+	if opt!= {}:
+		res = opt
+	else:
+		res = player_data.Options
+	match type:
+		"avatar_local":
+			res["network"] = false
+		"remote_puppet":
+			res["puppet"] = true
+			res["nocamera"] = true
+		"server_bot":
+			res["username"] = "Server Bot"
+			res["nocamera"] = true
 	return res
 	
 func get(category : String, prop : String = '', default=""):

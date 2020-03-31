@@ -28,6 +28,6 @@ func _ready_headless() -> void:
 	
 	var player_data : Dictionary = {
 		name = "Server bot",
-		options = Options.player_opt("server_bot")
+		options = Options.player_data_set_pattern("server_bot")
 	}
 	Lobby.connect_to_server(player_data, true)
