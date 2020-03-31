@@ -38,7 +38,6 @@ var skin_color : Color = Color(186.98631/256,126.435381/256,47.515679/256,1)
 var hair_color : Color = Color(0,0,0,1)
 var shoes_color : Color = Color(0,0,0,1)
 ##############################
-var scene_id = "scene_id_30160"
 
 const config_path : String = "user://settings.cfg"
 var config : ConfigFile = ConfigFile.new()

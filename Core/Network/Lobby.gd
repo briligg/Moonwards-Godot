@@ -73,7 +73,7 @@ signal check_or_timeout
 
 func _ready():
 	local_id = 0
-	queue_tree_signal(Options.scene_id, "player_scene", true)
+	queue_tree_signal("players", "player_scene", true)
 	_connect_signals()
 
 func _exit_tree():
@@ -293,7 +293,7 @@ func client_server_connect(host : String, port : int = DEFAULT_PORT):
 func has_player_scene() -> bool:
 	var result : bool = false
 	if get_tree() and get_tree().current_scene:
-		if get_tree().current_scene.has_node(Options.scene_id):
+		if get_tree().current_scene.has_node("players"):
 			result = true
 	return result
 
