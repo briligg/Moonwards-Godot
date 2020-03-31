@@ -99,15 +99,15 @@ func create_player(player : Dictionary) -> void:
 func player_apply_opt(pdata : Dictionary, player : Spatial):
 	pdata["instance"] = player
 	#apply options given in register dictionary under avatar
-	if pdata.has("avatar"):
+	if pdata.has("options"):
 		Log.hint(self, "player_apply_opt", "Applying options for avatar")
-		for k in pdata.avatar:
-			player.set(k, pdata.avatar[k])
-		if pdata.avatar.has("input_processing"):
-			 player.set_process_input(pdata.avatar["input_processing"])
+		for k in pdata.options:
+			player.set(k, pdata.options[k])
+		if pdata.options.has("input_processing"):
+			 player.set_process_input(pdata.options["input_processing"])
 	else:
 		Log.error(self, "player_apply_opt", "invalid player_data dictionary")
-		pdata.avatar = Options.player_data.avatar
+		pdata.options = Options.player_data.options
 		player_apply_opt(pdata, player)
 """
 This is legacy code that needs checking
