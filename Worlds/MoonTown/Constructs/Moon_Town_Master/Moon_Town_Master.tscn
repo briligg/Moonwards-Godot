@@ -416,6 +416,10 @@ shadow_color = Color( 0.423529, 0.423529, 0.423529, 1 )
 [node name="Audio_Tour_Marker_Indoor_intro" type="Spatial" parent="Audio_Tour_Markers" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2642, 10.0833, -21.0216 )
 
+[node name="AudioSphere" parent="Audio_Tour_Markers/Audio_Tour_Marker_Indoor_intro" index="0" instance=ExtResource( 32 )]
+display_info = "play indoor audio tour introduction."
+audio_file = ExtResource( 39 )
+
 [node name="Audio_Tour_Marker_Indoor" parent="Audio_Tour_Markers" index="1" instance=ExtResource( 34 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.329642, 10.033, -18.1257 )
 
