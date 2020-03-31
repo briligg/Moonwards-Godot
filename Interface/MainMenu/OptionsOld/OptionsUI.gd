@@ -67,7 +67,7 @@ func close() -> void:
 func get_player() -> Spatial:
 	var res
 	var tree = get_tree()
-	var pg = Options.player_opt.player_group
+	var pg = Options.player_data.player_group
 	if tree.has_group(pg):
 		var player = tree.get_nodes_in_group(pg)[0]
 		if player and NodeUtilities.obj_has_property(player, "SPEED_SCALE"):

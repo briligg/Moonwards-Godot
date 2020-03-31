@@ -188,7 +188,7 @@ func ApplyUserSettings():
 func set_player_group(enable=true): # for local only
 	if not  is_inside_tree():
 		return
-	var pg = Options.player_opt.PlayerGroup
+	var pg = Options.player_data.player_group
 	if puppet == false and not is_in_group(pg):
 		#printd("add avatar(%s), puppet(%s) to %s group" % [get_path(), puppet, pg])
 		add_to_group(pg, true)

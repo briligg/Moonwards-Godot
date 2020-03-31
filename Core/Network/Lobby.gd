@@ -395,10 +395,6 @@ func player_noinput(enable : bool = false) -> void:
 	if players.has(local_id):
 		players[local_id].instance.input_processing = enable
 
-# Callback from SceneTree, only for clients (not server)
-
-# Lobby management functions
-
 func end_game() -> void:
 	if (has_node("/root/world")): # Game is in progress
 		get_node("/root/world").queue_free()
@@ -582,4 +578,4 @@ func _on_connected_to_server() -> void:
 
 func _on_successful_connection():
 	yield(get_tree().create_timer(2), "timeout")
-	WorldManager.change_scene(Options.scenes.default)
+	WorldManager.change_scene(WorldManager.scenes.default)

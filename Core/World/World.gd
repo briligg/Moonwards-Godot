@@ -1,15 +1,33 @@
 extends Node
-
+""" 
+This scrip manages the world loading and 
+the scene information. 
+"""
+#TODO: Implement parallel and background loadings again.
 signal scene_change(name)
+
+#############################
+#    load scene Options     #
+#############################
+
+var scenes : Dictionary = {
+	loaded = null,
+	default = "WorldV2",
+	WorldV2 = {
+		path = "res://Worlds/LegacyWorld/WorldV2.tscn"
+	}
+}
+
+
 
 var level_loader : Object = preload("res://Core/World/LevelLoader.gd").new()
 var current_world : Node = null
 func set_current_world(new_world : Node) -> void:
 	current_world = new_world
-func change_scene(scene : String) -> void:
+func change_scene(scene : String = scenes.default) -> void:
 	var error
-	if not scene in Options.scenes:
-		Log.hint(self, "change_scene", "No such scene registered in options, attempting to load : %s" % scene)
+	if not scene in scenes:
+		Log.hint(self, "change_scene", "No such scene registered in manager, attempting to load : %s" % scene)
 		error = get_tree().change_scene(scene)
 		if error == OK:
 			emit_signal("scene_change", scene)
@@ -19,10 +37,10 @@ func change_scene(scene : String) -> void:
 			return
 	else:
 		Log.hint(self, "change_scene", "change_scene to %s" % scene)
-		error = get_tree().change_scene(Options.scenes[scene].path)
+		error = get_tree().change_scene(scenes[scene].path)
 		if error == 0 :
 			Log.hint(self, "change_scene", "changing scene okay(%s)" % Log.error_to_string(error))
-			Options.scenes.loaded = scene
+			scenes.loaded = scene
 			emit_signal("scene_change", scene)
 			return
 	Log.hint(self, "change_scene", "error changing scene %s" % Log.error_to_string(error))
