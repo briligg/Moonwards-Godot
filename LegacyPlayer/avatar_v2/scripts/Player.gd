@@ -282,7 +282,8 @@ func Jump(var timer):
 	jump_timeout = 1.0
 
 func _physics_process(delta):
-	UpdateNetworking()
+	if Lobby.isConnected:
+		UpdateNetworking()
 #	if puppet and not bot:
 #		return
 	if not puppet:

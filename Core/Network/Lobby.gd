@@ -1,5 +1,7 @@
 extends Node
 
+var isConnected = false
+
 enum MODE {
 	DISCONNECTED = 0,
 	CLIENT = 1,
@@ -282,7 +284,8 @@ func client_server_connect(host : String, port : int = DEFAULT_PORT):
 		Input.MOUSE_MODE_VISIBLE
 		yield(get_tree().create_timer(5), "timeout")
 		end_game()
-
+	else:
+		Lobby.isConnected = true
 
 ################
 # Scene functions
