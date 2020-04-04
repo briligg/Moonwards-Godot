@@ -56,12 +56,13 @@ func _physics_process(delta : float ) -> void:
 		#Show to the player what the potential interact is.
 		get_tree().call_group( "InteractDisplay", "show_interact_info", collider.get_info())
 
-	#Exit if I am not touching anything. Reset previous collider.
+	#Exit if I am not touching anything.
 	else :
-		previous_collider = null
-		hide_display()
+		#Hide interactdisplay if I had been touching something previously.
+		if previous_collider != null :
+			hide_display()
+			previous_collider = null
 		return
-	
 	
 	#Return the interactable's name and notify listener's of it.
 	if previous_collider != collider :
@@ -74,7 +75,6 @@ func _physics_process(delta : float ) -> void:
 	if Input.is_action_just_pressed( "use" ) :
 		#Player wants to interact with the collider.
 		collider.interact_with( get_node( user ) )
-		hide_display()
 
 
 func hide_display() -> void :
