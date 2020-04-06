@@ -14,8 +14,8 @@ material/1 = ExtResource( 5 )
 material/2 = ExtResource( 3 )
 material/3 = ExtResource( 4 )
 
-[node name="AirlockDoor_PassengerPod" parent="PassengerPod" index="0"]
+[node name="PassengerPod-Windows" parent="PassengerPod" index="0"]
 visible = false
 
-[node name="PassengerPod-Windows" parent="PassengerPod" index="1"]
-visible = false
+[node name="shape0" parent="groundPassengerPod" index="0"]
+disabled = true

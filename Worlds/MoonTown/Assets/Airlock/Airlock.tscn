@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Worlds/MoonTown/Assets/Airlock/Airlock.glb" type="PackedScene" id=1]
 
@@ -9,6 +9,50 @@ height = 0.0310016
 [sub_resource type="CylinderShape" id=2]
 radius = 0.152686
 height = 0.0310016
+
+[sub_resource type="Animation" id=3]
+resource_name = "InsideDoorClose"
+length = 0.4
+tracks/0/type = "transform"
+tracks/0/path = NodePath("AirlockStructure/AirlockDoor2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0.158664, 0, 1.05709, 0, 0.996374, 0, 0.0850861, 1, 1, 1, 0.0666667, 1, 0.158664, 0, 1.05709, 0, 0.972901, 0, 0.23122, 1, 1, 1, 0.133333, 1, 0.158664, 0, 1.05709, 0, 0.834891, 0, 0.550415, 1, 1, 1, 0.2, 1, 0.158664, 0, 1.05709, 0, 0.535049, 0, 0.844821, 1, 1, 1, 0.266667, 1, 0.158664, 0, 1.05709, 0, 0.20283, 0, 0.979214, 1, 1, 1, 0.333333, 1, 0.158664, 0, 1.05709, 0, 0.0246858, 0, 0.999695, 1, 1, 1, 0.4, 1, 0.158664, 0, 1.05709, 0, 0, 0, 1, 1, 1, 1 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "InsideDoorOpen"
+length = 0.4
+tracks/0/type = "transform"
+tracks/0/path = NodePath("AirlockStructure/AirlockDoor2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0.158664, 0, 1.05709, 0, 0, 0, 1, 1, 1, 1, 0.0666667, 1, 0.158664, 0, 1.05709, 0, 0.0246858, 0, 0.999695, 1, 1, 1, 0.133333, 1, 0.158664, 0, 1.05709, 0, 0.20283, 0, 0.979214, 1, 1, 1, 0.2, 1, 0.158664, 0, 1.05709, 0, 0.535049, 0, 0.844821, 1, 1, 1, 0.266667, 1, 0.158664, 0, 1.05709, 0, 0.834891, 0, 0.550415, 1, 1, 1, 0.333333, 1, 0.158664, 0, 1.05709, 0, 0.972901, 0, 0.23122, 1, 1, 1, 0.4, 1, 0.158664, 0, 1.05709, 0, 0.996374, 0, 0.0850861, 1, 1, 1 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "OutsideDoorClose"
+length = 0.4
+tracks/0/type = "transform"
+tracks/0/path = NodePath("AirlockStructure/AirlockDoor1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0.158664, 0.000121951, 0.0237398, 0, 0.630231, 0, 0.776408, 1, 1, 1, 0.1, 1, 0.158664, 0.000121951, 0.0237398, 0, 0.438055, 0, 0.898948, 1, 1, 1, 0.2, 1, 0.158664, 0.000121951, 0.0237398, 0, 0.25623, 0, 0.966616, 1, 1, 1, 0.3, 1, 0.158664, 0.000121951, 0.0237398, 0, 0.011331, 0, 0.999936, 1, 1, 1, 0.4, 1, 0.158664, 0.000121951, 0.0237398, 0, 0, 0, 1, 1, 1, 1 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "OutsideDoorOpen"
+length = 0.4
+tracks/0/type = "transform"
+tracks/0/path = NodePath("AirlockStructure/AirlockDoor1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0.158664, 0.000121951, 0.0237398, 0, 0, 0, 1, 1, 1, 1, 0.0666667, 1, 0.158664, 0.000121951, 0.0237398, 0, 0.011331, 0, 0.999936, 1, 1, 1, 0.133333, 1, 0.158664, 0.000121951, 0.0237398, 0, 0.0936063, 0, 0.995609, 1, 1, 1, 0.2, 1, 0.158664, 0.000121951, 0.0237398, 0, 0.25623, 0, 0.966616, 1, 1, 1, 0.266667, 1, 0.158664, 0.000121951, 0.0237398, 0, 0.438055, 0, 0.898948, 1, 1, 1, 0.333333, 1, 0.158664, 0.000121951, 0.0237398, 0, 0.576025, 0, 0.817432, 1, 1, 1, 0.4, 1, 0.158664, 0.000121951, 0.0237398, 0, 0.630231, 0, 0.776408, 1, 1, 1 )
 
 [node name="Airlock" instance=ExtResource( 1 )]
 
@@ -24,3 +68,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.45058e-08, 0.000121951, -0.
 [node name="CollisionShape" type="CollisionShape" parent="AirlockStructure/AirlockDoor2/StaticBody2" index="0"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, -0.158099, 0, -0.00471699 )
 shape = SubResource( 2 )
+
+[node name="AnimationPlayer" parent="." index="1"]
+anims/InsideDoorClose = SubResource( 3 )
+anims/InsideDoorOpen = SubResource( 4 )
+anims/OutsideDoorClose = SubResource( 5 )
+anims/OutsideDoorOpen = SubResource( 6 )

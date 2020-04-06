@@ -457,12 +457,12 @@ mesh = SubResource( 11 )
 material/0 = null
 
 [node name="Rover" parent="." instance=ExtResource( 41 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.45107, 0.988699, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.45107, 1.88516, 0 )
 override_navigation = NodePath("../Navigation")
 docking_path = NodePath("../PassengerPodDocking")
 
 [node name="LocalPlayer" parent="." instance=ExtResource( 40 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.67422, 1.12479, -13.3342 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1628, 1.12883, -13.2546 )
 
 [node name="PassengerPodDocking" parent="." instance=ExtResource( 43 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.8403, 1.29303, -10.3626 )
