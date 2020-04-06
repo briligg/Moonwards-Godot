@@ -113,11 +113,11 @@ var gender setget SetPuppetGender
 
 #################################
 # Init functions
-func _enter_tree():
+
+func _ready():
 	set_player_group()
 	if Lobby.local_id!=1 and bot:
 		puppet = true
-func _ready():
 	orientation = model.global_transform
 	orientation.origin = Vector3()
 	print("The local id is ", Lobby.local_id)
@@ -192,9 +192,6 @@ func ApplyUserSettings():
 		skeleton.scale = Vector3(1.0, 1.0, 1.0)
 
 	SetUsername(Options.username)
-
-
-	
 
 func set_player_group(enable=true): # for local only
 	if not  is_inside_tree():

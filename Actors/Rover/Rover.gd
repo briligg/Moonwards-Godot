@@ -109,9 +109,9 @@ func _set_network(var enabled : bool) -> void:
 		rset_config("puppet_anim_state",  MultiplayerAPI.RPC_MODE_DISABLED)
 
 func set_player_group(enable=true): # for local only
-	if not  is_inside_tree():
+	if not is_inside_tree():
 		return
-	var pg = Options.player_opt.PlayerGroup
+	var pg = Options.player_data.player_group
 	if puppet == false and not is_in_group(pg):
 		add_to_group(pg, true)
 	if puppet == true and is_in_group(pg):
