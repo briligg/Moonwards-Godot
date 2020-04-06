@@ -79,5 +79,5 @@ func _update_airlock_state():
 		_timer_started = false
 
 func _passenger_entered(body):
-	if !_timer_started and occupied and (AIRLOCK_STATE.OUTSIDE_OPEN or AIRLOCK_STATE.INSIDE_OPEN):
+	if !_timer_started and occupied and (_state == AIRLOCK_STATE.OUTSIDE_OPEN or _state == AIRLOCK_STATE.INSIDE_OPEN):
 		_timer_started = true
