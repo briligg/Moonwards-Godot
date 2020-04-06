@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Trees/Worlds/LegacyWorld/Stairs/Stairs.gd" type="Script" id=1]
+[ext_resource path="res://Worlds/LegacyWorld/scenes/meshes/FirstGalleryUpper__Interior_ShimmyStairs_ShimmyStairs_1.mesh" type="ArrayMesh" id=2]
+
+
+
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.05, 0.599655, 0.05 )
+
+[node name="ShimmyStairsLong" type="Spatial"]
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0537139, 0, 0.0102946 )
+script = ExtResource( 1 )
+height = 0.5
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.617071, 0 )
+shape = SubResource( 1 )
+
+[node name="Area2" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0534631, 0, 0.00234452 )
+script = ExtResource( 1 )
+height = 0.5
+
+[node name="CollisionShape" type="CollisionShape" parent="Area2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.617071, 0 )
+shape = SubResource( 1 )
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0178888, 0 )
+
+[node name="Spatial" type="Spatial" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0527847, 0 )
+
+[node name="FirstGalleryUpper__Interior_ShimmyStairs_ShimmyStairs_1" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 1.2, -0.05 )
+mesh = ExtResource( 2 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null

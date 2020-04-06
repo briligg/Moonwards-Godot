@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://Worlds/MoonTown/Assets/Melt_In_Place_Station/MeltInPlaceStation.glb" type="PackedScene" id=1]
-
-[node name="MeltInPlaceStation" instance=ExtResource( 1 )]

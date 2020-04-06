@@ -1,9 +1,9 @@
 [gd_resource type="ShaderMaterial" load_steps=18 format=2]
 
 [ext_resource path="res://_tests/Terrain/Lalande_splatmap.shader" type="Shader" id=1]
-[ext_resource path="res://SharedAssets/Textures/Miscellaneous/Regolith_test_normal2.png" type="Texture" id=2]
-[ext_resource path="res://SharedAssets/Textures/Miscellaneous/Colored-Lalande2.png" type="Texture" id=3]
-[ext_resource path="res://SharedAssets/Textures/Miscellaneous/Normal-Lalande.png" type="Texture" id=4]
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Regolith_test_normal2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Colored-Lalande2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Normal-Lalande.png" type="Texture" id=4]
 [ext_resource path="res://SharedAssets/Textures/TerrainTextures_fromPhotos/LalandeUpperWallTexture1_n.png" type="Texture" id=5]
 [ext_resource path="res://SharedAssets/Textures/TerrainTextures_fromPhotos/LalandeUpperWallTexture2_n.png" type="Texture" id=6]
 [ext_resource path="res://SharedAssets/Textures/TerrainTextures_fromPhotos/LalandeUpperWallTexture3_n.png" type="Texture" id=7]
@@ -17,6 +17,8 @@
 [ext_resource path="res://SharedAssets/Textures/TerrainTextures_fromPhotos/LalandeFloorTexture3.png" type="Texture" id=15]
 [ext_resource path="res://SharedAssets/Textures/TerrainTextures_fromPhotos/LalandeFloorTexture1.png" type="Texture" id=16]
 [ext_resource path="res://SharedAssets/Textures/TerrainTextures_fromPhotos/LalandeFloorTexture2.png" type="Texture" id=17]
+
+
 
 
 

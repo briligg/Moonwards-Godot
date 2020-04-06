@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Models/Flywheel_Towers/Flywheel_Towers_AllTogether.glb" type="PackedScene" id=1]
+
+
+
+
+[node name="Flywheel_Towers_AllTogether" instance=ExtResource( 1 )]

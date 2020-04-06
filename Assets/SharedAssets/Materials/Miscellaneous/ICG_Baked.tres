@@ -1,0 +1,11 @@
+[gd_resource type="SpatialMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/ICG_Bake2.png" type="Texture" id=1]
+
+
+
+
+[resource]
+resource_name = "ICG_Baked"
+albedo_color = Color( 0.903545, 0.903545, 0.903545, 1 )
+albedo_texture = ExtResource( 1 )

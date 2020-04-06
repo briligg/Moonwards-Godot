@@ -1,0 +1,18 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Interface/Fonts/dejavu/DejaVuSans.ttf" type="DynamicFontData" id=1]
+
+
+
+
+[resource]
+
+resource_name = "Sans"
+size = 16
+outline_size = 0
+outline_color = Color( 1, 1, 1, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Resource", "Settings" ]
+

@@ -1,0 +1,193 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Trees/addons/HuePicker/clip2.gd" type="Script" id=1]
+[ext_resource path="res://Trees/addons/HuePicker/icon_classic_controls.svg" type="Texture" id=2]
+[ext_resource path="res://Trees/addons/HuePicker/indicator.png" type="Texture" id=3]
+[ext_resource path="res://Trees/addons/HuePicker/clip.gd" type="Script" id=4]
+[ext_resource path="res://Trees/addons/HuePicker/slider_gradient.shader" type="Shader" id=5]
+[ext_resource path="res://Trees/addons/HuePicker/checkerboard.png" type="Texture" id=6]
+
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 1, 0, 1, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+anti_aliasing = false
+
+[sub_resource type="Theme" id=3]
+HSlider/icons/grabber = ExtResource( 3 )
+HSlider/icons/grabber_disabled = null
+HSlider/icons/grabber_highlight = ExtResource( 3 )
+HSlider/icons/tick = null
+HSlider/styles/focus = null
+HSlider/styles/grabber_area = SubResource( 1 )
+HSlider/styles/grabber_disabled = null
+HSlider/styles/grabber_highlight = null
+HSlider/styles/slider = SubResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=4]
+resource_local_to_scene = true
+shader = ExtResource( 5 )
+shader_param/color1 = Color( 0, 1, 1, 1 )
+shader_param/color2 = Color( 1, 1, 1, 1 )
+
+[sub_resource type="ShaderMaterial" id=5]
+resource_local_to_scene = true
+shader = ExtResource( 5 )
+shader_param/color1 = Color( 1, 0, 1, 1 )
+shader_param/color2 = Color( 1, 1, 1, 1 )
+
+[sub_resource type="ShaderMaterial" id=6]
+resource_local_to_scene = true
+shader = ExtResource( 5 )
+shader_param/color1 = Color( 1, 1, 0, 1 )
+shader_param/color2 = Color( 1, 1, 1, 1 )
+
+[sub_resource type="Shader" id=7]
+code = "shader_type canvas_item;
+
+bool approx_equal(vec3 a, vec3 b, float threshold){
+	vec3 c = abs(b-a);
+	if (c.r > threshold) {return false;}
+	if (c.g > threshold) {return false;}
+	if (c.b > threshold) {return false;}
+		
+	return true;
+}
+
+void fragment() {
+	vec4 c = texture(SCREEN_TEXTURE,SCREEN_UV,0.0);  //get pixel
+	vec4 t = texture(TEXTURE, UV);
+	
+	//mask me.
+	if(approx_equal(c.rgb, vec3(1.0,0.0,1.0), 0.01)) {
+		COLOR = t;
+	} else {
+		COLOR.rgba = c
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = SubResource( 7 )
+
+[sub_resource type="ShaderMaterial" id=9]
+resource_local_to_scene = true
+shader = ExtResource( 5 )
+shader_param/color1 = Color( 1, 1, 1, 0 )
+shader_param/color2 = Color( 1, 1, 1, 1 )
+
+[node name="ClassicControls" type="Container"]
+margin_right = 304.0
+margin_bottom = 178.0
+rect_min_size = Vector2( 300, 160 )
+mouse_filter = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+color = Color( 1, 1, 1, 1 )
+
+[node name="Hider" type="ViewportContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_clip_content = true
+mouse_filter = 1
+stretch = true
+
+[node name="Viewport" type="Viewport" parent="Hider"]
+size = Vector2( 304, 178 )
+own_world = true
+transparent_bg = true
+handle_input_locally = false
+usage = 0
+render_target_update_mode = 3
+
+[node name="ColorPicker" type="ColorPicker" parent="Hider/Viewport"]
+anchor_right = 1.0
+margin_left = 4.0
+margin_top = -284.0
+margin_bottom = 178.0
+theme = SubResource( 3 )
+script = ExtResource( 4 )
+
+[node name="R_Prev" type="PanelContainer" parent="Hider/Viewport"]
+material = SubResource( 4 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = -2.0
+margin_right = -124.0
+margin_bottom = -146.0
+rect_min_size = Vector2( 164, 0 )
+mouse_filter = 2
+
+[node name="G_Prev" type="PanelContainer" parent="Hider/Viewport"]
+material = SubResource( 5 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 20.0
+margin_right = -124.0
+margin_bottom = -124.0
+rect_min_size = Vector2( 164, 0 )
+mouse_filter = 2
+
+[node name="B_Prev" type="PanelContainer" parent="Hider/Viewport"]
+material = SubResource( 6 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 42.0
+margin_right = -124.0
+margin_bottom = -102.0
+rect_min_size = Vector2( 164, 0 )
+mouse_filter = 2
+
+[node name="PanelContainer" type="TextureRect" parent="Hider/Viewport"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 17.0
+margin_top = 70.0
+margin_right = -124.0
+margin_bottom = -81.0
+rect_clip_content = true
+mouse_filter = 2
+stretch_mode = 2
+
+[node name="TransBG" type="Sprite" parent="Hider/Viewport/PanelContainer"]
+material = SubResource( 8 )
+position = Vector2( 0, -3 )
+texture = ExtResource( 6 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 304, 16 )
+
+[node name="A_Prev" type="PanelContainer" parent="Hider/Viewport"]
+material = SubResource( 9 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 64.0
+margin_right = -124.0
+margin_bottom = -70.0
+rect_min_size = Vector2( 164, 0 )
+mouse_filter = 2
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+position = Vector2( -8, -8 )
+scale = Vector2( 0.06, 0.06 )
+copy_mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="color_changed" from="Hider/Viewport/ColorPicker" to="Hider/Viewport/ColorPicker" method="_on_ColorPicker_color_changed"]
+[connection signal="focus_entered" from="Hider/Viewport/ColorPicker" to="Hider/Viewport/ColorPicker" method="_on_ColorPicker_focus_entered"]
+[connection signal="focus_exited" from="Hider/Viewport/ColorPicker" to="Hider/Viewport/ColorPicker" method="_on_ColorPicker_focus_exited"]

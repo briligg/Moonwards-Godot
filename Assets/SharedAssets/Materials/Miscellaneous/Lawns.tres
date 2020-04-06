@@ -1,0 +1,11 @@
+[gd_resource type="SpatialMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/LongDomeLawns35.png" type="Texture" id=1]
+
+
+
+
+[resource]
+albedo_texture = ExtResource( 1 )
+uv1_scale = Vector3( 0.1, 0.1, 0.1 )
+uv1_triplanar = true

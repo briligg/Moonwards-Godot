@@ -1,0 +1,525 @@
+[gd_scene load_steps=60 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Moon_Town_Master.glb" type="PackedScene" id=1]
+[ext_resource path="res://Assets/MoonTown/Models/Molten_Soil_Reactor/Molten_Soil_Reactor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/MoonTown/Models/Melt_In_Place_Station/MeltInPlaceStation.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/MoonTown/Constructs/Nuclear_Plant/Nuclear_Plant.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/MoonTown/Constructs/Spaceport/Spaceport.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/MoonTown/Constructs/Rec_Hab_1/Rec_Hab_1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/MoonTown/Models/Radar_Tower/Radar_Tower.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/MoonTown/Constructs/Main_Factory/Main_Factory.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/MoonTown/Constructs/Galleries_Outer_Surface/GalleriesOuterSurface.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/MoonTown/Constructs/First_Factory/First_Factory.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/MoonTown/Constructs/Center_Atrium/Center_Atrium.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/First_Gallery_Lower.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/MoonTown/Constructs/Fifth_Gallery/Fifth_Gallery.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Assets/MoonTown/Constructs/First_Atrium/First_Atrium.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/First_Gallery_Upper.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/MoonTown/Constructs/South_Farm_Atrium/South_Farm_Atrium.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/MoonTown/Constructs/Second_Gallery/Second_Gallery.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/MoonTown/Constructs/Long_Dome/Long_Dome.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Assets/MoonTown/Constructs/Rim_Arcade/Rim_Arcade.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Assets/MoonTown/Constructs/North_Farm_Atrium/North_Farm_Atrium.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Assets/MoonTown/Constructs/Fourth_Gallery/Fourth_Gallery.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Assets/MoonTown/Constructs/Airlock_Bay/Airlock_Bay.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Assets/MoonTown/Constructs/Third_Gallery/Third_Gallery.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Assets/MoonTown/Constructs/Teacup_Crater/Teacup_Crater.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Assets/MoonTown/Models/Boat_Radiator/Boat_Radiator.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Assets/MoonTown/Constructs/Lalande_Crater/Lalande_85k.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Assets/MoonTown/Constructs/STEMP_Facilities/STEMP_Facilities.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Assets/MoonTown/Models/Solar_Thermal_Mirror_Sets/Solar_Thermal_Mirror_Set_Side_Circuit.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Assets/MoonTown/Models/Flywheel_Towers/Flywheel_Towers_AllTogether.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Assets/MoonTown/Models/Solar_Panel_Units/Solar_Panel_Units_All_Together.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/MilkyWay_LalandeRegion_4k.hdr" type="Texture" id=31]
+[ext_resource path="res://Scripts/Utilities/AudioTour/AudioSphere.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Assets/MoonTown/Models/Earth/Earth.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Marker_Indoor.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Marker_Outdoor.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Indoor4.ogg" type="AudioStream" id=36]
+[ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Indoor3.ogg" type="AudioStream" id=37]
+[ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Indoor1.ogg" type="AudioStream" id=38]
+[ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_intro.ogg" type="AudioStream" id=39]
+[ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Paths/Audio_Tour_Paths.glb" type="PackedScene" id=40]
+[ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Indoor2.ogg" type="AudioStream" id=41]
+[ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Indoor1b.ogg" type="AudioStream" id=42]
+[ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Indoor1a.ogg" type="AudioStream" id=43]
+[ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Indoor.ogg" type="AudioStream" id=44]
+
+
+
+
+
+
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1, 1, 1.22718 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1.11084, 1, 1.54439 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.68645, 1, 0.800407 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 1, 1, 1.24243 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 0.876734, 0.532014, 0.91751 )
+
+[sub_resource type="BoxShape" id=6]
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 0.759875, 0.725696, 0.791494 )
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 0.895901, 0.878588, 0.874023 )
+
+[sub_resource type="BoxShape" id=9]
+
+[sub_resource type="BoxShape" id=10]
+
+[sub_resource type="BoxShape" id=11]
+
+[sub_resource type="CylinderShape" id=12]
+radius = 2.40007
+height = 1.90651
+
+[sub_resource type="CylinderShape" id=13]
+radius = 0.70034
+height = 0.739112
+
+[sub_resource type="PanoramaSky" id=14]
+panorama = ExtResource( 31 )
+
+[sub_resource type="Environment" id=15]
+background_mode = 2
+background_sky = SubResource( 14 )
+background_energy = 1.5
+ambient_light_color = Color( 0.686275, 0.686275, 0.686275, 1 )
+ambient_light_energy = 0.0
+ambient_light_sky_contribution = 0.0
+tonemap_mode = 2
+tonemap_exposure = 0.7
+tonemap_white = 3.0
+auto_exposure_enabled = true
+auto_exposure_min_luma = 0.2
+auto_exposure_max_luma = 5.0
+auto_exposure_speed = 0.02
+ss_reflections_enabled = true
+ss_reflections_max_steps = 96
+ssao_enabled = true
+
+[node name="Moon_Town_Master" instance=ExtResource( 1 )]
+script = ExtResource( 41 )
+
+[node name="StaticBody" type="StaticBody" parent="GibraltarMiddle" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="GibraltarMiddle/StaticBody" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0380024, 0.590206, -0.0741183 )
+shape = SubResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="GibraltarRockEast" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="GibraltarRockEast/StaticBody" index="0"]
+transform = Transform( 1, 9.27685e-11, 2.23517e-08, -2.69392e-09, 1, -5.23869e-10, 0, -3.49246e-10, 1, 0.0660384, 0.133989, -0.154412 )
+shape = SubResource( 2 )
+
+[node name="StaticBody" type="StaticBody" parent="GibraltarWest" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="GibraltarWest/StaticBody" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.341187, 0.130512 )
+shape = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Boulder008" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Boulder008/StaticBody" index="0"]
+transform = Transform( 0.923291, 0, -0.384102, 0, 1, 0, 0.384102, 0, 0.923291, -1.78814e-07, -0.177124, 0 )
+shape = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="Boulder002" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Boulder002/StaticBody" index="0"]
+transform = Transform( 0.975878, 0.00185217, 0.303714, -0.0162532, 0.999901, 0.0389109, -0.15682, -0.00420667, 0.975812, -0.0352993, 0.673666, -0.00299597 )
+shape = SubResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="Boulder003" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Boulder003/StaticBody" index="0"]
+shape = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Boulder001" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Boulder001/StaticBody" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00542355, 0, 0.0542393 )
+shape = SubResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Boulder004" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Boulder004/StaticBody" index="0"]
+shape = SubResource( 8 )
+
+[node name="StaticBody" type="StaticBody" parent="Boulder005" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Boulder005/StaticBody" index="0"]
+shape = SubResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="Boulder006" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Boulder006/StaticBody" index="0"]
+shape = SubResource( 10 )
+
+[node name="StaticBody" type="StaticBody" parent="Boulder007" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Boulder007/StaticBody" index="0"]
+shape = SubResource( 11 )
+
+[node name="Foundation001" parent="." index="22"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.356, 5.54585, 45.8708 )
+
+[node name="Flywheel_Towers_AllTogether" parent="Marker_Flywheels_AllTogether" index="0" instance=ExtResource( 29 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0941849, -0.152714, 0.136749 )
+
+[node name="Solar_Panel_Units_All_Together" parent="Marker_Flywheels_AllTogether" index="1" instance=ExtResource( 30 )]
+
+[node name="Empty" parent="." index="37"]
+transform = Transform( 0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, -8.90194, 10.1654, 14.8518 )
+
+[node name="Boat_Radiator" parent="Empty" index="0" instance=ExtResource( 25 )]
+
+[node name="Empty001" parent="." index="38"]
+transform = Transform( 0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, -9.99363, 10.1654, 18.4428 )
+
+[node name="Boat_Radiator" parent="Empty001" index="0" instance=ExtResource( 25 )]
+
+[node name="Empty002" parent="." index="39"]
+transform = Transform( 0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, -11.4324, 10.1654, 22.2339 )
+
+[node name="Boat_Radiator" parent="Empty002" index="0" instance=ExtResource( 25 )]
+
+[node name="Boat_Radiator" parent="Empty003" index="0" instance=ExtResource( 25 )]
+
+[node name="Boat_Radiator" parent="Empty004" index="0" instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057132, 0.057848, -0.0685272 )
+
+[node name="Empty005" parent="." index="42"]
+transform = Transform( 0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, -15.9937, 11.5513, 65.5466 )
+
+[node name="Boat_Radiator" parent="Empty005" index="0" instance=ExtResource( 25 )]
+
+[node name="Empty006" parent="." index="43"]
+transform = Transform( 0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, -11.8254, 11.5513, 65.5466 )
+
+[node name="Boat_Radiator" parent="Empty006" index="0" instance=ExtResource( 25 )]
+
+[node name="Empty007" parent="." index="44"]
+transform = Transform( 0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, -7.49845, 11.5513, 65.5035 )
+
+[node name="Boat_Radiator" parent="Empty007" index="0" instance=ExtResource( 25 )]
+
+[node name="Empty008" parent="." index="45"]
+transform = Transform( 0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, -9.45666, 11.2612, 93.8459 )
+
+[node name="Boat_Radiator" parent="Empty008" index="0" instance=ExtResource( 25 )]
+
+[node name="Empty009" parent="." index="46"]
+transform = Transform( 0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, -5.61942, 10.8413, 97.117 )
+
+[node name="Boat_Radiator" parent="Empty009" index="0" instance=ExtResource( 25 )]
+
+[node name="Empty010" parent="." index="47"]
+transform = Transform( 0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, -1.21603, 10.1231, 99.3816 )
+
+[node name="Boat_Radiator" parent="Empty010" index="0" instance=ExtResource( 25 )]
+
+[node name="Empty011" parent="." index="48"]
+transform = Transform( 0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, 3.37608, 9.32327, 100.136 )
+
+[node name="Boat_Radiator" parent="Empty011" index="0" instance=ExtResource( 25 )]
+
+[node name="Empty012" parent="." index="49"]
+transform = Transform( 0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, 8.00906, 8.62406, 99.5849 )
+
+[node name="Boat_Radiator" parent="Empty012" index="0" instance=ExtResource( 25 )]
+
+[node name="Empty013" parent="." index="50"]
+transform = Transform( 0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, 12.3663, 7.78386, 97.4891 )
+
+[node name="Boat_Radiator" parent="Empty013" index="0" instance=ExtResource( 25 )]
+
+[node name="Empty014" parent="." index="51"]
+transform = Transform( 0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, -1.75144, 11.6088, -30.4775 )
+
+[node name="Boat_Radiator" parent="Empty014" index="0" instance=ExtResource( 25 )]
+
+[node name="Empty015" parent="." index="52"]
+transform = Transform( 0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, 2.69769, 11.8377, -30.5082 )
+
+[node name="Boat_Radiator" parent="Empty015" index="0" instance=ExtResource( 25 )]
+
+[node name="Empty016" parent="." index="53"]
+transform = Transform( 0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, 6.87067, 11.355, -30.5695 )
+
+[node name="Boat_Radiator" parent="Empty016" index="0" instance=ExtResource( 25 )]
+
+[node name="Empty017" parent="." index="54"]
+transform = Transform( 0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, 11.1664, 11.2965, -30.6309 )
+
+[node name="Boat_Radiator" parent="Empty017" index="0" instance=ExtResource( 25 )]
+
+[node name="Empty018" parent="." index="55"]
+transform = Transform( 0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, 15.6827, 11.1726, -30.7441 )
+
+[node name="Boat_Radiator" parent="Empty018" index="0" instance=ExtResource( 25 )]
+
+[node name="Empty019" parent="." index="56"]
+transform = Transform( 0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, 20.5256, 11.2565, -30.8329 )
+
+[node name="Boat_Radiator" parent="Empty019" index="0" instance=ExtResource( 25 )]
+
+[node name="Molten_Soil_Reactor" parent="Marker_MoltenSoilReactor" index="0" instance=ExtResource( 2 )]
+
+[node name="Solar_Thermal_Mirror_Set_Side_Circuit" parent="Marker_MoltenSoilReactor" index="1" instance=ExtResource( 28 )]
+
+[node name="Molten_Soil_Reactor" parent="Marker_MoltenSoilReactor001" index="0" instance=ExtResource( 2 )]
+
+[node name="Solar_Thermal_Mirror_Set_Side_Circuit" parent="Marker_MoltenSoilReactor001" index="1" instance=ExtResource( 28 )]
+
+[node name="Molten_Soil_Reactor" parent="Marker_MoltenSoilReactor002" index="0" instance=ExtResource( 2 )]
+
+[node name="Solar_Thermal_Mirror_Set_Side_Circuit" parent="Marker_MoltenSoilReactor002" index="1" instance=ExtResource( 28 )]
+
+[node name="Molten_Soil_Reactor" parent="Marker_MoltenSoilReactor003" index="0" instance=ExtResource( 2 )]
+
+[node name="Solar_Thermal_Mirror_Set_Side_Circuit" parent="Marker_MoltenSoilReactor003" index="1" instance=ExtResource( 28 )]
+
+[node name="Molten_Soil_Reactor" parent="Marker_MoltenSoilReactor004" index="0" instance=ExtResource( 2 )]
+
+[node name="Solar_Thermal_Mirror_Set_Side_Circuit" parent="Marker_MoltenSoilReactor004" index="1" instance=ExtResource( 28 )]
+
+[node name="Molten_Soil_Reactor" parent="Marker_MoltenSoilReactor005" index="0" instance=ExtResource( 2 )]
+
+[node name="Solar_Thermal_Mirror_Set_Side_Circuit" parent="Marker_MoltenSoilReactor005" index="1" instance=ExtResource( 28 )]
+
+[node name="Molten_Soil_Reactor" parent="Marker_MoltenSoilReactor006" index="0" instance=ExtResource( 2 )]
+
+[node name="Solar_Thermal_Mirror_Set_Side_Circuit" parent="Marker_MoltenSoilReactor006" index="1" instance=ExtResource( 28 )]
+
+[node name="Molten_Soil_Reactor" parent="Marker_MoltenSoilReactor007" index="0" instance=ExtResource( 2 )]
+
+[node name="Solar_Thermal_Mirror_Set_Side_Circuit" parent="Marker_MoltenSoilReactor007" index="1" instance=ExtResource( 28 )]
+
+[node name="Molten_Soil_Reactor" parent="Marker_MoltenSoilReactor008" index="0" instance=ExtResource( 2 )]
+
+[node name="Solar_Thermal_Mirror_Set_Side_Circuit" parent="Marker_MoltenSoilReactor008" index="1" instance=ExtResource( 28 )]
+
+[node name="Molten_Soil_Reactor" parent="Marker_MoltenSoilReactor009" index="0" instance=ExtResource( 2 )]
+
+[node name="Solar_Thermal_Mirror_Set_Side_Circuit" parent="Marker_MoltenSoilReactor009" index="1" instance=ExtResource( 28 )]
+
+[node name="Molten_Soil_Reactor" parent="Marker_MoltenSoilReactor010" index="0" instance=ExtResource( 2 )]
+
+[node name="Solar_Thermal_Mirror_Set_Side_Circuit" parent="Marker_MoltenSoilReactor010" index="1" instance=ExtResource( 28 )]
+
+[node name="Molten_Soil_Reactor" parent="Marker_MoltenSoilReactor011" index="0" instance=ExtResource( 2 )]
+
+[node name="Solar_Thermal_Mirror_Set_Side_Circuit" parent="Marker_MoltenSoilReactor011" index="1" instance=ExtResource( 28 )]
+
+[node name="Molten_Soil_Reactor" parent="Marker_MoltenSoilReactor012" index="0" instance=ExtResource( 2 )]
+
+[node name="Solar_Thermal_Mirror_Set_Side_Circuit" parent="Marker_MoltenSoilReactor012" index="1" instance=ExtResource( 28 )]
+
+[node name="MeltInPlaceStation" parent="Marker_MIP" index="0" instance=ExtResource( 3 )]
+
+[node name="MeltInPlaceStation" parent="Marker_MIP001" index="0" instance=ExtResource( 3 )]
+
+[node name="MeltInPlaceStation" parent="Marker_MIP002" index="0" instance=ExtResource( 3 )]
+
+[node name="MeltInPlaceStation" parent="Marker_MIP003" index="0" instance=ExtResource( 3 )]
+
+[node name="MeltInPlaceStation" parent="Marker_MIP004" index="0" instance=ExtResource( 3 )]
+
+[node name="Airlock_Bay" parent="Empty_AirlockBay" index="0" instance=ExtResource( 22 )]
+
+[node name="First_Atrium" parent="Empty_AtriumHab" index="0" instance=ExtResource( 14 )]
+
+[node name="Center_Atrium" parent="Empty_BigAtrium" index="0" instance=ExtResource( 11 )]
+
+[node name="Fifth_Gallery" parent="Empty_FifthGallery" index="0" instance=ExtResource( 13 )]
+
+[node name="Lalande_85k" parent="." index="82" instance=ExtResource( 26 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1033.13, -77.789, -292.667 )
+
+[node name="First_Gallery_Lower" parent="Empty_FirstGalleryLower" index="0" instance=ExtResource( 12 )]
+
+[node name="First_Gallery_Upper" parent="Empty_FirstGalleryUpper" index="0" instance=ExtResource( 15 )]
+
+[node name="First_Factory" parent="Empty_FirstHangars" index="0" instance=ExtResource( 10 )]
+
+[node name="Fourth_Gallery" parent="Empty_FourthGallery" index="0" instance=ExtResource( 21 )]
+
+[node name="Empty_GalleriesOuterSurface" parent="." index="87"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -83.292, -35.665, 28.867 )
+
+[node name="GalleriesOuterSurface" parent="Empty_GalleriesOuterSurface" index="0" instance=ExtResource( 9 )]
+
+[node name="Long_Dome" parent="Empty_LongDome" index="0" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.878448, 0 )
+
+[node name="Rim_Arcade" parent="Empty_LosPortalesTunnel" index="0" instance=ExtResource( 19 )]
+
+[node name="Main_Factory" parent="Empty_MainHangars" index="0" instance=ExtResource( 8 )]
+
+[node name="North_Farm_Atrium" parent="Empty_NorthLongAtrium" index="0" instance=ExtResource( 20 )]
+
+[node name="Nuclear_Plant" parent="Empty_NuclearPlant" index="0" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.550896, -0.914402, 0.92408 )
+
+[node name="Radar_Tower" parent="Empty_RadarTower" index="0" instance=ExtResource( 7 )]
+
+[node name="Rec_Hab_1" parent="Empty_RecHab1" index="0" instance=ExtResource( 6 )]
+
+[node name="Second_Gallery" parent="Empty_SecondGallery" index="0" instance=ExtResource( 17 )]
+
+[node name="South_Farm_Atrium" parent="Empty_SouthLongAtrium" index="0" instance=ExtResource( 16 )]
+
+[node name="Spaceport" parent="Empty_Spaceport" index="0" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0170898, 0.02174, 0.015564 )
+
+[node name="STEMP_Facilities" parent="Empty_STEMP-Facilities" index="0" instance=ExtResource( 27 )]
+
+[node name="Empty_TeacupCrater" parent="." index="99"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.395, 10.592, 82.453 )
+
+[node name="Teacup_Crater" parent="Empty_TeacupCrater" index="0" instance=ExtResource( 24 )]
+
+[node name="Third_Gallery" parent="Empty_ThirdGallery" index="0" instance=ExtResource( 23 )]
+
+[node name="StaticBody3" type="StaticBody" parent="RadioDish-Earth-Base001/RadioDish-Earth001" index="0"]
+transform = Transform( 0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="RadioDish-Earth-Base001/RadioDish-Earth001/StaticBody3" index="0"]
+shape = SubResource( 12 )
+
+[node name="StaticBody2" type="StaticBody" parent="RadioDish-Earth-Base002" index="1"]
+transform = Transform( 0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="RadioDish-Earth-Base002/StaticBody2" index="0"]
+shape = SubResource( 12 )
+
+[node name="StaticBody" type="StaticBody" parent="RadioDish-Earth-Base/RadioDish-Earth" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RadioDish-Earth-Base/RadioDish-Earth/StaticBody" index="0"]
+shape = SubResource( 13 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="106"]
+environment = SubResource( 15 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="." index="107"]
+transform = Transform( -0.0784591, 0.498459, -0.863356, 0, 0.866026, 0.5, 0.996917, 0.0392296, -0.0679476, 0, 46.5723, 0 )
+light_energy = 1.9
+shadow_enabled = true
+shadow_color = Color( 0.423529, 0.423529, 0.423529, 1 )
+directional_shadow_max_distance = 400.0
+
+[node name="Audio_Tour_Markers" type="Spatial" parent="." index="108"]
+
+[node name="Audio_Tour_Marker_Indoor_intro" parent="Audio_Tour_Markers" index="0" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.78409, 10.0051, -20.9595 )
+
+[node name="AudioSphere" parent="Audio_Tour_Markers/Audio_Tour_Marker_Indoor_intro" index="1" instance=ExtResource( 32 )]
+display_info = "play indoor audio tour intro"
+audio_file = ExtResource( 39 )
+
+[node name="Audio_Tour_Marker_Indoor" parent="Audio_Tour_Markers" index="1" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.308763, 10.033, -18.2206 )
+
+[node name="AudioSphere" parent="Audio_Tour_Markers/Audio_Tour_Marker_Indoor" index="1" instance=ExtResource( 32 )]
+display_info = "play indoor audio tour start"
+audio_file = ExtResource( 44 )
+
+[node name="Audio_Tour_Marker_Indoor1" parent="Audio_Tour_Markers" index="2" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.956578, 10.052, -17.4911 )
+
+[node name="AudioSphere" parent="Audio_Tour_Markers/Audio_Tour_Marker_Indoor1" index="1" instance=ExtResource( 32 )]
+display_info = "play indoor audio tour 1"
+audio_file = ExtResource( 38 )
+
+[node name="Audio_Tour_Marker_Indoor1a" parent="Audio_Tour_Markers" index="3" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.954955, 11.2025, -16.9511 )
+
+[node name="AudioSphere" parent="Audio_Tour_Markers/Audio_Tour_Marker_Indoor1a" index="1" instance=ExtResource( 32 )]
+display_info = "play indoor audio tour 1a"
+audio_file = ExtResource( 43 )
+
+[node name="Audio_Tour_Marker_Indoor1b" parent="Audio_Tour_Markers" index="4" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.77835, 11.1961, -17.9718 )
+
+[node name="AudioSphere" parent="Audio_Tour_Markers/Audio_Tour_Marker_Indoor1b" index="1" instance=ExtResource( 32 )]
+display_info = "play indoor audio tour 1b"
+audio_file = ExtResource( 42 )
+
+[node name="Audio_Tour_Marker_Indoor2" parent="Audio_Tour_Markers" index="5" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.88284, 10.052, -17.178 )
+
+[node name="AudioSphere" parent="Audio_Tour_Markers/Audio_Tour_Marker_Indoor2" index="1" instance=ExtResource( 32 )]
+display_info = "play indoor audio tour 2"
+audio_file = ExtResource( 41 )
+
+[node name="Audio_Tour_Marker_Indoor3" parent="Audio_Tour_Markers" index="6" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67953, 8.80916, -17.0219 )
+
+[node name="AudioSphere" parent="Audio_Tour_Markers/Audio_Tour_Marker_Indoor3" index="1" instance=ExtResource( 32 )]
+display_info = "play indoor audio tour 3"
+audio_file = ExtResource( 37 )
+
+[node name="Audio_Tour_Marker_Indoor4" parent="Audio_Tour_Markers" index="7" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13993, 8.22996, -10.7933 )
+
+[node name="AudioSphere" parent="Audio_Tour_Markers/Audio_Tour_Marker_Indoor4" index="1" instance=ExtResource( 32 )]
+display_info = "play indoor audio tour 4"
+audio_file = ExtResource( 36 )
+
+[node name="Audio_Tour_Marker_Indoor5" parent="Audio_Tour_Markers" index="8" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5721, 2.55657, -19.857 )
+
+[node name="Audio_Tour_Marker_Indoor6" parent="Audio_Tour_Markers" index="9" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.0337, 2.33928, -24.2952 )
+
+[node name="Audio_Tour_Marker_Outdoor" parent="Audio_Tour_Markers" index="10" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.064, 6.687, 38.039 )
+
+[node name="Audio_Tour_Marker_Outdoor2" parent="Audio_Tour_Markers" index="11" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.872, 6.288, 86.931 )
+
+[node name="Audio_Tour_Marker_Outdoor3" parent="Audio_Tour_Markers" index="12" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.303, 8.68, 71.786 )
+
+[node name="Audio_Tour_Marker_Outdoor4" parent="Audio_Tour_Markers" index="13" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.77, 11.586, 68.841 )
+
+[node name="Audio_Tour_Marker_Outdoor5" parent="Audio_Tour_Markers" index="14" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -374.645, -157.781, -98.225 )
+
+[node name="Audio_Tour_Marker_Outdoor6" parent="Audio_Tour_Markers" index="15" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 58.525, 15.282, -59.06 )
+
+[node name="Audio_Tour_Marker_Outdoor7" parent="Audio_Tour_Markers" index="16" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.734, 12.05, -35.012 )
+
+[node name="Audio_Tour_Marker_Outdoor8" parent="Audio_Tour_Markers" index="17" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 75.024, 38.534, -233.477 )
+
+[node name="Audio_Tour_Marker_Outdoor9" parent="Audio_Tour_Markers" index="18" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 350.579, -28.107, -595.797 )
+
+[node name="Audio_Tour_Marker_Outdoor10" parent="Audio_Tour_Markers" index="19" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 414.464, -41.103, -617.69 )
+
+[node name="Audio_Tour_Marker_Indoor8" parent="Audio_Tour_Markers" index="20" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 455.611, -50.513, -593.011 )
+
+[node name="Audio_Tour_Paths" parent="." index="109" instance=ExtResource( 40 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85657, 11.6271, -17.1318 )
+
+[node name="Earth" parent="." index="110" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2708.66, 0 )

@@ -1,9 +1,0 @@
-[gd_resource type="SpatialMaterial" load_steps=2 format=2]
-
-[ext_resource path="res://SharedAssets/Textures/Miscellaneous/Moss1.png" type="Texture" id=1]
-
-
-[resource]
-flags_world_triplanar = true
-albedo_texture = ExtResource( 1 )
-uv1_triplanar = true

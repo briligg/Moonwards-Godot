@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Trees/addons/HuePicker/HSVPickerButton.gd" type="Script" id=1]
+[ext_resource path="res://Trees/addons/HuePicker/icon_button_smol.png" type="Texture" id=2]
+[ext_resource path="res://Trees/addons/HuePicker/HuePicker.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Trees/addons/HuePicker/checkerboard.png" type="Texture" id=4]
+
+
+[node name="HSVPickerButton" type="Button"]
+margin_right = 32.0
+margin_bottom = 24.0
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+_sections_unfolded = [ "Rect" ]
+color = Color( 1, 1, 1, 1 )
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -320.0
+margin_top = -312.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HuePicker" parent="PopupPanel" instance=ExtResource( 3 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Label" type="Label" parent="PopupPanel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -316.0
+margin_top = -308.0
+margin_right = -4.0
+margin_bottom = -4.0
+text = "R: 255.0
+G: 255.0
+B: 255.0"
+valign = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+texture = ExtResource( 4 )
+stretch_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+mouse_filter = 1
+mouse_default_cursor_shape = 16
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="pressed" from="." to="." method="_on_HSVPickerButton_pressed"]
+[connection signal="about_to_show" from="PopupPanel" to="." method="_on_PopupPanel_about_to_show"]
+[connection signal="popup_hide" from="PopupPanel" to="." method="_on_PopupPanel_popup_hide"]

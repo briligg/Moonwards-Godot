@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Models/Launch_Pad/Launch_Pad.glb" type="PackedScene" id=1]
+
+
+
+
+[node name="Launch_Pad" instance=ExtResource( 1 )]

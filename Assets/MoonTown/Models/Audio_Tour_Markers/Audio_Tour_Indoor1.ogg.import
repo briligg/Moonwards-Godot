@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Audio_Tour_Indoor1.ogg-e1d4ba00703eb4d69ef08b51aa64de82.oggstr"
+
+[deps]
+
+source_file="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Indoor1.ogg"
+dest_files=[ "res://.import/Audio_Tour_Indoor1.ogg-e1d4ba00703eb4d69ef08b51aa64de82.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
