@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://SharedAssets/Environments/NASA_Goddard/NASA_Goddard.tres" type="Environment" id=1]
 [ext_resource path="res://SharedAssets/Environments/NASA_Goddard/NASA-Goddard-SVS-starmap-LevelledDesat-8k.png" type="Texture" id=2]
@@ -7,8 +7,6 @@
 [ext_resource path="res://LegacyPlayer/avatar_v2/player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Actors/Rover/Rover.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Actors/TourPod/PassengerPodDocking.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Actors/TourPod/TourPod.tscn" type="PackedScene" id=8]
-
 
 [sub_resource type="SphereMesh" id=1]
 flip_faces = true
@@ -254,7 +252,7 @@ __meta__ = {
 }
 
 [node name="0" type="Position3D" parent="spawn_points"]
-transform = Transform( -0.997314, 0, 0.0732408, 0, 1, 0, -0.0732408, 0, -0.997314, -51.371, -1929.8, -14.3414 )
+transform = Transform( -0.997314, 0, 0.0732408, 0, 1, 0, -0.0732408, 0, -0.997314, -53.4831, -1929.86, -12.1823 )
 
 [node name="players" type="Spatial" parent="."]
 
@@ -281,18 +279,16 @@ curve = SubResource( 6 )
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
 curve = SubResource( 7 )
 
-[node name="TourPod" parent="." instance=ExtResource( 8 )]
-transform = Transform( 0.997314, 0, -0.0732407, 0, 1, 0, 0.0732407, 0, 0.997314, -51.3631, -1929.7, -14.8385 )
-location_paths = [ NodePath("../PassengerPodPlaceholder2"), NodePath("../PassengerPodPlaceholder") ]
-
 [node name="Rover" parent="." instance=ExtResource( 6 )]
 transform = Transform( -0.00219636, 0, 0.999997, 0, 1, 0, -0.999997, 0, -0.00219636, -39.2494, -1930.67, -12.5602 )
-pod_path = NodePath("../TourPod")
+docking_path = NodePath("../PassengerPodPlaceholder")
 
 [node name="PassengerPodPlaceholder" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.997314, 0, -0.0732407, 0, 1, 0, 0.0732407, 0, 0.997314, -53.3708, -1929.68, -14.8795 )
+transform = Transform( 0.99939, 0, -0.0349195, 0, 1, 0, 0.0349195, 0, 0.99939, -53.3898, -1929.69, -14.8019 )
+occupied = true
+location_paths = [ NodePath("../PassengerPodPlaceholder2"), NodePath(".") ]
 
 [node name="PassengerPodPlaceholder2" parent="." instance=ExtResource( 7 )]
-transform = Transform( -0.997314, 0, 0.0732406, 0, 1, 0, -0.0732406, 0, -0.997314, -52.5436, -1929.68, -8.87615 )
+transform = Transform( -0.99822, 0, 0.0596398, 0, 1, 0, -0.0596398, 0, -0.99822, -52.5949, -1929.69, -8.95784 )
 
 [editable path="Terrain"]
