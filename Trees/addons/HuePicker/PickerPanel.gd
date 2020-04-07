@@ -20,7 +20,7 @@ func _ready() -> void:
 	yield(get_tree(),'idle_frame')
 	yield(get_tree(),'idle_frame')
 
-	set_meta("_editor_icon", preload("res://addons/HuePicker/icon_picker_panel.svg"))
+	set_meta("_editor_icon", preload("res://Trees/addons/HuePicker/icon_picker_panel.svg"))
 
 	set_color(color)
 
