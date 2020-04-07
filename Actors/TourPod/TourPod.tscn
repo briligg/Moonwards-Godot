@@ -139,6 +139,7 @@ viewport_path = NodePath("MainBody/TourPodArea/CollisionShape/MeshInstance/Viewp
 [sub_resource type="SpatialMaterial" id=12]
 resource_local_to_scene = true
 flags_transparent = true
+flags_unshaded = true
 params_cull_mode = 2
 albedo_texture = SubResource( 11 )
 
