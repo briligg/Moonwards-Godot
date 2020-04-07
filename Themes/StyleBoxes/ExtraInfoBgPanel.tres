@@ -1,10 +1,10 @@
 [gd_resource type="Theme" load_steps=16 format=2]
 
 [ext_resource path="res://Themes/Fonts/MainMenuFont.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Themes/StyleBoxes/MainMenuFocusStyle.tres" type="StyleBox" id=2]
-[ext_resource path="res://Themes/StyleBoxes/ChatDisabledLineEdit.tres" type="StyleBox" id=3]
-[ext_resource path="res://Themes/StyleBoxes/ChatLineEdit.tres" type="StyleBox" id=4]
-[ext_resource path="res://Themes/StyleBoxes/ChatPanelRichTextLabel.tres" type="StyleBox" id=5]
+[ext_resource path="res://Themes/StyleBoxes/ChatLineEdit.tres" type="StyleBox" id=2]
+[ext_resource path="res://Themes/StyleBoxes/ChatPanelRichTextLabel.tres" type="StyleBox" id=3]
+[ext_resource path="res://Themes/StyleBoxes/MainMenuFocusStyle.tres" type="StyleBox" id=4]
+[ext_resource path="res://Themes/StyleBoxes/ChatDisabledLineEdit.tres" type="StyleBox" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.392157 )
@@ -55,8 +55,8 @@ Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 Button/constants/hseparation = 20
 Button/fonts/font = ExtResource( 1 )
 Button/styles/disabled = SubResource( 1 )
-Button/styles/focus = ExtResource( 2 )
-Button/styles/hover = ExtResource( 2 )
+Button/styles/focus = ExtResource( 4 )
+Button/styles/hover = ExtResource( 4 )
 Button/styles/normal = SubResource( 2 )
 Button/styles/pressed = null
 Label/colors/font_color = Color( 1, 1, 1, 1 )
@@ -77,12 +77,12 @@ LineEdit/colors/selection_color = Color( 0.490196, 0.490196, 0.490196, 1 )
 LineEdit/constants/minimum_spaces = 12
 LineEdit/fonts/font = null
 LineEdit/icons/clear = null
-LineEdit/styles/focus = ExtResource( 4 )
-LineEdit/styles/normal = ExtResource( 4 )
-LineEdit/styles/read_only = ExtResource( 3 )
-Panel/styles/panel = ExtResource( 5 )
-Panel/styles/panelf = ExtResource( 5 )
-Panel/styles/panelnc = ExtResource( 5 )
+LineEdit/styles/focus = ExtResource( 2 )
+LineEdit/styles/normal = ExtResource( 2 )
+LineEdit/styles/read_only = ExtResource( 5 )
+Panel/styles/panel = ExtResource( 3 )
+Panel/styles/panelf = ExtResource( 3 )
+Panel/styles/panelnc = ExtResource( 3 )
 PopupMenu/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 PopupMenu/colors/font_color_accel = Color( 0.7, 0.7, 0.7, 0.8 )
 PopupMenu/colors/font_color_disabled = Color( 0.4, 0.4, 0.4, 0.8 )
