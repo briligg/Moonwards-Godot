@@ -218,7 +218,7 @@ func _check_equal_approx_float(var a : float, var b : float, var tolerance : flo
 func _update_movement(delta : float) -> bool:
 	if _nav_targets.size() <= 1:
 		_turn_tolerance = 0.003
-		_move_tolerance = 0.05
+		_move_tolerance = 0.1
 	else:
 		_turn_tolerance = 0.05
 		_move_tolerance = 0.3
@@ -251,8 +251,13 @@ func _update_movement(delta : float) -> bool:
 	
 	_movement_force *= 0.95
 	
+	#Remove the height from the distance check so it works pods which are uneven with the terrain.
 	var current_position_on_navmesh = navigation.get_closest_point(kinematic_body.global_transform.origin)
-	if _nav_targets[0].distance_to(current_position_on_navmesh) < _move_tolerance:
+	current_position_on_navmesh.y = 0.0
+	var nav_position = _nav_targets[0]
+	nav_position.y = 0.0
+	
+	if nav_position.distance_to(current_position_on_navmesh) < _move_tolerance:
 		_nav_targets.remove(0)
 	
 	var flat_force = _movement_force
