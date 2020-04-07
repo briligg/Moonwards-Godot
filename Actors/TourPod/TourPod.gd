@@ -4,6 +4,7 @@ onready var label : Node = $MainBody/TourPodArea/CollisionShape/MeshInstance/Vie
 onready var animaton_player : Node = $MainBody/AnimationPlayer
 onready var passenger_check : Node = $MainBody/PassengerCheck
 onready var body : Node = $MainBody
+onready var static_body : Node = $MainBody/Ground_Passenger_Pod/groundPassengerPod
 onready var camera_control : Node = $MainBody/PlayerCamera
 onready var camera_target : Node = $MainBody/PlayerCamera/Pivot/CameraTarget
 onready var camera : Node = $Camera
@@ -63,7 +64,7 @@ func _process(delta : float) -> void:
 			_camera_transition_check()
 			if _transition_camera:
 				yield(self, "_camera_transition_done")
-			body.set_collision_layer_bit(1, false)
+			static_body.set_collision_layer_bit(1, false)
 			ready_to_leave = true
 			timer = 0.0
 
@@ -125,7 +126,7 @@ func delivered() -> void:
 		_transition_timer = 0.0
 		yield(self, "_camera_transition_done")
 	
-	body.set_collision_layer_bit(1, true)
+	static_body.set_collision_layer_bit(1, true)
 	free_passengers()
 	camera_control.set_camera_control(false)
 	animaton_player.play("OpenDoor")
