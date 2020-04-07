@@ -44,3 +44,4 @@ export.cfg
 # Project-specific ignores #
 ############################
 !_exports/.gitignore
+.vscode/
