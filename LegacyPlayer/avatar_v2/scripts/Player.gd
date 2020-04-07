@@ -78,7 +78,7 @@ onready var nametag = $KinematicBody/Nametag
 onready var username_label = $KinematicBody/Nametag/Viewport/Username
 onready var immediate_geometry = $KinematicBody/ImmediateGeometry
 
-var frozen : bool = false
+var frozen : bool = false setget SetFrozen
 
 const walking = 0
 const flailing = 1
@@ -344,6 +344,10 @@ func HandleOnGround(delta):
 func HandleMovement():
 	animation_tree["parameters/Walk/blend_position"] = motion
 	animation_tree["parameters/MovementSpeed/scale"] = animation_speed
+
+func SetFrozen(var new_frozen):
+	frozen = new_frozen
+	motion = Vector2()
 
 func HandleControls(var delta):
 	if puppet or frozen:# and not bot:
