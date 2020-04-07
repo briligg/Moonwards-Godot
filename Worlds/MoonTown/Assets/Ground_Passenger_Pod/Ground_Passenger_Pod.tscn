@@ -4,5 +4,8 @@
 
 [node name="Ground_Passenger_Pod" instance=ExtResource( 1 )]
 
+[node name="shape0" parent="PassengerPod_Hatch/PassengerPod_Hatch" index="0"]
+disabled = true
+
 [node name="shape0" parent="groundPassengerPod" index="0"]
 disabled = true
