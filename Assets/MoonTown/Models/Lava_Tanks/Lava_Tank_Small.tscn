@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Models/Lava_Tanks/Lava_Tank_Small.glb" type="PackedScene" id=1]
+
+
+
+
+[node name="Lava_Tank_Small" instance=ExtResource( 1 )]

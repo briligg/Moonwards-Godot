@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Utilities/Interactable/Interactable.gd" type="Script" id=1]
+
+
+[node name="Interactable" type="Area"]
+collision_layer = 2048
+collision_mask = 0
+script = ExtResource( 1 )

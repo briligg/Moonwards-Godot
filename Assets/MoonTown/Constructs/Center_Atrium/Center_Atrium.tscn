@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Constructs/Center_Atrium/Center_Atrium.glb" type="PackedScene" id=1]
+[ext_resource path="res://Assets/MoonTown/Models/Hexpane_Window/Hexpane_Window.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/MoonTown/Models/Melt_In_Place_Station_Demo/MeltInPlaceStation_Demo.tscn" type="PackedScene" id=3]
+
+
+
+
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.456229, 2.13596, 0.04845 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.511405, 0.406912, 5.21746 )
+
+[node name="Center_Atrium" instance=ExtResource( 1 )]
+
+[node name="MeltInPlaceStation_Demo" parent="BigAtriumWalls/BigAtriumCenterBeam" index="0" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.53452, -2.66822 )
+
+[node name="StaticBody" type="StaticBody" parent="BigAtriumWalls/BigAtriumCenterBeam" index="1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="BigAtriumWalls/BigAtriumCenterBeam/StaticBody" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00736987, -2.51331, 0 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="BigAtriumWalls/BigAtriumCenterBeam/StaticBody" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00736987, -2.51331, -0.782714 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="BigAtriumWalls/BigAtriumCenterBeam/StaticBody" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00736987, -2.51331, -1.56543 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="BigAtriumWalls/BigAtriumCenterBeam/StaticBody" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00736987, -2.51331, -2.34499 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="BigAtriumWalls/BigAtriumCenterBeam/StaticBody" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00736987, -2.51331, -3.13086 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="BigAtriumWalls/BigAtriumCenterBeam/StaticBody" index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00736987, -2.51331, -3.91357 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="BigAtriumWalls/BigAtriumCenterBeam/StaticBody" index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00736987, -2.51331, -4.69556 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="BigAtriumWalls/BigAtriumCenterBeam/StaticBody" index="7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00736987, -2.51331, -5.48026 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="BigAtriumWalls/BigAtriumCenterBeam/StaticBody" index="8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00736987, -2.51331, -6.25954 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="BigAtriumWalls/BigAtriumCenterBeam/StaticBody" index="9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00736987, -2.51331, -7.04424 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="BigAtriumWalls/BigAtriumCenterBeam/StaticBody" index="10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00736987, -2.51331, -7.82353 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="BigAtriumWalls/BigAtriumCenterBeam/StaticBody" index="11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00736987, -2.51331, -7.82353 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="BigAtriumWalls/BigAtriumCenterBeam/StaticBody" index="12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.89707 )
+shape = SubResource( 2 )
+
+[node name="Hexpane_Window" parent="BigAtriumWalls/Empty_HexpaneWindow" index="0" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+
+[node name="Hexpane_Window" parent="BigAtriumWalls/Empty_HexpaneWindow001" index="0" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+
+[node name="Hexpane_Window" parent="BigAtriumWalls/Empty_HexpaneWindow002" index="0" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+
+[node name="Hexpane_Window" parent="BigAtriumWalls/Empty_HexpaneWindow003" index="0" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+
+[node name="OmniLight" type="OmniLight" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.49915, 0, -2.77204 )
+omni_range = 7.2
+omni_attenuation = 1.93187
+
+[node name="GIProbe" type="GIProbe" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.47934 )
+extents = Vector3( 4.71117, 3.4334, 9.27659 )

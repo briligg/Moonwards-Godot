@@ -1,0 +1,161 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Trees/Interface/MainMenu/OptionsOld/Settings.gd" type="Script" id=1]
+
+
+[node name="Settings" type="Tabs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 38.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -212.0
+margin_top = -108.0
+margin_right = 213.0
+margin_bottom = 108.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Main" type="HBoxContainer" parent="MarginContainer"]
+margin_right = 425.0
+margin_bottom = 216.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Row1" type="VBoxContainer" parent="MarginContainer/Main"]
+margin_right = 179.0
+margin_bottom = 216.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Options" type="VBoxContainer" parent="MarginContainer/Main/Row1"]
+margin_right = 179.0
+margin_bottom = 22.0
+
+[node name="Label" type="Label" parent="MarginContainer/Main/Row1/Options"]
+margin_right = 179.0
+margin_bottom = 14.0
+text = "Misc"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/Main/Row1/Options"]
+margin_top = 18.0
+margin_right = 179.0
+margin_bottom = 22.0
+
+[node name="Row2" type="VBoxContainer" parent="MarginContainer/Main"]
+margin_left = 183.0
+margin_right = 425.0
+margin_bottom = 216.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Video" type="VBoxContainer" parent="MarginContainer/Main/Row2"]
+margin_right = 242.0
+margin_bottom = 142.0
+
+[node name="Label" type="Label" parent="MarginContainer/Main/Row2/Video"]
+margin_right = 242.0
+margin_bottom = 14.0
+text = "Video"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/Main/Row2/Video"]
+margin_top = 18.0
+margin_right = 242.0
+margin_bottom = 22.0
+
+[node name="Resolution" type="HBoxContainer" parent="MarginContainer/Main/Row2/Video"]
+margin_top = 26.0
+margin_right = 242.0
+margin_bottom = 46.0
+
+[node name="Label" type="Label" parent="MarginContainer/Main/Row2/Video/Resolution"]
+margin_top = 3.0
+margin_right = 72.0
+margin_bottom = 17.0
+text = "Resolution:"
+
+[node name="Resolution" type="MenuButton" parent="MarginContainer/Main/Row2/Video/Resolution"]
+margin_left = 76.0
+margin_right = 159.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "1366 x 768"
+align = 0
+
+[node name="ScreenMode" type="MenuButton" parent="MarginContainer/Main/Row2/Video/Resolution"]
+margin_left = 163.0
+margin_right = 242.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Windowed"
+items = [ "Windowed", null, 0, false, false, 0, 0, null, "", false, "Borderless", null, 0, false, false, 1, 0, null, "", false, "Fullscreen", null, 0, false, false, 2, 0, null, "", false ]
+
+[node name="VSync" type="CheckButton" parent="MarginContainer/Main/Row2/Video"]
+margin_top = 50.0
+margin_right = 242.0
+margin_bottom = 90.0
+text = "VSync"
+
+[node name="ModelQuality" type="HBoxContainer" parent="MarginContainer/Main/Row2/Video"]
+margin_top = 94.0
+margin_right = 242.0
+margin_bottom = 114.0
+
+[node name="Label" type="Label" parent="MarginContainer/Main/Row2/Video/ModelQuality"]
+margin_top = 3.0
+margin_right = 94.0
+margin_bottom = 17.0
+text = "Model Quality:"
+
+[node name="Quality" type="MenuButton" parent="MarginContainer/Main/Row2/Video/ModelQuality"]
+margin_left = 98.0
+margin_right = 139.0
+margin_bottom = 20.0
+text = "High"
+align = 0
+items = [ "Low", null, 0, false, false, -1, 0, null, "", false, "Medium", null, 0, false, false, -1, 0, null, "", false, "High", null, 0, false, false, -1, 0, null, "", false ]
+
+[node name="FPSLimit" type="HBoxContainer" parent="MarginContainer/Main/Row2/Video"]
+margin_top = 118.0
+margin_right = 242.0
+margin_bottom = 142.0
+
+[node name="Label" type="Label" parent="MarginContainer/Main/Row2/Video/FPSLimit"]
+margin_top = 5.0
+margin_right = 60.0
+margin_bottom = 19.0
+text = "FPS limit:"
+
+[node name="FPSSlider" type="HSlider" parent="MarginContainer/Main/Row2/Video/FPSLimit"]
+margin_left = 64.0
+margin_right = 164.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+min_value = 24.0
+max_value = 140.0
+value = 24.0
+ticks_on_borders = true
+
+[node name="FPSSpin" type="SpinBox" parent="MarginContainer/Main/Row2/Video/FPSLimit"]
+margin_left = 168.0
+margin_right = 242.0
+margin_bottom = 24.0
+min_value = 24.0
+max_value = 140.0
+value = 24.0
+[connection signal="value_changed" from="MarginContainer/Main/Row2/Video/FPSLimit/FPSSlider" to="." method="_on_FPSSlider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/Main/Row2/Video/FPSLimit/FPSSpin" to="." method="_on_FPSSpin_value_changed"]

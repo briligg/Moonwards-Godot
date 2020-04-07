@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Models/Solar_Thermal_Mirror_Sets/Solar_Thermal_Mirror_Set_Side_Circuit.glb" type="PackedScene" id=1]
+
+
+
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.238862, 2.83358, 0.106082 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.759195, 0.107659, 2.1247 )
+
+[node name="Solar_Thermal_Mirror_Set_Side_Circuit" instance=ExtResource( 1 )]
+
+[node name="MirrorTowerFrame" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015025, -0.00500822, 2.18945 )
+
+[node name="StaticBody" type="StaticBody" parent="MirrorTowerFrame" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MirrorTowerFrame/StaticBody" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.72847, 0 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="MirrorTowerFrame/StaticBody" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.74518, 2.23196 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="MirrorTowerFrame/StaticBody" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.72771, -2.23841 )
+shape = SubResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="MirrorFrame_A" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MirrorFrame_A/StaticBody" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0184353, -0.910749, 2.10847 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="MirrorFrame_A/StaticBody" index="1"]
+transform = Transform( 0.889775, 0.456399, 0, -0.456399, 0.889775, 0, 0, 0, 1, -1.36337, -0.580824, 2.10847 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="MirrorFrame_A/StaticBody" index="2"]
+transform = Transform( 0.890285, -0.455405, 0, 0.455405, 0.890285, 0, 0, 0, 1, 1.37016, -0.583396, 2.10847 )
+shape = SubResource( 2 )

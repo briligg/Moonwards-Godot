@@ -1,0 +1,186 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/Interface/MainMenu.tres" type="Theme" id=1]
+[ext_resource path="res://Trees/Interface/MainMenu/OptionsOld/OptionsUI.gd" type="Script" id=2]
+[ext_resource path="res://Trees/Interface/MainMenu/OptionsOld/UserSettings.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Trees/Interface/MainMenu/OptionsOld/Settings.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Trees/Interface/MainMenu/OptionsOld/LabelSliderMix/LabelSliderMix.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Trees/Interface/MainMenu/OptionsOld/LabelOptionButton/LabelOptionButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Trees/Interface/MainMenu/OptionsOld/Controls_settings.tscn" type="PackedScene" id=7]
+
+
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 0.0
+bg_color = Color( 0.287646, 0.275574, 0.335938, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 0.0
+bg_color = Color( 0.287646, 0.275574, 0.335938, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 0.0
+bg_color = Color( 0.287646, 0.275574, 0.335938, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 0.0
+bg_color = Color( 0.287646, 0.275574, 0.335938, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+content_margin_left = 0.0
+bg_color = Color( 0.287646, 0.275574, 0.335938, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+content_margin_left = 0.0
+bg_color = Color( 0.287646, 0.275574, 0.335938, 1 )
+
+[node name="TabContainer" type="TabContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -495.0
+margin_top = -335.5
+margin_right = 495.0
+margin_bottom = 335.5
+theme = ExtResource( 1 )
+tab_align = 0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" type="Tabs" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 41.0
+
+[node name="UserSettings" parent="Player" instance=ExtResource( 3 )]
+
+[node name="Settings" parent="." instance=ExtResource( 4 )]
+margin_top = 41.0
+
+[node name="Dev" type="Tabs" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 41.0
+
+[node name="MarginContainer" type="CenterContainer" parent="Dev"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 23.0
+margin_top = 14.0
+margin_right = -23.0
+margin_bottom = -93.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dev/MarginContainer"]
+margin_left = 322.0
+margin_top = 71.0
+margin_right = 622.0
+margin_bottom = 452.0
+
+[node name="sPlayerSpeed" parent="Dev/MarginContainer/VBoxContainer" instance=ExtResource( 5 )]
+margin_right = 300.0
+margin_bottom = 31.0
+label = "Player Speed"
+ma = 50
+ticks = 5
+
+[node name="tAreas" type="CheckButton" parent="Dev/MarginContainer/VBoxContainer"]
+margin_top = 35.0
+margin_right = 300.0
+margin_bottom = 67.0
+custom_styles/hover = SubResource( 1 )
+text = "Enable Area hide/show"
+
+[node name="tCollisionShapes" type="CheckButton" parent="Dev/MarginContainer/VBoxContainer"]
+margin_top = 71.0
+margin_right = 300.0
+margin_bottom = 103.0
+custom_styles/hover = SubResource( 2 )
+text = "Enable Collision shapes"
+
+[node name="tPMonitor" type="CheckButton" parent="Dev/MarginContainer/VBoxContainer"]
+margin_top = 107.0
+margin_right = 300.0
+margin_bottom = 139.0
+custom_styles/hover = SubResource( 3 )
+text = "Show Performance Monitor"
+
+[node name="CheckButton4" type="CheckButton" parent="Dev/MarginContainer/VBoxContainer"]
+visible = false
+margin_right = 804.0
+margin_bottom = 566.0
+custom_styles/hover = SubResource( 4 )
+text = "Enable Networking"
+
+[node name="CheckButton5" type="CheckButton" parent="Dev/MarginContainer/VBoxContainer"]
+visible = false
+margin_right = 804.0
+margin_bottom = 566.0
+custom_styles/hover = SubResource( 5 )
+text = "Enable Teleport"
+
+[node name="tDecimate" type="CheckButton" parent="Dev/MarginContainer/VBoxContainer"]
+margin_top = 143.0
+margin_right = 300.0
+margin_bottom = 175.0
+custom_styles/hover = SubResource( 6 )
+text = "Decimate objects"
+
+[node name="sDecimatePercent" parent="Dev/MarginContainer/VBoxContainer" instance=ExtResource( 5 )]
+margin_top = 179.0
+margin_right = 300.0
+margin_bottom = 210.0
+label = "Decimate percent"
+
+[node name="tFPSLim" type="CheckButton" parent="Dev/MarginContainer/VBoxContainer"]
+margin_top = 214.0
+margin_right = 300.0
+margin_bottom = 246.0
+custom_styles/hover = SubResource( 6 )
+text = "Limit FPS"
+
+[node name="sFPSLim" parent="Dev/MarginContainer/VBoxContainer" instance=ExtResource( 5 )]
+margin_top = 250.0
+margin_right = 300.0
+margin_bottom = 281.0
+label = "Limit FPS value"
+mi = 0
+
+[node name="tLodManager" type="CheckButton" parent="Dev/MarginContainer/VBoxContainer"]
+margin_top = 285.0
+margin_right = 300.0
+margin_bottom = 317.0
+custom_styles/hover = SubResource( 6 )
+text = "Enable Lod management"
+
+[node name="sHBoxAspect" parent="Dev/MarginContainer/VBoxContainer" instance=ExtResource( 5 )]
+margin_top = 321.0
+margin_right = 300.0
+margin_bottom = 352.0
+label = "LodFar distance"
+mi = 0
+ma = 500
+ticks = 50
+
+[node name="SelectFlyCamera" parent="Dev/MarginContainer/VBoxContainer" instance=ExtResource( 6 )]
+margin_top = 356.0
+margin_right = 300.0
+margin_bottom = 381.0
+label = "Select Fly Camera"
+
+[node name="Controls" parent="." instance=ExtResource( 7 )]
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.0
+margin_top = 41.0
+margin_right = 0.0
+margin_bottom = 0.0

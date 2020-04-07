@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/MilkyWay_LalandeRegion_4k.hdr-32c8902d2e91a1b1cf7851cf7a772377.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Assets/MoonTown/Constructs/Moon_Town_Master/MilkyWay_LalandeRegion_4k.hdr"
+dest_files=[ "res://.import/MilkyWay_LalandeRegion_4k.hdr-32c8902d2e91a1b1cf7851cf7a772377.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=1
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

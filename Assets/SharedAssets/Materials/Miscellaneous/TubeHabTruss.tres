@@ -1,0 +1,18 @@
+[gd_resource type="SpatialMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/TubeHabWindows.png" type="Texture" id=1]
+
+
+
+
+[resource]
+flags_world_triplanar = true
+params_blend_mode = 1
+params_cull_mode = 2
+albedo_color = Color( 1, 0, 0, 0 )
+albedo_texture = ExtResource( 1 )
+transmission_enabled = true
+transmission = Color( 0.337255, 0, 0, 1 )
+transmission_texture = ExtResource( 1 )
+uv1_scale = Vector3( 6, 6, 6 )
+uv1_triplanar = true

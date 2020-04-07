@@ -1,0 +1,10 @@
+[gd_resource type="SpatialMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Earth-NASA-Combined-2048.png" type="Texture" id=1]
+
+
+
+
+[resource]
+flags_disable_ambient_light = true
+albedo_texture = ExtResource( 1 )

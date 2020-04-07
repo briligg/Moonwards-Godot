@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Trees/addons/HuePicker/PickerPanel.gd" type="Script" id=1]
+[ext_resource path="res://Trees/addons/HuePicker/icon_picker_panel.svg" type="Texture" id=2]
+[ext_resource path="res://Trees/addons/HuePicker/HuePicker.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Trees/addons/HuePicker/ClassicControls.tscn" type="PackedScene" id=4]
+
+
+[node name="PickerPanel" type="Panel"]
+margin_right = 304.0
+margin_bottom = 424.0
+rect_min_size = Vector2( 304, 304 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_editor_icon": ExtResource( 2 )
+}
+color = Color( 1, 1, 1, 1 )
+flat = null
+
+[node name="HuePicker" parent="." instance=ExtResource( 3 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 8.0
+margin_right = 0.0
+margin_bottom = -168.0
+
+[node name="ClassicControls" parent="." instance=ExtResource( 4 )]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.0
+margin_top = -156.0
+margin_right = -2.0
+margin_bottom = 6.0

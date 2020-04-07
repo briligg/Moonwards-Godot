@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/First_Gallery_Lower.glb" type="PackedScene" id=1]
+[ext_resource path="res://Assets/MoonTown/Models/Tube_Habs/TubeHab.glb" type="PackedScene" id=2]
+[ext_resource path="res://Assets/MoonTown/Models/Tube_Habs/TubeHab_Mirror.glb" type="PackedScene" id=3]
+
+
+
+
+
+[node name="First_Gallery_Lower" instance=ExtResource( 1 )]
+
+[node name="TubeHab_Mirror" parent="Marker_Tubehab_3" index="0" instance=ExtResource( 3 )]
+
+[node name="TubeHab_Mirror" parent="Marker_Tubehab_1" index="0" instance=ExtResource( 3 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0 )
+
+[node name="TubeHab" parent="Marker_Tubehab_2" index="0" instance=ExtResource( 2 )]
+
+[node name="TubeHab" parent="Marker_Tubehab_4" index="0" instance=ExtResource( 2 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0 )

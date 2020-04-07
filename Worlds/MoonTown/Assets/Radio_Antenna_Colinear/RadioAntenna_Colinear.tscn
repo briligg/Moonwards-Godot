@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://Worlds/MoonTown/Assets/Radio_Antenna_Colinear/RadioAntenna_Colinear.glb" type="PackedScene" id=1]
-
-[node name="RadioAntenna_Colinear" instance=ExtResource( 1 )]
