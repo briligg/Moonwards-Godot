@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Worlds/MoonTown/Constructs/Airlock_Bay/Airlock_Bay.glb" type="PackedScene" id=1]
 [ext_resource path="res://Worlds/MoonTown/Assets/Airlock/Airlock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Actors/TourPod/PassengerPodDocking.tscn" type="PackedScene" id=3]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 6.29957, 1, 2.43557 )
@@ -82,8 +83,8 @@ shape = SubResource( 6 )
 [node name="Airlock" parent="Marker_Airlock_S4" index="0" instance=ExtResource( 2 )]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 
-[node name="Airlock" parent="Marker_Airlock_S3" index="0" instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+[node name="PassengerPodDocking" parent="Marker_Airlock_S3" index="0" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 1.43196 )
 
 [node name="Airlock" parent="Marker_Airlock_S2" index="0" instance=ExtResource( 2 )]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
@@ -98,7 +99,9 @@ transform = Transform( 3.57746e-08, 0, -3, 0, 3, 0, 3, 0, 3.57746e-08, 0, 0, 0 )
 
 [node name="Airlock" parent="Marker_Airlock_N2" index="0" instance=ExtResource( 2 )]
 
-[node name="Airlock" parent="Marker_Airlock_N3" index="0" instance=ExtResource( 2 )]
+[node name="PassengerPodDocking" parent="Marker_Airlock_N3" index="0" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.4629 )
+occupied = true
 
 [node name="Airlock" parent="Marker_Airlock_N4" index="0" instance=ExtResource( 2 )]
 
