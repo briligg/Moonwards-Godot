@@ -24,10 +24,11 @@ const ERRORS = [
 signal hint_logged(message)
 signal warning_logged(message)
 signal error_logged(message)
+signal critical_logged(message)
 
 const LOG_DIR: String = "user://logs/"
 const LOG_FILE: String = "%s.txt" # _get_time_string()
-enum LEVELS {HINT, WARNING, ERROR}
+enum LEVELS {HINT, WARNING, ERROR, CRITICAL}
 
 	# Configuration Variables.
 var log_level: int = LEVELS.HINT # Lowest level that should be logged
@@ -89,6 +90,9 @@ func error(emitter: Object, function: String, message: String) -> void:
 	if enabled and log_level <= LEVELS.ERROR:
 		_log_message(LEVELS.ERROR, emitter, function, message)
 
+func critical(emitter: Object, function: String, message: String) -> void:
+	if enabled and log_level <= LEVELS.CRITICAL:
+		_log_message(LEVELS.CRITICAL, emitter, function, message)
 
 func _make_log_folder() -> void:
 	var open_err: int = _d.open("user://")
@@ -248,3 +252,7 @@ class LoggerConsole:
 		bbcode_text += "\n" # new_line uses buggy append_bbcode func
 		bbcode_text += "[color=red]" + message + "[/color]"
 	
+	
+	func _on_critical_logged(message) -> void:
+		bbcode_text += "\n" # new_line uses buggy append_bbcode func
+		bbcode_text += "[color=red]" + message + "[/color]"
