@@ -1,4 +1,4 @@
-extends Spatial
+extends AMovementController
 #var id = "CameraControl"
 
 export (NodePath) var kinematic_body_path
@@ -15,8 +15,12 @@ export (float) var max_zoom_distance = 1.0
 export (float) var min_zoom_distance = 0.15
 export (float) var zoom_step_size = 0.05
 var excluded_bodies = []
+var mouse_sensitivity: float = 0.10
+var max_up_aim_angle = 55.0
+var max_down_aim_angle = 55.0
 
 func _ready():
+	assert(camera != null)
 	if camera == null:
 		enabled = false
 		#printd("camera not defined, disabled")
@@ -64,6 +68,22 @@ func _physics_process(delta):
 	var new_look_position = look_target.global_transform.origin
 	current_look_position = current_look_position.linear_interpolate(new_look_position, delta * speed)
 	camera.look_at(current_look_position, Vector3(0,1,0))
+
+func _unhandled_input(event):	
+	if (event is InputEventMouseMotion):
+		look_direction.x -= event.relative.x * mouse_sensitivity
+		look_direction.y -= event.relative.y * mouse_sensitivity
+
+		if look_direction.x > 360:
+			look_direction.x = 0
+		elif look_direction.x < 0:
+			look_direction.x = 360
+		if look_direction.y > max_up_aim_angle:
+			look_direction.y = max_up_aim_angle
+		elif look_direction.y < -max_down_aim_angle:
+			look_direction.y = -max_down_aim_angle
+
+		Rotate(look_direction)
 
 func Rotate(var direction):
 	pivot.rotation_degrees = Vector3(direction.y, direction.x, 0)

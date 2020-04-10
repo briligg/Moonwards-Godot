@@ -1,7 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Tree/Actor/LegacyPlayer/avatar_v2/scripts/CameraControl.gd" type="Script" id=1]
-
+[ext_resource path="res://Component/Actor/CameraController.gd" type="Script" id=1]
 
 [node name="PlayerCamera" type="Spatial"]
 script = ExtResource( 1 )
