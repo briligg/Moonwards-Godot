@@ -12,12 +12,12 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "NameGenerator",
 "language": "GDScript",
-"path": "res://Scripts/Utilities/NameGenerator.gd"
+"path": "res://Script/Utilities/NameGenerator.gd"
 }, {
 "base": "Navigation",
 "class": "World_Navigator",
 "language": "GDScript",
-"path": "res://Scripts/Core/WorldNavigation.gd"
+"path": "res://Script/Core/WorldNavigation.gd"
 } ]
 _global_script_class_icons={
 "NameGenerator": "",
@@ -32,15 +32,15 @@ config/icon="res://icon.png"
 
 [autoload]
 
-WorldManager="*res://Scripts/Core/World/World.gd"
-Log="*res://Scripts/Core/Logger.gd"
-NodeUtilities="*res://Scripts/Core/Utilities.gd"
-Options="*res://Scripts/Core/Options.gd"
-Lobby="*res://Scripts/Core/Network/Lobby.gd"
-InputMapping="*res://Scripts/Core/InputMapping.gd"
-Hud="*res://Trees/Interface/Hud/Hud.tscn"
-PauseMenu="*res://Trees/Interface/PauseMenu/PauseMenu.tscn"
-MainMenu="*res://Trees/Interface/MainMenu/MainMenu.tscn"
+WorldManager="*res://Script/Core/World/World.gd"
+Log="*res://Script/Core/Logger.gd"
+NodeUtilities="*res://Script/Core/Utilities.gd"
+Options="*res://Script/Core/Options.gd"
+Lobby="*res://Script/Core/Network/Lobby.gd"
+InputMapping="*res://Script/Core/InputMapping.gd"
+Hud="*res://Tree/Interface/Hud/Hud.tscn"
+PauseMenu="*res://Tree/Interface/PauseMenu/PauseMenu.tscn"
+MainMenu="*res://Tree/Interface/MainMenu/MainMenu.tscn"
 
 [compression]
 

@@ -1,0 +1,90 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 0.120504, 0.120504, 0.120504, 0.588235 )
+
+[node name="About" type="PanelContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -324.0
+margin_top = -180.0
+margin_right = 188.0
+margin_bottom = 96.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="H" type="HBoxContainer" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 502.0
+margin_bottom = 266.0
+alignment = 1
+
+[node name="License" type="VBoxContainer" parent="H"]
+margin_right = 240.0
+margin_bottom = 256.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="H/License"]
+margin_right = 240.0
+margin_bottom = 14.0
+text = "License:"
+
+[node name="HSeparator2" type="HSeparator" parent="H/License"]
+margin_top = 18.0
+margin_right = 240.0
+margin_bottom = 22.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="H/License"]
+margin_top = 26.0
+margin_right = 240.0
+margin_bottom = 256.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Copyright 2019 Moonwards
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+
+[node name="VSeparator3" type="VSeparator" parent="H"]
+margin_left = 244.0
+margin_right = 248.0
+margin_bottom = 256.0
+
+[node name="Credits" type="VBoxContainer" parent="H"]
+margin_left = 252.0
+margin_right = 492.0
+margin_bottom = 256.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="H/Credits"]
+margin_right = 240.0
+margin_bottom = 14.0
+text = "Credits:"
+
+[node name="HSeparator2" type="HSeparator" parent="H/Credits"]
+margin_top = 18.0
+margin_right = 240.0
+margin_bottom = 22.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="H/Credits"]
+margin_top = 26.0
+margin_right = 240.0
+margin_bottom = 256.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Founder: Kim Holder
+Patrons:
+Programmers:
+
+Version:"

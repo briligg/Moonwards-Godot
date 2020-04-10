@@ -9,7 +9,7 @@ metadata={
 
 [deps]
 
-source_file="res://Trees/SharedAssets/Textures/Nature_Textures/GrassyGround/GrassyGround_Specular.png"
+source_file="res://Tree/SharedAssets/Textures/Nature_Textures/GrassyGround/GrassyGround_Specular.png"
 dest_files=[ "res://.import/GrassyGround_Specular.png-6695b607bfae338366ffc00ae73d8b41.stex" ]
 
 [params]
