@@ -1,7 +1,7 @@
 [gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Tree/Actor/LegacyPlayer/Avatars/AvatarRig.dae.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Component/Actor/CameraController.tscn" type="PackedScene" id=2]
+[ext_resource path="res://SceneComponent/Actor/CameraController.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tree/Actor/LegacyPlayer/avatar_v2/Nametag3D.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tree/Actor/LegacyPlayer/avatar_v2/interactor/Interactor.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/BrightTeal.tres" type="Material" id=5]
@@ -10,8 +10,6 @@
 [ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/Chestnut.tres" type="Material" id=8]
 [ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/Black.tres" type="Material" id=9]
 [ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/Eggplant.tres" type="Material" id=10]
-
-
 
 
 
@@ -135,7 +133,7 @@ nodes/MovementState/position = Vector2( 740, 80 )
 nodes/Walk/node = SubResource( 22 )
 nodes/Walk/position = Vector2( 260, 80 )
 nodes/output/position = Vector2( 1380, 100 )
-node_connections = [ "output", 0, "Land", "Land", 0, "JumpAmount", "Land", 1, "Animation 2", "JumpAmount", 0, "MovementState", "JumpAmount", 1, "Animation", "ClimbDirection", 0, "ClimbProgressUp", "ClimbDirection", 1, "ClimbProgressDown", "MovementSpeed", 0, "Walk", "MovementState", 0, "MovementSpeed", "MovementState", 1, "Animation 3", "MovementState", 2, "ClimbDirection", "ClimbProgressUp", 0, "Animation 5", "ClimbProgressDown", 0, "Animation 4" ]
+node_connections = [ "output", 0, "Land", "Land", 0, "JumpAmount", "Land", 1, "Animation 2", "ClimbProgressUp", 0, "Animation 5", "MovementSpeed", 0, "Walk", "ClimbDirection", 0, "ClimbProgressUp", "ClimbDirection", 1, "ClimbProgressDown", "ClimbProgressDown", 0, "Animation 4", "JumpAmount", 0, "MovementState", "JumpAmount", 1, "Animation", "MovementState", 0, "MovementSpeed", "MovementState", 1, "Animation 3", "MovementState", 2, "ClimbDirection" ]
 
 [node name="LocalPlayer" type="Spatial"]
 script = ExtResource( 6 )
@@ -164,9 +162,6 @@ cast_to = Vector3( 0, -0.1, 0 )
 
 [node name="PlayerCamera" parent="KinematicBody" instance=ExtResource( 2 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.144089, 0 )
-kinematic_body_path = NodePath("..")
-kinematic_body_camera = NodePath("../../Camera")
-enabled = true
 
 [node name="Interactor" parent="KinematicBody" instance=ExtResource( 4 )]
 

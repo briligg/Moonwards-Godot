@@ -1,23 +1,26 @@
-extends AMovementController
-#var id = "CameraControl"
+extends AComponent
+class_name CameraController
 
-export (NodePath) var kinematic_body_path
-export (NodePath) var kinematic_body_camera
 export (float, 0, 500) var speed = 5
-onready var kinematic_body = get_node(kinematic_body_path)
 onready var pivot = $Pivot
 onready var camera_target = $Pivot/CameraTarget
 onready var look_target = $Pivot/LookTarget
-onready var camera = get_node(kinematic_body_camera)
+onready var camera = $Camera
+onready var movement_comp = entity.get_component(
+		"AMovementController")
+
 var current_look_position = Vector3()
-export (bool) var enabled = false
 export (float) var max_zoom_distance = 1.0
 export (float) var min_zoom_distance = 0.15
 export (float) var zoom_step_size = 0.05
 var excluded_bodies = []
+#### Move this to settings later when its re-implemented
 var mouse_sensitivity: float = 0.10
 var max_up_aim_angle = 55.0
 var max_down_aim_angle = 55.0
+
+func _init().("CameraController"):
+	pass
 
 func _ready():
 	assert(camera != null)
@@ -31,7 +34,8 @@ func _ready():
 		camera.global_transform.origin = camera_target.global_transform.origin
 		current_look_position = look_target.global_transform.origin
 		camera.look_at(current_look_position, Vector3(0,1,0))
-		excluded_bodies.append(kinematic_body)
+		camera.current = true
+		excluded_bodies.append(entity)
 
 func IncreaseDistance():
 	if not enabled:
@@ -69,35 +73,20 @@ func _physics_process(delta):
 	current_look_position = current_look_position.linear_interpolate(new_look_position, delta * speed)
 	camera.look_at(current_look_position, Vector3(0,1,0))
 
-func _unhandled_input(event):	
+func _unhandled_input(event):
 	if (event is InputEventMouseMotion):
-		look_direction.x -= event.relative.x * mouse_sensitivity
-		look_direction.y -= event.relative.y * mouse_sensitivity
+		movement_comp.look_dir.x -= event.relative.x * mouse_sensitivity
+		movement_comp.look_dir.y -= event.relative.y * mouse_sensitivity
+		if movement_comp.look_dir.x > 360:
+			movement_comp.look_dir.x = 0
+		elif movement_comp.look_dir.x < 0:
+			movement_comp.look_dir.x = 360
+		if movement_comp.look_dir.y > max_up_aim_angle:
+			movement_comp.look_dir.y = max_up_aim_angle
+		elif movement_comp.look_dir.y < -max_down_aim_angle:
+			movement_comp.look_dir.y = -max_down_aim_angle
 
-		if look_direction.x > 360:
-			look_direction.x = 0
-		elif look_direction.x < 0:
-			look_direction.x = 360
-		if look_direction.y > max_up_aim_angle:
-			look_direction.y = max_up_aim_angle
-		elif look_direction.y < -max_down_aim_angle:
-			look_direction.y = -max_down_aim_angle
-
-		Rotate(look_direction)
+		Rotate(movement_comp.look_dir)
 
 func Rotate(var direction):
 	pivot.rotation_degrees = Vector3(direction.y, direction.x, 0)
-
-func DrawLine(var from, var to):
-	var im = $Lines
-	im.clear()
-	im.begin(Mesh.PRIMITIVE_LINE_STRIP, null)
-	var origin = im.global_transform.origin
-	
-	im.add_vertex(from - origin)
-	im.add_vertex(to - origin)
-	
-	im.end()
-
-#func printd(s):
-#	logg.print_filtered_message(id, s)

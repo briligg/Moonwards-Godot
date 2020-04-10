@@ -10,12 +10,36 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Spatial",
+"class": "AComponent",
+"language": "GDScript",
+"path": "res://Script/Core/AComponent.gd"
+}, {
+"base": "AComponent",
 "class": "AMovementController",
 "language": "GDScript",
-"path": "res://Script/Component/Actor/AMovementController.gd"
+"path": "res://Script/Component/AMovementController.gd"
+}, {
+"base": "AComponent",
+"class": "CameraController",
+"language": "GDScript",
+"path": "res://SceneComponent/Actor/CameraController.gd"
+}, {
+"base": "Node",
+"class": "Entity",
+"language": "GDScript",
+"path": "res://Script/Entity/Entity.gd"
+}, {
+"base": "AMovementController",
+"class": "KinematicMovement",
+"language": "GDScript",
+"path": "res://SceneComponent/Actor/KinematicMovement.gd"
 } ]
 _global_script_class_icons={
-"AMovementController": ""
+"AComponent": "",
+"AMovementController": "",
+"CameraController": "",
+"Entity": "",
+"KinematicMovement": ""
 }
 
 [application]
@@ -26,7 +50,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Log="*res://Script/Core/Logger.gd"
+Log="*res://Script/Manager/Logger.gd"
+WorldConstants="*res://Script/Manager/GlobalState/WorldConstants.gd"
 
 [compression]
 

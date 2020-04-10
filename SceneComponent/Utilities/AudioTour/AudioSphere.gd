@@ -1,4 +1,4 @@
-extends "res://Script/Utilities/Interactable/Interactable.gd"
+extends "res://SceneComponent/Utilities/Interactable/Interactable.gd"
 """
 Groups: SoloAudioPlayer
 """

@@ -5,7 +5,7 @@ extends Node
 	
 	Usage example:
 	
-	hint(self, "function_name", "thing went wrong")
+	trace(self, "function_name", "thing went wrong")
 """
 const ERRORS = [
 "OK", "FAILED", "ERR_UNAVAILABLE", "ERR_UNCONFIGURED", "ERR_UNAUTHORIZED",
@@ -21,17 +21,17 @@ const ERRORS = [
 "ERR_CYCLIC_LINK", "ERR_INVALID_DECLARATION", "ERR_DUPLICATE_SYMBOL", "ERR_PARSE_ERROR",
 "ERR_BUSY", "ERR_SKIP", "ERR_HELP", "ERR_BUG", "ERR_PRINTER_ON_FIRE" ] 
 
-signal hint_logged(message)
+signal trace_logged(message)
 signal warning_logged(message)
 signal error_logged(message)
 signal critical_logged(message)
 
 const LOG_DIR: String = "user://logs/"
 const LOG_FILE: String = "%s.txt" # _get_time_string()
-enum LEVELS {HINT, WARNING, ERROR, CRITICAL}
+enum LEVELS {TRACE, WARNING, ERROR, CRITICAL}
 
 	# Configuration Variables.
-var log_level: int = LEVELS.HINT # Lowest level that should be logged
+var log_level: int = LEVELS.TRACE # Lowest level that should be logged
 var enabled: bool = true # Log anything at all?
 var log_to_disk: bool = true # Log to disk?
 var control_quit_behavior: bool = false # Will delay application exist by one frame
@@ -76,9 +76,9 @@ func _ready() -> void:
 func error_to_string(code : int) -> String:
 	return ERRORS[code]
 
-func hint(emitter: Object, function: String, message: String) -> void:
-	if enabled and log_level <= LEVELS.HINT:
-		_log_message(LEVELS.HINT, emitter, function, message)
+func trace(emitter: Object, function: String, message: String) -> void:
+	if enabled and log_level <= LEVELS.TRACE:
+		_log_message(LEVELS.TRACE, emitter, function, message)
 
 
 func warning(emitter: Object, function: String, message: String) -> void:
@@ -136,13 +136,14 @@ func _log_message(level: int, emitter: Object, function: String, message: String
 	
 	# Message level.
 	match level:
-		LEVELS.HINT:
-			log_string += "HINT: "
+		LEVELS.TRACE:
+			log_string += "TRACE: "
 		LEVELS.WARNING:
 			log_string += "WARNING: "
 		LEVELS.ERROR:
 			log_string += "ERROR: "
-	
+		LEVELS.CRITICAL:
+			log_string += "CRITICAL: "
 	# Emitter Name if any.
 	if emitter.has_method("get_name"):
 		log_string += emitter.name
@@ -167,13 +168,14 @@ func _log_message(level: int, emitter: Object, function: String, message: String
 		log_string += "."
 	
 	match level:
-		LEVELS.HINT:
-			emit_signal("hint_logged", log_string)
+		LEVELS.TRACE:
+			emit_signal("trace_logged", log_string)
 		LEVELS.WARNING:
 			emit_signal("warning_logged", log_string)
 		LEVELS.ERROR:
 			emit_signal("error_logged", log_string)
-	
+		LEVELS.CRITICAL:
+			emit_signal("critical_logged", log_string)
 	
 	if log_to_disk and _can_log_to_disk:
 		_log_to_disk(log_string)
@@ -222,7 +224,7 @@ class LoggerConsole:
 		_use_logger_key = InputMap.has_action("toggle_logger")
 		
 		# warning-ignore:return_value_discarded
-		creator.connect("hint_logged", self, "_on_hint_logged")
+		creator.connect("trace_logged", self, "_on_trace_logged")
 		# warning-ignore:return_value_discarded
 		creator.connect("warning_logged", self, "_on_warning_logged")
 		# warning-ignore:return_value_discarded
@@ -238,7 +240,7 @@ class LoggerConsole:
 			visible = !visible
 	
 	
-	func _on_hint_logged(message) -> void:
+	func _on_trace_logged(message) -> void:
 		bbcode_text += "\n" # new_line uses buggy append_bbcode func
 		bbcode_text += message
 	

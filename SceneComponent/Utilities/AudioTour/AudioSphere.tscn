@@ -1,8 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Script/Utilities/AudioTour/AudioSphere.gd" type="Script" id=1]
-[ext_resource path="res://Script/Utilities/Interactable/Interactable.tscn" type="PackedScene" id=2]
+[ext_resource path="res://SceneComponent/Utilities/AudioTour/AudioSphere.gd" type="Script" id=1]
+[ext_resource path="res://SceneComponent/Utilities/Interactable/Interactable.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_intro.ogg" type="AudioStream" id=3]
+
+
 
 
 
