@@ -13,15 +13,9 @@ _global_script_classes=[ {
 "class": "NameGenerator",
 "language": "GDScript",
 "path": "res://Script/Utilities/NameGenerator.gd"
-}, {
-"base": "Navigation",
-"class": "World_Navigator",
-"language": "GDScript",
-"path": "res://Script/Core/WorldNavigation.gd"
 } ]
 _global_script_class_icons={
-"NameGenerator": "",
-"World_Navigator": ""
+"NameGenerator": ""
 }
 
 [application]
@@ -32,15 +26,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-WorldManager="*res://Script/Core/World/World.gd"
 Log="*res://Script/Core/Logger.gd"
-NodeUtilities="*res://Script/Core/Utilities.gd"
-Options="*res://Script/Core/Options.gd"
-Lobby="*res://Script/Core/Network/Lobby.gd"
-InputMapping="*res://Script/Core/InputMapping.gd"
 Hud="*res://Tree/Interface/Hud/Hud.tscn"
-PauseMenu="*res://Tree/Interface/PauseMenu/PauseMenu.tscn"
-MainMenu="*res://Tree/Interface/MainMenu/MainMenu.tscn"
 
 [compression]
 

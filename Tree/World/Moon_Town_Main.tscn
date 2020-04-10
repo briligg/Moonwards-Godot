@@ -1,12 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Moon_Town_Master.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Script/Core/WorldNavigation.gd" type="Script" id=2]
-
-
-
-
-
 
 [sub_resource type="NavigationMesh" id=1]
 sample_partition_type/sample_partition_type = 1
@@ -19,7 +13,6 @@ agent/max_slope = 69.7
 filter/filter_walkable_low_height_spans = true
 
 [node name="world" type="Navigation"]
-script = ExtResource( 2 )
 
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="."]
 navmesh = SubResource( 1 )
