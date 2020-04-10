@@ -9,13 +9,13 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Reference",
-"class": "NameGenerator",
+"base": "Spatial",
+"class": "AMovementController",
 "language": "GDScript",
-"path": "res://Script/Utilities/NameGenerator.gd"
+"path": "res://Script/Component/Actor/AMovementController.gd"
 } ]
 _global_script_class_icons={
-"NameGenerator": ""
+"AMovementController": ""
 }
 
 [application]
@@ -27,7 +27,6 @@ config/icon="res://icon.png"
 [autoload]
 
 Log="*res://Script/Core/Logger.gd"
-Hud="*res://Tree/Interface/Hud/Hud.tscn"
 
 [compression]
 

@@ -8,6 +8,8 @@ func _ready() -> void:
 #	if OS.has_feature("Server"):
 #		_ready_headless()
 #	else:
+	var test_scene = preload("res://_tests/NewDemo/TestScene.tscn")
+	get_tree().change_scene_to(test_scene)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 # 	var arguments = {}
 # 	for argument in OS.get_cmdline_args():
