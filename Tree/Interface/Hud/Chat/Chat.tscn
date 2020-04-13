@@ -9,10 +9,6 @@
 [ext_resource path="res://Tree/Interface/Hud/Chat/Chat.gd" type="Script" id=7]
 [ext_resource path="res://Tree/Interface/Hud/Chat/ChatInput.gd" type="Script" id=8]
 
-
-
-
-
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.392157 )
 

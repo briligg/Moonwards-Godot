@@ -18,30 +18,30 @@ margin_right = 188.0
 margin_bottom = 96.0
 custom_styles/panel = SubResource( 1 )
 
-[node name="H" type="HBoxContainer" parent="."]
+[node name="Parent" type="HBoxContainer" parent="."]
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 502.0
 margin_bottom = 266.0
 alignment = 1
 
-[node name="License" type="VBoxContainer" parent="H"]
+[node name="License" type="VBoxContainer" parent="Parent"]
 margin_right = 240.0
 margin_bottom = 256.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="H/License"]
+[node name="Label" type="Label" parent="Parent/License"]
 margin_right = 240.0
 margin_bottom = 14.0
 text = "License:"
 
-[node name="HSeparator2" type="HSeparator" parent="H/License"]
+[node name="HSeparator2" type="HSeparator" parent="Parent/License"]
 margin_top = 18.0
 margin_right = 240.0
 margin_bottom = 22.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="H/License"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Parent/License"]
 margin_top = 26.0
 margin_right = 240.0
 margin_bottom = 256.0
@@ -55,29 +55,29 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
 
-[node name="VSeparator3" type="VSeparator" parent="H"]
+[node name="VSeparator3" type="VSeparator" parent="Parent"]
 margin_left = 244.0
 margin_right = 248.0
 margin_bottom = 256.0
 
-[node name="Credits" type="VBoxContainer" parent="H"]
+[node name="Credits" type="VBoxContainer" parent="Parent"]
 margin_left = 252.0
 margin_right = 492.0
 margin_bottom = 256.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="H/Credits"]
+[node name="Label" type="Label" parent="Parent/Credits"]
 margin_right = 240.0
 margin_bottom = 14.0
 text = "Credits:"
 
-[node name="HSeparator2" type="HSeparator" parent="H/Credits"]
+[node name="HSeparator2" type="HSeparator" parent="Parent/Credits"]
 margin_top = 18.0
 margin_right = 240.0
 margin_bottom = 22.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="H/Credits"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Parent/Credits"]
 margin_top = 26.0
 margin_right = 240.0
 margin_bottom = 256.0
