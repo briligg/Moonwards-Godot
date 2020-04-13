@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Moon_Town_Master.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Molten_Soil_Reactor/Molten_Soil_Reactor.tscn" type="PackedScene" id=2]
@@ -44,12 +44,8 @@
 [ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Indoor1b.ogg" type="AudioStream" id=42]
 [ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Indoor1a.ogg" type="AudioStream" id=43]
 [ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Indoor.ogg" type="AudioStream" id=44]
-
-
-
-
-
-
+[ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Indoor6.ogg" type="AudioStream" id=45]
+[ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Indoor5.ogg" type="AudioStream" id=46]
 
 
 
@@ -485,8 +481,16 @@ audio_file = ExtResource( 36 )
 [node name="Audio_Tour_Marker_Indoor5" parent="Audio_Tour_Markers" index="8" instance=ExtResource( 34 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5721, 2.55657, -19.857 )
 
+[node name="AudioSphere" parent="Audio_Tour_Markers/Audio_Tour_Marker_Indoor5" index="1" instance=ExtResource( 32 )]
+display_info = "play indoor audio tour 5"
+audio_file = ExtResource( 46 )
+
 [node name="Audio_Tour_Marker_Indoor6" parent="Audio_Tour_Markers" index="9" instance=ExtResource( 34 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.0337, 2.33928, -24.2952 )
+
+[node name="AudioSphere" parent="Audio_Tour_Markers/Audio_Tour_Marker_Indoor6" index="1" instance=ExtResource( 32 )]
+display_info = "play indoor audio tour 6"
+audio_file = ExtResource( 45 )
 
 [node name="Audio_Tour_Marker_Outdoor" parent="Audio_Tour_Markers" index="10" instance=ExtResource( 35 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.064, 6.687, 38.039 )
