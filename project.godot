@@ -12,12 +12,22 @@ _global_script_classes=[ {
 "base": "Spatial",
 "class": "AComponent",
 "language": "GDScript",
-"path": "res://Script/Core/AComponent.gd"
+"path": "res://Script/Component/Core/AComponent.gd"
+}, {
+"base": "Spatial",
+"class": "AEntity",
+"language": "GDScript",
+"path": "res://Script/Entity/Core/AEntity.gd"
 }, {
 "base": "AComponent",
 "class": "AMovementController",
 "language": "GDScript",
 "path": "res://Script/Component/AMovementController.gd"
+}, {
+"base": "AEntity",
+"class": "ActorEntity",
+"language": "GDScript",
+"path": "res://Script/Entity/ActorEntity.gd"
 }, {
 "base": "AComponent",
 "class": "CameraController",
@@ -25,9 +35,19 @@ _global_script_classes=[ {
 "path": "res://SceneComponent/Actor/CameraController.gd"
 }, {
 "base": "Node",
-"class": "Entity",
+"class": "EntitySignals",
 "language": "GDScript",
-"path": "res://Script/Entity/Entity.gd"
+"path": "res://Script/Manager/SignalsManager/EntitySignals.gd"
+}, {
+"base": "Reference",
+"class": "EntityState",
+"language": "GDScript",
+"path": "res://Script/Entity/Core/EntityState.gd"
+}, {
+"base": "Node",
+"class": "EnumHelper",
+"language": "GDScript",
+"path": "res://Script/Manager/HelperClasses/EnumHelper.gd"
 }, {
 "base": "AMovementController",
 "class": "KinematicMovement",
@@ -36,9 +56,13 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "AComponent": "",
+"AEntity": "",
 "AMovementController": "",
+"ActorEntity": "",
 "CameraController": "",
-"Entity": "",
+"EntitySignals": "",
+"EntityState": "",
+"EnumHelper": "",
 "KinematicMovement": ""
 }
 
@@ -51,7 +75,10 @@ config/icon="res://icon.png"
 [autoload]
 
 Log="*res://Script/Manager/Logger.gd"
-WorldConstants="*res://Script/Manager/GlobalState/WorldConstants.gd"
+WorldConstants="*res://Script/Manager/WorldConstants.gd"
+Groups="*res://Script/Manager/GroupsManager/Groups.gd"
+Helpers="*res://Script/Manager/Helpers.gd"
+Signals="*res://Script/Manager/SignalsManager/Signals.gd"
 
 [compression]
 
