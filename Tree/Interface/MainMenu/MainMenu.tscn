@@ -1,14 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Tree/Interface/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Tree/Interface/MainMenu/Hangars_toHorizon.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Interface/MainMenu.tres" type="Theme" id=3]
-[ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/Options.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Tree/Interface/MainMenu/About/About.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Tree/Interface/MainMenu/Lobby/Lobby.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Interface/Fonts/MainMenuFont.tres" type="DynamicFont" id=7]
 [ext_resource path="res://Assets/Interface/Display.tres" type="Theme" id=8]
-
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -26,7 +23,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="H" type="HBoxContainer" parent="."]
+[node name="Top" type="HBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -40,7 +37,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="T" type="TabContainer" parent="H"]
+[node name="Tabs" type="TabContainer" parent="Top"]
 margin_right = 1046.0
 margin_bottom = 677.0
 size_flags_horizontal = 3
@@ -48,28 +45,11 @@ size_flags_vertical = 3
 custom_styles/panel = SubResource( 1 )
 tabs_visible = false
 
-[node name="Empty" type="Control" parent="H/T"]
+[node name="Empty" type="Control" parent="Top/Tabs"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Options" type="MarginContainer" parent="H/T"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-focus_next = NodePath("Options")
-
-[node name="Options" parent="H/T/Options" instance=ExtResource( 4 )]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 1046.0
-margin_bottom = 677.0
-theme = null
-
-[node name="About" parent="H/T" instance=ExtResource( 5 )]
+[node name="About" parent="Top/Tabs" instance=ExtResource( 5 )]
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -80,14 +60,7 @@ margin_top = 0.0
 margin_right = 0.0
 margin_bottom = 0.0
 
-[node name="Lobby" parent="H/T" instance=ExtResource( 6 )]
-visible = false
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 0.0
-margin_bottom = 0.0
-
-[node name="V" type="VBoxContainer" parent="."]
+[node name="Bottom" type="VBoxContainer" parent="."]
 anchor_top = 0.95
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -104,46 +77,44 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="bJoinServer" type="Button" parent="V"]
+[node name="bStart" type="Button" parent="Bottom"]
+margin_right = 1680.0
+margin_bottom = 21.0
+text = "Start Game"
+
+[node name="bJoinServer" type="Button" parent="Bottom"]
+visible = false
 margin_right = 1680.0
 margin_bottom = 21.0
 theme = ExtResource( 8 )
 custom_fonts/font = ExtResource( 7 )
 text = "Join Server"
 
-[node name="bLocalGame" type="Button" parent="V"]
+[node name="bLocalGame" type="Button" parent="Bottom"]
+visible = false
+margin_right = 1680.0
+margin_bottom = 21.0
+theme = ExtResource( 8 )
+custom_fonts/font = ExtResource( 7 )
+text = "Local Game"
+
+[node name="bAbout" type="Button" parent="Bottom"]
 margin_top = 25.0
 margin_right = 1680.0
 margin_bottom = 46.0
 theme = ExtResource( 8 )
 custom_fonts/font = ExtResource( 7 )
-text = "Local Game"
+text = "About"
 
-[node name="bOptions" type="Button" parent="V"]
+[node name="bQuit" type="Button" parent="Bottom"]
 margin_top = 50.0
 margin_right = 1680.0
 margin_bottom = 71.0
 theme = ExtResource( 8 )
 custom_fonts/font = ExtResource( 7 )
-text = "Options"
-
-[node name="bAbout" type="Button" parent="V"]
-margin_top = 75.0
-margin_right = 1680.0
-margin_bottom = 96.0
-theme = ExtResource( 8 )
-custom_fonts/font = ExtResource( 7 )
-text = "About"
-
-[node name="bQuit" type="Button" parent="V"]
-margin_top = 100.0
-margin_right = 1680.0
-margin_bottom = 121.0
-theme = ExtResource( 8 )
-custom_fonts/font = ExtResource( 7 )
 text = "Quit"
-[connection signal="pressed" from="V/bJoinServer" to="." method="_on_bJoinServer_pressed"]
-[connection signal="pressed" from="V/bLocalGame" to="." method="_on_bLocalGame_pressed"]
-[connection signal="pressed" from="V/bOptions" to="." method="_on_bOptions_pressed"]
-[connection signal="pressed" from="V/bAbout" to="." method="_on_bAbout_pressed"]
-[connection signal="pressed" from="V/bQuit" to="." method="_on_bQuit_pressed"]
+[connection signal="pressed" from="Bottom/bStart" to="." method="_on_bStart_pressed"]
+[connection signal="pressed" from="Bottom/bJoinServer" to="." method="_on_bJoinServer_pressed"]
+[connection signal="pressed" from="Bottom/bLocalGame" to="." method="_on_bLocalGame_pressed"]
+[connection signal="pressed" from="Bottom/bAbout" to="." method="_on_bAbout_pressed"]
+[connection signal="pressed" from="Bottom/bQuit" to="." method="_on_bQuit_pressed"]
