@@ -1,13 +1,12 @@
 extends AComponent
 class_name CameraController
 
-export (float, 0, 500) var speed = 5
+export (float, 0, 500) var pos_speed = 15
+export (float, 0, 500) var look_speed = 15
 onready var pivot = $Pivot
 onready var camera_target = $Pivot/CameraTarget
 onready var look_target = $Pivot/LookTarget
 onready var camera = $Camera
-onready var movement_comp = entity.get_component(
-		"AMovementController")
 
 var current_look_position = Vector3()
 export (float) var max_zoom_distance = 1.0
@@ -67,26 +66,26 @@ func _physics_process(delta):
 		if local_to.z > raycast_offset:
 			target_position = pivot.to_global(Vector3(0, 0, max(0.05, raycast_offset - 0.15)))
 	
-	camera.global_transform.origin = camera.global_transform.origin.linear_interpolate(target_position, delta * speed)
+	camera.global_transform.origin = target_position #camera.global_transform.origin.linear_interpolate(target_position, delta * pos_speed)
 	
 	var new_look_position = look_target.global_transform.origin
-	current_look_position = current_look_position.linear_interpolate(new_look_position, delta * speed)
+	current_look_position = new_look_position #current_look_position.linear_interpolate(new_look_position, delta * look_speed)
 	camera.look_at(current_look_position, Vector3(0,1,0))
 
 func _unhandled_input(event):
 	if (event is InputEventMouseMotion):
-		movement_comp.look_dir.x -= event.relative.x * mouse_sensitivity
-		movement_comp.look_dir.y -= event.relative.y * mouse_sensitivity
-		if movement_comp.look_dir.x > 360:
-			movement_comp.look_dir.x = 0
-		elif movement_comp.look_dir.x < 0:
-			movement_comp.look_dir.x = 360
-		if movement_comp.look_dir.y > max_up_aim_angle:
-			movement_comp.look_dir.y = max_up_aim_angle
-		elif movement_comp.look_dir.y < -max_down_aim_angle:
-			movement_comp.look_dir.y = -max_down_aim_angle
+		entity.look_dir.x -= event.relative.x * mouse_sensitivity
+		entity.look_dir.y -= event.relative.y * mouse_sensitivity
+		if entity.look_dir.x > 360:
+			entity.look_dir.x = 0
+		elif entity.look_dir.x < 0:
+			entity.look_dir.x = 360
+		if entity.look_dir.y > max_up_aim_angle:
+			entity.look_dir.y = max_up_aim_angle
+		elif entity.look_dir.y < -max_down_aim_angle:
+			entity.look_dir.y = -max_down_aim_angle
 
-		Rotate(movement_comp.look_dir)
+		Rotate(entity.look_dir)
 
 func Rotate(var direction):
 	pivot.rotation_degrees = Vector3(direction.y, direction.x, 0)
