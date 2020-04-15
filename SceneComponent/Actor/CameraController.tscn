@@ -2,7 +2,8 @@
 
 [ext_resource path="res://SceneComponent/Actor/CameraController.gd" type="Script" id=1]
 
-[node name="CameraController" type="Spatial"]
+[node name="CameraController" type="RemoteTransform"]
+update_rotation = false
 script = ExtResource( 1 )
 
 [node name="Camera" type="Camera" parent="."]
