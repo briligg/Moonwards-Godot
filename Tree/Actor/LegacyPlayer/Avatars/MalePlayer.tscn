@@ -1,25 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/Black.tres" type="Material" id=1]
 [ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/MidnightBlue.tres" type="Material" id=2]
 [ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/Eggplant.tres" type="Material" id=3]
 [ext_resource path="res://Tree/Actor/LegacyPlayer/Avatars/CinnamonSkin.material" type="Material" id=4]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Spatial
-
-func start_walk(speed, direction):
-	if direction:
-		$AnimationPlayer.play(\"Male_MoonWalking\",-1,speed)
-	else:
-		$AnimationPlayer.play(\"Male_MoonWalking\",-1,-speed,true)
-
-func idle():
-	$AnimationPlayer.play(\"Neutral\")
-
-func stop():
-	$AnimationPlayer.stop()
-"
 
 [sub_resource type="Animation" id=2]
 length = 0.0833333
@@ -1106,8 +1090,7 @@ surfaces/3 = {
 "vertex_count": 218
 }
 
-[node name="MalePlayer" type="Spatial"]
-script = SubResource( 1 )
+[node name="Model" type="Spatial"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/CasualStance = SubResource( 2 )

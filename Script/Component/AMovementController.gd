@@ -7,17 +7,11 @@ class_name AMovementController
 export(float) var mass = 70.0
 
 # Velocity of the actor
-var velocity: Vector3 = Vector3()
-
-# The direction in which we're headed
-var heading: Vector3 = Vector3()
+export(Vector3) var velocity = Vector3()
 
 # The angle at which we're looking relative to our transform
-var look_dir: Vector3 = Vector3()
+export(Vector3) var look_dir = Vector3()
 
 # Init parent with component name
-func _init().("AMovementController") -> void:
+func _init().("AMovementController"):
 	pass
-
-func is_grounded() -> bool:
-	return $OnGround.is_colliding()
