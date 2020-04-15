@@ -6,10 +6,6 @@ extends CanvasLayer
 var _active: bool = false
 
 
-func _ready() -> void:
-	hide()
-
-
 func show() -> void:
 	for child in get_children():
 		if child is Control:
