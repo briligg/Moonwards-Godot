@@ -4,10 +4,6 @@ extends AEntity
 class_name ActorEntity
 # Entity class, serves as a medium between Components to communicate.
 
-signal velocity_changed(val)
-signal look_dir_changed(val)
-signal look_rot_changed(val)
-
 var state: ActorEntityState = ActorEntityState.new()
 
 # Spatial Entity common data
