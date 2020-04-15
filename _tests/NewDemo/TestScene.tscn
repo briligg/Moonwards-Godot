@@ -6,6 +6,7 @@
 [node name="Spatial" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.13785, 0.434478, 0.281127 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.19904, 1.78994, 0 )
 
 [node name="Airlock_Bay" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.495213, 0, 0 )
