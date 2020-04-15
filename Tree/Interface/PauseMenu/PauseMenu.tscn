@@ -1,12 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Tree/Interface/PauseMenu/PauseMenu.gd" type="Script" id=1]
-[ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/Options.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tree/Interface/MainMenu/About/About.tscn" type="PackedScene" id=3]
-
-
-
-
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -18,6 +13,7 @@ content_margin_bottom = 10.0
 bg_color = Color( 0.120504, 0.120504, 0.120504, 0.588235 )
 
 [node name="PauseMenu" type="CanvasLayer"]
+pause_mode = 2
 layer = 9
 script = ExtResource( 1 )
 
@@ -29,6 +25,9 @@ margin_top = 64.0
 margin_right = -64.0
 margin_bottom = -64.0
 alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="V" type="VBoxContainer" parent="H"]
 margin_right = 69.0
@@ -36,27 +35,28 @@ margin_bottom = 952.0
 alignment = 1
 
 [node name="bContinue" type="Button" parent="H/V"]
-margin_top = 430.0
+margin_top = 442.0
 margin_right = 69.0
-margin_bottom = 450.0
+margin_bottom = 462.0
 text = "Continue"
 
 [node name="bOptions" type="Button" parent="H/V"]
+visible = false
 margin_top = 454.0
 margin_right = 69.0
 margin_bottom = 474.0
 text = "Options"
 
 [node name="bAbout" type="Button" parent="H/V"]
-margin_top = 478.0
+margin_top = 466.0
 margin_right = 69.0
-margin_bottom = 498.0
+margin_bottom = 486.0
 text = "About"
 
 [node name="bQuit" type="Button" parent="H/V"]
-margin_top = 502.0
+margin_top = 490.0
 margin_right = 69.0
-margin_bottom = 522.0
+margin_bottom = 510.0
 text = "Quit"
 
 [node name="T" type="TabContainer" parent="H"]
@@ -71,13 +71,6 @@ tabs_visible = false
 [node name="Empty" type="Control" parent="H/T"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-
-[node name="Options" parent="H/T" instance=ExtResource( 2 )]
-visible = false
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 0.0
-margin_bottom = 0.0
 
 [node name="About" parent="H/T" instance=ExtResource( 3 )]
 visible = false

@@ -6,7 +6,7 @@ extends CanvasLayer
 onready var tabs: TabContainer = $"H/T"
 
 
-var _can_open: bool = false
+var _can_open: bool = true
 var _open: bool = false
 
 
@@ -54,15 +54,28 @@ func hide(change_mouse_mode: bool = true) -> void:
 
 
 func _on_bContinue_pressed() -> void:
+	#Hide pause and hide anything that was selected in the pause menu.
+	tabs.current_tab = tabs.get_node( "Empty" ).get_position_in_parent()
 	hide()
 
 
 func _on_bOptions_pressed() -> void:
+	#Legacy code: Remove when Options.tscn is no longer needed.
 	tabs.current_tab = 1
 
 
 func _on_bAbout_pressed() -> void:
-	tabs.current_tab = 2
+	#Display the about tab or close it if it is already displayed.
+	#If this crashed, check that the about isntanced scene is named About.
+	#It should be a child of T.
+	assert( tabs.has_node( "About" ) )
+	
+	var about_node : PanelContainer = tabs.get_node( "About" )
+	if about_node.visible :
+		#Hide the about node.
+		tabs.current_tab = tabs.get_node( "Empty" ).get_position_in_parent()
+	else:
+		tabs.current_tab = about_node.get_position_in_parent()
 
 
 func _on_bQuit_pressed() -> void:
