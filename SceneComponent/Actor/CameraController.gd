@@ -3,15 +3,17 @@
 extends AComponent
 class_name CameraController
 
-export(float) var dist: float = .5
-export(float) var max_pitch: float = 55
-var mouse_sensitivity: float = 0.1
-
-var yaw: float = 0.0
-var pitch: float = 0.0
-
 onready var camera: Camera = $Camera
 onready var pivot: Spatial = $Pivot
+
+export(float) var dist: float = .5
+export(float) var max_pitch: float = 55
+export(float) var cull_col_distance: float = 0.1
+onready var excluded_cull_bodies = [entity]
+
+var mouse_sensitivity: float = 0.1
+var yaw: float = 0.0
+var pitch: float = 0.0
 
 func _init().("CameraController"):
 	pass
@@ -19,23 +21,33 @@ func _init().("CameraController"):
 func _ready():
 	yaw = 0.0
 	pitch = 0.0
-	_set_cam_pos()
-	camera.add_exception(entity)
+	_update_cam_pos()
+	camera.set_as_toplevel(true)
+
+func _process(_delta):
+	var _new_rot = Vector3(deg2rad(pitch), deg2rad(yaw), 0.0)
+	camera.set_rotation(_new_rot)
+	_update_cam_pos()
+	entity.ctrl_tform = camera.global_transform
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		var mouse_vec : Vector2 = event.get_relative()
-		
+		var mouse_vec : Vector2 = event.get_relative()		
 		yaw = fmod(yaw - mouse_vec.x * mouse_sensitivity, 360.0)
 		pitch = max(min(pitch - mouse_vec.y * mouse_sensitivity , max_pitch), -max_pitch)
-		
-		var _new_rot = Vector3(deg2rad(pitch), deg2rad(yaw), 0.0)
-		camera.set_rotation(_new_rot)
-		
-		_set_cam_pos()
 
-func _set_cam_pos() -> void:
-	# Ray normal from the exact center of the viewport
-	var r = camera.project_ray_normal(get_viewport().get_visible_rect().size * 0.5)
-	# Set cam position
-	camera.set_translation(pivot.transform.origin - dist * r)
+func _update_cam_pos() -> void:
+
+	var new_cam_pos = entity.global_transform.origin - _get_cam_normal() * dist
+	# Check if the new pos is behind collidable objects
+	var ray = get_world().direct_space_state.intersect_ray(pivot.global_transform.origin, new_cam_pos, excluded_cull_bodies)
+	if not ray.empty():
+		new_cam_pos = ray["position"]
+		
+	camera.global_transform.origin = new_cam_pos
+	pass
+
+# Ray normal from the exact center of the viewport
+func _get_cam_normal() -> Vector3:
+	return camera.project_ray_normal(get_viewport().get_visible_rect().size * 0.5)
+	
