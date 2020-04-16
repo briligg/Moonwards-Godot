@@ -4,17 +4,10 @@
 [ext_resource path="res://SceneComponent/Utilities/Interactable/Interactable.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_intro.ogg" type="AudioStream" id=3]
 
-
-
-
-
-
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.05, 0.05, 0.05 )
 
-[node name="AudioSphere" groups=[
-"SoloAudioPlayer",
-] instance=ExtResource( 2 )]
+[node name="AudioSphere" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
 display_info = "play audio recording"
 
@@ -23,4 +16,5 @@ stream = ExtResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="1"]
 shape = SubResource( 1 )
-[connection signal="interacted_with" from="." to="." method="play_sound"]
+[connection signal="interacted_with" from="." to="." method="_play_sound"]
+[connection signal="finished" from="Audio" to="." method="_stop"]

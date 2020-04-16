@@ -17,6 +17,8 @@ var Menus = MenuSignals.new() setget _set_illegal
 var Hud = HudSignals.new() setget _set_illegal
 var Network = NetworkSignals.new() setget _set_illegal
 var Lod = LodSignals.new() setget _set_illegal
+var Audio = AudioSignals.new() setget _set_illegal
+
 # These are constant instances and should not be set at all.
 func _set_illegal(_val) -> void:
 	Log.warning(self, "_set_illegal","Set invocation is illegal")
