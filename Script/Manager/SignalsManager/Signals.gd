@@ -13,6 +13,7 @@ extends Node
 # Refer to "EntitySignals.gd" for reference.
 
 var Entities = EntitySignals.new() setget _set_manager
+var Audio = AudioSignals.new() setget _set_manager
 
 # These are constant instances and should not be set at all.
 func _set_manager(val):
