@@ -123,10 +123,6 @@ Network="*res://Script/Network/NetworkManager/NetworkManager.gd"
 formats/zlib/compression_level=5
 formats/gzip/compression_level=5
 
-[debug]
-
-settings/crash_handler/message=""
-
 [display]
 
 window/size/width=1920
@@ -380,7 +376,7 @@ hide_extra_info_display={
 
 [physics]
 
-3d/default_gravity=1.6
+common/physics_fps=30
 
 [rendering]
 
