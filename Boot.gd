@@ -11,17 +11,6 @@ func _ready() -> void:
 	var test_scene = preload("res://_tests/NewDemo/TestScene.tscn")
 	get_tree().change_scene_to(test_scene)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-# 	var arguments = {}
-# 	for argument in OS.get_cmdline_args():
-# 	# Parse valid command-line arguments into a dictionary
-# 		if argument.find("=") > -1:
-# 			var key_value = argument.split("=")
-# 			arguments[key_value[0].lstrip("--")] = key_value[1]
-# 	if arguments.has("server"):
-# 		if arguments.server == "true":
-# 			_ready_headless()
-# 	else:
-# 		MainMenu.show()	
 
 
 # func _ready_headless() -> void:

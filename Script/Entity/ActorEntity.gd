@@ -8,5 +8,7 @@ var state: ActorEntityState = ActorEntityState.new()
 
 # Spatial Entity common data
 export(Vector3) var velocity: Vector3 = Vector3.ZERO
+# The controller's transform
+export(Transform) var ctrl_tform: Transform
+
 export(Vector3) var look_dir: Vector3 = Vector3.ZERO
-export(Vector3) var look_rot: Vector3 = Vector3.ZERO
