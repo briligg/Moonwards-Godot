@@ -16,9 +16,6 @@ script = ExtResource( 4 )
 
 [node name="CameraMovementController" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.114031, 0 )
-remote_path = NodePath("..")
-update_position = false
-update_scale = false
 
 [node name="KinematicMovementController" parent="." instance=ExtResource( 1 )]
 
