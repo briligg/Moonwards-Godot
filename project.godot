@@ -50,6 +50,16 @@ _global_script_classes=[ {
 "path": "res://Script/Manager/HelperClasses/EnumHelper.gd"
 }, {
 "base": "Node",
+"class": "GameClient",
+"language": "GDScript",
+"path": "res://Script/Network/GameClient.gd"
+}, {
+"base": "Node",
+"class": "GameServer",
+"language": "GDScript",
+"path": "res://Script/Network/GameServer.gd"
+}, {
+"base": "Node",
 "class": "HudSignals",
 "language": "GDScript",
 "path": "res://Script/Manager/SignalsManager/HudSignals.gd"
@@ -63,6 +73,16 @@ _global_script_classes=[ {
 "class": "MenuSignals",
 "language": "GDScript",
 "path": "res://Script/Manager/SignalsManager/MenuSignals.gd"
+}, {
+"base": "Node",
+"class": "NetworkManager",
+"language": "GDScript",
+"path": "res://Script/Network/NetworkManager/NetworkManager.gd"
+}, {
+"base": "Node",
+"class": "NetworkSignals",
+"language": "GDScript",
+"path": "res://Script/Manager/SignalsManager/NetworkSignals.gd"
 } ]
 _global_script_class_icons={
 "AComponent": "",
@@ -73,9 +93,13 @@ _global_script_class_icons={
 "CameraController": "",
 "EntitySignals": "",
 "EnumHelper": "",
+"GameClient": "",
+"GameServer": "",
 "HudSignals": "",
 "KinematicMovement": "",
-"MenuSignals": ""
+"MenuSignals": "",
+"NetworkManager": "",
+"NetworkSignals": ""
 }
 
 [application]
@@ -87,11 +111,12 @@ config/icon="res://icon.png"
 [autoload]
 
 Log="*res://Script/Manager/Logger.gd"
-WorldConstants="*res://Script/Manager/WorldConstants.gd"
-Groups="*res://Script/Manager/GroupsManager/Groups.gd"
+Signals="*res://Script/Manager/SignalsManager/SignalsManager.gd"
 Helpers="*res://Script/Manager/Helpers.gd"
-Signals="*res://Script/Manager/SignalsManager/Signals.gd"
+Groups="*res://Script/Manager/GroupsManager/GroupsManager.gd"
 CmdLineArgs="*res://Script/Manager/CmdLineArgs.gd"
+WorldConstants="*res://Script/Manager/WorldConstants.gd"
+Network="*res://Script/Network/NetworkManager/NetworkManager.gd"
 
 [compression]
 

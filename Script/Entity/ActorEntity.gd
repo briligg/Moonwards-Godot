@@ -4,11 +4,16 @@ extends AEntity
 class_name ActorEntity
 # Entity class, serves as a medium between Components to communicate.
 
+## Spatial Entity common data
+# The current `state` of the entity. 
+# Contains metadata in regards to what entity is currently doing.
 var state: ActorEntityState = ActorEntityState.new()
 
-# Spatial Entity common data
-export(Vector3) var velocity: Vector3 = Vector3.ZERO
-# The controller's transform
-export(Transform) var ctrl_tform: Transform
+# Velocity of the actor
+export(Vector3) var velocity = Vector3()
 
-export(Vector3) var look_dir: Vector3 = Vector3.ZERO
+# The angle at which we're looking relative to our transform
+export(Vector3) var look_dir = Vector3()
+
+# The `controller`'s transform
+export(Transform) var ctrl_tform: Transform

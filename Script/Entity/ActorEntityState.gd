@@ -8,6 +8,6 @@ enum State {
 	IN_AIR = 4,
 	INTERACTING = 8,
 	}
-	
+
 var state: int = State.IDLE
-var interactor: Node
+var interactor: Node = null

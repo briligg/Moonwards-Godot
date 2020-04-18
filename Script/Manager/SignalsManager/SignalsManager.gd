@@ -12,10 +12,11 @@ extends Node
 
 # Refer to "EntitySignals.gd" for reference.
 
-var Entities = EntitySignals.new() setget _set_manager
-var Menus = MenuSignals.new() setget _set_manager
-var Hud = HudSignals.new() setget _set_manager
+var Entities = EntitySignals.new() setget _set_illegal
+var Menus = MenuSignals.new() setget _set_illegal
+var Hud = HudSignals.new() setget _set_illegal
+var Network = NetworkSignals.new() setget _set_illegal
 
 # These are constant instances and should not be set at all.
-func _set_manager(val):
-	Log.warning(self, "_set_manager","Set invocation is illegal")
+func _set_illegal(_val) -> void:
+	Log.warning(self, "_set_illegal","Set invocation is illegal")
