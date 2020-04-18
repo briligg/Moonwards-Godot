@@ -13,7 +13,7 @@ extends Node
 # Refer to "EntitySignals.gd" for reference.
 
 var Entities = EntitySignals.new() setget _set_manager
-var Menus = MenuSignals.new() setget _set_manager
+var Hud = HudSignals.new() setget _set_manager
 
 # These are constant instances and should not be set at all.
 func _set_manager(val):

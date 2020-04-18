@@ -1,5 +1,5 @@
 extends Node
-class_name MenuSignals
+class_name HudSignals
 
 # Define the signal's string name.
 const EXTRA_INFO_DISPLAYED : String = "extra_info_displayed"
