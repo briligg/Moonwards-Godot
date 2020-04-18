@@ -18,7 +18,7 @@ func _ready() -> void :
 	set_process_input(false)
 	
 	#Listen for extra info to be shown.
-	Signals.Menus.connect(Signals.Menus.EXTRA_INFO_DISPLAYED, self, "_popup")
+	Signals.Hud.connect(Signals.Hud.EXTRA_INFO_DISPLAYED, self, "_popup")
 
 func _popup(title_text : String, information_text : String) -> void :
 	#Make the appropriate nodes have their needed text.
