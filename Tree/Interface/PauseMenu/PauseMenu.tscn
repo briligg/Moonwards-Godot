@@ -40,13 +40,6 @@ margin_right = 69.0
 margin_bottom = 462.0
 text = "Continue"
 
-[node name="bOptions" type="Button" parent="Parent/Buttons"]
-visible = false
-margin_top = 454.0
-margin_right = 69.0
-margin_bottom = 474.0
-text = "Options"
-
 [node name="bAbout" type="Button" parent="Parent/Buttons"]
 margin_top = 466.0
 margin_right = 69.0
@@ -84,6 +77,5 @@ margin_right = 0.0
 margin_bottom = 0.0
 custom_styles/panel = SubResource( 2 )
 [connection signal="pressed" from="Parent/Buttons/bContinue" to="." method="_on_bContinue_pressed"]
-[connection signal="pressed" from="Parent/Buttons/bOptions" to="." method="_on_bOptions_pressed"]
 [connection signal="pressed" from="Parent/Buttons/bAbout" to="." method="_on_bAbout_pressed"]
 [connection signal="pressed" from="Parent/Buttons/bQuit" to="." method="_on_bQuit_pressed"]

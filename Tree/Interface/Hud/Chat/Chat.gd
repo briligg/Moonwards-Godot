@@ -57,10 +57,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_LineEdit_text_entered(new_text: String) -> void:
 	if new_text != "":
-		
-		#var username : String = "[color=#DB7900]" + Options.username +  ":[/color]: "
-		#rpc("_append_text_to_chat", username + new_text )
-		rpc("_append_text_to_chat", new_text )
+		_append_text_to_chat(new_text)
 	
 	_chat_input_node.clear()
 	_chat_input_node.release_focus()
@@ -68,10 +65,8 @@ func _on_LineEdit_text_entered(new_text: String) -> void:
 	
 	set_deferred("_active", false)
 
-remotesync func _append_text_to_chat(new_text: String) -> void:
+func _append_text_to_chat(new_text: String) -> void:
 	_chat_display_node.newline()
-	# TODO: Add timestap prefix
-	# TODO: Add serverside logging
 
 	#warning-ignore:return_value_discarded
 	_chat_display_node.append_bbcode(new_text)
