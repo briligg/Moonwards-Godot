@@ -28,8 +28,6 @@ func _input(event: InputEvent) -> void:
 		
 		if _open:
 			hide()
-		else:
-			show()
 
 func set_openable(state: bool) -> void:
 	_can_open = state
@@ -55,19 +53,15 @@ func hide(change_mouse_mode: bool = true) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_bContinue_pressed() -> void:
-	#Hide pause and hide anything that was selected in the pause menu.
+	#hide pause and hide anything that was selected in the pause menu.
 	tabs.current_tab = tabs.get_node( "Empty" ).get_position_in_parent()
 	hide()
-
-func _on_bOptions_pressed() -> void:
-	#Legacy code: Remove when Options.tscn is no longer needed.
-	tabs.current_tab = 1
 
 func _on_bAbout_pressed() -> void:
 	#Display the about tab or close it if it is already displayed.
 	var about_node : PanelContainer = tabs.get_node( "About" )
 	if about_node.visible :
-		#Hide the about node.
+		#hide the about node.
 		tabs.current_tab = tabs.get_node( "Empty" ).get_position_in_parent()
 	else:
 		tabs.current_tab = about_node.get_position_in_parent()
