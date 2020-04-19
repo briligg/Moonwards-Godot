@@ -30,7 +30,7 @@ func _on_bQuit_pressed() -> void:
 
 func _on_bStart_pressed() -> void:
 	#This is a temporary button with temporary code.
-	return
+	Signals.Menus.emit_signal(Signals.Menus.START_GAME_PRESSED)
 #	var test_scene = preload("res://_tests/NewDemo/TestScene.tscn")
 #	get_tree().change_scene_to(test_scene)
 #	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

@@ -114,7 +114,6 @@ theme = ExtResource( 8 )
 custom_fonts/font = ExtResource( 7 )
 text = "Quit"
 [connection signal="pressed" from="Bottom/bStart" to="." method="_on_bStart_pressed"]
-[connection signal="pressed" from="Bottom/bJoinServer" to="." method="_on_bJoinServer_pressed"]
 [connection signal="pressed" from="Bottom/bLocalGame" to="." method="_on_bLocalGame_pressed"]
 [connection signal="pressed" from="Bottom/bAbout" to="." method="_on_bAbout_pressed"]
 [connection signal="pressed" from="Bottom/bQuit" to="." method="_on_bQuit_pressed"]
