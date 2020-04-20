@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MoonwardsLogo2019_300.png-8d780c285d301d6a5d805444d3fe8e8a.stex"
+path="res://.import/MoonwardsLogo2020_HeavyOutline_500px.png-746ccc1f92b900d13e6ec0fcb9aceb39.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Interface/Textures/MoonwardsLogo2019_300.png"
-dest_files=[ "res://.import/MoonwardsLogo2019_300.png-8d780c285d301d6a5d805444d3fe8e8a.stex" ]
+source_file="res://Assets/Interface/Textures/MoonwardsLogo2020_HeavyOutline_500px.png"
+dest_files=[ "res://.import/MoonwardsLogo2020_HeavyOutline_500px.png-746ccc1f92b900d13e6ec0fcb9aceb39.stex" ]
 
 [params]
 
