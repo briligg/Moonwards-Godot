@@ -15,10 +15,12 @@ var mouse_sensitivity: float = 0.1
 var yaw: float = 0.0
 var pitch: float = 0.0
 
-func _init().("CameraController"):
+func _init().("CameraController", true):
 	pass
 	
 func _ready():
+	if enabled == false:
+		camera.set_current(false)
 	yaw = 0.0
 	pitch = 0.0
 	_update_cam_pos()
@@ -28,7 +30,10 @@ func _process(_delta):
 	var _new_rot = Vector3(deg2rad(pitch), deg2rad(yaw), 0.0)
 	camera.set_rotation(_new_rot)
 	_update_cam_pos()
-	entity.ctrl_tform = camera.global_transform
+	var t = camera.global_transform.origin
+	entity.look_dir.y = entity.global_transform.origin.y
+	entity.look_dir.x = t.x
+	entity.look_dir.z = t.z
 
 func _input(event):
 	if event is InputEventMouseMotion:
