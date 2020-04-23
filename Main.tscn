@@ -1,8 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://_tests/NewDemo/TestScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
 
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
-menu_scene = ExtResource( 1 )

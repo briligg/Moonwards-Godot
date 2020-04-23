@@ -9,12 +9,12 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Spatial",
+"base": "MwSpatial",
 "class": "AComponent",
 "language": "GDScript",
 "path": "res://Script/Component/Core/AComponent.gd"
 }, {
-"base": "Spatial",
+"base": "MwSpatial",
 "class": "AEntity",
 "language": "GDScript",
 "path": "res://Script/Entity/Core/AEntity.gd"
@@ -23,6 +23,11 @@ _global_script_classes=[ {
 "class": "AMovementController",
 "language": "GDScript",
 "path": "res://Script/Component/AMovementController.gd"
+}, {
+"base": "Node",
+"class": "ANetworkInstance",
+"language": "GDScript",
+"path": "res://Script/Network/NetworkManager/ANetworkInstance.gd"
 }, {
 "base": "AEntity",
 "class": "ActorEntity",
@@ -39,55 +44,76 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/CameraController.gd"
 }, {
-"base": "Node",
+"base": "Reference",
 "class": "EntitySignals",
 "language": "GDScript",
 "path": "res://Script/Manager/SignalsManager/EntitySignals.gd"
 }, {
-"base": "Node",
+"base": "Reference",
 "class": "EnumHelper",
 "language": "GDScript",
 "path": "res://Script/Manager/HelperClasses/EnumHelper.gd"
 }, {
-"base": "Node",
+"base": "ANetworkInstance",
 "class": "GameClient",
 "language": "GDScript",
 "path": "res://Script/Network/GameClient.gd"
 }, {
-"base": "Node",
+"base": "ANetworkInstance",
 "class": "GameServer",
 "language": "GDScript",
 "path": "res://Script/Network/GameServer.gd"
 }, {
-"base": "Node",
+"base": "Reference",
 "class": "HudSignals",
 "language": "GDScript",
 "path": "res://Script/Manager/SignalsManager/HudSignals.gd"
 }, {
+"base": "AComponent",
+"class": "InputController",
+"language": "GDScript",
+"path": "res://SceneComponent/Actor/InputController.gd"
+}, {
 "base": "AMovementController",
 "class": "KinematicMovement",
 "language": "GDScript",
-"path": "res://SceneComponent/Actor/KinematicMovement.gd"
+"path": "res://SceneComponent/Actor/HumanoidMovement.gd"
 }, {
-"base": "Node",
+"base": "Reference",
 "class": "MenuSignals",
 "language": "GDScript",
 "path": "res://Script/Manager/SignalsManager/MenuSignals.gd"
+}, {
+"base": "Node",
+"class": "MwNode",
+"language": "GDScript",
+"path": "res://Script/ExtensionClass/MwNode.gd"
+}, {
+"base": "Spatial",
+"class": "MwSpatial",
+"language": "GDScript",
+"path": "res://Script/ExtensionClass/MwSpatial.gd"
 }, {
 "base": "Node",
 "class": "NetworkManager",
 "language": "GDScript",
 "path": "res://Script/Network/NetworkManager/NetworkManager.gd"
 }, {
-"base": "Node",
+"base": "Reference",
 "class": "NetworkSignals",
 "language": "GDScript",
 "path": "res://Script/Manager/SignalsManager/NetworkSignals.gd"
+}, {
+"base": "Reference",
+"class": "PlayerData",
+"language": "GDScript",
+"path": "res://Script/Network/PlayerData.gd"
 } ]
 _global_script_class_icons={
 "AComponent": "",
 "AEntity": "",
 "AMovementController": "",
+"ANetworkInstance": "",
 "ActorEntity": "",
 "ActorEntityState": "",
 "CameraController": "",
@@ -96,26 +122,31 @@ _global_script_class_icons={
 "GameClient": "",
 "GameServer": "",
 "HudSignals": "",
+"InputController": "",
 "KinematicMovement": "",
 "MenuSignals": "",
+"MwNode": "",
+"MwSpatial": "",
 "NetworkManager": "",
-"NetworkSignals": ""
+"NetworkSignals": "",
+"PlayerData": ""
 }
 
 [application]
 
 config/name="CernansPromise"
-run/main_scene="res://Boot.tscn"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Log="*res://Script/Manager/Logger.gd"
-Signals="*res://Script/Manager/SignalsManager/SignalsManager.gd"
-Helpers="*res://Script/Manager/Helpers.gd"
-Groups="*res://Script/Manager/GroupsManager/GroupsManager.gd"
-CmdLineArgs="*res://Script/Manager/CmdLineArgs.gd"
 WorldConstants="*res://Script/Manager/WorldConstants.gd"
+Log="*res://Script/Manager/Logger.gd"
+Helpers="*res://Script/Manager/Helpers.gd"
+CmdLineArgs="*res://Script/Manager/CmdLineArgs.gd"
+Signals="*res://Script/Manager/SignalsManager/SignalsManager.gd"
+Groups="*res://Script/Manager/GroupsManager/GroupsManager.gd"
+Scene="*res://Script/Manager/SceneManager/SceneManager.gd"
 Network="*res://Script/Network/NetworkManager/NetworkManager.gd"
 
 [compression]
@@ -126,6 +157,8 @@ formats/gzip/compression_level=5
 [debug]
 
 settings/crash_handler/message=""
+gdscript/warnings/unused_signal=false
+gdscript/warnings/return_value_discarded=false
 
 [display]
 

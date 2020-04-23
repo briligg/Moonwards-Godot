@@ -59,13 +59,21 @@ func crset_unreliable(caller: Node, method: String, val, exclude_list: Array = [
 
 ### Figure out a better way to handle this, if godot allows
 func crpc_signal(instance: Object, sig_name: String, param = null):
-	if get_tree().is_network_server():
-		crpc(self, "_handle_crpc_signal", [instance.name, sig_name, param])
+	if is_network_master():
+		crpc(self, "_client_crpc_signal", [instance.name, sig_name, param], [1])
 	else:
-		rpc_id(1, "_handle_crpc_signal",  [instance.name, sig_name, param])
+		rpc_id(1, "_server_crpc_signal",  [instance.name, sig_name, param])
 
 ### Figure out a better way to handle this, if godot allows
-remote func _handle_crpc_signal(params: Array):
+master func _server_crpc_signal(params: Array):
 	Log.trace(self, "", "Received RPC signal: %s.%s - param: %s" % [params[0], params[1], params[2]])
-	Signals.get(params[0]).emit_signal(params[1], params[2])
+	Signals.get(str(params[0])).emit_signal(params[1], params[2])
 
+### Figure out a better way to handle this, if godot allows
+puppet func _client_crpc_signal(params: Array):
+	# Exit if not sent by the server
+	if get_tree().get_rpc_sender_id() != 1:
+		return
+		
+	Log.trace(self, "", "Received RPC signal: %s.%s - param: %s" % [params[0], params[1], params[2]])
+	Signals.get(str(params[0])).emit_signal(params[1], params[2])
