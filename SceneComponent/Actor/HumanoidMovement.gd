@@ -38,7 +38,7 @@ func _process_client(delta):
 	update_state()
 
 func _process_server(delta):
-	rotate_body(delta)
+#	rotate_body(delta)
 	# If server, we set the authoritative pos to be beamed
 	var v = horizontal_vector
 	v += vertical_vector

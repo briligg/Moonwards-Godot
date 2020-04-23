@@ -16,7 +16,7 @@ master var input: Vector3 = Vector3.ZERO
 
 # `REMOTE`
 # Look dir of our actor
-remote var look_dir: Vector3 = Vector3.ZERO
+master var look_dir: Vector3 = Vector3.ZERO
 
 # `PUPPET`
 # The world position of this entity on the server
