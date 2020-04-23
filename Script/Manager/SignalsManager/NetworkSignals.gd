@@ -9,7 +9,7 @@ const name = "Network"
 # Fired when a request is received for a game to be started. 
 const GAME_SERVER_REQUESTED: String = "game_server_requested"
 
-signal game_server_requested
+signal game_server_requested(is_host_player)
 
 # Fired when the process is initialized as a game server & is ready to receive connections
 const GAME_SERVER_READY: String = "game_server_ready"
@@ -33,3 +33,13 @@ signal game_client_ready
 const CLIENT_LOAD_FINISHED: String = "client_load_finished"
 
 signal client_load_finished(player_data)
+
+
+### IN GAME EVENTS
+
+# Fired when a chat message is received from the server
+# `sender_id: int` the peer_id of the sender
+# `message: String` the message
+const CHAT_MESSAGE_RECEIVED: String = "chat_message_received"
+
+signal chat_message_received(sender_id, message)

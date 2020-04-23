@@ -13,5 +13,12 @@ func _init():
 			args[arg_vals] = true
 	#print(args)
 
+func is_true(key_name: String) -> bool:
+	if not args.has(key_name):
+		return false
+	if args[key_name] == "true":
+		return true
+	return false
+
 func _set_illegal(_val) -> void:
 	Log.warnings(self, "_set_cmd", "Set invocation is illegal.")
