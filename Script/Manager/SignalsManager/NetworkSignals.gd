@@ -19,7 +19,7 @@ signal game_server_ready
 # Fired when the process is requested to be a client
 const GAME_CLIENT_REQUESTED: String = "game_client_requested"
 
-signal game_client_requested
+signal game_client_requested(ip, port)
 
 # Fired when the process is initiated as a client, is connected & is ready
 const GAME_CLIENT_READY: String = "game_client_ready"

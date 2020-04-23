@@ -37,4 +37,4 @@ func _on_bStart_pressed() -> void:
 
 
 func _on_bJoinServer_pressed():
-	Signals.Network.emit_signal(Signals.Network.GAME_CLIENT_REQUESTED)
+	Signals.Network.emit_signal(Signals.Network.GAME_CLIENT_REQUESTED, "127.0.0.1", 5000)
