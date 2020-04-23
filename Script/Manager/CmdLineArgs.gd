@@ -13,5 +13,5 @@ func _init():
 			args[arg_vals] = true
 	#print(args)
 
-func _set_illegal(val) -> void:
+func _set_illegal(_val) -> void:
 	Log.warnings(self, "_set_cmd", "Set invocation is illegal.")
