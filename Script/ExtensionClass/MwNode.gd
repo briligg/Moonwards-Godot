@@ -1,6 +1,8 @@
 extends Node
 class_name MwNode
 
+var owner_peer_id: int = -1
+
 func _physics_process(delta):
 	_process_network(delta)
 
