@@ -14,4 +14,4 @@ func _run_normal() -> void:
 	get_tree().change_scene(Scene.main_menu)
 
 func _run_headless_server() -> void:
-	Signals.Network.emit_signal(Signals.Network.game_server_requested, false)
+	Signals.Network.emit_signal(Signals.Network.GAME_SERVER_REQUESTED, false)
