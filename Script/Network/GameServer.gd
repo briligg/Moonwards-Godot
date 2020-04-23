@@ -44,18 +44,23 @@ func _get_spawn() -> Vector3:
 func _player_connected(peer_id) -> void:
 	Log.trace(self, "", "CONNECTION INITIATED: %s" %peer_id)
 	var player_data = PlayerData.new(peer_id, str(peer_id), _get_spawn())
-	players[player_data.peer_id] = player_data
 	# Send existing players to newly conencted peer for loading
 	var data = []
+	# Add the player himself so they spawn themselves
+	data.append(player_data.serialize())
+	# Add the rest of the existing players
 	for player in players.values():
 		data.append(player.serialize())
 	rpc_id(peer_id, "initial_client_load_entities", data)
+	
 	# Need to dispose of the yield if the player fails to load.
 	# Wait until we receive a signal that the player has loaded.
 	### This needs to be moved to its own helper & provided a timeout.
 	while yield(Signals.Network, Signals.Network.CLIENT_LOAD_FINISHED) != peer_id:
 		pass
+	
 	# Resume spawning the player.
+	players[player_data.peer_id] = player_data	
 	crpc(self, "add_player", player_data.serialize(), [peer_id])
 	Log.trace(self, "", "CONNECTED: %s" %peer_id)
 
