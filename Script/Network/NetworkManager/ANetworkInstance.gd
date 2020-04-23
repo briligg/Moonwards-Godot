@@ -36,7 +36,7 @@ puppetsync func add_player(player_data) -> void:
 	var p = Scene.PLAYER_SCENE.instance()
 	p.transform.origin = player_data.initial_pos
 	p.name = str(player_data.peer_id)
-	p.peer_id = player_data.peer_id
+	p.owner_peer_id = player_data.peer_id
 	p.set_network_master(1)
 	players_container.add_child(p)
 

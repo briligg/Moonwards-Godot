@@ -1,8 +1,6 @@
 extends MwSpatial
 class_name AEntity
 
-var peer_id: int = -1
-
 var components: Dictionary = {}
 
 func _ready():

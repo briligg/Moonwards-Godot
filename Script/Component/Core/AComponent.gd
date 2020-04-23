@@ -15,7 +15,7 @@ func _ready() -> void:
 	entity.add_component(comp_name, self)
 	add_to_group(Groups.COMPONENTS)
 	# If we're not owned by this client, we're disabled.
-	if get_tree().get_network_unique_id() != entity.peer_id and require_net_owner:
+	if get_tree().get_network_unique_id() != entity.owner_peer_id and require_net_owner:
 		enabled = false
 		set_process(false)
 		set_physics_process(false)
