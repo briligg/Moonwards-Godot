@@ -6,7 +6,7 @@ var world: Node
 var players_container: Node
 
 # Array of PlayerData
-puppetsync var players: Dictionary = {}
+var players: Dictionary = {}
 
 func _ready():
 	world = Scene.change_scene_to_instance(Scene.world_scene)
@@ -16,13 +16,16 @@ func _ready():
 	players_container.name = "Players"
 	world.add_child(players_container)
 
+# `PUPPETSYNC`
 puppetsync func remove_player(peer_id: int) -> void:
 	players.erase(peer_id)
 	players_container.get_node(str(peer_id)).queue_free()
 
+# `PUPPETSYNC`
 # Adds a new player to the game
 # `player_data` `PlayerData` (or dictionary in serialized form) type
 puppetsync func add_player(player_data) -> void:
+	Log.trace(self, "", "ADDING PLAYER %s" %player_data)
 	var p = Scene.PLAYER_SCENE.instance()
 	p.transform.origin = player_data.initial_pos
 	p.name = str(player_data.peer_id)
@@ -65,11 +68,13 @@ func crpc_signal(instance: Object, sig_name: String, param = null):
 		rpc_id(1, "_server_crpc_signal",  [instance.name, sig_name, param])
 
 ### Figure out a better way to handle this, if godot allows
+# `MASTER`
 master func _server_crpc_signal(params: Array):
 	Log.trace(self, "", "Received RPC signal: %s.%s - param: %s" % [params[0], params[1], params[2]])
 	Signals.get(str(params[0])).emit_signal(params[1], params[2])
 
 ### Figure out a better way to handle this, if godot allows
+#`PUPPET`
 puppet func _client_crpc_signal(params: Array):
 	# Exit if not sent by the server
 	if get_tree().get_rpc_sender_id() != 1:
