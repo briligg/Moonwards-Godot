@@ -78,12 +78,12 @@ __meta__ = {
 }
 
 [node name="bStart" type="Button" parent="Bottom"]
+visible = false
 margin_right = 1680.0
 margin_bottom = 21.0
 text = "Start Game"
 
 [node name="bJoinServer" type="Button" parent="Bottom"]
-visible = false
 margin_right = 1680.0
 margin_bottom = 21.0
 theme = ExtResource( 8 )
@@ -91,25 +91,25 @@ custom_fonts/font = ExtResource( 7 )
 text = "Join Server"
 
 [node name="bLocalGame" type="Button" parent="Bottom"]
-visible = false
-margin_right = 1680.0
-margin_bottom = 21.0
-theme = ExtResource( 8 )
-custom_fonts/font = ExtResource( 7 )
-text = "Local Game"
-
-[node name="bAbout" type="Button" parent="Bottom"]
 margin_top = 25.0
 margin_right = 1680.0
 margin_bottom = 46.0
 theme = ExtResource( 8 )
 custom_fonts/font = ExtResource( 7 )
-text = "About"
+text = "Local Game"
 
-[node name="bQuit" type="Button" parent="Bottom"]
+[node name="bAbout" type="Button" parent="Bottom"]
 margin_top = 50.0
 margin_right = 1680.0
 margin_bottom = 71.0
+theme = ExtResource( 8 )
+custom_fonts/font = ExtResource( 7 )
+text = "About"
+
+[node name="bQuit" type="Button" parent="Bottom"]
+margin_top = 75.0
+margin_right = 1680.0
+margin_bottom = 96.0
 theme = ExtResource( 8 )
 custom_fonts/font = ExtResource( 7 )
 text = "Quit"
