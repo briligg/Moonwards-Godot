@@ -1,4 +1,4 @@
-extends Node
+extends Reference
 class_name NetworkSignals
 
 # Fired when a request is received for a game to be started. 
