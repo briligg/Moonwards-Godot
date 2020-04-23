@@ -19,13 +19,13 @@ func _set_game_server(is_host_player: bool = false) -> void:
 	var root = get_tree().get_root()
 	network_instance = GameServer.new(DEFAULT_PORT, DEFAULT_MAX_PLAYERS, is_host_player)
 	network_instance.name = "NetworkInstance"
-	root.add_child(network_instance)
+	root.call_deferred("add_child", network_instance)
 	
 func _set_game_client(_ip, _port) -> void:
 	var root = get_tree().get_root()
 	network_instance = GameClient.new(_ip, _port)
 	network_instance.name = "NetworkInstance"
-	root.add_child(network_instance)
+	root.call_deferred("add_child", network_instance)
 
 # Controlled RPC Wrapper with added control.
 func crpc(caller: Node, method: String, val):
