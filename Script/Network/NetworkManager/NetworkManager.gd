@@ -7,7 +7,7 @@ const SERVER_IP: String = "127.0.0.1"
 const SERVER_PORT: int = 5000
 const MAX_PLAYERS: int = 1000
 
-var _network_instance = null
+var network_instance = null
 
 func _ready():
 	Signals.Network.connect(Signals.Network.GAME_SERVER_REQUESTED, 
@@ -15,8 +15,34 @@ func _ready():
 	Signals.Network.connect(Signals.Network.GAME_CLIENT_REQUESTED, 
 			self, "_set_game_client")
 
-func _set_game_server() -> void:
-	_network_instance = GameServer.new(SERVER_PORT, MAX_PLAYERS)
+func _set_game_server(is_host_player: bool) -> void:
+	var root = get_tree().get_root()
+	network_instance = GameServer.new(SERVER_PORT, MAX_PLAYERS, is_host_player)
+	network_instance.name = "NetworkInstance"
+	root.add_child(network_instance)
 	
 func _set_game_client() -> void:
-	_network_instance = GameClient.new(SERVER_IP, SERVER_PORT)
+	var root = get_tree().get_root()
+	network_instance = GameClient.new(SERVER_IP, SERVER_PORT)
+	network_instance.name = "NetworkInstance"
+	root.add_child(network_instance)
+
+# Controlled RPC Wrapper with added control.
+func crpc(caller: Node, method: String, val):
+	network_instance.crpc(caller, method, val)
+
+# Controlled RPC Wrapper with added control.
+func crpc_unreliable(caller: Node, method: String, val):
+	network_instance.crpc_unreliable(caller, method, val)
+
+# Controlled RSET Wrapper with added control.
+func crset(caller: Node, method: String, val):
+	network_instance.crset(caller, method, val)
+
+# Controlled RSET Wrapper with added control.
+func crset_unreliable(caller: Node, method: String, val):
+	network_instance.crset_unreliable(caller, method, val)
+
+# Controlled signal RPC
+func crpc_signal(instance: Node, sig_name: String, param):
+	network_instance.crpc_signal(instance, sig_name, param)
