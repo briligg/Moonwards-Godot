@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Audio_Tour_Markers_Set.glb-7ac7670aa607f11089e0cf88c63f3abf.scn"
+path="res://.import/Solar_Panel_Unit_Markers.glb-01627e2a757588aef4fd87a9c282d3b3.scn"
 
 [deps]
 
-source_file="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Markers_Set.glb"
-dest_files=[ "res://.import/Audio_Tour_Markers_Set.glb-7ac7670aa607f11089e0cf88c63f3abf.scn" ]
+source_file="res://Assets/MoonTown/Models/Solar_Panel_Units/Solar_Panel_Unit_Markers.glb"
+dest_files=[ "res://.import/Solar_Panel_Unit_Markers.glb-01627e2a757588aef4fd87a9c282d3b3.scn" ]
 
 [params]
 
