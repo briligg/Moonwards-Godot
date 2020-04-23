@@ -179,7 +179,9 @@ func _log_message(level: int, emitter: Object, function: String, message: String
 	
 	if log_to_disk and _can_log_to_disk:
 		_log_to_disk(log_string)
-
+	print(log_string)
+	if level == LEVELS.CRITICAL or level == LEVELS.ERROR:
+		print_stack()
 
 func _log_to_disk(log_string: String) -> void:
 	# warning-ignore:return_value_discarded
