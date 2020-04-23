@@ -16,8 +16,8 @@ func serialize() -> Dictionary:
 			"initial_pos": initial_pos,
 			}
 
-func deserialize(data: Dictionary) -> PlayerData:
-	peer_id = data["peer_id"]
-	name = data["name"]
-	initial_pos = data["initial_pos"]
+func deserialize(data: Dictionary): #-> PlayerData: - causes a memory leak for some reason.
+	peer_id = int(data["peer_id"])
+	name = str(data["name"])
+	initial_pos = data["initial_pos"] as Vector3
 	return self
