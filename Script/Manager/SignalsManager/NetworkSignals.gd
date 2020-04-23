@@ -32,7 +32,7 @@ signal game_client_ready
 # param `player_data`: The player data object
 const CLIENT_LOAD_FINISHED: String = "client_load_finished"
 
-signal client_load_finished(player_data)
+signal client_load_finished(peer_id)
 
 
 ### IN GAME EVENTS

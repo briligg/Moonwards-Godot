@@ -25,7 +25,14 @@ puppetsync func remove_player(peer_id: int) -> void:
 # Adds a new player to the game
 # `player_data` `PlayerData` (or dictionary in serialized form) type
 puppetsync func add_player(player_data) -> void:
-	Log.trace(self, "", "ADDING PLAYER %s" %player_data)
+	Log.trace(self, "", "ADDING PLAYER %s %s" %[player_data.peer_id, player_data.name])
+	# Temporary until generic component instancing is available
+	if player_data.is_empty == true:
+		var n = Node.new()
+		n.name = str(player_data.peer_id)
+		players_container.add_child(n)
+		return
+	
 	var p = Scene.PLAYER_SCENE.instance()
 	p.transform.origin = player_data.initial_pos
 	p.name = str(player_data.peer_id)
@@ -62,6 +69,7 @@ func crset_unreliable(caller: Node, method: String, val, exclude_list: Array = [
 
 ### Figure out a better way to handle this, if godot allows
 func crpc_signal(instance: Object, sig_name: String, param = null):
+	Log.trace(self, "crpc_signal", "Received signal crpc: %s %s %s" %[instance, sig_name, param])
 	if is_network_master():
 		crpc(self, "_client_crpc_signal", [instance.name, sig_name, param], [1])
 	else:
