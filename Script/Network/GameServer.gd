@@ -31,10 +31,11 @@ func _host_game() -> void:
 func _start_game() -> void:
 	Log.trace(self, "", "Server instance started.")
 	# Add lobby host player
-	if self.is_host_player:
-		var player = PlayerData.new(1, "Server", _get_spawn())
-		players[1] = player
-		add_player(player)
+	var player = PlayerData.new(1, "Server", _get_spawn())
+	if not self.is_host_player:
+		player.is_empty = true
+	players[1] = player
+	add_player(player)
 
 ### Temporary
 func _get_spawn() -> Vector3:
@@ -55,7 +56,7 @@ func _player_connected(peer_id) -> void:
 	while yield(Signals.Network, Signals.Network.CLIENT_LOAD_FINISHED) != peer_id:
 		pass
 	# Resume spawning the player.
-	crpc(self, "add_player", player_data.serialize(),[peer_id])
+	crpc(self, "add_player", player_data.serialize(), [peer_id])
 	Log.trace(self, "", "CONNECTED: %s" %peer_id)
 
 func _player_disconnected(peer_id) -> void:
