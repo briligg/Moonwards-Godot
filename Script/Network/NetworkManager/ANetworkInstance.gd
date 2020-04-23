@@ -70,7 +70,7 @@ func crset_unreliable(caller: Node, method: String, val, exclude_list: Array = [
 ### Figure out a better way to handle this, if godot allows
 func crpc_signal(instance: Object, sig_name: String, param = null):
 	Log.trace(self, "crpc_signal", "Received signal crpc: %s %s %s" %[instance, sig_name, param])
-	if is_network_master():
+	if get_tree().is_network_server():
 		crpc(self, "_client_crpc_signal", [instance.name, sig_name, param], [1])
 	else:
 		rpc_id(1, "_server_crpc_signal",  [instance.name, sig_name, param])

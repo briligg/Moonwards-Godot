@@ -6,7 +6,8 @@ func _init().("InputController", true):
 
 func _ready():
 	pass
-func _process(_delta):
+	
+func _process_client(_delta):
 	entity.input = Vector3.ZERO
 	handle_input()
 
@@ -23,7 +24,3 @@ func handle_input() -> void:
 		entity.input += entity.transform.basis.x
 	elif Input.is_action_pressed("move_right"):
 		entity.input += -entity.transform.basis.x 
-
-	# Account for diagonal movement
-	
-	#rset("horizontal_vector", horizontal_vector)
