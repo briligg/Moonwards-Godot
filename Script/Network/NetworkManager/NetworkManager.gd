@@ -15,7 +15,7 @@ func _ready():
 	Signals.Network.connect(Signals.Network.GAME_CLIENT_REQUESTED, 
 			self, "_set_game_client")
 
-func _set_game_server(is_host_player: bool) -> void:
+func _set_game_server(is_host_player: bool = false) -> void:
 	var root = get_tree().get_root()
 	network_instance = GameServer.new(SERVER_PORT, MAX_PLAYERS, is_host_player)
 	network_instance.name = "NetworkInstance"
