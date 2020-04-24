@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Moon_Town_Master.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Constructs/Second_Gallery/Second_Gallery.tscn" type="PackedScene" id=2]
@@ -29,6 +29,7 @@
 [ext_resource path="res://Assets/MoonTown/Models/Melt_In_Place_Station/Melt_In_Place_Station.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Assets/MoonTown/Models/Radio_Dish_Earth/Radio_Dish_Earth.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Assets/MoonTown/Models/Molten_Soil_Reactor/Molten_Soil_Reactor.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Assets/MoonTown/Models/Earth/Earth.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Assets/MoonTown/Models/Solar_Panel_Units/Solar_Panel_Unit.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Assets/MoonTown/Models/Flywheel_Towers/Flywheel_Tower.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Caramel_Matte.material" type="Material" id=33]
@@ -1194,3 +1195,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0723152, 0 )
 
 [node name="shape0" type="CollisionShape" parent="Lalande_MoonTown/Road/Road2" index="0"]
 shape = SubResource( 30 )
+
+[node name="Earth" parent="." index="55" instance=ExtResource( 30 )]
