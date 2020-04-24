@@ -1196,4 +1196,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0723152, 0 )
 [node name="shape0" type="CollisionShape" parent="Lalande_MoonTown/Road/Road2" index="0"]
 shape = SubResource( 30 )
 
-[node name="Earth" parent="." index="55" instance=ExtResource( 30 )]
+[node name="Earth" parent="." index="9" instance=ExtResource( 30 )]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 30000, 0 )
