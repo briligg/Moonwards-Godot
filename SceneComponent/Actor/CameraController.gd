@@ -19,8 +19,8 @@ func _init().("CameraController", true):
 	pass
 	
 func _ready():
-	if enabled == false:
-		camera.set_current(false)
+	if enabled == true:
+		camera.set_current(true)
 	yaw = 0.0
 	pitch = 0.0
 	_update_cam_pos()
