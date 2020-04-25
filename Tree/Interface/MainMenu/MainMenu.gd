@@ -4,7 +4,7 @@ extends CanvasLayer
 """
 
 #Const variable nodes.
-onready var CUSTOM_SERVER_ADDRESS_FIELD : TextEdit = get_node( "HBoxContainer/Panel/HBoxContainer/StartGame/InputServer/Ipv4Address") setget _crash
+onready var CUSTOM_SERVER_ADDRESS_FIELD : TextEdit = get_node( "HBoxContainer/Panel/Tab/HBoxContainer/StartGame/InputServer/Ipv4Address") setget _crash
 
 
 #warning-ignore:unused_argument
