@@ -16,7 +16,12 @@ margin_left = -324.0
 margin_top = -180.0
 margin_right = 188.0
 margin_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Parent" type="HBoxContainer" parent="."]
 margin_left = 10.0
