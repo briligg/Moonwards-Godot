@@ -108,11 +108,6 @@ _global_script_classes=[ {
 "class": "NetworkSignals",
 "language": "GDScript",
 "path": "res://Script/Manager/SignalsManager/NetworkSignals.gd"
-}, {
-"base": "Reference",
-"class": "PlayerData",
-"language": "GDScript",
-"path": "res://Script/Network/PlayerData.gd"
 } ]
 _global_script_class_icons={
 "AComponent": "",
@@ -134,8 +129,7 @@ _global_script_class_icons={
 "MwNode": "",
 "MwSpatial": "",
 "NetworkManager": "",
-"NetworkSignals": "",
-"PlayerData": ""
+"NetworkSignals": ""
 }
 
 [application]
