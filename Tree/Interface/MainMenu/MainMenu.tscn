@@ -1,13 +1,29 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Tree/Interface/MainMenu/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://Tree/Interface/MainMenu/Hangars_toHorizon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Interface/Textures/menu_splash.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Interface/MainMenu.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Interface/Textures/MoonwardsLogo2020_HeavyOutline_500px.png" type="Texture" id=4]
 [ext_resource path="res://Tree/Interface/MainMenu/About/About.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Interface/Fonts/MainMenuFont.tres" type="DynamicFont" id=7]
-[ext_resource path="res://Assets/Interface/Display.tres" type="Theme" id=8]
+[ext_resource path="res://Tree/Interface/MainMenu/MainMenuHBox.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Interface/StyleBoxes/ChatLineEdit.tres" type="StyleBox" id=7]
+[ext_resource path="res://Tree/Interface/MainMenu/MainMenuTab.gd" type="Script" id=8]
 
-[sub_resource type="StyleBoxEmpty" id=1]
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.588235 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 18
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
 
 [node name="MainMenu" type="CanvasLayer"]
 layer = 10
@@ -20,101 +36,248 @@ texture = ExtResource( 2 )
 expand = true
 stretch_mode = 7
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Top" type="HBoxContainer" parent="."]
+[node name="Logo" type="TextureRect" parent="."]
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -522.0
-margin_top = -397.0
-margin_right = 524.0
-margin_bottom = 280.0
-theme = ExtResource( 3 )
+anchor_bottom = 0.25
+margin_left = -480.0
+margin_right = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 5
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Tabs" type="TabContainer" parent="Top"]
-margin_right = 1046.0
-margin_bottom = 677.0
+[node name="Quit" type="Button" parent="."]
+anchor_top = 0.92
+anchor_right = 0.07
+anchor_bottom = 1.0
+grow_vertical = 0
+rect_pivot_offset = Vector2( 53.8794, 87.2272 )
+focus_neighbour_top = NodePath("../HBoxContainer/VBoxContainer/Other")
+focus_neighbour_right = NodePath("../About")
+focus_neighbour_bottom = NodePath("../HBoxContainer/VBoxContainer/StartGame")
+theme = ExtResource( 3 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="About" type="Button" parent="."]
+anchor_left = 0.93
+anchor_top = 0.92
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_pivot_offset = Vector2( 53.8794, 87.2272 )
+focus_neighbour_left = NodePath("../Quit")
+focus_neighbour_top = NodePath("../HBoxContainer/VBoxContainer/Other")
+focus_neighbour_bottom = NodePath("../HBoxContainer/VBoxContainer/StartGame")
+theme = ExtResource( 3 )
+text = "About"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.2
+anchor_top = 0.3
+anchor_right = 0.8
+anchor_bottom = 0.8
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource( 3 )
+custom_constants/separation = 120
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 157.0
+margin_bottom = 540.0
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartGame" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 197.0
+margin_right = 157.0
+margin_bottom = 232.0
+focus_neighbour_left = NodePath("../../../Quit")
+focus_neighbour_top = NodePath("../Other")
+focus_neighbour_right = NodePath("../../../About")
+focus_neighbour_bottom = NodePath("../Settings")
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "  Start Game  "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 252.0
+margin_right = 123.0
+margin_bottom = 287.0
+focus_neighbour_left = NodePath("../../../Quit")
+focus_neighbour_top = NodePath("../StartGame")
+focus_neighbour_right = NodePath("../../../About")
+focus_neighbour_bottom = NodePath("../Other")
+size_flags_horizontal = 0
+text = "  Settings  "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Other" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 307.0
+margin_right = 93.0
+margin_bottom = 342.0
+focus_neighbour_left = NodePath("../../../Quit")
+focus_neighbour_top = NodePath("../Settings")
+focus_neighbour_right = NodePath("../../../About")
+focus_neighbour_bottom = NodePath("../StartGame")
+size_flags_horizontal = 0
+text = "  Other  "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="PanelContainer" parent="HBoxContainer"]
+margin_left = 277.0
+margin_right = 1152.0
+margin_bottom = 540.0
+rect_min_size = Vector2( 150, 180 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = SubResource( 1 )
+
+[node name="Tab" type="TabContainer" parent="HBoxContainer/Panel"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 873.0
+margin_bottom = 538.0
 tabs_visible = false
+use_hidden_tabs_for_min_size = true
+script = ExtResource( 8 )
 
-[node name="Empty" type="Control" parent="Top/Tabs"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Panel/Tab"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = -51.0
 
-[node name="About" parent="Top/Tabs" instance=ExtResource( 5 )]
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 0.0
-margin_bottom = 0.0
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/Panel/Tab/HBoxContainer"]
+margin_right = 14.0
+margin_bottom = 485.0
+rect_min_size = Vector2( 14, 0 )
+custom_styles/separator = SubResource( 2 )
 
-[node name="Bottom" type="VBoxContainer" parent="."]
-anchor_top = 0.95
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 120.0
-margin_top = 100.0
-margin_right = -120.0
-margin_bottom = -250.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="StartGame" type="VBoxContainer" parent="HBoxContainer/Panel/Tab/HBoxContainer"]
+margin_left = 18.0
+margin_right = 318.0
+margin_bottom = 485.0
+custom_constants/separation = 33
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/Panel/Tab/HBoxContainer/StartGame"]
+margin_right = 300.0
+margin_bottom = 8.0
+rect_min_size = Vector2( 0, 8 )
+custom_styles/separator = SubResource( 3 )
+
+[node name="JoinMainServer" type="Button" parent="HBoxContainer/Panel/Tab/HBoxContainer/StartGame"]
+margin_top = 41.0
+margin_right = 190.0
+margin_bottom = 76.0
 size_flags_horizontal = 0
-size_flags_vertical = 0
-theme = ExtResource( 3 )
+text = "Join Main Server"
+
+[node name="StartCustomServer" type="Button" parent="HBoxContainer/Panel/Tab/HBoxContainer/StartGame"]
+margin_top = 109.0
+margin_right = 234.0
+margin_bottom = 144.0
+size_flags_horizontal = 0
+text = "Start Custom Server"
+
+[node name="JoinServer" type="Button" parent="HBoxContainer/Panel/Tab/HBoxContainer/StartGame"]
+margin_top = 177.0
+margin_right = 127.0
+margin_bottom = 212.0
+size_flags_horizontal = 0
+text = "Join Server"
+
+[node name="InputServer" type="VBoxContainer" parent="HBoxContainer/Panel/Tab/HBoxContainer/StartGame"]
+margin_top = 245.0
+margin_right = 300.0
+margin_bottom = 314.0
+custom_constants/separation = -6
+
+[node name="Label" type="Label" parent="HBoxContainer/Panel/Tab/HBoxContainer/StartGame/InputServer"]
+margin_right = 300.0
+margin_bottom = 35.0
+text = "ipv4 address:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="bStart" type="Button" parent="Bottom"]
+[node name="Ipv4Address" type="TextEdit" parent="HBoxContainer/Panel/Tab/HBoxContainer/StartGame/InputServer"]
+margin_top = 29.0
+margin_right = 300.0
+margin_bottom = 69.0
+rect_min_size = Vector2( 300, 40 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_styles/focus = ExtResource( 7 )
+custom_styles/normal = ExtResource( 7 )
+text = "127.0.0.1"
+
+[node name="EmptySettingsTab" type="Control" parent="HBoxContainer/Panel/Tab"]
 visible = false
-margin_right = 1680.0
-margin_bottom = 21.0
-text = "Start Game"
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -831.0
+margin_bottom = -496.0
 
-[node name="bJoinServer" type="Button" parent="Bottom"]
-margin_right = 1680.0
-margin_bottom = 21.0
-theme = ExtResource( 8 )
-custom_fonts/font = ExtResource( 7 )
-text = "Join Server"
+[node name="EmptyOtherTab" type="Control" parent="HBoxContainer/Panel/Tab"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
 
-[node name="bLocalGame" type="Button" parent="Bottom"]
-margin_top = 25.0
-margin_right = 1680.0
-margin_bottom = 46.0
-theme = ExtResource( 8 )
-custom_fonts/font = ExtResource( 7 )
-text = "Local Game"
-
-[node name="bAbout" type="Button" parent="Bottom"]
-margin_top = 50.0
-margin_right = 1680.0
-margin_bottom = 71.0
-theme = ExtResource( 8 )
-custom_fonts/font = ExtResource( 7 )
-text = "About"
-
-[node name="bQuit" type="Button" parent="Bottom"]
-margin_top = 75.0
-margin_right = 1680.0
-margin_bottom = 96.0
-theme = ExtResource( 8 )
-custom_fonts/font = ExtResource( 7 )
-text = "Quit"
-[connection signal="pressed" from="Bottom/bStart" to="." method="_on_bStart_pressed"]
-[connection signal="pressed" from="Bottom/bJoinServer" to="." method="_on_bJoinServer_pressed"]
-[connection signal="pressed" from="Bottom/bLocalGame" to="." method="_on_bLocalGame_pressed"]
-[connection signal="pressed" from="Bottom/bAbout" to="." method="_on_bAbout_pressed"]
-[connection signal="pressed" from="Bottom/bQuit" to="." method="_on_bQuit_pressed"]
+[node name="About" parent="HBoxContainer" instance=ExtResource( 5 )]
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 1152.0
+margin_bottom = 540.0
+focus_neighbour_left = NodePath("../../Quit")
+focus_neighbour_top = NodePath("../VBoxContainer/Other")
+focus_neighbour_bottom = NodePath("../VBoxContainer/StartGame")
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="About" to="." method="_on_About_pressed"]
+[connection signal="focus_entered" from="HBoxContainer/VBoxContainer/StartGame" to="HBoxContainer" method="_on_StartGame_highlighted"]
+[connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/StartGame" to="HBoxContainer" method="_on_StartGame_highlighted"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/StartGame" to="." method="_on_StartGame_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/StartGame" to="HBoxContainer/Panel/Tab" method="_on_StartGame_pressed"]
+[connection signal="focus_entered" from="HBoxContainer/VBoxContainer/Settings" to="HBoxContainer" method="_on_Settings_highlighted"]
+[connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/Settings" to="HBoxContainer" method="_on_Settings_highlighted"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Settings" to="HBoxContainer/Panel/Tab" method="_on_Settings_pressed"]
+[connection signal="focus_entered" from="HBoxContainer/VBoxContainer/Other" to="HBoxContainer" method="_on_Other_highlighted"]
+[connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/Other" to="HBoxContainer" method="_on_Other_highlighted"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Other" to="HBoxContainer/Panel/Tab" method="_on_Other_pressed"]
+[connection signal="pressed" from="HBoxContainer/Panel/Tab/HBoxContainer/StartGame/JoinMainServer" to="." method="_on_JoinMainServer_pressed"]
+[connection signal="pressed" from="HBoxContainer/Panel/Tab/HBoxContainer/StartGame/StartCustomServer" to="." method="_on_StartCustomServer_pressed"]
+[connection signal="pressed" from="HBoxContainer/Panel/Tab/HBoxContainer/StartGame/JoinServer" to="." method="_on_JoinServer_pressed"]

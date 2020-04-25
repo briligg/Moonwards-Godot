@@ -3,8 +3,14 @@ extends CanvasLayer
 	MainMenu Singleton Scene Script
 """
 
-onready var tabs: TabContainer = $"Top/Tabs"
+#Const variable nodes.
+onready var CUSTOM_SERVER_ADDRESS_FIELD : TextEdit = get_node( "HBoxContainer/Panel/HBoxContainer/StartGame/InputServer/Ipv4Address") setget _crash
 
+
+#warning-ignore:unused_argument
+func _crash(value) -> void :
+	#Do not set the constant node variables.
+	assert(true == false)
 
 #Show the main menu.
 func show() -> void:
@@ -18,23 +24,38 @@ func hide() -> void:
 		if i is Control:
 			i.visible = false
 
-func _on_bLocalGame_pressed() -> void:
-	Signals.Network.emit_signal(Signals.Network.GAME_SERVER_REQUESTED, true)
-
-func _on_bAbout_pressed() -> void:
-	tabs.current_tab = get_node( "Top/Tabs/About" ).get_position_in_parent()
-
-func _on_bQuit_pressed() -> void:
+func _on_Quit_pressed() -> void:
 #	Options.save_user_settings()
 	get_tree().quit()
 
-func _on_bStart_pressed() -> void:
-	#This is a temporary button with temporary code.
-	return
-#	var test_scene = preload("res://_tests/NewDemo/TestScene.tscn")
-#	get_tree().change_scene_to(test_scene)
-#	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+#Toggle the About scene.
+func _on_About_pressed():
+	var about : PanelContainer = get_node("HBoxContainer/About")
+	var panel : PanelContainer = get_node("HBoxContainer/Panel")
+	var v_box : VBoxContainer = get_node("HBoxContainer/VBoxContainer")
+	var about_button : Button = get_node("About")
+	
+	if about.visible:
+		about.hide()
+		panel.show()
+		v_box.show()
+		about_button.text = "About"
+	
+	else:
+		panel.hide()
+		v_box.hide()
+		about.show()
+		about_button.text = "Hide About"
 
+func _on_StartGame_pressed():
+	pass
 
-func _on_bJoinServer_pressed():
+func _on_JoinMainServer_pressed():
+	Signals.Network.emit_signal(Signals.Network.GAME_SERVER_REQUESTED, true)
+
+func _on_StartCustomServer_pressed():
 	Signals.Network.emit_signal(Signals.Network.GAME_CLIENT_REQUESTED, "127.0.0.1", 5000)
+
+func _on_JoinServer_pressed():
+	var ipv4_address : String = CUSTOM_SERVER_ADDRESS_FIELD.text
+	Signals.Network.emit_signal(Signals.Network.GAME_CLIENT_REQUESTED, ipv4_address, 5000)
