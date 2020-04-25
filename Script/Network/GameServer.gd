@@ -31,11 +31,11 @@ func _host_game() -> void:
 func _start_game() -> void:
 	Log.trace(self, "", "Server instance started.")
 	# Add lobby host player
-	var player = PlayerData.new(1, "Server", _get_spawn())
+	var entity = EntityData.new(1, "Server", _get_spawn())
 	if not self.is_host_player:
-		player.is_empty = true
-	players[1] = player
-	add_player(player)
+		entity.is_empty = true
+	entities[1] = entity
+	add_player(entity)
 
 ### Temporary
 func _get_spawn() -> Vector3:
@@ -43,14 +43,14 @@ func _get_spawn() -> Vector3:
 
 func _player_connected(peer_id) -> void:
 	Log.trace(self, "", "CONNECTION INITIATED: %s" %peer_id)
-	var player_data = PlayerData.new(peer_id, str(peer_id), _get_spawn())
+	var entity_data = EntityData.new(peer_id, str(peer_id), _get_spawn())
 	# Send existing players to newly conencted peer for loading
 	var data = []
 	# Add the player himself so they spawn themselves
-	data.append(player_data.serialize())
+	data.append(entity_data.serialize())
 	# Add the rest of the existing players
-	for player in players.values():
-		data.append(player.serialize())
+	for entity in entities.values():
+		data.append(entity.serialize())
 	rpc_id(peer_id, "initial_client_load_entities", data)
 	
 	# Need to dispose of the yield if the player fails to load.
@@ -60,8 +60,8 @@ func _player_connected(peer_id) -> void:
 		pass
 	
 	# Resume spawning the player.
-	players[player_data.peer_id] = player_data	
-	crpc(self, "add_player", player_data.serialize(), [peer_id])
+	entities[entity_data.peer_id] = entity_data
+	crpc(self, "add_player", entity_data.serialize(), [peer_id])
 	Log.trace(self, "", "CONNECTED: %s" %peer_id)
 
 func _player_disconnected(peer_id) -> void:

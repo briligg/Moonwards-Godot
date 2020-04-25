@@ -29,7 +29,7 @@ signal game_client_ready
 ### LOADING & DATA MANAGEMENT
 
 # Fired when a connected player client has finished loading.
-# param `player_data`: The player data object
+# param `peer_id`: The player's peer_id
 const CLIENT_LOAD_FINISHED: String = "client_load_finished"
 
 signal client_load_finished(peer_id)

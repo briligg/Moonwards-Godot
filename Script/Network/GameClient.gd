@@ -33,13 +33,13 @@ func _server_disconnected():
 func _connected_fail():
 	Log.warning(self, "", "CONNECTION FAILED!")
 
-# The initial loading of all existing players upon connection.
-puppet func initial_client_load_entities(players_data: Array) -> void:
-	for p_data in players_data:
-		var p = PlayerData.new().deserialize(p_data)
-		self.players[p.peer_id] = p
-	for player in self.players.values():
-		add_player(player)
+# The initial loading of all existing entities upon connection.
+puppet func initial_client_load_entities(entities_data: Array) -> void:
+	for e_data in entities_data:
+		var p = EntityData.new().deserialize(e_data)
+		self.entities[p.peer_id] = p
+	for entity in self.entities.values():
+		add_player(entity)
 	
 	crpc_signal(Signals.Network, Signals.Network.CLIENT_LOAD_FINISHED, self.peer_id)
-	Log.trace(self, "", "LOADED PLAYERS %s" %players)
+	Log.trace(self, "", "LOADED ENTITIES %s" %entities)
