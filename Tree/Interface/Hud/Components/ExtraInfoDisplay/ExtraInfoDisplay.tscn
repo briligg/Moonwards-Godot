@@ -2,8 +2,9 @@
 
 [ext_resource path="res://Assets/Interface/ExtraInfoDisplay.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Interface/Fonts/ExtraInfoDisplayTitledjv_bold.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Tree/Interface/Components/ExtraInfoDisplay/ExtraInfoDisplay.gd" type="Script" id=3]
+[ext_resource path="res://Tree/Interface/Hud/Components/ExtraInfoDisplay/ExtraInfoDisplay.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Interface/StyleBoxes/ExtraInfoDisplayBgPanel.tres" type="StyleBox" id=4]
+
 
 
 [node name="ExtraInfoDisplay" type="PanelContainer"]

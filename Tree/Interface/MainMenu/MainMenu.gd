@@ -51,10 +51,11 @@ func _on_StartGame_pressed():
 	pass
 
 func _on_JoinMainServer_pressed():
-	Signals.Network.emit_signal(Signals.Network.GAME_SERVER_REQUESTED, true)
+	# Until we have config files
+	_on_JoinServer_pressed()
 
 func _on_StartCustomServer_pressed():
-	Signals.Network.emit_signal(Signals.Network.GAME_CLIENT_REQUESTED, "127.0.0.1", 5000)
+	Signals.Network.emit_signal(Signals.Network.GAME_SERVER_REQUESTED, 5000)
 
 func _on_JoinServer_pressed():
 	var ipv4_address : String = CUSTOM_SERVER_ADDRESS_FIELD.text
