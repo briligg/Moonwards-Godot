@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Models/Athlete_Rover/Athlete_Rover_Prop.glb" type="PackedScene" id=1]
+
+[node name="Athlete_Rover_Prop" instance=ExtResource( 1 )]

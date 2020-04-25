@@ -20,3 +20,6 @@ shape = SubResource( 1 )
 [node name="CollisionShape3" type="CollisionShape" parent="MirrorTowerFrame/StaticBody" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -40.7241, 44.2424 )
 shape = SubResource( 1 )
+
+[node name="MirrorFrame_A" parent="MirrorTowerFrame" index="2"]
+transform = Transform( 0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 0, 0, 0 )

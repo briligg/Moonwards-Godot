@@ -31,6 +31,6 @@ shape = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="GIProbe" type="GIProbe" parent="." index="1"]
-transform = Transform( 0.983991, 0, -0.178218, 0, 1, 0, 0.178218, 0, 0.983991, 67.2454, 47.1444, -255.608 )
-extents = Vector3( 48.28, 54.6459, 308.31 )
+transform = Transform( 0.983991, 0, -0.178218, 0, 1, 0, 0.178218, 0, 0.983991, 70.993, 47.1444, -270.598 )
+extents = Vector3( 48.28, 54.6459, 286.701 )
 data = SubResource( 3 )

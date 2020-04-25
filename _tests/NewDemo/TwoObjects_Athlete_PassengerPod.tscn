@@ -1,0 +1,2257 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Models/Athlete_Rover/Athlete_Rover_Prop.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/SharedAssets/Materials/Matte/Pistachio_Matte.material" type="Material" id=2]
+[ext_resource path="res://Assets/MoonTown/Models/Ground_Passenger_Pod/Ground_Passenger_Pod.tscn" type="PackedScene" id=3]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Athlete_Rover_Prop" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -301.862, 0, -301.489 )
+
+[node name="Athlete_Rover_Prop2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -266.864, 0, -301.489 )
+
+[node name="Athlete_Rover_Prop3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -236.173, 0, -301.489 )
+
+[node name="Athlete_Rover_Prop4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -207.402, 0, -301.489 )
+
+[node name="Athlete_Rover_Prop5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.798, 0, -301.489 )
+
+[node name="Athlete_Rover_Prop6" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -148.498, 0, -301.489 )
+
+[node name="Athlete_Rover_Prop7" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 0, -301.489 )
+
+[node name="Athlete_Rover_Prop8" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6009, 0, -301.489 )
+
+[node name="Athlete_Rover_Prop9" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.0955, 0, -301.489 )
+
+[node name="Athlete_Rover_Prop18" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9254, -3.05176e-05, -301.489 )
+
+[node name="Athlete_Rover_Prop17" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0726, -3.05176e-05, -301.489 )
+
+[node name="Athlete_Rover_Prop16" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.764, -3.05176e-05, -301.489 )
+
+[node name="Athlete_Rover_Prop15" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5352, -3.05176e-05, -301.489 )
+
+[node name="Athlete_Rover_Prop14" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.139, -3.05176e-05, -301.489 )
+
+[node name="Athlete_Rover_Prop13" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 129.439, -3.05176e-05, -301.489 )
+
+[node name="Athlete_Rover_Prop12" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160.937, -3.05176e-05, -301.489 )
+
+[node name="Athlete_Rover_Prop11" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 189.336, -3.05176e-05, -301.489 )
+
+[node name="Athlete_Rover_Prop10" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 219.841, -3.05176e-05, -301.489 )
+
+[node name="Athlete_Rover_Prop19" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 248.203, -3.05176e-05, -301.489 )
+
+[node name="Athlete_Rover_Prop20" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 277.312, -3.05176e-05, -301.489 )
+
+[node name="Athlete_Rover_Prop21" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 305.674, -3.05176e-05, -301.489 )
+
+[node name="Athlete_Rover_Prop42" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -301.862, 0, -276.513 )
+
+[node name="Athlete_Rover_Prop41" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -266.864, 0, -276.513 )
+
+[node name="Athlete_Rover_Prop40" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -236.173, 0, -276.513 )
+
+[node name="Athlete_Rover_Prop39" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -207.402, 0, -276.513 )
+
+[node name="Athlete_Rover_Prop38" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.798, 0, -276.513 )
+
+[node name="Athlete_Rover_Prop37" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -148.498, 0, -276.513 )
+
+[node name="Athlete_Rover_Prop36" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 0, -276.513 )
+
+[node name="Athlete_Rover_Prop35" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6009, 0, -276.513 )
+
+[node name="Athlete_Rover_Prop34" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.0955, 0, -276.513 )
+
+[node name="Athlete_Rover_Prop33" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9254, -3.05176e-05, -276.513 )
+
+[node name="Athlete_Rover_Prop32" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0726, -3.05176e-05, -276.513 )
+
+[node name="Athlete_Rover_Prop31" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.764, -3.05176e-05, -276.513 )
+
+[node name="Athlete_Rover_Prop30" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5352, -3.05176e-05, -276.513 )
+
+[node name="Athlete_Rover_Prop29" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.139, -3.05176e-05, -276.513 )
+
+[node name="Athlete_Rover_Prop28" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 129.439, -3.05176e-05, -276.513 )
+
+[node name="Athlete_Rover_Prop27" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160.937, -3.05176e-05, -276.513 )
+
+[node name="Athlete_Rover_Prop26" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 189.336, -3.05176e-05, -276.513 )
+
+[node name="Athlete_Rover_Prop25" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 219.841, -3.05176e-05, -276.513 )
+
+[node name="Athlete_Rover_Prop24" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 248.203, -3.05176e-05, -276.513 )
+
+[node name="Athlete_Rover_Prop23" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 277.312, -3.05176e-05, -276.513 )
+
+[node name="Athlete_Rover_Prop22" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 305.674, -3.05176e-05, -276.513 )
+
+[node name="Athlete_Rover_Prop63" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -301.862, 0, -251.536 )
+
+[node name="Athlete_Rover_Prop62" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -266.864, 0, -251.536 )
+
+[node name="Athlete_Rover_Prop61" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -236.173, 0, -251.536 )
+
+[node name="Athlete_Rover_Prop60" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -207.402, 0, -251.536 )
+
+[node name="Athlete_Rover_Prop59" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.798, 0, -251.536 )
+
+[node name="Athlete_Rover_Prop58" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -148.498, 0, -251.536 )
+
+[node name="Athlete_Rover_Prop57" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 0, -251.536 )
+
+[node name="Athlete_Rover_Prop56" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6009, 0, -251.536 )
+
+[node name="Athlete_Rover_Prop55" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.0955, 0, -251.536 )
+
+[node name="Athlete_Rover_Prop54" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9254, -3.05176e-05, -251.536 )
+
+[node name="Athlete_Rover_Prop53" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0726, -3.05176e-05, -251.536 )
+
+[node name="Athlete_Rover_Prop52" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.764, -3.05176e-05, -251.536 )
+
+[node name="Athlete_Rover_Prop51" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5352, -3.05176e-05, -251.536 )
+
+[node name="Athlete_Rover_Prop50" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.139, -3.05176e-05, -251.536 )
+
+[node name="Athlete_Rover_Prop49" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 129.439, -3.05176e-05, -251.536 )
+
+[node name="Athlete_Rover_Prop48" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160.937, -3.05176e-05, -251.536 )
+
+[node name="Athlete_Rover_Prop47" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 189.336, -3.05176e-05, -251.536 )
+
+[node name="Athlete_Rover_Prop46" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 219.841, -3.05176e-05, -251.536 )
+
+[node name="Athlete_Rover_Prop45" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 248.203, -3.05176e-05, -251.536 )
+
+[node name="Athlete_Rover_Prop44" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 277.312, -3.05176e-05, -251.536 )
+
+[node name="Athlete_Rover_Prop43" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 305.674, -3.05176e-05, -251.536 )
+
+[node name="Athlete_Rover_Prop84" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -301.862, 0, -225.48 )
+
+[node name="Athlete_Rover_Prop83" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -266.864, 0, -225.48 )
+
+[node name="Athlete_Rover_Prop82" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -236.173, 0, -225.48 )
+
+[node name="Athlete_Rover_Prop81" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -207.402, 0, -225.48 )
+
+[node name="Athlete_Rover_Prop80" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.798, 0, -225.48 )
+
+[node name="Athlete_Rover_Prop79" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -148.498, 0, -225.48 )
+
+[node name="Athlete_Rover_Prop78" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 0, -225.48 )
+
+[node name="Athlete_Rover_Prop77" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6009, 0, -225.48 )
+
+[node name="Athlete_Rover_Prop76" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.0955, 0, -225.48 )
+
+[node name="Athlete_Rover_Prop75" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9254, -3.05176e-05, -225.48 )
+
+[node name="Athlete_Rover_Prop74" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0726, -3.05176e-05, -225.48 )
+
+[node name="Athlete_Rover_Prop73" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.764, -3.05176e-05, -225.48 )
+
+[node name="Athlete_Rover_Prop72" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5352, -3.05176e-05, -225.48 )
+
+[node name="Athlete_Rover_Prop71" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.139, -3.05176e-05, -225.48 )
+
+[node name="Athlete_Rover_Prop70" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 129.439, -3.05176e-05, -225.48 )
+
+[node name="Athlete_Rover_Prop69" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160.937, -3.05176e-05, -225.48 )
+
+[node name="Athlete_Rover_Prop68" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 189.336, -3.05176e-05, -225.48 )
+
+[node name="Athlete_Rover_Prop67" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 219.841, -3.05176e-05, -225.48 )
+
+[node name="Athlete_Rover_Prop66" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 248.203, -3.05176e-05, -225.48 )
+
+[node name="Athlete_Rover_Prop65" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 277.312, -3.05176e-05, -225.48 )
+
+[node name="Athlete_Rover_Prop64" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 305.674, -3.05176e-05, -225.48 )
+
+[node name="Athlete_Rover_Prop105" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -301.862, 0, -196.751 )
+
+[node name="Athlete_Rover_Prop104" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -266.864, 0, -196.751 )
+
+[node name="Athlete_Rover_Prop103" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -236.173, 0, -196.751 )
+
+[node name="Athlete_Rover_Prop102" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -207.402, 0, -196.751 )
+
+[node name="Athlete_Rover_Prop101" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.798, 0, -196.751 )
+
+[node name="Athlete_Rover_Prop100" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -148.498, 0, -196.751 )
+
+[node name="Athlete_Rover_Prop99" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 0, -196.751 )
+
+[node name="Athlete_Rover_Prop98" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6009, 0, -196.751 )
+
+[node name="Athlete_Rover_Prop97" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.0955, 0, -196.751 )
+
+[node name="Athlete_Rover_Prop96" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9254, -3.05176e-05, -196.751 )
+
+[node name="Athlete_Rover_Prop95" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0726, -3.05176e-05, -196.751 )
+
+[node name="Athlete_Rover_Prop94" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.764, -3.05176e-05, -196.751 )
+
+[node name="Athlete_Rover_Prop93" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5352, -3.05176e-05, -196.751 )
+
+[node name="Athlete_Rover_Prop92" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.139, -3.05176e-05, -196.751 )
+
+[node name="Athlete_Rover_Prop91" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 129.439, -3.05176e-05, -196.751 )
+
+[node name="Athlete_Rover_Prop90" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160.937, -3.05176e-05, -196.751 )
+
+[node name="Athlete_Rover_Prop89" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 189.336, -3.05176e-05, -196.751 )
+
+[node name="Athlete_Rover_Prop88" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 219.841, -3.05176e-05, -196.751 )
+
+[node name="Athlete_Rover_Prop87" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 248.203, -3.05176e-05, -196.751 )
+
+[node name="Athlete_Rover_Prop86" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 277.312, -3.05176e-05, -196.751 )
+
+[node name="Athlete_Rover_Prop85" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 305.674, -3.05176e-05, -196.751 )
+
+[node name="Athlete_Rover_Prop126" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -301.862, 0, -171.505 )
+
+[node name="Athlete_Rover_Prop125" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -266.864, 0, -171.505 )
+
+[node name="Athlete_Rover_Prop124" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -236.173, 0, -171.505 )
+
+[node name="Athlete_Rover_Prop123" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -207.402, 0, -171.505 )
+
+[node name="Athlete_Rover_Prop122" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.798, 0, -171.505 )
+
+[node name="Athlete_Rover_Prop121" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -148.498, 0, -171.505 )
+
+[node name="Athlete_Rover_Prop120" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 0, -171.505 )
+
+[node name="Athlete_Rover_Prop119" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6009, 0, -171.505 )
+
+[node name="Athlete_Rover_Prop118" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.0955, 0, -171.505 )
+
+[node name="Athlete_Rover_Prop117" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9254, -3.05176e-05, -171.505 )
+
+[node name="Athlete_Rover_Prop116" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0726, -3.05176e-05, -171.505 )
+
+[node name="Athlete_Rover_Prop115" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.764, -3.05176e-05, -171.505 )
+
+[node name="Athlete_Rover_Prop114" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5352, -3.05176e-05, -171.505 )
+
+[node name="Athlete_Rover_Prop113" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.139, -3.05176e-05, -171.505 )
+
+[node name="Athlete_Rover_Prop112" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 129.439, -3.05176e-05, -171.505 )
+
+[node name="Athlete_Rover_Prop111" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160.937, -3.05176e-05, -171.505 )
+
+[node name="Athlete_Rover_Prop110" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 189.336, -3.05176e-05, -171.505 )
+
+[node name="Athlete_Rover_Prop109" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 219.841, -3.05176e-05, -171.505 )
+
+[node name="Athlete_Rover_Prop108" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 248.203, -3.05176e-05, -171.505 )
+
+[node name="Athlete_Rover_Prop107" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 277.312, -3.05176e-05, -171.505 )
+
+[node name="Athlete_Rover_Prop106" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 305.674, -3.05176e-05, -171.505 )
+
+[node name="Athlete_Rover_Prop147" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -301.862, 0, -146.258 )
+
+[node name="Athlete_Rover_Prop146" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -266.864, 0, -146.258 )
+
+[node name="Athlete_Rover_Prop145" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -236.173, 0, -146.258 )
+
+[node name="Athlete_Rover_Prop144" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -207.402, 0, -146.258 )
+
+[node name="Athlete_Rover_Prop143" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.798, 0, -146.258 )
+
+[node name="Athlete_Rover_Prop142" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -148.498, 0, -146.258 )
+
+[node name="Athlete_Rover_Prop141" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 0, -146.258 )
+
+[node name="Athlete_Rover_Prop140" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6009, 0, -146.258 )
+
+[node name="Athlete_Rover_Prop139" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.0955, 0, -146.258 )
+
+[node name="Athlete_Rover_Prop138" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9254, -3.05176e-05, -146.258 )
+
+[node name="Athlete_Rover_Prop137" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0726, -3.05176e-05, -146.258 )
+
+[node name="Athlete_Rover_Prop136" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.764, -3.05176e-05, -146.258 )
+
+[node name="Athlete_Rover_Prop135" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5352, -3.05176e-05, -146.258 )
+
+[node name="Athlete_Rover_Prop134" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.139, -3.05176e-05, -146.258 )
+
+[node name="Athlete_Rover_Prop133" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 129.439, -3.05176e-05, -146.258 )
+
+[node name="Athlete_Rover_Prop132" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160.937, -3.05176e-05, -146.258 )
+
+[node name="Athlete_Rover_Prop131" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 189.336, -3.05176e-05, -146.258 )
+
+[node name="Athlete_Rover_Prop130" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 219.841, -3.05176e-05, -146.258 )
+
+[node name="Athlete_Rover_Prop129" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 248.203, -3.05176e-05, -146.258 )
+
+[node name="Athlete_Rover_Prop128" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 277.312, -3.05176e-05, -146.258 )
+
+[node name="Athlete_Rover_Prop127" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 305.674, -3.05176e-05, -146.258 )
+
+[node name="Athlete_Rover_Prop168" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -301.862, 0, -119.271 )
+
+[node name="Athlete_Rover_Prop167" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -266.864, 0, -119.271 )
+
+[node name="Athlete_Rover_Prop166" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -236.173, 0, -119.271 )
+
+[node name="Athlete_Rover_Prop165" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -207.402, 0, -119.271 )
+
+[node name="Athlete_Rover_Prop164" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.798, 0, -119.271 )
+
+[node name="Athlete_Rover_Prop163" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -148.498, 0, -119.271 )
+
+[node name="Athlete_Rover_Prop162" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 0, -119.271 )
+
+[node name="Athlete_Rover_Prop161" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6009, 0, -119.271 )
+
+[node name="Athlete_Rover_Prop160" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.0955, 0, -119.271 )
+
+[node name="Athlete_Rover_Prop159" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9254, -3.05176e-05, -119.271 )
+
+[node name="Athlete_Rover_Prop158" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0726, -3.05176e-05, -119.271 )
+
+[node name="Athlete_Rover_Prop157" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.764, -3.05176e-05, -119.271 )
+
+[node name="Athlete_Rover_Prop156" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5352, -3.05176e-05, -119.271 )
+
+[node name="Athlete_Rover_Prop155" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.139, -3.05176e-05, -119.271 )
+
+[node name="Athlete_Rover_Prop154" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 129.439, -3.05176e-05, -119.271 )
+
+[node name="Athlete_Rover_Prop153" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160.937, -3.05176e-05, -119.271 )
+
+[node name="Athlete_Rover_Prop152" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 189.336, -3.05176e-05, -119.271 )
+
+[node name="Athlete_Rover_Prop151" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 219.841, -3.05176e-05, -119.271 )
+
+[node name="Athlete_Rover_Prop150" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 248.203, -3.05176e-05, -119.271 )
+
+[node name="Athlete_Rover_Prop149" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 277.312, -3.05176e-05, -119.271 )
+
+[node name="Athlete_Rover_Prop148" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 305.674, -3.05176e-05, -119.271 )
+
+[node name="Athlete_Rover_Prop189" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -301.862, 0, -91.8477 )
+
+[node name="Athlete_Rover_Prop188" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -266.864, 0, -91.8477 )
+
+[node name="Athlete_Rover_Prop187" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -236.173, 0, -91.8477 )
+
+[node name="Athlete_Rover_Prop186" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -207.402, 0, -91.8477 )
+
+[node name="Athlete_Rover_Prop185" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.798, 0, -91.8477 )
+
+[node name="Athlete_Rover_Prop184" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -148.498, 0, -91.8477 )
+
+[node name="Athlete_Rover_Prop183" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 0, -91.8477 )
+
+[node name="Athlete_Rover_Prop182" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6009, 0, -91.8477 )
+
+[node name="Athlete_Rover_Prop181" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.0955, 0, -91.8477 )
+
+[node name="Athlete_Rover_Prop180" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9254, -3.05176e-05, -91.8477 )
+
+[node name="Athlete_Rover_Prop179" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0726, -3.05176e-05, -91.8477 )
+
+[node name="Athlete_Rover_Prop178" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.764, -3.05176e-05, -91.8477 )
+
+[node name="Athlete_Rover_Prop177" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5352, -3.05176e-05, -91.8477 )
+
+[node name="Athlete_Rover_Prop176" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.139, -3.05176e-05, -91.8477 )
+
+[node name="Athlete_Rover_Prop175" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 129.439, -3.05176e-05, -91.8477 )
+
+[node name="Athlete_Rover_Prop174" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160.937, -3.05176e-05, -91.8477 )
+
+[node name="Athlete_Rover_Prop173" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 189.336, -3.05176e-05, -91.8477 )
+
+[node name="Athlete_Rover_Prop172" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 219.841, -3.05176e-05, -91.8477 )
+
+[node name="Athlete_Rover_Prop171" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 248.203, -3.05176e-05, -91.8477 )
+
+[node name="Athlete_Rover_Prop170" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 277.312, -3.05176e-05, -91.8477 )
+
+[node name="Athlete_Rover_Prop169" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 305.674, -3.05176e-05, -91.8477 )
+
+[node name="Athlete_Rover_Prop378" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -301.862, 0, -63.8736 )
+
+[node name="Athlete_Rover_Prop377" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -266.864, 0, -63.8736 )
+
+[node name="Athlete_Rover_Prop376" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -236.173, 0, -63.8736 )
+
+[node name="Athlete_Rover_Prop375" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -207.402, 0, -63.8736 )
+
+[node name="Athlete_Rover_Prop374" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.798, 0, -63.8736 )
+
+[node name="Athlete_Rover_Prop373" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -148.498, 0, -63.8736 )
+
+[node name="Athlete_Rover_Prop372" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 0, -63.8736 )
+
+[node name="Athlete_Rover_Prop371" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6009, 0, -63.8736 )
+
+[node name="Athlete_Rover_Prop370" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.0955, 0, -63.8736 )
+
+[node name="Athlete_Rover_Prop369" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9254, -3.05176e-05, -63.8736 )
+
+[node name="Athlete_Rover_Prop368" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0726, -3.05176e-05, -63.8736 )
+
+[node name="Athlete_Rover_Prop367" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.764, -3.05176e-05, -63.8736 )
+
+[node name="Athlete_Rover_Prop366" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5352, -3.05176e-05, -63.8736 )
+
+[node name="Athlete_Rover_Prop365" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.139, -3.05176e-05, -63.8736 )
+
+[node name="Athlete_Rover_Prop364" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 129.439, -3.05176e-05, -63.8736 )
+
+[node name="Athlete_Rover_Prop363" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160.937, -3.05176e-05, -63.8736 )
+
+[node name="Athlete_Rover_Prop362" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 189.336, -3.05176e-05, -63.8736 )
+
+[node name="Athlete_Rover_Prop361" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 219.841, -3.05176e-05, -63.8736 )
+
+[node name="Athlete_Rover_Prop360" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 248.203, -3.05176e-05, -63.8736 )
+
+[node name="Athlete_Rover_Prop359" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 277.312, -3.05176e-05, -63.8736 )
+
+[node name="Athlete_Rover_Prop358" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 305.674, -3.05176e-05, -63.8736 )
+
+[node name="Athlete_Rover_Prop357" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -301.862, 0, -38.8976 )
+
+[node name="Athlete_Rover_Prop356" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -266.864, 0, -38.8976 )
+
+[node name="Athlete_Rover_Prop355" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -236.173, 0, -38.8976 )
+
+[node name="Athlete_Rover_Prop354" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -207.402, 0, -38.8976 )
+
+[node name="Athlete_Rover_Prop353" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.798, 0, -38.8976 )
+
+[node name="Athlete_Rover_Prop352" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -148.498, 0, -38.8976 )
+
+[node name="Athlete_Rover_Prop351" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 0, -38.8976 )
+
+[node name="Athlete_Rover_Prop350" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6009, 0, -38.8976 )
+
+[node name="Athlete_Rover_Prop349" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.0955, 0, -38.8976 )
+
+[node name="Athlete_Rover_Prop348" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9254, -3.05176e-05, -38.8976 )
+
+[node name="Athlete_Rover_Prop347" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0726, -3.05176e-05, -38.8976 )
+
+[node name="Athlete_Rover_Prop346" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.764, -3.05176e-05, -38.8976 )
+
+[node name="Athlete_Rover_Prop345" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5352, -3.05176e-05, -38.8976 )
+
+[node name="Athlete_Rover_Prop344" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.139, -3.05176e-05, -38.8976 )
+
+[node name="Athlete_Rover_Prop343" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 129.439, -3.05176e-05, -38.8976 )
+
+[node name="Athlete_Rover_Prop342" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160.937, -3.05176e-05, -38.8976 )
+
+[node name="Athlete_Rover_Prop341" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 189.336, -3.05176e-05, -38.8976 )
+
+[node name="Athlete_Rover_Prop340" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 219.841, -3.05176e-05, -38.8976 )
+
+[node name="Athlete_Rover_Prop339" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 248.203, -3.05176e-05, -38.8976 )
+
+[node name="Athlete_Rover_Prop338" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 277.312, -3.05176e-05, -38.8976 )
+
+[node name="Athlete_Rover_Prop337" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 305.674, -3.05176e-05, -38.8976 )
+
+[node name="Athlete_Rover_Prop336" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -301.862, 0, -13.9216 )
+
+[node name="Athlete_Rover_Prop335" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -266.864, 0, -13.9216 )
+
+[node name="Athlete_Rover_Prop334" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -236.173, 0, -13.9216 )
+
+[node name="Athlete_Rover_Prop333" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -207.402, 0, -13.9216 )
+
+[node name="Athlete_Rover_Prop332" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.798, 0, -13.9216 )
+
+[node name="Athlete_Rover_Prop331" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -148.498, 0, -13.9216 )
+
+[node name="Athlete_Rover_Prop330" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 0, -13.9216 )
+
+[node name="Athlete_Rover_Prop329" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6009, 0, -13.9216 )
+
+[node name="Athlete_Rover_Prop328" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.0955, 0, -13.9216 )
+
+[node name="Athlete_Rover_Prop327" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9254, -3.05176e-05, -13.9216 )
+
+[node name="Athlete_Rover_Prop326" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0726, -3.05176e-05, -13.9216 )
+
+[node name="Athlete_Rover_Prop325" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.764, -3.05176e-05, -13.9216 )
+
+[node name="Athlete_Rover_Prop324" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5352, -3.05176e-05, -13.9216 )
+
+[node name="Athlete_Rover_Prop323" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.139, -3.05176e-05, -13.9216 )
+
+[node name="Athlete_Rover_Prop322" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 129.439, -3.05176e-05, -13.9216 )
+
+[node name="Athlete_Rover_Prop321" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160.937, -3.05176e-05, -13.9216 )
+
+[node name="Athlete_Rover_Prop320" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 189.336, -3.05176e-05, -13.9216 )
+
+[node name="Athlete_Rover_Prop319" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 219.841, -3.05176e-05, -13.9216 )
+
+[node name="Athlete_Rover_Prop318" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 248.203, -3.05176e-05, -13.9216 )
+
+[node name="Athlete_Rover_Prop317" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 277.312, -3.05176e-05, -13.9216 )
+
+[node name="Athlete_Rover_Prop316" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 305.674, -3.05176e-05, -13.9216 )
+
+[node name="Athlete_Rover_Prop315" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -301.862, 0, 12.1352 )
+
+[node name="Athlete_Rover_Prop314" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -266.864, 0, 12.1352 )
+
+[node name="Athlete_Rover_Prop313" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -236.173, 0, 12.1352 )
+
+[node name="Athlete_Rover_Prop312" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -207.402, 0, 12.1352 )
+
+[node name="Athlete_Rover_Prop311" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.798, 0, 12.1352 )
+
+[node name="Athlete_Rover_Prop310" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -148.498, 0, 12.1352 )
+
+[node name="Athlete_Rover_Prop309" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 0, 12.1352 )
+
+[node name="Athlete_Rover_Prop308" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6009, 0, 12.1352 )
+
+[node name="Athlete_Rover_Prop307" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.0955, 0, 12.1352 )
+
+[node name="Athlete_Rover_Prop306" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9254, -3.05176e-05, 12.1352 )
+
+[node name="Athlete_Rover_Prop305" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0726, -3.05176e-05, 12.1352 )
+
+[node name="Athlete_Rover_Prop304" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.764, -3.05176e-05, 12.1352 )
+
+[node name="Athlete_Rover_Prop303" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5352, -3.05176e-05, 12.1352 )
+
+[node name="Athlete_Rover_Prop302" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.139, -3.05176e-05, 12.1352 )
+
+[node name="Athlete_Rover_Prop301" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 129.439, -3.05176e-05, 12.1352 )
+
+[node name="Athlete_Rover_Prop300" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160.937, -3.05176e-05, 12.1352 )
+
+[node name="Athlete_Rover_Prop299" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 189.336, -3.05176e-05, 12.1352 )
+
+[node name="Athlete_Rover_Prop298" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 219.841, -3.05176e-05, 12.1352 )
+
+[node name="Athlete_Rover_Prop297" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 248.203, -3.05176e-05, 12.1352 )
+
+[node name="Athlete_Rover_Prop296" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 277.312, -3.05176e-05, 12.1352 )
+
+[node name="Athlete_Rover_Prop295" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 305.674, -3.05176e-05, 12.1352 )
+
+[node name="Athlete_Rover_Prop294" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -301.862, 0, 40.8639 )
+
+[node name="Athlete_Rover_Prop293" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -266.864, 0, 40.8639 )
+
+[node name="Athlete_Rover_Prop292" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -236.173, 0, 40.8639 )
+
+[node name="Athlete_Rover_Prop291" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -207.402, 0, 40.8639 )
+
+[node name="Athlete_Rover_Prop290" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.798, 0, 40.8639 )
+
+[node name="Athlete_Rover_Prop289" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -148.498, 0, 40.8639 )
+
+[node name="Athlete_Rover_Prop288" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 0, 40.8639 )
+
+[node name="Athlete_Rover_Prop287" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6009, 0, 40.8639 )
+
+[node name="Athlete_Rover_Prop286" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.0955, 0, 40.8639 )
+
+[node name="Athlete_Rover_Prop285" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9254, -3.05176e-05, 40.8639 )
+
+[node name="Athlete_Rover_Prop284" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0726, -3.05176e-05, 40.8639 )
+
+[node name="Athlete_Rover_Prop283" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.764, -3.05176e-05, 40.8639 )
+
+[node name="Athlete_Rover_Prop282" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5352, -3.05176e-05, 40.8639 )
+
+[node name="Athlete_Rover_Prop281" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.139, -3.05176e-05, 40.8639 )
+
+[node name="Athlete_Rover_Prop280" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 129.439, -3.05176e-05, 40.8639 )
+
+[node name="Athlete_Rover_Prop279" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160.937, -3.05176e-05, 40.8639 )
+
+[node name="Athlete_Rover_Prop278" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 189.336, -3.05176e-05, 40.8639 )
+
+[node name="Athlete_Rover_Prop277" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 219.841, -3.05176e-05, 40.8639 )
+
+[node name="Athlete_Rover_Prop276" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 248.203, -3.05176e-05, 40.8639 )
+
+[node name="Athlete_Rover_Prop275" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 277.312, -3.05176e-05, 40.8639 )
+
+[node name="Athlete_Rover_Prop274" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 305.674, -3.05176e-05, 40.8639 )
+
+[node name="Athlete_Rover_Prop273" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -301.862, 0, 66.1104 )
+
+[node name="Athlete_Rover_Prop272" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -266.864, 0, 66.1104 )
+
+[node name="Athlete_Rover_Prop271" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -236.173, 0, 66.1104 )
+
+[node name="Athlete_Rover_Prop270" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -207.402, 0, 66.1104 )
+
+[node name="Athlete_Rover_Prop269" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.798, 0, 66.1104 )
+
+[node name="Athlete_Rover_Prop268" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -148.498, 0, 66.1104 )
+
+[node name="Athlete_Rover_Prop267" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 0, 66.1104 )
+
+[node name="Athlete_Rover_Prop266" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6009, 0, 66.1104 )
+
+[node name="Athlete_Rover_Prop265" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.0955, 0, 66.1104 )
+
+[node name="Athlete_Rover_Prop264" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9254, -3.05176e-05, 66.1104 )
+
+[node name="Athlete_Rover_Prop263" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0726, -3.05176e-05, 66.1104 )
+
+[node name="Athlete_Rover_Prop262" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.764, -3.05176e-05, 66.1104 )
+
+[node name="Athlete_Rover_Prop261" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5352, -3.05176e-05, 66.1104 )
+
+[node name="Athlete_Rover_Prop260" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.139, -3.05176e-05, 66.1104 )
+
+[node name="Athlete_Rover_Prop259" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 129.439, -3.05176e-05, 66.1104 )
+
+[node name="Athlete_Rover_Prop258" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160.937, -3.05176e-05, 66.1104 )
+
+[node name="Athlete_Rover_Prop257" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 189.336, -3.05176e-05, 66.1104 )
+
+[node name="Athlete_Rover_Prop256" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 219.841, -3.05176e-05, 66.1104 )
+
+[node name="Athlete_Rover_Prop255" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 248.203, -3.05176e-05, 66.1104 )
+
+[node name="Athlete_Rover_Prop254" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 277.312, -3.05176e-05, 66.1104 )
+
+[node name="Athlete_Rover_Prop253" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 305.674, -3.05176e-05, 66.1104 )
+
+[node name="Athlete_Rover_Prop252" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -301.862, 0, 91.3568 )
+
+[node name="Athlete_Rover_Prop251" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -266.864, 0, 91.3568 )
+
+[node name="Athlete_Rover_Prop250" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -236.173, 0, 91.3568 )
+
+[node name="Athlete_Rover_Prop249" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -207.402, 0, 91.3568 )
+
+[node name="Athlete_Rover_Prop248" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.798, 0, 91.3568 )
+
+[node name="Athlete_Rover_Prop247" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -148.498, 0, 91.3568 )
+
+[node name="Athlete_Rover_Prop246" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 0, 91.3568 )
+
+[node name="Athlete_Rover_Prop245" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6009, 0, 91.3568 )
+
+[node name="Athlete_Rover_Prop244" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.0955, 0, 91.3568 )
+
+[node name="Athlete_Rover_Prop243" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9254, -3.05176e-05, 91.3568 )
+
+[node name="Athlete_Rover_Prop242" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0726, -3.05176e-05, 91.3568 )
+
+[node name="Athlete_Rover_Prop241" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.764, -3.05176e-05, 91.3568 )
+
+[node name="Athlete_Rover_Prop240" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5352, -3.05176e-05, 91.3568 )
+
+[node name="Athlete_Rover_Prop239" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.139, -3.05176e-05, 91.3568 )
+
+[node name="Athlete_Rover_Prop238" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 129.439, -3.05176e-05, 91.3568 )
+
+[node name="Athlete_Rover_Prop237" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160.937, -3.05176e-05, 91.3568 )
+
+[node name="Athlete_Rover_Prop236" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 189.336, -3.05176e-05, 91.3568 )
+
+[node name="Athlete_Rover_Prop235" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 219.841, -3.05176e-05, 91.3568 )
+
+[node name="Athlete_Rover_Prop234" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 248.203, -3.05176e-05, 91.3568 )
+
+[node name="Athlete_Rover_Prop233" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 277.312, -3.05176e-05, 91.3568 )
+
+[node name="Athlete_Rover_Prop232" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 305.674, -3.05176e-05, 91.3568 )
+
+[node name="Athlete_Rover_Prop231" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -301.862, 0, 118.344 )
+
+[node name="Athlete_Rover_Prop230" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -266.864, 0, 118.344 )
+
+[node name="Athlete_Rover_Prop229" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -236.173, 0, 118.344 )
+
+[node name="Athlete_Rover_Prop228" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -207.402, 0, 118.344 )
+
+[node name="Athlete_Rover_Prop227" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.798, 0, 118.344 )
+
+[node name="Athlete_Rover_Prop226" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -148.498, 0, 118.344 )
+
+[node name="Athlete_Rover_Prop225" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 0, 118.344 )
+
+[node name="Athlete_Rover_Prop224" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6009, 0, 118.344 )
+
+[node name="Athlete_Rover_Prop223" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.0955, 0, 118.344 )
+
+[node name="Athlete_Rover_Prop222" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9254, -3.05176e-05, 118.344 )
+
+[node name="Athlete_Rover_Prop221" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0726, -3.05176e-05, 118.344 )
+
+[node name="Athlete_Rover_Prop220" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.764, -3.05176e-05, 118.344 )
+
+[node name="Athlete_Rover_Prop219" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5352, -3.05176e-05, 118.344 )
+
+[node name="Athlete_Rover_Prop218" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.139, -3.05176e-05, 118.344 )
+
+[node name="Athlete_Rover_Prop217" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 129.439, -3.05176e-05, 118.344 )
+
+[node name="Athlete_Rover_Prop216" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160.937, -3.05176e-05, 118.344 )
+
+[node name="Athlete_Rover_Prop215" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 189.336, -3.05176e-05, 118.344 )
+
+[node name="Athlete_Rover_Prop214" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 219.841, -3.05176e-05, 118.344 )
+
+[node name="Athlete_Rover_Prop213" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 248.203, -3.05176e-05, 118.344 )
+
+[node name="Athlete_Rover_Prop212" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 277.312, -3.05176e-05, 118.344 )
+
+[node name="Athlete_Rover_Prop211" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 305.674, -3.05176e-05, 118.344 )
+
+[node name="Athlete_Rover_Prop210" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -301.862, 0, 145.767 )
+
+[node name="Athlete_Rover_Prop209" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -266.864, 0, 145.767 )
+
+[node name="Athlete_Rover_Prop208" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -236.173, 0, 145.767 )
+
+[node name="Athlete_Rover_Prop207" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -207.402, 0, 145.767 )
+
+[node name="Athlete_Rover_Prop206" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.798, 0, 145.767 )
+
+[node name="Athlete_Rover_Prop205" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -148.498, 0, 145.767 )
+
+[node name="Athlete_Rover_Prop204" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117, 0, 145.767 )
+
+[node name="Athlete_Rover_Prop203" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6009, 0, 145.767 )
+
+[node name="Athlete_Rover_Prop202" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.0955, 0, 145.767 )
+
+[node name="Athlete_Rover_Prop201" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9254, -3.05176e-05, 145.767 )
+
+[node name="Athlete_Rover_Prop200" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0726, -3.05176e-05, 145.767 )
+
+[node name="Athlete_Rover_Prop199" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.764, -3.05176e-05, 145.767 )
+
+[node name="Athlete_Rover_Prop198" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5352, -3.05176e-05, 145.767 )
+
+[node name="Athlete_Rover_Prop197" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.139, -3.05176e-05, 145.767 )
+
+[node name="Athlete_Rover_Prop196" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 129.439, -3.05176e-05, 145.767 )
+
+[node name="Athlete_Rover_Prop195" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160.937, -3.05176e-05, 145.767 )
+
+[node name="Athlete_Rover_Prop194" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 189.336, -3.05176e-05, 145.767 )
+
+[node name="Athlete_Rover_Prop193" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 219.841, -3.05176e-05, 145.767 )
+
+[node name="Athlete_Rover_Prop192" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 248.203, -3.05176e-05, 145.767 )
+
+[node name="Athlete_Rover_Prop191" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 277.312, -3.05176e-05, 145.767 )
+
+[node name="Athlete_Rover_Prop190" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 305.674, -3.05176e-05, 145.767 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 468.492, 0, 0, 0, 1, 0, 0, 0, 326.41, 0, -5.46173, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 2 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.591844, 0.806052, 0, -0.806052, 0.591844, 0, 42.5491, 0 )
+shadow_enabled = true
+directional_shadow_blend_splits = true
+
+[node name="Ground_Passenger_Pod" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -301.854, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -267.579, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -236.126, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod4" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -208.101, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod8" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.858, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod7" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -147.039, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod6" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -116.278, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod5" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -87.561, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod16" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.7541, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod15" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4786, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod14" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.97424, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod13" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9995, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod12" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68.2427, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod11" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 99.0611, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod10" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 129.822, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod23" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 188.366, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod22" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 222.641, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod21" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 254.094, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod20" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 282.119, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod19" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 312.363, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod18" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 343.181, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod17" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 373.942, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod9" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 158.539, -2.40198, -299.39 )
+
+[node name="Ground_Passenger_Pod46" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -298.808, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod45" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -264.532, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod44" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -233.08, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod43" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -205.054, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod42" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -174.811, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod41" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -143.993, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod40" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -113.231, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod39" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -84.5147, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod38" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.7078, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod37" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4323, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod36" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0206, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod35" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.0459, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod34" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 71.289, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod33" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 102.107, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod32" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 132.869, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod31" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 191.412, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod30" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 225.688, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod29" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 257.14, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod28" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 285.166, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod27" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 315.409, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod26" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 346.227, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod25" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 376.989, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod24" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 161.586, -2.40198, -268.42 )
+
+[node name="Ground_Passenger_Pod69" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -298.3, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod68" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -264.025, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod67" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -232.572, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod66" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -204.547, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod65" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -174.304, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod64" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -143.485, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod63" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -112.724, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod62" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -84.007, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod61" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.2001, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod60" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9246, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod59" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5283, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod58" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.5536, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod57" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 71.7967, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod56" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 102.615, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod55" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 133.376, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod54" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 191.92, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod53" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 226.195, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod52" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 257.648, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod51" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 285.673, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod50" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 315.917, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod49" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 346.735, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod48" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 377.496, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod47" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 162.093, -2.40198, -226.279 )
+
+[node name="Ground_Passenger_Pod92" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -299.316, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod91" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -265.04, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod90" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -233.587, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod89" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -205.562, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod88" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -175.319, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod87" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -144.501, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod86" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -113.739, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod85" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -85.0224, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod84" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.2155, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod83" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.94, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod82" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5128, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod81" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40.5381, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod80" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.7813, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod79" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 101.6, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod78" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 132.361, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod77" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 190.904, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod76" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 225.18, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod75" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 256.633, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod74" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 284.658, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod73" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 314.901, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod72" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 345.72, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod71" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 376.481, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod70" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 161.078, -2.40198, -193.278 )
+
+[node name="Ground_Passenger_Pod115" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -298.3, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod114" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -264.025, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod113" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -232.572, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod112" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -204.547, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod111" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -174.304, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod110" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -143.485, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod109" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -112.724, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod108" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -84.007, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod107" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.2001, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod106" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9246, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod105" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5283, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod104" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.5536, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod103" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 71.7967, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod102" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 102.615, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod101" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 133.376, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod100" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 191.92, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod99" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 226.195, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod98" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 257.648, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod97" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 285.673, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod96" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 315.917, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod95" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 346.735, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod94" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 377.496, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod93" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 162.093, -2.40198, -163.83 )
+
+[node name="Ground_Passenger_Pod138" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -298.808, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod137" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -264.533, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod136" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -233.08, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod135" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -205.054, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod134" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -174.811, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod133" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -143.993, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod132" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -113.231, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod131" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -84.5147, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod130" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.7078, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod129" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4323, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod128" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0205, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod127" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.0458, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod126" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 71.289, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod125" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 102.107, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod124" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 132.869, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod123" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 191.412, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod122" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 225.688, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod121" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 257.14, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod120" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 285.166, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod119" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 315.409, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod118" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 346.227, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod117" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 376.989, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod116" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 161.585, -2.40198, -134.137 )
+
+[node name="Ground_Passenger_Pod161" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -298.808, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod160" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -264.533, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod159" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -233.08, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod158" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -205.054, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod157" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -174.811, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod156" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -143.993, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod155" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -113.231, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod154" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -84.5147, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod153" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.7078, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod152" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4323, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod151" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0205, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod150" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.0458, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod149" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 71.289, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod148" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 102.107, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod147" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 132.869, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod146" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 191.412, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod145" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 225.688, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod144" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 257.14, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod143" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 285.166, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod142" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 315.409, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod141" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 346.227, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod140" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 376.989, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod139" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 161.585, -2.40198, -88.6077 )
+
+[node name="Ground_Passenger_Pod184" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -298.808, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod183" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -264.533, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod182" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -233.08, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod181" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -205.054, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod180" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -174.811, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod179" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -143.993, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod178" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -113.231, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod177" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -84.5147, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod176" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.7078, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod175" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4323, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod174" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0205, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod173" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.0458, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod172" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 71.289, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod171" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 102.107, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod170" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 132.869, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod169" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 191.412, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod168" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 225.688, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod167" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 257.14, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod166" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 285.166, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod165" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 315.409, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod164" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 346.227, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod163" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 376.989, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod162" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 161.585, -2.40198, -55.7672 )
+
+[node name="Ground_Passenger_Pod368" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -301.854, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod367" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -267.579, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod366" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -236.126, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod365" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -208.101, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod364" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.858, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod363" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -147.039, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod362" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -116.278, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod361" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -87.561, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod360" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.7541, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod359" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4786, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod358" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.97424, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod357" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9995, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod356" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68.2427, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod355" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 99.0611, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod354" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 129.822, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod353" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 188.366, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod352" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 222.641, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod351" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 254.094, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod350" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 282.119, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod349" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 312.363, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod348" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 343.181, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod347" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 373.942, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod346" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 158.539, -2.40198, -32.7636 )
+
+[node name="Ground_Passenger_Pod345" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -298.808, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod344" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -264.532, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod343" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -233.08, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod342" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -205.054, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod341" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -174.811, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod340" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -143.993, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod339" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -113.231, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod338" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -84.5147, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod337" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.7078, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod336" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4323, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod335" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0206, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod334" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.0459, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod333" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 71.289, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod332" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 102.107, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod331" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 132.869, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod330" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 191.412, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod329" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 225.688, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod328" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 257.14, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod327" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 285.166, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod326" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 315.409, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod325" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 346.227, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod324" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 376.989, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod323" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 161.586, -2.40198, -1.79294 )
+
+[node name="Ground_Passenger_Pod322" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -298.3, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod321" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -264.025, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod320" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -232.572, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod319" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -204.547, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod318" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -174.304, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod317" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -143.485, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod316" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -112.724, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod315" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -84.007, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod314" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.2001, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod313" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9246, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod312" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5283, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod311" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.5536, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod310" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 71.7967, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod309" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 102.615, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod308" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 133.376, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod307" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 191.92, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod306" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 226.195, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod305" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 257.648, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod304" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 285.673, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod303" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 315.917, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod302" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 346.735, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod301" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 377.496, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod300" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 162.093, -2.40198, 40.3475 )
+
+[node name="Ground_Passenger_Pod299" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -299.316, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod298" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -265.04, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod297" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -233.587, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod296" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -205.562, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod295" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -175.319, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod294" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -144.501, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod293" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -113.739, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod292" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -85.0224, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod291" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.2155, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod290" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.94, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod289" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5128, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod288" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40.5381, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod287" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.7813, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod286" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 101.6, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod285" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 132.361, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod284" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 190.904, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod283" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 225.18, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod282" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 256.633, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod281" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 284.658, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod280" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 314.901, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod279" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 345.72, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod278" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 376.481, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod277" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 161.078, -2.40198, 73.3491 )
+
+[node name="Ground_Passenger_Pod276" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -298.3, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod275" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -264.025, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod274" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -232.572, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod273" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -204.547, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod272" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -174.304, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod271" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -143.485, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod270" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -112.724, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod269" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -84.007, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod268" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.2001, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod267" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9246, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod266" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5283, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod265" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.5536, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod264" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 71.7967, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod263" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 102.615, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod262" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 133.376, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod261" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 191.92, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod260" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 226.195, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod259" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 257.648, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod258" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 285.673, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod257" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 315.917, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod256" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 346.735, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod255" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 377.496, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod254" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 162.093, -2.40198, 102.797 )
+
+[node name="Ground_Passenger_Pod253" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -298.808, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod252" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -264.533, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod251" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -233.08, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod250" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -205.054, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod249" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -174.811, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod248" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -143.993, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod247" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -113.231, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod246" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -84.5147, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod245" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.7078, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod244" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4323, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod243" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0205, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod242" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.0458, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod241" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 71.289, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod240" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 102.107, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod239" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 132.869, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod238" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 191.412, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod237" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 225.688, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod236" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 257.14, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod235" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 285.166, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod234" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 315.409, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod233" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 346.227, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod232" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 376.989, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod231" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 161.585, -2.40198, 132.49 )
+
+[node name="Ground_Passenger_Pod230" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -298.808, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod229" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -264.533, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod228" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -233.08, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod227" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -205.054, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod226" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -174.811, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod225" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -143.993, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod224" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -113.231, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod223" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -84.5147, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod222" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.7078, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod221" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4323, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod220" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0205, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod219" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.0458, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod218" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 71.289, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod217" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 102.107, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod216" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 132.869, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod215" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 191.412, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod214" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 225.688, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod213" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 257.14, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod212" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 285.166, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod211" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 315.409, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod210" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 346.227, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod209" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 376.989, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod208" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 161.585, -2.40198, 178.019 )
+
+[node name="Ground_Passenger_Pod207" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -298.808, -2.40198, 210.86 )
+
+[node name="Ground_Passenger_Pod206" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -264.533, -2.40198, 210.86 )
+
+[node name="Ground_Passenger_Pod205" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -233.08, -2.40198, 210.86 )
+
+[node name="Ground_Passenger_Pod204" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -205.054, -2.40198, 210.86 )
+
+[node name="Ground_Passenger_Pod203" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -174.811, -2.40198, 210.86 )
+
+[node name="Ground_Passenger_Pod202" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -143.993, -2.40198, 210.86 )
+
+[node name="Ground_Passenger_Pod201" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -113.231, -2.40198, 210.86 )
+
+[node name="Ground_Passenger_Pod200" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -84.5147, -2.40198, 210.86 )
+
+[node name="Ground_Passenger_Pod199" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.7078, -2.40198, 210.86 )
+
+[node name="Ground_Passenger_Pod198" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4323, -2.40198, 210.86 )
+
+[node name="Ground_Passenger_Pod197" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0205, -2.40198, 210.86 )
+
+[node name="Ground_Passenger_Pod196" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.0458, -2.40198, 210.86 )
+
+[node name="Ground_Passenger_Pod195" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 71.289, -2.40198, 210.86 )
+
+[node name="Ground_Passenger_Pod194" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 102.107, -2.40198, 210.86 )
+
+[node name="Ground_Passenger_Pod193" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 132.869, -2.40198, 210.86 )
+
+[node name="Ground_Passenger_Pod192" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 191.412, -2.40198, 210.86 )
+
+[node name="Ground_Passenger_Pod191" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 225.688, -2.40198, 210.86 )
+
+[node name="Ground_Passenger_Pod190" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 257.14, -2.40198, 210.86 )
+
+[node name="Ground_Passenger_Pod189" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 285.166, -2.40198, 210.86 )
+
+[node name="Ground_Passenger_Pod188" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 315.409, -2.40198, 210.86 )
+
+[node name="Ground_Passenger_Pod187" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 346.227, -2.40198, 210.86 )
+
+[node name="Ground_Passenger_Pod186" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 376.989, -2.40198, 210.86 )
+
+[node name="Ground_Passenger_Pod185" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 161.585, -2.40198, 210.86 )

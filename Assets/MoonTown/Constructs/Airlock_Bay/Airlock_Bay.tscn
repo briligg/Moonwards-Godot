@@ -52,8 +52,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.2322, 4.9519, -0.00354957 
 light_energy = 0.58
 light_indirect_energy = 0.5
 light_specular = 0.65
-omni_range = 19.7
-omni_attenuation = 0.5
+omni_range = 50.8
+omni_attenuation = 1.7411
 
 [node name="OmniLight2" type="OmniLight" parent="." index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -90.9008, 4.17155, -0.00354957 )
@@ -68,7 +68,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -129.666, 4.53356, -0.00354957
 light_energy = 0.5
 light_indirect_energy = 0.55
 light_specular = 0.3
-omni_range = 26.0
+omni_range = 41.7
 omni_attenuation = 1.6245
 
 [node name="GIProbe" type="GIProbe" parent="." index="4"]
@@ -78,3 +78,8 @@ dynamic_range = 8
 propagation = 0.2
 interior = true
 data = SubResource( 1 )
+
+[node name="OmniLight" type="OmniLight" parent="Ground_Passenger_Pod" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.832397, 0 )
+omni_range = 22.3
+omni_attenuation = 1.56917

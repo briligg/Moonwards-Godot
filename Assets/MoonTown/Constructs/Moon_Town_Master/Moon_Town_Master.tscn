@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Moon_Town_Master.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Constructs/Second_Gallery/Second_Gallery.tscn" type="PackedScene" id=2]
@@ -36,6 +36,8 @@
 [ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Pistachio_Matte.material" type="Material" id=34]
 [ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/BlueStone_Matte.material" type="Material" id=35]
 [ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Rock_temp.material" type="Material" id=36]
+[ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Marker_Outdoor.tscn" type="PackedScene" id=37]
+[ext_resource path="res://Assets/MoonTown/Models/Athlete_Rover/Athlete_Rover_Prop.tscn" type="PackedScene" id=38]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "SatelliteDishBase"
@@ -459,7 +461,16 @@ shadow_enabled = true
 directional_shadow_blend_splits = true
 directional_shadow_max_distance = 500.0
 
-[node name="Constructs" type="Spatial" parent="." index="1"]
+[node name="Athlete_Rover_Prop" parent="." index="1" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 417.904, 52.0479, 803.587 )
+
+[node name="Audio_Tour_Marker_Outdoor" parent="." index="2" instance=ExtResource( 37 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 919.512, -5.4134, 439.755 )
+
+[node name="Audio_Tour_Marker_Outdoor2" parent="." index="3" instance=ExtResource( 37 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 385.725, 60.8268, 865.82 )
+
+[node name="Constructs" type="Spatial" parent="." index="4"]
 
 [node name="Empty_AirlockBay" type="Spatial" parent="Constructs" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160.951, 97.4707, -207.941 )
@@ -567,7 +578,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -608.903, -264.244, 166.373 )
 
 [node name="Third_Gallery" parent="Constructs/Empty_ThirdGallery" index="0" instance=ExtResource( 8 )]
 
-[node name="Boat_Radiators" type="Spatial" parent="." index="2"]
+[node name="Boat_Radiators" type="Spatial" parent="." index="5"]
 
 [node name="BoatRad001" type="Spatial" parent="Boat_Radiators" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -99.9363, 101.654, 184.428 )
@@ -689,7 +700,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 205.256, 112.565, -308.329 )
 [node name="Boat_Radiator" parent="Boat_Radiators/BoatRad" index="0" instance=ExtResource( 25 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
 
-[node name="Flywheel_Towers" type="Spatial" parent="." index="3"]
+[node name="Flywheel_Towers" type="Spatial" parent="." index="6"]
 
 [node name="Marker-FlywheelTowers009" type="Spatial" parent="Flywheel_Towers" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 690.382, 80.1974, -241.67 )
@@ -841,7 +852,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 690.382, 89.157, -289.862 )
 
 [node name="Flywheel_Tower" parent="Flywheel_Towers/Marker-FlywheelTowers008" index="0" instance=ExtResource( 32 )]
 
-[node name="Solar_Panel_Units" type="Spatial" parent="." index="4"]
+[node name="Solar_Panel_Units" type="Spatial" parent="." index="7"]
 
 [node name="Marker_Solar_Panel_Unit05" type="Spatial" parent="Solar_Panel_Units" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 694.732, 106.651, -386.248 )
@@ -918,7 +929,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 694.732, 114.649, -434.441 )
 
 [node name="Solar_Panel_Unit" parent="Solar_Panel_Units/Marker_Solar_Panel_Unit04" index="0" instance=ExtResource( 31 )]
 
-[node name="Radio_Dishes" type="Spatial" parent="." index="5"]
+[node name="Radio_Dishes" type="Spatial" parent="." index="8"]
 
 [node name="Marker_RadioDishEarth" type="Spatial" parent="Radio_Dishes" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 475.644, 62.7823, -11.5285 )
@@ -963,7 +974,7 @@ material/0 = null
 
 [node name="Radio_Dish_Satellites" parent="Radio_Dishes/SatelliteDishStand3" index="0" instance=ExtResource( 26 )]
 
-[node name="Molten_Soil_Reactors" type="Spatial" parent="." index="6"]
+[node name="Molten_Soil_Reactors" type="Spatial" parent="." index="9"]
 
 [node name="Marker_MoltenSoilReactor006" type="Spatial" parent="Molten_Soil_Reactors" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 996.169, 28.3546, 411.147 )
@@ -1030,7 +1041,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 999.816, 28.2943, 310.49 )
 
 [node name="Molten_Soil_Reactor" parent="Molten_Soil_Reactors/Marker_MoltenSoilReactor005" index="0" instance=ExtResource( 29 )]
 
-[node name="Melt_In_Place_Stations" type="Spatial" parent="." index="7"]
+[node name="Melt_In_Place_Stations" type="Spatial" parent="." index="10"]
 
 [node name="Marker_MIP" type="Spatial" parent="Melt_In_Place_Stations" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 166.24, 99.4106, -32.7328 )
@@ -1190,11 +1201,14 @@ material/0 = null
 
 [node name="Lalande_85k" parent="Lalande_MoonTown/Lalande_85k_Marker" index="0" instance=ExtResource( 24 )]
 
+[node name="shape0" parent="Lalande_MoonTown/Lalande_MoonTown" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1748, 0, 0 )
+
 [node name="Road2" type="StaticBody" parent="Lalande_MoonTown/Road" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0723152, 0 )
 
 [node name="shape0" type="CollisionShape" parent="Lalande_MoonTown/Road/Road2" index="0"]
 shape = SubResource( 30 )
 
-[node name="Earth" parent="." index="9" instance=ExtResource( 30 )]
+[node name="Earth" parent="." index="12" instance=ExtResource( 30 )]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 30000, 0 )

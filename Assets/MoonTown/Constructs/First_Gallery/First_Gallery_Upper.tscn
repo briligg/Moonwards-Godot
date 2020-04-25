@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/First_Gallery_Upper.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Makers_Monument/Makers_Monument.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Paths/Audio_Tour_Paths.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Marker_Indoor.tscn" type="PackedScene" id=4]
 
 [sub_resource type="GIProbeData" id=1]
 bounds = AABB( -162.469, -61.685, -31.646, 324.937, 123.37, 63.2919 )
@@ -54,3 +56,23 @@ omni_range = 30.8064
 omni_attenuation = 1.8025
 
 [node name="Makers_Monument" parent="First_Gallery_Upper_Roof/Marker_MakersMonument001" index="0" instance=ExtResource( 2 )]
+
+[node name="Audio_Tour_Paths" parent="." index="9" instance=ExtResource( 3 )]
+
+[node name="Audio_Tour_Marker_Indoor" parent="." index="10" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8937, -16.1381, -10.0108 )
+
+[node name="Audio_Tour_Marker_Indoor2" parent="." index="11" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.3107, -16.1381, -2.09906 )
+
+[node name="Audio_Tour_Marker_Indoor3" parent="." index="12" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.0997, -4.1019, 2.83723 )
+
+[node name="Audio_Tour_Marker_Indoor4" parent="." index="13" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.3851, -3.98604, -8.31511 )
+
+[node name="Audio_Tour_Marker_Indoor5" parent="." index="14" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.1389, -15.9291, -0.682203 )
+
+[node name="Audio_Tour_Marker_Indoor6" parent="." index="15" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1487, -27.8564, -0.102418 )

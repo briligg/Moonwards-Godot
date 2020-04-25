@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Rec_Hab_1/Rec_Hab_1.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Picnic_Booth/Picnic_Booth.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Marker_Indoor.tscn" type="PackedScene" id=3]
 
 [node name="Rec_Hab_1" instance=ExtResource( 1 )]
 
@@ -18,3 +19,6 @@ omni_range = 20.8734
 omni_attenuation = 1.36604
 
 [node name="Picnic_Booth" parent="RecHabRetainingWalls_Opt/Marker_PicnicBooths" index="0" instance=ExtResource( 2 )]
+
+[node name="Audio_Tour_Marker_Indoor" parent="." index="7" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.53636, -2.81158, -5.68287 )

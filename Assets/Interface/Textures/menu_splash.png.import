@@ -2,16 +2,11 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/menu_splash.png-e8fe2feab08ee6b0d949bc308c093850.stex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://Assets/Interface/Textures/menu_splash.png"
-dest_files=[ "res://.import/menu_splash.png-e8fe2feab08ee6b0d949bc308c093850.stex" ]
-
 [params]
 
 compress/mode=0
