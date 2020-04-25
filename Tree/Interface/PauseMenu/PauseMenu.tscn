@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Tree/Interface/PauseMenu/PauseMenu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Interface/MainMenu.tres" type="Theme" id=2]
 [ext_resource path="res://Tree/Interface/MainMenu/About/About.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Interface/PauseMenu.tres" type="Theme" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -20,41 +22,44 @@ script = ExtResource( 1 )
 [node name="Parent" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 64.0
+margin_left = -2.0
 margin_top = 64.0
 margin_right = -64.0
 margin_bottom = -64.0
+theme = ExtResource( 2 )
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Buttons" type="VBoxContainer" parent="Parent"]
-margin_right = 69.0
+margin_right = 142.0
 margin_bottom = 952.0
+theme = ExtResource( 4 )
+custom_constants/separation = 12
 alignment = 1
 
 [node name="bContinue" type="Button" parent="Parent/Buttons"]
-margin_top = 442.0
-margin_right = 69.0
-margin_bottom = 462.0
+margin_top = 422.0
+margin_right = 142.0
+margin_bottom = 450.0
 text = "Continue"
 
 [node name="bAbout" type="Button" parent="Parent/Buttons"]
-margin_top = 466.0
-margin_right = 69.0
-margin_bottom = 486.0
+margin_top = 462.0
+margin_right = 142.0
+margin_bottom = 490.0
 text = "About"
 
 [node name="bQuit" type="Button" parent="Parent/Buttons"]
-margin_top = 490.0
-margin_right = 69.0
-margin_bottom = 510.0
+margin_top = 502.0
+margin_right = 142.0
+margin_bottom = 530.0
 text = "Quit"
 
 [node name="Features" type="TabContainer" parent="Parent"]
-margin_left = 73.0
-margin_right = 1792.0
+margin_left = 146.0
+margin_right = 1858.0
 margin_bottom = 952.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
