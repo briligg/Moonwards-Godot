@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Airlock_Bay/Airlock_Bay.tscn" type="PackedScene" id=1]
+[ext_resource path="res://SceneComponent/Interface/PlayerHud.tscn" type="PackedScene" id=2]
 
 [node name="TestScene" type="Spatial"]
 
@@ -9,3 +10,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.495213, 0, 0 )
 
 [node name="SpawnPlaceholder" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, 2 )
+
+[node name="PlayerHud" parent="." instance=ExtResource( 2 )]

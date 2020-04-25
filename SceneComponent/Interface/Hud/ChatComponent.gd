@@ -1,8 +1,7 @@
-extends AComponent
-
+extends MwSpatial
 onready var chatbox = $Chat
 
-func _init().("ChatComponent", true):
+func _init():
 	pass
 
 func _ready():
