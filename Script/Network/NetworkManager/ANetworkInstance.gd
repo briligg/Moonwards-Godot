@@ -77,16 +77,16 @@ func crpc_signal(instance: Object, sig_name: String, param = null):
 ### Figure out a better way to handle this, if godot allows
 # `MASTER`
 master func _server_crpc_signal(params: Array):
-	Log.trace(self, "crpc_signal", "Received server signal crpc: %s %s %s" %[params[0], params[1], params[2]])
+	Log.trace(self, "crpc_signal", "Received server signal crpc: %s" %[params])
 	Signals.get(str(params[0])).emit_signal(params[1], params[2])
 
 ### Figure out a better way to handle this, if godot allows
 #`PUPPET`
 puppet func _client_crpc_signal(params: Array):
-	Log.trace(self, "crpc_signal", "Received client signal crpc: %s %s %s" %[params[0], params[1], params[2]])
+	Log.trace(self, "crpc_signal", "Received client signal crpc: %s" %[params])
 	# Exit if not sent by the server
 	if get_tree().get_rpc_sender_id() != 1:
 		return
 		
-	Log.trace(self, "", "Received RPC signal: %s.%s - param: %s" % [params[0], params[1], params[2]])
+	Log.trace(self, "", "Received RPC signal - params: %s" % [params])
 	Signals.get(str(params[0])).emit_signal(params[1], params[2])
