@@ -175,7 +175,6 @@ script = ExtResource( 8 )
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Panel/Tab"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -51.0
 
 [node name="HSeparator" type="HSeparator" parent="HBoxContainer/Panel/Tab/HBoxContainer"]
 margin_right = 14.0
