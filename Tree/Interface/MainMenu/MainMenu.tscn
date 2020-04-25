@@ -175,18 +175,17 @@ script = ExtResource( 8 )
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Panel/Tab"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -51.0
 
 [node name="HSeparator" type="HSeparator" parent="HBoxContainer/Panel/Tab/HBoxContainer"]
 margin_right = 14.0
-margin_bottom = 485.0
+margin_bottom = 536.0
 rect_min_size = Vector2( 14, 0 )
 custom_styles/separator = SubResource( 2 )
 
 [node name="StartGame" type="VBoxContainer" parent="HBoxContainer/Panel/Tab/HBoxContainer"]
 margin_left = 18.0
 margin_right = 318.0
-margin_bottom = 485.0
+margin_bottom = 536.0
 custom_constants/separation = 33
 
 [node name="HSeparator" type="HSeparator" parent="HBoxContainer/Panel/Tab/HBoxContainer/StartGame"]
@@ -239,14 +238,12 @@ size_flags_horizontal = 2
 size_flags_vertical = 2
 custom_styles/focus = ExtResource( 7 )
 custom_styles/normal = ExtResource( 7 )
-text = "127.0.0.1"
+text = "95.179.245.99"
 
 [node name="EmptySettingsTab" type="Control" parent="HBoxContainer/Panel/Tab"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -831.0
-margin_bottom = -496.0
 
 [node name="EmptyOtherTab" type="Control" parent="HBoxContainer/Panel/Tab"]
 visible = false
@@ -270,8 +267,8 @@ focus_neighbour_bottom = NodePath("../VBoxContainer/StartGame")
 [connection signal="pressed" from="About" to="." method="_on_About_pressed"]
 [connection signal="focus_entered" from="HBoxContainer/VBoxContainer/StartGame" to="HBoxContainer" method="_on_StartGame_highlighted"]
 [connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/StartGame" to="HBoxContainer" method="_on_StartGame_highlighted"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/StartGame" to="." method="_on_StartGame_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/StartGame" to="HBoxContainer/Panel/Tab" method="_on_StartGame_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/StartGame" to="." method="_on_StartGame_pressed"]
 [connection signal="focus_entered" from="HBoxContainer/VBoxContainer/Settings" to="HBoxContainer" method="_on_Settings_highlighted"]
 [connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/Settings" to="HBoxContainer" method="_on_Settings_highlighted"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Settings" to="HBoxContainer/Panel/Tab" method="_on_Settings_pressed"]

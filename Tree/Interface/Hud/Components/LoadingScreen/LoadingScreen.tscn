@@ -1,8 +1,9 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://Tree/Interface/Components/LoadingScreen/LoadingScreen.gd" type="Script" id=1]
+[ext_resource path="res://Tree/Interface/Hud/Components/LoadingScreen/LoadingScreen.gd" type="Script" id=1]
 [ext_resource path="res://Tree/Interface/MainMenu/MainBG.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Interface/Fonts/MainMenuFont.tres" type="DynamicFont" id=3]
+
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
