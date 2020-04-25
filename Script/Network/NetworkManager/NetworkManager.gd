@@ -27,6 +27,12 @@ func _set_game_client(_ip, _port) -> void:
 	network_instance.name = "NetworkInstance"
 	root.call_deferred("add_child", network_instance)
 
+## Networking API - to be better written in C++
+
+func get_sender_entity() -> EntityData:
+	var id = get_tree().get_rpc_sender_id()
+	return network_instance.entities[id] as EntityData
+
 # Controlled RPC Wrapper with added control.
 func crpc(caller: Node, method: String, val):
 	network_instance.crpc(caller, method, val)

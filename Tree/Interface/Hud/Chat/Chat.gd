@@ -5,6 +5,8 @@ extends PanelContainer
 	We are part of the group named Chat.
 """
 
+signal chat_line_entered(message)
+
 onready var _chat_display_node: RichTextLabel = $"V/RichTextLabel"
 onready var _chat_input_node: LineEdit = $"V/ChatInput"
 
@@ -20,7 +22,6 @@ var _chat_is_raised : bool = false
 
 #True when chat window is active, false when chat window is minimized.
 var _chat_window_present : bool = true
-
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not visible or _active :
@@ -57,19 +58,13 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_LineEdit_text_entered(new_text: String) -> void:
 	if new_text != "":
-		_append_text_to_chat(new_text)
+		emit_signal("chat_line_entered", new_text)
 	
 	_chat_input_node.clear()
 	_chat_input_node.release_focus()
 	_chat_input_node.editable = false
 	
 	set_deferred("_active", false)
-
-func _append_text_to_chat(new_text: String) -> void:
-	_chat_display_node.newline()
-
-	#warning-ignore:return_value_discarded
-	_chat_display_node.append_bbcode(new_text)
 
 #This changes the chat between window active and window minimized.
 func _toggle_chat_window() -> void :
@@ -95,6 +90,12 @@ func _toggle_chat_window() -> void :
 	#If something has made me invisible before this method was called, make
 	#myself visible again.
 	visible = true
+
+func add_message(new_text: String) -> void:
+	_chat_display_node.newline()
+
+	#warning-ignore:return_value_discarded
+	_chat_display_node.append_bbcode(new_text)
 
 #Cause the chat to fade into being invisible.
 #Meant to be called from somewhere else. Usually from a group call.
