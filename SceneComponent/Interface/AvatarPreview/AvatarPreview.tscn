@@ -1,19 +1,8 @@
 [gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/AvatarPreview/AvatarPreview.gd" type="Script" id=1]
+[ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/selected.material" type="Material" id=1]
 [ext_resource path="res://Tree/Actor/LegacyPlayer/Avatars/AvatarRig.dae.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/selected.material" type="Material" id=3]
-
-
-
-
-
-
-
-
-
-
-
+[ext_resource path="res://SceneComponent/Interface/AvatarPreview/AvatarPreview.gd" type="Script" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -163,7 +152,7 @@ background_mode = 2
 background_sky = SubResource( 14 )
 
 [node name="AvatarPreview" type="Spatial"]
-script = ExtResource( 1 )
+script = ExtResource( 3 )
 base_material = SubResource( 1 )
 
 [node name="AvatarRig" parent="." instance=ExtResource( 2 )]
@@ -171,27 +160,27 @@ base_material = SubResource( 1 )
 [node name="FemSelPants" type="MeshInstance" parent="AvatarRig/FemaleRig/Skeleton/AvatarFemale" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84031e-05, -0.000975224, 0.000299406 )
 mesh = SubResource( 2 )
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 1 )
 
 [node name="FemSelBody" type="MeshInstance" parent="AvatarRig/FemaleRig/Skeleton/AvatarFemale" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84031e-05, -0.000975224, 0.000299406 )
 mesh = SubResource( 3 )
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 1 )
 
 [node name="FemSelSkin" type="MeshInstance" parent="AvatarRig/FemaleRig/Skeleton/AvatarFemale" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84031e-05, -0.000975224, 0.000299406 )
 mesh = SubResource( 4 )
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 1 )
 
 [node name="FemSelHair" type="MeshInstance" parent="AvatarRig/FemaleRig/Skeleton/AvatarFemale" index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84031e-05, -0.000975224, 0.000299406 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 1 )
 
 [node name="FemSelShoes" type="MeshInstance" parent="AvatarRig/FemaleRig/Skeleton/AvatarFemale" index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84031e-05, -0.000975224, 0.000299406 )
 mesh = SubResource( 6 )
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 1 )
 
 [node name="AvatarMale" parent="AvatarRig/FemaleRig/Skeleton" index="1"]
 visible = false
@@ -199,27 +188,27 @@ visible = false
 [node name="MaleSelPants" type="MeshInstance" parent="AvatarRig/FemaleRig/Skeleton/AvatarMale" index="0"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 mesh = SubResource( 7 )
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 1 )
 
 [node name="MaleSelBody" type="MeshInstance" parent="AvatarRig/FemaleRig/Skeleton/AvatarMale" index="1"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 mesh = SubResource( 8 )
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 1 )
 
 [node name="MaleSelSkin" type="MeshInstance" parent="AvatarRig/FemaleRig/Skeleton/AvatarMale" index="2"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 mesh = SubResource( 9 )
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 1 )
 
 [node name="MaleSelHair" type="MeshInstance" parent="AvatarRig/FemaleRig/Skeleton/AvatarMale" index="3"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 mesh = SubResource( 10 )
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 1 )
 
 [node name="MaleSelShoes" type="MeshInstance" parent="AvatarRig/FemaleRig/Skeleton/AvatarMale" index="4"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 mesh = SubResource( 11 )
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 1 )
 
 [node name="AnimationTree" type="AnimationTree" parent="AvatarRig"]
 tree_root = SubResource( 13 )
