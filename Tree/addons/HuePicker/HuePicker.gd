@@ -8,7 +8,6 @@ export(Color) var color : Color setget color_changed
 
 onready var hue_circle = $HueCircle
 onready var indicator_bg = $HueCircle/indicator_rgba/bg
-onready var indicator = $HueCircle/indicator_rgba
 onready var circle_rect = $HueCircle/indicator_rgba/ColorRect
 onready var indicator_h  = $HueCircle/indicator_h
 
@@ -52,39 +51,26 @@ func reposition_hue_indicator() -> void:
 	indicator_h.set_rotation(hue_circle.saved_h * 2*PI + PI/2)
 	indicator_h.rect_position = Vector2(ihx,ihy)
 
-func _on_HuePicker_resized() -> void:
-	var short_edge = min(rect_size.x, rect_size.y)
-	var chunk = Vector2(short_edge,short_edge)
-	
-	indicator.rect_size = chunk / 8
-	indicator_bg.position = chunk / 16
-	indicator_bg.scale = chunk / 256
-	indicator.rect_position.x = rect_size.x/2 - short_edge/2
-	indicator.rect_position.y = rect_size.y/2 + short_edge/2 - indicator.rect_size.y
-	
-	
-	reposition_hue_indicator()
-
 #Color change handler.
-func _on_HuePicker_color_changed(color : Color) -> int:
-	if isReady == false or color == null:  
-		print("HuePicker:  Warning, attempting to change color before control is ready")
+func _on_HuePicker_color_changed(new_color : Color) -> int:
+	if isReady == false or new_color == null:  
+		print("HuePicker:  Warning, attempting to change new_color before control is ready")
 		return  -1
 
-	circle_rect.color = color
+	circle_rect.color = new_color
 	hue_circle.get_node("ColorRect/SatVal").material.set_shader_param("hue", hue_circle.saved_h)
 	reposition_hue_indicator()
 	#Reposition SatVal indicator
-	hue_circle.get_node("ColorRect/indicator_sv").position = Vector2(color.s, 1-color.v) * hue_circle.get_node("ColorRect").rect_size
-	emit_signal("Hue_Selected", color)
+	hue_circle.get_node("ColorRect/indicator_sv").position = Vector2(new_color.s, 1-new_color.v) * hue_circle.get_node("ColorRect").rect_size
+	emit_signal("Hue_Selected", new_color)
 	return 0
 
 #For the Popup color picker.
-func _on_ColorPicker_color_changed(color : Color) -> void:
-	#	#Prevent from accidentally resetting the internal hue if color's out of range
-	var c = Color(color.r, color.g, color.b, 1)
+func _on_ColorPicker_color_changed(new_color : Color) -> void:
+	#	#Prevent from accidentally resetting the internal hue if new_color's out of range
+	var c = Color(new_color.r, new_color.g, new_color.b, 1)
 	if c != ColorN('black', 1) and c != ColorN('white', 1) and c.s !=0:
-		hue_circle.set_hue(self.color.h)
+		hue_circle.set_hue(color.h)
 
-	self.color = color
+	color = new_color
 	hue_circle.reposition_hue_indicator()

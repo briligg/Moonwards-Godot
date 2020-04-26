@@ -46,7 +46,7 @@ func _draw() -> void:
 
 	#square width, pos
 	var sqw = inR * 2 * SQ22
-	var sqpos = int(inR * SQ22)
+#	var sqpos = int(inR * SQ22)
 
 	var x = rect_size.x/2 #+ SQ22
 	var y = rect_size.y/2 #+ SQ22

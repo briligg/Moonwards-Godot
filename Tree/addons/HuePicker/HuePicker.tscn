@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Tree/addons/HuePicker/HuePicker.gd" type="Script" id=1]
 [ext_resource path="res://Tree/addons/HuePicker/icon.png" type="Texture" id=2]
@@ -7,10 +7,7 @@
 [ext_resource path="res://Tree/addons/HuePicker/slider_gradient.shader" type="Shader" id=5]
 [ext_resource path="res://Tree/addons/HuePicker/xor.shader" type="Shader" id=6]
 [ext_resource path="res://Tree/addons/HuePicker/indicator.png" type="Texture" id=7]
-[ext_resource path="res://Tree/addons/HuePicker/indicator_rgba.gd" type="Script" id=8]
 [ext_resource path="res://Tree/addons/HuePicker/checkerboard.png" type="Texture" id=9]
-
-
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
@@ -51,8 +48,8 @@ shadow_color = Color( 0, 0, 0, 1 )
 shadow_size = 2
 
 [node name="HuePicker" type="Control"]
-margin_right = 256.0
-margin_bottom = 256.0
+anchor_right = 0.2
+anchor_bottom = 0.2
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true,
@@ -72,22 +69,24 @@ margin_bottom = 200.0
 [node name="HueCircle" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_min_size = Vector2( 32, 32 )
 script = ExtResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="HueCircle"]
 material = SubResource( 2 )
-margin_left = 56.5923
-margin_top = 56.5923
-margin_right = 201.408
-margin_bottom = 201.408
+margin_left = 131.906
+margin_top = 47.906
+margin_right = 254.094
+margin_bottom = 170.094
 mouse_filter = 1
 
 [node name="SatVal" type="PanelContainer" parent="HueCircle/ColorRect"]
 material = SubResource( 3 )
-margin_right = 144.0
-margin_bottom = 144.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="indicator_sv" type="Sprite" parent="HueCircle/ColorRect"]
 material = SubResource( 4 )
@@ -96,24 +95,32 @@ texture = ExtResource( 7 )
 [node name="indicator_h" type="PanelContainer" parent="HueCircle"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 110.08
-margin_top = 112.64
-margin_right = 120.32
-margin_bottom = 143.36
+margin_left = 92.88
+margin_top = 95.04
+margin_right = 101.52
+margin_bottom = 120.96
 rect_rotation = 90.0
-rect_pivot_offset = Vector2( 5.12, 15.36 )
+rect_pivot_offset = Vector2( 4.32001, 12.96 )
 mouse_filter = 2
 custom_styles/panel = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="indicator_rgba" type="PanelContainer" parent="HueCircle"]
-margin_top = 224.0
-margin_right = 32.0
-margin_bottom = 256.0
+visible = false
+margin_left = 84.0
+margin_top = 189.0
+margin_right = 111.0
+margin_bottom = 216.0
 custom_styles/panel = SubResource( 6 )
-script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="bg" type="Sprite" parent="HueCircle/indicator_rgba"]
-position = Vector2( 16, 16 )
+position = Vector2( 13.5, 13.5 )
+scale = Vector2( 0.84375, 0.84375 )
 texture = ExtResource( 9 )
 
 [node name="ColorRect" type="ColorRect" parent="HueCircle/indicator_rgba"]
@@ -122,18 +129,4 @@ margin_top = 1.0
 margin_right = 31.0
 margin_bottom = 31.0
 mouse_filter = 1
-
-[node name="Pop" type="PopupPanel" parent="HueCircle/indicator_rgba"]
-margin_left = 1.0
-margin_top = 1.0
-margin_right = 307.0
-margin_bottom = 467.0
-
-[node name="ColorPicker" type="ColorPicker" parent="HueCircle/indicator_rgba/Pop"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 302.0
-margin_bottom = 466.0
 [connection signal="color_changed" from="." to="." method="_on_HuePicker_color_changed"]
-[connection signal="resized" from="." to="." method="_on_HuePicker_resized"]
-[connection signal="color_changed" from="HueCircle/indicator_rgba/Pop/ColorPicker" to="." method="_on_ColorPicker_color_changed"]
