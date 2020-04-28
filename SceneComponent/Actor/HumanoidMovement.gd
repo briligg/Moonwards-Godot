@@ -16,7 +16,7 @@ func _ready():
 	$OnGround.add_exception(entity)
 	pass
 
-func on_ground() -> bool:
+func is_grounded() -> bool:
 	return $OnGround.is_colliding()
 
 func _physics_process(_delta):
@@ -24,13 +24,18 @@ func _physics_process(_delta):
 	handle_input()
 	apply_gravity()
 #	move_body(delta)
+	entity.is_grounded = is_grounded()
 
 func _process_client(delta):
 	# Rotate only on the client
 	# The server will adjust accordingly to the velocity vector.
 	rotate_body(delta)
-	entity.global_transform.origin = entity.srv_pos
-
+	var o = entity.global_transform.origin
+	var t = entity.srv_pos
+	# This needs to be cleaned up
+	if not is_network_master():
+		entity.velocity = (t - o)
+	update_state()
 
 func _process_server(delta):
 	rotate_body(delta)
@@ -39,22 +44,30 @@ func _process_server(delta):
 	v += vertical_vector
 	entity.velocity = entity.move_and_slide(v * WorldConstants.SCALE, Vector3.UP)
 	entity.srv_pos = entity.global_transform.origin
+	update_state()
+
+func update_state():
+	entity.state.state = ActorEntityState.State.IDLE
+	if entity.velocity.x != 0:
+		entity.state.state = ActorEntityState.State.MOVING
+	if entity.velocity.y != 0:
+		entity.state.state = ActorEntityState.State.IN_AIR
 
 func reset_state() -> void:
 	horizontal_vector = Vector3.ZERO
 	entity.velocity = Vector3.ZERO
 	# Reset gravity accel only if we're on the floor.
-	if on_ground():
+	if is_grounded():
 		vertical_vector = Vector3.ZERO
 
 func handle_input() -> void:
 
-	if on_ground() and entity.input.y > 0:
+	if is_grounded() and entity.input.y > 0:
 		vertical_vector = Vector3.UP * jump_force
 	horizontal_vector = Vector3(entity.input.x, 0, entity.input.z).normalized() * speed
 
 func apply_gravity() -> void:
-	if not on_ground():
+	if not is_grounded():
 		vertical_vector.y += -1 * WorldConstants.GRAVITY * WorldConstants.SCALE
 
 func rotate_body(_delta: float) -> void:

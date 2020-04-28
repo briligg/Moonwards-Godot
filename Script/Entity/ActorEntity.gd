@@ -25,12 +25,14 @@ puppet var srv_pos: Vector3 = Vector3.ZERO
 # Velocity of the actor
 var velocity = Vector3()
 
+var is_grounded: bool
 
 func _process_server(_delta) -> void:
 	rset_unreliable("srv_pos", srv_pos)
 	rset_unreliable("look_dir", look_dir)
 
 func _process_client(_delta) -> void:
+	
 	# This needs to be validated on the server side.
 	# Figure out a way to do that as godot doesn't have it out of the box
 	# Setgetters are an option, try to find a cleaner way.
