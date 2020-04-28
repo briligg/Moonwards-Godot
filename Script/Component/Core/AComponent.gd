@@ -21,6 +21,21 @@ func _ready() -> void:
 		set_physics_process(false)
 		set_process_input(false)
 
+func _process_network(delta) -> void:
+	if get_tree().is_network_server() and entity.owner_peer_id == get_tree().get_network_unique_id():
+		_process_server(delta)
+		_process_client(delta)
+	elif get_tree().is_network_server():
+		_process_server(delta)
+	else:
+		_process_client(delta)
+		
+func _process_server(_delta) -> void:
+	pass
+	
+func _process_client(_delta) -> void:
+	pass
+
 func _set_enabled(val: bool) -> void:
 	Log.trace(self, "set_enabled", "enabled has been set to {enabled}")
 	enabled = val
