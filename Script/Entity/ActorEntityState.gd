@@ -9,7 +9,7 @@ enum State {
 	INTERACTING = 8,
 	}
 
-var state: int = State.IDLE
+var state: int = State.IDLE setget set_state
 var interactor_id: int = -1
 
 
@@ -23,3 +23,6 @@ func deserialize(data: Dictionary) -> ActorEntityState:
 	self.state = data.state
 	self.interactor_id = data.interactor_id
 	return self
+
+func set_state(val):
+	state = val
