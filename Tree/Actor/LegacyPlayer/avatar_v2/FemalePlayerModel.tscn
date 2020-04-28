@@ -2419,7 +2419,7 @@ tracks/29/imported = true
 tracks/29/enabled = true
 tracks/29/keys = PoolRealArray( 0, 1, 4.26221e-16, -1.16415e-10, 2.79397e-09, -3.36828e-29, -2.02376e-15, 1.50027e-14, 1, 1, 1, 1, 0.0833333, 1, 4.26221e-16, -1.16415e-10, 2.79397e-09, -3.36828e-29, -2.02376e-15, 1.50027e-14, 1, 1, 1, 1 )
 
-[node name="Scene Root" type="Spatial"]
+[node name="Model" type="Spatial"]
 
 [node name="FemaleRig" type="Spatial" parent="."]
 

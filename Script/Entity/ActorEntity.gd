@@ -27,9 +27,6 @@ var velocity = Vector3()
 
 
 func _process_server(_delta) -> void:
-#	for p in Network.network_instance.players.values():
-#		if p.peer_id != 1:
-#			rset_unreliable_id(p.peer_id, "srv_pos", srv_pos)
 	rset_unreliable("srv_pos", srv_pos)
 	rset_unreliable("look_dir", look_dir)
 

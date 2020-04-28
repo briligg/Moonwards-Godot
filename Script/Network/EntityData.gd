@@ -7,6 +7,9 @@ var initial_pos: Vector3 = Vector3.ZERO
 # Temporary until generic component instancing is available
 var is_empty: bool = false
 
+# Temporary until better player vs entity management is applied
+var colors: Array = [Color(1, 0.4, 1)]
+
 func _init(_peer_id: int = -1, _entity_name: String = "", _initial_pos: Vector3 = Vector3.ZERO):
 	self.peer_id = _peer_id
 	self.entity_name = _entity_name
@@ -17,6 +20,7 @@ func serialize() -> Dictionary:
 			"entity_name": entity_name,
 			"initial_pos": initial_pos,
 			"is_empty": is_empty,
+			"colors": colors
 			}
 
 func deserialize(data: Dictionary): #-> PlayerData: - causes a memory leak for some reason.
@@ -24,4 +28,5 @@ func deserialize(data: Dictionary): #-> PlayerData: - causes a memory leak for s
 	entity_name = str(data["entity_name"])
 	initial_pos = data["initial_pos"] as Vector3
 	is_empty = bool(data["is_empty"])
+	colors = data["colors"]
 	return self
