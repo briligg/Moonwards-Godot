@@ -10,4 +10,16 @@ enum State {
 	}
 
 var state: int = State.IDLE
-var interactor: Node = null
+var interactor_id: int = -1
+
+
+func serialize() -> Dictionary:
+	return {
+		"state": state,
+		"interactor_id": interactor_id,
+	}
+	
+func deserialize(data: Dictionary) -> ActorEntityState:
+	self.state = data.state
+	self.interactor_id = data.interactor_id
+	return self

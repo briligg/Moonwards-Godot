@@ -1,6 +1,8 @@
 extends MwSpatial
 class_name AEntity
 
+var entity_id: int = -1
+
 var entity_name: String = ""
 
 var components: Dictionary = {}
