@@ -413,7 +413,7 @@ hide_extra_info_display={
 
 [physics]
 
-3d/default_gravity=1.6
+common/physics_fps=30
 
 [rendering]
 

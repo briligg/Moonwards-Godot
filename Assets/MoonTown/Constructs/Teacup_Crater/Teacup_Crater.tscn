@@ -1,6 +1,95 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Teacup_Crater/Teacup_Crater.glb" type="PackedScene" id=1]
+[ext_resource path="res://Assets/MoonTown/Models/Truss_Triangular/Truss_Triangular_More.tscn" type="PackedScene" id=2]
 
+[sub_resource type="GIProbeData" id=1]
+bounds = AABB( -140.196, -43.5424, -141.65, 280.393, 87.0848, 283.299 )
+cell_size = 2.21328
+to_cell_xform = Transform( 0.451819, 0, 0, 0, 0.451819, 0, 0, 0, 0.451819, 63.3434, 19.6733, 64 )
+dynamic_data = PoolIntArray( 0, 8, 128, 64, 128, 1, 0, 0, -382530400, 32584, -382530400, 32584, 116, 101, 95, 122, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+dynamic_range = 4
+energy = 0.19
+bias = 1.5
+normal_bias = 0.0
+propagation = 0.31
 
 [node name="Teacup_Crater" instance=ExtResource( 1 )]
+
+[node name="OmniLight" type="OmniLight" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12658, -48.459, 0 )
+omni_range = 38.2719
+omni_attenuation = 1.51572
+
+[node name="OmniLight2" type="OmniLight" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12658, -1.41826, 12.3777 )
+omni_range = 38.2719
+omni_attenuation = 1.51572
+
+[node name="TeacupCraterRoof" parent="." index="2"]
+transform = Transform( 0.999958, -0.00906887, 0.00125398, 0.00905317, 0.999887, 0.0120047, -0.0013627, -0.0119928, 0.999927, 0.0295448, 0, 0 )
+
+[node name="Marker_Truss" parent="TeacupCraterRoof" index="0"]
+transform = Transform( -0.881805, 0.00905342, 0.471529, 0.0136256, 0.999888, 0.00628315, -0.471419, 0.0119654, -0.881829, 37.0414, -7.33692, 20.7482 )
+
+[node name="Truss_Triangular_More" parent="TeacupCraterRoof/Marker_Truss" index="0" instance=ExtResource( 2 )]
+
+[node name="Marker_Truss001" parent="TeacupCraterRoof" index="1"]
+transform = Transform( -0.992249, 0.00906645, 0.12394, 0.010482, 0.999887, 0.0107742, -0.123829, 0.0119898, -0.992232, 42.5416, -6.67985, 4.98646 )
+
+[node name="Truss_Triangular_More" parent="TeacupCraterRoof/Marker_Truss001" index="0" instance=ExtResource( 2 )]
+
+[node name="Truss_Triangular_More" parent="TeacupCraterRoof/Marker_Truss002" index="0" instance=ExtResource( 2 )]
+
+[node name="Marker_Truss003" parent="TeacupCraterRoof" index="3"]
+transform = Transform( 0.0233197, 0.00905317, 0.999687, 0.0117908, 0.999887, -0.00933002, -0.999659, 0.0120047, 0.0232103, 0.279419, -2.63094, 41.5868 )
+
+[node name="Truss_Triangular_More" parent="TeacupCraterRoof/Marker_Truss003" index="0" instance=ExtResource( 2 )]
+
+[node name="Truss_Triangular_More" parent="TeacupCraterRoof/Marker_Truss004" index="0" instance=ExtResource( 2 )]
+transform = Transform( 0.98175, 5.20216e-10, -0.190175, -5.65336e-10, 1, -3.03239e-10, 0.190175, 1.7628e-10, 0.98175, 0, 0, 0 )
+
+[node name="Marker_Truss005" parent="TeacupCraterRoof" index="5"]
+transform = Transform( 0.851797, 0.00905317, 0.523794, -0.00142273, 0.999887, -0.0149682, -0.52387, 0.0120047, 0.851714, -35.288, 6.09345, 21.4074 )
+
+[node name="Truss_Triangular_More" parent="TeacupCraterRoof/Marker_Truss005" index="0" instance=ExtResource( 2 )]
+
+[node name="Marker_Truss006" parent="TeacupCraterRoof" index="6"]
+transform = Transform( 0.993254, 0.00905317, -0.11561, -0.0103798, 0.999887, -0.0108781, 0.115498, 0.0120047, 0.993235, -41.6804, 9.9378, -5.18686 )
+
+[node name="Truss_Triangular_More" parent="TeacupCraterRoof/Marker_Truss006" index="0" instance=ExtResource( 2 )]
+
+[node name="Marker_Truss007" parent="TeacupCraterRoof" index="7"]
+transform = Transform( 0.869689, 0.00905317, -0.493518, -0.0137982, 0.999887, -0.00597343, 0.493408, 0.0120047, 0.869715, -35.388, 10.3399, -20.8499 )
+
+[node name="Truss_Triangular_More" parent="TeacupCraterRoof/Marker_Truss007" index="0" instance=ExtResource( 2 )]
+
+[node name="Marker_Truss008" parent="TeacupCraterRoof" index="8"]
+transform = Transform( 0.368793, 0.00905317, -0.929468, -0.0144975, 0.999887, 0.00398677, 0.929399, 0.0120047, 0.368882, -14.4051, 8.32526, -39.1946 )
+
+[node name="Truss_Triangular_More" parent="TeacupCraterRoof/Marker_Truss008" index="0" instance=ExtResource( 2 )]
+
+[node name="Marker_Truss009" parent="TeacupCraterRoof" index="9"]
+transform = Transform( -0.0359322, 0.00905318, -0.999313, -0.0116721, 0.999887, 0.00947807, 0.999286, 0.0120047, -0.0358225, 1.32997, 5.78435, -42.186 )
+
+[node name="Truss_Triangular_More" parent="TeacupCraterRoof/Marker_Truss009" index="0" instance=ExtResource( 2 )]
+
+[node name="Marker_Truss010" parent="TeacupCraterRoof" index="10"]
+transform = Transform( -0.597252, 0.00905318, -0.802003, -0.00422171, 0.999887, 0.0144309, 0.802043, 0.0120047, -0.597147, 26.4046, 0.225437, -34.0108 )
+
+[node name="Truss_Triangular_More" parent="TeacupCraterRoof/Marker_Truss010" index="0" instance=ExtResource( 2 )]
+
+[node name="Marker_Truss011" parent="TeacupCraterRoof" index="11"]
+transform = Transform( -0.868182, 0.00905318, -0.496165, 0.00190278, 0.999887, 0.0149148, 0.496244, 0.0120047, -0.868101, 37.2086, -3.02591, -21.4946 )
+
+[node name="Truss_Triangular_More" parent="TeacupCraterRoof/Marker_Truss011" index="0" instance=ExtResource( 2 )]
+
+[node name="shape0" parent="TeacupCraterRoof/Teacup-Planters" index="0"]
+transform = Transform( 1, -1.92813e-10, -1.16415e-10, 1.66983e-09, 1, 0, 0, -9.31323e-10, 1, -0.0590033, 0.0013938, -0.0715087 )
+
+[node name="GIProbe" type="GIProbe" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.1593, 0 )
+extents = Vector3( 140.196, 43.5424, 141.65 )
+energy = 0.19
+propagation = 0.31
+data = SubResource( 1 )
