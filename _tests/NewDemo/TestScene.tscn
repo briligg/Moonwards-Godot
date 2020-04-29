@@ -12,3 +12,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.495213, 0, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, 2 )
 
 [node name="PlayerHud" parent="." instance=ExtResource( 2 )]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.0404643, 0.824967, -0.563731, 0.261116, 0.553318, 0.790985, 0.964459, -0.115193, -0.237802, 12.8157, 25.8301, 0 )

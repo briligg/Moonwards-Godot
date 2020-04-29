@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Audio_Tour_Outdoor_Intro.ogg-941ab9c62052b8524fdc431a3f3fd974.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Audio_Tour/Audio_Tour_Outdoor_Intro.ogg"
+dest_files=[ "res://.import/Audio_Tour_Outdoor_Intro.ogg-941ab9c62052b8524fdc431a3f3fd974.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
