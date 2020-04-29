@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://SceneComponent/Interface/Nametag/Nametag3D.gd" type="Script" id=2]
+
+[sub_resource type="QuadMesh" id=2]
+flip_faces = true
+size = Vector2( 0.4, -0.1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Assets/Interface/Fonts/dejavu/DejaVuSans-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+resource_name = "Bold"
+size = 140
+font_data = SubResource( 3 )
+
+[node name="Nametag3D" type="MeshInstance"]
+transform = Transform( -1, 3.25841e-07, 3.25841e-07, -3.25841e-07, -1, 0, -3.25841e-07, 1.06173e-13, -1, 0, 0.209533, 0 )
+cast_shadow = 0
+mesh = SubResource( 2 )
+material/0 = null
+script = ExtResource( 2 )
+
+[node name="NametagHolder" type="Viewport" parent="."]
+size = Vector2( 1000, 600 )
+transparent_bg = true
+handle_input_locally = false
+hdr = false
+disable_3d = true
+usage = 0
+
+[node name="Username" type="Label" parent="NametagHolder"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 1000, 200 )
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 4 )
+text = "Hello World
+"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
