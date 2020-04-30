@@ -19,7 +19,7 @@ func serialize() -> Dictionary:
 		"interactor_id": interactor_id,
 	}
 	
-func deserialize(data: Dictionary) -> ActorEntityState:
+func deserialize(data: Dictionary):
 	self.state = data.state
 	self.interactor_id = data.interactor_id
 	return self
