@@ -8,7 +8,7 @@ var initial_pos: Vector3 = Vector3.ZERO
 var is_empty: bool = false
 
 # Temporary until better player vs entity management is applied
-var colors: Array = [Color(1, 0.4, 1)]
+var colors: Array = []
 
 func _init(_peer_id: int = -1, _entity_name: String = "", _initial_pos: Vector3 = Vector3.ZERO):
 	self.peer_id = _peer_id

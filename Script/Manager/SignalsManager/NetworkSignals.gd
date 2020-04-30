@@ -28,11 +28,20 @@ signal game_client_ready
 
 ### LOADING & DATA MANAGEMENT
 
+
 # Fired when a connected player client has finished loading.
 # param `peer_id`: The player's peer_id
 const CLIENT_LOAD_FINISHED: String = "client_load_finished"
 
 signal client_load_finished(peer_id)
+
+const CLIENT_NAME_CHANGED: String = "client_name_changed"
+
+signal client_name_changed(name)
+
+const CLIENT_COLOR_CHANGED: String = "client_color_changed"
+
+signal client_color_changed(colors)
 
 
 ### IN GAME EVENTS

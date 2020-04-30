@@ -9,11 +9,22 @@ const DEFAULT_MAX_PLAYERS: int = 100
 
 var network_instance = null
 
+# This is to be moved to a more full system once persistence is setup
+var self_meta_data = {
+	"name" : "",
+	# Temporary default values for testing
+	"colors": [Color(1,1,1), Color(1,1,1), Color(1,1,1), Color(1,1,1)]
+}
+
 func _ready():
 	Signals.Network.connect(Signals.Network.GAME_SERVER_REQUESTED, 
 			self, "_set_game_server")
 	Signals.Network.connect(Signals.Network.GAME_CLIENT_REQUESTED, 
 			self, "_set_game_client")
+	Signals.Network.connect(Signals.Network.CLIENT_COLOR_CHANGED, 
+			self, "_set_self_colors")
+	Signals.Network.connect(Signals.Network.CLIENT_NAME_CHANGED, 
+			self, "_set_self_name")
 
 func _set_game_server(is_host_player: bool = false) -> void:
 	var root = get_tree().get_root()
@@ -27,11 +38,20 @@ func _set_game_client(_ip, _port) -> void:
 	network_instance.name = "NetworkInstance"
 	root.call_deferred("add_child", network_instance)
 
+func _set_self_colors(colors: Array) -> void:
+	self_meta_data.colors = colors
+
+func _set_self_name(name: String) -> void:
+	self_meta_data.name = name
+	
 ## Networking API - to be better written in C++
 
 func get_sender_entity() -> EntityData:
 	var id = get_tree().get_rpc_sender_id()
 	return network_instance.entities[id] as EntityData
+
+func get_sender_id() -> int:
+	return get_tree().get_rpc_sender_id()
 
 # Controlled RPC Wrapper with added control.
 func crpc(caller: Node, method: String, val):
