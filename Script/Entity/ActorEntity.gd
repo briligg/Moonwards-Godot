@@ -6,6 +6,9 @@ class_name ActorEntity
 
 ## Spatial Entity common data
 
+onready var model = $Model
+onready var animation = $Model/AnimationPlayer
+
 # The current `state` of the entity. 
 # Contains metadata in regards to what entity is currently doing.
 var state: ActorEntityState = ActorEntityState.new()
