@@ -11,7 +11,7 @@ var network_instance = null
 
 # This is to be moved to a more full system once persistence is setup
 var self_meta_data = {
-	"name" : "",
+	"name" : "No name set",
 	# Temporary default values for testing
 	"colors": [Color(1,1,1), Color(1,1,1), Color(1,1,1), Color(1,1,1)]
 }
