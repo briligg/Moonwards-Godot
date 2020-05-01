@@ -35,6 +35,7 @@ func _process_client(delta):
 	# This needs to be cleaned up
 	if not is_network_master():
 		entity.velocity = (t - o)
+		entity.global_transform.origin = t
 	update_state()
 
 func _process_server(delta):
@@ -47,11 +48,16 @@ func _process_server(delta):
 	update_state()
 
 func update_state():
-	entity.state.state = ActorEntityState.State.IDLE
 	if entity.velocity.x != 0:
 		entity.state.state = ActorEntityState.State.MOVING
 	if entity.velocity.y != 0:
 		entity.state.state = ActorEntityState.State.IN_AIR
+	if (entity.velocity == Vector3.ZERO 
+			and is_grounded() 
+			and horizontal_vector == Vector3.ZERO
+			and vertical_vector == Vector3.ZERO):
+		entity.state.state = ActorEntityState.State.IDLE
+
 
 func reset_state() -> void:
 	horizontal_vector = Vector3.ZERO
