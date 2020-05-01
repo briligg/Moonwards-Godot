@@ -22,3 +22,6 @@ func _ready() -> void :
 	
 	#Create a material and asign it to myself.
 	material_override.albedo_texture = get_node("NametagHolder").get_texture()
+
+func set_name(name: String) -> void:
+	$NametagHolder/Username.text = name

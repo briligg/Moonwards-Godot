@@ -1,25 +1,25 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://SceneComponent/Interface/Nametag/Nametag3D.gd" type="Script" id=2]
+[ext_resource path="res://Tree/Interface/Nametag/Nametag3D.gd" type="Script" id=1]
 
-[sub_resource type="QuadMesh" id=2]
+[sub_resource type="QuadMesh" id=1]
 flip_faces = true
 size = Vector2( 0.4, -0.1 )
 
-[sub_resource type="DynamicFontData" id=3]
+[sub_resource type="DynamicFontData" id=2]
 font_path = "res://Assets/Interface/Fonts/dejavu/DejaVuSans-Bold.ttf"
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 resource_name = "Bold"
 size = 140
-font_data = SubResource( 3 )
+font_data = SubResource( 2 )
 
 [node name="Nametag3D" type="MeshInstance"]
 transform = Transform( -1, 3.25841e-07, 3.25841e-07, -3.25841e-07, -1, 0, -3.25841e-07, 1.06173e-13, -1, 0, 0.209533, 0 )
 cast_shadow = 0
-mesh = SubResource( 2 )
+mesh = SubResource( 1 )
 material/0 = null
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 
 [node name="NametagHolder" type="Viewport" parent="."]
 size = Vector2( 1000, 600 )
@@ -36,7 +36,7 @@ grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 1000, 200 )
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "Hello World
 "
 align = 1
