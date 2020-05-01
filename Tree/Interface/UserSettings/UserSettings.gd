@@ -17,11 +17,10 @@ var shoes_color : = Color(1,1,1)
 var current_slot : int = SLOTS.PANTS
 
 # Needs to use the paths before it's ready, so it will crash using onready
-var text_edit1 : String = "VBoxContainer/UsernameContainer/UsernameTextEdit"
-var username_display : String = "ModelDisplay/UsernameDisplay"
+var username_edit : String = "ModelDisplay/UsernameEdit"
 var gender_edit : String = "VBoxContainer/Gender"
 var avatar_preview : String = "ModelDisplay/ViewportContainer/Viewport/AvatarPreview"
-var hue_picker : String = "HuePicker"
+var hue_picker : String = "VBoxContainer/HuePicker"
 var button_containter : String = "ModelDisplay/ViewportContainer"
 
 var username : String = "default username"
@@ -31,8 +30,7 @@ var gender : int = GENDER_MALE
 
 
 func _ready() -> void:
-	get_node(text_edit1).text = username
-	get_node(username_display).text = username
+	get_node(username_edit).text = username
 	switch_slot()
 	_on_Gender_item_selected(gender)
 	get_node(gender_edit).selected = gender
@@ -70,6 +68,14 @@ func _on_CfgPlayer_pressed() -> void:
 func _on_SaveButton_pressed() -> void:
 	#Currently just log what the player is doing.
 	Log.trace(self, "_on_SaveButton_pressed", "Save button pressed by player.")
+	
+	#Emit signals to let the Network know we changed things.
+	Signals.Network.emit_signal(Signals.Network.CLIENT_NAME_CHANGED, username)
+	
+	#Emit the shirt color signals.
+#	for clothing_color in [pants_color, shirt_color, hair_color, skin_color, shoes_color] :
+#		Signals.Network.emit_signal(Signals.Network.CLIENT_COLOR_CHANGED, clothing_color)
+	Signals.Network.emit_signal(Signals.Network.CLIENT_COLOR_CHANGED, [pants_color, shirt_color, hair_color, skin_color, shoes_color])
 
 func _on_SlotOption_item_selected(ID : int) -> void:
 	get_node(avatar_preview).clean_selected()
@@ -89,5 +95,5 @@ func _on_Gender_item_selected(ID : int) -> void:
 
 func _on_UsernameTextEdit_text_changed(new_text : String) -> void:
 	username = new_text
-	get_node(username_display).text = new_text
 	Log.trace(self, "_on_UsernameTextEdit_text_changed", "Change player's name.'")
+	
