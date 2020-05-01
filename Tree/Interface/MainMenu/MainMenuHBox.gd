@@ -1,9 +1,9 @@
 extends HBoxContainer
 
 
-onready var START_GAME : Button = get_node("VBoxContainer/StartGame") setget _do_not_set_buttons
-onready var SETTINGS : Button = get_node("VBoxContainer/Settings") setget _do_not_set_buttons
-onready var OTHER : Button = get_node("VBoxContainer/Other") setget _do_not_set_buttons
+onready var START_GAME : Button = get_node("VBoxContainer/Destination") setget _do_not_set_buttons
+onready var SETTINGS : Button = get_node("VBoxContainer/Avatar") setget _do_not_set_buttons
+onready var OTHER : Button = get_node("VBoxContainer/Controls") setget _do_not_set_buttons
 onready var PANEL : PanelContainer = get_node("Panel") setget _do_not_set_buttons
 
 #Determines what button to draw from.
@@ -103,23 +103,16 @@ func _process(delta : float) -> void :
 		surge_transfers.remove(pos)
 
 func _ready() -> void :
-	get_node("VBoxContainer/StartGame").grab_focus()
+	get_node("VBoxContainer/Destination").grab_focus()
 
 #This forbids the onready buttons from being set since they act as constants.
 #warning-ignore:unused_argument
 func _do_not_set_buttons(new_value) -> void :
 	assert(true == false)
 
-#The bottom three methods are in charge of making the special
-#effects appear for their appropriate button.
-func _on_Other_highlighted() -> void :
-	current_button = OTHER
-	_create_surge()
-
-func _on_Settings_highlighted() -> void :
-	current_button = SETTINGS
-	_create_surge()
-
-func _on_StartGame_highlighted() -> void :
-	current_button = START_GAME
+#Called by buttons when they are highlighted.
+func _button_highlighted(button_name : String) -> void :
+	#If this fails it is because the button's name is not passed correctly.
+	assert(has_node("VBoxContainer/" + button_name))
+	current_button = get_node("VBoxContainer/" + button_name)
 	_create_surge()
