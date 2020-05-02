@@ -1,18 +1,12 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Tree/Interface/Nametag/Nametag3D.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Interface/Fonts/NametagFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/Interface/Nametag3D.tres" type="Theme" id=3]
 
 [sub_resource type="QuadMesh" id=1]
 flip_faces = true
-size = Vector2( 0.4, -0.1 )
-
-[sub_resource type="DynamicFontData" id=2]
-font_path = "res://Assets/Interface/Fonts/dejavu/DejaVuSans-Bold.ttf"
-
-[sub_resource type="DynamicFont" id=3]
-resource_name = "Bold"
-size = 140
-font_data = SubResource( 2 )
+size = Vector2( 0.7, -0.5 )
 
 [node name="Nametag3D" type="MeshInstance"]
 transform = Transform( -1, 3.25841e-07, 3.25841e-07, -3.25841e-07, -1, 0, -3.25841e-07, 1.06173e-13, -1, 0, 0.209533, 0 )
@@ -30,18 +24,20 @@ disable_3d = true
 usage = 0
 
 [node name="Username" type="Label" parent="NametagHolder"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-rect_min_size = Vector2( 1000, 200 )
-size_flags_vertical = 1
-custom_fonts/font = SubResource( 3 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource( 3 )
+custom_fonts/font = ExtResource( 2 )
 text = "Hello World
 "
 align = 1
-valign = 1
-autowrap = true
+valign = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
