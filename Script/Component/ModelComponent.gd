@@ -1,15 +1,24 @@
 extends AComponent
 
 # Temporary until this is done dynamically.
-onready var mesh: MeshInstance = $FemaleRig/Skeleton/AvatarFemale.mesh
+onready var mesh_inst: MeshInstance = $FemaleRig/Skeleton/AvatarFemale
 onready var animation: AnimationPlayer = $AnimationPlayer
 
 func _init().("ModelComponent", false):
 	pass
 
-func set_colors(colors: Array) -> void:
-	var count = mesh.get_surface_count()
+func _ready():
+	var count = mesh_inst.mesh.get_surface_count()
 	for i in range(count):
-		var mat = mesh.surface_get_material(i)
+		var mat = mesh_inst.mesh.surface_get_material(i).duplicate()
+		mesh_inst.set_surface_material(i, mat)
+
+func set_colors(colors: Array) -> void:
+	if colors.size() == 0:
+		return
+		
+	var count = mesh_inst.get_surface_material_count()
+	for i in range(count):
+		var mat = mesh_inst.get_surface_material(i)
 		mat.albedo_color = colors[i]
-		mesh.surface_set_material(i, mat)
+		mesh_inst.set_surface_material(i, mat)

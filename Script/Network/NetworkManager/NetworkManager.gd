@@ -13,7 +13,7 @@ var network_instance = null
 var self_meta_data = {
 	"name" : "No name set",
 	# Temporary default values for testing
-	"colors": [Color(1,1,1), Color(1,1,1), Color(1,1,1), Color(1,1,1)]
+	"colors": []
 }
 
 func _ready():
