@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/MeltInPlaceStation.glb-a0413d1f080b99533a3fa9def30a5d48.scn"
+path="res://.import/Truss_Triangular_More.glb-95607ba2908607fee49c3fad5cbe6a45.scn"
 
 [deps]
 
-source_file="res://Assets/MoonTown/Models/Melt_In_Place_Station/MeltInPlaceStation.glb"
-dest_files=[ "res://.import/MeltInPlaceStation.glb-a0413d1f080b99533a3fa9def30a5d48.scn" ]
+source_file="res://Assets/MoonTown/Models/Truss_Triangular/Truss_Triangular_More.glb"
+dest_files=[ "res://.import/Truss_Triangular_More.glb-95607ba2908607fee49c3fad5cbe6a45.scn" ]
 
 [params]
 

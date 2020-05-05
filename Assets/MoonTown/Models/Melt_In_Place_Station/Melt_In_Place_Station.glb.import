@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Audio_Tour_Markers_Set.glb-7ac7670aa607f11089e0cf88c63f3abf.scn"
+path="res://.import/Melt_In_Place_Station.glb-ba77c5ee24896e0ec787f6366db922dc.scn"
 
 [deps]
 
-source_file="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Markers_Set.glb"
-dest_files=[ "res://.import/Audio_Tour_Markers_Set.glb-7ac7670aa607f11089e0cf88c63f3abf.scn" ]
+source_file="res://Assets/MoonTown/Models/Melt_In_Place_Station/Melt_In_Place_Station.glb"
+dest_files=[ "res://.import/Melt_In_Place_Station.glb-ba77c5ee24896e0ec787f6366db922dc.scn" ]
 
 [params]
 
