@@ -19,26 +19,25 @@ func _process_client(_delta) -> void:
 	pass
 
 # Controlled RPC Wrapper with added control.
-func crpc(method: String, val):
+func crpc(method: String, val, exclude_list: Array = []):
 	if Network.network_instance == null:
 		return
-	Network.network_instance.crpc(self, method, val)
+	Network.network_instance.crpc(self, method, val, exclude_list)
 
 # Controlled RPC Wrapper with added control.
-func crpc_unreliable(method: String, val):
+func crpc_unreliable(method: String, val, exclude_list: Array = []):
 	if Network.network_instance == null:
 		return
-	Network.network_instance.crpc_unreliable(self, method, val)
+	Network.network_instance.crpc_unreliable(self, method, val, exclude_list)
 
 # Controlled RSET Wrapper with added control.
-func crset(method: String, val):
+func crset(method: String, val, exclude_list: Array = []):
 	if Network.network_instance == null:
 		return
-	Network.network_instance.crset(self, method, val)
+	Network.network_instance.crset(self, method, val, exclude_list)
 
 # Controlled RSET Wrapper with added control.
-
-func crset_unreliable(method: String, val):
+func crset_unreliable(method: String, val, exclude_list: Array = []):
 	if Network.network_instance == null:
 		return
-	Network.network_instance.crset_unreliable(self, method, val)
+	Network.network_instance.crset_unreliable(self, method, val, exclude_list)
