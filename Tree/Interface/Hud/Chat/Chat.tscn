@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Interface/Fonts/MainMenuFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Interface/StyleBoxes/MainMenuFocusStyle.tres" type="StyleBox" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Interface/StyleBoxes/ChatMainBGPanel.tres" type="StyleBox" id=6]
 [ext_resource path="res://Tree/Interface/Hud/Chat/ChatInput.gd" type="Script" id=7]
 [ext_resource path="res://Tree/Interface/Hud/Chat/Chat.gd" type="Script" id=8]
+[ext_resource path="res://Tree/Interface/Hud/Chat/ChatDisplay.gd" type="Script" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.392157 )
@@ -187,15 +188,16 @@ alignment = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="V"]
 margin_right = 399.0
-margin_bottom = 31.0
+margin_bottom = 21.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 bbcode_enabled = true
 scroll_following = true
+script = ExtResource( 9 )
 
 [node name="ChatInput" type="LineEdit" parent="V"]
-margin_top = 35.0
+margin_top = 25.0
 margin_right = 399.0
 margin_bottom = 58.0
 mouse_filter = 2

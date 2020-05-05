@@ -58,6 +58,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_LineEdit_text_entered(new_text: String) -> void:
 	if new_text != "":
+		#Add the username.
 		emit_signal("chat_line_entered", new_text)
 	
 	_chat_input_node.clear()
@@ -91,11 +92,9 @@ func _toggle_chat_window() -> void :
 	#myself visible again.
 	visible = true
 
+#Add a message to the chat history.
 func add_message(new_text: String) -> void:
-	_chat_display_node.newline()
-
-	#warning-ignore:return_value_discarded
-	_chat_display_node.append_bbcode(new_text)
+	_chat_display_node.add_message(new_text)
 
 #Cause the chat to fade into being invisible.
 #Meant to be called from somewhere else. Usually from a group call.
