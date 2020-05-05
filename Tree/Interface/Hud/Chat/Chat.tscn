@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Interface/Fonts/MainMenuFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Interface/StyleBoxes/MainMenuFocusStyle.tres" type="StyleBox" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Interface/StyleBoxes/ChatMainBGPanel.tres" type="StyleBox" id=6]
 [ext_resource path="res://Tree/Interface/Hud/Chat/ChatInput.gd" type="Script" id=7]
 [ext_resource path="res://Tree/Interface/Hud/Chat/Chat.gd" type="Script" id=8]
+[ext_resource path="res://Tree/Interface/Hud/Chat/ChatDisplay.gd" type="Script" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.392157 )
@@ -164,10 +165,10 @@ tracks/0/keys = {
 [node name="Chat" type="PanelContainer" groups=[
 "Chat",
 ]]
-anchor_top = 1.0
+anchor_top = 0.8
+anchor_right = 0.3
 anchor_bottom = 1.0
-margin_top = -60.0
-margin_right = 403.0
+grow_horizontal = 0
 grow_vertical = 0
 focus_mode = 1
 mouse_filter = 2
@@ -181,29 +182,68 @@ __meta__ = {
 [node name="V" type="VBoxContainer" parent="."]
 margin_left = 2.0
 margin_top = 2.0
-margin_right = 401.0
-margin_bottom = 60.0
+margin_right = 574.0
+margin_bottom = 216.0
 alignment = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="V"]
-margin_right = 399.0
-margin_bottom = 31.0
-mouse_filter = 2
+[node name="HelpPage" type="RichTextLabel" parent="V"]
+visible = false
+margin_right = 572.0
+margin_bottom = 177.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "'Enter' to start inputing text. 'Enter' again to send message.
+'T' to scroll chat display up.
+'G' to scroll chat display down.
+'V' to toggle Chat between max and min vertical size.
+'C' to expand Chat to the right.
+'X' to shrink Chat to the left.
+'1' to expand Chat upwards.
+'Q' to shrink Chat downwards.
+'2' to hide Chat.
+'H' to go back to Chat Display."
+
+[node name="Tabs" type="TabContainer" parent="V"]
+margin_right = 572.0
+margin_bottom = 177.0
+size_flags_horizontal = 15
+size_flags_vertical = 15
+tabs_visible = false
+
+[node name="Public" type="RichTextLabel" parent="V/Tabs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 bbcode_enabled = true
 scroll_following = true
+script = ExtResource( 9 )
+
+[node name="Messages" type="RichTextLabel" parent="V/Tabs"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -51.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+scroll_following = true
+script = ExtResource( 9 )
 
 [node name="ChatInput" type="LineEdit" parent="V"]
-margin_top = 35.0
-margin_right = 399.0
-margin_bottom = 58.0
+margin_top = 181.0
+margin_right = 572.0
+margin_bottom = 214.0
 mouse_filter = 2
 editable = false
-placeholder_text = "'Enter'=type 'V'=toggle 'T'/'G'=scroll 'Q'=display"
+placeholder_text = "Press 'H' for help."
 placeholder_alpha = 1.0
 script = ExtResource( 7 )
 
 [node name="ChatAnims" type="AnimationPlayer" parent="."]
 anims/Visibility = SubResource( 12 )
+[connection signal="resized" from="." to="." method="_on_Chat_resized"]
+[connection signal="tab_changed" from="V/Tabs" to="." method="_on_Tabs_tab_changed"]
+[connection signal="meta_clicked" from="V/Tabs/Public" to="." method="_link_clicked"]
+[connection signal="meta_clicked" from="V/Tabs/Messages" to="." method="_link_clicked"]
 [connection signal="text_entered" from="V/ChatInput" to="." method="_on_LineEdit_text_entered"]

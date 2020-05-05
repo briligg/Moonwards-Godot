@@ -150,6 +150,7 @@ focus_neighbour_top = NodePath("../Avatar")
 focus_neighbour_right = NodePath("../../../About")
 focus_neighbour_bottom = NodePath("../Apps")
 size_flags_horizontal = 0
+disabled = true
 text = "  Controls  "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -164,6 +165,7 @@ focus_neighbour_top = NodePath("../Controls")
 focus_neighbour_right = NodePath("../../../About")
 focus_neighbour_bottom = NodePath("../Display")
 size_flags_horizontal = 0
+disabled = true
 text = "  Apps  "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -178,6 +180,7 @@ focus_neighbour_top = NodePath("../Apps")
 focus_neighbour_right = NodePath("../../../About")
 focus_neighbour_bottom = NodePath("../Destination")
 size_flags_horizontal = 0
+disabled = true
 text = "  Display  "
 __meta__ = {
 "_edit_use_anchors_": false
