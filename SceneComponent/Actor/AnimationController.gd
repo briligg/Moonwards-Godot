@@ -18,7 +18,7 @@ func _initialize():
 	animation = model.get_node("AnimationPlayer")
 	pass
 
-func _process_client(_delta):
+func _process(_delta):
 	if Helpers.Enum.has_flag(entity.state.state, ActorEntityState.State.IDLE):
 		animation.play("CasualStance1")
 	elif Helpers.Enum.has_flag(entity.state.state, ActorEntityState.State.MOVING):
