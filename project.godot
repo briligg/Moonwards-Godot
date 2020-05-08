@@ -84,6 +84,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/HumanoidMovement.gd"
 }, {
+"base": "Spatial",
+"class": "LodModel",
+"language": "GDScript",
+"path": "res://Script/ExtensionClass/LodModel.gd"
+}, {
+"base": "Reference",
+"class": "LodSignals",
+"language": "GDScript",
+"path": "res://Script/Manager/SignalsManager/LodSignals.gd"
+}, {
 "base": "Reference",
 "class": "MenuSignals",
 "language": "GDScript",
@@ -125,6 +135,8 @@ _global_script_class_icons={
 "HudSignals": "",
 "InputController": "",
 "KinematicMovement": "",
+"LodModel": "",
+"LodSignals": "",
 "MenuSignals": "",
 "MwNode": "",
 "MwSpatial": "",
@@ -148,6 +160,7 @@ Signals="*res://Script/Manager/SignalsManager/SignalsManager.gd"
 Groups="*res://Script/Manager/GroupsManager/GroupsManager.gd"
 Scene="*res://Script/Manager/SceneManager/SceneManager.gd"
 Network="*res://Script/Network/NetworkManager/NetworkManager.gd"
+Lod="*res://Script/Manager/LodManager/LodManager.tscn"
 
 [compression]
 
