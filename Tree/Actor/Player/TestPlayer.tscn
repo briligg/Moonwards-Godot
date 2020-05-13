@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://SceneComponent/Actor/HumanoidMovement.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SceneComponent/Actor/CameraController.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://SceneComponent/Actor/InputController.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Tree/Actor/LegacyPlayer/avatar_v2/FemalePlayerModel.tscn" type="PackedScene" id=6]
 [ext_resource path="res://SceneComponent/Interface/Nametag/NametagComponent.tscn" type="PackedScene" id=7]
+[ext_resource path="res://SceneComponent/Actor/LodComponent.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.0309017
@@ -34,3 +35,5 @@ __meta__ = {
 [node name="Model" parent="." instance=ExtResource( 6 )]
 
 [node name="NametagComponent" parent="." instance=ExtResource( 7 )]
+
+[node name="LodComponent" parent="." instance=ExtResource( 8 )]
