@@ -1,8 +1,6 @@
 extends AComponent
 
-# Temporarily until SceneManager, scene indexing & dynamic component creation is added.
-var model
-var animation
+var walk_direction = Vector2.ONE
 
 func _init().("AnimationController", false):
 	pass
@@ -11,17 +9,22 @@ func _ready():
 	call_deferred("_initialize")
 
 func _initialize():
-	model = entity.get_component("ModelComponent")
-	if model == null:
-		Log.error(self, "", "Animation controller requires a model.")
-		assert(false)
-	animation = model.get_node("AnimationPlayer")
 	pass
 
-func _process(_delta):
-	if Helpers.Enum.has_flag(entity.state.state, ActorEntityState.State.IDLE):
-		animation.play("CasualStance1")
-	elif Helpers.Enum.has_flag(entity.state.state, ActorEntityState.State.MOVING):
-		animation.play("Female_MoonWalking-loop")
-	elif Helpers.Enum.has_flag(entity.state.state, ActorEntityState.State.IN_AIR):
-		animation.play("Flail-loop")
+func _process_client(_delta):
+	if entity.state.changed:
+		if entity.state.state == ActorEntityState.State.IN_AIR:
+			entity.animation_tree.set("parameters/State/current", 1)
+		else:
+			entity.animation_tree.set("parameters/State/current", 0)
+	
+	
+	var forward = entity.global_transform.basis.z
+	var left = entity.global_transform.basis.x
+	var flat_velocity = Vector3(entity.velocity.x, 0.0, entity.velocity.z)
+	
+	var forward_amount = forward.dot(flat_velocity)
+	var left_amount = left.dot(flat_velocity)
+	
+	walk_direction = walk_direction.linear_interpolate(Vector2(-left_amount, forward_amount), _delta * 5.0)
+	entity.animation_tree.set("parameters/Walking/blend_position", walk_direction)

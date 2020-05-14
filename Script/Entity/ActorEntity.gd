@@ -8,6 +8,8 @@ class_name ActorEntity
 
 onready var model = $Model
 onready var animation = $Model/AnimationPlayer
+onready var animation_tree = $Model/AnimationTree
+onready var im = $Model/ImmediateGeometry
 
 # The current `state` of the entity. 
 # Contains metadata in regards to what entity is currently doing.
@@ -19,7 +21,7 @@ master var input: Vector3 = Vector3.ZERO
 
 # `REMOTE`
 # Look dir of our actor
-remote var look_dir: Vector3 = Vector3.ZERO
+remote var look_dir: Vector3 = Vector3.FORWARD
 
 # `PUPPET`
 # The world position of this entity on the server

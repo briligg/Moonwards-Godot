@@ -10,6 +10,7 @@ enum State {
 	}
 
 var state: int = State.IDLE setget set_state
+var changed = false setget , get_changed
 var interactor_id: int = -1
 
 
@@ -25,4 +26,14 @@ func deserialize(data: Dictionary):
 	return self
 
 func set_state(val):
+	if val != state:
+		changed = true
+		
 	state = val
+
+func get_changed():
+	if changed:
+		changed = false
+		return true
+	else:
+		return false
