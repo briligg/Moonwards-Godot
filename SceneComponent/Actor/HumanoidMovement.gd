@@ -2,7 +2,7 @@ extends AMovementController
 class_name KinematicMovement
 # Component for kinematic movement
 
-export(float) var speed = 5
+export(float) var speed = 25
 export(float) var jump_force = 9
 
 # Input vectors
@@ -48,33 +48,25 @@ func _process_server(delta):
 	update_state()
 
 func update_state():
-	if entity.velocity.x != 0:
+	if Vector2(entity.velocity.x, entity.velocity.z).length() > 0.1:
 		entity.state.state = ActorEntityState.State.MOVING
-	if entity.velocity.y != 0:
+	elif abs(entity.velocity.y) > 0.1 or !entity.is_grounded:
 		entity.state.state = ActorEntityState.State.IN_AIR
-	if (entity.velocity == Vector3.ZERO 
-			and is_grounded() 
-			and horizontal_vector == Vector3.ZERO
-			and vertical_vector == Vector3.ZERO):
+	else:
 		entity.state.state = ActorEntityState.State.IDLE
 
 
 func reset_state() -> void:
 	horizontal_vector = Vector3.ZERO
 	entity.velocity = Vector3.ZERO
-	# Reset gravity accel only if we're on the floor.
-	if is_grounded():
-		vertical_vector = Vector3.ZERO
 
 func handle_input() -> void:
-
 	if is_grounded() and entity.input.y > 0:
 		vertical_vector = Vector3.UP * jump_force
 	horizontal_vector = Vector3(entity.input.x, 0, entity.input.z).normalized() * speed
 
 func apply_gravity() -> void:
-	if not is_grounded():
-		vertical_vector.y += -1 * WorldConstants.GRAVITY * WorldConstants.SCALE
+	vertical_vector.y += -1 * WorldConstants.GRAVITY * WorldConstants.SCALE
 
 func rotate_body(_delta: float) -> void:
 	# Rotate

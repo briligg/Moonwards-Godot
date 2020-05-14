@@ -42,8 +42,7 @@ func _input(event):
 		pitch = max(min(pitch - mouse_vec.y * mouse_sensitivity , max_pitch), -max_pitch)
 
 func _update_cam_pos() -> void:
-
-	var new_cam_pos = entity.global_transform.origin - _get_cam_normal() * dist
+	var new_cam_pos = global_transform.origin - _get_cam_normal() * dist
 	# Check if the new pos is behind collidable objects
 	var ray = get_world().direct_space_state.intersect_ray(pivot.global_transform.origin, new_cam_pos, excluded_cull_bodies)
 	if not ray.empty():

@@ -1,0 +1,82 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/Turquoise.tres" type="Material" id=1]
+[ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/Chestnut.tres" type="Material" id=2]
+[ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/SmokySkin.tres" type="Material" id=3]
+[ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/Black.tres" type="Material" id=4]
+[ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/BlueStone.tres" type="Material" id=5]
+[ext_resource path="res://Tree/Actor/Player/PlayerModel.glb" type="PackedScene" id=6]
+[ext_resource path="res://Script/Component/ModelComponent.gd" type="Script" id=7]
+
+[sub_resource type="AnimationNodeAnimation" id=1]
+animation = "Flail-loop"
+
+[sub_resource type="AnimationNodeTransition" id=2]
+input_count = 2
+xfade_time = 0.25
+input_0/name = "OnGround"
+input_0/auto_advance = false
+input_1/name = "Flailing"
+input_1/auto_advance = false
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "MoonWalking-loop"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "MoonWalkingBack-loop"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "MoonWalkingRight-loop"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "MoonWalkingLeft-loop"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "CasualStance"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=8]
+blend_point_0/node = SubResource( 3 )
+blend_point_0/pos = Vector2( 0, 1 )
+blend_point_1/node = SubResource( 4 )
+blend_point_1/pos = Vector2( 0, -1 )
+blend_point_2/node = SubResource( 5 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 6 )
+blend_point_3/pos = Vector2( -1, 0 )
+blend_point_4/node = SubResource( 7 )
+blend_point_4/pos = Vector2( 0, 0 )
+
+[sub_resource type="AnimationNodeBlendTree" id=9]
+graph_offset = Vector2( 78, 65 )
+nodes/Animation/node = SubResource( 1 )
+nodes/Animation/position = Vector2( 320, 240 )
+nodes/State/node = SubResource( 2 )
+nodes/State/position = Vector2( 680, 100 )
+nodes/Walking/node = SubResource( 8 )
+nodes/Walking/position = Vector2( 320, 40 )
+nodes/output/position = Vector2( 1020, 160 )
+node_connections = [ "output", 0, "State", "State", 0, "Walking", "State", 1, "Animation" ]
+
+[node name="Model" instance=ExtResource( 6 )]
+script = ExtResource( 7 )
+
+[node name="AvatarFemale" parent="MainRig/Skeleton" index="0"]
+material/0 = ExtResource( 3 )
+material/1 = ExtResource( 1 )
+material/2 = ExtResource( 2 )
+material/3 = ExtResource( 4 )
+material/4 = ExtResource( 5 )
+
+[node name="AvatarMale" parent="MainRig/Skeleton" index="1"]
+material/0 = ExtResource( 4 )
+material/1 = ExtResource( 2 )
+material/2 = ExtResource( 1 )
+material/3 = ExtResource( 3 )
+material/4 = ExtResource( 5 )
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource( 9 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/State/current = 0
+parameters/Walking/blend_position = Vector2( -0.00160003, 0 )
