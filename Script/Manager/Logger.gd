@@ -2,10 +2,28 @@ extends Node
 """
 	Logger Singleton Class Script
 	Provides functions for logging of various levels of message to disk.
+	The `F3` button (or any key assigned to `toggle_logger` action) opens up
+		in-game console logger.
 	
 	Usage example:
 	
 	trace(self, "function_name", "thing went wrong")
+	
+	Description:
+		
+	The log does have 5 levels:
+	TRACE: Informational messages that are used to depict application state
+		status/progress & program flow.
+	DEBUG: These messages will be more granular, detailed & include useful info
+		to debug the application.
+	WARNING: Messages to hint that an issue might be happening, but not
+		necessarily. Issues that WARN do not necessarily affect the flow of
+		the application.
+	ERROR: Messages to hint that an issue probably affects the program flow,
+		but not necessarily. Regardless, ERRORs are messages that require
+		attention & need to be fixed.
+	CRITICAL: Things that definitely break the program flow, and require
+		immediate attention. The program can not progerss past this type of error. 
 """
 const ERRORS = [
 "OK", "FAILED", "ERR_UNAVAILABLE", "ERR_UNCONFIGURED", "ERR_UNAUTHORIZED",
@@ -22,63 +40,40 @@ const ERRORS = [
 "ERR_BUSY", "ERR_SKIP", "ERR_HELP", "ERR_BUG", "ERR_PRINTER_ON_FIRE" ] 
 
 signal trace_logged(message)
+signal debug_logged(message)
 signal warning_logged(message)
 signal error_logged(message)
 signal critical_logged(message)
 
-const LOG_DIR: String = "user://logs/"
-const LOG_FILE: String = "%s.txt" # _get_time_string()
-enum LEVELS {TRACE, WARNING, ERROR, CRITICAL}
+enum LEVELS {TRACE, DEBUG, WARNING, ERROR, CRITICAL}
 
-	# Configuration Variables.
+# Configuration Variables.
 var log_level: int = LEVELS.TRACE # Lowest level that should be logged
 var enabled: bool = true # Log anything at all?
-var log_to_disk: bool = true # Log to disk?
-var control_quit_behavior: bool = false # Will delay application exist by one frame
 var use_builtin_console: bool = true # Will instance a rich text label to log to
 var console_canvas_layer: int = 10 # What canvas layer to place the label on
-# The rich text label can be accessed through the "toggle_log" action, or F3 if it does not exist
-
-var _f: File = File.new()
-var _d: Directory = Directory.new()
-
-var _can_log_to_disk: bool = true
-var _file_path: String = ""
-
-
-func _init() -> void:
-	if log_to_disk:
-		if not _d.dir_exists(LOG_DIR):
-			_make_log_folder()
-		
-		_init_log_file()
-
-
-func _notification(what: int) -> void:
-	
-	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-		_f.close()
-		
-		if control_quit_behavior:
-			get_tree().quit()
 
 
 func _ready() -> void:
-	if control_quit_behavior:
-		get_tree().set_auto_accept_quit(false)
-	
 	if use_builtin_console:
 		var n: CanvasLayer = CanvasLayer.new()
 		add_child(n)
 		n.layer = console_canvas_layer
 		n.add_child(LoggerConsole.new(self))
 
+
 func error_to_string(code : int) -> String:
 	return ERRORS[code]
+
 
 func trace(emitter: Object, function: String, message: String) -> void:
 	if enabled and log_level <= LEVELS.TRACE:
 		_log_message(LEVELS.TRACE, emitter, function, message)
+
+
+func debug(emitter: Object, function: String, message: String) -> void:
+	if enabled and log_level <= LEVELS.DEBUG:
+		_log_message(LEVELS.DEBUG, emitter, function, message)
 
 
 func warning(emitter: Object, function: String, message: String) -> void:
@@ -90,76 +85,55 @@ func error(emitter: Object, function: String, message: String) -> void:
 	if enabled and log_level <= LEVELS.ERROR:
 		_log_message(LEVELS.ERROR, emitter, function, message)
 
+
 func critical(emitter: Object, function: String, message: String) -> void:
 	if enabled and log_level <= LEVELS.CRITICAL:
 		_log_message(LEVELS.CRITICAL, emitter, function, message)
 
-func _make_log_folder() -> void:
-	var open_err: int = _d.open("user://")
-	
-	if not open_err == OK:
-		print("_ERROR: Logger: _make_log_folder, can't open 'user://'. Error %s. File logging suspended." % open_err)
-		_can_log_to_disk = false
-		return
-	
-	var make_err: int = _d.make_dir(LOG_DIR)
-	
-	if not make_err == OK:
-		print("_ERROR: Logger: _make_log_folder, can't make LOG_DIR. Error %s. File logging suspended." % make_err)
-		_can_log_to_disk = false
-		return
-
-
-func _init_log_file() -> void:
-	var time: String = _get_time_string()
-	_file_path = LOG_DIR + (LOG_FILE % time)
-	
-	var open_err: int = _f.open(_file_path, File.WRITE)
-	
-	if not open_err == OK:
-		print("_ERROR: Logger: _open_log_file, cant open %s. File logging suspended." % _file_path)
-		_can_log_to_disk = false
-		return
-	
-	var header_string: String = ProjectSettings.get("application/config/name")
-	header_string += " - " + time
-	
-	_f.store_line(header_string)
-	_f.close()
-
 
 func _log_message(level: int, emitter: Object, function: String, message: String) -> void:
 	var log_string: String = ""
+	var is_print: bool = true
+	var is_stack_print: bool = false
 	
 	log_string += _get_time_string()
-	log_string += " - "
+	log_string += " "
 	
 	# Message level.
 	match level:
 		LEVELS.TRACE:
 			log_string += "TRACE: "
+		LEVELS.DEBUG:
+			log_string += "DEBUG: "
+			if not OS.is_debug_build():
+				is_print = false
+			is_stack_print = true
 		LEVELS.WARNING:
 			log_string += "WARNING: "
+			is_stack_print = true
 		LEVELS.ERROR:
 			log_string += "ERROR: "
+			is_stack_print = true
 		LEVELS.CRITICAL:
 			log_string += "CRITICAL: "
+			is_stack_print = true
+	
 	# Emitter Name if any.
 	if emitter.has_method("get_name"):
 		log_string += emitter.name
-		log_string += " - "
+		log_string += " "
 	
 	# Emitter object ID.
 	log_string += str(emitter)
-	log_string += " - "
+	log_string += ", script: "
 	
 	# Script Path.
 	log_string += emitter.get_script().get_path().get_file()
-	log_string += " - "
+	log_string += " in func "
 	
 	# Function Name
 	log_string += function
-	log_string += " - "
+	log_string += ": "
 	
 	# Message
 	log_string += message
@@ -167,47 +141,35 @@ func _log_message(level: int, emitter: Object, function: String, message: String
 	if not log_string.ends_with("."):
 		log_string += "."
 	
-	match level:
-		LEVELS.TRACE:
-			emit_signal("trace_logged", log_string)
-		LEVELS.WARNING:
-			emit_signal("warning_logged", log_string)
-		LEVELS.ERROR:
-			emit_signal("error_logged", log_string)
-		LEVELS.CRITICAL:
-			emit_signal("critical_logged", log_string)
-	
-	if log_to_disk and _can_log_to_disk:
-		_log_to_disk(log_string)
-	print(log_string)
-	if level == LEVELS.CRITICAL or level == LEVELS.ERROR:
-		print_stack()
-
-func _log_to_disk(log_string: String) -> void:
-	# warning-ignore:return_value_discarded
-	_f.open(_file_path, File.READ_WRITE)
-	_f.seek_end(0)
-	_f.store_line(log_string)
-	_f.close()
+	# finally print if required
+	if is_print:
+		print(log_string)
+		if is_stack_print:
+			print_stack()
+		
+		# emit signals for UI Logger Console
+		match level:
+			LEVELS.TRACE:
+				emit_signal("trace_logged", log_string)
+			LEVELS.DEBUG:
+				emit_signal("debug_logged", log_string)
+			LEVELS.WARNING:
+				emit_signal("warning_logged", log_string)
+			LEVELS.ERROR:
+				emit_signal("error_logged", log_string)
+			LEVELS.CRITICAL:
+				emit_signal("critical_logged", log_string)
 
 
 func _get_time_string() -> String:
-	var datetime: Dictionary = OS.get_datetime(true)
-	var s: String = ""
-	# TODO: Use format strings for vertical alignment.
-	s += str(datetime.year, "-")
-	s += str(datetime.month, "-")
-	s += str(datetime.day, "-")
-	s += str(datetime.hour, "-")
-	s += str(datetime.minute, "-")
-	s += str(datetime.second)
+	var dt: Dictionary = OS.get_datetime(true)
+	var s: String = "%4d-%02d-%02d %02d:%02d:%02d" % [dt.year, dt.month, dt.day, 
+		dt.hour,dt.minute,dt.second]
 	return s
 
 
 class LoggerConsole:
 	extends RichTextLabel
-	
-	var _use_logger_key: bool = false
 	
 	
 	func _init(creator: Node) -> void:
@@ -222,27 +184,29 @@ class LoggerConsole:
 		scroll_active = false
 		bbcode_enabled = true
 		
-		# LoggerConsole
-		_use_logger_key = InputMap.has_action("toggle_logger")
-		
 		# warning-ignore:return_value_discarded
 		creator.connect("trace_logged", self, "_on_trace_logged")
+		# warning-ignore:return_value_discarded
+		creator.connect("debug_logged", self, "_on_debug_logged")
 		# warning-ignore:return_value_discarded
 		creator.connect("warning_logged", self, "_on_warning_logged")
 		# warning-ignore:return_value_discarded
 		creator.connect("error_logged", self, "_on_error_logged")
+		# warning-ignore:return_value_discarded
+		creator.connect("critical_logged", self, "_on_critical_logged")
 	
 	
 	func _input(event: InputEvent) -> void:
-		if _use_logger_key:
-			if event.is_action_pressed("toggle_logger"):
-				visible = !visible
-		
-		elif event is InputEventKey and event.scancode == KEY_F3 and event.pressed:
+		if event.is_action_pressed("toggle_logger"):
 			visible = !visible
 	
 	
 	func _on_trace_logged(message) -> void:
+		bbcode_text += "\n" # new_line uses buggy append_bbcode func
+		bbcode_text += message
+	
+	
+	func _on_debug_logged(message) -> void:
 		bbcode_text += "\n" # new_line uses buggy append_bbcode func
 		bbcode_text += message
 	
