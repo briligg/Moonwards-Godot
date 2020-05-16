@@ -6,19 +6,19 @@
 
 [node name="Fourth_Gallery" instance=ExtResource( 1 )]
 
-[node name="TubeHab_Long_Mirror" parent="FourthGalleryRoof/Empty_TubeHab_Long" index="0" instance=ExtResource( 4 )]
-transform = Transform( 1.67, 0, 0, 0, 1.67, 0, 0, 0, 1.67, 0, 0, 0 )
-
-[node name="TubeHab_Long_Mirror" parent="FourthGalleryRoof/Empty_TubeHab_Long004" index="0" instance=ExtResource( 4 )]
-transform = Transform( 1.67, 0, 0, 0, 1.67, 0, 0, 0, 1.67, 0, 0, 0 )
-
-[node name="TubeHab_Long_Mirror" parent="FourthGalleryRoof/Empty_TubeHab_Long006" index="0" instance=ExtResource( 4 )]
-transform = Transform( 1.67, 0, 0, 0, 1.67, 0, 0, 0, 1.67, 0, 0, 0 )
-
-[node name="TubeHab_Mirror" parent="FourthGalleryRoof/Empty_TubeHabLarge005" index="0" instance=ExtResource( 2 )]
-transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0 )
-
 [node name="OmniLight" type="OmniLight" parent="." index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -82.4016, -95.4751, 0 )
 omni_range = 82.2553
 omni_attenuation = 2.21914
+
+[node name="TubeHab_Long_Mirror" parent="Markers/Marker_TubeHab2_Long-Mirror-167" index="0" instance=ExtResource( 4 )]
+transform = Transform( 1.667, 0, 0, 0, 1.667, 0, 0, 0, 1.667, 0, 0, 0 )
+
+[node name="TubeHab_Long_Mirror" parent="Markers/Marker_TubeHab_Long-Mirror-167" index="0" instance=ExtResource( 4 )]
+transform = Transform( 1.667, 0, 0, 0, 1.667, 0, 0, 0, 1.667, 0, 0, 0 )
+
+[node name="TubeHab_Long_Mirror" parent="Markers/Marker_TubeHab_Long_Mirror_167" index="0" instance=ExtResource( 4 )]
+transform = Transform( 1.667, 0, 0, 0, 1.667, 0, 0, 0, 1.667, 0, 0, 0 )
+
+[node name="TubeHab_Mirror" parent="Markers/Marker_TubeHabLarge_Mirror-15" index="0" instance=ExtResource( 2 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0 )

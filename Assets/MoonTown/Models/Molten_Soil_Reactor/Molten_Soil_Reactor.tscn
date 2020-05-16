@@ -6,6 +6,6 @@
 
 [node name="Molten_Soil_Reactor" instance=ExtResource( 1 )]
 
-[node name="TowerRadiator_Small" parent="MSReactor-Insulation-on-Pipes_M/Empty_TowerRadiator_M" index="0" instance=ExtResource( 2 )]
+[node name="TowerRadiator_Small" parent="Marker_TowerRadiator_M" index="0" instance=ExtResource( 2 )]
 
-[node name="Solar_Thermal_Mirror_Set_Side_Circuit" parent="MSReactor-Insulation-on-Pipes_M/SolarThermalUnit_Marker" index="0" instance=ExtResource( 3 )]
+[node name="Solar_Thermal_Mirror_Set_Side_Circuit" parent="SolarThermalUnit_Marker" index="0" instance=ExtResource( 3 )]

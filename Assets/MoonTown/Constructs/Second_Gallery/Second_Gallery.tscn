@@ -5,13 +5,7 @@
 
 [node name="Second_Gallery" instance=ExtResource( 1 )]
 
-[node name="TubeHab" parent="HalfDomeHab-Glass/TubeHab_Large_Marker1" index="0" instance=ExtResource( 2 )]
-transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0 )
-
-[node name="TubeHab" parent="HalfDomeHab-Glass/TubeHab_Large_Marker2" index="0" instance=ExtResource( 2 )]
-transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0 )
-
-[node name="TubeHab" parent="HalfDomeHab-Glass/TubeHab_Large_Marker3" index="0" instance=ExtResource( 2 )]
+[node name="TubeHab" parent="Markers/TubeHab_Large_Marker1" index="0" instance=ExtResource( 2 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0 )
 
 [node name="OmniLight" type="OmniLight" parent="." index="2"]

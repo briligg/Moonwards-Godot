@@ -16,37 +16,6 @@ interior = true
 
 [node name="Airlock_Bay" instance=ExtResource( 1 )]
 
-[node name="Bay_Grounds" parent="AirlockBayOverlay" index="5"]
-transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0.321594, -0.160801, 0 )
-
-[node name="Airlock" parent="AirlockBayOverlay/Marker_Airlock_N1" index="0" instance=ExtResource( 2 )]
-
-[node name="Airlock" parent="AirlockBayOverlay/Marker_Airlock_N2" index="0" instance=ExtResource( 2 )]
-
-[node name="Airlock" parent="AirlockBayOverlay/Marker_Airlock_N3" index="0" instance=ExtResource( 2 )]
-
-[node name="Airlock" parent="AirlockBayOverlay/Marker_Airlock_N4" index="0" instance=ExtResource( 2 )]
-
-[node name="Airlock" parent="AirlockBayOverlay/Marker_Airlock_N5" index="0" instance=ExtResource( 2 )]
-
-[node name="Airlock" parent="AirlockBayOverlay/Marker_Airlock_S1" index="0" instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
-
-[node name="Airlock" parent="AirlockBayOverlay/Marker_Airlock_S2" index="0" instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
-
-[node name="Airlock" parent="AirlockBayOverlay/Marker_Airlock_S3" index="0" instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
-
-[node name="Airlock" parent="AirlockBayOverlay/Marker_Airlock_S4" index="0" instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
-
-[node name="Airlock" parent="AirlockBayOverlay/Marker_Airlock_S5" index="0" instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
-
-[node name="Airlock" parent="AirlockBayOverlay/Marker_GarageAirlock" index="0" instance=ExtResource( 2 )]
-transform = Transform( -4.88762e-07, 0, -3, 0, 3, 0, 3, 0, -4.88762e-07, 0, 0, 0 )
-
 [node name="OmniLight" type="OmniLight" parent="." index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.2322, 4.9519, -0.00354957 )
 light_energy = 0.58
@@ -78,3 +47,31 @@ dynamic_range = 8
 propagation = 0.2
 interior = true
 data = SubResource( 1 )
+
+[node name="Airlock" parent="Markers/Marker_Airlock_N1" index="0" instance=ExtResource( 2 )]
+
+[node name="Airlock" parent="Markers/Marker_Airlock_N2" index="0" instance=ExtResource( 2 )]
+
+[node name="Airlock" parent="Markers/Marker_Airlock_N3" index="0" instance=ExtResource( 2 )]
+
+[node name="Airlock" parent="Markers/Marker_Airlock_N4" index="0" instance=ExtResource( 2 )]
+
+[node name="Airlock" parent="Markers/Marker_Airlock_N5" index="0" instance=ExtResource( 2 )]
+
+[node name="Airlock" parent="Markers/Marker_Airlock_S1" index="0" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+
+[node name="Airlock" parent="Markers/Marker_Airlock_S2" index="0" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+
+[node name="Airlock" parent="Markers/Marker_Airlock_S3" index="0" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+
+[node name="Airlock" parent="Markers/Marker_Airlock_S4" index="0" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+
+[node name="Airlock" parent="Markers/Marker_Airlock_S5" index="0" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+
+[node name="Airlock" parent="Markers/Marker_GarageAirlock" index="0" instance=ExtResource( 2 )]
+transform = Transform( -4.88762e-07, 0, -3, 0, 3, 0, 3, 0, -4.88762e-07, 0, 0, 0 )
