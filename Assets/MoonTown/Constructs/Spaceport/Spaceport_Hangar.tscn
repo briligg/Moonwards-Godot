@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Constructs/Spaceport/Spaceport_Hangar.glb" type="PackedScene" id=1]
+[ext_resource path="res://Assets/MoonTown/Models/Nuclear_Pod_Ship/NuclearPodShip.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/MoonTown/Models/Tower_Radiators/TowerRadiator_3x.tscn" type="PackedScene" id=3]
+
+[node name="Spaceport_Hangar" instance=ExtResource( 1 )]
+
+[node name="NuclearPodShip" parent="Markers002/Marker_PodShipA" index="0" instance=ExtResource( 2 )]
+
+[node name="TowerRadiator_3x" parent="Markers002/Marker_TowerRad_1" index="0" instance=ExtResource( 3 )]
+
+[node name="TowerRadiator_3x" parent="Markers002/Marker_TowerRad_2" index="0" instance=ExtResource( 3 )]
+
+[node name="TowerRadiator_3x" parent="Markers002/Marker_TowerRad_3" index="0" instance=ExtResource( 3 )]

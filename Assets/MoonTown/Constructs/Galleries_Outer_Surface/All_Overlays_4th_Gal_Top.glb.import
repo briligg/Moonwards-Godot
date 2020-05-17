@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Overlay_4th_Gal_Top.glb-c71d504ae6f177e02c190ffc1c8fe965.scn"
+path="res://.import/All_Overlays_4th_Gal_Top.glb-9ae5b28e5959c1c6c159d28e6b9823e4.scn"
 
 [deps]
 
-source_file="res://Assets/MoonTown/Constructs/Galleries_Outer_Surface/Overlay_4th_Gal_Top.glb"
-dest_files=[ "res://.import/Overlay_4th_Gal_Top.glb-c71d504ae6f177e02c190ffc1c8fe965.scn" ]
+source_file="res://Assets/MoonTown/Constructs/Galleries_Outer_Surface/All_Overlays_4th_Gal_Top.glb"
+dest_files=[ "res://.import/All_Overlays_4th_Gal_Top.glb-9ae5b28e5959c1c6c159d28e6b9823e4.scn" ]
 
 [params]
 
