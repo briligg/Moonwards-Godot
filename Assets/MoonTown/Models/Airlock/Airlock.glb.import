@@ -11,7 +11,7 @@ dest_files=[ "res://.import/Airlock.glb-11d9b3431750bb4364a3e00ac0843652.scn" ]
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="LodModel (LodModel.gd)"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""

@@ -11,7 +11,7 @@ dest_files=[ "res://.import/Main_Factory.glb-b86af0971adfd74841a4da1188a4a0f8.sc
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="LodModel (LodModel.gd)"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""

@@ -11,7 +11,7 @@ dest_files=[ "res://.import/TowerRadiator_Small.glb-cad66a460c1b8af681ed7630a6a8
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="LodModel (LodModel.gd)"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""

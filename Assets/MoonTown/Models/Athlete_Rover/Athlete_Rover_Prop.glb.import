@@ -11,7 +11,7 @@ dest_files=[ "res://.import/Athlete_Rover_Prop.glb-194c350f0a77a2fa0f63d9de32ac9
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="LodModel (LodModel.gd)"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""

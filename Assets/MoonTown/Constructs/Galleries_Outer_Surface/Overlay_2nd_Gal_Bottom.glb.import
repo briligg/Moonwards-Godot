@@ -11,7 +11,7 @@ dest_files=[ "res://.import/Overlay_2nd_Gal_Bottom.glb-2e134ea0121b63261bfb9e9d4
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="LodModel (LodModel.gd)"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""

@@ -11,7 +11,7 @@ dest_files=[ "res://.import/Toilet_Full.glb-be997fbbf5dbe644df55b2f91fa0e8af.scn
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="LodModel (LodModel.gd)"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""

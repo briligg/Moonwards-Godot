@@ -11,7 +11,7 @@ dest_files=[ "res://.import/Nuclear_Plant.glb-f2278c252c21d9575fce1d273a89b52c.s
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="LodModel (LodModel.gd)"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""

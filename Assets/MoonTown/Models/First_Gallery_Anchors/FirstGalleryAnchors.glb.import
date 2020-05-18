@@ -11,7 +11,7 @@ dest_files=[ "res://.import/FirstGalleryAnchors.glb-5de392ec9e90186acccb412e7f8e
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="LodModel (LodModel.gd)"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""

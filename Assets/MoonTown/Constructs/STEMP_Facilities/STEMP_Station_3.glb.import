@@ -11,7 +11,7 @@ dest_files=[ "res://.import/STEMP_Station_3.glb-9b1074561dad26dde4700e1d710c7ac5
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="LodModel (LodModel.gd)"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""

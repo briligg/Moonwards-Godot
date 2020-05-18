@@ -11,7 +11,7 @@ dest_files=[ "res://.import/Light_Tube.glb-ee01a1d0b4cf24414e64f41af8604bbd.scn"
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="LodModel (LodModel.gd)"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""

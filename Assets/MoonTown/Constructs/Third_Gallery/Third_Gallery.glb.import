@@ -11,7 +11,7 @@ dest_files=[ "res://.import/Third_Gallery.glb-f3490a6440ddfa91d91291d9ca6e77e6.s
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="LodModel (LodModel.gd)"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""

@@ -11,7 +11,7 @@ dest_files=[ "res://.import/Moon_Town_Master.glb-998382bc4f8c016ff7b9034bcd8f36a
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="LodModel (LodModel.gd)"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""

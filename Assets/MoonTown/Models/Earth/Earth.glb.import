@@ -11,7 +11,7 @@ dest_files=[ "res://.import/Earth.glb-ccec2a8098669236926b5ae9b8dc8659.scn" ]
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="LodModel (LodModel.gd)"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""

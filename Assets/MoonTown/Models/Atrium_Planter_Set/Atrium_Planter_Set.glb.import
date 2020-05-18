@@ -11,7 +11,7 @@ dest_files=[ "res://.import/Atrium_Planter_Set.glb-83a9d09ef2c6815574eae23e9124c
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="LodModel (LodModel.gd)"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""

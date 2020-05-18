@@ -11,7 +11,7 @@ dest_files=[ "res://.import/Spaceport_Hangar.glb-126277e1143d519ff01a0672bada8c7
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="LodModel (LodModel.gd)"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""

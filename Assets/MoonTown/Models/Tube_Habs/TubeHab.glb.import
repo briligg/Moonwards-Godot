@@ -11,7 +11,7 @@ dest_files=[ "res://.import/TubeHab.glb-720f89794d04251d8a0163f82d89828a.scn" ]
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="LodModel (LodModel.gd)"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""

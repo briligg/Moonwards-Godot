@@ -11,7 +11,7 @@ dest_files=[ "res://.import/Audio_Tour_Paths.glb-97e3d0d984f8fad16f5ca6dad02e82c
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="LodModel (LodModel.gd)"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
