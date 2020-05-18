@@ -4,7 +4,7 @@
 
 [node name="LodVariables" type="Node"]
 script = ExtResource( 1 )
-lod0_distance = 10.0
-lod1_distance = 20.0
-lod2_distance = 30.0
-cull_distance = 40.0
+lod0_distance = 50.0
+lod1_distance = 100.0
+lod2_distance = 200.0
+cull_distance = 250.0

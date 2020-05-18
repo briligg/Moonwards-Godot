@@ -3,18 +3,17 @@ class_name LodModel
 
 var _lods = {}
 var lod_enabled: bool = false
-export(bool) var debug_lod = true
+export(bool) var debug_lod = false
 
 func _ready():
-	_lods[0] = $LOD0
-	_lods[1] = $LOD1
-	_lods[2] = $LOD2
-	lod_enabled = true
-	for lod in _lods:
-		if lod == null:
-			lod_enabled = false;
-	if lod_enabled == true:
+	if self.has_node("LOD0") and self.has_node("LOD1") and self.has_node("LOD2"):
+		_lods[0] = $LOD0
+		_lods[1] = $LOD1
+		_lods[2] = $LOD2
+		lod_enabled = true
 		add_to_group(Groups.LOD_MODELS)
+	else:
+		lod_enabled = false		
 
 #func _ready():
 #	for i in range(0,3):

@@ -66,7 +66,7 @@ func _start_game() -> void:
 
 ### Temporary
 func _get_spawn() -> Vector3:
-	return Vector3(rand_range(4.2, 4.5), .5, rand_range(1.8, 2))
+	return Vector3(100, 100, -210)
 
 func _player_connected(peer_id) -> void:
 	Log.trace(self, "", "CONNECTION INITIATED: %s" %peer_id)
