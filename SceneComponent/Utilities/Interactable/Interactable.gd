@@ -6,7 +6,6 @@ extends Area
  to connect to. 
  I emit interacted_with when an interactor interacts with me. 
 	Passes the node that requested the interact in the signal.
-
 """
 
 #This is what is displayed when an interactor can interact with me.
