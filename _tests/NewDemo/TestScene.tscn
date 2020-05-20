@@ -8,8 +8,11 @@
 [node name="Airlock_Bay" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.495213, 0, 0 )
 
-[node name="SpawnPlaceholder" type="Spatial" parent="."]
+[node name="SpawnPoints" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, 2 )
+
+[node name="1" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 15, 0, 0, 0, -4, 0, 0, 0, -2, 0, 0, 0 )
 
 [node name="PlayerHud" parent="." instance=ExtResource( 2 )]
 

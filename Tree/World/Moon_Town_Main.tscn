@@ -19,21 +19,7 @@ navmesh = SubResource( 1 )
 
 [node name="Moon_Town_Master" parent="NavigationMeshInstance" instance=ExtResource( 1 )]
 
-[node name="players" type="Spatial" parent="."]
+[node name="SpawnPoints" type="Spatial" parent="."]
 
-[node name="spawn_points" type="Spatial" parent="."]
-
-[node name="0" type="Position3D" parent="spawn_points"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.449457, 10.0396, -18.0219 )
-
-[node name="1" type="Position3D" parent="spawn_points"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.451772, 10.0396, -18.6485 )
-
-[node name="2" type="Position3D" parent="spawn_points"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.451772, 10.0396, -19.4119 )
-
-[node name="3" type="Position3D" parent="spawn_points"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0921584, 10.0396, -18.6485 )
-
-[node name="4" type="Position3D" parent="spawn_points"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17622, 10.0396, -18.6485 )
+[node name="1" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 100, -210 )

@@ -66,7 +66,10 @@ func _start_game() -> void:
 
 ### Temporary
 func _get_spawn() -> Vector3:
-	return Vector3(100, 100, -210)
+	var spawns = world.get_node("SpawnPoints").get_children()
+	var spawn = spawns[rand_range(0, spawns.size() - 1)]
+	return spawn.global_transform.origin
+#	return Vector3(100, 100, -210)
 
 func _player_connected(peer_id) -> void:
 	Log.trace(self, "", "CONNECTION INITIATED: %s" %peer_id)
