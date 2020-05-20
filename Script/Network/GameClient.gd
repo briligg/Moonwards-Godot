@@ -29,10 +29,13 @@ func _connected_ok():
 
 func _server_disconnected():
 	Log.trace(self, "", "DISCONNECTED.")
+	get_tree().change_scene(Scene.main_menu)
 	self.queue_free()
 
 func _connected_fail():
 	Log.warning(self, "", "CONNECTION FAILED!")
+	get_tree().change_scene(Scene.main_menu)
+	self.queue_free()
 
 # The initial loading of all existing entities upon connection.
 puppet func initial_client_load_entities(entities_data: Array) -> void:
