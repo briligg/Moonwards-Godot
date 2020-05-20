@@ -1,4 +1,4 @@
-extends Node
+extends Reference
 class_name AudioSignals
 
 #This signal is emiited when an audio player that is meant to be
