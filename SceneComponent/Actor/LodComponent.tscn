@@ -1,6 +1,25 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://SceneComponent/Actor/LodComponent.gd" type="Script" id=1]
 
+[sub_resource type="SphereShape" id=1]
+
 [node name="LodComponent" type="Spatial"]
 script = ExtResource( 1 )
+lod0_max_distance = 20.0
+lod1_max_distance = 40.0
+
+[node name="LOD0Area" type="Area" parent="."]
+input_ray_pickable = false
+priority = 1.0
+monitorable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="LOD0Area"]
+shape = SubResource( 1 )
+
+[node name="LOD1Area" type="Area" parent="."]
+input_ray_pickable = false
+monitorable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="LOD1Area"]
+shape = SubResource( 1 )

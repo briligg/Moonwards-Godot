@@ -22,6 +22,7 @@ script = ExtResource( 4 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.114031, 0 )
 
 [node name="HumanoidMovement" parent="." instance=ExtResource( 1 )]
+speed = 40.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.0828768, 0 )

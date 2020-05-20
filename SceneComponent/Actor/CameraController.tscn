@@ -6,6 +6,7 @@
 script = ExtResource( 1 )
 
 [node name="Camera" type="Camera" parent="."]
+far = 8192.0
 
 [node name="Pivot" type="Spatial" parent="."]
 
