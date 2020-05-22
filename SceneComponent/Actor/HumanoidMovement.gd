@@ -32,9 +32,10 @@ func _process_client(delta):
 	rotate_body(delta)
 	var o = entity.global_transform.origin
 	var t = entity.srv_pos
+	var v = entity.srv_vel
 	# This needs to be cleaned up
 	if not is_network_master():
-		entity.velocity = (t - o)
+		entity.velocity = v
 		entity.global_transform.origin = t
 	update_state()
 
@@ -45,6 +46,7 @@ func _process_server(delta):
 	v += vertical_vector
 	entity.velocity = entity.move_and_slide(v * WorldConstants.SCALE, Vector3.UP)
 	entity.srv_pos = entity.global_transform.origin
+	entity.srv_vel = entity.velocity
 	update_state()
 
 func update_state():
