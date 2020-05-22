@@ -47,7 +47,7 @@ blend_point_4/node = SubResource( 7 )
 blend_point_4/pos = Vector2( 0, 0 )
 
 [sub_resource type="AnimationNodeBlendTree" id=9]
-graph_offset = Vector2( 78, 65 )
+graph_offset = Vector2( 52, 47 )
 nodes/Animation/node = SubResource( 1 )
 nodes/Animation/position = Vector2( 320, 240 )
 nodes/State/node = SubResource( 2 )
@@ -79,4 +79,4 @@ tree_root = SubResource( 9 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/State/current = 0
-parameters/Walking/blend_position = Vector2( -0.00160003, 0 )
+parameters/Walking/blend_position = Vector2( 0, 0 )
