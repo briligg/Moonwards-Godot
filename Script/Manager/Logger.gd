@@ -96,36 +96,35 @@ func _log_message(level: int, emitter: Object, function: String, message: String
 	var is_print: bool = true
 	var is_stack_print: bool = false
 	
-	log_string += _get_time_string()
+	log_string += "[" + _get_time_string() + "]"
 	log_string += " "
 	
 	# Message level.
 	match level:
 		LEVELS.TRACE:
-			log_string += "TRACE: "
+			log_string += "[TRACE]: "
 		LEVELS.DEBUG:
-			log_string += "DEBUG: "
+			log_string += "[DEBUG]: "
 			if not OS.is_debug_build():
 				is_print = false
 			is_stack_print = true
 		LEVELS.WARNING:
-			log_string += "WARNING: "
+			log_string += "[WARNING]: "
 			is_stack_print = true
 		LEVELS.ERROR:
-			log_string += "ERROR: "
+			log_string += "[ERROR]: "
 			is_stack_print = true
 		LEVELS.CRITICAL:
-			log_string += "CRITICAL: "
+			log_string += "[CRITICAL]: "
 			is_stack_print = true
 	
 	# Emitter Name if any.
 	if emitter.has_method("get_name"):
-		log_string += emitter.name
-		log_string += " "
+		log_string += "[scene: %s] " %emitter.name
 	
 	# Emitter object ID.
 	log_string += str(emitter)
-	log_string += ", script: "
+	log_string += " script: "
 	
 	# Script Path.
 	log_string += emitter.get_script().get_path().get_file()
@@ -208,7 +207,7 @@ class LoggerConsole:
 	
 	func _on_debug_logged(message) -> void:
 		bbcode_text += "\n" # new_line uses buggy append_bbcode func
-		bbcode_text += message
+		bbcode_text += "[color=#03fc8c]" + message + "[/color]"
 	
 	
 	func _on_warning_logged(message) -> void:
@@ -218,7 +217,7 @@ class LoggerConsole:
 	
 	func _on_error_logged(message) -> void:
 		bbcode_text += "\n" # new_line uses buggy append_bbcode func
-		bbcode_text += "[color=red]" + message + "[/color]"
+		bbcode_text += "[color=#fc5603]" + message + "[/color]"
 	
 	
 	func _on_critical_logged(message) -> void:
