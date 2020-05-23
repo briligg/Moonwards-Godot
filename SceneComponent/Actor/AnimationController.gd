@@ -27,8 +27,8 @@ func update_walk_animation(_delta):
 			entity.animation_tree.set("parameters/State/current", 0)
 	
 	
-	var forward = entity.global_transform.basis.z
-	var left = entity.global_transform.basis.x
+	var forward = entity.model.global_transform.basis.z
+	var left = entity.model.global_transform.basis.x
 	var flat_velocity = Vector3(entity.velocity.x, 0.0, entity.velocity.z)
 	
 	var forward_amount = forward.dot(flat_velocity)
