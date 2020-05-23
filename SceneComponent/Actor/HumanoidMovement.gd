@@ -3,7 +3,7 @@ class_name KinematicMovement
 # Component for kinematic movement
 
 export(float) var speed = 25
-export(float) var jump_force = 9
+export(float) var jump_force = 15
 
 # Input vectors
 var horizontal_vector: Vector3 = Vector3.ZERO
