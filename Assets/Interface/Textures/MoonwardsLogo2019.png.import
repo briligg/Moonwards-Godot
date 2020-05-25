@@ -2,19 +2,21 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MoonwardsLogo2019.png-b55bd55d5d9af452e84f2be57fcd3f07.stex"
+path.s3tc="res://.import/MoonwardsLogo2019.png-b55bd55d5d9af452e84f2be57fcd3f07.s3tc.stex"
+path.etc2="res://.import/MoonwardsLogo2019.png-b55bd55d5d9af452e84f2be57fcd3f07.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Interface/Textures/MoonwardsLogo2019.png"
-dest_files=[ "res://.import/MoonwardsLogo2019.png-b55bd55d5d9af452e84f2be57fcd3f07.stex" ]
+dest_files=[ "res://.import/MoonwardsLogo2019.png-b55bd55d5d9af452e84f2be57fcd3f07.s3tc.stex", "res://.import/MoonwardsLogo2019.png-b55bd55d5d9af452e84f2be57fcd3f07.etc2.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
@@ -30,5 +32,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

@@ -2,19 +2,21 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MixedWeeds_disp.png-bab25bf652e4253cee66c447dbfe3a10.stex"
+path.s3tc="res://.import/MixedWeeds_disp.png-bab25bf652e4253cee66c447dbfe3a10.s3tc.stex"
+path.etc2="res://.import/MixedWeeds_disp.png-bab25bf652e4253cee66c447dbfe3a10.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/SharedAssets/Textures/Nature_Textures/MixedWeeds/MixedWeeds_disp.png"
-dest_files=[ "res://.import/MixedWeeds_disp.png-bab25bf652e4253cee66c447dbfe3a10.stex" ]
+dest_files=[ "res://.import/MixedWeeds_disp.png-bab25bf652e4253cee66c447dbfe3a10.s3tc.stex", "res://.import/MixedWeeds_disp.png-bab25bf652e4253cee66c447dbfe3a10.etc2.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
@@ -30,5 +32,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

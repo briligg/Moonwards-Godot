@@ -2,24 +2,26 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MixedWeeds_alb.png-dfa9ba57f9b179ffc55be0f7b8ae3833.stex"
+path.s3tc="res://.import/MixedWeeds_alb.png-dfa9ba57f9b179ffc55be0f7b8ae3833.s3tc.stex"
+path.etc2="res://.import/MixedWeeds_alb.png-dfa9ba57f9b179ffc55be0f7b8ae3833.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/SharedAssets/Textures/Nature_Textures/MixedWeeds/MixedWeeds_alb.png"
-dest_files=[ "res://.import/MixedWeeds_alb.png-dfa9ba57f9b179ffc55be0f7b8ae3833.stex" ]
+dest_files=[ "res://.import/MixedWeeds_alb.png-dfa9ba57f9b179ffc55be0f7b8ae3833.s3tc.stex", "res://.import/MixedWeeds_alb.png-dfa9ba57f9b179ffc55be0f7b8ae3833.etc2.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=true
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false

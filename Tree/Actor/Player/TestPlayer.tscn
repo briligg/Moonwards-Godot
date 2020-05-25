@@ -38,3 +38,5 @@ __meta__ = {
 [node name="NametagComponent" parent="." instance=ExtResource( 7 )]
 
 [node name="LodComponent" parent="." instance=ExtResource( 8 )]
+lod0_max_distance = 100.0
+lod1_max_distance = 200.0

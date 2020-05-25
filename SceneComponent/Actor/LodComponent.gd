@@ -2,8 +2,8 @@ extends AComponent
 
 var last_pos: Vector3 = Vector3.ZERO
 
-export(float) var lod0_max_distance: float = 5
-export(float) var lod1_max_distance: float = 10
+export(float) var lod0_max_distance: float = 5 setget _set_lod0_dist
+export(float) var lod1_max_distance: float = 10 setget _set_lod1_dist
 
 onready var lod0: Area = $LOD0Area
 onready var lod1: Area = $LOD1Area
@@ -43,3 +43,11 @@ func _on_lod1_exited(lod_node: Node) -> void:
 	if lod_node is LodModel:
 		Log.trace(self, "", "LodModel:%s exited lod1 range" %lod_node.name)
 		lod_node.set_lod(2)
+
+func _set_lod0_dist(val: float) -> void:
+	if lod0 != null:
+		lod0.get_node("CollisionShape").scale = Vector3.ONE * val
+
+func _set_lod1_dist(val: float) -> void:
+	if lod1 != null:
+		lod1.get_node("CollisionShape").scale = Vector3.ONE * val
