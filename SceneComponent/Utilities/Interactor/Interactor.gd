@@ -16,9 +16,8 @@ var collider : Area = null
 var previous_collider : Area = null
 
 
-#warning-ignore:unused_argument
 #Determine when I have touched an interactable.
-func _physics_process(delta : float) -> void:
+func _physics_process(_delta : float) -> void:
 	#Get the interactable I am colliding with.
 	var closest_body : Area = null
 	var closest_body_distance : float = 99999999999.0
