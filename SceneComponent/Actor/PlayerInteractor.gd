@@ -7,6 +7,6 @@ export var user : NodePath = get_path()
 func _init().("PlayerInteractor", true) -> void :
 	pass
 
-#Make Interactor have my user variable as it's user.
+#Make Interactor have my Entity variable as it's user.
 func _ready() -> void :
-	$Interactor.user = user
+	$Interactor.user = entity
