@@ -1,8 +1,5 @@
 extends AComponent
 
-export var user : NodePath = get_path()
-
-
 #This function is required by AComponent.
 func _init().("PlayerInteractor", true) -> void :
 	pass
