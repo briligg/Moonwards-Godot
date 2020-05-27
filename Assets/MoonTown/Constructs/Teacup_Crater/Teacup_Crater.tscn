@@ -42,7 +42,6 @@ transform = Transform( -0.880097, 0, 0.474794, 0, 1, 0, -0.474794, 0, -0.880097,
 transform = Transform( -0.995943, 0, 0.08999, 0, 1, 0, -0.08999, 0, -0.995943, 0, 0, 0 )
 
 [node name="Truss_Triangular_67m" parent="Markers/Marker_Truss001" index="0" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Marker_Truss002" parent="Markers" index="2"]
 transform = Transform( -0.366907, 0, 0.930258, 0, 1, 0, -0.930258, 0, -0.366907, -26.1938, 1.5979, 33.7125 )
@@ -53,13 +52,11 @@ transform = Transform( -0.366907, 0, 0.930258, 0, 1, 0, -0.930258, 0, -0.366907,
 transform = Transform( -0.00847852, 0, 0.999964, 0, 1, 0, -0.999964, 0, -0.00847852, -42.2513, 4.10522, 36.6067 )
 
 [node name="Truss_Triangular_67m" parent="Markers/Marker_Truss003" index="0" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Marker_Truss004" parent="Markers" index="4"]
 transform = Transform( 0.608626, 0, 0.793457, 0, 1, 0, -0.793457, 0, 0.608626, -67.5397, 9.39085, 28.1096 )
 
 [node name="Truss_Triangular_67m" parent="Markers/Marker_Truss004" index="0" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Marker_Truss005" parent="Markers" index="5"]
 transform = Transform( 0.858901, 0, 0.512142, 0, 1, 0, -0.512142, 0, 0.858901, -77.9216, 12.2644, 16.3726 )
@@ -70,7 +67,6 @@ transform = Transform( 0.858901, 0, 0.512142, 0, 1, 0, -0.512142, 0, 0.858901, -
 transform = Transform( 0.99565, 0, -0.09317, 0, 1, 0, 0.09317, 0, 0.99565, -84.3819, 15.7312, -10.2571 )
 
 [node name="Truss_Triangular_67m" parent="Markers/Marker_Truss006" index="0" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Marker_Truss007" parent="Markers" index="7"]
 transform = Transform( 0.865953, 0, -0.500125, 0, 1, 0, 0.500125, 0, 0.865953, -78.1131, 16.0022, -25.9324 )
@@ -86,13 +82,11 @@ transform = Transform( 0.352237, 0, -0.935911, 0, 1, 0, 0.935911, 0, 0.352237, -
 transform = Transform( -0.0396122, 0, -0.999215, 0, 1, 0, 0.999215, 0, -0.0396122, -41.3821, 11.5234, -47.2623 )
 
 [node name="Truss_Triangular_67m" parent="Markers/Marker_Truss009" index="0" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Marker_Truss010" parent="Markers" index="10"]
 transform = Transform( -0.607459, 0, -0.794351, 0, 1, 0, 0.794351, 0, -0.607459, -16.2479, 6.29026, -39.0552 )
 
 [node name="Truss_Triangular_67m" parent="Markers/Marker_Truss010" index="0" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Marker_Truss011" parent="Markers" index="11"]
 transform = Transform( -0.87195, 0, -0.489596, 0, 1, 0, 0.489596, 0, -0.87195, -5.39917, 3.28734, -26.5157 )

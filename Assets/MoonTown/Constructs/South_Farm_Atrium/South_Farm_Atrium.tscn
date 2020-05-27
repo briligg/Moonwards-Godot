@@ -2,5 +2,4 @@
 
 [ext_resource path="res://Assets/MoonTown/Constructs/South_Farm_Atrium/South_Farm_Atrium.glb" type="PackedScene" id=1]
 
-
 [node name="South_Farm_Atrium" instance=ExtResource( 1 )]

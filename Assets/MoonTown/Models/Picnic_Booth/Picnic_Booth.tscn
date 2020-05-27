@@ -2,7 +2,4 @@
 
 [ext_resource path="res://Assets/MoonTown/Models/Picnic_Booth/Picnic_Booth.glb" type="PackedScene" id=1]
 
-
-
-
 [node name="Picnic_Booth" instance=ExtResource( 1 )]
