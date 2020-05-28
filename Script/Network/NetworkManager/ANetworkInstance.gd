@@ -2,6 +2,10 @@ extends Node
 class_name ANetworkInstance
 # Base class for client and server instances
 
+signal initialized
+
+var is_initialized: bool = false
+
 var world: Node
 var entities_container: Node
 
@@ -9,12 +13,19 @@ var entities_container: Node
 var entities: Dictionary = {}
 
 func _ready():
-	world = Scene.change_scene_to_instance(Scene.world_scene)
+	world = yield(Scene.change_scene_to_async(Scene.world_scene), "scene_changed")
+	
 	world.name = "World"
 
 	entities_container = Node.new()
 	entities_container.name = "entities"
 	world.add_child(entities_container)
+	is_initialized = true
+	emit_signal("initialized")
+
+# virtual function called  when `initialized` is fired.
+func _start():
+	pass
 
 # `PUPPETSYNC`
 puppetsync func remove_player(peer_id: int) -> void:

@@ -12,6 +12,11 @@ func _init(_ip: String, _port: int):
 	self.port = _port
 
 func _ready():
+	# because inheritence is broken on yields
+	# yielding on a parent class' _ready returns it to the inheriting class' _ready
+	if !self.is_initialized:
+		yield(self, "initialized")
+		
 	get_tree().connect("connected_to_server", self, "_connected_ok")
 	get_tree().connect("connection_failed", self, "_connected_fail")
 	get_tree().connect("server_disconnected", self, "_server_disconnected")

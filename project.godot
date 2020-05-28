@@ -123,6 +123,16 @@ _global_script_classes=[ {
 "class": "NetworkSignals",
 "language": "GDScript",
 "path": "res://Script/Manager/SignalsManager/NetworkSignals.gd"
+}, {
+"base": "Reference",
+"class": "ResourceSignals",
+"language": "GDScript",
+"path": "res://Script/Manager/SignalsManager/ResourceSignals.gd"
+}, {
+"base": "Node",
+"class": "ResourceThreadedLoader",
+"language": "GDScript",
+"path": "res://Script/Manager/ResourceManager/ResourceThreadedLoader.gd"
 } ]
 _global_script_class_icons={
 "AComponent": "",
@@ -147,7 +157,9 @@ _global_script_class_icons={
 "MwNode": "",
 "MwSpatial": "",
 "NetworkManager": "",
-"NetworkSignals": ""
+"NetworkSignals": "",
+"ResourceSignals": "",
+"ResourceThreadedLoader": ""
 }
 
 [application]

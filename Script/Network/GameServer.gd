@@ -14,6 +14,11 @@ func _init(_port: int, _max_players: int, _is_host_player: bool = false):
 	self.name = "GameServer"
 
 func _ready():
+	# because inheritence is broken on yields
+	# yielding on a parent class' _ready returns it to the inheriting class' _ready
+	if !self.is_initialized:
+		yield(self, "initialized")
+	
 	get_tree().connect("network_peer_connected", self, "_player_connected")
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
 	_host_game()
