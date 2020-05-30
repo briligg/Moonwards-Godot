@@ -7,7 +7,7 @@ func _init():
 func _ready():
 	chatbox.connect("chat_line_entered", self, "_chat_line_entered")
 
-func _chat_line_entered(message: String) -> void:
+func _chat_line_entered(message: String, strength: int) -> void:
 	rpc_id(1, "_send_chat_message", message)
 
 #`MASTER`

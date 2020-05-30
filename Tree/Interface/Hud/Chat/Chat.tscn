@@ -1,152 +1,12 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Assets/Interface/Fonts/MainMenuFont.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Assets/Interface/StyleBoxes/MainMenuFocusStyle.tres" type="StyleBox" id=2]
-[ext_resource path="res://Assets/Interface/StyleBoxes/ChatLineEdit.tres" type="StyleBox" id=3]
-[ext_resource path="res://Assets/Interface/StyleBoxes/ChatDisabledLineEdit.tres" type="StyleBox" id=4]
-[ext_resource path="res://Assets/Interface/StyleBoxes/ChatPanelRichTextLabel.tres" type="StyleBox" id=5]
+[ext_resource path="res://Assets/Interface/ChatTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Interface/StyleBoxes/ChatMainBGPanel.tres" type="StyleBox" id=6]
 [ext_resource path="res://Tree/Interface/Hud/Chat/ChatInput.gd" type="Script" id=7]
 [ext_resource path="res://Tree/Interface/Hud/Chat/Chat.gd" type="Script" id=8]
+[ext_resource path="res://Tree/Interface/Hud/Chat/ChatDisplay.gd" type="Script" id=9]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0, 0, 0, 0.392157 )
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0, 0, 0, 0.607843 )
-
-[sub_resource type="StyleBoxFlat" id=3]
-content_margin_left = 10.0
-content_margin_right = 10.0
-content_margin_top = 10.0
-content_margin_bottom = 10.0
-bg_color = Color( 0.120504, 0.120504, 0.120504, 0.588235 )
-
-[sub_resource type="StyleBoxEmpty" id=4]
-
-[sub_resource type="StyleBoxFlat" id=5]
-content_margin_left = 10.0
-content_margin_right = 10.0
-bg_color = Color( 0, 0, 0, 0.588235 )
-
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0, 0, 0, 0.392157 )
-
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0, 0, 0, 0.607843 )
-
-[sub_resource type="StyleBoxFlat" id=8]
-content_margin_left = 10.0
-content_margin_right = 10.0
-content_margin_top = 10.0
-content_margin_bottom = 10.0
-bg_color = Color( 0.120504, 0.120504, 0.120504, 0.588235 )
-
-[sub_resource type="StyleBoxEmpty" id=9]
-
-[sub_resource type="StyleBoxFlat" id=10]
-content_margin_left = 10.0
-content_margin_right = 10.0
-bg_color = Color( 0, 0, 0, 0.588235 )
-
-[sub_resource type="Theme" id=11]
-default_font = ExtResource( 1 )
-Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
-Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
-Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
-Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
-Button/constants/hseparation = 20
-Button/fonts/font = ExtResource( 1 )
-Button/styles/disabled = SubResource( 1 )
-Button/styles/focus = ExtResource( 2 )
-Button/styles/hover = ExtResource( 2 )
-Button/styles/normal = SubResource( 2 )
-Button/styles/pressed = null
-Label/colors/font_color = Color( 1, 1, 1, 1 )
-Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
-Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-Label/constants/line_spacing = 3
-Label/constants/shadow_as_outline = 0
-Label/constants/shadow_offset_x = 1
-Label/constants/shadow_offset_y = 1
-Label/fonts/font = null
-Label/styles/normal = SubResource( 3 )
-LineEdit/colors/clear_button_color = Color( 0.878431, 0.878431, 0.878431, 1 )
-LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
-LineEdit/colors/cursor_color = Color( 0.941176, 0.941176, 0.941176, 1 )
-LineEdit/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
-LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
-LineEdit/colors/selection_color = Color( 0.490196, 0.490196, 0.490196, 1 )
-LineEdit/constants/minimum_spaces = 12
-LineEdit/fonts/font = null
-LineEdit/icons/clear = null
-LineEdit/styles/focus = ExtResource( 3 )
-LineEdit/styles/normal = ExtResource( 3 )
-LineEdit/styles/read_only = ExtResource( 4 )
-Panel/styles/panel = ExtResource( 5 )
-Panel/styles/panelf = ExtResource( 5 )
-Panel/styles/panelnc = ExtResource( 5 )
-PopupMenu/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
-PopupMenu/colors/font_color_accel = Color( 0.7, 0.7, 0.7, 0.8 )
-PopupMenu/colors/font_color_disabled = Color( 0.4, 0.4, 0.4, 0.8 )
-PopupMenu/colors/font_color_hover = Color( 0.878431, 0.878431, 0.878431, 1 )
-PopupMenu/constants/hseparation = 4
-PopupMenu/constants/vseparation = 4
-PopupMenu/fonts/font = null
-PopupMenu/icons/checked = null
-PopupMenu/icons/radio_checked = null
-PopupMenu/icons/radio_unchecked = null
-PopupMenu/icons/submenu = null
-PopupMenu/icons/unchecked = null
-PopupMenu/styles/hover = null
-PopupMenu/styles/labeled_separator_left = null
-PopupMenu/styles/labeled_separator_right = null
-PopupMenu/styles/panel = SubResource( 4 )
-PopupMenu/styles/panel_disabled = null
-PopupMenu/styles/separator = null
-ProgressBar/colors/font_color = Color( 0.941176, 0.941176, 0.941176, 1 )
-ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
-ProgressBar/fonts/font = null
-ProgressBar/styles/bg = SubResource( 5 )
-ProgressBar/styles/fg = null
-RichTextLabel/colors/default_color = Color( 0.878431, 0.878431, 0.878431, 1 )
-RichTextLabel/colors/font_color_selected = Color( 0.490196, 0.490196, 0.490196, 1 )
-RichTextLabel/colors/font_color_shadow = Color( 0, 0, 0, 0 )
-RichTextLabel/colors/selection_color = Color( 0.1, 0.1, 1, 0.8 )
-RichTextLabel/constants/line_separation = 1
-RichTextLabel/constants/shadow_as_outline = 0
-RichTextLabel/constants/shadow_offset_x = 1
-RichTextLabel/constants/shadow_offset_y = 1
-RichTextLabel/constants/table_hseparation = 3
-RichTextLabel/constants/table_vseparation = 3
-RichTextLabel/fonts/bold_font = null
-RichTextLabel/fonts/bold_italics_font = null
-RichTextLabel/fonts/italics_font = null
-RichTextLabel/fonts/mono_font = null
-RichTextLabel/fonts/normal_font = null
-RichTextLabel/styles/focus = null
-RichTextLabel/styles/normal = SubResource( 6 )
-TabContainer/colors/font_color_bg = Color( 0.690196, 0.690196, 0.690196, 1 )
-TabContainer/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
-TabContainer/colors/font_color_fg = Color( 0.941176, 0.941176, 0.941176, 1 )
-TabContainer/constants/hseparation = 4
-TabContainer/constants/label_valign_bg = 2
-TabContainer/constants/label_valign_fg = 0
-TabContainer/constants/side_margin = 8
-TabContainer/constants/top_margin = 24
-TabContainer/fonts/font = null
-TabContainer/icons/decrement = null
-TabContainer/icons/decrement_highlight = null
-TabContainer/icons/increment = null
-TabContainer/icons/increment_highlight = null
-TabContainer/icons/menu = null
-TabContainer/icons/menu_highlight = null
-TabContainer/styles/panel = SubResource( 7 )
-TabContainer/styles/tab_bg = SubResource( 8 )
-TabContainer/styles/tab_disabled = SubResource( 9 )
-TabContainer/styles/tab_fg = SubResource( 10 )
-
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=1]
 resource_name = "Visibility"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -164,14 +24,14 @@ tracks/0/keys = {
 [node name="Chat" type="PanelContainer" groups=[
 "Chat",
 ]]
-anchor_top = 1.0
+anchor_top = 0.8
+anchor_right = 0.3
 anchor_bottom = 1.0
-margin_top = -60.0
-margin_right = 403.0
+grow_horizontal = 0
 grow_vertical = 0
 focus_mode = 1
 mouse_filter = 2
-theme = SubResource( 11 )
+theme = ExtResource( 1 )
 custom_styles/panel = ExtResource( 6 )
 script = ExtResource( 8 )
 __meta__ = {
@@ -181,29 +41,64 @@ __meta__ = {
 [node name="V" type="VBoxContainer" parent="."]
 margin_left = 2.0
 margin_top = 2.0
-margin_right = 401.0
-margin_bottom = 60.0
+margin_right = 574.0
+margin_bottom = 216.0
 alignment = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="V"]
-margin_right = 399.0
-margin_bottom = 31.0
-mouse_filter = 2
+[node name="HelpPage" type="RichTextLabel" parent="V"]
+visible = false
+margin_right = 572.0
+margin_bottom = 177.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "'Enter' to start inputing text. 'Enter' again to send message.
+'T' to scroll chat display up.
+'G' to scroll chat display down.
+'V' to toggle Chat between max and min vertical size.
+'C' to expand Chat to the right.
+'X' to shrink Chat to the left.
+'1' to expand Chat upwards.
+'Q' to shrink Chat downwards.
+'2' to hide Chat.
+'H' to go back to Chat Display."
+
+[node name="Tabs" type="TabContainer" parent="V"]
+margin_right = 572.0
+margin_bottom = 189.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tabs_visible = false
+
+[node name="Public" type="RichTextLabel" parent="V/Tabs"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 bbcode_enabled = true
 scroll_following = true
+script = ExtResource( 9 )
+
+[node name="Messages" type="RichTextLabel" parent="V/Tabs"]
+visible = false
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+scroll_following = true
+script = ExtResource( 9 )
 
 [node name="ChatInput" type="LineEdit" parent="V"]
-margin_top = 35.0
-margin_right = 399.0
-margin_bottom = 58.0
+margin_top = 193.0
+margin_right = 572.0
+margin_bottom = 214.0
 mouse_filter = 2
 editable = false
-placeholder_text = "'Enter'=type 'V'=toggle 'T'/'G'=scroll 'Q'=display"
+placeholder_text = "Press 'H' for help."
 placeholder_alpha = 1.0
 script = ExtResource( 7 )
 
 [node name="ChatAnims" type="AnimationPlayer" parent="."]
-anims/Visibility = SubResource( 12 )
+anims/Visibility = SubResource( 1 )
+[connection signal="tab_changed" from="V/Tabs" to="." method="_on_Tabs_tab_changed"]
+[connection signal="meta_clicked" from="V/Tabs/Public" to="." method="_link_clicked"]
+[connection signal="meta_clicked" from="V/Tabs/Messages" to="." method="_link_clicked"]
 [connection signal="text_entered" from="V/ChatInput" to="." method="_on_LineEdit_text_entered"]
