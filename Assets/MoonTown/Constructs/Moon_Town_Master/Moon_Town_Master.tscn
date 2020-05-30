@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Moon_Town_Master.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/First_Gallery_Lower_UpperPart.tscn" type="PackedScene" id=2]
@@ -37,6 +37,17 @@
 [ext_resource path="res://Assets/MoonTown/Models/Earth/Earth.tscn" type="PackedScene" id=35]
 [ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Marker_Outdoor.tscn" type="PackedScene" id=36]
 [ext_resource path="res://Assets/MoonTown/Models/Athlete_Rover/Athlete_Rover_Prop.tscn" type="PackedScene" id=37]
+[ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-4.ogg" type="AudioStream" id=38]
+[ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-11.ogg" type="AudioStream" id=39]
+[ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-2.ogg" type="AudioStream" id=40]
+[ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-6.ogg" type="AudioStream" id=41]
+[ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-5.ogg" type="AudioStream" id=42]
+[ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-3.ogg" type="AudioStream" id=43]
+[ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-1.ogg" type="AudioStream" id=44]
+[ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-intro.ogg" type="AudioStream" id=45]
+[ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-10.ogg" type="AudioStream" id=46]
+[ext_resource path="res://SceneComponent/Utilities/AudioTour/AudioSphere.tscn" type="PackedScene" id=47]
+[ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-8.ogg" type="AudioStream" id=48]
 
 [node name="Moon_Town_Master" instance=ExtResource( 1 )]
 
@@ -64,32 +75,72 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.52368, -2.87244 )
 [node name="Audio_Tour_Marker_Indoor_Intro" parent="Audio-Tour-Markers" index="0" instance=ExtResource( 27 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68.3646, 100.258, -208.485 )
 
+[node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Indoor_Intro" index="1" instance=ExtResource( 47 )]
+display_info = "play indoor audio tour introduction"
+audio_file = ExtResource( 45 )
+
 [node name="Audio_Tour_Marker_Indoor1" parent="Audio-Tour-Markers" index="1" instance=ExtResource( 27 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.48357, 100.272, -181.337 )
+
+[node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Indoor1" index="1" instance=ExtResource( 47 )]
+display_info = "play indoor audio tour part 1"
+audio_file = ExtResource( 44 )
 
 [node name="Audio_Tour_Marker_Indoor2" parent="Audio-Tour-Markers" index="2" instance=ExtResource( 27 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.81935, 100.272, -173.777 )
 
+[node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Indoor2" index="1" instance=ExtResource( 47 )]
+display_info = "play indoor audio tour part 2"
+audio_file = ExtResource( 40 )
+
 [node name="Audio_Tour_Marker_Indoor3" parent="Audio-Tour-Markers" index="3" instance=ExtResource( 27 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.90144, 112.387, -168.746 )
+
+[node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Indoor3" index="1" instance=ExtResource( 47 )]
+display_info = "play indoor audio tour part 3"
+audio_file = ExtResource( 43 )
 
 [node name="Audio_Tour_Marker_Indoor4" parent="Audio-Tour-Markers" index="4" instance=ExtResource( 27 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68.6175, 112.564, -180.035 )
 
+[node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Indoor4" index="1" instance=ExtResource( 47 )]
+display_info = "play indoor audio tour part 4"
+audio_file = ExtResource( 38 )
+
 [node name="Audio_Tour_Marker_Indoor5" parent="Audio-Tour-Markers" index="5" instance=ExtResource( 27 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47.9403, 100.387, -171.717 )
+
+[node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Indoor5" index="1" instance=ExtResource( 47 )]
+display_info = "play indoor audio tour part 5"
+audio_file = ExtResource( 42 )
 
 [node name="Audio_Tour_Marker_Indoor6" parent="Audio-Tour-Markers" index="6" instance=ExtResource( 27 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.2385, 88.2769, -170.968 )
 
+[node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Indoor6" index="1" instance=ExtResource( 47 )]
+display_info = "play indoor audio tour part 6"
+audio_file = ExtResource( 41 )
+
 [node name="Audio_Tour_Marker_Indoor8" parent="Audio-Tour-Markers" index="7" instance=ExtResource( 27 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.1978, 82.0088, -107.549 )
+
+[node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Indoor8" index="1" instance=ExtResource( 47 )]
+display_info = "play indoor audio tour part 8"
+audio_file = ExtResource( 48 )
 
 [node name="Audio_Tour_Marker_Indoor10" parent="Audio-Tour-Markers" index="8" instance=ExtResource( 27 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -172.643, 25.6057, -195.051 )
 
+[node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Indoor10" index="1" instance=ExtResource( 47 )]
+display_info = "play indoor audio tour part 10"
+audio_file = ExtResource( 46 )
+
 [node name="Audio_Tour_Marker_Indoor11" parent="Audio-Tour-Markers" index="9" instance=ExtResource( 27 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -170.508, 23.9715, -243.228 )
+
+[node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Indoor11" index="1" instance=ExtResource( 47 )]
+display_info = "play indoor audio tour part 11"
+audio_file = ExtResource( 39 )
 
 [node name="Audio_Tour_Marker_Outdoor1" parent="Audio-Tour-Markers" index="10" instance=ExtResource( 36 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 945.979, -9.28398, 519.527 )
