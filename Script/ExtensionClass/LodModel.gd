@@ -13,7 +13,7 @@ func _ready():
 		_lods[2] = $LOD2
 		lod_enabled = true
 		add_to_group(Groups.LOD_MODELS)
-		set_lod(2)
+#		set_lod(2)
 	else:
 		lod_enabled = false
 

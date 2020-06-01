@@ -7,3 +7,4 @@ extends Node
 const ENTITIES: String = "entities"
 const COMPONENTS: String = "components"
 const LOD_MODELS: String = "lod_models"
+const DYNAMIC_VISIBILITY: String = "dynamic_visibility"

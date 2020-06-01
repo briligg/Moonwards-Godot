@@ -37,7 +37,7 @@
 [ext_resource path="res://Assets/MoonTown/Models/Earth/Earth.tscn" type="PackedScene" id=35]
 [ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Marker_Outdoor.tscn" type="PackedScene" id=36]
 [ext_resource path="res://Assets/MoonTown/Models/Athlete_Rover/Athlete_Rover_Prop.tscn" type="PackedScene" id=37]
-[ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-4.ogg" type="AudioStream" id=38]
+[ext_resource path="res://SceneComponent/World/DynamicLoading/DynamicVisibilityTrigger.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-11.ogg" type="AudioStream" id=39]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-2.ogg" type="AudioStream" id=40]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-6.ogg" type="AudioStream" id=41]
@@ -59,6 +59,7 @@
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Outdoor_2.ogg" type="AudioStream" id=57]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Outdoor_6.ogg" type="AudioStream" id=58]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Outdoor_5.ogg" type="AudioStream" id=59]
+[ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-4.ogg" type="AudioStream" id=60]
 
 [node name="Moon_Town_Master" instance=ExtResource( 1 )]
 
@@ -116,7 +117,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68.6175, 112.564, -180.035 )
 
 [node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Indoor4" index="1" instance=ExtResource( 47 )]
 display_info = "play indoor audio tour part 4"
-audio_file = ExtResource( 38 )
+audio_file = ExtResource( 60 )
 
 [node name="Audio_Tour_Marker_Indoor5" parent="Audio-Tour-Markers" index="5" instance=ExtResource( 27 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47.9403, 100.387, -171.717 )
@@ -448,6 +449,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.390442 )
 
 [node name="First_Gallery_Upper" parent="Marker_all_Constructs/Empty_FirstGalleryUpper" index="0" instance=ExtResource( 10 )]
 
+[node name="DynamicLoadHandler" parent="Marker_all_Constructs/Empty_FirstGalleryUpper" index="1" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2718, -17.7215, -17.284 )
+show_lod0_list = [ NodePath("../../Empty_FirstGalleryLower/First_Gallery_Lower_UpperPart"), NodePath("../../../Lalande_85k"), NodePath("../../../Lalande_MoonTown"), NodePath("../../Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top") ]
+show_lod1_list = [ NodePath("../../Empty_FirstGalleryLower/First_Gallery_Lower_MiddlePart"), NodePath("../../Empty_FirstGalleryLower/First_Gallery_Lower_LowerPart") ]
+
+[node name="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/DynamicLoadHandler" index="0"]
+transform = Transform( 7, 0, 0, 0, 7, 0, 0, 0, 7, 0.354678, 0, 0 )
+
 [node name="First_Factory" parent="Marker_all_Constructs/Empty_FirstHangars" index="0" instance=ExtResource( 8 )]
 
 [node name="Fourth_Gallery" parent="Marker_all_Constructs/Empty_FourthGallery" index="0" instance=ExtResource( 7 )]
@@ -482,3 +491,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.390442 )
 
 [node name="Earth" parent="." index="25" instance=ExtResource( 35 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30000, 0 )
+
+[editable path="Marker_all_Constructs/Empty_FirstGalleryUpper/DynamicLoadHandler"]
