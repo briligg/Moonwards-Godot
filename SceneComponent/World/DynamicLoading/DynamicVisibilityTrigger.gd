@@ -41,6 +41,8 @@ func process_visibility() -> void:
 			node.set_lod(1)
 		elif path in show_lod2_list:
 			node.set_lod(2)
+		elif path in hide_list:
+			node.hide_all()
 		else:
 			orphan_op(node)
 
