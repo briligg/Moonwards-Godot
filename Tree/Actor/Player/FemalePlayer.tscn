@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://SceneComponent/Actor/CameraController.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SceneComponent/Actor/AnimationController.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://SceneComponent/Actor/InputController.tscn" type="PackedScene" id=5]
 [ext_resource path="res://SceneComponent/Actor/LodComponent.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Tree/Actor/Player/FemalePlayerModel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://SceneComponent/Actor/PlayerInteractor.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.287522
@@ -37,3 +38,5 @@ __meta__ = {
 [node name="LodComponent" parent="." instance=ExtResource( 6 )]
 lod0_max_distance = 300.0
 lod1_max_distance = 500.0
+
+[node name="Interactor" parent="." instance=ExtResource( 8 )]
