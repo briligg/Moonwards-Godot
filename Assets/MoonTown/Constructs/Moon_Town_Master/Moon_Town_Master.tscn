@@ -465,10 +465,9 @@ show_lod0_list = [ NodePath("../../Empty_FirstGalleryUpper/First_Gallery_Upper")
 
 [node name="DVT_First_Gallery_Upper" parent="Marker_all_Constructs/Empty_FirstGalleryUpper" index="1" instance=ExtResource( 38 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2718, -17.7215, -17.284 )
-orphan_node_op = 3
-show_lod0_list = [ NodePath("../../Empty_FirstGalleryLower/First_Gallery_Lower_UpperPart"), NodePath("../../../Lalande_85k"), NodePath("../../../Lalande_MoonTown"), NodePath("") ]
-show_lod1_list = [ NodePath("../../Empty_FirstGalleryLower/First_Gallery_Lower_MiddlePart"), NodePath("../../Empty_FirstGalleryLower/First_Gallery_Lower_LowerPart"), NodePath("../../Empty_FirstHangars/First_Factory"), NodePath("") ]
-show_lod2_list = [ NodePath("../../Empty_ThirdGallery/Third_Gallery"), NodePath("../../Empty_NorthLongAtrium/North_Farm_Atrium"), NodePath("../../Empty_TeacupCrater/Teacup_Crater"), NodePath("../../Empty_STEMP-Facilities/STEMP_Facilities"), NodePath("../../Empty_RadarTower/Radar_Tower"), NodePath("../../Empty_LosPortalesTunnel/Rim_Arcade") ]
+show_lod0_list = [ NodePath("../../Empty_FirstGalleryLower/First_Gallery_Lower_UpperPart"), NodePath("../../../Lalande_85k"), NodePath("../../../Lalande_MoonTown"), NodePath("../../Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/1st_Gal_Top/Overlay_1stGal_Top") ]
+show_lod1_list = [ NodePath("../../Empty_FirstGalleryLower/First_Gallery_Lower_MiddlePart"), NodePath("../../Empty_FirstGalleryLower/First_Gallery_Lower_LowerPart"), NodePath("../../Empty_FirstHangars/First_Factory"), NodePath("../../Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/3rd_Gal_Top/Overlay_3rd_Gal_Top") ]
+show_lod2_list = [ NodePath("../../Empty_ThirdGallery/Third_Gallery"), NodePath("../../Empty_NorthLongAtrium/North_Farm_Atrium"), NodePath("../../Empty_TeacupCrater/Teacup_Crater"), NodePath("../../Empty_STEMP-Facilities/STEMP_Facilities"), NodePath("../../Empty_RadarTower/Radar_Tower"), NodePath("../../Empty_LosPortalesTunnel/Rim_Arcade"), NodePath("../../Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/5th_Gal_Top/Overlay_5th_Gal_Top") ]
 
 [node name="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/DVT_First_Gallery_Upper" index="0"]
 transform = Transform( 7, 0, 0, 0, 7, 0, 0, 0, 7, 0.354678, 0, 0 )
@@ -521,3 +520,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30000, 0 )
 [editable path="Marker_all_Constructs/Empty_AirlockBay/DVT_Airlock_Bay"]
 
 [editable path="Marker_all_Constructs/Empty_FirstGalleryUpper/DVT_First_Gallery_Upper"]
+
+[editable path="Marker_all_Constructs/Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top"]
