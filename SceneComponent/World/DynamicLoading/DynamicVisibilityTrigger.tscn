@@ -4,7 +4,7 @@
 
 [sub_resource type="BoxShape" id=1]
 
-[node name="DynamicLoadHandler" type="Area"]
+[node name="DynamicVisibilityTrigger" type="Area"]
 monitorable = false
 script = ExtResource( 1 )
 

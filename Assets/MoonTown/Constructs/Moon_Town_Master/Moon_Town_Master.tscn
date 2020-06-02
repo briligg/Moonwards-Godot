@@ -435,9 +435,22 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.390442 )
 
 [node name="Airlock_Bay" parent="Marker_all_Constructs/Empty_AirlockBay" index="0" instance=ExtResource( 3 )]
 
+[node name="DVT_Airlock_Bay" parent="Marker_all_Constructs/Empty_AirlockBay" index="1" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00577, 0, 0 )
+show_lod0_list = [ NodePath("../../Empty_FirstGalleryUpper/First_Gallery_Upper") ]
+
+[node name="CollisionShape" parent="Marker_all_Constructs/Empty_AirlockBay/DVT_Airlock_Bay" index="0"]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 8, 0, 0, 0 )
+
 [node name="First_Atrium" parent="Marker_all_Constructs/Empty_AtriumHab" index="0" instance=ExtResource( 4 )]
 
+[node name="DVT_Empty_AtriumHab" parent="Marker_all_Constructs/Empty_AtriumHab" index="1" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1894, 17.6173, 21.409 )
+show_lod0_list = [ NodePath("../../Empty_LosPortalesTunnel/Rim_Arcade"), NodePath("../../Empty_BigAtrium/Center_Atrium"), NodePath("../../../Lalande_85k"), NodePath("../../Empty_ThirdGallery/Third_Gallery") ]
+
 [node name="Center_Atrium" parent="Marker_all_Constructs/Empty_BigAtrium" index="0" instance=ExtResource( 26 )]
+
+[node name="DVT_Center_Atrium" parent="Marker_all_Constructs/Empty_BigAtrium" index="1" instance=ExtResource( 38 )]
 
 [node name="Fifth_Gallery" parent="Marker_all_Constructs/Empty_FifthGallery" index="0" instance=ExtResource( 28 )]
 
@@ -449,12 +462,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.390442 )
 
 [node name="First_Gallery_Upper" parent="Marker_all_Constructs/Empty_FirstGalleryUpper" index="0" instance=ExtResource( 10 )]
 
-[node name="DynamicLoadHandler" parent="Marker_all_Constructs/Empty_FirstGalleryUpper" index="1" instance=ExtResource( 38 )]
+[node name="DVT_First_Gallery_Upper" parent="Marker_all_Constructs/Empty_FirstGalleryUpper" index="1" instance=ExtResource( 38 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2718, -17.7215, -17.284 )
+orphan_node_op = 3
 show_lod0_list = [ NodePath("../../Empty_FirstGalleryLower/First_Gallery_Lower_UpperPart"), NodePath("../../../Lalande_85k"), NodePath("../../../Lalande_MoonTown"), NodePath("../../Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top") ]
 show_lod1_list = [ NodePath("../../Empty_FirstGalleryLower/First_Gallery_Lower_MiddlePart"), NodePath("../../Empty_FirstGalleryLower/First_Gallery_Lower_LowerPart") ]
 
-[node name="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/DynamicLoadHandler" index="0"]
+[node name="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/DVT_First_Gallery_Upper" index="0"]
 transform = Transform( 7, 0, 0, 0, 7, 0, 0, 0, 7, 0.354678, 0, 0 )
 
 [node name="First_Factory" parent="Marker_all_Constructs/Empty_FirstHangars" index="0" instance=ExtResource( 8 )]
@@ -467,6 +481,8 @@ transform = Transform( 7, 0, 0, 0, 7, 0, 0, 0, 7, 0.354678, 0, 0 )
 
 [node name="Rim_Arcade" parent="Marker_all_Constructs/Empty_LosPortalesTunnel" index="0" instance=ExtResource( 19 )]
 
+[node name="DVT_Rim_Arcade" parent="Marker_all_Constructs/Empty_LosPortalesTunnel/Rim_Arcade" index="7" instance=ExtResource( 38 )]
+
 [node name="Main_Factory" parent="Marker_all_Constructs/Empty_MainHangars" index="0" instance=ExtResource( 11 )]
 
 [node name="North_Farm_Atrium" parent="Marker_all_Constructs/Empty_NorthLongAtrium" index="0" instance=ExtResource( 15 )]
@@ -477,19 +493,29 @@ transform = Transform( 7, 0, 0, 0, 7, 0, 0, 0, 7, 0.354678, 0, 0 )
 
 [node name="Rec_Hab_1" parent="Marker_all_Constructs/Empty_RecHab1" index="0" instance=ExtResource( 9 )]
 
+[node name="DVT_Rec_Hab_1" parent="Marker_all_Constructs/Empty_RecHab1" index="1" instance=ExtResource( 38 )]
+
 [node name="Second_Gallery" parent="Marker_all_Constructs/Empty_SecondGallery" index="0" instance=ExtResource( 22 )]
 
 [node name="South_Farm_Atrium" parent="Marker_all_Constructs/Empty_SouthLongAtrium" index="0" instance=ExtResource( 16 )]
+
+[node name="DVT_South_Farm_Atrium" parent="Marker_all_Constructs/Empty_SouthLongAtrium" index="1" instance=ExtResource( 38 )]
 
 [node name="Spaceport" parent="Marker_all_Constructs/Empty_Spaceport" index="0" instance=ExtResource( 25 )]
 
 [node name="STEMP_Facilities" parent="Marker_all_Constructs/Empty_STEMP-Facilities" index="0" instance=ExtResource( 12 )]
 
+[node name="DVT_STEMP_Facilities" parent="Marker_all_Constructs/Empty_STEMP-Facilities" index="1" instance=ExtResource( 38 )]
+
 [node name="Teacup_Crater" parent="Marker_all_Constructs/Empty_TeacupCrater" index="0" instance=ExtResource( 23 )]
+
+[node name="DVT_Teacup_Crater" parent="Marker_all_Constructs/Empty_TeacupCrater" index="1" instance=ExtResource( 38 )]
 
 [node name="Third_Gallery" parent="Marker_all_Constructs/Empty_ThirdGallery" index="0" instance=ExtResource( 24 )]
 
 [node name="Earth" parent="." index="25" instance=ExtResource( 35 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30000, 0 )
 
-[editable path="Marker_all_Constructs/Empty_FirstGalleryUpper/DynamicLoadHandler"]
+[editable path="Marker_all_Constructs/Empty_AirlockBay/DVT_Airlock_Bay"]
+
+[editable path="Marker_all_Constructs/Empty_FirstGalleryUpper/DVT_First_Gallery_Upper"]

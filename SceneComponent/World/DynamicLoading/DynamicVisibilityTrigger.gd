@@ -1,14 +1,14 @@
 extends Area
 
 enum NoListOp {
+	Hide,
 	ShowLod0,
 	ShowLod1,
 	ShowLod2,
-	Hide
 }
 
 # The operation to perform on nodes not in any of the lists.
-export(NoListOp) var orphan_node_op
+export(NoListOp) var orphan_node_op = NoListOp.Hide
 
 export(Array, NodePath) var show_lod0_list
 export(Array, NodePath) var show_lod1_list
