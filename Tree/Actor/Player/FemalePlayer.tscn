@@ -40,3 +40,4 @@ lod0_max_distance = 300.0
 lod1_max_distance = 500.0
 
 [node name="Interactor" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.879645, 0 )
