@@ -34,7 +34,7 @@ func process_visibility() -> void:
 	get_tree().call_group(Groups.DYNAMIC_VISIBILITY, "unset")
 	
 	for node in get_tree().get_nodes_in_group(Groups.LOD_MODELS):
-		var path = node.get_path()
+		var path = get_path_to(node)
 		if path in show_lod0_list:
 			node.set_lod(0)
 		elif path in show_lod1_list:
