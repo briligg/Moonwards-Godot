@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/PlayerModel.glb-cb3c4e5300ead1689678a89eb819c329.scn"
+path="res://.import/PlayerModel.glb-1c278244dc2b439b63612e54dadaa5fe.scn"
 
 [deps]
 
-source_file="res://Tree/Actor/Player/PlayerModel.glb"
-dest_files=[ "res://.import/PlayerModel.glb-cb3c4e5300ead1689678a89eb819c329.scn" ]
+source_file="res://Assets/MoonTown/Models/Human_Model/PlayerModel.glb"
+dest_files=[ "res://.import/PlayerModel.glb-1c278244dc2b439b63612e54dadaa5fe.scn" ]
 
 [params]
 

@@ -1,12 +1,12 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/Turquoise.tres" type="Material" id=1]
-[ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/Chestnut.tres" type="Material" id=2]
-[ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/SmokySkin.tres" type="Material" id=3]
-[ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/Black.tres" type="Material" id=4]
-[ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/BlueStone.tres" type="Material" id=5]
-[ext_resource path="res://Tree/Actor/Player/PlayerModel.glb" type="PackedScene" id=6]
-[ext_resource path="res://Script/Component/ModelComponent.gd" type="Script" id=7]
+[ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/Black.tres" type="Material" id=1]
+[ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/BlueStone.tres" type="Material" id=2]
+[ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/Turquoise.tres" type="Material" id=3]
+[ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/Chestnut.tres" type="Material" id=4]
+[ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/SmokySkin.tres" type="Material" id=5]
+[ext_resource path="res://Script/Component/ModelComponent.gd" type="Script" id=6]
+[ext_resource path="res://Assets/MoonTown/Models/Human_Model/PlayerModel.glb" type="PackedScene" id=7]
 
 [sub_resource type="AnimationNodeAnimation" id=1]
 animation = "Flail-loop"
@@ -57,22 +57,22 @@ nodes/Walking/position = Vector2( 320, 40 )
 nodes/output/position = Vector2( 1020, 160 )
 node_connections = [ "output", 0, "State", "State", 0, "Walking", "State", 1, "Animation" ]
 
-[node name="Model" instance=ExtResource( 6 )]
-script = ExtResource( 7 )
+[node name="Model" instance=ExtResource( 7 )]
+script = ExtResource( 6 )
 
 [node name="AvatarFemale" parent="MainRig/Skeleton" index="0"]
-material/0 = ExtResource( 3 )
-material/1 = ExtResource( 1 )
-material/2 = ExtResource( 2 )
-material/3 = ExtResource( 4 )
-material/4 = ExtResource( 5 )
+material/0 = ExtResource( 5 )
+material/1 = ExtResource( 3 )
+material/2 = ExtResource( 4 )
+material/3 = ExtResource( 1 )
+material/4 = ExtResource( 2 )
 
 [node name="AvatarMale" parent="MainRig/Skeleton" index="1"]
-material/0 = ExtResource( 4 )
-material/1 = ExtResource( 2 )
-material/2 = ExtResource( 1 )
-material/3 = ExtResource( 3 )
-material/4 = ExtResource( 5 )
+material/0 = ExtResource( 1 )
+material/1 = ExtResource( 4 )
+material/2 = ExtResource( 3 )
+material/3 = ExtResource( 5 )
+material/4 = ExtResource( 2 )
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="2"]
 tree_root = SubResource( 9 )
