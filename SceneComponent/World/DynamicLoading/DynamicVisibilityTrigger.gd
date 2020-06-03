@@ -7,6 +7,8 @@ enum NoListOp {
 	ShowLod2,
 }
 
+export(bool) var pause_on_error: bool = false
+
 # The operation to perform on nodes not in any of the lists.
 export(NoListOp) var orphan_node_op = NoListOp.Hide
 
@@ -67,4 +69,5 @@ func _validate_paths(path_list: Array):
 	for path in path_list:
 		if get_node(path) == null:
 			Log.error(self, "", "DVT Path %s is inavlid in %s." %[path, self.name])
-			assert(false)
+			if pause_on_error:
+				assert(false)
