@@ -4,7 +4,7 @@ extends "res://SceneComponent/Utilities/Interactable/Interactable.gd"
 var climb_points = []
 var step_size = 0.0535
 
-export (float) var height = 0.5 setget SetHeight
+export (float) var height = 0.5 setget _set_height
 
 
 func _ready():
@@ -15,22 +15,25 @@ func _ready():
 	var max_y = step_position.y + $CollisionShape.shape.extents.y
 	step_position.y -= $CollisionShape.shape.extents.y
 	
+	#Calculate how large each step needs to be.
 	while true:
 		climb_points.append(step_position)
 		step_position.y += step_size
 		if step_position.y > max_y:
 			break
 
+#Let the interactor know they interacted with me.
 func interacted_with(_interactor : Node) -> void :
-	#Let the interactor know they interacted with me.
 	pass
 
-func SetHeight(var new_height):
+#Set the height of the collision shape.
+func _set_height(var new_height):
 	$CollisionShape.shape.extents.y = new_height
 	$CollisionShape.translation.y = new_height
 	height = new_height
 
-func GetLookDirection(var position):
+#Determine which side the player should be facing when climbing.
+func _get_look_direction(var position):
 	var flat_position = global_transform.origin
 	flat_position.y = position.y
 	
@@ -39,7 +42,7 @@ func GetLookDirection(var position):
 	else:
 		return -global_transform.basis.z
 
-func CreateDebugLine(var from, var to):
+func _create_debug_line(var from, var to):
 	var im = ImmediateGeometry.new()
 	add_child(im)
 	im.global_transform.origin = Vector3()
@@ -48,7 +51,7 @@ func CreateDebugLine(var from, var to):
 	im.add_vertex(to + Vector3(0, 0.1, 0.0))
 	im.end()
 
-func CreateDebugObject(var location):
+func _create_debug_object(var location):
 	var mesh_instance = MeshInstance.new()
 	var mesh = CubeMesh.new()
 	var material = SpatialMaterial.new()
