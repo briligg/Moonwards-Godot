@@ -20,8 +20,11 @@ var is_set: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	_validate_paths(show_lod0_list)
+	_validate_paths(show_lod1_list)
+	_validate_paths(show_lod2_list)
+	_validate_paths(hide_list)
 	self.connect("body_entered", self, "on_body_entered")
-	pass
 
 func on_body_entered(body) -> void:
 	if body is AEntity:
@@ -59,3 +62,9 @@ func orphan_op(node):
 
 func unset() -> void:
 	is_set = false
+
+func _validate_paths(path_list: Array):
+	for path in path_list:
+		if get_node(path) == null:
+			Log.error(self, "", "DVT Path %s is inavlid in %s." %[path, self.name])
+			assert(false)
