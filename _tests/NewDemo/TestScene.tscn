@@ -1,11 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Airlock_Bay/Airlock_Bay.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SceneComponent/Interface/PlayerHud.tscn" type="PackedScene" id=2]
-[ext_resource path="res://SceneComponent/World/DynamicLoading/DynamicVisibilityTrigger.tscn" type="PackedScene" id=3]
+[ext_resource path="res://SceneComponent/World/DynamicLoading/ReversingVisibilityTrigger.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/MoonTown/Models/Boat_Radiator/Boat_Radiator.tscn" type="PackedScene" id=4]
 
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+albedo_color = Color( 0, 0, 0, 0.619608 )
 
 [node name="TestScene" type="Spatial"]
 
@@ -33,24 +37,23 @@ light_energy = 1.9
 shadow_enabled = true
 shadow_color = Color( 0.447059, 0.447059, 0.447059, 1 )
 
-[node name="DynamicVisibilityTrigger" parent="DirectionalLight" instance=ExtResource( 3 )]
-transform = Transform( -0.0209515, -0.0756101, -0.996917, -0.967683, -0.249098, 0.0392297, -0.251296, 0.965522, -0.0679477, 8.21431, 3.14225, -118.705 )
-hide_list = [ NodePath("../../Spatial/Spatial/Boat_Radiator2"), NodePath("../../Boat_Radiator") ]
+[node name="ReversingVisibilityTrigger" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.6235, 0, 0 )
+hide_list = [ NodePath("../Airlock_Bay"), NodePath("../Spatial/Spatial/Boat_Radiator2"), NodePath("../Boat_Radiator") ]
 
-[node name="CollisionShape" parent="DirectionalLight/DynamicVisibilityTrigger" index="0"]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+[node name="CollisionShape" parent="ReversingVisibilityTrigger" index="0"]
+transform = Transform( 5, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0.428563 )
 
-[node name="Area" type="Area" parent="DirectionalLight/DynamicVisibilityTrigger"]
-
-[node name="CollisionShape" type="CollisionShape" parent="DirectionalLight/DynamicVisibilityTrigger/Area"]
-transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
-shape = SubResource( 1 )
+[node name="MeshInstance" type="MeshInstance" parent="ReversingVisibilityTrigger"]
+transform = Transform( 5, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
 
 [node name="Boat_Radiator" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 77.4413, 0, -19.5083 )
 
 [editable path="Spatial/Spatial/Boat_Radiator2"]
 
-[editable path="DirectionalLight/DynamicVisibilityTrigger"]
+[editable path="ReversingVisibilityTrigger"]
 
 [editable path="Boat_Radiator"]
