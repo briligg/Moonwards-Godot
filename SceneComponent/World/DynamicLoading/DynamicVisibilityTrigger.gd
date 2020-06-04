@@ -33,7 +33,8 @@ func _ready():
 
 func on_body_entered(body) -> void:
 	if body is AEntity:
-		process_visibility()
+		if body.owner_peer_id == get_tree().get_network_unique_id():
+			process_visibility()
 
 func process_visibility() -> void:
 	if is_set:
