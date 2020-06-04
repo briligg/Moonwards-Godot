@@ -24,7 +24,9 @@ func _ready():
 
 #Let the interactor know they interacted with me.
 func interacted_with(_interactor : Node) -> void :
-	pass
+	if _interactor is AEntity :
+		#Make the interactor climb stairs.
+		return
 
 #Set the height of the collision shape.
 func _set_height(var new_height):
