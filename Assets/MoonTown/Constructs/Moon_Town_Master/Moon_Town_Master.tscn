@@ -449,13 +449,13 @@ transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 8, -146.088, 0, 0.207336 )
 
 [node name="DVT_Empty_AtriumHab" parent="Marker_all_Constructs/Empty_AtriumHab" index="1" instance=ExtResource( 38 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1894, 17.6173, 21.409 )
-show_lod0_list = [ NodePath("../../Empty_LosPortalesTunnel/Rim_Arcade"), NodePath("../../Empty_BigAtrium/Center_Atrium"), NodePath("../../../Lalande_85k"), NodePath("../../Empty_ThirdGallery/Third_Gallery"), NodePath("../../../Earth"), NodePath("../First_Atrium") ]
+show_lod0_list = [ NodePath("../../Empty_LosPortalesTunnel/Rim_Arcade"), NodePath("../../Empty_BigAtrium/Center_Atrium"), NodePath("../../../Lalande_85k"), NodePath("../../../Earth"), NodePath("../../../Marker_all_BoatRads/BoatRad004/Boat_Radiator") ]
+show_lod1_list = [ NodePath("../../Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/3rd_Gal_Top/Overlay_3rd_Gal_Top") ]
 
 [node name="Center_Atrium" parent="Marker_all_Constructs/Empty_BigAtrium" index="0" instance=ExtResource( 26 )]
 
 [node name="DVT_Center_Atrium" parent="Marker_all_Constructs/Empty_BigAtrium" index="1" instance=ExtResource( 38 )]
-show_lod0_list = [ NodePath("../../Empty_AtriumHab/First_Atrium"), NodePath("../../../Earth"), NodePath("../../../Lalande_85k") ]
-show_lod1_list = [ NodePath("../../Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/3rd_Gal_Top/Overlay_3rd_Gal_Top") ]
+show_lod0_list = [ NodePath("../../Empty_AtriumHab/First_Atrium"), NodePath("../../../Earth"), NodePath("../../Empty_FirstGalleryUpper/First_Gallery_Upper") ]
 
 [node name="Fifth_Gallery" parent="Marker_all_Constructs/Empty_FifthGallery" index="0" instance=ExtResource( 28 )]
 
