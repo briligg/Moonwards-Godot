@@ -3,6 +3,9 @@ extends Area
 export(bool) var pause_on_error: bool = false
 
 export(Array, NodePath) var show_lod0_list
+export(Array, NodePath) var show_lod1_list
+export(Array, NodePath) var show_lod2_list
+
 export(Array, NodePath) var hide_list
 
 var _previous_states: Dictionary = {}
@@ -39,6 +42,14 @@ func process_visibility() -> void:
 		var node = get_node(path)
 		_previous_states[node] = node.lod_state
 		node.set_lod(0)
+	for path in show_lod1_list:
+		var node = get_node(path)
+		_previous_states[node] = node.lod_state
+		node.set_lod(1)
+	for path in show_lod2_list:
+		var node = get_node(path)
+		_previous_states[node] = node.lod_state
+		node.set_lod(2)
 	for path in hide_list:
 		var node = get_node(path)
 		_previous_states[node] = node.lod_state
