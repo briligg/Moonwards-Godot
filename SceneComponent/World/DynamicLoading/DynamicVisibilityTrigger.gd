@@ -34,6 +34,8 @@ func _ready():
 func on_body_entered(body) -> void:
 	if body is AEntity:
 		if body.owner_peer_id == get_tree().get_network_unique_id():
+			Log.trace(self, "on_body_entered", "Processing visibility for %s, in %s"
+					%[body.name, self.name])
 			process_visibility()
 
 func process_visibility() -> void:

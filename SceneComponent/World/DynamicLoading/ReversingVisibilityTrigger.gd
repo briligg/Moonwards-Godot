@@ -26,11 +26,15 @@ func _ready():
 func on_body_entered(body) -> void:
 	if body is AEntity:
 		if body.owner_peer_id == get_tree().get_network_unique_id():
+			Log.trace(self, "on_body_entered", "Reversing visibility states for %s, in %s"
+					%[body.name, self.name])
 			process_visibility()
 		
 func on_body_exited(body) -> void:
 	if body is AEntity:
 		if body.owner_peer_id == get_tree().get_network_unique_id():
+			Log.trace(self, "on_body_exited", "Processing visibility for %s, in %s"
+					%[body.name, self.name])
 			reverse_visibility()
 	
 func process_visibility() -> void:
