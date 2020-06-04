@@ -61,13 +61,13 @@
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Outdoor_5.ogg" type="AudioStream" id=59]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-4.ogg" type="AudioStream" id=60]
 
-[sub_resource type="BoxShape" id=2]
+[sub_resource type="BoxShape" id=1]
 extents = Vector3( 2.47637, 5.05642, 3.12395 )
 
-[sub_resource type="BoxShape" id=3]
+[sub_resource type="BoxShape" id=2]
 extents = Vector3( 4.12164, 1.88042, 3.29427 )
 
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="BoxShape" id=3]
 extents = Vector3( 3.34447, 3.13417, 2.98515 )
 
 [node name="Moon_Town_Master" instance=ExtResource( 1 )]
@@ -460,7 +460,7 @@ show_lod1_list = [ NodePath("../../Empty_GalleriesOuterSurface/All_Overlays_4th_
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_AtriumHab/DVT_Empty_AtriumHab" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.8723 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Center_Atrium" parent="Marker_all_Constructs/Empty_BigAtrium" index="0" instance=ExtResource( 26 )]
 
@@ -496,6 +496,20 @@ transform = Transform( 7, 0, 0, 0, 7, 0, 0, 0, 7, 0.354678, 0, 0 )
 
 [node name="Rim_Arcade" parent="Marker_all_Constructs/Empty_LosPortalesTunnel" index="0" instance=ExtResource( 19 )]
 
+[node name="DVT_Rim_Arcade" parent="Marker_all_Constructs/Empty_LosPortalesTunnel/Rim_Arcade" index="7" instance=ExtResource( 38 )]
+show_lod0_list = [ NodePath(".."), NodePath("../../../Empty_AtriumHab/First_Atrium"), NodePath("../../../../Lalande_85k"), NodePath("../../../Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/3rd_Gal_Top/Overlay_3rd_Gal_Top") ]
+show_lod2_list = [ NodePath("../../../Empty_LongDome/Long_Dome") ]
+
+[node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_LosPortalesTunnel/Rim_Arcade/DVT_Rim_Arcade" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.3249, -1.36786, -93.5838 )
+shape = SubResource( 2 )
+
+[node name="DVT_Rim_Arcade_South" parent="Marker_all_Constructs/Empty_LosPortalesTunnel/Rim_Arcade" index="8" instance=ExtResource( 38 )]
+show_lod0_list = [ NodePath("../../../Empty_SouthLongAtrium/South_Farm_Atrium") ]
+
+[node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_LosPortalesTunnel/Rim_Arcade/DVT_Rim_Arcade_South" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9674, 0, 107.344 )
+
 [node name="Main_Factory" parent="Marker_all_Constructs/Empty_MainHangars" index="0" instance=ExtResource( 11 )]
 
 [node name="North_Farm_Atrium" parent="Marker_all_Constructs/Empty_NorthLongAtrium" index="0" instance=ExtResource( 15 )]
@@ -513,7 +527,7 @@ show_lod2_list = [ NodePath("../../Empty_LongDome/Long_Dome") ]
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_RecHab1/DVT_Rec_Hab_1" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96588, 0, 27.1804 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="Second_Gallery" parent="Marker_all_Constructs/Empty_SecondGallery" index="0" instance=ExtResource( 22 )]
 
