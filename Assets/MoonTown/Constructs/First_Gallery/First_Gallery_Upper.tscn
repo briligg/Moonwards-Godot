@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/First_Gallery_Upper.glb" type="PackedScene" id=1]
+[ext_resource path="res://Assets/MoonTown/Models/Makers_Monument/Makers_Monument.tscn" type="PackedScene" id=2]
 
 [sub_resource type="GIProbeData" id=1]
 bounds = AABB( -162.469, -61.685, -31.646, 324.937, 123.37, 63.2919 )
@@ -51,3 +52,5 @@ omni_attenuation = 1.7411
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.0639, -55.9659, 0.0796747 )
 omni_range = 30.8064
 omni_attenuation = 1.8025
+
+[node name="Makers_Monument" parent="LOD0/Marker_MakersMonument" index="0" instance=ExtResource( 2 )]

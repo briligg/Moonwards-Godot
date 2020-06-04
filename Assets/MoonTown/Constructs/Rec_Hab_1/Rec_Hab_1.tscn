@@ -15,3 +15,9 @@ omni_attenuation = 1.93187
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58769, 0, -4.76123 )
 omni_range = 20.8734
 omni_attenuation = 1.36604
+
+[node name="LOD1" parent="." index="6"]
+visible = false
+
+[node name="LOD2" parent="." index="7"]
+visible = false
