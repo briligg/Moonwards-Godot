@@ -95,6 +95,16 @@ func _process_server(delta: float) -> void:
 	entity.srv_vel = entity.velocity
 	update_state()
 
+#Start or stop climbing stairs.
+func climb_stairs(start_climbing_stairs : bool) -> void :
+	#Start climbing stairs.
+	if start_climbing_stairs :
+		pass
+	
+	#Stop climbing stairs.
+	else :
+		pass
+
 func update_state():
 	if !entity.is_grounded:
 		entity.state.state = ActorEntityState.State.IN_AIR
