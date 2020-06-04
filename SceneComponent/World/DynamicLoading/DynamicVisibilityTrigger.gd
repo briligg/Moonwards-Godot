@@ -27,6 +27,9 @@ func _ready():
 	_validate_paths(show_lod2_list)
 	_validate_paths(hide_list)
 	self.connect("body_entered", self, "on_body_entered")
+	for n in get_children():
+		if n is Area:
+			n.connect("body_entered", self, "on_body_entered")
 
 func on_body_entered(body) -> void:
 	if body is AEntity:
