@@ -19,10 +19,16 @@ filter/filter_walkable_low_height_spans = true
 
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="."]
 navmesh = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Moon_Town_Master" parent="NavigationMeshInstance" instance=ExtResource( 1 )]
 
 [node name="SpawnPoints" type="Spatial" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="1" type="Position3D" parent="SpawnPoints"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.62903, 451.242, 27.9351 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -90.8939, 82.6136, 101.694 )

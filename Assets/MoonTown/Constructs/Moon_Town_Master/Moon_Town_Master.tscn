@@ -65,30 +65,30 @@
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 2.47637, 5.05642, 3.12395 )
 
-[sub_resource type="BoxShape" id=6]
+[sub_resource type="BoxShape" id=2]
 extents = Vector3( 2.6948, 6.28403, 3.63721 )
 
-[sub_resource type="BoxShape" id=7]
+[sub_resource type="BoxShape" id=3]
 extents = Vector3( 2.97086, 3.2004, 4.10938 )
 
-[sub_resource type="BoxShape" id=8]
-extents = Vector3( 2.84085, 6.07345, 3.9313 )
-
-[sub_resource type="BoxShape" id=2]
-extents = Vector3( 4.12164, 1.88042, 3.29427 )
-
 [sub_resource type="BoxShape" id=4]
+extents = Vector3( 7.10108, 4.30648, 3.9313 )
 
 [sub_resource type="BoxShape" id=5]
-extents = Vector3( 7.2225, 6.17074, 70.1488 )
+extents = Vector3( 4.12164, 1.88042, 3.29427 )
+
+[sub_resource type="BoxShape" id=6]
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 8.86944, 6.17074, 73.8565 )
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 3.89548, 9.332, 3.11862 )
 
 [sub_resource type="BoxShape" id=9]
-extents = Vector3( 2.54324, 7.12376, 3.11862 )
-
-[sub_resource type="BoxShape" id=10]
 extents = Vector3( 47.0684, 35.792, 261.925 )
 
-[sub_resource type="BoxShape" id=3]
+[sub_resource type="BoxShape" id=10]
 extents = Vector3( 3.34447, 3.13417, 2.98515 )
 
 [node name="Moon_Town_Master" instance=ExtResource( 1 )]
@@ -257,11 +257,26 @@ audio_file = ExtResource( 54 )
 [node name="Audio_Tour_Marker_Outdoor11" parent="Audio-Tour-Markers" index="20" instance=ExtResource( 36 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4170.9, -420.808, -6138.28 )
 
+[node name="Lalande_MoonTown" parent="." index="4"]
+visible = false
+
+[node name="Lalande_MoonTown2" parent="." index="5"]
+visible = false
+
 [node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Outdoor11" index="1" instance=ExtResource( 47 )]
 display_info = "play outdoor audio tour 11"
 audio_file = ExtResource( 55 )
 
 [node name="Lalande_85k" parent="." index="12" instance=ExtResource( 17 )]
+
+[node name="Boulders" parent="." index="14"]
+visible = false
+
+[node name="Foundations" parent="." index="15"]
+visible = false
+
+[node name="Marker_all_BoatRads" parent="." index="16"]
+visible = false
 
 [node name="Boat_Radiator" parent="Marker_all_BoatRads/BoatRad001" index="0" instance=ExtResource( 33 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
@@ -323,6 +338,9 @@ transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
 [node name="Boat_Radiator" parent="Marker_all_BoatRads/BoatRad" index="0" instance=ExtResource( 33 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
 
+[node name="Marker_all_MoltenSoilReactors" parent="." index="17"]
+visible = false
+
 [node name="Molten_Soil_Reactor" parent="Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor" index="0" instance=ExtResource( 29 )]
 
 [node name="Molten_Soil_Reactor" parent="Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor001" index="0" instance=ExtResource( 29 )]
@@ -349,6 +367,9 @@ transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
 
 [node name="Molten_Soil_Reactor" parent="Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor012" index="0" instance=ExtResource( 29 )]
 
+[node name="Marker_all_MIPs" parent="." index="18"]
+visible = false
+
 [node name="Melt_In_Place_Station" parent="Marker_all_MIPs/Marker_MIP" index="0" instance=ExtResource( 13 )]
 
 [node name="Melt_In_Place_Station" parent="Marker_all_MIPs/Marker_MIP001" index="0" instance=ExtResource( 13 )]
@@ -361,6 +382,7 @@ transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
 
 [node name="Marker_RadioDishEarth" parent="." index="19"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 475.644, 62.7823, -11.5285 )
+visible = false
 
 [node name="Radio_Dish_Earth" parent="Marker_RadioDishEarth" index="0" instance=ExtResource( 21 )]
 
@@ -509,15 +531,15 @@ transform = Transform( 7, 0, 0, 0, 7, 0, 0, 0, 7, 0.354678, 0, 0 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/DVT_First_Gallery_Upper" index="1"]
 transform = Transform( 0.991712, 0, -0.128484, 0, 1, 0, 0.128484, 0, 0.991712, -3.84719, -28.9271, 71.4808 )
-shape = SubResource( 6 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape3" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/DVT_First_Gallery_Upper" index="2"]
 transform = Transform( 0.989488, 0, -0.144615, 0, 1, 0, 0.144615, 0, 0.989488, -161.119, -71.5642, -34.0707 )
-shape = SubResource( 7 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape4" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/DVT_First_Gallery_Upper" index="3"]
-transform = Transform( 0.962346, 0, -0.271827, 0, 1, 0, 0.271827, 0, 0.962346, 40.6516, -25.5886, -133.593 )
-shape = SubResource( 8 )
+transform = Transform( 0.962346, 0, -0.271827, 0, 1, 0, 0.271827, 0, 0.962346, 24.8038, -25.5886, -74.3809 )
+shape = SubResource( 4 )
 
 [node name="First_Factory" parent="Marker_all_Constructs/Empty_FirstHangars" index="0" instance=ExtResource( 8 )]
 
@@ -530,42 +552,43 @@ shape = SubResource( 8 )
 [node name="Rim_Arcade" parent="Marker_all_Constructs/Empty_LosPortalesTunnel" index="0" instance=ExtResource( 19 )]
 
 [node name="DVT_Rim_Arcade" parent="Marker_all_Constructs/Empty_LosPortalesTunnel/Rim_Arcade" index="7" instance=ExtResource( 38 )]
-show_lod0_list = [ NodePath(".."), NodePath("../../../Empty_AtriumHab/First_Atrium"), NodePath("../../../../Lalande_85k"), NodePath("../../../Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/3rd_Gal_Top/Overlay_3rd_Gal_Top"), NodePath("../../../Empty_SouthLongAtrium/South_Farm_Atrium"), NodePath("../../../Empty_ThirdGallery/Third_Gallery") ]
+show_lod0_list = [ NodePath(".."), NodePath("../../../Empty_AtriumHab/First_Atrium"), NodePath("../../../../Lalande_85k"), NodePath("../../../Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/3rd_Gal_Top/Overlay_3rd_Gal_Top"), NodePath("../../../Empty_SouthLongAtrium/South_Farm_Atrium"), NodePath("../../../Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/3rd_Gal_Bottom/Overlay_3rd_Gal_Bottom") ]
+show_lod1_list = [ NodePath("../../../Empty_ThirdGallery/Third_Gallery") ]
 show_lod2_list = [ NodePath("../../../Empty_LongDome/Long_Dome") ]
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_LosPortalesTunnel/Rim_Arcade/DVT_Rim_Arcade" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.3249, -1.36786, -93.5838 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape3" type="CollisionShape" parent="Marker_all_Constructs/Empty_LosPortalesTunnel/Rim_Arcade/DVT_Rim_Arcade" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3413, -12.7268, 110.787 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="ReversingVisibilityTrigger" parent="Marker_all_Constructs/Empty_LosPortalesTunnel/Rim_Arcade" index="8" instance=ExtResource( 39 )]
-hide_list = [ NodePath("../../../Empty_SouthLongAtrium/South_Farm_Atrium"), NodePath("../../../Empty_ThirdGallery/Third_Gallery"), NodePath("../../../Empty_AtriumHab/First_Atrium") ]
+hide_list = [ NodePath("../../../Empty_SouthLongAtrium/South_Farm_Atrium"), NodePath("../../../Empty_AtriumHab/First_Atrium") ]
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_LosPortalesTunnel/Rim_Arcade/ReversingVisibilityTrigger" index="1"]
-transform = Transform( 0.966052, 0, -0.258347, 0, 1, 0, 0.258347, 0, 0.966052, 6.26758, 0, 7.18684 )
-shape = SubResource( 5 )
+transform = Transform( 0.966052, 0, -0.258347, 0, 1, 0, 0.258347, 0, 0.966052, 9.12482, 0, 7.37732 )
+shape = SubResource( 7 )
 
 [node name="Main_Factory" parent="Marker_all_Constructs/Empty_MainHangars" index="0" instance=ExtResource( 11 )]
 
 [node name="North_Farm_Atrium" parent="Marker_all_Constructs/Empty_NorthLongAtrium" index="0" instance=ExtResource( 15 )]
 
-[node name="DynamicVisibilityTrigger" parent="Marker_all_Constructs/Empty_NorthLongAtrium/North_Farm_Atrium" index="5" instance=ExtResource( 38 )]
+[node name="DynamicVisibilityTrigger" parent="Marker_all_Constructs/Empty_NorthLongAtrium/North_Farm_Atrium" index="4" instance=ExtResource( 38 )]
 show_lod0_list = [ NodePath(".."), NodePath("../../../Empty_FirstGalleryUpper/First_Gallery_Upper"), NodePath("../../../../Earth") ]
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_NorthLongAtrium/North_Farm_Atrium/DynamicVisibilityTrigger" index="1"]
-transform = Transform( 0.962365, 0, -0.27176, 0, 1, 0, 0.27176, 0, 0.962365, -47.5338, 12.0471, 137.384 )
-shape = SubResource( 9 )
+transform = Transform( 0.962365, 0, -0.27176, 0, 1, 0, 0.27176, 0, 0.962365, -21.3893, 14.6643, 44.5208 )
+shape = SubResource( 8 )
 
-[node name="ReversingVisibilityTrigger" parent="Marker_all_Constructs/Empty_NorthLongAtrium/North_Farm_Atrium" index="6" instance=ExtResource( 39 )]
+[node name="ReversingVisibilityTrigger" parent="Marker_all_Constructs/Empty_NorthLongAtrium/North_Farm_Atrium" index="5" instance=ExtResource( 39 )]
 show_lod0_list = [ NodePath("../../../../Earth"), NodePath("..") ]
 show_lod2_list = [ NodePath("../../../Empty_FirstGalleryUpper/First_Gallery_Upper") ]
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_NorthLongAtrium/North_Farm_Atrium/ReversingVisibilityTrigger" index="1"]
 transform = Transform( 0.984442, 0, -0.17571, 0, 1, 0, 0.17571, 0, 0.984442, 71.6086, 28.4194, -275.83 )
-shape = SubResource( 10 )
+shape = SubResource( 9 )
 
 [node name="Nuclear_Plant" parent="Marker_all_Constructs/Empty_NuclearPlant" index="0" instance=ExtResource( 14 )]
 
@@ -580,7 +603,7 @@ show_lod2_list = [ NodePath("../../Empty_LongDome/Long_Dome") ]
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_RecHab1/DVT_Rec_Hab_1" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96588, 0, 27.1804 )
-shape = SubResource( 3 )
+shape = SubResource( 10 )
 
 [node name="Second_Gallery" parent="Marker_all_Constructs/Empty_SecondGallery" index="0" instance=ExtResource( 22 )]
 
