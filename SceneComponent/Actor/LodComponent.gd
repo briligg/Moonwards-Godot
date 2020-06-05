@@ -15,11 +15,10 @@ func _ready():
 	lod0.get_node("CollisionShape").scale *= lod0_max_distance
 	lod1.get_node("CollisionShape").scale *= lod1_max_distance
 	
-	lod0.connect("area_entered", self, "_on_lod0_entered")
-	lod0.connect("area_exited", self, "_on_lod0_exited")
-	lod1.connect("area_entered", self, "_on_lod1_entered")
-	lod1.connect("area_exited", self, "_on_lod1_exited")
-	pass 
+#	lod0.connect("area_entered", self, "_on_lod0_entered")
+#	lod0.connect("area_exited", self, "_on_lod0_exited")
+#	lod1.connect("area_entered", self, "_on_lod1_entered")
+#	lod1.connect("area_exited", self, "_on_lod1_exited")
 
 ### Perhaps clean up this code to be clear lod level setters instead
 func _on_lod0_entered(lod_node: Node) -> void:
