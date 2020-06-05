@@ -6,6 +6,10 @@ export(float) var on_ground_speed = 25
 export(float) var in_air_speed = 3
 export(float) var jump_force = 250
 
+export(float) var climb_speed = 20
+export(float) var speed = 25
+export(float) var jump_force = 15
+
 # Input vectors
 var horizontal_vector: Vector3 = Vector3.ZERO
 var ground_normal: Vector3 = Vector3.UP
@@ -14,6 +18,11 @@ var old_normal : Vector3 = Vector3.DOWN
 
 onready var on_ground : Node = $OnGround
 onready var normal_detect : Node = $NormalDetect
+#Whether I am climbing or not.
+var is_climbing : bool = false
+
+func _init():
+	pass
 
 func _ready() -> void:
 	# Add the KinematicBody as collision exception so it doesn't detect the body as a walkable surface.
@@ -99,17 +108,21 @@ func _process_server(delta: float) -> void:
 func climb_stairs(start_climbing_stairs : bool) -> void :
 	#Start climbing stairs.
 	if start_climbing_stairs :
-		pass
+		is_climbing = true
 	
 	#Stop climbing stairs.
 	else :
-		pass
+		is_climbing = false
 
 func update_state():
 	if !entity.is_grounded:
 		entity.state.state = ActorEntityState.State.IN_AIR
 	elif Vector2(entity.velocity.x, entity.velocity.z).length() > 0.1:
 		entity.state.state = ActorEntityState.State.MOVING
+	elif is_climbing :
+		entity.state.state = ActorEntityState.State.CLIMBING
+	elif abs(entity.velocity.y) > 0.1 or !entity.is_grounded:
+		entity.state.state = ActorEntityState.State.IN_AIR
 	else:
 		entity.state.state = ActorEntityState.State.IDLE
 
@@ -120,6 +133,13 @@ func handle_input(delta : float) -> void:
 	elif entity.state.state != ActorEntityState.State.IN_AIR and entity.input.y > 0:
 		entity.velocity += Vector3.UP * jump_force * delta
 		jump_timeout = 2.0
+	#Stair climbing logic.
+	if is_climbing :
+		vertical_vector.y = entity.input.z * climb_speed
+		return
+	
+	if is_grounded() and entity.input.y > 0:
+		vertical_vector = Vector3.UP * jump_force
 	
 	var forward = entity.model.global_transform.basis.z
 	var left = entity.model.global_transform.basis.x
@@ -130,6 +150,9 @@ func handle_input(delta : float) -> void:
 		speed = in_air_speed
 	
 	horizontal_vector = (entity.input.z * forward + entity.input.x * left) * speed
+
+func apply_gravity() -> void:
+	vertical_vector.y += -1 * WorldConstants.GRAVITY * WorldConstants.SCALE
 
 func rotate_body(_delta: float) -> void:
 	# Rotate

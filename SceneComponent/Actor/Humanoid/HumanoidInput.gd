@@ -33,7 +33,7 @@ func handle_input() -> void:
 
 func set_ignore_inputs(ignore_bool : bool) -> void :
 	ignore_inputs = ignore_bool
-
-
-
-
+	
+	#Interact with interactables.
+	if Input.is_action_just_pressed("use") :
+		entity.get_component("PlayerInteractor").interact()
