@@ -31,4 +31,4 @@ __meta__ = {
 }
 
 [node name="1" type="Position3D" parent="SpawnPoints"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 55.1922, 100.457, -210.188 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -124.863, 83.0332, 232.079 )
