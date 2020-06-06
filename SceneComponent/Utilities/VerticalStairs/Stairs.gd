@@ -4,7 +4,7 @@ extends "res://SceneComponent/Utilities/Interactable/Interactable.gd"
 var climb_points = []
 var step_size = 0.0535
 
-export (float) var height = 0.5 setget _set_height
+export (float) var height = 1 setget _set_height
 
 
 func _ready():
@@ -26,12 +26,10 @@ func _ready():
 func interacted_with(_interactor : Node) -> void :
 	if _interactor.has_method("climb_stairs") :
 		#Make the interactor climb stairs.
-		_interactor.climb_stairs()
+		_interactor.climb_stairs(global_transform.origin.y + height)
 
-#Set the height of the collision shape.
-func _set_height(var new_height):
-	$CollisionShape.shape.extents.y = new_height
-	$CollisionShape.translation.y = new_height
+#Set the height of the stairs
+func _set_height(var new_height) :
 	height = new_height
 
 #Determine which side the player should be facing when climbing.

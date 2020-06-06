@@ -20,6 +20,8 @@ onready var on_ground : Node = $OnGround
 onready var normal_detect : Node = $NormalDetect
 #Whether I am climbing or not.
 var is_climbing : bool = false
+#End point of stairs.
+var stairs_top_point : float = 0
 
 func _init():
 	pass
@@ -105,10 +107,11 @@ func _process_server(delta: float) -> void:
 	update_state()
 
 #Start or stop climbing stairs.
-func climb_stairs(start_climbing_stairs : bool) -> void :
+func climb_stairs(start_climbing_stairs : bool, new_stairs_top_point : float = 0) -> void :
 	#Start climbing stairs.
 	if start_climbing_stairs :
 		is_climbing = true
+		stairs_top_point = new_stairs_top_point
 	
 	#Stop climbing stairs.
 	else :
@@ -135,6 +138,13 @@ func handle_input(delta : float) -> void:
 		jump_timeout = 2.0
 	#Stair climbing logic.
 	if is_climbing :
+		#If we have reached the top of the stairs, dismount.
+		if entity.model.global_transform.origin.y >= stairs_top_point :
+			vertical_vector.y = 0
+			climb_stairs(false)
+			handle_input()
+			return
+		
 		vertical_vector.y = entity.input.z * climb_speed
 		if is_grounded() && vertical_vector.y < 0 :
 			climb_stairs(false)
