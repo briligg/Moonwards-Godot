@@ -136,6 +136,8 @@ func handle_input(delta : float) -> void:
 	#Stair climbing logic.
 	if is_climbing :
 		vertical_vector.y = entity.input.z * climb_speed
+		if is_grounded() && vertical_vector.y < 0 :
+			climb_stairs(false)
 		return
 	
 	if is_grounded() and entity.input.y > 0:
