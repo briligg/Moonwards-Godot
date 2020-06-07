@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Constructs/Airlock_Bay/Airlock_Bay.tscn" type="PackedScene" id=1]
+[ext_resource path="res://SceneComponent/Interface/PlayerHud.tscn" type="PackedScene" id=2]
+[ext_resource path="res://SceneComponent/Display/ScreenViewer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Slides/BucknellRocket/Slide00.tscn" type="PackedScene" id=4]
+
+[node name="TestScene" type="Spatial"]
+
+[node name="Airlock_Bay" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.495213, 0, 0 )
+
+[node name="Screen" parent="Airlock_Bay" instance=ExtResource( 3 )]
+transform = Transform( 0.998004, 0, -0.0631564, 0, 1, 0, 0.0631564, 0, 0.998004, 7.18808, -5.36002, -6.23104 )
+Content = ExtResource( 4 )
+
+[node name="SpawnPoints" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, 2 )
+
+[node name="1" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 0.352086, 0, -1.99945, 0, -4, 0, -14.9959, 0, -0.0469447, 0, 0, 0 )
+
+[node name="PlayerHud" parent="." instance=ExtResource( 2 )]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.0209515, -0.967683, -0.251296, -0.0756101, -0.249098, 0.965522, -0.996917, 0.0392297, -0.0679477, 0, 116.016, 0 )
+light_energy = 1.9
+shadow_enabled = true
+shadow_color = Color( 0.447059, 0.447059, 0.447059, 1 )
