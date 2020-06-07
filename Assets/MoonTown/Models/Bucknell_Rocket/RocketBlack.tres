@@ -1,0 +1,10 @@
+[gd_resource type="SpatialMaterial" format=2]
+
+[resource]
+resource_name = "Black"
+params_cull_mode = 2
+albedo_color = Color( 0, 0, 0, 1 )
+metallic = 0.31
+roughness = 0.28
+transmission_enabled = true
+transmission = Color( 0.556863, 0.552941, 0.552941, 1 )

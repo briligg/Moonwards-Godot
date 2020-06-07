@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://SceneComponent/Display/ScreenViewer.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Slides/lightmask.png" type="Texture" id=2]
+
+[sub_resource type="PlaneMesh" id=1]
+flip_faces = true
+
+[sub_resource type="ViewportTexture" id=2]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="SpatialMaterial" id=3]
+resource_local_to_scene = true
+flags_transparent = true
+flags_albedo_tex_force_srgb = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+albedo_texture = SubResource( 2 )
+emission_enabled = true
+emission = Color( 0.529412, 0.529412, 0.529412, 1 )
+emission_energy = 1.0
+emission_operator = 1
+emission_on_uv2 = false
+emission_texture = SubResource( 2 )
+detail_enabled = true
+detail_blend_mode = 1
+detail_uv_layer = 1
+detail_albedo = ExtResource( 2 )
+uv2_scale = Vector3( 3, 3, 3 )
+uv2_triplanar = true
+
+[sub_resource type="GDScript" id=4]
+script/source = "tool
+extends Object
+func e():
+	return 0.01
+"
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 1, 1, 0.01 )
+script = SubResource( 4 )
+
+[sub_resource type="BoxShape" id=6]
+
+[node name="Screen" type="Spatial"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+script = ExtResource( 1 )
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 1024, 700 )
+transparent_bg = true
+hdr = false
+usage = 0
+
+[node name="Area" type="Area" parent="."]
+
+[node name="Quad" type="MeshInstance" parent="Area"]
+transform = Transform( 1, -1.74846e-07, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, -1.74846e-07, -1, -5.73206e-15, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 5 )
+
+[node name="InteractionTrigger" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.01, 0, 0, 0, 0.4, 0, -0.99, 0.4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="InteractionTrigger"]
+shape = SubResource( 6 )
