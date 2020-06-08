@@ -122,7 +122,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.pressed == false :
 			return
 		
-		if event.scancode == KEY_ENTER:
+		if event.is_action_pressed("start_chat") :
 			#Show the correct menu.
 			_help_node.hide()
 			_tabs_node.show()
@@ -131,6 +131,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			_chat_input_node.grab_focus()
 			_chat_input_node.editable = true
 			_active = true
+			_chat_input_node.start()
+			
+			Signals.Hud.emit_signal(Signals.Hud.CHAT_TYPING_STARTED)
 		
 		elif event.scancode == KEY_H :
 			#Show the help page if it is not already open.

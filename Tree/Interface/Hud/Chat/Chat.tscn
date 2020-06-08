@@ -72,6 +72,8 @@ size_flags_vertical = 3
 tabs_visible = false
 
 [node name="Public" type="RichTextLabel" parent="V/Tabs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 bbcode_enabled = true
@@ -80,6 +82,8 @@ script = ExtResource( 9 )
 
 [node name="Messages" type="RichTextLabel" parent="V/Tabs"]
 visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 bbcode_enabled = true
