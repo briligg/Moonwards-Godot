@@ -102,7 +102,7 @@ extents = Vector3( 21.0852, 5.62635, 18.5988 )
 extents = Vector3( 3.16868, 6.28403, 3.63721 )
 
 [sub_resource type="BoxShape" id=14]
-extents = Vector3( 2.97086, 3.2004, 2.02918 )
+extents = Vector3( 2.97086, 4.42631, 2.02918 )
 
 [sub_resource type="BoxShape" id=15]
 extents = Vector3( 7.10108, 5.81447, 3.9313 )
@@ -123,7 +123,7 @@ extents = Vector3( 3.89548, 9.332, 3.11862 )
 extents = Vector3( 47.0684, 35.792, 261.925 )
 
 [sub_resource type="BoxShape" id=21]
-extents = Vector3( 3.34447, 3.13417, 2.02271 )
+extents = Vector3( 3.34447, 4.32709, 2.02271 )
 
 [sub_resource type="BoxShape" id=22]
 extents = Vector3( 1.91961, 2.04567, 2.21689 )
@@ -332,6 +332,9 @@ audio_file = ExtResource( 54 )
 
 [node name="Audio_Tour_Marker_Outdoor11" parent="Audio-Tour-Markers" index="20" instance=ExtResource( 36 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4170.9, -420.808, -6138.28 )
+
+[node name="Lalande_MoonTown" parent="." index="6"]
+visible = false
 
 [node name="Lalande_MoonTown2" parent="." index="7"]
 visible = false
