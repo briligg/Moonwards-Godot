@@ -122,7 +122,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.pressed == false :
 			return
 		
-		if event.is_action_pressed("start_chat") :
+		if event.is_action_pressed("start_typing_chat"):
 			#Show the correct menu.
 			_help_node.hide()
 			_tabs_node.show()
@@ -135,7 +135,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 			Signals.Hud.emit_signal(Signals.Hud.CHAT_TYPING_STARTED)
 		
-		elif event.scancode == KEY_H :
+		elif event.is_action_pressed("chat_toggle_help") :
 			#Show the help page if it is not already open.
 			if $V/HelpPage.visible == false :
 				_help_node.show()
@@ -148,43 +148,43 @@ func _unhandled_input(event: InputEvent) -> void:
 				_tabs_node.show()
 				_change_display_node(_previous_display)
 		
-		elif event.scancode == KEY_V :
+		elif event.is_action_pressed("chat_toggle_size") :
 			if _chat_is_raised : #Lower the chat.
 				lower_chat()
 			else :
 				raise_chat()
 		
 		#Now determine if the player is trying to scroll the chat window.
-		elif event.scancode == KEY_T :
+		elif event.is_action_pressed("chat_page_up"):
 			#Scroll upwards.
 			var _v_scroll_bar : VScrollBar = _current_display.get_v_scroll()
 			_v_scroll_bar.value = _v_scroll_bar.value - _v_scroll_bar.page
 		
-		elif event.scancode == KEY_G :
+		elif event.is_action_pressed("chat_page_down") :
 			#Scroll downwards.
 			var _v_scroll_bar : VScrollBar = _current_display.get_v_scroll()
 			_v_scroll_bar.value = _v_scroll_bar.value + _v_scroll_bar.page
 		
-		elif event.scancode == KEY_C :
+		elif event.is_action_pressed("chat_size_right"):
 			#Increase Chat horizontal size.
 			anchor_right = min(anchor_right + 0.05, CHAT_RESIZE_RIGHT)
 		
-		elif event.scancode == KEY_X :
+		elif event.is_action_pressed("chat_size_left") :
 			#Decrease chat horizontal size.
 			anchor_right = max(anchor_right - 0.05, CHAT_RESIZE_LEFT)
 		
-		elif event.scancode == KEY_1 :
+		elif event.is_action_pressed("chat_size_up"):
 			_current_display.show()
 			#Increase chat vertical size.
 			anchor_top = max(anchor_top - 0.05, CHAT_RESIZE_TOP)
 		
-		elif event.scancode == KEY_Q :
+		elif event.is_action_pressed("chat_size_down") :
 			#Decrease chat vertical size.
 			#I have to hide Chat if we are trying to scale down 
 			#past the allowed rect size.
 			anchor_top = min(anchor_top + 0.05, CHAT_RESIZE_BOTTOM)
 		
-		elif event.scancode == KEY_2 :
+		elif event.is_action_pressed("chat_toggle_visibility") :
 			_toggle_chat_window()
 
 func _on_LineEdit_text_entered(new_text: String) -> void:
