@@ -7,8 +7,8 @@ func _init().("InputController", true):
 	pass
 
 func _ready():
-	Signals.Hud.connect(Signals.Hud.CHAT_TYPING, self, "set_ignore_inputs", [true])
-	Signals.Hud.connect(Signals.Hud.CHAT_FINISHED_TYPING, self, "set_ignore_inputs", [false])
+	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_STARTED, self, "set_ignore_inputs", [true])
+	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_FINISHED, self, "set_ignore_inputs", [false])
 	
 func _process_client(_delta):
 	entity.input = Vector3.ZERO

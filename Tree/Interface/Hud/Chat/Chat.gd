@@ -133,7 +133,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			_active = true
 			_chat_input_node.start()
 			
-			Signals.Hud.emit_signal(Signals.Hud.CHAT_TYPING)
+			Signals.Hud.emit_signal(Signals.Hud.CHAT_TYPING_STARTED)
 		
 		elif event.scancode == KEY_H :
 			#Show the help page if it is not already open.

@@ -5,8 +5,8 @@ class_name HudSignals
 const name = "Hud"
 
 # Define the signal's string name.
-const CHAT_TYPING : String = "chat_typing"
-const CHAT_FINISHED_TYPING : String = "chat_finished_typing"
+const CHAT_TYPING_STARTED : String = "chat_typing"
+const CHAT_TYPING_FINISHED : String = "chat_finished_typing"
 const EXTRA_INFO_DISPLAYED : String = "extra_info_displayed"
 
 # Define the actual signal.

@@ -11,7 +11,7 @@ func _gui_input(event):
 	
 	#When event is return key, let everyone know that we have finished typing.
 	if event.is_action_pressed("start_chat") :
-		Signals.Hud.emit_signal(Signals.Hud.CHAT_FINISHED_TYPING)
+		Signals.Hud.emit_signal(Signals.Hud.CHAT_TYPING_FINISHED)
 
 #Prevent accidental inputs from being read.
 func _ready() -> void :
