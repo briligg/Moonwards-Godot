@@ -26,6 +26,12 @@ transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0
 [node name="Hexpane_Window" parent="Markers/Marker_HexpaneWindow003" index="0" instance=ExtResource( 2 )]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 
+[node name="LOD1" parent="." index="6"]
+visible = false
+
+[node name="LOD2" parent="." index="7"]
+visible = false
+
 [node name="ReflectionProbe" type="ReflectionProbe" parent="." index="8"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.9222 )
 max_distance = 10.0
