@@ -1552,6 +1552,12 @@ chat_toggle_size={
  ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="World"
+3d_physics/layer_6="LOD"
+3d_physics/layer_16="Interactions"
+
 [logging]
 
 file_logging/enable_file_logging=true
