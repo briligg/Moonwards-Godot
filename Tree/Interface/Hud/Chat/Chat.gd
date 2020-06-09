@@ -275,9 +275,7 @@ func hide_chat() -> void :
 
 #Make the chat as small as possible.
 func lower_chat() -> void :
-	_tabs_node.hide()
-	_current_display.hide()
-	anchor_top = 1
+	anchor_top = 0.9
 	_chat_is_raised = false
 
 #Bring the chat up to the maximum height.
