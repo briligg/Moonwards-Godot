@@ -48,26 +48,26 @@ func process_visibility() -> void:
 	for node in get_tree().get_nodes_in_group(Groups.LOD_MODELS):
 		var path = get_path_to(node)
 		if path in show_lod0_list:
-			node.set_lod(0)
+			node.call_deferred("set_lod", 0)
 		elif path in show_lod1_list:
-			node.set_lod(1)
+			node.call_deferred("set_lod", 1)
 		elif path in show_lod2_list:
-			node.set_lod(2)
+			node.call_deferred("set_lod", 2)
 		elif path in hide_list:
-			node.hide_all()
+			node.call_deferred("hide_all")
 		else:
 			orphan_op(node)
 
 func orphan_op(node):
 	match orphan_node_op:
 		NoListOp.ShowLod0:
-			node.set_lod(0)
+			node.call_deferred("set_lod", 0)
 		NoListOp.ShowLod1:
-			node.set_lod(0)
+			node.call_deferred("set_lod", 1)
 		NoListOp.ShowLod2:
-			node.set_lod(0)
+			node.call_deferred("set_lod", 2)
 		NoListOp.Hide:
-			node.hide_all()
+			node.call_deferred("hide_all")
 
 func unset() -> void:
 	is_set = false
