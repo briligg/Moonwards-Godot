@@ -1,0 +1,32 @@
+[gd_scene format=2]
+
+[node name="Root" type="Control"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 32.7129
+margin_top = 88.5978
+margin_right = 136.713
+margin_bottom = 108.598
+text = "Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 158.747
+margin_top = 88.5978
+margin_right = 262.747
+margin_bottom = 108.598
+text = "Load"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_right = 395.0
+margin_bottom = 40.0
+text = "
+Scene Backup Options"

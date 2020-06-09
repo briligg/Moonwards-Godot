@@ -205,7 +205,7 @@ convert_text_resources_to_binary_on_export=true
 
 [editor_plugins]
 
-enabled=PoolStringArray(  )
+enabled=PoolStringArray( "scene_pos_backup" )
 
 [importer_defaults]
 
