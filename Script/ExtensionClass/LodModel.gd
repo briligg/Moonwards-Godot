@@ -25,7 +25,7 @@ func _ready():
 		
 		var temp = debug_lod
 		debug_lod = false
-		set_lod(LodState.HIDDEN)
+		set_lod(LodState.LOD2)
 		debug_lod = temp
 	else:
 		lod_enabled = false
