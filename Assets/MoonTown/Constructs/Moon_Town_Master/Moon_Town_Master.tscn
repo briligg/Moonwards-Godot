@@ -377,10 +377,6 @@ display_info = "play outdoor audio tour 11"
 audio_file = ExtResource( 55 )
 
 [node name="Lalande_85k" parent="." index="14" instance=ExtResource( 17 )]
-visible = false
-
-[node name="Road2" parent="." index="15"]
-visible = false
 
 [node name="Boat_Radiator" parent="Marker_all_BoatRads/BoatRad001" index="0" instance=ExtResource( 33 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
