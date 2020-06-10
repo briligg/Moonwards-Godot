@@ -23,7 +23,7 @@ __meta__ = {
 
 [node name="LoggerText" type="RichTextLabel" parent="Container"]
 margin_right = 1920.0
-margin_bottom = 324.0
+margin_bottom = 296.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 3 )
@@ -31,3 +31,52 @@ bbcode_enabled = true
 bbcode_text = "This is fun."
 scroll_following = true
 script = ExtResource( 2 )
+
+[node name="Filters" type="HBoxContainer" parent="Container"]
+margin_top = 300.0
+margin_right = 1920.0
+margin_bottom = 324.0
+alignment = 2
+
+[node name="Label" type="Label" parent="Container/Filters"]
+margin_left = 1507.0
+margin_top = 5.0
+margin_right = 1559.0
+margin_bottom = 19.0
+text = "FILTERS:"
+
+[node name="Trace" type="CheckBox" parent="Container/Filters"]
+margin_left = 1563.0
+margin_right = 1625.0
+margin_bottom = 24.0
+pressed = true
+text = "Trace"
+
+[node name="Debug" type="CheckBox" parent="Container/Filters"]
+margin_left = 1629.0
+margin_right = 1698.0
+margin_bottom = 24.0
+pressed = true
+text = "Debug"
+
+[node name="Warning" type="CheckBox" parent="Container/Filters"]
+margin_left = 1702.0
+margin_right = 1782.0
+margin_bottom = 24.0
+pressed = true
+text = "Warning"
+
+[node name="Error" type="CheckBox" parent="Container/Filters"]
+margin_left = 1786.0
+margin_right = 1844.0
+margin_bottom = 24.0
+pressed = true
+text = "Error"
+
+[node name="Critical" type="CheckBox" parent="Container/Filters"]
+margin_left = 1848.0
+margin_right = 1920.0
+margin_bottom = 24.0
+pressed = true
+text = "Critical"
+[connection signal="toggled" from="Container/Filters/Trace" to="." method="_filter_toggled"]
