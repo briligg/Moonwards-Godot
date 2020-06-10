@@ -171,7 +171,7 @@ config/icon="res://icon.png"
 [autoload]
 
 WorldConstants="*res://Script/Manager/WorldConstants.gd"
-Log="*res://Script/Manager/Logger.gd"
+Log="*res://Tree/Manager/Log.tscn"
 Helpers="*res://Script/Manager/Helpers.gd"
 CmdLineArgs="*res://Script/Manager/CmdLineArgs.gd"
 Signals="*res://Script/Manager/SignalsManager/SignalsManager.gd"
