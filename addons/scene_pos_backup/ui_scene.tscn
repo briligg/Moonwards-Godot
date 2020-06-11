@@ -28,5 +28,4 @@ __meta__ = {
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_right = 395.0
 margin_bottom = 40.0
-text = "
-Scene Backup Options"
+text = "Get Open Scenes"
