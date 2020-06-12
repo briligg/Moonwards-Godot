@@ -56,10 +56,7 @@ var console_canvas_layer: int = 10 # What canvas layer to place the label on
 
 func _ready() -> void:
 	if use_builtin_console:
-		var n: CanvasLayer = CanvasLayer.new()
-		add_child(n)
-		n.layer = console_canvas_layer
-		n.add_child(LoggerConsole.new(self))
+		pass
 
 
 func error_to_string(code : int) -> String:
@@ -165,61 +162,3 @@ func _get_time_string() -> String:
 	var s: String = "%4d-%02d-%02d %02d:%02d:%02d" % [dt.year, dt.month, dt.day, 
 		dt.hour,dt.minute,dt.second]
 	return s
-
-
-class LoggerConsole:
-	extends RichTextLabel
-	
-	
-	func _init(creator: Node) -> void:
-		# Control
-		visible = false
-		set_anchors_and_margins_preset(Control.PRESET_WIDE)
-		focus_mode = Control.FOCUS_NONE
-		mouse_filter = Control.MOUSE_FILTER_PASS
-		
-		# RichTextLabel
-		scroll_following = true
-		scroll_active = false
-		bbcode_enabled = true
-		
-		# warning-ignore:return_value_discarded
-		creator.connect("trace_logged", self, "_on_trace_logged")
-		# warning-ignore:return_value_discarded
-		creator.connect("debug_logged", self, "_on_debug_logged")
-		# warning-ignore:return_value_discarded
-		creator.connect("warning_logged", self, "_on_warning_logged")
-		# warning-ignore:return_value_discarded
-		creator.connect("error_logged", self, "_on_error_logged")
-		# warning-ignore:return_value_discarded
-		creator.connect("critical_logged", self, "_on_critical_logged")
-	
-	
-	func _input(event: InputEvent) -> void:
-		if event.is_action_pressed("toggle_logger"):
-			visible = !visible
-	
-	
-	func _on_trace_logged(message) -> void:
-		bbcode_text += "\n" # new_line uses buggy append_bbcode func
-		bbcode_text += message
-	
-	
-	func _on_debug_logged(message) -> void:
-		bbcode_text += "\n" # new_line uses buggy append_bbcode func
-		bbcode_text += "[color=#03fc8c]" + message + "[/color]"
-	
-	
-	func _on_warning_logged(message) -> void:
-		bbcode_text += "\n" # new_line uses buggy append_bbcode func
-		bbcode_text += "[color=yellow]" + message + "[/color]"
-	
-	
-	func _on_error_logged(message) -> void:
-		bbcode_text += "\n" # new_line uses buggy append_bbcode func
-		bbcode_text += "[color=#fc5603]" + message + "[/color]"
-	
-	
-	func _on_critical_logged(message) -> void:
-		bbcode_text += "\n" # new_line uses buggy append_bbcode func
-		bbcode_text += "[color=red]" + message + "[/color]"
