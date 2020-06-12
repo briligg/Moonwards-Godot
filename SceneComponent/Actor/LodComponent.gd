@@ -12,6 +12,7 @@ func _init().("LodComponent", true):
 	pass
 
 func _ready():
+	# FPS Issues are caused when the collision shapes have too high values (> 300)
 	lod0.get_node("CollisionShape").scale *= lod0_max_distance
 	lod1.get_node("CollisionShape").scale *= lod1_max_distance
 	
@@ -19,7 +20,6 @@ func _ready():
 	lod0.connect("area_exited", self, "_on_lod0_exited")
 	lod1.connect("area_entered", self, "_on_lod1_entered")
 	lod1.connect("area_exited", self, "_on_lod1_exited")
-	pass 
 
 ### Perhaps clean up this code to be clear lod level setters instead
 func _on_lod0_entered(lod_node: Node) -> void:

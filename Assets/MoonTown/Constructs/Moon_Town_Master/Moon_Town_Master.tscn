@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Moon_Town_Master.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/First_Gallery_Lower_UpperPart.tscn" type="PackedScene" id=2]
@@ -37,8 +37,8 @@
 [ext_resource path="res://Assets/MoonTown/Models/Earth/Earth.tscn" type="PackedScene" id=35]
 [ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Marker_Outdoor.tscn" type="PackedScene" id=36]
 [ext_resource path="res://Assets/MoonTown/Models/Athlete_Rover/Athlete_Rover_Prop.tscn" type="PackedScene" id=37]
-[ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-4.ogg" type="AudioStream" id=38]
-[ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-11.ogg" type="AudioStream" id=39]
+[ext_resource path="res://SceneComponent/World/DynamicLoading/DynamicVisibilityTrigger.tscn" type="PackedScene" id=38]
+[ext_resource path="res://SceneComponent/World/DynamicLoading/ReversingVisibilityTrigger.tscn" type="PackedScene" id=39]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-2.ogg" type="AudioStream" id=40]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-6.ogg" type="AudioStream" id=41]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-5.ogg" type="AudioStream" id=42]
@@ -59,6 +59,89 @@
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Outdoor_2.ogg" type="AudioStream" id=57]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Outdoor_6.ogg" type="AudioStream" id=58]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Outdoor_5.ogg" type="AudioStream" id=59]
+[ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-4.ogg" type="AudioStream" id=60]
+[ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-11.ogg" type="AudioStream" id=61]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1218, 284.159, 2804.41 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1090.38, 178.691, 628.184 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 295.592, 70.4394, 1119.59 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 1609.94, 1391.98, 2112.52 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 70.046, 11.0033, 20.5461 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 2.47637, 5.05642, 3.12395 )
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 2.26149, 2.12984, 1.45604 )
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 2.58779, 5.85584, 2.75677 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 2.99961, 5.84374, 3.40385 )
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 4.05716, 43.5251, 18.943 )
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 27.8008, 8.00589, 14.5938 )
+
+[sub_resource type="BoxShape" id=12]
+extents = Vector3( 21.0852, 5.62635, 18.5988 )
+
+[sub_resource type="BoxShape" id=13]
+extents = Vector3( 3.16868, 6.28403, 3.63721 )
+
+[sub_resource type="BoxShape" id=14]
+extents = Vector3( 2.97086, 4.42631, 2.02918 )
+
+[sub_resource type="BoxShape" id=15]
+extents = Vector3( 7.10108, 5.81447, 3.9313 )
+
+[sub_resource type="BoxShape" id=16]
+extents = Vector3( 4.12164, 1.88042, 1.7687 )
+
+[sub_resource type="BoxShape" id=17]
+extents = Vector3( 2.16183, 2.2233, 2.65298 )
+
+[sub_resource type="BoxShape" id=18]
+extents = Vector3( 8.86944, 6.17074, 73.8565 )
+
+[sub_resource type="BoxShape" id=19]
+extents = Vector3( 3.89548, 9.332, 3.11862 )
+
+[sub_resource type="BoxShape" id=20]
+extents = Vector3( 47.0684, 35.792, 261.925 )
+
+[sub_resource type="BoxShape" id=21]
+extents = Vector3( 3.34447, 4.32709, 2.02271 )
+
+[sub_resource type="BoxShape" id=22]
+extents = Vector3( 1.91961, 2.04567, 2.21689 )
+
+[sub_resource type="BoxShape" id=23]
+extents = Vector3( 2.40445, 2.82355, 2.46728 )
+
+[sub_resource type="BoxShape" id=24]
+extents = Vector3( 21.0153, 13.9677, 161.834 )
+
+[sub_resource type="BoxShape" id=25]
+extents = Vector3( 1670.88, 988.891, 2074.96 )
+
+[sub_resource type="BoxShape" id=26]
+extents = Vector3( 1, 1.24474, 1.96094 )
+
+[sub_resource type="BoxShape" id=27]
+extents = Vector3( 2.15067, 2.19388, 2.6153 )
 
 [node name="Moon_Town_Master" instance=ExtResource( 1 )]
 
@@ -68,20 +151,62 @@ light_energy = 1.9
 shadow_enabled = true
 shadow_color = Color( 0.498039, 0.498039, 0.498039, 1 )
 directional_shadow_max_distance = 400.0
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Athlete_Rover_Prop" parent="." index="1" instance=ExtResource( 37 )]
+[node name="RVT_Moon_Town_Master_Rim" parent="." index="1" instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 93.7111, 0, -59.2866 )
+hide_list = [ NodePath("../Marker_all_Constructs/Empty_FourthGallery/Fourth_Gallery"), NodePath("../Marker_all_Constructs/Empty_SecondGallery/Second_Gallery"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport/Markers/Marker_PodshipH/NuclearPodShip"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport/Spaceport_Terminal"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport/Spaceport_Hangar"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport/Markers/Marker_PodshipB/NuclearPodShip"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport/Markers/Marker_PodshipC/NuclearPodShip"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport/Markers/Marker_PodshipD/NuclearPodShip"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport/Markers/Marker_PodshipE/NuclearPodShip"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport/Markers/Marker_PodshipF/NuclearPodShip"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport/Markers/Marker_PodshipG/NuclearPodShip"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport/Markers/Marker_PodshipH/NuclearPodShip"), NodePath("../Marker_all_Constructs/Empty_RecHab1/Rec_Hab_1") ]
+
+[node name="CollisionShape3" type="CollisionShape" parent="RVT_Moon_Town_Master_Rim" index="1"]
+transform = Transform( 0.999984, 0, 0.00567225, 0, 1, 0, -0.00567225, 0, 0.999984, 1324.38, 76.4257, -641.635 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2" type="CollisionShape" parent="RVT_Moon_Town_Master_Rim" index="2"]
+transform = Transform( 0.950965, 0, -0.309299, 0, 1, 0, 0.309299, 0, 0.950965, 373.372, 0, 1616.14 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape4" type="CollisionShape" parent="RVT_Moon_Town_Master_Rim" index="3"]
+transform = Transform( 0.971483, 0, -0.237109, 0, 1, 0, 0.237109, 0, 0.971483, 30.7028, 108.28, 84.201 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RVT_Moon_Town_Master_Crater" parent="." index="2" instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2175.24, 0, -115.704 )
+hide_list = [ NodePath("../Marker_all_Constructs/Empty_BigAtrium/Center_Atrium"), NodePath("../Marker_all_Constructs/Empty_FirstHangars/First_Factory"), NodePath("../Marker_all_Constructs/Empty_MainHangars/Main_Factory"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport"), NodePath("../Marker_all_Constructs/Empty_TeacupCrater/Teacup_Crater"), NodePath("../Marker_all_Constructs/Empty_SouthLongAtrium/South_Farm_Atrium"), NodePath("../Road"), NodePath("../Marker_all_Constructs/Empty_AirlockBay/Airlock_Bay"), NodePath("../Athlete_Rover_Prop"), NodePath("../Athlete_Rover_Prop/Ground_Passenger_Pod"), NodePath("../Athlete_Rover_Prop2"), NodePath("../Athlete_Rover_Prop2/Ground_Passenger_Pod") ]
+
+[node name="CollisionShape2" type="CollisionShape" parent="RVT_Moon_Town_Master_Crater" index="1"]
+transform = Transform( 0.961238, 0, -0.275721, 0, 1, 0, 0.275721, 0, 0.961238, -1365.39, -1210.91, 181.126 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Athlete_Rover_Prop" parent="." index="3" instance=ExtResource( 37 )]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 122.585, 103.087, -180.953 )
 
 [node name="Ground_Passenger_Pod" parent="Athlete_Rover_Prop" index="3" instance=ExtResource( 34 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.52368, -2.87244 )
 
-[node name="Athlete_Rover_Prop2" parent="." index="2" instance=ExtResource( 37 )]
+[node name="Athlete_Rover_Prop2" parent="." index="4" instance=ExtResource( 37 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.6243, 103.087, -234.569 )
 
 [node name="Ground_Passenger_Pod" parent="Athlete_Rover_Prop2" index="3" instance=ExtResource( 34 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.52368, -2.87244 )
 
-[node name="Audio-Tour-Markers" type="Spatial" parent="." index="3"]
+[node name="Audio-Tour-Markers" type="Spatial" parent="." index="5"]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Audio_Tour_Marker_Indoor_Intro" parent="Audio-Tour-Markers" index="0" instance=ExtResource( 27 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68.3646, 100.258, -208.485 )
@@ -116,7 +241,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68.6175, 112.564, -180.035 )
 
 [node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Indoor4" index="1" instance=ExtResource( 47 )]
 display_info = "play indoor audio tour part 4"
-audio_file = ExtResource( 38 )
+audio_file = ExtResource( 60 )
 
 [node name="Audio_Tour_Marker_Indoor5" parent="Audio-Tour-Markers" index="5" instance=ExtResource( 27 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47.9403, 100.387, -171.717 )
@@ -151,7 +276,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -170.508, 23.9715, -243.228 )
 
 [node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Indoor11" index="1" instance=ExtResource( 47 )]
 display_info = "play indoor audio tour part 11"
-audio_file = ExtResource( 39 )
+audio_file = ExtResource( 61 )
 
 [node name="Audio_Tour_Marker_Outdoor1" parent="Audio-Tour-Markers" index="10" instance=ExtResource( 36 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 945.979, -9.28398, 519.527 )
@@ -226,11 +351,32 @@ audio_file = ExtResource( 54 )
 [node name="Audio_Tour_Marker_Outdoor11" parent="Audio-Tour-Markers" index="20" instance=ExtResource( 36 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4170.9, -420.808, -6138.28 )
 
+[node name="Lalande_MoonTown" parent="." index="6"]
+visible = false
+
+[node name="UpperHabsMainTanksTarp" parent="." index="8"]
+visible = false
+
+[node name="SatelliteDishBase" parent="." index="9"]
+visible = false
+
+[node name="SatelliteDishStand1" parent="." index="10"]
+visible = false
+
+[node name="SatelliteDishStand2" parent="." index="11"]
+visible = false
+
+[node name="SatelliteDishStand3" parent="." index="12"]
+visible = false
+
+[node name="Road" parent="." index="13"]
+visible = false
+
 [node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Outdoor11" index="1" instance=ExtResource( 47 )]
 display_info = "play outdoor audio tour 11"
 audio_file = ExtResource( 55 )
 
-[node name="Lalande_85k" parent="." index="12" instance=ExtResource( 17 )]
+[node name="Lalande_85k" parent="." index="14" instance=ExtResource( 17 )]
 
 [node name="Boat_Radiator" parent="Marker_all_BoatRads/BoatRad001" index="0" instance=ExtResource( 33 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
@@ -328,12 +474,12 @@ transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
 
 [node name="Melt_In_Place_Station" parent="Marker_all_MIPs/Marker_MIP004" index="0" instance=ExtResource( 13 )]
 
-[node name="Marker_RadioDishEarth" parent="." index="19"]
+[node name="Marker_RadioDishEarth" parent="." index="21"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 475.644, 62.7823, -11.5285 )
 
 [node name="Radio_Dish_Earth" parent="Marker_RadioDishEarth" index="0" instance=ExtResource( 21 )]
 
-[node name="Marker_RadioDishEarth001" parent="." index="20"]
+[node name="Marker_RadioDishEarth001" parent="." index="22"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 911.615, -11.5876, 86.7956 )
 
 [node name="Radio_Dish_Earth" parent="Marker_RadioDishEarth001" index="0" instance=ExtResource( 21 )]
@@ -434,9 +580,57 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.390442 )
 
 [node name="Airlock_Bay" parent="Marker_all_Constructs/Empty_AirlockBay" index="0" instance=ExtResource( 3 )]
 
+[node name="DVT_Airlock_Bay" parent="Marker_all_Constructs/Empty_AirlockBay" index="1" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00577, 0, 0 )
+show_lod0_list = [ NodePath("../../Empty_FirstGalleryUpper/First_Gallery_Upper"), NodePath("../Airlock_Bay"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_N1/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_N2/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_N3/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_N4/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_N5/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_S1/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_S2/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_S3/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_S4/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_S5/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_GarageAirlock/Airlock") ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Marker_all_Constructs/Empty_AirlockBay/DVT_Airlock_Bay" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -103.181, 0, 4.40912 )
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="First_Atrium" parent="Marker_all_Constructs/Empty_AtriumHab" index="0" instance=ExtResource( 4 )]
 
+[node name="DVT_Empty_AtriumHab" parent="Marker_all_Constructs/Empty_AtriumHab" index="1" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50.7373, 2.58819, -55.8898 )
+show_lod0_list = [ NodePath("../../Empty_LosPortalesTunnel/Rim_Arcade"), NodePath("../../../Lalande_85k"), NodePath("../../../Earth"), NodePath("../../../Marker_all_BoatRads/BoatRad004/Boat_Radiator"), NodePath("../First_Atrium"), NodePath("../First_Atrium/Markers/Mariker_HexWindow1/Hexpane_Window"), NodePath("../First_Atrium/Markers/Marker_HexWindow2/Hexpane_Window"), NodePath("../First_Atrium/Markers/Marker_HexWindow3/Hexpane_Window"), NodePath("../First_Atrium/Markers/Marker_HexWindow4/Hexpane_Window"), NodePath("../First_Atrium/Markers/Marker_HexWindow5/Hexpane_Window") ]
+show_lod1_list = [ NodePath("../../Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/3rd_Gal_Top/Overlay_3rd_Gal_Top"), NodePath("../../Empty_BigAtrium/Center_Atrium") ]
+
+[node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_AtriumHab/DVT_Empty_AtriumHab" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05933, 0.712097, 17.6263 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Marker_all_Constructs/Empty_AtriumHab/DVT_Empty_AtriumHab" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.9801, -2.17831, 69.1814 )
+shape = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Center_Atrium" parent="Marker_all_Constructs/Empty_BigAtrium" index="0" instance=ExtResource( 26 )]
+
+[node name="DVT_Center_Atrium" parent="Marker_all_Constructs/Empty_BigAtrium" index="1" instance=ExtResource( 38 )]
+show_lod0_list = [ NodePath("../../../Earth"), NodePath("../Center_Atrium"), NodePath("../Center_Atrium/Markers/Marker_HexpaneWindow/Hexpane_Window"), NodePath("../Center_Atrium/Markers/Marker_HexpaneWindow001/Hexpane_Window"), NodePath("../Center_Atrium/Markers/Marker_HexpaneWindow002/Hexpane_Window"), NodePath("../Center_Atrium/Markers/Marker_HexpaneWindow003/Hexpane_Window") ]
+show_lod1_list = [ NodePath("../../Empty_FirstGalleryUpper/First_Gallery_Upper"), NodePath("../../Empty_AtriumHab/First_Atrium") ]
+
+[node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_BigAtrium/DVT_Center_Atrium" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3862, 9.80199, 35.9513 )
+shape = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape3" type="CollisionShape" parent="Marker_all_Constructs/Empty_BigAtrium/DVT_Center_Atrium" index="1"]
+transform = Transform( 0.994794, 0, -0.101907, 0, 1, 0, 0.101907, 0, 0.994794, -7.73895, -5.51354, -95.2946 )
+shape = SubResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Fifth_Gallery" parent="Marker_all_Constructs/Empty_FifthGallery" index="0" instance=ExtResource( 28 )]
 
@@ -446,7 +640,95 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.390442 )
 
 [node name="First_Gallery_Lower_UpperPart" parent="Marker_all_Constructs/Empty_FirstGalleryLower" index="2" instance=ExtResource( 2 )]
 
+[node name="DVT_FirstGalleryLower" parent="Marker_all_Constructs/Empty_FirstGalleryLower" index="3" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 456.307, 364.93, 62.9397 )
+show_lod0_list = [ NodePath("../First_Gallery_Lower_LowerPart"), NodePath("../First_Gallery_Lower_MiddlePart"), NodePath("../First_Gallery_Lower_UpperPart"), NodePath("../../Empty_FirstGalleryUpper/First_Gallery_Upper") ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryLower/DVT_FirstGalleryLower" index="0"]
+transform = Transform( 0.989316, 0, -0.14579, 0, 1, 0, 0.14579, 0, 0.989316, 54.5475, 45.5952, 0.658752 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="First_Gallery_Upper" parent="Marker_all_Constructs/Empty_FirstGalleryUpper" index="0" instance=ExtResource( 10 )]
+
+[node name="ReversingVisibilityTrigger" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper" index="18" instance=ExtResource( 39 )]
+show_lod1_list = [ NodePath("../../../../Marker_all_MIPs/Marker_MIP001/Melt_In_Place_Station"), NodePath("../../../../Marker_all_MIPs/Marker_MIP/Melt_In_Place_Station"), NodePath("../../../../Athlete_Rover_Prop"), NodePath("../../../../Athlete_Rover_Prop2"), NodePath("../../../../Athlete_Rover_Prop/Ground_Passenger_Pod"), NodePath("../../../../Marker_all_BoatRads/BoatRad/Boat_Radiator"), NodePath("../../../../Marker_all_BoatRads/BoatRad018/Boat_Radiator"), NodePath("../../../../Marker_all_BoatRads/BoatRad017/Boat_Radiator"), NodePath("../../../Empty_FirstHangars/First_Factory"), NodePath("../../../Empty_FirstHangars/First_Factory/Markers/Empty_SpiderCrane/Spider_Crane") ]
+show_lod2_list = [ NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit02/Solar_Panel_Unit"), NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit03/Solar_Panel_Unit"), NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit04/Solar_Panel_Unit"), NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit05/Solar_Panel_Unit"), NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit06/Solar_Panel_Unit"), NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit07/Solar_Panel_Unit"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers003/Flywheel_Tower"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers004/Flywheel_Tower"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers005/Flywheel_Tower"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers006/Flywheel_Tower"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers007/Flywheel_Tower"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers008/Flywheel_Tower") ]
+
+[node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/ReversingVisibilityTrigger" index="1"]
+transform = Transform( 0.992215, 0, -0.124537, 0, 1, 0, 0.124537, 0, 0.992215, 20.3003, 7.11565, 3.02989 )
+shape = SubResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ReversingVisibilityTrigger2" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper" index="19" instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3778, 0, -1.07788 )
+show_lod1_list = [ NodePath("../../../Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/3rd_Gal_Top/Overlay_3rd_Gal_Top"), NodePath("../../../Empty_LosPortalesTunnel/Rim_Arcade"), NodePath("../../../Empty_FirstHangars/First_Factory/Markers/Empty_PressurizedHangar001/PressurizedHangar_Regular") ]
+show_lod2_list = [ NodePath("../../../../Marker_all_BoatRads/BoatRad002/Boat_Radiator"), NodePath("../../../../Marker_all_BoatRads/BoatRad005/Boat_Radiator"), NodePath("../../../../Marker_all_BoatRads/BoatRad006"), NodePath("../../../../Marker_all_BoatRads/BoatRad007/Boat_Radiator"), NodePath("../../../../Marker_all_BoatRads/BoatRad014/Boat_Radiator"), NodePath("../../../Empty_STEMP-Facilities/STEMP_Facilities/Radio_Dish_Deep_Space"), NodePath("../../../Empty_STEMP-Facilities/STEMP_Facilities/Station_1/STEMP_Station_1"), NodePath("../../../Empty_STEMP-Facilities/STEMP_Facilities/Station_2/STEMP_Station_2"), NodePath("../../../Empty_RadarTower/Radar_Tower"), NodePath("../../../Empty_TeacupCrater/Teacup_Crater"), NodePath("../../../Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/5th_Gal_Top/Overlay_5th_Gal_Top"), NodePath("../../../Empty_NorthLongAtrium/North_Farm_Atrium"), NodePath("../../../Empty_ThirdGallery/Third_Gallery"), NodePath("../../../Empty_FirstHangars/First_Factory/Markers/Empty_TowerRadiator2x006/TowerRadiator_2x") ]
+
+[node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/ReversingVisibilityTrigger2" index="1"]
+transform = Transform( 0.847437, -0.515442, -0.127164, 0.509735, 0.856924, -0.0764897, 0.148396, 0, 0.988928, -43.2341, -14.5923, -5.88049 )
+shape = SubResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape3" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/ReversingVisibilityTrigger2" index="2"]
+transform = Transform( 0.847437, -0.515442, -0.127164, 0.509735, 0.856924, -0.0764897, 0.148396, 0, 0.988928, -85.3366, -41.6847, -10.5088 )
+shape = SubResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape4" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/ReversingVisibilityTrigger2" index="3"]
+transform = Transform( 0.833208, -0.538638, -0.125029, 0.532675, 0.842537, -0.0799319, 0.148396, 0, 0.988928, -126.688, -70.0444, -16.5435 )
+shape = SubResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape5" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/ReversingVisibilityTrigger2" index="4"]
+transform = Transform( 0.793362, -0.596995, -0.11905, 0.590385, 0.802245, -0.0885919, 0.148396, 0, 0.988928, -165.447, -99.471, -21.3921 )
+shape = SubResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DVT_First_Gallery_Upper" parent="Marker_all_Constructs/Empty_FirstGalleryUpper" index="1" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2718, -17.7215, -17.284 )
+show_lod0_list = [ NodePath("../../Empty_FirstGalleryLower/First_Gallery_Lower_UpperPart"), NodePath("../../../Lalande_85k"), NodePath("../../../Lalande_MoonTown"), NodePath("../../Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/1st_Gal_Top/Overlay_1stGal_Top"), NodePath("../../Empty_AirlockBay/Airlock_Bay"), NodePath("../First_Gallery_Upper"), NodePath("../../Empty_AirlockBay/Airlock_Bay/Markers/Marker_Airlock_N5/Airlock") ]
+show_lod1_list = [ NodePath("../../Empty_FirstGalleryLower/First_Gallery_Lower_MiddlePart"), NodePath("../../Empty_FirstGalleryLower/First_Gallery_Lower_LowerPart"), NodePath("../../Empty_BigAtrium/Center_Atrium"), NodePath("../../Empty_RecHab1/Rec_Hab_1") ]
+
+[node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/DVT_First_Gallery_Upper" index="0"]
+transform = Transform( 0.991712, 0, -0.128484, 0, 1, 0, 0.128484, 0, 0.991712, -0.0761323, -26.0353, 46.5446 )
+shape = SubResource( 13 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape3" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/DVT_First_Gallery_Upper" index="1"]
+transform = Transform( 0.989488, 0, -0.144615, 0, 1, 0, 0.144615, 0, 0.989488, -162.537, -70.813, -24.5237 )
+shape = SubResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape4" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/DVT_First_Gallery_Upper" index="2"]
+transform = Transform( 0.962346, 0, -0.271827, 0, 1, 0, 0.271827, 0, 0.962346, 24.8038, -25.5886, -74.3809 )
+shape = SubResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape5" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/DVT_First_Gallery_Upper" index="3"]
+transform = Transform( 0.989316, 0, -0.14579, 0, 1, 0, 0.14579, 0, 0.989316, -241.949, -149.443, -8.65079 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="First_Factory" parent="Marker_all_Constructs/Empty_FirstHangars" index="0" instance=ExtResource( 8 )]
 
@@ -454,13 +736,69 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.390442 )
 
 [node name="All_Overlays_4th_Gal_Top" parent="Marker_all_Constructs/Empty_GalleriesOuterSurface" index="0" instance=ExtResource( 31 )]
 
+[node name="3rd_Gal_Top" parent="Marker_all_Constructs/Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top" index="7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
 [node name="Long_Dome" parent="Marker_all_Constructs/Empty_LongDome" index="0" instance=ExtResource( 18 )]
 
 [node name="Rim_Arcade" parent="Marker_all_Constructs/Empty_LosPortalesTunnel" index="0" instance=ExtResource( 19 )]
 
+[node name="DVT_Rim_Arcade" parent="Marker_all_Constructs/Empty_LosPortalesTunnel" index="1" instance=ExtResource( 38 )]
+show_lod0_list = [ NodePath("../Rim_Arcade"), NodePath("../../../Lalande_85k"), NodePath("../../Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/3rd_Gal_Top/Overlay_3rd_Gal_Top") ]
+show_lod1_list = [ NodePath("../../Empty_ThirdGallery/Third_Gallery"), NodePath("../../Empty_SouthLongAtrium/South_Farm_Atrium"), NodePath("../../Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/3rd_Gal_Bottom/Overlay_3rd_Gal_Bottom"), NodePath("../../Empty_AtriumHab/First_Atrium") ]
+show_lod2_list = [ NodePath("../../Empty_LongDome/Long_Dome") ]
+
+[node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_LosPortalesTunnel/DVT_Rim_Arcade" index="0"]
+transform = Transform( 0.851297, 0, -0.524684, 0, 1, 0, 0.524684, 0, 0.851297, 44.0263, -1.36786, -88.0066 )
+shape = SubResource( 16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape3" type="CollisionShape" parent="Marker_all_Constructs/Empty_LosPortalesTunnel/DVT_Rim_Arcade" index="1"]
+transform = Transform( 0.997176, 0, -0.0751006, 0.00397497, 0.998598, 0.0527788, 0.0749953, -0.0529286, 0.995779, -13.6707, -12.5419, 109.853 )
+shape = SubResource( 17 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ReversingVisibilityTrigger" parent="Marker_all_Constructs/Empty_LosPortalesTunnel" index="2" instance=ExtResource( 39 )]
+hide_list = [ NodePath("../../Empty_SouthLongAtrium/South_Farm_Atrium"), NodePath("../../Empty_AtriumHab/First_Atrium") ]
+
+[node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_LosPortalesTunnel/ReversingVisibilityTrigger" index="1"]
+transform = Transform( 0.966052, 0, -0.258347, 0, 1, 0, 0.258347, 0, 0.966052, 9.12482, 0, 7.37732 )
+shape = SubResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Main_Factory" parent="Marker_all_Constructs/Empty_MainHangars" index="0" instance=ExtResource( 11 )]
 
+[node name="Empty_NorthLongAtrium" parent="Marker_all_Constructs" index="12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.1102, 57.8899, -326.097 )
+
 [node name="North_Farm_Atrium" parent="Marker_all_Constructs/Empty_NorthLongAtrium" index="0" instance=ExtResource( 15 )]
+
+[node name="DynamicVisibilityTrigger" parent="Marker_all_Constructs/Empty_NorthLongAtrium/North_Farm_Atrium" index="4" instance=ExtResource( 38 )]
+show_lod0_list = [ NodePath(".."), NodePath("../../../Empty_FirstGalleryUpper/First_Gallery_Upper"), NodePath("../../../../Earth") ]
+
+[node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_NorthLongAtrium/North_Farm_Atrium/DynamicVisibilityTrigger" index="0"]
+transform = Transform( 0.962365, 0, -0.27176, 0, 1, 0, 0.27176, 0, 0.962365, -21.3893, 19.6832, 44.5208 )
+shape = SubResource( 19 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ReversingVisibilityTrigger" parent="Marker_all_Constructs/Empty_NorthLongAtrium/North_Farm_Atrium" index="5" instance=ExtResource( 39 )]
+show_lod0_list = [ NodePath("../../../../Earth"), NodePath("..") ]
+show_lod2_list = [ NodePath("../../../Empty_FirstGalleryUpper/First_Gallery_Upper") ]
+
+[node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_NorthLongAtrium/North_Farm_Atrium/ReversingVisibilityTrigger" index="1"]
+transform = Transform( 0.984442, 0, -0.17571, 0, 1, 0, 0.17571, 0, 0.984442, 71.6086, 28.4194, -275.83 )
+shape = SubResource( 20 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Nuclear_Plant" parent="Marker_all_Constructs/Empty_NuclearPlant" index="0" instance=ExtResource( 14 )]
 
@@ -468,17 +806,150 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.390442 )
 
 [node name="Rec_Hab_1" parent="Marker_all_Constructs/Empty_RecHab1" index="0" instance=ExtResource( 9 )]
 
+[node name="DVT_Rec_Hab_1" parent="Marker_all_Constructs/Empty_RecHab1" index="1" instance=ExtResource( 38 )]
+show_lod0_list = [ NodePath("../../../Lalande_85k"), NodePath("../../../Lalande_MoonTown"), NodePath("../Rec_Hab_1") ]
+show_lod1_list = [ NodePath("../../Empty_FirstGalleryLower/First_Gallery_Lower_UpperPart"), NodePath("../../Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/1st_Gal_Middle/Overlay_1stGal_Middle"), NodePath("../../Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/1st_Gal_Top/Overlay_1stGal_Top"), NodePath("../../Empty_FirstGalleryUpper/First_Gallery_Upper") ]
+show_lod2_list = [ NodePath("../../Empty_LongDome/Long_Dome") ]
+
+[node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_RecHab1/DVT_Rec_Hab_1" index="0"]
+transform = Transform( 0.989942, 0, -0.141471, 0, 1, 0, 0.141471, 0, 0.989942, -2.56548, 0.955372, 14.2987 )
+shape = SubResource( 21 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Second_Gallery" parent="Marker_all_Constructs/Empty_SecondGallery" index="0" instance=ExtResource( 22 )]
 
 [node name="South_Farm_Atrium" parent="Marker_all_Constructs/Empty_SouthLongAtrium" index="0" instance=ExtResource( 16 )]
 
+[node name="DVT_South_Farm_Atrium" parent="Marker_all_Constructs/Empty_SouthLongAtrium" index="1" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7365, 0, -161.241 )
+show_lod0_list = [ NodePath("../South_Farm_Atrium"), NodePath("../../Empty_FifthGallery/Fifth_Gallery") ]
+show_lod1_list = [ NodePath("../../Empty_ThirdGallery/Third_Gallery"), NodePath("../../../Marker_all_BoatRads/BoatRad006/Boat_Radiator"), NodePath("../../../Marker_all_BoatRads/BoatRad007/Boat_Radiator"), NodePath("../../Empty_LosPortalesTunnel/Rim_Arcade") ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Marker_all_Constructs/Empty_SouthLongAtrium/DVT_South_Farm_Atrium" index="0"]
+transform = Transform( 0.997073, 0, -0.076458, 0, 1, 0, 0.076458, 0, 0.997073, -16.7126, 12.1658, -180.725 )
+shape = SubResource( 22 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_SouthLongAtrium/DVT_South_Farm_Atrium" index="1"]
+transform = Transform( 0.912249, 0, 0.409637, 0, 1, 0, -0.409637, 0, 0.912249, 20.589, 14.6429, 161.254 )
+shape = SubResource( 23 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape3" type="CollisionShape" parent="Marker_all_Constructs/Empty_SouthLongAtrium/DVT_South_Farm_Atrium" index="2"]
+transform = Transform( 0.990195, 0, 0.139692, 0, 1, 0, -0.139692, 0, 0.990195, -50.8762, 14.3132, 160.965 )
+shape = SubResource( 23 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ReversingVisibilityTrigger" parent="Marker_all_Constructs/Empty_SouthLongAtrium" index="2" instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12424, -0.000488281, -40.4724 )
+hide_list = [ NodePath("../../Empty_ThirdGallery/Third_Gallery"), NodePath("../../Empty_FifthGallery/Fifth_Gallery"), NodePath("../../Empty_TeacupCrater/Teacup_Crater") ]
+
+[node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_SouthLongAtrium/ReversingVisibilityTrigger" index="1"]
+transform = Transform( 0.995319, 0, -0.0966449, 0, 1, 0, 0.0966449, 0, 0.995319, 18.8667, 24.6001, -134.068 )
+shape = SubResource( 24 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Spaceport" parent="Marker_all_Constructs/Empty_Spaceport" index="0" instance=ExtResource( 25 )]
+
+[node name="RVT_Spaceport" parent="Marker_all_Constructs/Empty_Spaceport/Spaceport" index="0" instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1481.01, 0, -478.241 )
+hide_list = [ NodePath("../../../Empty_LongDome/Long_Dome"), NodePath("../../../Empty_FourthGallery/Fourth_Gallery"), NodePath("../../../Empty_SecondGallery/Second_Gallery"), NodePath("../../../Empty_FifthGallery/Fifth_Gallery"), NodePath("../../../Empty_ThirdGallery/Third_Gallery"), NodePath("../../../Empty_RecHab1/Rec_Hab_1"), NodePath("../../../Empty_FirstGalleryUpper/First_Gallery_Upper"), NodePath("../../../Empty_AtriumHab/First_Atrium"), NodePath("../../../Empty_BigAtrium/Center_Atrium"), NodePath("../../../Empty_NorthLongAtrium/North_Farm_Atrium"), NodePath("../../../Empty_SouthLongAtrium/South_Farm_Atrium"), NodePath("../../../Empty_STEMP-Facilities/STEMP_Facilities"), NodePath("../../../Empty_AirlockBay/Airlock_Bay"), NodePath("../../../Empty_TeacupCrater/Teacup_Crater"), NodePath("../../../Empty_NuclearPlant/Nuclear_Plant"), NodePath("../../../Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top"), NodePath("../../../Empty_FirstGalleryLower/First_Gallery_Lower_UpperPart"), NodePath("../../../Empty_FirstGalleryLower/First_Gallery_Lower_MiddlePart"), NodePath("../../../Empty_FirstGalleryLower/First_Gallery_Lower_LowerPart") ]
+
+[node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_Spaceport/Spaceport/RVT_Spaceport" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.9614, -0.000244141, 783.391 )
+shape = SubResource( 25 )
+
+[node name="DVT_Spaceport_Terminal" parent="Marker_all_Constructs/Empty_Spaceport/Spaceport/Spaceport_Terminal" index="5" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.30273, 0, 0 )
+show_lod0_list = [ NodePath(".."), NodePath("../../../../../Earth") ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Marker_all_Constructs/Empty_Spaceport/Spaceport/Spaceport_Terminal/DVT_Spaceport_Terminal" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.7349, -10.6152, -26.9717 )
+shape = SubResource( 26 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_Spaceport/Spaceport/Spaceport_Terminal/DVT_Spaceport_Terminal" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.7349, -10.6152, -17.3032 )
+shape = SubResource( 26 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Marker_all_Constructs/Empty_Spaceport/Spaceport/Spaceport_Terminal/DVT_Spaceport_Terminal" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.7349, -10.6152, -7.10596 )
+shape = SubResource( 26 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Marker_all_Constructs/Empty_Spaceport/Spaceport/Spaceport_Terminal/DVT_Spaceport_Terminal" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.7349, -10.6152, 2.98535 )
+shape = SubResource( 26 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Marker_all_Constructs/Empty_Spaceport/Spaceport/Spaceport_Terminal/DVT_Spaceport_Terminal" index="4"]
+transform = Transform( 0.000855164, 0, -1, 0, 1, 0, 1, 0, 0.000855164, -2.53955, -8.48434, -30.5669 )
+shape = SubResource( 26 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Marker_all_Constructs/Empty_Spaceport/Spaceport/Spaceport_Terminal/DVT_Spaceport_Terminal" index="5"]
+transform = Transform( 0.000855164, 0, -1, 0, 1, 0, 1, 0, 0.000855164, 7.05664, -8.48434, -30.5669 )
+shape = SubResource( 26 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Marker_all_Constructs/Empty_Spaceport/Spaceport/Spaceport_Terminal/DVT_Spaceport_Terminal" index="6"]
+transform = Transform( 0.000855164, 0, -1, 0, 1, 0, 1, 0, 0.000855164, 2.41455, -0.639191, -30.5669 )
+shape = SubResource( 26 )
 
 [node name="STEMP_Facilities" parent="Marker_all_Constructs/Empty_STEMP-Facilities" index="0" instance=ExtResource( 12 )]
 
 [node name="Teacup_Crater" parent="Marker_all_Constructs/Empty_TeacupCrater" index="0" instance=ExtResource( 23 )]
 
+[node name="DVT_Teacup_Crater" parent="Marker_all_Constructs/Empty_TeacupCrater" index="1" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24365, 0, -49.3583 )
+show_lod0_list = [ NodePath("../Teacup_Crater"), NodePath("../Teacup_Crater/Markers/Marker_Truss/Truss_Triangular_67m"), NodePath("../Teacup_Crater/Markers/Marker_Truss001/Truss_Triangular_67m"), NodePath("../Teacup_Crater/Markers/Marker_Truss002/Truss_Triangular_67m"), NodePath("../Teacup_Crater/Markers/Marker_Truss003/Truss_Triangular_67m"), NodePath("../Teacup_Crater/Markers/Marker_Truss004/Truss_Triangular_67m"), NodePath("../Teacup_Crater/Markers/Marker_Truss005/Truss_Triangular_67m"), NodePath("../Teacup_Crater/Markers/Marker_Truss006/Truss_Triangular_67m"), NodePath("../Teacup_Crater/Markers/Marker_Truss007/Truss_Triangular_67m"), NodePath("../Teacup_Crater/Markers/Marker_Truss008/Truss_Triangular_67m"), NodePath("../Teacup_Crater/Markers/Marker_Truss009"), NodePath("../Teacup_Crater/Markers/Marker_Truss010"), NodePath("../Teacup_Crater/Markers/Marker_Truss011/Truss_Triangular_67m") ]
+show_lod1_list = [ NodePath("../../Empty_MainHangars/Main_Factory"), NodePath("../../Empty_MainHangars/Main_Factory/Markers/Empty_LavaTank_Large005/Lava_Tank_Large"), NodePath("../../Empty_MainHangars/Main_Factory/Markers/TowerRad_3x_Marker/TowerRadiator_3x"), NodePath("../../Empty_MainHangars/Main_Factory/Markers/TowerRad_3x_Marker009/TowerRadiator_3x"), NodePath("../../Empty_MainHangars/Main_Factory/Markers/TowerRad_3x_Marker008/TowerRadiator_3x"), NodePath("../../../Marker_all_BoatRads/BoatRad013/Boat_Radiator"), NodePath("../../../Marker_all_BoatRads/BoatRad012/Boat_Radiator"), NodePath("../../../Marker_all_BoatRads/BoatRad011/Boat_Radiator"), NodePath("../../../Marker_all_BoatRads/BoatRad010/Boat_Radiator"), NodePath("../../../Marker_all_BoatRads/BoatRad009/Boat_Radiator"), NodePath("../../Empty_MainHangars/Main_Factory/Markers/Empty_PressurizedHangar_Giant/PressurizedHangar_Giant"), NodePath("../../Empty_MainHangars/Main_Factory/Markers/Empty_LavaTank_Large004/Lava_Tank_Large"), NodePath("../../../Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor011/Molten_Soil_Reactor"), NodePath("../../../Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor004/Molten_Soil_Reactor"), NodePath("../../../Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor012/Molten_Soil_Reactor"), NodePath("../../../Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor004/Molten_Soil_Reactor/Marker_TowerRadiator_M/TowerRadiator_Small"), NodePath("../../../Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor011/Molten_Soil_Reactor/Marker_TowerRadiator_M/TowerRadiator_Small"), NodePath("../../../Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor012/Molten_Soil_Reactor/Marker_TowerRadiator_M/TowerRadiator_Small"), NodePath("../../../Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor004/Molten_Soil_Reactor/SolarThermalUnit_Marker/Solar_Thermal_Mirror_Set_Side_Circuit"), NodePath("../../../Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor012/Molten_Soil_Reactor/SolarThermalUnit_Marker/Solar_Thermal_Mirror_Set_Side_Circuit"), NodePath("../../../Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor011/Molten_Soil_Reactor/SolarThermalUnit_Marker/Solar_Thermal_Mirror_Set_Side_Circuit"), NodePath("../../Empty_SouthLongAtrium/South_Farm_Atrium") ]
+show_lod2_list = [ NodePath("../../Empty_MainHangars/Main_Factory/Markers/TowerRad_3x_Marker007/TowerRadiator_3x"), NodePath("../../Empty_MainHangars/Main_Factory/Markers/TowerRad_3x_Marker006/TowerRadiator_3x"), NodePath("../../Empty_MainHangars/Main_Factory/Markers/TowerRad_3x_Marker005/TowerRadiator_3x"), NodePath("../../../Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor003/Molten_Soil_Reactor"), NodePath("../../../Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor002/Molten_Soil_Reactor"), NodePath("../../../Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor002/Molten_Soil_Reactor/Marker_TowerRadiator_M/TowerRadiator_Small"), NodePath("../../../Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor003/Molten_Soil_Reactor/Marker_TowerRadiator_M/TowerRadiator_Small"), NodePath("../../../Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor002/Molten_Soil_Reactor/SolarThermalUnit_Marker/Solar_Thermal_Mirror_Set_Side_Circuit"), NodePath("../../../Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor003/Molten_Soil_Reactor/SolarThermalUnit_Marker/Solar_Thermal_Mirror_Set_Side_Circuit") ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Marker_all_Constructs/Empty_TeacupCrater/DVT_Teacup_Crater" index="0"]
+transform = Transform( 0.93477, 0, 0.355254, -0.0293747, 0.996576, 0.0772928, -0.354037, -0.0826865, 0.931569, -123.778, -30.0335, -138.772 )
+shape = SubResource( 27 )
+
 [node name="Third_Gallery" parent="Marker_all_Constructs/Empty_ThirdGallery" index="0" instance=ExtResource( 24 )]
 
-[node name="Earth" parent="." index="25" instance=ExtResource( 35 )]
+[node name="Earth" parent="." index="27" instance=ExtResource( 35 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30000, 0 )
+
+[editable path="Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor002/Molten_Soil_Reactor"]
+
+[editable path="Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor003/Molten_Soil_Reactor"]
+
+[editable path="Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor004/Molten_Soil_Reactor"]
+
+[editable path="Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor011/Molten_Soil_Reactor"]
+
+[editable path="Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor012/Molten_Soil_Reactor"]
+
+[editable path="Marker_all_Constructs/Empty_AirlockBay/Airlock_Bay"]
+
+[editable path="Marker_all_Constructs/Empty_AirlockBay/DVT_Airlock_Bay"]
+
+[editable path="Marker_all_Constructs/Empty_AtriumHab/First_Atrium"]
+
+[editable path="Marker_all_Constructs/Empty_BigAtrium/Center_Atrium"]
+
+[editable path="Marker_all_Constructs/Empty_FirstGalleryUpper/DVT_First_Gallery_Upper"]
+
+[editable path="Marker_all_Constructs/Empty_FirstHangars/First_Factory"]
+
+[editable path="Marker_all_Constructs/Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top"]
+
+[editable path="Marker_all_Constructs/Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/1st_Gal_Top/Overlay_1stGal_Top"]
+
+[editable path="Marker_all_Constructs/Empty_MainHangars/Main_Factory"]
+
+[editable path="Marker_all_Constructs/Empty_Spaceport/Spaceport"]
+
+[editable path="Marker_all_Constructs/Empty_STEMP-Facilities/STEMP_Facilities"]
+
+[editable path="Marker_all_Constructs/Empty_TeacupCrater/Teacup_Crater"]

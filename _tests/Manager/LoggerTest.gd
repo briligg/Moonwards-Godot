@@ -1,6 +1,5 @@
 extends Node
 
-
 func _ready():
 	Log.trace(self, "_ready", "trace test")
 	Log.debug(self, "_ready", "debug test")
