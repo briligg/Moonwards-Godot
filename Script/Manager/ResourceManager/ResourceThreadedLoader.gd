@@ -30,7 +30,7 @@ func load_async():
 	emit_signal("finished_loading", res)
 	self.queue_free()
 	
-func _load_threaded(userdata):
+func _load_threaded(_userdata):
 	_process_load()
 
 func _process_load():

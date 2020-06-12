@@ -13,7 +13,7 @@ agent/max_climb = 0.27
 agent/max_slope = 69.7
 filter/filter_walkable_low_height_spans = true
 
-[node name="world" type="Navigation"]
+[node name="world" type="Spatial"]
 
 [node name="ChatComponent" parent="." instance=ExtResource( 2 )]
 

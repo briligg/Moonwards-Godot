@@ -32,7 +32,7 @@ func _process_client(delta):
 	# Rotate only on the client
 	# The server will adjust accordingly to the velocity vector.
 	rotate_body(delta)
-	var o = entity.global_transform.origin
+#	var o = entity.global_transform.origin
 	var t = entity.srv_pos
 	var v = entity.srv_vel
 	# This needs to be cleaned up

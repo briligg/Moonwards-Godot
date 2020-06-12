@@ -5,7 +5,7 @@ extends Area
 """
 
 #This is what I pass as the interactor.
-export var user : NodePath = get_path()
+export var user : NodePath
 
 signal interact_possible(string_describing_potential_interact)
 signal interact_became_impossible()
