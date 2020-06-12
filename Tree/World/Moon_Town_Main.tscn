@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Moon_Town_Master.tscn" type="PackedScene" id=1]
-[ext_resource path="res://SceneComponent/Interface/Hud/ChatComponent.tscn" type="PackedScene" id=2]
+[ext_resource path="res://SceneComponent/Interface/PlayerHud.tscn" type="PackedScene" id=2]
 
 [sub_resource type="NavigationMesh" id=1]
 sample_partition_type/sample_partition_type = 1
@@ -15,7 +15,7 @@ filter/filter_walkable_low_height_spans = true
 
 [node name="world" type="Spatial"]
 
-[node name="ChatComponent" parent="." instance=ExtResource( 2 )]
+[node name="PlayerHud" parent="." instance=ExtResource( 2 )]
 
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="."]
 navmesh = SubResource( 1 )
