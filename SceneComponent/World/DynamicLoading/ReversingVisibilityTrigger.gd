@@ -63,7 +63,7 @@ func _process_lod_node(path, lod_level) -> void:
 	var node = get_node(path)
 	if node is LodModel:
 		_previous_states[node] = node.lod_state
-		node.call_deferred("set_lod", 0)
+		node.call_deferred("set_lod", lod_level)
 	else:
 		Log.warning(self, "process_rvt_node", "Node %s is not a LodModel." %path) 
 
