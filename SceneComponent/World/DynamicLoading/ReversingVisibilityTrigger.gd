@@ -64,12 +64,13 @@ func _process_lod_node(path, lod_level) -> void:
 	if node is LodModel:
 		_previous_states[node] = node.lod_state
 		node.call_deferred("set_lod", lod_level)
+		Log.trace(self, "process_rvt_node", "Node %s set to lod level: %s." %[path, lod_level]) 
 	else:
 		Log.warning(self, "process_rvt_node", "Node %s is not a LodModel." %path) 
 
 func _validate_paths(path_list: Array):
 	for path in path_list:
 		if get_node(path) == null:
-			Log.error(self, "", "DVT Path %s is inavlid in %s." %[path, self.name])
+			Log.error(self, "", "RVT Path %s is inavlid in %s." %[path, self.name])
 			if pause_on_error:
 				assert(false)
