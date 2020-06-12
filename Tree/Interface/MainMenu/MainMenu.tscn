@@ -270,7 +270,7 @@ size_flags_horizontal = 2
 size_flags_vertical = 2
 custom_styles/focus = ExtResource( 7 )
 custom_styles/normal = ExtResource( 7 )
-text = "95.179.245.99"
+text = "45.77.54.168"
 
 [node name="AvatarTab" type="HBoxContainer" parent="HBoxContainer/Panel/Tab"]
 visible = false
