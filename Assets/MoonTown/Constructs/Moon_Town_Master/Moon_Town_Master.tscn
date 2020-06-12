@@ -68,9 +68,6 @@ extents = Vector3( 1218, 284.159, 2804.41 )
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 1090.38, 178.691, 628.184 )
 
-[sub_resource type="BoxShape" id=3]
-extents = Vector3( 295.592, 70.4394, 1119.59 )
-
 [sub_resource type="BoxShape" id=4]
 extents = Vector3( 2985.31, 1391.98, 2112.52 )
 
@@ -106,6 +103,9 @@ extents = Vector3( 2.97086, 4.42631, 2.02918 )
 
 [sub_resource type="BoxShape" id=15]
 extents = Vector3( 7.10108, 5.81447, 3.9313 )
+
+[sub_resource type="BoxShape" id=28]
+extents = Vector3( 14.7474, 10.0738, 2.89783 )
 
 [sub_resource type="BoxShape" id=16]
 extents = Vector3( 4.12164, 1.88042, 1.7687 )
@@ -160,25 +160,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 93.7111, 0, -59.2866 )
 hide_list = [ NodePath("../Marker_all_Constructs/Empty_FourthGallery/Fourth_Gallery"), NodePath("../Marker_all_Constructs/Empty_SecondGallery/Second_Gallery"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport/Markers/Marker_PodshipH/NuclearPodShip"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport/Spaceport_Terminal"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport/Spaceport_Hangar"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport/Markers/Marker_PodshipB/NuclearPodShip"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport/Markers/Marker_PodshipC/NuclearPodShip"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport/Markers/Marker_PodshipD/NuclearPodShip"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport/Markers/Marker_PodshipE/NuclearPodShip"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport/Markers/Marker_PodshipF/NuclearPodShip"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport/Markers/Marker_PodshipG/NuclearPodShip"), NodePath("../Marker_all_Constructs/Empty_Spaceport/Spaceport/Markers/Marker_PodshipH/NuclearPodShip"), NodePath("../Marker_all_Constructs/Empty_RecHab1/Rec_Hab_1"), NodePath("../Marker_all_Constructs/Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/3rd_Gal_Bottom/Overlay_3rd_Gal_Bottom"), NodePath("../Marker_all_Constructs/Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/1st_Gal_Middle/Overlay_1stGal_Middle"), NodePath("../Marker_all_Constructs/Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/1st_Gal_Bottom/Overlay_1stGal_Bottom"), NodePath("../Marker_all_Constructs/Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/5th_Gal_Bottom/Overlay_5th_Gal_Bottom"), NodePath("../Marker_all_Constructs/Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/4th_Gal_Middle/Overlay_4th_Gal_Middle"), NodePath("../Marker_all_Constructs/Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/4th_Gal_Bottom/Overlay_4th_Gal_Bottom"), NodePath("../Marker_all_Constructs/Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/2nd_Gal_Top/Overlay_2nd_Gal_Top"), NodePath("../Marker_all_Constructs/Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/2nd_Gal_Bottom/Overlay_2nd_Gal_Bottom") ]
 
 [node name="CollisionShape3" type="CollisionShape" parent="RVT_Moon_Town_Master_Rim" index="1"]
-transform = Transform( 0.999984, 0, 0.00567225, 0, 1, 0, -0.00567225, 0, 0.999984, 1324.38, 76.4257, -641.635 )
+transform = Transform( 0.976953, 0, -0.213457, 0, 1, 0, 0.213457, 0, 0.976953, 1302.91, 76.4257, -632.215 )
 shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="CollisionShape2" type="CollisionShape" parent="RVT_Moon_Town_Master_Rim" index="2"]
-transform = Transform( 0.950965, 0, -0.309299, 0, 1, 0, 0.309299, 0, 0.950965, 373.372, 0, 1616.14 )
+transform = Transform( 0.950965, 0, -0.309299, 0, 1, 0, 0.309299, 0, 0.950965, 583.95, 0, 1708.31 )
 shape = SubResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape4" type="CollisionShape" parent="RVT_Moon_Town_Master_Rim" index="3"]
-transform = Transform( 0.971483, 0, -0.237109, 0, 1, 0, 0.237109, 0, 0.971483, 30.7028, 108.28, 84.201 )
-shape = SubResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="RVT_Moon_Town_Master_Crater" parent="." index="2" instance=ExtResource( 39 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2175.24, 0, -115.704 )
@@ -710,6 +697,13 @@ __meta__ = {
 }
 
 [node name="First_Factory" parent="Marker_all_Constructs/Empty_FirstHangars" index="0" instance=ExtResource( 8 )]
+
+[node name="DynamicVisibilityTrigger" parent="Marker_all_Constructs/Empty_FirstHangars" index="1" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 155.931, 0, -130.284 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstHangars/DynamicVisibilityTrigger" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3668, 9.62103, -28.8648 )
+shape = SubResource( 28 )
 
 [node name="Fourth_Gallery" parent="Marker_all_Constructs/Empty_FourthGallery" index="0" instance=ExtResource( 7 )]
 
