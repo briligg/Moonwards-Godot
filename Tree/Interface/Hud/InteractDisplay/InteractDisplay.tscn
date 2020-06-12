@@ -5,7 +5,8 @@
 [ext_resource path="res://Assets/Interface/StyleBoxes/InteractDisplayBackground.tres" type="StyleBox" id=3]
 
 [node name="InteractDisplay" type="Label"]
-anchor_left = 0.8
+visible = false
+anchor_left = 0.6
 anchor_top = 0.9
 anchor_right = 0.87
 anchor_bottom = 0.9
