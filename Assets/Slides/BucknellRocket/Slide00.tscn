@@ -6,11 +6,18 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_scale = Vector2( 1.875, 1.54286 )
 color = Color( 0.25708, 0.33283, 0.40625, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ViewportContainer" type="ViewportContainer" parent="ColorRect"]
 margin_left = 56.0
@@ -78,6 +85,9 @@ focus_mode = 0
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
 text = "Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PrevButton" type="Button" parent="ColorRect/Buttons"]
 visible = false

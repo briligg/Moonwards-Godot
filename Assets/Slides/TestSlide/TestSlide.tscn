@@ -1,0 +1,149 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SceneComponent/Display/Slide.gd" type="Script" id=1]
+[ext_resource path="res://SceneComponent/Display/Presentation.gd" type="Script" id=2]
+
+[node name="Presentation" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.00012207
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slide1" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Slide1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.482353, 0.270588, 0.352941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text0" type="RichTextLabel" parent="Slide1/ColorRect"]
+margin_left = 753.34
+margin_top = 343.024
+margin_right = 916.34
+margin_bottom = 416.024
+rect_scale = Vector2( 4, 4 )
+text = "Test slide number #1!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextButton" type="Button" parent="Slide1/ColorRect"]
+margin_left = 1600.0
+margin_top = 900.0
+margin_right = 1642.0
+margin_bottom = 920.0
+rect_scale = Vector2( 4, 4 )
+focus_mode = 0
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slide2" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="Slide2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.611765, 0.447059, 0.188235, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text1" type="RichTextLabel" parent="Slide2/ColorRect2"]
+margin_left = 703.248
+margin_top = 488.244
+margin_right = 840.248
+margin_bottom = 537.244
+rect_scale = Vector2( 4, 4 )
+text = "Hello my space friends! Middle slide!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextButton" type="Button" parent="Slide2/ColorRect2"]
+margin_left = 1600.0
+margin_top = 900.0
+margin_right = 1642.0
+margin_bottom = 920.0
+rect_scale = Vector2( 4, 4 )
+focus_mode = 0
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PrevButton" type="Button" parent="Slide2/ColorRect2"]
+margin_left = 100.0
+margin_top = 900.0
+margin_right = 167.0
+margin_bottom = 920.0
+rect_scale = Vector2( 4, 4 )
+focus_mode = 0
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "Previous"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slide3" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="Slide3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.25708, 0.33283, 0.40625, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text2" type="RichTextLabel" parent="Slide3/ColorRect3"]
+margin_left = 709.796
+margin_top = 551.279
+margin_right = 886.796
+margin_bottom = 615.279
+rect_scale = Vector2( 4, 4 )
+text = "And the last one"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PrevButton" type="Button" parent="Slide3/ColorRect3"]
+margin_left = 100.0
+margin_top = 900.0
+margin_right = 167.0
+margin_bottom = 920.0
+rect_scale = Vector2( 4, 4 )
+focus_mode = 0
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "Previous"
+[connection signal="button_up" from="Slide1/ColorRect/NextButton" to="." method="_on_next_clicked"]
+[connection signal="button_up" from="Slide2/ColorRect2/NextButton" to="." method="_on_next_clicked"]
+[connection signal="button_up" from="Slide2/ColorRect2/PrevButton" to="." method="_on_prev_clicked"]
+[connection signal="button_up" from="Slide3/ColorRect3/PrevButton" to="." method="_on_prev_clicked"]
