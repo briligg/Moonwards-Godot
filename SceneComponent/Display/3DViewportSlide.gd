@@ -38,7 +38,7 @@ func _ready():
 	
 func _on_size_changed():
 	var Newsize = get_viewport().get_visible_rect().size
-	$ColorRect.rect_scale = Newsize/Vector2(1024,700)
+	$ColorRect.rect_scale = Newsize/Vector2(1920, 1080)
 
 func create_content_path():
 	var ss = Content.resource_path.split("/")

@@ -43,11 +43,11 @@ script = SubResource( 4 )
 [sub_resource type="BoxShape" id=6]
 
 [node name="Screen" type="Spatial"]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
 script = ExtResource( 1 )
+Size = Vector2( 1920, 1080 )
 
 [node name="Viewport" type="Viewport" parent="."]
-size = Vector2( 1024, 700 )
+size = Vector2( 1920, 1080 )
 transparent_bg = true
 hdr = false
 usage = 0
