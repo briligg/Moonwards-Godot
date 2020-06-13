@@ -205,7 +205,7 @@ convert_text_resources_to_binary_on_export=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "scene_pos_backup" )
+enabled=PoolStringArray( "QuickPluginManager", "editor_icon_previewer", "moonwards_lock_nodes" )
 
 [importer_defaults]
 
