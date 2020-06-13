@@ -6,7 +6,7 @@ var prev_pos = null
 var last_click_pos = null
 var viewport = null
 export(PackedScene) var Content = null
-export(Vector2) var Size = Vector2(1024,700)
+export(Vector2) var Size = Vector2(1920, 1080)
 export(bool) var Hologram = false
 
 # Mouse events for Area
