@@ -1,3 +1,4 @@
+tool
 extends Control
 class_name Presentation, "res://Assets/Icons/Presentation.svg"
 
@@ -22,7 +23,8 @@ func get_class(): return "Presentation"
 
 func _on_size_changed() -> void:
 	var new_size = get_viewport().get_visible_rect().size
-	self.rect_scale = new_size/Vector2(1920, 1080)
+	self.rect_scale = new_size/Vector2(ProjectSettings.get_setting("display/window/size/width"),
+			ProjectSettings.get_setting("display/window/size/height"))
 
 
 func _hide_all_slides() -> void:
