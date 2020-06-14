@@ -4,3 +4,6 @@
 
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
