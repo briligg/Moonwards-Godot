@@ -5,12 +5,12 @@
 [node name="Solar_Thermal_Mirror_Set_Side_Circuit" instance=ExtResource( 1 )]
 
 [node name="StaticBody" type="StaticBody" parent="MirrorTowerFrame" index="0"]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="MirrorFrame_LOD0" parent="LOD0/MirrorTowerFrame_LOD0" index="0"]
-transform = Transform( 0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 0, 0, 0 )
+[node name="LOD0" parent="." index="3"]
+visible = false
 
-[node name="MirrorFrame_LOD1" parent="LOD1/MirrorTowerFrame_LOD1" index="0"]
-transform = Transform( 0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 0, 0, 0 )
-
-[node name="MirrorFrame_LOD2" parent="LOD2/MirrorTowerFrame_LOD2" index="0"]
-transform = Transform( 0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 0, 0, 0 )
+[node name="LOD2" parent="." index="5"]
+visible = false

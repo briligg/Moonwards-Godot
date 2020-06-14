@@ -22,16 +22,10 @@ __meta__ = {
 
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="."]
 navmesh = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Moon_Town_Master" parent="NavigationMeshInstance" instance=ExtResource( 1 )]
 
 [node name="SpawnPoints" type="Spatial" parent="."]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="1" type="Position3D" parent="SpawnPoints"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 208.908, 87.0419, 106.862 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 212.943, 100.116, 259.474 )
