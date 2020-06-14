@@ -4,13 +4,14 @@ extends Spatial
 # Member variables
 var prev_pos = null
 var last_click_pos = null
-var viewport = null
+var viewport: Node = null
 export(PackedScene) var Content = null
-export(Vector2) var Size = Vector2(1920, 1080)
+export(Vector2) var Size = Vector2(ProjectSettings.get_setting("display/window/size/width"),
+		ProjectSettings.get_setting("display/window/size/height"))
 export(bool) var Hologram = false
 
 # Mouse events for Area
-func _on_area_input_event(camera, event, click_pos, click_normal, shape_idx):
+func _on_area_input_event(_camera, event, click_pos, _click_normal, _shape_idx):
 	# Use click pos (click in 3d space, convert to area space)
 	var pos = get_node("Area").get_global_transform().affine_inverse()
 	# the click pos is not zero, then use it to convert from 3D space to area space
@@ -52,6 +53,7 @@ func _on_area_input_event(camera, event, click_pos, click_normal, shape_idx):
 	# Send the event to the viewport
 	viewport.input(event)
 
+
 func _ready():
 	set_process_input(false)
 	viewport = get_node("Viewport")
@@ -59,11 +61,12 @@ func _ready():
 	if Content != null:
 		viewport.add_child(Content.instance())
 	else:
-		print("ERROR: Assign a Content to this screen!")
+		Log.trace(self, "_ready", "Screen View without a content")
 	
 	get_node("Area").connect("input_event", self, "_on_area_input_event")
 	get_node("InteractionTrigger").connect("body_entered", self, "_start_interaction")
 	get_node("InteractionTrigger").connect("body_exited", self, "_stop_interaction")
+	
 	
 	if Hologram:
 		var mat = $Area/Quad.get_surface_material(0)
@@ -71,11 +74,13 @@ func _ready():
 		mat.flags_transparent = true
 		$Area/Quad.set_surface_material(0, mat)
 
+
 func _start_interaction(body):
 	set_process_input(true)
 	var player = body.get_parent()
 	if(player.has_method("ShowMouseCursor")):
 		player.call("ShowMouseCursor")
+
 
 func _stop_interaction(body):
 	set_process_input(false)
