@@ -1,3 +1,4 @@
+tool
 extends Control
 class_name Slide, "res://Assets/Icons/Slide.svg"
 
