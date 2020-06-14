@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/scene_pos_backup/main_panel.gd" type="Script" id=1]
+
+[node name="main_panel" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SaveBtn" type="Button" parent="."]
+margin_left = 32.7129
+margin_top = 88.5978
+margin_right = 136.713
+margin_bottom = 108.598
+text = "Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadBtn" type="Button" parent="."]
+margin_left = 158.747
+margin_top = 88.5978
+margin_right = 262.747
+margin_bottom = 108.598
+text = "Load"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LockAllBtn" type="Button" parent="."]
+margin_left = 9.0
+margin_top = 50.0
+margin_right = 129.0
+margin_bottom = 70.0
+text = "Lock All Nodes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SceneNameLbl" type="RichTextLabel" parent="."]
+margin_right = 395.0
+margin_bottom = 40.0
+text = "Get Open Scenes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="SaveBtn" to="." method="_on_SaveBtn_pressed"]
+[connection signal="pressed" from="LoadBtn" to="." method="_on_LoadBtn_pressed"]
+[connection signal="pressed" from="LockAllBtn" to="." method="_on_LoadBtn_pressed"]
+[connection signal="pressed" from="LockAllBtn" to="." method="_on_LockAllBtn_pressed"]
