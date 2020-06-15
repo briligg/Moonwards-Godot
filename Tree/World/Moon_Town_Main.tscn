@@ -28,4 +28,4 @@ navmesh = SubResource( 1 )
 [node name="SpawnPoints" type="Spatial" parent="."]
 
 [node name="1" type="Position3D" parent="SpawnPoints"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 212.943, 100.116, 259.474 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 749.047, 412.248, -2460.08 )
