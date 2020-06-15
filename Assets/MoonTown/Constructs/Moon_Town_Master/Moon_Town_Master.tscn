@@ -254,7 +254,7 @@ extents = Vector3( 1233.37, 469.828, 1115.31 )
 extents = Vector3( 1670.88, 988.891, 2042.72 )
 
 [sub_resource type="BoxShape" id=65]
-extents = Vector3( 322.877, 1, 492.525 )
+extents = Vector3( 322.877, 170.718, 492.525 )
 
 [sub_resource type="BoxShape" id=66]
 extents = Vector3( 2.15067, 2.19388, 2.6153 )
@@ -1293,11 +1293,11 @@ __meta__ = {
 }
 
 [node name="Empty_NuclearPlant" parent="Marker_all_Constructs" index="13"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1256.79, -104.417, 1022.06 )
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 1256.79, -104.417, 1022.06 )
 
 [node name="RVT_NuclearPlant" parent="Marker_all_Constructs/Empty_NuclearPlant" index="0" instance=ExtResource( 39 )]
 monitorable = false
-show_lod0_list = [ NodePath("../Nuclear_Plant"), NodePath("../Markers/Marker_NuclearCore/NuclearCore"), NodePath("../Markers/Marker_NuclearCore_Large/NuclearCore"), NodePath("../Nuclear_Plant/Markers/Marker_StirlingEngines_Small/Stirling_Free_Piston_Array"), NodePath("../Markers/Marker_StirlingEnginesLarge/Stirling_Free_Piston_Array"), NodePath("../Markers/Marker_TowerRadiator001/TowerRadiator_Small"), NodePath("../Markers/Marker_TowerRadiator002/TowerRadiator_Small") ]
+show_lod0_list = [ NodePath("../Nuclear_Plant"), NodePath("../Nuclear_Plant/Markers/Marker_NuclearCore/NuclearCore"), NodePath("../Nuclear_Plant/Markers/Marker_NuclearCore_Large/NuclearCore"), NodePath("../Nuclear_Plant/Markers/Marker_StirlingEngines_Small/Stirling_Free_Piston_Array"), NodePath("../Nuclear_Plant/Markers/Marker_StirlingEnginesLarge/Stirling_Free_Piston_Array"), NodePath("../Nuclear_Plant/Markers/Marker_TowerRadiator001/TowerRadiator_Small"), NodePath("../Nuclear_Plant/Markers/Marker_TowerRadiator002/TowerRadiator_Small") ]
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_NuclearPlant/RVT_NuclearPlant" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.9812, 0 )
