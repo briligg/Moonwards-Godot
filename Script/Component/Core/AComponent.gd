@@ -14,6 +14,10 @@ func _init(_comp_name: String, _req_net_owner: bool) -> void:
 func _ready() -> void:
 	entity.add_component(comp_name, self)
 	add_to_group(Groups.COMPONENTS)
+	# If there's no network peer (local testing)
+	if !get_tree().network_peer:
+		return
+	
 	# If we're not owned by this client, we're disabled.
 	if get_tree().get_network_unique_id() != entity.owner_peer_id and require_net_owner:
 		enabled = false
@@ -22,6 +26,8 @@ func _ready() -> void:
 		set_process_input(false)
 
 func _process_network(delta) -> void:
+	if !get_tree().network_peer:
+		return
 	if get_tree().is_network_server() and entity.owner_peer_id == get_tree().get_network_unique_id():
 		_process_server(delta)
 		_process_client(delta)
