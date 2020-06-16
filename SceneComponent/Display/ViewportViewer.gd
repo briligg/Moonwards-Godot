@@ -1,3 +1,9 @@
+"""
+
+	Use this class for showing-up independent screens within the game.
+
+"""
+
 tool
 extends Spatial
 
@@ -5,10 +11,10 @@ extends Spatial
 var prev_pos = null
 var last_click_pos = null
 var viewport: Node = null
-export(PackedScene) var Content = null
-export(Vector2) var Size = Vector2(ProjectSettings.get_setting("display/window/size/width"),
+export(PackedScene) var content = null
+export(Vector2) var viewport_size = Vector2(ProjectSettings.get_setting("display/window/size/width"),
 		ProjectSettings.get_setting("display/window/size/height"))
-export(bool) var Hologram = false
+export(bool) var hologram = false
 
 # Mouse events for Area
 func _on_area_input_event(_camera, event, click_pos, _click_normal, _shape_idx):
@@ -57,9 +63,9 @@ func _on_area_input_event(_camera, event, click_pos, _click_normal, _shape_idx):
 func _ready():
 	set_process_input(false)
 	viewport = get_node("Viewport")
-	viewport.size = Size
-	if Content != null:
-		viewport.add_child(Content.instance())
+	viewport.size = viewport_size
+	if content != null:
+		viewport.add_child(content.instance())
 	else:
 		Log.trace(self, "_ready", "Screen View without a content")
 	
@@ -67,8 +73,7 @@ func _ready():
 	get_node("InteractionTrigger").connect("body_entered", self, "_start_interaction")
 	get_node("InteractionTrigger").connect("body_exited", self, "_stop_interaction")
 	
-	
-	if Hologram:
+	if hologram:
 		var mat = $Area/Quad.get_surface_material(0)
 		mat.albedo_color.a = 0.7
 		mat.flags_transparent = true

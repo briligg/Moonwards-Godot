@@ -1,3 +1,10 @@
+"""
+
+	Main Node used as a container to hold the slides.
+	Best to set it's size to Windows' width and height (see project's properties)
+	currently: 1920x1080
+
+"""
 tool
 extends Control
 class_name Presentation, "res://Assets/Icons/Presentation.svg"
@@ -8,7 +15,6 @@ onready var slide_count: int = get_child_count()
 
 func _ready():
 	_hide_all_slides()
-	get_viewport().connect("size_changed", self, "_on_size_changed")
 	
 	var first_slide: Node = get_child(0)
 	if first_slide.is_class("Slide"):
@@ -21,12 +27,6 @@ func _ready():
 func get_class(): return "Presentation"
 
 
-func _on_size_changed() -> void:
-	var new_size = get_viewport().get_visible_rect().size
-	self.rect_scale = new_size/Vector2(ProjectSettings.get_setting("display/window/size/width"),
-			ProjectSettings.get_setting("display/window/size/height"))
-
-
 func _hide_all_slides() -> void:
 	for i in get_children():
 		if i.has_method("hide"):
@@ -34,7 +34,10 @@ func _hide_all_slides() -> void:
 
 
 func _on_next_clicked() -> void:
-	get_child(idx).hide()
+	var current_slide = get_child(idx)
+	if current_slide.has_method("hide"):
+		current_slide.hide()
+	
 	if idx < slide_count:
 		idx += 1
 		var next_slide: Node = get_child(idx)
@@ -46,7 +49,10 @@ func _on_next_clicked() -> void:
 
 
 func _on_prev_clicked() -> void:
-	get_child(idx).hide()
+	var current_slide = get_child(idx)
+	if current_slide.has_method("hide"):
+		current_slide.hide()
+	
 	if idx > 0:
 		idx -= 1
 		var prev_slide: Node = get_child(idx)
@@ -55,3 +61,12 @@ func _on_prev_clicked() -> void:
 		else:
 			Log.warning(self, "_on_next_clicked",
 					"Item selected for a load isn't of Slide class type'")
+
+
+# legacy code, if problems with slides resize reconnect with
+# get_viewport().connect("size_changed", self, "_on_size_changed")
+# on the _ready() function
+#
+#func _on_size_changed() -> void:
+#	var new_size = get_viewport().get_visible_rect().size
+#	self.rect_scale = new_size/rect_size

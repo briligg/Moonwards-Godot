@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://SceneComponent/Display/ScreenViewer.gd" type="Script" id=1]
+[ext_resource path="res://SceneComponent/Display/ViewportViewer.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Slides/lightmask.png" type="Texture" id=2]
 
 [sub_resource type="PlaneMesh" id=1]
@@ -44,7 +44,7 @@ script = SubResource( 4 )
 
 [node name="Screen" type="Spatial"]
 script = ExtResource( 1 )
-Size = Vector2( 1920, 1080 )
+viewport_size = Vector2( 1920, 1080 )
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 1920, 1080 )
