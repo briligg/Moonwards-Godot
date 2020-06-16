@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Assets/MoonTown/Models/Bucknell_Rocket/SCTR_Bucknell_Opt.tscn" type="PackedScene" id=1]
 
-
 [node name="Slide" type="Spatial"]
 
 [node name="Body" parent="." instance=ExtResource( 1 )]

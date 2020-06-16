@@ -398,6 +398,11 @@ _global_script_classes=[ {
 "class": "Slide",
 "language": "GDScript",
 "path": "res://SceneComponent/Display/Slide.gd"
+}, {
+"base": "Viewport",
+"class": "SlideViewport",
+"language": "GDScript",
+"path": "res://SceneComponent/Display/SlideViewport.gd"
 } ]
 _global_script_class_icons={
 "AComponent": "",
@@ -476,7 +481,9 @@ _global_script_class_icons={
 "VisualShaderNodeUVEdit": "",
 "VisualShaderNodeUVPanner": "",
 "VisualShaderNodeVectorHeightMix": "",
-"Workstation": ""
+"Workstation": "",
+"Slide": "res://Assets/Icons/Slide.svg",
+"SlideViewport": "res://Assets/Icons/SlideViewport.svg"
 }
 
 [application]

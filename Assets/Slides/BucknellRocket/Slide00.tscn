@@ -13,7 +13,6 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_scale = Vector2( 1.875, 1.54286 )
 color = Color( 0.25708, 0.33283, 0.40625, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -25,6 +24,9 @@ margin_top = 13.0
 margin_right = 903.0
 margin_bottom = 433.0
 stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Viewport" type="Viewport" parent="ColorRect/ViewportContainer"]
 size = Vector2( 847, 420 )
