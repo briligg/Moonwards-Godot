@@ -1,0 +1,227 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Constructs/Spaceport/Spaceport.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tree/Actor/Vehicle/AthleteRover/AthleteRover.tscn" type="PackedScene" id=2]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Spaceport" parent="." instance=ExtResource( 1 )]
+
+[node name="AthleteRover" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -174.925 )
+
+[node name="Physical Bone root" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="14"]
+transform = Transform( 1, 5.78526e-07, 3.72529e-09, -3.88653e-07, 1, 1.86265e-09, -1.22935e-07, -6.51926e-09, 1, 0.035861, 2.2802, -6.25679 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7909e-06, -1.00248e-05, 6.0498 )
+body_offset = Transform( 1, 5.71075e-07, 3.72529e-09, -3.84913e-07, 1, 1.86265e-09, -1.21072e-07, -6.51926e-09, 1, 4.76837e-06, 1.00136e-05, -6.0498 )
+
+[node name="Physical Bone front_right_top_rotate" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="15"]
+transform = Transform( 0.00272635, -0.999973, -0.00687425, -0.00687445, -0.00689299, 0.999954, -0.999973, -0.00267835, -0.00689309, -1.94308, 2.34332, 2.24355 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.166864, 1.72005, 0.444334 )
+body_offset = Transform( 0.861821, 0.507174, -0.00627351, -0.495275, 0.844144, 0.20525, 0.109392, -0.173781, 0.978692, -0.725769, -1.62581, -0.117701 )
+
+[node name="Physical Bone front_right_top_bend" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="16"]
+transform = Transform( 0.000801194, -1, -0.00016487, -0.000165036, -0.000164488, 1, -1, -0.00080101, -0.00016527, -2.651, -0.235123, 2.23994 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512675, 1.61297, 3.1512 )
+body_offset = Transform( 0.99277, 0.116378, -0.0293747, -0.111479, 0.803316, -0.585034, -0.0444877, 0.584077, 0.810486, 0.413818, 0.490679, -3.51891 )
+
+[node name="Physical Bone front_right_middle_bend" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="17"]
+transform = Transform( 0.000468433, -0.946383, -0.323046, -0.000826095, -0.323049, 0.946384, -1, -0.00017626, -0.000933134, -8.406, 2.40182, 2.23517 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16303, 1.47046, -2.57567 )
+body_offset = Transform( 0.992897, 0.118642, 0.00902527, -0.0908873, 0.805205, -0.586, -0.0767909, 0.581014, 0.810267, 1.00356, -2.79906, 1.14331 )
+
+[node name="Physical Bone front_right_middle_rotate" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="18"]
+transform = Transform( -0.013352, -0.945919, -0.324127, 0.0390378, -0.324401, 0.945115, -0.999149, -3.39597e-05, 0.041258, -8.4338, 0.603436, 2.15227 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49286, 1.41393, -0.66519 )
+body_offset = Transform( 0.873167, 0.457679, -0.167667, -0.468596, 0.693534, -0.547204, -0.13416, 0.556367, 0.820038, 0.544861, -2.04415, -0.441465 )
+
+[node name="Physical Bone front_right_bottom_bend" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="19"]
+transform = Transform( -0.0245866, -0.949959, -0.311419, 0.0796663, -0.312386, 0.946615, -0.996519, -0.00153493, 0.0833592, -12.7603, 0.878072, 2.20641 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.55991, 0.100517, -4.40655 )
+body_offset = Transform( 0.745274, 0.57904, -0.330583, -0.584401, 0.328576, -0.741973, -0.321007, 0.746165, 0.583269, 1.13817, -5.38299, 1.35245 )
+
+[node name="Physical Bone front_right_bottom_rotate" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="20"]
+transform = Transform( -0.312568, -0.935581, -0.164311, 0.831013, -0.353119, 0.429806, -0.460137, -0.00220191, 0.887846, -13.2879, 0.423291, 1.07065 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.55141, -0.117341, 1.85916 )
+body_offset = Transform( 0.0852905, 0.993108, 0.0804604, -0.992985, 0.0780835, 0.0888304, 0.0819367, -0.0874733, 0.992794, 0.525716, -6.66144, -1.31923 )
+
+[node name="Physical Bone middle_right_top_rotate_1" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="21"]
+transform = Transform( 1, 1.17463e-07, 1.49012e-08, -7.11443e-08, 1, 3.63216e-08, -6.70552e-08, 2.04891e-08, 1, -2.82845, 1.42216, -0.836945 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0893699, 1.3221, 0.599478 )
+body_offset = Transform( 0.971007, 0.239064, 0.000363119, -0.239059, 0.970996, -0.0050319, -0.00155558, 0.00479925, 0.999991, -0.229506, -1.3021, -0.605957 )
+
+[node name="Physical Bone middle_right_top_rotate" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="22"]
+transform = Transform( -0.00687457, -0.999974, -0.00272615, 0.999958, -0.0068929, 0.00687484, -0.0068934, -0.00267871, 0.999974, -2.82751, 2.69387, -0.552902 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.397605, 1.31444, 0.297725 )
+body_offset = Transform( 0.942646, -0.333782, 0.00422874, 0.333749, 0.942146, -0.0312479, 0.00644601, 0.030867, 0.999504, 0.0626783, -1.3618, -0.340714 )
+
+[node name="Physical Bone middle_right_top_bend" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="23"]
+transform = Transform( 0.000801174, -1, -0.000164916, -0.000165001, -0.000164612, 1, -1, -0.000801122, -0.000165114, -3.53397, -0.235116, -0.20166 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0794335, 1.27463, 3.55966 )
+body_offset = Transform( 0.999988, 0.0042572, -0.00245756, -0.00490903, 0.838986, -0.544134, -0.000254693, 0.544141, 0.838996, -0.0761108, 0.867923, -3.6801 )
+
+[node name="Physical Bone middle_right_middle_bend" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="24"]
+transform = Transform( 0.000468273, -0.999367, -0.0357247, -0.00082597, -0.0357254, 0.999362, -1, -0.000438407, -0.00084216, -9.37666, 2.38565, -0.206284 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0526499, 0.42227, -2.23399 )
+body_offset = Transform( 0.999992, 0.00374325, -0.0023699, -0.0044302, 0.839604, -0.543189, -4.35961e-05, 0.543199, 0.839608, -0.0595245, -1.56779, 1.6463 )
+
+[node name="Physical Bone middle_right_middle_rotate" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="25"]
+transform = Transform( 0.000380801, -0.999311, -0.0371544, -0.00226053, -0.0371553, 0.999308, -0.999996, -0.00029658, -0.00227308, -9.92291, 0.670387, -0.202026 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0723927, 0.424919, -0.508172 )
+body_offset = Transform( 0.999282, -0.0301975, 0.0227903, 0.0308087, 0.299928, -0.953464, 0.0219568, 0.953486, 0.300643, -0.0479279, -0.6142, -0.253965 )
+
+[node name="Physical Bone middle_right_bottom_bend" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="26"]
+transform = Transform( 0.00114417, -0.998037, 0.062642, -0.00364248, 0.0626375, 0.998031, -0.999991, -0.00136967, -0.00356359, -14.0149, 2.18481, -0.206436 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.205682, -3.02384, -5.72292 )
+body_offset = Transform( 0.998433, -0.0312312, 0.0463837, 0.0304582, -0.391901, -0.919503, 0.0468943, 0.919479, -0.390337, -0.0343475, -6.45355, 0.536842 )
+
+[node name="Physical Bone middle_right_bottom_rotate" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="27"]
+transform = Transform( 0.019466, -0.999818, 0.000954228, 0.998182, 0.0194887, 0.057218, -0.0572255, -0.000161357, 0.998363, -14.6655, 2.48725, -1.51643 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.81696, -3.67381, 0.721192 )
+body_offset = Transform( -0.459755, 0.879075, -0.125977, -0.879077, -0.470624, -0.0758637, -0.125978, 0.075865, 0.989131, 0.186274, -7.6669, -1.29343 )
+
+[node name="Physical Bone back_right_top_rotate_1" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="28"]
+transform = Transform( 1, 2.69938e-07, -3.72529e-09, -2.60508e-07, 1, 1.02445e-08, -3.35276e-08, 1.86265e-08, 1, -1.94548, 1.42584, -3.28967 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.262994, 0.867774, 0.713799 )
+body_offset = Transform( 0.9999, 0.0144493, -7.99801e-05, -0.0144495, 0.999859, -0.00872825, -4.61824e-05, 0.00872854, 0.999963, 0.250486, -0.865222, -0.721359 )
+
+[node name="Physical Bone back_right_top_rotate" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="29"]
+transform = Transform( -0.00687436, -0.999974, -0.00272617, 0.999957, -0.00689281, 0.00687499, -0.00689328, -0.00267917, 0.999975, -1.94453, 2.69388, -3.00793 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.148702, 1.24734, -0.159532 )
+body_offset = Transform( 0.99555, 0.0876313, -0.0347629, -0.0937853, 0.883031, -0.459859, -0.00960109, 0.46107, 0.887318, -0.262892, -1.16086, -0.432129 )
+
+[node name="Physical Bone back_right_top_bend" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="30"]
+transform = Transform( 0.000801189, -1, -0.000164258, -0.000165221, -0.000165114, 1, -1, -0.000801375, -0.000165017, -2.65102, -0.235113, -2.6561 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.772022, 1.19618, 3.00972 )
+body_offset = Transform( 0.983668, -0.169999, 0.0591435, 0.168946, 0.758685, -0.629174, 0.062087, 0.628889, 0.775015, -0.73407, 0.855682, -3.13277 )
+
+[node name="Physical Bone back_right_middle_bend" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="31"]
+transform = Transform( 0.000467306, -0.999366, -0.0357253, -0.000825939, -0.0357257, 0.999365, -1, -0.000437297, -0.000842365, -8.49365, 2.38562, -2.66107 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76315, -0.0889919, -3.29899 )
+body_offset = Transform( 0.983621, -0.172249, 0.0531517, 0.166934, 0.759123, -0.629185, 0.0680276, 0.627751, 0.775441, -1.57425, -2.30245, 2.4941 )
+
+[node name="Physical Bone back_right_middle_rotate" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="32"]
+transform = Transform( 0.000380468, -0.99931, -0.0371546, -0.00226055, -0.0371554, 0.999317, -0.999997, -0.000296114, -0.00227154, -9.03998, 0.670401, -2.65701 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05405, -0.156571, -1.64105 )
+body_offset = Transform( 0.74713, -0.508455, 0.428105, 0.509562, 0.0245967, -0.860092, 0.426783, 0.860738, 0.277468, -0.911713, -2.45427, -0.28653 )
+
+[node name="Physical Bone back_right_bottom_bend" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="33"]
+transform = Transform( 0.0011436, -0.999705, 0.0242831, -0.00364233, 0.024279, 0.999698, -0.999994, -0.00123184, -0.00361308, -13.1189, 2.18434, -2.66159 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.10562, -4.48094, -6.47599 )
+body_offset = Transform( 0.610196, -0.456192, 0.647728, 0.45905, -0.462762, -0.758369, 0.645706, 0.760094, -0.0729604, -0.354713, -8.86948, 0.282417 )
+
+[node name="Physical Bone back_right_bottom_rotate" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="34"]
+transform = Transform( 0.0148266, -0.999822, -0.0117311, -0.783376, -0.0189058, 0.621271, -0.621379, -2.18246e-05, -0.783509, -13.7671, 1.72281, -1.6375 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.651, -5.1459, 0.0388994 )
+body_offset = Transform( -0.473557, -0.853761, 0.216428, 0.853765, -0.505341, -0.125397, 0.216423, 0.125395, 0.968214, -0.30505, -9.98148, -1.26466 )
+
+[node name="Physical Bone back_left_top_rotate_1" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="35"]
+transform = Transform( 1, 3.52273e-07, -8.75443e-08, -1.70941e-07, 1, -7.45058e-09, -5.58794e-09, 3.07336e-08, 1, 2.01719, 1.37206, -3.31682 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55472, 0.858352, 1.03391 )
+body_offset = Transform( 0.998798, -0.0382473, -0.0307833, 0.0375448, 0.999031, -0.0230917, 0.0316365, 0.0219081, 0.999263, -0.489396, -0.854472, -1.0695 )
+
+[node name="Physical Bone back_left_top_rotate" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="36"]
+transform = Transform( -0.0068747, 0.999973, 0.00272627, -0.999959, -0.0068933, 0.00691224, 0.00693088, -0.0026783, 0.999971, 2.0162, 2.69385, -3.00787 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49301, 1.68264, 0.0264448 )
+body_offset = Transform( 0.997799, -0.0599354, -0.0286085, 0.0358581, 0.848775, -0.527543, 0.0559004, 0.525353, 0.849048, -0.390319, -1.43191, -0.93399 )
+
+[node name="Physical Bone back_left_top_bend" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="37"]
+transform = Transform( 0.000801345, 1, 0.000166073, 0.000164558, -0.000164533, 1, 0.999999, -0.000801029, -0.000165054, 2.72271, -0.235128, -2.65634 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.663248, 1.59103, 2.38505 )
+body_offset = Transform( 0.977123, 0.20547, -0.0548675, -0.197127, 0.778238, -0.596231, -0.0798072, 0.593407, 0.800942, 0.452026, 0.053093, -2.90735 )
+
+[node name="Physical Bone back_left_middle_bend" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="38"]
+transform = Transform( 0.000468224, 0.99936, 0.0357249, 0.00082529, -0.0357255, 0.999365, 0.999999, -0.00043864, -0.00084146, 8.56538, 2.38562, -2.6611 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.82041, 0.436174, -3.71108 )
+body_offset = Transform( 0.97711, 0.207483, -0.0469661, -0.19385, 0.777478, -0.598291, -0.0876196, 0.593698, 0.799907, 1.51395, -2.91231, 2.55006 )
+
+[node name="Physical Bone back_left_middle_rotate" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="39"]
+transform = Transform( 0.000380622, 0.999314, 0.0371554, 0.00225956, -0.0371555, 0.99931, 0.999998, -0.000296529, -0.00227277, 9.11169, 0.670411, -2.65742 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09832, 0.373977, -2.07495 )
+body_offset = Transform( 0.833478, 0.470993, -0.288937, -0.478736, 0.354428, -0.803241, -0.275912, 0.80781, 0.520888, 0.973236, -2.80378, 0.199764 )
+
+[node name="Physical Bone back_left_bottom_bend" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="40"]
+transform = Transform( 0.00114225, 0.999267, -0.0382394, 0.00400348, 0.0382343, 0.999263, 0.999988, -0.00129528, -0.00395611, 13.1953, 2.18443, -2.66188 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02357, -2.76085, -6.76413 )
+body_offset = Transform( 0.743797, 0.490792, -0.453745, -0.491149, -0.0591201, -0.869068, -0.453356, 0.869267, 0.19708, 1.27853, -8.01789, 1.90888 )
+
+[node name="Physical Bone back_left_bottom_rotate" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="41"]
+transform = Transform( 0.004131, 0.999988, 0.00271786, 0.825912, -0.00494505, 0.563775, 0.563783, -8.49236e-05, -0.825926, 13.8503, 1.80737, -1.58232 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.91349, -3.14253, 0.454668 )
+body_offset = Transform( -0.234994, 0.964982, -0.11657, -0.964996, -0.245984, -0.0909525, -0.116443, 0.0911166, 0.98901, 0.990867, -9.33315, -1.20125 )
+
+[node name="Physical Bone middle_left_top_rotate_1" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="42"]
+transform = Transform( 0.999999, 3.55547e-07, 1.86265e-09, 4.05562e-08, 1, -1.86265e-09, -1.49012e-08, 2.98023e-08, 1, 2.90018, 1.35221, -0.872391 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.144225, 1.04579, 0.650223 )
+body_offset = Transform( 0.996792, -0.0800164, 0.00110426, 0.0800176, 0.996793, -0.000813466, -0.00103563, 0.000899241, 1, -0.0608001, -1.05344, -0.651016 )
+
+[node name="Physical Bone middle_left_top_rotate" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="43"]
+transform = Transform( -0.00687467, 0.999973, 0.00272629, -0.999961, -0.00689381, 0.0069122, 0.00693083, -0.00267865, 0.999972, 2.8992, 2.69385, -0.553452 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.315806, 1.34246, 0.316326 )
+body_offset = Transform( 0.982078, 0.188516, -0.00136444, -0.188519, 0.981987, -0.0128131, -0.00107564, 0.0128406, 0.999917, 0.0575027, -1.37376, -0.333878 )
+
+[node name="Physical Bone middle_left_top_bend" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="44"]
+transform = Transform( 0.000801211, 1, 0.000165068, 0.000164608, -0.000164541, 1.00001, 1.00001, -0.000801135, -0.000164824, 3.60567, -0.235131, -0.201218 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0518947, 1.33263, 3.36613 )
+body_offset = Transform( 0.999856, -0.016291, 0.00588052, 0.0164245, 0.784077, -0.620453, 0.00549699, 0.620455, 0.78423, 0.0538025, 1.04449, -3.46637 )
+
+[node name="Physical Bone middle_left_middle_bend" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="45"]
+transform = Transform( 0.000467388, 0.999365, 0.035725, 0.000825177, -0.035728, 0.999366, 1.00001, -0.000437714, -0.000841363, 9.44831, 2.38562, -0.206482 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0425136, 0.181728, -2.88327 )
+body_offset = Transform( 0.999865, -0.0159165, 0.00533574, 0.0157999, 0.784879, -0.619455, 0.00567161, 0.61945, 0.785019, -0.024231, -1.92936, 2.15061 )
+
+[node name="Physical Bone middle_left_middle_rotate" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="46"]
+transform = Transform( 0.000380713, 0.999315, 0.0371547, 0.00225896, -0.0371555, 0.999311, 0.999997, -0.000296647, -0.00227158, 9.99462, 0.670382, -0.202286 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0276767, 0.186113, -1.19875 )
+body_offset = Transform( 0.999945, -0.00786986, 0.00697204, 0.00783284, 0.11526, -0.993307, 0.00701344, 0.993309, 0.115316, -0.0178528, -1.2124, -0.0468273 )
+
+[node name="Physical Bone middle_left_bottom_bend" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="47"]
+transform = Transform( 0.0011426, 0.997695, -0.0678658, 0.00400296, 0.0678619, 0.997693, 0.999988, -0.00141179, -0.00391629, 14.0883, 2.18496, -0.206345 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0435501, -4.08271, -6.44391 )
+body_offset = Transform( 0.999934, -0.00562944, 0.00972311, 0.00559814, -0.500697, -0.86561, 0.00974107, 0.865606, -0.500636, -0.00387573, -7.62236, 0.307534 )
+
+[node name="Physical Bone middle_left_bottom_rotate" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="48"]
+transform = Transform( 0.024707, 0.203276, -0.978811, -0.999296, -0.0226622, -0.0299304, -0.0282661, 0.978859, 0.202572, 16.0176, 2.60486, -0.474335 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.56805, -0.674904, 6.04038 )
+body_offset = Transform( 0.226207, -0.845899, -0.482998, 0.845926, -0.0752491, 0.527968, -0.482951, -0.528009, 0.698546, 0.634644, -9.64192, -0.920841 )
+
+[node name="Physical Bone front_left_top_rotate_1" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="49"]
+transform = Transform( 1, 3.81828e-07, -4.09782e-08, -2.53873e-07, 1, 1.44355e-07, -8.3819e-08, 1.11759e-08, 1, 2.01685, 1.37017, 1.57816 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.319283, 1.04885, 0.546071 )
+body_offset = Transform( 0.998657, -0.0518069, 0.00198465, 0.0517194, 0.998173, 0.0313539, -0.00360548, -0.031209, 0.999508, -0.265601, -1.08056, -0.511917 )
+
+[node name="Physical Bone front_left_top_rotate" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="50"]
+transform = Transform( -0.00687476, 0.999974, 0.00272586, -0.999961, -0.00689342, 0.00691222, 0.00693083, -0.00267853, 0.999972, 2.01587, 2.69396, 1.88797 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.285495, 1.35928, 0.842203 )
+body_offset = Transform( 0.99768, 0.066062, 0.0169323, -0.06784, 0.935954, 0.345528, 0.00697842, -0.345874, 0.938255, 0.180776, -1.5826, -0.318069 )
+
+[node name="Physical Bone front_left_top_bend" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="51"]
+transform = Transform( 0.000801025, 0.999998, 0.000164773, 0.000164743, -0.000165787, 1, 0.999999, -0.00080164, -0.000164796, 2.72237, -0.235027, 2.23972 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.728651, 1.31747, 3.25631 )
+body_offset = Transform( 0.997379, -0.0692525, 0.0209068, 0.0673418, 0.783309, -0.617976, 0.0264195, 0.617762, 0.785921, -0.703583, 0.931264, -3.39234 )
+
+[node name="Physical Bone front_left_middle_bend" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="52"]
+transform = Transform( 0.000468198, 0.998675, -0.0515104, 0.000826007, 0.0515106, 0.998673, 0.999999, -0.00051019, -0.000800728, 8.59162, 2.38594, 2.23523 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11905, -0.121579, -2.98265 )
+body_offset = Transform( 0.997314, -0.0686903, 0.0254059, 0.0697378, 0.784731, -0.615904, 0.0223698, 0.616024, 0.787413, -1.04861, -1.81966, 2.39844 )
+
+[node name="Physical Bone front_left_middle_rotate" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="53"]
+transform = Transform( 0.0155538, 0.998746, -0.0476069, -0.303173, 0.0500818, 0.95162, 0.952812, -0.000368126, 0.303571, 9.28044, 0.819073, 1.62738 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29832, -0.162289, -0.789796 )
+body_offset = Transform( 0.588062, -0.647139, 0.485177, 0.647585, 0.0173241, -0.761799, 0.484586, 0.762176, 0.429264, -1.07339, -2.08721, -0.651009 )
+
+[node name="Physical Bone front_left_bottom_bend" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="54"]
+transform = Transform( 0.016165, 0.996233, -0.0852147, -0.301451, 0.0861157, 0.949586, 0.953345, 0.0103384, 0.301707, 13.2081, 2.6033, 2.13133 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.87731, -4.31193, -5.34866 )
+body_offset = Transform( 0.375569, -0.572978, 0.728455, 0.572286, -0.474871, -0.668571, 0.728997, 0.66798, 0.14956, -0.406151, -8.41479, 0.124687 )
+
+[node name="Physical Bone front_left_bottom_rotate" parent="AthleteRover/Model/Rig_Athlete/Skeleton" index="55"]
+transform = Transform( 0.0417143, 0.998998, -0.0162105, -0.916647, 0.0447194, 0.397187, 0.397513, -0.00170915, 0.917594, 13.87, 2.45995, 1.03804 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.25318, -5.02741, 1.11544 )
+body_offset = Transform( -0.518049, -0.854609, 0.0356224, 0.854608, -0.518884, -0.0200528, 0.0356202, 0.0200545, 0.999164, -0.0606537, -9.63951, -1.30766 )
+
+[editable path="Spaceport"]
+
+[editable path="AthleteRover"]
+
+[editable path="AthleteRover/Model"]

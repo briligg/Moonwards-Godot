@@ -7,6 +7,8 @@ func _physics_process(delta):
 	_process_network(delta)
 
 func _process_network(delta) -> void:
+	if !get_tree().network_peer:
+		return
 	if is_network_master():
 		_process_server(delta)
 	else:

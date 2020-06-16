@@ -33,11 +33,15 @@ var velocity = Vector3()
 var is_grounded: bool
 
 func _process_server(_delta) -> void:
+	if !get_tree().network_peer:
+		return
 	rset_unreliable("srv_pos", srv_pos)
 	rset_unreliable("srv_vel", srv_vel)
 	rset_unreliable("look_dir", look_dir)
 
 func _process_client(_delta) -> void:
+	if !get_tree().network_peer:
+		return
 	# This needs to be validated on the server side.
 	# Figure out a way to do that as godot doesn't have it out of the box
 	# Setgetters are an option, try to find a cleaner way.
