@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://SceneComponent/Display/Slide.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Display/Presentation.gd" type="Script" id=2]
+[ext_resource path="res://SceneComponent/Display/SlideViewport.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Slides/BucknellRocket/Slide00_VP.tscn" type="PackedScene" id=4]
 
 [node name="Presentation" type="Control"]
 anchor_right = 1.0
@@ -54,6 +56,7 @@ __meta__ = {
 }
 
 [node name="Slide2" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -106,7 +109,6 @@ __meta__ = {
 }
 
 [node name="Slide3" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -122,13 +124,32 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ViewportContainer" type="ViewportContainer" parent="Slide3/ColorRect3"]
+margin_left = 100.0
+margin_top = 100.0
+margin_right = 1800.0
+margin_bottom = 700.0
+stretch = true
+stretch_shrink = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SlideViewport" type="Viewport" parent="Slide3/ColorRect3/ViewportContainer"]
+size = Vector2( 425, 150 )
+own_world = true
+handle_input_locally = false
+render_target_update_mode = 3
+script = ExtResource( 3 )
+Content = ExtResource( 4 )
+
 [node name="Text2" type="RichTextLabel" parent="Slide3/ColorRect3"]
-margin_left = 709.796
-margin_top = 551.279
-margin_right = 886.796
-margin_bottom = 615.279
+margin_left = 449.0
+margin_top = 778.0
+margin_right = 710.0
+margin_bottom = 842.0
 rect_scale = Vector2( 4, 4 )
-text = "And the last one"
+text = "And the last one with viewport"
 __meta__ = {
 "_edit_use_anchors_": false
 }
