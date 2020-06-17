@@ -8,4 +8,9 @@ script = ExtResource( 1 )
 [node name="OnGround" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10014, 0 )
 enabled = true
-cast_to = Vector3( 0, -0.3, 0 )
+cast_to = Vector3( 0, -0.2, 0 )
+
+[node name="NormalDetect" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10014, 0 )
+enabled = true
+cast_to = Vector3( 0, -0.4, 0 )
