@@ -15,9 +15,6 @@ var old_normal : Vector3 = Vector3.DOWN
 onready var on_ground : Node = $OnGround
 onready var normal_detect : Node = $NormalDetect
 
-func _init():
-	pass
-
 func _ready():
 	# Add the KinematicBody as collision exception so it doesn't detect the body as a walkable surface.
 	on_ground.add_exception(entity)
