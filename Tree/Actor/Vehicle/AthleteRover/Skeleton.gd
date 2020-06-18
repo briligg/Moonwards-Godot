@@ -1,4 +1,4 @@
-#tool
+tool
 extends Skeleton
 
 export(bool) var play_ik setget _start
