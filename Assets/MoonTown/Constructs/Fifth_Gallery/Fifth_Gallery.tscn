@@ -10,7 +10,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.7811, -38.2298, -17.737 )
 omni_range = 52.5414
 
 [node name="Marker_TubeHab_Long_2" parent="." index="2"]
-transform = Transform( 1.43282, 0, -0.443861, 0, 1.5, 0, 0.443861, 0, 1.43282, -240.239, -208.384, -200.154 )
+transform = Transform( 1.59235, 0, -0.493279, 0, 1.667, 0, 0.493279, 0, 1.59235, -240.239, -208.384, -200.154 )
 
 [node name="TubeHab_Long_Mirror" parent="Marker_TubeHab_Long_2" index="0" instance=ExtResource( 2 )]
 

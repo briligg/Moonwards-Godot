@@ -1,39 +1,38 @@
 extends AMovementController
 class_name KinematicMovement
-
 # Component for kinematic movement
-export(float) var on_ground_speed = 25
-export(float) var in_air_speed = 3
-export(float) var jump_force = 250
+
+export(float) var speed = 25
+export(float) var jump_force = 15
 
 # Input vectors
 var horizontal_vector: Vector3 = Vector3.ZERO
-var ground_normal: Vector3 = Vector3.UP
-var jump_timeout: float
-var old_normal : Vector3 = Vector3.DOWN
+var vertical_vector: Vector3 = Vector3.ZERO
+var ground_normal: Vector3 = Vector3.ZERO
 
-onready var on_ground : Node = $OnGround
-onready var normal_detect : Node = $NormalDetect
+func _init():
+	pass
 
 func _ready():
-	# Add the KinematicBody as collision exception so it doesn't detect the body as a walkable surface.
-	on_ground.add_exception(entity)
-	normal_detect.add_exception(entity)
+	$OnGround.add_exception(entity)
+	pass
 
 func is_grounded() -> bool:
-	return on_ground.is_colliding()
+	return $OnGround.is_colliding()
 
 func _physics_process(_delta):
-	handle_input(_delta)
+	reset_state()
+	handle_input()
+	apply_gravity()
+#	move_body(delta)
 	entity.is_grounded = is_grounded()
-	# Only get the ground normal if the Raycast is colliding with something or else we get weird values.
-	if on_ground.is_colliding():
-		ground_normal = on_ground.get_collision_normal()
+	ground_normal = $OnGround.get_collision_normal()
 
 func _process_client(delta):
 	# Rotate only on the client
 	# The server will adjust accordingly to the velocity vector.
 	rotate_body(delta)
+#	var o = entity.global_transform.origin
 	var t = entity.srv_pos
 	var v = entity.srv_vel
 	# This needs to be cleaned up
@@ -45,81 +44,54 @@ func _process_client(delta):
 func _process_server(delta):
 	rotate_body(delta)
 	
-	var movement_direction = horizontal_vector.normalized()
-	var velocity_direction = entity.velocity.normalized()
-	var normal = normal_detect.get_collision_normal()
+	var velocity = horizontal_vector
+	velocity += vertical_vector
 	
-	# Use the normal of the ground detect if the normal detect isn't colliding.
-	if not normal_detect.is_colliding():
-		normal = on_ground.get_collision_normal()
-	# Move the raycast towards the movement direction to detect the ground better. Makes the ramps walkable.
-	on_ground.cast_to = (normal * -2.0 + movement_direction).normalized() * 0.5
-	
-	# Only start ground normal assisted walking when the character is on the ground.
-	if entity.state.state != ActorEntityState.State.IN_AIR:
-		var slide_direction = movement_direction.slide(normal)
-		var adjusted_horizontal_vector = slide_direction * horizontal_vector.length()
+	#Only start ground normal assisted walking when the character is on the ground and not jumping.
+	if entity.is_grounded and not entity.input.y > 0:
+		var velocity_direction = horizontal_vector.normalized()
+		var slide_direction = velocity_direction.slide(ground_normal)
+		horizontal_vector = slide_direction * horizontal_vector.length()
+		#Move the raycast towards the movement direction to detect the ground better. Makes the ramps walkable.
+		$OnGround.cast_to = (Vector3(0.0, -1.0, 0.0) + velocity_direction).normalized() * 0.5
 		
-		# When the ground normal is steeper than a threshold start adding vertical movement to help the character walk up ramps.
+		velocity.x = horizontal_vector.x
+		#when the ground normal is steeper than a threshold start adding vertical movement to help the character walk up ramps.
 		if ground_normal.angle_to(Vector3(0.0, 1.0, 0.0)) > 0.1:
-			horizontal_vector.y = adjusted_horizontal_vector.y
-		horizontal_vector.z = adjusted_horizontal_vector.z
-		horizontal_vector.x = adjusted_horizontal_vector.x
-		
-		# When the ground normal changes suddenly, retarget the velocity so it's flat to the ground.
-		if jump_timeout <= 0.0 and (old_normal - normal).length() > 0.1:
-			old_normal = normal
-			# This makes the character snap to the ground normal and not shoot off a ramp.
-			entity.velocity = entity.velocity.slide(normal)
+			velocity.y = horizontal_vector.y
+		velocity.z = horizontal_vector.z
 	
-	# Don't let the character slide off slanted surfaces, but do slide when no ground is found, like edges.
+	#Don't let the character slide off slanted surfaces, but when do slide when no ground is found like edges.
 	var slide = horizontal_vector != Vector3.ZERO and entity.is_grounded
-	
-	# Add the movement velocity using delta to make sure physics are consistent regardless of framerate.
-	entity.velocity += horizontal_vector * delta
-	# Apply the gravity towards the down direction.
-	entity.velocity += (WorldConstants.GRAVITY) * Vector3.DOWN * delta
-	
-	# TODO the stop_on_slope is ignored in Godot 3.2, check if 4.0 fixes this or create workaround.
-	entity.velocity = entity.move_and_slide(entity.velocity, Vector3.UP, slide)
-	
-	# Add some velcity damping when on the floor, aka friction.
-	if entity.state.state != ActorEntityState.State.IN_AIR:
-		entity.velocity *= 0.95
-	else:
-		# A very small amount of air resistance.
-		entity.velocity *= 0.999
-	
-	# Update the values that are use for networking.
+	entity.velocity = entity.move_and_slide(velocity * WorldConstants.SCALE, Vector3.UP, slide)
 	entity.srv_pos = entity.global_transform.origin
 	entity.srv_vel = entity.velocity
 	update_state()
 
 func update_state():
-	if !entity.is_grounded:
-		entity.state.state = ActorEntityState.State.IN_AIR
-	elif Vector2(entity.velocity.x, entity.velocity.z).length() > 0.1:
+	if Vector2(entity.velocity.x, entity.velocity.z).length() > 0.1:
 		entity.state.state = ActorEntityState.State.MOVING
+	elif abs(entity.velocity.y) > 0.1 or !entity.is_grounded:
+		entity.state.state = ActorEntityState.State.IN_AIR
 	else:
 		entity.state.state = ActorEntityState.State.IDLE
 
-func handle_input(delta : float) -> void:
-	# Adding a timeout after the jump makes sure the jump velocity is consistent and not triggered multiple times.
-	if(jump_timeout > 0.0 and on_ground):
-		jump_timeout -= delta
-	elif entity.state.state != ActorEntityState.State.IN_AIR and entity.input.y > 0:
-		entity.velocity += Vector3.UP * jump_force * delta
-		jump_timeout = 2.0
+
+func reset_state() -> void:
+	horizontal_vector = Vector3.ZERO
+	entity.velocity = Vector3.ZERO
+
+func handle_input() -> void:
+	if is_grounded() and entity.input.y > 0:
+		vertical_vector = Vector3.UP * jump_force
 	
 	var forward = entity.model.global_transform.basis.z
 	var left = entity.model.global_transform.basis.x
 	
-	var speed = on_ground_speed
-	# Use a smaller movement speed when the character is in the air.
-	if entity.state.state == ActorEntityState.State.IN_AIR:
-		speed = in_air_speed
-	
 	horizontal_vector = (entity.input.z * forward + entity.input.x * left) * speed
+
+func apply_gravity() -> void:
+	vertical_vector.y += -1 * WorldConstants.GRAVITY * WorldConstants.SCALE
 
 func rotate_body(_delta: float) -> void:
 	# Rotate

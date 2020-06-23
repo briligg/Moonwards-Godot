@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SceneComponent/Actor/PlayerInteractor.gd" type="Script" id=1]
+[ext_resource path="res://SceneComponent/Utilities/Interactor/Interactor.tscn" type="PackedScene" id=2]
+
+[node name="Interactor" type="Spatial"]
+script = ExtResource( 1 )
+comp_name = "PlayerInteractor"
+require_net_owner = true
+
+[node name="Interactor" parent="." instance=ExtResource( 2 )]
+user = NodePath("..")

@@ -16,12 +16,8 @@ normal_bias = 0.0
 
 [node name="First_Atrium" instance=ExtResource( 1 )]
 
-[node name="LOD0" parent="." index="0"]
-visible = false
-
 [node name="GIProbe" type="GIProbe" parent="." index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.3405, 3.27717, 6.98868 )
-visible = false
 subdiv = 2
 extents = Vector3( 83.7084, 24.424, 38.0104 )
 energy = 0.44
@@ -71,6 +67,3 @@ transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -83.930
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -83.9307, 3.58573, -10.3247 )
 
 [node name="Hexpane_Window" parent="Markers/Marker_HexWindow5" index="0" instance=ExtResource( 3 )]
-
-[node name="LOD1" parent="." index="8"]
-visible = false

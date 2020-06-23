@@ -34,5 +34,5 @@ func update_walk_animation(_delta):
 	var forward_amount = forward.dot(flat_velocity)
 	var left_amount = left.dot(flat_velocity)
 	
-	walk_direction = walk_direction.linear_interpolate(Vector2(-left_amount, forward_amount), _delta * 15.0)
+	walk_direction = walk_direction.linear_interpolate(Vector2(-left_amount, forward_amount), _delta * 5.0)
 	entity.animation_tree.set("parameters/Walking/blend_position", walk_direction)

@@ -74,6 +74,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Network/GameServer.gd"
 }, {
+"base": "Node",
+"class": "HighlightItem",
+"language": "GDScript",
+"path": "res://SceneComponent/Display/HighlightItem.gd"
+}, {
+"base": "Spatial",
+"class": "HighlightPresentation",
+"language": "GDScript",
+"path": "res://SceneComponent/Display/HighlightPresentation.gd"
+}, {
 "base": "Reference",
 "class": "HudSignals",
 "language": "GDScript",
@@ -83,16 +93,6 @@ _global_script_classes=[ {
 "class": "InputController",
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/InputController.gd"
-}, {
-"base": "Area",
-"class": "Interactable",
-"language": "GDScript",
-"path": "res://Script/GameLogic/Interact/Interactable/Interactable.gd"
-}, {
-"base": "Area",
-"class": "Interactor",
-"language": "GDScript",
-"path": "res://Script/GameLogic/Interact/Interactor/Interactor.gd"
 }, {
 "base": "AMovementController",
 "class": "KinematicMovement",
@@ -134,6 +134,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Manager/SignalsManager/NetworkSignals.gd"
 }, {
+"base": "Control",
+"class": "Presentation",
+"language": "GDScript",
+"path": "res://SceneComponent/Display/Presentation.gd"
+}, {
 "base": "Reference",
 "class": "ResourceSignals",
 "language": "GDScript",
@@ -143,6 +148,16 @@ _global_script_classes=[ {
 "class": "ResourceThreadedLoader",
 "language": "GDScript",
 "path": "res://Script/Manager/ResourceManager/ResourceThreadedLoader.gd"
+}, {
+"base": "Control",
+"class": "Slide",
+"language": "GDScript",
+"path": "res://SceneComponent/Display/Slide.gd"
+}, {
+"base": "Viewport",
+"class": "SlideViewport",
+"language": "GDScript",
+"path": "res://SceneComponent/Display/SlideViewport.gd"
 } ]
 _global_script_class_icons={
 "AComponent": "",
@@ -158,10 +173,10 @@ _global_script_class_icons={
 "EnumHelper": "",
 "GameClient": "",
 "GameServer": "",
+"HighlightItem": "",
+"HighlightPresentation": "",
 "HudSignals": "",
 "InputController": "",
-"Interactable": "",
-"Interactor": "",
 "KinematicMovement": "",
 "LodModel": "",
 "LodSignals": "",
@@ -170,8 +185,11 @@ _global_script_class_icons={
 "MwSpatial": "",
 "NetworkManager": "",
 "NetworkSignals": "",
+"Presentation": "res://Assets/Icons/Presentation.svg",
 "ResourceSignals": "",
-"ResourceThreadedLoader": ""
+"ResourceThreadedLoader": "",
+"Slide": "res://Assets/Icons/Slide.svg",
+"SlideViewport": "res://Assets/Icons/SlideViewport.svg"
 }
 
 [application]

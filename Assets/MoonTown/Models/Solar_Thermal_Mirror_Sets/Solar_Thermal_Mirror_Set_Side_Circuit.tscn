@@ -5,12 +5,3 @@
 [node name="Solar_Thermal_Mirror_Set_Side_Circuit" instance=ExtResource( 1 )]
 
 [node name="StaticBody" type="StaticBody" parent="MirrorTowerFrame" index="0"]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="LOD0" parent="." index="3"]
-visible = false
-
-[node name="LOD2" parent="." index="5"]
-visible = false

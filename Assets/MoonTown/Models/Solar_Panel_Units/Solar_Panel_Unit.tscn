@@ -3,12 +3,3 @@
 [ext_resource path="res://Assets/MoonTown/Models/Solar_Panel_Units/Solar_Panel_Unit.glb" type="PackedScene" id=1]
 
 [node name="Solar_Panel_Unit" instance=ExtResource( 1 )]
-
-[node name="SolarPanel_LOD0" parent="LOD0/Truss_Tower_SolarPanels_LOD0" index="0"]
-transform = Transform( 0.5, -0.866025, 0, -1.41093e-07, -8.14603e-08, 1, -0.866025, -0.5, -1.62921e-07, 0.122996, -24.0779, -20.9823 )
-
-[node name="SolarPanel_LOD1" parent="LOD1/Truss_Tower_SolarPanels_LOD1" index="0"]
-transform = Transform( 0.5, -0.866025, 0, -1.41093e-07, -8.14603e-08, 1, -0.866025, -0.5, -1.62921e-07, 0.122996, -24.0779, -20.9823 )
-
-[node name="SolarPanel_LOD2" parent="LOD2/Truss_Tower_SolarPanels_LOD2" index="0"]
-transform = Transform( 0.5, -0.866025, 0, -1.41093e-07, -8.14603e-08, 1, -0.866025, -0.5, -1.62921e-07, 0.122996, -24.0779, -20.9823 )
