@@ -29,7 +29,7 @@ func _process(_delta):
 	handle_input()
 
 func _physics_process(_delta):
-	entity.engine_force = forward * 100000
+	entity.engine_force = forward * 1000000
 	wheels[0].steering = vertical * 45
 	wheels[1].steering = vertical * 45
 	wheels[4].steering = -vertical * 45

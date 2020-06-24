@@ -1,10 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Script/Entity/ActorEntity.gd" type="Script" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Athlete_Rover/Athlete_Rover_Prop.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tree/Actor/Vehicle/AthleteRover/Skeleton.gd" type="Script" id=3]
 [ext_resource path="res://SceneComponent/Actor/CameraController.tscn" type="PackedScene" id=4]
-[ext_resource path="res://SceneComponent/Actor/InputController.tscn" type="PackedScene" id=5]
 [ext_resource path="res://SceneComponent/Actor/Vehicle/RoverVehicleMovement.tscn" type="PackedScene" id=6]
 
 [sub_resource type="BoxShape" id=1]
@@ -39,7 +38,7 @@ wheel_radius = 1.5
 wheel_rest_length = 7.0
 wheel_friction_slip = 0.6
 suspension_travel = 4.0
-suspension_stiffness = 0.5
+suspension_stiffness = 1.0
 suspension_max_force = 4000.0
 damping_compression = 0.3
 damping_relaxation = 0.7
@@ -56,7 +55,7 @@ wheel_radius = 1.5
 wheel_rest_length = 7.0
 wheel_friction_slip = 0.6
 suspension_travel = 4.0
-suspension_stiffness = 0.5
+suspension_stiffness = 1.0
 suspension_max_force = 4000.0
 damping_compression = 0.3
 damping_relaxation = 0.7
@@ -74,7 +73,7 @@ wheel_radius = 1.5
 wheel_rest_length = 7.0
 wheel_friction_slip = 0.6
 suspension_travel = 4.0
-suspension_stiffness = 0.5
+suspension_stiffness = 1.0
 suspension_max_force = 4000.0
 damping_compression = 0.3
 damping_relaxation = 0.7
@@ -92,7 +91,7 @@ wheel_radius = 1.5
 wheel_rest_length = 7.0
 wheel_friction_slip = 0.6
 suspension_travel = 4.0
-suspension_stiffness = 0.5
+suspension_stiffness = 1.0
 suspension_max_force = 4000.0
 damping_compression = 0.3
 damping_relaxation = 0.7
@@ -109,7 +108,7 @@ wheel_radius = 1.5
 wheel_rest_length = 7.0
 wheel_friction_slip = 0.6
 suspension_travel = 4.0
-suspension_stiffness = 0.5
+suspension_stiffness = 1.0
 suspension_max_force = 4000.0
 damping_compression = 0.3
 damping_relaxation = 0.7
@@ -127,7 +126,7 @@ wheel_radius = 1.5
 wheel_rest_length = 7.0
 wheel_friction_slip = 0.6
 suspension_travel = 4.0
-suspension_stiffness = 0.5
+suspension_stiffness = 1.0
 suspension_max_force = 4000.0
 damping_compression = 0.3
 damping_relaxation = 0.7
@@ -170,6 +169,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 [node name="Skeleton" parent="Model/Rig_Athlete" index="0"]
 bones/47/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.981, -0.91, 2.448 )
 script = ExtResource( 3 )
+play_ik = false
+stop_ik = false
 
 [node name="LeftFrontWheel" type="SkeletonIK" parent="Model/Rig_Athlete/Skeleton" index="0"]
 process_priority = 1
@@ -226,7 +227,5 @@ cull_col_distance = 0.01
 
 [node name="RoverVehicleMovement" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.00298, 0 )
-
-[node name="InputController" parent="." instance=ExtResource( 5 )]
 
 [editable path="Model"]
