@@ -46,7 +46,7 @@ func _process_server(delta):
 	rotate_body(delta)
 	
 	var movement_direction = horizontal_vector.normalized()
-	var velocity_direction = entity.velocity.normalized()
+	var _velocity_direction = entity.velocity.normalized()
 	var normal = normal_detect.get_collision_normal()
 	
 	# Use the normal of the ground detect if the normal detect isn't colliding.
