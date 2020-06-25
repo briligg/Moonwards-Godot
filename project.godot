@@ -80,7 +80,7 @@ _global_script_classes=[ {
 "path": "res://Script/Manager/SignalsManager/HudSignals.gd"
 }, {
 "base": "AComponent",
-"class": "HumanoidInput",
+"class": "InputController",
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/Humanoid/HumanoidInput.gd"
 }, {
@@ -143,6 +143,16 @@ _global_script_classes=[ {
 "class": "ResourceThreadedLoader",
 "language": "GDScript",
 "path": "res://Script/Manager/ResourceManager/ResourceThreadedLoader.gd"
+}, {
+"base": "AComponent",
+"class": "RoverInput",
+"language": "GDScript",
+"path": "res://SceneComponent/Actor/Vehicle/RoverInput.gd"
+}, {
+"base": "AEntity",
+"class": "VehicleEntity",
+"language": "GDScript",
+"path": "res://Script/Entity/VehicleEntity.gd"
 } ]
 _global_script_class_icons={
 "AComponent": "",
@@ -159,7 +169,7 @@ _global_script_class_icons={
 "GameClient": "",
 "GameServer": "",
 "HudSignals": "",
-"HumanoidInput": "",
+"InputController": "",
 "Interactable": "",
 "Interactor": "",
 "KinematicMovement": "",
@@ -171,7 +181,9 @@ _global_script_class_icons={
 "NetworkManager": "",
 "NetworkSignals": "",
 "ResourceSignals": "",
-"ResourceThreadedLoader": ""
+"ResourceThreadedLoader": "",
+"RoverInput": "",
+"VehicleEntity": ""
 }
 
 [application]

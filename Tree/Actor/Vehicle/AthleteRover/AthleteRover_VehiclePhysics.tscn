@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Script/Entity/ActorEntity.gd" type="Script" id=1]
+[ext_resource path="res://Script/Entity/VehicleEntity.gd" type="Script" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Athlete_Rover/Athlete_Rover_Prop.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tree/Actor/Vehicle/AthleteRover/Skeleton.gd" type="Script" id=3]
 [ext_resource path="res://SceneComponent/Actor/CameraController.tscn" type="PackedScene" id=4]
+[ext_resource path="res://SceneComponent/Actor/Vehicle/RoverInput.tscn" type="PackedScene" id=5]
 [ext_resource path="res://SceneComponent/Actor/Vehicle/RoverVehicleMovement.tscn" type="PackedScene" id=6]
 
 [sub_resource type="BoxShape" id=1]
@@ -23,7 +24,9 @@ extents = Vector3( 1.08164, 0.536182, 1.08848 )
 
 [node name="AthleteRover" type="VehicleBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7, 0 )
-mass = 1079.3
+mass = 1500.0
+can_sleep = false
+angular_damp = 0.5
 script = ExtResource( 1 )
 
 [node name="rootcol" type="CollisionShape" parent="."]
@@ -36,12 +39,12 @@ use_as_traction = true
 use_as_steering = true
 wheel_radius = 1.5
 wheel_rest_length = 7.0
-wheel_friction_slip = 0.6
+wheel_friction_slip = 0.85
 suspension_travel = 4.0
 suspension_stiffness = 1.0
-suspension_max_force = 4000.0
-damping_compression = 0.3
-damping_relaxation = 0.7
+suspension_max_force = 3500.0
+damping_compression = 0.4
+damping_relaxation = 0.85
 
 [node name="MeshInstance" type="MeshInstance" parent="LeftFrontWheel"]
 transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
@@ -53,12 +56,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 7.00298, 0 )
 use_as_traction = true
 wheel_radius = 1.5
 wheel_rest_length = 7.0
-wheel_friction_slip = 0.6
+wheel_friction_slip = 0.85
 suspension_travel = 4.0
 suspension_stiffness = 1.0
 suspension_max_force = 4000.0
 damping_compression = 0.3
-damping_relaxation = 0.7
+damping_relaxation = 0.85
 
 [node name="MeshInstance" type="MeshInstance" parent="LeftMidWheel"]
 transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
@@ -71,12 +74,12 @@ use_as_traction = true
 use_as_steering = true
 wheel_radius = 1.5
 wheel_rest_length = 7.0
-wheel_friction_slip = 0.6
+wheel_friction_slip = 0.85
 suspension_travel = 4.0
 suspension_stiffness = 1.0
 suspension_max_force = 4000.0
 damping_compression = 0.3
-damping_relaxation = 0.7
+damping_relaxation = 0.85
 
 [node name="MeshInstance" type="MeshInstance" parent="LeftBackWheel"]
 transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
@@ -89,12 +92,12 @@ use_as_traction = true
 use_as_steering = true
 wheel_radius = 1.5
 wheel_rest_length = 7.0
-wheel_friction_slip = 0.6
+wheel_friction_slip = 0.85
 suspension_travel = 4.0
 suspension_stiffness = 1.0
 suspension_max_force = 4000.0
 damping_compression = 0.3
-damping_relaxation = 0.7
+damping_relaxation = 0.85
 
 [node name="MeshInstance" type="MeshInstance" parent="RightFrontWheel"]
 transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
@@ -106,12 +109,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 7.00298, 0 )
 use_as_traction = true
 wheel_radius = 1.5
 wheel_rest_length = 7.0
-wheel_friction_slip = 0.6
+wheel_friction_slip = 0.85
 suspension_travel = 4.0
 suspension_stiffness = 1.0
 suspension_max_force = 4000.0
 damping_compression = 0.3
-damping_relaxation = 0.7
+damping_relaxation = 0.85
 
 [node name="MeshInstance" type="MeshInstance" parent="RightMidWheel"]
 transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
@@ -124,12 +127,12 @@ use_as_traction = true
 use_as_steering = true
 wheel_radius = 1.5
 wheel_rest_length = 7.0
-wheel_friction_slip = 0.6
+wheel_friction_slip = 0.85
 suspension_travel = 4.0
 suspension_stiffness = 1.0
 suspension_max_force = 4000.0
 damping_compression = 0.3
-damping_relaxation = 0.7
+damping_relaxation = 0.85
 
 [node name="MeshInstance" type="MeshInstance" parent="RightBackWheel"]
 transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
@@ -227,5 +230,7 @@ cull_col_distance = 0.01
 
 [node name="RoverVehicleMovement" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.00298, 0 )
+
+[node name="RoverInput" parent="." instance=ExtResource( 5 )]
 
 [editable path="Model"]
