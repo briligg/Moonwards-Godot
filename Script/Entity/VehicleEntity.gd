@@ -4,8 +4,6 @@ extends AEntity
 class_name VehicleEntity
 # Entity class, serves as a medium between Components to communicate.
 
-signal _integrate_forces_fired(state)
-
 ## Spatial Entity common data
 
 onready var model = $Model
@@ -22,16 +20,13 @@ puppet var srv_pos: Vector3 = Vector3.ZERO
 
 puppet var srv_basis: Basis = Basis.IDENTITY
 
-func _integrate_forces(state):
-	emit_signal("_integrate_forces_fired", state)
-
-func _process_server(_delta) -> void:
+func _process_server(_delta):
 	if !get_tree().network_peer:
 		return
 	rset_unreliable("srv_pos", srv_pos)
 	rset_unreliable("srv_basis", srv_basis)
-
-func _process_client(_delta) -> void:
+	
+func _process_client(_delta):
 	if !get_tree().network_peer:
 		return
 	# This needs to be validated on the server side.

@@ -1,6 +1,6 @@
 extends AMovementController
 
-onready var wheels : Array
+puppet var wheels : Array
 
 #var wheels : Array
 onready var default_stiffness = 1
@@ -27,7 +27,6 @@ func _ready():
 	entity.get_node("LeftBackWheel"),
 	entity.get_node("RightBackWheel")
 ]
-	entity.connect("_integrate_forces_fired", self, "_integrate_forces")
 
 func _process_server(_delta):
 	translate_input()
@@ -54,18 +53,10 @@ func process_jump() -> void:
 			wheel.suspension_stiffness = default_stiffness
 		jump_state = JumpState.None
 
-func _integrate_forces(state):
-	if !get_tree().network_peer:
-		return
-	if get_tree().is_network_server() and entity.owner_peer_id == get_tree().get_network_unique_id():
-		pass
-	elif get_tree().is_network_server():
-		pass
-	else:
+func _process_client(_delta):
+	if not is_network_master():
 		entity.global_transform.origin = entity.srv_pos
 		entity.global_transform.basis = entity.srv_basis
-		
-	state.integrate_forces()
 
 #func _process_client(_delta):
 #	entity.global_transform.origin = entity.srv_pos
