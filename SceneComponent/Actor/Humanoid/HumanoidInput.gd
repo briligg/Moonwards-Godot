@@ -1,9 +1,9 @@
 extends AComponent
-class_name HumanoidInput
+class_name InputController
 
 var ignore_inputs : bool = false
 
-func _init().("HumanoidInput", true):
+func _init().("InputController", true):
 	pass
 
 func _ready():
