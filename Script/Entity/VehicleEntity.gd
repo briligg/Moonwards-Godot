@@ -8,6 +8,8 @@ class_name VehicleEntity
 
 onready var model = $Model
 
+
+
 # `MASTER`
 # Input vector
 master var input: Vector3 = Vector3.ZERO
@@ -20,11 +22,16 @@ puppet var srv_pos: Vector3 = Vector3.ZERO
 
 puppet var srv_basis: Basis = Basis.IDENTITY
 
+# `PUPPET`
+# Velocity in meters / second
+puppet var velocity: float = 0.0
+
 func _process_server(_delta):
 	if !get_tree().network_peer:
 		return
 	rset_unreliable("srv_pos", srv_pos)
 	rset_unreliable("srv_basis", srv_basis)
+	rset_unreliable("velocity", velocity)
 	
 func _process_client(_delta):
 	if !get_tree().network_peer:
