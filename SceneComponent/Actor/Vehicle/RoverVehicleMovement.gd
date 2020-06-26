@@ -3,7 +3,7 @@ extends AMovementController
 puppet var wheels : Array
 
 #var wheels : Array
-onready var default_stiffness = 1
+onready var default_stiffness = .5
 
 enum JumpState {
 	None,
@@ -31,11 +31,13 @@ func _ready():
 func _process_server(_delta):
 	translate_input()
 	entity.engine_force = entity.input.z * 100000
-	wheels[0].steering = entity.input.x * 60
-	wheels[1].steering = entity.input.x * 60
-	wheels[4].steering = -entity.input.x * 60
-	wheels[5].steering = -entity.input.x * 60
+	wheels[0].steering = entity.input.x * 45
+	wheels[1].steering = entity.input.x * 45
+	wheels[4].steering = -entity.input.x * 45
+	wheels[5].steering = -entity.input.x * 45
 	process_jump()
+	entity.velocity = (entity.srv_pos - 
+			entity.global_transform.origin).length() * 60
 	entity.srv_pos = entity.global_transform.origin
 	entity.srv_basis = entity.global_transform.basis
 
@@ -45,8 +47,8 @@ func process_jump() -> void:
 			wheel.suspension_stiffness = .1
 	elif jump_state == JumpState.Released:
 		for wheel in wheels:
-			wheel.suspension_stiffness = 7
-			wheel.suspension_stiffness = 7
+			wheel.suspension_stiffness = 6
+			wheel.suspension_stiffness = 6
 		jump_state = JumpState.Reset
 	elif jump_state == JumpState.Reset:
 		for wheel in wheels:
@@ -57,10 +59,6 @@ func _process_client(_delta):
 	if not is_network_master():
 		entity.global_transform.origin = entity.srv_pos
 		entity.global_transform.basis = entity.srv_basis
-
-#func _process_client(_delta):
-#	entity.global_transform.origin = entity.srv_pos
-#	pass
 
 func translate_input() -> void:
 	if entity.input.y == 1:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Script/Entity/VehicleEntity.gd" type="Script" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Athlete_Rover/Athlete_Rover_Prop.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://SceneComponent/Actor/CameraController.tscn" type="PackedScene" id=4]
 [ext_resource path="res://SceneComponent/Actor/Vehicle/RoverInput.tscn" type="PackedScene" id=5]
 [ext_resource path="res://SceneComponent/Actor/Vehicle/RoverVehicleMovement.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Tree/Actor/Vehicle/AthleteRover/Speedometer.tscn" type="PackedScene" id=7]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1.08164, 0.536182, 1.08848 )
@@ -26,8 +27,11 @@ extents = Vector3( 1.08164, 0.536182, 1.08848 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7, 0 )
 mass = 1500.0
 continuous_cd = true
+linear_damp = 0.05
 angular_damp = 0.5
 script = ExtResource( 1 )
+
+[node name="Speedometer" parent="." instance=ExtResource( 7 )]
 
 [node name="rootcol" type="CollisionShape" parent="."]
 transform = Transform( 2.989, 0, 0, 0, 2, 0, 0, 0, 4, 0, 8.42498, 0 )
@@ -37,14 +41,14 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 7.00298, 9 )
 use_as_traction = true
 use_as_steering = true
-wheel_radius = 1.5
+wheel_radius = 1.0
 wheel_rest_length = 7.0
 wheel_friction_slip = 0.85
 suspension_travel = 4.0
 suspension_stiffness = 1.0
 suspension_max_force = 3500.0
-damping_compression = 0.4
-damping_relaxation = 0.85
+damping_compression = 0.35
+damping_relaxation = 0.45
 
 [node name="MeshInstance" type="MeshInstance" parent="LeftFrontWheel"]
 transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
@@ -54,14 +58,14 @@ material/0 = null
 [node name="LeftMidWheel" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 7.00298, 0 )
 use_as_traction = true
-wheel_radius = 1.5
+wheel_radius = 1.0
 wheel_rest_length = 7.0
 wheel_friction_slip = 0.85
 suspension_travel = 4.0
 suspension_stiffness = 1.0
 suspension_max_force = 4000.0
-damping_compression = 0.3
-damping_relaxation = 0.85
+damping_compression = 0.35
+damping_relaxation = 0.45
 
 [node name="MeshInstance" type="MeshInstance" parent="LeftMidWheel"]
 transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
@@ -72,14 +76,14 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 7.00298, -9 )
 use_as_traction = true
 use_as_steering = true
-wheel_radius = 1.5
+wheel_radius = 1.0
 wheel_rest_length = 7.0
 wheel_friction_slip = 0.85
 suspension_travel = 4.0
 suspension_stiffness = 1.0
 suspension_max_force = 4000.0
-damping_compression = 0.3
-damping_relaxation = 0.85
+damping_compression = 0.35
+damping_relaxation = 0.45
 
 [node name="MeshInstance" type="MeshInstance" parent="LeftBackWheel"]
 transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
@@ -90,14 +94,14 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 7.00298, 9 )
 use_as_traction = true
 use_as_steering = true
-wheel_radius = 1.5
+wheel_radius = 1.0
 wheel_rest_length = 7.0
 wheel_friction_slip = 0.85
 suspension_travel = 4.0
 suspension_stiffness = 1.0
 suspension_max_force = 4000.0
-damping_compression = 0.3
-damping_relaxation = 0.85
+damping_compression = 0.35
+damping_relaxation = 0.45
 
 [node name="MeshInstance" type="MeshInstance" parent="RightFrontWheel"]
 transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
@@ -107,14 +111,14 @@ material/0 = null
 [node name="RightMidWheel" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 7.00298, 0 )
 use_as_traction = true
-wheel_radius = 1.5
+wheel_radius = 1.0
 wheel_rest_length = 7.0
 wheel_friction_slip = 0.85
 suspension_travel = 4.0
 suspension_stiffness = 1.0
 suspension_max_force = 4000.0
-damping_compression = 0.3
-damping_relaxation = 0.85
+damping_compression = 0.35
+damping_relaxation = 0.45
 
 [node name="MeshInstance" type="MeshInstance" parent="RightMidWheel"]
 transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
@@ -125,14 +129,14 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 7.00298, -9 )
 use_as_traction = true
 use_as_steering = true
-wheel_radius = 1.5
+wheel_radius = 1.0
 wheel_rest_length = 7.0
 wheel_friction_slip = 0.85
 suspension_travel = 4.0
 suspension_stiffness = 1.0
 suspension_max_force = 4000.0
-damping_compression = 0.3
-damping_relaxation = 0.85
+damping_compression = 0.35
+damping_relaxation = 0.45
 
 [node name="MeshInstance" type="MeshInstance" parent="RightBackWheel"]
 transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
@@ -172,6 +176,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 [node name="Skeleton" parent="Model/Rig_Athlete" index="0"]
 bones/47/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.981, -0.91, 2.448 )
 script = ExtResource( 3 )
+play_ik = false
+stop_ik = false
 
 [node name="LeftFrontWheel" type="SkeletonIK" parent="Model/Rig_Athlete/Skeleton" index="0"]
 process_priority = 1
