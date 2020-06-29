@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "tool
+extends GraphNode
+
+func _ready():
+	set_slot(0,false,7,Color(1,1,0.5,1),true,TYPE_INT_ARRAY,Color(TYPE_INT_ARRAY))
+	
+"
+
+[node name="Got Shot" type="GraphNode"]
+margin_right = 101.0
+margin_bottom = 62.0
+title = "Got Shot"
+slot/0/left_enabled = false
+slot/0/left_type = 7
+slot/0/left_color = Color( 1, 1, 0.5, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 1
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 87.0
+margin_bottom = 38.0
+text = "Attack data"
+align = 2
