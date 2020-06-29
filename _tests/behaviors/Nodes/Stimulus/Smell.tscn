@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "tool
+extends GraphNode
+func _enter_tree():
+	set_slot(0,false,TYPE_NIL,Nodes.Color(TYPE_NIL),true,TYPE_DICTIONARY,Nodes.Color(TYPE_DICTIONARY))
+"
+
+[node name="Smell" type="GraphNode"]
+margin_right = 118.0
+margin_bottom = 60.0
+title = "Smell"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 1
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Trigger" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 102.0
+margin_bottom = 38.0
+text = "Emmiter data"
+align = 2

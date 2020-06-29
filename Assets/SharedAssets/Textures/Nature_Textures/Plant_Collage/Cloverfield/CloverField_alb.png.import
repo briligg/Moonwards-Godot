@@ -2,15 +2,17 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CloverField_alb.png-a1a0d584b4ca8ec9f1dc3f2a2c531eca.stex"
+path.s3tc="res://.import/CloverField_alb.png-a1a0d584b4ca8ec9f1dc3f2a2c531eca.s3tc.stex"
+path.etc2="res://.import/CloverField_alb.png-a1a0d584b4ca8ec9f1dc3f2a2c531eca.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/SharedAssets/Textures/Nature_Textures/Plant_Collage/Cloverfield/CloverField_alb.png"
-dest_files=[ "res://.import/CloverField_alb.png-a1a0d584b4ca8ec9f1dc3f2a2c531eca.stex" ]
+dest_files=[ "res://.import/CloverField_alb.png-a1a0d584b4ca8ec9f1dc3f2a2c531eca.s3tc.stex", "res://.import/CloverField_alb.png-a1a0d584b4ca8ec9f1dc3f2a2c531eca.etc2.stex" ]
 
 [params]
 

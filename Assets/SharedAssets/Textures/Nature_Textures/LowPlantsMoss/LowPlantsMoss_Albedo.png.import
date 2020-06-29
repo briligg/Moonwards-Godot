@@ -2,15 +2,17 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LowPlantsMoss_Albedo.png-1d8dcedbe5e44ebc218e21460598807e.stex"
+path.s3tc="res://.import/LowPlantsMoss_Albedo.png-1d8dcedbe5e44ebc218e21460598807e.s3tc.stex"
+path.etc2="res://.import/LowPlantsMoss_Albedo.png-1d8dcedbe5e44ebc218e21460598807e.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/SharedAssets/Textures/Nature_Textures/LowPlantsMoss/LowPlantsMoss_Albedo.png"
-dest_files=[ "res://.import/LowPlantsMoss_Albedo.png-1d8dcedbe5e44ebc218e21460598807e.stex" ]
+dest_files=[ "res://.import/LowPlantsMoss_Albedo.png-1d8dcedbe5e44ebc218e21460598807e.s3tc.stex", "res://.import/LowPlantsMoss_Albedo.png-1d8dcedbe5e44ebc218e21460598807e.etc2.stex" ]
 
 [params]
 

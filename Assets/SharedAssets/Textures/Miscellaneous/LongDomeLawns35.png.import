@@ -2,15 +2,17 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LongDomeLawns35.png-5b3b91cd1ab4973edd1c03989d2cf6f8.stex"
+path.s3tc="res://.import/LongDomeLawns35.png-5b3b91cd1ab4973edd1c03989d2cf6f8.s3tc.stex"
+path.etc2="res://.import/LongDomeLawns35.png-5b3b91cd1ab4973edd1c03989d2cf6f8.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/SharedAssets/Textures/Miscellaneous/LongDomeLawns35.png"
-dest_files=[ "res://.import/LongDomeLawns35.png-5b3b91cd1ab4973edd1c03989d2cf6f8.stex" ]
+dest_files=[ "res://.import/LongDomeLawns35.png-5b3b91cd1ab4973edd1c03989d2cf6f8.s3tc.stex", "res://.import/LongDomeLawns35.png-5b3b91cd1ab4973edd1c03989d2cf6f8.etc2.stex" ]
 
 [params]
 

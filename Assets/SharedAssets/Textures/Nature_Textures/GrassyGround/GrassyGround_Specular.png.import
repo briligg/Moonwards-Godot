@@ -2,15 +2,17 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GrassyGround_Specular.png-f4602d884d320e2f3f71d410bcc88e8a.stex"
+path.s3tc="res://.import/GrassyGround_Specular.png-f4602d884d320e2f3f71d410bcc88e8a.s3tc.stex"
+path.etc2="res://.import/GrassyGround_Specular.png-f4602d884d320e2f3f71d410bcc88e8a.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/SharedAssets/Textures/Nature_Textures/GrassyGround/GrassyGround_Specular.png"
-dest_files=[ "res://.import/GrassyGround_Specular.png-f4602d884d320e2f3f71d410bcc88e8a.stex" ]
+dest_files=[ "res://.import/GrassyGround_Specular.png-f4602d884d320e2f3f71d410bcc88e8a.s3tc.stex", "res://.import/GrassyGround_Specular.png-f4602d884d320e2f3f71d410bcc88e8a.etc2.stex" ]
 
 [params]
 

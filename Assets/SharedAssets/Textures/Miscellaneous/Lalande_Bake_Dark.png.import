@@ -2,15 +2,17 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Lalande_Bake_Dark.png-0fdc1fab5d52961ffda00885b957538e.stex"
+path.s3tc="res://.import/Lalande_Bake_Dark.png-0fdc1fab5d52961ffda00885b957538e.s3tc.stex"
+path.etc2="res://.import/Lalande_Bake_Dark.png-0fdc1fab5d52961ffda00885b957538e.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/SharedAssets/Textures/Miscellaneous/Lalande_Bake_Dark.png"
-dest_files=[ "res://.import/Lalande_Bake_Dark.png-0fdc1fab5d52961ffda00885b957538e.stex" ]
+dest_files=[ "res://.import/Lalande_Bake_Dark.png-0fdc1fab5d52961ffda00885b957538e.s3tc.stex", "res://.import/Lalande_Bake_Dark.png-0fdc1fab5d52961ffda00885b957538e.etc2.stex" ]
 
 [params]
 

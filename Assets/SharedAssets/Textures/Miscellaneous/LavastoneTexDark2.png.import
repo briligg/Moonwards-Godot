@@ -2,15 +2,17 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LavastoneTexDark2.png-f7d98ab369e28d08c92fda4759fd62de.stex"
+path.s3tc="res://.import/LavastoneTexDark2.png-f7d98ab369e28d08c92fda4759fd62de.s3tc.stex"
+path.etc2="res://.import/LavastoneTexDark2.png-f7d98ab369e28d08c92fda4759fd62de.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/SharedAssets/Textures/Miscellaneous/LavastoneTexDark2.png"
-dest_files=[ "res://.import/LavastoneTexDark2.png-f7d98ab369e28d08c92fda4759fd62de.stex" ]
+dest_files=[ "res://.import/LavastoneTexDark2.png-f7d98ab369e28d08c92fda4759fd62de.s3tc.stex", "res://.import/LavastoneTexDark2.png-f7d98ab369e28d08c92fda4759fd62de.etc2.stex" ]
 
 [params]
 

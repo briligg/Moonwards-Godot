@@ -2,15 +2,17 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon_button.png-f5a96713d3be9c8e6b12f3209c6a1ae7.stex"
+path.s3tc="res://.import/icon_button.png-f5a96713d3be9c8e6b12f3209c6a1ae7.s3tc.stex"
+path.etc2="res://.import/icon_button.png-f5a96713d3be9c8e6b12f3209c6a1ae7.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Tree/addons/HuePicker/icon_button.png"
-dest_files=[ "res://.import/icon_button.png-f5a96713d3be9c8e6b12f3209c6a1ae7.stex" ]
+dest_files=[ "res://.import/icon_button.png-f5a96713d3be9c8e6b12f3209c6a1ae7.s3tc.stex", "res://.import/icon_button.png-f5a96713d3be9c8e6b12f3209c6a1ae7.etc2.stex" ]
 
 [params]
 

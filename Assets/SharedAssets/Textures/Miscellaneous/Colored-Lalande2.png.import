@@ -2,15 +2,17 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Colored-Lalande2.png-0bb891dd77becd3017c4a89fce9e05e0.stex"
+path.s3tc="res://.import/Colored-Lalande2.png-0bb891dd77becd3017c4a89fce9e05e0.s3tc.stex"
+path.etc2="res://.import/Colored-Lalande2.png-0bb891dd77becd3017c4a89fce9e05e0.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/SharedAssets/Textures/Miscellaneous/Colored-Lalande2.png"
-dest_files=[ "res://.import/Colored-Lalande2.png-0bb891dd77becd3017c4a89fce9e05e0.stex" ]
+dest_files=[ "res://.import/Colored-Lalande2.png-0bb891dd77becd3017c4a89fce9e05e0.s3tc.stex", "res://.import/Colored-Lalande2.png-0bb891dd77becd3017c4a89fce9e05e0.etc2.stex" ]
 
 [params]
 

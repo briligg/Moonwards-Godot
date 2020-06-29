@@ -1,0 +1,22 @@
+[gd_scene format=2]
+
+[node name="Attack" type="GraphNode"]
+margin_right = 107.0
+margin_bottom = 61.0
+title = "Attack"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 91.0
+margin_bottom = 38.0
+text = "Owner Data"

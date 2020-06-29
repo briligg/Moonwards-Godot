@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "tool
+extends GraphNode
+
+func _enter_tree():
+	set_slot(0, true,Nodes.TYPE_ANY, Nodes.Color(Nodes.TYPE_ANY),true,TYPE_DICTIONARY, Nodes.Color(TYPE_DICTIONARY))
+
+func _change_type(idx):
+	var something : GraphEdit
+	set_slot(0,true, Nodes.TYPE_ANY, Nodes.MISC_OBJ,true,idx,Nodes.CHARACTER)
+"
+
+[node name="Filter" type="GraphNode"]
+margin_right = 97.0
+margin_bottom = 65.0
+title = "filter"
+slot/0/left_enabled = true
+slot/0/left_type = 21
+slot/0/left_color = Color( 0, 0, 0, 0.0823529 )
+slot/0/right_enabled = true
+slot/0/right_type = 18
+slot/0/right_color = Color( 0, 0, 0, 0.0705882 )
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color( 1, 1, 1, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 1, 1, 1, 1 )
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 101.0
+margin_bottom = 38.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+margin_right = 40.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "In"
+
+[node name="Label2" type="Label" parent="HBoxContainer2"]
+margin_left = 44.0
+margin_right = 85.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "Out"
+align = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 16.0
+margin_top = 39.0
+margin_right = 101.0
+margin_bottom = 59.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_top = 3.0
+margin_right = 30.0
+margin_bottom = 17.0
+text = "Type"
+
+[node name="MenuButton" type="MenuButton" parent="HBoxContainer"]
+margin_left = 34.0
+margin_right = 85.0
+margin_bottom = 20.0
+text = "Select"

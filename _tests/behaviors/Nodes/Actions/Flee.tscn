@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "tool
+extends GraphNode
+var func_name = \"flee\"
+var content : Array = [
+	\"trigger\",
+	\"from\"]
+func _enter_tree():
+	set_slot(0,true,TYPE_BOOL,Nodes.BOOL,false,TYPE_NIL,Nodes.BOOL)
+	set_slot(1,true,TYPE_VECTOR3,Nodes.VECTOR,false,TYPE_NIL,Nodes.BOOL)
+"
+
+[node name="Flee" type="GraphNode"]
+margin_right = 59.0
+margin_bottom = 29.0
+title = "Flee"
+slot/0/left_enabled = true
+slot/0/left_type = 1
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = true
+slot/1/left_type = 7
+slot/1/left_color = Color( 0.5, 0.2, 0.2, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 1, 1, 1, 1 )
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 59.0
+margin_bottom = 38.0
+text = "Trigger"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 39.0
+margin_right = 59.0
+margin_bottom = 53.0
+text = "From"

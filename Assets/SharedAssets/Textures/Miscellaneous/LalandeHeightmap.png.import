@@ -2,15 +2,17 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LalandeHeightmap.png-98310471814a04032f520894327adfe7.stex"
+path.s3tc="res://.import/LalandeHeightmap.png-98310471814a04032f520894327adfe7.s3tc.stex"
+path.etc2="res://.import/LalandeHeightmap.png-98310471814a04032f520894327adfe7.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/SharedAssets/Textures/Miscellaneous/LalandeHeightmap.png"
-dest_files=[ "res://.import/LalandeHeightmap.png-98310471814a04032f520894327adfe7.stex" ]
+dest_files=[ "res://.import/LalandeHeightmap.png-98310471814a04032f520894327adfe7.s3tc.stex", "res://.import/LalandeHeightmap.png-98310471814a04032f520894327adfe7.etc2.stex" ]
 
 [params]
 

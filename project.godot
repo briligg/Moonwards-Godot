@@ -49,6 +49,21 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/CameraController.gd"
 }, {
+"base": "Node",
+"class": "Compiler",
+"language": "GDScript",
+"path": "res://_tests/behaviors/Core/Compiler/Main.gd"
+}, {
+"base": "HBoxContainer",
+"class": "DoubleLabel",
+"language": "GDScript",
+"path": "res://_tests/behaviors/Core/Control_Components/SeparatedLabel.gd"
+}, {
+"base": "MenuButton",
+"class": "DropDown",
+"language": "GDScript",
+"path": "res://_tests/behaviors/Core/Control_Components/MenuWTitles.gd"
+}, {
 "base": "Reference",
 "class": "EntityData",
 "language": "GDScript",
@@ -63,6 +78,11 @@ _global_script_classes=[ {
 "class": "EnumHelper",
 "language": "GDScript",
 "path": "res://Script/Manager/HelperClasses/EnumHelper.gd"
+}, {
+"base": "FuncRef",
+"class": "Function",
+"language": "GDScript",
+"path": "res://_tests/behaviors/FuncRef_Logic.gd"
 }, {
 "base": "ANetworkInstance",
 "class": "GameClient",
@@ -125,6 +145,11 @@ _global_script_classes=[ {
 "path": "res://Script/ExtensionClass/MwSpatial.gd"
 }, {
 "base": "Node",
+"class": "NPCBase",
+"language": "GDScript",
+"path": "res://_tests/behaviors/Config/NPC.gd"
+}, {
+"base": "Node",
 "class": "NetworkManager",
 "language": "GDScript",
 "path": "res://Script/Network/NetworkManager/NetworkManager.gd"
@@ -133,6 +158,11 @@ _global_script_classes=[ {
 "class": "NetworkSignals",
 "language": "GDScript",
 "path": "res://Script/Manager/SignalsManager/NetworkSignals.gd"
+}, {
+"base": "Resource",
+"class": "NpcDefinitions",
+"language": "GDScript",
+"path": "res://_tests/behaviors/Definitions.gd"
 }, {
 "base": "Reference",
 "class": "ResourceSignals",
@@ -153,9 +183,13 @@ _global_script_class_icons={
 "ActorEntityState": "",
 "AudioSignals": "",
 "CameraController": "",
+"Compiler": "",
+"DoubleLabel": "",
+"DropDown": "",
 "EntityData": "",
 "EntitySignals": "",
 "EnumHelper": "",
+"Function": "",
 "GameClient": "",
 "GameServer": "",
 "HudSignals": "",
@@ -168,8 +202,10 @@ _global_script_class_icons={
 "MenuSignals": "",
 "MwNode": "",
 "MwSpatial": "",
+"NPCBase": "",
 "NetworkManager": "",
 "NetworkSignals": "",
+"NpcDefinitions": "",
 "ResourceSignals": "",
 "ResourceThreadedLoader": ""
 }
@@ -190,6 +226,7 @@ Signals="*res://Script/Manager/SignalsManager/SignalsManager.gd"
 Groups="*res://Script/Manager/GroupsManager/GroupsManager.gd"
 Scene="*res://Script/Manager/SceneManager/SceneManager.gd"
 Network="*res://Script/Network/NetworkManager/NetworkManager.gd"
+Nodes="*res://_tests/behaviors/Nodes.gd"
 
 [compression]
 

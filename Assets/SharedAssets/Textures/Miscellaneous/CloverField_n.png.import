@@ -2,15 +2,17 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CloverField_n.png-a36ed2ebc7106b5907cc339d53e7b27d.stex"
+path.s3tc="res://.import/CloverField_n.png-a36ed2ebc7106b5907cc339d53e7b27d.s3tc.stex"
+path.etc2="res://.import/CloverField_n.png-a36ed2ebc7106b5907cc339d53e7b27d.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/SharedAssets/Textures/Miscellaneous/CloverField_n.png"
-dest_files=[ "res://.import/CloverField_n.png-a36ed2ebc7106b5907cc339d53e7b27d.stex" ]
+dest_files=[ "res://.import/CloverField_n.png-a36ed2ebc7106b5907cc339d53e7b27d.s3tc.stex", "res://.import/CloverField_n.png-a36ed2ebc7106b5907cc339d53e7b27d.etc2.stex" ]
 
 [params]
 

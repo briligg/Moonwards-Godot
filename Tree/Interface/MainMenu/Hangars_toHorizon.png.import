@@ -2,15 +2,17 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Hangars_toHorizon.png-8ddef5e26d0851cf9f526b45a0bf27cb.stex"
+path.s3tc="res://.import/Hangars_toHorizon.png-8ddef5e26d0851cf9f526b45a0bf27cb.s3tc.stex"
+path.etc2="res://.import/Hangars_toHorizon.png-8ddef5e26d0851cf9f526b45a0bf27cb.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Tree/Interface/MainMenu/Hangars_toHorizon.png"
-dest_files=[ "res://.import/Hangars_toHorizon.png-8ddef5e26d0851cf9f526b45a0bf27cb.stex" ]
+dest_files=[ "res://.import/Hangars_toHorizon.png-8ddef5e26d0851cf9f526b45a0bf27cb.s3tc.stex", "res://.import/Hangars_toHorizon.png-8ddef5e26d0851cf9f526b45a0bf27cb.etc2.stex" ]
 
 [params]
 

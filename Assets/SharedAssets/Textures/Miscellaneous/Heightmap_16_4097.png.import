@@ -2,15 +2,17 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Heightmap_16_4097.png-a5d0f3a9e01081c14518786d1d5c6c11.stex"
+path.s3tc="res://.import/Heightmap_16_4097.png-a5d0f3a9e01081c14518786d1d5c6c11.s3tc.stex"
+path.etc2="res://.import/Heightmap_16_4097.png-a5d0f3a9e01081c14518786d1d5c6c11.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/SharedAssets/Textures/Miscellaneous/Heightmap_16_4097.png"
-dest_files=[ "res://.import/Heightmap_16_4097.png-a5d0f3a9e01081c14518786d1d5c6c11.stex" ]
+dest_files=[ "res://.import/Heightmap_16_4097.png-a5d0f3a9e01081c14518786d1d5c6c11.s3tc.stex", "res://.import/Heightmap_16_4097.png-a5d0f3a9e01081c14518786d1d5c6c11.etc2.stex" ]
 
 [params]
 

@@ -2,15 +2,17 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon_button_smol.png-392e6fcd4cd4c1481db359d20816e099.stex"
+path.s3tc="res://.import/icon_button_smol.png-392e6fcd4cd4c1481db359d20816e099.s3tc.stex"
+path.etc2="res://.import/icon_button_smol.png-392e6fcd4cd4c1481db359d20816e099.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Tree/addons/HuePicker/icon_button_smol.png"
-dest_files=[ "res://.import/icon_button_smol.png-392e6fcd4cd4c1481db359d20816e099.stex" ]
+dest_files=[ "res://.import/icon_button_smol.png-392e6fcd4cd4c1481db359d20816e099.s3tc.stex", "res://.import/icon_button_smol.png-392e6fcd4cd4c1481db359d20816e099.etc2.stex" ]
 
 [params]
 
