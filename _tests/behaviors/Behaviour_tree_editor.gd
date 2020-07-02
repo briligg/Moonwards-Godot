@@ -1,4 +1,4 @@
-extends Tabs
+extends TabContainer
 
 var type : String = ""
 var node_name  : String = ""

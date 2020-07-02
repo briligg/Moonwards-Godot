@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://_tests/behaviors/Behaviour_tree_editor.gd" type="Script" id=1]
 [ext_resource path="res://_tests/behaviors/BehaviorParameters.tscn" type="PackedScene" id=2]
 [ext_resource path="res://_tests/behaviors/Graph_compiler.gd" type="Script" id=3]
-
+[ext_resource path="res://Assets/Interface/NPCEditorTheme.tres" type="Theme" id=4]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends PopupMenu
@@ -36,13 +36,11 @@ func _on_Behaviors_id_pressed(id):
 		menus[id].popup()
 "
 
-[node name="Node-Editor" type="Tabs"]
+[node name="Node-Editor" type="TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -51,153 +49,169 @@ __meta__ = {
 [node name="MainSplitter" type="VSplitContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.948
-margin_top = 1.36723
-margin_right = 1.948
-margin_bottom = 1.36725
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
 dragger_visibility = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Panel" type="PanelContainer" parent="MainSplitter"]
-margin_right = 1016.0
-margin_bottom = 34.0
-rect_min_size = Vector2( 0, 30 )
+margin_right = 1912.0
+margin_bottom = 39.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
 
 [node name="DropDowns" type="HBoxContainer" parent="MainSplitter/Panel"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 1009.0
-margin_bottom = 27.0
-
-[node name="VS2" type="VSeparator" parent="MainSplitter/Panel/DropDowns"]
-margin_right = 4.0
-margin_bottom = 20.0
-
-[node name="Label" type="Label" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 8.0
-margin_top = 3.0
-margin_right = 89.0
-margin_bottom = 17.0
-text = "Create node:"
+margin_right = 1905.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 4 )
+alignment = 1
 
 [node name="VSeparator" type="VSeparator" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 93.0
-margin_right = 97.0
-margin_bottom = 20.0
+margin_left = 749.0
+margin_right = 753.0
+margin_bottom = 25.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
 
 [node name="stimulus" type="MenuButton" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 101.0
-margin_right = 169.0
-margin_bottom = 20.0
+margin_left = 757.0
+margin_right = 831.0
+margin_bottom = 25.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
 text = "Stimulus"
 
 [node name="VS" type="VSeparator" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 173.0
-margin_right = 177.0
-margin_bottom = 20.0
+margin_left = 835.0
+margin_right = 839.0
+margin_bottom = 25.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
 
 [node name="inhibitors" type="MenuButton" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 181.0
-margin_right = 262.0
-margin_bottom = 20.0
+margin_left = 843.0
+margin_right = 930.0
+margin_bottom = 25.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
 text = "Inhibitions"
 
 [node name="VS3" type="VSeparator" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 266.0
-margin_right = 270.0
-margin_bottom = 20.0
+margin_left = 934.0
+margin_right = 938.0
+margin_bottom = 25.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
 
 [node name="actions" type="MenuButton" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 274.0
-margin_right = 334.0
-margin_bottom = 20.0
+margin_left = 942.0
+margin_right = 1006.0
+margin_bottom = 25.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
 text = "Actions"
 
 [node name="VS4" type="VSeparator" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 338.0
-margin_right = 342.0
-margin_bottom = 20.0
+margin_left = 1010.0
+margin_right = 1014.0
+margin_bottom = 25.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
 
 [node name="misc" type="MenuButton" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 346.0
-margin_right = 388.0
-margin_bottom = 20.0
+margin_left = 1018.0
+margin_right = 1062.0
+margin_bottom = 25.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
 text = "Misc"
 
 [node name="VS6" type="VSeparator" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 392.0
-margin_right = 396.0
-margin_bottom = 20.0
+margin_left = 1066.0
+margin_right = 1070.0
+margin_bottom = 25.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
 
 [node name="custom" type="MenuButton" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 400.0
-margin_right = 461.0
-margin_bottom = 20.0
+margin_left = 1074.0
+margin_right = 1140.0
+margin_bottom = 25.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
 text = "Custom"
 
 [node name="VS5" type="VSeparator" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 465.0
-margin_right = 469.0
-margin_bottom = 20.0
+margin_left = 1144.0
+margin_right = 1148.0
+margin_bottom = 25.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
 
 [node name="ViewMenuSplit" type="HSplitContainer" parent="MainSplitter"]
-margin_top = 46.0
-margin_right = 1016.0
-margin_bottom = 564.0
+margin_top = 51.0
+margin_right = 1912.0
+margin_bottom = 1044.0
 
 [node name="Container" type="VBoxContainer" parent="MainSplitter/ViewMenuSplit"]
-margin_right = 223.0
-margin_bottom = 518.0
+margin_right = 172.0
+margin_bottom = 993.0
 alignment = 1
 
 [node name="selection" type="HBoxContainer" parent="MainSplitter/ViewMenuSplit/Container"]
-margin_right = 223.0
+margin_right = 172.0
 margin_bottom = 14.0
 
 [node name="title" type="Label" parent="MainSplitter/ViewMenuSplit/Container/selection"]
-margin_right = 121.0
+margin_right = 59.0
 margin_bottom = 14.0
-text = "Currently selected:"
+text = "Selected:"
 
 [node name="name" type="Label" parent="MainSplitter/ViewMenuSplit/Container/selection"]
-margin_left = 125.0
-margin_right = 207.0
+margin_left = 63.0
+margin_right = 145.0
 margin_bottom = 14.0
 text = "NODE_NAME"
 
 [node name="type" type="HBoxContainer" parent="MainSplitter/ViewMenuSplit/Container"]
 margin_top = 18.0
-margin_right = 223.0
+margin_right = 172.0
 margin_bottom = 32.0
 
 [node name="title" type="Label" parent="MainSplitter/ViewMenuSplit/Container/type"]
-margin_right = 146.0
+margin_right = 95.0
 margin_bottom = 14.0
-text = "Current selection type:"
+text = "Selection type:"
 
 [node name="name" type="Label" parent="MainSplitter/ViewMenuSplit/Container/type"]
-margin_left = 150.0
-margin_right = 223.0
+margin_left = 99.0
+margin_right = 172.0
 margin_bottom = 14.0
 text = "NODE_TYPE"
 
 [node name="type2" type="HBoxContainer" parent="MainSplitter/ViewMenuSplit/Container"]
 margin_top = 36.0
-margin_right = 223.0
+margin_right = 172.0
 margin_bottom = 56.0
 
 [node name="Open" type="Button" parent="MainSplitter/ViewMenuSplit/Container/type2"]
-margin_right = 109.0
+margin_right = 84.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Open"
 
 [node name="Save" type="Button" parent="MainSplitter/ViewMenuSplit/Container/type2"]
-margin_left = 113.0
-margin_right = 223.0
+margin_left = 88.0
+margin_right = 172.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -205,32 +219,33 @@ text = "Save"
 
 [node name="Add" type="Button" parent="MainSplitter/ViewMenuSplit/Container"]
 margin_top = 60.0
-margin_right = 223.0
+margin_right = 172.0
 margin_bottom = 80.0
 text = "Add to Tree"
 
 [node name="Compile" type="Button" parent="MainSplitter/ViewMenuSplit/Container"]
 margin_top = 84.0
-margin_right = 223.0
+margin_right = 172.0
 margin_bottom = 104.0
 text = "Compile"
 
 [node name="HSeparator" type="HSeparator" parent="MainSplitter/ViewMenuSplit/Container"]
 margin_top = 108.0
-margin_right = 223.0
+margin_right = 172.0
 margin_bottom = 112.0
 
 [node name="Specs" parent="MainSplitter/ViewMenuSplit/Container" instance=ExtResource( 2 )]
 margin_top = 116.0
-margin_right = 223.0
-margin_bottom = 518.0
+margin_right = 172.0
+margin_bottom = 993.0
+rect_min_size = Vector2( 0, 0 )
 
 [node name="GraphEdit" type="GraphEdit" parent="MainSplitter/ViewMenuSplit"]
-margin_left = 235.0
-margin_right = 1016.0
-margin_bottom = 518.0
+margin_left = 184.0
+margin_right = 1912.0
+margin_bottom = 993.0
 right_disconnects = true
-scroll_offset = Vector2( -110, -30 )
+scroll_offset = Vector2( -8, -116 )
 script = ExtResource( 3 )
 
 [node name="Behaviors" type="PopupMenu" parent="MainSplitter/ViewMenuSplit/GraphEdit"]
@@ -284,11 +299,11 @@ margin_bottom = 241.245
 items = [ "Stimulus", null, 0, false, false, 0, 0, null, "", false, "Inhibitors", null, 0, false, false, 1, 0, null, "", false, "Actions", null, 0, false, false, 2, 0, null, "", false, "Custom", null, 0, false, false, 3, 0, null, "", false ]
 
 [node name="Save" type="FileDialog" parent="MainSplitter/ViewMenuSplit/GraphEdit"]
-visible = true
 margin_left = 14.0
 margin_top = 65.0
 margin_right = 468.0
 margin_bottom = 281.0
+rect_min_size = Vector2( 0, 0 )
 window_title = "Guardar un Archivo"
 filters = PoolStringArray( "*.jbt" )
 __meta__ = {
