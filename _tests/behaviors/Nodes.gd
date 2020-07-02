@@ -48,8 +48,9 @@ func _are_valid_identifiers(strings : Array)->bool:
 
 
 func _define_class(_class_name : String):
-	var current : Dictionary = Definitions.get(_class_name)
-	var properies = current.keys()
+	pass
+#	var current : Dictionary = Definitions.get(_class_name)
+#	var properies = current.keys()
 
 
 func _get_port_name(data : Dictionary, port : int, input : bool = true) -> String:
