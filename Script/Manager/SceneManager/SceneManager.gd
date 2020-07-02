@@ -7,8 +7,8 @@ signal scene_changed
 #var world_scene: String = "res://Tree/World/Moon_Town_Main.tscn"
 var world_scene: String = "res://_tests/RoverTest.tscn"
 var main_menu: String = "res://Tree/Interface/MainMenu/MainMenu.tscn"
-#const PLAYER_SCENE: PackedScene = preload("res://Tree/Actor/Player/HumanPlayer.tscn")
-const PLAYER_SCENE: PackedScene = preload("res://Tree/Actor/Vehicle/AthleteRover/AthleteRover_VehiclePhysics.tscn")
+const PLAYER_SCENE: PackedScene = preload("res://Tree/Actor/Player/HumanPlayer.tscn")
+#const PLAYER_SCENE: PackedScene = preload("res://Tree/Actor/Vehicle/AthleteRover/AthleteRover_VehiclePhysics.tscn")
 const LOADING_SCREEN: PackedScene = preload("res://Tree/Interface/Hud/LoadingScreen/LoadingScreen.tscn")
 
 # Returns the instanced scene after it's added to the `SceneTree`

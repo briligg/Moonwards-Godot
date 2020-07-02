@@ -20,10 +20,20 @@ func _ready() -> void:
 	
 	# If we're not owned by this client, we're disabled.
 	if get_tree().get_network_unique_id() != entity.owner_peer_id and require_net_owner:
-		enabled = false
-		set_process(false)
-		set_physics_process(false)
-		set_process_input(false)
+		disable()
+
+
+func disable() -> void:
+	enabled = false
+	set_process(false)
+	set_physics_process(false)
+	set_process_input(false)
+	
+func enable() -> void:
+	enabled = true
+	set_process(true)
+	set_physics_process(true)
+	set_process_input(true)
 
 func _process_network(delta) -> void:
 	if !get_tree().network_peer:
@@ -44,7 +54,10 @@ func _process_client(_delta) -> void:
 
 func _set_enabled(val: bool) -> void:
 	Log.trace(self, "set_enabled", "enabled has been set to {enabled}")
-	enabled = val
+	if val == false:
+		disable()
+	elif val == true:
+		enable()
 
 func _get_comp_name() -> String:
 	return comp_name
