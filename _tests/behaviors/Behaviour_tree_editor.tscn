@@ -13,21 +13,22 @@ var menus : Array = []
 
 func _ready():
 	for id in get_child_count():
-		menus.append(get_child(id+1))
+		if id+1 < get_child_count() :
+			menus.append(get_child(id+1))
 
-func _on_stimulus_id_pressed(id):
+func _on_stimulus_id_pressed(_id):
 	menus[0].popup()
 
-func _on_inhibitors_id_pressed(id):
+func _on_inhibitors_id_pressed(_id):
 	menus[1].popup()
 
-func _on_actions_id_pressed(id):
+func _on_actions_id_pressed(_id):
 	menus[2].popup()
 
-func _on_misc_id_pressed(id):
+func _on_misc_id_pressed(_id):
 	menus[3].popup()
 
-func _on_custom_id_pressed(id):
+func _on_custom_id_pressed(_id):
 	menus[4].popup()
 
 func _on_Behaviors_id_pressed(id):

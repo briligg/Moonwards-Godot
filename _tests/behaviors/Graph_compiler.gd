@@ -28,8 +28,8 @@ func add_node(name : String):
 			SceneNodes[name]=Nodes.Graphs.stimulus.get(Result[0].get_string()).instance()
 			return
 		if Nodes.Graphs.misc.has(Result[0].get_string()):
-			return
 			SceneNodes[name]=Nodes.Graphs.misc.get(Result[0].get_string()).instance()
+			return
 		if Nodes.Graphs.actions.has(Result[0].get_string()):
 			SceneNodes[name]=Nodes.Graphs.actions.get(Result[0].get_string()).instance()
 			return

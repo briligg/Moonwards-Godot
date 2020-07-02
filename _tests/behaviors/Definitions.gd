@@ -4,7 +4,7 @@ class_name NpcDefinitions
 #Class ID will be assigned from 27 and on, in the order classes are declared
 func _init():
 	var expr = Expression.new()
-	var inputs = ["output"]
+#	var inputs = ["output"]
 	var long_input = ["input_data", "weight_1", "weight_2", "weight_3"]
 	var long_string = """
 	if max(max(weight_1,weight_2),weight_3) == weight_1:
