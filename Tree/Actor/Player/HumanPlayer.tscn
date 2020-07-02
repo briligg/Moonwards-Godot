@@ -9,9 +9,6 @@
 [ext_resource path="res://Assets/MoonTown/Models/Human_Model/FemalePlayerModel.tscn" type="PackedScene" id=7]
 [ext_resource path="res://SceneComponent/Actor/InteractorComponent.tscn" type="PackedScene" id=8]
 
-
-
-
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.287522
 height = 1.04841

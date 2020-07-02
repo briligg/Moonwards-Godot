@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Script/Entity/VehicleEntity.gd" type="Script" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Athlete_Rover/Athlete_Rover_Prop.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://SceneComponent/Actor/Vehicle/RoverInput.tscn" type="PackedScene" id=5]
 [ext_resource path="res://SceneComponent/Actor/Vehicle/RoverVehicleMovement.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Tree/Actor/Vehicle/AthleteRover/Speedometer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://SceneComponent/Actor/Vehicle/RoverInteractable.tscn" type="PackedScene" id=8]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1.08164, 0.536182, 1.08848 )
@@ -176,8 +177,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 [node name="Skeleton" parent="Model/Rig_Athlete" index="0"]
 bones/47/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.981, -0.91, 2.448 )
 script = ExtResource( 3 )
-play_ik = false
-stop_ik = false
 
 [node name="LeftFrontWheel" type="SkeletonIK" parent="Model/Rig_Athlete/Skeleton" index="0"]
 process_priority = 1
@@ -226,6 +225,9 @@ tip_bone = "back_right_wheel_rotate"
 override_tip_basis = false
 use_magnet = true
 target_node = NodePath("../../../../RightBackWheel")
+
+[node name="RoverInteractable" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.02105, 0 )
 
 [node name="CameraController" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.00298, -0.0989065 )
