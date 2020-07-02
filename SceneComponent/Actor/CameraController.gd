@@ -15,7 +15,7 @@ var mouse_sensitivity: float = 0.1
 var yaw: float = 0.0
 var pitch: float = 0.0
 
-func _init().("CameraController", true):
+func _init().("Camera", true):
 	pass
 	
 func _ready():

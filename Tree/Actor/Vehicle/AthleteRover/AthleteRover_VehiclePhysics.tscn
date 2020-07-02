@@ -177,6 +177,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 [node name="Skeleton" parent="Model/Rig_Athlete" index="0"]
 bones/47/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.981, -0.91, 2.448 )
 script = ExtResource( 3 )
+play_ik = false
+stop_ik = false
 
 [node name="LeftFrontWheel" type="SkeletonIK" parent="Model/Rig_Athlete/Skeleton" index="0"]
 process_priority = 1
