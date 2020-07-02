@@ -18,7 +18,7 @@ script = ExtResource( 6 )
 
 [node name="AnimationController" parent="." instance=ExtResource( 4 )]
 
-[node name="CameraController" parent="." instance=ExtResource( 3 )]
+[node name="Camera" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.766189, 0 )
 dist = 3.0
 
