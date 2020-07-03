@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Interface/Fonts/ExtraInfoDisplayTitledjv_bold.tres" type="DynamicFont" id=1]
+[ext_resource path="res://SceneComponent/Display/MakersMonument/MonumentContent.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainArea" type="Control" parent="VBoxContainer"]
+margin_right = 1920.0
+margin_bottom = 960.0
+rect_min_size = Vector2( 1920, 960 )
+
+[node name="Button" type="Button" parent="VBoxContainer/MainArea"]
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BottomArea" type="Control" parent="VBoxContainer"]
+margin_top = 964.0
+margin_right = 1920.0
+margin_bottom = 1084.0
+rect_min_size = Vector2( 1920, 120 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/BottomArea"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShowAll" type="Button" parent="VBoxContainer/BottomArea/CenterContainer"]
+margin_left = 660.0
+margin_right = 1259.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 0, 120 )
+custom_fonts/font = ExtResource( 1 )
+text = "= SHOW ALL ="
+[connection signal="button_up" from="VBoxContainer/BottomArea/CenterContainer/ShowAll" to="." method="_on_ShowAll_button_up"]
