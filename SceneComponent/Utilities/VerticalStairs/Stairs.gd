@@ -1,15 +1,14 @@
-tool
-extends "res://SceneComponent/Utilities/Interactable/Interactable.gd"
+extends Interactable
 
 var climb_points = []
-var step_size = 0.0535
+var step_size = 0.535
 
 export (float) var height = 1 setget _set_height
 
 
 func _ready():
 	#Listen to when I am interacted with.
-	connect("interacted_with", self, "interacted_with")
+	connect("interacted_by", self, "interacted_with")
 	
 	var step_position = $CollisionShape.global_transform.origin
 	var max_y = step_position.y + $CollisionShape.shape.extents.y
@@ -24,18 +23,20 @@ func _ready():
 
 #Let the interactor know they interacted with me.
 func interacted_with(_interactor : Node) -> void :
-	if _interactor.has_method("climb_stairs") :
+	if _interactor is ActorEntity:
 		#Make the interactor climb stairs.
-		_interactor.climb_stairs(global_transform.origin.y + height)
+		_interactor.humanoid_movement.start_climb_stairs(self)
 
 #Set the height of the stairs
 func _set_height(var new_height) :
 	height = new_height
 
 #Determine which side the player should be facing when climbing.
-func _get_look_direction(var position):
+func get_look_direction(var position):
 	var flat_position = global_transform.origin
 	flat_position.y = position.y
+	
+	var deg = rad2deg(global_transform.basis.z.angle_to((flat_position - position).normalized()))
 	
 	if rad2deg(global_transform.basis.z.angle_to((flat_position - position).normalized())) < 90.0:
 		return global_transform.basis.z

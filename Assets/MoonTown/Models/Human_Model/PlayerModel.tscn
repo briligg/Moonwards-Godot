@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/Black.tres" type="Material" id=1]
 [ext_resource path="res://Assets/SharedAssets/Materials/Miscellaneous/BlueStone.tres" type="Material" id=2]
@@ -14,48 +14,74 @@ animation = "Flail-loop"
 [sub_resource type="AnimationNodeTransition" id=2]
 input_count = 2
 xfade_time = 0.25
+input_0/name = "Up"
+input_0/auto_advance = false
+input_1/name = "Down"
+input_1/auto_advance = false
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "ClimbDown-loop"
+
+[sub_resource type="AnimationNodeTimeSeek" id=4]
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "ClimbUp-loop"
+
+[sub_resource type="AnimationNodeTransition" id=6]
+input_count = 3
+xfade_time = 0.25
 input_0/name = "OnGround"
 input_0/auto_advance = false
 input_1/name = "Flailing"
 input_1/auto_advance = false
-
-[sub_resource type="AnimationNodeAnimation" id=3]
-animation = "MoonWalking-loop"
-
-[sub_resource type="AnimationNodeAnimation" id=4]
-animation = "MoonWalkingBack-loop"
-
-[sub_resource type="AnimationNodeAnimation" id=5]
-animation = "MoonWalkingRight-loop"
-
-[sub_resource type="AnimationNodeAnimation" id=6]
-animation = "MoonWalkingLeft-loop"
+input_2/name = "Climbing"
+input_2/auto_advance = false
 
 [sub_resource type="AnimationNodeAnimation" id=7]
+animation = "MoonWalking-loop"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "MoonWalkingBack-loop"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "MoonWalkingRight-loop"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "MoonWalkingLeft-loop"
+
+[sub_resource type="AnimationNodeAnimation" id=11]
 animation = "CasualStance"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=8]
-blend_point_0/node = SubResource( 3 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=12]
+blend_point_0/node = SubResource( 7 )
 blend_point_0/pos = Vector2( 0, 1 )
-blend_point_1/node = SubResource( 4 )
+blend_point_1/node = SubResource( 8 )
 blend_point_1/pos = Vector2( 0, -1 )
-blend_point_2/node = SubResource( 5 )
+blend_point_2/node = SubResource( 9 )
 blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 6 )
+blend_point_3/node = SubResource( 10 )
 blend_point_3/pos = Vector2( -1, 0 )
-blend_point_4/node = SubResource( 7 )
+blend_point_4/node = SubResource( 11 )
 blend_point_4/pos = Vector2( 0, 0 )
 
-[sub_resource type="AnimationNodeBlendTree" id=9]
-graph_offset = Vector2( 52, 47 )
+[sub_resource type="AnimationNodeBlendTree" id=13]
+graph_offset = Vector2( 31, 326.5 )
 nodes/Animation/node = SubResource( 1 )
 nodes/Animation/position = Vector2( 320, 240 )
-nodes/State/node = SubResource( 2 )
+nodes/ClimbDirection/node = SubResource( 2 )
+nodes/ClimbDirection/position = Vector2( 520, 400 )
+nodes/ClimbDown/node = SubResource( 3 )
+nodes/ClimbDown/position = Vector2( 260, 500 )
+nodes/ClimbProgress/node = SubResource( 4 )
+nodes/ClimbProgress/position = Vector2( 720, 420 )
+nodes/ClimbUp/node = SubResource( 5 )
+nodes/ClimbUp/position = Vector2( 271, 381 )
+nodes/State/node = SubResource( 6 )
 nodes/State/position = Vector2( 680, 100 )
-nodes/Walking/node = SubResource( 8 )
+nodes/Walking/node = SubResource( 12 )
 nodes/Walking/position = Vector2( 320, 40 )
 nodes/output/position = Vector2( 1020, 160 )
-node_connections = [ "output", 0, "State", "State", 0, "Walking", "State", 1, "Animation" ]
+node_connections = [ "output", 0, "State", "ClimbProgress", 0, "ClimbDirection", "State", 0, "Walking", "State", 1, "Animation", "State", 2, "ClimbProgress", "ClimbDirection", 0, "ClimbUp", "ClimbDirection", 1, "ClimbDown" ]
 
 [node name="Model" instance=ExtResource( 7 )]
 script = ExtResource( 6 )
@@ -75,8 +101,10 @@ material/3 = ExtResource( 5 )
 material/4 = ExtResource( 2 )
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="2"]
-tree_root = SubResource( 9 )
+tree_root = SubResource( 13 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
+parameters/ClimbDirection/current = 0
+parameters/ClimbProgress/seek_position = 1.0
 parameters/State/current = 0
 parameters/Walking/blend_position = Vector2( 0, 0 )
