@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Interface/Fonts/ExtraInfoDisplayTitledjv_bold.tres" type="DynamicFont" id=1]
 [ext_resource path="res://SceneComponent/Display/MakersMonument/MonumentContent.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Interface/Display.tres" type="Theme" id=3]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -18,16 +19,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainArea" type="Control" parent="VBoxContainer"]
+[node name="SequenceArea" type="Control" parent="VBoxContainer"]
 margin_right = 1920.0
 margin_bottom = 960.0
 rect_min_size = Vector2( 1920, 960 )
 
-[node name="Button" type="Button" parent="VBoxContainer/MainArea"]
-margin_bottom = 20.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="AllArea" type="Control" parent="VBoxContainer"]
+visible = false
+margin_top = 964.0
+margin_right = 1920.0
+margin_bottom = 1924.0
+rect_min_size = Vector2( 1920, 960 )
 
 [node name="BottomArea" type="Control" parent="VBoxContainer"]
 margin_top = 964.0
@@ -46,10 +48,11 @@ __meta__ = {
 }
 
 [node name="ShowAll" type="Button" parent="VBoxContainer/BottomArea/CenterContainer"]
-margin_left = 660.0
-margin_right = 1259.0
+margin_left = 873.0
+margin_right = 1047.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 0, 120 )
+theme = ExtResource( 3 )
 custom_fonts/font = ExtResource( 1 )
 text = "= SHOW ALL ="
 [connection signal="button_up" from="VBoxContainer/BottomArea/CenterContainer/ShowAll" to="." method="_on_ShowAll_button_up"]
