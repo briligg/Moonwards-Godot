@@ -8,13 +8,13 @@ class_name Interactor
 #This is what I pass as the interactor.
 var owning_entity : AEntity
 
-signal interact_made_possible(string_describing_potential_interact)
+signal interact_made_possible(string_closest_potential_interact)
 signal interact_made_impossible()
 
 signal interacted_with(interactable)
 
 #What interactable I am closest to and can interact with.
-var interactable : Area = null
+var interactables : Array = []
 #This is how I will not spam a signal when I have potential interacts.
 var previous_collider : Area = null
 
@@ -27,14 +27,14 @@ func _physics_process(_delta : float) -> void:
 	#Get the interactable I am colliding with.
 	var closest_body : Area = null
 	var closest_body_distance : float = 99999999999.0
-	for body in get_overlapping_areas() :
+	interactables = get_overlapping_areas()
+	for body in interactables :
 		var position_from_me : float
 		position_from_me = (global_transform.origin - body.global_transform.origin).length()
 		#Determine if the new body is closer.
 		if position_from_me < closest_body_distance :
 			closest_body_distance = position_from_me
 			closest_body = body
-			interactable = closest_body
 
 	#Exit if I am not touching anything.
 	if closest_body == null :
@@ -42,21 +42,31 @@ func _physics_process(_delta : float) -> void:
 		#emit a signal saying that.
 		if previous_collider != null :
 			emit_signal("interact_made_impossible")
-		interactable = null
+		interactables = []
 		previous_collider = null
 		return
 	
 	#Return the interactable's name and notify listener's of it.
-	if previous_collider != interactable :
-		var interact_info : String = interactable.get_info()
+	if previous_collider != closest_body :
+		var interact_info : String = closest_body.get_info()
 		emit_signal("interact_made_possible", interact_info)
-		previous_collider = interactable
+		previous_collider = closest_body
+
+#Return what interactables can be interacted with
+func get_potential_interacts() -> Array :
+	return interactables
+
+#Interact with the given interactable.
+func interact(interactable) -> void :
+	assert(interactables.empty() == false)
+	interactable.interact_with(owning_entity)
+	emit_signal("interacted_with", interactable.owning_entity)
 
 #Interact with the closest potential interactable. Can be called when no interactables are present.
-func interact() -> void :
-	if interactable == null :
+func interact_with_closest() -> void :
+	if interactables.empty() :
 		return
 	
-	interactable.interact_with(owning_entity)
-	if interactable.owning_entity != null:
-		emit_signal("interacted_with", interactable.owning_entity)
+	interactables[0].interact_with(owning_entity)
+	if interactables[0].owning_entity != null:
+		emit_signal("interacted_with", interactables[0].owning_entity)
