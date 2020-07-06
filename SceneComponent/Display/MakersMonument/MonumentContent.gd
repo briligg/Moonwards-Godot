@@ -4,10 +4,14 @@ var is_all: bool = false
 
 const MAX_ENTRIES: int = 6
 
-onready var sequence_area = $VBoxContainer/SequenceArea
-onready var all_area = $VBoxContainer/AllArea
+onready var sequence_area: Control = $VBoxContainer/SequenceArea
+onready var all_area: Control = $VBoxContainer/AllArea
+
 onready var monument_theme = load("res://SceneComponent/Display/MakersMonument/Monument.tres")
+
 var monument_font: DynamicFont = DynamicFont.new()
+var containers: Array = []
+var animation_players: Array = []
 
 signal sequence_finished(idx)
 
@@ -44,43 +48,70 @@ var entries: Array = [
 
 func _ready():
 	connect("sequence_finished", self, "_on_sequence_finished")
-	#emit_signal("sequence_finished", 0)
+	
 	monument_font = DynamicFont.new()
 	monument_font.font_data = load("res://Assets/Interface/Fonts/Exo2/Exo2-ExtraBoldItalic.ttf")
 	monument_font.size = 82
 	
 	$VBoxContainer/BottomArea/CenterContainer/ShowAll.set("custom_fonts/font", monument_font)
 	monument_font.size = 64
+	
 	_build_all()
+	_build_sequence_buttons()
+	emit_signal("sequence_finished", 0)
 
 
 func _on_sequence_finished(idx) -> void:
-	var first_entry: int = idx
-	var last_entry: int = min(first_entry + MAX_ENTRIES, entries.size())
+	for c in containers:
+		c.hide()
+	
+	containers[idx].show()
+	animation_players[idx].play("animation")
 
 
-func _build_buttons() -> void:
+func _build_sequence_buttons() -> void:
 	var i: int = 0
-	var j: int = 0
-	var containers: Array = [ceil(entries.size())]
+	var j: int = -1
+	var c: VBoxContainer = null
+	var sequence_animation: AnimationPlayer = null
+	var animation: Animation = null
 	
-	while i <= entries.size():
-		#var c: VBoxContainer = VBoxContainer.new()
-		pass
-	
-	
-#	for e in entries:
-#		var button: Button = Button.new()
-#		button.text = e["name"]
-#		button.margin_bottom = STD_MARGIN
+	for e in entries:
+		if i % MAX_ENTRIES == 0:
+			j += 1
+			c = VBoxContainer.new()
+			c.add_constant_override("separation", 64)
+			sequence_animation = AnimationPlayer.new()
+			animation = Animation.new()
+			animation.length = 16.0
+			
+			sequence_animation.add_animation("animation", animation)
+			
+			animation_players.append(sequence_animation)
+			c.add_child(sequence_animation)
+			
+			containers.append(c)
+			sequence_area.add_child(c)
+		
+		containers[j].add_child(_build_button(e, true, sequence_animation, animation))
+		i += 1
 
 
-func _build_button(var e: Dictionary) -> Button:
+func _build_button(var e: Dictionary, var is_animated: bool,
+		 var sequence_animation: AnimationPlayer, var animation: Animation) -> Button:
+	
 	var button: Button = Button.new()
 	button.text = e["name"]
 	button.rect_min_size = Vector2(360, 80)
 	button.theme = monument_theme
 	button.set("custom_fonts/font", monument_font)
+	
+	if is_animated and sequence_animation != null and animation != null:
+		var track_index = animation.add_track(Animation.TYPE_VALUE)
+		animation.track_set_path(track_index, button.name + ":rect_position")
+		animation.track_insert_key(track_index, 0.0, Vector2(0, 0))
+		animation.track_insert_key(track_index, 16.0, Vector2(2600, 0))
+		sequence_animation.add_animation("animation", animation)
 	
 	return button
 
@@ -93,10 +124,9 @@ func _build_all() -> void:
 	vbox.rect_min_size = Vector2(1920, 960)
 	
 	for e in entries:
-		var button: Button = _build_button(e)
+		var button: Button = _build_button(e, false, null, null)
 		vbox.add_child(button)
 	
-#	vbox.separation = 12
 	scroll.add_child(vbox)
 	all_area.add_child(scroll)
 

@@ -15,3 +15,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.125, 0.5 )
 content = ExtResource( 4 )
 
 [node name="Makers_Monument" parent="." instance=ExtResource( 1 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
