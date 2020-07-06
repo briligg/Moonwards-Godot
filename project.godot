@@ -147,7 +147,12 @@ _global_script_classes=[ {
 "base": "AComponent",
 "class": "RoverInput",
 "language": "GDScript",
-"path": "res://SceneComponent/Actor/Vehicle/RoverInput.gd"
+"path": "res://SceneComponent/Actor/Vehicle/AthleteRover/RoverInput.gd"
+}, {
+"base": "AEntity",
+"class": "StaticEntity",
+"language": "GDScript",
+"path": "res://Script/Entity/StaticEntity.gd"
 }, {
 "base": "AEntity",
 "class": "VehicleEntity",
@@ -183,6 +188,7 @@ _global_script_class_icons={
 "ResourceSignals": "",
 "ResourceThreadedLoader": "",
 "RoverInput": "",
+"StaticEntity": "",
 "VehicleEntity": ""
 }
 

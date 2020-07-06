@@ -52,8 +52,8 @@ puppetsync func add_player(entity_data) -> void:
 	e.owner_peer_id = entity_data.peer_id
 	e.set_network_master(1)
 	entities_container.add_child(e)
-	var model = e.get_component("ModelComponent")
-	model.set_colors(entity_data.colors)
+#	var model = e.get_component("ModelComponent")
+#	model.set_colors(entity_data.colors)
 	
 ### Networking API
 ## See if we can move this to it's own script.

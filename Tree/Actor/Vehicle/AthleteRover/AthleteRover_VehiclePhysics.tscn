@@ -4,10 +4,10 @@
 [ext_resource path="res://Assets/MoonTown/Models/Athlete_Rover/Athlete_Rover_Prop.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Script/ExtensionClass/SkeletonIKEditor.gd" type="Script" id=3]
 [ext_resource path="res://SceneComponent/Actor/CameraController.tscn" type="PackedScene" id=4]
-[ext_resource path="res://SceneComponent/Actor/Vehicle/RoverInput.tscn" type="PackedScene" id=5]
-[ext_resource path="res://SceneComponent/Actor/Vehicle/RoverVehicleMovement.tscn" type="PackedScene" id=6]
+[ext_resource path="res://SceneComponent/Actor/Vehicle/AthleteRover/RoverInput.tscn" type="PackedScene" id=5]
+[ext_resource path="res://SceneComponent/Actor/Vehicle/AthleteRover/RoverVehicleMovement.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Tree/Actor/Vehicle/AthleteRover/Speedometer.tscn" type="PackedScene" id=7]
-[ext_resource path="res://SceneComponent/Actor/Vehicle/RoverInteractable.tscn" type="PackedScene" id=8]
+[ext_resource path="res://SceneComponent/Actor/Vehicle/AthleteRover/RoverInteractable.tscn" type="PackedScene" id=8]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1.08164, 0.536182, 1.08848 )
@@ -25,7 +25,6 @@ extents = Vector3( 1.08164, 0.536182, 1.08848 )
 [sub_resource type="SphereMesh" id=7]
 
 [node name="AthleteRover" type="VehicleBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7, 0 )
 mass = 1500.0
 continuous_cd = true
 linear_damp = 0.05
@@ -143,30 +142,6 @@ damping_relaxation = 0.45
 transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 mesh = SubResource( 7 )
 material/0 = null
-
-[node name="LeftFrontJoint" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 6.00298, 6.5 )
-visible = false
-
-[node name="LeftMidJoint" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 6.00298, 0 )
-visible = false
-
-[node name="LeftBackJoint" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 7.50298, -6.5 )
-visible = false
-
-[node name="RightFrontJoint" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 6.00298, 6.5 )
-visible = false
-
-[node name="RightMidJoint" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 7.50298, 0 )
-visible = false
-
-[node name="RightBackJoint" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 7.50298, -6.5 )
-visible = false
 
 [node name="Model" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.00298, 0 )
