@@ -1,6 +1,4 @@
 extends AEntity
-# TODO: Decide whether a single type of entities will be enough.
-# Should start showing when we add more things to the game.
 class_name VehicleEntity
 # Entity class, serves as a medium between Components to communicate.
 

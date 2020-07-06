@@ -1,5 +1,6 @@
 extends Reference
 class_name ActorEntityState
+
 # Bit flag
 enum State {
 	NONE = 0
