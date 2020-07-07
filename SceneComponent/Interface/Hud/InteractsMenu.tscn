@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://SceneComponent/Interface/Hud/InteractsMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Interface/InteractsMenu.tres" type="Theme" id=2]
 [ext_resource path="res://Assets/Interface/StyleBoxes/InteractsMenuPanel.tres" type="StyleBox" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="InteractsMenu" type="PanelContainer"]
 visible = false
@@ -21,18 +23,26 @@ __meta__ = {
 margin_left = 2.0
 margin_top = 2.0
 margin_right = 766.0
-margin_bottom = 648.0
+margin_bottom = 646.0
+size_flags_horizontal = 3
 
 [node name="Buttons" type="VBoxContainer" parent="HBox"]
-margin_right = 380.0
-margin_bottom = 646.0
+margin_right = 361.0
+margin_bottom = 644.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/separation = 4
+custom_constants/separation = 10
+
+[node name="TopSeparator" type="HSeparator" parent="HBox/Buttons"]
+margin_right = 361.0
+margin_bottom = 15.0
+custom_styles/separator = SubResource( 1 )
+custom_constants/separation = 15
 
 [node name="Description" type="RichTextLabel" parent="HBox"]
-margin_left = 384.0
+margin_left = 365.0
 margin_right = 764.0
-margin_bottom = 646.0
+margin_bottom = 644.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+size_flags_stretch_ratio = 1.1
