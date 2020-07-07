@@ -53,10 +53,10 @@ func _ready():
 	
 	monument_font = DynamicFont.new()
 	monument_font.font_data = load("res://Assets/Interface/Fonts/Exo2/Exo2-ExtraBoldItalic.ttf")
-	monument_font.size = 82
+	monument_font.size = 156
 	
 	$VBoxContainer/BottomArea/CenterContainer/ShowAll.set("custom_fonts/font", monument_font)
-	monument_font.size = 64
+	monument_font.size = 124
 	
 	_build_all()
 	_build_sequence_buttons()
@@ -86,12 +86,11 @@ func _build_sequence_buttons() -> void:
 		if i % MAX_ENTRIES == 0:
 			j += 1
 			c = Control.new()
-			c.add_constant_override("separation", 64)
 			sequence_animation = AnimationPlayer.new()
 			sequence_animation.name = "AnimationPlayer"
 			sequence_animation.connect("animation_finished", self, "_on_animation_finished")
 			animation = Animation.new()
-			animation.length = ANIMATION_LENGTH
+			animation.length = ANIMATION_LENGTH + MAX_ENTRIES * 6.8
 			
 			sequence_animation.add_animation("animation", animation)
 			
@@ -101,7 +100,6 @@ func _build_sequence_buttons() -> void:
 			containers.append(c)
 			sequence_area.add_child(c)
 		
-
 		containers[j].add_child(_build_button(e, true, animation, i, j))
 		i += 1
 
@@ -114,18 +112,23 @@ func _build_button(var e: Dictionary, var is_animated: bool,
 	button.rect_min_size = Vector2(360, 80)
 	button.theme = monument_theme
 	button.set("custom_fonts/font", monument_font)
-	button.rect_position = Vector2(-600, -600)
+	button.set("custom_colors/font_color", Color(Color.gold))
+	button.rect_position = Vector2(-ProjectSettings.get_setting("display/window/size/width"),
+			-ProjectSettings.get_setting("display/window/size/height"))
 	
 	if is_animated and animation != null:
 		button.name = "Button" + str(i)
 		var track_index = animation.add_track(Animation.TYPE_VALUE)
 		animation.track_set_path(track_index, button.name + ":rect_position")
+		var delay = i-j*MAX_ENTRIES
 		if i % 2 == 0:
-			animation.track_insert_key(track_index, 0.0, Vector2(-500, (i-j*MAX_ENTRIES)*150))
-			animation.track_insert_key(track_index, ANIMATION_LENGTH, Vector2(2100, (i-j*MAX_ENTRIES)*150))
+			animation.track_insert_key(track_index, delay*6.8, Vector2(-button.rect_size.x, delay*200))
+			animation.track_insert_key(track_index, ANIMATION_LENGTH+delay*6.8,
+					Vector2(ProjectSettings.get_setting("display/window/size/width")+1, delay*150))
 		else:
-			animation.track_insert_key(track_index, 0.0, Vector2(2100, (i-j*MAX_ENTRIES)*150))
-			animation.track_insert_key(track_index, ANIMATION_LENGTH, Vector2(-500, (i-j*MAX_ENTRIES)*150))
+			animation.track_insert_key(track_index, delay*6.8,
+					Vector2(ProjectSettings.get_setting("display/window/size/width")+1, delay*200))
+			animation.track_insert_key(track_index, ANIMATION_LENGTH+delay*6.8, Vector2(-button.rect_size.x, delay*150))
 	return button
 
 
