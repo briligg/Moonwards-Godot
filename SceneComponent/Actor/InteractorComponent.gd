@@ -24,3 +24,11 @@ func _unhandled_input(event : InputEvent) -> void :
 
 func on_interacted_with(_interactor)->void:
 	print("Interacted with %s " %_interactor)
+
+#Bring up the interact display
+func _interact_made_possible(_string_closest_potential_interact : String):
+	Signals.Hud.emit_signal(Signals.Hud.INTERACT_POSSIBLE, "Press use to bring up interact menu")
+
+#Hide the interact display when no interactions are available.
+func _interact_made_impossible():
+	Signals.Hud.emit_signal(Signals.Hud.INTERACT_BECAME_IMPOSSIBLE)
