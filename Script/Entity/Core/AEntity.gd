@@ -1,6 +1,16 @@
 extends MwSpatial
 class_name AEntity
 
+enum EntityType {
+	Undefined,
+	Player,
+	NPC,
+	Vehicle,
+	StaticObject,
+}
+
+var entity_type = EntityType.Undefined
+
 var enabled = false
 
 var entity_id: int = -1
