@@ -1,37 +1,30 @@
 extends AComponent
 
-var interactee
-var interactee_cam
-
-var is_active = false
-
-func _init().("RoverDock", true):
+#This function is required by AComponent.
+func _init().("RoverDockInteractor", true) -> void :
 	pass
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	$Interactor.connect("interact_made_possible", self, "interacted_by")
-	$Interactor.connect("interacted_with", self, "interacted_by")
+
+#Make Interactor have my Entity variable as it's user.
+func _ready() -> void :
+	$Interactor.owning_entity = self.entity
 	
-func interacted_by(e) -> void:
-	if !self.is_active:
-		self.interactee = e
-		self.interactee_cam = interactee.get_component("Camera").camera
-		self.interactee.disable()
-		self.entity.enable()
-		var cam = entity.get_component("Camera")
-		if cam:
-			cam.camera.current = true
-		is_active = true
+	#Listen for when interactions are possible and when they become impossible.
+	$Interactor.connect("interact_made_possible", self, "on_interact_possible")
+	$Interactor.connect("interact_made_impossible", self, "on_interact_impossible")
+	$Interactor.connect("interacted_with", self, "on_interacted_with")
 
-func disable():
-	pass
+func _unhandled_input(event : InputEvent) -> void :
+	if event.is_action_pressed("use") :
+		$Interactor.interact()
 
-func return_control() -> void:
-	self.interactee.enable()
-	self.interactee_cam.current = true
-	self.entity.disable()
-	self.is_active = false
+func on_interact_impossible() -> void :
+	Signals.Hud.emit_signal(Signals.Hud.INTERACT_BECAME_IMPOSSIBLE)
 
-func _input(event : InputEvent) -> void :
-	if event.is_action_pressed("use") and is_active:
-		call_deferred("return_control")
+func on_interact_possible(interact_info : String) -> void :
+	Signals.Hud.emit_signal(Signals.Hud.INTERACT_POSSIBLE, interact_info)
+
+func on_interacted_with(interactor)->void:
+	var parent = interactor.get_parent()
+	parent.remove_child(interactor)
+	entity.add_child(interactor)
+	interactor.transform = self.transform

@@ -3,7 +3,7 @@ extends AComponent
 onready var interactor : Area = $Interactor
 
 #This function is required by AComponent.
-func _init().("PlayerInteractor", true) -> void :
+func _init().("Interactor", true) -> void :
 	pass
 
 func _interactable_left(interactable_user_node : Node) -> void :
