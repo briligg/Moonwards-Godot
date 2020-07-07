@@ -5,7 +5,7 @@ var interactee_cam
 
 var is_active = false
 
-func _init().("RoverInteractable", true):
+func _init().("RoverRideInteractable", true):
 	pass
 # Called when the node enters the scene tree for the first time.
 func _ready():

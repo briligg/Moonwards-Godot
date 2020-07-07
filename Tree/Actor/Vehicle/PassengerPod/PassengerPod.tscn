@@ -11,3 +11,6 @@ script = ExtResource( 3 )
 [node name="Ground_Passenger_Pod" parent="." instance=ExtResource( 1 )]
 
 [node name="PassengerPod" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="PassengerPod"]
+shape = ExtResource( 2 )
