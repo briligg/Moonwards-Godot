@@ -2,7 +2,7 @@ extends PanelContainer
 
 #The button parent.
 onready var button_parent : VBoxContainer = get_node("HBox/Buttons")
-onready var description : RichTextLabel = get_node("HBox/Description")
+onready var description : RichTextLabel = get_node("HBox/DescriptionPanel/HBox/Description")
 
 var interact_list : Array = []
 
@@ -40,16 +40,20 @@ func _create_button(interact_name : String, interactable_location : int, info : 
 	var separator : HSeparator = HSeparator.new()
 	separator.call_deferred("add_constant_override", "separation", 15)
 	separator.set("separation", true)
-
-	#Do not add the separator if you are first in the list.
-	if interactable_location != 0 :
-		button_parent.call_deferred("add_child", separator)
 	
 	#Create a button.
 	var new_button : Button = Button.new()
 	new_button.name = interact_name
 	new_button.text = interact_name
 	button_parent.call_deferred("add_child", new_button)
+
+	#Do not add the separator if you are first in the list.
+	if interactable_location != 0 :
+		button_parent.call_deferred("add_child", separator)
+	
+	#Grab focus if we are the first button to be created.
+	else :
+		new_button.call_deferred("grab_focus")
 	
 	#Listen for the button to be interacted with.
 	new_button.connect("pressed", self, "_button_pressed", [interactable_location])
