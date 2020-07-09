@@ -68,25 +68,9 @@ func _ready():
 		Log.trace(self, "_ready", "Screen View without a content")
 	
 	get_node("Area").connect("input_event", self, "_on_area_input_event")
-	get_node("InteractionTrigger").connect("body_entered", self, "_start_interaction")
-	get_node("InteractionTrigger").connect("body_exited", self, "_stop_interaction")
 	
 	if hologram:
 		var mat = $Area/Quad.get_surface_material(0)
 		mat.albedo_color.a = 0.7
 		mat.flags_transparent = true
 		$Area/Quad.set_surface_material(0, mat)
-
-
-func _start_interaction(body):
-	set_process_input(true)
-	var player = body.get_parent()
-	if(player.has_method("ShowMouseCursor")):
-		player.call("ShowMouseCursor")
-
-
-func _stop_interaction(body):
-	set_process_input(false)
-	var player = body.get_parent()
-	if(player.has_method("HideMouseCursor")):
-		player.call("HideMouseCursor")
