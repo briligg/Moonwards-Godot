@@ -16,7 +16,8 @@ export var display_info : String = "Interactable"
 var owning_entity: AEntity = null
 
 func _ready() -> void :
-	set_collision_layer_bit(15, true)
+	collision_layer = 32768
+	collision_mask = 0
 
 func get_info() -> String :
 	#Show what the display info should be for interacting with me.

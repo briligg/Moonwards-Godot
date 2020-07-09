@@ -18,6 +18,10 @@ var interactable : Area = null
 #This is how I will not spam a signal when I have potential interacts.
 var previous_collider : Area = null
 
+func _ready():
+	collision_layer = 0
+	collision_mask = 32768
+
 #Determine when I have touched an interactable.
 func _physics_process(_delta : float) -> void:
 	#Get the interactable I am colliding with.
