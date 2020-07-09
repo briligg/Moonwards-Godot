@@ -3,13 +3,20 @@ extends Node
 
 var Enum = EnumHelper.new()
 
-#### Temporary for testing
-var is_capture_mode: float = true
+var is_capture_mode : bool = false
+
 func _input(event):
 	if event.is_action_pressed("mainmenu_toggle"):
 		if is_capture_mode:
-			is_capture_mode = !is_capture_mode
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			capture_mouse(false)
 		else:
-			is_capture_mode = !is_capture_mode
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			capture_mouse(true)
+
+func capture_mouse(capture_mouse : bool) -> void :
+	if capture_mouse == true :
+		is_capture_mode = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	else :
+		is_capture_mode = false
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

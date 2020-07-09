@@ -101,6 +101,9 @@ func _show_interacts(potential_interacts : Array) :
 	_clear_button_parent()
 	show()
 	
+	#Make the mouse appear
+	Helpers.capture_mouse(false)
+	
 	#Create a button for each potential interact.
 	var at : int = 0
 	for interactable in potential_interacts :
