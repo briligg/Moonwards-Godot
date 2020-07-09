@@ -8,6 +8,8 @@ class_name Interactor
 #This is what I pass as the interactor.
 var owning_entity : AEntity
 
+signal interactable_entered_area(interactable_node)
+signal interactable_left_area(interactable_node)
 signal interact_made_possible(string_closest_potential_interact)
 signal interact_made_impossible()
 
@@ -21,8 +23,14 @@ var previous_collider : Area = null
 func _ready():
 	collision_layer = 0
 	collision_mask = 32768
+	
+	connect("area_exited", self, "_interactable_left")
+	connect("area_entered", self, "_interactable_entered")
 
-#Determine when I have touched an interactable.
+func _interactable_left(interactable_area : Area) -> void :
+	emit_signal("interactable_left_area", interactable_area)
+
+#Determine what Interactables I am touching.
 func _physics_process(_delta : float) -> void:
 	#Get the interactable I am colliding with.
 	var closest_body : Area = null
@@ -70,3 +78,7 @@ func interact_with_closest() -> void :
 	interactables[0].interact_with(owning_entity)
 	if interactables[0].owning_entity != null:
 		emit_signal("interacted_with", interactables[0].owning_entity)
+
+#An interactable has entered my area.
+func _interactable_entered(interactable_node) -> void :
+	emit_signal("interactable_entered_area", interactable_node)
