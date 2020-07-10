@@ -74,7 +74,7 @@ func _free_button(button_location_in_interact_list : int) -> void :
 
 func _interactable_entered(interactable_node) -> void :
 	interact_list.append(interactable_node)
-	_create_button(interactable_node.name, interact_list.size()-1, interactable_node.get_info())
+	_create_button(interactable_node.get_title(), interact_list.size()-1, interactable_node.get_info())
 	enter_comes_first = true
 
 func _interactable_left(interactable_node) -> void :
@@ -107,5 +107,5 @@ func _show_interacts(potential_interacts : Array) :
 	#Create a button for each potential interact.
 	var at : int = 0
 	for interactable in potential_interacts :
-		_create_button(interactable.name, at, interactable.get_info())
+		_create_button(interactable.get_title(), at, interactable.get_info())
 		at += 1

@@ -12,6 +12,8 @@ signal interacted_by(interactor_ray_cast)
 
 #This is what is displayed when an interactor can interact with me.
 export var display_info : String = "Interactable"
+#This string is displayed in the text of the InteractsMenu button.
+export var title : String = "Title"
 
 var owning_entity: AEntity = null
 
@@ -23,6 +25,12 @@ func get_info() -> String :
 	#Show what the display info should be for interacting with me.
 	return display_info
 
+func get_title() -> String :
+	return title
+
 func interact_with(interactor : Node) -> void :
 	#Someone requested interaction with me.
 	emit_signal("interacted_by", interactor)
+
+func set_title(new_title : String) -> void :
+	title = new_title
