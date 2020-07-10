@@ -6,8 +6,6 @@ class_name VehicleEntity
 
 onready var model = $Model
 
-
-
 # `MASTER`
 # Input vector
 master var input: Vector3 = Vector3.ZERO

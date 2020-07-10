@@ -170,136 +170,136 @@ extents = Vector3( 1159.2, 178.691, 628.184 )
 [sub_resource type="BoxShape" id=36]
 extents = Vector3( 3049.85, 1391.98, 2112.52 )
 
-[sub_resource type="BoxShape" id=76]
+[sub_resource type="BoxShape" id=37]
 extents = Vector3( 536.22, 181.407, 199.066 )
 
-[sub_resource type="BoxShape" id=77]
+[sub_resource type="BoxShape" id=38]
 extents = Vector3( 150.395, 192.582, 182.329 )
 
-[sub_resource type="BoxShape" id=78]
+[sub_resource type="BoxShape" id=39]
 extents = Vector3( 77.5133, 92.0111, 53.3649 )
 
-[sub_resource type="BoxShape" id=79]
+[sub_resource type="BoxShape" id=40]
 extents = Vector3( 31.8284, 35.5358, 48.0454 )
 
-[sub_resource type="BoxShape" id=72]
+[sub_resource type="BoxShape" id=41]
 extents = Vector3( 789.306, 502.503, 416.161 )
 
-[sub_resource type="BoxShape" id=80]
+[sub_resource type="BoxShape" id=42]
 extents = Vector3( 404.602, 145.358, 380.093 )
 
-[sub_resource type="BoxShape" id=74]
+[sub_resource type="BoxShape" id=43]
 extents = Vector3( 574.805, 318.912, 435.816 )
 
-[sub_resource type="BoxShape" id=75]
+[sub_resource type="BoxShape" id=44]
 extents = Vector3( 455.095, 289.11, 353.011 )
 
-[sub_resource type="BoxShape" id=73]
+[sub_resource type="BoxShape" id=45]
 extents = Vector3( 1207.04, 864.05, 1597.06 )
 
-[sub_resource type="BoxShape" id=37]
+[sub_resource type="BoxShape" id=46]
 extents = Vector3( 8.18572, 11.0033, 13.4322 )
 
-[sub_resource type="BoxShape" id=38]
+[sub_resource type="BoxShape" id=47]
 extents = Vector3( 1.73007, 1.55893, 1 )
 
-[sub_resource type="BoxShape" id=39]
+[sub_resource type="BoxShape" id=48]
 extents = Vector3( 1, 5.23859, 4.86922 )
 
-[sub_resource type="BoxShape" id=40]
+[sub_resource type="BoxShape" id=49]
 extents = Vector3( 2.47637, 5.05642, 3.12395 )
 
-[sub_resource type="BoxShape" id=41]
+[sub_resource type="BoxShape" id=50]
 extents = Vector3( 2.26149, 2.12984, 1.45604 )
 
-[sub_resource type="BoxShape" id=42]
+[sub_resource type="BoxShape" id=51]
 extents = Vector3( 2.58779, 5.85584, 2.75677 )
 
-[sub_resource type="BoxShape" id=43]
+[sub_resource type="BoxShape" id=52]
 extents = Vector3( 2.99961, 5.84374, 3.40385 )
 
-[sub_resource type="BoxShape" id=44]
+[sub_resource type="BoxShape" id=53]
 extents = Vector3( 4.05716, 43.5251, 18.943 )
 
-[sub_resource type="BoxShape" id=45]
+[sub_resource type="BoxShape" id=54]
 extents = Vector3( 27.8008, 8.00589, 14.5938 )
 
-[sub_resource type="BoxShape" id=46]
+[sub_resource type="BoxShape" id=55]
 extents = Vector3( 21.0852, 6.16039, 18.5988 )
 
-[sub_resource type="BoxShape" id=47]
+[sub_resource type="BoxShape" id=56]
 extents = Vector3( 3.16868, 6.28403, 3.63721 )
 
-[sub_resource type="BoxShape" id=48]
+[sub_resource type="BoxShape" id=57]
 extents = Vector3( 2.97086, 4.42631, 2.02918 )
 
-[sub_resource type="BoxShape" id=49]
+[sub_resource type="BoxShape" id=58]
 extents = Vector3( 7.10108, 5.81447, 3.9313 )
 
-[sub_resource type="BoxShape" id=50]
+[sub_resource type="BoxShape" id=59]
 extents = Vector3( 54.1514, 39.2752, 51.0915 )
 
-[sub_resource type="BoxShape" id=51]
+[sub_resource type="BoxShape" id=60]
 extents = Vector3( 13.9197, 0.001, 46.6909 )
 
-[sub_resource type="BoxShape" id=52]
+[sub_resource type="BoxShape" id=61]
 extents = Vector3( 4.12164, 1.88042, 1.7687 )
 
-[sub_resource type="BoxShape" id=53]
+[sub_resource type="BoxShape" id=62]
 extents = Vector3( 2.16183, 2.2233, 2.65298 )
 
-[sub_resource type="BoxShape" id=54]
+[sub_resource type="BoxShape" id=63]
 extents = Vector3( 8.86944, 6.17074, 73.8565 )
 
-[sub_resource type="BoxShape" id=55]
+[sub_resource type="BoxShape" id=64]
 extents = Vector3( 605.627, 1, 529.818 )
 
-[sub_resource type="BoxShape" id=56]
+[sub_resource type="BoxShape" id=65]
 extents = Vector3( 479.692, 223.313, 469.14 )
 
-[sub_resource type="BoxShape" id=57]
+[sub_resource type="BoxShape" id=66]
 extents = Vector3( 123.21, 164.866, 295.004 )
 
-[sub_resource type="BoxShape" id=58]
+[sub_resource type="BoxShape" id=67]
 extents = Vector3( 66.8489, 72.2684, 38.6468 )
 
-[sub_resource type="BoxShape" id=59]
+[sub_resource type="BoxShape" id=68]
 extents = Vector3( 683.031, 320.328, 769.205 )
 
-[sub_resource type="BoxShape" id=60]
+[sub_resource type="BoxShape" id=69]
 extents = Vector3( 3.89548, 9.332, 3.11862 )
 
-[sub_resource type="BoxShape" id=61]
+[sub_resource type="BoxShape" id=70]
 extents = Vector3( 47.0684, 35.792, 261.925 )
 
-[sub_resource type="BoxShape" id=62]
+[sub_resource type="BoxShape" id=71]
 extents = Vector3( 79.3654, 53.8226, 77.604 )
 
-[sub_resource type="BoxShape" id=63]
+[sub_resource type="BoxShape" id=72]
 extents = Vector3( 3.34447, 4.32709, 2.02271 )
 
-[sub_resource type="BoxShape" id=64]
+[sub_resource type="BoxShape" id=73]
 extents = Vector3( 1.91961, 2.04567, 2.21689 )
 
-[sub_resource type="BoxShape" id=65]
+[sub_resource type="BoxShape" id=74]
 extents = Vector3( 2.40445, 2.82355, 2.46728 )
 
-[sub_resource type="BoxShape" id=66]
+[sub_resource type="BoxShape" id=75]
 extents = Vector3( 21.0153, 13.9677, 161.834 )
 
-[sub_resource type="BoxShape" id=67]
+[sub_resource type="BoxShape" id=76]
 extents = Vector3( 263.204, 154.553, 370.67 )
 
-[sub_resource type="BoxShape" id=68]
+[sub_resource type="BoxShape" id=77]
 extents = Vector3( 1233.37, 469.828, 1115.31 )
 
-[sub_resource type="BoxShape" id=69]
+[sub_resource type="BoxShape" id=78]
 extents = Vector3( 1670.88, 988.891, 2042.72 )
 
-[sub_resource type="BoxShape" id=70]
+[sub_resource type="BoxShape" id=79]
 extents = Vector3( 322.877, 170.718, 492.525 )
 
-[sub_resource type="BoxShape" id=71]
+[sub_resource type="BoxShape" id=80]
 extents = Vector3( 2.15067, 2.19388, 2.6153 )
 
 [node name="Moon_Town_Master" instance=ExtResource( 1 )]
@@ -661,19 +661,19 @@ show_lod1_list = [ NodePath("../Marker_all_Constructs/Empty_FirstGalleryUpper/Fi
 
 [node name="CollisionShape2" type="CollisionShape" parent="RVT_Crater_1stGal" index="1"]
 transform = Transform( 0.817724, -0.569824, -0.081417, 0.565678, 0.821697, -0.0694465, 0.106472, 0.0107323, 0.994258, -119.635, -286.896, -4.59253 )
-shape = SubResource( 76 )
+shape = SubResource( 37 )
 
 [node name="CollisionShape3" type="CollisionShape" parent="RVT_Crater_1stGal" index="2"]
 transform = Transform( 0.984466, 0, -0.175573, 0, 1, 0, 0.175573, 0, 0.984466, 384.735, 0, -48.9309 )
-shape = SubResource( 77 )
+shape = SubResource( 38 )
 
 [node name="CollisionShape4" type="CollisionShape" parent="RVT_Crater_1stGal" index="3"]
 transform = Transform( 0.987287, 0, -0.158951, 0, 1, 0, 0.158951, 0, 0.987287, 425.823, 85.457, 191.941 )
-shape = SubResource( 78 )
+shape = SubResource( 39 )
 
 [node name="CollisionShape5" type="CollisionShape" parent="RVT_Crater_1stGal" index="4"]
 transform = Transform( 0.985606, 0, -0.169057, 0, 1, 0, 0.169057, 0, 0.985606, 324.029, 79.2219, 173.544 )
-shape = SubResource( 79 )
+shape = SubResource( 40 )
 
 [node name="RVT_Crater_2ndGal" parent="." index="22" instance=ExtResource( 39 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1248.4, 0, 26.4211 )
@@ -681,7 +681,7 @@ show_lod0_list = [ NodePath("../Marker_all_Constructs/Empty_GalleriesOuterSurfac
 
 [node name="CollisionShape2" type="CollisionShape" parent="RVT_Crater_2ndGal" index="1"]
 transform = Transform( 0.808691, -0.561971, -0.173803, 0.570656, 0.821189, 0, 0.142725, -0.0991817, 0.98478, -411.515, -570.396, -396.239 )
-shape = SubResource( 72 )
+shape = SubResource( 41 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -692,7 +692,7 @@ show_lod0_list = [ NodePath("../Marker_all_Constructs/Empty_GalleriesOuterSurfac
 
 [node name="CollisionShape2" type="CollisionShape" parent="RVT_Crater_3rdGal" index="1"]
 transform = Transform( 0.738311, -0.665217, -0.111277, 0.6744, 0.730328, 0.10865, 0.0089927, -0.155263, 0.987832, -91.382, -64.9707, 71.6128 )
-shape = SubResource( 80 )
+shape = SubResource( 42 )
 
 [node name="RVT_Crater_4thGal" parent="." index="24" instance=ExtResource( 39 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1182.35, 0, 219.673 )
@@ -700,7 +700,7 @@ show_lod0_list = [ NodePath("../Marker_all_Constructs/Empty_GalleriesOuterSurfac
 
 [node name="CollisionShape2" type="CollisionShape" parent="RVT_Crater_4thGal" index="1"]
 transform = Transform( 0.839045, -0.505416, -0.20139, 0.505023, 0.861205, -0.0572525, 0.202375, -0.0536694, 0.977836, -73.8871, -572.694, 106.886 )
-shape = SubResource( 74 )
+shape = SubResource( 43 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -711,7 +711,7 @@ show_lod0_list = [ NodePath("../Marker_all_Constructs/Empty_GalleriesOuterSurfac
 
 [node name="CollisionShape2" type="CollisionShape" parent="RVT_Crater_5thGal" index="1"]
 transform = Transform( 0.7552, -0.597499, -0.269568, 0.562724, 0.80187, -0.200864, 0.336175, 0, 0.9418, -221.676, -78.0918, -30.972 )
-shape = SubResource( 75 )
+shape = SubResource( 44 )
 
 [node name="RVT_Crater_Long_Dome" parent="." index="26" instance=ExtResource( 39 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3513.98, 0, -336.867 )
@@ -719,7 +719,7 @@ show_lod0_list = [ NodePath("../Marker_all_Constructs/Empty_LongDome/Long_Dome")
 
 [node name="CollisionShape2" type="CollisionShape" parent="RVT_Crater_Long_Dome" index="1"]
 transform = Transform( 0.988199, 0, -0.153176, 0, 1, 0, 0.153176, 0, 0.988199, -297.831, -1256.83, 217.736 )
-shape = SubResource( 73 )
+shape = SubResource( 45 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -727,13 +727,13 @@ __meta__ = {
 [node name="Athlete_Rover_Prop" parent="." index="27" instance=ExtResource( 37 )]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 122.585, 103.087, -180.953 )
 
-[node name="Ground_Passenger_Pod" parent="Athlete_Rover_Prop" index="3" instance=ExtResource( 34 )]
+[node name="Ground_Passenger_Pod" parent="Athlete_Rover_Prop" index="2" instance=ExtResource( 34 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.52368, -2.87244 )
 
 [node name="Athlete_Rover_Prop2" parent="." index="28" instance=ExtResource( 37 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.6243, 103.087, -234.569 )
 
-[node name="Ground_Passenger_Pod" parent="Athlete_Rover_Prop2" index="3" instance=ExtResource( 34 )]
+[node name="Ground_Passenger_Pod" parent="Athlete_Rover_Prop2" index="2" instance=ExtResource( 34 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.52368, -2.87244 )
 
 [node name="Audio-Tour-Markers" type="Spatial" parent="." index="29"]
@@ -1101,84 +1101,84 @@ show_lod0_list = [ NodePath("../../Empty_FirstGalleryUpper/First_Gallery_Upper")
 
 [node name="CollisionShape" type="CollisionShape" parent="Marker_all_Constructs/Empty_AirlockBay/DVT_Airlock_Bay" index="0"]
 transform = Transform( 0.124052, 0, 0.992276, 0, 1, 0, -0.992276, 0, 0.124052, -164.97, 0, 11.5037 )
-shape = SubResource( 37 )
+shape = SubResource( 46 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_AirlockBay/DVT_Airlock_Bay" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -127.453, 3.69745, -8.14403 )
-shape = SubResource( 38 )
+shape = SubResource( 47 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape3" type="CollisionShape" parent="Marker_all_Constructs/Empty_AirlockBay/DVT_Airlock_Bay" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -107.366, 3.69745, -7.77422 )
-shape = SubResource( 38 )
+shape = SubResource( 47 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape4" type="CollisionShape" parent="Marker_all_Constructs/Empty_AirlockBay/DVT_Airlock_Bay" index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -87.3051, 3.69745, -7.77422 )
-shape = SubResource( 38 )
+shape = SubResource( 47 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape5" type="CollisionShape" parent="Marker_all_Constructs/Empty_AirlockBay/DVT_Airlock_Bay" index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -67.6335, 3.69745, -7.77422 )
-shape = SubResource( 38 )
+shape = SubResource( 47 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape6" type="CollisionShape" parent="Marker_all_Constructs/Empty_AirlockBay/DVT_Airlock_Bay" index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47.1827, 3.69745, -7.77422 )
-shape = SubResource( 38 )
+shape = SubResource( 47 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape7" type="CollisionShape" parent="Marker_all_Constructs/Empty_AirlockBay/DVT_Airlock_Bay" index="6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.3145, 3.69745, 7.74236 )
-shape = SubResource( 38 )
+shape = SubResource( 47 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape8" type="CollisionShape" parent="Marker_all_Constructs/Empty_AirlockBay/DVT_Airlock_Bay" index="7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.4025, 3.69745, 7.74236 )
-shape = SubResource( 38 )
+shape = SubResource( 47 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape9" type="CollisionShape" parent="Marker_all_Constructs/Empty_AirlockBay/DVT_Airlock_Bay" index="8"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4961, 3.69745, 7.74236 )
-shape = SubResource( 38 )
+shape = SubResource( 47 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape10" type="CollisionShape" parent="Marker_all_Constructs/Empty_AirlockBay/DVT_Airlock_Bay" index="9"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -97.3114, 3.69745, 7.74236 )
-shape = SubResource( 38 )
+shape = SubResource( 47 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape11" type="CollisionShape" parent="Marker_all_Constructs/Empty_AirlockBay/DVT_Airlock_Bay" index="10"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117.238, 3.69745, 7.74236 )
-shape = SubResource( 38 )
+shape = SubResource( 47 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape12" type="CollisionShape" parent="Marker_all_Constructs/Empty_AirlockBay/DVT_Airlock_Bay" index="11"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.4081, -0.21283, -0.194763 )
-shape = SubResource( 39 )
+shape = SubResource( 48 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1192,14 +1192,14 @@ show_lod1_list = [ NodePath("../../Empty_GalleriesOuterSurface/All_Overlays_4th_
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_AtriumHab/DVT_Empty_AtriumHab" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05933, 0.712097, 17.6263 )
-shape = SubResource( 40 )
+shape = SubResource( 49 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape" type="CollisionShape" parent="Marker_all_Constructs/Empty_AtriumHab/DVT_Empty_AtriumHab" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.9801, -2.17831, 69.1814 )
-shape = SubResource( 41 )
+shape = SubResource( 50 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1212,14 +1212,14 @@ show_lod1_list = [ NodePath("../../Empty_FirstGalleryUpper/First_Gallery_Upper")
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_BigAtrium/DVT_Center_Atrium" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3862, 9.80199, 35.9513 )
-shape = SubResource( 42 )
+shape = SubResource( 51 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape3" type="CollisionShape" parent="Marker_all_Constructs/Empty_BigAtrium/DVT_Center_Atrium" index="1"]
 transform = Transform( 0.994794, 0, -0.101907, 0, 1, 0, 0.101907, 0, 0.994794, -7.73895, -5.51354, -95.2946 )
-shape = SubResource( 43 )
+shape = SubResource( 52 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1238,7 +1238,7 @@ show_lod0_list = [ NodePath("../First_Gallery_Lower_LowerPart"), NodePath("../Fi
 
 [node name="CollisionShape" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryLower/DVT_FirstGalleryLower" index="0"]
 transform = Transform( 0.989316, 0, -0.14579, 0, 1, 0, 0.14579, 0, 0.989316, 54.5475, 45.5952, 0.658752 )
-shape = SubResource( 44 )
+shape = SubResource( 53 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1251,7 +1251,7 @@ show_lod2_list = [ NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Pan
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/ReversingVisibilityTrigger" index="1"]
 transform = Transform( 0.992215, 0, -0.124537, 0, 1, 0, 0.124537, 0, 0.992215, 20.3003, 7.11565, 3.02989 )
-shape = SubResource( 45 )
+shape = SubResource( 54 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1263,28 +1263,28 @@ show_lod2_list = [ NodePath("../../../../Marker_all_BoatRads/BoatRad002/Boat_Rad
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/ReversingVisibilityTrigger2" index="1"]
 transform = Transform( 0.852425, -0.507058, -0.127532, 0.511233, 0.859442, 0, 0.109606, -0.0651986, 0.991834, -43.2341, -14.5923, -5.88049 )
-shape = SubResource( 46 )
+shape = SubResource( 55 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape3" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/ReversingVisibilityTrigger2" index="2"]
 transform = Transform( 0.852425, -0.507058, -0.127532, 0.511233, 0.859442, 0, 0.109606, -0.0651986, 0.991834, -85.3366, -41.6847, -10.5088 )
-shape = SubResource( 46 )
+shape = SubResource( 55 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape4" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/ReversingVisibilityTrigger2" index="3"]
 transform = Transform( 0.838567, -0.530161, -0.125437, 0.534382, 0.845243, 0, 0.106025, -0.0670313, 0.992102, -126.688, -70.0444, -16.5435 )
-shape = SubResource( 46 )
+shape = SubResource( 55 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape5" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/ReversingVisibilityTrigger2" index="4"]
 transform = Transform( 0.799638, -0.588468, -0.119513, 0.592716, 0.805411, 0, 0.0962571, -0.0708373, 0.992833, -165.447, -99.471, -21.3921 )
-shape = SubResource( 46 )
+shape = SubResource( 55 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1296,28 +1296,28 @@ show_lod1_list = [ NodePath("../../Empty_FirstGalleryLower/First_Gallery_Lower_M
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/DVT_First_Gallery_Upper" index="0"]
 transform = Transform( 0.991712, 0, -0.128484, 0, 1, 0, 0.128484, 0, 0.991712, -0.0761323, -26.0353, 46.5446 )
-shape = SubResource( 47 )
+shape = SubResource( 56 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape3" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/DVT_First_Gallery_Upper" index="1"]
 transform = Transform( 0.989488, 0, -0.144615, 0, 1, 0, 0.144615, 0, 0.989488, -162.537, -70.813, -24.5237 )
-shape = SubResource( 48 )
+shape = SubResource( 57 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape4" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/DVT_First_Gallery_Upper" index="2"]
 transform = Transform( 0.962346, 0, -0.271827, 0, 1, 0, 0.271827, 0, 0.962346, 24.8038, -25.5886, -74.3809 )
-shape = SubResource( 49 )
+shape = SubResource( 58 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape5" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/DVT_First_Gallery_Upper" index="3"]
 transform = Transform( 0.989316, 0, -0.14579, 0, 1, 0, 0.14579, 0, 0.989316, -241.949, -149.443, -8.65079 )
-shape = SubResource( 44 )
+shape = SubResource( 53 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1333,14 +1333,14 @@ show_lod0_list = [ NodePath(".."), NodePath("../First_Factory/Markers/Empty_Towe
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstHangars/RVT_First_Factory_LOD0" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8041, 13.9015, -40.9016 )
-shape = SubResource( 50 )
+shape = SubResource( 59 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape3" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstHangars/RVT_First_Factory_LOD0" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.4055, 0, -36.3027 )
-shape = SubResource( 51 )
+shape = SubResource( 60 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1363,14 +1363,14 @@ show_lod2_list = [ NodePath("../../Empty_LongDome/Long_Dome") ]
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_LosPortalesTunnel/DVT_Rim_Arcade" index="0"]
 transform = Transform( 0.851297, 0, -0.524684, 0, 1, 0, 0.524684, 0, 0.851297, 44.0263, -1.36786, -88.0066 )
-shape = SubResource( 52 )
+shape = SubResource( 61 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape3" type="CollisionShape" parent="Marker_all_Constructs/Empty_LosPortalesTunnel/DVT_Rim_Arcade" index="1"]
 transform = Transform( 0.997176, 0, -0.0751006, 0.00397497, 0.998598, 0.0527788, 0.0749953, -0.0529286, 0.995779, -13.6707, -12.5419, 109.853 )
-shape = SubResource( 53 )
+shape = SubResource( 62 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1380,7 +1380,7 @@ hide_list = [ NodePath("../../Empty_SouthLongAtrium/South_Farm_Atrium"), NodePat
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_LosPortalesTunnel/ReversingVisibilityTrigger" index="1"]
 transform = Transform( 0.966052, 0, -0.258347, 0, 1, 0, 0.258347, 0, 0.966052, 9.12482, 0, 7.37732 )
-shape = SubResource( 54 )
+shape = SubResource( 63 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1392,7 +1392,7 @@ show_lod1_list = [ NodePath("../Markers/Empty_PressurizedHangar_Giant/Pressurize
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_MainHangars/Main_Factory/RVT_PressurizedFactory_Far" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 625.508, 0, -1193.04 )
-shape = SubResource( 55 )
+shape = SubResource( 64 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1403,21 +1403,21 @@ show_lod0_list = [ NodePath(".."), NodePath("../Markers/Empty_PressurizedHangar_
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_MainHangars/Main_Factory/RVT_Main_Factory_LOD0" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 125.971, 195.415, -5.1991 )
-shape = SubResource( 56 )
+shape = SubResource( 65 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape3" type="CollisionShape" parent="Marker_all_Constructs/Empty_MainHangars/Main_Factory/RVT_Main_Factory_LOD0" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -471.377, 204.241, 169.541 )
-shape = SubResource( 57 )
+shape = SubResource( 66 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape4" type="CollisionShape" parent="Marker_all_Constructs/Empty_MainHangars/Main_Factory/RVT_Main_Factory_LOD0" index="3"]
 transform = Transform( 0.676079, 0, 0.736829, 0, 1, 0, -0.736829, 0, 0.676079, -363.377, 184.205, -147.115 )
-shape = SubResource( 58 )
+shape = SubResource( 67 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1428,7 +1428,7 @@ show_lod1_list = [ NodePath(".."), NodePath("../Markers/Empty_PressurizedHangar_
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_MainHangars/Main_Factory/RVT_Main_Factory_LOD1" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 287.264, 56.0106, 119.57 )
-shape = SubResource( 59 )
+shape = SubResource( 68 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1443,7 +1443,7 @@ show_lod0_list = [ NodePath(".."), NodePath("../../../Empty_FirstGalleryUpper/Fi
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_NorthLongAtrium/North_Farm_Atrium/DynamicVisibilityTrigger" index="0"]
 transform = Transform( 0.962365, 0, -0.27176, 0, 1, 0, 0.27176, 0, 0.962365, -21.3893, 19.6832, 44.5208 )
-shape = SubResource( 60 )
+shape = SubResource( 69 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1454,7 +1454,7 @@ show_lod2_list = [ NodePath("../../../Empty_FirstGalleryUpper/First_Gallery_Uppe
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_NorthLongAtrium/North_Farm_Atrium/ReversingVisibilityTrigger" index="1"]
 transform = Transform( 0.984442, 0, -0.17571, 0, 1, 0, 0.17571, 0, 0.984442, 71.6086, 28.4194, -275.83 )
-shape = SubResource( 61 )
+shape = SubResource( 70 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1468,7 +1468,7 @@ show_lod0_list = [ NodePath("../Nuclear_Plant"), NodePath("../Nuclear_Plant/Mark
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_NuclearPlant/RVT_NuclearPlant" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.9812, 0 )
-shape = SubResource( 62 )
+shape = SubResource( 71 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1486,7 +1486,7 @@ show_lod2_list = [ NodePath("../../Empty_LongDome/Long_Dome") ]
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_RecHab1/DVT_Rec_Hab_1" index="0"]
 transform = Transform( 0.989942, 0, -0.141471, 0, 1, 0, 0.141471, 0, 0.989942, -2.56548, 0.955372, 14.2987 )
-shape = SubResource( 63 )
+shape = SubResource( 72 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1502,21 +1502,21 @@ show_lod1_list = [ NodePath("../../Empty_ThirdGallery/Third_Gallery"), NodePath(
 
 [node name="CollisionShape" type="CollisionShape" parent="Marker_all_Constructs/Empty_SouthLongAtrium/DVT_South_Farm_Atrium" index="0"]
 transform = Transform( 0.997073, 0, -0.076458, 0, 1, 0, 0.076458, 0, 0.997073, -16.7126, 12.1658, -180.725 )
-shape = SubResource( 64 )
+shape = SubResource( 73 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_SouthLongAtrium/DVT_South_Farm_Atrium" index="1"]
 transform = Transform( 0.912249, 0, 0.409637, 0, 1, 0, -0.409637, 0, 0.912249, 20.589, 14.6429, 161.254 )
-shape = SubResource( 65 )
+shape = SubResource( 74 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape3" type="CollisionShape" parent="Marker_all_Constructs/Empty_SouthLongAtrium/DVT_South_Farm_Atrium" index="2"]
 transform = Transform( 0.990195, 0, 0.139692, 0, 1, 0, -0.139692, 0, 0.990195, -50.8762, 14.3132, 160.965 )
-shape = SubResource( 65 )
+shape = SubResource( 74 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1527,7 +1527,7 @@ hide_list = [ NodePath("../../Empty_ThirdGallery/Third_Gallery"), NodePath("../.
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_SouthLongAtrium/ReversingVisibilityTrigger" index="1"]
 transform = Transform( 0.995319, 0, -0.0966449, 0, 1, 0, 0.0966449, 0, 0.995319, 18.8667, 24.6001, -134.068 )
-shape = SubResource( 66 )
+shape = SubResource( 75 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1540,7 +1540,7 @@ show_lod0_list = [ NodePath("../Spaceport_Terminal"), NodePath("../Spaceport_Han
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_Spaceport/Spaceport/RVT_SpaceportBuildings_L0" index="1"]
 transform = Transform( 0.994003, 0, -0.109353, 0, 1, 0, 0.109353, 0, 0.994003, -49.7646, 75.0759, 123.97 )
-shape = SubResource( 67 )
+shape = SubResource( 76 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1551,7 +1551,7 @@ show_lod1_list = [ NodePath(".."), NodePath("../Spaceport_Hangar"), NodePath("..
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_Spaceport/Spaceport/RVT_Spaceport_L1" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -669.301, 0, -327.127 )
-shape = SubResource( 68 )
+shape = SubResource( 77 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1562,7 +1562,7 @@ hide_list = [ NodePath("../../../Empty_LongDome/Long_Dome"), NodePath("../../../
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_Spaceport/Spaceport/RVT_Spaceport_Hider" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.9614, -0.000244141, 783.391 )
-shape = SubResource( 69 )
+shape = SubResource( 78 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1576,7 +1576,7 @@ show_lod0_list = [ NodePath("../STEMP_Facilities"), NodePath("../STEMP_Facilitie
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_STEMP-Facilities/RVT_STEMP" index="1"]
 transform = Transform( 0.995144, 0, -0.098434, 0, 1, 0, 0.098434, 0, 0.995144, 190.192, 0, -275.679 )
-shape = SubResource( 70 )
+shape = SubResource( 79 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1593,7 +1593,7 @@ show_lod2_list = [ NodePath("../../Empty_MainHangars/Main_Factory/Markers/TowerR
 
 [node name="CollisionShape" type="CollisionShape" parent="Marker_all_Constructs/Empty_TeacupCrater/DVT_Teacup_Crater" index="0"]
 transform = Transform( 0.93477, 0, 0.355254, -0.0293747, 0.996576, 0.0772928, -0.354037, -0.0826865, 0.931569, -123.778, -30.0335, -138.772 )
-shape = SubResource( 71 )
+shape = SubResource( 80 )
 __meta__ = {
 "_edit_lock_": true
 }
