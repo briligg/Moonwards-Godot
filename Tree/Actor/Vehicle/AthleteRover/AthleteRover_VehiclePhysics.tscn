@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Script/Entity/VehicleEntity.gd" type="Script" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Athlete_Rover/Athlete_Rover_Prop.tscn" type="PackedScene" id=2]
@@ -7,7 +7,8 @@
 [ext_resource path="res://SceneComponent/Actor/Vehicle/AthleteRover/RoverInput.tscn" type="PackedScene" id=5]
 [ext_resource path="res://SceneComponent/Actor/Vehicle/AthleteRover/RoverVehicleMovement.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Tree/Actor/Vehicle/AthleteRover/Speedometer.tscn" type="PackedScene" id=7]
-[ext_resource path="res://SceneComponent/Actor/Vehicle/AthleteRover/RoverDockInteractor.tscn" type="PackedScene" id=9]
+[ext_resource path="res://SceneComponent/Actor/Vehicle/AthleteRover/RoverRideInteractable.tscn" type="PackedScene" id=8]
+[ext_resource path="res://SceneComponent/Actor/InteractorComponent.tscn" type="PackedScene" id=9]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1.08164, 0.536182, 1.08848 )
@@ -24,7 +25,9 @@ extents = Vector3( 1.08164, 0.536182, 1.08848 )
 
 [sub_resource type="SphereMesh" id=7]
 
-[node name="AthleteRover" type="VehicleBody"]
+[node name="AthleteRover" type="VehicleBody" groups=[
+"athlete_rover",
+]]
 mass = 1500.0
 continuous_cd = true
 linear_damp = 0.05
@@ -213,9 +216,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.00298, 0 )
 
 [node name="RoverInput" parent="." instance=ExtResource( 5 )]
 
-[node name="RoverDockInteractor" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.84551, 0 )
+[node name="RoverRideInteractable" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.31836, 0 )
+
+[node name="Interactor" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.81685, 0 )
+
+[node name="DockPoint" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.74438, 0 )
 
 [editable path="Model"]
-
-[editable path="RoverDockInteractor"]

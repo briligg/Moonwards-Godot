@@ -3,7 +3,7 @@ class_name InputController
 
 var ignore_inputs : bool = false
 
-func _init().("InputController", true):
+func _init().("HumanoidInput", true):
 	pass
 
 func _ready():

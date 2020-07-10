@@ -3,9 +3,7 @@ extends Interactable
 Groups: SoloAudioPlayer
 """
 
-
 export var audio_file : AudioStreamOGGVorbis = AudioStreamOGGVorbis.new()
-
 
 func _ready() -> void :
 	#Will crash if no file is given to the AudioSphere.

@@ -18,7 +18,7 @@ script = ExtResource( 6 )
 
 [node name="AnimationController" parent="." instance=ExtResource( 4 )]
 
-[node name="Camera" parent="." instance=ExtResource( 3 )]
+[node name="CameraController" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.766189, 0 )
 dist = 3.0
 
@@ -31,12 +31,12 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="InputController" parent="." instance=ExtResource( 1 )]
+[node name="HumanoidInput" parent="." instance=ExtResource( 1 )]
 
 [node name="Model" parent="." instance=ExtResource( 7 )]
 
 [node name="Interactor" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.879645, 0 )
 
-[node name="NametagComponent" parent="." instance=ExtResource( 2 )]
+[node name="Nametag" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70766, 0 )
