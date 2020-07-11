@@ -6,8 +6,6 @@ onready var description : RichTextLabel = get_node("HBox/DescriptionPanel/HBox/D
 
 var interact_list : Array = []
 
-var enter_comes_first : bool = false
-
 #Listen for when interacts are possible.
 func _ready() -> void :
 	Signals.Hud.connect(Signals.Hud.POTENTIAL_INTERACT_REQUESTED, self, "_show_interacts")
@@ -75,19 +73,14 @@ func _free_button(button_location_in_interact_list : int) -> void :
 func _interactable_entered(interactable_node) -> void :
 	interact_list.append(interactable_node)
 	_create_button(interactable_node.get_title(), interact_list.size()-1, interactable_node.get_info())
-	enter_comes_first = true
 
 func _interactable_left(interactable_node) -> void :
-	assert(enter_comes_first)
-	
 	#Get where the interactable was originally in the list.
 	var at : int = interact_list.find(interactable_node)
 	#Remove myself from the interact_list.
 	interact_list.remove(at)
 	
 	_free_button(at)
-	
-	enter_comes_first = false
 
 #Called from a signal. The player wants to see what interactables are present.
 func _show_interacts(potential_interacts : Array) :
