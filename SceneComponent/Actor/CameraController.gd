@@ -19,8 +19,6 @@ func _init().("Camera", true):
 	pass
 	
 func _ready():
-	if enabled == true:
-		camera.set_current(true)
 	yaw = 0.0
 	pitch = 0.0
 	_update_cam_pos()
@@ -55,3 +53,10 @@ func _update_cam_pos() -> void:
 func _get_cam_normal() -> Vector3:
 	return camera.project_ray_normal(get_viewport().get_visible_rect().size * 0.5)
 	
+func disable():
+	camera.set_current(false)
+	.disable()
+
+func enable():
+	camera.set_current(true)
+	.enable()
