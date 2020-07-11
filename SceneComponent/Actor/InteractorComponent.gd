@@ -38,3 +38,6 @@ func on_interacted_with(_interactor)->void:
 
 func interactable_entered(interactable_node):
 	Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_ENTERED_REACH, interactable_node)
+
+func disable():
+	$Interactor.enabled = false

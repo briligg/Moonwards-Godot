@@ -2,7 +2,7 @@ extends MwSpatial
 class_name AComponent
 
 onready var entity: AEntity = get_parent()
-export(bool) var enabled = true setget _set_enabled
+export(bool) var enabled = true setget set_enabled
 export(String) var comp_name = "" setget , _get_comp_name
 # Whether or not this component must run only on it's owner game client
 export(bool) var require_net_owner = false
@@ -52,7 +52,7 @@ func _process_server(_delta) -> void:
 func _process_client(_delta) -> void:
 	pass
 
-func _set_enabled(val: bool) -> void:
+func set_enabled(val: bool) -> void:
 	Log.trace(self, "set_enabled", "enabled has been set to {enabled}")
 	if val == false:
 		disable()

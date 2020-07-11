@@ -8,6 +8,8 @@ class_name Interactor
 #This is what I pass as the interactor.
 var owning_entity : AEntity
 
+var enabled: bool setget set_enabled
+
 signal interactable_entered_area(interactable_node)
 signal interactable_left_area(interactable_node)
 signal interact_made_possible(string_closest_potential_interact)
@@ -23,6 +25,7 @@ var previous_collider : Area = null
 func _ready():
 	collision_layer = 0
 	collision_mask = 32768
+	enabled = false
 	
 	connect("area_exited", self, "_interactable_left")
 	connect("area_entered", self, "_interactable_entered")
@@ -82,3 +85,12 @@ func interact_with_closest() -> void :
 #An interactable has entered my area.
 func _interactable_entered(interactable_node) -> void :
 	emit_signal("interactable_entered_area", interactable_node)
+
+func set_enabled(val: bool) -> void:
+	if !val:
+		interactables = []
+	set_physics_process(val)
+	set_process(val)
+	set_process_input(val)
+	$CollisionShape.disabled = !val
+	enabled = val
