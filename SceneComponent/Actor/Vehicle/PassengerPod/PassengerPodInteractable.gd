@@ -14,6 +14,8 @@ func _ready():
 	$Interactable.owning_entity = self.pod
 	$Interactable.display_info = "Dock to rover"
 	$Interactable.connect("interacted_by", self, "interacted_by")
+	$Interactable.title = "Dock Passenger Pod"
+	$Interactable.display_info = ""
 	orig_parent = pod.get_parent()
 
 func interacted_by(interactor):
@@ -24,6 +26,7 @@ func interacted_by(interactor):
 			call_deferred("undock")
 
 func dock_with(rover):
+	$Interactable.title = "Undock Passenger Pod"
 	_reparent(pod, rover)
 	_reparent(collision, rover)
 	pod.transform = rover.get_node("DockPoint").transform
@@ -32,6 +35,7 @@ func dock_with(rover):
 	is_docked = true
 
 func undock():
+	$Interactable.title = "Dock Passenger Pod"
 	_reparent(collision, pod)
 	_reparent(pod, orig_parent)
 	pod.global_transform = docked_to.get_node("DockPoint").global_transform
