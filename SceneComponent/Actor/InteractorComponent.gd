@@ -40,6 +40,7 @@ func interactable_entered(interactable_node):
 	Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_ENTERED_REACH, interactable_node)
 
 func disable():
+	Signals.Hud.emit_signal(Signals.Hud.HIDE_INTERACTS_MENU_REQUESTED)
 	$Interactor.enabled = false
 	.disable()
 

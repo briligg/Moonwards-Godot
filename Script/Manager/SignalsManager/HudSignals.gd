@@ -14,7 +14,7 @@ const INTERACT_POSSIBLE : String = "interact_possible"
 const INTERACT_BECAME_IMPOSSIBLE : String = "interact_became_impossible"
 const INTERACT_OCCURED : String = "interact_occured"
 const POTENTIAL_INTERACT_REQUESTED : String = "potential_interact_requested"
-
+const HIDE_INTERACTS_MENU_REQUESTED: String = "hide_interacts_menu_requested"
 # Define the actual signal.
 #warning-ignore:unused_signal
 signal chat_finished_typing()
@@ -28,3 +28,4 @@ signal interact_became_impossible()
 signal interact_occured(interactable_user_node)
 #Interact was pressed when multiple interactables are potentially interactable.
 signal potential_interact_requested(potential_interact_array)
+signal hide_interacts_menu_requested()
