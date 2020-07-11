@@ -28,7 +28,7 @@ func _ready() -> void :
 	interactor.connect("interacted_with", self, "on_interacted_with")
 	interactor.connect("interactable_left_area", self, "_interactable_left")
 
-func _unhandled_input(event : InputEvent) -> void :
+func _input(event : InputEvent) -> void :
 	if event.is_action_pressed("use") :
 		var potential_interacts : Array = interactor.get_potential_interacts()
 		Signals.Hud.emit_signal(Signals.Hud.POTENTIAL_INTERACT_REQUESTED, potential_interacts)
@@ -41,6 +41,8 @@ func interactable_entered(interactable_node):
 
 func disable():
 	$Interactor.enabled = false
+	.disable()
 
 func enable():
 	$Interactor.enabled = true
+	.enable()
