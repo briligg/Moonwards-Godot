@@ -2,7 +2,7 @@ extends MwSpatial
 class_name AComponent
 
 onready var entity: AEntity = get_parent()
-export(bool) var enabled = true setget set_enabled
+export(bool) var enabled setget set_enabled
 export(String) var comp_name = "" setget , _get_comp_name
 # Whether or not this component must run only on it's owner game client
 export(bool) var require_net_owner = false
@@ -28,12 +28,14 @@ func disable() -> void:
 	set_process(false)
 	set_physics_process(false)
 	set_process_input(false)
+	Log.trace(self, "disable", "Component %s has been disabled" %comp_name)
 	
 func enable() -> void:
 	enabled = true
 	set_process(true)
 	set_physics_process(true)
 	set_process_input(true)
+	Log.trace(self, "enable", "Component %s has been enabled" %comp_name)
 
 func _process_network(delta) -> void:
 	if !get_tree().network_peer:
@@ -53,7 +55,7 @@ func _process_client(_delta) -> void:
 	pass
 
 func set_enabled(val: bool) -> void:
-	Log.trace(self, "set_enabled", "enabled has been set to {enabled}")
+	
 	if val == false:
 		disable()
 	elif val == true:

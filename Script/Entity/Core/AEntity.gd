@@ -35,10 +35,14 @@ func get_component(_name: String) -> Node:
 func disable() -> void:
 	for comp in components.values():
 		comp.disable()
-
+	Log.trace(self, "disable", "Entity id:%s, name:%s has been disabled" 
+			%[entity_id, entity_name])
+	
 func enable() -> void:
 	for comp in components.values():
 		comp.enable()
+	Log.trace(self, "enable", "Entity id:%s, name:%s has been enabled" 
+			%[entity_id, entity_name])
 
 func set_enabled(val: bool) -> void:
 	if val:
