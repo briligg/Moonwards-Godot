@@ -10,16 +10,18 @@ var enter_comes_first : bool = false
 
 #Listen for when interacts are possible.
 func _ready() -> void :
-	Signals.Hud.connect(Signals.Hud.POTENTIAL_INTERACT_REQUESTED, self, "_show_interacts")
+	Signals.Hud.connect(Signals.Hud.POTENTIAL_INTERACT_REQUESTED, self, "_on_interact_requested")
 	Signals.Hud.connect(Signals.Hud.INTERACTABLE_ENTERED_REACH, self, "_interactable_entered")
 	Signals.Hud.connect(Signals.Hud.INTERACTABLE_LEFT_REACH, self, "_interactable_left")
-
+	Signals.Hud.connect(Signals.Hud.HIDE_INTERACTS_MENU_REQUESTED, self, "_hide_interacts")
+	
 #One of the buttons corresponding to the interactables has been pressed.
 func _button_pressed(interactable_location_in_list : int) -> void :
 	#Interact with desired interactable
 	var signal_string : String = Signals.Hud.INTERACT_OCCURED
 	var interactable = interact_list[interactable_location_in_list]
 	Signals.Hud.emit_signal(signal_string, interactable)
+	_hide_interacts()
 
 #Remove all buttons from the button parent.
 func _clear_button_parent() -> void :
@@ -78,7 +80,7 @@ func _interactable_entered(interactable_node) -> void :
 	enter_comes_first = true
 
 func _interactable_left(interactable_node) -> void :
-	assert(enter_comes_first)
+#	assert(enter_comes_first)
 	
 	#Get where the interactable was originally in the list.
 	var at : int = interact_list.find(interactable_node)
@@ -89,13 +91,14 @@ func _interactable_left(interactable_node) -> void :
 	
 	enter_comes_first = false
 
+func _on_interact_requested(potential_interacts: Array):
+	if visible:
+		_hide_interacts()
+	else:
+		_show_interacts(potential_interacts)
+
 #Called from a signal. The player wants to see what interactables are present.
-func _show_interacts(potential_interacts : Array) :
-	#Hide if I am already visible.
-	if visible == true :
-		visible = false
-		return
-	
+func _show_interacts(potential_interacts: Array) :
 	interact_list = potential_interacts
 	interact_list.empty()
 	_clear_button_parent()
@@ -109,3 +112,14 @@ func _show_interacts(potential_interacts : Array) :
 	for interactable in potential_interacts :
 		_create_button(interactable.get_title(), at, interactable.get_info())
 		at += 1
+
+func _hide_interacts():
+	Helpers.capture_mouse(true)
+	visible = false
+	_clear_menu()
+
+func _clear_menu():
+#	for i in interact_list:
+#		_interactable_left(i)
+#	interact_list = []
+	pass

@@ -69,7 +69,7 @@ func get_potential_interacts() -> Array :
 
 #Interact with the given interactable.
 func interact(interactable) -> void :
-	assert(interactables.empty() == false)
+#	assert(interactables.empty() == false)
 	interactable.interact_with(owning_entity)
 	emit_signal("interacted_with", interactable.owning_entity)
 
