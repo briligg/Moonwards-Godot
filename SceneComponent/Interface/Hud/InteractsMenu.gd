@@ -13,10 +13,10 @@ func _ready() -> void :
 	Signals.Hud.connect(Signals.Hud.INTERACTABLE_LEFT_REACH, self, "_interactable_left")
 
 #Called from a signal. One of the buttons corresponding to the interactables has been pressed.
-func _button_pressed(interactable_location_in_list : int) -> void :
+func _button_pressed(interactable_path : NodePath) -> void :
 	#Interact with desired interactable
 	var signal_string : String = Signals.Hud.INTERACT_OCCURED
-	var interactable = interact_list[interactable_location_in_list]
+	var interactable = get_node(interactable_path)
 	Signals.Hud.emit_signal(signal_string, interactable)
 
 #Remove all buttons and their separators from the button parent.
@@ -39,7 +39,7 @@ func _convert_to_button_location(interactor_list_location : int) -> int :
 	return at
 
 #Add a button to the InteractsMenu.
-func _create_button(interact_name : String, interactable_location : int, info : String) -> void :
+func _create_button(interact_name : String, interactable_location : int, info : String, interactable_path : NodePath) -> void :
 	#Create a separator to give buttons more space between each other.
 	#Add constant override has to be deferred 
 	#or else it will get overwritten by Godot.
@@ -61,7 +61,7 @@ func _create_button(interact_name : String, interactable_location : int, info : 
 		new_button.call_deferred("grab_focus")
 	
 	#Listen for the button to be interacted with.
-	new_button.connect("pressed", self, "_button_pressed", [interactable_location])
+	new_button.connect("pressed", self, "_button_pressed", [interactable_path])
 	new_button.connect("mouse_entered", self, "_display_button_info", [info])
 	new_button.connect("focus_entered", self, "_display_button_info", [info])
 
@@ -92,7 +92,7 @@ func _get_button(location_in_interact_list : int) -> Button :
 #Called from a signal. Adds a button to the button list based on the interactable.
 func _interactable_entered(interactable_node) -> void :
 	interact_list.append(interactable_node)
-	_create_button(interactable_node.get_title(), interact_list.size()-1, interactable_node.get_info())
+	_create_button(interactable_node.get_title(), interact_list.size()-1, interactable_node.get_info(), interactable_node.get_path())
 
 #Called from a signal. Remove the button corresponding to the interactable from the button list.
 func _interactable_left(interactable_node) -> void :
@@ -133,5 +133,5 @@ func _show_interacts(potential_interacts : Array) :
 	#Create a button for each potential interact.
 	var at : int = 0
 	for interactable in potential_interacts :
-		_create_button(interactable.get_title(), at, interactable.get_info())
+		_create_button(interactable.get_title(), at, interactable.get_info(), interactable.get_path())
 		at += 1
