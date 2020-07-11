@@ -41,3 +41,6 @@ func interactable_entered(interactable_node):
 
 func disable():
 	$Interactor.enabled = false
+
+func enable():
+	$Interactor.enabled = true
