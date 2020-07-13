@@ -6,18 +6,18 @@ onready var armature: Skeleton = $"../Model/Legs"
 var legs: Array = [] # Holds an instance of Proc_Leg_Rover for each leg
 
 # Some properties are set in setup_movement() directly and don't have a var here, to avoid cluttering
-var wheel_rotation_scale: float = 1.0 # Multiplier for the wheel mesh spin velocity
-var wheel_contact_speed : float = 12.0 # Interpolation value when in contact with the surface
-var wheel_return_speed : float = 2.0 # Interpolation value when not in contact with the surface
+export var wheel_rotation_scale: float = 1.0 # Multiplier for the wheel mesh spin velocity
+export var wheel_contact_speed : float = 12.0 # Interpolation value when in contact with the surface
+export var wheel_return_speed : float = 2.0 # Interpolation value when not in contact with the surface
 
-var raise_anim_speed: float = 0.20 # Speed of the animations
-var lower_anim_speed: float = 0.30
-var leg_lift_anim_speed: float = 0.70
+export var raise_anim_speed: float = 0.20 # Speed of the animations
+export var lower_anim_speed: float = 0.30
+export var leg_lift_anim_speed: float = 0.70
 
 # Animation offsets, based on the initial home_target (wheel) positions set in setup_movement
-var raise_anim_offset: float = -3.0
-var lower_anim_offset: float = 3.0
-var leg_lift_offset: float = 11.0
+export var raise_anim_offset: float = -3.0
+export var lower_anim_offset: float = 3.0
+export var leg_lift_offset: float = 11.0
 
 
 func _init().("RoverAnimation", false):

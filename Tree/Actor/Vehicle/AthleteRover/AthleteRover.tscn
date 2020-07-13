@@ -45,6 +45,9 @@ dist = 25.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, 0 )
 shape = SubResource( 1 )
 
+[node name="DockPoint" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.45547, 0 )
+
 [node name="effectors" type="Spatial" parent="."]
 
 [node name="effector_l_f" type="Position3D" parent="effectors"]
@@ -85,8 +88,5 @@ bones/11/bound_children = [ NodePath("WheellMiddleRBoneAttachment") ]
 bones/15/bound_children = [ NodePath("WheelBackLBoneAttachment") ]
 bones/19/bound_children = [ NodePath("WheelFrontLBoneAttachment") ]
 bones/23/bound_children = [ NodePath("WheelBackRBoneAttachment") ]
-
-[node name="DockPoint" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.45547, 0 )
 
 [editable path="Model"]

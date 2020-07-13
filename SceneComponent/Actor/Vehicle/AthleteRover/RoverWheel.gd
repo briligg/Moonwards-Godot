@@ -2,14 +2,14 @@ extends Spatial
 class_name Custom_Wheel
 
 # Control properties
-var wheel_radius: float = 0.75 # Physical radius, needs to match the mesh - use debug visualization to ensure
-var max_spring_force: float = 14580.0 # Should be about 6x the weight  14580.0
-var spring_force: float = 2200.0 # About 1/6th the max force
-var stifness: float = 0.05 # 0.15
-var damping_force: float = 0.05
-var traction_x: float = 0.95
-var traction_z: float = 0.04
-var cast_to: Vector3 = Vector3(0,-11.5,0) # A value close, but lesser than the max extension intended for a leg
+export var wheel_radius: float = 0.75 # Physical radius, needs to match the mesh - use debug visualization to ensure
+export var max_spring_force: float = 14580.0 # Should be about 6x the weight  14580.0
+export var spring_force: float = 2200.0 # About 1/6th the max force
+export var stifness: float = 0.05 # 0.15
+export var damping_force: float = 0.05
+export var traction_x: float = 0.95
+export var traction_z: float = 0.04
+export var cast_to: Vector3 = Vector3(0,-11.5,0) # A value close, but lesser than the max extension intended for a leg
 
 
 # Godot has no direct way to perform sphere_casts, so we do it manually
