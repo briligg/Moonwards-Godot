@@ -1,10 +1,10 @@
 extends AComponent
 
 # Control properties
-var engine_power: float = 4000.0 # At most 6x the weight
-var max_steering_angle: float = 40.0 # Wheel steering angle
-var steering_speed: float = 2.0 # How fast the wheel turns
-var power_per_wheel: float # Set in _ready
+export var engine_power: float = 4000.0 # At most 6x the weight
+export var max_steering_angle: float = 40.0 # Wheel steering angle
+export var steering_speed: float = 2.0 # How fast the wheel turns
+export var power_per_wheel: float # Set in _ready
 
 func _init().("RoverMovement", false):
 	pass
