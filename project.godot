@@ -52,7 +52,7 @@ _global_script_classes=[ {
 "base": "Spatial",
 "class": "Custom_Wheel",
 "language": "GDScript",
-"path": "res://moonwards_custom/custom_wheel.gd"
+"path": "res://SceneComponent/Actor/Vehicle/AthleteRover/RoverWheel.gd"
 }, {
 "base": "Reference",
 "class": "EntityData",

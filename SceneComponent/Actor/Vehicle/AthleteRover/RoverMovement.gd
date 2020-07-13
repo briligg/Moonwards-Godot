@@ -1,17 +1,34 @@
-extends Spatial
+extends AComponent
 
-onready var left_front = $LeftFrontWheel
-onready var left_mid = $LeftMidWheel
-onready var left_back = $LeftBackWheel
-onready var right_front = $RightFrontWheel
-onready var right_mid = $RightMidWheel
-onready var right_back = $RightBackWheel
+# Control properties
+var engine_power: float = 4000.0 # At most 6x the weight
+var max_steering_angle: float = 40.0 # Wheel steering angle
+var steering_speed: float = 2.0 # How fast the wheel turns
+var power_per_wheel: float # Set in _ready
 
-func _physics_process(_delta):
-#	if left_front.get_collider():
-	left_front.global_transform.origin.y = left_front.get_collision_point ().y
-	left_mid.global_transform.origin.y = left_mid.get_collision_point ().y
-	left_back.global_transform.origin.y = left_back.get_collision_point ().y
-	right_front.global_transform.origin.y = right_front.get_collision_point ().y
-	right_mid.global_transform.origin.y = right_mid.get_collision_point ().y
-	right_back.global_transform.origin.y = right_back.get_collision_point ().y
+func _init().("RoverMovement", false):
+	pass
+
+func _ready() -> void:
+	# Distribute power equally amongst the powered wheels
+	power_per_wheel = engine_power / 6.0 # This is still recommended to have as 6 (6 wheels) even as 4WD
+
+func _physics_process(delta: float) -> void:
+	var front_target: float = entity.input.y * max_steering_angle
+	var back_target: float = entity.input.y * -max_steering_angle
+	
+	# In order: LF, RF, LB, RB
+	entity.wheels[0].rotation_degrees.y = lerp(entity.wheels[0].rotation_degrees.y, front_target, 
+		(1.0 - exp(-steering_speed * delta)))
+	entity.wheels[3].rotation_degrees.y = lerp(entity.wheels[3].rotation_degrees.y, front_target, 
+		(1.0 - exp(-steering_speed * delta)))
+	entity.wheels[2].rotation_degrees.y = lerp(entity.wheels[2].rotation_degrees.y, back_target, 
+		(1.0 - exp(-steering_speed * delta)))
+	entity.wheels[5].rotation_degrees.y = lerp(entity.wheels[5].rotation_degrees.y, back_target, 
+		(1.0 - exp(-steering_speed * delta)))
+	
+	# 4 wheel drive, middle wheels do not exert engine force - can be changed, but works well
+	entity.wheels[0].apply_engine_force(entity.input.x * entity.global_transform.basis.z * power_per_wheel * delta)
+	entity.wheels[3].apply_engine_force(entity.input.x * entity.global_transform.basis.z * power_per_wheel * delta)
+	entity.wheels[2].apply_engine_force(entity.input.x * entity.global_transform.basis.z * power_per_wheel * delta)
+	entity.wheels[5].apply_engine_force(entity.input.x * entity.global_transform.basis.z * power_per_wheel * delta)
