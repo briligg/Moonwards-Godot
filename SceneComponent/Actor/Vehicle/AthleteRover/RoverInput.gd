@@ -1,5 +1,4 @@
 extends AComponent
-class_name RoverInput
 
 var ignore_inputs : bool = false
 

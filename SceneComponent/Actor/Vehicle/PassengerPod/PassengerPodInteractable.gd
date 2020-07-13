@@ -29,7 +29,7 @@ func dock_with(rover):
 	$Interactable.title = "Undock Passenger Pod"
 	_reparent(pod, rover)
 	_reparent(collision, rover)
-	pod.transform = rover.get_node("DockPoint").transform
+#	pod.transform = rover.get_node("DockPoint").transform
 	collision.global_transform = rover.get_node("DockPoint").global_transform
 	docked_to = rover
 	is_docked = true
@@ -45,6 +45,6 @@ func undock():
 
 func _reparent(node, new_parent):
 	var p = node.get_parent()
-	p.remove_child(pod)
+	p.remove_child(node)
 	new_parent.add_child(node)
 	node.owner = new_parent
