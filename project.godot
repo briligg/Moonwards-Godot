@@ -1597,7 +1597,8 @@ file_logging/max_log_files=30
 
 [physics]
 
-3d/default_gravity=1.6
+3d/physics_engine="Bullet"
+3d/default_gravity=1.62
 
 [rendering]
 

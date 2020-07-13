@@ -81,12 +81,4 @@ script = ExtResource( 4 )
 
 [node name="Model" parent="." instance=ExtResource( 6 )]
 
-[node name="Legs" parent="Model" index="0"]
-bones/3/bound_children = [ NodePath("WheelFrontRBoneAttachment") ]
-bones/7/bound_children = [ NodePath("WheelMiddleLBoneAttachment") ]
-bones/11/bound_children = [ NodePath("WheellMiddleRBoneAttachment") ]
-bones/15/bound_children = [ NodePath("WheelBackLBoneAttachment") ]
-bones/19/bound_children = [ NodePath("WheelFrontLBoneAttachment") ]
-bones/23/bound_children = [ NodePath("WheelBackRBoneAttachment") ]
-
 [editable path="Model"]
