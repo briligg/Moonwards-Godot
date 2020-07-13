@@ -28,18 +28,14 @@ func interacted_by(interactor):
 func dock_with(rover):
 	$Interactable.title = "Undock Passenger Pod"
 	_reparent(pod, rover)
-	_reparent(collision, rover)
-#	pod.transform = rover.get_node("DockPoint").transform
-	collision.global_transform = rover.get_node("DockPoint").global_transform
+	pod.transform = rover.get_node("DockPoint").transform
 	docked_to = rover
 	is_docked = true
 
 func undock():
 	$Interactable.title = "Dock Passenger Pod"
-	_reparent(collision, pod)
 	_reparent(pod, orig_parent)
 	pod.global_transform = docked_to.get_node("DockPoint").global_transform
-	collision.global_transform = pod.global_transform
 	docked_to = null
 	is_docked = false
 
