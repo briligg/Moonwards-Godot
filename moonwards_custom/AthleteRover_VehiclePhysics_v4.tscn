@@ -1,0 +1,110 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://moonwards_custom/RoverMovement.tscn" type="PackedScene" id=1]
+[ext_resource path="res://moonwards_custom/AthleteRover-BallJoints_v4_model.tscn" type="PackedScene" id=2]
+[ext_resource path="res://moonwards_custom/RoverInput.tscn" type="PackedScene" id=3]
+[ext_resource path="res://moonwards_custom/AthleteRover_VehiclePhysics_v4.gd" type="Script" id=4]
+[ext_resource path="res://moonwards_custom/custom_wheel.gd" type="Script" id=5]
+[ext_resource path="res://moonwards_custom/RoverAnimation.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Tree/Actor/Vehicle/AthleteRover/Speedometer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://SceneComponent/Actor/CameraController.tscn" type="PackedScene" id=8]
+[ext_resource path="res://SceneComponent/Actor/InteractorComponent.tscn" type="PackedScene" id=9]
+[ext_resource path="res://SceneComponent/Actor/Vehicle/AthleteRover/RoverRideInteractable.tscn" type="PackedScene" id=10]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 4, 2, 4 )
+
+[node name="AthleteRover" type="RigidBody" groups=[
+"athlete_rover",
+]]
+collision_layer = 4
+mass = 1500.0
+continuous_cd = true
+script = ExtResource( 4 )
+
+[node name="Speedometer" parent="." instance=ExtResource( 7 )]
+
+[node name="Interactor" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.28379, 0 )
+
+[node name="RoverRideInteractable" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.59981, 0 )
+
+[node name="RoverAnimation" parent="." instance=ExtResource( 6 )]
+
+[node name="RoverInput" parent="." instance=ExtResource( 3 )]
+
+[node name="RoverMovement" parent="." instance=ExtResource( 1 )]
+
+[node name="Camera" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.70634, 0 )
+dist = 25.0
+
+[node name="rootcol" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, 0 )
+shape = SubResource( 1 )
+
+[node name="effectors" type="Spatial" parent="."]
+
+[node name="effector_l_f" type="Position3D" parent="effectors"]
+
+[node name="effector_l_m" type="Position3D" parent="effectors"]
+
+[node name="effector_l_b" type="Position3D" parent="effectors"]
+
+[node name="effector_r_f" type="Position3D" parent="effectors"]
+
+[node name="effector_r_m" type="Position3D" parent="effectors"]
+
+[node name="effector_r_b" type="Position3D" parent="effectors"]
+
+[node name="left_front_wheel" type="Spatial" parent="."]
+script = ExtResource( 5 )
+
+[node name="left_mid_wheel" type="Spatial" parent="."]
+script = ExtResource( 5 )
+
+[node name="left_back_wheel" type="Spatial" parent="."]
+script = ExtResource( 5 )
+
+[node name="right_front_wheel" type="Spatial" parent="."]
+script = ExtResource( 5 )
+
+[node name="right_mid_wheel" type="Spatial" parent="."]
+script = ExtResource( 5 )
+
+[node name="right_back_wheel" type="Spatial" parent="."]
+script = ExtResource( 5 )
+
+[node name="Model" parent="." instance=ExtResource( 2 )]
+
+[node name="Legs" parent="Model" index="0"]
+bones/3/bound_children = [ NodePath("WheelFrontRBoneAttachment") ]
+bones/7/bound_children = [ NodePath("WheelMiddleLBoneAttachment") ]
+bones/11/bound_children = [ NodePath("WheellMiddleRBoneAttachment") ]
+bones/15/bound_children = [ NodePath("WheelBackLBoneAttachment") ]
+bones/19/bound_children = [ NodePath("WheelFrontLBoneAttachment") ]
+bones/23/bound_children = [ NodePath("WheelBackRBoneAttachment") ]
+
+[node name="WheelBackLBoneAttachment" parent="Model/Legs" index="1"]
+transform = Transform( 0.00490884, 0.798927, -0.601408, 0.999981, -0.00614417, 4.65661e-09, -0.00369515, -0.601397, -0.798942, 15.7619, 6.13141, -11.8435 )
+
+[node name="WheelBackRBoneAttachment" parent="Model/Legs" index="2"]
+transform = Transform( -0.798636, 2.094e-08, 0.601815, -2.19918e-08, 1, -7.81597e-14, -0.601815, -3.99691e-08, -0.798636, -15.7953, 6.13141, -11.7974 )
+
+[node name="WheelFrontLBoneAttachment" parent="Model/Legs" index="3"]
+transform = Transform( -0.798635, -3.30181e-08, 0.601815, -5.56857e-08, 1, 4.26326e-13, -0.601815, -4.02874e-08, -0.798635, 15.6942, 6.13141, 11.9316 )
+
+[node name="WheelFrontRBoneAttachment" parent="Model/Legs" index="4"]
+transform = Transform( 0.0049087, 0.798927, -0.601408, 0.999981, -0.006144, 2.79397e-09, -0.00369505, -0.601397, -0.798942, -15.7413, 6.13141, 11.8707 )
+
+[node name="WheellMiddleRBoneAttachment" parent="Model/Legs" index="5"]
+transform = Transform( -1, -2.03814e-08, -5.96101e-08, -5.04201e-08, 1, 2.41584e-13, -6.74399e-08, 4.47559e-08, -1, -19.5691, 6.13141, -0.00982869 )
+
+[node name="WheelMiddleLBoneAttachment" parent="Model/Legs" index="6"]
+transform = Transform( -1, -6.11162e-08, 2.50441e-06, -2.03768e-07, 1, 3.12639e-13, -2.58496e-06, -3.31399e-08, -1, 19.5691, 6.13141, -0.00983331 )
+
+[node name="DockPoint" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.45547, 0 )
+
+[editable path="Model"]
