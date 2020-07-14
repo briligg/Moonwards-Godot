@@ -1,5 +1,5 @@
 # Moonwards Virtual Moon
-Everything to build the Moonwards space colonies in Godot. See https://github.com/moonwards1/Moonwards-Assets for the Blender files of assets.
+Everything to build the Moonwards space colonies in Godot. See the [Moonwards-Assets](https://github.com/moonwards1/Moonwards-Assets) reop for the Blender files of assets.
 
 You must install [Git LFS](https://git-lfs.github.com/) before cloning this repository, in addition to Git itself.
 
