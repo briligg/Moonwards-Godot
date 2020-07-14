@@ -24,3 +24,5 @@ func _ready() -> void:
 		$right_mid_wheel,
 		$right_back_wheel,
 	]
+	
+	$RoverInput.connect("jump_pressed", $RoverMovement, "on_jump_pressed")

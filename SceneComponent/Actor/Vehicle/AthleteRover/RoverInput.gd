@@ -1,5 +1,7 @@
 extends AComponent
 
+signal jump_pressed
+
 func _init().("RoverInput", false):
 	pass
 
@@ -28,3 +30,9 @@ func handle_input() -> void:
 	
 	if Input.is_action_pressed("maneuver_lift_leg"):
 		entity.anim_state = entity.Anim_States.LIFT_LEG
+	
+	if Input.is_action_just_pressed("jump"):
+		# This will be true only on the frame that the user pressed down the button, since we want to apply only
+		# one impulse; To avoid having "movement" code here, we emit a signal: signals are reliable for 1-frame stuff,
+		# as opposed to using the Anim_States which might not be recognized in a diff script in 1 frame
+		emit_signal("jump_pressed")
