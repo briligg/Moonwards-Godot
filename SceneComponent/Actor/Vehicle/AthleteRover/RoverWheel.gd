@@ -1,6 +1,8 @@
 extends Spatial
 class_name Custom_Wheel
 
+export var ENABLE_DEBUG: bool = false # TODO remove this if not needed
+
 # Control properties
 export var wheel_radius: float = 0.75 # Physical radius, needs to match the mesh - use debug visualization to ensure
 export var max_spring_force: float = 14580.0 # Should be about 6x the weight  14580.0
@@ -29,7 +31,6 @@ var collision_normal: Vector3 = Vector3.UP
 var suspension_vector: Vector3
 var is_grounded: bool = false
 
-const ENABLE_DEBUG: bool = true # TODO remove this if not needed
 
 
 func _physics_process(delta: float) -> void:

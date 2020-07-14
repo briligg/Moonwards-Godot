@@ -45,11 +45,11 @@ puppetsync func add_player(entity_data) -> void:
 		return
 	
 	var e = Scene.PLAYER_SCENE.instance()
-	e.enabled = true
 	e.name = str(entity_data.peer_id)
 	e.entity_name = str(entity_data.entity_name)
 	e.owner_peer_id = entity_data.peer_id
 	e.set_network_master(1)
+	e.enabled = true
 	entities_container.add_child(e)
 	e.global_transform.origin = entity_data.initial_pos
 #	var model = e.get_component("ModelComponent")

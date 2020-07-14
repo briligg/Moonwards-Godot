@@ -18,7 +18,7 @@ extents = Vector3( 4, 2, 4 )
 [node name="AthleteRover" type="RigidBody" groups=[
 "athlete_rover",
 ]]
-collision_layer = 4
+collision_layer = 5
 mass = 1500.0
 continuous_cd = true
 script = ExtResource( 10 )

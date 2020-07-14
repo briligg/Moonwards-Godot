@@ -7,6 +7,7 @@ enum Anim_States {
 	LOWER,
 	LIFT_LEG,
 }
+
 var anim_state: int = Anim_States.NONE
 
 # used by the animation_controller

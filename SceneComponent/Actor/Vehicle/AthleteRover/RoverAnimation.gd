@@ -27,7 +27,7 @@ func _ready() -> void:
 	setup_movement()
 
 
-func _physics_process(_delta: float) -> void:
+func _process_client(_delta: float) -> void:
 	for i in range(legs.size()):
 		legs[i].update(_delta)
 

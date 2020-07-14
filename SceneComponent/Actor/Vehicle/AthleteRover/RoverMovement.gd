@@ -15,6 +15,7 @@ var m_b_center_mass: Vector3 = Vector3(0.0, 6.5, 0.0) # Main body center of mass
 # Collision mask to determine how close the center of mass is from the ground - should only want the ground, so any
 # load/cargo below the body should be in a different layer
 var coll_mask: int = 1
+var jump_col_ignore = [entity]
 var jump_min_distance: float = 3.5 # What to consider as minimum distance for jump_max_force
 var jump_max_distance: float = 13.5 # What to consider as maximum distance for jump_min_force
 var jump_min_force: float = 105.0 # Force per wheel -> when jumping with body at highest point
@@ -27,7 +28,7 @@ func _ready() -> void:
 	# Distribute power equally amongst the powered wheels
 	power_per_wheel = engine_power / 6.0 # This is still recommended to have as 6 (6 wheels) even as 4WD
 
-func _physics_process(delta: float) -> void:
+func _process_server(delta: float) -> void:
 	# Decrease jump cooldown
 	if (_jump_timer > 0.0):
 		_jump_timer = max(_jump_timer - delta, 0.0)
@@ -50,7 +51,15 @@ func _physics_process(delta: float) -> void:
 	entity.wheels[3].apply_engine_force(entity.input.x * entity.global_transform.basis.z * power_per_wheel * delta)
 	entity.wheels[2].apply_engine_force(entity.input.x * entity.global_transform.basis.z * power_per_wheel * delta)
 	entity.wheels[5].apply_engine_force(entity.input.x * entity.global_transform.basis.z * power_per_wheel * delta)
+	entity.srv_pos = entity.global_transform.origin
+	entity.srv_basis = entity.global_transform.basis
 
+func _process_client(_delta: float) -> void:
+	if !is_network_master():
+		var p = entity.srv_pos
+		var b = entity.srv_basis
+		entity.global_transform.origin = p
+		entity.global_transform.basis = b
 
 func on_jump_pressed() -> void:
 	if (_jump_timer > 0.0):
@@ -64,7 +73,7 @@ func on_jump_pressed() -> void:
 	var _to: Vector3 = entity.global_transform.origin + entity.global_transform.basis.y * Vector3(0.0, -12.0, 0.0)
 	
 	var _d_s_s: PhysicsDirectSpaceState = entity.get_world().direct_space_state
-	var _res: Dictionary = _d_s_s.intersect_ray(_from, _to, [entity], coll_mask)
+	var _res: Dictionary = _d_s_s.intersect_ray(_from, _to, jump_col_ignore, coll_mask)
 	
 	AL_DebugDraw.c_draw_line(_from, _to, Color(255,0,0), jump_cooldown)
 	if _res:
