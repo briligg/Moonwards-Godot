@@ -5,7 +5,7 @@ var icon_window
 var suppress_warnings = false
 
 
-func _enter_tree():
+func _enter_tree() -> void:
 	assert(Engine.get_version_info().major >= 3)
 
 	icon_window = preload('editor_icon_window.tscn').instance()
@@ -15,7 +15,7 @@ func _enter_tree():
 	add_icons_menu_item(tr('Show Editor Icons'), '_on_show_editor_icons_pressed')
 
 
-func _exit_tree():
+func _exit_tree() -> void:
 	if icon_window:
 		icon_window.queue_free()
 		remove_icons_menu_item(tr('Show Editor Icons'))

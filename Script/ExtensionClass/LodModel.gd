@@ -14,7 +14,7 @@ export(bool) var debug_lod = true
 
 var lod_state setget _set_illegal
 
-func _ready():
+func _ready() -> void:
 	_generate_col_shape()
 	if self.has_node("LOD0") and self.has_node("LOD1") and self.has_node("LOD2"):
 		_lods[0] = $LOD0

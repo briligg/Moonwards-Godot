@@ -15,7 +15,7 @@ func _ready() -> void :
 	main_panel.connect("load_scene_pos", self, "_load_scene_pos")
 	main_panel.connect("lock_all_nodes", self, "_lock_all_nodes")
 
-func _enter_tree():
+func _enter_tree() -> void:
 	main_panel = MainPanel.instance()
 	# Add the main panel to the editor's main viewport.
 	get_editor_interface().get_editor_viewport().add_child(main_panel)
@@ -34,7 +34,7 @@ func _enter_tree():
 	add_control_to_dock(DOCK_SLOT_LEFT_UL, btn.instance())
 	make_visible(false)
 
-func _exit_tree():
+func _exit_tree() -> void:
 	if main_panel:
 		main_panel.queue_free()
 

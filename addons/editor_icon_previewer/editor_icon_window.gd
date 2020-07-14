@@ -32,7 +32,7 @@ var filter = ''
 var _update_queued = false
 
 
-func _ready():
+func _ready() -> void:
 	icon_info_label.text = SELECT_ICON_MSG
 
 	icon_preview_size_range.min_value = MIN_ICON_SIZE

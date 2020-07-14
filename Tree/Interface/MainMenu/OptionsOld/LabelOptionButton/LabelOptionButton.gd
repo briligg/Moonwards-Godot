@@ -13,10 +13,10 @@ func set_value(val):
 func get_value():
 	$OptionButton.selected
 
-func _enter_tree():
+func _enter_tree() -> void:
 	$OptionLabel.text = label
 
-func _ready():
+func _ready() -> void:
 	button = $OptionButton
 	$OptionButton.connect("item_selected", self, "notify_changed")
 	set_enabled(enabled)

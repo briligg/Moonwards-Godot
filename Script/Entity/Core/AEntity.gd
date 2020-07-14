@@ -19,7 +19,7 @@ var entity_name: String = ""
 
 var components: Dictionary = {}
 
-func _ready():
+func _ready() -> void:
 	add_to_group(Groups.ENTITIES)
 	Signals.Entities.emit_signal(Signals.Entities.ENTITY_CREATED, self)
 	# Because godot, right?

@@ -18,13 +18,13 @@ var pitch: float = 0.0
 func _init().("Camera", true):
 	pass
 	
-func _ready():
+func _ready() -> void:
 	yaw = 0.0
 	pitch = 0.0
 	_update_cam_pos()
 	camera.set_as_toplevel(true)
 
-func _process(_delta):
+func _process(_delta: float) -> void:
 	var _new_rot = Vector3(deg2rad(pitch), deg2rad(yaw), 0.0)
 	camera.set_rotation(_new_rot)
 	_update_cam_pos()

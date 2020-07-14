@@ -22,7 +22,7 @@ func get_value():
 	value = $OptionInput.value
 	return value
 
-func _ready():
+func _ready() -> void:
 	$OptionLabel.text = label
 	$OptionSlider.min_value = mi
 	$OptionSlider.max_value = ma

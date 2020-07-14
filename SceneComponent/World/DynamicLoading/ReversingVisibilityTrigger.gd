@@ -13,7 +13,7 @@ var _previous_states: Dictionary = {}
 var is_set: bool = false
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	_validate_paths(show_lod0_list)
 	_validate_paths(hide_list)
 	self.connect("body_entered", self, "on_body_entered")

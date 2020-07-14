@@ -11,7 +11,7 @@ onready var lod1: Area = $LOD1Area
 func _init().("LodComponent", true):
 	pass
 
-func _ready():
+func _ready() -> void:
 	# FPS Issues are caused when the collision shapes have too high values (> 300)
 	lod0.get_node("CollisionShape").scale *= lod0_max_distance
 	lod1.get_node("CollisionShape").scale *= lod1_max_distance

@@ -21,7 +21,7 @@ export(Array, NodePath) var hide_list
 var is_set: bool = false
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	add_to_group(Groups.DYNAMIC_VISIBILITY)
 	_validate_paths(show_lod0_list)
 	_validate_paths(show_lod1_list)

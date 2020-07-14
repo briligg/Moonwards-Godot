@@ -16,7 +16,7 @@ var self_meta_data = {
 	"colors": []
 }
 
-func _ready():
+func _ready() -> void:
 	Signals.Network.connect(Signals.Network.GAME_SERVER_REQUESTED, 
 			self, "_set_game_server")
 	Signals.Network.connect(Signals.Network.GAME_CLIENT_REQUESTED, 
