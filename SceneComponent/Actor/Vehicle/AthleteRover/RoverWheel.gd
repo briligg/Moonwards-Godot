@@ -25,6 +25,8 @@ var instant_linear_vel: Vector3
 var previous_distance: float = cast_to.length()
 var previous_hit: Sphere_Cast_Result = Sphere_Cast_Result.new()
 var collision_pos: Vector3 = cast_to
+var collision_normal: Vector3 = Vector3.UP
+var suspension_vector: Vector3
 var is_grounded: bool = false
 
 const ENABLE_DEBUG: bool = true # TODO remove this if not needed
@@ -33,6 +35,7 @@ const ENABLE_DEBUG: bool = true # TODO remove this if not needed
 func _physics_process(delta: float) -> void:
 	var cast_res: Sphere_Cast_Result = sphere_cast(global_transform.origin, cast_to, wheel_radius)
 	collision_pos = cast_res.hit_position
+	collision_normal = cast_res.hit_normal
 	if ENABLE_DEBUG: # TODO remove this if not needed
 		AL_DebugDraw.c_draw_cube(collision_pos, wheel_radius, Color(255,255,255)) 
 		AL_DebugDraw.c_draw_cube(global_transform.origin, .5, Color(255,0,255))
@@ -47,7 +50,7 @@ func _physics_process(delta: float) -> void:
 		var _spring_f: float = stifness * (cast_to.length() - cur_distance) 
 		var _damp_f: float = damping_force * (previous_distance - cur_distance) / delta
 		var _suspension_force: float = clamp((_spring_f + _damp_f) * spring_force, 0.0, max_spring_force)
-		var _suspension_impulse: Vector3 = global_transform.basis.y * _suspension_force * delta
+		suspension_vector = global_transform.basis.y * _suspension_force * delta
 		
 		# Local vel components along ground axes
 		var loc_vel_z: float = global_transform.basis.xform_inv(instant_linear_vel).z
@@ -60,13 +63,13 @@ func _physics_process(delta: float) -> void:
 			(vehicle_entity.weight * vehicle_entity.gravity_scale)/vehicle_entity.wheels.size() * traction_z * delta )
 		
 		# Mitigate sliding
-		_force_x.x -= _suspension_impulse.x * vehicle_entity.global_transform.basis.y.dot(Vector3.UP)
-		_force_z.z -= _suspension_impulse.z * vehicle_entity.global_transform.basis.y.dot(Vector3.UP)
+		_force_x.x -= suspension_vector.x * vehicle_entity.global_transform.basis.y.dot(Vector3.UP)
+		_force_z.z -= suspension_vector.z * vehicle_entity.global_transform.basis.y.dot(Vector3.UP)
 		
-		var final_force: Vector3 = _suspension_impulse + _force_x + _force_z
+		var final_force: Vector3 = suspension_vector + _force_x + _force_z
 		
 		if ENABLE_DEBUG: # TODO remove this if not needed
-			AL_DebugDraw.c_draw_ray(collision_pos, _suspension_impulse, Color(0,255,0))
+			AL_DebugDraw.c_draw_ray(collision_pos, suspension_vector, Color(0,255,0))
 			AL_DebugDraw.c_draw_ray(collision_pos, _force_x, Color(255,0,0))
 			AL_DebugDraw.c_draw_ray(collision_pos, _force_z, Color(0,0,255))
 		
@@ -93,6 +96,16 @@ func apply_engine_force(_force: Vector3) -> void:
 		vehicle_entity.apply_impulse(
 			vehicle_entity.global_transform.basis.xform( vehicle_entity.to_local(collision_pos) ),
 			_force)
+
+
+func apply_jump_force(_force: Vector3) -> void:
+	if is_grounded:
+		# apply_impulse uses the rotation of the global coordinate system, but is centered at the object's origin
+		vehicle_entity.apply_impulse(
+			vehicle_entity.global_transform.basis.xform( vehicle_entity.to_local(collision_pos) ),
+			_force * suspension_vector)
+		
+		AL_DebugDraw.c_draw_ray(collision_pos, _force*.01, Color(0,0,255), 2.0)
 
 
 func sphere_cast(origin: Vector3, to_offset: Vector3, radius: float) -> Sphere_Cast_Result:

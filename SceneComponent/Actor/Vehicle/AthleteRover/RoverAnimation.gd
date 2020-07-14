@@ -91,8 +91,8 @@ func setup_movement() -> void:
 		l_ik.start(false)
 		
 		# Ideally this Y offset should be nearly the same length as the foot bone -> 1.69595 for this model
-		# I think leaving some leeway is good, makes the wheel feel grounded, so 1.62 is solid
-		var _ik_ee_offset: Vector3 = Vector3(0.0, 1.62, 0.0)
+		# I think leaving some leeway is good, makes the wheel feel grounded, so 1.59 is solid
+		var _ik_ee_offset: Vector3 = Vector3(0.0, 1.59, 0.0)
 		
 		# The rotation offset - needed to align with surfaces
 		var _ik_ee_rot_offset: Vector3 = ik_ee[i][1]
