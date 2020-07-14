@@ -9,6 +9,7 @@ extends Spatial
 var prev_pos = null
 var last_click_pos = null
 var viewport: Node = null
+var content_instance = null
 export(PackedScene) var content = null
 export(Vector2) var viewport_size = Vector2(ProjectSettings.get_setting("display/window/size/width"),
 		ProjectSettings.get_setting("display/window/size/height"))
@@ -63,7 +64,8 @@ func _ready():
 	viewport = get_node("Viewport")
 	viewport.size = viewport_size
 	if content != null:
-		viewport.add_child(content.instance())
+		content_instance = content.instance()
+		viewport.add_child(content_instance)
 	else:
 		Log.trace(self, "_ready", "Screen View without a content")
 	

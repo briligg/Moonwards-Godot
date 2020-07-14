@@ -4,25 +4,26 @@ var is_all: bool = false
 var idx: int = 0
 
 const MAX_ENTRIES: int = 5
-const ANIMATION_LENGTH: float = 18.0
+const ANIMATION_LENGTH: float = 18.0 #18.0
+const TIME_DELAY: float = 6.8 #6.8
+const Y_SEPARATOR: int = 180
 
 onready var sequence_area: Control = $VBoxContainer/SequenceArea
 onready var all_area: Control = $VBoxContainer/AllArea
 
-onready var monument_theme = load("res://SceneComponent/Display/MakersMonument/Monument.tres")
+const AUDIO_PATH: String = "res://Assets/Sounds/Monument/"
+onready var audio_player: AudioStreamPlayer = $AudioPlayer
 
-var monument_font: DynamicFont = DynamicFont.new()
 var containers: Array = []
 var animation_players: Array = []
 
-signal sequence_finished(idx)
-
+signal entry_selected
 
 var entries: Array = [
 	{"name": "Diane Osborne",
-	"sound": "dianeosborne.wav"},
-	{"name": "Jan Kowalski",
-	"sound": "jankowalski.wav"},
+	"sound": "test.ogg"},
+	{"name": "Stanislaw Lem",
+	"sound": "test.ogg"},
 	{"name": "Jan Kowalski",
 	"sound": "jankowalski.wav"},
 	{"name": "Jan Kowalski",
@@ -47,32 +48,38 @@ var entries: Array = [
 	"sound": "jankowalski.wav"},
 ]
 
-
-func _ready():
-	connect("sequence_finished", self, "_on_sequence_finished")
-	
-	monument_font = DynamicFont.new()
-	monument_font.font_data = load("res://Assets/Interface/Fonts/Exo2/Exo2-ExtraBoldItalic.ttf")
-	monument_font.size = 156
-	
-	$VBoxContainer/BottomArea/CenterContainer/ShowAll.set("custom_fonts/font", monument_font)
-	monument_font.size = 124
-	
+func _ready() -> void:
 	_build_all()
 	_build_sequence_buttons()
-	_on_animation_finished("")
+	
+	for c in containers:
+		c.hide()
+		
+	containers[idx].show()
+
+
+func play() -> void:
+	animation_players[idx].play("animation")
+
+
+func stop() -> void:
+	animation_players[idx].stop(false)
 
 
 func _on_animation_finished(_name: String) -> void:
+	for b in containers[idx].get_children():
+		if b.is_class("Button"):
+			b.disconnect("button_up", self, "_on_button_up")
+	
 	for c in containers:
 		c.hide()
-	
-	containers[idx].show()
-	animation_players[idx].play("animation")
 	
 	idx += 1
 	if idx >= containers.size():
 		idx = 0
+	
+	containers[idx].show()
+	animation_players[idx].play("animation")
 
 
 func _build_sequence_buttons() -> void:
@@ -90,7 +97,7 @@ func _build_sequence_buttons() -> void:
 			sequence_animation.name = "AnimationPlayer"
 			sequence_animation.connect("animation_finished", self, "_on_animation_finished")
 			animation = Animation.new()
-			animation.length = ANIMATION_LENGTH + MAX_ENTRIES * 6.8
+			animation.length = ANIMATION_LENGTH + (MAX_ENTRIES-1) * TIME_DELAY
 			
 			sequence_animation.add_animation("animation", animation)
 			
@@ -100,36 +107,8 @@ func _build_sequence_buttons() -> void:
 			containers.append(c)
 			sequence_area.add_child(c)
 		
-		containers[j].add_child(_build_button(e, true, animation, i, j))
+		_build_button(e, true, animation, containers[j], i, j)
 		i += 1
-
-
-func _build_button(var e: Dictionary, var is_animated: bool,
-		 var animation: Animation, var i: int, var j: int) -> Button:
-	
-	var button: Button = Button.new()
-	button.text = e["name"]
-	button.rect_min_size = Vector2(360, 80)
-	button.theme = monument_theme
-	button.set("custom_fonts/font", monument_font)
-	button.set("custom_colors/font_color", Color(Color.gold))
-	button.rect_position = Vector2(-ProjectSettings.get_setting("display/window/size/width"),
-			-ProjectSettings.get_setting("display/window/size/height"))
-	
-	if is_animated and animation != null:
-		button.name = "Button" + str(i)
-		var track_index = animation.add_track(Animation.TYPE_VALUE)
-		animation.track_set_path(track_index, button.name + ":rect_position")
-		var delay = i-j*MAX_ENTRIES
-		if i % 2 == 0:
-			animation.track_insert_key(track_index, delay*6.8, Vector2(-button.rect_size.x, delay*200))
-			animation.track_insert_key(track_index, ANIMATION_LENGTH+delay*6.8,
-					Vector2(ProjectSettings.get_setting("display/window/size/width")+1, delay*150))
-		else:
-			animation.track_insert_key(track_index, delay*6.8,
-					Vector2(ProjectSettings.get_setting("display/window/size/width")+1, delay*200))
-			animation.track_insert_key(track_index, ANIMATION_LENGTH+delay*6.8, Vector2(-button.rect_size.x, delay*150))
-	return button
 
 
 func _build_all() -> void:
@@ -140,19 +119,58 @@ func _build_all() -> void:
 	vbox.rect_min_size = Vector2(1920, 960)
 	
 	for e in entries:
-		var button: Button = _build_button(e, false, null, 0, 0)
-		vbox.add_child(button)
+		_build_button(e, false, null, vbox, 0, 0)
 	
 	scroll.add_child(vbox)
 	all_area.add_child(scroll)
 
 
-func _on_ShowAll_button_up():
+func _build_button(e: Dictionary, is_animated: bool, animation: Animation,
+		parent: Control, i: int, j: int) -> void:
+	
+	var button: Button = Button.new()
+	parent.add_child(button)
+	button.text = e["name"]
+	button.connect("button_up", self, "_on_button_up", [e["sound"]])
+	
+	if is_animated and animation != null:
+		button.rect_position = Vector2(-ProjectSettings.get_setting("display/window/size/width"),
+				-ProjectSettings.get_setting("display/window/size/height"))
+		button.name = "Button" + str(i)
+		var track_index = animation.add_track(Animation.TYPE_VALUE)
+		animation.track_set_path(track_index, button.name + ":rect_position")
+		var delay_idx = i-j*MAX_ENTRIES
+		if i % 2 == 0:
+			animation.track_insert_key(track_index, delay_idx*TIME_DELAY, Vector2(-button.rect_size.x, delay_idx*Y_SEPARATOR))
+			animation.track_insert_key(track_index, ANIMATION_LENGTH+delay_idx*TIME_DELAY,
+					Vector2(ProjectSettings.get_setting("display/window/size/width")+1, delay_idx*Y_SEPARATOR))
+		else:
+			animation.track_insert_key(track_index, delay_idx*TIME_DELAY,
+					Vector2(ProjectSettings.get_setting("display/window/size/width")+1, delay_idx*Y_SEPARATOR))
+			animation.track_insert_key(track_index, ANIMATION_LENGTH+delay_idx*TIME_DELAY, Vector2(-button.rect_size.x, delay_idx*Y_SEPARATOR))
+
+
+func _on_ShowAll_button_up() -> void:
 	if(not is_all):
 		sequence_area.hide()
 		all_area.show()
+		animation_players[idx].stop(false)
 		is_all = true
 	else:
 		sequence_area.show()
 		all_area.hide()
+		animation_players[idx].play("animation")
 		is_all = false
+
+
+func _on_button_up(sound: String) -> void:
+	var stream = load(AUDIO_PATH + sound)
+	if stream != null:
+		if audio_player.playing:
+			audio_player.stop()
+		stream.loop = false
+		audio_player.stream = stream
+		audio_player.play()
+	else:
+		Log.warning(self, "_on_button_up", "Cannot load audio resource on path: "
+				+ str(AUDIO_PATH + sound))

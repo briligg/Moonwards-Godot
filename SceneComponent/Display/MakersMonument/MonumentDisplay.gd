@@ -1,34 +1,28 @@
 tool
 extends Spatial
 
-onready var interactable_area: Area = $Interactable
-
-onready var monument_camera: Camera = $InteractionCamera
-var player_camera: Camera = null
-
+var body_counter: int = 0
 
 func _ready():
-	interactable_area.connect("interacted_by", self, "_on_interacted_by")
+	$PlayArea.connect("body_entered", self, "_on_body_entered")
+	$PlayArea.connect("body_exited", self, "_on_body_exited")
 
 
-func _input(event):
-	# quit
-	if event.is_action_pressed("use"):
-		self.set_process_input(false)
-		$Screen.set_process_input(false)
-		
-		if(player_camera != null):
-			player_camera.make_current()
-			player_camera = null
+func _on_body_entered(_body: Node) -> void:
+	if body_counter == 0:
+		var content = $Screen.content_instance
+		if content != null:
+			if content.has_method("play"):
+				content.play()
 	
-		interactable_area.set_collision_layer_bit(15, true)
+	body_counter += 1
 
 
-func _on_interacted_by(_interactor_node):
-	self.set_process_input(true)
-	$Screen.set_process_input(true)
+func _on_body_exited(_body: Node) -> void:
+	body_counter -= 1
 	
-	player_camera = get_viewport().get_camera()
-	monument_camera.make_current()
-	
-	interactable_area.set_collision_layer_bit(15, false)
+	if body_counter == 0:
+		var content = $Screen.content_instance
+		if content != null:
+			if content.has_method("stop"):
+				content.stop()
