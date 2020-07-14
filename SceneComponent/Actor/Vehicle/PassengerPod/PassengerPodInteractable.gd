@@ -10,7 +10,7 @@ var orig_parent
 
 onready var pod = get_parent()
 
-func _ready():
+func _ready() -> void:
 	$Interactable.owning_entity = self.pod
 	$Interactable.display_info = "Dock to rover"
 	$Interactable.connect("interacted_by", self, "interacted_by")

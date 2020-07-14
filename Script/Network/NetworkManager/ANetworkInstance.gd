@@ -12,7 +12,7 @@ var entities_container: Node
 # Array of EntityData
 var entities: Dictionary = {}
 
-func _ready():
+func _ready() -> void:
 	world = yield(Scene.change_scene_to_async(Scene.world_scene), "scene_changed")
 	
 	world.name = "World"

@@ -4,7 +4,7 @@ signal save_scene_pos
 signal load_scene_pos
 signal lock_all_nodes
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	pass # Replace with function body.
 
 func _on_SaveBtn_pressed():

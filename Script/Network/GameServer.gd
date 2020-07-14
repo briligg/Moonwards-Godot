@@ -13,7 +13,7 @@ func _init(_port: int, _max_players: int, _is_host_player: bool = false):
 	self.is_host_player = _is_host_player
 	self.name = "GameServer"
 
-func _ready():
+func _ready() -> void:
 	# because inheritence is broken on yields
 	# yielding on a parent class' _ready returns it to the inheriting class' _ready
 	if !self.is_initialized:

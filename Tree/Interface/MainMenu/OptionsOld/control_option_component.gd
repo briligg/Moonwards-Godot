@@ -21,7 +21,7 @@ func update_title(text):
 
 
 
-func _enter_tree():
+func _enter_tree() -> void:
 	var is_key = false
 	if not $Confirm.get_cancel().is_connected("pressed",self,"_on_Cancel"):
 		$Confirm.get_cancel().connect("pressed",self,"_on_Cancel") 

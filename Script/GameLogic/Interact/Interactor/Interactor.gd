@@ -22,7 +22,7 @@ var interactables : Array = []
 #This is how I will not spam a signal when I have potential interacts.
 var previous_collider : Area = null
 
-func _ready():
+func _ready() -> void:
 	collision_layer = 0
 	collision_mask = 32768
 	enabled = false

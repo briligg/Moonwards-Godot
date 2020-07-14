@@ -1,6 +1,6 @@
 extends Node
 
-func _ready():
+func _ready() -> void:
 	Log.trace(self, "_ready", "trace test")
 	Log.debug(self, "_ready", "debug test")
 	Log.warning(self, "_ready", "warning test")

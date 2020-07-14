@@ -7,7 +7,7 @@ var step_size = 0.0535
 export (float) var height = 0.5 setget SetHeight
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	var step_position = $CollisionShape.global_transform.origin
 	var max_y = step_position.y + $CollisionShape.shape.extents.y
 	step_position.y -= $CollisionShape.shape.extents.y

@@ -8,7 +8,7 @@ onready var animation: AnimationPlayer = $AnimationPlayer
 func _init().("ModelComponent", false):
 	pass
 
-func _ready():
+func _ready() -> void:
 	var count = mesh.get_surface_material_count()
 	for i in range(count):
 		var mat = mesh.get_surface_material(i).duplicate()

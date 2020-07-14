@@ -33,7 +33,7 @@ var _menu_items_idx = 0
 
 
 
-func _enter_tree():
+func _enter_tree() -> void:
 	_plugin_menu_btn.text = POPUP_BUTTON_TEXT
 	_plugin_menu_btn.hint_tooltip = MENU_BUTTON_TOOLTIP
 	
@@ -119,7 +119,7 @@ func _menu_popup_about_to_show():
 
 
 #clean up
-func _exit_tree():
+func _exit_tree() -> void:
 	remove_control_from_container(EditorPlugin.CONTAINER_TOOLBAR, _plugin_menu_btn)
 
 	if _plugin_menu_btn:

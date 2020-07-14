@@ -10,7 +10,7 @@ onready var interactable = $Interactable
 func _init().("RoverRideInteractable", true):
 	pass
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	interactable.connect("interacted_by", self, "interacted_by")
 	interactable.display_info = "Take control of the rover"
 	interactable.title = "Athlete Rover"

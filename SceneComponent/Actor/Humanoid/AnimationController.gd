@@ -5,16 +5,16 @@ var walk_direction = Vector2.ONE
 func _init().("AnimationController", false):
 	pass
 
-func _ready():
+func _ready() -> void:
 	call_deferred("_initialize")
 
-func _initialize():
+func _initialize() -> void:
 	pass
 
-func _process_client(_delta):
+func _process_client(_delta: float) -> void:
 	update_walk_animation(_delta)
 
-func _process_server(_delta):
+func _process_server(_delta: float) -> void:
 	#If this entity is the the server player entity running on the server then _process_client already updates the animation.
 	if not(get_tree().is_network_server() and entity.owner_peer_id == get_tree().get_network_unique_id()):
 		update_walk_animation(_delta)

@@ -48,10 +48,10 @@ func _process_network(delta) -> void:
 	else:
 		_process_client(delta)
 		
-func _process_server(_delta) -> void:
+func _process_server(_delta: float) -> void:
 	pass
 	
-func _process_client(_delta) -> void:
+func _process_client(_delta: float) -> void:
 	pass
 
 func set_enabled(val: bool) -> void:

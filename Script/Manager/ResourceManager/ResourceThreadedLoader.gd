@@ -52,7 +52,7 @@ func _process_load():
 			break
 
 
-func _exit_tree():
+func _exit_tree() -> void:
 	# Wait until it exits.
 	# Thread must be joined, for portability.
 	thread.wait_to_finish()

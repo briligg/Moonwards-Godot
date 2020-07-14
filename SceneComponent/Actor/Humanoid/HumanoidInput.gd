@@ -6,11 +6,11 @@ var ignore_inputs : bool = false
 func _init().("HumanoidInput", true):
 	pass
 
-func _ready():
+func _ready() -> void:
 	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_STARTED, self, "set_ignore_inputs", [true])
 	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_FINISHED, self, "set_ignore_inputs", [false])
 	
-func _process_client(_delta):
+func _process_client(_delta: float) -> void:
 	entity.input = Vector3.ZERO
 	handle_input()
 

@@ -12,7 +12,7 @@ func _ready() -> void :
 	#Keep up to date with the open scenes.
 	connect("scene_changed", self, "_on_scene_changed")
 
-func _enter_tree():
+func _enter_tree() -> void:
 	lock_button = lock_button_scene.instance()
 	unlock_button = unlock_button_scene.instance()
 	add_control_to_container(CONTAINER_SPATIAL_EDITOR_MENU, lock_button)
@@ -21,7 +21,7 @@ func _enter_tree():
 	lock_button.connect("pressed", self, "on_lock_pressed")
 	unlock_button.connect("pressed", self, "on_unlock_pressed")
 
-func _exit_tree():
+func _exit_tree() -> void:
 	if lock_button:
 		remove_control_from_container(CONTAINER_SPATIAL_EDITOR_MENU, lock_button)
 		lock_button.queue_free()

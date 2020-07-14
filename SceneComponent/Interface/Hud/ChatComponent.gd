@@ -4,7 +4,7 @@ onready var chatbox = $Chat
 func _init():
 	pass
 
-func _ready():
+func _ready() -> void:
 	chatbox.connect("chat_line_entered", self, "_chat_line_entered")
 
 func _chat_line_entered(message: String, _strength: int) -> void:

@@ -15,7 +15,7 @@ var old_normal : Vector3 = Vector3.DOWN
 onready var on_ground : Node = $OnGround
 onready var normal_detect : Node = $NormalDetect
 
-func _ready():
+func _ready() -> void:
 	# Add the KinematicBody as collision exception so it doesn't detect the body as a walkable surface.
 	on_ground.add_exception(entity)
 	normal_detect.add_exception(entity)
@@ -23,14 +23,14 @@ func _ready():
 func is_grounded() -> bool:
 	return on_ground.is_colliding()
 
-func _physics_process(_delta):
+func _physics_process(_delta: float) -> void:
 	handle_input(_delta)
 	entity.is_grounded = is_grounded()
 	# Only get the ground normal if the Raycast is colliding with something or else we get weird values.
 	if on_ground.is_colliding():
 		ground_normal = on_ground.get_collision_normal()
 
-func _process_client(delta):
+func _process_client(delta: float) -> void:
 	# Rotate only on the client
 	# The server will adjust accordingly to the velocity vector.
 	rotate_body(delta)
@@ -42,7 +42,7 @@ func _process_client(delta):
 		entity.global_transform.origin = t
 	update_state()
 
-func _process_server(delta):
+func _process_server(delta: float) -> void:
 	rotate_body(delta)
 	
 	var movement_direction = horizontal_vector.normalized()

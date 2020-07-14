@@ -11,7 +11,7 @@ func _init(_ip: String, _port: int):
 	self.ip = _ip
 	self.port = _port
 
-func _ready():
+func _ready() -> void:
 	# because inheritence is broken on yields
 	# yielding on a parent class' _ready returns it to the inheriting class' _ready
 	if !self.is_initialized:
