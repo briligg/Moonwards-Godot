@@ -1,5 +1,12 @@
 """
 	Use this class for showing-up independent screens within the game.
+	
+	A modified version of a standard Godot's Viewport that will handle the input
+	and distribute the events accordingly into viewport's UI controls.
+	
+	Assign the Context variable on the Inspector. Content is a scene that will be
+	displayed within the screen (viewport) - usually contains UI Controls that player
+	can click on the display.
 """
 
 tool

@@ -1,3 +1,9 @@
+"""
+	Maker's Monument display screen. To add the entries modify the entries dictionary
+	below. Also add the name of the audio associated with the name. The audio tracks
+	should be put on the dictionary Assets/Sounds/Monument/.
+"""
+
 extends Control
 
 var is_all: bool = false
@@ -10,6 +16,7 @@ const Y_SEPARATOR: int = 180
 
 onready var sequence_area: Control = $VBoxContainer/SequenceArea
 onready var all_area: Control = $VBoxContainer/AllArea
+onready var control_button = $VBoxContainer/BottomArea/CenterContainer/ControlButton
 
 const AUDIO_PATH: String = "res://Assets/Sounds/Monument/"
 onready var audio_player: AudioStreamPlayer = $AudioPlayer
@@ -59,11 +66,13 @@ func _ready() -> void:
 
 
 func play() -> void:
-	animation_players[idx].play("animation")
+	if !is_all and !animation_players[idx].is_playing():
+		animation_players[idx].play("animation")
 
 
 func stop() -> void:
-	animation_players[idx].stop(false)
+	if animation_players[idx].is_playing():
+		animation_players[idx].stop(false)
 
 
 func _on_animation_finished(_name: String) -> void:
@@ -150,16 +159,18 @@ func _build_button(e: Dictionary, is_animated: bool, animation: Animation,
 			animation.track_insert_key(track_index, ANIMATION_LENGTH+delay_idx*TIME_DELAY, Vector2(-button.rect_size.x, delay_idx*Y_SEPARATOR))
 
 
-func _on_ShowAll_button_up() -> void:
+func _on_control_button_button_up() -> void:
 	if(not is_all):
 		sequence_area.hide()
 		all_area.show()
 		animation_players[idx].stop(false)
+		control_button.text = "= HIDE ="
 		is_all = true
 	else:
 		sequence_area.show()
 		all_area.hide()
 		animation_players[idx].play("animation")
+		control_button.text = "= SHOW ALL ="
 		is_all = false
 
 
