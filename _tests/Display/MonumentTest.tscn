@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Constructs/Airlock_Bay/Airlock_Bay.tscn" type="PackedScene" id=1]
+[ext_resource path="res://SceneComponent/Interface/PlayerHud.tscn" type="PackedScene" id=2]
+[ext_resource path="res://SceneComponent/Display/MakersMonument/MonumentDisplay.tscn" type="PackedScene" id=3]
+
+
+[node name="TestScene" type="Spatial"]
+
+[node name="SpawnPoints" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, 2 )
+
+[node name="1" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 15, 0, 0, 0, -4, 0, 0, 0, -2, 0, 0, 0 )
+
+[node name="PlayerHud" parent="." instance=ExtResource( 2 )]
+
+[node name="Spatial" type="Spatial" parent="."]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.0209515, -0.967683, -0.251296, -0.0756101, -0.249098, 0.965522, -0.996917, 0.0392297, -0.0679477, 0, 116.016, 0 )
+light_energy = 1.9
+shadow_enabled = true
+shadow_color = Color( 0.447059, 0.447059, 0.447059, 1 )
+
+[node name="Airlock_Bay" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49521, 0, 0 )
+
+[node name="MakersMonument" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11474, -6.62498, -7.30037 )
+
+[node name="Camera1" type="Camera" parent="MakersMonument"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8877, 0.885342 )
+
+[node name="Camera2" type="Camera" parent="MakersMonument"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.50064, 3.61618 )
+__meta__ = {
+"_editor_description_": ""
+}
