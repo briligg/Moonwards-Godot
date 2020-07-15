@@ -59,28 +59,28 @@ puppetsync func add_player(entity_data) -> void:
 ## See if we can move this to it's own script.
 
 # Controlled RPC Wrapper with added control.
-func crpc(caller: Node, method: String, val, exclude_list: Array = []):
+func crpc(caller: Node, method: String, args = [], exclude_list: Array = []):
 	for client in entities.values():
 		if not exclude_list.has(client.peer_id):
-			caller.rpc_id(client.peer_id, method, val)
+			caller.rpc_id(client.peer_id, method, args)
 
 # Controlled RPC Wrapper with added control.
-func crpc_unreliable(caller: Node, method: String, val, exclude_list: Array = []):
+func crpc_unreliable(caller: Node, method: String, args = [], exclude_list: Array = []):
 	for client in entities.values():
 		if not exclude_list.has(client.peer_id):
-			caller.rpc_unreliable_id(client.peer_id, method, val)
+			caller.rpc_unreliable_id(client.peer_id, method, args)
 
 # Controlled RSET Wrapper with added control.
-func crset(caller: Node, method: String, val, exclude_list: Array = []):
+func crset(caller: Node, method: String, args = [], exclude_list: Array = []):
 	for client in entities.values():
 		if not exclude_list.has(client.peer_id):
-			caller.rset_id(client.peer_id, method, val)
+			caller.rset_id(client.peer_id, method, args)
 
 # Controlled RSET Wrapper with added control.
-func crset_unreliable(caller: Node, method: String, val, exclude_list: Array = []):
+func crset_unreliable(caller: Node, method: String, args = [], exclude_list: Array = []):
 	for client in entities.values():
 		if not exclude_list.has(client.peer_id):
-			caller.rset_id(client.peer_id, method, val)
+			caller.rset_id(client.peer_id, method, args)
 
 ### Figure out a better way to handle this, if godot allows
 func crpc_signal(instance: Object, sig_name: String, param = null):

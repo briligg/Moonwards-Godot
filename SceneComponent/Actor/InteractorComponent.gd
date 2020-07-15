@@ -34,15 +34,17 @@ func _input(event : InputEvent) -> void :
 	if event.is_action_pressed("use") :
 		var potential_interacts : Array = interactor.get_potential_interacts()
 		Signals.Hud.emit_signal(Signals.Hud.POTENTIAL_INTERACT_REQUESTED, potential_interacts)
-
-puppet func on_interacted_from_remote(interactees : Array) -> void :
-	if interactees[1] != entity :
-		interactees[0].interact_with(interactees[1])
+		crpc("on_interacted_from_client", [null, interactor.owning_entity], [entity.owner_peer_id])
+		
+master func on_interacted_from_client(interactees : Array) -> void :
+	Log.warning(self, "", "HEY, I GOT CALLED FROM A CLIENT OVER NETWORK!!!")
+#	if interactees[1] != entity :
+#		interactees[0].interact_with(interactees[1])
 
 func on_interacted_with(interactable : Interactable)->void:
 	print("Interacted with %s " %interactable)
-	if interactable.is_networked() :
-		crpc(INTERACT_METHOD, [interactable, interactor.owning_entity])
+#	if interactable.is_networked() :
+#		crpc(INTERACT_METHOD, [interactable, interactor.owning_entity])
 
 func interactable_entered(interactable_node):
 	Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_ENTERED_REACH, interactable_node)
