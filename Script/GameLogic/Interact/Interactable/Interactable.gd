@@ -14,6 +14,8 @@ signal interacted_by(interactor_ray_cast)
 export var display_info : String = "Interactable"
 #This string is displayed in the text of the InteractsMenu button.
 export var title : String = "Title"
+#True means that players online can see the interactable be used by others.
+export var networked : bool = true
 
 var owning_entity: AEntity = null
 
@@ -31,6 +33,9 @@ func get_title() -> String :
 func interact_with(interactor : Node) -> void :
 	#Someone requested interaction with me.
 	emit_signal("interacted_by", interactor)
+
+func is_networked() -> bool :
+	return networked
 
 func set_title(new_title : String) -> void :
 	title = new_title

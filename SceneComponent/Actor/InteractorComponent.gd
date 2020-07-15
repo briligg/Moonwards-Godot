@@ -1,5 +1,7 @@
 extends AComponent
 
+const INTERACT_METHOD : String = "on_interacted_from_remote"
+
 onready var interactor : Area = $Interactor
 
 #This function is required by AComponent.
@@ -33,8 +35,14 @@ func _input(event : InputEvent) -> void :
 		var potential_interacts : Array = interactor.get_potential_interacts()
 		Signals.Hud.emit_signal(Signals.Hud.POTENTIAL_INTERACT_REQUESTED, potential_interacts)
 
-func on_interacted_with(_interactor)->void:
-	print("Interacted with %s " %_interactor)
+puppet func on_interacted_from_remote(interactees : Array) -> void :
+	if interactees[1] != entity :
+		interactees[0].interact_with(interactees[1])
+
+func on_interacted_with(interactable : Interactable)->void:
+	print("Interacted with %s " %interactable)
+	if interactable.is_networked() :
+		crpc(INTERACT_METHOD, [interactable, interactor.owning_entity])
 
 func interactable_entered(interactable_node):
 	Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_ENTERED_REACH, interactable_node)
