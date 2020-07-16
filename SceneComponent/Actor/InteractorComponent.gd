@@ -41,7 +41,7 @@ master func on_interacted_from_client(_interactees : Array) -> void :
 
 #Called after the interactable has been interacted with. Networks that the interaction happened.
 func on_interacted_with(interactable : Interactable)->void:
-	print("Interacted with %s " %interactable)
+	Log.trace(self, "", "Interacted with %s " %interactable)
 	if interactable.is_networked() :
 		crpc("on_interacted_from_client", [interactable, interactor.owning_entity], [entity.owner_peer_id])
 
