@@ -24,11 +24,13 @@ func _ready() -> void :
 	#Interact with the interactable the player has chosen from the list.
 	Signals.Hud.connect(Signals.Hud.INTERACT_OCCURED, self, "on_interact_menu_request")
 
-#Called after the interactable has been interacted with. Networks that the interaction happened.
+#Call after chosen from InteractsMenu. Networks that the interaction happened.
 func on_interact_menu_request(interactable : Interactable)->void:
 	Log.trace(self, "", "Interacted with %s " %interactable)
 	if interactable.is_networked() :
 		crpc("request_interact", [interactor.get_path(), interactable.get_path()], [entity.owner_peer_id])
+	else :
+		interactor.interact(interactable)
 
 master func request_interact(args : Array) -> void :
 	Log.warning(self, "", "Client %s requested an interaction" %entity.owner_peer_id)
