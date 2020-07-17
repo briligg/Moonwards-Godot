@@ -17,11 +17,9 @@ func _ready() -> void:
 	# If there's no network peer (local testing)
 	if !get_tree().network_peer:
 		return
-	
-	# If we're not owned by this client, we're disabled.
-	if get_tree().get_network_unique_id() != entity.owner_peer_id and require_net_owner:
+	#TODO: Remove this & refactor parts that may depend on it.
+	if !is_net_owner() and require_net_owner:
 		disable()
-
 
 func disable() -> void:
 	enabled = false
@@ -63,3 +61,6 @@ func set_enabled(val: bool) -> void:
 
 func _get_comp_name() -> String:
 	return comp_name
+
+func is_net_owner() -> bool:
+	return get_tree().get_network_unique_id() == entity.owner_peer_id

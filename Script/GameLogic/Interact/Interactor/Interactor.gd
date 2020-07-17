@@ -69,18 +69,8 @@ func get_potential_interacts() -> Array :
 
 #Interact with the given interactable.
 func interact(interactable) -> void :
-#	assert(interactables.empty() == false)
 	interactable.interact_with(owning_entity)
 	emit_signal("interacted_with", interactable)
-
-#Interact with the closest potential interactable. Can be called when no interactables are present.
-func interact_with_closest() -> void :
-	if interactables.empty() :
-		return
-	
-	interactables[0].interact_with(owning_entity)
-	if interactables[0].owning_entity != null:
-		emit_signal("interacted_with", interactables[0].owning_entity)
 
 #An interactable has entered my area.
 func _interactable_entered(interactable_node) -> void :

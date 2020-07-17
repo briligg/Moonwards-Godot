@@ -7,7 +7,7 @@ var is_active = false
 
 onready var interactable = $Interactable
 
-func _init().("RoverRideInteractable", true):
+func _init().("RoverRideInteractable", false):
 	pass
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,7 +28,7 @@ func take_control(e):
 	self.entity.enable()
 
 	is_active = true
-		
+
 func return_control() -> void:
 	interactable.display_info = "Take control of the rover"
 	self.entity.disable()
