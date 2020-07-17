@@ -14,7 +14,7 @@ export(int) var stairs_step_count
 
 export(bool) var generate_editor_visual setget test_in_editor
 
-var _generated_length: float = 0.0
+var _total_length: float = 0.0
 
 func _ready():
 	generate_stairs()
@@ -41,25 +41,27 @@ func get_look_direction(var position):
 		return -global_transform.basis.z
 
 func generate_stairs():
-	var bottom = MeshInstance.new()
-	bottom.mesh = stair_bottom
-	self.add_child(bottom)
-	bottom.transform.origin = Vector3.ZERO
+	_total_length = (stairs_step_count * stair_step_length) + stair_bottom_length
+	
+	var top = MeshInstance.new()
+	top.mesh = stair_top
+	self.add_child(top)
+	top.transform.origin = Vector3(0, stair_step_length, 0)
 	for i in range(0, stairs_step_count):
 		var step = MeshInstance.new()
 		step.mesh = stair_step
 		self.add_child(step)
-		step.transform.origin.y = (i+1) * stair_step_length
-	var top = MeshInstance.new()
-	top.mesh = stair_top
-	self.add_child(top)
-	top.transform.origin.y = (stairs_step_count+1) * stair_step_length
-	_generated_length = (stairs_step_count) * stair_step_length
+		step.transform.origin.y = -1 * i * stair_step_length
+	var bottom = MeshInstance.new()
+	bottom.mesh = stair_bottom
+	self.add_child(bottom)
+	bottom.transform.origin.y = -1 * stairs_step_count * stair_step_length
 	
 func update_collision():
 	$CollisionShape.scale.x = stair_width
 	$CollisionShape.scale.z = stair_width
-	$CollisionShape.scale.y = _generated_length
+	$CollisionShape.scale.y = _total_length / 2
+	$CollisionShape.transform.origin.y = -_total_length / 2
 	
 	var step_position = $CollisionShape.global_transform.origin
 	var max_y = step_position.y + $CollisionShape.scale.y

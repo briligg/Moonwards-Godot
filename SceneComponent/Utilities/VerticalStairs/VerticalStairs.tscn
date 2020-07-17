@@ -20,5 +20,5 @@ stair_width = 0.54
 stairs_step_count = 5
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.52218 )
+transform = Transform( -0.54, 0, 8.15377e-08, 0, 5.22, 0, -8.15377e-08, 0, -0.54, 0, -2.61, 0.52218 )
 shape = SubResource( 1 )
