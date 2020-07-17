@@ -63,15 +63,16 @@ omni_attenuation = 1.8025
 [node name="Vertical-Stair-First-Gallery-1a" parent="Marker_Vertical-Stairs001" index="0" instance=ExtResource( 4 )]
 
 [node name="Vertical-Stair-First-Gallery-1b" parent="Marker_Vertical-Stairs001" index="1" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06397, 0, -0.00115585 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07, 0, 0 )
 
 [node name="Marker_Vertical-Stairs002" parent="." index="11"]
 transform = Transform( 0.0777978, 0, 0.996969, 0, 1, 0, -0.996969, 0, 0.0777978, 35.2925, -17.2804, -2.95547 )
 
 [node name="Vertical-Stair-First-Gallery-2a" parent="Marker_Vertical-Stairs002" index="0" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, 0, 0, 0 )
 
 [node name="Vertical-Stair-First-Gallery-2b" parent="Marker_Vertical-Stairs002" index="1" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07026, 0, -0.00239944 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07, 0, 0 )
 
 [node name="LOD1" parent="." index="20"]
 visible = false
