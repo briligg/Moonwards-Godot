@@ -1,35 +1,32 @@
+tool
 extends Interactable
 
 var climb_points = []
 var step_size = 0.535
 
-export (float) var height = 1 setget _set_height
+export(Mesh) var stair_step
+export(Mesh) var stair_top
+export(Mesh) var stair_bottom
+export(float) var stair_step_length
+export(float) var stair_bottom_length
+export(float) var stair_width
+export(int) var stairs_step_count
 
+export(bool) var generate_editor_visual setget test_in_editor
+
+var _generated_length: float = 0.0
 
 func _ready():
+	generate_stairs()
+	update_collision()
 	#Listen to when I am interacted with.
 	connect("interacted_by", self, "interacted_with")
-	
-	var step_position = $CollisionShape.global_transform.origin
-	var max_y = step_position.y + $CollisionShape.shape.extents.y
-	step_position.y -= $CollisionShape.shape.extents.y
-	
-	#Calculate how large each step needs to be.
-	while true:
-		climb_points.append(step_position)
-		step_position.y += step_size
-		if step_position.y > max_y:
-			break
 
 #Let the interactor know they interacted with me.
 func interacted_with(_interactor : Node) -> void :
 	if _interactor is ActorEntity:
 		#Make the interactor climb stairs.
 		_interactor.humanoid_movement.start_climb_stairs(self)
-
-#Set the height of the stairs
-func _set_height(var new_height) :
-	height = new_height
 
 #Determine which side the player should be facing when climbing.
 func get_look_direction(var position):
@@ -42,6 +39,46 @@ func get_look_direction(var position):
 		return global_transform.basis.z
 	else:
 		return -global_transform.basis.z
+
+func generate_stairs():
+	var bottom = MeshInstance.new()
+	bottom.mesh = stair_bottom
+	self.add_child(bottom)
+	bottom.transform.origin = Vector3.ZERO
+	for i in range(0, stairs_step_count):
+		var step = MeshInstance.new()
+		step.mesh = stair_step
+		self.add_child(step)
+		step.transform.origin.y = (i+1) * stair_step_length
+	var top = MeshInstance.new()
+	top.mesh = stair_top
+	self.add_child(top)
+	top.transform.origin.y = (stairs_step_count+1) * stair_step_length
+	_generated_length = (stairs_step_count) * stair_step_length
+	
+func update_collision():
+	$CollisionShape.scale.x = stair_width
+	$CollisionShape.scale.z = stair_width
+	$CollisionShape.scale.y = _generated_length
+	
+	var step_position = $CollisionShape.global_transform.origin
+	var max_y = step_position.y + $CollisionShape.scale.y
+	step_position.y -= $CollisionShape.scale.y
+	
+	#Calculate how large each step needs to be.
+	while true:
+		climb_points.append(step_position)
+		step_position.y += step_size
+		if step_position.y > max_y:
+			break
+
+func test_in_editor(val):
+	for n in self.get_children():
+		if n != $CollisionShape:
+			self.remove_child(n)
+			n.queue_free()
+	generate_stairs()
+	update_collision()
 
 func _create_debug_line(var from, var to):
 	var im = ImmediateGeometry.new()

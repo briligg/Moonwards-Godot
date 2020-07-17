@@ -11,7 +11,7 @@ dest_files=[ "res://.import/Vertical_Stairs.glb-33967c9fabd1f23a18ca0b72f52e025a
 
 [params]
 
-nodes/root_type="LodModel (LodModel.gd)"
+nodes/root_type="Spatial"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
