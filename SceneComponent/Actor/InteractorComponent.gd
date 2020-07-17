@@ -23,10 +23,6 @@ func _ready() -> void :
 	
 	#Interact with the interactable the player has chosen from the list.
 	Signals.Hud.connect(Signals.Hud.INTERACT_OCCURED, self, "on_interact_menu_request")
-	
-	#Listen for when interactions are possible and when they become impossible.
-	interactor.connect("interacted_with", self, "on_interacted_with")
-	interactor.connect("interactable_left_area", self, "_interactable_left")
 
 #Called after the interactable has been interacted with. Networks that the interaction happened.
 func on_interact_menu_request(interactable : Interactable)->void:

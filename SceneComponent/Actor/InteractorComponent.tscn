@@ -21,3 +21,4 @@ shape = SubResource( 1 )
 [connection signal="interact_made_impossible" from="Interactor" to="." method="_interact_made_impossible"]
 [connection signal="interact_made_possible" from="Interactor" to="." method="_interact_made_possible"]
 [connection signal="interactable_entered_area" from="Interactor" to="." method="interactable_entered"]
+[connection signal="interactable_left_area" from="Interactor" to="." method="_interactable_left"]
