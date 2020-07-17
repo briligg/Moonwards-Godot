@@ -28,14 +28,6 @@ func _ready() -> void :
 	interactor.connect("interacted_with", self, "on_interacted_with")
 	interactor.connect("interactable_left_area", self, "_interactable_left")
 
-func _input(event : InputEvent) -> void :
-	if !self.is_net_owner():
-		return
-	
-	if event.is_action_pressed("use") :
-		var potential_interacts : Array = interactor.get_potential_interacts()
-		Signals.Hud.emit_signal(Signals.Hud.POTENTIAL_INTERACT_REQUESTED, potential_interacts)
-
 #Called after the interactable has been interacted with. Networks that the interaction happened.
 func on_interact_menu_request(interactable : Interactable)->void:
 	Log.trace(self, "", "Interacted with %s " %interactable)
