@@ -6,10 +6,12 @@ onready var description : RichTextLabel = get_node("HBox/DescriptionPanel/HBox/D
 
 var interact_list : Array = []
 
+#This is the current interactor component that has focus.
+var interactor_component = null
+
 #Listen for when interacts are possible.
 func _ready() -> void :
-	Signals.Hud.connect(Signals.Hud.INTERACTABLE_ENTERED_REACH, self, "_interactable_entered")
-	Signals.Hud.connect(Signals.Hud.INTERACTABLE_LEFT_REACH, self, "_interactable_left")
+	Signals.Hud.connect(Signals.Hud.NEW_INTERACTOR_GRABBED_FOCUS, self, "_new_interactor")
 
 #Called from a signal. One of the buttons corresponding to the interactables has been pressed.
 func _button_pressed(interactable_path : NodePath) -> void :
@@ -123,3 +125,44 @@ func _interactable_left(interactable_node) -> void :
 	#Clear the text description if there are no more interactables.
 	if interact_list.empty() :
 		description.text = ""
+
+#Called from a signal. A new InteractorComponent has grabbed focus.
+func _new_interactor(new_interactor : Node) :
+	if interactor_component != null :
+		interactor_component.lost_focus()
+		interactor_component.disconnect(interactor_component.INTERACTABLE_ENTERED_REACH, self, "_interactable_entered")
+		interactor_component.disconnect(interactor_component.INTERACTABLE_LEFT_REACH, self, "_interactable_left")
+	new_interactor.connect(new_interactor.INTERACTABLE_ENTERED_REACH, self, "_interactable_entered")
+	new_interactor.connect(new_interactor.INTERACTABLE_LEFT_REACH, self, "_interactable_left")
+
+func _on_interact_requested(potential_interacts: Array):
+	if visible:
+		_hide_interacts()
+	else:
+		_show_interacts(potential_interacts)
+
+#Called from a signal. The player wants to see what interactables are present.
+func _show_interacts(potential_interacts: Array) :
+	interact_list = potential_interacts
+	_clear_button_parent()
+	show()
+	
+	#Make the mouse appear
+	Helpers.capture_mouse(false)
+	
+	#Create a button for each potential interact.
+	var at : int = 0
+	for interactable in potential_interacts :
+		_create_button(interactable.get_title(), at, interactable.get_info(), interactable.get_path())
+		at += 1
+
+func _hide_interacts():
+	Helpers.capture_mouse(true)
+	visible = false
+	_clear_menu()
+
+func _clear_menu():
+#	for i in interact_list:
+#		_interactable_left(i)
+#	interact_list = []
+	pass
