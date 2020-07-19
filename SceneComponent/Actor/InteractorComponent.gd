@@ -25,9 +25,6 @@ func _init().("Interactor", true) -> void :
 func _ready() -> void :
 	interactor.owning_entity = self.entity
 	
-	#Interact with the interactable the player has chosen from the list.
-	Signals.Hud.connect(Signals.Hud.INTERACT_OCCURED, self, "on_interact_menu_request")
-	
 	if grab_focus_at_ready :
 		call_deferred("grab_focus")
 
@@ -41,7 +38,6 @@ puppetsync func execute_interact(args: Array):
 	var _interactor = get_node(args[0])
 	var _interactable = get_node(args[1])
 	_interactor.interact(_interactable)
-	Signals.Hud.connect(Signals.Hud.INTERACT_OCCURED, interactor, "interact")
 
 #Become the current Interactor in use.
 func grab_focus() -> void :
@@ -62,7 +58,8 @@ func lost_focus() -> void :
 func on_interact_menu_request(interactable : Interactable)->void:
 	Log.trace(self, "", "Interacted with %s " %interactable)
 	if interactable.is_networked() :
-		crpc("request_interact", [interactor.get_path(), interactable.get_path()], [entity.owner_peer_id])
+		crpc("request_interact", [interactor.get_path(), interactable.get_path()], [])
+		#I removed entity.owner_peer_id from the now empty array.
 	else :
 		interactor.interact(interactable)
 

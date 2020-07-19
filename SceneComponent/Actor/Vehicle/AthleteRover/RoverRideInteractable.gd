@@ -5,6 +5,8 @@ var interactee_cam
 
 var is_active = false
 
+signal interacted_with()
+
 onready var interactable = $Interactable
 
 func _init().("RoverRideInteractable", false):
@@ -16,7 +18,7 @@ func _ready() -> void:
 	interactable.title = "Athlete Rover"
 
 func interacted_by(e) -> void:
-	if !self.is_active and e != self.entity:
+	if !self.is_active :
 		call_deferred("take_control", e)
 	elif self.is_active:
 		call_deferred("return_control")
@@ -28,6 +30,8 @@ func take_control(e):
 	self.entity.enable()
 
 	is_active = true
+	
+	.emit_signal("interacted_with")
 
 func return_control() -> void:
 	interactable.display_info = "Take control of the rover"

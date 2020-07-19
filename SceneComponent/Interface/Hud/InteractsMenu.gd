@@ -16,9 +16,7 @@ func _ready() -> void :
 #Called from a signal. One of the buttons corresponding to the interactables has been pressed.
 func _button_pressed(interactable_path : NodePath) -> void :
 	#Interact with desired interactable
-	var signal_string : String = Signals.Hud.INTERACT_OCCURED
-	var interactable = get_node(interactable_path)
-	Signals.Hud.emit_signal(signal_string, interactable)
+	interactor_component.on_interact_menu_request(get_node(interactable_path))
 
 #Remove all buttons and their separators from the button parent.
 func _clear_button_parent() -> void :
@@ -134,3 +132,4 @@ func _new_interactor(new_interactor : Node) :
 		interactor_component.disconnect(interactor_component.INTERACTABLE_LEFT_REACH, self, "_interactable_left")
 	new_interactor.connect(new_interactor.INTERACTABLE_ENTERED_REACH, self, "_interactable_entered")
 	new_interactor.connect(new_interactor.INTERACTABLE_LEFT_REACH, self, "_interactable_left")
+	interactor_component = new_interactor
