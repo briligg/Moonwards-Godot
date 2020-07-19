@@ -32,13 +32,12 @@ func _ready() -> void :
 	interactor.connect("interactable_entered_area", self, "relay_signal", [INTERACTABLE_ENTERED_REACH])
 	interactor.connect("interactable_left_area", self, "relay_signal", [INTERACTABLE_LEFT_REACH])
 	
-	if grab_focus_at_ready :
-		call_deferred("grab_focus")
+	call_deferred("_ready_deferred")
 
-master func request_interact(args : Array) -> void :
-	Log.warning(self, "", "Client %s requested an interaction" %entity.owner_peer_id)
-	crpc("execute_interact", args)
-
+func _ready_deferred() -> void :
+	if grab_focus_at_ready && enabled:
+		grab_focus()
+	
 #A different player interacted with a networked Interactable.
 puppetsync func execute_interact(args: Array):
 	Log.warning(self, "", "Client %s interacted request executed" %entity.owner_peer_id)
