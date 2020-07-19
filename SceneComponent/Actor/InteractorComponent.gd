@@ -3,11 +3,13 @@ extends AComponent
 onready var interactor : Area = $Interactor
 
 #These allow us to call signals using actual variables instead of strings.
+const FOCUS_ROLLBACK : String = "focus_returned"
 const INTERACTABLE_ENTERED_REACH : String = "interactable_entered_reach"
 const INTERACTABLE_LEFT_REACH : String = "interactable_left_reach"
 const INTERACT_MADE_IMPOSSIBLE : String = "interact_made_impossible"
 const INTERACT_MADE_POSSIBLE : String = "interact_made_possible"
 
+signal focus_returned()
 signal interactable_entered_reach(interactable)
 signal interactable_left_reach(interactable)
 signal interact_made_impossible()
@@ -24,6 +26,11 @@ func _init().("Interactor", true) -> void :
 #Make Interactor have my Entity variable as it's user.
 func _ready() -> void :
 	interactor.owning_entity = self.entity
+	
+	interactor.connect("interact_made_impossible", self, "emit_signal", [INTERACT_MADE_IMPOSSIBLE])
+	interactor.connect("interact_made_possible", self, "relay_signal", [INTERACT_MADE_POSSIBLE])
+	interactor.connect("interactable_entered_area", self, "relay_signal", [INTERACTABLE_ENTERED_REACH])
+	interactor.connect("interactable_left_area", self, "relay_signal", [INTERACTABLE_LEFT_REACH])
 	
 	if grab_focus_at_ready :
 		call_deferred("grab_focus")
@@ -42,17 +49,11 @@ puppetsync func execute_interact(args: Array):
 #Become the current Interactor in use.
 func grab_focus() -> void :
 	Signals.Hud.emit_signal(Signals.Hud.NEW_INTERACTOR_GRABBED_FOCUS, self)
-	interactor.connect("interact_made_impossible", self, "emit_signal", [INTERACT_MADE_IMPOSSIBLE])
-	interactor.connect("interact_made_possible", self, "relay_signal", [INTERACT_MADE_POSSIBLE])
-	interactor.connect("interactable_entered_area", self, "relay_signal", [INTERACTABLE_ENTERED_REACH])
-	interactor.connect("interactable_left_area", self, "relay_signal", [INTERACTABLE_LEFT_REACH])
+	enable()
 
 #The focus has been given to another interactor componennt.
 func lost_focus() -> void :
-	interactor.disconnect("interact_made_impossible", self, "emit_signal")
-	interactor.disconnect("interact_made_possible", self, "relay_signal")
-	interactor.disconnect("interactable_entered_area", self, "relay_signal")
-	interactor.disconnect("interactable_left_area", self, "relay_signal")
+	disable()
 
 #An Interactable has been chosen from InteractsMenu. Perform the appropriate logic for the Interactable.
 func on_interact_menu_request(interactable : Interactable)->void:
@@ -71,3 +72,6 @@ func relay_signal(attribute = null, signal_name = "interactable_made_impossible"
 master func request_interact(args : Array) -> void :
 	Log.warning(self, "", "Client %s requested an interaction" %entity.owner_peer_id)
 	crpc("execute_interact", args)
+
+func rollback_focus():
+	emit_signal(FOCUS_ROLLBACK)

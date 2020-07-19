@@ -5,7 +5,8 @@ var interactee_cam
 
 var is_active = false
 
-signal interacted_with()
+signal take_control()
+signal lose_control()
 
 onready var interactable = $Interactable
 
@@ -31,13 +32,15 @@ func take_control(e):
 
 	is_active = true
 	
-	.emit_signal("interacted_with")
+	.emit_signal("take_control")
 
 func return_control() -> void:
 	interactable.display_info = "Take control of the rover"
 	self.entity.disable()
 	self.is_active = false
 	self.interactee.enable()
+	
+	emit_signal("lose_control")
 
 func disable():
 	pass

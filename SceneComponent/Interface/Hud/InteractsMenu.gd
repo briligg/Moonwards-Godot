@@ -9,9 +9,13 @@ var interact_list : Array = []
 #This is the current interactor component that has focus.
 var interactor_component = null
 
+#THe history of interactors.
+var interactor_history : Array = []
+var interactor_history_pointers : Array = []
+
 #Listen for when interacts are possible.
 func _ready() -> void :
-	Signals.Hud.connect(Signals.Hud.NEW_INTERACTOR_GRABBED_FOCUS, self, "_new_interactor")
+	Signals.Hud.connect(Signals.Hud.NEW_INTERACTOR_GRABBED_FOCUS, self, "_new_interactor_append_to_history")
 
 #Called from a signal. One of the buttons corresponding to the interactables has been pressed.
 func _button_pressed(interactable_path : NodePath) -> void :
@@ -124,12 +128,43 @@ func _interactable_left(interactable_node) -> void :
 	if interact_list.empty() :
 		description.text = ""
 
-#Called from a signal. A new InteractorComponent has grabbed focus.
-func _new_interactor(new_interactor : Node) :
+#Called from a signal. Disconnect the old interactor and connect the new one.
+func _new_interactor(new_interactor : Node) -> void :
 	if interactor_component != null :
 		interactor_component.lost_focus()
+		interactor_component.disconnect(interactor_component.FOCUS_ROLLBACK, self, "_rollback_interactor_focus")
 		interactor_component.disconnect(interactor_component.INTERACTABLE_ENTERED_REACH, self, "_interactable_entered")
 		interactor_component.disconnect(interactor_component.INTERACTABLE_LEFT_REACH, self, "_interactable_left")
+	new_interactor.connect(new_interactor.FOCUS_ROLLBACK, self, "_rollback_interactor_focus")
 	new_interactor.connect(new_interactor.INTERACTABLE_ENTERED_REACH, self, "_interactable_entered")
 	new_interactor.connect(new_interactor.INTERACTABLE_LEFT_REACH, self, "_interactable_left")
 	interactor_component = new_interactor
+
+#A new InteractorComponent has grabbed focus.
+func _new_interactor_append_to_history(new_interactor : Node) -> void :
+	_new_interactor(new_interactor)
+	
+	#Listen for when the interactor has been freed so we don't crash the game
+	#by trying to call it after.
+	new_interactor.connect("tree_exited", self, "interactor_freed", [new_interactor.get_instance_id()])
+	
+	interactor_history.append(new_interactor.get_instance_id())
+	interactor_history_pointers.append(new_interactor)
+
+#Called from a signal. Set the freed interactor contained in the history to null.
+func interactor_freed(interactor_instance_id : int) -> void :
+	interactor_history[interactor_history.find(interactor_instance_id)] = null
+
+#Move the focus to the latest valid InteractorComponent.
+func _rollback_interactor_focus() -> void :
+	if interactor_history[interactor_history.size() -1] != null :
+		var interactor : Node = interactor_history_pointers[interactor_history.size() -1]
+		interactor.disconnect("tree_exited", self, "interactor_freed")
+	interactor_history.pop_back()
+	interactor_history_pointers.pop_back()
+	
+	while interactor_history[interactor_history.size() -1] == null :
+		interactor_history.pop_back()
+		interactor_history_pointers.pop_back()
+	
+	_new_interactor(interactor_history_pointers[interactor_history.size() -1])
