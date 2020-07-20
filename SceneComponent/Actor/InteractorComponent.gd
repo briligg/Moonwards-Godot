@@ -3,21 +3,20 @@ extends AComponent
 onready var interactor : Area = $Interactor
 
 #These allow us to call signals using actual variables instead of strings.
-const FOCUS_ROLLBACK : String = "focus_returned"
+#const FOCUS_ROLLBACK : String = "focus_returned"
 const INTERACTABLE_ENTERED_REACH : String = "interactable_entered_reach"
 const INTERACTABLE_LEFT_REACH : String = "interactable_left_reach"
 const INTERACT_MADE_IMPOSSIBLE : String = "interact_made_impossible"
 const INTERACT_MADE_POSSIBLE : String = "interact_made_possible"
 
-signal focus_returned()
+#signal focus_returned()
 signal interactable_entered_reach(interactable)
 signal interactable_left_reach(interactable)
 signal interact_made_impossible()
 signal interact_made_possible(interact_info_string)
 
 #Call grab_focus immediately at startup.
-export var grab_focus_at_ready : bool = false
-
+export var grab_focus_at_ready : bool = true
 
 #This function is required by AComponent.
 func _init().("Interactor", true) -> void :
@@ -32,10 +31,10 @@ func _ready() -> void :
 	interactor.connect("interactable_entered_area", self, "relay_signal", [INTERACTABLE_ENTERED_REACH])
 	interactor.connect("interactable_left_area", self, "relay_signal", [INTERACTABLE_LEFT_REACH])
 	
-	call_deferred("_ready_deferred")
+	# call_deferred("_ready_deferred")
 
 func _ready_deferred() -> void :
-	if grab_focus_at_ready && enabled:
+	if grab_focus_at_ready && self.enabled:
 		grab_focus()
 	
 #A different player interacted with a networked Interactable.
@@ -46,13 +45,8 @@ puppetsync func execute_interact(args: Array):
 	_interactor.interact(_interactable)
 
 #Become the current Interactor in use.
-func grab_focus() -> void :
+func grab_focus() -> void:
 	Signals.Hud.emit_signal(Signals.Hud.NEW_INTERACTOR_GRABBED_FOCUS, self)
-	enable()
-
-#The focus has been given to another interactor componennt.
-func lost_focus() -> void :
-	disable()
 
 #An Interactable has been chosen from InteractsMenu. Perform the appropriate logic for the Interactable.
 func on_interact_menu_request(interactable : Interactable)->void:
@@ -65,12 +59,23 @@ func on_interact_menu_request(interactable : Interactable)->void:
 
 #Pass the interactor signals we are listening to onwards.
 func relay_signal(attribute = null, signal_name = "interactable_made_impossible") -> void :
-	.emit_signal(signal_name, attribute)
+	emit_signal(signal_name, attribute)
 
 #Someone interacted with a networked Interactable.
 master func request_interact(args : Array) -> void :
 	Log.warning(self, "", "Client %s requested an interaction" %entity.owner_peer_id)
 	crpc("execute_interact", args)
 
-func rollback_focus():
-	emit_signal(FOCUS_ROLLBACK)
+#func rollback_focus():
+#	emit_signal(FOCUS_ROLLBACK)
+
+func disable():
+	$Interactor.enabled = false
+	.disable()
+
+func enable():
+	if is_net_owner():
+		grab_focus()
+		$Interactor.enabled = true
+	.enable()
+	
