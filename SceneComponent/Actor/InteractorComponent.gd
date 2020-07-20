@@ -51,7 +51,7 @@ func grab_focus() -> void:
 #An Interactable has been chosen from InteractsMenu. Perform the appropriate logic for the Interactable.
 func on_interact_menu_request(interactable : Interactable)->void:
 	Log.trace(self, "", "Interacted with %s " %interactable)
-	if interactable.is_networked() :
+	if interactable.is_networked() and !get_tree().is_network_server():
 		crpc("request_interact", [interactor.get_path(), interactable.get_path()], [])
 		#I removed entity.owner_peer_id from the now empty array.
 	else :
