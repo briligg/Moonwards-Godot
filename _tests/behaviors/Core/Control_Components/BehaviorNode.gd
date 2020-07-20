@@ -8,7 +8,7 @@ var slots_to_reset : Array = []
 
 func _ready():
 	connect("connected_to", self, "_on_connection_to")
-
+	connect("disconnected_from", self, "_on_disconnected_from")
 func _on_connection_to(slot : int, type : int):
 	if get_slot_type_left(slot) == Nodes.TYPE_ANY:
 		for slots in get_child_count():
@@ -31,4 +31,4 @@ func  _on_disconnected_from(slot:int):
 					is_slot_enabled_right(slots), 
 					Nodes.TYPE_ANY, 
 					Nodes.Color(Nodes.TYPE_ANY))
-	pass
+
