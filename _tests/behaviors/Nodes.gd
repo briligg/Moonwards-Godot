@@ -109,7 +109,7 @@ func _load_functions():
 		return
 	for function in function_names:
 		var data : Dictionary = functions.get(function)
-		var current_node : GraphNode = GraphNode.new()
+		var current_node : GraphNode = BehaviorNode.new()
 		current_node.title = function
 		for ports in max(data.get("_input_ports").size(),data.get("_output_ports").size()):
 			current_node.set_slot(

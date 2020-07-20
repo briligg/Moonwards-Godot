@@ -78,8 +78,8 @@ func compile(connections):
 		node = get_child(child)
 		
 		var nodevars : Array = []
-		for child in node.get_children():
-			if not child is GraphNode:
+		for child2 in node.get_children():
+			if not child2 is GraphNode:
 				continue
 			nodevars.append(recursive_get_variable(child))
 		OutputFile.set_value("variables", node.name, nodevars)
@@ -121,11 +121,14 @@ func _on_GraphEdit_connection_request(from, from_slot, to, to_slot) -> void:
 	if from != to:
 		if not is_slot_occupied(to_slot, to):
 			connect_node(from, from_slot, to, to_slot)
-			
+			if get_node(to).has_signal("connected_to"):
+				get_node(to).emit_signal("connected_to", to_slot, 
+					get_node(from).get_slot_type_right(from_slot))
 
 
 func _on_GraphEdit_disconnection_request(from, from_slot, to, to_slot) -> void:
 	disconnect_node(from, from_slot, to, to_slot )
+	get_node(to).emit_signal("disconnected_from", to_slot)
 
 
 
