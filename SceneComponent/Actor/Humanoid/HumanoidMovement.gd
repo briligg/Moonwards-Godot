@@ -190,12 +190,12 @@ func handle_input(delta : float) -> void:
 	var forward = entity.model.global_transform.basis.z
 	var left = entity.model.global_transform.basis.x
 	
-	var speed = on_ground_speed
+	var _speed = on_ground_speed
 	# Use a smaller movement speed when the character is in the air.
 	if entity.state.state == ActorEntityState.State.IN_AIR:
-		speed = in_air_speed
+		_speed = in_air_speed
 	
-	horizontal_vector = (entity.input.z * forward + entity.input.x * left) * speed
+	horizontal_vector = (entity.input.z * forward + entity.input.x * left) * _speed
 
 func rotate_body(_delta: float) -> void:
 	# Rotate

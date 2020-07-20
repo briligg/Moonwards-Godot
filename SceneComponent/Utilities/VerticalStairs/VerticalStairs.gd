@@ -74,7 +74,7 @@ func update_collision():
 		if step_position.y > max_y:
 			break
 
-func test_in_editor(val):
+func test_in_editor(_val):
 	for n in self.get_children():
 		if n != $CollisionShape:
 			self.remove_child(n)
