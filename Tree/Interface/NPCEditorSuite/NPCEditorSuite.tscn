@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="PanelContainer" type="PanelContainer"]
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+__meta__ = {
+"_edit_use_anchors_": false
+}
