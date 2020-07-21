@@ -26,7 +26,7 @@ func _ready():
 func interacted_with(_interactor : Node) -> void :
 	if _interactor is ActorEntity:
 		#Make the interactor climb stairs.
-		_interactor.humanoid_movement.start_climb_stairs(self)
+		_interactor.get_component("AMovementController").start_climb_stairs(self)
 
 #Determine which side the player should be facing when climbing.
 func get_look_direction(var position):

@@ -4,7 +4,7 @@
 [ext_resource path="res://Script/GameLogic/Interact/Interactor/Interactor.gd" type="Script" id=2]
 
 [sub_resource type="SphereShape" id=1]
-radius = 10.0696
+radius = 1.97071
 
 [node name="Interactor" type="Spatial"]
 script = ExtResource( 1 )

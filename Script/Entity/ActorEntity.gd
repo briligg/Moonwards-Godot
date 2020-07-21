@@ -7,7 +7,6 @@ class_name ActorEntity
 onready var model = $Model
 onready var animation = $Model/AnimationPlayer
 onready var animation_tree = $Model/AnimationTree
-onready var humanoid_movement = $HumanoidMovement
 var stairs = null
 var climb_point = -1
 var climb_look_direction = Vector3.FORWARD
