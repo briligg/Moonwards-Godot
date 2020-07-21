@@ -1,4 +1,4 @@
-extends Node
+extends AComponent
 
 class_name NPCBase
 

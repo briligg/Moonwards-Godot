@@ -144,10 +144,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/ExtensionClass/MwSpatial.gd"
 }, {
-"base": "Node",
+"base": "AComponent",
 "class": "NPCBase",
 "language": "GDScript",
-"path": "res://Tree/Tools/NPCEditor/behaviors/Config/NPC.gd"
+"path": "res://SceneComponent/Actor/Humanoid/NPC.gd"
 }, {
 "base": "Node",
 "class": "NetworkManager",
