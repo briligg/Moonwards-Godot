@@ -5,6 +5,8 @@ onready var button_parent : VBoxContainer = get_node("HBox/Buttons")
 onready var description : RichTextLabel = get_node("HBox/DescriptionPanel/HBox/Description")
 
 var interact_list : Array = []
+#Contains pointers to the buttons.
+var button_list : Array = []
 
 #This is the current interactor component that has focus.
 var interactor_component = null
@@ -42,14 +44,14 @@ func _convert_to_button_location(interactor_list_location : int) -> int :
 	return at
 
 #Add a button to the InteractsMenu.
-func _create_button(interact_name : String, interactable_location : int, info : String, interactable_path : NodePath) -> void :
+func _create_button(interact_name : String, info : String, interactable_path : NodePath) -> void :
 	#Create a separator to give buttons more space between each other.
 	#Add constant override has to be deferred 
 	#or else it will get overwritten by Godot.
 	var separator : HSeparator = HSeparator.new()
 	separator.call_deferred("add_constant_override", "separation", 15)
 	separator.set("separation", true)
-	if interactable_location != 0 :
+	if (interact_list.size() - 1) != 0 :
 		button_parent.call_deferred("add_child", separator)
 	
 	#Create a button.
@@ -60,7 +62,7 @@ func _create_button(interact_name : String, interactable_location : int, info : 
 	button_parent.call_deferred("add_child", new_button)
 	
 	#Grab focus if we are the first button to be created.
-	if interactable_location == 0 :
+	if (interact_list.size() - 1) == 0 :
 		new_button.call_deferred("grab_focus")
 	
 	#Listen for the button to be interacted with.
@@ -104,7 +106,7 @@ func _input(event : InputEvent) -> void :
 #Called from a signal. Adds a button to the button list based on the interactable.
 func _interactable_entered(interactable_node) -> void :
 	interact_list.append(interactable_node)
-	_create_button(interactable_node.get_title(), interact_list.size()-1, interactable_node.get_info(), interactable_node.get_path())
+	_create_button(interactable_node.get_title(), interactable_node.get_info(), interactable_node.get_path())
 
 #Called from a signal. Remove the button corresponding to the interactable from the button list.
 func _interactable_left(interactable_node) -> void :
