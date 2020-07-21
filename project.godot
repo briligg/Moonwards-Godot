@@ -209,6 +209,7 @@ Groups="*res://Script/Manager/GroupsManager/GroupsManager.gd"
 Scene="*res://Script/Manager/SceneManager/SceneManager.gd"
 Network="*res://Script/Network/NetworkManager/NetworkManager.gd"
 AL_DebugDraw="*res://Script/DebugHelper/debug_draw_3d.gd"
+Hud="*res://Script/Manager/HudManager/HudManager.gd"
 
 [compression]
 
