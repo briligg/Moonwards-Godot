@@ -4,7 +4,6 @@
 [ext_resource path="res://Tree/Tools/NPCEditor/behaviors/Interface/Graph_compiler.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Interface/NPCEditorTheme.tres" type="Theme" id=3]
 
-
 [sub_resource type="GDScript" id=1]
 script/source = "extends PopupMenu
 
@@ -47,7 +46,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainSplitter" type="VSplitContainer" parent="."]
+[node name="States" type="VSplitContainer" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -59,13 +59,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="PanelContainer" parent="MainSplitter"]
+[node name="Panel" type="PanelContainer" parent="States"]
 margin_right = 1912.0
 margin_bottom = 39.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 
-[node name="DropDowns" type="HBoxContainer" parent="MainSplitter/Panel"]
+[node name="DropDowns" type="HBoxContainer" parent="States/Panel"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 1905.0
@@ -75,141 +75,126 @@ size_flags_vertical = 3
 theme = ExtResource( 3 )
 alignment = 1
 
-[node name="VSeparator" type="VSeparator" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 749.0
-margin_right = 753.0
+[node name="VSeparator" type="VSeparator" parent="States/Panel/DropDowns"]
+margin_left = 788.0
+margin_right = 792.0
 margin_bottom = 25.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 
-[node name="stimulus" type="MenuButton" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 757.0
-margin_right = 831.0
+[node name="stimulus" type="MenuButton" parent="States/Panel/DropDowns"]
+margin_left = 796.0
+margin_right = 870.0
 margin_bottom = 25.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 text = "Stimulus"
 
-[node name="VS" type="VSeparator" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 835.0
-margin_right = 839.0
+[node name="VS" type="VSeparator" parent="States/Panel/DropDowns"]
+margin_left = 874.0
+margin_right = 878.0
 margin_bottom = 25.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 
-[node name="inhibitors" type="MenuButton" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 843.0
-margin_right = 930.0
+[node name="inhibitors" type="MenuButton" parent="States/Panel/DropDowns"]
+margin_left = 882.0
+margin_right = 969.0
 margin_bottom = 25.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 text = "Inhibitions"
 
-[node name="VS3" type="VSeparator" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 934.0
-margin_right = 938.0
+[node name="VS3" type="VSeparator" parent="States/Panel/DropDowns"]
+margin_left = 973.0
+margin_right = 977.0
 margin_bottom = 25.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 
-[node name="actions" type="MenuButton" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 942.0
-margin_right = 1006.0
+[node name="actions" type="MenuButton" parent="States/Panel/DropDowns"]
+margin_left = 981.0
+margin_right = 1045.0
 margin_bottom = 25.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 text = "Actions"
 
-[node name="VS4" type="VSeparator" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 1010.0
-margin_right = 1014.0
+[node name="VS4" type="VSeparator" parent="States/Panel/DropDowns"]
+margin_left = 1049.0
+margin_right = 1053.0
 margin_bottom = 25.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 
-[node name="misc" type="MenuButton" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 1018.0
-margin_right = 1062.0
+[node name="misc" type="MenuButton" parent="States/Panel/DropDowns"]
+margin_left = 1057.0
+margin_right = 1101.0
 margin_bottom = 25.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 text = "Misc"
 
-[node name="VS6" type="VSeparator" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 1066.0
-margin_right = 1070.0
+[node name="VS6" type="VSeparator" parent="States/Panel/DropDowns"]
+margin_left = 1105.0
+margin_right = 1109.0
 margin_bottom = 25.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 
-[node name="custom" type="MenuButton" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 1074.0
-margin_right = 1140.0
-margin_bottom = 25.0
-size_flags_horizontal = 5
-size_flags_vertical = 5
-text = "Custom"
-
-[node name="VS5" type="VSeparator" parent="MainSplitter/Panel/DropDowns"]
-margin_left = 1144.0
-margin_right = 1148.0
-margin_bottom = 25.0
-size_flags_horizontal = 5
-size_flags_vertical = 5
-
-[node name="ViewMenuSplit" type="HSplitContainer" parent="MainSplitter"]
+[node name="ViewMenuSplit" type="HSplitContainer" parent="States"]
 margin_top = 51.0
 margin_right = 1912.0
 margin_bottom = 1044.0
 
-[node name="Container" type="VBoxContainer" parent="MainSplitter/ViewMenuSplit"]
+[node name="Container" type="VBoxContainer" parent="States/ViewMenuSplit"]
 margin_right = 172.0
 margin_bottom = 993.0
 
-[node name="selection" type="HBoxContainer" parent="MainSplitter/ViewMenuSplit/Container"]
+[node name="selection" type="HBoxContainer" parent="States/ViewMenuSplit/Container"]
 margin_right = 172.0
 margin_bottom = 14.0
 
-[node name="title" type="Label" parent="MainSplitter/ViewMenuSplit/Container/selection"]
+[node name="title" type="Label" parent="States/ViewMenuSplit/Container/selection"]
 margin_right = 59.0
 margin_bottom = 14.0
 text = "Selected:"
 
-[node name="name" type="Label" parent="MainSplitter/ViewMenuSplit/Container/selection"]
+[node name="name" type="Label" parent="States/ViewMenuSplit/Container/selection"]
 margin_left = 63.0
 margin_right = 145.0
 margin_bottom = 14.0
 text = "NODE_NAME"
 
-[node name="type" type="HBoxContainer" parent="MainSplitter/ViewMenuSplit/Container"]
+[node name="type" type="HBoxContainer" parent="States/ViewMenuSplit/Container"]
 margin_top = 18.0
 margin_right = 172.0
 margin_bottom = 32.0
 
-[node name="title" type="Label" parent="MainSplitter/ViewMenuSplit/Container/type"]
+[node name="title" type="Label" parent="States/ViewMenuSplit/Container/type"]
 margin_right = 95.0
 margin_bottom = 14.0
 text = "Selection type:"
 
-[node name="name" type="Label" parent="MainSplitter/ViewMenuSplit/Container/type"]
+[node name="name" type="Label" parent="States/ViewMenuSplit/Container/type"]
 margin_left = 99.0
 margin_right = 172.0
 margin_bottom = 14.0
 text = "NODE_TYPE"
 
-[node name="type2" type="HBoxContainer" parent="MainSplitter/ViewMenuSplit/Container"]
+[node name="type2" type="HBoxContainer" parent="States/ViewMenuSplit/Container"]
 margin_top = 36.0
 margin_right = 172.0
 margin_bottom = 56.0
 
-[node name="Open" type="Button" parent="MainSplitter/ViewMenuSplit/Container/type2"]
+[node name="Open" type="Button" parent="States/ViewMenuSplit/Container/type2"]
 margin_right = 84.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Open"
 
-[node name="Save" type="Button" parent="MainSplitter/ViewMenuSplit/Container/type2"]
+[node name="Save" type="Button" parent="States/ViewMenuSplit/Container/type2"]
 margin_left = 88.0
 margin_right = 172.0
 margin_bottom = 20.0
@@ -217,24 +202,24 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Save"
 
-[node name="Add" type="Button" parent="MainSplitter/ViewMenuSplit/Container"]
+[node name="Add" type="Button" parent="States/ViewMenuSplit/Container"]
 margin_top = 60.0
 margin_right = 172.0
 margin_bottom = 80.0
 text = "Add to Tree"
 
-[node name="Compile" type="Button" parent="MainSplitter/ViewMenuSplit/Container"]
+[node name="Compile" type="Button" parent="States/ViewMenuSplit/Container"]
 margin_top = 84.0
 margin_right = 172.0
 margin_bottom = 104.0
 text = "Compile"
 
-[node name="HSeparator" type="HSeparator" parent="MainSplitter/ViewMenuSplit/Container"]
+[node name="HSeparator" type="HSeparator" parent="States/ViewMenuSplit/Container"]
 margin_top = 108.0
 margin_right = 172.0
 margin_bottom = 112.0
 
-[node name="GraphEdit" type="GraphEdit" parent="MainSplitter/ViewMenuSplit"]
+[node name="GraphEdit" type="GraphEdit" parent="States/ViewMenuSplit"]
 margin_left = 184.0
 margin_right = 1912.0
 margin_bottom = 993.0
@@ -242,7 +227,7 @@ right_disconnects = true
 scroll_offset = Vector2( -184, -116 )
 script = ExtResource( 2 )
 
-[node name="Behaviors" type="PopupMenu" parent="MainSplitter/ViewMenuSplit/GraphEdit"]
+[node name="Behaviors" type="PopupMenu" parent="States/ViewMenuSplit/GraphEdit"]
 margin_left = 433.528
 margin_top = 153.245
 margin_right = 515.528
@@ -253,46 +238,46 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="stimulus" type="PopupMenu" parent="MainSplitter/ViewMenuSplit/GraphEdit/Behaviors"]
+[node name="stimulus" type="PopupMenu" parent="States/ViewMenuSplit/GraphEdit/Behaviors"]
 margin_right = 82.0
 margin_bottom = 88.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="inhibitors" type="PopupMenu" parent="MainSplitter/ViewMenuSplit/GraphEdit/Behaviors"]
+[node name="inhibitors" type="PopupMenu" parent="States/ViewMenuSplit/GraphEdit/Behaviors"]
 margin_right = 82.0
 margin_bottom = 88.0002
 
-[node name="custom" type="PopupMenu" parent="MainSplitter/ViewMenuSplit/GraphEdit/Behaviors"]
+[node name="custom" type="PopupMenu" parent="States/ViewMenuSplit/GraphEdit/Behaviors"]
 margin_right = 82.0
 margin_bottom = 88.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="misc" type="PopupMenu" parent="MainSplitter/ViewMenuSplit/GraphEdit/Behaviors"]
+[node name="misc" type="PopupMenu" parent="States/ViewMenuSplit/GraphEdit/Behaviors"]
 margin_right = 82.0
 margin_bottom = 88.0002
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="actions" type="PopupMenu" parent="MainSplitter/ViewMenuSplit/GraphEdit/Behaviors"]
+[node name="actions" type="PopupMenu" parent="States/ViewMenuSplit/GraphEdit/Behaviors"]
 margin_right = 82.0
 margin_bottom = 88.0002
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="States" type="PopupMenu" parent="MainSplitter/ViewMenuSplit/GraphEdit"]
+[node name="States" type="PopupMenu" parent="States/ViewMenuSplit/GraphEdit"]
 margin_left = 433.528
 margin_top = 153.245
 margin_right = 515.528
 margin_bottom = 241.245
 items = [ "Stimulus", null, 0, false, false, 0, 0, null, "", false, "Inhibitors", null, 0, false, false, 1, 0, null, "", false, "Actions", null, 0, false, false, 2, 0, null, "", false, "Custom", null, 0, false, false, 3, 0, null, "", false ]
 
-[node name="Save" type="FileDialog" parent="MainSplitter/ViewMenuSplit/GraphEdit"]
+[node name="Save" type="FileDialog" parent="States/ViewMenuSplit/GraphEdit"]
 margin_left = 14.0
 margin_top = 65.0
 margin_right = 468.0
@@ -303,17 +288,273 @@ filters = PoolStringArray( "*.jbt" )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="MainSplitter/ViewMenuSplit/Container/type2/Open" to="MainSplitter/ViewMenuSplit/GraphEdit" method="_on_Button3_pressed"]
-[connection signal="pressed" from="MainSplitter/ViewMenuSplit/Container/type2/Save" to="MainSplitter/ViewMenuSplit/GraphEdit" method="_on_save_pressed"]
-[connection signal="pressed" from="MainSplitter/ViewMenuSplit/Container/Add" to="." method="_on_Add_node_pressed"]
-[connection signal="pressed" from="MainSplitter/ViewMenuSplit/Container/Compile" to="MainSplitter/ViewMenuSplit/GraphEdit" method="_on_Button3_pressed"]
-[connection signal="connection_request" from="MainSplitter/ViewMenuSplit/GraphEdit" to="MainSplitter/ViewMenuSplit/GraphEdit" method="_on_GraphEdit_connection_request"]
-[connection signal="disconnection_request" from="MainSplitter/ViewMenuSplit/GraphEdit" to="MainSplitter/ViewMenuSplit/GraphEdit" method="_on_GraphEdit_disconnection_request"]
-[connection signal="node_selected" from="MainSplitter/ViewMenuSplit/GraphEdit" to="MainSplitter/ViewMenuSplit/GraphEdit" method="_on_GraphEdit_node_selected"]
-[connection signal="id_pressed" from="MainSplitter/ViewMenuSplit/GraphEdit/Behaviors" to="MainSplitter/ViewMenuSplit/GraphEdit/Behaviors" method="_on_Behaviors_id_pressed"]
-[connection signal="id_pressed" from="MainSplitter/ViewMenuSplit/GraphEdit/Behaviors/stimulus" to="MainSplitter/ViewMenuSplit/GraphEdit/Behaviors" method="_on_stimulus_id_pressed"]
-[connection signal="id_pressed" from="MainSplitter/ViewMenuSplit/GraphEdit/Behaviors/inhibitors" to="MainSplitter/ViewMenuSplit/GraphEdit/Behaviors" method="_on_inhibitors_id_pressed"]
-[connection signal="id_pressed" from="MainSplitter/ViewMenuSplit/GraphEdit/Behaviors/custom" to="MainSplitter/ViewMenuSplit/GraphEdit/Behaviors" method="_on_custom_id_pressed"]
-[connection signal="id_pressed" from="MainSplitter/ViewMenuSplit/GraphEdit/Behaviors/misc" to="MainSplitter/ViewMenuSplit/GraphEdit/Behaviors" method="_on_misc_id_pressed"]
-[connection signal="id_pressed" from="MainSplitter/ViewMenuSplit/GraphEdit/Behaviors/actions" to="MainSplitter/ViewMenuSplit/GraphEdit/Behaviors" method="_on_actions_id_pressed"]
-[connection signal="file_selected" from="MainSplitter/ViewMenuSplit/GraphEdit/Save" to="MainSplitter/ViewMenuSplit/GraphEdit" method="_on_save_file_selected"]
+
+[node name="Behaviors" type="VSplitContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+dragger_visibility = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="PanelContainer" parent="Behaviors"]
+margin_right = 1912.0
+margin_bottom = 39.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+
+[node name="DropDowns" type="HBoxContainer" parent="Behaviors/Panel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1905.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="Behaviors/Panel/DropDowns"]
+margin_left = 788.0
+margin_right = 792.0
+margin_bottom = 25.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+
+[node name="stimulus" type="MenuButton" parent="Behaviors/Panel/DropDowns"]
+margin_left = 796.0
+margin_right = 870.0
+margin_bottom = 25.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+text = "Stimulus"
+
+[node name="VS" type="VSeparator" parent="Behaviors/Panel/DropDowns"]
+margin_left = 874.0
+margin_right = 878.0
+margin_bottom = 25.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+
+[node name="inhibitors" type="MenuButton" parent="Behaviors/Panel/DropDowns"]
+margin_left = 882.0
+margin_right = 969.0
+margin_bottom = 25.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+text = "Inhibitions"
+
+[node name="VS3" type="VSeparator" parent="Behaviors/Panel/DropDowns"]
+margin_left = 973.0
+margin_right = 977.0
+margin_bottom = 25.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+
+[node name="actions" type="MenuButton" parent="Behaviors/Panel/DropDowns"]
+margin_left = 981.0
+margin_right = 1045.0
+margin_bottom = 25.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+text = "Actions"
+
+[node name="VS4" type="VSeparator" parent="Behaviors/Panel/DropDowns"]
+margin_left = 1049.0
+margin_right = 1053.0
+margin_bottom = 25.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+
+[node name="misc" type="MenuButton" parent="Behaviors/Panel/DropDowns"]
+margin_left = 1057.0
+margin_right = 1101.0
+margin_bottom = 25.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+text = "Misc"
+
+[node name="VS6" type="VSeparator" parent="Behaviors/Panel/DropDowns"]
+margin_left = 1105.0
+margin_right = 1109.0
+margin_bottom = 25.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+
+[node name="ViewMenuSplit" type="HSplitContainer" parent="Behaviors"]
+margin_top = 51.0
+margin_right = 1912.0
+margin_bottom = 1044.0
+
+[node name="Container" type="VBoxContainer" parent="Behaviors/ViewMenuSplit"]
+margin_right = 172.0
+margin_bottom = 993.0
+
+[node name="selection" type="HBoxContainer" parent="Behaviors/ViewMenuSplit/Container"]
+margin_right = 172.0
+margin_bottom = 14.0
+
+[node name="title" type="Label" parent="Behaviors/ViewMenuSplit/Container/selection"]
+margin_right = 59.0
+margin_bottom = 14.0
+text = "Selected:"
+
+[node name="name" type="Label" parent="Behaviors/ViewMenuSplit/Container/selection"]
+margin_left = 63.0
+margin_right = 145.0
+margin_bottom = 14.0
+text = "NODE_NAME"
+
+[node name="type" type="HBoxContainer" parent="Behaviors/ViewMenuSplit/Container"]
+margin_top = 18.0
+margin_right = 172.0
+margin_bottom = 32.0
+
+[node name="title" type="Label" parent="Behaviors/ViewMenuSplit/Container/type"]
+margin_right = 95.0
+margin_bottom = 14.0
+text = "Selection type:"
+
+[node name="name" type="Label" parent="Behaviors/ViewMenuSplit/Container/type"]
+margin_left = 99.0
+margin_right = 172.0
+margin_bottom = 14.0
+text = "NODE_TYPE"
+
+[node name="type2" type="HBoxContainer" parent="Behaviors/ViewMenuSplit/Container"]
+margin_top = 36.0
+margin_right = 172.0
+margin_bottom = 56.0
+
+[node name="Open" type="Button" parent="Behaviors/ViewMenuSplit/Container/type2"]
+margin_right = 84.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Open"
+
+[node name="Save" type="Button" parent="Behaviors/ViewMenuSplit/Container/type2"]
+margin_left = 88.0
+margin_right = 172.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Save"
+
+[node name="Add" type="Button" parent="Behaviors/ViewMenuSplit/Container"]
+margin_top = 60.0
+margin_right = 172.0
+margin_bottom = 80.0
+text = "Add to Tree"
+
+[node name="Compile" type="Button" parent="Behaviors/ViewMenuSplit/Container"]
+margin_top = 84.0
+margin_right = 172.0
+margin_bottom = 104.0
+text = "Compile"
+
+[node name="HSeparator" type="HSeparator" parent="Behaviors/ViewMenuSplit/Container"]
+margin_top = 108.0
+margin_right = 172.0
+margin_bottom = 112.0
+
+[node name="GraphEdit" type="GraphEdit" parent="Behaviors/ViewMenuSplit"]
+margin_left = 184.0
+margin_right = 1912.0
+margin_bottom = 993.0
+right_disconnects = true
+scroll_offset = Vector2( -184, -116 )
+script = ExtResource( 2 )
+
+[node name="Behaviors" type="PopupMenu" parent="Behaviors/ViewMenuSplit/GraphEdit"]
+margin_left = 433.528
+margin_top = 153.245
+margin_right = 515.528
+margin_bottom = 241.245
+items = [ "Stimulus", null, 0, false, false, 0, 0, null, "", false, "Inhibitors", null, 0, false, false, 1, 0, null, "", false, "Actions", null, 0, false, false, 2, 0, null, "", false, "Misc", null, 0, false, false, 3, 0, null, "", false, "Custom", null, 0, false, false, 4, 0, null, "", false ]
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stimulus" type="PopupMenu" parent="Behaviors/ViewMenuSplit/GraphEdit/Behaviors"]
+margin_right = 82.0
+margin_bottom = 88.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="inhibitors" type="PopupMenu" parent="Behaviors/ViewMenuSplit/GraphEdit/Behaviors"]
+margin_right = 82.0
+margin_bottom = 88.0002
+
+[node name="custom" type="PopupMenu" parent="Behaviors/ViewMenuSplit/GraphEdit/Behaviors"]
+margin_right = 82.0
+margin_bottom = 88.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="misc" type="PopupMenu" parent="Behaviors/ViewMenuSplit/GraphEdit/Behaviors"]
+margin_right = 82.0
+margin_bottom = 88.0002
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="actions" type="PopupMenu" parent="Behaviors/ViewMenuSplit/GraphEdit/Behaviors"]
+margin_right = 82.0
+margin_bottom = 88.0002
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="States" type="PopupMenu" parent="Behaviors/ViewMenuSplit/GraphEdit"]
+margin_left = 433.528
+margin_top = 153.245
+margin_right = 515.528
+margin_bottom = 241.245
+items = [ "Stimulus", null, 0, false, false, 0, 0, null, "", false, "Inhibitors", null, 0, false, false, 1, 0, null, "", false, "Actions", null, 0, false, false, 2, 0, null, "", false, "Custom", null, 0, false, false, 3, 0, null, "", false ]
+
+[node name="Save" type="FileDialog" parent="Behaviors/ViewMenuSplit/GraphEdit"]
+margin_left = 14.0
+margin_top = 65.0
+margin_right = 468.0
+margin_bottom = 281.0
+rect_min_size = Vector2( 0, 0 )
+window_title = "Guardar un Archivo"
+filters = PoolStringArray( "*.jbt" )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="States/ViewMenuSplit/Container/type2/Open" to="States/ViewMenuSplit/GraphEdit" method="_on_Button3_pressed"]
+[connection signal="pressed" from="States/ViewMenuSplit/Container/type2/Save" to="States/ViewMenuSplit/GraphEdit" method="_on_save_pressed"]
+[connection signal="pressed" from="States/ViewMenuSplit/Container/Add" to="." method="_on_Add_node_pressed"]
+[connection signal="pressed" from="States/ViewMenuSplit/Container/Compile" to="States/ViewMenuSplit/GraphEdit" method="_on_Button3_pressed"]
+[connection signal="connection_request" from="States/ViewMenuSplit/GraphEdit" to="States/ViewMenuSplit/GraphEdit" method="_on_GraphEdit_connection_request"]
+[connection signal="disconnection_request" from="States/ViewMenuSplit/GraphEdit" to="States/ViewMenuSplit/GraphEdit" method="_on_GraphEdit_disconnection_request"]
+[connection signal="node_selected" from="States/ViewMenuSplit/GraphEdit" to="States/ViewMenuSplit/GraphEdit" method="_on_GraphEdit_node_selected"]
+[connection signal="id_pressed" from="States/ViewMenuSplit/GraphEdit/Behaviors" to="States/ViewMenuSplit/GraphEdit/Behaviors" method="_on_Behaviors_id_pressed"]
+[connection signal="id_pressed" from="States/ViewMenuSplit/GraphEdit/Behaviors/stimulus" to="States/ViewMenuSplit/GraphEdit/Behaviors" method="_on_stimulus_id_pressed"]
+[connection signal="id_pressed" from="States/ViewMenuSplit/GraphEdit/Behaviors/inhibitors" to="States/ViewMenuSplit/GraphEdit/Behaviors" method="_on_inhibitors_id_pressed"]
+[connection signal="id_pressed" from="States/ViewMenuSplit/GraphEdit/Behaviors/custom" to="States/ViewMenuSplit/GraphEdit/Behaviors" method="_on_custom_id_pressed"]
+[connection signal="id_pressed" from="States/ViewMenuSplit/GraphEdit/Behaviors/misc" to="States/ViewMenuSplit/GraphEdit/Behaviors" method="_on_misc_id_pressed"]
+[connection signal="id_pressed" from="States/ViewMenuSplit/GraphEdit/Behaviors/actions" to="States/ViewMenuSplit/GraphEdit/Behaviors" method="_on_actions_id_pressed"]
+[connection signal="file_selected" from="States/ViewMenuSplit/GraphEdit/Save" to="States/ViewMenuSplit/GraphEdit" method="_on_save_file_selected"]
+[connection signal="pressed" from="Behaviors/ViewMenuSplit/Container/type2/Open" to="Behaviors/ViewMenuSplit/GraphEdit" method="_on_Button3_pressed"]
+[connection signal="pressed" from="Behaviors/ViewMenuSplit/Container/type2/Save" to="Behaviors/ViewMenuSplit/GraphEdit" method="_on_save_pressed"]
+[connection signal="pressed" from="Behaviors/ViewMenuSplit/Container/Add" to="." method="_on_Add_node_pressed"]
+[connection signal="pressed" from="Behaviors/ViewMenuSplit/Container/Compile" to="Behaviors/ViewMenuSplit/GraphEdit" method="_on_Button3_pressed"]
+[connection signal="connection_request" from="Behaviors/ViewMenuSplit/GraphEdit" to="Behaviors/ViewMenuSplit/GraphEdit" method="_on_GraphEdit_connection_request"]
+[connection signal="disconnection_request" from="Behaviors/ViewMenuSplit/GraphEdit" to="Behaviors/ViewMenuSplit/GraphEdit" method="_on_GraphEdit_disconnection_request"]
+[connection signal="node_selected" from="Behaviors/ViewMenuSplit/GraphEdit" to="Behaviors/ViewMenuSplit/GraphEdit" method="_on_GraphEdit_node_selected"]
+[connection signal="id_pressed" from="Behaviors/ViewMenuSplit/GraphEdit/Behaviors" to="Behaviors/ViewMenuSplit/GraphEdit/Behaviors" method="_on_Behaviors_id_pressed"]
+[connection signal="id_pressed" from="Behaviors/ViewMenuSplit/GraphEdit/Behaviors/stimulus" to="Behaviors/ViewMenuSplit/GraphEdit/Behaviors" method="_on_stimulus_id_pressed"]
+[connection signal="id_pressed" from="Behaviors/ViewMenuSplit/GraphEdit/Behaviors/inhibitors" to="Behaviors/ViewMenuSplit/GraphEdit/Behaviors" method="_on_inhibitors_id_pressed"]
+[connection signal="id_pressed" from="Behaviors/ViewMenuSplit/GraphEdit/Behaviors/custom" to="Behaviors/ViewMenuSplit/GraphEdit/Behaviors" method="_on_custom_id_pressed"]
+[connection signal="id_pressed" from="Behaviors/ViewMenuSplit/GraphEdit/Behaviors/misc" to="Behaviors/ViewMenuSplit/GraphEdit/Behaviors" method="_on_misc_id_pressed"]
+[connection signal="id_pressed" from="Behaviors/ViewMenuSplit/GraphEdit/Behaviors/actions" to="Behaviors/ViewMenuSplit/GraphEdit/Behaviors" method="_on_actions_id_pressed"]
+[connection signal="file_selected" from="Behaviors/ViewMenuSplit/GraphEdit/Save" to="Behaviors/ViewMenuSplit/GraphEdit" method="_on_save_file_selected"]
