@@ -47,17 +47,12 @@ _global_script_classes=[ {
 "base": "GraphNode",
 "class": "BehaviorNode",
 "language": "GDScript",
-"path": "res://_tests/behaviors/Core/Control_Components/BehaviorNode.gd"
+"path": "res://Tree/Tools/NPCEditor/behaviors/Core/Control_Components/BehaviorNode.gd"
 }, {
 "base": "AComponent",
 "class": "CameraController",
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/CameraController.gd"
-}, {
-"base": "Node",
-"class": "Compiler",
-"language": "GDScript",
-"path": "res://_tests/behaviors/Core/Compiler/Main.gd"
 }, {
 "base": "Spatial",
 "class": "Custom_Wheel",
@@ -67,12 +62,12 @@ _global_script_classes=[ {
 "base": "HBoxContainer",
 "class": "DoubleLabel",
 "language": "GDScript",
-"path": "res://_tests/behaviors/Core/Control_Components/SeparatedLabel.gd"
+"path": "res://Tree/Tools/NPCEditor/behaviors/Core/Control_Components/SeparatedLabel.gd"
 }, {
 "base": "MenuButton",
 "class": "DropDown",
 "language": "GDScript",
-"path": "res://_tests/behaviors/Core/Control_Components/MenuWTitles.gd"
+"path": "res://Tree/Tools/NPCEditor/behaviors/Core/Control_Components/MenuWTitles.gd"
 }, {
 "base": "Reference",
 "class": "EntityData",
@@ -88,11 +83,6 @@ _global_script_classes=[ {
 "class": "EnumHelper",
 "language": "GDScript",
 "path": "res://Script/Manager/HelperClasses/EnumHelper.gd"
-}, {
-"base": "FuncRef",
-"class": "Function",
-"language": "GDScript",
-"path": "res://_tests/behaviors/FuncRef_Logic.gd"
 }, {
 "base": "ANetworkInstance",
 "class": "GameClient",
@@ -157,7 +147,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "NPCBase",
 "language": "GDScript",
-"path": "res://_tests/behaviors/Config/NPC.gd"
+"path": "res://Tree/Tools/NPCEditor/behaviors/Config/NPC.gd"
 }, {
 "base": "Node",
 "class": "NetworkManager",
@@ -172,7 +162,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "NpcDefinitions",
 "language": "GDScript",
-"path": "res://_tests/behaviors/Definitions.gd"
+"path": "res://Tree/Tools/NPCEditor/behaviors/Config/Definitions.gd"
 }, {
 "base": "Reference",
 "class": "ResourceSignals",
@@ -204,14 +194,12 @@ _global_script_class_icons={
 "AudioSignals": "",
 "BehaviorNode": "",
 "CameraController": "",
-"Compiler": "",
 "Custom_Wheel": "",
 "DoubleLabel": "",
 "DropDown": "",
 "EntityData": "",
 "EntitySignals": "",
 "EnumHelper": "",
-"Function": "",
 "GameClient": "",
 "GameServer": "",
 "HudSignals": "",
@@ -252,6 +240,7 @@ Scene="*res://Script/Manager/SceneManager/SceneManager.gd"
 Network="*res://Script/Network/NetworkManager/NetworkManager.gd"
 AL_DebugDraw="*res://Script/DebugHelper/debug_draw_3d.gd"
 Hud="*res://Script/Manager/HudManager/HudManager.gd"
+Nodes="*res://Tree/Tools/NPCEditor/behaviors/Core/Nodes.gd"
 
 [compression]
 

@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://_tests/behaviors/Behaviour_tree_editor.gd" type="Script" id=1]
-[ext_resource path="res://_tests/behaviors/BehaviorParameters.tscn" type="PackedScene" id=2]
-[ext_resource path="res://_tests/behaviors/Graph_compiler.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Interface/NPCEditorTheme.tres" type="Theme" id=4]
+[ext_resource path="res://Tree/Tools/NPCEditor/behaviors/Interface/Behaviour_tree_editor.gd" type="Script" id=1]
+[ext_resource path="res://Tree/Tools/NPCEditor/behaviors/Interface/Graph_compiler.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Interface/NPCEditorTheme.tres" type="Theme" id=3]
+
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends PopupMenu
@@ -72,7 +72,7 @@ margin_right = 1905.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 4 )
+theme = ExtResource( 3 )
 alignment = 1
 
 [node name="VSeparator" type="VSeparator" parent="MainSplitter/Panel/DropDowns"]
@@ -165,7 +165,6 @@ margin_bottom = 1044.0
 [node name="Container" type="VBoxContainer" parent="MainSplitter/ViewMenuSplit"]
 margin_right = 172.0
 margin_bottom = 993.0
-alignment = 1
 
 [node name="selection" type="HBoxContainer" parent="MainSplitter/ViewMenuSplit/Container"]
 margin_right = 172.0
@@ -235,19 +234,13 @@ margin_top = 108.0
 margin_right = 172.0
 margin_bottom = 112.0
 
-[node name="Specs" parent="MainSplitter/ViewMenuSplit/Container" instance=ExtResource( 2 )]
-margin_top = 116.0
-margin_right = 172.0
-margin_bottom = 993.0
-rect_min_size = Vector2( 0, 0 )
-
 [node name="GraphEdit" type="GraphEdit" parent="MainSplitter/ViewMenuSplit"]
 margin_left = 184.0
 margin_right = 1912.0
 margin_bottom = 993.0
 right_disconnects = true
-scroll_offset = Vector2( -8, -116 )
-script = ExtResource( 3 )
+scroll_offset = Vector2( -184, -116 )
+script = ExtResource( 2 )
 
 [node name="Behaviors" type="PopupMenu" parent="MainSplitter/ViewMenuSplit/GraphEdit"]
 margin_left = 433.528

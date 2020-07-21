@@ -9,7 +9,9 @@
 [ext_resource path="res://Assets/Interface/StyleBoxes/ChatLineEdit.tres" type="StyleBox" id=7]
 [ext_resource path="res://Tree/Interface/MainMenu/MainMenuTab.gd" type="Script" id=8]
 [ext_resource path="res://Tree/Interface/UserSettings/UserSettings.tscn" type="PackedScene" id=9]
-[ext_resource path="res://_tests/behaviors/Behaviour_tree_editor.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Tree/Tools/NPCEditor/behaviors/Interface/Behaviour_tree_editor.tscn" type="PackedScene" id=10]
+
+
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.588235 )
