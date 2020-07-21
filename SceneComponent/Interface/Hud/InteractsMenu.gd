@@ -22,17 +22,6 @@ func _button_pressed(interactable : Node) -> void :
 	#Interact with desired interactable
 	interactor_component.on_interact_menu_request(interactable)
 
-#Remove all buttons and their separators from the button parent.
-#func _clear_button_parent() -> void :
-#	description.text = ""
-#
-#	#Remove buttons and separators except for the top separator
-#	var at : int = 0
-#	for child in button_parent.get_children() :
-#		if at != 0 :
-#			child.queue_free()
-#		at += 1
-
 #Add a button to the InteractsMenu.
 func _create_button(interact_name : String, info : String, interactable : Node) -> Button :
 	#Create a separator to give buttons more space between each other.
