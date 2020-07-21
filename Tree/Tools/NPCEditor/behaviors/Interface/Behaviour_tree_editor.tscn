@@ -301,170 +301,173 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="PanelContainer" parent="Behaviors"]
+[node name="ViewMenuSplit" type="HSplitContainer" parent="Behaviors"]
 margin_right = 1912.0
-margin_bottom = 39.0
+margin_bottom = 1044.0
+
+[node name="Container" type="VBoxContainer" parent="Behaviors/ViewMenuSplit"]
+margin_right = 200.0
+margin_bottom = 1044.0
+rect_min_size = Vector2( 200, 0 )
+
+[node name="Panel" type="PanelContainer" parent="Behaviors/ViewMenuSplit/Container"]
+margin_right = 200.0
+margin_bottom = 166.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 
-[node name="DropDowns" type="HBoxContainer" parent="Behaviors/Panel"]
+[node name="DropDowns" type="VBoxContainer" parent="Behaviors/ViewMenuSplit/Container/Panel"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 1905.0
-margin_bottom = 32.0
+margin_right = 193.0
+margin_bottom = 159.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 3 )
 alignment = 1
 
-[node name="VSeparator" type="VSeparator" parent="Behaviors/Panel/DropDowns"]
-margin_left = 788.0
-margin_right = 792.0
-margin_bottom = 25.0
-size_flags_horizontal = 5
-size_flags_vertical = 5
+[node name="HS2" type="HSeparator" parent="Behaviors/ViewMenuSplit/Container/Panel/DropDowns"]
+margin_right = 186.0
+margin_bottom = 4.0
 
-[node name="stimulus" type="MenuButton" parent="Behaviors/Panel/DropDowns"]
-margin_left = 796.0
-margin_right = 870.0
-margin_bottom = 25.0
+[node name="stimulus" type="MenuButton" parent="Behaviors/ViewMenuSplit/Container/Panel/DropDowns"]
+margin_top = 8.0
+margin_right = 186.0
+margin_bottom = 33.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 text = "Stimulus"
 
-[node name="VS" type="VSeparator" parent="Behaviors/Panel/DropDowns"]
-margin_left = 874.0
-margin_right = 878.0
-margin_bottom = 25.0
-size_flags_horizontal = 5
-size_flags_vertical = 5
+[node name="HS3" type="HSeparator" parent="Behaviors/ViewMenuSplit/Container/Panel/DropDowns"]
+margin_top = 37.0
+margin_right = 186.0
+margin_bottom = 41.0
 
-[node name="inhibitors" type="MenuButton" parent="Behaviors/Panel/DropDowns"]
-margin_left = 882.0
-margin_right = 969.0
-margin_bottom = 25.0
+[node name="inhibitors" type="MenuButton" parent="Behaviors/ViewMenuSplit/Container/Panel/DropDowns"]
+margin_top = 45.0
+margin_right = 186.0
+margin_bottom = 70.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 text = "Inhibitions"
 
-[node name="VS3" type="VSeparator" parent="Behaviors/Panel/DropDowns"]
-margin_left = 973.0
-margin_right = 977.0
-margin_bottom = 25.0
-size_flags_horizontal = 5
-size_flags_vertical = 5
+[node name="HS4" type="HSeparator" parent="Behaviors/ViewMenuSplit/Container/Panel/DropDowns"]
+margin_top = 74.0
+margin_right = 186.0
+margin_bottom = 78.0
 
-[node name="actions" type="MenuButton" parent="Behaviors/Panel/DropDowns"]
-margin_left = 981.0
-margin_right = 1045.0
-margin_bottom = 25.0
+[node name="actions" type="MenuButton" parent="Behaviors/ViewMenuSplit/Container/Panel/DropDowns"]
+margin_top = 82.0
+margin_right = 186.0
+margin_bottom = 107.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 text = "Actions"
 
-[node name="VS4" type="VSeparator" parent="Behaviors/Panel/DropDowns"]
-margin_left = 1049.0
-margin_right = 1053.0
-margin_bottom = 25.0
-size_flags_horizontal = 5
-size_flags_vertical = 5
+[node name="hs5" type="HSeparator" parent="Behaviors/ViewMenuSplit/Container/Panel/DropDowns"]
+margin_top = 111.0
+margin_right = 186.0
+margin_bottom = 115.0
 
-[node name="misc" type="MenuButton" parent="Behaviors/Panel/DropDowns"]
-margin_left = 1057.0
-margin_right = 1101.0
-margin_bottom = 25.0
+[node name="misc" type="MenuButton" parent="Behaviors/ViewMenuSplit/Container/Panel/DropDowns"]
+margin_top = 119.0
+margin_right = 186.0
+margin_bottom = 144.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 text = "Misc"
 
-[node name="VS6" type="VSeparator" parent="Behaviors/Panel/DropDowns"]
-margin_left = 1105.0
-margin_right = 1109.0
-margin_bottom = 25.0
-size_flags_horizontal = 5
-size_flags_vertical = 5
+[node name="HS1" type="HSeparator" parent="Behaviors/ViewMenuSplit/Container/Panel/DropDowns"]
+margin_top = 148.0
+margin_right = 186.0
+margin_bottom = 152.0
 
-[node name="ViewMenuSplit" type="HSplitContainer" parent="Behaviors"]
-margin_top = 51.0
-margin_right = 1912.0
-margin_bottom = 1044.0
-
-[node name="Container" type="VBoxContainer" parent="Behaviors/ViewMenuSplit"]
-margin_right = 172.0
-margin_bottom = 993.0
+[node name="HSeparator7" type="HSeparator" parent="Behaviors/ViewMenuSplit/Container"]
+margin_top = 170.0
+margin_right = 200.0
+margin_bottom = 174.0
 
 [node name="selection" type="HBoxContainer" parent="Behaviors/ViewMenuSplit/Container"]
-margin_right = 172.0
+margin_top = 178.0
+margin_right = 200.0
+margin_bottom = 192.0
+
+[node name="VSeparator2" type="VSeparator" parent="Behaviors/ViewMenuSplit/Container/selection"]
+margin_right = 4.0
 margin_bottom = 14.0
 
 [node name="title" type="Label" parent="Behaviors/ViewMenuSplit/Container/selection"]
-margin_right = 59.0
+margin_left = 8.0
+margin_right = 67.0
 margin_bottom = 14.0
 text = "Selected:"
 
+[node name="VSeparator3" type="VSeparator" parent="Behaviors/ViewMenuSplit/Container/selection"]
+margin_left = 71.0
+margin_right = 75.0
+margin_bottom = 14.0
+
 [node name="name" type="Label" parent="Behaviors/ViewMenuSplit/Container/selection"]
-margin_left = 63.0
-margin_right = 145.0
+margin_left = 79.0
+margin_right = 192.0
 margin_bottom = 14.0
-text = "NODE_NAME"
+size_flags_horizontal = 3
+text = "None"
+align = 1
+valign = 1
 
-[node name="type" type="HBoxContainer" parent="Behaviors/ViewMenuSplit/Container"]
-margin_top = 18.0
-margin_right = 172.0
-margin_bottom = 32.0
-
-[node name="title" type="Label" parent="Behaviors/ViewMenuSplit/Container/type"]
-margin_right = 95.0
+[node name="VSeparator" type="VSeparator" parent="Behaviors/ViewMenuSplit/Container/selection"]
+margin_left = 196.0
+margin_right = 200.0
 margin_bottom = 14.0
-text = "Selection type:"
 
-[node name="name" type="Label" parent="Behaviors/ViewMenuSplit/Container/type"]
-margin_left = 99.0
-margin_right = 172.0
-margin_bottom = 14.0
-text = "NODE_TYPE"
+[node name="HSeparator8" type="HSeparator" parent="Behaviors/ViewMenuSplit/Container"]
+margin_top = 196.0
+margin_right = 200.0
+margin_bottom = 200.0
 
 [node name="type2" type="HBoxContainer" parent="Behaviors/ViewMenuSplit/Container"]
-margin_top = 36.0
-margin_right = 172.0
-margin_bottom = 56.0
+margin_top = 204.0
+margin_right = 200.0
+margin_bottom = 224.0
 
 [node name="Open" type="Button" parent="Behaviors/ViewMenuSplit/Container/type2"]
-margin_right = 84.0
+margin_right = 98.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Open"
 
 [node name="Save" type="Button" parent="Behaviors/ViewMenuSplit/Container/type2"]
-margin_left = 88.0
-margin_right = 172.0
+margin_left = 102.0
+margin_right = 200.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Save"
 
 [node name="Add" type="Button" parent="Behaviors/ViewMenuSplit/Container"]
-margin_top = 60.0
-margin_right = 172.0
-margin_bottom = 80.0
+margin_top = 228.0
+margin_right = 200.0
+margin_bottom = 248.0
 text = "Add to Tree"
 
 [node name="Compile" type="Button" parent="Behaviors/ViewMenuSplit/Container"]
-margin_top = 84.0
-margin_right = 172.0
-margin_bottom = 104.0
+margin_top = 252.0
+margin_right = 200.0
+margin_bottom = 272.0
 text = "Compile"
 
 [node name="HSeparator" type="HSeparator" parent="Behaviors/ViewMenuSplit/Container"]
-margin_top = 108.0
-margin_right = 172.0
-margin_bottom = 112.0
+margin_top = 276.0
+margin_right = 200.0
+margin_bottom = 280.0
 
 [node name="GraphEdit" type="GraphEdit" parent="Behaviors/ViewMenuSplit"]
-margin_left = 184.0
+margin_left = 212.0
 margin_right = 1912.0
-margin_bottom = 993.0
+margin_bottom = 1044.0
+mouse_default_cursor_shape = 3
 right_disconnects = true
 scroll_offset = Vector2( -184, -116 )
 script = ExtResource( 2 )
