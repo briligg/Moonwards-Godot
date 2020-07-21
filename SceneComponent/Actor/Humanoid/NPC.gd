@@ -1,4 +1,4 @@
-extends AComponent
+extends Spatial
 
 class_name NPCBase
 
