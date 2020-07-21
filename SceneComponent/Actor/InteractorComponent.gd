@@ -27,8 +27,9 @@ func _ready() -> void :
 #Call after chosen from InteractsMenu. Networks that the interaction happened.
 func on_interact_menu_request(interactable : Interactable)->void:
 	Log.trace(self, "", "Interacted with %s " %interactable)
-	if interactable.is_networked() :
-		crpc("request_interact", [interactor.get_path(), interactable.get_path()], [entity.owner_peer_id])
+	if interactable.is_networked() and !get_tree().is_network_server():
+		crpc("request_interact", [interactor.get_path(), interactable.get_path()], [])
+		#I removed entity.owner_peer_id from the now empty array.
 	else :
 		interactor.interact(interactable)
 
