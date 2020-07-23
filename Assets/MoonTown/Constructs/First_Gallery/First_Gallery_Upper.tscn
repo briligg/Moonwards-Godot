@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/First_Gallery_Upper.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Carousel/Carousel.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/MoonTown/Models/Makers_Monument/Makers_Monument.tscn" type="PackedScene" id=3]
+[ext_resource path="res://SceneComponent/Display/MakersMonument/MonumentDisplay.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SceneComponent/Utilities/VerticalStairs/VerticalStairs.tscn" type="PackedScene" id=4]
 
 [sub_resource type="GIProbeData" id=1]
@@ -55,91 +55,170 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.0639, -55.9659, 0.0796747 )
 omni_range = 30.8064
 omni_attenuation = 1.8025
 
-[node name="Makers_Monument" parent="Marker_MakersMonument" index="0" instance=ExtResource( 3 )]
+[node name="MakersMonument" parent="Marker_MakersMonument" index="0" instance=ExtResource( 3 )]
 
 [node name="Carousel" parent="Marker_Carousel" index="0" instance=ExtResource( 2 )]
 
 [node name="Vertical-Stairs-1a" parent="Marker_Vertical-Stairs001" index="0" instance=ExtResource( 4 )]
+display_info = "Interactable"
+title = "Title"
+networked = true
 stairs_step_count = 18
+generate_editor_visual = false
 
 [node name="Vertical-Stairs-1b" parent="Marker_Vertical-Stairs001" index="1" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07, 0, 0 )
+display_info = "Interactable"
+title = "Title"
+networked = true
 stairs_step_count = 18
+generate_editor_visual = false
 
-[node name="Marker_Vertical-Stairs002" parent="." index="11"]
+[node name="Marker_Vertical-Stairs002" parent="." index="15"]
 transform = Transform( 0.0777978, 0, 0.996969, 0, 1, 0, -0.996969, 0, 0.0777978, 35.2925, -17.2804, -2.95547 )
 
 [node name="Vertical-Stairs-2a" parent="Marker_Vertical-Stairs002" index="0" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+display_info = "Interactable"
+title = "Title"
+networked = true
 stairs_step_count = 18
+generate_editor_visual = false
 
 [node name="Vertical-Stairs-2b" parent="Marker_Vertical-Stairs002" index="1" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07, 0, 0 )
+display_info = "Interactable"
+title = "Title"
+networked = true
 stairs_step_count = 18
+generate_editor_visual = false
 
 [node name="Vertical-Stairs-3a" parent="Marker_Vertical-Stairs003" index="0" instance=ExtResource( 4 )]
+display_info = "Interactable"
+title = "Title"
+networked = true
 stairs_step_count = 18
+generate_editor_visual = false
 
 [node name="Vertical-Stairs-3b" parent="Marker_Vertical-Stairs003" index="1" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07, 0, 0 )
+display_info = "Interactable"
+title = "Title"
+networked = true
 stairs_step_count = 18
+generate_editor_visual = false
 
 [node name="Vertical-Stairs-4a" parent="Marker_Vertical-Stairs004" index="0" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
+display_info = "Interactable"
+title = "Title"
+networked = true
 stairs_step_count = 16
+generate_editor_visual = false
 
 [node name="Vertical-Stairs-4b" parent="Marker_Vertical-Stairs004" index="1" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, -1.07 )
+display_info = "Interactable"
+title = "Title"
+networked = true
 stairs_step_count = 16
+generate_editor_visual = false
 
 [node name="Vertical-Stairs-5a" parent="Marker_Vertical-Stairs005" index="0" instance=ExtResource( 4 )]
+display_info = "Interactable"
+title = "Title"
+networked = true
 stairs_step_count = 11
+generate_editor_visual = false
 
 [node name="Vertical-Stairs-5b" parent="Marker_Vertical-Stairs005" index="1" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07, 0, 0 )
+display_info = "Interactable"
+title = "Title"
+networked = true
 stairs_step_count = 11
+generate_editor_visual = false
 
 [node name="Vertical-Stairs-6a" parent="Marker_Vertical-Stairs006" index="0" instance=ExtResource( 4 )]
+display_info = "Interactable"
+title = "Title"
+networked = true
 stairs_step_count = 18
+generate_editor_visual = false
 
 [node name="Vertical-Stairs-6b" parent="Marker_Vertical-Stairs006" index="1" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07, 0, 0 )
+display_info = "Interactable"
+title = "Title"
+networked = true
 stairs_step_count = 18
+generate_editor_visual = false
 
 [node name="Vertical-Stairs-7a" parent="Marker_Vertical-Stairs007" index="0" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
+display_info = "Interactable"
+title = "Title"
+networked = true
 stairs_step_count = 18
+generate_editor_visual = false
 
 [node name="Vertical-Stairs-7b" parent="Marker_Vertical-Stairs007" index="1" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, -1.07 )
+display_info = "Interactable"
+title = "Title"
+networked = true
 stairs_step_count = 18
+generate_editor_visual = false
 
 [node name="Vertical-Stairs-8a" parent="Marker_Vertical-Stairs008" index="0" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0 )
+display_info = "Interactable"
+title = "Title"
+networked = true
 stairs_step_count = 18
+generate_editor_visual = false
 
 [node name="Vertical-Stairs-8b" parent="Marker_Vertical-Stairs008" index="1" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 1.07, 0, 0 )
+display_info = "Interactable"
+title = "Title"
+networked = true
 stairs_step_count = 18
+generate_editor_visual = false
 
 [node name="Vertical-Stairs-9a" parent="Marker_Vertical-Stairs009" index="0" instance=ExtResource( 4 )]
 transform = Transform( -1.49012e-07, 0, 1, 0, 1, 0, -1, 0, -1.49012e-07, 0, 0, 0 )
+display_info = "Interactable"
+title = "Title"
+networked = true
 stairs_step_count = 16
+generate_editor_visual = false
 
 [node name="Vertical-Stairs-9a2" parent="Marker_Vertical-Stairs009" index="1" instance=ExtResource( 4 )]
 transform = Transform( -1.49012e-07, 0, 1, 0, 1, 0, -1, 0, -1.49012e-07, 0, 0, -1.07 )
+display_info = "Interactable"
+title = "Title"
+networked = true
 stairs_step_count = 16
+generate_editor_visual = false
 
 [node name="Vertical-Stairs-10a" parent="Marker_Vertical-Stairs010" index="0" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0, 0, 0 )
+display_info = "Interactable"
+title = "Title"
+networked = true
 stairs_step_count = 20
+generate_editor_visual = false
 
 [node name="Vertical-Stairs-10b" parent="Marker_Vertical-Stairs010" index="1" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 1.07, 0, 0 )
+display_info = "Interactable"
+title = "Title"
+networked = true
 stairs_step_count = 19
+generate_editor_visual = false
 
-[node name="LOD1" parent="." index="20"]
+[node name="LOD1" parent="." index="24"]
 visible = false
 
-[node name="LOD2" parent="." index="21"]
+[node name="LOD2" parent="." index="25"]
 visible = false
