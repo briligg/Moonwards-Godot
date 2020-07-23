@@ -1,4 +1,4 @@
-[gd_scene load_steps=142 format=2]
+[gd_scene load_steps=143 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Moon_Town_Master.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/First_Gallery_Lower_UpperPart.tscn" type="PackedScene" id=2]
@@ -61,6 +61,7 @@
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Outdoor_5.ogg" type="AudioStream" id=59]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-4.ogg" type="AudioStream" id=60]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-11.ogg" type="AudioStream" id=61]
+[ext_resource path="res://SceneComponent/Display/MakersMonument/MonumentDisplay.tscn" type="PackedScene" id=62]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 108.19, 109.38, 110.021 )
@@ -1185,6 +1186,36 @@ __meta__ = {
 
 [node name="First_Atrium" parent="Marker_all_Constructs/Empty_AtriumHab" index="0" instance=ExtResource( 4 )]
 
+[node name="VerticalStair_TunnelBottom" parent="Marker_all_Constructs/Empty_AtriumHab/First_Atrium/Markers/Marker-VerticalStair_TunnelBottom" index="0"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-1" parent="Marker_all_Constructs/Empty_AtriumHab/First_Atrium/Markers/Marker_Vertical-Stairs-1" index="0"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-2" parent="Marker_all_Constructs/Empty_AtriumHab/First_Atrium/Markers/Marker_Vertical-Stairs-2" index="0"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-3" parent="Marker_all_Constructs/Empty_AtriumHab/First_Atrium/Markers/Marker_Vertical-Stairs-3" index="0"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
+[node name="VerticalStair_TunnelTop" parent="Marker_all_Constructs/Empty_AtriumHab/First_Atrium/Markers/Marker_VerticalStair_TunnelTop" index="0"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
 [node name="DVT_Empty_AtriumHab" parent="Marker_all_Constructs/Empty_AtriumHab" index="1" instance=ExtResource( 38 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50.7373, 2.58819, -55.8898 )
 show_lod0_list = [ NodePath("../../Empty_LosPortalesTunnel/Rim_Arcade"), NodePath("../../../Lalande_85k"), NodePath("../../../Earth"), NodePath("../../../Marker_all_BoatRads/BoatRad004/Boat_Radiator"), NodePath("../First_Atrium"), NodePath("../First_Atrium/Markers/Mariker_HexWindow1/Hexpane_Window"), NodePath("../First_Atrium/Markers/Marker_HexWindow2/Hexpane_Window"), NodePath("../First_Atrium/Markers/Marker_HexWindow3/Hexpane_Window"), NodePath("../First_Atrium/Markers/Marker_HexWindow4/Hexpane_Window"), NodePath("../First_Atrium/Markers/Marker_HexWindow5/Hexpane_Window") ]
@@ -1245,6 +1276,23 @@ __meta__ = {
 
 [node name="First_Gallery_Upper" parent="Marker_all_Constructs/Empty_FirstGalleryUpper" index="0" instance=ExtResource( 10 )]
 
+[node name="Makers_Monument" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_MakersMonument" index="0"]
+visible = false
+
+[node name="MakersMonument" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_MakersMonument" index="1" instance=ExtResource( 62 )]
+
+[node name="Vertical-Stairs-1a" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Vertical-Stairs001" index="0"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-1b" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Vertical-Stairs001" index="1"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
 [node name="ReversingVisibilityTrigger" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper" index="11" instance=ExtResource( 39 )]
 show_lod1_list = [ NodePath("../../../../Marker_all_MIPs/Marker_MIP001/Melt_In_Place_Station"), NodePath("../../../../Marker_all_MIPs/Marker_MIP/Melt_In_Place_Station"), NodePath("../../../../Athlete_Rover_Prop"), NodePath("../../../../Athlete_Rover_Prop2"), NodePath("../../../../Athlete_Rover_Prop/Ground_Passenger_Pod"), NodePath("../../../../Marker_all_BoatRads/BoatRad/Boat_Radiator"), NodePath("../../../../Marker_all_BoatRads/BoatRad018/Boat_Radiator"), NodePath("../../../../Marker_all_BoatRads/BoatRad017/Boat_Radiator"), NodePath("../../../Empty_FirstHangars/First_Factory"), NodePath("../../../Empty_FirstHangars/First_Factory/Markers/Empty_SpiderCrane/Spider_Crane") ]
 show_lod2_list = [ NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit02/Solar_Panel_Unit"), NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit03/Solar_Panel_Unit"), NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit04/Solar_Panel_Unit"), NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit05/Solar_Panel_Unit"), NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit06/Solar_Panel_Unit"), NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit07/Solar_Panel_Unit"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers003/Flywheel_Tower"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers004/Flywheel_Tower"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers005/Flywheel_Tower"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers006/Flywheel_Tower"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers007/Flywheel_Tower"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers008/Flywheel_Tower") ]
@@ -1288,6 +1336,114 @@ shape = SubResource( 55 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Vertical-Stairs-2a" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Vertical-Stairs002" index="0"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-2b" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Vertical-Stairs002" index="1"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-3a" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Vertical-Stairs003" index="0"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-3b" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Vertical-Stairs003" index="1"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-4a" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Vertical-Stairs004" index="0"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-4b" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Vertical-Stairs004" index="1"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-5a" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Vertical-Stairs005" index="0"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-5b" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Vertical-Stairs005" index="1"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-6a" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Vertical-Stairs006" index="0"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-6b" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Vertical-Stairs006" index="1"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-7a" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Vertical-Stairs007" index="0"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-7b" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Vertical-Stairs007" index="1"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-8a" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Vertical-Stairs008" index="0"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-8b" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Vertical-Stairs008" index="1"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-9a" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Vertical-Stairs009" index="0"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-9a2" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Vertical-Stairs009" index="1"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-10a" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Vertical-Stairs010" index="0"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-10b" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Vertical-Stairs010" index="1"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+generate_editor_visual = false
 
 [node name="DVT_First_Gallery_Upper" parent="Marker_all_Constructs/Empty_FirstGalleryUpper" index="1" instance=ExtResource( 38 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2718, -17.7215, -17.284 )
@@ -1643,6 +1799,8 @@ visible = false
 [editable path="Marker_all_Constructs/Empty_FirstGalleryLower/First_Gallery_Lower_UpperPart"]
 
 [editable path="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper"]
+
+[editable path="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_MakersMonument/MakersMonument"]
 
 [editable path="Marker_all_Constructs/Empty_FirstGalleryUpper/DVT_First_Gallery_Upper"]
 

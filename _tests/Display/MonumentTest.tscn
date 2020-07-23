@@ -4,7 +4,6 @@
 [ext_resource path="res://SceneComponent/Interface/PlayerHud.tscn" type="PackedScene" id=2]
 [ext_resource path="res://SceneComponent/Display/MakersMonument/MonumentDisplay.tscn" type="PackedScene" id=3]
 
-
 [node name="TestScene" type="Spatial"]
 
 [node name="SpawnPoints" type="Spatial" parent="."]
@@ -25,6 +24,9 @@ shadow_color = Color( 0.447059, 0.447059, 0.447059, 1 )
 
 [node name="Airlock_Bay" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49521, 0, 0 )
+
+[node name="MakersMonument2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.99302, -6.62498, -7.30037 )
 
 [node name="MakersMonument" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11474, -6.62498, -7.30037 )
