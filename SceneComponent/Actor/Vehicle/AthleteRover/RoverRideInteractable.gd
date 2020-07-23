@@ -40,7 +40,7 @@ func take_control(e):
 	rset("controller_peer_id", entity.owner_peer_id)
 	
 	is_active = true
-	interactable.is_available = false
+#	interactable.is_available = false
 
 func return_control(e) -> void:
 	if e.owner_peer_id != self.controller_peer_id:
@@ -52,7 +52,7 @@ func return_control(e) -> void:
 	entity.owner_peer_id = -1
 	rset("controller_peer_id", -1)
 	is_active = false
-	interactable.is_available = true
+#	interactable.is_available = true
 	
 	interactee.enable()
 	interactee.get_component("Interactor").grab_focus()

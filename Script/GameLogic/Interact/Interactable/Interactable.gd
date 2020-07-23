@@ -10,10 +10,13 @@ class_name Interactable
 
 signal interacted_by(interactor_ray_cast)
 
+signal title_changed(new_title_string)
+signal display_info_changed(new_description_string)
+
 #This is what is displayed when an interactor can interact with me.
-export var display_info : String = "Interactable"
+export var display_info : String = "Interactable" setget set_display_info
 #This string is displayed in the text of the InteractsMenu button.
-export var title : String = "Title"
+export var title : String = "Title" setget set_title
 #True means that players online can see the interactable be used by others.
 export var networked : bool = true
 # Whether or not this interactable is available  to receive interactions.
@@ -39,5 +42,10 @@ func interact_with(interactor : Node) -> void :
 func is_networked() -> bool :
 	return networked
 
+func set_display_info(new_display_info : String) -> void :
+	display_info = new_display_info
+	emit_signal("display_info_changed", display_info)
+
 func set_title(new_title : String) -> void :
 	title = new_title
+	emit_signal("title_changed", title)

@@ -77,10 +77,25 @@ func _input(event : InputEvent) -> void :
 			Helpers.capture_mouse(false)
 			visible = true
 
+#Called from Interactable signal. Update a buttons display text.
+func _interactable_display_info_changed(new_display_info : String, button : Button) -> void :
+	button.disconnect("mouse_entered", self, "_display_button_info")
+	button.disconnect("focus_entered", self, "_display_button_info")
+	button.connect("mouse_entered", self, "_display_button_info", [new_display_info])
+	button.connect("focus_entered", self, "_display_button_info", [new_display_info])
+	
+	#Update the info display if the button has focus.
+	if button.has_focus() :
+		description.text = new_display_info
+
 #Called from a signal. Adds a button to the button list based on the interactable.
 func _interactable_entered(interactable_node) -> void :
 	var button : Button = _create_button(interactable_node.get_title(), interactable_node.get_info(), interactable_node)
 	button_relations.append([interactable_node, button])
+	
+	#Listen for when Interactable attributes have been changed.
+	interactable_node.connect("display_info_changed", self, "_interactable_display_info_changed", [button])
+	interactable_node.connect("title_changed", self, "_interactable_title_changed", [button])
 
 #Called from a signal. Remove the button corresponding to the interactable from the button list.
 func _interactable_left(interactable_node) -> void :
@@ -101,6 +116,10 @@ func _interactable_left(interactable_node) -> void :
 		elif button_parent.get_child_count() >= 4 :
 			button_parent.get_child(3).grab_focus()
 	
+	#Stop listening to the Interactables signals.
+	interactable_node.disconnect("display_info_changed", self, "_interactable_display_info_changed")
+	interactable_node.disconnect("title_changed", self, "_interactable_title_changed")
+	
 	#Remove the button from the scene tree.
 	_free_button(button)
 	
@@ -110,6 +129,9 @@ func _interactable_left(interactable_node) -> void :
 	#Clear the text description if there are no more interactables.
 	if button_relations.empty() :
 		description.text = ""
+
+func _interactable_title_changed(new_title : String, button : Button) -> void :
+	button.text = new_title
 
 #Called from a signal. Disconnect the old interactor and connect the new one.
 func _new_interactor(new_interactor : Node) -> void :
