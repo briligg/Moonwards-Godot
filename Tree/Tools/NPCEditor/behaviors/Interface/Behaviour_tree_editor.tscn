@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Tree/Tools/NPCEditor/behaviors/Interface/Behaviour_tree_editor.gd" type="Script" id=1]
 [ext_resource path="res://Tree/Tools/NPCEditor/behaviors/Interface/Graph_compiler.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Interface/NPCEditorTheme.tres" type="Theme" id=3]
 [ext_resource path="res://Tree/addons/inspector-gadget/src/inspector_gadget.gd" type="Script" id=4]
 [ext_resource path="res://SceneComponent/Actor/Humanoid/NPCs/NPC.gd" type="Script" id=5]
-
+[ext_resource path="res://Tree/Tools/NPCEditor/States/States.gd" type="Script" id=6]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends PopupMenu
@@ -57,105 +57,38 @@ margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
 dragger_visibility = 1
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="PanelContainer" parent="States"]
-margin_right = 1912.0
-margin_bottom = 39.0
-size_flags_horizontal = 5
-size_flags_vertical = 5
-
-[node name="DropDowns" type="HBoxContainer" parent="States/Panel"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 1905.0
-margin_bottom = 32.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource( 3 )
-alignment = 1
-
-[node name="VSeparator" type="VSeparator" parent="States/Panel/DropDowns"]
-margin_left = 788.0
-margin_right = 792.0
-margin_bottom = 25.0
-size_flags_horizontal = 5
-size_flags_vertical = 5
-
-[node name="stimulus" type="MenuButton" parent="States/Panel/DropDowns"]
-margin_left = 796.0
-margin_right = 870.0
-margin_bottom = 25.0
-size_flags_horizontal = 5
-size_flags_vertical = 5
-text = "Stimulus"
-
-[node name="VS" type="VSeparator" parent="States/Panel/DropDowns"]
-margin_left = 874.0
-margin_right = 878.0
-margin_bottom = 25.0
-size_flags_horizontal = 5
-size_flags_vertical = 5
-
-[node name="inhibitors" type="MenuButton" parent="States/Panel/DropDowns"]
-margin_left = 882.0
-margin_right = 969.0
-margin_bottom = 25.0
-size_flags_horizontal = 5
-size_flags_vertical = 5
-text = "Inhibitions"
-
-[node name="VS3" type="VSeparator" parent="States/Panel/DropDowns"]
-margin_left = 973.0
-margin_right = 977.0
-margin_bottom = 25.0
-size_flags_horizontal = 5
-size_flags_vertical = 5
-
-[node name="actions" type="MenuButton" parent="States/Panel/DropDowns"]
-margin_left = 981.0
-margin_right = 1045.0
-margin_bottom = 25.0
-size_flags_horizontal = 5
-size_flags_vertical = 5
-text = "Actions"
-
-[node name="VS4" type="VSeparator" parent="States/Panel/DropDowns"]
-margin_left = 1049.0
-margin_right = 1053.0
-margin_bottom = 25.0
-size_flags_horizontal = 5
-size_flags_vertical = 5
-
-[node name="misc" type="MenuButton" parent="States/Panel/DropDowns"]
-margin_left = 1057.0
-margin_right = 1101.0
-margin_bottom = 25.0
-size_flags_horizontal = 5
-size_flags_vertical = 5
-text = "Misc"
-
-[node name="VS6" type="VSeparator" parent="States/Panel/DropDowns"]
-margin_left = 1105.0
-margin_right = 1109.0
-margin_bottom = 25.0
-size_flags_horizontal = 5
-size_flags_vertical = 5
-
 [node name="ViewMenuSplit" type="HSplitContainer" parent="States"]
-margin_top = 51.0
 margin_right = 1912.0
 margin_bottom = 1044.0
 
 [node name="Container" type="VBoxContainer" parent="States/ViewMenuSplit"]
-margin_right = 172.0
-margin_bottom = 993.0
+margin_right = 280.0
+margin_bottom = 1044.0
+rect_min_size = Vector2( 280, 0 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="States/ViewMenuSplit/Container"]
+margin_right = 280.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 0, 120 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Behaviors" type="ItemList" parent="States/ViewMenuSplit/Container/ScrollContainer"]
+margin_right = 280.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="selection" type="HBoxContainer" parent="States/ViewMenuSplit/Container"]
-margin_right = 172.0
-margin_bottom = 14.0
+margin_top = 124.0
+margin_right = 280.0
+margin_bottom = 138.0
 
 [node name="title" type="Label" parent="States/ViewMenuSplit/Container/selection"]
 margin_right = 59.0
@@ -164,67 +97,51 @@ text = "Selected:"
 
 [node name="name" type="Label" parent="States/ViewMenuSplit/Container/selection"]
 margin_left = 63.0
-margin_right = 145.0
+margin_right = 101.0
 margin_bottom = 14.0
-text = "NODE_NAME"
+text = " None"
 
-[node name="type" type="HBoxContainer" parent="States/ViewMenuSplit/Container"]
-margin_top = 18.0
-margin_right = 172.0
-margin_bottom = 32.0
-
-[node name="title" type="Label" parent="States/ViewMenuSplit/Container/type"]
-margin_right = 95.0
-margin_bottom = 14.0
-text = "Selection type:"
-
-[node name="name" type="Label" parent="States/ViewMenuSplit/Container/type"]
-margin_left = 99.0
-margin_right = 172.0
-margin_bottom = 14.0
-text = "NODE_TYPE"
+[node name="Add" type="Button" parent="States/ViewMenuSplit/Container"]
+margin_top = 142.0
+margin_right = 280.0
+margin_bottom = 162.0
+text = "Add to Tree"
 
 [node name="type2" type="HBoxContainer" parent="States/ViewMenuSplit/Container"]
-margin_top = 36.0
-margin_right = 172.0
-margin_bottom = 56.0
+margin_top = 166.0
+margin_right = 280.0
+margin_bottom = 186.0
 
 [node name="Open" type="Button" parent="States/ViewMenuSplit/Container/type2"]
-margin_right = 84.0
+margin_right = 138.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Open"
 
 [node name="Save" type="Button" parent="States/ViewMenuSplit/Container/type2"]
-margin_left = 88.0
-margin_right = 172.0
+margin_left = 142.0
+margin_right = 280.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Save"
 
-[node name="Add" type="Button" parent="States/ViewMenuSplit/Container"]
-margin_top = 60.0
-margin_right = 172.0
-margin_bottom = 80.0
-text = "Add to Tree"
-
 [node name="Compile" type="Button" parent="States/ViewMenuSplit/Container"]
-margin_top = 84.0
-margin_right = 172.0
-margin_bottom = 104.0
+margin_top = 190.0
+margin_right = 280.0
+margin_bottom = 210.0
 text = "Compile"
 
 [node name="HSeparator" type="HSeparator" parent="States/ViewMenuSplit/Container"]
-margin_top = 108.0
-margin_right = 172.0
-margin_bottom = 112.0
+margin_top = 214.0
+margin_right = 280.0
+margin_bottom = 218.0
 
 [node name="InspectorGadgetScrollContainer" type="ScrollContainer" parent="States/ViewMenuSplit/Container"]
-margin_top = 116.0
-margin_right = 172.0
-margin_bottom = 516.0
+margin_top = 222.0
+margin_right = 280.0
+margin_bottom = 622.0
 rect_min_size = Vector2( 0, 400 )
 size_flags_horizontal = 3
 __meta__ = {
@@ -233,7 +150,7 @@ __meta__ = {
 
 [node name="InspectorGadget" type="MarginContainer" parent="States/ViewMenuSplit/Container/InspectorGadgetScrollContainer"]
 margin_right = 279.0
-margin_bottom = 1034.0
+margin_bottom = 872.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 4 )
@@ -258,10 +175,15 @@ container_type_hints = {
 }
 filter_built_in_properties = false
 
+[node name="HSeparator2" type="HSeparator" parent="States/ViewMenuSplit/Container"]
+margin_top = 626.0
+margin_right = 280.0
+margin_bottom = 630.0
+
 [node name="GraphEdit" type="GraphEdit" parent="States/ViewMenuSplit"]
-margin_left = 184.0
+margin_left = 292.0
 margin_right = 1912.0
-margin_bottom = 993.0
+margin_bottom = 1044.0
 right_disconnects = true
 scroll_offset = Vector2( -184, -116 )
 script = ExtResource( 2 )
@@ -576,9 +498,9 @@ __meta__ = {
 
 [node name="TemplateNPC" type="Spatial" parent="."]
 script = ExtResource( 5 )
+[connection signal="pressed" from="States/ViewMenuSplit/Container/Add" to="." method="_on_Add_node_pressed"]
 [connection signal="pressed" from="States/ViewMenuSplit/Container/type2/Open" to="States/ViewMenuSplit/GraphEdit" method="_on_Button3_pressed"]
 [connection signal="pressed" from="States/ViewMenuSplit/Container/type2/Save" to="States/ViewMenuSplit/GraphEdit" method="_on_save_pressed"]
-[connection signal="pressed" from="States/ViewMenuSplit/Container/Add" to="." method="_on_Add_node_pressed"]
 [connection signal="pressed" from="States/ViewMenuSplit/Container/Compile" to="States/ViewMenuSplit/GraphEdit" method="_on_Button3_pressed"]
 [connection signal="connection_request" from="States/ViewMenuSplit/GraphEdit" to="States/ViewMenuSplit/GraphEdit" method="_on_GraphEdit_connection_request"]
 [connection signal="disconnection_request" from="States/ViewMenuSplit/GraphEdit" to="States/ViewMenuSplit/GraphEdit" method="_on_GraphEdit_disconnection_request"]

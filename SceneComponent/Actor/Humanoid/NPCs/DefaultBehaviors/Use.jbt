@@ -1,0 +1,23 @@
+[variables]
+
+Behaviors=[  ]
+States=[  ]
+Save=[  ]
+user_input=[  ]
+CLAYER=[  ]
+match=[  ]
+@@117=[  ]
+
+[node_signals]
+
+user_input=[ "user_input_output_0" ]
+match=[ "match_output_0" ]
+
+[ai_config]
+
+connections=[ {
+"from": "user_input",
+"from_port": 0,
+"to": "match",
+"to_port": 0
+} ]
