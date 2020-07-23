@@ -11,7 +11,10 @@ export var stifness: float = 0.05 # 0.15
 export var damping_force: float = 0.05
 export var traction_x: float = 0.95
 export var traction_z: float = 0.04
-export var cast_to: Vector3 = Vector3(0,-11.5,0) # A value close, but lesser than the max extension intended for a leg
+export var cast_to: Vector3 = Vector3(0.0, -11.5, 0.0) # A value close, but lesser than the max extension intended for a leg
+export var normal_cast_to: Vector3 = Vector3(0.0, -11.5, 0.0) # A value close, but lesser than the max extension intended for a leg
+export var rigor_mortis_thres: float = -0.5 # Threshold to enter rigor_mortis
+export var cast_to_rigor_mortis: Vector3 = Vector3(0.0, 3.5, 0.0)
 
 
 # Godot has no direct way to perform sphere_casts, so we do it manually
@@ -34,6 +37,12 @@ var is_grounded: bool = false
 
 
 func _physics_process(delta: float) -> void:
+	# If entity is upside down, reverse cast_to and lessen it
+	if vehicle_entity.global_transform.basis.y.dot(Vector3.UP) < rigor_mortis_thres:
+		cast_to = cast_to_rigor_mortis
+	else:
+		cast_to = normal_cast_to
+	
 	var cast_res: Sphere_Cast_Result = sphere_cast(global_transform.origin, cast_to, wheel_radius)
 	collision_pos = cast_res.hit_position
 	collision_normal = cast_res.hit_normal
