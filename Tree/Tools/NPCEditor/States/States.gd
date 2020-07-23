@@ -1,6 +1,7 @@
 extends Node
 
 var Behaviors : Array = []
+var Behavior_names : Array = []
 
 func _ready() -> void:
 	load_behaviors_in(OS.get_user_data_dir())
@@ -20,6 +21,7 @@ func load_behaviors_in(path : String) -> void:
 					var BT = ConfigFile.new()
 					BT.load(file_name)
 					Behaviors.append(BT)
+					Behavior_names.append(file_name.trim_suffix(".jbt"))
 				else:
 					print_debug("Found a file that is not a BT")
 			else:
