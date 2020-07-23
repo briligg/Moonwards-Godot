@@ -4,7 +4,8 @@
 [ext_resource path="res://Tree/Tools/NPCEditor/behaviors/Interface/Graph_compiler.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Interface/NPCEditorTheme.tres" type="Theme" id=3]
 [ext_resource path="res://Tree/addons/inspector-gadget/src/inspector_gadget.gd" type="Script" id=4]
-[ext_resource path="res://SceneComponent/Actor/Humanoid/NPC.gd" type="Script" id=5]
+[ext_resource path="res://SceneComponent/Actor/Humanoid/NPCs/NPC.gd" type="Script" id=5]
+
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends PopupMenu

@@ -257,7 +257,7 @@ _global_script_classes=[ {
 "base": "Spatial",
 "class": "NPCBase",
 "language": "GDScript",
-"path": "res://SceneComponent/Actor/Humanoid/NPC.gd"
+"path": "res://SceneComponent/Actor/Humanoid/NPCs/NPC.gd"
 }, {
 "base": "Node",
 "class": "NetworkManager",
