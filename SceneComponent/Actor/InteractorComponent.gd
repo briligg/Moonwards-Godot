@@ -37,6 +37,9 @@ func _ready_deferred() -> void :
 	if grab_focus_at_ready && self.enabled:
 		grab_focus()
 
+func get_interactables() -> Array :
+	return interactor.get_potential_interacts()
+
 #Become the current Interactor in use.
 func grab_focus() -> void:
 	Signals.Hud.emit_signal(Signals.Hud.NEW_INTERACTOR_GRABBED_FOCUS, self)
