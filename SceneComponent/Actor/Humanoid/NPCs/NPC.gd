@@ -4,6 +4,10 @@ class_name NPCBase
 
 onready var actor = get_parent()
 
+var destination : Vector3 = Vector3.ZERO
+var has_destination : bool = false
+var is_occpuied : bool = false
+
 var ai_script : ConfigFile = ConfigFile.new()
 
 export(String, FILE, "*.jbt") var AI_file : String = "" #This works just fine! :D
