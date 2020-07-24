@@ -119,11 +119,10 @@ func is_slot_occupied(to_port, to):
 func _on_GraphEdit_connection_request(from, from_slot, to, to_slot) -> void:
 	print("Requesting conection from node: ", from, " port: ", from_slot, " to node: ", to, " port: ", to_slot)
 	if from != to:
-		if not is_slot_occupied(to_slot, to):
-			connect_node(from, from_slot, to, to_slot)
-			if get_node(to).has_signal("connected_to"):
-				get_node(to).emit_signal("connected_to", to_slot, 
-					get_node(from).get_slot_type_right(from_slot))
+		connect_node(from, from_slot, to, to_slot)
+		if get_node(to).has_signal("connected_to"):
+			get_node(to).emit_signal("connected_to", to_slot, 
+				get_node(from).get_slot_type_right(from_slot))
 
 
 func _on_GraphEdit_disconnection_request(from, from_slot, to, to_slot) -> void:

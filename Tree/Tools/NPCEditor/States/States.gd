@@ -1,7 +1,10 @@
 extends VSplitContainer
 
+var current_idx = 0
 var Behaviors : Array = []
 var Behavior_names : Array = []
+
+onready var BehaviorList : ItemList = $ViewMenuSplit/Container/ScrollContainer/Behaviors
 
 func _ready() -> void:
 	var dir = Directory.new()
@@ -16,7 +19,7 @@ func _ready() -> void:
 func list_behaviors():
 	for names in Behavior_names:
 		print(names)
-		$ViewMenuSplit/Container/ScrollContainer/Behaviors.add_item(names)
+		BehaviorList.add_item(names)
 
 func load_behaviors_in(path : String) -> void:
 	print(path)
@@ -43,3 +46,13 @@ func load_behaviors_in(path : String) -> void:
 	else: 
 		print_debug("Error accessing ", path)
 		
+func add_state(text):
+	var node : GraphNode = GraphNode.new()
+	node.title = text
+	node.set_slot(0, true, 1, Color(1,1,1,1), true, 1, Color(1,1,1,1))
+	$ViewMenuSplit/StatesGraphEdit.add_child(node)
+func _on_Behaviors_item_selected(index):
+	current_idx = index
+
+func _on_Add_pressed():
+	add_state(BehaviorList.get_item_text(current_idx))
