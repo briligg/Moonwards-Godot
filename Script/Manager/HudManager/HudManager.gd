@@ -3,12 +3,12 @@ extends Node
 
 #Determines what parts of the Hud you are referring to.
 enum flags {
-	Chat = 0,
-	InteractsMenu = 1,
-	InteractsDisplay = 2,
-	All = 4,
-	InteractsAll = 8,
-	Rollback = 16
+	Chat = 1,
+	InteractsMenu = 2,
+	InteractsDisplay = 4,
+	All = 8,
+	InteractsAll = 16,
+	Rollback = 32
 }
 
 var current_visibility : int = flags.All
