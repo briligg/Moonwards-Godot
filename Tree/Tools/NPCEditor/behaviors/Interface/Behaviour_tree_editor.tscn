@@ -146,8 +146,8 @@ __meta__ = {
 }
 
 [node name="InspectorGadget" type="MarginContainer" parent="States/ViewMenuSplit/Container/InspectorGadgetScrollContainer"]
-margin_right = 279.0
-margin_bottom = 872.0
+margin_right = 280.0
+margin_bottom = 400.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 4 )
