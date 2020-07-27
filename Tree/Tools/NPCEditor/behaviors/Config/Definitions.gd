@@ -97,6 +97,16 @@ var _functions = {
 			{"_label_title":"","_type":TYPE_NIL},
 			]
 	},
+	"trigger_dialog" : {
+		"_category" : "actions",
+		"_code" : "<actual code>",
+		"_input_ports" : [
+			{"_label_title":"Trigger","_type":Nodes.TYPE_ANY},
+			],
+		"_output_ports" : [
+			{"_label_title":"","_type":TYPE_NIL},
+			]
+	},
 	"play_global_sound" : {
 		"_category" : "actions",
 		"_code" : "<actual code>",

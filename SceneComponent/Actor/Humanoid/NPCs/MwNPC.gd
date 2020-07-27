@@ -5,6 +5,11 @@ This is the actual class to be edited, extends the NPCBase and has the functions
 that appear in the Definitions file.
 """
 
+signal user_input(action_name)
+signal see()
+signal hear()
+
+
 func property_check(input, signals, variables):
 	#input is object, get the specific variable in the variable port and then
 	#passes it to the next node
@@ -54,3 +59,6 @@ func play_3d_sound(input, signals, variables):
 	sound_player.connect("finished", sound_player, "queue_free")
 	add_child(sound_player)
 	sound_player.play()
+
+func trigger_dialog(input, signals, variables):
+	pass

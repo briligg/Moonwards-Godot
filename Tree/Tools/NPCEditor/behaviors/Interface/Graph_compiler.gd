@@ -3,6 +3,7 @@ extends GraphEdit
 var SceneNodes : Dictionary
 var Currently_selected : Node = null
 var OutputFile : ConfigFile = ConfigFile.new()
+
 func _ready():
 	connect("node_selected", self, "_on_node_selected")
 	for type in range (0,27):
