@@ -30,10 +30,27 @@ func tri_v_decision(input, signals, variables):
 	var weight1 = get_variable_from_port(variables, 1)
 	var weight2 = get_variable_from_port(variables, 2)
 	var weigth3 = get_variable_from_port(variables, 3)
-	var max = max(weight1, max(weight2, weigth3))
-	if max == weight1:
+	var maximum = max(weight1, max(weight2, weigth3))
+	if maximum == weight1:
 		emit_signal_from_port(input, signals, 1)
-	elif max == weight2:
+	elif maximum == weight2:
 		emit_signal_from_port(input, signals, 2)
-	elif max == weight3:
+	elif maximum == weigth3:
 		emit_signal_from_port(input, signals, 3)
+
+func play_global_sound(input, signals, variables):
+	var path = get_variable_from_port(variables, 0)
+	var sound_player = AudioStreamPlayer.new()
+	sound_player.stream = load(path)
+	sound_player.connect("finished", sound_player, "queue_free")
+	add_child(sound_player)
+	sound_player.play()
+
+
+func play_3d_sound(input, signals, variables):
+	var path = get_variable_from_port(variables, 0)
+	var sound_player = AudioStreamPlayer3D.new()
+	sound_player.stream = load(path)
+	sound_player.connect("finished", sound_player, "queue_free")
+	add_child(sound_player)
+	sound_player.play()

@@ -97,6 +97,26 @@ var _functions = {
 			{"_label_title":"","_type":TYPE_NIL},
 			]
 	},
+	"play_global_sound" : {
+		"_category" : "actions",
+		"_code" : "<actual code>",
+		"_input_ports" : [
+			{"_label_title":"_s_file:*.ogg,*.wav,*.mp3","_type":Nodes.TYPE_ANY},
+			],
+		"_output_ports" : [
+			{"_label_title":"","_type":TYPE_NIL},
+			]
+	},
+	"play_3d_sound" : {
+		"_category" : "actions",
+		"_code" : "<actual code>",
+		"_input_ports" : [
+			{"_label_title":"_s_file:*.ogg,*.wav,*.mp3","_type":Nodes.TYPE_ANY},
+			],
+		"_output_ports" : [
+			{"_label_title":"","_type":TYPE_NIL},
+			]
+	},
 	"force_next_state" : {
 		"_category" : "actions",
 		"_code" : "<actual code>",

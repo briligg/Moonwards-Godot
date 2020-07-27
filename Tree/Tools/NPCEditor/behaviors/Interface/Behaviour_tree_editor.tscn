@@ -50,6 +50,7 @@ __meta__ = {
 }
 
 [node name="States" type="VSplitContainer" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -145,8 +146,8 @@ __meta__ = {
 }
 
 [node name="InspectorGadget" type="MarginContainer" parent="States/ViewMenuSplit/Container/InspectorGadgetScrollContainer"]
-margin_right = 279.0
-margin_bottom = 872.0
+margin_right = 280.0
+margin_bottom = 400.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 4 )
@@ -156,7 +157,7 @@ __meta__ = {
 node_path = NodePath("../../../../../TemplateNPC")
 subnames = ""
 editable = true
-property_blacklist = [  ]
+property_blacklist = [ "NPC_File" ]
 custom_gadget_paths = {
 
 }
@@ -204,7 +205,6 @@ __meta__ = {
 }
 
 [node name="Behaviors" type="VSplitContainer" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -367,16 +367,10 @@ margin_right = 200.0
 margin_bottom = 248.0
 text = "Add to Tree"
 
-[node name="Compile" type="Button" parent="Behaviors/ViewMenuSplit/Container"]
+[node name="HSeparator" type="HSeparator" parent="Behaviors/ViewMenuSplit/Container"]
 margin_top = 252.0
 margin_right = 200.0
-margin_bottom = 272.0
-text = "Compile"
-
-[node name="HSeparator" type="HSeparator" parent="Behaviors/ViewMenuSplit/Container"]
-margin_top = 276.0
-margin_right = 200.0
-margin_bottom = 280.0
+margin_bottom = 256.0
 
 [node name="GraphEdit" type="GraphEdit" parent="Behaviors/ViewMenuSplit"]
 margin_left = 212.0
@@ -462,7 +456,6 @@ script = ExtResource( 5 )
 [connection signal="pressed" from="Behaviors/ViewMenuSplit/Container/type2/Open" to="Behaviors/ViewMenuSplit/GraphEdit" method="_on_Button3_pressed"]
 [connection signal="pressed" from="Behaviors/ViewMenuSplit/Container/type2/Save" to="Behaviors/ViewMenuSplit/GraphEdit" method="_on_save_pressed"]
 [connection signal="pressed" from="Behaviors/ViewMenuSplit/Container/Add" to="." method="_on_Add_node_pressed"]
-[connection signal="pressed" from="Behaviors/ViewMenuSplit/Container/Compile" to="Behaviors/ViewMenuSplit/GraphEdit" method="_on_Button3_pressed"]
 [connection signal="connection_request" from="Behaviors/ViewMenuSplit/GraphEdit" to="Behaviors/ViewMenuSplit/GraphEdit" method="_on_GraphEdit_connection_request"]
 [connection signal="disconnection_request" from="Behaviors/ViewMenuSplit/GraphEdit" to="Behaviors/ViewMenuSplit/GraphEdit" method="_on_GraphEdit_disconnection_request"]
 [connection signal="node_selected" from="Behaviors/ViewMenuSplit/GraphEdit" to="Behaviors/ViewMenuSplit/GraphEdit" method="_on_GraphEdit_node_selected"]

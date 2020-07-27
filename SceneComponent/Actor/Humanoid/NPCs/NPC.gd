@@ -8,12 +8,17 @@ onready var actor = get_parent()
 var destination : Vector3 = Vector3.ZERO
 var has_destination : bool = false
 var is_occpuied : bool = false
-
+var states : Dictionary = {}
 var ai_script : ConfigFile = ConfigFile.new()
 
 export(String) var initial_state : String = ""
 
-#export(String, FILE, "*.jbt") var AI_file : String = "" #This works just fine! :D
+export(String, FILE, "*.jnpc") var NPC_File : String = "" #This works just fine! :D
+
+
+func load_states(): 
+	pass
+
 
 func emit_signal_from_port(what, signals : Array, port : int) -> void:
 	if not signals.size() >= port:

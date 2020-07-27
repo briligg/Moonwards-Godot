@@ -107,7 +107,7 @@ func _on_node_selected(node):
 	Currently_selected = node
 	
 func _on_Button3_pressed():
-	compile(get_connection_list())
+	pass
 
 func is_slot_occupied(to_port, to):
 	for connection in get_connection_list():
@@ -141,4 +141,5 @@ func _on_save_file_selected(path):
 
 
 func _on_save_pressed():
+	compile(get_connection_list())
 	$Save.popup_centered()
