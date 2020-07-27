@@ -16,7 +16,7 @@ var ground_normal: Vector3 = Vector3.UP
 var jump_timeout: float
 var old_normal : Vector3 = Vector3.DOWN
 
-onready var on_ground : Node = $OnGround
+onready var on_ground : RayCast = $OnGround
 onready var normal_detect : Node = $NormalDetect
 #Whether I am climbing or not.
 var is_climbing : bool = false
@@ -60,6 +60,7 @@ func _process_server(delta: float) -> void:
 		update_movement(delta)
 	update_state()
 
+#Process vertical stair climbing or descending. 
 func update_stairs_climbing(delta):
 	var kb_pos = entity.global_transform.origin
 	
@@ -76,7 +77,6 @@ func update_stairs_climbing(delta):
 		# Add the movement velocity using delta to make sure physics are consistent regardless of framerate.
 		entity.velocity += horizontal_vector * delta
 		
-		
 		#Stop climbing at the top when too far away from the stairs.
 		if kb_pos.distance_to(entity.stairs.climb_points[entity.climb_point]) > 1.2:
 			stop_climb_stairs()
@@ -87,14 +87,14 @@ func update_stairs_climbing(delta):
 		entity.velocity += flat_velocity
 		entity.velocity += Vector3(0, input_direction * delta * climb_speed, 0)
 	
-	#When moving down and at the bottom of the stairs, then let go.
-	if input_direction < 0.0 and entity.climb_point < 2:
+	#When moving down and at the bottom of the stairs, let go.
+	if input_direction < 0.0 and on_ground.is_colliding():
 		stop_climb_stairs()
 	
 	entity.velocity = entity.move_and_slide(entity.velocity, Vector3.UP, false)
 	entity.velocity *= 0.9
 	
-	# Update the values that are use for networking.
+	# Update the values that are used for networking.
 	entity.srv_pos = entity.global_transform.origin
 	entity.srv_vel = entity.velocity
 
@@ -166,6 +166,7 @@ func start_climb_stairs(target_stairs) -> void:
 func stop_climb_stairs() -> void :
 	is_climbing = false
 	entity.climb_point = -1
+	entity.velocity += Vector3(0, 0, 0)
 
 func update_state():
 	if !entity.is_grounded and !is_climbing:
