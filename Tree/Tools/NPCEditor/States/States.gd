@@ -49,6 +49,7 @@ func load_behaviors_in(path : String) -> void:
 func add_state(text):
 	var node : GraphNode = GraphNode.new()
 	node.title = text
+	node.add_child(Label.new())
 	node.set_slot(0, true, 1, Color(1,1,1,1), true, 1, Color(1,1,1,1))
 	$ViewMenuSplit/StatesGraphEdit.add_child(node)
 func _on_Behaviors_item_selected(index):

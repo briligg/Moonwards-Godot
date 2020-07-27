@@ -2,6 +2,7 @@ extends Spatial
 
 class_name NPCBase
 
+signal next_state(force)
 onready var actor = get_parent()
 
 var destination : Vector3 = Vector3.ZERO
@@ -10,22 +11,9 @@ var is_occpuied : bool = false
 
 var ai_script : ConfigFile = ConfigFile.new()
 
-export(String, FILE, "*.jbt") var AI_file : String = "" #This works just fine! :D
+export(String) var initial_state : String = ""
 
-func filter(input, signals, variables):
-	#input is object, get the specific variable in the variable port and then
-	#passes it to the next node
-	var filter = get_variable_from_port(variables, 1)
-	if input.has(filter):
-		emit_signal_from_port(input.get(filter), signals, 0)
-	pass
-
-func match(input, signals, variables):
-	#Checks if input matches with the variable input, if it does
-	#calls the next node
-	if input == get_variable_from_port(variables, 1):
-		emit_signal_from_port(true, signals, 0)
-	pass
+#export(String, FILE, "*.jbt") var AI_file : String = "" #This works just fine! :D
 
 func emit_signal_from_port(what, signals : Array, port : int) -> void:
 	if not signals.size() >= port:
@@ -46,7 +34,7 @@ func get_variable_from_port(variables : Array, port : int):
 		return
 	return variables[port]
 
-func load_script():
+func load_script(AI_file : String): #Path to a BT
 	ai_script.load(AI_file)
 	for signals in ai_script.get_section_keys("node_signals"):
 		add_user_signal(signals)
@@ -70,4 +58,6 @@ func define_connection(from : String, from_port : String , to: String, to_port :
 		function = function.replace(str(number), "")
 	#name cleaned up
 	connect(signal_name, self, function, connection_bindings) 
+
+func _on_next_state(force : bool = false):
 	pass

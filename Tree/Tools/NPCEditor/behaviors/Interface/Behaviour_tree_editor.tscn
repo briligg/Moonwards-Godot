@@ -169,7 +169,7 @@ container_type_hints = {
 ":dictionary_value:[keys]": "",
 ":dictionary_value:[values]": ""
 }
-filter_built_in_properties = false
+filter_built_in_properties = true
 
 [node name="HSeparator2" type="HSeparator" parent="States/ViewMenuSplit/Container"]
 margin_top = 602.0
