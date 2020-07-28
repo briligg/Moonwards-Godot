@@ -101,11 +101,11 @@ func update_stairs_climbing(delta):
 func update_movement(delta):
 	var movement_direction = horizontal_vector.normalized()
 	var _velocity_direction = entity.velocity.normalized()
-	var normal = normal_detect.get_collision_normal()
+	var normal = normal_detect.get_collision_normal().normalized()
 	
 	# Use the normal of the ground detect if the normal detect isn't colliding.
 	if not normal_detect.is_colliding():
-		normal = on_ground.get_collision_normal()
+		normal = on_ground.get_collision_normal().normalized()
 	# Move the raycast towards the movement direction to detect the ground better. Makes the ramps walkable.
 	on_ground.cast_to = (normal * -2.0 + movement_direction).normalized() * 0.5
 	
@@ -151,22 +151,35 @@ func update_movement(delta):
 	entity.srv_vel = entity.velocity
 
 func start_climb_stairs(target_stairs) -> void:
+	#Do nothing if the player is already in climbing state.
 	if entity.state.state == ActorEntityState.State.CLIMBING:
 		return
+	
 	entity.stairs = target_stairs
 	is_climbing = true
+	
+	#Get which direction I should face when climbing the stairs.
 	var kb_pos = entity.global_transform.origin
 	entity.climb_look_direction = entity.stairs.get_look_direction(kb_pos)
+	
 	#Get the closest step to start climbing from.
 	for index in entity.stairs.climb_points.size():
 		if entity.climb_point == -1 or entity.stairs.climb_points[index].distance_to(kb_pos) < entity.stairs.climb_points[entity.climb_point].distance_to(kb_pos):
 			entity.climb_point = index
+	
+	#Rotate the model to best fit the stairs.
+	var a = entity.model.global_transform
+	var target_transform = a.looking_at(entity.model.global_transform.origin - entity.climb_look_direction, Vector3(0, 1, 0))
+	entity.model.global_transform.basis = target_transform.basis
 
 #Stop climbing stairs.
 func stop_climb_stairs() -> void :
 	is_climbing = false
 	entity.climb_point = -1
 	entity.velocity += Vector3(0, 0, 0)
+	
+	#Make myself face the same direction as the camera.
+	entity.model.global_transform.basis = entity.global_transform.basis
 
 func update_state():
 	if !entity.is_grounded and !is_climbing:
@@ -201,8 +214,7 @@ func handle_input(delta : float) -> void:
 func rotate_body(_delta: float) -> void:
 	# Rotate
 	if entity.state.state == ActorEntityState.State.CLIMBING:
-		var target_transform = entity.model.global_transform.looking_at(entity.model.global_transform.origin - entity.climb_look_direction, Vector3(0, 1, 0))
-		entity.model.global_transform.basis = target_transform.basis
+		return
 	else:
 		var o = entity.global_transform.origin
 		var t = entity.look_dir
