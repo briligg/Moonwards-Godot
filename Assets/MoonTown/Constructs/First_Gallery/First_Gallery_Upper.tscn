@@ -5,6 +5,8 @@
 [ext_resource path="res://SceneComponent/Display/MakersMonument/MonumentDisplay.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SceneComponent/Utilities/VerticalStairs/VerticalStairs.tscn" type="PackedScene" id=4]
 [ext_resource path="res://SceneComponent/Display/RocketDisplay.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/MoonTown/Models/Neighborhood/Neighborhood-1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/MoonTown/Models/Neighborhood/Shared-Facilities-1.tscn" type="PackedScene" id=7]
 
 [sub_resource type="GIProbeData" id=1]
 bounds = AABB( -162.469, -61.685, -31.646, 324.937, 123.37, 63.2919 )
@@ -56,6 +58,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.0639, -55.9659, 0.0796747 )
 omni_range = 30.8064
 omni_attenuation = 1.8025
 
+[node name="Marker_Neighborhood" type="Spatial" parent="." index="9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6423, -5.21722, 2.99319 )
+
+[node name="Neighborhood-1" parent="Marker_Neighborhood" index="0" instance=ExtResource( 6 )]
+
+[node name="Shared-Facilities-1" parent="Marker_Neighborhood" index="1" instance=ExtResource( 7 )]
+
 [node name="MakersMonument" parent="Marker_MakersMonument" index="0" instance=ExtResource( 3 )]
 
 [node name="Carousel" parent="Marker_Carousel" index="0" instance=ExtResource( 2 )]
@@ -75,7 +84,7 @@ networked = true
 stairs_step_count = 18
 generate_editor_visual = false
 
-[node name="Marker_Vertical-Stairs002" parent="." index="12"]
+[node name="Marker_Vertical-Stairs002" parent="." index="13"]
 transform = Transform( 0.0777978, 0, 0.996969, 0, 1, 0, -0.996969, 0, 0.0777978, 35.2925, -17.2804, -2.95547 )
 
 [node name="Vertical-Stairs-2a" parent="Marker_Vertical-Stairs002" index="0" instance=ExtResource( 4 )]
@@ -224,8 +233,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4549, -15.5153, -1.94232 )
 [node name="RocketDisplay" parent="Marker_Rocket_Display" index="0" instance=ExtResource( 5 )]
 transform = Transform( -1.62921e-06, 0, 10, 0, 10, 0, -10, 0, -1.62921e-06, 0, 0, 0 )
 
-[node name="LOD1" parent="." index="22"]
+[node name="LOD1" parent="." index="23"]
 visible = false
 
-[node name="LOD2" parent="." index="23"]
+[node name="LOD2" parent="." index="24"]
 visible = false

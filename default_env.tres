@@ -18,5 +18,4 @@ tonemap_mode = 1
 tonemap_exposure = 1.1
 tonemap_white = 1.1
 ss_reflections_enabled = true
-ssao_enabled = true
 adjustment_contrast = 0.94
