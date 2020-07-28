@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Tree/Tools/NPCEditor/behaviors/Interface/Behaviour_tree_editor.gd" type="Script" id=1]
 [ext_resource path="res://Tree/Tools/NPCEditor/behaviors/Interface/Behaviors.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tree/Tools/NPCEditor/States/Interface/States.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SceneComponent/Actor/Humanoid/NPCs/NPC.gd" type="Script" id=5]
@@ -10,33 +9,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 7
 size_flags_vertical = 7
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="States" parent="." instance=ExtResource( 3 )]
 
-[node name="InspectorGadget" parent="States/ViewMenuSplit/Container/InspectorGadgetScrollContainer" index="0"]
-custom_gadget_paths = {
-
-}
-custom_gadget_metadata = {
-
-}
-container_type_hints = {
-":array_value:4": 0,
-":array_value:5": "",
-":dictionary_value:[keys]": "",
-":dictionary_value:[values]": ""
-}
-
-[node name="States" parent="States/ViewMenuSplit/StatesGraphEdit" index="1"]
-items = [ "Stimulus", null, 0, false, false, 0, 0, null, "", false, "Inhibitors", null, 0, false, false, 1, 0, null, "", false, "Actions", null, 0, false, false, 2, 0, null, "", false, "Custom", null, 0, false, false, 3, 0, null, "", false ]
-
 [node name="Behaviors" parent="." instance=ExtResource( 2 )]
+visible = false
 
 [node name="TemplateNPC" type="Spatial" parent="."]
 script = ExtResource( 5 )
-
-[editable path="States"]

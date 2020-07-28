@@ -1,8 +1,6 @@
 extends GraphEdit
 
 var last_mouse_pos : Vector2 = Vector2.ZERO
-var node_start_pos : Vector2 = Vector2.ZERO
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 	
@@ -31,10 +29,7 @@ func _on_StatesGraphEdit_popup_request(position):
 	popup_add_menu(position)
 
 func _on_States_id_pressed(id):
-	node_start_pos =   -(scroll_offset + (last_mouse_pos - rect_global_position)) 
-	print("offset = ", scroll_offset, " rect_pos = ", rect_global_position, " last pos = ", last_mouse_pos, " the sum = ", node_start_pos)
+	var node_start_pos =  -(scroll_offset + (last_mouse_pos - rect_global_position)) 
 	add_state($States.get_item_text(id), node_start_pos)
 
 
-func _on_StatesGraphEdit_scroll_offset_changed(ofs):
-	node_start_pos = -last_mouse_pos+ofs

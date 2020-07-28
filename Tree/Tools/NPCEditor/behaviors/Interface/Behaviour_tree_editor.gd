@@ -1,12 +1,12 @@
-extends TabContainer
+extends VSplitContainer
 
 var type : String = ""
 var node_name  : String = ""
 var idx : int = 0
-onready var Stimulus = $Behaviors/ViewMenuSplit/Container/Panel/DropDowns/stimulus.get_popup()
-onready var Actions = $Behaviors/ViewMenuSplit/Container/Panel/DropDowns/actions.get_popup()
-onready var Inhibitors = $Behaviors/ViewMenuSplit/Container/Panel/DropDowns/inhibitors.get_popup()
-onready var Misc = $Behaviors/ViewMenuSplit/Container/Panel/DropDowns/misc.get_popup()
+onready var Stimulus = $ViewMenuSplit/Container/Panel/DropDowns/stimulus.get_popup()
+onready var Actions = $ViewMenuSplit/Container/Panel/DropDowns/actions.get_popup()
+onready var Inhibitors = $ViewMenuSplit/Container/Panel/DropDowns/inhibitors.get_popup()
+onready var Misc = $ViewMenuSplit/Container/Panel/DropDowns/misc.get_popup()
 
 func _ready() -> void:
 
@@ -39,19 +39,17 @@ func _update_labels(name : String) -> void:
 		Placeholder = Nodes.Graphs.get(name).get(node_name).duplicate()
 	else:
 		Placeholder = Nodes.Graphs.get(name).get(node_name).instance()
-	$Behaviors/ViewMenuSplit/Container/selection/name.text = str(Placeholder.title)
-	$Behaviors/ViewMenuSplit/Container/type/name
-	
+	$ViewMenuSplit/Container/selection/name.text = str(Placeholder.title)
 	Placeholder.queue_free()
 
 func _generate_nodes() -> void:
 	for Any in Nodes.Graphs:
 		var subdict = Nodes.Graphs.get(Any)
 		for N in subdict:
-			get_node("Behaviors/ViewMenuSplit/Container/Panel/DropDowns/"+Any).get_popup().add_item(N)
-			get_node("Behaviors/ViewMenuSplit/GraphEdit/Behaviors/"+Any).add_item(N)
+			get_node("ViewMenuSplit/Container/Panel/DropDowns/"+Any).get_popup().add_item(N)
+			get_node("ViewMenuSplit/GraphEdit/Behaviors/"+Any).add_item(N)
 
-func _on_Add_node_pressed() -> void:
+func _on_Add_pressed() -> void:
 	if (type == "" or node_name == ""):
 		return
 	var instanced = Nodes.Graphs.get(type).get(node_name)
@@ -60,6 +58,5 @@ func _on_Add_node_pressed() -> void:
 	else:
 		instanced = instanced.instance()
 	instanced.name = instanced.title 
-	$Behaviors/ViewMenuSplit/GraphEdit.add_child(instanced)
+	$ViewMenuSplit/GraphEdit.add_child(instanced)
 	idx+=1
-

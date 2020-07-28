@@ -163,6 +163,5 @@ __meta__ = {
 [connection signal="connection_request" from="ViewMenuSplit/StatesGraphEdit" to="ViewMenuSplit/StatesGraphEdit" method="_on_StatesGraphEdit_connection_request"]
 [connection signal="disconnection_request" from="ViewMenuSplit/StatesGraphEdit" to="ViewMenuSplit/StatesGraphEdit" method="_on_StatesGraphEdit_disconnection_request"]
 [connection signal="popup_request" from="ViewMenuSplit/StatesGraphEdit" to="ViewMenuSplit/StatesGraphEdit" method="_on_StatesGraphEdit_popup_request"]
-[connection signal="scroll_offset_changed" from="ViewMenuSplit/StatesGraphEdit" to="ViewMenuSplit/StatesGraphEdit" method="_on_StatesGraphEdit_scroll_offset_changed"]
 [connection signal="id_pressed" from="ViewMenuSplit/StatesGraphEdit/States" to="ViewMenuSplit/StatesGraphEdit" method="_on_States_id_pressed"]
 [connection signal="file_selected" from="ViewMenuSplit/StatesGraphEdit/Save" to="ViewMenuSplit/StatesGraphEdit" method="_on_save_file_selected"]

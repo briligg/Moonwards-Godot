@@ -1,5 +1,9 @@
 extends GraphEdit
 
+
+var idx : int = 0
+var last_mouse_pos : Vector2 = Vector2.ZERO
+
 var SceneNodes : Dictionary
 var Currently_selected : Node = null
 var OutputFile : ConfigFile = ConfigFile.new()
@@ -10,7 +14,7 @@ func _ready():
 		add_valid_connection_type(28,type)
 #		add_valid_connection_type(type, 28)
 
-func add_node(name : String):
+func load_node(name : String):
 	var REGEX : RegEx = RegEx.new()
 	REGEX.compile(".[A-Za-z]*[\\s*[A-Za-z]*]*[^0-9]")
 	var Result : Array = REGEX.search_all(name)
@@ -36,6 +40,23 @@ func add_node(name : String):
 			return
 		else:
 			print("Non-existant node ",Result[0].get_string() ,", check your Character Studio version, if this is a custom node, please use only letters and spaces for the title")
+
+func add_node_offset(type : String, node_name : String):
+	var node_start_pos = (scroll_offset + (last_mouse_pos - rect_global_position)) 
+	add_node(type, node_name, node_start_pos)
+
+func add_node(type : String, node_name : String, offset : Vector2 = Vector2.ZERO) -> void:
+	if (type == "" or node_name == ""):
+		return
+	var instanced = Nodes.Graphs.get(type).get(node_name)
+	if instanced is Node:
+		instanced = instanced.duplicate()
+	else:
+		instanced = instanced.instance()
+	instanced.offset = offset
+	instanced.name = instanced.title 
+	add_child(instanced)
+	idx += 1
 	
 func _input(event):
 	if event is InputEventKey:
@@ -94,16 +115,16 @@ func compile(connections):
 	OutputFile.set_value("ai_config", "connections", connections)
 
 func popup_add_menu():
-	$Behaviors.rect_position = get_tree().get_root().get_mouse_position()
+	$Behaviors.rect_position = last_mouse_pos
 	$Behaviors.popup()
 
 
 func open(SaveArray : Array):
 	for connection in SaveArray:
 		if not SceneNodes.has(connection.from):
-			add_node(connection.from)
+			load_node(connection.from)
 		if not SceneNodes.has(connection.to):
-			add_node(connection.to)
+			load_node(connection.to)
 
 func _on_node_selected(node):
 	Currently_selected = node
@@ -137,4 +158,5 @@ func _on_save_pressed():
 	$Save.popup_centered()
 
 func _on_GraphEdit_popup_request(position):
+	last_mouse_pos = position
 	popup_add_menu()

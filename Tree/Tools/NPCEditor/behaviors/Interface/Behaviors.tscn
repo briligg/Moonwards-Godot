@@ -1,13 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Tree/Tools/NPCEditor/behaviors/Interface/Graph_compiler.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Interface/NPCEditorTheme.tres" type="Theme" id=2]
+[ext_resource path="res://Tree/Tools/NPCEditor/behaviors/Interface/Behaviour_tree_editor.gd" type="Script" id=3]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends PopupMenu
 
 var menus : Array = []
-
+var type : String = \"\"
 
 func _ready():
 	for id in get_child_count():
@@ -16,23 +17,30 @@ func _ready():
 
 func _on_stimulus_id_pressed(_id):
 	menus[0].popup()
+	get_parent().add_node_offset(type, menus[0].get_item_text(_id))
 
 func _on_inhibitors_id_pressed(_id):
 	menus[1].popup()
+	get_parent().add_node_offset(type, menus[1].get_item_text(_id))
 
 func _on_actions_id_pressed(_id):
 	menus[2].popup()
+	get_parent().add_node_offset(type, menus[2].get_item_text(_id))
 
 func _on_misc_id_pressed(_id):
 	menus[3].popup()
+	get_parent().add_node_offset(type, menus[3].get_item_text(_id))
+	
 
 func _on_custom_id_pressed(_id):
 	menus[4].popup()
+	get_parent().add_node_offset(type, menus[4].get_item_text(_id))
 
 func _on_Behaviors_id_pressed(id):
 	if menus[id] is PopupMenu:
 		menus[id].rect_position =  get_tree().get_root().get_mouse_position()
 		menus[id].popup()
+		type = get_item_text(id)
 "
 
 [node name="Behaviors" type="VSplitContainer"]
@@ -43,6 +51,7 @@ margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
 dragger_visibility = 1
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -217,7 +226,7 @@ margin_left = 433.528
 margin_top = 153.245
 margin_right = 515.528
 margin_bottom = 241.245
-items = [ "Stimulus", null, 0, false, false, 0, 0, null, "", false, "Inhibitors", null, 0, false, false, 1, 0, null, "", false, "Actions", null, 0, false, false, 2, 0, null, "", false, "Misc", null, 0, false, false, 3, 0, null, "", false, "Custom", null, 0, false, false, 4, 0, null, "", false ]
+items = [ "stimulus", null, 0, false, false, 0, 0, null, "", false, "inhibitors", null, 0, false, false, 1, 0, null, "", false, "actions", null, 0, false, false, 2, 0, null, "", false, "misc", null, 0, false, false, 3, 0, null, "", false ]
 script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -234,21 +243,14 @@ __meta__ = {
 margin_right = 82.0
 margin_bottom = 88.0002
 
-[node name="custom" type="PopupMenu" parent="ViewMenuSplit/GraphEdit/Behaviors"]
-margin_right = 82.0
-margin_bottom = 88.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="misc" type="PopupMenu" parent="ViewMenuSplit/GraphEdit/Behaviors"]
+[node name="actions" type="PopupMenu" parent="ViewMenuSplit/GraphEdit/Behaviors"]
 margin_right = 82.0
 margin_bottom = 88.0002
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="actions" type="PopupMenu" parent="ViewMenuSplit/GraphEdit/Behaviors"]
+[node name="misc" type="PopupMenu" parent="ViewMenuSplit/GraphEdit/Behaviors"]
 margin_right = 82.0
 margin_bottom = 88.0002
 __meta__ = {
@@ -275,13 +277,13 @@ __meta__ = {
 }
 [connection signal="pressed" from="ViewMenuSplit/Container/type2/Open" to="ViewMenuSplit/GraphEdit" method="_on_Button3_pressed"]
 [connection signal="pressed" from="ViewMenuSplit/Container/type2/Save" to="ViewMenuSplit/GraphEdit" method="_on_save_pressed"]
+[connection signal="pressed" from="ViewMenuSplit/Container/Add" to="." method="_on_Add_pressed"]
 [connection signal="connection_request" from="ViewMenuSplit/GraphEdit" to="ViewMenuSplit/GraphEdit" method="_on_GraphEdit_connection_request"]
 [connection signal="disconnection_request" from="ViewMenuSplit/GraphEdit" to="ViewMenuSplit/GraphEdit" method="_on_GraphEdit_disconnection_request"]
 [connection signal="popup_request" from="ViewMenuSplit/GraphEdit" to="ViewMenuSplit/GraphEdit" method="_on_GraphEdit_popup_request"]
 [connection signal="id_pressed" from="ViewMenuSplit/GraphEdit/Behaviors" to="ViewMenuSplit/GraphEdit/Behaviors" method="_on_Behaviors_id_pressed"]
 [connection signal="id_pressed" from="ViewMenuSplit/GraphEdit/Behaviors/stimulus" to="ViewMenuSplit/GraphEdit/Behaviors" method="_on_stimulus_id_pressed"]
 [connection signal="id_pressed" from="ViewMenuSplit/GraphEdit/Behaviors/inhibitors" to="ViewMenuSplit/GraphEdit/Behaviors" method="_on_inhibitors_id_pressed"]
-[connection signal="id_pressed" from="ViewMenuSplit/GraphEdit/Behaviors/custom" to="ViewMenuSplit/GraphEdit/Behaviors" method="_on_custom_id_pressed"]
-[connection signal="id_pressed" from="ViewMenuSplit/GraphEdit/Behaviors/misc" to="ViewMenuSplit/GraphEdit/Behaviors" method="_on_misc_id_pressed"]
 [connection signal="id_pressed" from="ViewMenuSplit/GraphEdit/Behaviors/actions" to="ViewMenuSplit/GraphEdit/Behaviors" method="_on_actions_id_pressed"]
+[connection signal="id_pressed" from="ViewMenuSplit/GraphEdit/Behaviors/misc" to="ViewMenuSplit/GraphEdit/Behaviors" method="_on_misc_id_pressed"]
 [connection signal="file_selected" from="ViewMenuSplit/GraphEdit/Save" to="ViewMenuSplit/GraphEdit" method="_on_save_file_selected"]
