@@ -14,7 +14,7 @@ var viewport: Node = null
 export(PackedScene) var content = null
 export(Vector2) var viewport_size = Vector2(ProjectSettings.get_setting("display/window/size/width"),
 		ProjectSettings.get_setting("display/window/size/height"))
-export(bool) var hologram = false
+export(bool) var hologram = false setget set_holo
 
 # Mouse events for Area
 func _on_area_input_event(_camera, event, click_pos, _click_normal, _shape_idx):
@@ -59,7 +59,6 @@ func _on_area_input_event(_camera, event, click_pos, _click_normal, _shape_idx):
 	# Send the event to the viewport
 	viewport.input(event)
 
-
 func _ready():
 	set_process_input(false)
 	viewport = get_node("Viewport")
@@ -92,3 +91,16 @@ func _stop_interaction(body):
 	var player = body.get_parent()
 	if(player.has_method("HideMouseCursor")):
 		player.call("HideMouseCursor")
+
+func set_holo(val):
+	if val:
+		var mat = $Area/Quad.get_surface_material(0)
+		mat.albedo_color.a = 0.7
+		mat.flags_transparent = true
+		$Area/Quad.set_surface_material(0, mat)
+	else:
+		var mat = $Area/Quad.get_surface_material(0)
+		mat.albedo_color.a = 1
+		mat.flags_transparent = false
+		$Area/Quad.set_surface_material(0, mat)
+	hologram = val
