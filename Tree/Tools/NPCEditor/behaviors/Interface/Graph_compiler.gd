@@ -40,8 +40,7 @@ func add_node(name : String):
 func _input(event):
 	if event is InputEventKey:
 		if Input.is_action_pressed("Shift") and Input.is_key_pressed(KEY_A):
-			$Behaviors.rect_position = get_tree().get_root().get_mouse_position()
-			$Behaviors.popup()
+			popup_add_menu()
 		if Input.is_key_pressed(KEY_DELETE) and Currently_selected != null:
 			var all_connections : Array = get_connection_list()
 			for connection in all_connections:
@@ -94,7 +93,9 @@ func compile(connections):
 			OutputFile.set_value("node_signals", node.name, node_info)
 	OutputFile.set_value("ai_config", "connections", connections)
 
-
+func popup_add_menu():
+	$Behaviors.rect_position = get_tree().get_root().get_mouse_position()
+	$Behaviors.popup()
 
 
 func open(SaveArray : Array):
@@ -118,29 +119,22 @@ func is_slot_occupied(to_port, to):
 			return true
 
 func _on_GraphEdit_connection_request(from, from_slot, to, to_slot) -> void:
-	print("Requesting conection from node: ", from, " port: ", from_slot, " to node: ", to, " port: ", to_slot)
 	if from != to:
 		connect_node(from, from_slot, to, to_slot)
 		if get_node(to).has_signal("connected_to"):
 			get_node(to).emit_signal("connected_to", to_slot, 
 				get_node(from).get_slot_type_right(from_slot))
 
-
 func _on_GraphEdit_disconnection_request(from, from_slot, to, to_slot) -> void:
 	disconnect_node(from, from_slot, to, to_slot )
 	get_node(to).emit_signal("disconnected_from", to_slot)
 
-
-
-func _on_GraphEdit_node_selected(node : GraphNode):
-	print(node.get_slot_type_right(0), ", ",  node.get_slot_type_left(0))
-	pass # Replace with function body.
-
-
 func _on_save_file_selected(path):
 	OutputFile.save(path)
-
 
 func _on_save_pressed():
 	compile(get_connection_list())
 	$Save.popup_centered()
+
+func _on_GraphEdit_popup_request(position):
+	popup_add_menu()

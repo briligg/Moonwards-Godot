@@ -5,6 +5,8 @@ var Behaviors : Array = []
 var Behavior_names : Array = []
 
 onready var BehaviorList : ItemList = $ViewMenuSplit/Container/ScrollContainer/Behaviors
+onready var BehaviorMenu : PopupMenu = $ViewMenuSplit/StatesGraphEdit/States
+onready var Graph : GraphEdit = $ViewMenuSplit/StatesGraphEdit
 
 func _ready() -> void:
 	var dir = Directory.new()
@@ -18,7 +20,7 @@ func _ready() -> void:
 
 func list_behaviors():
 	for names in Behavior_names:
-		print(names)
+		BehaviorMenu.add_item(names)
 		BehaviorList.add_item(names)
 
 func load_behaviors_in(path : String) -> void:
@@ -45,15 +47,13 @@ func load_behaviors_in(path : String) -> void:
 		Dir.list_dir_end()
 	else: 
 		print_debug("Error accessing ", path)
-		
-func add_state(text):
-	var node : GraphNode = GraphNode.new()
-	node.title = text
-	node.add_child(Label.new())
-	node.set_slot(0, true, 1, Color(1,1,1,1), true, 1, Color(1,1,1,1))
-	$ViewMenuSplit/StatesGraphEdit.add_child(node)
+
+func save_state_machine():
+	var list = Graph.get_connection_list()
+	pass
+
 func _on_Behaviors_item_selected(index):
 	current_idx = index
 
 func _on_Add_pressed():
-	add_state(BehaviorList.get_item_text(current_idx))
+	Graph.add_state(BehaviorList.get_item_text(current_idx))

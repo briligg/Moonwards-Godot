@@ -1,0 +1,168 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Tree/Tools/NPCEditor/States/States.gd" type="Script" id=1]
+[ext_resource path="res://Tree/Tools/NPCEditor/States/Interface/StatesGraphEdit.gd" type="Script" id=2]
+[ext_resource path="res://Tree/addons/inspector-gadget/src/inspector_gadget.gd" type="Script" id=3]
+
+[node name="States" type="VSplitContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+dragger_visibility = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ViewMenuSplit" type="HSplitContainer" parent="."]
+margin_right = 1912.0
+margin_bottom = 1044.0
+
+[node name="Container" type="VBoxContainer" parent="ViewMenuSplit"]
+margin_right = 280.0
+margin_bottom = 1044.0
+rect_min_size = Vector2( 280, 0 )
+
+[node name="type2" type="HBoxContainer" parent="ViewMenuSplit/Container"]
+margin_right = 280.0
+margin_bottom = 20.0
+
+[node name="Open" type="Button" parent="ViewMenuSplit/Container/type2"]
+margin_right = 138.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Open"
+
+[node name="Save" type="Button" parent="ViewMenuSplit/Container/type2"]
+margin_left = 142.0
+margin_right = 280.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Save"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ViewMenuSplit/Container"]
+margin_top = 24.0
+margin_right = 280.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 0, 120 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Behaviors" type="ItemList" parent="ViewMenuSplit/Container/ScrollContainer"]
+margin_right = 280.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="selection" type="HBoxContainer" parent="ViewMenuSplit/Container"]
+margin_top = 148.0
+margin_right = 280.0
+margin_bottom = 162.0
+
+[node name="title" type="Label" parent="ViewMenuSplit/Container/selection"]
+margin_right = 59.0
+margin_bottom = 14.0
+text = "Selected:"
+
+[node name="name" type="Label" parent="ViewMenuSplit/Container/selection"]
+margin_left = 63.0
+margin_right = 280.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = " None"
+align = 1
+
+[node name="Add" type="Button" parent="ViewMenuSplit/Container"]
+margin_top = 166.0
+margin_right = 280.0
+margin_bottom = 186.0
+text = "Add to Tree"
+
+[node name="HSeparator" type="HSeparator" parent="ViewMenuSplit/Container"]
+margin_top = 190.0
+margin_right = 280.0
+margin_bottom = 194.0
+
+[node name="InspectorGadgetScrollContainer" type="ScrollContainer" parent="ViewMenuSplit/Container"]
+margin_top = 198.0
+margin_right = 280.0
+margin_bottom = 598.0
+rect_min_size = Vector2( 0, 400 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InspectorGadget" type="MarginContainer" parent="ViewMenuSplit/Container/InspectorGadgetScrollContainer"]
+margin_right = 280.0
+margin_bottom = 400.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+node_path = NodePath("../../../../../TemplateNPC")
+subnames = ""
+editable = true
+property_blacklist = [ "NPC_File" ]
+custom_gadget_paths = {
+
+}
+custom_gadget_metadata = {
+
+}
+container_type_hints = {
+":array_value:4": 0,
+":array_value:5": "",
+":dictionary_value:[keys]": "",
+":dictionary_value:[values]": ""
+}
+filter_built_in_properties = true
+
+[node name="HSeparator2" type="HSeparator" parent="ViewMenuSplit/Container"]
+margin_top = 602.0
+margin_right = 280.0
+margin_bottom = 606.0
+
+[node name="StatesGraphEdit" type="GraphEdit" parent="ViewMenuSplit"]
+margin_left = 292.0
+margin_right = 1912.0
+margin_bottom = 1044.0
+right_disconnects = true
+scroll_offset = Vector2( -184, -116 )
+script = ExtResource( 2 )
+
+[node name="States" type="PopupMenu" parent="ViewMenuSplit/StatesGraphEdit"]
+margin_left = 433.528
+margin_top = 153.245
+margin_right = 515.528
+margin_bottom = 241.245
+
+[node name="Save" type="FileDialog" parent="ViewMenuSplit/StatesGraphEdit"]
+margin_left = 14.0
+margin_top = 65.0
+margin_right = 468.0
+margin_bottom = 281.0
+rect_min_size = Vector2( 0, 0 )
+window_title = "Guardar un Archivo"
+filters = PoolStringArray( "*.jbt" )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="ViewMenuSplit/Container/type2/Open" to="ViewMenuSplit/StatesGraphEdit" method="_on_Button3_pressed"]
+[connection signal="pressed" from="ViewMenuSplit/Container/type2/Save" to="ViewMenuSplit/StatesGraphEdit" method="_on_save_pressed"]
+[connection signal="item_selected" from="ViewMenuSplit/Container/ScrollContainer/Behaviors" to="." method="_on_Behaviors_item_selected"]
+[connection signal="pressed" from="ViewMenuSplit/Container/Add" to="." method="_on_Add_pressed"]
+[connection signal="connection_request" from="ViewMenuSplit/StatesGraphEdit" to="ViewMenuSplit/StatesGraphEdit" method="_on_StatesGraphEdit_connection_request"]
+[connection signal="disconnection_request" from="ViewMenuSplit/StatesGraphEdit" to="ViewMenuSplit/StatesGraphEdit" method="_on_StatesGraphEdit_disconnection_request"]
+[connection signal="popup_request" from="ViewMenuSplit/StatesGraphEdit" to="ViewMenuSplit/StatesGraphEdit" method="_on_StatesGraphEdit_popup_request"]
+[connection signal="scroll_offset_changed" from="ViewMenuSplit/StatesGraphEdit" to="ViewMenuSplit/StatesGraphEdit" method="_on_StatesGraphEdit_scroll_offset_changed"]
+[connection signal="id_pressed" from="ViewMenuSplit/StatesGraphEdit/States" to="ViewMenuSplit/StatesGraphEdit" method="_on_States_id_pressed"]
+[connection signal="file_selected" from="ViewMenuSplit/StatesGraphEdit/Save" to="ViewMenuSplit/StatesGraphEdit" method="_on_save_file_selected"]
