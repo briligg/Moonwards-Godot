@@ -319,6 +319,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://SceneComponent/World/DynamicLoading/ReversingVisibilityTrigger.gd"
 }, {
+"base": "Control",
+"class": "Slide",
+"language": "GDScript",
+"path": "res://SceneComponent/Display/Slide.gd"
+}, {
+"base": "Viewport",
+"class": "SlideViewport",
+"language": "GDScript",
+"path": "res://SceneComponent/Display/SlideViewport.gd"
+}, {
 "base": "AEntity",
 "class": "StaticEntity",
 "language": "GDScript",
@@ -483,7 +493,9 @@ _global_script_class_icons={
 "VisualShaderNodeVectorHeightMix": "",
 "Workstation": "",
 "Slide": "res://Assets/Icons/Slide.svg",
-"SlideViewport": "res://Assets/Icons/SlideViewport.svg"
+"SlideViewport": "res://Assets/Icons/SlideViewport.svg",
+"StaticEntity": "",
+"VehicleEntity": ""
 }
 
 [application]
