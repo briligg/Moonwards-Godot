@@ -2,37 +2,26 @@
 
 [node name="SlideControl" type="Control"]
 anchor_right = 1.0
-anchor_bottom = 1.185
-margin_bottom = 0.199951
-rect_min_size = Vector2( 1920, 1280 )
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1920.0
-margin_bottom = 1080.0
+anchor_right = 1.0
+anchor_bottom = 0.8
 color = Color( 0.0431373, 0.321569, 0.917647, 0.470588 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="."]
-anchor_left = 1.0
-anchor_top = 0.841
+anchor_left = 0.8
+anchor_top = 0.85
 anchor_right = 1.0
-anchor_bottom = 0.841
-margin_left = -379.258
-margin_top = 20.1807
-margin_right = -17.2578
-margin_bottom = 102.181
+anchor_bottom = 0.93
 
 [node name="Button2" type="Button" parent="."]
-anchor_left = 1.0
-anchor_top = 0.841
-anchor_right = 1.0
-anchor_bottom = 0.841
-margin_left = -1903.64
-margin_top = 17.511
-margin_right = -1541.64
-margin_bottom = 99.511
+anchor_top = 0.85
+anchor_right = 0.2
+anchor_bottom = 0.93
