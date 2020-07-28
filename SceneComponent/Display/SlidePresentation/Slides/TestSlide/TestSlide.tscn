@@ -1,25 +1,22 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://SceneComponent/Display/Slide.gd" type="Script" id=1]
-[ext_resource path="res://SceneComponent/Display/Presentation.gd" type="Script" id=2]
-[ext_resource path="res://SceneComponent/Display/SlideViewport.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Slides/TestSlide/Slide03VP.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Slides/TestSlide/SpaceTransportMain2.jpg" type="Texture" id=5]
+[ext_resource path="res://SceneComponent/Display/SlidePresentation/Slides/TestSlide/SpaceTransportMain2.jpg" type="Texture" id=2]
+[ext_resource path="res://SceneComponent/Display/SlidePresentation/Slide.gd" type="Script" id=4]
+[ext_resource path="res://SceneComponent/Display/SlidePresentation/Presentation.gd" type="Script" id=5]
 
 [node name="Presentation" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 0.00012207
-script = ExtResource( 2 )
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Slide1" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -44,10 +41,10 @@ __meta__ = {
 }
 
 [node name="NextButton" type="Button" parent="Slide1/ColorRect"]
-margin_left = 1600.0
-margin_top = 900.0
-margin_right = 1642.0
-margin_bottom = 920.0
+margin_left = 1728.85
+margin_top = 1109.76
+margin_right = 1770.85
+margin_bottom = 1129.76
 rect_scale = Vector2( 4, 4 )
 focus_mode = 0
 shortcut_in_tooltip = false
@@ -58,9 +55,10 @@ __meta__ = {
 }
 
 [node name="Slide2" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
+script = ExtResource( 4 )
 
 [node name="ColorRect2" type="ColorRect" parent="Slide2"]
 anchor_right = 1.0
@@ -86,7 +84,7 @@ margin_left = 259.305
 margin_top = 55.3856
 margin_right = 1659.31
 margin_bottom = 705.386
-texture = ExtResource( 5 )
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -123,7 +121,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -146,14 +144,6 @@ stretch_shrink = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="SlideViewport" type="Viewport" parent="Slide3/ColorRect3/ViewportContainer"]
-size = Vector2( 425, 150 )
-own_world = true
-handle_input_locally = false
-render_target_update_mode = 0
-script = ExtResource( 3 )
-Content = ExtResource( 4 )
 
 [node name="Text2" type="RichTextLabel" parent="Slide3/ColorRect3"]
 margin_left = 449.0

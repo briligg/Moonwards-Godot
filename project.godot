@@ -302,7 +302,7 @@ _global_script_classes=[ {
 "base": "Control",
 "class": "Presentation",
 "language": "GDScript",
-"path": "res://SceneComponent/Display/Presentation.gd"
+"path": "res://SceneComponent/Display/SlidePresentation/Presentation.gd"
 }, {
 "base": "Reference",
 "class": "ResourceSignals",
@@ -322,12 +322,12 @@ _global_script_classes=[ {
 "base": "Control",
 "class": "Slide",
 "language": "GDScript",
-"path": "res://SceneComponent/Display/Slide.gd"
+"path": "res://SceneComponent/Display/SlidePresentation/Slide.gd"
 }, {
 "base": "Viewport",
 "class": "SlideViewport",
 "language": "GDScript",
-"path": "res://SceneComponent/Display/SlideViewport.gd"
+"path": "res://SceneComponent/Display/SlidePresentation/SlideViewport.gd"
 }, {
 "base": "AEntity",
 "class": "StaticEntity",

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/lightmask.png-25f4854aee4d70fb3a67bd96629a06b5.s3tc.stex"
-path.etc2="res://.import/lightmask.png-25f4854aee4d70fb3a67bd96629a06b5.etc2.stex"
+path.s3tc="res://.import/lightmask.png-d5ded26f26bbc7da5e0e66a7fbfc68ac.s3tc.stex"
+path.etc2="res://.import/lightmask.png-d5ded26f26bbc7da5e0e66a7fbfc68ac.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Slides/lightmask.png"
-dest_files=[ "res://.import/lightmask.png-25f4854aee4d70fb3a67bd96629a06b5.s3tc.stex", "res://.import/lightmask.png-25f4854aee4d70fb3a67bd96629a06b5.etc2.stex" ]
+source_file="res://SceneComponent/Display/SlidePresentation/Slides/lightmask.png"
+dest_files=[ "res://.import/lightmask.png-d5ded26f26bbc7da5e0e66a7fbfc68ac.s3tc.stex", "res://.import/lightmask.png-d5ded26f26bbc7da5e0e66a7fbfc68ac.etc2.stex" ]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=1
-flags/repeat=1
+flags/repeat=true
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false
@@ -32,5 +32,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
