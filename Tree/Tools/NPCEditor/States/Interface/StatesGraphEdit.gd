@@ -29,7 +29,7 @@ func _on_StatesGraphEdit_popup_request(position):
 	popup_add_menu(position)
 
 func _on_States_id_pressed(id):
-	var node_start_pos =  -(scroll_offset + (last_mouse_pos - rect_global_position)) 
+	var node_start_pos = -(scroll_offset + (last_mouse_pos - rect_global_position))/zoom 
 	add_state($States.get_item_text(id), node_start_pos)
 
 

@@ -42,7 +42,7 @@ func load_node(name : String):
 			print("Non-existant node ",Result[0].get_string() ,", check your Character Studio version, if this is a custom node, please use only letters and spaces for the title")
 
 func add_node_offset(type : String, node_name : String):
-	var node_start_pos = (scroll_offset + (last_mouse_pos - rect_global_position)) 
+	var node_start_pos = (scroll_offset + (last_mouse_pos - rect_global_position))/zoom 
 	add_node(type, node_name, node_start_pos)
 
 func add_node(type : String, node_name : String, offset : Vector2 = Vector2.ZERO) -> void:
