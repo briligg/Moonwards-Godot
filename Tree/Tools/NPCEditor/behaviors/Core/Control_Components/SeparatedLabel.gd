@@ -1,6 +1,7 @@
 extends HBoxContainer
 class_name DoubleLabel
 
+
 func get_class_dropdown(classname : String) -> Control:
 	if not Nodes.custom_types.has(classname):
 		return null
@@ -16,9 +17,14 @@ func filter_input_label(input : String) -> void:
 	if input.begins_with("_s_prop_dropdown_"):
 		processed = input.trim_prefix("_s_prop_dropdown_")
 		input = input.trim_suffix(processed)
+	elif input.begins_with("_s_file:"):
+		processed = input.trim_prefix("_s_file:")
+		input = input.trim_suffix(processed)
 	match input:
+		"_s_file:":
+			Label1 = FileLabel.new(processed)
 		"_s_text_edit":
-			Label1 = LineEdit.new()
+			Label1 = LineEdit.new() 
 		"_s_prop_dropdown_":
 			Label1 = get_class_dropdown(processed)
 		"_s_int":

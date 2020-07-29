@@ -22,7 +22,7 @@ func _on_connection_to(slot : int, type : int):
 					Nodes.Color(type))
 				slots_to_reset.append(slots)
 
-func  _on_disconnected_from(slot:int):
+func  _on_disconnected_from(_slot:int):
 	for slots in slots_to_reset:
 		set_slot(slots, 
 					is_slot_enabled_left(slots), 

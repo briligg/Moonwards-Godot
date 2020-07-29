@@ -84,6 +84,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Manager/HelperClasses/EnumHelper.gd"
 }, {
+"base": "HBoxContainer",
+"class": "FileLabel",
+"language": "GDScript",
+"path": "res://Tree/Tools/NPCEditor/behaviors/Core/Control_Components/FileSeparator.gd"
+}, {
 "base": "InspectorGadgetBase",
 "class": "GadgetAABB",
 "language": "GDScript",
@@ -272,7 +277,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "NpcDefinitions",
 "language": "GDScript",
-"path": "res://Tree/Tools/NPCEditor/behaviors/Config/Definitions.gd"
+"path": "res://Tree/Tools/NPCEditor/Config/Definitions.gd"
 }, {
 "base": "Reference",
 "class": "ResourceSignals",
@@ -315,6 +320,7 @@ _global_script_class_icons={
 "EntityData": "",
 "EntitySignals": "",
 "EnumHelper": "",
+"FileLabel": "",
 "GadgetAABB": "",
 "GadgetBasis": "",
 "GadgetBool": "",
