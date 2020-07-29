@@ -32,18 +32,18 @@ func _ready():
 func _on_next_pressed():
 	if slide_size > slide_index + 1:
 		slide_index += 1
-		slide_control.texture = texture_slides[slide_index]
 	else:
-		slide_control.texture = texture_slides[0]
 		slide_index = 0
+	slide_control.texture = texture_slides[slide_index]
+	slide_control.text = text_slides[slide_index]
 
 func _on_prev_pressed():
 	if slide_index > 0:
 		slide_index -= 1
-		slide_control.texture = texture_slides[slide_index]
 	else:
-		slide_control.texture = texture_slides[slide_size - 1]
 		slide_index = slide_size - 1
+	slide_control.texture = texture_slides[slide_index]
+	slide_control.text = text_slides[slide_index]
 
 # Mouse events for Area
 func _on_area_input_event(_camera, event, click_pos, _click_normal, _shape_idx):
