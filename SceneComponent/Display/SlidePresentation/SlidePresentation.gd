@@ -10,11 +10,40 @@ extends Spatial
 # Member variables
 var prev_pos = null
 var last_click_pos = null
-var viewport: Node = null
-export(PackedScene) var content = null
-export(Vector2) var viewport_size = Vector2(ProjectSettings.get_setting("display/window/size/width"),
-		ProjectSettings.get_setting("display/window/size/height"))
-export(bool) var hologram = false setget set_holo
+onready var viewport = $Viewport
+onready var slide_control = $Viewport/SlideControl2
+
+export(Array, Texture) var texture_slides
+export(Array, String) var text_slides
+var slide_index: int = 0
+var slide_size: int = 0
+
+func _ready():
+	get_node("Area").connect("input_event", self, "_on_area_input_event")
+	$Viewport/SlideControl2.connect("next_pressed", self, "_on_next_pressed")
+	$Viewport/SlideControl2.connect("prev_pressed", self, "_on_prev_pressed")
+	
+	if texture_slides.size() != text_slides.size():
+		assert(false)
+		Log.error(self, "_ready", "Texture array size is not the same as text array size.")
+	else:
+		slide_size = texture_slides.size()
+	
+func _on_next_pressed():
+	if slide_size > slide_index + 1:
+		slide_index += 1
+		slide_control.texture = texture_slides[slide_index]
+	else:
+		slide_control.texture = texture_slides[0]
+		slide_index = 0
+
+func _on_prev_pressed():
+	if slide_index > 0:
+		slide_index -= 1
+		slide_control.texture = texture_slides[slide_index]
+	else:
+		slide_control.texture = texture_slides[slide_size - 1]
+		slide_index = slide_size - 1
 
 # Mouse events for Area
 func _on_area_input_event(_camera, event, click_pos, _click_normal, _shape_idx):
@@ -42,7 +71,7 @@ func _on_area_input_event(_camera, event, click_pos, _click_normal, _shape_idx):
 	pos.y *= -1
 	pos += Vector2(1, 1)
 	pos = pos / 2
-  
+
 	# Convert pos to be in range of the viewport
 	pos.x *= viewport.size.x
 	pos.y *= viewport.size.y
@@ -58,49 +87,3 @@ func _on_area_input_event(_camera, event, click_pos, _click_normal, _shape_idx):
 	
 	# Send the event to the viewport
 	viewport.input(event)
-
-func _ready():
-	set_process_input(false)
-	viewport = get_node("Viewport")
-	viewport.size = viewport_size
-	if content != null:
-		viewport.add_child(content.instance())
-	else:
-		Log.trace(self, "_ready", "Screen View without a content")
-	
-	get_node("Area").connect("input_event", self, "_on_area_input_event")
-	get_node("InteractionTrigger").connect("body_entered", self, "_start_interaction")
-	get_node("InteractionTrigger").connect("body_exited", self, "_stop_interaction")
-	
-	if hologram:
-		var mat = $Area/Quad.get_surface_material(0)
-		mat.albedo_color.a = 0.7
-		mat.flags_transparent = true
-		$Area/Quad.set_surface_material(0, mat)
-
-
-func _start_interaction(body):
-	set_process_input(true)
-	var player = body.get_parent()
-	if(player.has_method("ShowMouseCursor")):
-		player.call("ShowMouseCursor")
-
-
-func _stop_interaction(body):
-	set_process_input(false)
-	var player = body.get_parent()
-	if(player.has_method("HideMouseCursor")):
-		player.call("HideMouseCursor")
-
-func set_holo(val):
-	if val:
-		var mat = $Area/Quad.get_surface_material(0)
-		mat.albedo_color.a = 0.7
-		mat.flags_transparent = true
-		$Area/Quad.set_surface_material(0, mat)
-	else:
-		var mat = $Area/Quad.get_surface_material(0)
-		mat.albedo_color.a = 1
-		mat.flags_transparent = false
-		$Area/Quad.set_surface_material(0, mat)
-	hologram = val
