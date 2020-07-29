@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/SpaceTransportMain2.jpg-b9785b8d0f398c77401c3e797e3ab8e6.s3tc.stex"
-path.etc2="res://.import/SpaceTransportMain2.jpg-b9785b8d0f398c77401c3e797e3ab8e6.etc2.stex"
+path.s3tc="res://.import/lightmasky.png-dea0a77e91e4719080557c75c56e4d20.s3tc.stex"
+path.etc2="res://.import/lightmasky.png-dea0a77e91e4719080557c75c56e4d20.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://SceneComponent/Display/SlidePresentation/Slides/TestSlide/SpaceTransportMain2.jpg"
-dest_files=[ "res://.import/SpaceTransportMain2.jpg-b9785b8d0f398c77401c3e797e3ab8e6.s3tc.stex", "res://.import/SpaceTransportMain2.jpg-b9785b8d0f398c77401c3e797e3ab8e6.etc2.stex" ]
+source_file="res://SceneComponent/Display/SlidePresentation/Slides/lightmasky.png"
+dest_files=[ "res://.import/lightmasky.png-dea0a77e91e4719080557c75c56e4d20.s3tc.stex", "res://.import/lightmasky.png-dea0a77e91e4719080557c75c56e4d20.etc2.stex" ]
 
 [params]
 
