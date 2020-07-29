@@ -69,7 +69,6 @@ stream = ExtResource( 3 )
 shape = SubResource( 1 )
 
 [node name="AudioTourMarker_Indoor" type="MeshInstance" parent="."]
-transform = Transform( 1.06667, 0, 0, 0, 1.06667, 0, 0, 0, 1.06667, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = null
 
@@ -77,5 +76,3 @@ material/0 = null
 anims/Idle = SubResource( 3 )
 "anims/Interacted With" = SubResource( 4 )
 script = ExtResource( 5 )
-[connection signal="interacted_by" from="." to="." method="_play_sound"]
-[connection signal="finished" from="Audio" to="." method="_stop"]

@@ -9,11 +9,14 @@ func _ready() -> void :
 	#Will crash if no file is given to the AudioSphere.
 	assert(audio_file.resource_path != "")
 	
+	#Listen for when play_sound is called
+	connect("interacted_by", self, "_play_sound")
+	$Audio.connect("finished", self, "_stop")
+	
 	audio_file.loop = false
 	$Audio.stream = audio_file
 
-#warning-ignore:unused_argument
-func _play_sound(interactor_ray_cast):
+func _play_sound(_interactor_ray_cast):
 	#Player requested audio. Play the audio.
 	Signals.Audio.emit_signal(Signals.Audio.SOLO_AUDIO_STREAM_BEGUN)
 	$Audio.play()
