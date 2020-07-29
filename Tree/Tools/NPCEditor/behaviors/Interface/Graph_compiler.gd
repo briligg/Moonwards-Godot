@@ -96,13 +96,13 @@ func compile(connections):
 	var node : Control
 	for child in get_child_count():
 		var node_info : Array = []
-		node = get_child(child)
+		node = get_child(child) #These are most of the time GraphNodes
 		
-		var nodevars : Array = []
-		for child2 in node.get_children():
-			if not child2 is GraphNode:
-				continue
-			nodevars.append(recursive_get_variable(child))
+		var nodevars : Array = [] # Here the variables will be stored
+		for child2 in node.get_children(): #For each children in the GraphNode
+			if node is GraphNode: #Checks if it's actuallly a GraphNode
+				var found = recursive_get_variable(child2)
+				nodevars.append(found)
 		OutputFile.set_value("variables", node.name, nodevars)
 		if node is GraphNode:
 			for inputs in max(
