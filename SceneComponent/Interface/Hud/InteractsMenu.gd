@@ -27,8 +27,7 @@ func _create_button(interact_name : String, info : String, interactable : Node) 
 	#Create a separator to give buttons more space between each other.
 	#Add constant override has to be deferred 
 	#or else it will get overwritten by Godot.
-	var child_count : int = button_parent.get_child_count() - 1
-	if child_count != 0 :
+	if not button_relations.empty() :
 		var separator : HSeparator = HSeparator.new()
 		separator.call_deferred("add_constant_override", "separation", 15)
 		separator.set("separation", true)
@@ -42,7 +41,7 @@ func _create_button(interact_name : String, info : String, interactable : Node) 
 	button_parent.call_deferred("add_child", new_button)
 	
 	#Grab focus if we are the first button to be created.
-	if child_count == 0 :
+	if button_relations.empty() :
 		new_button.call_deferred("grab_focus")
 	
 	#Listen for the button to be interacted with.
