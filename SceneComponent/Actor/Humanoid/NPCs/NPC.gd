@@ -20,17 +20,20 @@ export(String) var initial_state : String = ""
 func _ready():
 	randomize()
 	_load_states(NPC_File)
-	_start_machine()
+	
 
 func _create_signal(signal_name : String):
 	if not has_signal(signal_name):
 		add_user_signal(signal_name)
 
-func _load_states(state_file):
-	ai_script.load(state_file) 
-	_load_connection_dict(ai_script.get_value("config", "filtered_connections", []))
-	_load_behaviors_in_machine()
-	pass
+func _load_states(state_file : String):
+	if state_file != "":
+		ai_script.load(state_file) 
+		_load_connection_dict(ai_script.get_value("config", "filtered_connections", []))
+		_load_behaviors_in_machine()
+		_start_machine()
+	else:
+		print_debug("Error: No State Machine File selected")
 
 func _load_connection_dict(connections):
 	for elements in connections:
@@ -61,7 +64,7 @@ func _start_machine():
 			current_state = state 
 			_change_behavior(behaviors.get(current_state))
 			return
-	print_debug("This states file has no start state defined")
+	print_debug("Error: This states file has no start state defined")
 
 func _next_state(force : bool = false, condition = null):
 	#Sets the next state in the machine
@@ -127,7 +130,7 @@ func _define_connection(behavior : ConfigFile, from : String, from_port : String
 	if has_signal(signal_name) and has_method(function):
 			connect(signal_name, self, function, connection_bindings) 
 	else:
-		print_debug("Either a signal or a method is missing from the NPC")
+		print_debug("Warning: Either a signal or a method is missing from the NPC")
 		
 func _undefine_connection(behavior : ConfigFile):
 	for connection in behavior.get_value("ai_config", "connections", []):
