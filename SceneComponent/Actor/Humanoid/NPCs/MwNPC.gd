@@ -51,7 +51,6 @@ func play_global_sound(input, signals, variables):
 	add_child(sound_player)
 	sound_player.play()
 
-
 func play_3d_sound(input, signals, variables):
 	var path = get_variable_from_port(variables, 0)
 	var sound_player = AudioStreamPlayer3D.new()

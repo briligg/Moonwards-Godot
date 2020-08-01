@@ -7,12 +7,20 @@ func _ready():
 func add_state(text : String, position : Vector2 = Vector2.ZERO):
 	var node : GraphNode = GraphNode.new()
 	node.title = text
+	node.name = text
 	node.add_child(Label.new())
 	node.set_slot(0, true, 1, Color(1,1,1,1), true, 1, Color(1,1,1,1))
 	node.offset.x -= position.x
 	node.offset.y -= position.y
 	add_child(node)
-	
+
+func get_unique_nodes() -> Array:
+	#This function returns the names of the states in the graph
+	var arr : Array = []
+	for child in get_children():
+		if not child.name.begins_with("@"):
+			arr.append(child.name)
+	return arr
 	
 func popup_add_menu(position):
 	last_mouse_pos = position

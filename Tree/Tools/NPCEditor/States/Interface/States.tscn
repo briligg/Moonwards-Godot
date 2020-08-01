@@ -146,22 +146,23 @@ margin_right = 515.528
 margin_bottom = 241.245
 
 [node name="Save" type="FileDialog" parent="ViewMenuSplit/StatesGraphEdit"]
+visible = true
 margin_left = 14.0
 margin_top = 65.0
 margin_right = 468.0
 margin_bottom = 281.0
 rect_min_size = Vector2( 0, 0 )
 window_title = "Guardar un Archivo"
-filters = PoolStringArray( "*.jbt" )
+filters = PoolStringArray( "*.jsm" )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="ViewMenuSplit/Container/type2/Open" to="ViewMenuSplit/StatesGraphEdit" method="_on_Button3_pressed"]
-[connection signal="pressed" from="ViewMenuSplit/Container/type2/Save" to="ViewMenuSplit/StatesGraphEdit" method="_on_save_pressed"]
+[connection signal="pressed" from="ViewMenuSplit/Container/type2/Open" to="." method="_on_Open_pressed"]
+[connection signal="pressed" from="ViewMenuSplit/Container/type2/Save" to="." method="_on_Save_pressed"]
 [connection signal="item_selected" from="ViewMenuSplit/Container/ScrollContainer/Behaviors" to="." method="_on_Behaviors_item_selected"]
 [connection signal="pressed" from="ViewMenuSplit/Container/Add" to="." method="_on_Add_pressed"]
 [connection signal="connection_request" from="ViewMenuSplit/StatesGraphEdit" to="ViewMenuSplit/StatesGraphEdit" method="_on_StatesGraphEdit_connection_request"]
 [connection signal="disconnection_request" from="ViewMenuSplit/StatesGraphEdit" to="ViewMenuSplit/StatesGraphEdit" method="_on_StatesGraphEdit_disconnection_request"]
 [connection signal="popup_request" from="ViewMenuSplit/StatesGraphEdit" to="ViewMenuSplit/StatesGraphEdit" method="_on_StatesGraphEdit_popup_request"]
 [connection signal="id_pressed" from="ViewMenuSplit/StatesGraphEdit/States" to="ViewMenuSplit/StatesGraphEdit" method="_on_States_id_pressed"]
-[connection signal="file_selected" from="ViewMenuSplit/StatesGraphEdit/Save" to="ViewMenuSplit/StatesGraphEdit" method="_on_save_file_selected"]
+[connection signal="file_selected" from="ViewMenuSplit/StatesGraphEdit/Save" to="." method="_on_Save_file_selected"]
