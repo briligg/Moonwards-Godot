@@ -29,6 +29,9 @@ func _input(event : InputEvent) -> void :
 		if interactable != null :
 			on_interact_menu_request(interactable)
 
+func _make_hud_display_interactable(interactable : Interactable = null) -> void :
+	Signals.Hud.emit_signal(Signals.Hud.CLOSEST_INTERACTABLE_CHANGED, interactable)
+
 #Make Interactor have my Entity variable as it's user.
 func _ready() -> void :
 	interactor.owning_entity = self.entity
@@ -37,6 +40,9 @@ func _ready() -> void :
 	interactor.connect("interact_made_possible", self, "relay_signal", [INTERACT_MADE_POSSIBLE])
 	interactor.connect("interactable_entered_area", self, "relay_signal", [INTERACTABLE_ENTERED_REACH])
 	interactor.connect("interactable_left_area", self, "relay_signal", [INTERACTABLE_LEFT_REACH])
+	
+	#Display what is the closest interactable.
+	interactor.connect("closest_interactable_changed", self, "_make_hud_display_interactable")
 	
 	# call_deferred("_ready_deferred")
 

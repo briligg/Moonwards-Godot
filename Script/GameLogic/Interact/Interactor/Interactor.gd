@@ -13,6 +13,8 @@ var closest_interactable : Interactable
 
 var enabled: bool setget set_enabled
 
+#The closest interactable has changed.
+signal closest_interactable_changed(interactable)
 signal interactable_entered_area(interactable_node)
 signal interactable_left_area(interactable_node)
 signal interact_made_possible(string_closest_potential_interact)
@@ -56,6 +58,7 @@ func _physics_process(_delta : float) -> void:
 		#emit a signal saying that.
 		if previous_collider != null :
 			emit_signal("interact_made_impossible")
+			emit_signal("closest_interactable_changed", null)
 		interactables = []
 		previous_collider = null
 		closest_interactable = null
@@ -65,6 +68,7 @@ func _physics_process(_delta : float) -> void:
 	if previous_collider != closest_body :
 		var interact_info : String = closest_body.get_info()
 		emit_signal("interact_made_possible", interact_info)
+		emit_signal("closest_interactable_changed", closest_body)
 		previous_collider = closest_body
 		closest_interactable = closest_body
 

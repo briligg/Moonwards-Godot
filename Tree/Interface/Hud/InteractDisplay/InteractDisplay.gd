@@ -4,15 +4,18 @@ extends Label
 """
 
 func _ready() -> void :
-	Signals.Hud.connect(Signals.Hud.INTERACT_POSSIBLE, self, "show_interact_info")
-	Signals.Hud.connect(Signals.Hud.INTERACT_BECAME_IMPOSSIBLE, self, "interact_became_impossible")
+	Signals.Hud.connect(Signals.Hud.CLOSEST_INTERACTABLE_CHANGED, self, "show_interact_info")
 
 #Let the user know what interaction is possible.
-func show_interact_info( display_string : String ) -> void :
+func show_interact_info(new_interactable : Interactable) -> void :
+	#Hide the menu if there are no Interactables to interact with.
+	if new_interactable == null :
+		hide()
+		return
+	
 	text = "Press " 
-	text += OS.get_scancode_string(InputMap.get_action_list( "use" )[0].scancode)
-	text += " " + display_string
+	text += OS.get_scancode_string(InputMap.get_action_list("use")[0].scancode)
+	text += " to show InteractsMenu.\n"
+	text += "Press " + OS.get_scancode_string(InputMap.get_action_list("interact_with_closest")[0].scancode)
+	text += " to interact with " + new_interactable.title
 	show()
-
-func interact_became_impossible() -> void :
-	hide()
