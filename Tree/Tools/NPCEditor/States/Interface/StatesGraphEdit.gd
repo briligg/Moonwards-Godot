@@ -18,8 +18,9 @@ func get_unique_nodes() -> Array:
 	#This function returns the names of the states in the graph
 	var arr : Array = []
 	for child in get_children():
-		if not child.name.begins_with("@"):
-			arr.append(child.name)
+		if child is GraphNode:
+			if not child.name.begins_with("@"):
+				arr.append(child.name)
 	return arr
 	
 func popup_add_menu(position):

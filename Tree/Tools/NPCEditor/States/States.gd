@@ -50,7 +50,7 @@ func load_behaviors_in(path : String) -> void:
 					var BT = ConfigFile.new()
 					BT.load(file_name)
 					Behaviors.append(BT)
-					Behavior_routes.append(file_name)
+					Behavior_routes.append(Dir.get_current_dir()+file_name)
 					Behavior_names.append(file_name.trim_suffix(".jbt"))
 				else:
 					print_debug("Found a file that is not a BT")
