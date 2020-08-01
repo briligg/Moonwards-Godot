@@ -11,13 +11,15 @@ onready var BehaviorList : ItemList = $ViewMenuSplit/Container/ScrollContainer/B
 onready var BehaviorMenu : PopupMenu = $ViewMenuSplit/StatesGraphEdit/States
 onready var Graph : GraphEdit = $ViewMenuSplit/StatesGraphEdit
 
+export(String, DIR) var BehaviorsPath = "res://SceneComponent/Actor/Humanoid/NPCs/DefaultBehaviors"
+
 func _ready() -> void:
 	var dir = Directory.new()
 	dir.open(OS.get_user_data_dir())
 	dir.make_dir_recursive("behaviors")
 	load_behaviors_in(OS.get_user_data_dir()+"/behaviors")
 	#Loads User Defined Behaviors
-	load_behaviors_in("res://SceneComponent/Actor/Humanoid/NPCs/DefaultBehaviors")
+	load_behaviors_in(BehaviorsPath)
 	#Loads Default behaviors
 	list_behaviors()
 	
