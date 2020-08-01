@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Interface/SlideControl.tres" type="Theme" id=1]
 [ext_resource path="res://SceneComponent/Display/SlidePresentation/Slide2DControl.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
 
 [node name="Slide2DControl" type="Control"]
 anchor_right = 1.0
@@ -14,8 +21,8 @@ __meta__ = {
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
-anchor_bottom = 0.8
-color = Color( 0.0431373, 0.321569, 0.917647, 0.133333 )
+anchor_bottom = 1.0
+color = Color( 0.180392, 0.180392, 0.180392, 0.529412 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -55,10 +62,14 @@ anchor_left = 0.2
 anchor_top = 0.8
 anchor_right = 0.8
 anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TextContainer"]
 anchor_left = 0.03
-anchor_top = 0.05
+anchor_top = 0.06
 anchor_right = 0.97
 anchor_bottom = 0.95
 bbcode_text = "Hello World!sdfsdfsdfsdf"
