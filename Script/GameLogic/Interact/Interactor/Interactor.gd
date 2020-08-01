@@ -8,6 +8,9 @@ class_name Interactor
 #This is what I pass as the interactor.
 var owning_entity : AEntity
 
+#This is the closest interactable at any given moment.
+var closest_interactable : Interactable
+
 var enabled: bool setget set_enabled
 
 signal interactable_entered_area(interactable_node)
@@ -55,6 +58,7 @@ func _physics_process(_delta : float) -> void:
 			emit_signal("interact_made_impossible")
 		interactables = []
 		previous_collider = null
+		closest_interactable = null
 		return
 	
 	#Return the interactable's name and notify listener's of it.
@@ -62,6 +66,11 @@ func _physics_process(_delta : float) -> void:
 		var interact_info : String = closest_body.get_info()
 		emit_signal("interact_made_possible", interact_info)
 		previous_collider = closest_body
+		closest_interactable = closest_body
+
+#Returns null if there is no Interactable.
+func get_closest_interactable() -> Interactable :
+	return closest_interactable
 
 #Return what interactables can be interacted with
 func get_potential_interacts() -> Array :

@@ -22,6 +22,13 @@ export var grab_focus_at_ready : bool = true
 func _init().("Interactor", true) -> void :
 	pass
 
+#Check for when the player wants to interact with the closest interactable.
+func _input(event : InputEvent) -> void :
+	if event.is_action_pressed("interact_with_closest") :
+		var interactable = interactor.get_closest_interactable()
+		if interactable != null :
+			on_interact_menu_request(interactable)
+
 #Make Interactor have my Entity variable as it's user.
 func _ready() -> void :
 	interactor.owning_entity = self.entity
