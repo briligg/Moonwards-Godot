@@ -1,3 +1,4 @@
+tool
 extends VSplitContainer
 
 var type : String = ""
@@ -9,7 +10,6 @@ onready var Inhibitors = $ViewMenuSplit/Container/Panel/DropDowns/inhibitors.get
 onready var Misc = $ViewMenuSplit/Container/Panel/DropDowns/misc.get_popup()
 
 func _ready() -> void:
-
 	Stimulus.connect("index_pressed",self,"_on_Stimulus_selected")
 	Actions.connect("index_pressed",self,"_on_Actions_selected")
 	Inhibitors.connect("index_pressed",self, "_on_Inhibitions_selected")

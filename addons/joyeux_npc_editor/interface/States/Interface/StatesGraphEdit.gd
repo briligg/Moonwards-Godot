@@ -1,3 +1,4 @@
+tool
 extends GraphEdit
 
 var last_mouse_pos : Vector2 = Vector2.ZERO

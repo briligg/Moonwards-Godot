@@ -1,3 +1,4 @@
+tool
 extends VSplitContainer
 
 var current_idx = 0

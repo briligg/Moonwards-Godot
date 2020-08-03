@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Tree/Tools/NPCEditor/States/States.gd" type="Script" id=1]
-[ext_resource path="res://Tree/Tools/NPCEditor/States/Interface/StatesGraphEdit.gd" type="Script" id=2]
+[ext_resource path="res://addons/joyeux_npc_editor/interface/States/States.gd" type="Script" id=1]
+[ext_resource path="res://addons/joyeux_npc_editor/interface/States/Interface/StatesGraphEdit.gd" type="Script" id=2]
 [ext_resource path="res://Tree/addons/inspector-gadget/src/inspector_gadget.gd" type="Script" id=3]
+
 
 [node name="States" type="VSplitContainer"]
 anchor_right = 1.0

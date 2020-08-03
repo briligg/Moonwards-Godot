@@ -47,7 +47,7 @@ _global_script_classes=[ {
 "base": "GraphNode",
 "class": "BehaviorNode",
 "language": "GDScript",
-"path": "res://Tree/Tools/NPCEditor/behaviors/Core/Control_Components/BehaviorNode.gd"
+"path": "res://addons/joyeux_npc_editor/interface/behaviors/Core/Control_Components/BehaviorNode.gd"
 }, {
 "base": "AComponent",
 "class": "CameraController",
@@ -62,12 +62,12 @@ _global_script_classes=[ {
 "base": "HBoxContainer",
 "class": "DoubleLabel",
 "language": "GDScript",
-"path": "res://Tree/Tools/NPCEditor/behaviors/Core/Control_Components/SeparatedLabel.gd"
+"path": "res://addons/joyeux_npc_editor/interface/behaviors/Core/Control_Components/SeparatedLabel.gd"
 }, {
 "base": "MenuButton",
 "class": "DropDown",
 "language": "GDScript",
-"path": "res://Tree/Tools/NPCEditor/behaviors/Core/Control_Components/MenuWTitles.gd"
+"path": "res://addons/joyeux_npc_editor/interface/behaviors/Core/Control_Components/MenuWTitles.gd"
 }, {
 "base": "Reference",
 "class": "EntityData",
@@ -87,7 +87,7 @@ _global_script_classes=[ {
 "base": "HBoxContainer",
 "class": "FileLabel",
 "language": "GDScript",
-"path": "res://Tree/Tools/NPCEditor/behaviors/Core/Control_Components/FileSeparator.gd"
+"path": "res://addons/joyeux_npc_editor/interface/behaviors/Core/Control_Components/FileSeparator.gd"
 }, {
 "base": "InspectorGadgetBase",
 "class": "GadgetAABB",
@@ -277,7 +277,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "NpcDefinitions",
 "language": "GDScript",
-"path": "res://Tree/Tools/NPCEditor/Config/Definitions.gd"
+"path": "res://addons/joyeux_npc_editor/Config/Definitions.gd"
 }, {
 "base": "Reference",
 "class": "ResourceSignals",
@@ -384,7 +384,7 @@ Scene="*res://Script/Manager/SceneManager/SceneManager.gd"
 Network="*res://Script/Network/NetworkManager/NetworkManager.gd"
 AL_DebugDraw="*res://Script/DebugHelper/debug_draw_3d.gd"
 Hud="*res://Script/Manager/HudManager/HudManager.gd"
-Nodes="*res://Tree/Tools/NPCEditor/behaviors/Core/Nodes.gd"
+Nodes="*res://addons/joyeux_npc_editor/interface/behaviors/Core/Nodes.gd"
 
 [compression]
 
@@ -413,7 +413,7 @@ convert_text_resources_to_binary_on_export=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "QuickPluginManager", "editor_icon_previewer", "moonwards_lock_nodes" )
+enabled=PoolStringArray( "QuickPluginManager", "editor_icon_previewer", "joyeux_npc_editor", "moonwards_lock_nodes" )
 
 [importer_defaults]
 

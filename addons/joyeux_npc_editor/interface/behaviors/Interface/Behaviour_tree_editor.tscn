@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Tree/Tools/NPCEditor/behaviors/Interface/Behaviors.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Tree/Tools/NPCEditor/States/Interface/States.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/joyeux_npc_editor/interface/behaviors/Interface/Behaviors.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/joyeux_npc_editor/interface/States/Interface/States.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SceneComponent/Actor/Humanoid/NPCs/NPC.gd" type="Script" id=5]
+
 
 [node name="Node-Editor" type="TabContainer"]
 anchor_right = 1.0

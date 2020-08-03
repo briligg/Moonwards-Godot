@@ -1,3 +1,4 @@
+tool
 extends Node
 const TYPE_ANY = 28
 onready var Definitions
@@ -191,7 +192,7 @@ var Graphs : Dictionary = {
 
 
 
-func _ready() -> void:
+func _enter_tree() -> void:
 	Definitions =  NpcDefinitions.new()
 	_load_definitions()
 	_load_functions()
