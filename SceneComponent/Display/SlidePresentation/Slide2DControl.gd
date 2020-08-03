@@ -13,7 +13,7 @@ func _on_prev_pressed():
 	emit_signal("prev_pressed")
 
 func set_texture(tex: Texture):
-	$TextureRect.set_texture(tex)
+	$ColorRect/TextureRect.set_texture(tex)
 	
 func set_text(text: String):
 	$TextContainer/RichTextLabel.set_text(text)
