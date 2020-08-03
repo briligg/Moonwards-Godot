@@ -17,11 +17,6 @@ flags_transparent = true
 params_cull_mode = 2
 params_depth_draw_mode = 3
 albedo_texture = SubResource( 2 )
-emission_enabled = true
-emission = Color( 0.0509804, 0.184314, 0.494118, 1 )
-emission_energy = 0.06
-emission_operator = 0
-emission_on_uv2 = true
 uv2_scale = Vector3( 3, 3, 3 )
 
 [sub_resource type="GDScript" id=4]
