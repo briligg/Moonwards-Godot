@@ -1,0 +1,32 @@
+[variables]
+
+States=[  ]
+Save=[  ]
+CLAYER=[  ]
+hear=[ null ]
+match=[ null, "" ]
+Behaviors=[  ]
+trigger_dialog=[ null ]
+property_check=[ null, null ]
+GraphEditFilter=[  ]
+
+[node_signals]
+
+hear=[ "hear_output_0" ]
+match=[ "match_output_0" ]
+trigger_dialog=[  ]
+property_check=[ "property_check_output_0" ]
+
+[ai_config]
+
+connections=[ {
+"from": "hear",
+"from_port": 0,
+"to": "property_check",
+"to_port": 0
+}, {
+"from": "property_check",
+"from_port": 0,
+"to": "trigger_dialog",
+"to_port": 0
+} ]

@@ -47,7 +47,7 @@ _global_script_classes=[ {
 "base": "GraphNode",
 "class": "BehaviorNode",
 "language": "GDScript",
-"path": "res://addons/joyeux_npc_editor/interface/behaviors/Core/Control_Components/BehaviorNode.gd"
+"path": "res://addons/joyeux_npc_editor/src/Core/Control_Components/BehaviorNode.gd"
 }, {
 "base": "AComponent",
 "class": "CameraController",
@@ -62,12 +62,12 @@ _global_script_classes=[ {
 "base": "HBoxContainer",
 "class": "DoubleLabel",
 "language": "GDScript",
-"path": "res://addons/joyeux_npc_editor/interface/behaviors/Core/Control_Components/SeparatedLabel.gd"
+"path": "res://addons/joyeux_npc_editor/src/Core/Control_Components/SeparatedLabel.gd"
 }, {
 "base": "MenuButton",
 "class": "DropDown",
 "language": "GDScript",
-"path": "res://addons/joyeux_npc_editor/interface/behaviors/Core/Control_Components/MenuWTitles.gd"
+"path": "res://addons/joyeux_npc_editor/src/Core/Control_Components/MenuWTitles.gd"
 }, {
 "base": "Reference",
 "class": "EntityData",
@@ -87,7 +87,7 @@ _global_script_classes=[ {
 "base": "HBoxContainer",
 "class": "FileLabel",
 "language": "GDScript",
-"path": "res://addons/joyeux_npc_editor/interface/behaviors/Core/Control_Components/FileSeparator.gd"
+"path": "res://addons/joyeux_npc_editor/src/Core/Control_Components/FileSeparator.gd"
 }, {
 "base": "InspectorGadgetBase",
 "class": "GadgetAABB",
@@ -384,7 +384,7 @@ Scene="*res://Script/Manager/SceneManager/SceneManager.gd"
 Network="*res://Script/Network/NetworkManager/NetworkManager.gd"
 AL_DebugDraw="*res://Script/DebugHelper/debug_draw_3d.gd"
 Hud="*res://Script/Manager/HudManager/HudManager.gd"
-Nodes="*res://addons/joyeux_npc_editor/interface/behaviors/Core/Nodes.gd"
+Nodes="*res://addons/joyeux_npc_editor/src/core/Nodes.gd"
 
 [compression]
 
