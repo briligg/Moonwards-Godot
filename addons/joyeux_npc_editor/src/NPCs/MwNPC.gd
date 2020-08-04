@@ -9,6 +9,14 @@ signal user_input(action_name)
 signal see()
 signal hear()
 
+export(String) var character_name
+
+export(Color) var shirt_color
+export(Color) var pants_color
+export(Color) var hair_color
+export(Color) var skin_color
+export(Color) var shoes_color
+
 
 func property_check(input, signals, variables):
 	#input is object, get the specific variable in the variable port and then

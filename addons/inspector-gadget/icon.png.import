@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-98199a22579a5f849a4396169881c648.stex"
+path="res://.import/icon.png-ddb35d34eac98116c1b472ed5959f2d8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tree/addons/inspector-gadget/icon.png"
-dest_files=[ "res://.import/icon.png-98199a22579a5f849a4396169881c648.stex" ]
+source_file="res://addons/inspector-gadget/icon.png"
+dest_files=[ "res://.import/icon.png-ddb35d34eac98116c1b472ed5959f2d8.stex" ]
 
 [params]
 

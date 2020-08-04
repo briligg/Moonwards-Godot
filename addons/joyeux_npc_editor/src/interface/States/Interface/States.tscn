@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Tree/addons/inspector-gadget/src/inspector_gadget.gd" type="Script" id=1]
+[ext_resource path="res://addons/inspector-gadget/src/inspector_gadget.gd" type="Script" id=1]
 [ext_resource path="res://addons/joyeux_npc_editor/src/interface/States/Interface/States.gd" type="Script" id=2]
 [ext_resource path="res://addons/joyeux_npc_editor/src/interface/States/Interface/StatesGraphEdit.gd" type="Script" id=3]
 
@@ -92,16 +92,17 @@ margin_bottom = 194.0
 [node name="InspectorGadgetScrollContainer" type="ScrollContainer" parent="ViewMenuSplit/Container"]
 margin_top = 198.0
 margin_right = 280.0
-margin_bottom = 598.0
+margin_bottom = 1036.0
 rect_min_size = Vector2( 0, 400 )
 size_flags_horizontal = 3
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="InspectorGadget" type="MarginContainer" parent="ViewMenuSplit/Container/InspectorGadgetScrollContainer"]
 margin_right = 280.0
-margin_bottom = 400.0
+margin_bottom = 838.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 1 )
@@ -127,9 +128,9 @@ container_type_hints = {
 filter_built_in_properties = true
 
 [node name="HSeparator2" type="HSeparator" parent="ViewMenuSplit/Container"]
-margin_top = 602.0
+margin_top = 1040.0
 margin_right = 280.0
-margin_bottom = 606.0
+margin_bottom = 1044.0
 
 [node name="StatesGraphEdit" type="GraphEdit" parent="ViewMenuSplit"]
 margin_left = 292.0
