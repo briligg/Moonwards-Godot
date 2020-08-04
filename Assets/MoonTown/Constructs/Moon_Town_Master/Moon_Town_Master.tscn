@@ -222,7 +222,7 @@ extents = Vector3( 2.99961, 5.84374, 3.40385 )
 extents = Vector3( 4.05716, 43.5251, 18.943 )
 
 [sub_resource type="BoxShape" id=54]
-extents = Vector3( 27.8008, 8.00589, 14.5938 )
+extents = Vector3( 28.3461, 13.7801, 26.4022 )
 
 [sub_resource type="BoxShape" id=55]
 extents = Vector3( 21.0852, 6.16039, 18.5988 )
@@ -1262,11 +1262,12 @@ __meta__ = {
 hologram = false
 
 [node name="ReversingVisibilityTrigger" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper" index="11" instance=ExtResource( 39 )]
+show_lod0_list = [ NodePath("../Marker_Neighborhood/Neighborhood-1"), NodePath("../Marker_Neighborhood/Shared-Facilities-1") ]
 show_lod1_list = [ NodePath("../../../../Marker_all_MIPs/Marker_MIP001/Melt_In_Place_Station"), NodePath("../../../../Marker_all_MIPs/Marker_MIP/Melt_In_Place_Station"), NodePath("../../../../Athlete_Rover_Prop"), NodePath("../../../../Athlete_Rover_Prop2"), NodePath("../../../../Athlete_Rover_Prop/Ground_Passenger_Pod"), NodePath("../../../../Marker_all_BoatRads/BoatRad/Boat_Radiator"), NodePath("../../../../Marker_all_BoatRads/BoatRad018/Boat_Radiator"), NodePath("../../../../Marker_all_BoatRads/BoatRad017/Boat_Radiator"), NodePath("../../../Empty_FirstHangars/First_Factory"), NodePath("../../../Empty_FirstHangars/First_Factory/Markers/Empty_SpiderCrane/Spider_Crane") ]
 show_lod2_list = [ NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit02/Solar_Panel_Unit"), NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit03/Solar_Panel_Unit"), NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit04/Solar_Panel_Unit"), NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit05/Solar_Panel_Unit"), NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit06/Solar_Panel_Unit"), NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit07/Solar_Panel_Unit"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers003/Flywheel_Tower"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers004/Flywheel_Tower"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers005/Flywheel_Tower"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers006/Flywheel_Tower"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers007/Flywheel_Tower"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers008/Flywheel_Tower") ]
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/ReversingVisibilityTrigger" index="1"]
-transform = Transform( 0.992215, 0, -0.124537, 0, 1, 0, 0.124537, 0, 0.992215, 20.3003, 7.11565, 3.02989 )
+transform = Transform( 0.992215, 0, -0.124537, 0, 1, 0, 0.124537, 0, 0.992215, 20.3003, 4.79518, 3.02989 )
 shape = SubResource( 54 )
 __meta__ = {
 "_edit_lock_": true
@@ -1308,7 +1309,7 @@ __meta__ = {
 [node name="DVT_First_Gallery_Upper" parent="Marker_all_Constructs/Empty_FirstGalleryUpper" index="1" instance=ExtResource( 38 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2718, -17.7215, -17.284 )
 show_lod0_list = [ NodePath("../../Empty_FirstGalleryLower/First_Gallery_Lower_UpperPart"), NodePath("../../../Lalande_85k"), NodePath("../../../Lalande_MoonTown"), NodePath("../../Empty_GalleriesOuterSurface/All_Overlays_4th_Gal_Top/1st_Gal_Top/Overlay_1stGal_Top"), NodePath("../../Empty_AirlockBay/Airlock_Bay"), NodePath("../First_Gallery_Upper"), NodePath("../../Empty_AirlockBay/Airlock_Bay/Markers/Marker_Airlock_N5/Airlock"), NodePath("../First_Gallery_Upper/Marker_MakersMonument/MakersMonument/Makers_Monument"), NodePath("../First_Gallery_Upper/Marker_Carousel/Carousel") ]
-show_lod1_list = [ NodePath("../../Empty_FirstGalleryLower/First_Gallery_Lower_MiddlePart"), NodePath("../../Empty_FirstGalleryLower/First_Gallery_Lower_LowerPart"), NodePath("../../Empty_BigAtrium/Center_Atrium"), NodePath("../../Empty_RecHab1/Rec_Hab_1") ]
+show_lod1_list = [ NodePath("../../Empty_FirstGalleryLower/First_Gallery_Lower_MiddlePart"), NodePath("../../Empty_FirstGalleryLower/First_Gallery_Lower_LowerPart"), NodePath("../../Empty_BigAtrium/Center_Atrium"), NodePath("../../Empty_RecHab1/Rec_Hab_1"), NodePath("../First_Gallery_Upper/Marker_Neighborhood/Shared-Facilities-1"), NodePath("../First_Gallery_Upper/Marker_Neighborhood/Neighborhood-1") ]
 
 [node name="CollisionShape2" type="CollisionShape" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/DVT_First_Gallery_Upper" index="0"]
 transform = Transform( 0.991712, 0, -0.128484, 0, 1, 0, 0.128484, 0, 0.991712, -0.0761323, -26.0353, 46.5446 )

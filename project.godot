@@ -396,7 +396,7 @@ Scene="*res://Script/Manager/SceneManager/SceneManager.gd"
 Network="*res://Script/Network/NetworkManager/NetworkManager.gd"
 AL_DebugDraw="*res://Script/DebugHelper/debug_draw_3d.gd"
 Hud="*res://Script/Manager/HudManager/HudManager.gd"
-Nodes="*res://addons/joyeux_npc_editor/src/core/Nodes.gd"
+Nodes="*res://addons/joyeux_npc_editor/src/Core/Nodes.gd"
 
 [compression]
 
