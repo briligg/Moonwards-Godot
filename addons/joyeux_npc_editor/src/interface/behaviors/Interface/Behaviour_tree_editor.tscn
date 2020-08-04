@@ -2,7 +2,7 @@
 
 [ext_resource path="res://addons/joyeux_npc_editor/src/interface/behaviors/Interface/Behaviors.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/joyeux_npc_editor/src/interface/States/Interface/States.tscn" type="PackedScene" id=2]
-[ext_resource path="res://SceneComponent/Actor/Humanoid/NPCs/NPC.gd" type="Script" id=3]
+[ext_resource path="res://addons/joyeux_npc_editor/src/NPCs/NPC.gd" type="Script" id=3]
 
 [node name="Node-Editor" type="TabContainer"]
 anchor_right = 1.0
@@ -14,6 +14,7 @@ __meta__ = {
 }
 
 [node name="States" parent="." instance=ExtResource( 2 )]
+BehaviorsPath = "res://addons/joyeux_npc_editor/src/NPCs/DefaultBehaviors"
 
 [node name="Behaviors" parent="." instance=ExtResource( 1 )]
 visible = false

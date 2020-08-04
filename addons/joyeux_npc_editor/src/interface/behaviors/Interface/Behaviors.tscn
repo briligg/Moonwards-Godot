@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://addons/joyeux_npc_editor/src/interface/behaviors/Interface/Behaviour_tree_editor.gd" type="Script" id=1]
 [ext_resource path="res://addons/joyeux_npc_editor/src/interface/behaviors/Interface/Graph_compiler.gd" type="Script" id=2]
@@ -42,6 +42,19 @@ func _on_Behaviors_id_pressed(id):
 		menus[id].rect_position =  get_tree().get_root().get_mouse_position()
 		menus[id].popup()
 		type = get_item_text(id)
+"
+
+[sub_resource type="GDScript" id=2]
+script/source = "tool
+extends FileDialog
+
+export(String, DIR) var Start_path
+
+func _enter_tree():
+	if not Engine.editor_hint:
+		access = FileDialog.ACCESS_USERDATA
+		current_dir = \"user://behaviors/\"
+		current_path = \"user://behaviors/\"
 "
 
 [node name="Behaviors" type="VSplitContainer"]
@@ -93,7 +106,7 @@ margin_bottom = 33.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 text = "Stimulus"
-items = [ "hear", null, 0, false, false, 0, 0, null, "", false, "user_input", null, 0, false, false, 1, 0, null, "", false, "see", null, 0, false, false, 2, 0, null, "", false ]
+items = [ "hear", null, 0, false, false, 0, 0, null, "", false, "user_input", null, 0, false, false, 1, 0, null, "", false, "see", null, 0, false, false, 2, 0, null, "", false, "hear", null, 0, false, false, 3, 0, null, "", false, "user_input", null, 0, false, false, 4, 0, null, "", false, "see", null, 0, false, false, 5, 0, null, "", false, "hear", null, 0, false, false, 6, 0, null, "", false, "user_input", null, 0, false, false, 7, 0, null, "", false, "see", null, 0, false, false, 8, 0, null, "", false, "hear", null, 0, false, false, 9, 0, null, "", false, "user_input", null, 0, false, false, 10, 0, null, "", false, "see", null, 0, false, false, 11, 0, null, "", false, "hear", null, 0, false, false, 12, 0, null, "", false, "user_input", null, 0, false, false, 13, 0, null, "", false, "see", null, 0, false, false, 14, 0, null, "", false, "hear", null, 0, false, false, 15, 0, null, "", false, "user_input", null, 0, false, false, 16, 0, null, "", false, "see", null, 0, false, false, 17, 0, null, "", false, "hear", null, 0, false, false, 18, 0, null, "", false, "user_input", null, 0, false, false, 19, 0, null, "", false, "see", null, 0, false, false, 20, 0, null, "", false, "hear", null, 0, false, false, 21, 0, null, "", false, "user_input", null, 0, false, false, 22, 0, null, "", false, "see", null, 0, false, false, 23, 0, null, "", false, "hear", null, 0, false, false, 24, 0, null, "", false, "user_input", null, 0, false, false, 25, 0, null, "", false, "see", null, 0, false, false, 26, 0, null, "", false ]
 
 [node name="HS3" type="HSeparator" parent="ViewMenuSplit/Container/Panel/DropDowns"]
 margin_top = 37.0
@@ -107,7 +120,7 @@ margin_bottom = 70.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 text = "Inhibitions"
-items = [ "property_check", null, 0, false, false, 0, 0, null, "", false, "match", null, 0, false, false, 1, 0, null, "", false, "tri_v_decision", null, 0, false, false, 2, 0, null, "", false ]
+items = [ "property_check", null, 0, false, false, 0, 0, null, "", false, "match", null, 0, false, false, 1, 0, null, "", false, "tri_v_decision", null, 0, false, false, 2, 0, null, "", false, "property_check", null, 0, false, false, 3, 0, null, "", false, "match", null, 0, false, false, 4, 0, null, "", false, "tri_v_decision", null, 0, false, false, 5, 0, null, "", false, "property_check", null, 0, false, false, 6, 0, null, "", false, "match", null, 0, false, false, 7, 0, null, "", false, "tri_v_decision", null, 0, false, false, 8, 0, null, "", false, "property_check", null, 0, false, false, 9, 0, null, "", false, "match", null, 0, false, false, 10, 0, null, "", false, "tri_v_decision", null, 0, false, false, 11, 0, null, "", false, "property_check", null, 0, false, false, 12, 0, null, "", false, "match", null, 0, false, false, 13, 0, null, "", false, "tri_v_decision", null, 0, false, false, 14, 0, null, "", false, "property_check", null, 0, false, false, 15, 0, null, "", false, "match", null, 0, false, false, 16, 0, null, "", false, "tri_v_decision", null, 0, false, false, 17, 0, null, "", false, "property_check", null, 0, false, false, 18, 0, null, "", false, "match", null, 0, false, false, 19, 0, null, "", false, "tri_v_decision", null, 0, false, false, 20, 0, null, "", false, "property_check", null, 0, false, false, 21, 0, null, "", false, "match", null, 0, false, false, 22, 0, null, "", false, "tri_v_decision", null, 0, false, false, 23, 0, null, "", false, "property_check", null, 0, false, false, 24, 0, null, "", false, "match", null, 0, false, false, 25, 0, null, "", false, "tri_v_decision", null, 0, false, false, 26, 0, null, "", false ]
 
 [node name="HS4" type="HSeparator" parent="ViewMenuSplit/Container/Panel/DropDowns"]
 margin_top = 74.0
@@ -121,7 +134,7 @@ margin_bottom = 107.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 text = "Actions"
-items = [ "set_objective", null, 0, false, false, 0, 0, null, "", false, "trigger_dialog", null, 0, false, false, 1, 0, null, "", false, "play_global_sound", null, 0, false, false, 2, 0, null, "", false, "play_3d_sound", null, 0, false, false, 3, 0, null, "", false, "force_next_state", null, 0, false, false, 4, 0, null, "", false ]
+items = [ "set_objective", null, 0, false, false, 0, 0, null, "", false, "trigger_dialog", null, 0, false, false, 1, 0, null, "", false, "play_global_sound", null, 0, false, false, 2, 0, null, "", false, "play_3d_sound", null, 0, false, false, 3, 0, null, "", false, "force_next_state", null, 0, false, false, 4, 0, null, "", false, "set_objective", null, 0, false, false, 5, 0, null, "", false, "trigger_dialog", null, 0, false, false, 6, 0, null, "", false, "play_global_sound", null, 0, false, false, 7, 0, null, "", false, "play_3d_sound", null, 0, false, false, 8, 0, null, "", false, "force_next_state", null, 0, false, false, 9, 0, null, "", false, "set_objective", null, 0, false, false, 10, 0, null, "", false, "trigger_dialog", null, 0, false, false, 11, 0, null, "", false, "play_global_sound", null, 0, false, false, 12, 0, null, "", false, "play_3d_sound", null, 0, false, false, 13, 0, null, "", false, "force_next_state", null, 0, false, false, 14, 0, null, "", false, "set_objective", null, 0, false, false, 15, 0, null, "", false, "trigger_dialog", null, 0, false, false, 16, 0, null, "", false, "play_global_sound", null, 0, false, false, 17, 0, null, "", false, "play_3d_sound", null, 0, false, false, 18, 0, null, "", false, "force_next_state", null, 0, false, false, 19, 0, null, "", false, "set_objective", null, 0, false, false, 20, 0, null, "", false, "trigger_dialog", null, 0, false, false, 21, 0, null, "", false, "play_global_sound", null, 0, false, false, 22, 0, null, "", false, "play_3d_sound", null, 0, false, false, 23, 0, null, "", false, "force_next_state", null, 0, false, false, 24, 0, null, "", false, "set_objective", null, 0, false, false, 25, 0, null, "", false, "trigger_dialog", null, 0, false, false, 26, 0, null, "", false, "play_global_sound", null, 0, false, false, 27, 0, null, "", false, "play_3d_sound", null, 0, false, false, 28, 0, null, "", false, "force_next_state", null, 0, false, false, 29, 0, null, "", false, "set_objective", null, 0, false, false, 30, 0, null, "", false, "trigger_dialog", null, 0, false, false, 31, 0, null, "", false, "play_global_sound", null, 0, false, false, 32, 0, null, "", false, "play_3d_sound", null, 0, false, false, 33, 0, null, "", false, "force_next_state", null, 0, false, false, 34, 0, null, "", false, "set_objective", null, 0, false, false, 35, 0, null, "", false, "trigger_dialog", null, 0, false, false, 36, 0, null, "", false, "play_global_sound", null, 0, false, false, 37, 0, null, "", false, "play_3d_sound", null, 0, false, false, 38, 0, null, "", false, "force_next_state", null, 0, false, false, 39, 0, null, "", false, "set_objective", null, 0, false, false, 40, 0, null, "", false, "trigger_dialog", null, 0, false, false, 41, 0, null, "", false, "play_global_sound", null, 0, false, false, 42, 0, null, "", false, "play_3d_sound", null, 0, false, false, 43, 0, null, "", false, "force_next_state", null, 0, false, false, 44, 0, null, "", false ]
 
 [node name="hs5" type="HSeparator" parent="ViewMenuSplit/Container/Panel/DropDowns"]
 margin_top = 111.0
@@ -135,7 +148,7 @@ margin_bottom = 144.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 text = "Misc"
-items = [ "parallel_trigger", null, 0, false, false, 0, 0, null, "", false ]
+items = [ "parallel_trigger", null, 0, false, false, 0, 0, null, "", false, "parallel_trigger", null, 0, false, false, 1, 0, null, "", false, "parallel_trigger", null, 0, false, false, 2, 0, null, "", false, "parallel_trigger", null, 0, false, false, 3, 0, null, "", false, "parallel_trigger", null, 0, false, false, 4, 0, null, "", false, "parallel_trigger", null, 0, false, false, 5, 0, null, "", false, "parallel_trigger", null, 0, false, false, 6, 0, null, "", false, "parallel_trigger", null, 0, false, false, 7, 0, null, "", false, "parallel_trigger", null, 0, false, false, 8, 0, null, "", false ]
 
 [node name="HS1" type="HSeparator" parent="ViewMenuSplit/Container/Panel/DropDowns"]
 margin_top = 148.0
@@ -240,7 +253,7 @@ __meta__ = {
 [node name="stimulus" type="PopupMenu" parent="ViewMenuSplit/GraphEdit/Behaviors"]
 margin_right = 82.0
 margin_bottom = 88.0
-items = [ "hear", null, 0, false, false, 0, 0, null, "", false, "user_input", null, 0, false, false, 1, 0, null, "", false, "see", null, 0, false, false, 2, 0, null, "", false ]
+items = [ "hear", null, 0, false, false, 0, 0, null, "", false, "user_input", null, 0, false, false, 1, 0, null, "", false, "see", null, 0, false, false, 2, 0, null, "", false, "hear", null, 0, false, false, 3, 0, null, "", false, "user_input", null, 0, false, false, 4, 0, null, "", false, "see", null, 0, false, false, 5, 0, null, "", false, "hear", null, 0, false, false, 6, 0, null, "", false, "user_input", null, 0, false, false, 7, 0, null, "", false, "see", null, 0, false, false, 8, 0, null, "", false, "hear", null, 0, false, false, 9, 0, null, "", false, "user_input", null, 0, false, false, 10, 0, null, "", false, "see", null, 0, false, false, 11, 0, null, "", false, "hear", null, 0, false, false, 12, 0, null, "", false, "user_input", null, 0, false, false, 13, 0, null, "", false, "see", null, 0, false, false, 14, 0, null, "", false, "hear", null, 0, false, false, 15, 0, null, "", false, "user_input", null, 0, false, false, 16, 0, null, "", false, "see", null, 0, false, false, 17, 0, null, "", false, "hear", null, 0, false, false, 18, 0, null, "", false, "user_input", null, 0, false, false, 19, 0, null, "", false, "see", null, 0, false, false, 20, 0, null, "", false, "hear", null, 0, false, false, 21, 0, null, "", false, "user_input", null, 0, false, false, 22, 0, null, "", false, "see", null, 0, false, false, 23, 0, null, "", false, "hear", null, 0, false, false, 24, 0, null, "", false, "user_input", null, 0, false, false, 25, 0, null, "", false, "see", null, 0, false, false, 26, 0, null, "", false ]
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -248,12 +261,12 @@ __meta__ = {
 [node name="inhibitors" type="PopupMenu" parent="ViewMenuSplit/GraphEdit/Behaviors"]
 margin_right = 82.0
 margin_bottom = 88.0002
-items = [ "property_check", null, 0, false, false, 0, 0, null, "", false, "match", null, 0, false, false, 1, 0, null, "", false, "tri_v_decision", null, 0, false, false, 2, 0, null, "", false ]
+items = [ "property_check", null, 0, false, false, 0, 0, null, "", false, "match", null, 0, false, false, 1, 0, null, "", false, "tri_v_decision", null, 0, false, false, 2, 0, null, "", false, "property_check", null, 0, false, false, 3, 0, null, "", false, "match", null, 0, false, false, 4, 0, null, "", false, "tri_v_decision", null, 0, false, false, 5, 0, null, "", false, "property_check", null, 0, false, false, 6, 0, null, "", false, "match", null, 0, false, false, 7, 0, null, "", false, "tri_v_decision", null, 0, false, false, 8, 0, null, "", false, "property_check", null, 0, false, false, 9, 0, null, "", false, "match", null, 0, false, false, 10, 0, null, "", false, "tri_v_decision", null, 0, false, false, 11, 0, null, "", false, "property_check", null, 0, false, false, 12, 0, null, "", false, "match", null, 0, false, false, 13, 0, null, "", false, "tri_v_decision", null, 0, false, false, 14, 0, null, "", false, "property_check", null, 0, false, false, 15, 0, null, "", false, "match", null, 0, false, false, 16, 0, null, "", false, "tri_v_decision", null, 0, false, false, 17, 0, null, "", false, "property_check", null, 0, false, false, 18, 0, null, "", false, "match", null, 0, false, false, 19, 0, null, "", false, "tri_v_decision", null, 0, false, false, 20, 0, null, "", false, "property_check", null, 0, false, false, 21, 0, null, "", false, "match", null, 0, false, false, 22, 0, null, "", false, "tri_v_decision", null, 0, false, false, 23, 0, null, "", false, "property_check", null, 0, false, false, 24, 0, null, "", false, "match", null, 0, false, false, 25, 0, null, "", false, "tri_v_decision", null, 0, false, false, 26, 0, null, "", false ]
 
 [node name="actions" type="PopupMenu" parent="ViewMenuSplit/GraphEdit/Behaviors"]
 margin_right = 82.0
 margin_bottom = 88.0002
-items = [ "set_objective", null, 0, false, false, 0, 0, null, "", false, "trigger_dialog", null, 0, false, false, 1, 0, null, "", false, "play_global_sound", null, 0, false, false, 2, 0, null, "", false, "play_3d_sound", null, 0, false, false, 3, 0, null, "", false, "force_next_state", null, 0, false, false, 4, 0, null, "", false ]
+items = [ "set_objective", null, 0, false, false, 0, 0, null, "", false, "trigger_dialog", null, 0, false, false, 1, 0, null, "", false, "play_global_sound", null, 0, false, false, 2, 0, null, "", false, "play_3d_sound", null, 0, false, false, 3, 0, null, "", false, "force_next_state", null, 0, false, false, 4, 0, null, "", false, "set_objective", null, 0, false, false, 5, 0, null, "", false, "trigger_dialog", null, 0, false, false, 6, 0, null, "", false, "play_global_sound", null, 0, false, false, 7, 0, null, "", false, "play_3d_sound", null, 0, false, false, 8, 0, null, "", false, "force_next_state", null, 0, false, false, 9, 0, null, "", false, "set_objective", null, 0, false, false, 10, 0, null, "", false, "trigger_dialog", null, 0, false, false, 11, 0, null, "", false, "play_global_sound", null, 0, false, false, 12, 0, null, "", false, "play_3d_sound", null, 0, false, false, 13, 0, null, "", false, "force_next_state", null, 0, false, false, 14, 0, null, "", false, "set_objective", null, 0, false, false, 15, 0, null, "", false, "trigger_dialog", null, 0, false, false, 16, 0, null, "", false, "play_global_sound", null, 0, false, false, 17, 0, null, "", false, "play_3d_sound", null, 0, false, false, 18, 0, null, "", false, "force_next_state", null, 0, false, false, 19, 0, null, "", false, "set_objective", null, 0, false, false, 20, 0, null, "", false, "trigger_dialog", null, 0, false, false, 21, 0, null, "", false, "play_global_sound", null, 0, false, false, 22, 0, null, "", false, "play_3d_sound", null, 0, false, false, 23, 0, null, "", false, "force_next_state", null, 0, false, false, 24, 0, null, "", false, "set_objective", null, 0, false, false, 25, 0, null, "", false, "trigger_dialog", null, 0, false, false, 26, 0, null, "", false, "play_global_sound", null, 0, false, false, 27, 0, null, "", false, "play_3d_sound", null, 0, false, false, 28, 0, null, "", false, "force_next_state", null, 0, false, false, 29, 0, null, "", false, "set_objective", null, 0, false, false, 30, 0, null, "", false, "trigger_dialog", null, 0, false, false, 31, 0, null, "", false, "play_global_sound", null, 0, false, false, 32, 0, null, "", false, "play_3d_sound", null, 0, false, false, 33, 0, null, "", false, "force_next_state", null, 0, false, false, 34, 0, null, "", false, "set_objective", null, 0, false, false, 35, 0, null, "", false, "trigger_dialog", null, 0, false, false, 36, 0, null, "", false, "play_global_sound", null, 0, false, false, 37, 0, null, "", false, "play_3d_sound", null, 0, false, false, 38, 0, null, "", false, "force_next_state", null, 0, false, false, 39, 0, null, "", false, "set_objective", null, 0, false, false, 40, 0, null, "", false, "trigger_dialog", null, 0, false, false, 41, 0, null, "", false, "play_global_sound", null, 0, false, false, 42, 0, null, "", false, "play_3d_sound", null, 0, false, false, 43, 0, null, "", false, "force_next_state", null, 0, false, false, 44, 0, null, "", false ]
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -261,7 +274,7 @@ __meta__ = {
 [node name="misc" type="PopupMenu" parent="ViewMenuSplit/GraphEdit/Behaviors"]
 margin_right = 82.0
 margin_bottom = 88.0002
-items = [ "parallel_trigger", null, 0, false, false, 0, 0, null, "", false ]
+items = [ "parallel_trigger", null, 0, false, false, 0, 0, null, "", false, "parallel_trigger", null, 0, false, false, 1, 0, null, "", false, "parallel_trigger", null, 0, false, false, 2, 0, null, "", false, "parallel_trigger", null, 0, false, false, 3, 0, null, "", false, "parallel_trigger", null, 0, false, false, 4, 0, null, "", false, "parallel_trigger", null, 0, false, false, 5, 0, null, "", false, "parallel_trigger", null, 0, false, false, 6, 0, null, "", false, "parallel_trigger", null, 0, false, false, 7, 0, null, "", false, "parallel_trigger", null, 0, false, false, 8, 0, null, "", false ]
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -281,6 +294,10 @@ margin_bottom = 281.0
 rect_min_size = Vector2( 0, 0 )
 window_title = "Guardar un Archivo"
 filters = PoolStringArray( "*.jbt" )
+current_dir = "res://addons/joyeux_npc_editor/src/NPCs/DefaultBehaviors"
+current_file = "untitled"
+current_path = "res://addons/joyeux_npc_editor/src/NPCs/DefaultBehaviors/untitled"
+script = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
