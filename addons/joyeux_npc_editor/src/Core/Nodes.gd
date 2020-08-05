@@ -182,7 +182,7 @@ var Graphs : Dictionary = {
 
 
 
-func _enter_tree() -> void:
+func initiate() -> void:
 	Definitions =  NpcDefinitions.new()
 	_load_definitions()
 	_load_functions()
