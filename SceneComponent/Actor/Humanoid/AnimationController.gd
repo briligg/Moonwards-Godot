@@ -80,7 +80,8 @@ func update_climb_animation(_delta):
 			entity.animation_tree.set("parameters/ClimbDirection/current", 1)
 			climb_direction = -1.0
 	
-	entity.animation_tree.set("parameters/ClimbProgress/seek_position", climb_progress)
+	entity.animation_tree.set("parameters/ClimbProgressUp/seek_position", climb_progress)
+	entity.animation_tree.set("parameters/ClimbProgressDown/seek_position", climb_progress)
 
 
 
