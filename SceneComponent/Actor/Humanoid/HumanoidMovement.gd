@@ -78,7 +78,7 @@ func update_stairs_climbing(delta):
 		entity.velocity += horizontal_vector * delta
 		
 		#Stop climbing at the top when too far away from the stairs.
-		if kb_pos.distance_to(entity.stairs.climb_points[entity.climb_point]) > 1.2:
+		if entity.climb_point + 1 >= entity.stairs.climb_points.size() :
 			stop_climb_stairs()
 	else:
 		#Automatically move towards the climbing point horizontally.
