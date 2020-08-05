@@ -32,7 +32,7 @@ const Colors = [
 	Color(0.2, 1, 0.1),
 	Color(1,0.5,0.2,1),
 	Color(0.1,0.2,0.3,1)
-	] 
+	]
 var custom_types : Dictionary = {}
 
 func _is_format_correct() -> bool:
@@ -55,7 +55,6 @@ func _get_port_name(data : Dictionary, port : int, input : bool = true) -> Strin
 	else:
 		ports = data.get("_output_ports")
 	if port < ports.size():
-		print(data)
 		return ports[port].get("_label_title")
 	else:
 		return ""
@@ -65,12 +64,12 @@ func _get_port_type(data : Dictionary, port : int, input : bool = true) -> int:
 	if input:
 		ports = data.get("_input_ports")
 	else:
-		ports = data.get("_output_ports") 
+		ports = data.get("_output_ports")
 	if port < ports.size():
 		return _get_type(ports[port].get("_type"))
 	else:
 		return TYPE_NIL
-		
+
 func _get_type(type) -> int:
 	if type is int:
 		return type # The type is already a number we don't have to do anything
@@ -79,9 +78,9 @@ func _get_type(type) -> int:
 		if custom == false:
 			return TYPE_NIL #If not defined we return NIL
 		else:
-			return 28+custom_types.get(type.trim_prefix("CLASS_")).idx #28 is the Any type, this one is locked out. 
+			return 28+custom_types.get(type.trim_prefix("CLASS_")).idx #28 is the Any type, this one is locked out.
 	return TYPE_NIL
-		
+
 func _load_signals():
 	var signal_list : Dictionary = Definitions.get("_stimulus")
 	var signal_names : Array = signal_list.keys()
@@ -90,11 +89,11 @@ func _load_signals():
 		var current_node : GraphNode = GraphNode.new()
 		current_node.title = signals
 		current_node.add_child(DoubleLabel.new("", data.get("_output_name")))
-		current_node.set_slot(0,false,TYPE_NIL,0, true, 
+		current_node.set_slot(0,false,TYPE_NIL,0, true,
 			_get_type(data.get("_output_type")),  #the type may be a string, so we need to parse it
 			self.Color(data.get("_output_type"))) #Special case, color parses strings
 		Graphs.stimulus[signals]=current_node
-		
+
 
 func _load_functions():
 	var functions : Dictionary = Definitions.get("_functions")
@@ -109,7 +108,7 @@ func _load_functions():
 		for ports in max(data.get("_input_ports").size(),data.get("_output_ports").size()):
 			current_node.set_slot(
 				ports,
-				_get_port_type(data, ports, true), 
+				_get_port_type(data, ports, true),
 				_get_port_type(data, ports, true),
 				self.Color(_get_port_type(data, ports, true)),
 				_get_port_type(data, ports, false),
@@ -152,8 +151,8 @@ func Color(id) -> Color:
 			return Colors[id] #If the color is from a default type, looks for it
 	elif id is String:
 		#If the color is from a custom class, loads it from the Definitions.
-		return _color_from_class(id) 
-	return Color(0) 
+		return _color_from_class(id)
+	return Color(0)
 
 func _color_from_class(id : String) -> Color:
 	var Class = Definitions.get(id)
@@ -161,23 +160,23 @@ func _color_from_class(id : String) -> Color:
 	if Class != null:
 		color = Class.get("_color")
 	return color
-	
+
 
 var Graphs : Dictionary = {
 	"actions" : {
 		#here you could add manually made nodes
 	},
-	
+
 	"stimulus" : {
 	#
 	},
-	
+
 	"inhibitors" : {
-		#"Decision" : preload("res://Nodes/Inhibitors/Decision.tscn") 
+		#"Decision" : preload("res://Nodes/Inhibitors/Decision.tscn")
 		#this is an example for pre defined nodes, that do not follow the definitions file
 	},
-	"misc" : { 
-		
+	"misc" : {
+
 	}
 }
 
@@ -188,7 +187,7 @@ func _enter_tree() -> void:
 	_load_definitions()
 	_load_functions()
 	_load_signals()
-	
+
 #	load_user_defined_nodes()
 """
 func load_user_defined_nodes() -> void:
@@ -207,4 +206,3 @@ func load_user_defined_nodes() -> void:
 			N = N.replace(".tscn","")
 			Graphs.custom[N]=load(str("user://CustomNodes/",N,".tscn"))
 """
-

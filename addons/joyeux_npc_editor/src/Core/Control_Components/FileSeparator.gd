@@ -28,5 +28,4 @@ func _init(filters = ""):
 		Dial.get_cancel().connect("pressed",  get_node("Text"), "clear")
 
 func open_file():
-	print("Pressed!")
 	get_node("OpenFile").popup_centered()

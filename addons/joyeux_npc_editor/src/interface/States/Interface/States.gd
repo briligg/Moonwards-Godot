@@ -59,16 +59,12 @@ func list_behaviors():
 func load_behaviors_in(path : String) -> void:
 	if path == "." or path == ".." or path == "":
 		return
-	print(path)
 	var Dir = Directory.new()
 	if Dir.open(path) == OK:
 		Dir.list_dir_begin()
 		var file_name : String = Dir.get_next()
-		print(file_name)
 		while (file_name != ""):
-			print(file_name)
 			if not Dir.current_is_dir():
-				print("found file: ", file_name)
 				if file_name.ends_with(".jbt"):
 					var BT = ConfigFile.new()
 					BT.load(file_name)
@@ -81,7 +77,7 @@ func load_behaviors_in(path : String) -> void:
 				load_behaviors_in(file_name)
 			file_name = Dir.get_next()
 		Dir.list_dir_end()
-	else: 
+	else:
 		print_debug("Error accessing ", path)
 
 func save_SM_connections():
