@@ -3,7 +3,6 @@
 [ext_resource path="res://addons/inspector-gadget/src/inspector_gadget.gd" type="Script" id=1]
 [ext_resource path="res://addons/inspector-gadget/src/property_visualizer.gd" type="Script" id=2]
 
-
 [node name="InspectorGadgetExample" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -69,8 +68,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 node_path = NodePath("../../VisualizerScrollContainer/PropertyVisualizer")
-subnames = ""
-editable = true
 property_blacklist = [ "blacklisted_property" ]
 custom_gadget_paths = {
 
@@ -84,4 +81,3 @@ container_type_hints = {
 ":dictionary_value:[keys]": "",
 ":dictionary_value:[values]": ""
 }
-filter_built_in_properties = true

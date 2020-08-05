@@ -11,8 +11,8 @@ var SaveFile : ConfigFile = ConfigFile.new()
 onready var BehaviorList : ItemList = $ViewMenuSplit/Container/ScrollContainer/Behaviors
 onready var BehaviorMenu : PopupMenu = $ViewMenuSplit/StatesGraphEdit/States
 onready var Graph : GraphEdit = $ViewMenuSplit/StatesGraphEdit
-
-export(String, DIR) var BehaviorsPath = "res://SceneComponent/Actor/Humanoid/NPCs/DefaultBehaviors"
+export(NodePath) var node_path = null
+export(String, DIR) var BehaviorsPath = "res://addons/joyeux_npc_editor/src/NPCs/DefaultBehaviors/"
 
 func _ready() -> void:
 	var dir = Directory.new()
@@ -23,7 +23,22 @@ func _ready() -> void:
 	load_behaviors_in(BehaviorsPath)
 	#Loads Default behaviors
 	list_behaviors()
-	
+
+func save_variables():
+	var node = get_node(node_path)
+	var Default = Node.new()
+	var list = node.get_property_list()
+	var list2 = Default.get_property_list()
+	for variables in list.size():
+		for variables2 in list2.size():
+			if variables < list.size() and variables2 < list2.size():
+				if list[variables].hash() == list2[variables2].hash():
+					list.erase(list[variables])
+	for element in list:
+		if element.usage == 8199 and not element.name == "NPC_File": #Exported value
+			SaveFile.set_value("variables", element.get("name"), node.get(element.get("name")))
+
+
 func save_states(file : String):
 	#First we save the routes to the nodes used in the machine
 	var names : Array = Graph.get_unique_nodes()
@@ -31,14 +46,19 @@ func save_states(file : String):
 		var idx : int = Behavior_names.find(_name)
 		SaveFile.set_value("node_routes", _name, Behavior_routes[idx])
 	save_SM_connections()
+	save_variables()
 	SaveFile.save(file)
 
 func list_behaviors():
+	BehaviorMenu.clear()
+	BehaviorList.clear()
 	for names in Behavior_names:
 		BehaviorMenu.add_item(names)
 		BehaviorList.add_item(names)
 
 func load_behaviors_in(path : String) -> void:
+	if path == "." or path == ".." or path == "":
+		return
 	print(path)
 	var Dir = Directory.new()
 	if Dir.open(path) == OK:

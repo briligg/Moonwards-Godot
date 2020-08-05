@@ -119,7 +119,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/inspector-gadget/src/gadgets/gadget_int.gd"
 }, {
-"base": "Reference",
+"base": "GadgetStringEdit",
 "class": "GadgetNodePath",
 "language": "GDScript",
 "path": "res://addons/inspector-gadget/src/gadgets/gadget_node_path.gd"
@@ -144,7 +144,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/inspector-gadget/src/gadgets/gadget_rect2.gd"
 }, {
-"base": "Reference",
+"base": "InspectorGadgetBase",
 "class": "GadgetResource",
 "language": "GDScript",
 "path": "res://addons/inspector-gadget/src/gadgets/gadget_resource.gd"
@@ -154,7 +154,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/inspector-gadget/src/gadgets/gadget_string_edit.gd"
 }, {
-"base": "Reference",
+"base": "InspectorGadgetBase",
 "class": "GadgetStringLabel",
 "language": "GDScript",
 "path": "res://addons/inspector-gadget/src/gadgets/gadget_string_label.gd"
@@ -204,7 +204,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/Humanoid/HumanoidInput.gd"
 }, {
-"base": "Reference",
+"base": "InspectorGadgetBase",
 "class": "InspectorGadget",
 "language": "GDScript",
 "path": "res://addons/inspector-gadget/src/inspector_gadget.gd"
@@ -259,7 +259,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/ExtensionClass/MwSpatial.gd"
 }, {
-"base": "Spatial",
+"base": "Node",
 "class": "NPCBase",
 "language": "GDScript",
 "path": "res://addons/joyeux_npc_editor/src/NPCs/NPC.gd"

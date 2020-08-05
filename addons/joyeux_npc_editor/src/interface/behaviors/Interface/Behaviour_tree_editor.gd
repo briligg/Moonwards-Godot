@@ -9,7 +9,7 @@ onready var Actions = $ViewMenuSplit/Container/Panel/DropDowns/actions.get_popup
 onready var Inhibitors = $ViewMenuSplit/Container/Panel/DropDowns/inhibitors.get_popup()
 onready var Misc = $ViewMenuSplit/Container/Panel/DropDowns/misc.get_popup()
 
-func _ready() -> void:
+func _on_ready() -> void:
 	Stimulus.connect("index_pressed",self,"_on_Stimulus_selected")
 	Actions.connect("index_pressed",self,"_on_Actions_selected")
 	Inhibitors.connect("index_pressed",self, "_on_Inhibitions_selected")
@@ -45,6 +45,8 @@ func _update_labels(name : String) -> void:
 func _generate_nodes() -> void:
 	for Any in Nodes.Graphs:
 		var subdict = Nodes.Graphs.get(Any)
+		get_node("ViewMenuSplit/Container/Panel/DropDowns/"+Any).get_popup().clear()
+		get_node("ViewMenuSplit/GraphEdit/Behaviors/"+Any).clear()
 		for N in subdict:
 			get_node("ViewMenuSplit/Container/Panel/DropDowns/"+Any).get_popup().add_item(N)
 			get_node("ViewMenuSplit/GraphEdit/Behaviors/"+Any).add_item(N)

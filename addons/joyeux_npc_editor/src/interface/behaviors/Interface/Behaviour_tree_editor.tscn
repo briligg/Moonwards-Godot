@@ -14,10 +14,9 @@ __meta__ = {
 }
 
 [node name="States" parent="." instance=ExtResource( 2 )]
-BehaviorsPath = "res://addons/joyeux_npc_editor/src/NPCs/DefaultBehaviors"
 
 [node name="Behaviors" parent="." instance=ExtResource( 1 )]
 visible = false
 
-[node name="TemplateNPC" type="Spatial" parent="."]
+[node name="TemplateNPC" type="Node" parent="."]
 script = ExtResource( 3 )

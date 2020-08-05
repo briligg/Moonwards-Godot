@@ -48,12 +48,6 @@ func _are_valid_identifiers(strings : Array)->bool:
 	return true
 
 
-func _define_class(_class_name : String):
-	pass
-#	var current : Dictionary = Definitions.get(_class_name)
-#	var properies = current.keys()
-
-
 func _get_port_name(data : Dictionary, port : int, input : bool = true) -> String:
 	var ports : Array = []
 	if input:
@@ -148,9 +142,7 @@ func _load_definitions() -> void:
 	for Class in Classes:
 		idx = idx + 1
 		Definitions.get(Class)["idx"] = idx
-		print("CLASS_"+Class)
 		custom_types[Class.trim_prefix("CLASS_")] = Definitions.get(Class).get("_variables")
-	print(Classes)
 
 
 
@@ -186,8 +178,7 @@ var Graphs : Dictionary = {
 	},
 	"misc" : { 
 		
-	},
-	"custom" :  {}
+	}
 }
 
 
