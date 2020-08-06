@@ -46,6 +46,13 @@ func enable() -> void:
 			%[entity_id, entity_name])
 	enabled = true
 
+func enable_on_owner() -> void:
+	for comp in components.values():
+		comp.enable_on_owner()
+	Log.trace(self, "enable_on_owner", "Entity id:%s, name:%s has been enabled on owner" 
+			%[entity_id, entity_name])
+	enabled = true
+
 func set_enabled(val: bool) -> void:
 	if val:
 		enable()

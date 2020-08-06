@@ -57,6 +57,6 @@ func disable():
 	.disable()
 
 func enable():
-	if get_tree().get_network_unique_id() == entity.owner_peer_id:
+	if Network.network_instance.peer_id == entity.owner_peer_id:
 		camera.set_current(true)
 	.enable()

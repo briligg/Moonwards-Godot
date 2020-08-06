@@ -28,10 +28,14 @@ func disable() -> void:
 	set_process_input(false)
 	Log.trace(self, "disable", "Component %s has been disabled" %comp_name)
 	
-func enable() -> void:
+# Enables the entity on the owning client
+func enable_on_owner():
 	if !is_net_owner() and require_net_owner:
 		disable()
-		return
+	else:
+		enable()
+	
+func enable() -> void:
 	enabled = true
 	set_process(true)
 	set_physics_process(true)
@@ -66,4 +70,4 @@ func _get_comp_name() -> String:
 	return comp_name
 
 func is_net_owner() -> bool:
-	return get_tree().get_network_unique_id() == entity.owner_peer_id
+	return Network.network_instance.peer_id == entity.owner_peer_id

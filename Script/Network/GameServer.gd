@@ -22,6 +22,8 @@ func _ready() -> void:
 	get_tree().connect("network_peer_connected", self, "_player_connected")
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
 	_host_game()
+	self.peer_id = get_tree().get_network_unique_id()
+	_start_session()
 
 master func initialize_entity_data(name, colors):
 	var peer_id = Network.get_sender_id()
@@ -53,13 +55,12 @@ func _host_game() -> void:
 	var err = server_peer.create_server(port, max_players)
 	if err == OK:
 		get_tree().set_network_peer(server_peer)
-		_start_game()
 	elif err == ERR_CANT_CREATE:
 		Log.critical(self, "", "Could not create server peer.")
 	elif err == ERR_ALREADY_EXISTS:
 		Log.error(self, "", "Server peer already exists.")
 
-func _start_game() -> void:
+func _start_session() -> void:
 	Log.trace(self, "", "Server instance started.")
 	# Add lobby host player
 	var entity = EntityData.new(1, "Server", _get_spawn())

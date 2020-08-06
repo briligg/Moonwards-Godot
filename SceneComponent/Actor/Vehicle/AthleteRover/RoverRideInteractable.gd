@@ -36,7 +36,7 @@ func take_control(e):
 	entity.get_component("RoverInput").enabled = true
 	entity.get_component("Interactor").grab_focus()
 	
-	entity.owner_peer_id = get_tree().get_network_unique_id()
+	entity.owner_peer_id = Network.network_instance.peer_id
 	rset("controller_peer_id", entity.owner_peer_id)
 	
 	is_active = true

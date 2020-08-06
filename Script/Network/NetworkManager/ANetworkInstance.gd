@@ -12,6 +12,8 @@ var entities_container: Node
 # Array of EntityData
 var entities: Dictionary = {}
 
+var peer_id: int = -1
+
 func _ready() -> void:
 	world = yield(Scene.change_scene_to_async(Scene.world_scene), "scene_changed")
 	
@@ -28,9 +30,9 @@ func _start():
 	pass
 
 # `PUPPETSYNC`
-puppetsync func remove_player(peer_id: int) -> void:
-	entities.erase(peer_id)
-	entities_container.get_node(str(peer_id)).queue_free()
+puppetsync func remove_player(_peer_id: int) -> void:
+	entities.erase(_peer_id)
+	entities_container.get_node(str(_peer_id)).queue_free()
 
 # `PUPPETSYNC`
 # Adds a new player to the game
@@ -49,8 +51,8 @@ puppetsync func add_player(entity_data) -> void:
 	e.entity_name = str(entity_data.entity_name)
 	e.owner_peer_id = entity_data.peer_id
 	e.set_network_master(1)
-	e.enabled = true
 	entities_container.add_child(e)
+	e.enable_on_owner()
 	e.global_transform.origin = entity_data.initial_pos
 #	var model = e.get_component("ModelComponent")
 #	model.set_colors(entity_data.colors)

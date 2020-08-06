@@ -5,7 +5,6 @@ export(String) var Test
 
 var ip: String = ""
 var port: int = 0
-var peer_id: int = -1
 
 func _init(_ip: String, _port: int):
 	self.ip = _ip
