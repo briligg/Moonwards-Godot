@@ -1,7 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Spaceport/Spaceport_Terminal.glb" type="PackedScene" id=1]
-[ext_resource path="res://Assets/MoonTown/Models/Airlock/Airlock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://SceneComponent/Object/Airlock/Airlock.tscn" type="PackedScene" id=2]
+
+
+
 
 [node name="Spaceport_Terminal" instance=ExtResource( 1 )]
 
