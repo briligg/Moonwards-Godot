@@ -63,3 +63,8 @@ func _on_Add_pressed() -> void:
 	instanced.name = instanced.title 
 	$ViewMenuSplit/GraphEdit.add_child(instanced)
 	idx+=1
+	
+
+func _on_Open_pressed():
+	$ViewMenuSplit/GraphEdit/Save.set_open()
+	$ViewMenuSplit/GraphEdit/Save.popup_centered()

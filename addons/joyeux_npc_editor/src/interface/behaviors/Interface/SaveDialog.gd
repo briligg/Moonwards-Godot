@@ -8,3 +8,9 @@ func _enter_tree():
 		access = FileDialog.ACCESS_USERDATA
 		current_dir = "user://behaviors/"
 		current_path = "user://behaviors/"
+
+func set_open():
+	mode = FileDialog.MODE_OPEN_FILE 
+
+func set_save():
+	mode = FileDialog.MODE_SAVE_FILE

@@ -94,7 +94,7 @@ margin_bottom = 33.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 text = "Stimulus"
-items = [ ]
+items = [ "hear", null, 0, false, false, 0, 0, null, "", false, "user_input", null, 0, false, false, 1, 0, null, "", false, "see", null, 0, false, false, 2, 0, null, "", false ]
 
 [node name="HS3" type="HSeparator" parent="ViewMenuSplit/Container/Panel/DropDowns"]
 margin_top = 37.0
@@ -108,7 +108,7 @@ margin_bottom = 70.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 text = "Inhibitions"
-items = [ ]
+items = [ "property_check", null, 0, false, false, 0, 0, null, "", false, "match", null, 0, false, false, 1, 0, null, "", false, "tri_v_decision", null, 0, false, false, 2, 0, null, "", false ]
 
 [node name="HS4" type="HSeparator" parent="ViewMenuSplit/Container/Panel/DropDowns"]
 margin_top = 74.0
@@ -122,7 +122,7 @@ margin_bottom = 107.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 text = "Actions"
-items = []
+items = [ "set_objective", null, 0, false, false, 0, 0, null, "", false, "trigger_dialog", null, 0, false, false, 1, 0, null, "", false, "play_global_sound", null, 0, false, false, 2, 0, null, "", false, "play_3d_sound", null, 0, false, false, 3, 0, null, "", false, "force_next_state", null, 0, false, false, 4, 0, null, "", false ]
 
 [node name="hs5" type="HSeparator" parent="ViewMenuSplit/Container/Panel/DropDowns"]
 margin_top = 111.0
@@ -136,7 +136,7 @@ margin_bottom = 144.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 text = "Misc"
-items = []
+items = [ "parallel_trigger", null, 0, false, false, 0, 0, null, "", false ]
 
 [node name="HS1" type="HSeparator" parent="ViewMenuSplit/Container/Panel/DropDowns"]
 margin_top = 148.0
@@ -241,7 +241,7 @@ __meta__ = {
 [node name="stimulus" type="PopupMenu" parent="ViewMenuSplit/GraphEdit/Behaviors"]
 margin_right = 82.0
 margin_bottom = 88.0
-items = [ ]
+items = [ "hear", null, 0, false, false, 0, 0, null, "", false, "user_input", null, 0, false, false, 1, 0, null, "", false, "see", null, 0, false, false, 2, 0, null, "", false ]
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -249,12 +249,12 @@ __meta__ = {
 [node name="inhibitors" type="PopupMenu" parent="ViewMenuSplit/GraphEdit/Behaviors"]
 margin_right = 82.0
 margin_bottom = 88.0002
-items = [ ]
+items = [ "property_check", null, 0, false, false, 0, 0, null, "", false, "match", null, 0, false, false, 1, 0, null, "", false, "tri_v_decision", null, 0, false, false, 2, 0, null, "", false ]
 
 [node name="actions" type="PopupMenu" parent="ViewMenuSplit/GraphEdit/Behaviors"]
 margin_right = 82.0
 margin_bottom = 88.0002
-items = [ ]
+items = [ "set_objective", null, 0, false, false, 0, 0, null, "", false, "trigger_dialog", null, 0, false, false, 1, 0, null, "", false, "play_global_sound", null, 0, false, false, 2, 0, null, "", false, "play_3d_sound", null, 0, false, false, 3, 0, null, "", false, "force_next_state", null, 0, false, false, 4, 0, null, "", false ]
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -262,7 +262,7 @@ __meta__ = {
 [node name="misc" type="PopupMenu" parent="ViewMenuSplit/GraphEdit/Behaviors"]
 margin_right = 82.0
 margin_bottom = 88.0002
-items = [  ]
+items = [ "parallel_trigger", null, 0, false, false, 0, 0, null, "", false ]
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -272,7 +272,6 @@ margin_left = 433.528
 margin_top = 153.245
 margin_right = 515.528
 margin_bottom = 241.245
-items = [  ]
 
 [node name="Save" type="FileDialog" parent="ViewMenuSplit/GraphEdit"]
 margin_left = 14.0
@@ -290,7 +289,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="ready" from="." to="." method="_on_ready"]
-[connection signal="pressed" from="ViewMenuSplit/Container/type2/Open" to="ViewMenuSplit/GraphEdit" method="_on_Button3_pressed"]
+[connection signal="pressed" from="ViewMenuSplit/Container/type2/Open" to="." method="_on_Open_pressed"]
 [connection signal="pressed" from="ViewMenuSplit/Container/type2/Save" to="ViewMenuSplit/GraphEdit" method="_on_save_pressed"]
 [connection signal="pressed" from="ViewMenuSplit/Container/Add" to="." method="_on_Add_pressed"]
 [connection signal="connection_request" from="ViewMenuSplit/GraphEdit" to="ViewMenuSplit/GraphEdit" method="_on_GraphEdit_connection_request"]
