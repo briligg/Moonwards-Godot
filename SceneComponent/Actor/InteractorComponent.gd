@@ -34,10 +34,11 @@ func _make_hud_display_interactable(interactable : Interactable = null) -> void 
 
 #Make Interactor have my Entity variable as it's user.
 func _ready() -> void :
+	#Do not process input unless I have focus.
+	set_process_input(false)
+	
 	interactor.owning_entity = self.entity
 	
-	interactor.connect("interact_made_impossible", self, "emit_signal", [INTERACT_MADE_IMPOSSIBLE])
-	interactor.connect("interact_made_possible", self, "relay_signal", [INTERACT_MADE_POSSIBLE])
 	interactor.connect("interactable_entered_area", self, "relay_signal", [INTERACTABLE_ENTERED_REACH])
 	interactor.connect("interactable_left_area", self, "relay_signal", [INTERACTABLE_LEFT_REACH])
 	
@@ -50,6 +51,8 @@ func get_interactables() -> Array :
 
 #Become the current Interactor in use.
 func grab_focus() -> void:
+	set_process_input(true)
+	
 	Signals.Hud.emit_signal(Signals.Hud.NEW_INTERACTOR_GRABBED_FOCUS, self)
 	
 	#Display what is the closest interactable.
@@ -57,6 +60,7 @@ func grab_focus() -> void:
 
 #Another interactor has grabbed focus. Perform cleanup.
 func lost_focus() -> void :
+	set_process_input(false)
 	interactor.disconnect("closest_interactable_changed", self, "_make_hud_display_interactable")
 
 #Pass the interactor signals we are listening to onwards.
