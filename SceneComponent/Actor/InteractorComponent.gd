@@ -18,12 +18,17 @@ signal interact_made_possible(interact_info_string)
 #Call grab_focus immediately at startup.
 export var grab_focus_at_ready : bool = true
 
+var has_focus : bool = false
+
 #This function is required by AComponent.
 func _init().("Interactor", true) -> void :
 	pass
 
 #Check for when the player wants to interact with the closest interactable.
 func _input(event : InputEvent) -> void :
+	if not(has_focus) :
+		return
+	
 	if event.is_action_pressed("interact_with_closest") :
 		var interactable = interactor.get_closest_interactable()
 		if interactable != null :
@@ -34,9 +39,6 @@ func _make_hud_display_interactable(interactable : Interactable = null) -> void 
 
 #Make Interactor have my Entity variable as it's user.
 func _ready() -> void :
-	#Do not process input unless I have focus.
-	set_process_input(false)
-	
 	interactor.owning_entity = self.entity
 	
 	interactor.connect("interactable_entered_area", self, "relay_signal", [INTERACTABLE_ENTERED_REACH])
@@ -51,7 +53,7 @@ func get_interactables() -> Array :
 
 #Become the current Interactor in use.
 func grab_focus() -> void:
-	set_process_input(true)
+	has_focus = true
 	
 	Signals.Hud.emit_signal(Signals.Hud.NEW_INTERACTOR_GRABBED_FOCUS, self)
 	
@@ -60,7 +62,7 @@ func grab_focus() -> void:
 
 #Another interactor has grabbed focus. Perform cleanup.
 func lost_focus() -> void :
-	set_process_input(false)
+	has_focus = false
 	interactor.disconnect("closest_interactable_changed", self, "_make_hud_display_interactable")
 
 #Pass the interactor signals we are listening to onwards.
@@ -92,7 +94,6 @@ func disable():
 
 func enable():
 	if is_net_owner():
-		grab_focus()
 		$Interactor.enabled = true
 	.enable()
 

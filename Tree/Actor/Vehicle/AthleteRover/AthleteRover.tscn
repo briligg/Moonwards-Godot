@@ -27,7 +27,6 @@ script = ExtResource( 10 )
 
 [node name="Interactor" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.28379, 0 )
-grab_focus_at_ready = false
 
 [node name="RoverRideInteractable" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.59981, 0 )
@@ -87,6 +86,14 @@ script = ExtResource( 4 )
 script = ExtResource( 4 )
 
 [node name="Model" parent="." instance=ExtResource( 6 )]
+
+[node name="Legs" parent="Model" index="0"]
+bones/3/bound_children = [  ]
+bones/7/bound_children = [  ]
+bones/11/bound_children = [  ]
+bones/15/bound_children = [  ]
+bones/19/bound_children = [  ]
+bones/23/bound_children = [  ]
 
 [node name="WheelBackLBoneAttachment" parent="Model/Legs" index="1"]
 transform = Transform( 0.00490884, 0.798927, -0.601408, 0.999981, -0.00614417, 4.65661e-09, -0.00369515, -0.601397, -0.798942, 15.7619, 6.13141, -11.8435 )
