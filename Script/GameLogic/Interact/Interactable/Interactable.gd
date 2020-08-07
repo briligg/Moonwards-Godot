@@ -21,6 +21,8 @@ export var title : String = "Title" setget set_title
 export var networked : bool = true
 # Whether or not this interactable is available  to receive interactions.
 var is_available: bool = true
+#Whether or not this interactable has active collision detection.
+export var interactions_active : bool = true setget set_active
 
 var owning_entity: AEntity = null
 
@@ -41,6 +43,15 @@ func interact_with(interactor : Node) -> void :
 
 func is_networked() -> bool :
 	return networked
+
+#Turns on or shuts off this interactables collision detection.
+func set_active(become_active : bool) -> void :
+	if become_active :
+		set_collision_layer_bit(15, true)
+	else :
+		set_collision_layer_bit(15, false)
+	
+	interactions_active = become_active
 
 func set_display_info(new_display_info : String) -> void :
 	display_info = new_display_info
