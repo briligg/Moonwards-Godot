@@ -9,6 +9,7 @@ radius = 1.97071
 [node name="Interactor" type="Spatial"]
 script = ExtResource( 1 )
 require_net_owner = true
+grab_focus_at_ready = false
 
 [node name="Interactor" type="Area" parent="."]
 collision_layer = 0

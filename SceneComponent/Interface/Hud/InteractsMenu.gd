@@ -140,7 +140,7 @@ func _interactable_title_changed(new_title : String, button : Button) -> void :
 #Called from a signal. Disconnect the old interactor and connect the new one.
 func _new_interactor(new_interactor : Node) -> void :
 	if interactor_component != null :
-#		interactor_component.lost_focus()
+		interactor_component.lost_focus()
 #		interactor_component.disconnect(interactor_component.FOCUS_ROLLBACK, self, "_rollback_interactor_focus")
 		interactor_component.disconnect(interactor_component.INTERACTABLE_ENTERED_REACH, self, "_interactable_entered")
 		interactor_component.disconnect(interactor_component.INTERACTABLE_LEFT_REACH, self, "_interactable_left")
