@@ -12,10 +12,10 @@ cell_size = 2.29634
 to_cell_xform = Transform( 0.435475, 0, 0, 0, 0.435475, 0, 0, 0, 0.435475, 64, 22.4953, 8.60524 )
 dynamic_data = PoolIntArray( 0, 8, 128, 64, 32, 1, 0, 0, 0, 0, 0, 0, 7, 0, 1, 1979, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 4
-energy = 0.69
+energy = 2.14
 bias = 1.112
 normal_bias = 0.0
-propagation = 0.58
+propagation = 0.5
 interior = true
 
 [node name="First_Gallery_Upper" instance=ExtResource( 1 )]
@@ -85,6 +85,12 @@ light_energy = 0.48
 light_specular = 0.0
 omni_range = 30.8064
 omni_attenuation = 1.8025
+
+[node name="First_Gallery_Upper_Roof" parent="LOD0" index="6"]
+use_in_baked_light = true
+
+[node name="First_Gallery_Upper_Walls" parent="LOD0" index="7"]
+use_in_baked_light = true
 
 [node name="MakersMonument" parent="Marker_MakersMonument" index="0" instance=ExtResource( 3 )]
 

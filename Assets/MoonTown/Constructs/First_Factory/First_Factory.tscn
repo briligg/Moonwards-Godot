@@ -19,6 +19,12 @@ omni_attenuation = 1.56917
 [node name="HangarFoundationSmall" parent="LOD0" index="0"]
 material/0 = ExtResource( 3 )
 
+[node name="FirstHangar" parent="LOD0/HangarFoundationSmall" index="1"]
+use_in_baked_light = true
+
+[node name="SideOpenHangar_M" parent="LOD0/HangarFoundationSmall/FirstHangar" index="1"]
+use_in_baked_light = true
+
 [node name="Lava_Tank_Large" parent="Markers/Empty_LavaTank_Large" index="0" instance=ExtResource( 4 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 
