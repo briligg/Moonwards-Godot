@@ -8,3 +8,4 @@
 [node name="Lalande_85k_Export" parent="." index="0"]
 material_override = ExtResource( 2 )
 cast_shadow = 0
+use_in_baked_light = true
