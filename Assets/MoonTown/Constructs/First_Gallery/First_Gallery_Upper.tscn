@@ -7,15 +7,15 @@
 [ext_resource path="res://default_env_indoors.tres" type="Environment" id=5]
 
 [sub_resource type="GIProbeData" id=1]
-bounds = AABB( -146.966, -51.657, -19.7606, 293.933, 103.314, 39.5213 )
-cell_size = 2.29635
-to_cell_xform = Transform( 0.435474, 0, 0, 0, 0.435474, 0, 0, 0, 0.435474, 64, 22.4953, 8.60524 )
-dynamic_data = PoolIntArray( 0, 8, 128, 64, 32, 1, 0, 0, 0, 1056964608, 0, 0, 0, 0, 0, 1056964608, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+bounds = AABB( -146.966, -51.657, -19.7606, 293.932, 103.314, 39.5212 )
+cell_size = 2.29634
+to_cell_xform = Transform( 0.435475, 0, 0, 0, 0.435475, 0, 0, 0, 0.435475, 64, 22.4953, 8.60524 )
+dynamic_data = PoolIntArray( 0, 8, 128, 64, 32, 1, 0, 0, 0, 0, 0, 0, 7, 0, 1, 1979, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 4
-energy = 1.48
-bias = 1.5
+energy = 0.69
+bias = 1.112
 normal_bias = 0.0
-propagation = 0.69
+propagation = 0.58
 interior = true
 
 [node name="First_Gallery_Upper" instance=ExtResource( 1 )]
@@ -23,8 +23,8 @@ interior = true
 [node name="GIProbe" type="GIProbe" parent="." index="0"]
 transform = Transform( 0.832528, -0.543142, -0.10906, 0.541341, 0.839426, -0.0481008, 0.117674, -0.0189936, 0.992871, -77.7004, -68.9083, -9.64462 )
 extents = Vector3( 146.966, 51.657, 19.7606 )
-energy = 1.48
-propagation = 0.69
+energy = 0.69
+propagation = 0.58
 interior = true
 data = SubResource( 1 )
 
