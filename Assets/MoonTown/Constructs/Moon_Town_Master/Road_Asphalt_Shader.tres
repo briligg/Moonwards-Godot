@@ -12,8 +12,8 @@
 [resource]
 shader = ExtResource( 1 )
 shader_param/Color_A = Color( 0.815686, 0.815686, 0.815686, 1 )
-shader_param/UVScale_A = Vector3( 100, 100, 1 )
-shader_param/UVScale_B = Vector3( 100, 100, 1 )
+shader_param/UVScale_A = Vector3( 500, 500, 1 )
+shader_param/UVScale_B = Vector3( 500, 500, 1 )
 shader_param/Color_B = Color( 0.611765, 0.611765, 0.611765, 1 )
 shader_param/NoiseInvert = false
 shader_param/NoiseIntensity = 0.8
