@@ -1,7 +1,6 @@
 tool
 extends GraphEdit
 
-
 var idx : int = 0
 var last_mouse_pos : Vector2 = Vector2.ZERO
 
@@ -10,25 +9,28 @@ var Currently_selected : Node = null
 var OutputFile : ConfigFile = ConfigFile.new()
 
 onready var save = $Save
-func _ready():
+func _ready() -> void:
 	connect("node_selected", self, "_on_node_selected")
 	for type in range (0,27):
 		add_valid_connection_type(28,type)
 #		add_valid_connection_type(type, 28)
 
-func load_nodes():
+func clear_graph() -> void:
+	for child in get_children():
+		if child is GraphNode:
+			child.queue_free()
+	emit_signal("nodes_deleted")
+
+func load_nodes() -> void:
 	var connections = OutputFile.get_value("ai_config", "connections")
-	for name in ["from", "to1"]:
+	for name in ["from", "to"]:
 		
 		for connection in connections:
 			#First load and create the nodes
 			var unfiltered = connection.get(name)
 			var type 
-			if unfiltered == null:
-				continue
-			for i in range(0,9):
-				unfiltered = unfiltered.replace(str(i),"")
-				unfiltered.replace("@","")
+			
+			unfiltered = Nodes.filter_node_name(unfiltered)
 			for cat in Nodes.Graphs:
 				if Nodes.Graphs.get(cat).has(unfiltered):
 					type = cat
@@ -36,10 +38,13 @@ func load_nodes():
 			var offset = OutputFile.get_value("node_offsets", unfiltered)
 			if not has_node(unfiltered):
 				add_node(type, unfiltered, offset)
+				print("Node added: ", unfiltered)
 			for child in get_node(unfiltered).get_child_count():
-				recursive_set_variable(
-					get_node(unfiltered).get_child(child),
-					OutputFile.get_value("variables", unfiltered))
+				var variables = OutputFile.get_value("variables", unfiltered)
+				if child < variables.size():
+					recursive_set_variable(
+						get_node(unfiltered).get_child(child),
+						variables[child])
 	for connection in connections:
 		#Next, connect the nodes as they were saved
 		_on_GraphEdit_connection_request(
@@ -56,10 +61,7 @@ func add_node_offset(type : String, node_name : String):
 func add_node(type : String, node_name : String, offset : Vector2 = Vector2.ZERO) -> void:
 	if (type == "" or node_name == ""):
 		return
-	var filtered 
-	for i in range(0,9):
-		filtered = node_name.replace(str(i),"")
-		filtered.replace("@","")
+	var filtered = Nodes.filter_node_name(node_name)
 	var instanced = Nodes.Graphs.get(type).get(filtered)
 	if instanced is Node:
 		instanced = instanced.duplicate()
@@ -181,7 +183,10 @@ func _on_save_file_selected(path):
 	if save.mode == FileDialog.MODE_SAVE_FILE:
 		OutputFile.save(path)
 	else:
+		OutputFile = ConfigFile.new()
 		OutputFile.load(path)
+		clear_graph()
+		yield(get_tree().create_timer(0.5), "timeout")
 		load_nodes()
 
 func _on_save_pressed():

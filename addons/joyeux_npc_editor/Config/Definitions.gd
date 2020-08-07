@@ -35,7 +35,7 @@ var CLASS_CHARACTER =  {
 		"shield" : TYPE_REAL,
 		"target_location" : TYPE_VECTOR3}
 	}
-#Do not use spaces or symbols in function defintions. 
+#Do not use spaces, numbers or symbols in function defintions. 
 #_s_ prefix indicates the label would be replaced with a special component
 #This prefix only works in the input label.
 var _functions = {
@@ -118,7 +118,7 @@ var _functions = {
 			{"_label_title":"","_type":TYPE_NIL},
 			]
 	},
-	"play_3d_sound" : {
+	"play_pos_sound" : {
 		"_category" : "actions",
 		"_code" : "<actual code>",
 		"_input_ports" : [

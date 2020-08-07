@@ -33,6 +33,24 @@ const Colors = [
 	Color(1,0.5,0.2,1),
 	Color(0.1,0.2,0.3,1)
 	]
+var Graphs : Dictionary = {
+	"actions" : {
+		#here you could add manually made nodes
+	},
+
+	"stimulus" : {
+	#
+	},
+
+	"inhibitors" : {
+		#"Decision" : preload("res://Nodes/Inhibitors/Decision.tscn")
+		#this is an example for pre defined nodes, that do not follow the definitions file
+	},
+	"misc" : {
+
+	}
+}
+
 var custom_types : Dictionary = {}
 
 func _is_format_correct() -> bool:
@@ -81,7 +99,7 @@ func _get_type(type) -> int:
 			return 28+custom_types.get(type.trim_prefix("CLASS_")).idx #28 is the Any type, this one is locked out.
 	return TYPE_NIL
 
-func _load_signals():
+func _load_signals() -> void:
 	var signal_list : Dictionary = Definitions.get("_stimulus")
 	var signal_names : Array = signal_list.keys()
 	for signals in signal_names:
@@ -95,7 +113,7 @@ func _load_signals():
 		Graphs.stimulus[signals]=current_node
 
 
-func _load_functions():
+func _load_functions() -> void:
 	var functions : Dictionary = Definitions.get("_functions")
 	var function_names = functions.keys()
 	if not _are_valid_identifiers(function_names):
@@ -143,7 +161,18 @@ func _load_definitions() -> void:
 		Definitions.get(Class)["idx"] = idx
 		custom_types[Class.trim_prefix("CLASS_")] = Definitions.get(Class).get("_variables")
 
+func _color_from_class(id : String) -> Color:
+	var Class = Definitions.get(id)
+	var color : Color = Color(0)
+	if Class != null:
+		color = Class.get("_color")
+	return color
 
+func filter_node_name(unfiltered : String) -> String:
+	for i in range(0,9):
+		unfiltered = unfiltered.replace(str(i),"")
+		unfiltered.replace("@","")
+	return unfiltered
 
 func Color(id) -> Color:
 	if id is int:
@@ -153,34 +182,6 @@ func Color(id) -> Color:
 		#If the color is from a custom class, loads it from the Definitions.
 		return _color_from_class(id)
 	return Color(0)
-
-func _color_from_class(id : String) -> Color:
-	var Class = Definitions.get(id)
-	var color : Color = Color(0)
-	if Class != null:
-		color = Class.get("_color")
-	return color
-
-
-var Graphs : Dictionary = {
-	"actions" : {
-		#here you could add manually made nodes
-	},
-
-	"stimulus" : {
-	#
-	},
-
-	"inhibitors" : {
-		#"Decision" : preload("res://Nodes/Inhibitors/Decision.tscn")
-		#this is an example for pre defined nodes, that do not follow the definitions file
-	},
-	"misc" : {
-
-	}
-}
-
-
 
 func initiate() -> void:
 	Definitions =  NpcDefinitions.new()
