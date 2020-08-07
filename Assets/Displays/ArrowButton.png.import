@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/ArrowButton.png-b085addfacc6bda0f0d7af273a495aaf.s3tc.stex"
+path.etc2="res://.import/ArrowButton.png-b085addfacc6bda0f0d7af273a495aaf.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://Assets/Displays/ArrowButton.png"
+dest_files=[ "res://.import/ArrowButton.png-b085addfacc6bda0f0d7af273a495aaf.s3tc.stex", "res://.import/ArrowButton.png-b085addfacc6bda0f0d7af273a495aaf.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=2
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=0
+process/fix_alpha_border=false
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=1
+size_limit=0
+detect_3d=false
+svg/scale=1.0
