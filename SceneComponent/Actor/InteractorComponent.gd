@@ -59,17 +59,11 @@ func grab_focus() -> void:
 	
 	#Display what is the closest interactable.
 	interactor.connect("closest_interactable_changed", self, "_make_hud_display_interactable")
-	
-	#Turn on networking and processing.
-	enable()
 
 #Another interactor has grabbed focus. Perform cleanup.
 func lost_focus() -> void :
 	has_focus = false
 	interactor.disconnect("closest_interactable_changed", self, "_make_hud_display_interactable")
-	
-	#Shut off networking and processing.
-	disable()
 
 #Pass the interactor signals we are listening to onwards.
 func relay_signal(attribute = null, signal_name = "interactable_made_impossible") -> void :
