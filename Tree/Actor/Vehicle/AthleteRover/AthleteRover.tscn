@@ -27,6 +27,7 @@ script = ExtResource( 10 )
 
 [node name="Interactor" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.28379, 0 )
+grab_focus_at_ready = false
 
 [node name="RoverRideInteractable" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.59981, 0 )

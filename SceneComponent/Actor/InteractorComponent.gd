@@ -41,15 +41,10 @@ func _ready() -> void :
 	interactor.connect("interactable_entered_area", self, "relay_signal", [INTERACTABLE_ENTERED_REACH])
 	interactor.connect("interactable_left_area", self, "relay_signal", [INTERACTABLE_LEFT_REACH])
 	
-	#Display what is the closest interactable.
-	interactor.connect("closest_interactable_changed", self, "_make_hud_display_interactable")
-	
-	# call_deferred("_ready_deferred")
-
-func _ready_deferred() -> void :
-	if grab_focus_at_ready && self.enabled:
+	if grab_focus_at_ready :
 		grab_focus()
 
+#Return what interactables are in reach.
 func get_interactables() -> Array :
 	return interactor.get_potential_interacts()
 
@@ -57,6 +52,13 @@ func get_interactables() -> Array :
 func grab_focus() -> void:
 	Signals.Hud.emit_signal(Signals.Hud.NEW_INTERACTOR_GRABBED_FOCUS, self)
 	
+	#Display what is the closest interactable.
+	interactor.connect("closest_interactable_changed", self, "_make_hud_display_interactable")
+
+#Another interactor has grabbed focus. Perform cleanup.
+func lost_focus() -> void :
+	interactor.disconnect("closest_interactable_changed", self, "_make_hud_display_interactable")
+
 #Pass the interactor signals we are listening to onwards.
 func relay_signal(attribute = null, signal_name = "interactable_made_impossible") -> void :
 	emit_signal(signal_name, attribute)
