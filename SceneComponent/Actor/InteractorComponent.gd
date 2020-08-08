@@ -32,7 +32,7 @@ func _input(event : InputEvent) -> void :
 	if event.is_action_pressed("interact_with_closest") :
 		var interactable = interactor.get_closest_interactable()
 		if interactable != null :
-			on_interact_menu_request(interactable)
+			menu_interact_request(interactable)
 
 func _make_hud_display_interactable(interactable : Interactable = null) -> void :
 	Signals.Hud.emit_signal(Signals.Hud.CLOSEST_INTERACTABLE_CHANGED, interactable)
@@ -59,18 +59,25 @@ func grab_focus() -> void:
 	
 	#Display what is the closest interactable.
 	interactor.connect("closest_interactable_changed", self, "_make_hud_display_interactable")
+	
+	for area in interactor.get_overlapping_areas():
+		if area is Interactable:
+			emit_signal(INTERACTABLE_ENTERED_REACH, area)
 
 #Another interactor has grabbed focus. Perform cleanup.
 func lost_focus() -> void :
 	has_focus = false
 	interactor.disconnect("closest_interactable_changed", self, "_make_hud_display_interactable")
+	for area in interactor.get_overlapping_areas():
+		if area is Interactable:
+			emit_signal(INTERACTABLE_LEFT_REACH, area)
 
 #Pass the interactor signals we are listening to onwards.
 func relay_signal(attribute = null, signal_name = "interactable_made_impossible") -> void :
 	emit_signal(signal_name, attribute)
 	
 #An Interactable has been chosen from InteractsMenu. Perform the appropriate logic for the Interactable.
-func on_interact_menu_request(interactable : Interactable)->void:
+func menu_interact_request(interactable : Interactable)->void:
 	Log.trace(self, "", "Interacted with %s " %interactable)
 	if interactable.is_networked():
 		rpc_id(1, "request_interact", [interactor.get_path(), interactable.get_path()])
