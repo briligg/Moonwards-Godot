@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SceneComponent/Object/AirlockDocker/AirlockDockInteractable.gd" type="Script" id=1]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 4.75397
+height = 28.3531
+
+[node name="AirlockDockInteractable" type="Area"]
+script = ExtResource( 1 )
+display_info = "Passenger Pod Dock"
+title = "Dock the passenger pod"
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+shape = SubResource( 1 )

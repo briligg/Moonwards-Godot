@@ -26,6 +26,7 @@ shape = SubResource( 1 )
 
 [node name="AirlockDoorInteractable" parent="LOD0/AirlockDoor1_LOD0" index="1" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70037, 0, 0 )
+title = "Airlock Door"
 animation_player = NodePath("../../../AnimationPlayer")
 animation_name = "Door1"
 
@@ -38,6 +39,7 @@ shape = SubResource( 1 )
 
 [node name="AirlockDoorInteractable2" parent="LOD0/AirlockDoor2_LOD0" index="1" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70037, 0.00121951, -0.0877142 )
+title = "Airlock Door"
 animation_player = NodePath("../../../AnimationPlayer")
 animation_name = "Door2"
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=142 format=2]
+[gd_scene load_steps=143 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Moon_Town_Master.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/First_Gallery_Lower_UpperPart.tscn" type="PackedScene" id=2]
@@ -33,9 +33,9 @@
 [ext_resource path="res://Assets/MoonTown/Constructs/Galleries_Outer_Surface/All_Overlays_4th_Gal_Top.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Assets/MoonTown/Models/Solar_Panel_Units/Solar_Panel_Unit.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Assets/MoonTown/Models/Boat_Radiator/Boat_Radiator.tscn" type="PackedScene" id=33]
-[ext_resource path="res://Assets/MoonTown/Models/Ground_Passenger_Pod/Ground_Passenger_Pod.tscn" type="PackedScene" id=34]
 [ext_resource path="res://Assets/MoonTown/Models/Earth/Earth.tscn" type="PackedScene" id=35]
 [ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Marker_Outdoor.tscn" type="PackedScene" id=36]
+[ext_resource path="res://SceneComponent/Object/AirlockDocker/AirlockDockInteractable.tscn" type="PackedScene" id=37]
 [ext_resource path="res://SceneComponent/World/DynamicLoading/DynamicVisibilityTrigger.tscn" type="PackedScene" id=38]
 [ext_resource path="res://SceneComponent/World/DynamicLoading/ReversingVisibilityTrigger.tscn" type="PackedScene" id=39]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-2.ogg" type="AudioStream" id=40]
@@ -61,6 +61,7 @@
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-4.ogg" type="AudioStream" id=60]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-11.ogg" type="AudioStream" id=61]
 [ext_resource path="res://Tree/Actor/Vehicle/AthleteRover/AthleteRover.tscn" type="PackedScene" id=62]
+[ext_resource path="res://Tree/Actor/Vehicle/PassengerPod/PassengerPod.tscn" type="PackedScene" id=63]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 108.19, 109.38, 110.021 )
@@ -727,16 +728,21 @@ __meta__ = {
 [node name="AthleteRover" parent="." index="27" instance=ExtResource( 62 )]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 122.585, 109, -180.953 )
 
-[node name="Ground_Passenger_Pod" parent="." index="28" instance=ExtResource( 34 )]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 122.585, 100.563, -178.081 )
+[node name="PassengerPod" parent="." index="28" instance=ExtResource( 63 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 122.585, 100.563, -179.058 )
 
 [node name="AthleteRover2" parent="." index="29" instance=ExtResource( 62 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.6243, 109.644, -234.569 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.6243, 104.935, -237.975 )
 
-[node name="Ground_Passenger_Pod2" parent="." index="30" instance=ExtResource( 34 )]
+[node name="PassengerPod2" parent="." index="30" instance=ExtResource( 63 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.624, 100.703, -236.604 )
+
+[node name="AirlockDockInteractable" parent="." index="31" instance=ExtResource( 37 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.6243, 100.563, -237.441 )
+display_info = "Interactable"
+title = "Title"
 
-[node name="Audio-Tour-Markers" type="Spatial" parent="." index="31"]
+[node name="Audio-Tour-Markers" type="Spatial" parent="." index="32"]
 __meta__ = {
 "_edit_lock_": true
 }
@@ -898,10 +904,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4170.9, -420.808, -6138.28 )
 display_info = "play outdoor audio tour 11"
 audio_file = ExtResource( 55 )
 
-[node name="Lalande_MoonTown2" parent="." index="33"]
+[node name="Lalande_MoonTown2" parent="." index="34"]
 visible = false
 
-[node name="Lalande_85k" parent="." index="40" instance=ExtResource( 17 )]
+[node name="Lalande_85k" parent="." index="41" instance=ExtResource( 17 )]
 
 [node name="Boat_Radiator" parent="Marker_all_BoatRads/BoatRad001" index="0" instance=ExtResource( 33 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
@@ -999,12 +1005,12 @@ transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
 
 [node name="Melt_In_Place_Station" parent="Marker_all_MIPs/Marker_MIP004" index="0" instance=ExtResource( 13 )]
 
-[node name="Marker_RadioDishEarth" parent="." index="47"]
+[node name="Marker_RadioDishEarth" parent="." index="48"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 475.644, 62.7823, -11.5285 )
 
 [node name="Radio_Dish_Earth" parent="Marker_RadioDishEarth" index="0" instance=ExtResource( 21 )]
 
-[node name="Marker_RadioDishEarth001" parent="." index="48"]
+[node name="Marker_RadioDishEarth001" parent="." index="49"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 911.615, -11.5876, 86.7956 )
 
 [node name="Radio_Dish_Earth" parent="Marker_RadioDishEarth001" index="0" instance=ExtResource( 21 )]
@@ -1105,6 +1111,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.390442 )
 
 [node name="Airlock_Bay" parent="Marker_all_Constructs/Empty_AirlockBay" index="0" instance=ExtResource( 3 )]
 
+[node name="Bay_Grounds_LOD2" parent="Marker_all_Constructs/Empty_AirlockBay/Airlock_Bay/LOD2" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 71.0697, -3.71949, 0.115387 )
+
 [node name="DVT_Airlock_Bay" parent="Marker_all_Constructs/Empty_AirlockBay" index="1" instance=ExtResource( 38 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00577, 0, 0 )
 show_lod0_list = [ NodePath("../../Empty_FirstGalleryUpper/First_Gallery_Upper"), NodePath("../Airlock_Bay"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_N1/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_N2/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_N3/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_N4/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_N5/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_S1/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_S2/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_S3/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_S4/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_S5/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_GarageAirlock/Airlock"), NodePath("../../Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_MakersMonument/MakersMonument/Makers_Monument"), NodePath("../../Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Carousel/Carousel") ]
@@ -1194,36 +1203,6 @@ __meta__ = {
 }
 
 [node name="First_Atrium" parent="Marker_all_Constructs/Empty_AtriumHab" index="0" instance=ExtResource( 4 )]
-
-[node name="VerticalStair_TunnelBottom" parent="Marker_all_Constructs/Empty_AtriumHab/First_Atrium/Markers/Marker-VerticalStair_TunnelBottom" index="0"]
-display_info = "Interactable"
-title = "Title"
-networked = true
-generate_editor_visual = false
-
-[node name="Vertical-Stairs-1" parent="Marker_all_Constructs/Empty_AtriumHab/First_Atrium/Markers/Marker_Vertical-Stairs-1" index="0"]
-display_info = "Interactable"
-title = "Title"
-networked = true
-generate_editor_visual = false
-
-[node name="Vertical-Stairs-2" parent="Marker_all_Constructs/Empty_AtriumHab/First_Atrium/Markers/Marker_Vertical-Stairs-2" index="0"]
-display_info = "Interactable"
-title = "Title"
-networked = true
-generate_editor_visual = false
-
-[node name="Vertical-Stairs-3" parent="Marker_all_Constructs/Empty_AtriumHab/First_Atrium/Markers/Marker_Vertical-Stairs-3" index="0"]
-display_info = "Interactable"
-title = "Title"
-networked = true
-generate_editor_visual = false
-
-[node name="VerticalStair_TunnelTop" parent="Marker_all_Constructs/Empty_AtriumHab/First_Atrium/Markers/Marker_VerticalStair_TunnelTop" index="0"]
-display_info = "Interactable"
-title = "Title"
-networked = true
-generate_editor_visual = false
 
 [node name="DVT_Empty_AtriumHab" parent="Marker_all_Constructs/Empty_AtriumHab" index="1" instance=ExtResource( 38 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50.7373, 2.58819, -55.8898 )
@@ -1643,9 +1622,11 @@ __meta__ = {
 
 [node name="Third_Gallery" parent="Marker_all_Constructs/Empty_ThirdGallery" index="0" instance=ExtResource( 24 )]
 
-[node name="Earth" parent="." index="53" instance=ExtResource( 35 )]
+[node name="Earth" parent="." index="54" instance=ExtResource( 35 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30000, 0 )
 visible = false
+
+[editable path="AirlockDockInteractable"]
 
 [editable path="Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor/Molten_Soil_Reactor"]
 
