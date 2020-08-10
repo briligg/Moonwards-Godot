@@ -21,7 +21,7 @@ func _init(in_node_path: NodePath = NodePath(), in_subnames: String = "").(in_no
 	var colorbox :StyleBoxFlat = _set_colorbox()
 	button.connect("pressed", popup, "popup_centered")
 	get_node("HBoxContainer").add_child(button)
-	popup.connect("color_changed", self, "populate_value")
+	popup.connect("color_changed", self, "set_node_value")
 	button.add_stylebox_override("normal", colorbox)
 	button.add_stylebox_override("pressed", colorbox)
 	button.add_stylebox_override("focus", colorbox)

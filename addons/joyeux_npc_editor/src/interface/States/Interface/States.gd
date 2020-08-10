@@ -39,10 +39,10 @@ func load_connections():
 		)
 
 func load_variables():
-	var node = get_node(node_path)
+	var node = get_node("ViewMenuSplit/Container/InspectorGadgetScrollContainer/InspectorGadget")
 	for key in SaveFile.get_section_keys("variables"):
 		var vars = SaveFile.get_value("variables", key)
-		node.set(key, vars)
+		node.set_value_for_prop(key, vars)
 
 func save_variables():
 	var node = get_node(node_path)
