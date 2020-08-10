@@ -31,9 +31,15 @@ func _load_states(state_file : String):
 		ai_script.load(state_file) 
 		_load_connection_dict(ai_script.get_value("config", "filtered_connections", []))
 		_load_behaviors_in_machine()
+		_load_variables()
 		_start_machine()
 	else:
 		print_debug("Error: No State Machine File selected")
+
+func _load_variables():
+	for key in ai_script.get_section_keys("variables"):
+		var vars = ai_script.get_value("variables", key)
+		set(key, vars)
 
 func _load_connection_dict(connections):
 	for elements in connections:
