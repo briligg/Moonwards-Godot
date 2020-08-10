@@ -54,13 +54,13 @@ size_flags_vertical = 3
 text = "'Enter' to start inputing text. 'Enter' again to send message.
 'T' to scroll chat display up.
 'G' to scroll chat display down.
-'V' to toggle Chat between max and min vertical size.
-'C' to expand Chat to the right.
-'X' to shrink Chat to the left.
-'1' to expand Chat upwards.
-'Q' to shrink Chat downwards.
-'2' to hide Chat.
-'H' to go back to Chat Display."
+'CTRL+V' to toggle Chat between max and min vertical size.
+'CTRL+C' to expand Chat to the right.
+'CTRL+X' to shrink Chat to the left.
+'CTRL+1' to expand Chat upwards.
+'CTRL+Q' to shrink Chat downwards.
+'CTRL+2' to hide Chat.
+'CTRL+H' to go back to Chat Display."
 
 [node name="Tabs" type="TabContainer" parent="V"]
 margin_right = 572.0
