@@ -57,9 +57,11 @@ func _input(event):
 		Signals.Entities.emit_signal(Signals.Entities.FREE_CAMERA_TOGGLED)
 	
 	if event.is_action_pressed("zoom_in", true) :
-		fly_speed += 1
+		fly_speed += 2
+		Signals.Hud.emit_signal(Signals.Hud.FLIGHT_VALUE_SET, fly_speed)
 	if event.is_action_pressed("zoom_out", true) :
 		fly_speed = max(0.05, fly_speed - 2)
+		Signals.Hud.emit_signal(Signals.Hud.FLIGHT_VALUE_SET, fly_speed)
 
 func _update_cam_pos(delta : float = 0.016667) -> void:
 	#The player is in camera fly mode.
