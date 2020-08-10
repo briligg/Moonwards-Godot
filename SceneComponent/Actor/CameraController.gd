@@ -17,6 +17,9 @@ var pitch: float = 0.0
 
 #Determines if I should freely fly or not.
 var is_flying : bool = false
+#How fast the player is flying.
+var fly_speed : float = 90
+
 
 func _init().("Camera", true):
 	pass
@@ -52,6 +55,11 @@ func _input(event):
 	elif event.is_action_pressed("toggle_camera_fly") :
 		is_flying = !is_flying
 		Signals.Entities.emit_signal(Signals.Entities.FREE_CAMERA_TOGGLED)
+	
+	if event.is_action_pressed("zoom_in", true) :
+		fly_speed += 1
+	if event.is_action_pressed("zoom_out", true) :
+		fly_speed = max(0.05, fly_speed - 2)
 
 func _update_cam_pos(delta : float = 0.016667) -> void:
 	#The player is in camera fly mode.
@@ -70,7 +78,7 @@ func _update_cam_pos(delta : float = 0.016667) -> void:
 		new_input.y = input.y
 		
 		var velocity : Vector3 = new_input
-		velocity *= 90
+		velocity *= fly_speed
 		velocity *= delta
 		
 		camera.global_transform.origin += velocity
