@@ -61,7 +61,7 @@
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-4.ogg" type="AudioStream" id=60]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-11.ogg" type="AudioStream" id=61]
 [ext_resource path="res://Tree/Actor/Vehicle/AthleteRover/AthleteRover.tscn" type="PackedScene" id=62]
-[ext_resource path="res://Tree/Actor/Vehicle/PassengerPod/PassengerPod.tscn" type="PackedScene" id=63]
+[ext_resource path="res://Tree/Object/PassengerPod/PassengerPod.tscn" type="PackedScene" id=63]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 108.19, 109.38, 110.021 )
@@ -729,7 +729,7 @@ __meta__ = {
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 122.585, 109, -180.953 )
 
 [node name="PassengerPod" parent="." index="28" instance=ExtResource( 63 )]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 122.585, 100.563, -179.058 )
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 122.585, 100.563, -158.051 )
 
 [node name="AthleteRover2" parent="." index="29" instance=ExtResource( 62 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.6243, 104.935, -237.975 )

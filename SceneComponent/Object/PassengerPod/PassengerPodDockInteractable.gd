@@ -1,0 +1,128 @@
+extends Spatial
+
+onready var collision = get_parent().get_node("CollisionShape")
+onready var airlock_latch = get_parent().get_node("AirlockLatch")
+
+const HALF_HEIGHT = 2.23
+
+# Is docked to a rover?
+var is_docked = false
+
+# The rover it's docked to, if any
+var docked_to: AEntity
+
+# Original parent of the pod at spawn
+var orig_parent
+
+# The interactable of the door we're docked with or potentially docking with
+var _dock_door_interactable
+
+onready var pod = get_parent()
+
+func _ready() -> void:
+	$Interactable.owning_entity = self.pod
+	$Interactable.display_info = "Dock to rover"
+	$Interactable.connect("interacted_by", self, "interacted_by")
+	$Interactable.title = "Dock Passenger Pod"
+	$Interactable.display_info = ""
+	orig_parent = pod.get_parent()
+	$AirlockDetector.connect("area_entered", self, "_on_area_entered")
+	$AirlockDetector.connect("area_exited", self, "_on_area_exited")
+	
+func interacted_by(interactor):
+	if interactor.is_in_group("athlete_rover"):
+		if !is_docked:
+			call_deferred("dock_with", interactor)
+		elif is_docked and interactor == docked_to:
+			if _dock_door_interactable != null:
+				call_deferred("undock_to_airlock", interactor)
+			else:
+				call_deferred("undock")
+
+func dock_with(rover):
+	rover.mode = RigidBody.MODE_KINEMATIC
+	var rover_anchor = rover.get_node("DockLatch")
+	var pod_anchor = get_parent().get_node("DockLatch")
+	var original_rover_pos = rover.global_transform.origin
+	
+	while(true):
+		var dir = (pod_anchor.global_transform.origin - 
+				rover_anchor.global_transform.origin).normalized()
+		rover.global_translate(dir * 0.016)
+		if pod_anchor.global_transform.origin.distance_to(
+					rover_anchor.global_transform.origin) <= .1:
+			break
+		yield(get_tree(), "physics_frame")
+		
+	$Interactable.title = "Undock Passenger Pod"
+	_reparent(pod, rover)
+	var target_xfm = rover.get_node("DockLatch").transform
+	pod.transform = target_xfm
+	pod.transform.origin.y -= HALF_HEIGHT + .1
+	_reparent(collision, rover)
+	collision.transform.origin.y = target_xfm.origin.y - HALF_HEIGHT + .1
+	docked_to = rover
+	is_docked = true
+	
+	var c = 0.0
+	var dir = Vector3(0, original_rover_pos.y, original_rover_pos.z).normalized()
+	var dist = original_rover_pos.distance_to(rover.global_transform.origin)
+	while(true):
+		rover.global_translate(dir * 0.016)
+		c += dir.length() * 0.016
+		if c >= dist:
+			break
+		yield(get_tree(), "physics_frame")
+	pod.mode = RigidBody.MODE_STATIC
+	rover.mode = RigidBody.MODE_RIGID
+
+func undock():
+	$Interactable.title = "Dock Passenger Pod"
+	_reparent(pod, orig_parent)
+	
+	pod.global_transform = docked_to.get_node("DockLatch").global_transform
+	pod.global_transform.origin.y -= HALF_HEIGHT + .1
+	
+	_reparent(collision, pod)
+	collision.transform.origin = Vector3.ZERO
+	# Offset because the pivot is broken on the pod model
+	collision.transform.origin.z = -1
+	
+	docked_to = null
+	is_docked = false
+	pod.mode = RigidBody.MODE_RIGID
+
+# Undock from rover and into the airlock
+func undock_to_airlock(rover):
+	while(true):
+		var dir = (_dock_door_interactable.global_transform.origin - 
+				airlock_latch.global_transform.origin).normalized()
+		rover.global_translate(dir * 0.016)
+		if _dock_door_interactable.global_transform.origin.distance_to(
+					airlock_latch.global_transform.origin) <= .016:
+			break
+		yield(get_tree(), "physics_frame")
+	undock()
+	pod.mode = RigidBody.MODE_STATIC
+
+func _on_area_entered(area):
+	if area is AirlockDoorInteractable:
+		if area.is_dock_door:
+			_dock_door_interactable = area
+			$Interactable.display_info = "Undock Passenger Pod from the rover and into the airlock door"
+
+func _on_area_exited(area):
+	yield(get_tree(), "physics_frame")
+	if area == _dock_door_interactable:
+		if !area.overlaps_area($AirlockDetector):
+			$Interactable.display_info = ""
+			_dock_door_interactable = null
+
+func _align_rover_to_dock(rover):
+	pass
+
+func _reparent(node, new_parent):
+	var p = node.get_parent()
+	p.remove_child(node)
+	new_parent.add_child(node)
+	node.owner = new_parent
