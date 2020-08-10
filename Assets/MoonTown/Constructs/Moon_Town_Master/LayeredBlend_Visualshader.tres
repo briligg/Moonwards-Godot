@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=53 format=2]
+[gd_resource type="VisualShader" load_steps=55 format=2]
 
 [sub_resource type="VisualShaderNodeVectorOp" id=1]
 operator = 2
@@ -72,9 +72,6 @@ texture_type = 2
 uniform_name = "Noise_RGB"
 texture_type = 1
 
-[sub_resource type="VisualShaderNodeVec3Uniform" id=26]
-uniform_name = "UVScale2"
-
 [sub_resource type="VisualShaderNodeInput" id=27]
 input_name = "uv"
 
@@ -134,6 +131,14 @@ function = 31
 
 [sub_resource type="VisualShaderNodeBooleanUniform" id=49]
 uniform_name = "NoiseInvert"
+
+[sub_resource type="VisualShaderNodeFresnel" id=53]
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=54]
+uniform_name = "RimInt"
+
+[sub_resource type="VisualShaderNodeColorUniform" id=55]
+uniform_name = "ColorUniform"
 
 [sub_resource type="VisualShaderNodeInput" id=50]
 input_name = "uv"
@@ -432,7 +437,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -1103, -127 )
+graph_offset = Vector2( -1163, 5 )
 nodes/fragment/0/position = Vector2( 200, 200 )
 nodes/fragment/7/node = SubResource( 50 )
 nodes/fragment/7/position = Vector2( -2000, 100 )
@@ -490,8 +495,6 @@ nodes/fragment/33/node = SubResource( 24 )
 nodes/fragment/33/position = Vector2( -600, 880 )
 nodes/fragment/34/node = SubResource( 25 )
 nodes/fragment/34/position = Vector2( -3200, 800 )
-nodes/fragment/35/node = SubResource( 26 )
-nodes/fragment/35/position = Vector2( -2000, -600 )
 nodes/fragment/36/node = SubResource( 27 )
 nodes/fragment/36/position = Vector2( -3600, 800 )
 nodes/fragment/37/node = SubResource( 28 )
@@ -538,4 +541,10 @@ nodes/fragment/59/node = SubResource( 48 )
 nodes/fragment/59/position = Vector2( -1600, 800 )
 nodes/fragment/60/node = SubResource( 49 )
 nodes/fragment/60/position = Vector2( -2000, 800 )
-nodes/fragment/connections = PoolIntArray( 7, 0, 10, 0, 8, 0, 10, 1, 7, 0, 11, 0, 9, 0, 11, 1, 10, 0, 12, 0, 11, 0, 13, 0, 12, 0, 16, 1, 14, 0, 16, 0, 13, 0, 17, 0, 15, 0, 17, 1, 16, 0, 18, 0, 17, 0, 18, 1, 10, 0, 20, 0, 11, 0, 21, 0, 20, 0, 22, 0, 21, 0, 23, 0, 22, 1, 24, 0, 23, 1, 24, 1, 27, 0, 25, 0, 28, 0, 25, 1, 30, 0, 26, 1, 10, 0, 31, 0, 11, 0, 32, 0, 31, 0, 33, 0, 32, 0, 33, 1, 33, 0, 0, 8, 18, 0, 0, 0, 36, 0, 38, 0, 37, 0, 38, 1, 38, 0, 34, 0, 34, 0, 39, 0, 41, 0, 40, 0, 42, 0, 44, 0, 19, 0, 47, 0, 47, 0, 0, 3, 25, 0, 48, 0, 48, 0, 0, 2, 26, 0, 49, 0, 49, 0, 0, 4, 34, 1, 50, 1, 39, 2, 50, 2, 39, 0, 40, 2, 39, 1, 40, 1, 51, 0, 50, 0, 50, 0, 52, 1, 40, 0, 52, 2, 53, 0, 52, 0, 52, 0, 42, 1, 43, 0, 42, 0, 22, 0, 54, 0, 54, 0, 19, 0, 23, 0, 55, 0, 55, 0, 19, 1, 56, 0, 54, 1, 57, 0, 55, 1, 60, 0, 59, 0, 58, 0, 59, 1, 44, 0, 59, 2, 44, 0, 58, 0, 29, 0, 26, 0, 59, 0, 26, 2, 59, 0, 25, 2, 59, 0, 19, 2, 59, 0, 24, 2, 59, 0, 18, 2, 59, 0, 33, 2 )
+nodes/fragment/61/node = SubResource( 53 )
+nodes/fragment/61/position = Vector2( -140, -120 )
+nodes/fragment/62/node = SubResource( 54 )
+nodes/fragment/62/position = Vector2( -180, 360 )
+nodes/fragment/63/node = SubResource( 55 )
+nodes/fragment/63/position = Vector2( -100, 620 )
+nodes/fragment/connections = PoolIntArray( 7, 0, 10, 0, 8, 0, 10, 1, 7, 0, 11, 0, 9, 0, 11, 1, 10, 0, 12, 0, 11, 0, 13, 0, 12, 0, 16, 1, 14, 0, 16, 0, 13, 0, 17, 0, 15, 0, 17, 1, 16, 0, 18, 0, 17, 0, 18, 1, 10, 0, 20, 0, 11, 0, 21, 0, 20, 0, 22, 0, 21, 0, 23, 0, 22, 1, 24, 0, 23, 1, 24, 1, 27, 0, 25, 0, 28, 0, 25, 1, 30, 0, 26, 1, 10, 0, 31, 0, 11, 0, 32, 0, 31, 0, 33, 0, 32, 0, 33, 1, 33, 0, 0, 8, 36, 0, 38, 0, 37, 0, 38, 1, 38, 0, 34, 0, 34, 0, 39, 0, 41, 0, 40, 0, 42, 0, 44, 0, 19, 0, 47, 0, 47, 0, 0, 3, 25, 0, 48, 0, 48, 0, 0, 2, 26, 0, 49, 0, 49, 0, 0, 4, 34, 1, 50, 1, 39, 2, 50, 2, 39, 0, 40, 2, 39, 1, 40, 1, 51, 0, 50, 0, 50, 0, 52, 1, 40, 0, 52, 2, 53, 0, 52, 0, 52, 0, 42, 1, 43, 0, 42, 0, 22, 0, 54, 0, 54, 0, 19, 0, 23, 0, 55, 0, 55, 0, 19, 1, 56, 0, 54, 1, 57, 0, 55, 1, 60, 0, 59, 0, 58, 0, 59, 1, 44, 0, 59, 2, 44, 0, 58, 0, 29, 0, 26, 0, 59, 0, 26, 2, 59, 0, 25, 2, 59, 0, 19, 2, 59, 0, 24, 2, 59, 0, 18, 2, 59, 0, 33, 2, 18, 0, 0, 0 )

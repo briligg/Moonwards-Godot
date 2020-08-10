@@ -1,0 +1,37 @@
+[gd_resource type="ShaderMaterial" load_steps=9 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/LayeredBlendAlt_Visualshader.tres" type="Shader" id=1]
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Concrete_02/Concrete_02_2K_Roughness.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Concrete_01/Concrete_01_2K_Albedo.jpg" type="Texture" id=3]
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Concrete_01/Concrete_01_2K_Normal.jpg" type="Texture" id=4]
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Concrete_02/Concrete_02_2K_Normal.jpg" type="Texture" id=5]
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Concrete_02/Concrete_02_2K_Albedo.jpg" type="Texture" id=6]
+[ext_resource path="res://Assets/SharedAssets/Textures/Noises/Noise_Hev_01_1K_RGBA.png" type="Texture" id=7]
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Concrete_01/Concrete_01_2K_Roughness.jpg" type="Texture" id=8]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/Color_A = Color( 0.788235, 0.72549, 0.67451, 1 )
+shader_param/UVScale_A = Vector3( 50, 50, 1 )
+shader_param/UVScale_B = Vector3( 50, 50, 1 )
+shader_param/Color_B = Color( 0.772549, 0.717647, 0.67451, 1 )
+shader_param/NoiseInvert = true
+shader_param/NoiseIntensity = 0.9
+shader_param/NoiseAlpha = true
+shader_param/NoiseZ = false
+shader_param/UVScale_Noise = Vector3( 5, 5, 0 )
+shader_param/NoiseY = false
+shader_param/Metallic_A = null
+shader_param/Metallic_B = null
+shader_param/Rough_Mult_A = 1.0
+shader_param/Rough_Mult_B = 1.0
+shader_param/Specular_A = 0.5
+shader_param/Specular_B = 0.5
+shader_param/RimInt = 6.0
+shader_param/Albedo_A = ExtResource( 3 )
+shader_param/Albedo_B = ExtResource( 6 )
+shader_param/Noise_RGB = ExtResource( 7 )
+shader_param/Rough_A = ExtResource( 8 )
+shader_param/Rough_B = ExtResource( 2 )
+shader_param/NormalMap_A = ExtResource( 4 )
+shader_param/NormalMap_B = ExtResource( 5 )
