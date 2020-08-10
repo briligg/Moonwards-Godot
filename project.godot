@@ -1623,8 +1623,12 @@ file_logging/max_log_files=30
 
 [rendering]
 
+threads/thread_model=2
+quality/filters/anisotropic_filter_level=8
 quality/shadows/filter_mode=2
+quality/reflections/irradiance_max_size=256
 quality/filters/use_nearest_mipmap_filter=true
 limits/rendering/max_renderable_elements=60000
 environment/default_clear_color=Color( 0, 0, 0, 1 )
+quality/filters/msaa=1
 environment/default_environment="res://default_env.tres"
