@@ -1,10 +1,61 @@
-[gd_resource type="VisualShader" load_steps=87 format=2]
+[gd_resource type="VisualShader" load_steps=101 format=2]
 
 [sub_resource type="VisualShaderNodeVectorOp" id=1]
 operator = 2
 
+[sub_resource type="VisualShaderNodeExpression" id=90]
+size = Vector2( 668, 483 )
+expression = "vec4 invcamx = Camera[0];
+vec4 invcamy = Camera[1];
+vec4 invcamz = Camera[2];
+vec4 invcamw = Camera[3];
+
+mat3 invcam = mat3(invcamx.xyz, invcamy.xyz, invcamz.xyz);
+
+vec3 world_normal = Normal * invcam;
+vec3 world_pos = (Vertex - invcamw.xyz) * invcam;
+NormalWorld = world_normal;
+NormalLocation = world_pos;"
+
+[sub_resource type="VisualShaderNodeScalarConstant" id=91]
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id=92]
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=93]
+uniform_name = "Rough_Mult_C"
+
+[sub_resource type="VisualShaderNodeScalarOp" id=94]
+operator = 2
+
+[sub_resource type="VisualShaderNodeScalarInterp" id=95]
+
 [sub_resource type="VisualShaderNodeVectorOp" id=2]
 operator = 2
+
+[sub_resource type="VisualShaderNodeInput" id=102]
+input_name = "inv_camera"
+
+[sub_resource type="VisualShaderNodeInput" id=103]
+input_name = "normal"
+
+[sub_resource type="VisualShaderNodeInput" id=104]
+input_name = "vertex"
+
+[sub_resource type="VisualShaderNodeExpression" id=105]
+size = Vector2( 668, 483 )
+expression = "float y = normal.y;
+normal.y = -normal.z;
+normal.z = y;
+NormalWorld =  (Camera * (World * vec4(normal, 0.0))).rgb;"
+
+[sub_resource type="VisualShaderNodeInput" id=106]
+input_name = "inv_camera"
+
+[sub_resource type="VisualShaderNodeInput" id=107]
+input_name = "world"
+
+[sub_resource type="VisualShaderNodeInput" id=108]
+input_name = "normal"
 
 [sub_resource type="VisualShaderNodeTextureUniform" id=3]
 uniform_name = "Albedo_A"
@@ -39,8 +90,6 @@ texture_type = 1
 [sub_resource type="VisualShaderNodeVectorDecompose" id=13]
 
 [sub_resource type="VisualShaderNodeVectorDecompose" id=14]
-
-[sub_resource type="VisualShaderNodeScalarInterp" id=15]
 
 [sub_resource type="VisualShaderNodeScalarInterp" id=16]
 
@@ -195,10 +244,10 @@ default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 0, 0, 0 ), 2, Vector
 uniform_name = "Fresnel_Color"
 
 [sub_resource type="VisualShaderNodeVec3Constant" id=73]
-constant = Vector3( 0, 0, 1 )
+constant = Vector3( 0, 1, 0 )
 
 [sub_resource type="VisualShaderNodeInput" id=74]
-input_name = "normal"
+input_name = "vertex"
 
 [sub_resource type="VisualShaderNodeDotProduct" id=75]
 
@@ -239,6 +288,11 @@ texture_type = 2
 
 [sub_resource type="VisualShaderNodeVectorInterp" id=87]
 
+[sub_resource type="VisualShaderNodeScalarClamp" id=88]
+
+[sub_resource type="VisualShaderNodeScalarFunc" id=89]
+function = 31
+
 [resource]
 code = "shader_type spatial;
 uniform vec4 Color_A : hint_color;
@@ -265,15 +319,16 @@ uniform vec4 Color_C_Alt : hint_color;
 uniform float Metallic_A;
 uniform float Metallic_B;
 uniform float Metallic_C;
-uniform sampler2D Rough_A : hint_albedo;
 uniform float Rough_Mult_A;
-uniform sampler2D Rough_B : hint_albedo;
+uniform sampler2D Rough_A : hint_albedo;
 uniform float Rough_Mult_B;
+uniform sampler2D Rough_B : hint_albedo;
+uniform float Rough_Mult_C;
+uniform sampler2D Rough_C : hint_albedo;
 uniform float Specular_A;
 uniform float Specular_B;
 uniform float Specular_C;
 uniform vec4 Fresnel_Color : hint_color;
-uniform float Fresnel_Power;
 uniform sampler2D NormalMap_A : hint_normal;
 uniform sampler2D NormalMap_B : hint_normal;
 uniform sampler2D NormalMap_C : hint_normal;
@@ -446,14 +501,39 @@ void fragment() {
 // VectorMix:75
 	vec3 n_out75p0 = mix(n_out65p0, n_out72p0, vec3(n_out59p0));
 
-// Vector:83
-	vec3 n_out83p0 = vec3(0.000000, 0.000000, 1.000000);
+// Input:112
+	mat4 n_out112p0 = INV_CAMERA_MATRIX;
 
-// Input:84
-	vec3 n_out84p0 = NORMAL;
+// Input:113
+	vec3 n_out113p0 = NORMAL;
+
+// Input:114
+	vec3 n_out114p0 = VERTEX;
+
+// Expression:100
+	vec3 n_out100p0;
+	vec3 n_out100p1;
+	n_out100p0 = vec3(0.0, 0.0, 0.0);
+	n_out100p1 = vec3(0.0, 0.0, 0.0);
+	{
+		vec4 invcamx = n_out112p0[0];
+		vec4 invcamy = n_out112p0[1];
+		vec4 invcamz = n_out112p0[2];
+		vec4 invcamw = n_out112p0[3];
+		
+		mat3 invcam = mat3(invcamx.xyz, invcamy.xyz, invcamz.xyz);
+		
+		vec3 world_normal = n_out113p0 * invcam;
+		vec3 world_pos = (n_out114p0 - invcamw.xyz) * invcam;
+		n_out100p0 = world_normal;
+		n_out100p1 = world_pos;
+	}
+
+// Vector:83
+	vec3 n_out83p0 = vec3(0.000000, 1.000000, 0.000000);
 
 // DotProduct:85
-	float n_out85p0 = dot(n_out83p0, n_out84p0);
+	float n_out85p0 = dot(n_out100p0, n_out83p0);
 
 // ScalarUniform:88
 	float n_out88p0 = Slope;
@@ -467,8 +547,16 @@ void fragment() {
 // ScalarOp:87
 	float n_out87p0 = n_out86p0 * n_out89p0;
 
+// ScalarClamp:98
+	float n_in98p1 = 0.00000;
+	float n_in98p2 = 1.00000;
+	float n_out98p0 = clamp(n_out87p0, n_in98p1, n_in98p2);
+
+// ScalarFunc:99
+	float n_out99p0 = 1.0 - n_out98p0;
+
 // VectorMix:78
-	vec3 n_out78p0 = mix(n_out18p0, n_out75p0, vec3(n_out87p0));
+	vec3 n_out78p0 = mix(n_out18p0, n_out75p0, vec3(n_out99p0));
 
 // ColorUniform:15
 	vec3 n_out15p0 = Color_C.rgb;
@@ -502,9 +590,11 @@ void fragment() {
 // VectorMix:76
 	vec3 n_out76p0 = mix(n_out17p0, n_out74p0, vec3(n_out59p0));
 
+// Scalar:101
+	float n_out101p0 = 0.000000;
+
 // VectorMix:79
-	vec3 n_in79p2 = vec3(0.50000, 0.50000, 0.50000);
-	vec3 n_out79p0 = mix(n_out78p0, n_out76p0, n_in79p2);
+	vec3 n_out79p0 = mix(n_out78p0, n_out76p0, vec3(n_out101p0));
 
 // ScalarUniform:27
 	float n_out27p0 = Metallic_A;
@@ -513,19 +603,21 @@ void fragment() {
 	float n_out28p0 = Metallic_B;
 
 // ScalarMix:25
-	float n_out25p0 = mix(n_out27p0, n_out28p0, n_out87p0);
+	float n_out25p0 = mix(n_out27p0, n_out28p0, n_out99p0);
 
 // ScalarUniform:91
 	float n_out91p0 = Metallic_C;
 
 // ScalarMix:94
-	float n_in94p2 = 0.50000;
-	float n_out94p0 = mix(n_out25p0, n_out91p0, n_in94p2);
+	float n_out94p0 = mix(n_out25p0, n_out91p0, n_out101p0);
 
 // ScalarClamp:48
 	float n_in48p1 = 0.00000;
 	float n_in48p2 = 1.00000;
 	float n_out48p0 = clamp(n_out94p0, n_in48p1, n_in48p2);
+
+// ScalarUniform:56
+	float n_out56p0 = Rough_Mult_A;
 
 // TextureUniform:20
 	vec3 n_out20p0;
@@ -541,11 +633,11 @@ void fragment() {
 	float n_out22p1 = n_out20p0.y;
 	float n_out22p2 = n_out20p0.z;
 
-// ScalarUniform:56
-	float n_out56p0 = Rough_Mult_A;
-
 // ScalarOp:54
-	float n_out54p0 = n_out22p0 * n_out56p0;
+	float n_out54p0 = n_out56p0 * n_out22p0;
+
+// ScalarUniform:57
+	float n_out57p0 = Rough_Mult_B;
 
 // TextureUniform:21
 	vec3 n_out21p0;
@@ -561,19 +653,39 @@ void fragment() {
 	float n_out23p1 = n_out21p0.y;
 	float n_out23p2 = n_out21p0.z;
 
-// ScalarUniform:57
-	float n_out57p0 = Rough_Mult_B;
-
 // ScalarOp:55
-	float n_out55p0 = n_out23p0 * n_out57p0;
+	float n_out55p0 = n_out57p0 * n_out23p0;
 
 // ScalarMix:19
 	float n_out19p0 = mix(n_out54p0, n_out55p0, n_out59p0);
 
+// ScalarUniform:103
+	float n_out103p0 = Rough_Mult_C;
+
+// TextureUniform:77
+	vec3 n_out77p0;
+	float n_out77p1;
+	{
+		vec4 n_tex_read = texture(Rough_C, n_out11p0.xy);
+		n_out77p0 = n_tex_read.rgb;
+		n_out77p1 = n_tex_read.a;
+	}
+
+// VectorDecompose:102
+	float n_out102p0 = n_out77p0.x;
+	float n_out102p1 = n_out77p0.y;
+	float n_out102p2 = n_out77p0.z;
+
+// ScalarOp:104
+	float n_out104p0 = n_out103p0 * n_out102p0;
+
+// ScalarMix:105
+	float n_out105p0 = mix(n_out19p0, n_out104p0, n_out101p0);
+
 // ScalarClamp:47
 	float n_in47p1 = 0.00000;
 	float n_in47p2 = 1.00000;
-	float n_out47p0 = clamp(n_out19p0, n_in47p1, n_in47p2);
+	float n_out47p0 = clamp(n_out105p0, n_in47p1, n_in47p2);
 
 // ScalarUniform:29
 	float n_out29p0 = Specular_A;
@@ -582,14 +694,13 @@ void fragment() {
 	float n_out30p0 = Specular_B;
 
 // ScalarMix:26
-	float n_out26p0 = mix(n_out29p0, n_out30p0, n_out87p0);
+	float n_out26p0 = mix(n_out29p0, n_out30p0, n_out99p0);
 
 // ScalarUniform:92
 	float n_out92p0 = Specular_C;
 
 // ScalarMix:93
-	float n_in93p2 = 0.50000;
-	float n_out93p0 = mix(n_out26p0, n_out92p0, n_in93p2);
+	float n_out93p0 = mix(n_out26p0, n_out92p0, n_out101p0);
 
 // ScalarClamp:49
 	float n_in49p1 = 0.00000;
@@ -600,25 +711,13 @@ void fragment() {
 	vec3 n_out81p0 = Fresnel_Color.rgb;
 	float n_out81p1 = Fresnel_Color.a;
 
-// ScalarUniform:62
-	float n_out62p0 = Fresnel_Power;
-
-// Fresnel:61
-	bool n_in61p2 = false;
-	float n_out61p0 = n_in61p2 ? (pow(clamp(dot(NORMAL, VIEW), 0.0, 1.0), n_out62p0)) : (pow(1.0 - clamp(dot(NORMAL, VIEW), 0.0, 1.0), n_out62p0));
-
-// VectorMix:90
-	vec3 n_in90p1 = vec3(0.00000, 0.00000, 0.00000);
-	vec3 n_out90p0 = mix(n_out81p0, n_in90p1, vec3(n_out61p0));
-
 // VectorMix:80
 	vec3 n_in80p1 = vec3(0.00000, 0.00000, 0.00000);
-	vec3 n_out80p0 = mix(n_out90p0, n_in80p1, vec3(n_out87p0));
+	vec3 n_out80p0 = mix(n_out81p0, n_in80p1, vec3(n_out99p0));
 
 // VectorMix:95
 	vec3 n_in95p1 = vec3(0.00000, 0.00000, 0.00000);
-	vec3 n_in95p2 = vec3(0.50000, 0.50000, 0.50000);
-	vec3 n_out95p0 = mix(n_out80p0, n_in95p1, n_in95p2);
+	vec3 n_out95p0 = mix(n_out80p0, n_in95p1, vec3(n_out101p0));
 
 // TextureUniform:31
 	vec3 n_out31p0;
@@ -639,7 +738,7 @@ void fragment() {
 	}
 
 // VectorMix:33
-	vec3 n_out33p0 = mix(n_out31p0, n_out32p0, vec3(n_out87p0));
+	vec3 n_out33p0 = mix(n_out31p0, n_out32p0, vec3(n_out99p0));
 
 // TextureUniform:96
 	vec3 n_out96p0;
@@ -651,8 +750,7 @@ void fragment() {
 	}
 
 // VectorMix:97
-	vec3 n_in97p2 = vec3(0.50000, 0.50000, 0.50000);
-	vec3 n_out97p0 = mix(n_out33p0, n_out96p0, n_in97p2);
+	vec3 n_out97p0 = mix(n_out33p0, n_out96p0, vec3(n_out101p0));
 
 // Output:0
 	ALBEDO = n_out79p0;
@@ -661,6 +759,7 @@ void fragment() {
 	SPECULAR = n_out49p0;
 	EMISSION = n_out95p0;
 	NORMALMAP = n_out97p0;
+	RIM = dot(n_out95p0, vec3(0.333333, 0.333333, 0.333333));
 
 }
 
@@ -669,8 +768,8 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -1515, -181 )
-nodes/fragment/0/position = Vector2( 200, 200 )
+graph_offset = Vector2( -1450.9, -416.092 )
+nodes/fragment/0/position = Vector2( 400, 200 )
 nodes/fragment/7/node = SubResource( 58 )
 nodes/fragment/7/position = Vector2( -2000, 140 )
 nodes/fragment/8/node = SubResource( 69 )
@@ -705,8 +804,6 @@ nodes/fragment/22/node = SubResource( 13 )
 nodes/fragment/22/position = Vector2( -1000, 880 )
 nodes/fragment/23/node = SubResource( 14 )
 nodes/fragment/23/position = Vector2( -1000, 1080 )
-nodes/fragment/24/node = SubResource( 15 )
-nodes/fragment/24/position = Vector2( -400, 1000 )
 nodes/fragment/25/node = SubResource( 16 )
 nodes/fragment/25/position = Vector2( -800, 200 )
 nodes/fragment/26/node = SubResource( 17 )
@@ -746,7 +843,7 @@ nodes/fragment/43/position = Vector2( -2400, 800 )
 nodes/fragment/44/node = SubResource( 34 )
 nodes/fragment/44/position = Vector2( -2000, 880 )
 nodes/fragment/47/node = SubResource( 35 )
-nodes/fragment/47/position = Vector2( -200, 880 )
+nodes/fragment/47/position = Vector2( 0, 880 )
 nodes/fragment/48/node = SubResource( 36 )
 nodes/fragment/48/position = Vector2( -200, 200 )
 nodes/fragment/49/node = SubResource( 37 )
@@ -760,13 +857,13 @@ nodes/fragment/52/position = Vector2( -2400, 900 )
 nodes/fragment/53/node = SubResource( 41 )
 nodes/fragment/53/position = Vector2( -3000, 1060 )
 nodes/fragment/54/node = SubResource( 42 )
-nodes/fragment/54/position = Vector2( -600, 860 )
+nodes/fragment/54/position = Vector2( -600, 800 )
 nodes/fragment/55/node = SubResource( 43 )
-nodes/fragment/55/position = Vector2( -600, 1040 )
+nodes/fragment/55/position = Vector2( -600, 1000 )
 nodes/fragment/56/node = SubResource( 44 )
-nodes/fragment/56/position = Vector2( -800, 1000 )
+nodes/fragment/56/position = Vector2( -1000, 800 )
 nodes/fragment/57/node = SubResource( 45 )
-nodes/fragment/57/position = Vector2( -800, 1200 )
+nodes/fragment/57/position = Vector2( -1000, 1000 )
 nodes/fragment/58/node = SubResource( 46 )
 nodes/fragment/58/position = Vector2( -1800, 940 )
 nodes/fragment/59/node = SubResource( 47 )
@@ -812,23 +909,23 @@ nodes/fragment/79/position = Vector2( -400, -1000 )
 nodes/fragment/80/node = SubResource( 71 )
 nodes/fragment/80/position = Vector2( -400, -200 )
 nodes/fragment/81/node = SubResource( 72 )
-nodes/fragment/81/position = Vector2( -1000, -200 )
+nodes/fragment/81/position = Vector2( -880, -320 )
 nodes/fragment/83/node = SubResource( 73 )
-nodes/fragment/83/position = Vector2( -2600, 400 )
+nodes/fragment/83/position = Vector2( -2840, 240 )
 nodes/fragment/84/node = SubResource( 74 )
-nodes/fragment/84/position = Vector2( -2400, 500 )
+nodes/fragment/84/position = Vector2( -2800, 500 )
 nodes/fragment/85/node = SubResource( 75 )
-nodes/fragment/85/position = Vector2( -2200, 400 )
+nodes/fragment/85/position = Vector2( -2400, 400 )
 nodes/fragment/86/node = SubResource( 76 )
-nodes/fragment/86/position = Vector2( -2000, 400 )
+nodes/fragment/86/position = Vector2( -2200, 400 )
 nodes/fragment/87/node = SubResource( 77 )
-nodes/fragment/87/position = Vector2( -1820, 400 )
+nodes/fragment/87/position = Vector2( -2000, 400 )
 nodes/fragment/88/node = SubResource( 78 )
-nodes/fragment/88/position = Vector2( -2200, 500 )
+nodes/fragment/88/position = Vector2( -2400, 500 )
 nodes/fragment/89/node = SubResource( 79 )
-nodes/fragment/89/position = Vector2( -2000, 500 )
+nodes/fragment/89/position = Vector2( -2200, 500 )
 nodes/fragment/90/node = SubResource( 80 )
-nodes/fragment/90/position = Vector2( -600, -200 )
+nodes/fragment/90/position = Vector2( -640, -140 )
 nodes/fragment/91/node = SubResource( 81 )
 nodes/fragment/91/position = Vector2( -600, 240 )
 nodes/fragment/92/node = SubResource( 82 )
@@ -843,4 +940,55 @@ nodes/fragment/96/node = SubResource( 86 )
 nodes/fragment/96/position = Vector2( -1200, 1800 )
 nodes/fragment/97/node = SubResource( 87 )
 nodes/fragment/97/position = Vector2( -400, 1480 )
-nodes/fragment/connections = PoolIntArray( 7, 0, 10, 0, 8, 0, 10, 1, 7, 0, 11, 0, 9, 0, 11, 1, 10, 0, 12, 0, 11, 0, 13, 0, 12, 0, 16, 1, 14, 0, 16, 0, 16, 0, 18, 0, 10, 0, 20, 0, 20, 0, 22, 0, 21, 0, 23, 0, 22, 1, 24, 0, 23, 1, 24, 1, 27, 0, 25, 0, 28, 0, 25, 1, 30, 0, 26, 1, 31, 0, 33, 0, 32, 0, 33, 1, 36, 0, 38, 0, 37, 0, 38, 1, 38, 0, 34, 0, 34, 0, 39, 0, 41, 0, 40, 0, 42, 0, 44, 0, 19, 0, 47, 0, 47, 0, 0, 3, 48, 0, 0, 2, 49, 0, 0, 4, 34, 1, 50, 1, 39, 2, 50, 2, 39, 0, 40, 2, 39, 1, 40, 1, 51, 0, 50, 0, 50, 0, 52, 1, 40, 0, 52, 2, 53, 0, 52, 0, 52, 0, 42, 1, 43, 0, 42, 0, 22, 0, 54, 0, 54, 0, 19, 0, 23, 0, 55, 0, 55, 0, 19, 1, 56, 0, 54, 1, 57, 0, 55, 1, 60, 0, 59, 0, 58, 0, 59, 1, 44, 0, 59, 2, 44, 0, 58, 0, 29, 0, 26, 0, 59, 0, 19, 2, 59, 0, 24, 2, 59, 0, 18, 2, 62, 0, 61, 3, 66, 0, 65, 1, 64, 0, 65, 0, 67, 0, 68, 1, 7, 0, 68, 0, 68, 0, 66, 0, 15, 0, 17, 0, 13, 0, 17, 1, 12, 0, 70, 0, 69, 0, 70, 1, 66, 0, 72, 0, 71, 0, 72, 1, 13, 0, 74, 0, 73, 0, 74, 1, 70, 0, 18, 1, 65, 0, 75, 0, 72, 0, 75, 1, 59, 0, 75, 2, 17, 0, 76, 0, 74, 0, 76, 1, 59, 0, 76, 2, 18, 0, 78, 0, 75, 0, 78, 1, 78, 0, 79, 0, 76, 0, 79, 1, 79, 0, 0, 0, 84, 0, 85, 1, 83, 0, 85, 0, 85, 0, 86, 0, 86, 0, 87, 0, 88, 0, 86, 1, 89, 0, 87, 1, 87, 0, 78, 2, 87, 0, 80, 2, 90, 0, 80, 0, 81, 0, 90, 0, 61, 0, 90, 2, 87, 0, 25, 2, 87, 0, 26, 2, 91, 0, 94, 1, 92, 0, 93, 1, 26, 0, 93, 0, 25, 0, 94, 0, 94, 0, 48, 0, 93, 0, 49, 0, 80, 0, 95, 0, 95, 0, 0, 5, 11, 0, 77, 0, 68, 0, 21, 0, 10, 0, 31, 0, 68, 0, 32, 0, 11, 0, 96, 0, 87, 0, 33, 2, 33, 0, 97, 0, 96, 0, 97, 1, 97, 0, 0, 8 )
+nodes/fragment/98/node = SubResource( 88 )
+nodes/fragment/98/position = Vector2( -1800, 420 )
+nodes/fragment/99/node = SubResource( 89 )
+nodes/fragment/99/position = Vector2( -1640, 420 )
+nodes/fragment/100/node = SubResource( 90 )
+nodes/fragment/100/position = Vector2( -3580, 280 )
+nodes/fragment/100/size = Vector2( 668, 483 )
+nodes/fragment/100/input_ports = "0,3,Camera;1,1,Normal;2,1,Vertex;"
+nodes/fragment/100/output_ports = "0,1,NormalWorld;1,1,NormalLocation;"
+nodes/fragment/100/expression = "vec4 invcamx = Camera[0];
+vec4 invcamy = Camera[1];
+vec4 invcamz = Camera[2];
+vec4 invcamw = Camera[3];
+
+mat3 invcam = mat3(invcamx.xyz, invcamy.xyz, invcamz.xyz);
+
+vec3 world_normal = Normal * invcam;
+vec3 world_pos = (Vertex - invcamw.xyz) * invcam;
+NormalWorld = world_normal;
+NormalLocation = world_pos;"
+nodes/fragment/101/node = SubResource( 91 )
+nodes/fragment/101/position = Vector2( -1000, 600 )
+nodes/fragment/102/node = SubResource( 92 )
+nodes/fragment/102/position = Vector2( -1000, 1280 )
+nodes/fragment/103/node = SubResource( 93 )
+nodes/fragment/103/position = Vector2( -1000, 1200 )
+nodes/fragment/104/node = SubResource( 94 )
+nodes/fragment/104/position = Vector2( -600, 1200 )
+nodes/fragment/105/node = SubResource( 95 )
+nodes/fragment/105/position = Vector2( -200, 880 )
+nodes/fragment/112/node = SubResource( 102 )
+nodes/fragment/112/position = Vector2( -3780, 320 )
+nodes/fragment/113/node = SubResource( 103 )
+nodes/fragment/113/position = Vector2( -3780, 400 )
+nodes/fragment/114/node = SubResource( 104 )
+nodes/fragment/114/position = Vector2( -3780, 480 )
+nodes/fragment/115/node = SubResource( 105 )
+nodes/fragment/115/position = Vector2( -3580, -240 )
+nodes/fragment/115/size = Vector2( 668, 483 )
+nodes/fragment/115/input_ports = "0,3,Camera;1,3,World;2,1,Normal;"
+nodes/fragment/115/output_ports = "0,1,NormalWorld;"
+nodes/fragment/115/expression = "float y = normal.y;
+normal.y = -normal.z;
+normal.z = y;
+NormalWorld =  (Camera * (World * vec4(normal, 0.0))).rgb;"
+nodes/fragment/116/node = SubResource( 106 )
+nodes/fragment/116/position = Vector2( -3800, -200 )
+nodes/fragment/117/node = SubResource( 107 )
+nodes/fragment/117/position = Vector2( -3800, -120 )
+nodes/fragment/118/node = SubResource( 108 )
+nodes/fragment/118/position = Vector2( -3800, -40 )
+nodes/fragment/connections = PoolIntArray( 7, 0, 10, 0, 8, 0, 10, 1, 7, 0, 11, 0, 9, 0, 11, 1, 10, 0, 12, 0, 11, 0, 13, 0, 12, 0, 16, 1, 14, 0, 16, 0, 16, 0, 18, 0, 10, 0, 20, 0, 20, 0, 22, 0, 21, 0, 23, 0, 27, 0, 25, 0, 28, 0, 25, 1, 30, 0, 26, 1, 31, 0, 33, 0, 32, 0, 33, 1, 36, 0, 38, 0, 37, 0, 38, 1, 38, 0, 34, 0, 34, 0, 39, 0, 41, 0, 40, 0, 42, 0, 44, 0, 47, 0, 0, 3, 48, 0, 0, 2, 49, 0, 0, 4, 34, 1, 50, 1, 39, 2, 50, 2, 39, 0, 40, 2, 39, 1, 40, 1, 51, 0, 50, 0, 50, 0, 52, 1, 40, 0, 52, 2, 53, 0, 52, 0, 52, 0, 42, 1, 43, 0, 42, 0, 54, 0, 19, 0, 55, 0, 19, 1, 60, 0, 59, 0, 58, 0, 59, 1, 44, 0, 59, 2, 44, 0, 58, 0, 29, 0, 26, 0, 59, 0, 19, 2, 59, 0, 18, 2, 62, 0, 61, 3, 66, 0, 65, 1, 64, 0, 65, 0, 67, 0, 68, 1, 7, 0, 68, 0, 68, 0, 66, 0, 15, 0, 17, 0, 13, 0, 17, 1, 12, 0, 70, 0, 69, 0, 70, 1, 66, 0, 72, 0, 71, 0, 72, 1, 13, 0, 74, 0, 73, 0, 74, 1, 70, 0, 18, 1, 65, 0, 75, 0, 72, 0, 75, 1, 59, 0, 75, 2, 17, 0, 76, 0, 74, 0, 76, 1, 59, 0, 76, 2, 18, 0, 78, 0, 75, 0, 78, 1, 78, 0, 79, 0, 76, 0, 79, 1, 88, 0, 86, 1, 89, 0, 87, 1, 81, 0, 90, 0, 61, 0, 90, 2, 91, 0, 94, 1, 92, 0, 93, 1, 26, 0, 93, 0, 25, 0, 94, 0, 94, 0, 48, 0, 93, 0, 49, 0, 80, 0, 95, 0, 11, 0, 77, 0, 68, 0, 21, 0, 10, 0, 31, 0, 68, 0, 32, 0, 11, 0, 96, 0, 33, 0, 97, 0, 96, 0, 97, 1, 97, 0, 0, 8, 86, 0, 87, 0, 98, 0, 99, 0, 87, 0, 98, 0, 99, 0, 33, 2, 99, 0, 26, 2, 99, 0, 25, 2, 99, 0, 80, 2, 99, 0, 78, 2, 101, 0, 79, 2, 101, 0, 95, 2, 101, 0, 94, 2, 101, 0, 93, 2, 101, 0, 97, 2, 56, 0, 54, 0, 22, 0, 54, 1, 23, 0, 55, 1, 57, 0, 55, 0, 102, 0, 104, 1, 103, 0, 104, 0, 77, 0, 102, 0, 19, 0, 105, 0, 104, 0, 105, 1, 101, 0, 105, 2, 105, 0, 47, 0, 112, 0, 100, 0, 113, 0, 100, 1, 114, 0, 100, 2, 85, 0, 86, 0, 79, 0, 0, 0, 95, 0, 0, 5, 100, 0, 85, 0, 83, 0, 85, 1, 116, 0, 115, 0, 117, 0, 115, 1, 118, 0, 115, 2, 95, 0, 0, 10, 81, 0, 80, 0 )
