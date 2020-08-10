@@ -221,6 +221,7 @@ formats/gzip/compression_level=5
 settings/crash_handler/message=""
 gdscript/warnings/unused_signal=false
 gdscript/warnings/return_value_discarded=false
+settings/gameplay/humans_can_fly=true
 
 [display]
 
