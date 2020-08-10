@@ -11,6 +11,7 @@ var SaveFile : ConfigFile = ConfigFile.new()
 onready var BehaviorList : ItemList = $ViewMenuSplit/Container/ScrollContainer/Behaviors
 onready var BehaviorMenu : PopupMenu = $ViewMenuSplit/StatesGraphEdit/States
 onready var Graph : GraphEdit = $ViewMenuSplit/StatesGraphEdit
+onready var filepop : FileDialog = $ViewMenuSplit/StatesGraphEdit/Save
 export(NodePath) var node_path = null
 export(String, DIR) var BehaviorsPath = "res://addons/joyeux_npc_editor/src/NPCs/DefaultBehaviors/"
 
@@ -23,6 +24,25 @@ func _ready() -> void:
 	load_behaviors_in(BehaviorsPath)
 	#Loads Default behaviors
 	list_behaviors()
+
+func load_states():
+	for key in SaveFile.get_section_keys("offsets"):
+		Graph.add_state(key, SaveFile.get_value("offsets", key))
+
+func load_connections():
+	for connection in SaveFile.get_value("config", "filtered_connections"):
+		Graph.connect_node(
+			connection.get("from"),
+			connection.get("from_port"),
+			connection.get("to"),
+			connection.get("to_port")
+		)
+
+func load_variables():
+	var node = get_node(node_path)
+	for key in SaveFile.get_section_keys("variables"):
+		var vars = SaveFile.get_value("variables", key)
+		node.set(key, vars)
 
 func save_variables():
 	var node = get_node(node_path)
@@ -41,6 +61,8 @@ func save_variables():
 
 func save_states(file : String):
 	#First we save the routes to the nodes used in the machine
+	if Graph.get_connection_list().size() == 0:
+		print_debug("WARNING: Attempting to save a State Machine with no connections")
 	var names : Array = Graph.get_unique_nodes()
 	for _name in names:
 		var idx : int = Behavior_names.find(_name)
@@ -84,7 +106,9 @@ func save_SM_connections():
 	var list = Graph.get_connection_list()
 	for elements in list:
 		var from : String = elements.get("from")
+		var node_from : GraphNode = Graph.get_node(from)
 		var to : String = elements.get("to")
+		var node_to : GraphNode = Graph.get_node(to)
 		if from.begins_with("@"):
 			from = from.trim_prefix("@")
 			from = from.replace("@", "_")
@@ -93,6 +117,8 @@ func save_SM_connections():
 			to = to.replace("@", "_")
 		elements["from"] = from
 		elements["to"] = to
+		SaveFile.set_value("offsets", from, node_from.offset)
+		SaveFile.set_value("offsets", to, node_to.offset)
 	SaveFile.set_value("config", "filtered_connections", list)
 
 func _on_Behaviors_item_selected(index):
@@ -101,14 +127,22 @@ func _on_Behaviors_item_selected(index):
 func _on_Add_pressed():
 	Graph.add_state(BehaviorList.get_item_text(current_idx))
 
-
 func _on_Save_pressed():
-	$ViewMenuSplit/StatesGraphEdit/Save.popup_centered()
+	filepop.set_save()
+	filepop.popup_centered()
 
 func _on_Open_pressed():
-	pass # Replace with function body.
-
+	filepop.set_open()
+	filepop.popup_centered()
 
 func _on_Save_file_selected(path):
-	save_states(path)
-	pass # Replace with function body.
+	if filepop.mode == FileDialog.MODE_OPEN_FILE:
+		Graph.clear_graph()
+		yield(get_tree().create_timer(0.5), "timeout")
+		SaveFile = ConfigFile.new()
+		SaveFile.load(path)
+		load_states()
+		load_connections()
+		load_variables()
+	else:
+		save_states(path)

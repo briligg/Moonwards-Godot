@@ -4,10 +4,16 @@ extends GraphEdit
 var last_mouse_pos : Vector2 = Vector2.ZERO
 func _ready():
 	pass # Replace with function body.
+
+func clear_graph():
+	for nodes in get_children():
+		if nodes is GraphNode:
+			nodes.queue_free()
 	
 func add_state(text : String, position : Vector2 = Vector2.ZERO):
 	var node : GraphNode = GraphNode.new()
-	node.title = text
+	node.title = Nodes.filter_node_name(text)
+	node.title = node.title.trim_suffix("_")
 	node.name = text
 	node.add_child(Label.new())
 	node.set_slot(0, true, 1, Color(1,1,1,1), true, 1, Color(1,1,1,1))

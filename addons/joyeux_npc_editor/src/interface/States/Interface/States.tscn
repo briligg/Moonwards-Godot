@@ -1,8 +1,25 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://addons/inspector-gadget/src/inspector_gadget.gd" type="Script" id=1]
 [ext_resource path="res://addons/joyeux_npc_editor/src/interface/States/Interface/States.gd" type="Script" id=2]
 [ext_resource path="res://addons/joyeux_npc_editor/src/interface/States/Interface/StatesGraphEdit.gd" type="Script" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "tool
+extends FileDialog
+
+func _enter_tree():
+	if not Engine.editor_hint:
+		access = FileDialog.ACCESS_USERDATA
+		current_dir = \"user://NPCConfigs/\"
+		current_path = \"user://NPCConfigs/\"
+
+func set_open():
+	mode = FileDialog.MODE_OPEN_FILE 
+
+func set_save():
+	mode = FileDialog.MODE_SAVE_FILE
+"
 
 [node name="States" type="VSplitContainer"]
 anchor_right = 1.0
@@ -61,7 +78,7 @@ margin_right = 280.0
 margin_bottom = 120.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-items = [ ]
+items = [ "test", null, false, "test2", null, false, "Say_test", null, false, "simple", null, false, "Use", null, false ]
 
 [node name="selection" type="HBoxContainer" parent="ViewMenuSplit/Container"]
 margin_top = 148.0
@@ -104,8 +121,8 @@ __meta__ = {
 }
 
 [node name="InspectorGadget" type="MarginContainer" parent="ViewMenuSplit/Container/InspectorGadgetScrollContainer"]
-margin_right = 428.0
-margin_bottom = 826.0
+margin_right = 280.0
+margin_bottom = 838.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 1 )
@@ -113,6 +130,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 node_path = NodePath("../../../../../TemplateNPC")
+subnames = ""
+editable = true
 property_blacklist = [ "NPC_File" ]
 custom_gadget_paths = {
 
@@ -126,6 +145,7 @@ container_type_hints = {
 ":dictionary_value:[keys]": "",
 ":dictionary_value:[values]": ""
 }
+filter_built_in_properties = true
 
 [node name="HSeparator2" type="HSeparator" parent="ViewMenuSplit/Container"]
 margin_top = 1040.0
@@ -145,7 +165,7 @@ margin_left = 433.528
 margin_top = 153.245
 margin_right = 515.528
 margin_bottom = 241.245
-items = [ ]
+items = [ "test", null, 0, false, false, 0, 0, null, "", false, "test2", null, 0, false, false, 1, 0, null, "", false, "Say_test", null, 0, false, false, 2, 0, null, "", false, "simple", null, 0, false, false, 3, 0, null, "", false, "Use", null, 0, false, false, 4, 0, null, "", false ]
 
 [node name="Save" type="FileDialog" parent="ViewMenuSplit/StatesGraphEdit"]
 visible = true
@@ -156,6 +176,10 @@ margin_bottom = 281.0
 rect_min_size = Vector2( 0, 0 )
 window_title = "Guardar un Archivo"
 filters = PoolStringArray( "*.jsm" )
+current_dir = "res://addons/joyeux_npc_editor/saved"
+current_file = "untitled"
+current_path = "res://addons/joyeux_npc_editor/saved/untitled"
+script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
