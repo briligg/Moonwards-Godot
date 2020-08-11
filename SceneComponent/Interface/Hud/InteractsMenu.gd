@@ -22,6 +22,21 @@ func _button_pressed(interactable : Node) -> void :
 	#Interact with desired interactable
 	interactor_component.menu_interact_request(interactable)
 
+#Remove all buttons and separators for Interactables.
+func _clear_button_parent() -> void :
+	#Disconnect all signals that are connected.
+	for array in button_relations :
+		var interactable = array[0]
+		interactable.disconnect("display_info_changed", self, "_interactable_display_info_changed")
+		interactable.disconnect("title_changed", self, "_interactable_title_changed")
+	
+	var child_index : int = button_parent.get_child_count() - 1
+	while child_index > 0 :
+		button_parent.get_child(child_index).queue_free()
+		child_index -= 1
+	
+	button_relations = []
+
 #Add a button to the InteractsMenu.
 func _create_button(interact_name : String, info : String, interactable : Node) -> Button :
 	#Create a separator to give buttons more space between each other.
@@ -88,7 +103,7 @@ func _interactable_display_info_changed(new_display_info : String, button : Butt
 		description.text = new_display_info
 
 #Called from a signal. Adds a button to the button list based on the interactable.
-func _interactable_entered(interactable_node) -> void :
+func _interactable_entered(interactable_node : Interactable) -> void :
 	#Check that the Interctable is not already listed.
 	for array in button_relations :
 		if array[0] == interactable_node :
@@ -144,7 +159,15 @@ func _new_interactor(new_interactor : Node) -> void :
 #		interactor_component.disconnect(interactor_component.FOCUS_ROLLBACK, self, "_rollback_interactor_focus")
 		interactor_component.disconnect(interactor_component.INTERACTABLE_ENTERED_REACH, self, "_interactable_entered")
 		interactor_component.disconnect(interactor_component.INTERACTABLE_LEFT_REACH, self, "_interactable_left")
+		
+		#Clear whatever Interactables are present from the old Interactor.
+		_clear_button_parent()
+		
 #	new_interactor.connect(new_interactor.FOCUS_ROLLBACK, self, "_rollback_interactor_focus")
 	new_interactor.connect(new_interactor.INTERACTABLE_ENTERED_REACH, self, "_interactable_entered")
 	new_interactor.connect(new_interactor.INTERACTABLE_LEFT_REACH, self, "_interactable_left")
 	interactor_component = new_interactor
+	
+	#Add the new Interactables to the scene tree.
+	for interactable in new_interactor.get_interactables() :
+		_interactable_entered(interactable)
