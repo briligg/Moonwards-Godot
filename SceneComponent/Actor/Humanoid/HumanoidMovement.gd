@@ -16,7 +16,10 @@ var ground_normal: Vector3 = Vector3.UP
 var jump_timeout: float
 var old_normal : Vector3 = Vector3.DOWN
 
-onready var on_ground : RayCast = $OnGround
+#Whether we are currently flying or not.
+var is_flying : bool = false
+
+onready var on_ground : Node = $OnGround
 onready var normal_detect : Node = $NormalDetect
 #Whether I am climbing or not.
 var is_climbing : bool = false
@@ -28,6 +31,8 @@ func _ready() -> void:
 	# Add the KinematicBody as collision exception so it doesn't detect the body as a walkable surface.
 	on_ground.add_exception(entity)
 	normal_detect.add_exception(entity)
+	
+	Signals.Entities.connect(Signals.Entities.FLY_TOGGLED, self, "_toggle_fly")
 
 func is_grounded() -> bool:
 	return on_ground.is_colliding()
@@ -54,13 +59,33 @@ func _process_client(delta: float) -> void:
 func _process_server(delta: float) -> void:
 	rotate_body(delta)
 	
-	if entity.state.state == ActorEntityState.State.CLIMBING:
+	if entity.state.state == ActorEntityState.State.FLY :
+		update_fly(delta)
+	elif entity.state.state == ActorEntityState.State.CLIMBING:
 		update_stairs_climbing(delta)
 	else:
 		update_movement(delta)
 	update_state()
 
-#Process vertical stair climbing or descending. 
+#Toggle whether the player is flying or not.
+func _toggle_fly() -> void :
+	is_flying = !is_flying
+	
+	#SHut off collision detection for the entity.
+	entity.set_collision_mask_bit(0, !is_flying)
+	entity.set_collision_layer_bit(0, !is_flying)
+
+func update_fly(delta) -> void :
+	entity.velocity += (horizontal_vector*90) * delta 
+	entity.velocity.y += (entity.fly_input_float * 3600) * delta
+	
+	entity.velocity = entity.move_and_slide(entity.velocity, Vector3.UP, false)
+	entity.velocity = Vector3.ZERO
+	
+	#Update the values for networking.
+	entity.srv_pos = entity.global_transform.origin
+	entity.srv_vel = entity.velocity
+
 func update_stairs_climbing(delta):
 	var kb_pos = entity.global_transform.origin
 	
@@ -131,7 +156,7 @@ func update_movement(delta):
 	
 	# Add the movement velocity using delta to make sure physics are consistent regardless of framerate.
 	entity.velocity += horizontal_vector * delta
-	entity.velocity += vertical_vector * delta
+	
 	# Apply the gravity towards the down direction.
 	if !is_climbing:
 		entity.velocity += (WorldConstants.GRAVITY) * Vector3.DOWN * delta
@@ -182,7 +207,9 @@ func stop_climb_stairs() -> void :
 	entity.model.global_transform.basis = entity.global_transform.basis
 
 func update_state():
-	if !entity.is_grounded and !is_climbing:
+	if is_flying :
+		entity.state.state = ActorEntityState.State.FLY
+	elif !entity.is_grounded and !is_climbing:
 		entity.state.state = ActorEntityState.State.IN_AIR
 	elif is_climbing :
 		entity.state.state = ActorEntityState.State.CLIMBING
