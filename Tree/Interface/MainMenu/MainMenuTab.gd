@@ -21,5 +21,4 @@ func _on_Avatar_pressed():
 	current_tab = AVATAR_TAB
 
 
-func _on_NPCs_pressed():
-	current_tab = NPC_TAB
+
