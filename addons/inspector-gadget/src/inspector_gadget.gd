@@ -81,6 +81,7 @@ func populate_value(value) -> void:
 
 			var gadget: InspectorGadgetBase = get_gadget_for_type(value[property_name], subnames + ":" + property_name, property_name)
 			if gadget:
+				gadget.name = property_name
 				gadget.size_flags_horizontal = SIZE_EXPAND_FILL
 				gadget.node_path = "../../../" + node_path
 				if subnames != "":
@@ -396,3 +397,9 @@ func get_gadget_for_type(value, subnames: String, property_name: String = "") ->
 			gadget = get_script().new()
 
 	return gadget
+
+func set_value_for_prop(prop_name : String, value):
+	var node : InspectorGadgetBase = get_node_or_null("PanelContainer/VBoxContainer/"+prop_name)
+	if node:
+		if node.supports_type(value):
+			node.set_node_value(value)

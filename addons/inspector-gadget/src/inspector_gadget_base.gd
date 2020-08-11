@@ -1,6 +1,7 @@
 class_name InspectorGadgetBase
 extends MarginContainer
 
+signal value_changed(value)
 signal change_property_begin(object, property)
 signal change_property_end(object, property)
 signal gadget_event(event)
@@ -139,11 +140,18 @@ func set_node_value(new_value) -> void:
 	var _node = _node_ref.get_ref()
 	if not _node:
 		return
-
+	emit_signal("value_changed", new_value)
 	emit_signal("change_property_begin", _node, subnames)
 	InspectorGadgetUtil.set_indexed_ex(_node, subnames, new_value)
 	emit_signal("change_property_end", _node, subnames)
-
+	
+	
+func get_node_value():
+	var _node = _node_ref.get_ref()
+	if not _node:
+		return
+	return InspectorGadgetUtil.get_indexed_ex(_node, subnames)
+	
 # Virtuals
 static func supports_type(value) -> bool:
 	return false
