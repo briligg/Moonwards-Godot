@@ -160,12 +160,12 @@ _global_script_classes=[ {
 "path": "res://Script/Entity/VehicleEntity.gd"
 }, {
 "base": "VisualShaderNodeCustom",
-"class": "VisualShaderNodeColorHue",
+"class": "VisualShaderNodeCheapContrast",
 "language": "GDScript",
 "path": "res://Assets/SharedAssets/Shaders/CheapContrastNode.gd"
 }, {
 "base": "VisualShaderNodeCustom",
-"class": "VisualShaderNodeRGBAhue",
+"class": "VisualShaderNodeColorHue",
 "language": "GDScript",
 "path": "res://Assets/SharedAssets/Shaders/ColorHueNode.gd"
 }, {
@@ -210,8 +210,8 @@ _global_script_class_icons={
 "ResourceThreadedLoader": "",
 "StaticEntity": "",
 "VehicleEntity": "",
+"VisualShaderNodeCheapContrast": "",
 "VisualShaderNodeColorHue": "",
-"VisualShaderNodeRGBAhue": "",
 "VisualShaderNodeScalarHeightMix": "",
 "VisualShaderNodeVectorHeightMix": ""
 }

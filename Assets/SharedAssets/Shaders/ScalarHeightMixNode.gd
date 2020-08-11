@@ -18,7 +18,7 @@ func _get_return_icon_type() -> int:
 	return VisualShaderNode.PORT_TYPE_VECTOR
 
 func _get_input_port_count() -> int:
-	return 1
+	return 5
 
 func _get_input_port_name(port: int):
 	match port:
@@ -73,3 +73,5 @@ func _get_code(input_vars: Array, output_vars: Array, mode: int, type: int) -> S
 
 func _init():
 	# Default values for the editor
+	if not get_input_port_default_value(4):
+		set_input_port_default_value(4, 0.5)

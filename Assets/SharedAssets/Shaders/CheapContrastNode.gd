@@ -1,9 +1,9 @@
 tool
 extends VisualShaderNodeCustom
-class_name VisualShaderNodeColorHue
+class_name VisualShaderNodeCheapContrast
 
 func _get_name() -> String:
-	return "ColorHue"
+	return "CheapContrast"
 
 func _get_category() -> String:
 	return "Color"
@@ -56,3 +56,5 @@ func _get_code(input_vars: Array, output_vars: Array, mode: int, type: int) -> S
 
 func _init():
 	# Default values for the editor
+	if not get_input_port_default_value(0):
+		set_input_port_default_value(0, 0.5)

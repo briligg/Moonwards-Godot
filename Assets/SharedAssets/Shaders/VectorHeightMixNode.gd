@@ -73,3 +73,5 @@ func _get_code(input_vars: Array, output_vars: Array, mode: int, type: int) -> S
 
 func _init():
 	# Default values for the editor
+	if not get_input_port_default_value(4):
+		set_input_port_default_value(4, 0.5)
