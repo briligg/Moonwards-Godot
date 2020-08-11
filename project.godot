@@ -158,6 +158,26 @@ _global_script_classes=[ {
 "class": "VehicleEntity",
 "language": "GDScript",
 "path": "res://Script/Entity/VehicleEntity.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeColorHue",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/CheapContrastNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeRGBAhue",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/ColorHueNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeScalarHeightMix",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/ScalarHeightMixNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeVectorHeightMix",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/VectorHeightMixNode.gd"
 } ]
 _global_script_class_icons={
 "AComponent": "",
@@ -189,7 +209,11 @@ _global_script_class_icons={
 "ResourceSignals": "",
 "ResourceThreadedLoader": "",
 "StaticEntity": "",
-"VehicleEntity": ""
+"VehicleEntity": "",
+"VisualShaderNodeColorHue": "",
+"VisualShaderNodeRGBAhue": "",
+"VisualShaderNodeScalarHeightMix": "",
+"VisualShaderNodeVectorHeightMix": ""
 }
 
 [application]
