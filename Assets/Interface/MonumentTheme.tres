@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=15 format=2]
 
-[ext_resource path="res://Assets/Displays/MonumentFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Interface/Fonts/MonumentFont.tres" type="DynamicFont" id=3]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -12,35 +12,35 @@
 
 [sub_resource type="StyleBoxEmpty" id=5]
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=6]
 content_margin_left = 5.0
 content_margin_right = 5.0
 content_margin_top = 5.0
 content_margin_bottom = 5.0
 bg_color = Color( 0.105882, 0.105882, 0.105882, 1 )
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0, 0, 0, 0.588235 )
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.101961, 0.101961, 0.101961, 0.901961 )
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=11]
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0, 0, 0, 0.588235 )
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=11]
 content_margin_left = 10.0
 content_margin_right = 10.0
 content_margin_top = 10.0
 content_margin_bottom = 10.0
 bg_color = Color( 0.120504, 0.120504, 0.120504, 0.588235 )
 
-[sub_resource type="StyleBoxEmpty" id=13]
+[sub_resource type="StyleBoxEmpty" id=12]
 
-[sub_resource type="StyleBoxFlat" id=14]
+[sub_resource type="StyleBoxFlat" id=13]
 content_margin_left = 10.0
 content_margin_right = 10.0
 bg_color = Color( 0, 0, 0, 0.588235 )
@@ -77,15 +77,15 @@ LineEdit/constants/minimum_spaces = 12
 LineEdit/fonts/font = null
 LineEdit/icons/clear = null
 LineEdit/styles/focus = null
-LineEdit/styles/normal = SubResource( 7 )
+LineEdit/styles/normal = SubResource( 6 )
 LineEdit/styles/read_only = null
-Panel/styles/panel = SubResource( 8 )
-Panel/styles/panelf = SubResource( 8 )
-Panel/styles/panelnc = SubResource( 8 )
+Panel/styles/panel = SubResource( 7 )
+Panel/styles/panelf = SubResource( 7 )
+Panel/styles/panelnc = SubResource( 7 )
 ProgressBar/colors/font_color = Color( 0.941176, 0.941176, 0.941176, 1 )
 ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
 ProgressBar/fonts/font = null
-ProgressBar/styles/bg = SubResource( 9 )
+ProgressBar/styles/bg = SubResource( 8 )
 ProgressBar/styles/fg = null
 RichTextLabel/colors/default_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 RichTextLabel/colors/font_color_selected = Color( 0.490196, 0.490196, 0.490196, 1 )
@@ -103,7 +103,7 @@ RichTextLabel/fonts/italics_font = null
 RichTextLabel/fonts/mono_font = null
 RichTextLabel/fonts/normal_font = null
 RichTextLabel/styles/focus = null
-RichTextLabel/styles/normal = SubResource( 10 )
+RichTextLabel/styles/normal = SubResource( 9 )
 TabContainer/colors/font_color_bg = Color( 0.690196, 0.690196, 0.690196, 1 )
 TabContainer/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 TabContainer/colors/font_color_fg = Color( 0.941176, 0.941176, 0.941176, 1 )
@@ -119,7 +119,7 @@ TabContainer/icons/increment = null
 TabContainer/icons/increment_highlight = null
 TabContainer/icons/menu = null
 TabContainer/icons/menu_highlight = null
-TabContainer/styles/panel = SubResource( 11 )
-TabContainer/styles/tab_bg = SubResource( 12 )
-TabContainer/styles/tab_disabled = SubResource( 13 )
-TabContainer/styles/tab_fg = SubResource( 14 )
+TabContainer/styles/panel = SubResource( 10 )
+TabContainer/styles/tab_bg = SubResource( 11 )
+TabContainer/styles/tab_disabled = SubResource( 12 )
+TabContainer/styles/tab_fg = SubResource( 13 )
