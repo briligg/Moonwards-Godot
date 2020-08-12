@@ -170,6 +170,11 @@ _global_script_classes=[ {
 "path": "res://Assets/SharedAssets/Shaders/ColorHueNode.gd"
 }, {
 "base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeDistanceWS",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/DistanceWSNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
 "class": "VisualShaderNodeLocationWS",
 "language": "GDScript",
 "path": "res://Assets/SharedAssets/Shaders/LocationWSNode.gd"
@@ -222,6 +227,7 @@ _global_script_class_icons={
 "VehicleEntity": "",
 "VisualShaderNodeCheapContrast": "",
 "VisualShaderNodeColorHue": "",
+"VisualShaderNodeDistanceWS": "",
 "VisualShaderNodeLocationWS": "",
 "VisualShaderNodeNormalWS": "",
 "VisualShaderNodeScalarHeightMix": "",

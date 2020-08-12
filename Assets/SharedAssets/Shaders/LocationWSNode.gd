@@ -54,8 +54,3 @@ vec3 GetWorldLocation( vec4 _Camera, vec3 _Vertex ) {
 
 func _get_code(input_vars: Array, output_vars: Array, mode: int, type: int) -> String:
 	return "%s = GetWorldLocation(INV_CAMERA_MATRIX,VERTEX);" % [output_vars[0]]
-
-func _init():
-	# Default values for the editor
-	if not get_input_port_default_value(0):
-		set_input_port_default_value(0, 1.0)
