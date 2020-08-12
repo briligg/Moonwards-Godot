@@ -3,23 +3,7 @@
 [ext_resource path="res://addons/inspector-gadget/src/inspector_gadget.gd" type="Script" id=1]
 [ext_resource path="res://addons/joyeux_npc_editor/src/interface/States/Interface/States.gd" type="Script" id=2]
 [ext_resource path="res://addons/joyeux_npc_editor/src/interface/States/Interface/StatesGraphEdit.gd" type="Script" id=3]
-
-[sub_resource type="GDScript" id=1]
-script/source = "tool
-extends FileDialog
-
-func _enter_tree():
-	if not Engine.editor_hint:
-		access = FileDialog.ACCESS_USERDATA
-		current_dir = \"user://NPCConfigs/\"
-		current_path = \"user://NPCConfigs/\"
-
-func set_open():
-	mode = FileDialog.MODE_OPEN_FILE 
-
-func set_save():
-	mode = FileDialog.MODE_SAVE_FILE
-"
+[ext_resource path="res://addons/joyeux_npc_editor/src/interface/States/Interface/States_FileDialog.gd" type="Script" id=4]
 
 [node name="States" type="VSplitContainer"]
 anchor_right = 1.0
@@ -130,8 +114,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 node_path = NodePath("../../../../../TemplateNPC")
-subnames = ""
-editable = true
 property_blacklist = [ "NPC_File" ]
 custom_gadget_paths = {
 
@@ -145,7 +127,6 @@ container_type_hints = {
 ":dictionary_value:[keys]": "",
 ":dictionary_value:[values]": ""
 }
-filter_built_in_properties = true
 
 [node name="HSeparator2" type="HSeparator" parent="ViewMenuSplit/Container"]
 margin_top = 1040.0
@@ -176,10 +157,9 @@ margin_bottom = 281.0
 rect_min_size = Vector2( 0, 0 )
 window_title = "Guardar un Archivo"
 filters = PoolStringArray( "*.jsm" )
-current_dir = "res://addons/joyeux_npc_editor/saved"
 current_file = "untitled"
-current_path = "res://addons/joyeux_npc_editor/saved/untitled"
-script = SubResource( 1 )
+current_path = "res://untitled"
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
