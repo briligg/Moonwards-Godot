@@ -54,13 +54,13 @@ func _process(_delta: float) -> void:
 	_update_cam_pos()
 	
 	if not is_flying :
-#		entity.look_dir = global_transform.origin - _get_cam_normal() * dist
+		entity.look_dir = global_transform.origin - _get_cam_normal() * dist
 		#Below was code that did not seem to have a reason for being here.
 		#Leave it here until we figure out if it should be here.
-		var t = camera.global_transform.origin
-		entity.look_dir.y = entity.global_transform.origin.y
-		entity.look_dir.x = t.x
-		entity.look_dir.z = t.z
+#		var t = camera.global_transform.origin
+#		entity.look_dir.y = entity.global_transform.origin.y
+#		entity.look_dir.x = t.x
+#		entity.look_dir.z = t.z
 
 func _input(event):
 	if event is InputEventMouseMotion:
