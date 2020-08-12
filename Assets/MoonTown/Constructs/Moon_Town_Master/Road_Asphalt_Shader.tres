@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/SharedAssets/Textures/Nature_Textures/Lavastone_3/Lavastone_3_nrm.jpg" type="Texture" id=4]
 [ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Asphalt_01/Asphalt_01_2K_Diffuse.jpg" type="Texture" id=5]
 [ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Asphalt_01/Asphalt_01_2K_Normal.jpg" type="Texture" id=6]
-[ext_resource path="res://Assets/SharedAssets/Textures/Noises/Noise_Hev_01_1K_RGBA.png" type="Texture" id=7]
+[ext_resource path="res://Assets/SharedAssets/Textures/Noises/Noise_Hev_03_1K_RGB.png" type="Texture" id=7]
 [ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Asphalt_01/Asphalt_01_2K_Roughness.jpg" type="Texture" id=8]
 
 [resource]
@@ -14,13 +14,13 @@ shader = ExtResource( 1 )
 shader_param/Color_A = Color( 0.815686, 0.815686, 0.815686, 1 )
 shader_param/UVScale_A = Vector3( 500, 500, 1 )
 shader_param/UVScale_B = Vector3( 500, 500, 1 )
-shader_param/Color_B = Color( 0.611765, 0.611765, 0.611765, 1 )
+shader_param/Color_B = Color( 0.588235, 0.588235, 0.588235, 1 )
 shader_param/NoiseInvert = false
 shader_param/NoiseIntensity = 0.8
-shader_param/NoiseAlpha = true
-shader_param/NoiseZ = true
+shader_param/NoiseAlpha = false
+shader_param/NoiseZ = false
 shader_param/UVScale_Noise = Vector3( 10, 10, 0 )
-shader_param/NoiseY = true
+shader_param/NoiseY = false
 shader_param/Metallic_A = null
 shader_param/Metallic_B = null
 shader_param/Rough_Mult_A = 0.5

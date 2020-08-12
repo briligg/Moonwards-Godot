@@ -9,19 +9,19 @@
 [ext_resource path="res://Assets/SharedAssets/Textures/Nature/Sand_01/Sand_01_2K_Normal.jpg" type="Texture" id=7]
 [ext_resource path="res://Assets/SharedAssets/Textures/Nature/Sand_01/Sand_01_2K_Color.png" type="Texture" id=8]
 [ext_resource path="res://Assets/SharedAssets/Textures/Nature/Sand_01/Sand_01_2K_Roughness.jpg" type="Texture" id=9]
-[ext_resource path="res://Assets/SharedAssets/Textures/Noises/Noise_Hev_01_1K_RGBA.png" type="Texture" id=10]
+[ext_resource path="res://Assets/SharedAssets/Textures/Noises/Noise_Hev_01_1K_RGB.png" type="Texture" id=10]
 
 [resource]
 shader = ExtResource( 1 )
-shader_param/Color_A = Color( 0.882353, 0.882353, 0.882353, 1 )
+shader_param/Color_A = Color( 0.643137, 0.643137, 0.643137, 1 )
 shader_param/UVScale_A = Vector3( 1500, 1500, 0 )
 shader_param/UVScale_B = Vector3( 1000, 1000, 0 )
-shader_param/Color_B = Color( 0.603922, 0.603922, 0.603922, 1 )
+shader_param/Color_B = Color( 0.552246, 0.552246, 0.552246, 1 )
 shader_param/NoiseInvert = false
 shader_param/NoiseIntensity = 1.1
-shader_param/NoiseAlpha = true
+shader_param/NoiseAlpha = false
 shader_param/NoiseZ = true
-shader_param/UVScale_Noise = Vector3( 100, 100, 0 )
+shader_param/UVScale_Noise = Vector3( 500, 250, 0 )
 shader_param/NoiseY = false
 shader_param/UVScale_Far = Vector3( 1, 1, 1 )
 shader_param/Color_Far = Color( 0.803922, 0.803922, 0.803922, 1 )
