@@ -21,4 +21,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19534, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1943, 0 )
 
 [node name="AirlockLatch" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.1668 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275563, 13.1668 )

@@ -1,6 +1,8 @@
 extends Spatial
 
 onready var collision = get_parent().get_node("CollisionShape")
+
+# The latch that goes into the airlock door
 onready var airlock_latch = get_parent().get_node("AirlockLatch")
 
 const HALF_HEIGHT = 2.23
@@ -64,15 +66,23 @@ func dock_with(rover):
 	docked_to = rover
 	is_docked = true
 	
-	var c = 0.0
-	var dir = Vector3(0, original_rover_pos.y, original_rover_pos.z).normalized()
-	var dist = original_rover_pos.distance_to(rover.global_transform.origin)
+	var targy = Vector3(0, original_rover_pos.y, 0)
+	var targz = Vector3(0, 0, original_rover_pos.z)
+	var diry = targy.normalized()
+	var dirz = targz.normalized()
+
 	while(true):
-		rover.global_translate(dir * 0.016)
-		c += dir.length() * 0.016
-		if c >= dist:
+		rover.global_translate(dirz * 0.016)
+		if rover.global_transform.origin.z - targz.z <= 0.05:
 			break
 		yield(get_tree(), "physics_frame")
+	
+	while(true):
+		rover.global_translate(diry * 0.016)
+		if rover.global_transform.origin.y - targy.y <= 0.05:
+			break
+		yield(get_tree(), "physics_frame")
+		
 	pod.mode = RigidBody.MODE_STATIC
 	rover.mode = RigidBody.MODE_RIGID
 
@@ -94,17 +104,37 @@ func undock():
 
 # Undock from rover and into the airlock
 func undock_to_airlock(rover):
-	while(true):
-		var dir = (_dock_door_interactable.global_transform.origin - 
+	rover.mode = RigidBody.MODE_KINEMATIC
+	var original_rover_pos = rover.global_transform.origin
+	
+	var dir = (_dock_door_interactable.global_transform.origin - 
 				airlock_latch.global_transform.origin).normalized()
-		rover.global_translate(dir * 0.016)
-		if _dock_door_interactable.global_transform.origin.distance_to(
-					airlock_latch.global_transform.origin) <= .016:
-			break
+	var targy = Vector3(0, _dock_door_interactable.global_transform.origin.y, 0)
+	var targz = Vector3(0, 0, _dock_door_interactable.global_transform.origin.z)
+	var diry = Vector3(0, dir.y, 0)
+	var dirz = Vector3(0, 0, dir.z)
+
+	while(true):
 		yield(get_tree(), "physics_frame")
+		rover.global_translate(diry * 0.016)
+		if abs(airlock_latch.global_transform.origin.y - targy.y) <= 0.02:
+			break
+
+	while(true):
+		yield(get_tree(), "physics_frame")
+		rover.global_translate(dirz * 0.016)
+		if abs(airlock_latch.global_transform.origin.z - targz.z) <= 0.02:
+			break
 	undock()
 	pod.mode = RigidBody.MODE_STATIC
-
+	
+	dir = (original_rover_pos - rover.global_transform.origin).normalized()
+	while(true):
+		rover.global_translate(dir * 0.016)
+		if rover.global_transform.origin.distance_to(original_rover_pos) <= 0.05:
+			break
+		yield(get_tree(), "physics_frame")
+		rover.mode = RigidBody.MODE_RIGID
 func _on_area_entered(area):
 	if area is AirlockDoorInteractable:
 		if area.is_dock_door:
