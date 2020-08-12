@@ -57,21 +57,26 @@ func _get_output_port_type(port: int) -> int:
 
 func _get_global_code(mode: int) -> String:
 	return """
-float ContrastFunc(float _Inp, float _Contrast){
+float ContrastScalarFunc(float _Inp, float _Contrast){
 	vec3 a = mix(vec3(0.0 - _Contrast, 0.0 - _Contrast, 0.0 - _Contrast), vec3(1.0 + _Contrast, 1.0 + _Contrast, 1.0 + _Contrast), _Inp);
 	return clamp(a.r, 0.0, 1.0);
 }
 
-float HeightLerp(float _A, float _B, float _Weight, float _Height, float _Contrast){
-	float contrast = ContrastFunc(clamp(_Height - 1.0) + (_Weight * 2.0), 0.0, 1.0), _Contrast);
+float HeightScalarLerp(float _A, float _B, float _Weight, float _Height, float _Contrast){
+	float lva = clamp((_Height - 1.0) + (_Weight * 2.0), 0.0, 1.0);
+	float contrast = ContrastScalarFunc(lva, _Contrast);
 	return mix(_A, _B, contrast);
 }
 """
 
 func _get_code(input_vars: Array, output_vars: Array, mode: int, type: int) -> String:
-	return "%s = HeightLerp(%s);" % [output_vars[0], input_vars[0], input_vars[1], input_vars[2], input_vars[3], input_vars[4]]
+	return "%s = HeightScalarLerp(%s,%s,%s,%s,%s);" % [output_vars[0], input_vars[0], input_vars[1], input_vars[2], input_vars[3], input_vars[4]]
 
 func _init():
 	# Default values for the editor
+	if not get_input_port_default_value(2):
+		set_input_port_default_value(2, 0.5)
+	if not get_input_port_default_value(3):
+		set_input_port_default_value(3, 0.5)
 	if not get_input_port_default_value(4):
-		set_input_port_default_value(4, 0.5)
+		set_input_port_default_value(4, 0.0)
