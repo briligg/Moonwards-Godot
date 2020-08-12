@@ -27,7 +27,7 @@ func _ready() -> void:
 
 func load_states():
 	for key in SaveFile.get_section_keys("offsets"):
-		Graph.add_state(key, SaveFile.get_value("offsets", key))
+		Graph.add_state(key, -SaveFile.get_value("offsets", key))
 
 func load_connections():
 	for connection in SaveFile.get_value("config", "filtered_connections"):
