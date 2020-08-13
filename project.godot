@@ -185,6 +185,11 @@ _global_script_classes=[ {
 "path": "res://Assets/SharedAssets/Shaders/NormalWSNode.gd"
 }, {
 "base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeParallaxMapping",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/ParallaxMappingNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
 "class": "VisualShaderNodeScalarHeightMix",
 "language": "GDScript",
 "path": "res://Assets/SharedAssets/Shaders/ScalarHeightMixNode.gd"
@@ -230,6 +235,7 @@ _global_script_class_icons={
 "VisualShaderNodeDistanceWS": "",
 "VisualShaderNodeLocationWS": "",
 "VisualShaderNodeNormalWS": "",
+"VisualShaderNodeParallaxMapping": "",
 "VisualShaderNodeScalarHeightMix": "",
 "VisualShaderNodeVectorHeightMix": ""
 }
