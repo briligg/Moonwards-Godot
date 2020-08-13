@@ -47,13 +47,9 @@ func dock_with(rover):
 	var pod_anchor = get_parent().get_node("DockLatch")
 	var original_rover_pos = rover.global_transform.origin
 	
-	while(true):
-		var dir = (pod_anchor.global_transform.origin - 
-				rover_anchor.global_transform.origin).normalized()
-		rover.global_translate(dir * 0.016)
-		if pod_anchor.global_transform.origin.distance_to(
-					rover_anchor.global_transform.origin) <= .1:
-			break
+	var counter = 0.0
+	while(!_lerp_to_coroutine(rover, rover_anchor.global_transform.origin, 
+			pod_anchor.global_transform.origin, counter)):
 		yield(get_tree(), "physics_frame")
 		
 	$Interactable.title = "Undock Passenger Pod"
@@ -66,23 +62,11 @@ func dock_with(rover):
 	docked_to = rover
 	is_docked = true
 	
-	var targy = Vector3(0, original_rover_pos.y, 0)
-	var targz = Vector3(0, 0, original_rover_pos.z)
-	var diry = targy.normalized()
-	var dirz = targz.normalized()
+	counter = 0.0
+	var targz = Vector3(rover.global_transform.origin.x, rover.global_transform.origin.y, original_rover_pos.z)
+	while(!_lerp_to_coroutine(rover, rover.global_transform.origin, targz, counter)):
+		yield(get_tree(), "physics_frame")
 
-	while(true):
-		rover.global_translate(dirz * 0.016)
-		if rover.global_transform.origin.z - targz.z <= 0.05:
-			break
-		yield(get_tree(), "physics_frame")
-	
-	while(true):
-		rover.global_translate(diry * 0.016)
-		if rover.global_transform.origin.y - targy.y <= 0.05:
-			break
-		yield(get_tree(), "physics_frame")
-		
 	pod.mode = RigidBody.MODE_STATIC
 	rover.mode = RigidBody.MODE_RIGID
 
@@ -107,34 +91,43 @@ func undock_to_airlock(rover):
 	rover.mode = RigidBody.MODE_KINEMATIC
 	var original_rover_pos = rover.global_transform.origin
 	
-	var dir = (_dock_door_interactable.global_transform.origin - 
-				airlock_latch.global_transform.origin).normalized()
-	var targy = Vector3(0, _dock_door_interactable.global_transform.origin.y, 0)
-	var targz = Vector3(0, 0, _dock_door_interactable.global_transform.origin.z)
-	var diry = Vector3(0, dir.y, 0)
-	var dirz = Vector3(0, 0, dir.z)
-
-	while(true):
+	var counter = 0.0
+	
+	var targxy = Vector3(_dock_door_interactable.global_transform.origin.x, 
+			_dock_door_interactable.global_transform.origin.y,
+			airlock_latch.global_transform.origin.z)
+	while(!_lerp_to_coroutine(rover, airlock_latch.global_transform.origin, targxy, counter)):
 		yield(get_tree(), "physics_frame")
-		rover.global_translate(diry * 0.016)
-		if abs(airlock_latch.global_transform.origin.y - targy.y) <= 0.02:
-			break
-
-	while(true):
+	
+	counter = 0
+	var targz = Vector3(airlock_latch.global_transform.origin.x, 
+			airlock_latch.global_transform.origin.y,
+			_dock_door_interactable.global_transform.origin.z)
+	while(!_lerp_to_coroutine(rover, airlock_latch.global_transform.origin, targz, counter)):
 		yield(get_tree(), "physics_frame")
-		rover.global_translate(dirz * 0.016)
-		if abs(airlock_latch.global_transform.origin.z - targz.z) <= 0.02:
-			break
+	
 	undock()
 	pod.mode = RigidBody.MODE_STATIC
 	
-	dir = (original_rover_pos - rover.global_transform.origin).normalized()
+	var dir = (original_rover_pos - rover.global_transform.origin).normalized()
 	while(true):
 		rover.global_translate(dir * 0.016)
 		if rover.global_transform.origin.distance_to(original_rover_pos) <= 0.05:
 			break
 		yield(get_tree(), "physics_frame")
-		rover.mode = RigidBody.MODE_RIGID
+		
+	rover.mode = RigidBody.MODE_RIGID
+
+# Lerp the rovers' position to a target position
+func _lerp_to_coroutine(rover: Node, source: Vector3, target: Vector3, counter: float) -> bool:
+	var dir = (target - source).normalized()
+	var dist = target.distance_to(source)
+	rover.global_translate(dir * 0.016)
+	counter += dir.length() * 0.016
+	if counter >= dist:
+		return true
+	return false
+
 func _on_area_entered(area):
 	if area is AirlockDoorInteractable:
 		if area.is_dock_door:
