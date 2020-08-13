@@ -52,6 +52,49 @@ var Graphs : Dictionary = {
 }
 
 var custom_types : Dictionary = {}
+var user_override : String = "" 
+var proj_override : String = "" 
+var behavior_paths = [
+	"res://addons/joyeux_npc_editor/src/NPCs/DefaultBehaviors/",
+	OS.get_user_data_dir()+"/behaviors"
+]
+
+func override_default(which : int, dir : String):
+	match which:
+		0:
+			proj_override = dir
+		1:
+			user_override = dir
+		_:
+			if behavior_paths < which and which  >= 0:
+				behavior_paths[which] = dir
+
+func load_custom_paths():
+	var Conf = ConfigFile.new()
+	var err = Conf.load("res://addons/joyeux_npc_editor/Config/paths.cfg")
+	if err != OK:
+		return
+	
+	if Conf.has_section_key("overrides", "0"):
+		behavior_paths[0] = Conf.get_value("overrides", "0")
+	if Conf.has_section_key("overrides", "1"):
+		behavior_paths[1] = Conf.get_value("overrides", "1")
+	
+	for key in Conf.get_section_keys("behaviors"):
+		behavior_paths.append(Conf.get_value("behaviors", key))
+
+func save_custom_paths():
+	var Conf = ConfigFile.new()
+	if behavior_paths.size < 2:
+		return
+	for idx in range(2, behavior_paths.size()-1):
+		Conf.set_value("behaviors", str(idx), behavior_paths[idx])
+	if user_override != "":
+		Conf.set_value("overrides", str(0))
+	if proj_override != "":
+		Conf.set_value("overrides", str(1))
+	Conf.save("res://addons/joyeux_npc_editor/Config/paths.cfg")
+
 
 func _is_format_correct() -> bool:
 	if Definitions.get("_functions") == null or Definitions.get("_stimulus") == null:
@@ -185,6 +228,7 @@ func Color(id) -> Color:
 
 func initiate() -> void:
 	Definitions =  NpcDefinitions.new()
+	load_custom_paths()
 	_load_definitions()
 	_load_functions()
 	_load_signals()

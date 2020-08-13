@@ -18,11 +18,11 @@ export(String, DIR) var BehaviorsPath = "res://addons/joyeux_npc_editor/src/NPCs
 func _ready() -> void:
 	var dir = Directory.new()
 	dir.open(OS.get_user_data_dir())
-	dir.make_dir_recursive("behaviors")
-	load_behaviors_in(OS.get_user_data_dir()+"/behaviors")
+	if not dir.dir_exists("behaviors"):
+		dir.make_dir_recursive("behaviors")
+	for element in Nodes.behavior_paths:
+		load_behaviors_in(element)
 	#Loads User Defined Behaviors
-	load_behaviors_in(BehaviorsPath)
-	#Loads Default behaviors
 	list_behaviors()
 
 func load_states():
@@ -146,3 +146,4 @@ func _on_Save_file_selected(path):
 		load_variables()
 	else:
 		save_states(path)
+

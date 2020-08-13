@@ -1,8 +1,45 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://addons/joyeux_npc_editor/src/interface/behaviors/Interface/Behaviors.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/joyeux_npc_editor/src/interface/States/Interface/States.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/joyeux_npc_editor/src/NPCs/MwNPC.gd" type="Script" id=3]
+[ext_resource path="res://addons/joyeux_npc_editor/src/interface/behaviors/Interface/Settings.gd" type="Script" id=4]
+[ext_resource path="res://addons/joyeux_npc_editor/src/Core/Edit.svg" type="Texture" id=5]
+[ext_resource path="res://addons/joyeux_npc_editor/src/interface/Settings/interface/FileDialog.gd" type="Script" id=6]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends VBoxContainer
+
+onready var popup = $Add/FileDialog
+
+func add_item(path : String) -> void:
+	if has_node(path):
+		return
+	var cont : HBoxContainer = HBoxContainer.new()
+	var title : Label = Label.new()
+	var button : Button = Button.new()
+	var content : LineEdit = LineEdit.new()
+	content.editable = false
+	content.text = path
+	button.text = \"-\"
+	title.text = \"Path: \"
+	content.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	cont.name = path
+	button.connect(\"pressed\", self, \"delete_item\", [cont])
+	cont.add_child(title)
+	cont.add_child(content)
+	cont.add_child(button)
+#	Nodes.behavior_paths.append(path)
+	add_child(cont)
+	move_child( get_node(\"Add\"), get_child_count())
+
+func call_add_item():
+	popup.popup_centered()
+
+func delete_item(node):
+#	Nodes.behavior_paths.erase(node.name)
+	node.queue_free()
+"
 
 [node name="Node-Editor" type="TabContainer"]
 anchor_right = 1.0
@@ -14,9 +51,224 @@ __meta__ = {
 }
 
 [node name="States" parent="." instance=ExtResource( 2 )]
+visible = false
 
 [node name="Behaviors" parent="." instance=ExtResource( 1 )]
 visible = false
 
+[node name="Settings" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+script = ExtResource( 4 )
+
+[node name="Control2" type="Control" parent="Settings"]
+margin_right = 1912.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings"]
+margin_top = 34.0
+margin_right = 1912.0
+margin_bottom = 1040.0
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="Settings/HBoxContainer"]
+margin_right = 30.0
+margin_bottom = 1006.0
+rect_min_size = Vector2( 30, 0 )
+
+[node name="Locations" type="VBoxContainer" parent="Settings/HBoxContainer"]
+margin_left = 34.0
+margin_right = 656.0
+margin_bottom = 1006.0
+
+[node name="Label" type="Label" parent="Settings/HBoxContainer/Locations"]
+margin_right = 622.0
+margin_bottom = 14.0
+text = "Information"
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Settings/HBoxContainer/Locations/Label"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 55.0
+margin_bottom = 56.0
+window_title = "Por favor, Confirma..."
+dialog_text = "Warning: Changing the default locations can cause your current NPCs to break, do you wish to continue?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="Settings/HBoxContainer/Locations"]
+margin_top = 18.0
+margin_right = 622.0
+margin_bottom = 22.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Project Location" type="HBoxContainer" parent="Settings/HBoxContainer/Locations"]
+margin_top = 26.0
+margin_right = 622.0
+margin_bottom = 50.0
+
+[node name="Label" type="Label" parent="Settings/HBoxContainer/Locations/Project Location"]
+margin_top = 5.0
+margin_right = 286.0
+margin_bottom = 19.0
+text = "Current in project default Behaviors location:"
+
+[node name="Path" type="LineEdit" parent="Settings/HBoxContainer/Locations/Project Location"]
+margin_left = 290.0
+margin_right = 590.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 300, 0 )
+text = "none"
+align = 2
+editable = false
+
+[node name="ProjLoc" type="Button" parent="Settings/HBoxContainer/Locations/Project Location"]
+margin_left = 594.0
+margin_right = 622.0
+margin_bottom = 24.0
+icon = ExtResource( 5 )
+
+[node name="HSeparator2" type="HSeparator" parent="Settings/HBoxContainer/Locations"]
+margin_top = 54.0
+margin_right = 622.0
+margin_bottom = 58.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="User Location" type="HBoxContainer" parent="Settings/HBoxContainer/Locations"]
+margin_top = 62.0
+margin_right = 622.0
+margin_bottom = 86.0
+
+[node name="Label" type="Label" parent="Settings/HBoxContainer/Locations/User Location"]
+margin_top = 5.0
+margin_right = 286.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "Current in user default Behaviors location:"
+
+[node name="Path" type="LineEdit" parent="Settings/HBoxContainer/Locations/User Location"]
+margin_left = 290.0
+margin_right = 590.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 3
+text = "none"
+align = 2
+editable = false
+
+[node name="UserLoc" type="Button" parent="Settings/HBoxContainer/Locations/User Location"]
+margin_left = 594.0
+margin_right = 622.0
+margin_bottom = 24.0
+icon = ExtResource( 5 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Settings/HBoxContainer/Locations"]
+margin_top = 90.0
+margin_right = 622.0
+margin_bottom = 948.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ItemList" type="VBoxContainer" parent="Settings/HBoxContainer/Locations/ScrollContainer"]
+margin_right = 622.0
+margin_bottom = 858.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = SubResource( 1 )
+
+[node name="Add" type="Button" parent="Settings/HBoxContainer/Locations/ScrollContainer/ItemList"]
+margin_right = 622.0
+margin_bottom = 20.0
+hint_tooltip = "Add new location"
+text = "+"
+
+[node name="FileDialog" type="FileDialog" parent="Settings/HBoxContainer/Locations/ScrollContainer/ItemList/Add"]
+margin_left = 423.812
+margin_top = 177.884
+margin_right = 919.812
+margin_bottom = 598.884
+window_title = "Abrir un Directorio"
+mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Apply" type="Button" parent="Settings/HBoxContainer/Locations"]
+margin_top = 952.0
+margin_right = 622.0
+margin_bottom = 982.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_horizontal = 3
+text = "Apply"
+
+[node name="Control2" type="Control" parent="Settings/HBoxContainer/Locations"]
+margin_top = 986.0
+margin_right = 622.0
+margin_bottom = 1006.0
+rect_min_size = Vector2( 30, 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control3" type="Control" parent="Settings/HBoxContainer"]
+margin_left = 660.0
+margin_right = 690.0
+margin_bottom = 1006.0
+rect_min_size = Vector2( 30, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/HBoxContainer"]
+margin_left = 694.0
+margin_right = 1912.0
+margin_bottom = 1006.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Dialogs" type="Control" parent="Settings"]
+margin_top = 1044.0
+margin_right = 1912.0
+margin_bottom = 1044.0
+
+[node name="FileDialog" type="FileDialog" parent="Settings/Dialogs"]
+visible = true
+margin_left = 663.0
+margin_top = -578.0
+margin_right = 1088.0
+margin_bottom = -355.0
+window_title = "Abrir un Directorio"
+mode = 2
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Settings/Dialogs"]
+visible = true
+margin_left = 932.0
+margin_top = -808.0
+margin_right = 1242.0
+margin_bottom = -733.0
+window_title = "Por favor, Confirma..."
+dialog_text = "Warning, changing the default path may break your current NPCs, do you want to continue?"
+dialog_autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TemplateNPC" type="Node" parent="."]
 script = ExtResource( 3 )
+[connection signal="pressed" from="Settings/HBoxContainer/Locations/Project Location/ProjLoc" to="Settings" method="_on_ProjLoc_pressed"]
+[connection signal="pressed" from="Settings/HBoxContainer/Locations/User Location/UserLoc" to="Settings" method="_on_UserLoc_pressed"]
+[connection signal="pressed" from="Settings/HBoxContainer/Locations/ScrollContainer/ItemList/Add" to="Settings/HBoxContainer/Locations/ScrollContainer/ItemList" method="call_add_item"]
+[connection signal="dir_selected" from="Settings/HBoxContainer/Locations/ScrollContainer/ItemList/Add/FileDialog" to="Settings/HBoxContainer/Locations/ScrollContainer/ItemList" method="add_item"]
+[connection signal="dir_selected" from="Settings/Dialogs/FileDialog" to="Settings" method="_on_FileDialog_dir_selected"]
+[connection signal="popup_hide" from="Settings/Dialogs/FileDialog" to="Settings" method="_on_FileDialog_popup_hide"]
