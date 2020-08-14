@@ -16,6 +16,7 @@ const INTERACTABLE_ENTERED_REACH : String = "interactable_entered_reach"
 const INTERACTABLE_LEFT_REACH : String = "interactable_left_reach"
 const INTERACT_OCCURED : String = "interact_occured"
 const NEW_INTERACTOR_GRABBED_FOCUS : String = "new_interactor_grabbed_focus"
+const SHOW_RETICLE : String = "show_reticle"
 const VISIBLE_HUDS_SET : String = "visible_huds_set"
 
 # Define the actual signal.
@@ -32,4 +33,5 @@ signal interactable_entered_reach(interactable_node)
 signal interactable_left_reach(interactable_node)
 signal interact_occured(interactable_user_node)
 signal new_interactor_grabbed_focus(new_interactor_component_node)
+signal show_reticle()
 signal visible_huds_set(show_flag_int)

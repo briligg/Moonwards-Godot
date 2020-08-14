@@ -19,6 +19,15 @@ var content_instance = null
 export(PackedScene) var content = null
 export(bool) var hologram = false
 
+#Called by call_deferred. Listen for button interactions to show reticle.
+func _connect_buttons(instance) -> void :
+	for child in instance.get_children() :
+		if child is Button :
+			child.connect("focus_entered", self, "_show_reticle")
+			child.connect("mouse_entered", self, "_show_reticle")
+		
+		_connect_buttons(child)
+
 # Mouse events for Area
 func _on_area_input_event(_camera, event, click_pos, _click_normal, _shape_idx):
 	# Use click pos (click in 3d space, convert to area space)
@@ -54,6 +63,7 @@ func _ready():
 	if content != null:
 		content_instance = content.instance()
 		viewport.add_child(content_instance)
+		call_deferred("_connect_buttons", content_instance)
 	else:
 		Log.trace(self, "_ready", "Screen View without a content")
 	
@@ -64,3 +74,7 @@ func _ready():
 		mat.albedo_color.a = 0.7
 		mat.flags_transparent = true
 		$Area/Quad.set_surface_material(0, mat)
+
+#Show the reticle.
+func _show_reticle() -> void :
+	Signals.Hud.emit_signal(Signals.Hud.SHOW_RETICLE)
