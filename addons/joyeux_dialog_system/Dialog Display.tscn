@@ -1,0 +1,169 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Interface/InteractsMenu.tres" type="Theme" id=1]
+
+[node name="Dialog Display" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBC" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSpacer3" type="Control" parent="HBC"]
+margin_right = 320.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 320, 0 )
+size_flags_vertical = 3
+
+[node name="VBC" type="VBoxContainer" parent="HBC"]
+margin_left = 324.0
+margin_right = 1596.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer" type="Control" parent="HBC/VBC"]
+margin_right = 1272.0
+margin_bottom = 316.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer2" type="Control" parent="HBC/VBC"]
+margin_top = 320.0
+margin_right = 1272.0
+margin_bottom = 636.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextContainer" type="PanelContainer" parent="HBC/VBC"]
+margin_top = 640.0
+margin_right = 1272.0
+margin_bottom = 956.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBC/VBC/TextContainer"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 1270.0
+margin_bottom = 314.0
+
+[node name="Control2" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 312.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBC/VBC/TextContainer/HBoxContainer"]
+margin_left = 54.0
+margin_right = 1214.0
+margin_bottom = 312.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
+margin_right = 1160.0
+margin_bottom = 35.0
+text = "Sample"
+
+[node name="HSeparator" type="HSeparator" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
+margin_top = 39.0
+margin_right = 1160.0
+margin_bottom = 43.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
+margin_top = 47.0
+margin_right = 1160.0
+margin_bottom = 273.0
+size_flags_vertical = 3
+text = "Lorem ipsum dolor sit amet consectetur adipiscing elit, tristique a aliquam euismod et vestibulum cum, quisque auctor commodo egestas torquent iaculis. Inceptos hendrerit gravida conubia mi placerat feugiat curabitur platea, molestie primis lacus duis vehicula cras pharetra, habitasse libero fermentum netus morbi leo rutrum. Magna ultricies dignissim lacinia ligula etiam consequat molestie risus imperdiet aenean senectus arcu, accumsan est interdum mauris cum semper egestas faucibus ac convallis fames, dis rutrum et ad elementum nec neque massa tempor potenti felis."
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
+margin_top = 277.0
+margin_right = 1160.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control3" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_right = 20.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="Button" type="Button" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 24.0
+margin_right = 61.0
+margin_bottom = 23.0
+text = "Auto"
+
+[node name="Control" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 65.0
+margin_right = 85.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="Button2" type="Button" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 89.0
+margin_right = 122.0
+margin_bottom = 23.0
+text = "Skip"
+
+[node name="Control2" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 126.0
+margin_right = 146.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="Button3" type="Button" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 150.0
+margin_right = 196.0
+margin_bottom = 23.0
+text = "Pause"
+
+[node name="Control4" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
+margin_top = 304.0
+margin_right = 1160.0
+margin_bottom = 304.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="HSeparator2" type="HSeparator" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
+margin_top = 308.0
+margin_right = 1160.0
+margin_bottom = 312.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer"]
+margin_left = 1218.0
+margin_right = 1268.0
+margin_bottom = 312.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="Spacer3" type="Control" parent="HBC/VBC"]
+margin_top = 960.0
+margin_right = 1272.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 0, 120 )
+size_flags_horizontal = 3
+
+[node name="HSpacer2" type="Control" parent="HBC"]
+margin_left = 1600.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 320, 0 )
+size_flags_vertical = 3
