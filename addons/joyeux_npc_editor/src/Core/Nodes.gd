@@ -85,14 +85,14 @@ func load_custom_paths():
 
 func save_custom_paths():
 	var Conf = ConfigFile.new()
-	if behavior_paths.size < 2:
+	if behavior_paths.size() < 2:
 		return
-	for idx in range(2, behavior_paths.size()-1):
+	for idx in range(2, behavior_paths.size()):
 		Conf.set_value("behaviors", str(idx), behavior_paths[idx])
 	if user_override != "":
-		Conf.set_value("overrides", str(0))
+		Conf.set_value("overrides", str(0), user_override)
 	if proj_override != "":
-		Conf.set_value("overrides", str(1))
+		Conf.set_value("overrides", str(1), proj_override)
 	Conf.save("res://addons/joyeux_npc_editor/Config/paths.cfg")
 
 
@@ -214,7 +214,12 @@ func _color_from_class(id : String) -> Color:
 func filter_node_name(unfiltered : String) -> String:
 	for i in range(0,9):
 		unfiltered = unfiltered.replace(str(i),"")
-		unfiltered.replace("@","")
+	unfiltered = unfiltered.replace("@","")
+	unfiltered = unfiltered.replace(":", "")
+	unfiltered = unfiltered.replace("/", "")
+	unfiltered = unfiltered.replace("-", "")
+	unfiltered = unfiltered.replace("+", "")
+	unfiltered = unfiltered.replace(".", "")
 	return unfiltered
 
 func Color(id) -> Color:

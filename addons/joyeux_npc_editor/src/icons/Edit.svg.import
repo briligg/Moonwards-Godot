@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Edit.svg-21b95c0603be3d4b8a30b51ac8f5c8ee.s3tc.stex"
-path.etc2="res://.import/Edit.svg-21b95c0603be3d4b8a30b51ac8f5c8ee.etc2.stex"
+path.s3tc="res://.import/Edit.svg-ea770be3331cf9884cc3ee4531c4dff9.s3tc.stex"
+path.etc2="res://.import/Edit.svg-ea770be3331cf9884cc3ee4531c4dff9.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/joyeux_npc_editor/src/Core/Edit.svg"
-dest_files=[ "res://.import/Edit.svg-21b95c0603be3d4b8a30b51ac8f5c8ee.s3tc.stex", "res://.import/Edit.svg-21b95c0603be3d4b8a30b51ac8f5c8ee.etc2.stex" ]
+source_file="res://addons/joyeux_npc_editor/src/icons/Edit.svg"
+dest_files=[ "res://.import/Edit.svg-ea770be3331cf9884cc3ee4531c4dff9.s3tc.stex", "res://.import/Edit.svg-ea770be3331cf9884cc3ee4531c4dff9.etc2.stex" ]
 
 [params]
 

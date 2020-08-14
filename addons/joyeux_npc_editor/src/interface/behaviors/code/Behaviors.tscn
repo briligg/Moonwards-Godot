@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://addons/joyeux_npc_editor/src/interface/behaviors/Interface/Behaviour_tree_editor.gd" type="Script" id=1]
-[ext_resource path="res://addons/joyeux_npc_editor/src/interface/behaviors/Interface/Graph_compiler.gd" type="Script" id=2]
+[ext_resource path="res://addons/joyeux_npc_editor/src/interface/behaviors/scenes/Behaviour_tree_editor.gd" type="Script" id=1]
+[ext_resource path="res://addons/joyeux_npc_editor/src/interface/behaviors/scenes/Graph_compiler.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Interface/NPCEditorTheme.tres" type="Theme" id=3]
-[ext_resource path="res://addons/joyeux_npc_editor/src/interface/behaviors/Interface/SaveDialog.gd" type="Script" id=4]
+[ext_resource path="res://addons/joyeux_npc_editor/src/interface/behaviors/scenes/SaveDialog.gd" type="Script" id=4]
 
 [sub_resource type="GDScript" id=1]
 script/source = "tool
@@ -122,7 +122,7 @@ margin_bottom = 107.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 text = "Actions"
-items = [ "set_objective", null, 0, false, false, 0, 0, null, "", false, "trigger_dialog", null, 0, false, false, 1, 0, null, "", false, "play_global_sound", null, 0, false, false, 2, 0, null, "", false, "play_3d_sound", null, 0, false, false, 3, 0, null, "", false, "force_next_state", null, 0, false, false, 4, 0, null, "", false, "play_pos_sound", null, 0, false, false, 5, 0, null, "", false ]
+items = [ "set_objective", null, 0, false, false, 0, 0, null, "", false, "trigger_dialog", null, 0, false, false, 1, 0, null, "", false, "play_global_sound", null, 0, false, false, 2, 0, null, "", false, "play_pos_sound", null, 0, false, false, 3, 0, null, "", false, "force_next_state", null, 0, false, false, 4, 0, null, "", false ]
 
 [node name="hs5" type="HSeparator" parent="ViewMenuSplit/Container/Panel/DropDowns"]
 margin_top = 111.0
@@ -254,7 +254,7 @@ items = [ "property_check", null, 0, false, false, 0, 0, null, "", false, "match
 [node name="actions" type="PopupMenu" parent="ViewMenuSplit/GraphEdit/Behaviors"]
 margin_right = 82.0
 margin_bottom = 88.0002
-items = [ "set_objective", null, 0, false, false, 0, 0, null, "", false, "trigger_dialog", null, 0, false, false, 1, 0, null, "", false, "play_global_sound", null, 0, false, false, 2, 0, null, "", false, "play_3d_sound", null, 0, false, false, 3, 0, null, "", false, "force_next_state", null, 0, false, false, 4, 0, null, "", false, "play_pos_sound", null, 0, false, false, 5, 0, null, "", false ]
+items = [ "set_objective", null, 0, false, false, 0, 0, null, "", false, "trigger_dialog", null, 0, false, false, 1, 0, null, "", false, "play_global_sound", null, 0, false, false, 2, 0, null, "", false, "play_pos_sound", null, 0, false, false, 3, 0, null, "", false, "force_next_state", null, 0, false, false, 4, 0, null, "", false ]
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -288,6 +288,7 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+Start_path = ""
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="ViewMenuSplit/Container/type2/Open" to="." method="_on_Open_pressed"]
 [connection signal="pressed" from="ViewMenuSplit/Container/type2/Save" to="ViewMenuSplit/GraphEdit" method="_on_save_pressed"]

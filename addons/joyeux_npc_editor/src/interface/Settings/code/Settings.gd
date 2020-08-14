@@ -1,3 +1,4 @@
+tool
 extends VBoxContainer
 onready var default_project = $"HBoxContainer/Locations/Project Location/Path"
 onready var default_user = $"HBoxContainer/Locations/User Location/Path"
@@ -34,16 +35,18 @@ func _on_default_changing(which : String):
 	else:
 		match which:
 			"project":
-				print("Overrided project!")
 				default_project.text = result
-#				Nodes.override_default(0, result) #0 is for project
+				Nodes.override_default(0, result) #0 is for project
 			"user":
-				print("Overrided user!")
 				default_user.text = result
-#				Nodes.override_default(1, result) #1 is for user
+				Nodes.override_default(1, result) #1 is for user
 func _on_FileDialog_dir_selected(dir):
 	emit_signal("confirm_or_cancel", dir)
 
 
 func _on_FileDialog_popup_hide():
 	emit_signal("confirm_or_cancel", "cancel")
+
+
+func _on_Apply_pressed():
+	Nodes.save_custom_paths()
