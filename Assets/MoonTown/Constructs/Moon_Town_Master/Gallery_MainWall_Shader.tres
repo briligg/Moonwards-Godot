@@ -1,6 +1,13 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/LayeredMainWall_Visualshader.tres" type="Shader" id=1]
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Marble_01/Marble_01_2K_Albedo.jpg" type="Texture" id=2]
 
 [resource]
 shader = ExtResource( 1 )
+shader_param/Color_B2 = Color( 1, 0.823529, 0.823529, 1 )
+shader_param/UVScale_A2 = Vector3( 1, 1, 0 )
+shader_param/Rim = 0.0
+shader_param/Rim2 = 1.5
+shader_param/Albedo_A3 = ExtResource( 2 )
+shader_param/Albedo_A2 = ExtResource( 2 )
