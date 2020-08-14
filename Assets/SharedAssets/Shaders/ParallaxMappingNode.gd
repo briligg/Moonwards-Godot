@@ -114,7 +114,7 @@ func _get_code(input_vars: Array, output_vars: Array, mode: int, type: int) -> S
 	var uvl = "vec3(UV, 0.0)"
 	if input_vars[0]:
 		uvl = input_vars[0]
-	return "%s = ParallaxMapping_Simple(%s,%s,%s,%s,%s,%s,%s,VERTEX,NORMAL,TANGENT,BINORMAL);" % [output_vars[0], uvl, input_vars[1], input_vars[2], input_vars[3], input_vars[4], input_vars[5], input_vars[6]]
+	return "%s = ParallaxMapping_Simple(%s,%s,%s,%s,%s,%s,%s,VERTEX,NORMAL,TANGENT,BINORMAL);" % [output_vars[0], uvl, input_vars[1], input_vars[2], input_vars[6], input_vars[3], input_vars[4], input_vars[5]]
 
 func _init():
 	# Default values for the editor
