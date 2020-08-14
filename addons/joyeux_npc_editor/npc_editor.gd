@@ -5,7 +5,7 @@ const main_panel = preload("res://addons/joyeux_npc_editor/src/interface/NPCEdit
 var main_panel_instance
 
 func _enter_tree():
-	add_autoload_singleton("Nodes", "res://addons/joyeux_npc_editor/src/core/Nodes.gd")
+	add_autoload_singleton("Nodes", "res://addons/joyeux_npc_editor/src/Core/Nodes.gd")
 	main_panel_instance = main_panel.instance()
 	get_editor_interface().get_editor_viewport().add_child(main_panel_instance)
 	make_visible(false)
