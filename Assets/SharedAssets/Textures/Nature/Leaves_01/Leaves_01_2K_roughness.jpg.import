@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Leaves_01_2K_roughness.jpg-3a8908d6b6076a1650a1e57e1841fd09.s3tc.stex"
-path.etc2="res://.import/Leaves_01_2K_roughness.jpg-3a8908d6b6076a1650a1e57e1841fd09.etc2.stex"
+path.s3tc="res://.import/Leaves_01_2K_Roughness.jpg-d3da9bb52c3ce8b929ec609f2f493a6d.s3tc.stex"
+path.etc2="res://.import/Leaves_01_2K_Roughness.jpg-d3da9bb52c3ce8b929ec609f2f493a6d.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/SharedAssets/Textures/Nature/Leaves_01/Leaves_01_2K_roughness.jpg"
-dest_files=[ "res://.import/Leaves_01_2K_roughness.jpg-3a8908d6b6076a1650a1e57e1841fd09.s3tc.stex", "res://.import/Leaves_01_2K_roughness.jpg-3a8908d6b6076a1650a1e57e1841fd09.etc2.stex" ]
+source_file="res://Assets/SharedAssets/Textures/Nature/Leaves_01/Leaves_01_2K_Roughness.jpg"
+dest_files=[ "res://.import/Leaves_01_2K_Roughness.jpg-d3da9bb52c3ce8b929ec609f2f493a6d.s3tc.stex", "res://.import/Leaves_01_2K_Roughness.jpg-d3da9bb52c3ce8b929ec609f2f493a6d.etc2.stex" ]
 
 [params]
 
