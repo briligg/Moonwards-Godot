@@ -1,46 +1,6 @@
-[gd_resource type="ShaderMaterial" load_steps=10 format=2]
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/LayeredMainWall_Visualshader.tres" type="Shader" id=1]
-[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Marble_01/Marble_01_2K_Albedo.jpg" type="Texture" id=2]
-[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Marble_02/Marble_02_2K_Albedo.jpg" type="Texture" id=3]
-[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Marble_01/Marble_01_2K_Normal.jpg" type="Texture" id=4]
-[ext_resource path="res://Assets/SharedAssets/Textures/Noises/Noise_Hev_03_1K_RGB.png" type="Texture" id=5]
-[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Marble_02/Marble_02_2K_Normal.jpg" type="Texture" id=6]
-[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Marble_01/Marble_01_2K_Roughness.jpg" type="Texture" id=7]
-[ext_resource path="res://Assets/SharedAssets/Textures/Noises/Noise_Hev_02_1K_RGB.png" type="Texture" id=8]
-[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Marble_02/Marble_02_2K_Roughness.jpg" type="Texture" id=9]
 
 [resource]
 shader = ExtResource( 1 )
-shader_param/Color_A = Color( 0.745098, 0.737255, 0.631373, 1 )
-shader_param/UVScale_A = Vector3( 30, 30, 1 )
-shader_param/Color_A_Alt = Color( 0.764706, 0.745098, 0.545098, 1 )
-shader_param/NoiseInvert_B = true
-shader_param/NoiseIntensity_B = 1.0
-shader_param/NoiseZ_B = true
-shader_param/UVScale_Noise_B = Vector3( 0.5, 0.5, 0 )
-shader_param/NoiseY_B = false
-shader_param/Color_B = Color( 0.654902, 0.65098, 0.501961, 1 )
-shader_param/UVScale_B = Vector3( 20, 20, 1 )
-shader_param/Color_B_Alt = Color( 0.737255, 0.729412, 0.568627, 1 )
-shader_param/NoiseInvert_A = true
-shader_param/NoiseIntensity_A = 1.0
-shader_param/NoiseZ_A = false
-shader_param/UVScale_Noise_A = Vector3( 5, 10, 0 )
-shader_param/NoiseY_A = true
-shader_param/Metallic_A = null
-shader_param/Metallic_B = null
-shader_param/Rough_Mult_A = 1.0
-shader_param/Rough_Mult_B = 1.0
-shader_param/Specular_A = 0.5
-shader_param/Specular_B = 0.5
-shader_param/Rim = 0.05
-shader_param/Rim_Tint = 0.85
-shader_param/Albedo_A = ExtResource( 2 )
-shader_param/Noise_B_RGB = ExtResource( 5 )
-shader_param/Albedo_B = ExtResource( 3 )
-shader_param/Noise_A_RGB = ExtResource( 8 )
-shader_param/Rough_A = ExtResource( 7 )
-shader_param/Rough_B = ExtResource( 9 )
-shader_param/NormalMap_A = ExtResource( 4 )
-shader_param/NormalMap_B = ExtResource( 6 )

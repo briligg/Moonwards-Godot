@@ -66,7 +66,7 @@ func _get_output_port_type(port: int) -> int:
 #Code based on Godot original code https://github.com/godotengine/godot/blob/00949f0c5fcc6a4f8382a4a97d5591fd9ec380f8/scene/resources/material.cpp#L814
 func _get_global_code(mode: int) -> String:
 	return """
-vec3 ParallaxMapping(vec3 _UV, sampler2D _HeightmapTexture, float _HeightRatio, bool _HeighInverted, float _StepsMin, float _StepsMax, vec3 _HeightmapFlip, vec3 _Vertex, vec3 _Normal, vec3 _Tangent, vec3 _Binormal) {
+vec3 ParallaxMapping_Simple(vec3 _UV, sampler2D _HeightmapTexture, float _HeightRatio, bool _HeighInverted, float _StepsMin, float _StepsMax, vec3 _HeightmapFlip, vec3 _Vertex, vec3 _Normal, vec3 _Tangent, vec3 _Binormal) {
 	vec3 view_dir = normalize(normalize(-_Vertex)*mat3(_Tangent*_HeightmapFlip.x,-_Binormal*_HeightmapFlip.y,_Normal));
 	float num_steps = mix(_StepsMax,_StepsMin, abs(dot(vec3(0.0, 0.0, 1.0), view_dir)));
 	
@@ -104,16 +104,17 @@ vec3 ParallaxMapping(vec3 _UV, sampler2D _HeightmapTexture, float _HeightRatio, 
 		float weight = after_depth / (after_depth - before_depth);
 		ofs = mix(ofs,prev_ofs,weight);
 	}
-	vec3 uv = ofs.xy;
-	return uv;
+	vec3 uvL = vec3(ofs,0.0);
+	//uv.xy = ofs;
+	return uvL;
 }
 """
 
 func _get_code(input_vars: Array, output_vars: Array, mode: int, type: int) -> String:
-	var uv = "vec3(UV, 0.0)"
+	var uvl = "vec3(UV, 0.0)"
 	if input_vars[0]:
-		uv = input_vars[0]
-	return "%s = ParallaxMapping(%s,%s,%s,%s,%s,%s,%s,VERTEX,NORMAL,TANGENT,BINORMAL);" % [output_vars[0], uv, input_vars[1], input_vars[2], input_vars[3], input_vars[4], input_vars[5], input_vars[6]]
+		uvl = input_vars[0]
+	return "%s = ParallaxMapping_Simple(%s,%s,%s,%s,%s,%s,%s,VERTEX,NORMAL,TANGENT,BINORMAL);" % [output_vars[0], uvl, input_vars[1], input_vars[2], input_vars[3], input_vars[4], input_vars[5], input_vars[6]]
 
 func _init():
 	# Default values for the editor

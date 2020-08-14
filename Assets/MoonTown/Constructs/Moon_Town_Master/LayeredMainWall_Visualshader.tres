@@ -1,5 +1,6 @@
-[gd_resource type="VisualShader" load_steps=74 format=2]
+[gd_resource type="VisualShader" load_steps=84 format=2]
 
+[ext_resource path="res://Assets/SharedAssets/Shaders/ParallaxMappingNode.gd" type="Script" id=1]
 [ext_resource path="res://Assets/SharedAssets/Shaders/VectorHeightMixNode.gd" type="Script" id=3]
 
 [sub_resource type="VisualShaderNodeVectorOp" id=1]
@@ -64,6 +65,32 @@ uniform_name = "Rim_Tint"
 [sub_resource type="VisualShaderNodeCustom" id=22]
 default_input_values = [ 2, 0.5, 3, 0.5, 4, 0.0 ]
 script = ExtResource( 3 )
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=73]
+uniform_name = "Rim2"
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=74]
+uniform_name = "Rim3"
+
+[sub_resource type="VisualShaderNodeColorConstant" id=75]
+
+[sub_resource type="VisualShaderNodeCustom" id=76]
+default_input_values = [ 2, 0.05, 3, 4, 4, 16, 5, Vector3( 1, 1, 0 ), 6, false ]
+script = ExtResource( 1 )
+
+[sub_resource type="VisualShaderNodeTextureUniform" id=77]
+uniform_name = "Albedo_A2"
+
+[sub_resource type="VisualShaderNodeColorConstant" id=78]
+
+[sub_resource type="VisualShaderNodeVectorOp" id=79]
+operator = 2
+
+[sub_resource type="VisualShaderNodeInput" id=80]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeTextureUniform" id=81]
+uniform_name = "Albedo_A3"
 
 [sub_resource type="VisualShaderNodeVectorInterp" id=23]
 
@@ -205,39 +232,55 @@ uniform_name = "UVScale_A"
 
 [resource]
 code = "shader_type spatial;
-uniform vec4 Color_A : hint_color;
-uniform vec3 UVScale_A;
-uniform sampler2D Albedo_A;
-uniform vec4 Color_A_Alt : hint_color;
-uniform bool NoiseInvert_B;
-uniform float NoiseIntensity_B;
-uniform bool NoiseZ_B;
-uniform vec3 UVScale_Noise_B;
-uniform sampler2D Noise_B_RGB : hint_albedo;
-uniform bool NoiseY_B;
-uniform vec4 Color_B : hint_color;
-uniform vec3 UVScale_B;
-uniform sampler2D Albedo_B;
-uniform vec4 Color_B_Alt : hint_color;
-uniform bool NoiseInvert_A;
-uniform float NoiseIntensity_A;
-uniform bool NoiseZ_A;
-uniform vec3 UVScale_Noise_A;
-uniform sampler2D Noise_A_RGB : hint_albedo;
-uniform bool NoiseY_A;
-uniform float Metallic_A;
-uniform float Metallic_B;
-uniform float Rough_Mult_A;
-uniform sampler2D Rough_A : hint_albedo;
-uniform float Rough_Mult_B;
-uniform sampler2D Rough_B : hint_albedo;
-uniform float Specular_A;
-uniform float Specular_B;
-uniform sampler2D NormalMap_A : hint_normal;
-uniform sampler2D NormalMap_B : hint_normal;
-uniform float Rim;
-uniform float Rim_Tint;
+uniform float Rim3;
+uniform float Rim2;
+uniform sampler2D Albedo_A3;
+uniform sampler2D Albedo_A2;
 
+
+// ParallaxMapping
+
+vec3 ParallaxMapping(vec3 _UV, sampler2D _HeightmapTexture, float _HeightRatio, bool _HeighInverted, float _StepsMin, float _StepsMax, vec3 _HeightmapFlip, vec3 _Vertex, vec3 _Normal, vec3 _Tangent, vec3 _Binormal) {
+	vec3 view_dir = normalize(normalize(-_Vertex)*mat3(_Tangent*_HeightmapFlip.x,-_Binormal*_HeightmapFlip.y,_Normal));
+	float num_steps = mix(_StepsMax,_StepsMin, abs(dot(vec3(0.0, 0.0, 1.0), view_dir)));
+	
+	float layer_depth = 1.0 / num_steps;
+	vec2 p = view_dir.xy * _HeightRatio;
+	vec2 delta = p / num_steps;
+	vec2 ofs = _UV.xy;
+	float depth = 0.0;
+	if (_HeighInverted) {
+		depth = texture(_HeightmapTexture, ofs).r;
+		float current_depth = 0.0;
+		while(current_depth < depth) {
+			ofs -= delta;
+			depth = texture(_HeightmapTexture, ofs).r;
+			current_depth += layer_depth;
+		}
+		vec2 prev_ofs = ofs + delta;
+		float after_depth  = depth - current_depth;
+		float before_depth = 0.0;
+		before_depth = texture(_HeightmapTexture, prev_ofs).r - current_depth + layer_depth;
+		float weight = after_depth / (after_depth - before_depth);
+		ofs = mix(ofs,prev_ofs,weight);
+	} else {
+		depth = 1.0 - texture(_HeightmapTexture, ofs).r;
+		float current_depth = 0.0;
+		while(current_depth < depth) {
+			ofs -= delta;
+			depth = 1.0 - texture(_HeightmapTexture, ofs).r;
+			current_depth += layer_depth;
+		}
+		vec2 prev_ofs = ofs + delta;
+		float after_depth  = depth - current_depth;
+		float before_depth = 0.0;
+		before_depth = ( 1.0 - texture(_HeightmapTexture, prev_ofs).r  ) - current_depth + layer_depth;
+		float weight = after_depth / (after_depth - before_depth);
+		ofs = mix(ofs,prev_ofs,weight);
+	}
+	vec3 uv = ofs.xy;
+	return uv;
+}
 
 
 void vertex() {
@@ -246,345 +289,60 @@ void vertex() {
 }
 
 void fragment() {
-// ColorUniform:14
-	vec3 n_out14p0 = Color_A.rgb;
-	float n_out14p1 = Color_A.a;
+// Color:165
+	vec3 n_out165p0 = vec3(1.000000, 1.000000, 1.000000);
+	float n_out165p1 = 1.000000;
 
-// Input:7
-	vec3 n_out7p0 = vec3(UV, 0.0);
+// ScalarUniform:164
+	float n_out164p0 = Rim3;
 
-// VectorUniform:8
-	vec3 n_out8p0 = UVScale_A;
+// ScalarUniform:163
+	float n_out163p0 = Rim2;
 
-// VectorOp:10
-	vec3 n_out10p0 = n_out7p0 * n_out8p0;
+// Color:168
+	vec3 n_out168p0 = vec3(1.000000, 1.000000, 1.000000);
+	float n_out168p1 = 1.000000;
 
-// TextureUniform:12
-	vec3 n_out12p0;
-	float n_out12p1;
+// Input:170
+	vec3 n_out170p0 = vec3(UV, 0.0);
+
+// TextureUniform:171
+	vec3 n_out171p0;
+	float n_out171p1;
 	{
-		vec4 n_tex_read = texture(Albedo_A, n_out10p0.xy);
-		n_out12p0 = n_tex_read.rgb;
-		n_out12p1 = n_tex_read.a;
+		vec4 n_tex_read = texture(Albedo_A3, n_out170p0.xy);
+		n_out171p0 = n_tex_read.rgb;
+		n_out171p1 = n_tex_read.a;
 	}
 
-// VectorOp:16
-	vec3 n_out16p0 = n_out14p0 * n_out12p0;
-
-// ColorUniform:69
-	vec3 n_out69p0 = Color_A_Alt.rgb;
-	float n_out69p1 = Color_A_Alt.a;
-
-// VectorOp:70
-	vec3 n_out70p0 = n_out12p0 * n_out69p0;
-
-// BooleanUniform:159
-	bool n_out159p0 = NoiseInvert_B;
-
-// ScalarUniform:153
-	float n_out153p0 = NoiseIntensity_B;
-
-// BooleanUniform:155
-	bool n_out155p0 = NoiseZ_B;
-
-// Input:146
-	vec3 n_out146p0 = vec3(UV, 0.0);
-
-// VectorUniform:147
-	vec3 n_out147p0 = UVScale_Noise_B;
-
-// VectorOp:148
-	vec3 n_out148p0 = n_out146p0 * n_out147p0;
-
-// TextureUniform:145
-	vec3 n_out145p0;
-	float n_out145p1;
+// ParallaxMapping:166
+	float n_in166p2 = 0.05000;
+	float n_in166p3 = 4.00000;
+	float n_in166p4 = 16.00000;
+	vec3 n_in166p5 = vec3(1.00000, 1.00000, 0.00000);
+	bool n_in166p6 = false;
+	vec3 n_out166p0;
 	{
-		vec4 n_tex_read = texture(Noise_B_RGB, n_out148p0.xy);
-		n_out145p0 = n_tex_read.rgb;
-		n_out145p1 = n_tex_read.a;
+		n_out166p0 = ParallaxMapping(n_out170p0,Albedo_A3,n_in166p2,n_in166p3,n_in166p4,n_in166p5,n_in166p6,VERTEX,NORMAL,TANGENT,BINORMAL);
 	}
 
-// VectorDecompose:149
-	float n_out149p0 = n_out145p0.x;
-	float n_out149p1 = n_out145p0.y;
-	float n_out149p2 = n_out145p0.z;
-
-// BooleanUniform:151
-	bool n_out151p0 = NoiseY_B;
-
-// ScalarSwitch:150
-	float n_out150p0;
-	if(n_out151p0)
+// TextureUniform:167
+	vec3 n_out167p0;
+	float n_out167p1;
 	{
-		n_out150p0 = n_out149p1;
-	}
-	else
-	{
-		n_out150p0 = n_out149p0;
+		vec4 n_tex_read = texture(Albedo_A2, n_out166p0.xy);
+		n_out167p0 = n_tex_read.rgb;
+		n_out167p1 = n_tex_read.a;
 	}
 
-// ScalarSwitch:154
-	float n_out154p0;
-	if(n_out155p0)
-	{
-		n_out154p0 = n_out149p2;
-	}
-	else
-	{
-		n_out154p0 = n_out150p0;
-	}
-
-// ScalarOp:152
-	float n_out152p0 = n_out153p0 * n_out154p0;
-
-// ScalarClamp:156
-	float n_in156p1 = 0.00000;
-	float n_in156p2 = 1.00000;
-	float n_out156p0 = clamp(n_out152p0, n_in156p1, n_in156p2);
-
-// ScalarFunc:157
-	float n_out157p0 = 1.0 - n_out156p0;
-
-// ScalarSwitch:158
-	float n_out158p0;
-	if(n_out159p0)
-	{
-		n_out158p0 = n_out157p0;
-	}
-	else
-	{
-		n_out158p0 = n_out156p0;
-	}
-
-// VectorMix:18
-	vec3 n_out18p0 = mix(n_out16p0, n_out70p0, vec3(n_out158p0));
-
-// ColorUniform:64
-	vec3 n_out64p0 = Color_B.rgb;
-	float n_out64p1 = Color_B.a;
-
-// VectorUniform:67
-	vec3 n_out67p0 = UVScale_B;
-
-// VectorOp:68
-	vec3 n_out68p0 = n_out7p0 * n_out67p0;
-
-// TextureUniform:66
-	vec3 n_out66p0;
-	float n_out66p1;
-	{
-		vec4 n_tex_read = texture(Albedo_B, n_out68p0.xy);
-		n_out66p0 = n_tex_read.rgb;
-		n_out66p1 = n_tex_read.a;
-	}
-
-// VectorOp:65
-	vec3 n_out65p0 = n_out64p0 * n_out66p0;
-
-// ColorUniform:71
-	vec3 n_out71p0 = Color_B_Alt.rgb;
-	float n_out71p1 = Color_B_Alt.a;
-
-// VectorOp:72
-	vec3 n_out72p0 = n_out66p0 * n_out71p0;
-
-// VectorMix:75
-	vec3 n_out75p0 = mix(n_out65p0, n_out72p0, vec3(n_out158p0));
-
-// BooleanUniform:60
-	bool n_out60p0 = NoiseInvert_A;
-
-// ScalarUniform:43
-	float n_out43p0 = NoiseIntensity_A;
-
-// BooleanUniform:51
-	bool n_out51p0 = NoiseZ_A;
-
-// Input:36
-	vec3 n_out36p0 = vec3(UV, 0.0);
-
-// VectorUniform:37
-	vec3 n_out37p0 = UVScale_Noise_A;
-
-// VectorOp:38
-	vec3 n_out38p0 = n_out36p0 * n_out37p0;
-
-// TextureUniform:34
-	vec3 n_out34p0;
-	float n_out34p1;
-	{
-		vec4 n_tex_read = texture(Noise_A_RGB, n_out38p0.xy);
-		n_out34p0 = n_tex_read.rgb;
-		n_out34p1 = n_tex_read.a;
-	}
-
-// VectorDecompose:39
-	float n_out39p0 = n_out34p0.x;
-	float n_out39p1 = n_out34p0.y;
-	float n_out39p2 = n_out34p0.z;
-
-// BooleanUniform:41
-	bool n_out41p0 = NoiseY_A;
-
-// ScalarSwitch:40
-	float n_out40p0;
-	if(n_out41p0)
-	{
-		n_out40p0 = n_out39p1;
-	}
-	else
-	{
-		n_out40p0 = n_out39p0;
-	}
-
-// ScalarSwitch:52
-	float n_out52p0;
-	if(n_out51p0)
-	{
-		n_out52p0 = n_out39p2;
-	}
-	else
-	{
-		n_out52p0 = n_out40p0;
-	}
-
-// ScalarOp:42
-	float n_out42p0 = n_out43p0 * n_out52p0;
-
-// ScalarClamp:44
-	float n_in44p1 = 0.00000;
-	float n_in44p2 = 1.00000;
-	float n_out44p0 = clamp(n_out42p0, n_in44p1, n_in44p2);
-
-// ScalarFunc:58
-	float n_out58p0 = 1.0 - n_out44p0;
-
-// ScalarSwitch:59
-	float n_out59p0;
-	if(n_out60p0)
-	{
-		n_out59p0 = n_out58p0;
-	}
-	else
-	{
-		n_out59p0 = n_out44p0;
-	}
-
-// VectorMix:78
-	vec3 n_out78p0 = mix(n_out18p0, n_out75p0, vec3(n_out59p0));
-
-// ScalarUniform:27
-	float n_out27p0 = Metallic_A;
-
-// ScalarUniform:28
-	float n_out28p0 = Metallic_B;
-
-// ScalarMix:25
-	float n_out25p0 = mix(n_out27p0, n_out28p0, n_out59p0);
-
-// ScalarClamp:48
-	float n_in48p1 = 0.00000;
-	float n_in48p2 = 1.00000;
-	float n_out48p0 = clamp(n_out25p0, n_in48p1, n_in48p2);
-
-// ScalarUniform:56
-	float n_out56p0 = Rough_Mult_A;
-
-// TextureUniform:20
-	vec3 n_out20p0;
-	float n_out20p1;
-	{
-		vec4 n_tex_read = texture(Rough_A, n_out10p0.xy);
-		n_out20p0 = n_tex_read.rgb;
-		n_out20p1 = n_tex_read.a;
-	}
-
-// VectorDecompose:22
-	float n_out22p0 = n_out20p0.x;
-	float n_out22p1 = n_out20p0.y;
-	float n_out22p2 = n_out20p0.z;
-
-// ScalarOp:54
-	float n_out54p0 = n_out56p0 * n_out22p0;
-
-// ScalarUniform:57
-	float n_out57p0 = Rough_Mult_B;
-
-// TextureUniform:21
-	vec3 n_out21p0;
-	float n_out21p1;
-	{
-		vec4 n_tex_read = texture(Rough_B, n_out68p0.xy);
-		n_out21p0 = n_tex_read.rgb;
-		n_out21p1 = n_tex_read.a;
-	}
-
-// VectorDecompose:23
-	float n_out23p0 = n_out21p0.x;
-	float n_out23p1 = n_out21p0.y;
-	float n_out23p2 = n_out21p0.z;
-
-// ScalarOp:55
-	float n_out55p0 = n_out57p0 * n_out23p0;
-
-// ScalarMix:19
-	float n_out19p0 = mix(n_out54p0, n_out55p0, n_out59p0);
-
-// ScalarClamp:47
-	float n_in47p1 = 0.00000;
-	float n_in47p2 = 1.00000;
-	float n_out47p0 = clamp(n_out19p0, n_in47p1, n_in47p2);
-
-// ScalarUniform:29
-	float n_out29p0 = Specular_A;
-
-// ScalarUniform:30
-	float n_out30p0 = Specular_B;
-
-// ScalarMix:26
-	float n_out26p0 = mix(n_out29p0, n_out30p0, n_out59p0);
-
-// ScalarClamp:49
-	float n_in49p1 = 0.00000;
-	float n_in49p2 = 1.00000;
-	float n_out49p0 = clamp(n_out26p0, n_in49p1, n_in49p2);
-
-// TextureUniform:31
-	vec3 n_out31p0;
-	float n_out31p1;
-	{
-		vec4 n_tex_read = texture(NormalMap_A, n_out10p0.xy);
-		n_out31p0 = n_tex_read.rgb;
-		n_out31p1 = n_tex_read.a;
-	}
-
-// TextureUniform:32
-	vec3 n_out32p0;
-	float n_out32p1;
-	{
-		vec4 n_tex_read = texture(NormalMap_B, n_out68p0.xy);
-		n_out32p0 = n_tex_read.rgb;
-		n_out32p1 = n_tex_read.a;
-	}
-
-// VectorMix:33
-	vec3 n_out33p0 = mix(n_out31p0, n_out32p0, vec3(n_out59p0));
-
-// ScalarUniform:160
-	float n_out160p0 = Rim;
-
-// ScalarUniform:161
-	float n_out161p0 = Rim_Tint;
+// VectorOp:169
+	vec3 n_out169p0 = n_out168p0 * n_out167p0;
 
 // Output:0
-	ALBEDO = n_out78p0;
-	METALLIC = n_out48p0;
-	ROUGHNESS = n_out47p0;
-	SPECULAR = n_out49p0;
-	NORMALMAP = n_out33p0;
-	RIM = n_out160p0;
-	RIM_TINT = n_out161p0;
+	ALBEDO = n_out165p0;
+	ROUGHNESS = n_out164p0;
+	SPECULAR = n_out163p0;
+	EMISSION = n_out169p0;
 
 }
 
@@ -593,7 +351,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -1219, -1475 )
+graph_offset = Vector2( -1302, -567 )
 nodes/fragment/0/position = Vector2( 400, 200 )
 nodes/fragment/7/node = SubResource( 66 )
 nodes/fragment/7/position = Vector2( -2000, -300 )
@@ -734,9 +492,27 @@ nodes/fragment/158/position = Vector2( -1200, -800 )
 nodes/fragment/159/node = SubResource( 18 )
 nodes/fragment/159/position = Vector2( -1600, -800 )
 nodes/fragment/160/node = SubResource( 20 )
-nodes/fragment/160/position = Vector2( 60, 420 )
+nodes/fragment/160/position = Vector2( 20, 420 )
 nodes/fragment/161/node = SubResource( 21 )
 nodes/fragment/161/position = Vector2( -47, 543 )
 nodes/fragment/162/node = SubResource( 22 )
 nodes/fragment/162/position = Vector2( -400, -1100 )
-nodes/fragment/connections = PoolIntArray( 7, 0, 10, 0, 8, 0, 10, 1, 10, 0, 12, 0, 12, 0, 16, 1, 14, 0, 16, 0, 16, 0, 18, 0, 10, 0, 20, 0, 20, 0, 22, 0, 21, 0, 23, 0, 27, 0, 25, 0, 28, 0, 25, 1, 30, 0, 26, 1, 32, 0, 33, 1, 36, 0, 38, 0, 37, 0, 38, 1, 38, 0, 34, 0, 34, 0, 39, 0, 41, 0, 40, 0, 42, 0, 44, 0, 39, 0, 40, 2, 39, 1, 40, 1, 40, 0, 52, 2, 52, 0, 42, 1, 43, 0, 42, 0, 54, 0, 19, 0, 55, 0, 19, 1, 60, 0, 59, 0, 58, 0, 59, 1, 44, 0, 59, 2, 44, 0, 58, 0, 29, 0, 26, 0, 66, 0, 65, 1, 64, 0, 65, 0, 67, 0, 68, 1, 7, 0, 68, 0, 68, 0, 66, 0, 12, 0, 70, 0, 69, 0, 70, 1, 66, 0, 72, 0, 71, 0, 72, 1, 70, 0, 18, 1, 65, 0, 75, 0, 72, 0, 75, 1, 18, 0, 78, 0, 75, 0, 78, 1, 68, 0, 21, 0, 10, 0, 31, 0, 68, 0, 32, 0, 56, 0, 54, 0, 22, 0, 54, 1, 23, 0, 55, 1, 57, 0, 55, 0, 31, 0, 33, 0, 51, 0, 52, 0, 39, 2, 52, 1, 146, 0, 148, 0, 147, 0, 148, 1, 148, 0, 145, 0, 145, 0, 149, 0, 151, 0, 150, 0, 149, 0, 150, 2, 149, 1, 150, 1, 150, 0, 154, 2, 154, 0, 152, 1, 153, 0, 152, 0, 155, 0, 154, 0, 149, 2, 154, 1, 159, 0, 158, 0, 157, 0, 158, 1, 156, 0, 158, 2, 156, 0, 157, 0, 152, 0, 156, 0, 59, 0, 33, 2, 19, 0, 47, 0, 59, 0, 19, 2, 59, 0, 25, 2, 59, 0, 26, 2, 25, 0, 48, 0, 26, 0, 49, 0, 59, 0, 78, 2, 158, 0, 75, 2, 158, 0, 18, 2, 78, 0, 0, 0, 48, 0, 0, 2, 49, 0, 0, 4, 47, 0, 0, 3, 33, 0, 0, 8, 160, 0, 0, 10, 161, 0, 0, 11, 18, 0, 162, 0, 75, 0, 162, 1 )
+nodes/fragment/163/node = SubResource( 73 )
+nodes/fragment/163/position = Vector2( 20, 300 )
+nodes/fragment/164/node = SubResource( 74 )
+nodes/fragment/164/position = Vector2( 40, 200 )
+nodes/fragment/165/node = SubResource( 75 )
+nodes/fragment/165/position = Vector2( 220, 80 )
+nodes/fragment/166/node = SubResource( 76 )
+nodes/fragment/166/position = Vector2( -660, -260 )
+nodes/fragment/167/node = SubResource( 77 )
+nodes/fragment/167/position = Vector2( -400, -340 )
+nodes/fragment/168/node = SubResource( 78 )
+nodes/fragment/168/position = Vector2( -340, -440 )
+nodes/fragment/169/node = SubResource( 79 )
+nodes/fragment/169/position = Vector2( 100, -260 )
+nodes/fragment/170/node = SubResource( 80 )
+nodes/fragment/170/position = Vector2( -1140, -320 )
+nodes/fragment/171/node = SubResource( 81 )
+nodes/fragment/171/position = Vector2( -920, -240 )
+nodes/fragment/connections = PoolIntArray( 7, 0, 10, 0, 8, 0, 10, 1, 10, 0, 12, 0, 12, 0, 16, 1, 14, 0, 16, 0, 16, 0, 18, 0, 10, 0, 20, 0, 20, 0, 22, 0, 21, 0, 23, 0, 27, 0, 25, 0, 28, 0, 25, 1, 30, 0, 26, 1, 32, 0, 33, 1, 36, 0, 38, 0, 37, 0, 38, 1, 38, 0, 34, 0, 34, 0, 39, 0, 41, 0, 40, 0, 42, 0, 44, 0, 39, 0, 40, 2, 39, 1, 40, 1, 40, 0, 52, 2, 52, 0, 42, 1, 43, 0, 42, 0, 54, 0, 19, 0, 55, 0, 19, 1, 60, 0, 59, 0, 58, 0, 59, 1, 44, 0, 59, 2, 44, 0, 58, 0, 29, 0, 26, 0, 66, 0, 65, 1, 64, 0, 65, 0, 67, 0, 68, 1, 7, 0, 68, 0, 68, 0, 66, 0, 12, 0, 70, 0, 69, 0, 70, 1, 66, 0, 72, 0, 71, 0, 72, 1, 70, 0, 18, 1, 65, 0, 75, 0, 72, 0, 75, 1, 18, 0, 78, 0, 75, 0, 78, 1, 68, 0, 21, 0, 10, 0, 31, 0, 68, 0, 32, 0, 56, 0, 54, 0, 22, 0, 54, 1, 23, 0, 55, 1, 57, 0, 55, 0, 31, 0, 33, 0, 51, 0, 52, 0, 39, 2, 52, 1, 146, 0, 148, 0, 147, 0, 148, 1, 148, 0, 145, 0, 145, 0, 149, 0, 151, 0, 150, 0, 149, 0, 150, 2, 149, 1, 150, 1, 150, 0, 154, 2, 154, 0, 152, 1, 153, 0, 152, 0, 155, 0, 154, 0, 149, 2, 154, 1, 159, 0, 158, 0, 157, 0, 158, 1, 156, 0, 158, 2, 156, 0, 157, 0, 152, 0, 156, 0, 59, 0, 33, 2, 19, 0, 47, 0, 59, 0, 19, 2, 59, 0, 25, 2, 59, 0, 26, 2, 25, 0, 48, 0, 26, 0, 49, 0, 59, 0, 78, 2, 158, 0, 75, 2, 158, 0, 18, 2, 18, 0, 162, 0, 75, 0, 162, 1, 163, 0, 0, 4, 164, 0, 0, 3, 165, 0, 0, 0, 166, 0, 167, 0, 168, 0, 169, 0, 167, 0, 169, 1, 170, 0, 166, 0, 169, 0, 0, 5, 171, 2, 166, 1, 170, 0, 171, 0 )
