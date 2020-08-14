@@ -1,5 +1,6 @@
-[gd_resource type="VisualShader" load_steps=74 format=2]
+[gd_resource type="VisualShader" load_steps=77 format=2]
 
+[ext_resource path="res://Assets/SharedAssets/Shaders/ParallaxMappingNode.gd" type="Script" id=1]
 [ext_resource path="res://Assets/SharedAssets/Shaders/VectorHeightMixNode.gd" type="Script" id=3]
 
 [sub_resource type="VisualShaderNodeVectorOp" id=1]
@@ -64,6 +65,14 @@ uniform_name = "Rim_Tint"
 [sub_resource type="VisualShaderNodeCustom" id=22]
 default_input_values = [ 2, 0.5, 3, 0.5, 4, 0.0 ]
 script = ExtResource( 3 )
+
+[sub_resource type="VisualShaderNodeCustom" id=73]
+default_input_values = [ 2, 0.1, 3, 4, 4, 16, 5, Vector3( 1, 1, 0 ), 6, false ]
+script = ExtResource( 1 )
+
+[sub_resource type="VisualShaderNodeCustom" id=74]
+default_input_values = [ 2, 0.1, 3, 8, 4, 16, 5, Vector3( 1, 1, 0 ), 6, false ]
+script = ExtResource( 1 )
 
 [sub_resource type="VisualShaderNodeVectorInterp" id=23]
 
@@ -207,6 +216,7 @@ uniform_name = "UVScale_A"
 code = "shader_type spatial;
 uniform vec4 Color_A : hint_color;
 uniform vec3 UVScale_A;
+uniform sampler2D Rough_A : hint_albedo;
 uniform sampler2D Albedo_A;
 uniform vec4 Color_A_Alt : hint_color;
 uniform bool NoiseInvert_B;
@@ -228,7 +238,6 @@ uniform bool NoiseY_A;
 uniform float Metallic_A;
 uniform float Metallic_B;
 uniform float Rough_Mult_A;
-uniform sampler2D Rough_A : hint_albedo;
 uniform float Rough_Mult_B;
 uniform sampler2D Rough_B : hint_albedo;
 uniform float Specular_A;
@@ -238,6 +247,51 @@ uniform sampler2D NormalMap_B : hint_normal;
 uniform float Rim;
 uniform float Rim_Tint;
 
+
+// ParallaxMapping
+
+vec3 ParallaxMapping_Simple(vec3 _UV, sampler2D _HeightmapTexture, float _HeightRatio, bool _HeighInverted, float _StepsMin, float _StepsMax, vec3 _HeightmapFlip, vec3 _Vertex, vec3 _Normal, vec3 _Tangent, vec3 _Binormal) {
+	vec3 view_dir = normalize(normalize(-_Vertex)*mat3(_Tangent*_HeightmapFlip.x,-_Binormal*_HeightmapFlip.y,_Normal));
+	float num_steps = mix(_StepsMax,_StepsMin, abs(dot(vec3(0.0, 0.0, 1.0), view_dir)));
+	
+	float layer_depth = 1.0 / num_steps;
+	vec2 p = view_dir.xy * _HeightRatio;
+	vec2 delta = p / num_steps;
+	vec2 ofs = _UV.xy;
+	float depth = 0.0;
+	if (_HeighInverted) {
+		depth = texture(_HeightmapTexture, ofs).r;
+		float current_depth = 0.0;
+		while(current_depth < depth) {
+			ofs -= delta;
+			depth = texture(_HeightmapTexture, ofs).r;
+			current_depth += layer_depth;
+		}
+		vec2 prev_ofs = ofs + delta;
+		float after_depth  = depth - current_depth;
+		float before_depth = 0.0;
+		before_depth = texture(_HeightmapTexture, prev_ofs).r - current_depth + layer_depth;
+		float weight = after_depth / (after_depth - before_depth);
+		ofs = mix(ofs,prev_ofs,weight);
+	} else {
+		depth = 1.0 - texture(_HeightmapTexture, ofs).r;
+		float current_depth = 0.0;
+		while(current_depth < depth) {
+			ofs -= delta;
+			depth = 1.0 - texture(_HeightmapTexture, ofs).r;
+			current_depth += layer_depth;
+		}
+		vec2 prev_ofs = ofs + delta;
+		float after_depth  = depth - current_depth;
+		float before_depth = 0.0;
+		before_depth = ( 1.0 - texture(_HeightmapTexture, prev_ofs).r  ) - current_depth + layer_depth;
+		float weight = after_depth / (after_depth - before_depth);
+		ofs = mix(ofs,prev_ofs,weight);
+	}
+	vec3 uvL = vec3(ofs,0.0);
+	//uv.xy = ofs;
+	return uvL;
+}
 
 
 void vertex() {
@@ -259,11 +313,31 @@ void fragment() {
 // VectorOp:10
 	vec3 n_out10p0 = n_out7p0 * n_out8p0;
 
+// TextureUniform:20
+	vec3 n_out20p0;
+	float n_out20p1;
+	{
+		vec4 n_tex_read = texture(Rough_A, n_out10p0.xy);
+		n_out20p0 = n_tex_read.rgb;
+		n_out20p1 = n_tex_read.a;
+	}
+
+// ParallaxMapping:163
+	float n_in163p2 = 0.10000;
+	float n_in163p3 = 4.00000;
+	float n_in163p4 = 16.00000;
+	vec3 n_in163p5 = vec3(1.00000, 1.00000, 0.00000);
+	bool n_in163p6 = false;
+	vec3 n_out163p0;
+	{
+		n_out163p0 = ParallaxMapping_Simple(n_out10p0,Rough_A,n_in163p2,n_in163p6,n_in163p3,n_in163p4,n_in163p5,VERTEX,NORMAL,TANGENT,BINORMAL);
+	}
+
 // TextureUniform:12
 	vec3 n_out12p0;
 	float n_out12p1;
 	{
-		vec4 n_tex_read = texture(Albedo_A, n_out10p0.xy);
+		vec4 n_tex_read = texture(Albedo_A, n_out163p0.xy);
 		n_out12p0 = n_tex_read.rgb;
 		n_out12p1 = n_tex_read.a;
 	}
@@ -491,15 +565,6 @@ void fragment() {
 // ScalarUniform:56
 	float n_out56p0 = Rough_Mult_A;
 
-// TextureUniform:20
-	vec3 n_out20p0;
-	float n_out20p1;
-	{
-		vec4 n_tex_read = texture(Rough_A, n_out10p0.xy);
-		n_out20p0 = n_tex_read.rgb;
-		n_out20p1 = n_tex_read.a;
-	}
-
 // VectorDecompose:22
 	float n_out22p0 = n_out20p0.x;
 	float n_out22p1 = n_out20p0.y;
@@ -550,11 +615,22 @@ void fragment() {
 	float n_in49p2 = 1.00000;
 	float n_out49p0 = clamp(n_out26p0, n_in49p1, n_in49p2);
 
+// ParallaxMapping:164
+	float n_in164p2 = 0.10000;
+	float n_in164p3 = 8.00000;
+	float n_in164p4 = 16.00000;
+	vec3 n_in164p5 = vec3(1.00000, 1.00000, 0.00000);
+	bool n_in164p6 = false;
+	vec3 n_out164p0;
+	{
+		n_out164p0 = ParallaxMapping_Simple(n_out10p0,Rough_A,n_in164p2,n_in164p6,n_in164p3,n_in164p4,n_in164p5,VERTEX,NORMAL,TANGENT,BINORMAL);
+	}
+
 // TextureUniform:31
 	vec3 n_out31p0;
 	float n_out31p1;
 	{
-		vec4 n_tex_read = texture(NormalMap_A, n_out10p0.xy);
+		vec4 n_tex_read = texture(NormalMap_A, n_out164p0.xy);
 		n_out31p0 = n_tex_read.rgb;
 		n_out31p1 = n_tex_read.a;
 	}
@@ -593,7 +669,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -1219, -1475 )
+graph_offset = Vector2( -1849, -1594 )
 nodes/fragment/0/position = Vector2( 400, 200 )
 nodes/fragment/7/node = SubResource( 66 )
 nodes/fragment/7/position = Vector2( -2000, -300 )
@@ -739,4 +815,8 @@ nodes/fragment/161/node = SubResource( 21 )
 nodes/fragment/161/position = Vector2( -47, 543 )
 nodes/fragment/162/node = SubResource( 22 )
 nodes/fragment/162/position = Vector2( -400, -1100 )
-nodes/fragment/connections = PoolIntArray( 7, 0, 10, 0, 8, 0, 10, 1, 10, 0, 12, 0, 12, 0, 16, 1, 14, 0, 16, 0, 16, 0, 18, 0, 10, 0, 20, 0, 20, 0, 22, 0, 21, 0, 23, 0, 27, 0, 25, 0, 28, 0, 25, 1, 30, 0, 26, 1, 32, 0, 33, 1, 36, 0, 38, 0, 37, 0, 38, 1, 38, 0, 34, 0, 34, 0, 39, 0, 41, 0, 40, 0, 42, 0, 44, 0, 39, 0, 40, 2, 39, 1, 40, 1, 40, 0, 52, 2, 52, 0, 42, 1, 43, 0, 42, 0, 54, 0, 19, 0, 55, 0, 19, 1, 60, 0, 59, 0, 58, 0, 59, 1, 44, 0, 59, 2, 44, 0, 58, 0, 29, 0, 26, 0, 66, 0, 65, 1, 64, 0, 65, 0, 67, 0, 68, 1, 7, 0, 68, 0, 68, 0, 66, 0, 12, 0, 70, 0, 69, 0, 70, 1, 66, 0, 72, 0, 71, 0, 72, 1, 70, 0, 18, 1, 65, 0, 75, 0, 72, 0, 75, 1, 18, 0, 78, 0, 75, 0, 78, 1, 68, 0, 21, 0, 10, 0, 31, 0, 68, 0, 32, 0, 56, 0, 54, 0, 22, 0, 54, 1, 23, 0, 55, 1, 57, 0, 55, 0, 31, 0, 33, 0, 51, 0, 52, 0, 39, 2, 52, 1, 146, 0, 148, 0, 147, 0, 148, 1, 148, 0, 145, 0, 145, 0, 149, 0, 151, 0, 150, 0, 149, 0, 150, 2, 149, 1, 150, 1, 150, 0, 154, 2, 154, 0, 152, 1, 153, 0, 152, 0, 155, 0, 154, 0, 149, 2, 154, 1, 159, 0, 158, 0, 157, 0, 158, 1, 156, 0, 158, 2, 156, 0, 157, 0, 152, 0, 156, 0, 59, 0, 33, 2, 19, 0, 47, 0, 59, 0, 19, 2, 59, 0, 25, 2, 59, 0, 26, 2, 25, 0, 48, 0, 26, 0, 49, 0, 59, 0, 78, 2, 158, 0, 75, 2, 158, 0, 18, 2, 78, 0, 0, 0, 48, 0, 0, 2, 49, 0, 0, 4, 47, 0, 0, 3, 33, 0, 0, 8, 160, 0, 0, 10, 161, 0, 0, 11, 18, 0, 162, 0, 75, 0, 162, 1 )
+nodes/fragment/163/node = SubResource( 73 )
+nodes/fragment/163/position = Vector2( -1500, -1440 )
+nodes/fragment/164/node = SubResource( 74 )
+nodes/fragment/164/position = Vector2( -1460, 1280 )
+nodes/fragment/connections = PoolIntArray( 7, 0, 10, 0, 8, 0, 10, 1, 12, 0, 16, 1, 14, 0, 16, 0, 16, 0, 18, 0, 10, 0, 20, 0, 20, 0, 22, 0, 21, 0, 23, 0, 27, 0, 25, 0, 28, 0, 25, 1, 30, 0, 26, 1, 32, 0, 33, 1, 36, 0, 38, 0, 37, 0, 38, 1, 38, 0, 34, 0, 34, 0, 39, 0, 41, 0, 40, 0, 42, 0, 44, 0, 39, 0, 40, 2, 39, 1, 40, 1, 40, 0, 52, 2, 52, 0, 42, 1, 43, 0, 42, 0, 54, 0, 19, 0, 55, 0, 19, 1, 60, 0, 59, 0, 58, 0, 59, 1, 44, 0, 59, 2, 44, 0, 58, 0, 29, 0, 26, 0, 66, 0, 65, 1, 64, 0, 65, 0, 67, 0, 68, 1, 7, 0, 68, 0, 68, 0, 66, 0, 12, 0, 70, 0, 69, 0, 70, 1, 66, 0, 72, 0, 71, 0, 72, 1, 70, 0, 18, 1, 65, 0, 75, 0, 72, 0, 75, 1, 18, 0, 78, 0, 75, 0, 78, 1, 68, 0, 21, 0, 68, 0, 32, 0, 56, 0, 54, 0, 22, 0, 54, 1, 23, 0, 55, 1, 57, 0, 55, 0, 31, 0, 33, 0, 51, 0, 52, 0, 39, 2, 52, 1, 146, 0, 148, 0, 147, 0, 148, 1, 148, 0, 145, 0, 145, 0, 149, 0, 151, 0, 150, 0, 149, 0, 150, 2, 149, 1, 150, 1, 150, 0, 154, 2, 154, 0, 152, 1, 153, 0, 152, 0, 155, 0, 154, 0, 149, 2, 154, 1, 159, 0, 158, 0, 157, 0, 158, 1, 156, 0, 158, 2, 156, 0, 157, 0, 152, 0, 156, 0, 59, 0, 33, 2, 19, 0, 47, 0, 59, 0, 19, 2, 59, 0, 25, 2, 59, 0, 26, 2, 25, 0, 48, 0, 26, 0, 49, 0, 59, 0, 78, 2, 158, 0, 75, 2, 158, 0, 18, 2, 78, 0, 0, 0, 48, 0, 0, 2, 49, 0, 0, 4, 47, 0, 0, 3, 33, 0, 0, 8, 160, 0, 0, 10, 161, 0, 0, 11, 18, 0, 162, 0, 75, 0, 162, 1, 10, 0, 163, 0, 20, 2, 163, 1, 163, 0, 12, 0, 164, 0, 31, 0, 10, 0, 164, 0, 20, 2, 164, 1 )
