@@ -75,7 +75,7 @@ uniform_name = "Rim3"
 [sub_resource type="VisualShaderNodeColorConstant" id=25]
 
 [sub_resource type="VisualShaderNodeCustom" id=26]
-default_input_values = [ 2, 0.2, 3, 1, 4, 1, 5, Vector3( 1, 1, 0 ), 6, false ]
+default_input_values = [ 2, 0.05, 3, 1, 4, 1, 5, Vector3( 1, 1, 0 ), 6, false ]
 script = ExtResource( 1 )
 
 [sub_resource type="VisualShaderNodeTextureUniform" id=27]
@@ -325,7 +325,7 @@ void fragment() {
 	}
 
 // ParallaxMapping:166
-	float n_in166p2 = 0.20000;
+	float n_in166p2 = 0.05000;
 	float n_in166p3 = 1.00000;
 	float n_in166p4 = 1.00000;
 	vec3 n_in166p5 = vec3(1.00000, 1.00000, 0.00000);
@@ -365,7 +365,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -749, 55 )
+graph_offset = Vector2( -1657, -558 )
 nodes/fragment/0/position = Vector2( 400, 200 )
 nodes/fragment/7/node = SubResource( 78 )
 nodes/fragment/7/position = Vector2( -2000, -300 )

@@ -1,0 +1,450 @@
+[gd_resource type="VisualShader" load_steps=45 format=2]
+
+[sub_resource type="VisualShaderNodeVectorOp" id=1]
+operator = 2
+
+[sub_resource type="VisualShaderNodeVectorOp" id=2]
+operator = 2
+
+[sub_resource type="VisualShaderNodeColorUniform" id=3]
+uniform_name = "Color_A"
+
+[sub_resource type="VisualShaderNodeColorUniform" id=4]
+uniform_name = "Color_B"
+
+[sub_resource type="VisualShaderNodeVectorInterp" id=5]
+
+[sub_resource type="VisualShaderNodeScalarInterp" id=6]
+
+[sub_resource type="VisualShaderNodeTextureUniform" id=7]
+uniform_name = "Rough_A"
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeTextureUniform" id=8]
+uniform_name = "Rough_B"
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id=9]
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id=10]
+
+[sub_resource type="VisualShaderNodeScalarInterp" id=11]
+
+[sub_resource type="VisualShaderNodeScalarInterp" id=12]
+
+[sub_resource type="VisualShaderNodeScalarInterp" id=13]
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=14]
+uniform_name = "Metallic_A"
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=15]
+uniform_name = "Metallic_B"
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=16]
+uniform_name = "Specular_A"
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=17]
+uniform_name = "Specular_B"
+
+[sub_resource type="VisualShaderNodeTextureUniform" id=18]
+uniform_name = "Noise_RGB"
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeInput" id=19]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeVec3Uniform" id=20]
+uniform_name = "UVScale_Noise"
+
+[sub_resource type="VisualShaderNodeVectorOp" id=21]
+operator = 2
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id=22]
+
+[sub_resource type="VisualShaderNodeScalarSwitch" id=23]
+
+[sub_resource type="VisualShaderNodeBooleanUniform" id=24]
+uniform_name = "NoiseY"
+
+[sub_resource type="VisualShaderNodeScalarOp" id=25]
+operator = 2
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=26]
+uniform_name = "NoiseIntensity"
+
+[sub_resource type="VisualShaderNodeScalarClamp" id=27]
+
+[sub_resource type="VisualShaderNodeScalarClamp" id=28]
+
+[sub_resource type="VisualShaderNodeScalarClamp" id=29]
+
+[sub_resource type="VisualShaderNodeScalarClamp" id=30]
+
+[sub_resource type="VisualShaderNodeScalarSwitch" id=31]
+
+[sub_resource type="VisualShaderNodeBooleanUniform" id=32]
+uniform_name = "NoiseZ"
+
+[sub_resource type="VisualShaderNodeScalarSwitch" id=33]
+
+[sub_resource type="VisualShaderNodeBooleanUniform" id=34]
+uniform_name = "NoiseAlpha"
+
+[sub_resource type="VisualShaderNodeScalarOp" id=35]
+operator = 2
+
+[sub_resource type="VisualShaderNodeScalarOp" id=36]
+operator = 2
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=37]
+uniform_name = "Rough_Mult_A"
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=38]
+uniform_name = "Rough_Mult_B"
+
+[sub_resource type="VisualShaderNodeScalarFunc" id=39]
+function = 31
+
+[sub_resource type="VisualShaderNodeScalarSwitch" id=40]
+
+[sub_resource type="VisualShaderNodeBooleanUniform" id=41]
+uniform_name = "NoiseInvert"
+
+[sub_resource type="VisualShaderNodeInput" id=42]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeVec3Uniform" id=43]
+uniform_name = "UVScale_A"
+
+[sub_resource type="VisualShaderNodeVec3Uniform" id=44]
+uniform_name = "UVScale_B"
+
+[resource]
+code = "shader_type spatial;
+uniform vec4 Color_A : hint_color;
+uniform vec4 Color_B : hint_color;
+uniform bool NoiseInvert;
+uniform float NoiseIntensity;
+uniform bool NoiseAlpha;
+uniform bool NoiseZ;
+uniform vec3 UVScale_Noise;
+uniform sampler2D Noise_RGB : hint_albedo;
+uniform bool NoiseY;
+uniform float Metallic_A;
+uniform float Metallic_B;
+uniform vec3 UVScale_A;
+uniform sampler2D Rough_A : hint_albedo;
+uniform float Rough_Mult_A;
+uniform vec3 UVScale_B;
+uniform sampler2D Rough_B : hint_albedo;
+uniform float Rough_Mult_B;
+uniform float Specular_A;
+uniform float Specular_B;
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// ColorUniform:14
+	vec3 n_out14p0 = Color_A.rgb;
+	float n_out14p1 = Color_A.a;
+
+// ColorUniform:15
+	vec3 n_out15p0 = Color_B.rgb;
+	float n_out15p1 = Color_B.a;
+
+// BooleanUniform:60
+	bool n_out60p0 = NoiseInvert;
+
+// ScalarUniform:43
+	float n_out43p0 = NoiseIntensity;
+
+// BooleanUniform:53
+	bool n_out53p0 = NoiseAlpha;
+
+// BooleanUniform:51
+	bool n_out51p0 = NoiseZ;
+
+// Input:36
+	vec3 n_out36p0 = vec3(UV, 0.0);
+
+// VectorUniform:37
+	vec3 n_out37p0 = UVScale_Noise;
+
+// VectorOp:38
+	vec3 n_out38p0 = n_out36p0 * n_out37p0;
+
+// TextureUniform:34
+	vec3 n_out34p0;
+	float n_out34p1;
+	{
+		vec4 n_tex_read = texture(Noise_RGB, n_out38p0.xy);
+		n_out34p0 = n_tex_read.rgb;
+		n_out34p1 = n_tex_read.a;
+	}
+
+// VectorDecompose:39
+	float n_out39p0 = n_out34p0.x;
+	float n_out39p1 = n_out34p0.y;
+	float n_out39p2 = n_out34p0.z;
+
+// ScalarSwitch:50
+	float n_out50p0;
+	if(n_out51p0)
+	{
+		n_out50p0 = n_out34p1;
+	}
+	else
+	{
+		n_out50p0 = n_out39p2;
+	}
+
+// BooleanUniform:41
+	bool n_out41p0 = NoiseY;
+
+// ScalarSwitch:40
+	float n_out40p0;
+	if(n_out41p0)
+	{
+		n_out40p0 = n_out39p1;
+	}
+	else
+	{
+		n_out40p0 = n_out39p0;
+	}
+
+// ScalarSwitch:52
+	float n_out52p0;
+	if(n_out53p0)
+	{
+		n_out52p0 = n_out50p0;
+	}
+	else
+	{
+		n_out52p0 = n_out40p0;
+	}
+
+// ScalarOp:42
+	float n_out42p0 = n_out43p0 * n_out52p0;
+
+// ScalarClamp:44
+	float n_in44p1 = 0.00000;
+	float n_in44p2 = 1.00000;
+	float n_out44p0 = clamp(n_out42p0, n_in44p1, n_in44p2);
+
+// ScalarFunc:58
+	float n_out58p0 = 1.0 - n_out44p0;
+
+// ScalarSwitch:59
+	float n_out59p0;
+	if(n_out60p0)
+	{
+		n_out59p0 = n_out58p0;
+	}
+	else
+	{
+		n_out59p0 = n_out44p0;
+	}
+
+// VectorMix:18
+	vec3 n_out18p0 = mix(n_out14p0, n_out15p0, vec3(n_out59p0));
+
+// ScalarUniform:27
+	float n_out27p0 = Metallic_A;
+
+// ScalarUniform:28
+	float n_out28p0 = Metallic_B;
+
+// ScalarMix:25
+	float n_out25p0 = mix(n_out27p0, n_out28p0, n_out59p0);
+
+// ScalarClamp:48
+	float n_in48p1 = 0.00000;
+	float n_in48p2 = 1.00000;
+	float n_out48p0 = clamp(n_out25p0, n_in48p1, n_in48p2);
+
+// Input:7
+	vec3 n_out7p0 = vec3(UV, 0.0);
+
+// VectorUniform:8
+	vec3 n_out8p0 = UVScale_A;
+
+// VectorOp:10
+	vec3 n_out10p0 = n_out7p0 * n_out8p0;
+
+// TextureUniform:20
+	vec3 n_out20p0;
+	float n_out20p1;
+	{
+		vec4 n_tex_read = texture(Rough_A, n_out10p0.xy);
+		n_out20p0 = n_tex_read.rgb;
+		n_out20p1 = n_tex_read.a;
+	}
+
+// VectorDecompose:22
+	float n_out22p0 = n_out20p0.x;
+	float n_out22p1 = n_out20p0.y;
+	float n_out22p2 = n_out20p0.z;
+
+// ScalarUniform:56
+	float n_out56p0 = Rough_Mult_A;
+
+// ScalarOp:54
+	float n_out54p0 = n_out22p0 * n_out56p0;
+
+// VectorUniform:9
+	vec3 n_out9p0 = UVScale_B;
+
+// VectorOp:11
+	vec3 n_out11p0 = n_out7p0 * n_out9p0;
+
+// TextureUniform:21
+	vec3 n_out21p0;
+	float n_out21p1;
+	{
+		vec4 n_tex_read = texture(Rough_B, n_out11p0.xy);
+		n_out21p0 = n_tex_read.rgb;
+		n_out21p1 = n_tex_read.a;
+	}
+
+// VectorDecompose:23
+	float n_out23p0 = n_out21p0.x;
+	float n_out23p1 = n_out21p0.y;
+	float n_out23p2 = n_out21p0.z;
+
+// ScalarUniform:57
+	float n_out57p0 = Rough_Mult_B;
+
+// ScalarOp:55
+	float n_out55p0 = n_out23p0 * n_out57p0;
+
+// ScalarMix:19
+	float n_out19p0 = mix(n_out54p0, n_out55p0, n_out59p0);
+
+// ScalarClamp:47
+	float n_in47p1 = 0.00000;
+	float n_in47p2 = 1.00000;
+	float n_out47p0 = clamp(n_out19p0, n_in47p1, n_in47p2);
+
+// ScalarUniform:29
+	float n_out29p0 = Specular_A;
+
+// ScalarUniform:30
+	float n_out30p0 = Specular_B;
+
+// ScalarMix:26
+	float n_out26p0 = mix(n_out29p0, n_out30p0, n_out59p0);
+
+// ScalarClamp:49
+	float n_in49p1 = 0.00000;
+	float n_in49p2 = 1.00000;
+	float n_out49p0 = clamp(n_out26p0, n_in49p1, n_in49p2);
+
+// Output:0
+	ALBEDO = n_out18p0;
+	METALLIC = n_out48p0;
+	ROUGHNESS = n_out47p0;
+	SPECULAR = n_out49p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -1710, -163 )
+nodes/fragment/0/position = Vector2( 200, 200 )
+nodes/fragment/7/node = SubResource( 42 )
+nodes/fragment/7/position = Vector2( -2000, 100 )
+nodes/fragment/8/node = SubResource( 43 )
+nodes/fragment/8/position = Vector2( -2000, -60 )
+nodes/fragment/9/node = SubResource( 44 )
+nodes/fragment/9/position = Vector2( -2000, 280 )
+nodes/fragment/10/node = SubResource( 1 )
+nodes/fragment/10/position = Vector2( -1800, -60 )
+nodes/fragment/11/node = SubResource( 2 )
+nodes/fragment/11/position = Vector2( -1800, 140 )
+nodes/fragment/14/node = SubResource( 3 )
+nodes/fragment/14/position = Vector2( -1200, -200 )
+nodes/fragment/15/node = SubResource( 4 )
+nodes/fragment/15/position = Vector2( -1200, 0 )
+nodes/fragment/18/node = SubResource( 5 )
+nodes/fragment/18/position = Vector2( -800, -100 )
+nodes/fragment/19/node = SubResource( 6 )
+nodes/fragment/19/position = Vector2( -400, 480 )
+nodes/fragment/20/node = SubResource( 7 )
+nodes/fragment/20/position = Vector2( -1200, 400 )
+nodes/fragment/21/node = SubResource( 8 )
+nodes/fragment/21/position = Vector2( -1200, 600 )
+nodes/fragment/22/node = SubResource( 9 )
+nodes/fragment/22/position = Vector2( -1000, 480 )
+nodes/fragment/23/node = SubResource( 10 )
+nodes/fragment/23/position = Vector2( -1000, 680 )
+nodes/fragment/24/node = SubResource( 11 )
+nodes/fragment/24/position = Vector2( -400, 600 )
+nodes/fragment/25/node = SubResource( 12 )
+nodes/fragment/25/position = Vector2( -600, 200 )
+nodes/fragment/26/node = SubResource( 13 )
+nodes/fragment/26/position = Vector2( -600, 320 )
+nodes/fragment/27/node = SubResource( 14 )
+nodes/fragment/27/position = Vector2( -800, 200 )
+nodes/fragment/28/node = SubResource( 15 )
+nodes/fragment/28/position = Vector2( -800, 260 )
+nodes/fragment/29/node = SubResource( 16 )
+nodes/fragment/29/position = Vector2( -800, 340 )
+nodes/fragment/30/node = SubResource( 17 )
+nodes/fragment/30/position = Vector2( -800, 400 )
+nodes/fragment/34/node = SubResource( 18 )
+nodes/fragment/34/position = Vector2( -3200, 800 )
+nodes/fragment/36/node = SubResource( 19 )
+nodes/fragment/36/position = Vector2( -3600, 800 )
+nodes/fragment/37/node = SubResource( 20 )
+nodes/fragment/37/position = Vector2( -3600, 940 )
+nodes/fragment/38/node = SubResource( 21 )
+nodes/fragment/38/position = Vector2( -3400, 800 )
+nodes/fragment/39/node = SubResource( 22 )
+nodes/fragment/39/position = Vector2( -3000, 880 )
+nodes/fragment/40/node = SubResource( 23 )
+nodes/fragment/40/position = Vector2( -2680, 800 )
+nodes/fragment/41/node = SubResource( 24 )
+nodes/fragment/41/position = Vector2( -3000, 800 )
+nodes/fragment/42/node = SubResource( 25 )
+nodes/fragment/42/position = Vector2( -2200, 800 )
+nodes/fragment/43/node = SubResource( 26 )
+nodes/fragment/43/position = Vector2( -2400, 800 )
+nodes/fragment/44/node = SubResource( 27 )
+nodes/fragment/44/position = Vector2( -2000, 880 )
+nodes/fragment/47/node = SubResource( 28 )
+nodes/fragment/47/position = Vector2( -200, 480 )
+nodes/fragment/48/node = SubResource( 29 )
+nodes/fragment/48/position = Vector2( -400, 200 )
+nodes/fragment/49/node = SubResource( 30 )
+nodes/fragment/49/position = Vector2( -400, 320 )
+nodes/fragment/50/node = SubResource( 31 )
+nodes/fragment/50/position = Vector2( -2680, 1000 )
+nodes/fragment/51/node = SubResource( 32 )
+nodes/fragment/51/position = Vector2( -3000, 1000 )
+nodes/fragment/52/node = SubResource( 33 )
+nodes/fragment/52/position = Vector2( -2400, 900 )
+nodes/fragment/53/node = SubResource( 34 )
+nodes/fragment/53/position = Vector2( -3000, 1060 )
+nodes/fragment/54/node = SubResource( 35 )
+nodes/fragment/54/position = Vector2( -600, 460 )
+nodes/fragment/55/node = SubResource( 36 )
+nodes/fragment/55/position = Vector2( -600, 640 )
+nodes/fragment/56/node = SubResource( 37 )
+nodes/fragment/56/position = Vector2( -800, 600 )
+nodes/fragment/57/node = SubResource( 38 )
+nodes/fragment/57/position = Vector2( -800, 800 )
+nodes/fragment/58/node = SubResource( 39 )
+nodes/fragment/58/position = Vector2( -1800, 940 )
+nodes/fragment/59/node = SubResource( 40 )
+nodes/fragment/59/position = Vector2( -1600, 800 )
+nodes/fragment/60/node = SubResource( 41 )
+nodes/fragment/60/position = Vector2( -2000, 800 )
+nodes/fragment/connections = PoolIntArray( 7, 0, 10, 0, 8, 0, 10, 1, 7, 0, 11, 0, 9, 0, 11, 1, 10, 0, 20, 0, 11, 0, 21, 0, 20, 0, 22, 0, 21, 0, 23, 0, 22, 1, 24, 0, 23, 1, 24, 1, 27, 0, 25, 0, 28, 0, 25, 1, 30, 0, 26, 1, 36, 0, 38, 0, 37, 0, 38, 1, 38, 0, 34, 0, 34, 0, 39, 0, 41, 0, 40, 0, 42, 0, 44, 0, 19, 0, 47, 0, 47, 0, 0, 3, 25, 0, 48, 0, 48, 0, 0, 2, 26, 0, 49, 0, 49, 0, 0, 4, 34, 1, 50, 1, 39, 2, 50, 2, 39, 0, 40, 2, 39, 1, 40, 1, 51, 0, 50, 0, 50, 0, 52, 1, 40, 0, 52, 2, 53, 0, 52, 0, 52, 0, 42, 1, 43, 0, 42, 0, 22, 0, 54, 0, 54, 0, 19, 0, 23, 0, 55, 0, 55, 0, 19, 1, 56, 0, 54, 1, 57, 0, 55, 1, 60, 0, 59, 0, 58, 0, 59, 1, 44, 0, 59, 2, 44, 0, 58, 0, 29, 0, 26, 0, 59, 0, 26, 2, 59, 0, 25, 2, 59, 0, 19, 2, 59, 0, 24, 2, 59, 0, 18, 2, 18, 0, 0, 0, 14, 0, 18, 0, 15, 0, 18, 1 )
