@@ -46,10 +46,10 @@ func dock_with(rover):
 	var rover_anchor = rover.get_node("DockLatch")
 	var pod_anchor = get_parent().get_node("DockLatch")
 	var original_rover_pos = rover.global_transform.origin
+	var lerp_speed = 0.016
 	
-	var counter = 0.0
 	while(!_lerp_to_coroutine(rover, rover_anchor.global_transform.origin, 
-			pod_anchor.global_transform.origin, counter)):
+			pod_anchor.global_transform.origin, lerp_speed)):
 		yield(get_tree(), "physics_frame")
 		
 	$Interactable.title = "Undock Passenger Pod"
@@ -62,9 +62,8 @@ func dock_with(rover):
 	docked_to = rover
 	is_docked = true
 	
-	counter = 0.0
 	var targz = Vector3(rover.global_transform.origin.x, rover.global_transform.origin.y, original_rover_pos.z)
-	while(!_lerp_to_coroutine(rover, rover.global_transform.origin, targz, counter)):
+	while(!_lerp_to_coroutine(rover, rover.global_transform.origin, targz, lerp_speed)):
 		yield(get_tree(), "physics_frame")
 
 	pod.mode = RigidBody.MODE_STATIC
@@ -90,20 +89,24 @@ func undock():
 func undock_to_airlock(rover):
 	rover.mode = RigidBody.MODE_KINEMATIC
 	var original_rover_pos = rover.global_transform.origin
+	var lerp_speed = 0.016
 	
-	var counter = 0.0
-	
+	var targ = Quat(_dock_door_interactable.global_transform.basis).normalized()
+	while(!_slerp_to_coroutine(rover, targ, lerp_speed)):
+		yield(get_tree(), "physics_frame")
+#
+	# Align XY axes
 	var targxy = Vector3(_dock_door_interactable.global_transform.origin.x, 
 			_dock_door_interactable.global_transform.origin.y,
 			airlock_latch.global_transform.origin.z)
-	while(!_lerp_to_coroutine(rover, airlock_latch.global_transform.origin, targxy, counter)):
+	while(!_lerp_to_coroutine(rover, airlock_latch.global_transform.origin, targxy, lerp_speed)):
 		yield(get_tree(), "physics_frame")
-	
-	counter = 0
+		
+	# ALign Z axis
 	var targz = Vector3(airlock_latch.global_transform.origin.x, 
 			airlock_latch.global_transform.origin.y,
 			_dock_door_interactable.global_transform.origin.z)
-	while(!_lerp_to_coroutine(rover, airlock_latch.global_transform.origin, targz, counter)):
+	while(!_lerp_to_coroutine(rover, airlock_latch.global_transform.origin, targz, lerp_speed)):
 		yield(get_tree(), "physics_frame")
 	
 	undock()
@@ -118,13 +121,20 @@ func undock_to_airlock(rover):
 		
 	rover.mode = RigidBody.MODE_RIGID
 
+
+func _slerp_to_coroutine(rover: Node, target: Quat, speed:float ) -> bool:
+	var b = Quat(rover.global_transform.basis).normalized().slerp(target, speed)
+	rover.global_transform.basis = Basis(b)
+	if b.dot(target) == 1:
+		return true
+	return false
+
 # Lerp the rovers' position to a target position
-func _lerp_to_coroutine(rover: Node, source: Vector3, target: Vector3, counter: float) -> bool:
+func _lerp_to_coroutine(rover: Node, source: Vector3, target: Vector3, speed: float) -> bool:
 	var dir = (target - source).normalized()
 	var dist = target.distance_to(source)
-	rover.global_translate(dir * 0.016)
-	counter += dir.length() * 0.016
-	if counter >= dist:
+	rover.global_translate(dir * speed)
+	if speed >= dist:
 		return true
 	return false
 
