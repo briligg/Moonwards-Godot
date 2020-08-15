@@ -85,6 +85,9 @@ func _input(event):
 		if entity.has_node("Model") :
 			is_first_person = !is_first_person
 			entity.get_node("Model").visible = !is_first_person
+			
+			#Hud Reticle should be active when in first person mode.
+			Signals.Hud.emit_signal(Signals.Hud.RETICLE_ACTIVITY_SET, is_first_person)
 
 func _update_cam_pos(delta : float = 0.016667) -> void:
 	#The player is in camera fly mode.
