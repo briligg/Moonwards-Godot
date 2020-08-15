@@ -19,14 +19,24 @@ var content_instance = null
 export(PackedScene) var content = null
 export(bool) var hologram = false
 
+
 #Called by call_deferred. Listen for button interactions to show reticle.
 func _connect_buttons(instance) -> void :
 	for child in instance.get_children() :
 		if child is Button :
+			#Show the mouse when the button is highlighted.
 			child.connect("focus_entered", self, "_show_reticle")
 			child.connect("mouse_entered", self, "_show_reticle")
+			
+			#Hide the reticle if we are not clicking on anything else.
+			child.connect("mouse_exited", self, "_hide_reticle")
+			child.connect("focus_exited", self, "_hide_reticle")
 		
 		_connect_buttons(child)
+
+#Hide the reticle when not selecting any buttons.
+func _hide_reticle() -> void :
+	Signals.Hud.emit_signal(Signals.Hud.HIDE_RETICLE)
 
 # Mouse events for Area
 func _on_area_input_event(_camera, event, click_pos, _click_normal, _shape_idx):
