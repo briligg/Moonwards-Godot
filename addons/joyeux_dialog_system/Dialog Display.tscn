@@ -1,11 +1,78 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Interface/InteractsMenu.tres" type="Theme" id=1]
+[ext_resource path="res://addons/joyeux_dialog_system/Dialog Display.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Interface/Fonts/InteractsMenuDescription.tres" type="DynamicFont" id=3]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends PanelContainer
+
+onready var options = $CenterContainer/Options
+onready var text = $CenterContainer/TextInput
+
+func get_multi_answer(opt : Array) -> int:
+	options.clear()
+	visible = true
+	options.visible = true
+	for option in opt:
+		if option is String:
+			options.add_option(option)
+	var answer = yield(options, \"option_selected\")
+	options.visible = false
+	visible = false
+	return answer
+	
+func get_text_answer() -> String:
+	text.clear()
+	visible = true
+	text.visible = true
+	var answer = yield(text, \"text_input\")
+	text.visible = false
+	visible = false
+	return answer
+"
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends VBoxContainer
+
+var font = preload(\"res://Assets/Interface/Fonts/InteractsMenuDescription.tres\")
+
+signal option_selected(idx)
+
+func add_option(option_name : String) -> void:
+	var Opt = Button.new()
+	Opt.add_font_override(\"font\", font)
+	Opt.text = option_name
+	add_child(Opt)
+	Opt.name = get_child_count()
+	Opt.connect(\"presssed\", self, \"_on_child_pressed\", [get_child_count()])
+	
+func _on_child_pressed(idx : int) -> void:
+	emit_signal(\"option_selected\", idx)
+	pass
+
+func clear():
+	for child in get_children():
+		child.queue_free()
+"
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends HBoxContainer
+onready var Text = $Text
+signal text_input(text)
+func _on_Go_pressed(_text = \"\") -> void:
+	if _text != \"\":
+		emit_signal(\"text_input\", _text)
+	emit_signal(\"text_input\", Text.text)
+func clear() -> void:
+	Text.clear()
+"
 
 [node name="Dialog Display" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -18,14 +85,14 @@ __meta__ = {
 }
 
 [node name="HSpacer3" type="Control" parent="HBC"]
-margin_right = 320.0
+margin_right = 100.0
 margin_bottom = 1080.0
-rect_min_size = Vector2( 320, 0 )
+rect_min_size = Vector2( 100, 0 )
 size_flags_vertical = 3
 
 [node name="VBC" type="VBoxContainer" parent="HBC"]
-margin_left = 324.0
-margin_right = 1596.0
+margin_left = 104.0
+margin_right = 1816.0
 margin_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -34,136 +101,196 @@ __meta__ = {
 }
 
 [node name="Spacer" type="Control" parent="HBC/VBC"]
-margin_right = 1272.0
-margin_bottom = 316.0
+margin_right = 1712.0
+margin_bottom = 339.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Spacer2" type="Control" parent="HBC/VBC"]
-margin_top = 320.0
-margin_right = 1272.0
-margin_bottom = 636.0
+margin_top = 343.0
+margin_right = 1712.0
+margin_bottom = 682.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextContainer" type="PanelContainer" parent="HBC/VBC"]
-margin_top = 640.0
-margin_right = 1272.0
-margin_bottom = 956.0
+margin_top = 686.0
+margin_right = 1712.0
+margin_bottom = 1026.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBC/VBC/TextContainer"]
 margin_left = 2.0
 margin_top = 2.0
-margin_right = 1270.0
-margin_bottom = 314.0
+margin_right = 1710.0
+margin_bottom = 338.0
 
-[node name="Control2" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer"]
+[node name="Spacer1" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer"]
 margin_right = 50.0
-margin_bottom = 312.0
+margin_bottom = 336.0
 rect_min_size = Vector2( 50, 0 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBC/VBC/TextContainer/HBoxContainer"]
 margin_left = 54.0
-margin_right = 1214.0
-margin_bottom = 312.0
+margin_right = 1654.0
+margin_bottom = 336.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
-margin_right = 1160.0
+[node name="CharName" type="Label" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
+margin_right = 1600.0
 margin_bottom = 35.0
 text = "Sample"
 
 [node name="HSeparator" type="HSeparator" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
 margin_top = 39.0
-margin_right = 1160.0
+margin_right = 1600.0
 margin_bottom = 43.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
+[node name="CurrentText" type="RichTextLabel" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
 margin_top = 47.0
-margin_right = 1160.0
-margin_bottom = 273.0
+margin_right = 1600.0
+margin_bottom = 297.0
 size_flags_vertical = 3
 text = "Lorem ipsum dolor sit amet consectetur adipiscing elit, tristique a aliquam euismod et vestibulum cum, quisque auctor commodo egestas torquent iaculis. Inceptos hendrerit gravida conubia mi placerat feugiat curabitur platea, molestie primis lacus duis vehicula cras pharetra, habitasse libero fermentum netus morbi leo rutrum. Magna ultricies dignissim lacinia ligula etiam consequat molestie risus imperdiet aenean senectus arcu, accumsan est interdum mauris cum semper egestas faucibus ac convallis fames, dis rutrum et ad elementum nec neque massa tempor potenti felis."
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
-margin_top = 277.0
-margin_right = 1160.0
-margin_bottom = 300.0
+[node name="Controls" type="HBoxContainer" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
+margin_top = 301.0
+margin_right = 1600.0
+margin_bottom = 324.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control3" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Spacer1" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls"]
 margin_right = 20.0
 margin_bottom = 23.0
 rect_min_size = Vector2( 20, 0 )
 
-[node name="Button" type="Button" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Auto" type="Button" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls"]
 margin_left = 24.0
 margin_right = 61.0
 margin_bottom = 23.0
 text = "Auto"
 
-[node name="Control" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Spacer2" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls"]
 margin_left = 65.0
 margin_right = 85.0
 margin_bottom = 23.0
 rect_min_size = Vector2( 20, 0 )
 
-[node name="Button2" type="Button" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Skip" type="Button" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls"]
 margin_left = 89.0
 margin_right = 122.0
 margin_bottom = 23.0
 text = "Skip"
 
-[node name="Control2" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Spacer3" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls"]
 margin_left = 126.0
 margin_right = 146.0
 margin_bottom = 23.0
 rect_min_size = Vector2( 20, 0 )
 
-[node name="Button3" type="Button" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Pause" type="Button" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls"]
 margin_left = 150.0
 margin_right = 196.0
 margin_bottom = 23.0
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
 text = "Pause"
 
-[node name="Control4" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
-margin_top = 304.0
-margin_right = 1160.0
-margin_bottom = 304.0
+[node name="Spacer1" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
+margin_top = 328.0
+margin_right = 1600.0
+margin_bottom = 328.0
 rect_min_size = Vector2( 20, 0 )
 
 [node name="HSeparator2" type="HSeparator" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
-margin_top = 308.0
-margin_right = 1160.0
-margin_bottom = 312.0
+margin_top = 332.0
+margin_right = 1600.0
+margin_bottom = 336.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer"]
-margin_left = 1218.0
-margin_right = 1268.0
-margin_bottom = 312.0
+[node name="Spacer2" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer"]
+margin_left = 1658.0
+margin_right = 1708.0
+margin_bottom = 336.0
 rect_min_size = Vector2( 50, 0 )
 
 [node name="Spacer3" type="Control" parent="HBC/VBC"]
-margin_top = 960.0
-margin_right = 1272.0
+margin_top = 1030.0
+margin_right = 1712.0
 margin_bottom = 1080.0
-rect_min_size = Vector2( 0, 120 )
+rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
 
 [node name="HSpacer2" type="Control" parent="HBC"]
-margin_left = 1600.0
+margin_left = 1820.0
 margin_right = 1920.0
 margin_bottom = 1080.0
-rect_min_size = Vector2( 320, 0 )
+rect_min_size = Vector2( 100, 0 )
 size_flags_vertical = 3
+
+[node name="CenterContainer" type="PanelContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 1918.0
+margin_bottom = 1078.0
+
+[node name="Options" type="VBoxContainer" parent="CenterContainer/CenterContainer"]
+visible = false
+margin_left = 958.0
+margin_top = 538.0
+margin_right = 958.0
+margin_bottom = 538.0
+script = SubResource( 1 )
+
+[node name="TextInput" type="HBoxContainer" parent="CenterContainer/CenterContainer"]
+visible = false
+margin_left = 742.0
+margin_top = 517.0
+margin_right = 1173.0
+margin_bottom = 558.0
+script = SubResource( 2 )
+
+[node name="Label" type="Label" parent="CenterContainer/CenterContainer/TextInput"]
+margin_top = 3.0
+margin_right = 179.0
+margin_bottom = 38.0
+text = "Say something:"
+
+[node name="Text" type="LineEdit" parent="CenterContainer/CenterContainer/TextInput"]
+margin_left = 183.0
+margin_right = 393.0
+margin_bottom = 41.0
+rect_min_size = Vector2( 210, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Go" type="Button" parent="CenterContainer/CenterContainer/TextInput"]
+margin_left = 397.0
+margin_right = 431.0
+margin_bottom = 41.0
+custom_fonts/font = ExtResource( 3 )
+text = "Go"
+[connection signal="text_entered" from="CenterContainer/CenterContainer/TextInput/Text" to="CenterContainer/CenterContainer/TextInput" method="_on_Go_pressed"]
+[connection signal="pressed" from="CenterContainer/CenterContainer/TextInput/Go" to="CenterContainer/CenterContainer/TextInput" method="_on_Go_pressed"]
