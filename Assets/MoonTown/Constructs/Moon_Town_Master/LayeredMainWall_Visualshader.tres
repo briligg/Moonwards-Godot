@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=77 format=2]
+[gd_resource type="VisualShader" load_steps=78 format=2]
 
 [ext_resource path="res://Assets/SharedAssets/Shaders/ParallaxMappingNode.gd" type="Script" id=1]
 [ext_resource path="res://Assets/SharedAssets/Shaders/ScalarHeightMixNode.gd" type="Script" id=2]
@@ -58,7 +58,7 @@ uniform_name = "NoiseInvert_B"
 operator = 2
 
 [sub_resource type="VisualShaderNodeCustom" id=20]
-default_input_values = [ 2, 0.5, 3, 0.5, 4, 0.3 ]
+default_input_values = [ 2, 0.5, 3, 0.5, 4, 0.5 ]
 script = ExtResource( 3 )
 
 [sub_resource type="VisualShaderNodeCustom" id=21]
@@ -77,18 +77,25 @@ uniform_name = "Heightmap_A"
 [sub_resource type="VisualShaderNodeVectorInterp" id=25]
 
 [sub_resource type="VisualShaderNodeCustom" id=26]
-default_input_values = [ 2, 0.5, 3, 0.5, 4, 0.3 ]
+default_input_values = [ 2, 0.5, 3, 0.5, 4, 0.5 ]
 script = ExtResource( 2 )
 
 [sub_resource type="VisualShaderNodeCustom" id=27]
-default_input_values = [ 2, 0.5, 3, 0.5, 4, 0.3 ]
+default_input_values = [ 2, 0.5, 3, 0.5, 4, 0.5 ]
 script = ExtResource( 2 )
 
 [sub_resource type="VisualShaderNodeTextureUniform" id=28]
 uniform_name = "Heightmap_B"
 texture_type = 1
 
-[sub_resource type="VisualShaderNodeScalarInterp" id=29]
+[sub_resource type="VisualShaderNodeTextureUniform" id=74]
+uniform_name = "Albedo_B_Mix"
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id=75]
+
+[sub_resource type="VisualShaderNodeCustom" id=76]
+default_input_values = [ 2, 0.5, 3, 0.5, 4, 0.5 ]
+script = ExtResource( 3 )
 
 [sub_resource type="VisualShaderNodeTextureUniform" id=30]
 uniform_name = "Rough_A"
@@ -101,8 +108,6 @@ texture_type = 1
 [sub_resource type="VisualShaderNodeVectorDecompose" id=32]
 
 [sub_resource type="VisualShaderNodeVectorDecompose" id=33]
-
-[sub_resource type="VisualShaderNodeScalarInterp" id=34]
 
 [sub_resource type="VisualShaderNodeScalarUniform" id=35]
 uniform_name = "Specular_A"
@@ -242,6 +247,7 @@ uniform float Rough_Mult_A;
 uniform sampler2D Rough_A : hint_albedo;
 uniform float Rough_Mult_B;
 uniform sampler2D Rough_B : hint_albedo;
+uniform sampler2D Albedo_B_Mix;
 uniform float Specular_A;
 uniform float Specular_B;
 uniform sampler2D NormalMap_A : hint_normal;
@@ -303,6 +309,19 @@ float ContrastVectorFunc(float _Inp, float _Contrast){
 vec3 HeightVectorLerp(vec3 _A, vec3 _B, float _Weight, float _Height, float _Contrast){
 	float lva = clamp((_Height - 1.0) + (_Weight * 2.0), 0.0, 1.0);
 	float contrast = ContrastVectorFunc(lva, _Contrast);
+	return mix(_A, _B, contrast);
+}
+
+// ScalarHeightMix
+
+float ContrastScalarFunc(float _Inp, float _Contrast){
+	vec3 a = mix(vec3(0.0 - _Contrast, 0.0 - _Contrast, 0.0 - _Contrast), vec3(1.0 + _Contrast, 1.0 + _Contrast, 1.0 + _Contrast), _Inp);
+	return clamp(a.r, 0.0, 1.0);
+}
+
+float HeightScalarLerp(float _A, float _B, float _Weight, float _Height, float _Contrast){
+	float lva = clamp((_Height - 1.0) + (_Weight * 2.0), 0.0, 1.0);
+	float contrast = ContrastScalarFunc(lva, _Contrast);
 	return mix(_A, _B, contrast);
 }
 
@@ -578,16 +597,16 @@ void fragment() {
 		n_out59p0 = n_out44p0;
 	}
 
-// VectorDecompose:178
-	float n_out178p0 = n_out66p0.x;
-	float n_out178p1 = n_out66p0.y;
-	float n_out178p2 = n_out66p0.z;
+// VectorDecompose:184
+	float n_out184p0 = n_out66p0.x;
+	float n_out184p1 = n_out66p0.y;
+	float n_out184p2 = n_out66p0.z;
 
 // VectorHeightMix:162
-	float n_in162p4 = 0.30000;
+	float n_in162p4 = 0.50000;
 	vec3 n_out162p0;
 	{
-		n_out162p0 = HeightVectorLerp(n_out18p0,n_out75p0,n_out59p0,n_out178p0,n_in162p4);
+		n_out162p0 = HeightVectorLerp(n_out18p0,n_out75p0,n_out59p0,n_out184p0,n_in162p4);
 	}
 
 // ScalarUniform:56
@@ -630,13 +649,31 @@ void fragment() {
 // ScalarOp:55
 	float n_out55p0 = n_out57p0 * n_out23p0;
 
-// ScalarMix:19
-	float n_out19p0 = mix(n_out54p0, n_out55p0, n_out59p0);
+// TextureUniform:183
+	vec3 n_out183p0;
+	float n_out183p1;
+	{
+		vec4 n_tex_read = texture(Albedo_B_Mix, n_out68p0.xy);
+		n_out183p0 = n_tex_read.rgb;
+		n_out183p1 = n_tex_read.a;
+	}
+
+// VectorDecompose:178
+	float n_out178p0 = n_out183p0.x;
+	float n_out178p1 = n_out183p0.y;
+	float n_out178p2 = n_out183p0.z;
+
+// ScalarHeightMix:180
+	float n_in180p4 = 0.50000;
+	float n_out180p0;
+	{
+		n_out180p0 = HeightScalarLerp(n_out54p0,n_out55p0,n_out59p0,n_out178p0,n_in180p4);
+	}
 
 // ScalarClamp:47
 	float n_in47p1 = 0.00000;
 	float n_in47p2 = 1.00000;
-	float n_out47p0 = clamp(n_out19p0, n_in47p1, n_in47p2);
+	float n_out47p0 = clamp(n_out180p0, n_in47p1, n_in47p2);
 
 // ScalarUniform:29
 	float n_out29p0 = Specular_A;
@@ -644,13 +681,17 @@ void fragment() {
 // ScalarUniform:30
 	float n_out30p0 = Specular_B;
 
-// ScalarMix:26
-	float n_out26p0 = mix(n_out29p0, n_out30p0, n_out59p0);
+// ScalarHeightMix:181
+	float n_in181p4 = 0.50000;
+	float n_out181p0;
+	{
+		n_out181p0 = HeightScalarLerp(n_out29p0,n_out30p0,n_out59p0,n_out178p0,n_in181p4);
+	}
 
 // ScalarClamp:49
 	float n_in49p1 = 0.00000;
 	float n_in49p2 = 1.00000;
-	float n_out49p0 = clamp(n_out26p0, n_in49p1, n_in49p2);
+	float n_out49p0 = clamp(n_out181p0, n_in49p1, n_in49p2);
 
 // TextureUniform:31
 	vec3 n_out31p0;
@@ -670,14 +711,18 @@ void fragment() {
 		n_out32p1 = n_tex_read.a;
 	}
 
-// VectorMix:33
-	vec3 n_out33p0 = mix(n_out31p0, n_out32p0, vec3(n_out59p0));
+// VectorHeightMix:185
+	float n_in185p4 = 0.50000;
+	vec3 n_out185p0;
+	{
+		n_out185p0 = HeightVectorLerp(n_out31p0,n_out32p0,n_out59p0,n_out178p0,n_in185p4);
+	}
 
 // Output:0
 	ALBEDO = n_out162p0;
 	ROUGHNESS = n_out47p0;
 	SPECULAR = n_out49p0;
-	NORMALMAP = n_out33p0;
+	NORMALMAP = n_out185p0;
 
 }
 
@@ -686,7 +731,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -2180, -1483 )
+graph_offset = Vector2( -669, 141 )
 nodes/fragment/0/position = Vector2( 400, 200 )
 nodes/fragment/7/node = SubResource( 67 )
 nodes/fragment/7/position = Vector2( -2000, -300 )
@@ -702,8 +747,6 @@ nodes/fragment/16/node = SubResource( 19 )
 nodes/fragment/16/position = Vector2( -1000, -1520 )
 nodes/fragment/18/node = SubResource( 25 )
 nodes/fragment/18/position = Vector2( -800, -1480 )
-nodes/fragment/19/node = SubResource( 29 )
-nodes/fragment/19/position = Vector2( -400, 880 )
 nodes/fragment/20/node = SubResource( 30 )
 nodes/fragment/20/position = Vector2( -1200, 800 )
 nodes/fragment/21/node = SubResource( 31 )
@@ -712,8 +755,6 @@ nodes/fragment/22/node = SubResource( 32 )
 nodes/fragment/22/position = Vector2( -1000, 880 )
 nodes/fragment/23/node = SubResource( 33 )
 nodes/fragment/23/position = Vector2( -1000, 1080 )
-nodes/fragment/26/node = SubResource( 34 )
-nodes/fragment/26/position = Vector2( -800, 320 )
 nodes/fragment/29/node = SubResource( 35 )
 nodes/fragment/29/position = Vector2( -1000, 340 )
 nodes/fragment/30/node = SubResource( 36 )
@@ -827,11 +868,17 @@ nodes/fragment/176/position = Vector2( -1540, -1080 )
 nodes/fragment/177/node = SubResource( 23 )
 nodes/fragment/177/position = Vector2( -1820, -1380 )
 nodes/fragment/178/node = SubResource( 24 )
-nodes/fragment/178/position = Vector2( -800, -1000 )
+nodes/fragment/178/position = Vector2( -980, -120 )
 nodes/fragment/180/node = SubResource( 26 )
-nodes/fragment/180/position = Vector2( -400, 1000 )
+nodes/fragment/180/position = Vector2( -400, 880 )
 nodes/fragment/181/node = SubResource( 27 )
-nodes/fragment/181/position = Vector2( -800, 440 )
+nodes/fragment/181/position = Vector2( -800, 340 )
 nodes/fragment/182/node = SubResource( 28 )
 nodes/fragment/182/position = Vector2( -1800, -1160 )
-nodes/fragment/connections = PoolIntArray( 7, 0, 10, 0, 8, 0, 10, 1, 12, 0, 16, 1, 14, 0, 16, 0, 16, 0, 18, 0, 10, 0, 20, 0, 20, 0, 22, 0, 21, 0, 23, 0, 30, 0, 26, 1, 32, 0, 33, 1, 36, 0, 38, 0, 37, 0, 38, 1, 38, 0, 34, 0, 34, 0, 39, 0, 41, 0, 40, 0, 42, 0, 44, 0, 39, 0, 40, 2, 39, 1, 40, 1, 40, 0, 52, 2, 52, 0, 42, 1, 43, 0, 42, 0, 54, 0, 19, 0, 55, 0, 19, 1, 60, 0, 59, 0, 58, 0, 59, 1, 44, 0, 59, 2, 44, 0, 58, 0, 29, 0, 26, 0, 66, 0, 65, 1, 64, 0, 65, 0, 67, 0, 68, 1, 7, 0, 68, 0, 12, 0, 70, 0, 69, 0, 70, 1, 66, 0, 72, 0, 71, 0, 72, 1, 70, 0, 18, 1, 65, 0, 75, 0, 72, 0, 75, 1, 18, 0, 78, 0, 75, 0, 78, 1, 68, 0, 21, 0, 10, 0, 31, 0, 68, 0, 32, 0, 56, 0, 54, 0, 22, 0, 54, 1, 23, 0, 55, 1, 57, 0, 55, 0, 31, 0, 33, 0, 51, 0, 52, 0, 39, 2, 52, 1, 146, 0, 148, 0, 147, 0, 148, 1, 148, 0, 145, 0, 145, 0, 149, 0, 151, 0, 150, 0, 149, 0, 150, 2, 149, 1, 150, 1, 150, 0, 154, 2, 154, 0, 152, 1, 153, 0, 152, 0, 155, 0, 154, 0, 149, 2, 154, 1, 159, 0, 158, 0, 157, 0, 158, 1, 156, 0, 158, 2, 156, 0, 157, 0, 152, 0, 156, 0, 59, 0, 33, 2, 19, 0, 47, 0, 59, 0, 19, 2, 59, 0, 26, 2, 26, 0, 49, 0, 59, 0, 78, 2, 158, 0, 75, 2, 158, 0, 18, 2, 18, 0, 162, 0, 75, 0, 162, 1, 10, 0, 175, 0, 175, 0, 12, 0, 68, 0, 176, 0, 49, 0, 0, 4, 47, 0, 0, 3, 33, 0, 0, 8, 177, 2, 175, 1, 10, 0, 177, 0, 162, 0, 0, 0, 59, 0, 162, 2, 66, 0, 178, 0, 178, 0, 162, 3, 54, 0, 180, 0, 55, 0, 180, 1, 59, 0, 180, 2, 29, 0, 181, 0, 30, 0, 181, 1, 59, 0, 181, 2, 68, 0, 182, 0, 182, 2, 176, 1, 176, 0, 66, 0 )
+nodes/fragment/183/node = SubResource( 74 )
+nodes/fragment/183/position = Vector2( -1200, -200 )
+nodes/fragment/184/node = SubResource( 75 )
+nodes/fragment/184/position = Vector2( -800, -980 )
+nodes/fragment/185/node = SubResource( 76 )
+nodes/fragment/185/position = Vector2( -297, 1423 )
+nodes/fragment/connections = PoolIntArray( 7, 0, 10, 0, 8, 0, 10, 1, 12, 0, 16, 1, 14, 0, 16, 0, 16, 0, 18, 0, 10, 0, 20, 0, 20, 0, 22, 0, 21, 0, 23, 0, 32, 0, 33, 1, 36, 0, 38, 0, 37, 0, 38, 1, 38, 0, 34, 0, 34, 0, 39, 0, 41, 0, 40, 0, 42, 0, 44, 0, 39, 0, 40, 2, 39, 1, 40, 1, 40, 0, 52, 2, 52, 0, 42, 1, 43, 0, 42, 0, 60, 0, 59, 0, 58, 0, 59, 1, 44, 0, 59, 2, 44, 0, 58, 0, 66, 0, 65, 1, 64, 0, 65, 0, 67, 0, 68, 1, 7, 0, 68, 0, 12, 0, 70, 0, 69, 0, 70, 1, 66, 0, 72, 0, 71, 0, 72, 1, 70, 0, 18, 1, 65, 0, 75, 0, 72, 0, 75, 1, 18, 0, 78, 0, 75, 0, 78, 1, 68, 0, 21, 0, 10, 0, 31, 0, 68, 0, 32, 0, 56, 0, 54, 0, 22, 0, 54, 1, 23, 0, 55, 1, 57, 0, 55, 0, 31, 0, 33, 0, 51, 0, 52, 0, 39, 2, 52, 1, 146, 0, 148, 0, 147, 0, 148, 1, 148, 0, 145, 0, 145, 0, 149, 0, 151, 0, 150, 0, 149, 0, 150, 2, 149, 1, 150, 1, 150, 0, 154, 2, 154, 0, 152, 1, 153, 0, 152, 0, 155, 0, 154, 0, 149, 2, 154, 1, 159, 0, 158, 0, 157, 0, 158, 1, 156, 0, 158, 2, 156, 0, 157, 0, 152, 0, 156, 0, 59, 0, 33, 2, 59, 0, 78, 2, 158, 0, 75, 2, 158, 0, 18, 2, 18, 0, 162, 0, 75, 0, 162, 1, 10, 0, 175, 0, 175, 0, 12, 0, 68, 0, 176, 0, 49, 0, 0, 4, 47, 0, 0, 3, 177, 2, 175, 1, 10, 0, 177, 0, 162, 0, 0, 0, 59, 0, 162, 2, 54, 0, 180, 0, 55, 0, 180, 1, 29, 0, 181, 0, 30, 0, 181, 1, 59, 0, 181, 2, 68, 0, 182, 0, 182, 2, 176, 1, 176, 0, 66, 0, 178, 0, 181, 3, 181, 0, 49, 0, 59, 0, 180, 2, 178, 0, 180, 3, 180, 0, 47, 0, 68, 0, 183, 0, 183, 0, 178, 0, 66, 0, 184, 0, 184, 0, 162, 3, 31, 0, 185, 0, 32, 0, 185, 1, 59, 0, 185, 2, 178, 0, 185, 3, 185, 0, 0, 8 )
