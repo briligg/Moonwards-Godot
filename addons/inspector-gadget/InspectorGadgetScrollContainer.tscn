@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/inspector-gadget/src/inspector_gadget.gd" type="Script" id=1]
+
+[node name="InspectorGadgetScrollContainer" type="ScrollContainer"]
+margin_left = 962.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InspectorGadget" type="MarginContainer" parent="."]
+margin_right = 958.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+node_path = NodePath("../../VisualizerScrollContainer/PropertyVisualizer")
+property_blacklist = [ "blacklisted_property" ]
+custom_gadget_paths = {
+
+}
+custom_gadget_metadata = {
+
+}
+container_type_hints = {
+":array_value:4": 0,
+":array_value:5": "",
+":dictionary_value:[keys]": "",
+":dictionary_value:[values]": ""
+}

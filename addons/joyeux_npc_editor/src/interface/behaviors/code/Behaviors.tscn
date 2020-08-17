@@ -1,0 +1,304 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://addons/joyeux_npc_editor/src/interface/behaviors/scenes/Behaviour_tree_editor.gd" type="Script" id=1]
+[ext_resource path="res://addons/joyeux_npc_editor/src/interface/behaviors/scenes/Graph_compiler.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Interface/NPCEditorTheme.tres" type="Theme" id=3]
+[ext_resource path="res://addons/joyeux_npc_editor/src/interface/behaviors/scenes/SaveDialog.gd" type="Script" id=4]
+
+[sub_resource type="GDScript" id=1]
+script/source = "tool
+extends PopupMenu
+
+var menus : Array = []
+var type : String = \"\"
+
+func _ready():
+	for id in get_child_count():
+		if id+1 < get_child_count() :
+			menus.append(get_child(id+1))
+
+func _on_stimulus_id_pressed(_id):
+	menus[0].popup()
+	get_parent().add_node_offset(type, menus[0].get_item_text(_id))
+
+func _on_inhibitors_id_pressed(_id):
+	menus[1].popup()
+	get_parent().add_node_offset(type, menus[1].get_item_text(_id))
+
+func _on_actions_id_pressed(_id):
+	menus[2].popup()
+	get_parent().add_node_offset(type, menus[2].get_item_text(_id))
+
+func _on_misc_id_pressed(_id):
+	menus[3].popup()
+	get_parent().add_node_offset(type, menus[3].get_item_text(_id))
+
+
+func _on_custom_id_pressed(_id):
+	menus[4].popup()
+	get_parent().add_node_offset(type, menus[4].get_item_text(_id))
+
+func _on_Behaviors_id_pressed(id):
+	if menus[id] is PopupMenu:
+		menus[id].rect_position =  get_tree().get_root().get_mouse_position()
+		menus[id].popup()
+		type = get_item_text(id)
+"
+
+[node name="Behaviors" type="VSplitContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+dragger_visibility = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ViewMenuSplit" type="HSplitContainer" parent="."]
+margin_right = 1912.0
+margin_bottom = 1044.0
+
+[node name="Container" type="VBoxContainer" parent="ViewMenuSplit"]
+margin_right = 200.0
+margin_bottom = 1044.0
+rect_min_size = Vector2( 200, 0 )
+
+[node name="Panel" type="PanelContainer" parent="ViewMenuSplit/Container"]
+margin_right = 200.0
+margin_bottom = 166.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+
+[node name="DropDowns" type="VBoxContainer" parent="ViewMenuSplit/Container/Panel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 193.0
+margin_bottom = 159.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+alignment = 1
+
+[node name="HS2" type="HSeparator" parent="ViewMenuSplit/Container/Panel/DropDowns"]
+margin_right = 186.0
+margin_bottom = 4.0
+
+[node name="stimulus" type="MenuButton" parent="ViewMenuSplit/Container/Panel/DropDowns"]
+margin_top = 8.0
+margin_right = 186.0
+margin_bottom = 33.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+text = "Stimulus"
+items = [ "hear", null, 0, false, false, 0, 0, null, "", false, "user_input", null, 0, false, false, 1, 0, null, "", false, "see", null, 0, false, false, 2, 0, null, "", false ]
+
+[node name="HS3" type="HSeparator" parent="ViewMenuSplit/Container/Panel/DropDowns"]
+margin_top = 37.0
+margin_right = 186.0
+margin_bottom = 41.0
+
+[node name="inhibitors" type="MenuButton" parent="ViewMenuSplit/Container/Panel/DropDowns"]
+margin_top = 45.0
+margin_right = 186.0
+margin_bottom = 70.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+text = "Inhibitions"
+items = [ "property_check", null, 0, false, false, 0, 0, null, "", false, "match", null, 0, false, false, 1, 0, null, "", false, "tri_v_decision", null, 0, false, false, 2, 0, null, "", false ]
+
+[node name="HS4" type="HSeparator" parent="ViewMenuSplit/Container/Panel/DropDowns"]
+margin_top = 74.0
+margin_right = 186.0
+margin_bottom = 78.0
+
+[node name="actions" type="MenuButton" parent="ViewMenuSplit/Container/Panel/DropDowns"]
+margin_top = 82.0
+margin_right = 186.0
+margin_bottom = 107.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+text = "Actions"
+items = [ "set_objective", null, 0, false, false, 0, 0, null, "", false, "trigger_dialog", null, 0, false, false, 1, 0, null, "", false, "play_global_sound", null, 0, false, false, 2, 0, null, "", false, "play_pos_sound", null, 0, false, false, 3, 0, null, "", false, "force_next_state", null, 0, false, false, 4, 0, null, "", false ]
+
+[node name="hs5" type="HSeparator" parent="ViewMenuSplit/Container/Panel/DropDowns"]
+margin_top = 111.0
+margin_right = 186.0
+margin_bottom = 115.0
+
+[node name="misc" type="MenuButton" parent="ViewMenuSplit/Container/Panel/DropDowns"]
+margin_top = 119.0
+margin_right = 186.0
+margin_bottom = 144.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+text = "Misc"
+items = [ "parallel_trigger", null, 0, false, false, 0, 0, null, "", false ]
+
+[node name="HS1" type="HSeparator" parent="ViewMenuSplit/Container/Panel/DropDowns"]
+margin_top = 148.0
+margin_right = 186.0
+margin_bottom = 152.0
+
+[node name="HSeparator7" type="HSeparator" parent="ViewMenuSplit/Container"]
+margin_top = 170.0
+margin_right = 200.0
+margin_bottom = 174.0
+
+[node name="selection" type="HBoxContainer" parent="ViewMenuSplit/Container"]
+margin_top = 178.0
+margin_right = 200.0
+margin_bottom = 192.0
+
+[node name="VSeparator2" type="VSeparator" parent="ViewMenuSplit/Container/selection"]
+margin_right = 4.0
+margin_bottom = 14.0
+
+[node name="title" type="Label" parent="ViewMenuSplit/Container/selection"]
+margin_left = 8.0
+margin_right = 67.0
+margin_bottom = 14.0
+text = "Selected:"
+
+[node name="VSeparator3" type="VSeparator" parent="ViewMenuSplit/Container/selection"]
+margin_left = 71.0
+margin_right = 75.0
+margin_bottom = 14.0
+
+[node name="name" type="Label" parent="ViewMenuSplit/Container/selection"]
+margin_left = 79.0
+margin_right = 192.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "None"
+align = 1
+valign = 1
+
+[node name="VSeparator" type="VSeparator" parent="ViewMenuSplit/Container/selection"]
+margin_left = 196.0
+margin_right = 200.0
+margin_bottom = 14.0
+
+[node name="HSeparator8" type="HSeparator" parent="ViewMenuSplit/Container"]
+margin_top = 196.0
+margin_right = 200.0
+margin_bottom = 200.0
+
+[node name="type2" type="HBoxContainer" parent="ViewMenuSplit/Container"]
+margin_top = 204.0
+margin_right = 200.0
+margin_bottom = 224.0
+
+[node name="Open" type="Button" parent="ViewMenuSplit/Container/type2"]
+margin_right = 98.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Open"
+
+[node name="Save" type="Button" parent="ViewMenuSplit/Container/type2"]
+margin_left = 102.0
+margin_right = 200.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Save"
+
+[node name="Add" type="Button" parent="ViewMenuSplit/Container"]
+margin_top = 228.0
+margin_right = 200.0
+margin_bottom = 248.0
+text = "Add to Tree"
+
+[node name="HSeparator" type="HSeparator" parent="ViewMenuSplit/Container"]
+margin_top = 252.0
+margin_right = 200.0
+margin_bottom = 256.0
+
+[node name="GraphEdit" type="GraphEdit" parent="ViewMenuSplit"]
+margin_left = 212.0
+margin_right = 1912.0
+margin_bottom = 1044.0
+mouse_default_cursor_shape = 3
+right_disconnects = true
+scroll_offset = Vector2( -184, -116 )
+script = ExtResource( 2 )
+
+[node name="Behaviors" type="PopupMenu" parent="ViewMenuSplit/GraphEdit"]
+margin_left = 433.528
+margin_top = 153.245
+margin_right = 515.528
+margin_bottom = 241.245
+items = [ "stimulus", null, 0, false, false, 0, 0, null, "", false, "inhibitors", null, 0, false, false, 1, 0, null, "", false, "actions", null, 0, false, false, 2, 0, null, "", false, "misc", null, 0, false, false, 3, 0, null, "", false ]
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stimulus" type="PopupMenu" parent="ViewMenuSplit/GraphEdit/Behaviors"]
+margin_right = 82.0
+margin_bottom = 88.0
+items = [ "hear", null, 0, false, false, 0, 0, null, "", false, "user_input", null, 0, false, false, 1, 0, null, "", false, "see", null, 0, false, false, 2, 0, null, "", false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="inhibitors" type="PopupMenu" parent="ViewMenuSplit/GraphEdit/Behaviors"]
+margin_right = 82.0
+margin_bottom = 88.0002
+items = [ "property_check", null, 0, false, false, 0, 0, null, "", false, "match", null, 0, false, false, 1, 0, null, "", false, "tri_v_decision", null, 0, false, false, 2, 0, null, "", false ]
+
+[node name="actions" type="PopupMenu" parent="ViewMenuSplit/GraphEdit/Behaviors"]
+margin_right = 82.0
+margin_bottom = 88.0002
+items = [ "set_objective", null, 0, false, false, 0, 0, null, "", false, "trigger_dialog", null, 0, false, false, 1, 0, null, "", false, "play_global_sound", null, 0, false, false, 2, 0, null, "", false, "play_pos_sound", null, 0, false, false, 3, 0, null, "", false, "force_next_state", null, 0, false, false, 4, 0, null, "", false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="misc" type="PopupMenu" parent="ViewMenuSplit/GraphEdit/Behaviors"]
+margin_right = 82.0
+margin_bottom = 88.0002
+items = [ "parallel_trigger", null, 0, false, false, 0, 0, null, "", false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="States" type="PopupMenu" parent="ViewMenuSplit/GraphEdit"]
+margin_left = 433.528
+margin_top = 153.245
+margin_right = 515.528
+margin_bottom = 241.245
+
+[node name="Save" type="FileDialog" parent="ViewMenuSplit/GraphEdit"]
+margin_left = 14.0
+margin_top = 65.0
+margin_right = 468.0
+margin_bottom = 281.0
+rect_min_size = Vector2( 0, 0 )
+window_title = "Guardar un Archivo"
+filters = PoolStringArray( "*.jbt" )
+current_dir = "res://addons/joyeux_npc_editor/src/NPCs/DefaultBehaviors"
+current_file = "untitled"
+current_path = "res://addons/joyeux_npc_editor/src/NPCs/DefaultBehaviors/untitled"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+Start_path = ""
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="ViewMenuSplit/Container/type2/Open" to="." method="_on_Open_pressed"]
+[connection signal="pressed" from="ViewMenuSplit/Container/type2/Save" to="ViewMenuSplit/GraphEdit" method="_on_save_pressed"]
+[connection signal="pressed" from="ViewMenuSplit/Container/Add" to="." method="_on_Add_pressed"]
+[connection signal="connection_request" from="ViewMenuSplit/GraphEdit" to="ViewMenuSplit/GraphEdit" method="_on_GraphEdit_connection_request"]
+[connection signal="disconnection_request" from="ViewMenuSplit/GraphEdit" to="ViewMenuSplit/GraphEdit" method="_on_GraphEdit_disconnection_request"]
+[connection signal="popup_request" from="ViewMenuSplit/GraphEdit" to="ViewMenuSplit/GraphEdit" method="_on_GraphEdit_popup_request"]
+[connection signal="id_pressed" from="ViewMenuSplit/GraphEdit/Behaviors" to="ViewMenuSplit/GraphEdit/Behaviors" method="_on_Behaviors_id_pressed"]
+[connection signal="id_pressed" from="ViewMenuSplit/GraphEdit/Behaviors/stimulus" to="ViewMenuSplit/GraphEdit/Behaviors" method="_on_stimulus_id_pressed"]
+[connection signal="id_pressed" from="ViewMenuSplit/GraphEdit/Behaviors/inhibitors" to="ViewMenuSplit/GraphEdit/Behaviors" method="_on_inhibitors_id_pressed"]
+[connection signal="id_pressed" from="ViewMenuSplit/GraphEdit/Behaviors/actions" to="ViewMenuSplit/GraphEdit/Behaviors" method="_on_actions_id_pressed"]
+[connection signal="id_pressed" from="ViewMenuSplit/GraphEdit/Behaviors/misc" to="ViewMenuSplit/GraphEdit/Behaviors" method="_on_misc_id_pressed"]
+[connection signal="file_selected" from="ViewMenuSplit/GraphEdit/Save" to="ViewMenuSplit/GraphEdit" method="_on_save_file_selected"]

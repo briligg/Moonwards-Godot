@@ -49,6 +49,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Manager/SignalsManager/AudioSignals.gd"
 }, {
+"base": "GraphNode",
+"class": "BehaviorNode",
+"language": "GDScript",
+"path": "res://addons/joyeux_npc_editor/src/Core/Control_Components/BehaviorNode.gd"
+}, {
 "base": "AComponent",
 "class": "CameraController",
 "language": "GDScript",
@@ -58,6 +63,16 @@ _global_script_classes=[ {
 "class": "Custom_Wheel",
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/Vehicle/AthleteRover/RoverWheel.gd"
+}, {
+"base": "HBoxContainer",
+"class": "DoubleLabel",
+"language": "GDScript",
+"path": "res://addons/joyeux_npc_editor/src/Core/Control_Components/SeparatedLabel.gd"
+}, {
+"base": "MenuButton",
+"class": "DropDown",
+"language": "GDScript",
+"path": "res://addons/joyeux_npc_editor/src/Core/Control_Components/MenuWTitles.gd"
 }, {
 "base": "Reference",
 "class": "EntityData",
@@ -73,6 +88,106 @@ _global_script_classes=[ {
 "class": "EnumHelper",
 "language": "GDScript",
 "path": "res://Script/Manager/HelperClasses/EnumHelper.gd"
+}, {
+"base": "HBoxContainer",
+"class": "FileLabel",
+"language": "GDScript",
+"path": "res://addons/joyeux_npc_editor/src/Core/Control_Components/FileSeparator.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetAABB",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_aabb.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetBasis",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_basis.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetBool",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_bool.gd"
+}, {
+"base": "GadgetVector4",
+"class": "GadgetColor",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_vector4/gadget_color.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetFloat",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_float.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetInt",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_int.gd"
+}, {
+"base": "GadgetStringEdit",
+"class": "GadgetNodePath",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_node_path.gd"
+}, {
+"base": "GadgetVector4",
+"class": "GadgetPlane",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_vector4/gadget_plane.gd"
+}, {
+"base": "GadgetVector4",
+"class": "GadgetQuat",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_vector4/gadget_quat.gd"
+}, {
+"base": "GadgetStringEdit",
+"class": "GadgetRID",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_rid.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetRect2",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_rect2.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetResource",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_resource.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetStringEdit",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_string_edit.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetStringLabel",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_string_label.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetTransform",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_transform.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetTransform2D",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_transform2d.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetVector2",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_vector2.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetVector3",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_vector3.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetVector4",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_vector4.gd"
 }, {
 "base": "ANetworkInstance",
 "class": "GameClient",
@@ -93,6 +208,21 @@ _global_script_classes=[ {
 "class": "InputController",
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/Humanoid/HumanoidInput.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "InspectorGadget",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/inspector_gadget.gd"
+}, {
+"base": "MarginContainer",
+"class": "InspectorGadgetBase",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/inspector_gadget_base.gd"
+}, {
+"base": "Reference",
+"class": "InspectorGadgetUtil",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/inspector_gadget_util.gd"
 }, {
 "base": "Area",
 "class": "Interactable",
@@ -135,6 +265,11 @@ _global_script_classes=[ {
 "path": "res://Script/ExtensionClass/MwSpatial.gd"
 }, {
 "base": "Node",
+"class": "NPCBase",
+"language": "GDScript",
+"path": "res://addons/joyeux_npc_editor/src/NPCs/NPC.gd"
+}, {
+"base": "Node",
 "class": "NetworkManager",
 "language": "GDScript",
 "path": "res://Script/Network/NetworkManager/NetworkManager.gd"
@@ -143,6 +278,16 @@ _global_script_classes=[ {
 "class": "NetworkSignals",
 "language": "GDScript",
 "path": "res://Script/Manager/SignalsManager/NetworkSignals.gd"
+}, {
+"base": "Resource",
+"class": "NpcDefinitions",
+"language": "GDScript",
+"path": "res://addons/joyeux_npc_editor/Config/Definitions.gd"
+}, {
+"base": "AcceptDialog",
+"class": "PopupColor",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_popup/popup_color.gd"
 }, {
 "base": "Reference",
 "class": "ResourceSignals",
@@ -163,6 +308,11 @@ _global_script_classes=[ {
 "class": "VehicleEntity",
 "language": "GDScript",
 "path": "res://Script/Entity/VehicleEntity.gd"
+}, {
+"base": "Node",
+"class": "Workstation",
+"language": "GDScript",
+"path": "res://SceneComponent/Actor/NPCWorkstation.gd"
 } ]
 _global_script_class_icons={
 "AComponent": "",
@@ -173,15 +323,41 @@ _global_script_class_icons={
 "ActorEntityState": "",
 "AirlockDoorInteractable": "",
 "AudioSignals": "",
+"BehaviorNode": "",
 "CameraController": "",
 "Custom_Wheel": "",
+"DoubleLabel": "",
+"DropDown": "",
 "EntityData": "",
 "EntitySignals": "",
 "EnumHelper": "",
+"FileLabel": "",
+"GadgetAABB": "",
+"GadgetBasis": "",
+"GadgetBool": "",
+"GadgetColor": "",
+"GadgetFloat": "",
+"GadgetInt": "",
+"GadgetNodePath": "",
+"GadgetPlane": "",
+"GadgetQuat": "",
+"GadgetRID": "",
+"GadgetRect2": "",
+"GadgetResource": "",
+"GadgetStringEdit": "",
+"GadgetStringLabel": "",
+"GadgetTransform": "",
+"GadgetTransform2D": "",
+"GadgetVector2": "",
+"GadgetVector3": "",
+"GadgetVector4": "",
 "GameClient": "",
 "GameServer": "",
 "HudSignals": "",
 "InputController": "",
+"InspectorGadget": "",
+"InspectorGadgetBase": "",
+"InspectorGadgetUtil": "",
 "Interactable": "",
 "Interactor": "",
 "KinematicMovement": "",
@@ -190,12 +366,16 @@ _global_script_class_icons={
 "MenuSignals": "",
 "MwNode": "",
 "MwSpatial": "",
+"NPCBase": "",
 "NetworkManager": "",
 "NetworkSignals": "",
+"NpcDefinitions": "",
+"PopupColor": "",
 "ResourceSignals": "",
 "ResourceThreadedLoader": "",
 "StaticEntity": "",
-"VehicleEntity": ""
+"VehicleEntity": "",
+"Workstation": ""
 }
 
 [application]
@@ -216,6 +396,7 @@ Scene="*res://Script/Manager/SceneManager/SceneManager.gd"
 Network="*res://Script/Network/NetworkManager/NetworkManager.gd"
 AL_DebugDraw="*res://Script/DebugHelper/debug_draw_3d.gd"
 Hud="*res://Script/Manager/HudManager/HudManager.gd"
+Nodes="*res://addons/joyeux_npc_editor/src/core/Nodes.gd"
 
 [compression]
 
@@ -244,7 +425,7 @@ convert_text_resources_to_binary_on_export=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "QuickPluginManager", "editor_icon_previewer", "moonwards_lock_nodes" )
+enabled=PoolStringArray( "QuickPluginManager", "editor_icon_previewer", "joyeux_npc_editor", "moonwards_lock_nodes" )
 
 [importer_defaults]
 

@@ -1,0 +1,30 @@
+[variables]
+
+States=[  ]
+Save=[  ]
+Behaviors=[  ]
+play_3d_sound=[  ]
+CLAYER=[  ]
+match=[  ]
+user_input=[  ]
+@@111=[  ]
+
+[node_signals]
+
+play_3d_sound=[  ]
+match=[ "match_output_0" ]
+user_input=[ "user_input_output_0" ]
+
+[ai_config]
+
+connections=[ {
+"from": "user_input",
+"from_port": 0,
+"to": "match",
+"to_port": 0
+}, {
+"from": "match",
+"from_port": 0,
+"to": "play_3d_sound",
+"to_port": 0
+} ]
