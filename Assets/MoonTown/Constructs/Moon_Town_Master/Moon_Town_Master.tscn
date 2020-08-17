@@ -1111,6 +1111,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 71.0697, -3.71949, 0.115387 )
 [node name="DVT_Airlock_Bay" parent="Marker_all_Constructs/Empty_AirlockBay" index="1" instance=ExtResource( 38 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00577, 0, 0 )
 show_lod0_list = [ NodePath("../../Empty_FirstGalleryUpper/First_Gallery_Upper"), NodePath("../Airlock_Bay"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_N1/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_N2/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_N3/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_N4/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_N5/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_S1/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_S2/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_S3/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_S4/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_Airlock_S5/Airlock"), NodePath("../Airlock_Bay/Markers/Marker_GarageAirlock/Airlock"), NodePath("../../Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_MakersMonument/MakersMonument/Makers_Monument"), NodePath("../../Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Carousel/Carousel") ]
+show_lod1_list = [ NodePath("../../Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Neighborhood/Neighborhood-1"), NodePath("../../Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Neighborhood/Shared-Facilities-1") ]
 
 [node name="CollisionShape" type="CollisionShape" parent="Marker_all_Constructs/Empty_AirlockBay/DVT_Airlock_Bay" index="0"]
 transform = Transform( 0.124052, 0, 0.992276, 0, 1, 0, -0.992276, 0, 0.124052, -164.97, 0, 11.5037 )
@@ -1198,6 +1199,41 @@ __meta__ = {
 
 [node name="First_Atrium" parent="Marker_all_Constructs/Empty_AtriumHab" index="0" instance=ExtResource( 4 )]
 
+[node name="VerticalStair_TunnelBottom" parent="Marker_all_Constructs/Empty_AtriumHab/First_Atrium/Markers/Marker-VerticalStair_TunnelBottom" index="0"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+interactions_active = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-1" parent="Marker_all_Constructs/Empty_AtriumHab/First_Atrium/Markers/Marker_Vertical-Stairs-1" index="0"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+interactions_active = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-2" parent="Marker_all_Constructs/Empty_AtriumHab/First_Atrium/Markers/Marker_Vertical-Stairs-2" index="0"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+interactions_active = true
+generate_editor_visual = false
+
+[node name="Vertical-Stairs-3" parent="Marker_all_Constructs/Empty_AtriumHab/First_Atrium/Markers/Marker_Vertical-Stairs-3" index="0"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+interactions_active = true
+generate_editor_visual = false
+
+[node name="VerticalStair_TunnelTop" parent="Marker_all_Constructs/Empty_AtriumHab/First_Atrium/Markers/Marker_VerticalStair_TunnelTop" index="0"]
+display_info = "Interactable"
+title = "Title"
+networked = true
+interactions_active = true
+generate_editor_visual = false
+
 [node name="DVT_Empty_AtriumHab" parent="Marker_all_Constructs/Empty_AtriumHab" index="1" instance=ExtResource( 38 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50.7373, 2.58819, -55.8898 )
 show_lod0_list = [ NodePath("../../Empty_LosPortalesTunnel/Rim_Arcade"), NodePath("../../../Lalande_85k"), NodePath("../../../Earth"), NodePath("../../../Marker_all_BoatRads/BoatRad004/Boat_Radiator"), NodePath("../First_Atrium"), NodePath("../First_Atrium/Markers/Mariker_HexWindow1/Hexpane_Window"), NodePath("../First_Atrium/Markers/Marker_HexWindow2/Hexpane_Window"), NodePath("../First_Atrium/Markers/Marker_HexWindow3/Hexpane_Window"), NodePath("../First_Atrium/Markers/Marker_HexWindow4/Hexpane_Window"), NodePath("../First_Atrium/Markers/Marker_HexWindow5/Hexpane_Window") ]
@@ -1257,9 +1293,6 @@ __meta__ = {
 }
 
 [node name="First_Gallery_Upper" parent="Marker_all_Constructs/Empty_FirstGalleryUpper" index="0" instance=ExtResource( 10 )]
-
-[node name="Screen" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_MakersMonument/MakersMonument" index="1"]
-hologram = false
 
 [node name="ReversingVisibilityTrigger" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper" index="11" instance=ExtResource( 39 )]
 show_lod0_list = [ NodePath("../Marker_Neighborhood/Neighborhood-1"), NodePath("../Marker_Neighborhood/Shared-Facilities-1") ]
