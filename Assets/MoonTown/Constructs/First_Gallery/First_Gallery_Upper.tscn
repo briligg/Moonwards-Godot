@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/First_Gallery_Upper.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Carousel/Carousel.tscn" type="PackedScene" id=2]
@@ -73,6 +73,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6423, -5.21722, 2.99319 )
 display_info = "Interactable"
 title = "Title"
 networked = true
+interactions_active = true
 stairs_step_count = 18
 generate_editor_visual = false
 
@@ -81,6 +82,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07, 0, 0 )
 display_info = "Interactable"
 title = "Title"
 networked = true
+interactions_active = true
 stairs_step_count = 18
 generate_editor_visual = false
 
@@ -91,6 +93,7 @@ transform = Transform( 0.0777978, 0, 0.996969, 0, 1, 0, -0.996969, 0, 0.0777978,
 display_info = "Interactable"
 title = "Title"
 networked = true
+interactions_active = true
 stairs_step_count = 18
 generate_editor_visual = false
 
@@ -99,6 +102,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07, 0, 0 )
 display_info = "Interactable"
 title = "Title"
 networked = true
+interactions_active = true
 stairs_step_count = 18
 generate_editor_visual = false
 
@@ -106,6 +110,7 @@ generate_editor_visual = false
 display_info = "Interactable"
 title = "Title"
 networked = true
+interactions_active = true
 stairs_step_count = 18
 generate_editor_visual = false
 
@@ -114,6 +119,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07, 0, 0 )
 display_info = "Interactable"
 title = "Title"
 networked = true
+interactions_active = true
 stairs_step_count = 18
 generate_editor_visual = false
 
@@ -122,6 +128,7 @@ transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0
 display_info = "Interactable"
 title = "Title"
 networked = true
+interactions_active = true
 stairs_step_count = 16
 generate_editor_visual = false
 
@@ -130,6 +137,7 @@ transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, -
 display_info = "Interactable"
 title = "Title"
 networked = true
+interactions_active = true
 stairs_step_count = 16
 generate_editor_visual = false
 
@@ -137,6 +145,7 @@ generate_editor_visual = false
 display_info = "Interactable"
 title = "Title"
 networked = true
+interactions_active = true
 stairs_step_count = 11
 generate_editor_visual = false
 
@@ -145,6 +154,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07, 0, 0 )
 display_info = "Interactable"
 title = "Title"
 networked = true
+interactions_active = true
 stairs_step_count = 11
 generate_editor_visual = false
 
@@ -152,6 +162,7 @@ generate_editor_visual = false
 display_info = "Interactable"
 title = "Title"
 networked = true
+interactions_active = true
 stairs_step_count = 18
 generate_editor_visual = false
 
@@ -160,6 +171,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07, 0, 0 )
 display_info = "Interactable"
 title = "Title"
 networked = true
+interactions_active = true
 stairs_step_count = 18
 generate_editor_visual = false
 
@@ -168,6 +180,7 @@ transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0
 display_info = "Interactable"
 title = "Title"
 networked = true
+interactions_active = true
 stairs_step_count = 18
 generate_editor_visual = false
 
@@ -176,6 +189,7 @@ transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, -
 display_info = "Interactable"
 title = "Title"
 networked = true
+interactions_active = true
 stairs_step_count = 18
 generate_editor_visual = false
 
@@ -184,6 +198,7 @@ transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0 )
 display_info = "Interactable"
 title = "Title"
 networked = true
+interactions_active = true
 stairs_step_count = 18
 generate_editor_visual = false
 
@@ -192,6 +207,7 @@ transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 1.07, 0, 
 display_info = "Interactable"
 title = "Title"
 networked = true
+interactions_active = true
 stairs_step_count = 18
 generate_editor_visual = false
 
@@ -200,6 +216,7 @@ transform = Transform( -1.49012e-07, 0, 1, 0, 1, 0, -1, 0, -1.49012e-07, 0, 0, 0
 display_info = "Interactable"
 title = "Title"
 networked = true
+interactions_active = true
 stairs_step_count = 16
 generate_editor_visual = false
 
@@ -208,6 +225,7 @@ transform = Transform( -1.49012e-07, 0, 1, 0, 1, 0, -1, 0, -1.49012e-07, 0, 0, -
 display_info = "Interactable"
 title = "Title"
 networked = true
+interactions_active = true
 stairs_step_count = 16
 generate_editor_visual = false
 
@@ -216,6 +234,7 @@ transform = Transform( 1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0, 0, 0 )
 display_info = "Interactable"
 title = "Title"
 networked = true
+interactions_active = true
 stairs_step_count = 20
 generate_editor_visual = false
 
@@ -224,10 +243,11 @@ transform = Transform( 1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 1.07, 0, 
 display_info = "Interactable"
 title = "Title"
 networked = true
+interactions_active = true
 stairs_step_count = 19
 generate_editor_visual = false
 
-[node name="Marker_Rocket_Display" parent="." index="21"]
+[node name="Marker_Rocket_Display" parent="." index="22"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4549, -15.5153, -1.94232 )
 
 [node name="RocketDisplay" parent="Marker_Rocket_Display" index="0" instance=ExtResource( 5 )]
