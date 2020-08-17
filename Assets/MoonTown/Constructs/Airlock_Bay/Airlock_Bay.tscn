@@ -4,10 +4,10 @@
 [ext_resource path="res://SceneComponent/Object/Airlock/Airlock.tscn" type="PackedScene" id=2]
 
 [sub_resource type="GIProbeData" id=1]
-bounds = AABB( -90.8923, -14.3202, -27.6605, 181.785, 28.6404, 55.321 )
-cell_size = 2.84038
-to_cell_xform = Transform( 0.352065, 0, 0, 0, 0.352065, 0, 0, 0, 0.352065, 32, 5.04164, 9.7383 )
-dynamic_data = PoolIntArray( 0, 7, 64, 16, 32, 1, 0, 0, 0, 0, 0, 0, 7, 0, 9, 3417, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+bounds = AABB( -90.892, -14.32, -25, 181.784, 28.64, 50 )
+cell_size = 2.84037
+to_cell_xform = Transform( 0.352066, 0, 0, 0, 0.352066, 0, 0, 0, 0.352066, 32, 5.04159, 8.80165 )
+dynamic_data = PoolIntArray( 0, 7, 64, 16, 32, 1, 0, 0, 0, 0, 0, 0, 7, 0, 9, 3798, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 8
 bias = 1.5
 normal_bias = 0.0
@@ -40,10 +40,20 @@ light_specular = 0.3
 omni_range = 26.0
 omni_attenuation = 1.6245
 
-[node name="GIProbe" type="GIProbe" parent="." index="4"]
+[node name="OmniLight4" type="OmniLight" parent="." index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -156.741, 4.53356, 11.8596 )
+light_color = Color( 0.803922, 0.847059, 0.54902, 1 )
+light_energy = 2.31
+light_indirect_energy = 2.46
+light_specular = 0.0
+shadow_bias = -2.41
+omni_range = 26.0
+omni_attenuation = 1.6245
+
+[node name="GIProbe" type="GIProbe" parent="." index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -86.8261, 0.707192, -0.259207 )
 subdiv = 0
-extents = Vector3( 90.8923, 14.3202, 27.6605 )
+extents = Vector3( 90.892, 14.32, 25 )
 dynamic_range = 8
 propagation = 0.2
 interior = true
