@@ -9,7 +9,6 @@
 [ext_resource path="res://Assets/SharedAssets/Textures/Noises/Noise_Hev_03_1K_RGB.png" type="Texture" id=7]
 [ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Asphalt_01/Asphalt_01_2K_Roughness.jpg" type="Texture" id=8]
 
-
 [resource]
 shader = ExtResource( 1 )
 shader_param/Color_A = Color( 0.815686, 0.815686, 0.815686, 1 )
