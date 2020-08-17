@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=9 format=2]
 
-[ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/LayeredBlend_Visualshader.tres" type="Shader" id=1]
+[ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Shaders/LayeredBlend_Visualshader.tres" type="Shader" id=1]
 [ext_resource path="res://Assets/SharedAssets/Textures/Nature_Textures/Lavastone_3/Lavastone_3_rgh.jpg" type="Texture" id=2]
 [ext_resource path="res://Assets/SharedAssets/Textures/Nature_Textures/Lavastone_3/Lavastone_3_col.jpg" type="Texture" id=3]
 [ext_resource path="res://Assets/SharedAssets/Textures/Nature_Textures/Lavastone_3/Lavastone_3_nrm.jpg" type="Texture" id=4]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Asphalt_01/Asphalt_01_2K_Normal.jpg" type="Texture" id=6]
 [ext_resource path="res://Assets/SharedAssets/Textures/Noises/Noise_Hev_03_1K_RGB.png" type="Texture" id=7]
 [ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Asphalt_01/Asphalt_01_2K_Roughness.jpg" type="Texture" id=8]
+
 
 [resource]
 shader = ExtResource( 1 )

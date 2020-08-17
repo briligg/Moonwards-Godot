@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=11 format=2]
 
-[ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/DistanceNoiseBlend_Visualshader.tres" type="Shader" id=1]
+[ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Shaders/DistanceNoiseBlend_Visualshader.tres" type="Shader" id=1]
 [ext_resource path="res://Assets/MoonTown/Constructs/Lalande_Crater/textures/Lalande_Whole_2k_Normals.jpg" type="Texture" id=2]
 [ext_resource path="res://Assets/SharedAssets/Textures/Nature_Textures/Rock_bumpyBrown_cc0textures/Rock03_nrm.jpg" type="Texture" id=3]
 [ext_resource path="res://Assets/SharedAssets/Textures/Nature/Snow_01/Snow_01_2K_Roughness.png" type="Texture" id=4]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/SharedAssets/Textures/Nature/Sand_01/Sand_01_2K_Color.png" type="Texture" id=8]
 [ext_resource path="res://Assets/SharedAssets/Textures/Nature/Sand_01/Sand_01_2K_Roughness.jpg" type="Texture" id=9]
 [ext_resource path="res://Assets/SharedAssets/Textures/Noises/Noise_Hev_01_1K_RGB.png" type="Texture" id=10]
+
 
 [resource]
 shader = ExtResource( 1 )

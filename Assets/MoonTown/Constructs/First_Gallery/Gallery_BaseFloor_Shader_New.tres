@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=13 format=2]
 
-[ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/LayeredFloor_Visualshader.tres" type="Shader" id=1]
+[ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/Shaders/LayeredFloor_Visualshader_New.tres" type="Shader" id=1]
 [ext_resource path="res://Assets/SharedAssets/Textures/Noises/Noise_Hev_01_1K_RGBA.png" type="Texture" id=2]
 [ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Pavement_01/Pavement_01_2K_Normal.png" type="Texture" id=3]
 [ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Pavement_01/Pavement_01_2K_Albedo.png" type="Texture" id=4]
@@ -12,6 +12,9 @@
 [ext_resource path="res://Assets/SharedAssets/Textures/Nature/Rock_02/Rock020_2K_Roughness.jpg" type="Texture" id=10]
 [ext_resource path="res://Assets/SharedAssets/Textures/Nature/Rock_02/Rock_02_2K_Albedo.jpg" type="Texture" id=11]
 [ext_resource path="res://Assets/SharedAssets/Textures/Nature/Rock_02/Rock020_2K_Normal.jpg" type="Texture" id=12]
+
+
+
 
 [resource]
 shader = ExtResource( 1 )
@@ -37,13 +40,12 @@ shader_param/Height_Mult_C = 1.0
 shader_param/Metallic_A = null
 shader_param/Metallic_B = null
 shader_param/Metallic_C = null
-shader_param/Rough_Mult_A = 0.5
+shader_param/Rough_Mult_A = 1.0
 shader_param/Rough_Mult_B = 1.0
-shader_param/Rough_Mult_C = 0.8
-shader_param/Specular_A = 1.0
+shader_param/Rough_Mult_C = 1.0
+shader_param/Specular_A = 0.8
 shader_param/Specular_B = 0.5
 shader_param/Specular_C = 0.5
-shader_param/Fresnel_Color = Color( 0.215686, 0.113725, 0.917647, 1 )
 shader_param/Albedo_A = ExtResource( 7 )
 shader_param/Noise_RGB = ExtResource( 2 )
 shader_param/Albedo_B = ExtResource( 11 )
