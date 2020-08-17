@@ -135,9 +135,13 @@ func _get_cam_normal() -> Vector3:
 func disable():
 	if is_first_person :
 		entity.get_node("Model").show()
+		Signals.Hud.emit_signal(Signals.Hud.RETICLE_ACTIVITY_SET, false)
 	.disable()
 
 func enable():
+	#Turn on the aiming reticle if in first person.
+	if is_first_person :
+		Signals.Hud.emit_signal(Signals.Hud.RETICLE_ACTIVITY_SET, true)
 	if Network.network_instance.peer_id == entity.owner_peer_id:
 		camera.set_current(true)
 	.enable()
