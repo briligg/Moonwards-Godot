@@ -16,6 +16,8 @@ func _physics_process(_delta) -> void :
 				#Set the InputEvent to left mouse button.
 				new_event = InputEventMouseButton.new()
 				new_event.button_index = BUTTON_LEFT
+				new_event.button_mask = BUTTON_MASK_LEFT
+				new_event.pressed = true
 			else :
 				new_event = InputEventMouseMotion.new()
 			get_collider().emit_signal("input_event", null, new_event, get_collision_point(), get_collision_normal(), null)
