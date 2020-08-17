@@ -24,13 +24,15 @@ func _ready() -> void :
 #Determines if I should turn on when requested or not.
 func _set_activity(is_active : bool) -> void :
 	if is_active :
+		#Do not show any errors should this get called twice in a row.
 		if not Signals.Hud.is_connected(Signals.Hud.SHOW_RETICLE, self, "show") :
 			Signals.Hud.connect(Signals.Hud.SHOW_RETICLE, self, "show")
 			Signals.Hud.connect(Signals.Hud.HIDE_RETICLE, self, "hide")
-		ray_cast.enabled = true
+		ray_cast.activate()
 	else :
 		hide()
+		#Do not show any errors should this get called twice in a row.
 		if Signals.Hud.is_connected(Signals.Hud.SHOW_RETICLE, self, "show") :
 			Signals.Hud.disconnect(Signals.Hud.SHOW_RETICLE, self, "show")
 			Signals.Hud.disconnect(Signals.Hud.HIDE_RETICLE, self, "hide")
-		ray_cast.enabled = false
+		ray_cast.deactivate()
