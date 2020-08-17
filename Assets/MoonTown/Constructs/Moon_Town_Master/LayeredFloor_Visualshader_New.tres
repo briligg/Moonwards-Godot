@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=122 format=2]
+[gd_resource type="VisualShader" load_steps=127 format=2]
 
 [ext_resource path="res://Assets/SharedAssets/Shaders/StochasticTextureNode.gd" type="Script" id=1]
 [ext_resource path="res://Assets/SharedAssets/Shaders/ScalarHeightMixNode.gd" type="Script" id=2]
@@ -143,6 +143,16 @@ uniform_name = "Color_C"
 
 [sub_resource type="VisualShaderNodeCustom" id=42]
 script = ExtResource( 1 )
+
+[sub_resource type="VisualShaderNodeScalarClamp" id=119]
+
+[sub_resource type="VisualShaderNodeScalarClamp" id=120]
+
+[sub_resource type="VisualShaderNodeScalarClamp" id=121]
+
+[sub_resource type="VisualShaderNodeScalarClamp" id=122]
+
+[sub_resource type="VisualShaderNodeVectorClamp" id=123]
 
 [sub_resource type="VisualShaderNodeVectorOp" id=43]
 operator = 2
@@ -398,7 +408,6 @@ uniform float Specular_C;
 uniform sampler2D NormalMap_A : hint_normal;
 uniform sampler2D NormalMap_B : hint_normal;
 uniform sampler2D NormalMap_C : hint_normal;
-uniform vec4 Fresnel_Color : hint_color;
 
 
 // StochasticTexture
@@ -792,8 +801,13 @@ void fragment() {
 // ScalarOp:122
 	float n_out122p0 = n_out23p2 * n_out123p0;
 
+// ScalarClamp:151
+	float n_in151p1 = 0.00000;
+	float n_in151p2 = 1.00000;
+	float n_out151p0 = clamp(n_out122p0, n_in151p1, n_in151p2);
+
 // ScalarOp:124
-	float n_out124p0 = n_out99p0 + n_out122p0;
+	float n_out124p0 = n_out99p0 + n_out151p0;
 
 // VectorMix:78
 	vec3 n_out78p0 = mix(n_out18p0, n_out75p0, vec3(n_out124p0));
@@ -867,12 +881,22 @@ void fragment() {
 // ScalarOp:120
 	float n_out120p0 = n_out102p2 * n_out121p0;
 
+// ScalarClamp:153
+	float n_in153p1 = 0.00000;
+	float n_in153p2 = 1.00000;
+	float n_out153p0 = clamp(n_out120p0, n_in153p1, n_in153p2);
+
 // VectorHeightMix:143
 	float n_in143p4 = 0.30000;
 	vec3 n_out143p0;
 	{
-		n_out143p0 = HeightVectorLerp(n_out78p0,n_out76p0,n_out128p0,n_out120p0,n_in143p4);
+		n_out143p0 = HeightVectorLerp(n_out78p0,n_out76p0,n_out128p0,n_out153p0,n_in143p4);
 	}
+
+// VectorClamp:156
+	vec3 n_in156p1 = vec3(0.00000, 0.00000, 0.00000);
+	vec3 n_in156p2 = vec3(1.00000, 1.00000, 1.00000);
+	vec3 n_out156p0 = clamp(n_out143p0, n_in156p1, n_in156p2);
 
 // ScalarUniform:27
 	float n_out27p0 = Metallic_A;
@@ -890,7 +914,7 @@ void fragment() {
 	float n_in140p4 = 0.30000;
 	float n_out140p0;
 	{
-		n_out140p0 = HeightScalarLerp(n_out25p0,n_out91p0,n_out128p0,n_out120p0,n_in140p4);
+		n_out140p0 = HeightScalarLerp(n_out25p0,n_out91p0,n_out128p0,n_out153p0,n_in140p4);
 	}
 
 // ScalarClamp:48
@@ -943,7 +967,7 @@ void fragment() {
 	float n_in144p4 = 0.30000;
 	float n_out144p0;
 	{
-		n_out144p0 = HeightScalarLerp(n_out19p0,n_out104p0,n_out128p0,n_out120p0,n_in144p4);
+		n_out144p0 = HeightScalarLerp(n_out19p0,n_out104p0,n_out128p0,n_out153p0,n_in144p4);
 	}
 
 // ScalarClamp:47
@@ -967,7 +991,7 @@ void fragment() {
 	float n_in139p4 = 0.30000;
 	float n_out139p0;
 	{
-		n_out139p0 = HeightScalarLerp(n_out26p0,n_out92p0,n_out128p0,n_out120p0,n_in139p4);
+		n_out139p0 = HeightScalarLerp(n_out26p0,n_out92p0,n_out128p0,n_out153p0,n_in139p4);
 	}
 
 // ScalarClamp:49
@@ -1021,52 +1045,15 @@ void fragment() {
 	float n_in138p4 = 0.30000;
 	vec3 n_out138p0;
 	{
-		n_out138p0 = HeightVectorLerp(n_out33p0,n_out96p0,n_out128p0,n_out120p0,n_in138p4);
+		n_out138p0 = HeightVectorLerp(n_out33p0,n_out96p0,n_out128p0,n_out153p0,n_in138p4);
 	}
-
-// ColorUniform:81
-	vec3 n_out81p0 = Fresnel_Color.rgb;
-	float n_out81p1 = Fresnel_Color.a;
-
-// VectorDecompose:130
-	float n_out130p0 = n_out81p0.x;
-	float n_out130p1 = n_out81p0.y;
-	float n_out130p2 = n_out81p0.z;
-
-// ScalarMix:131
-	float n_out131p0 = mix(n_out130p0, n_out130p1, n_out59p0);
-
-// VectorCompose:132
-	float n_in132p1 = 0.00000;
-	vec3 n_out132p0 = vec3(n_out131p0, n_in132p1, n_out130p2);
-
-// VectorMix:80
-	vec3 n_in80p1 = vec3(0.00000, 0.00000, 0.00000);
-	vec3 n_out80p0 = mix(n_out132p0, n_in80p1, vec3(n_out124p0));
-
-// Vector:142
-	vec3 n_out142p0 = vec3(0.000000, 0.000000, 0.000000);
-
-// VectorHeightMix:141
-	float n_in141p4 = 0.30000;
-	vec3 n_out141p0;
-	{
-		n_out141p0 = HeightVectorLerp(n_out80p0,n_out142p0,n_out128p0,n_out120p0,n_in141p4);
-	}
-
-// VectorDecompose:119
-	float n_out119p0 = n_out141p0.x;
-	float n_out119p1 = n_out141p0.y;
-	float n_out119p2 = n_out141p0.z;
 
 // Output:0
-	ALBEDO = n_out143p0;
+	ALBEDO = n_out156p0;
 	METALLIC = n_out48p0;
 	ROUGHNESS = n_out47p0;
 	SPECULAR = n_out49p0;
 	NORMALMAP = n_out138p0;
-	RIM = n_out119p0;
-	RIM_TINT = n_out119p2;
 
 }
 
@@ -1075,7 +1062,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -1584, -1073 )
+graph_offset = Vector2( -771, 268 )
 nodes/fragment/0/position = Vector2( 400, 200 )
 nodes/fragment/7/node = SubResource( 92 )
 nodes/fragment/7/position = Vector2( -2000, 140 )
@@ -1334,4 +1321,14 @@ nodes/fragment/149/node = SubResource( 40 )
 nodes/fragment/149/position = Vector2( -1000, 1520 )
 nodes/fragment/150/node = SubResource( 42 )
 nodes/fragment/150/position = Vector2( -1000, 1720 )
-nodes/fragment/connections = PoolIntArray( 7, 0, 10, 0, 8, 0, 10, 1, 7, 0, 11, 0, 9, 0, 11, 1, 10, 0, 12, 0, 11, 0, 13, 0, 14, 0, 16, 0, 16, 0, 18, 0, 10, 0, 20, 0, 27, 0, 25, 0, 28, 0, 25, 1, 30, 0, 26, 1, 36, 0, 38, 0, 37, 0, 38, 1, 38, 0, 34, 0, 34, 0, 39, 0, 41, 0, 40, 0, 42, 0, 44, 0, 34, 1, 50, 1, 39, 2, 50, 2, 39, 0, 40, 2, 39, 1, 40, 1, 51, 0, 50, 0, 50, 0, 52, 1, 40, 0, 52, 2, 53, 0, 52, 0, 52, 0, 42, 1, 43, 0, 42, 0, 54, 0, 19, 0, 55, 0, 19, 1, 60, 0, 59, 0, 58, 0, 59, 1, 44, 0, 59, 2, 44, 0, 58, 0, 29, 0, 26, 0, 59, 0, 18, 2, 62, 0, 61, 3, 64, 0, 65, 0, 67, 0, 68, 1, 7, 0, 68, 0, 68, 0, 66, 0, 15, 0, 17, 0, 69, 0, 70, 1, 71, 0, 72, 1, 73, 0, 74, 1, 70, 0, 18, 1, 65, 0, 75, 0, 72, 0, 75, 1, 59, 0, 75, 2, 17, 0, 76, 0, 74, 0, 76, 1, 59, 0, 76, 2, 18, 0, 78, 0, 75, 0, 78, 1, 88, 0, 86, 1, 89, 0, 87, 1, 81, 0, 90, 0, 61, 0, 90, 2, 11, 0, 77, 0, 68, 0, 21, 0, 10, 0, 31, 0, 68, 0, 32, 0, 11, 0, 96, 0, 86, 0, 87, 0, 98, 0, 99, 0, 87, 0, 98, 0, 56, 0, 54, 0, 22, 0, 54, 1, 23, 0, 55, 1, 57, 0, 55, 0, 102, 0, 104, 1, 103, 0, 104, 0, 77, 0, 102, 0, 112, 0, 100, 0, 113, 0, 100, 1, 114, 0, 100, 2, 85, 0, 86, 0, 100, 0, 85, 0, 83, 0, 85, 1, 116, 0, 115, 0, 117, 0, 115, 1, 118, 0, 115, 2, 102, 2, 120, 0, 121, 0, 120, 1, 23, 2, 122, 0, 123, 0, 122, 1, 99, 0, 124, 0, 122, 0, 124, 1, 124, 0, 19, 2, 124, 0, 33, 2, 124, 0, 26, 2, 124, 0, 25, 2, 124, 0, 80, 2, 124, 0, 78, 2, 126, 0, 125, 0, 125, 0, 128, 0, 81, 0, 130, 0, 130, 0, 131, 0, 130, 1, 131, 1, 132, 0, 80, 0, 131, 0, 132, 0, 130, 2, 132, 2, 59, 0, 131, 2, 128, 0, 138, 2, 120, 0, 138, 3, 25, 0, 140, 0, 91, 0, 140, 1, 26, 0, 139, 0, 92, 0, 139, 1, 128, 0, 139, 2, 128, 0, 140, 2, 142, 0, 141, 1, 80, 0, 141, 0, 128, 0, 141, 2, 78, 0, 143, 0, 76, 0, 143, 1, 128, 0, 143, 2, 19, 0, 144, 0, 104, 0, 144, 1, 128, 0, 144, 2, 143, 0, 0, 0, 120, 0, 141, 3, 33, 0, 138, 0, 96, 0, 138, 1, 140, 0, 48, 0, 139, 0, 49, 0, 48, 0, 0, 2, 120, 0, 140, 3, 120, 0, 139, 3, 49, 0, 0, 4, 141, 0, 119, 0, 120, 0, 144, 3, 144, 0, 47, 0, 47, 0, 0, 3, 120, 0, 143, 3, 138, 0, 0, 8, 119, 0, 0, 10, 119, 2, 0, 11, 12, 2, 145, 0, 10, 0, 145, 1, 66, 2, 146, 0, 68, 0, 146, 1, 146, 0, 72, 0, 146, 0, 65, 1, 145, 0, 70, 0, 145, 0, 16, 1, 20, 2, 147, 0, 10, 0, 147, 1, 147, 0, 22, 0, 148, 0, 23, 0, 21, 2, 148, 0, 68, 0, 148, 1, 31, 2, 149, 0, 32, 2, 150, 0, 68, 0, 150, 1, 10, 0, 149, 1, 149, 0, 33, 0, 150, 0, 33, 1, 13, 0, 17, 1, 13, 0, 74, 0 )
+nodes/fragment/151/node = SubResource( 119 )
+nodes/fragment/151/position = Vector2( -1600, 480 )
+nodes/fragment/153/node = SubResource( 120 )
+nodes/fragment/153/position = Vector2( -400, 1320 )
+nodes/fragment/154/node = SubResource( 121 )
+nodes/fragment/154/position = Vector2( 40, 520 )
+nodes/fragment/155/node = SubResource( 122 )
+nodes/fragment/155/position = Vector2( 40, 640 )
+nodes/fragment/156/node = SubResource( 123 )
+nodes/fragment/156/position = Vector2( 20, -340 )
+nodes/fragment/connections = PoolIntArray( 7, 0, 10, 0, 8, 0, 10, 1, 7, 0, 11, 0, 9, 0, 11, 1, 10, 0, 12, 0, 11, 0, 13, 0, 14, 0, 16, 0, 16, 0, 18, 0, 10, 0, 20, 0, 27, 0, 25, 0, 28, 0, 25, 1, 30, 0, 26, 1, 36, 0, 38, 0, 37, 0, 38, 1, 38, 0, 34, 0, 34, 0, 39, 0, 41, 0, 40, 0, 42, 0, 44, 0, 34, 1, 50, 1, 39, 2, 50, 2, 39, 0, 40, 2, 39, 1, 40, 1, 51, 0, 50, 0, 50, 0, 52, 1, 40, 0, 52, 2, 53, 0, 52, 0, 52, 0, 42, 1, 43, 0, 42, 0, 54, 0, 19, 0, 55, 0, 19, 1, 60, 0, 59, 0, 58, 0, 59, 1, 44, 0, 59, 2, 44, 0, 58, 0, 29, 0, 26, 0, 59, 0, 18, 2, 62, 0, 61, 3, 64, 0, 65, 0, 67, 0, 68, 1, 7, 0, 68, 0, 68, 0, 66, 0, 15, 0, 17, 0, 69, 0, 70, 1, 71, 0, 72, 1, 73, 0, 74, 1, 70, 0, 18, 1, 65, 0, 75, 0, 72, 0, 75, 1, 59, 0, 75, 2, 17, 0, 76, 0, 74, 0, 76, 1, 59, 0, 76, 2, 18, 0, 78, 0, 75, 0, 78, 1, 88, 0, 86, 1, 89, 0, 87, 1, 81, 0, 90, 0, 61, 0, 90, 2, 11, 0, 77, 0, 68, 0, 21, 0, 10, 0, 31, 0, 68, 0, 32, 0, 11, 0, 96, 0, 86, 0, 87, 0, 98, 0, 99, 0, 87, 0, 98, 0, 56, 0, 54, 0, 22, 0, 54, 1, 23, 0, 55, 1, 57, 0, 55, 0, 102, 0, 104, 1, 103, 0, 104, 0, 77, 0, 102, 0, 112, 0, 100, 0, 113, 0, 100, 1, 114, 0, 100, 2, 85, 0, 86, 0, 100, 0, 85, 0, 83, 0, 85, 1, 116, 0, 115, 0, 117, 0, 115, 1, 118, 0, 115, 2, 102, 2, 120, 0, 121, 0, 120, 1, 23, 2, 122, 0, 123, 0, 122, 1, 99, 0, 124, 0, 124, 0, 19, 2, 124, 0, 33, 2, 124, 0, 26, 2, 124, 0, 25, 2, 124, 0, 80, 2, 124, 0, 78, 2, 126, 0, 125, 0, 125, 0, 128, 0, 81, 0, 130, 0, 130, 0, 131, 0, 130, 1, 131, 1, 132, 0, 80, 0, 131, 0, 132, 0, 130, 2, 132, 2, 59, 0, 131, 2, 128, 0, 138, 2, 25, 0, 140, 0, 91, 0, 140, 1, 26, 0, 139, 0, 92, 0, 139, 1, 128, 0, 139, 2, 128, 0, 140, 2, 142, 0, 141, 1, 80, 0, 141, 0, 128, 0, 141, 2, 78, 0, 143, 0, 76, 0, 143, 1, 128, 0, 143, 2, 19, 0, 144, 0, 104, 0, 144, 1, 128, 0, 144, 2, 33, 0, 138, 0, 96, 0, 138, 1, 140, 0, 48, 0, 139, 0, 49, 0, 48, 0, 0, 2, 49, 0, 0, 4, 141, 0, 119, 0, 144, 0, 47, 0, 47, 0, 0, 3, 138, 0, 0, 8, 12, 2, 145, 0, 10, 0, 145, 1, 66, 2, 146, 0, 68, 0, 146, 1, 146, 0, 72, 0, 146, 0, 65, 1, 145, 0, 70, 0, 145, 0, 16, 1, 20, 2, 147, 0, 10, 0, 147, 1, 147, 0, 22, 0, 148, 0, 23, 0, 21, 2, 148, 0, 68, 0, 148, 1, 31, 2, 149, 0, 32, 2, 150, 0, 68, 0, 150, 1, 10, 0, 149, 1, 149, 0, 33, 0, 150, 0, 33, 1, 13, 0, 17, 1, 13, 0, 74, 0, 122, 0, 151, 0, 151, 0, 124, 1, 120, 0, 153, 0, 153, 0, 138, 3, 153, 0, 144, 3, 153, 0, 141, 3, 153, 0, 139, 3, 153, 0, 140, 3, 153, 0, 143, 3, 119, 0, 154, 0, 119, 2, 155, 0, 143, 0, 156, 0, 156, 0, 0, 0 )
