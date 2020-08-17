@@ -7,3 +7,7 @@ mesh_path = NodePath("MainRig/Skeleton/AvatarFemale")
 
 [node name="AvatarMale" parent="MainRig/Skeleton" index="1"]
 visible = false
+
+[node name="AnimationTree" parent="." index="2"]
+parameters/ClimbProgressDown/seek_position = 1.0
+parameters/ClimbProgressUp/seek_position = 1.0

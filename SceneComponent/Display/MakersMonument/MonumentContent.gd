@@ -29,8 +29,6 @@ signal entry_selected
 var entries: Array = [
 	{"name": "Diane Osborne",
 	"sound": "test.ogg"},
-	{"name": "Stanislaw Lem",
-	"sound": "test.ogg"},
 	{"name": "Awesome Sponsor",
 	"sound": "test.ogg"},
 	{"name": "Awesome Contributor",

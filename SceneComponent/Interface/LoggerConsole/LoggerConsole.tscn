@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://SceneComponent/Interface/LoggerConsole/LoggerConsole.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/LoggerConsole/LoggerText.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Interface/LoggerConsoleTheme.tres" type="Theme" id=3]
+[ext_resource path="res://SceneComponent/Interface/LoggerConsole/FontSize.gd" type="Script" id=4]
 
 [node name="LoggerConsole" type="CanvasLayer"]
 layer = -128
@@ -17,66 +18,74 @@ __meta__ = {
 [node name="Container" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 0.3
+theme = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LoggerText" type="RichTextLabel" parent="Container"]
 margin_right = 1920.0
-margin_bottom = 296.0
+margin_bottom = 281.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 3 )
 bbcode_enabled = true
 bbcode_text = "This is fun."
+text = "This is fun."
 scroll_following = true
 script = ExtResource( 2 )
 
 [node name="Filters" type="HBoxContainer" parent="Container"]
-margin_top = 300.0
+margin_top = 285.0
 margin_right = 1920.0
 margin_bottom = 324.0
 alignment = 2
 
+[node name="FontSize" type="LineEdit" parent="Container/Filters"]
+margin_right = 1266.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+text = "Hello World"
+align = 1
+script = ExtResource( 4 )
+
 [node name="Label" type="Label" parent="Container/Filters"]
-margin_left = 1507.0
-margin_top = 5.0
-margin_right = 1559.0
-margin_bottom = 19.0
+margin_left = 1270.0
+margin_right = 1348.0
+margin_bottom = 39.0
 text = "FILTERS:"
 
 [node name="Trace" type="CheckBox" parent="Container/Filters"]
-margin_left = 1563.0
-margin_right = 1625.0
-margin_bottom = 24.0
+margin_left = 1352.0
+margin_right = 1452.0
+margin_bottom = 39.0
 pressed = true
 text = "Trace"
 
 [node name="Debug" type="CheckBox" parent="Container/Filters"]
-margin_left = 1629.0
-margin_right = 1698.0
-margin_bottom = 24.0
+margin_left = 1456.0
+margin_right = 1564.0
+margin_bottom = 39.0
 pressed = true
 text = "Debug"
 
 [node name="Warning" type="CheckBox" parent="Container/Filters"]
-margin_left = 1702.0
-margin_right = 1782.0
-margin_bottom = 24.0
+margin_left = 1568.0
+margin_right = 1702.0
+margin_bottom = 39.0
 pressed = true
 text = "Warning"
 
 [node name="Error" type="CheckBox" parent="Container/Filters"]
-margin_left = 1786.0
-margin_right = 1844.0
-margin_bottom = 24.0
+margin_left = 1706.0
+margin_right = 1800.0
+margin_bottom = 39.0
 pressed = true
 text = "Error"
 
 [node name="Critical" type="CheckBox" parent="Container/Filters"]
-margin_left = 1848.0
+margin_left = 1804.0
 margin_right = 1920.0
-margin_bottom = 24.0
+margin_bottom = 39.0
 pressed = true
 text = "Critical"
 [connection signal="toggled" from="Container/Filters/Trace" to="." method="_filter_toggled"]

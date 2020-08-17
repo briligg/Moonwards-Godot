@@ -8,7 +8,8 @@ enum State {
 	MOVING = 2,
 	IN_AIR = 4,
 	INTERACTING = 8,
-	CLIMBING = 16
+	CLIMBING = 16,
+	FLY = 32
 	}
 
 var state: int = State.IDLE setget set_state

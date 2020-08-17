@@ -7,6 +7,12 @@ const WARNING = 2
 const ERROR = 4
 const CRITICAL = 8
 
+#Determines whether we should alternate the line or not.
+var trace_alternate : bool = false
+var debug_alternate : bool = false
+var warning_alternate : bool = false
+var error_alternate : bool = false
+var critical_alternate : bool = false
 
 var trace_text : PoolStringArray = PoolStringArray()
 var debug_text : PoolStringArray = PoolStringArray()
@@ -16,7 +22,7 @@ var critical_text : PoolStringArray = PoolStringArray()
 
 var message_type_history : Array = []
 
-func _filter_text(message : String) -> String :
+func _get_right_of_date(message : String) -> String :
 	message = message.right(message.find("]", 0) + 1)
 	return message
 
@@ -24,34 +30,64 @@ func _ready() -> void :
 	call_deferred("deferred_ready")
 
 func _on_trace_logged(message) -> void:
-	message = _filter_text(message)
+	message = _get_right_of_date(message)
+	if trace_alternate :
+		message = "[color=#FFFFFF]"+message+"[/color]"
+		trace_alternate = false
+	else :
+		message = "[color=#BBBBBB]"+message+"[/color]"
+		trace_alternate = true
 	bbcode_text += "\n" # new_line uses buggy append_bbcode func
 	bbcode_text += message
 	trace_text.append("\n" + message)
 	message_type_history.append(TRACE)
 
 func _on_debug_logged(message) -> void:
-	message = _filter_text(message)
+	message = _get_right_of_date(message)
+	if debug_alternate :
+		message = "[color=#1414FF]"+message+"[/color]"
+		debug_alternate = false
+	else :
+		message = "[color=#5050FF]"+message+"[/color]"
+		debug_alternate = true
 	bbcode_text += "\n" # new_line uses buggy append_bbcode func
-	bbcode_text += "[color=#03fc8c]" + message + "[/color]"
+	bbcode_text += "[color=#03FC8C]" + message + "[/color]"
 	debug_text.append("\n" + message)
 	message_type_history.append(DEBUG)
 
 func _on_warning_logged(message) -> void:
+	if warning_alternate :
+		message = "[color=#FFEF00]"+message+"[/color]"
+		warning_alternate = false
+	else :
+		message = "[color=#CCAC00]"+message+"[/color]"
+		warning_alternate = true
 	bbcode_text += "\n" # new_line uses buggy append_bbcode func
 	bbcode_text += "[color=yellow]" + message + "[/color]"
 	warning_text.append("\n" + message)
 	message_type_history.append(WARNING)
 
 func _on_error_logged(message) -> void:
-	message = _filter_text(message)
+	message = _get_right_of_date(message)
+	if error_alternate :
+		message = "[color=#FF0000]"+message+"[/color]"
+		error_alternate = false
+	else :
+		message = "[color=#FF5555]"+message+"[/color]"
+		error_alternate = true
 	bbcode_text += "\n" # new_line uses buggy append_bbcode func
-	bbcode_text += "[color=#fc5603]" + message + "[/color]"
+	bbcode_text += "[color=#FC5603]" + message + "[/color]"
 	error_text.append("\n" + message)
 	message_type_history.append(ERROR)
 
 func _on_critical_logged(message) -> void:
-	message = _filter_text(message)
+	message = _get_right_of_date(message)
+	if critical_alternate :
+		message = "[color=#00FF10]"+message+"[/color]"
+		critical_alternate = false
+	else :
+		message = "[color=#8FFF8F]"+message+"[/color]"
+		critical_alternate = true
 	bbcode_text += "\n" # new_line uses buggy append_bbcode func
 	bbcode_text += "[color=red]" + message + "[/color]"
 	critical_text.append("\n" + message)
