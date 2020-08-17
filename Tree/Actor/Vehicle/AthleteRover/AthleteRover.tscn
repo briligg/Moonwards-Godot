@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://SceneComponent/Actor/CameraController.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SceneComponent/Actor/InteractorComponent.tscn" type="PackedScene" id=2]
@@ -13,6 +13,9 @@
 [ext_resource path="res://SceneComponent/Actor/Vehicle/AthleteRover/RoverWheel.tscn" type="PackedScene" id=11]
 
 [sub_resource type="BoxShape" id=1]
+extents = Vector3( 2.76811, 3.79233, 3.79236 )
+
+[sub_resource type="BoxShape" id=2]
 extents = Vector3( 4, 2, 4 )
 
 [node name="AthleteRover" type="RigidBody" groups=[
@@ -27,6 +30,13 @@ script = ExtResource( 10 )
 
 [node name="Interactor" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.28379, 0 )
+
+[node name="Interactor" parent="Interactor" index="0"]
+collision_layer = 2147516416
+
+[node name="CollisionShape" parent="Interactor/Interactor" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.83747, 0 )
+shape = SubResource( 1 )
 
 [node name="RoverRideInteractable" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.59981, 0 )
@@ -43,10 +53,10 @@ dist = 25.0
 
 [node name="rootcol" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="DockPoint" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.45547, 0 )
+[node name="DockLatch" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.71109, 0 )
 
 [node name="effectors" type="Spatial" parent="."]
 
@@ -112,5 +122,7 @@ transform = Transform( -1, -2.03814e-08, -5.96101e-08, -5.04201e-08, 1, 2.41584e
 
 [node name="WheelMiddleLBoneAttachment" parent="Model/Legs" index="6"]
 transform = Transform( -1, -6.11162e-08, 2.50441e-06, -2.03768e-07, 1, 3.12639e-13, -2.58496e-06, -3.31399e-08, -1, 19.5691, 6.13141, -0.00983331 )
+
+[editable path="Interactor"]
 
 [editable path="Model"]

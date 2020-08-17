@@ -11,5 +11,7 @@ script = ExtResource( 4 )
 [node name="LOD0" parent="." instance=ExtResource( 3 )]
 
 [node name="LOD1" parent="." instance=ExtResource( 2 )]
+visible = false
 
 [node name="LOD2" parent="." instance=ExtResource( 1 )]
+visible = false

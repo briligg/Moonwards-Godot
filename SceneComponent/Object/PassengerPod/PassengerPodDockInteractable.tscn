@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Script/GameLogic/Interact/Interactable/Interactable.gd" type="Script" id=1]
+[ext_resource path="res://SceneComponent/Object/PassengerPod/PassengerPodDockInteractable.gd" type="Script" id=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1.15324, 0.408259, 8.18383 )
+
+[sub_resource type="CylinderShape" id=2]
+radius = 4.78185
+height = 12.551
+
+[node name="PassengerPodDockInteractable" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Interactable" type="Area" parent="."]
+collision_layer = 32768
+collision_mask = 32768
+script = ExtResource( 1 )
+display_info = "Dock"
+title = "Passenger Pod"
+
+[node name="CollisionShape" type="CollisionShape" parent="Interactable"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+shape = SubResource( 1 )
+
+[node name="AirlockDetector" type="Area" parent="."]
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="CollisionShape" type="CollisionShape" parent="AirlockDetector"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 14.4 )
+shape = SubResource( 2 )

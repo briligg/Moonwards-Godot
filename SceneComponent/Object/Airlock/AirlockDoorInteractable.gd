@@ -1,15 +1,29 @@
 extends Interactable
+class_name AirlockDoorInteractable
 
 export(NodePath) var animation_player
 export(String) var animation_name
+# If this door is dockable to a passenger pod
+export(bool) var is_dock_door: bool = false
 
 onready var anim = get_node(animation_player)
 var is_open: bool = true
 
+
+func _ready():
+	title = "Airlock Dock"
+	
+
 func interact_with(interactor : Node) -> void :
 	if is_open:
-		anim.play(animation_name, -1, 0.65, false)
-		is_open = !is_open
+		close()
 	else:
-		anim.play(animation_name, -1, -0.65, true)
-		is_open = !is_open
+		open()
+
+func open():
+	anim.play(animation_name, -1, 0.65, false)
+	is_open = !is_open
+
+func close():
+	anim.play(animation_name, -1, -0.65, true)
+	is_open = !is_open
