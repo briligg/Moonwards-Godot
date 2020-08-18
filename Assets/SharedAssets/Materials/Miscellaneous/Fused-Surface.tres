@@ -1,6 +1,3 @@
-[gd_resource type="SpatialMaterial" format=2]
-
-[resource]
-resource_name = "Fused-Surface"
-params_cull_mode = 2
-albedo_color = Color( 0.8, 0.8, 0.8, 1 )
+version https://git-lfs.github.com/spec/v1
+oid sha256:0e4cd28eee4ccd8e7fc74e996c07f91286ed407f562e8a817e929abb9907d941
+size 158

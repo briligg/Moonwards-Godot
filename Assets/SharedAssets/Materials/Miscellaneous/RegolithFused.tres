@@ -1,7 +1,3 @@
-[gd_resource type="SpatialMaterial" format=2]
-
-[resource]
-resource_name = "RegolithFused"
-albedo_color = Color( 0.266757, 0.2613, 0.245321, 1 )
-roughness = 0.8
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:46300953c22cf9ec8c5e6c5f6bc35e01c98c90d54941417b74b966d44cc9fbb4
+size 168

@@ -1,8 +1,3 @@
-[gd_resource type="SpatialMaterial" format=2]
-
-[resource]
-emission_enabled = true
-emission = Color( 1, 1, 1, 1 )
-emission_energy = 1.0
-emission_operator = 0
-emission_on_uv2 = false
+version https://git-lfs.github.com/spec/v1
+oid sha256:a0db61bf339386e4de51a2ca4a9861bf0a0dd21eb1acbac3d34243dafb411ae8
+size 189

@@ -1,18 +1,3 @@
-[gd_resource type="DynamicFont" load_steps=2 format=2]
-
-[ext_resource path="res://Assets/Interface/Fonts/dejavu/DejaVuSerif-Italic.ttf" type="DynamicFontData" id=1]
-
-
-
-
-[resource]
-
-resource_name = "Italic"
-size = 16
-outline_size = 0
-outline_color = Color( 1, 1, 1, 1 )
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 1 )
-_sections_unfolded = [ "Font", "Resource" ]
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:3b28cef93cc2503b0b22b78c52c4a35121da3a93b63937f9c71d1eecc6579622
+size 400

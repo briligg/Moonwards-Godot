@@ -1,8 +1,3 @@
-[gd_resource type="SpatialMaterial" format=2]
-
-[resource]
-resource_name = "MirrorFlat"
-albedo_color = Color( 0, 0, 0, 1 )
-metallic = 1.0
-metallic_specular = 1.0
-roughness = 0.0
+version https://git-lfs.github.com/spec/v1
+oid sha256:54766905505e13bb916387e54ff40ea483dbea47c721dcc324e0c604c788ea14
+size 185

@@ -1,8 +1,3 @@
-[gd_resource type="SpatialMaterial" format=2]
-
-[resource]
-resource_name = "Caramel"
-params_cull_mode = 2
-albedo_color = Color( 0.733333, 0.529412, 0.239216, 1 )
-roughness = 0.8
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:fc44ec978ea30c2b48119f2876cd7442946f2ce52b3854db266256798f2059bf
+size 186

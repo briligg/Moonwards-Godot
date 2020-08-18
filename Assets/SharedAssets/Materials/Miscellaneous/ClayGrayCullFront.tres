@@ -1,7 +1,3 @@
-[gd_resource type="SpatialMaterial" format=2]
-
-[resource]
-resource_name = "ClayGray"
-params_cull_mode = 1
-albedo_color = Color( 0.502725, 0.494312, 0.451433, 1 )
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:f5f2cdf99cd838bb6e66e7836c2490d43bd37376a1f02db8b39b461f62f669ca
+size 170

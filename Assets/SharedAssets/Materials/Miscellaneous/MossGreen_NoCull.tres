@@ -1,7 +1,3 @@
-[gd_resource type="SpatialMaterial" format=2]
-
-[resource]
-resource_name = "MossGreen"
-params_cull_mode = 2
-albedo_color = Color( 0.101446, 0.399535, 0.187612, 1 )
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:73164018c62471749b221a362a3be5b99010f091fd4638f9bf73ddacb7c163cf
+size 171

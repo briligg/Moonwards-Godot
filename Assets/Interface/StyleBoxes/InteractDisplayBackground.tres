@@ -1,4 +1,3 @@
-[gd_resource type="StyleBoxFlat" format=2]
-
-[resource]
-bg_color = Color( 0, 0, 0, 0.764706 )
+version https://git-lfs.github.com/spec/v1
+oid sha256:a331163170e93c8e2b3a7ac14d3aaf6224a91edc861b41dc0559e9849a443f6a
+size 97

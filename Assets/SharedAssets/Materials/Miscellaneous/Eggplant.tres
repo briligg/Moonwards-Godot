@@ -1,10 +1,3 @@
-[gd_resource type="SpatialMaterial" format=2]
-
-[resource]
-resource_name = "Eggplant"
-params_cull_mode = 2
-albedo_color = Color( 0.160784, 0, 0.137255, 1 )
-roughness = 0.8
-distance_fade_mode = 3
-distance_fade_min_distance = 0.1
-distance_fade_max_distance = 0.2
+version https://git-lfs.github.com/spec/v1
+oid sha256:916fde263a3eb8f3ac836fe937957c46a4cc8ed29e69c8455fe0b2bc6a3cfa38
+size 270

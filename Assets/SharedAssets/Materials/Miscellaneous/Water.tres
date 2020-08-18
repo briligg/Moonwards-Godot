@@ -1,16 +1,3 @@
-[gd_resource type="SpatialMaterial" format=2]
-
-[resource]
-resource_name = "Water"
-flags_transparent = true
-flags_world_triplanar = true
-params_cull_mode = 2
-params_depth_draw_mode = 2
-albedo_color = Color( 0.341904, 0.902344, 0.902344, 0.237569 )
-roughness = 0.0
-rim_enabled = true
-rim = 0.2
-rim_tint = 0.5
-uv1_scale = Vector3( 3, 6, 3 )
-uv1_offset = Vector3( 0.451334, 0.180534, 0.2708 )
-uv1_triplanar = true
+version https://git-lfs.github.com/spec/v1
+oid sha256:43f72d378d4ecbfcf5f9ebb68f1237ccc68a42a6c6a58ac9725027f582e0f46e
+size 426

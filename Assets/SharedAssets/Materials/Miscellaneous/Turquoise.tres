@@ -1,10 +1,3 @@
-[gd_resource type="SpatialMaterial" format=2]
-
-[resource]
-resource_name = "Turquoise"
-params_cull_mode = 2
-albedo_color = Color( 0.0862745, 0.611765, 0.580392, 1 )
-roughness = 0.8
-distance_fade_mode = 3
-distance_fade_min_distance = 0.1
-distance_fade_max_distance = 0.2
+version https://git-lfs.github.com/spec/v1
+oid sha256:f732cb7dbc9231f63354f84ed6657d4e267c14b2538cd386af8725acb4ff5dd1
+size 279

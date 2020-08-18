@@ -1,10 +1,3 @@
-[gd_resource type="SpatialMaterial" load_steps=2 format=2]
-
-[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Earth-NASA-Combined-2048.png" type="Texture" id=1]
-
-
-
-
-[resource]
-flags_disable_ambient_light = true
-albedo_texture = ExtResource( 1 )
+version https://git-lfs.github.com/spec/v1
+oid sha256:cbe683751f7747d560cc99c4ea8f269805edb2e17d55cfb39dc026a2b28e2b43
+size 274
