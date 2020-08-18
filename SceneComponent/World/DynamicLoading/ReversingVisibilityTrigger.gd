@@ -25,15 +25,21 @@ func _ready() -> void:
 			n.connect("body_exited", self, "on_body_exited")
 
 func on_body_entered(body) -> void:
+	if VisibilityManager.disable_all_triggers:
+		return
+	
 	if body is AEntity:
-		if body.owner_peer_id == get_tree().get_network_unique_id():
+		if body.owner_peer_id == get_tree().get_network_unique_id() and VisibilityManager.log_vt_changes:
 			Log.trace(self, "on_body_entered", "Reversing visibility states for %s, in %s"
 					%[body.name, self.name])
 			process_visibility()
 		
 func on_body_exited(body) -> void:
+	if VisibilityManager.disable_all_triggers:
+		return
+		
 	if body is AEntity:
-		if body.owner_peer_id == get_tree().get_network_unique_id():
+		if body.owner_peer_id == get_tree().get_network_unique_id() and VisibilityManager.log_vt_changes:
 			Log.trace(self, "on_body_exited", "Processing visibility for %s, in %s"
 					%[body.name, self.name])
 			reverse_visibility()
@@ -65,7 +71,8 @@ func _process_lod_node(path, lod_level) -> void:
 	if node is LodModel:
 		_previous_states[node] = node.lod_state
 		node.call_deferred("set_lod", lod_level)
-		Log.trace(self, "process_rvt_node", "Node %s set to lod level: %s." %[path, lod_level]) 
+		if VisibilityManager.log_vt_changes:
+			Log.trace(self, "process_rvt_node", "Node %s set to lod level: %s." %[path, lod_level]) 
 	else:
 		Log.warning(self, "process_rvt_node", "Node %s is not a LodModel." %path) 
 

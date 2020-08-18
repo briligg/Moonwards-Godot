@@ -31,7 +31,8 @@ func take_control(e):
 	interactable.display_info = "Dismount the rover"
 	interactee = e
 	interactee.disable()
-#	self.entity.enabled = true
+	VisibilityManager.switch_context()
+	
 	entity.get_component("Camera").camera.current = true
 	entity.get_component("RoverInput").enabled = true
 	entity.get_component("Interactor").grab_focus()
@@ -54,6 +55,7 @@ func return_control(e) -> void:
 	is_active = false
 	interactable.is_available = true
 	
+	VisibilityManager.reverse_context()
 	interactee.enable()
 	interactee.get_component("Interactor").grab_focus()
 	interactee.get_component("Camera").camera.current = true
