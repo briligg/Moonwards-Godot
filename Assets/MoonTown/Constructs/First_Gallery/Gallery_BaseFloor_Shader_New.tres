@@ -13,9 +13,6 @@
 [ext_resource path="res://Assets/SharedAssets/Textures/Nature/Rock_02/Rock_02_2K_Albedo.jpg" type="Texture" id=11]
 [ext_resource path="res://Assets/SharedAssets/Textures/Nature/Rock_02/Rock020_2K_Normal.jpg" type="Texture" id=12]
 
-
-
-
 [resource]
 shader = ExtResource( 1 )
 shader_param/Color_A = Color( 0.529412, 0.580392, 0.509804, 1 )
@@ -32,7 +29,6 @@ shader_param/UVScale_B = Vector3( 10, 10, 0 )
 shader_param/Color_B_Alt = Color( 0.254902, 0.254902, 0.254902, 1 )
 shader_param/Slope = 10.0
 shader_param/Slope_Mult = 3.0
-shader_param/Height_Mult_B = 1.0
 shader_param/Color_C = Color( 0.32549, 0.32549, 0.32549, 1 )
 shader_param/UVScale_C = Vector3( 50, 50, 0 )
 shader_param/Color_C_Alt = Color( 0.254902, 0.254902, 0.254902, 1 )
@@ -49,11 +45,11 @@ shader_param/Specular_C = 0.5
 shader_param/Albedo_A = ExtResource( 7 )
 shader_param/Noise_RGB = ExtResource( 2 )
 shader_param/Albedo_B = ExtResource( 11 )
-shader_param/Rough_B = ExtResource( 10 )
 shader_param/Albedo_C = ExtResource( 4 )
 shader_param/Splatmap = ExtResource( 9 )
 shader_param/Rough_C = ExtResource( 8 )
 shader_param/Rough_A = ExtResource( 6 )
+shader_param/Rough_B = ExtResource( 10 )
 shader_param/NormalMap_A = ExtResource( 5 )
 shader_param/NormalMap_B = ExtResource( 12 )
 shader_param/NormalMap_C = ExtResource( 3 )

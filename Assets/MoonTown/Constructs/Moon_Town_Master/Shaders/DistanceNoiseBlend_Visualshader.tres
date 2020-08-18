@@ -204,16 +204,16 @@ constant = 2.0
 [sub_resource type="VisualShaderNodeVectorScalarMix" id=71]
 default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 1, 1, 1 ), 2, 0.7 ]
 
+[sub_resource type="VisualShaderNodeCustom" id=72]
+script = ExtResource( 1 )
+
 [sub_resource type="VisualShaderNodeCustom" id=73]
 script = ExtResource( 1 )
 
 [sub_resource type="VisualShaderNodeCustom" id=74]
 script = ExtResource( 1 )
 
-[sub_resource type="VisualShaderNodeCustom" id=75]
-script = ExtResource( 1 )
-
-[sub_resource type="VisualShaderNodeVec3Uniform" id=72]
+[sub_resource type="VisualShaderNodeVec3Uniform" id=75]
 uniform_name = "UVScale_Far"
 
 [sub_resource type="VisualShaderNodeCustom" id=76]
@@ -766,7 +766,7 @@ nodes/fragment/7/node = SubResource( 54 )
 nodes/fragment/7/position = Vector2( -2200, 400 )
 nodes/fragment/8/node = SubResource( 65 )
 nodes/fragment/8/position = Vector2( -2000, 40 )
-nodes/fragment/9/node = SubResource( 72 )
+nodes/fragment/9/node = SubResource( 75 )
 nodes/fragment/9/position = Vector2( -2000, 440 )
 nodes/fragment/10/node = SubResource( 1 )
 nodes/fragment/10/position = Vector2( -1800, 0 )
@@ -898,11 +898,11 @@ nodes/fragment/84/node = SubResource( 70 )
 nodes/fragment/84/position = Vector2( -860, -420 )
 nodes/fragment/86/node = SubResource( 71 )
 nodes/fragment/86/position = Vector2( -600, -760 )
-nodes/fragment/87/node = SubResource( 73 )
+nodes/fragment/87/node = SubResource( 72 )
 nodes/fragment/87/position = Vector2( -1000, -640 )
-nodes/fragment/88/node = SubResource( 74 )
+nodes/fragment/88/node = SubResource( 73 )
 nodes/fragment/88/position = Vector2( -1000, -360 )
-nodes/fragment/89/node = SubResource( 75 )
+nodes/fragment/89/node = SubResource( 74 )
 nodes/fragment/89/position = Vector2( -1000, 500 )
 nodes/fragment/90/node = SubResource( 76 )
 nodes/fragment/90/position = Vector2( -1000, 980 )
