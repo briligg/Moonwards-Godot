@@ -1,8 +1,3 @@
-[gd_resource type="SpatialMaterial" format=2]
-
-[resource]
-resource_name = "Metal-MixedAlloy"
-params_cull_mode = 2
-albedo_color = Color( 0.505882, 0.505882, 0.490196, 1 )
-metallic = 1.0
-roughness = 0.33
+version https://git-lfs.github.com/spec/v1
+oid sha256:530e28cdf5d89438a4d13a344a7c18330a3013782bf7362a8d0ce6c4438995cf
+size 210

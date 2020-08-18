@@ -1,8 +1,3 @@
-[gd_resource type="SpatialMaterial" format=2]
-
-[resource]
-resource_name = "Metal-Steel"
-albedo_color = Color( 0.47451, 0.494118, 0.505882, 1 )
-metallic = 1.0
-roughness = 0.33
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:6ae498eea9ec5cd01039635b1ca77d9a4b3778128487812e2aa4be1ad8aea097
+size 184

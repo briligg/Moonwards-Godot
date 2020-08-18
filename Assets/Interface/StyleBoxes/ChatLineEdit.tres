@@ -1,9 +1,3 @@
-[gd_resource type="StyleBoxFlat" format=2]
-
-[resource]
-bg_color = Color( 1, 1, 1, 1 )
-draw_center = false
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+version https://git-lfs.github.com/spec/v1
+oid sha256:4d7696233a17adfc28eb01fd3ecab25c9bc1a6bb0f5e2bd418fa38c63d30d0e1
+size 205

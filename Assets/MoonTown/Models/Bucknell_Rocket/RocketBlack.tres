@@ -1,10 +1,3 @@
-[gd_resource type="SpatialMaterial" format=2]
-
-[resource]
-resource_name = "Black"
-params_cull_mode = 2
-albedo_color = Color( 0, 0, 0, 1 )
-metallic = 0.31
-roughness = 0.28
-transmission_enabled = true
-transmission = Color( 0.556863, 0.552941, 0.552941, 1 )
+version https://git-lfs.github.com/spec/v1
+oid sha256:ad7b3c94e75d9780e1d18ce6b86d319c396a815bc8dbbfddd628b8b36560a0ae
+size 265

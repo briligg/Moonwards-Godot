@@ -1,11 +1,3 @@
-[gd_resource type="DynamicFont" load_steps=2 format=2]
-
-[ext_resource path="res://Assets/Interface/Fonts/dejavu/DejaVuSans-Bold.ttf" type="DynamicFontData" id=1]
-
-[resource]
-resource_name = "Bold"
-size = 17
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-extra_spacing_char = -1
-font_data = ExtResource( 1 )
+version https://git-lfs.github.com/spec/v1
+oid sha256:8faba9ea41a195c4d6693de3ab2250d987a48b20f94542e4006d5a10c6a882af
+size 324

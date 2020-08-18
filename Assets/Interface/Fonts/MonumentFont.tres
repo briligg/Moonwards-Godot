@@ -1,9 +1,3 @@
-[gd_resource type="DynamicFont" load_steps=2 format=2]
-
-[ext_resource path="res://Assets/Interface/Fonts/Exo2/Exo2-ExtraBold.ttf" type="DynamicFontData" id=1]
-
-[resource]
-size = 64
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
+version https://git-lfs.github.com/spec/v1
+oid sha256:070557535c11cf9db7bac6111e387a186fa955eac5cbfe9102956d113dbb33a9
+size 272
