@@ -33,7 +33,7 @@ func _ready() -> void:
 			n.connect("body_entered", self, "on_body_entered")
 
 func on_body_entered(body) -> void:
-	if VisibilityManager.disable_all_vt:
+	if VisibilityManager.disable_all_triggers:
 		return
 		
 	if body is AEntity:

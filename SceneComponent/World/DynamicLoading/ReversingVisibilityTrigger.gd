@@ -24,7 +24,7 @@ func _ready() -> void:
 			n.connect("body_exited", self, "on_body_exited")
 
 func on_body_entered(body) -> void:
-	if VisibilityManager.disable_all_vt:
+	if VisibilityManager.disable_all_triggers:
 		return
 	
 	if body is AEntity:
@@ -34,7 +34,7 @@ func on_body_entered(body) -> void:
 			process_visibility()
 		
 func on_body_exited(body) -> void:
-	if VisibilityManager.disable_all_vt:
+	if VisibilityManager.disable_all_triggers:
 		return
 		
 	if body is AEntity:
