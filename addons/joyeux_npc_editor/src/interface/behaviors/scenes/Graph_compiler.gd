@@ -161,7 +161,7 @@ func _on_node_selected(node):
 func _on_Button3_pressed():
 	pass
 
-func is_slot_occupied(to_port, to):
+func is_slot_occupied(to, to_port):
 	for connection in get_connection_list():
 		var from_port = connection.get("from_port")
 		var from = connection.get("from")
@@ -169,7 +169,7 @@ func is_slot_occupied(to_port, to):
 			return true
 
 func _on_GraphEdit_connection_request(from, from_slot, to, to_slot) -> void:
-	if from != to:
+	if from != to and not is_slot_occupied(to, to_slot):
 		connect_node(from, from_slot, to, to_slot)
 		if get_node(to).has_signal("connected_to"):
 			get_node(to).emit_signal("connected_to", to_slot, 
