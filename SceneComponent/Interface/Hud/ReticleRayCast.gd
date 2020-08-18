@@ -3,9 +3,8 @@ extends RayCast
 
 onready var viewport : Viewport = get_tree().root
 
-func _input(event) -> void :
+func _unhandled_input(event) -> void :
 	#Look for collisions so I can convert them to clicks.
-	force_raycast_update()
 	if is_colliding() :
 		var collider = get_collider()
 		if collider.has_signal("input_event") :
@@ -24,14 +23,15 @@ func _input(event) -> void :
 				new_event.doubleclick = false
 			else :
 				new_event = InputEventMouseMotion.new()
+				
 			var camera : Camera = get_tree().root.get_camera()
 			get_collider().emit_signal("input_event", camera, new_event, get_collision_point(), get_collision_normal(), 0)
 
 func _ready() :
-	set_physics_process(false)
+	set_process_unhandled_input(false)
 
 func activate() -> void :
-	set_physics_process(true)
+	set_process_unhandled_input(true)
 
 func deactivate() -> void :
-	set_physics_process(false)
+	set_process_unhandled_input(false)
