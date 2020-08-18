@@ -39,11 +39,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Entity/ActorEntityState.gd"
 }, {
-"base": "Interactable",
-"class": "AirlockDoorInteractable",
-"language": "GDScript",
-"path": "res://SceneComponent/Object/Airlock/AirlockDoorInteractable.gd"
-}, {
 "base": "Reference",
 "class": "AudioSignals",
 "language": "GDScript",
@@ -321,7 +316,6 @@ _global_script_class_icons={
 "ANetworkInstance": "",
 "ActorEntity": "",
 "ActorEntityState": "",
-"AirlockDoorInteractable": "",
 "AudioSignals": "",
 "BehaviorNode": "",
 "CameraController": "",

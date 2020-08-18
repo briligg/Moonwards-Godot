@@ -1295,7 +1295,7 @@ __meta__ = {
 [node name="First_Gallery_Upper" parent="Marker_all_Constructs/Empty_FirstGalleryUpper" index="0" instance=ExtResource( 10 )]
 
 [node name="ReversingVisibilityTrigger" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper" index="11" instance=ExtResource( 39 )]
-show_lod0_list = [ NodePath("../Marker_Neighborhood/Neighborhood-1"), NodePath("../Marker_Neighborhood/Shared-Facilities-1") ]
+show_lod0_list = [ NodePath("../Marker_Neighborhood/Neighborhood-1"), NodePath("../Marker_Neighborhood/Shared-Facilities-1"), NodePath("../Marker_Neighborhood/Neighborhood-1/Example-Dwelling-1") ]
 show_lod1_list = [ NodePath("../../../../Marker_all_MIPs/Marker_MIP001/Melt_In_Place_Station"), NodePath("../../../../Marker_all_MIPs/Marker_MIP/Melt_In_Place_Station"), NodePath("../../../../Athlete_Rover_Prop"), NodePath("../../../../Athlete_Rover_Prop2"), NodePath("../../../../Athlete_Rover_Prop/Ground_Passenger_Pod"), NodePath("../../../../Marker_all_BoatRads/BoatRad/Boat_Radiator"), NodePath("../../../../Marker_all_BoatRads/BoatRad018/Boat_Radiator"), NodePath("../../../../Marker_all_BoatRads/BoatRad017/Boat_Radiator"), NodePath("../../../Empty_FirstHangars/First_Factory"), NodePath("../../../Empty_FirstHangars/First_Factory/Markers/Empty_SpiderCrane/Spider_Crane") ]
 show_lod2_list = [ NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit02/Solar_Panel_Unit"), NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit03/Solar_Panel_Unit"), NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit04/Solar_Panel_Unit"), NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit05/Solar_Panel_Unit"), NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit06/Solar_Panel_Unit"), NodePath("../../../../Marker_all_SolarPanels/Marker_Solar_Panel_Unit07/Solar_Panel_Unit"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers003/Flywheel_Tower"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers004/Flywheel_Tower"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers005/Flywheel_Tower"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers006/Flywheel_Tower"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers007/Flywheel_Tower"), NodePath("../../../../Marker_all_FlywheelTowers/Marker-FlywheelTowers008/Flywheel_Tower") ]
 
@@ -1693,6 +1693,8 @@ visible = false
 [editable path="Marker_all_Constructs/Empty_FirstGalleryLower/First_Gallery_Lower_UpperPart"]
 
 [editable path="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper"]
+
+[editable path="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_Neighborhood/Neighborhood-1"]
 
 [editable path="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_MakersMonument/MakersMonument"]
 
