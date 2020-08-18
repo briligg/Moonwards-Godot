@@ -1,4 +1,5 @@
 extends Area
+class_name DynamicVisibilityTrigger
 
 enum NoListOp {
 	Hide,

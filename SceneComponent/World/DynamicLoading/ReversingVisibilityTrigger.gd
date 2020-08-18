@@ -1,4 +1,5 @@
 extends Area
+class_name ReversingVisibilityTrigger
 
 export(bool) var pause_on_error: bool = false
 
