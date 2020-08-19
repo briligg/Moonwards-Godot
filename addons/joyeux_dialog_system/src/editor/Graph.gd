@@ -25,7 +25,10 @@ func save_dialogs(path : String, character_name : String) -> void:
 			file.set_value("offsets", child.name, child.offset)
 			
 			if child.title == "Choice" or child.title == "Text input match":
-				file.set_value("choices", child.name, child.get_options())
+				if child.title == "Choice":
+					file.set_value("choices", child.name, child.get_options())
+				else:
+					file.set_value("matches", child.name, child.get_options())
 				next.clear()
 				for connection in connections:
 					if connection.get("from") == child.name:
