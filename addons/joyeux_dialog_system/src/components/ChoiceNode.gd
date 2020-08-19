@@ -21,6 +21,13 @@ func set_options(options : Array) -> void:
 			add_child(line)
 	move_child($Button, get_child_count())
 
+func get_option(id : int) -> String:
+	id += 1
+	if id < get_child_count():
+		return get_child(id).text
+	return ""
+
+
 func get_options() -> Array:
 	var options : Array = []
 	for child in get_children():
