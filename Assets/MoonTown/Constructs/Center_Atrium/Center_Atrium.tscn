@@ -5,28 +5,36 @@
 [ext_resource path="res://Assets/MoonTown/Constructs/Center_Atrium/Atrium_MainWall_Shader.tres" type="Material" id=3]
 
 [sub_resource type="GIProbeData" id=1]
-bounds = AABB( -45.6825, -30.536, -52.471, 91.3651, 61.0719, 104.942 )
-cell_size = 0.819859
-to_cell_xform = Transform( 1.21972, 0, 0, 0, 1.21972, 0, 0, 0, 1.21972, 55.72, 37.2454, 64 )
-dynamic_data = PoolIntArray( 0, 8, 128, 128, 128, 1, 0, 0, 0, 1094713344, 0, 0, 7, 0, 1, 3418, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+bounds = AABB( -45.6825, -30.536, -52.471, 91.365, 61.072, 104.942 )
+cell_size = 0.40993
+to_cell_xform = Transform( 2.43944, 0, 0, 0, 2.43944, 0, 0, 0, 2.43944, 111.44, 74.4908, 128 )
+dynamic_data = PoolIntArray( 0, 9, 256, 256, 256, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 4
+energy = 0.17
 bias = 1.5
 normal_bias = 0.0
-propagation = 0.7
+propagation = 0.66
 
 [node name="Center_Atrium" instance=ExtResource( 1 )]
 
 [node name="CenterAtrium_Structures_LOD0" parent="LOD0" index="0"]
+cast_shadow = 2
+extra_cull_margin = 1.0
 material/0 = ExtResource( 3 )
 
 [node name="OmniLight" type="OmniLight" parent="." index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9486, -1.73356, -29.8064 )
+light_indirect_energy = 0.47
+light_specular = 0.1
 omni_range = 76.0
 omni_attenuation = 2.0
 
 [node name="GIProbe" type="GIProbe" parent="." index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39774, 1.54666, -30.6783 )
+subdiv = 2
 extents = Vector3( 45.6825, 30.536, 52.471 )
+energy = 0.17
+propagation = 0.66
 data = SubResource( 1 )
 
 [node name="Hexpane_Window" parent="Markers/Marker_HexpaneWindow" index="0" instance=ExtResource( 2 )]

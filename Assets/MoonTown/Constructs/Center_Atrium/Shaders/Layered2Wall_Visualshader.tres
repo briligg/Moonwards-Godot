@@ -91,11 +91,9 @@ script = ExtResource( 1 )
 
 [sub_resource type="VisualShaderNodeTextureUniform" id=30]
 uniform_name = "Rough_A"
-texture_type = 1
 
 [sub_resource type="VisualShaderNodeTextureUniform" id=31]
 uniform_name = "Rough_B"
-texture_type = 1
 
 [sub_resource type="VisualShaderNodeVectorDecompose" id=32]
 
@@ -233,9 +231,9 @@ uniform vec3 UVScale_Noise_A;
 uniform sampler2D Noise_A_RGB : hint_albedo;
 uniform bool NoiseY_A;
 uniform float Rough_Mult_A;
-uniform sampler2D Rough_A : hint_albedo;
+uniform sampler2D Rough_A;
 uniform float Rough_Mult_B;
-uniform sampler2D Rough_B : hint_albedo;
+uniform sampler2D Rough_B;
 uniform sampler2D Albedo_B_Mix;
 uniform float Specular_A;
 uniform float Specular_B;
@@ -700,7 +698,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -2041, -1654 )
+graph_offset = Vector2( -1664, 1231 )
 nodes/fragment/0/position = Vector2( 400, 200 )
 nodes/fragment/7/node = SubResource( 66 )
 nodes/fragment/7/position = Vector2( -2000, -300 )
