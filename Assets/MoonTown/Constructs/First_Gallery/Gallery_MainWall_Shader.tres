@@ -9,9 +9,6 @@
 [ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Marble_02/Marble_02_2K_Albedo.jpg" type="Texture" id=7]
 [ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Marble_02/Marble_02_2K_Roughness.jpg" type="Texture" id=8]
 
-
-
-
 [resource]
 shader = ExtResource( 1 )
 shader_param/Color_A = Color( 1, 0.823529, 0.823529, 1 )

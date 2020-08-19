@@ -1,6 +1,7 @@
-[gd_resource type="VisualShader" load_steps=80 format=2]
+[gd_resource type="VisualShader" load_steps=81 format=2]
 
 [ext_resource path="res://Assets/SharedAssets/Shaders/StochasticTextureNode.gd" type="Script" id=1]
+[ext_resource path="res://Assets/SharedAssets/Shaders/NormalMultiplyNode.gd" type="Script" id=2]
 
 [sub_resource type="VisualShaderNodeVectorOp" id=1]
 operator = 2
@@ -63,21 +64,12 @@ uniform_name = "Normal_Int"
 [sub_resource type="VisualShaderNodeScalarUniform" id=20]
 uniform_name = "Normal_Far_Int"
 
-[sub_resource type="VisualShaderNodeVectorOp" id=21]
-operator = 2
-
-[sub_resource type="VisualShaderNodeVectorOp" id=22]
-operator = 2
-
 [sub_resource type="VisualShaderNodeTextureUniform" id=23]
 uniform_name = "NormalMap_B"
 texture_type = 2
 
 [sub_resource type="VisualShaderNodeScalarUniform" id=24]
 uniform_name = "DistanceLerp"
-
-[sub_resource type="VisualShaderNodeVectorOp" id=25]
-operator = 2
 
 [sub_resource type="VisualShaderNodeVectorInterp" id=26]
 
@@ -225,6 +217,18 @@ script = ExtResource( 1 )
 [sub_resource type="VisualShaderNodeCustom" id=78]
 script = ExtResource( 1 )
 
+[sub_resource type="VisualShaderNodeCustom" id=79]
+default_input_values = [ 0, Vector3( 0.5, 0.5, 1 ), 1, 1.0 ]
+script = ExtResource( 2 )
+
+[sub_resource type="VisualShaderNodeCustom" id=80]
+default_input_values = [ 0, Vector3( 0.5, 0.5, 1 ), 1, 1.0 ]
+script = ExtResource( 2 )
+
+[sub_resource type="VisualShaderNodeCustom" id=81]
+default_input_values = [ 0, Vector3( 0.5, 0.5, 1 ), 1, 1.0 ]
+script = ExtResource( 2 )
+
 [resource]
 code = "shader_type spatial;
 uniform vec4 Color_A : hint_color;
@@ -363,6 +367,12 @@ vec3 STexComplexB(sampler2D input, vec3 uv){
 	vec4 tex = vec4(ProceduralTilingAndBlending(input, uv.xy),1);
 	tex = mix(tex, textureStochastic(input, uv.xy), 0.4);
 	return tex.rgb;
+}
+
+// NormalMultiply
+
+vec3 NormalMultFunc(vec3 _Normal, float _Amount){
+	return vec3(_Normal.x * _Amount, _Normal.y * _Amount, 1.0);
 }
 
 
@@ -690,8 +700,11 @@ void fragment() {
 // ScalarUniform:35
 	float n_out35p0 = Normal_Int;
 
-// VectorOp:38
-	vec3 n_out38p0 = n_out91p0 * vec3(n_out35p0);
+// NormalMultiply:93
+	vec3 n_out93p0;
+	{
+		n_out93p0 = NormalMultFunc(n_out91p0,n_out35p0);
+	}
 
 // TextureUniform:39
 	vec3 n_out39p0;
@@ -708,11 +721,14 @@ void fragment() {
 		n_out92p0 = STexComplexB(NormalMap_B,n_out61p0);
 	}
 
-// VectorOp:40
-	vec3 n_out40p0 = n_out92p0 * vec3(n_out35p0);
+// NormalMultiply:94
+	vec3 n_out94p0;
+	{
+		n_out94p0 = NormalMultFunc(n_out92p0,n_out35p0);
+	}
 
 // VectorMix:41
-	vec3 n_out41p0 = mix(n_out38p0, n_out40p0, vec3(n_out43p0));
+	vec3 n_out41p0 = mix(n_out93p0, n_out94p0, vec3(n_out43p0));
 
 // TextureUniform:32
 	vec3 n_out32p0;
@@ -726,11 +742,14 @@ void fragment() {
 // ScalarUniform:36
 	float n_out36p0 = Normal_Far_Int;
 
-// VectorOp:37
-	vec3 n_out37p0 = n_out32p0 * vec3(n_out36p0);
+// NormalMultiply:95
+	vec3 n_out95p0;
+	{
+		n_out95p0 = NormalMultFunc(n_out32p0,n_out36p0);
+	}
 
 // VectorMix:33
-	vec3 n_out33p0 = mix(n_out41p0, n_out37p0, vec3(n_out3p0));
+	vec3 n_out33p0 = mix(n_out41p0, n_out95p0, vec3(n_out3p0));
 
 // Output:0
 	ALBEDO = n_out18p0;
@@ -747,7 +766,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -1839, 926.75 )
+graph_offset = Vector2( -1557, 1196 )
 nodes/fragment/0/position = Vector2( 100, 200 )
 nodes/fragment/3/node = SubResource( 15 )
 nodes/fragment/3/position = Vector2( -2160, 1200 )
@@ -806,14 +825,8 @@ nodes/fragment/35/node = SubResource( 19 )
 nodes/fragment/35/position = Vector2( -1000, 1580 )
 nodes/fragment/36/node = SubResource( 20 )
 nodes/fragment/36/position = Vector2( -1200, 2000 )
-nodes/fragment/37/node = SubResource( 21 )
-nodes/fragment/37/position = Vector2( -1000, 1860 )
-nodes/fragment/38/node = SubResource( 22 )
-nodes/fragment/38/position = Vector2( -800, 1460 )
 nodes/fragment/39/node = SubResource( 23 )
 nodes/fragment/39/position = Vector2( -1200, 1600 )
-nodes/fragment/40/node = SubResource( 25 )
-nodes/fragment/40/position = Vector2( -800, 1660 )
 nodes/fragment/41/node = SubResource( 26 )
 nodes/fragment/41/position = Vector2( -600, 1560 )
 nodes/fragment/43/node = SubResource( 27 )
@@ -910,4 +923,10 @@ nodes/fragment/91/node = SubResource( 77 )
 nodes/fragment/91/position = Vector2( -1000, 1400 )
 nodes/fragment/92/node = SubResource( 78 )
 nodes/fragment/92/position = Vector2( -1000, 1720 )
-nodes/fragment/connections = PoolIntArray( 5, 0, 3, 2, 6, 0, 3, 0, 4, 0, 3, 1, 7, 0, 10, 0, 8, 0, 10, 1, 7, 0, 11, 0, 9, 0, 11, 1, 10, 0, 12, 0, 11, 0, 13, 0, 14, 0, 16, 0, 13, 0, 17, 0, 15, 0, 17, 1, 17, 0, 18, 1, 3, 0, 18, 2, 10, 0, 20, 0, 11, 0, 21, 0, 26, 0, 0, 4, 25, 0, 0, 2, 3, 0, 26, 2, 3, 0, 25, 2, 11, 0, 32, 0, 3, 0, 33, 2, 33, 0, 0, 8, 18, 0, 0, 0, 32, 0, 37, 0, 36, 0, 37, 1, 35, 0, 38, 1, 37, 0, 33, 1, 35, 0, 40, 1, 38, 0, 41, 0, 40, 0, 41, 1, 43, 0, 41, 2, 41, 0, 33, 0, 21, 0, 49, 0, 47, 0, 49, 1, 48, 0, 50, 1, 48, 0, 51, 1, 43, 0, 52, 2, 3, 0, 53, 2, 52, 0, 53, 0, 49, 0, 53, 1, 53, 0, 23, 0, 23, 0, 0, 3, 23, 1, 0, 6, 54, 0, 56, 0, 55, 0, 57, 0, 56, 0, 58, 0, 56, 1, 58, 1, 57, 0, 59, 0, 57, 1, 59, 1, 58, 0, 25, 0, 59, 0, 26, 0, 57, 2, 26, 1, 56, 2, 25, 1, 43, 0, 58, 2, 43, 0, 59, 2, 60, 0, 61, 1, 7, 0, 61, 0, 61, 0, 45, 0, 10, 0, 31, 0, 61, 0, 39, 0, 63, 0, 64, 1, 61, 0, 62, 0, 16, 0, 65, 0, 64, 0, 65, 1, 43, 0, 65, 2, 68, 0, 43, 0, 71, 0, 70, 0, 70, 0, 72, 0, 70, 0, 43, 2, 72, 0, 43, 1, 69, 0, 71, 0, 73, 0, 71, 1, 74, 0, 73, 2, 75, 0, 73, 1, 78, 0, 74, 0, 77, 0, 75, 0, 76, 0, 73, 0, 79, 1, 74, 1, 79, 0, 74, 2, 79, 2, 75, 2, 80, 0, 79, 0, 80, 1, 75, 1, 66, 0, 81, 0, 67, 0, 81, 1, 81, 0, 80, 0, 65, 0, 82, 0, 17, 0, 83, 0, 84, 0, 83, 1, 83, 0, 82, 1, 65, 0, 86, 0, 83, 0, 86, 1, 86, 0, 18, 0, 62, 2, 88, 0, 12, 2, 87, 0, 10, 0, 87, 1, 61, 0, 88, 1, 87, 0, 16, 1, 88, 0, 64, 0, 20, 2, 89, 0, 45, 2, 90, 0, 61, 0, 90, 1, 10, 0, 89, 1, 51, 0, 52, 0, 50, 0, 52, 1, 90, 0, 50, 0, 89, 0, 51, 0, 39, 2, 92, 0, 92, 0, 40, 0, 91, 0, 38, 0, 31, 2, 91, 0, 10, 0, 91, 1, 61, 0, 92, 1 )
+nodes/fragment/93/node = SubResource( 79 )
+nodes/fragment/93/position = Vector2( -780, 1400 )
+nodes/fragment/94/node = SubResource( 80 )
+nodes/fragment/94/position = Vector2( -780, 1720 )
+nodes/fragment/95/node = SubResource( 81 )
+nodes/fragment/95/position = Vector2( -1000, 1880 )
+nodes/fragment/connections = PoolIntArray( 5, 0, 3, 2, 6, 0, 3, 0, 4, 0, 3, 1, 7, 0, 10, 0, 8, 0, 10, 1, 7, 0, 11, 0, 9, 0, 11, 1, 10, 0, 12, 0, 11, 0, 13, 0, 14, 0, 16, 0, 13, 0, 17, 0, 15, 0, 17, 1, 17, 0, 18, 1, 3, 0, 18, 2, 10, 0, 20, 0, 11, 0, 21, 0, 26, 0, 0, 4, 25, 0, 0, 2, 3, 0, 26, 2, 3, 0, 25, 2, 11, 0, 32, 0, 3, 0, 33, 2, 33, 0, 0, 8, 18, 0, 0, 0, 43, 0, 41, 2, 41, 0, 33, 0, 21, 0, 49, 0, 47, 0, 49, 1, 48, 0, 50, 1, 48, 0, 51, 1, 43, 0, 52, 2, 3, 0, 53, 2, 52, 0, 53, 0, 49, 0, 53, 1, 53, 0, 23, 0, 23, 0, 0, 3, 23, 1, 0, 6, 54, 0, 56, 0, 55, 0, 57, 0, 56, 0, 58, 0, 56, 1, 58, 1, 57, 0, 59, 0, 57, 1, 59, 1, 58, 0, 25, 0, 59, 0, 26, 0, 57, 2, 26, 1, 56, 2, 25, 1, 43, 0, 58, 2, 43, 0, 59, 2, 60, 0, 61, 1, 7, 0, 61, 0, 61, 0, 45, 0, 10, 0, 31, 0, 61, 0, 39, 0, 63, 0, 64, 1, 61, 0, 62, 0, 16, 0, 65, 0, 64, 0, 65, 1, 43, 0, 65, 2, 68, 0, 43, 0, 71, 0, 70, 0, 70, 0, 72, 0, 70, 0, 43, 2, 72, 0, 43, 1, 69, 0, 71, 0, 73, 0, 71, 1, 74, 0, 73, 2, 75, 0, 73, 1, 78, 0, 74, 0, 77, 0, 75, 0, 76, 0, 73, 0, 79, 1, 74, 1, 79, 0, 74, 2, 79, 2, 75, 2, 80, 0, 79, 0, 80, 1, 75, 1, 66, 0, 81, 0, 67, 0, 81, 1, 81, 0, 80, 0, 65, 0, 82, 0, 17, 0, 83, 0, 84, 0, 83, 1, 83, 0, 82, 1, 65, 0, 86, 0, 83, 0, 86, 1, 86, 0, 18, 0, 62, 2, 88, 0, 12, 2, 87, 0, 10, 0, 87, 1, 61, 0, 88, 1, 87, 0, 16, 1, 88, 0, 64, 0, 20, 2, 89, 0, 45, 2, 90, 0, 61, 0, 90, 1, 10, 0, 89, 1, 51, 0, 52, 0, 50, 0, 52, 1, 90, 0, 50, 0, 89, 0, 51, 0, 39, 2, 92, 0, 31, 2, 91, 0, 10, 0, 91, 1, 61, 0, 92, 1, 91, 0, 93, 0, 35, 0, 93, 1, 93, 0, 41, 0, 35, 0, 94, 1, 92, 0, 94, 0, 94, 0, 41, 1, 36, 0, 95, 1, 32, 0, 95, 0, 95, 0, 33, 1 )

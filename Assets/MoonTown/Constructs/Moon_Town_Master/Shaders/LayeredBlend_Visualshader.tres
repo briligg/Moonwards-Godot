@@ -1,4 +1,6 @@
-[gd_resource type="VisualShader" load_steps=52 format=2]
+[gd_resource type="VisualShader" load_steps=58 format=2]
+
+[ext_resource path="res://Assets/SharedAssets/Shaders/NormalMultiplyNode.gd" type="Script" id=1]
 
 [sub_resource type="VisualShaderNodeVectorOp" id=1]
 operator = 2
@@ -132,13 +134,29 @@ function = 31
 [sub_resource type="VisualShaderNodeBooleanUniform" id=48]
 uniform_name = "NoiseInvert"
 
-[sub_resource type="VisualShaderNodeInput" id=49]
+[sub_resource type="VisualShaderNodeScalarUniform" id=49]
+uniform_name = "Normal_Mult_B"
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=50]
+uniform_name = "Normal_Mult_A"
+
+[sub_resource type="VisualShaderNodeCustom" id=51]
+default_input_values = [ 0, Vector3( 0.5, 0.5, 1 ), 1, 1.0 ]
+script = ExtResource( 1 )
+
+[sub_resource type="VisualShaderNodeCustom" id=52]
+default_input_values = [ 0, Vector3( 0.5, 0.5, 1 ), 1, 1.0 ]
+script = ExtResource( 1 )
+
+[sub_resource type="VisualShaderNodeVectorClamp" id=56]
+
+[sub_resource type="VisualShaderNodeInput" id=53]
 input_name = "uv"
 
-[sub_resource type="VisualShaderNodeVec3Uniform" id=50]
+[sub_resource type="VisualShaderNodeVec3Uniform" id=54]
 uniform_name = "UVScale_A"
 
-[sub_resource type="VisualShaderNodeVec3Uniform" id=51]
+[sub_resource type="VisualShaderNodeVec3Uniform" id=55]
 uniform_name = "UVScale_B"
 
 [resource]
@@ -165,8 +183,16 @@ uniform float Rough_Mult_B;
 uniform float Specular_A;
 uniform float Specular_B;
 uniform sampler2D NormalMap_A : hint_normal;
+uniform float Normal_Mult_A;
 uniform sampler2D NormalMap_B : hint_normal;
+uniform float Normal_Mult_B;
 
+
+// NormalMultiply
+
+vec3 NormalMultFunc(vec3 _Normal, float _Amount){
+	return vec3(_Normal.x * _Amount, _Normal.y * _Amount, 1.0);
+}
 
 
 void vertex() {
@@ -403,6 +429,15 @@ void fragment() {
 		n_out31p1 = n_tex_read.a;
 	}
 
+// ScalarUniform:62
+	float n_out62p0 = Normal_Mult_A;
+
+// NormalMultiply:66
+	vec3 n_out66p0;
+	{
+		n_out66p0 = NormalMultFunc(n_out31p0,n_out62p0);
+	}
+
 // TextureUniform:32
 	vec3 n_out32p0;
 	float n_out32p1;
@@ -412,15 +447,29 @@ void fragment() {
 		n_out32p1 = n_tex_read.a;
 	}
 
+// ScalarUniform:61
+	float n_out61p0 = Normal_Mult_B;
+
+// NormalMultiply:65
+	vec3 n_out65p0;
+	{
+		n_out65p0 = NormalMultFunc(n_out32p0,n_out61p0);
+	}
+
 // VectorMix:33
-	vec3 n_out33p0 = mix(n_out31p0, n_out32p0, vec3(n_out59p0));
+	vec3 n_out33p0 = mix(n_out66p0, n_out65p0, vec3(n_out59p0));
+
+// VectorClamp:67
+	vec3 n_in67p1 = vec3(0.00000, 0.00000, 0.00000);
+	vec3 n_in67p2 = vec3(1.00000, 1.00000, 1.00000);
+	vec3 n_out67p0 = clamp(n_out33p0, n_in67p1, n_in67p2);
 
 // Output:0
 	ALBEDO = n_out18p0;
 	METALLIC = n_out48p0;
 	ROUGHNESS = n_out47p0;
 	SPECULAR = n_out49p0;
-	NORMALMAP = n_out33p0;
+	NORMALMAP = n_out67p0;
 
 }
 
@@ -429,13 +478,13 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -1585, 60 )
+graph_offset = Vector2( -1106, 326 )
 nodes/fragment/0/position = Vector2( 200, 200 )
-nodes/fragment/7/node = SubResource( 49 )
+nodes/fragment/7/node = SubResource( 53 )
 nodes/fragment/7/position = Vector2( -2000, 100 )
-nodes/fragment/8/node = SubResource( 50 )
+nodes/fragment/8/node = SubResource( 54 )
 nodes/fragment/8/position = Vector2( -2000, -60 )
-nodes/fragment/9/node = SubResource( 51 )
+nodes/fragment/9/node = SubResource( 55 )
 nodes/fragment/9/position = Vector2( -2000, 280 )
 nodes/fragment/10/node = SubResource( 1 )
 nodes/fragment/10/position = Vector2( -1800, -60 )
@@ -533,4 +582,14 @@ nodes/fragment/59/node = SubResource( 47 )
 nodes/fragment/59/position = Vector2( -1600, 800 )
 nodes/fragment/60/node = SubResource( 48 )
 nodes/fragment/60/position = Vector2( -2000, 800 )
-nodes/fragment/connections = PoolIntArray( 7, 0, 10, 0, 8, 0, 10, 1, 7, 0, 11, 0, 9, 0, 11, 1, 10, 0, 12, 0, 11, 0, 13, 0, 12, 0, 16, 1, 14, 0, 16, 0, 13, 0, 17, 0, 15, 0, 17, 1, 16, 0, 18, 0, 17, 0, 18, 1, 10, 0, 20, 0, 11, 0, 21, 0, 20, 0, 22, 0, 21, 0, 23, 0, 22, 1, 24, 0, 23, 1, 24, 1, 27, 0, 25, 0, 28, 0, 25, 1, 30, 0, 26, 1, 10, 0, 31, 0, 11, 0, 32, 0, 31, 0, 33, 0, 32, 0, 33, 1, 33, 0, 0, 8, 36, 0, 38, 0, 37, 0, 38, 1, 38, 0, 34, 0, 34, 0, 39, 0, 41, 0, 40, 0, 42, 0, 44, 0, 19, 0, 47, 0, 47, 0, 0, 3, 25, 0, 48, 0, 48, 0, 0, 2, 26, 0, 49, 0, 49, 0, 0, 4, 34, 1, 50, 1, 39, 2, 50, 2, 39, 0, 40, 2, 39, 1, 40, 1, 51, 0, 50, 0, 50, 0, 52, 1, 40, 0, 52, 2, 53, 0, 52, 0, 52, 0, 42, 1, 43, 0, 42, 0, 22, 0, 54, 0, 54, 0, 19, 0, 23, 0, 55, 0, 55, 0, 19, 1, 56, 0, 54, 1, 57, 0, 55, 1, 60, 0, 59, 0, 58, 0, 59, 1, 44, 0, 59, 2, 44, 0, 58, 0, 29, 0, 26, 0, 59, 0, 26, 2, 59, 0, 25, 2, 59, 0, 19, 2, 59, 0, 24, 2, 59, 0, 18, 2, 59, 0, 33, 2, 18, 0, 0, 0 )
+nodes/fragment/61/node = SubResource( 49 )
+nodes/fragment/61/position = Vector2( -1000, 1140 )
+nodes/fragment/62/node = SubResource( 50 )
+nodes/fragment/62/position = Vector2( -1000, 1000 )
+nodes/fragment/65/node = SubResource( 51 )
+nodes/fragment/65/position = Vector2( -800, 1000 )
+nodes/fragment/66/node = SubResource( 52 )
+nodes/fragment/66/position = Vector2( -800, 880 )
+nodes/fragment/67/node = SubResource( 56 )
+nodes/fragment/67/position = Vector2( -400, 880 )
+nodes/fragment/connections = PoolIntArray( 7, 0, 10, 0, 8, 0, 10, 1, 7, 0, 11, 0, 9, 0, 11, 1, 10, 0, 12, 0, 11, 0, 13, 0, 12, 0, 16, 1, 14, 0, 16, 0, 13, 0, 17, 0, 15, 0, 17, 1, 16, 0, 18, 0, 17, 0, 18, 1, 10, 0, 20, 0, 11, 0, 21, 0, 20, 0, 22, 0, 21, 0, 23, 0, 22, 1, 24, 0, 23, 1, 24, 1, 27, 0, 25, 0, 28, 0, 25, 1, 30, 0, 26, 1, 10, 0, 31, 0, 11, 0, 32, 0, 36, 0, 38, 0, 37, 0, 38, 1, 38, 0, 34, 0, 34, 0, 39, 0, 41, 0, 40, 0, 42, 0, 44, 0, 19, 0, 47, 0, 47, 0, 0, 3, 25, 0, 48, 0, 48, 0, 0, 2, 26, 0, 49, 0, 49, 0, 0, 4, 34, 1, 50, 1, 39, 2, 50, 2, 39, 0, 40, 2, 39, 1, 40, 1, 51, 0, 50, 0, 50, 0, 52, 1, 40, 0, 52, 2, 53, 0, 52, 0, 52, 0, 42, 1, 43, 0, 42, 0, 22, 0, 54, 0, 54, 0, 19, 0, 23, 0, 55, 0, 55, 0, 19, 1, 56, 0, 54, 1, 57, 0, 55, 1, 60, 0, 59, 0, 58, 0, 59, 1, 44, 0, 59, 2, 44, 0, 58, 0, 29, 0, 26, 0, 59, 0, 26, 2, 59, 0, 25, 2, 59, 0, 19, 2, 59, 0, 24, 2, 59, 0, 18, 2, 59, 0, 33, 2, 18, 0, 0, 0, 32, 0, 65, 0, 31, 0, 66, 0, 62, 0, 66, 1, 61, 0, 65, 1, 66, 0, 33, 0, 65, 0, 33, 1, 33, 0, 67, 0, 67, 0, 0, 8 )

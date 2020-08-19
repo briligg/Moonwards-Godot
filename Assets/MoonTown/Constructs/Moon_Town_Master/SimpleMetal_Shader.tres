@@ -5,7 +5,6 @@
 [ext_resource path="res://Assets/SharedAssets/Textures/Noises/Noise_Hev_03_1K_RGB.png" type="Texture" id=7]
 [ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Asphalt_01/Asphalt_01_2K_Roughness.jpg" type="Texture" id=8]
 
-
 [resource]
 shader = ExtResource( 1 )
 shader_param/Color_A = Color( 0.815686, 0.815686, 0.815686, 1 )
@@ -16,8 +15,8 @@ shader_param/NoiseAlpha = false
 shader_param/NoiseZ = false
 shader_param/UVScale_Noise = Vector3( 10, 10, 0 )
 shader_param/NoiseY = false
-shader_param/Metallic_A = null
-shader_param/Metallic_B = null
+shader_param/Metallic_A = 1.0
+shader_param/Metallic_B = 1.0
 shader_param/UVScale_A = Vector3( 500, 500, 1 )
 shader_param/Rough_Mult_A = 0.5
 shader_param/UVScale_B = Vector3( 500, 500, 1 )
