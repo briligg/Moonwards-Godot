@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:22c68b7068818ed5d1d6492edd5856f7c84c6f52da4aa903fa315da2b547829e
-size 289
+[gd_resource type="SpatialMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/LongDomeLawns35.png" type="Texture" id=1]
+
+
+
+
+[resource]
+albedo_texture = ExtResource( 1 )
+uv1_scale = Vector3( 0.1, 0.1, 0.1 )
+uv1_triplanar = true

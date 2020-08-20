@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c8a6ade1d6232a9d86235fadde53a4ea504d48eecc01ae14779fecb2da7014f9
-size 290
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Interface/Fonts/Exo2/Exo2-Medium.ttf" type="DynamicFontData" id=1]
+
+[resource]
+size = 25
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )

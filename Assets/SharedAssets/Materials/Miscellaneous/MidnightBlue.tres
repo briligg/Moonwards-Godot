@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:02147e919f610f19ccf298e14d88e568f462687222284bf6142918f08a11f7e1
-size 190
+[gd_resource type="SpatialMaterial" format=2]
+
+[resource]
+resource_name = "MidnightBlue"
+params_cull_mode = 2
+albedo_color = Color( 0.0235294, 0.207843, 0.341176, 1 )
+roughness = 0.8

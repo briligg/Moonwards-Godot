@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8e68b3e84333c0eb73ee102cf57068ea99ef0c4fb10da496af88ba7cb90e515c
-size 674
+[gd_resource type="Environment" load_steps=2 format=2]
+
+[sub_resource type="ProceduralSky" id=1]
+sky_top_color = Color( 0.992157, 1, 0.819608, 1 )
+sky_horizon_color = Color( 0.847059, 0.980392, 0.839216, 1 )
+ground_energy = 0.0
+
+[resource]
+background_mode = 2
+background_sky = SubResource( 1 )
+ambient_light_color = Color( 0.490196, 0.435294, 0.498039, 1 )
+ambient_light_energy = 0.61
+ambient_light_sky_contribution = 0.3
+tonemap_mode = 2
+tonemap_exposure = 1.9
+tonemap_white = 2.42
+auto_exposure_enabled = true
+auto_exposure_min_luma = 0.51
+auto_exposure_max_luma = 8.08
+auto_exposure_speed = 0.2
+adjustment_contrast = 1.2
+adjustment_saturation = 0.9

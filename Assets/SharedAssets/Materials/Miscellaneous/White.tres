@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a3df26892c0ea86f60b0e384438dfe20fef048530f96847fca28d8d4b4c5a51a
-size 125
+[gd_resource type="SpatialMaterial" format=2]
+
+[resource]
+resource_name = "White"
+params_cull_mode = 2
+roughness = 0.8

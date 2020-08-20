@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fc608d1dc64ae2c8c21cfe8114604aee91c4e6505274afb643dfbc5674199d6f
-size 221
+[gd_resource type="SpatialMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://Assets/SharedAssets/Textures/PainterlyTextures/Lawns.jpg" type="Texture" id=1]
+
+
+
+[resource]
+albedo_texture = ExtResource( 1 )
