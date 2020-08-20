@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f81b21e76ed17ada0487ce8de45b18c1561a8c42fed5ec5c6c6038ae8d8ec7a7
-size 745
+[gd_resource type="Environment" load_steps=3 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/MilkyWay_LalandeRegion_4k.hdr" type="Texture" id=1]
+
+[sub_resource type="PanoramaSky" id=1]
+panorama = ExtResource( 1 )
+
+[resource]
+background_mode = 2
+background_sky = SubResource( 1 )
+background_sky_orientation = Basis( -1, 0, 0, 0, 1, 0, 0, 0, -1 )
+background_color = Color( 0.164706, 0.156863, 0.160784, 1 )
+background_energy = 1.25
+ambient_light_color = Color( 0.6, 0.588235, 0.588235, 1 )
+ambient_light_energy = 0.5
+ambient_light_sky_contribution = 0.28
+tonemap_mode = 1
+tonemap_exposure = 1.1
+tonemap_white = 1.1
+ss_reflections_enabled = true
+ssao_enabled = true
+adjustment_contrast = 0.94

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f278c28a929b2df86b44e5f23fc72f5e561770add0422c02993348d71242de5f
-size 253
+[gd_resource type="SpatialMaterial" format=2]
+
+[resource]
+resource_name = "Black"
+params_cull_mode = 2
+albedo_color = Color( 0, 0, 0, 1 )
+roughness = 0.8
+distance_fade_mode = 3
+distance_fade_min_distance = 0.1
+distance_fade_max_distance = 0.2

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ead99e9979af9924318f837dbd577e457d7e53564a530e77ebc43c3123cbcb48
-size 279
+[gd_resource type="SpatialMaterial" format=2]
+
+[resource]
+resource_name = "BrightTeal"
+params_cull_mode = 2
+albedo_color = Color( 0.341176, 0.921569, 0.752941, 1 )
+roughness = 0.8
+distance_fade_mode = 3
+distance_fade_min_distance = 0.1
+distance_fade_max_distance = 0.2

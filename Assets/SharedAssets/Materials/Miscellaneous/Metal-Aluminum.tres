@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c6e16d380b1a27b5eb3857cef5064765bfabdabaee8f52521d458d1cf2e410fb
-size 208
+[gd_resource type="SpatialMaterial" format=2]
+
+[resource]
+resource_name = "Metal-Aluminum"
+params_cull_mode = 2
+albedo_color = Color( 0.843137, 0.843137, 0.843137, 1 )
+metallic = 1.0
+roughness = 0.32

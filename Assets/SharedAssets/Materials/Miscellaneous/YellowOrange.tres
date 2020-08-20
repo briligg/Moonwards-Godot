@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e35a48e304021d30cc0b0a37972afc7054fbe5a7392b13c47308e5dd330ee7e0
-size 191
+[gd_resource type="SpatialMaterial" format=2]
+
+[resource]
+resource_name = "YellowOrange"
+params_cull_mode = 2
+albedo_color = Color( 0.972549, 0.709804, 0.203922, 1 )
+roughness = 0.8
+

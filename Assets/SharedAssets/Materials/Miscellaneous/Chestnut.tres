@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:49537849a5a553b11192fd0352cea8f75e9de4c31c1849fbd2a9e3397c9c6408
-size 262
+[gd_resource type="SpatialMaterial" format=2]
+
+[resource]
+resource_name = "Chestnut"
+params_cull_mode = 2
+albedo_color = Color( 0.192157, 0.0156863, 0.0196078, 1 )
+distance_fade_mode = 3
+distance_fade_min_distance = 0.1
+distance_fade_max_distance = 0.2

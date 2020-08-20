@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7035db97cfd571744192a9ad391402b652498ff9e14e44b8d41ed0f554d6f7a0
-size 173
+[gd_resource type="SpatialMaterial" format=2]
+
+[resource]
+resource_name = "DeepVanilla"
+params_cull_mode = 2
+albedo_color = Color( 0.869755, 0.741261, 0.489541, 1 )
+

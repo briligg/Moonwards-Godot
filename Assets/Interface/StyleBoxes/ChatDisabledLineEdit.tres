@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:04fa2a76d8fcf18020f04c57231a137c378c7421b099700088c9857f5c0b78a0
-size 225
+[gd_resource type="StyleBoxFlat" format=2]
+
+[resource]
+bg_color = Color( 0.0352941, 0.0352941, 0.0352941, 1 )
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color( 0.639216, 0.639216, 0.639216, 0.639216 )

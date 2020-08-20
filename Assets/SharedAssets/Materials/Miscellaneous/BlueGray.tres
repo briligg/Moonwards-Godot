@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:686f1628254c29b37737bbbc25ee857aca51029259f6755a5d5f9d5b9da08e85
-size 169
+[gd_resource type="SpatialMaterial" format=2]
+
+[resource]
+resource_name = "BlueGray"
+params_cull_mode = 2
+albedo_color = Color( 0.32549, 0.341176, 0.411765, 1 )
+

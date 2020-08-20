@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7cc06a53b005a5ec4665891f2ef37ff4f27b472705f683b2aaa86fef858db72b
-size 303
+[gd_resource type="SpatialMaterial" format=2]
+
+[resource]
+
+params_cull_mode = 2
+resource_name = "CaveTex"
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_transparent = false
+vertex_color_use_as_albedo = false
+albedo_color = Color(0.8, 0.8, 0.8, 1.0)
+subsurf_scatter_enabled = false

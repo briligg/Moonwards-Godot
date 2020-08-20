@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:05d9eecb877f3ad7eb0ddecd7cb0a802c4a8e0b630bbca75769a4c8af44d082a
-size 308
+[gd_resource type="SpatialMaterial" format=2]
+
+[resource]
+
+params_cull_mode = 2
+resource_name = "Enamel-White"
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_transparent = false
+vertex_color_use_as_albedo = false
+albedo_color = Color(1.0, 1.0, 1.0, 1.0)
+subsurf_scatter_enabled = false
