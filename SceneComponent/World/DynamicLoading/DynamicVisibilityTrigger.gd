@@ -1,4 +1,5 @@
 extends Area
+class_name DynamicVisibilityTrigger
 
 enum NoListOp {
 	Hide,
@@ -33,8 +34,11 @@ func _ready() -> void:
 			n.connect("body_entered", self, "on_body_entered")
 
 func on_body_entered(body) -> void:
+	if VisibilityManager.disable_all_triggers:
+		return
+		
 	if body is AEntity:
-		if body.owner_peer_id == get_tree().get_network_unique_id():
+		if body.owner_peer_id == get_tree().get_network_unique_id() and VisibilityManager.log_vt_changes:
 			Log.trace(self, "on_body_entered", "Processing visibility for %s, in %s"
 					%[body.name, self.name])
 			process_visibility()

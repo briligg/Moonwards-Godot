@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://SceneComponent/Interface/Hud/FlightSpeedDisplay.gd" type="Script" id=1]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 1
+
+[sub_resource type="Animation" id=3]
+resource_name = "FadeOut"
+length = 1.7
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="FlightSpeedDisplay" type="VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.95
+anchor_top = 0.4
+anchor_right = 0.955
+anchor_bottom = 0.8
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="TextureProgress" parent="."]
+margin_right = 9.0
+margin_bottom = 432.0
+size_flags_vertical = 3
+max_value = 1000.0
+value = 500.0
+allow_greater = true
+texture_progress = SubResource( 2 )
+fill_mode = 3
+nine_patch_stretch = true
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+anims/FadeOut = SubResource( 3 )

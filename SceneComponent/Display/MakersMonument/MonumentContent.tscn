@@ -1,13 +1,20 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://SceneComponent/Display/MakersMonument/MonumentContent.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Displays/MonumentTheme.tres" type="Theme" id=4]
+[ext_resource path="res://Assets/Interface/MonumentTheme.tres" type="Theme" id=4]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 4 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -48,9 +55,10 @@ __meta__ = {
 }
 
 [node name="ControlButton" type="Button" parent="VBoxContainer/BottomArea/CenterContainer"]
-margin_left = 495.0
-margin_right = 1424.0
-margin_bottom = 171.0
+margin_left = 824.0
+margin_top = 20.0
+margin_right = 1095.0
+margin_bottom = 140.0
 rect_min_size = Vector2( 0, 120 )
 custom_colors/font_color_disabled = Color( 0.882353, 0.878431, 0.878431, 1 )
 custom_colors/font_color = Color( 0.882353, 0.878431, 0.878431, 1 )

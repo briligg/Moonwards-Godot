@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Tree/Interface/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Interface/Textures/menu_splash.png" type="Texture" id=2]
@@ -9,6 +9,10 @@
 [ext_resource path="res://Assets/Interface/StyleBoxes/ChatLineEdit.tres" type="StyleBox" id=7]
 [ext_resource path="res://Tree/Interface/MainMenu/MainMenuTab.gd" type="Script" id=8]
 [ext_resource path="res://Tree/Interface/UserSettings/UserSettings.tscn" type="PackedScene" id=9]
+[ext_resource path="res://addons/joyeux_npc_editor/src/interface/behaviors/code/Behaviour_tree_editor.tscn" type="PackedScene" id=10]
+
+
+
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.588235 )
@@ -25,6 +29,13 @@ corner_detail = 18
 [sub_resource type="StyleBoxEmpty" id=2]
 
 [sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends WindowDialog
+
+func _on_NPCs_pressed():
+	popup_centered_clamped(Vector2(1920,1080))
+"
 
 [node name="MainMenu" type="CanvasLayer"]
 layer = 10
@@ -113,9 +124,9 @@ __meta__ = {
 }
 
 [node name="Destination" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 142.0
+margin_top = 115.0
 margin_right = 161.0
-margin_bottom = 177.0
+margin_bottom = 150.0
 focus_neighbour_left = NodePath("../../../Quit")
 focus_neighbour_top = NodePath("../Display")
 focus_neighbour_right = NodePath("../../../About")
@@ -128,9 +139,9 @@ __meta__ = {
 }
 
 [node name="Avatar" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 197.0
+margin_top = 170.0
 margin_right = 105.0
-margin_bottom = 232.0
+margin_bottom = 205.0
 focus_neighbour_left = NodePath("../../../Quit")
 focus_neighbour_top = NodePath("../Destination")
 focus_neighbour_right = NodePath("../../../About")
@@ -142,9 +153,9 @@ __meta__ = {
 }
 
 [node name="Controls" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 252.0
+margin_top = 225.0
 margin_right = 126.0
-margin_bottom = 287.0
+margin_bottom = 260.0
 focus_neighbour_left = NodePath("../../../Quit")
 focus_neighbour_top = NodePath("../Avatar")
 focus_neighbour_right = NodePath("../../../About")
@@ -156,10 +167,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="NPCs" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 280.0
+margin_right = 131.0
+margin_bottom = 315.0
+focus_neighbour_left = NodePath("../../../Quit")
+focus_neighbour_top = NodePath("../Controls")
+focus_neighbour_right = NodePath("../../../About")
+focus_neighbour_bottom = NodePath("../Display")
+size_flags_horizontal = 0
+text = " NPC Editor"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Apps" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 307.0
+margin_top = 335.0
 margin_right = 87.0
-margin_bottom = 342.0
+margin_bottom = 370.0
 focus_neighbour_left = NodePath("../../../Quit")
 focus_neighbour_top = NodePath("../Controls")
 focus_neighbour_right = NodePath("../../../About")
@@ -172,9 +197,9 @@ __meta__ = {
 }
 
 [node name="Display" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 362.0
+margin_top = 390.0
 margin_right = 114.0
-margin_bottom = 397.0
+margin_bottom = 425.0
 focus_neighbour_left = NodePath("../../../Quit")
 focus_neighbour_top = NodePath("../Apps")
 focus_neighbour_right = NodePath("../../../About")
@@ -307,17 +332,39 @@ margin_bottom = 540.0
 focus_neighbour_left = NodePath("../../Quit")
 focus_neighbour_top = NodePath("../VBoxContainer/Display")
 focus_neighbour_bottom = NodePath("../VBoxContainer/Destination")
+
+[node name="NPCEditor" type="WindowDialog" parent="."]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -877.0
+margin_top = -460.0
+margin_right = 877.0
+margin_bottom = 461.0
+window_title = "NPC Editor"
+script = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NPCEditor" parent="NPCEditor" instance=ExtResource( 10 )]
+margin_bottom = 1.0
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="About" to="." method="_on_About_pressed"]
 [connection signal="focus_entered" from="HBoxContainer/VBoxContainer/Destination" to="HBoxContainer" method="_button_highlighted" binds= [ "Destination" ]]
 [connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/Destination" to="HBoxContainer" method="_button_highlighted" binds= [ "Destination" ]]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/Destination" to="HBoxContainer/Panel/Tab" method="_on_StartGame_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Destination" to="." method="_on_StartGame_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Destination" to="HBoxContainer/Panel/Tab" method="_on_StartGame_pressed"]
 [connection signal="focus_entered" from="HBoxContainer/VBoxContainer/Avatar" to="HBoxContainer" method="_button_highlighted" binds= [ "Avatar" ]]
 [connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/Avatar" to="HBoxContainer" method="_button_highlighted" binds= [ "Avatar" ]]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Avatar" to="HBoxContainer/Panel/Tab" method="_on_Avatar_pressed"]
 [connection signal="focus_entered" from="HBoxContainer/VBoxContainer/Controls" to="HBoxContainer" method="_button_highlighted" binds= [ "Controls" ]]
 [connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/Controls" to="HBoxContainer" method="_button_highlighted" binds= [ "Controls" ]]
+[connection signal="focus_entered" from="HBoxContainer/VBoxContainer/NPCs" to="HBoxContainer" method="_button_highlighted" binds= [ "NPCs" ]]
+[connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/NPCs" to="HBoxContainer" method="_button_highlighted" binds= [ "NPCs" ]]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/NPCs" to="NPCEditor" method="_on_NPCs_pressed"]
 [connection signal="focus_entered" from="HBoxContainer/VBoxContainer/Apps" to="HBoxContainer" method="_button_highlighted" binds= [ "Apps" ]]
 [connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/Apps" to="HBoxContainer" method="_button_highlighted" binds= [ "Apps" ]]
 [connection signal="focus_entered" from="HBoxContainer/VBoxContainer/Display" to="HBoxContainer" method="_button_highlighted" binds= [ "Display" ]]

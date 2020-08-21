@@ -1,16 +1,8 @@
 extends Area
 class_name LodModel
 
-enum LodState {
-	LOD0 = 0,
-	LOD1 = 1,
-	LOD2 = 2,
-	HIDDEN = 255,
-}
-
 var _lods = {}
 var lod_enabled: bool = false
-export(bool) var debug_lod = true
 
 var lod_state setget _set_illegal
 
@@ -22,11 +14,7 @@ func _ready() -> void:
 		_lods[2] = $LOD2
 		lod_enabled = true
 		add_to_group(Groups.LOD_MODELS)
-		
-		var temp = debug_lod
-		debug_lod = false
-		set_lod(LodState.LOD2)
-		debug_lod = temp
+		set_lod(VisibilityManager.default_lod_state)
 	else:
 		lod_enabled = false
 
@@ -35,19 +23,20 @@ func set_lod(level: int)-> void:
 		return
 		
 	hide_all()
-	if level != LodState.HIDDEN:
+	if level != VisibilityManager.LodState.HIDDEN:
 		_lods[level].visible = true;
 		
 	lod_state = level
-	if debug_lod:
+	if VisibilityManager.log_lod_changes:
 		Log.trace(self, "", "Lod changed to %s for object %s" %[level, self.name])
+	VisibilityManager.update_context(self)
 
 func hide_all()-> void:
 	if !lod_enabled:
 		return
 	for i in range(_lods.size()):
 		_lods[i].visible = false;
-	lod_state = LodState.HIDDEN
+	lod_state = VisibilityManager.LodState.HIDDEN
 
 func _generate_col_shape():
 	var col = CollisionShape.new()

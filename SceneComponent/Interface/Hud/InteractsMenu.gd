@@ -20,7 +20,22 @@ func _ready() -> void :
 #Called from a signal. One of the buttons corresponding to the interactables has been pressed.
 func _button_pressed(interactable : Node) -> void :
 	#Interact with desired interactable
-	interactor_component.on_interact_menu_request(interactable)
+	interactor_component.menu_interact_request(interactable)
+
+#Remove all buttons and separators for Interactables.
+func _clear_button_parent() -> void :
+	#Disconnect all signals that are connected.
+	for array in button_relations :
+		var interactable = array[0]
+		interactable.disconnect("display_info_changed", self, "_interactable_display_info_changed")
+		interactable.disconnect("title_changed", self, "_interactable_title_changed")
+	
+	var child_index : int = button_parent.get_child_count() - 1
+	while child_index > 0 :
+		button_parent.get_child(child_index).queue_free()
+		child_index -= 1
+	
+	button_relations = []
 
 #Add a button to the InteractsMenu.
 func _create_button(interact_name : String, info : String, interactable : Node) -> Button :
@@ -88,7 +103,7 @@ func _interactable_display_info_changed(new_display_info : String, button : Butt
 		description.text = new_display_info
 
 #Called from a signal. Adds a button to the button list based on the interactable.
-func _interactable_entered(interactable_node) -> void :
+func _interactable_entered(interactable_node : Interactable) -> void :
 	#Check that the Interctable is not already listed.
 	for array in button_relations :
 		if array[0] == interactable_node :
@@ -140,36 +155,19 @@ func _interactable_title_changed(new_title : String, button : Button) -> void :
 #Called from a signal. Disconnect the old interactor and connect the new one.
 func _new_interactor(new_interactor : Node) -> void :
 	if interactor_component != null :
-#		interactor_component.lost_focus()
+		interactor_component.lost_focus()
 #		interactor_component.disconnect(interactor_component.FOCUS_ROLLBACK, self, "_rollback_interactor_focus")
 		interactor_component.disconnect(interactor_component.INTERACTABLE_ENTERED_REACH, self, "_interactable_entered")
 		interactor_component.disconnect(interactor_component.INTERACTABLE_LEFT_REACH, self, "_interactable_left")
+		
+		#Clear whatever Interactables are present from the old Interactor.
+		_clear_button_parent()
+		
 #	new_interactor.connect(new_interactor.FOCUS_ROLLBACK, self, "_rollback_interactor_focus")
 	new_interactor.connect(new_interactor.INTERACTABLE_ENTERED_REACH, self, "_interactable_entered")
 	new_interactor.connect(new_interactor.INTERACTABLE_LEFT_REACH, self, "_interactable_left")
 	interactor_component = new_interactor
-
-#A new InteractorComponent has grabbed focus.
-#func _new_interactor_append_to_history(new_interactor : Node) -> void :
-#	_new_interactor(new_interactor)
-#
-#	#Listen for when the interactor has been freed so we don't crash the game
-#	#by trying to call it after.
-#	new_interactor.connect("tree_exited", self, "interactor_freed", [new_interactor.get_instance_id()])
-#
-#	interactor_history.append(new_interactor.get_instance_id())
-#	interactor_history_pointers.append(new_interactor)
-
-#Move the focus to the latest valid InteractorComponent.
-#func _rollback_interactor_focus() -> void :
-#	if interactor_history[interactor_history.size() -1] != null :
-#		var interactor : Node = interactor_history_pointers[interactor_history.size() -1]
-#		interactor.disconnect("tree_exited", self, "interactor_freed")
-#	interactor_history.pop_back()
-#	interactor_history_pointers.pop_back()
-#
-#	while interactor_history[interactor_history.size() -1] == null :
-#		interactor_history.pop_back()
-#		interactor_history_pointers.pop_back()
-#
-#	_new_interactor(interactor_history_pointers[interactor_history.size() -1])
+	
+	#Add the new Interactables to the scene tree.
+	for interactable in new_interactor.get_interactables() :
+		_interactable_entered(interactable)

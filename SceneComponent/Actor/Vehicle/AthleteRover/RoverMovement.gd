@@ -11,7 +11,7 @@ export var power_per_wheel: float # Set in _ready
 # to actuate before allowing another jump attempt
 var _jump_timer: float = 0.0
 var jump_cooldown: float = 2.0
-var m_b_center_mass: Vector3 = Vector3(0.0, 6.5, 0.0) # Main body center of mass, currently matches the rootcol pos
+var m_b_center_mass: Vector3 = Vector3(0.0, 0, 0.0) # Main body center of mass, currently matches the rootcol pos
 # Collision mask to determine how close the center of mass is from the ground - should only want the ground, so any
 # load/cargo below the body should be in a different layer
 var coll_mask: int = 1

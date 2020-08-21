@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://SceneComponent/Interface/Hud/ChatComponent.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tree/Interface/Hud/InteractDisplay/InteractDisplay.tscn" type="PackedScene" id=2]
 [ext_resource path="res://SceneComponent/Interface/Hud/InteractsMenu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SceneComponent/Interface/PlayerHud.gd" type="Script" id=4]
+[ext_resource path="res://SceneComponent/Interface/Hud/FlightSpeedDisplay.tscn" type="PackedScene" id=5]
 
 [node name="PlayerHud" type="Spatial"]
 script = ExtResource( 4 )
@@ -13,3 +14,5 @@ script = ExtResource( 4 )
 [node name="InteractDisplay" parent="." instance=ExtResource( 2 )]
 
 [node name="InteractsMenu" parent="." instance=ExtResource( 3 )]
+
+[node name="FlightSpeedDisplay" parent="." instance=ExtResource( 5 )]

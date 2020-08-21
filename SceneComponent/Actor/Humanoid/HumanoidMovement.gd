@@ -16,6 +16,9 @@ var ground_normal: Vector3 = Vector3.UP
 var jump_timeout: float
 var old_normal : Vector3 = Vector3.DOWN
 
+#Whether we are currently flying or not.
+var is_flying : bool = false
+
 onready var on_ground : Node = $OnGround
 onready var normal_detect : Node = $NormalDetect
 #Whether I am climbing or not.
@@ -28,6 +31,8 @@ func _ready() -> void:
 	# Add the KinematicBody as collision exception so it doesn't detect the body as a walkable surface.
 	on_ground.add_exception(entity)
 	normal_detect.add_exception(entity)
+	
+	Signals.Entities.connect(Signals.Entities.FLY_TOGGLED, self, "_toggle_fly")
 
 func is_grounded() -> bool:
 	return on_ground.is_colliding()
@@ -54,11 +59,32 @@ func _process_client(delta: float) -> void:
 func _process_server(delta: float) -> void:
 	rotate_body(delta)
 	
-	if entity.state.state == ActorEntityState.State.CLIMBING:
+	if entity.state.state == ActorEntityState.State.FLY :
+		update_fly(delta)
+	elif entity.state.state == ActorEntityState.State.CLIMBING:
 		update_stairs_climbing(delta)
 	else:
 		update_movement(delta)
 	update_state()
+
+#Toggle whether the player is flying or not.
+func _toggle_fly() -> void :
+	is_flying = !is_flying
+	
+	#SHut off collision detection for the entity.
+	entity.set_collision_mask_bit(0, !is_flying)
+	entity.set_collision_layer_bit(0, !is_flying)
+
+func update_fly(delta) -> void :
+	entity.velocity += (horizontal_vector*90) * delta 
+	entity.velocity.y += (entity.fly_input_float * 3600) * delta
+	
+	entity.velocity = entity.move_and_slide(entity.velocity, Vector3.UP, false)
+	entity.velocity = Vector3.ZERO
+	
+	#Update the values for networking.
+	entity.srv_pos = entity.global_transform.origin
+	entity.srv_vel = entity.velocity
 
 func update_stairs_climbing(delta):
 	var kb_pos = entity.global_transform.origin
@@ -76,9 +102,8 @@ func update_stairs_climbing(delta):
 		# Add the movement velocity using delta to make sure physics are consistent regardless of framerate.
 		entity.velocity += horizontal_vector * delta
 		
-		
 		#Stop climbing at the top when too far away from the stairs.
-		if kb_pos.distance_to(entity.stairs.climb_points[entity.climb_point]) > 1.2:
+		if entity.climb_point + 1 >= entity.stairs.climb_points.size() :
 			stop_climb_stairs()
 	else:
 		#Automatically move towards the climbing point horizontally.
@@ -87,25 +112,25 @@ func update_stairs_climbing(delta):
 		entity.velocity += flat_velocity
 		entity.velocity += Vector3(0, input_direction * delta * climb_speed, 0)
 	
-	#When moving down and at the bottom of the stairs, then let go.
-	if input_direction < 0.0 and entity.climb_point < 2:
+	#When moving down and at the bottom of the stairs, let go.
+	if input_direction < 0.0 and on_ground.is_colliding():
 		stop_climb_stairs()
 	
 	entity.velocity = entity.move_and_slide(entity.velocity, Vector3.UP, false)
 	entity.velocity *= 0.9
 	
-	# Update the values that are use for networking.
+	# Update the values that are used for networking.
 	entity.srv_pos = entity.global_transform.origin
 	entity.srv_vel = entity.velocity
 
 func update_movement(delta):
 	var movement_direction = horizontal_vector.normalized()
 	var _velocity_direction = entity.velocity.normalized()
-	var normal = normal_detect.get_collision_normal()
+	var normal = normal_detect.get_collision_normal().normalized()
 	
 	# Use the normal of the ground detect if the normal detect isn't colliding.
 	if not normal_detect.is_colliding():
-		normal = on_ground.get_collision_normal()
+		normal = on_ground.get_collision_normal().normalized()
 	# Move the raycast towards the movement direction to detect the ground better. Makes the ramps walkable.
 	on_ground.cast_to = (normal * -2.0 + movement_direction).normalized() * 0.5
 	
@@ -131,7 +156,7 @@ func update_movement(delta):
 	
 	# Add the movement velocity using delta to make sure physics are consistent regardless of framerate.
 	entity.velocity += horizontal_vector * delta
-	entity.velocity += vertical_vector * delta
+	
 	# Apply the gravity towards the down direction.
 	if !is_climbing:
 		entity.velocity += (WorldConstants.GRAVITY) * Vector3.DOWN * delta
@@ -151,24 +176,40 @@ func update_movement(delta):
 	entity.srv_vel = entity.velocity
 
 func start_climb_stairs(target_stairs) -> void:
+	#Do nothing if the player is already in climbing state.
 	if entity.state.state == ActorEntityState.State.CLIMBING:
 		return
+	
 	entity.stairs = target_stairs
 	is_climbing = true
+	
+	#Get which direction I should face when climbing the stairs.
 	var kb_pos = entity.global_transform.origin
 	entity.climb_look_direction = entity.stairs.get_look_direction(kb_pos)
+	
 	#Get the closest step to start climbing from.
 	for index in entity.stairs.climb_points.size():
 		if entity.climb_point == -1 or entity.stairs.climb_points[index].distance_to(kb_pos) < entity.stairs.climb_points[entity.climb_point].distance_to(kb_pos):
 			entity.climb_point = index
+	
+	#Rotate the model to best fit the stairs.
+	var a = entity.model.global_transform
+	var target_transform = a.looking_at(entity.model.global_transform.origin - entity.climb_look_direction, Vector3(0, 1, 0))
+	entity.model.global_transform.basis = target_transform.basis
 
 #Stop climbing stairs.
 func stop_climb_stairs() -> void :
 	is_climbing = false
 	entity.climb_point = -1
+	entity.velocity += Vector3(0, 0, 0)
+	
+	#Make myself face the same direction as the camera.
+	entity.model.global_transform.basis = entity.global_transform.basis
 
 func update_state():
-	if !entity.is_grounded and !is_climbing:
+	if is_flying :
+		entity.state.state = ActorEntityState.State.FLY
+	elif !entity.is_grounded and !is_climbing:
 		entity.state.state = ActorEntityState.State.IN_AIR
 	elif is_climbing :
 		entity.state.state = ActorEntityState.State.CLIMBING
@@ -200,8 +241,7 @@ func handle_input(delta : float) -> void:
 func rotate_body(_delta: float) -> void:
 	# Rotate
 	if entity.state.state == ActorEntityState.State.CLIMBING:
-		var target_transform = entity.model.global_transform.looking_at(entity.model.global_transform.origin - entity.climb_look_direction, Vector3(0, 1, 0))
-		entity.model.global_transform.basis = target_transform.basis
+		return
 	else:
 		var o = entity.global_transform.origin
 		var t = entity.look_dir

@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://SceneComponent/Display/Billboard/InteractorBillboard.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Interface/MonumentTheme.tres" type="Theme" id=2]
+
+[sub_resource type="PlaneMesh" id=1]
+size = Vector2( 1, 1 )
+
+[sub_resource type="ViewportTexture" id=2]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="SpatialMaterial" id=3]
+resource_local_to_scene = true
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+albedo_texture = SubResource( 2 )
+
+[node name="InteractorBillboard" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 512, 512 )
+transparent_bg = true
+hdr = false
+usage = 1
+render_target_v_flip = true
+
+[node name="InteractorBillboardContent" type="Control" parent="Viewport"]
+anchor_right = 0.267
+anchor_bottom = 0.474
+margin_right = 375.296
+margin_bottom = 269.312
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Viewport/InteractorBillboardContent"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Billboard
+Content"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

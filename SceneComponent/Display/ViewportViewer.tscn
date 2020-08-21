@@ -5,6 +5,7 @@
 
 [sub_resource type="PlaneMesh" id=1]
 flip_faces = true
+size = Vector2( 2, 1.125 )
 
 [sub_resource type="ViewportTexture" id=2]
 viewport_path = NodePath("Viewport")
