@@ -299,11 +299,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/inspector-gadget/src/gadgets/gadget_popup/popup_color.gd"
 }, {
-"base": "Control",
-"class": "Presentation",
-"language": "GDScript",
-"path": "res://SceneComponent/Display/SlidePresentation/Presentation.gd"
-}, {
 "base": "Reference",
 "class": "ResourceSignals",
 "language": "GDScript",
@@ -318,16 +313,6 @@ _global_script_classes=[ {
 "class": "ReversingVisibilityTrigger",
 "language": "GDScript",
 "path": "res://SceneComponent/World/DynamicLoading/ReversingVisibilityTrigger.gd"
-}, {
-"base": "Control",
-"class": "Slide",
-"language": "GDScript",
-"path": "res://SceneComponent/Display/SlidePresentation/Slide.gd"
-}, {
-"base": "Viewport",
-"class": "SlideViewport",
-"language": "GDScript",
-"path": "res://SceneComponent/Display/SlidePresentation/SlideViewport.gd"
 }, {
 "base": "AEntity",
 "class": "StaticEntity",
@@ -403,16 +388,6 @@ _global_script_classes=[ {
 "class": "Workstation",
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/NPCWorkstation.gd"
-}, {
-"base": "Control",
-"class": "Slide",
-"language": "GDScript",
-"path": "res://SceneComponent/Display/Slide.gd"
-}, {
-"base": "Viewport",
-"class": "SlideViewport",
-"language": "GDScript",
-"path": "res://SceneComponent/Display/SlideViewport.gd"
 } ]
 _global_script_class_icons={
 "AComponent": "",
@@ -473,7 +448,6 @@ _global_script_class_icons={
 "NetworkSignals": "",
 "NpcDefinitions": "",
 "PopupColor": "",
-"Presentation": "res://Assets/Icons/Presentation.svg",
 "ResourceSignals": "",
 "ResourceThreadedLoader": "",
 "ReversingVisibilityTrigger": "",
