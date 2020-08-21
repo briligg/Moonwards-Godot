@@ -74,6 +74,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/joyeux_npc_editor/src/Core/Control_Components/MenuWTitles.gd"
 }, {
+"base": "Area",
+"class": "DynamicVisibilityTrigger",
+"language": "GDScript",
+"path": "res://SceneComponent/World/DynamicLoading/DynamicVisibilityTrigger.gd"
+}, {
 "base": "Reference",
 "class": "EntityData",
 "language": "GDScript",
@@ -299,6 +304,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Manager/ResourceManager/ResourceThreadedLoader.gd"
 }, {
+"base": "Area",
+"class": "ReversingVisibilityTrigger",
+"language": "GDScript",
+"path": "res://SceneComponent/World/DynamicLoading/ReversingVisibilityTrigger.gd"
+}, {
 "base": "AEntity",
 "class": "StaticEntity",
 "language": "GDScript",
@@ -328,6 +338,7 @@ _global_script_class_icons={
 "Custom_Wheel": "",
 "DoubleLabel": "",
 "DropDown": "",
+"DynamicVisibilityTrigger": "",
 "EntityData": "",
 "EntitySignals": "",
 "EnumHelper": "",
@@ -373,6 +384,7 @@ _global_script_class_icons={
 "PopupColor": "",
 "ResourceSignals": "",
 "ResourceThreadedLoader": "",
+"ReversingVisibilityTrigger": "",
 "StaticEntity": "",
 "VehicleEntity": "",
 "Workstation": ""
