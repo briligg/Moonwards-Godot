@@ -39,32 +39,34 @@ __meta__ = {
 }
 
 [node name="NextBtn" type="TextureButton" parent="."]
-anchor_left = 0.8
+anchor_left = 0.9
 anchor_top = 0.83
-anchor_right = 0.9
+anchor_right = 0.98
 anchor_bottom = 0.99
 margin_top = -0.399963
 margin_bottom = -0.199951
 texture_normal = ExtResource( 4 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PrevBtn" type="TextureButton" parent="."]
-anchor_left = 0.1
+anchor_left = 0.02
 anchor_top = 0.83
-anchor_right = 0.2
+anchor_right = 0.1
 anchor_bottom = 0.99
 margin_top = 0.400024
-margin_right = 8.0
 rect_rotation = 180.0
-rect_pivot_offset = Vector2( 100, 86 )
+rect_pivot_offset = Vector2( 76.8, 86.2 )
 texture_normal = ExtResource( 4 )
 expand = true
 
 [node name="TextContainer" type="Panel" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.2
+anchor_left = 0.1
 anchor_top = 0.8
-anchor_right = 0.8
+anchor_right = 0.9
 anchor_bottom = 1.0
 margin_top = 18.0
 __meta__ = {
