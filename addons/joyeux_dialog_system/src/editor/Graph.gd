@@ -19,7 +19,7 @@ func save_dialogs(path : String, character_name : String) -> void:
 	for child in get_children():
 		if child is GraphNode:
 			
-			var next : Array = []
+			var next = []
 			for connection in connections:
 					if connection.get("from") == child.name:
 						next.append(connection.get("to"))
@@ -42,6 +42,10 @@ func save_dialogs(path : String, character_name : String) -> void:
 				file.set_value("choices_triggers", child.name, next)
 				
 			if child.has_node("content"):
+				if next.size() == 0:
+					next = ""
+				else:
+					next = next[0]
 				var dialog = {
 					"title" : child.get_node("content").title,
 					"content" : child.get_node("content").content,

@@ -130,6 +130,7 @@ margin_top = 343.473
 margin_right = 1318.56
 margin_bottom = 724.473
 window_title = "Guardar un Archivo"
+filters = PoolStringArray( "*.mtalk ; Dialog files" )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
