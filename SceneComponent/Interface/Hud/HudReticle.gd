@@ -17,22 +17,23 @@ func _physics_process(_delta) -> void :
 		#on it's camera parent.
 		ray_cast.transform.origin = Vector3.ZERO
 
-#Listen to SignalsManager to see when I should activate/deactivate.
+# Listen to SignalsManager to see when I should activate/deactivate.
 func _ready() -> void :
 	Signals.Hud.connect(Signals.Hud.RETICLE_ACTIVITY_SET, self, "_set_activity")
 
-#Determines if I should turn on when requested or not.
+# Determines if I should turn on when requested or not.
 func _set_activity(is_active : bool) -> void :
 	if is_active :
 		#Do not show any errors should this get called twice in a row.
-		if not Signals.Hud.is_connected(Signals.Hud.SHOW_RETICLE, self, "show") :
-			Signals.Hud.connect(Signals.Hud.SHOW_RETICLE, self, "show")
-			Signals.Hud.connect(Signals.Hud.HIDE_RETICLE, self, "hide")
+#		if not Signals.Hud.is_connected(Signals.Hud.SHOW_RETICLE, self, "show") :
+#			Signals.Hud.connect(Signals.Hud.SHOW_RETICLE, self, "show")
+#			Signals.Hud.connect(Signals.Hud.HIDE_RETICLE, self, "hide")
+		show()
 		ray_cast.activate()
 	else :
 		hide()
 		#Do not show any errors should this get called twice in a row.
-		if Signals.Hud.is_connected(Signals.Hud.SHOW_RETICLE, self, "show") :
-			Signals.Hud.disconnect(Signals.Hud.SHOW_RETICLE, self, "show")
-			Signals.Hud.disconnect(Signals.Hud.HIDE_RETICLE, self, "hide")
-		ray_cast.deactivate()
+#		if Signals.Hud.is_connected(Signals.Hud.SHOW_RETICLE, self, "show") :
+#			Signals.Hud.disconnect(Signals.Hud.SHOW_RETICLE, self, "show")
+#			Signals.Hud.disconnect(Signals.Hud.HIDE_RETICLE, self, "hide")
+#		ray_cast.deactivate()

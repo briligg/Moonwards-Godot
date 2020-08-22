@@ -16,7 +16,7 @@ __meta__ = {
 [node name="Makers_Monument" parent="." instance=ExtResource( 1 )]
 
 [node name="Screen" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 1, 0, 1.7, 0.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0.5 )
 content = ExtResource( 4 )
 
 [node name="PlayArea" type="Area" parent="."]
