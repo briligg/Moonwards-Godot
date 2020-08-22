@@ -27,7 +27,8 @@ func _on_FileDialog_file_selected(path):
 		FileDialog.MODE_SAVE_FILE:
 			Graph.save_dialogs(path, CharNameEdit.text)
 		FileDialog.MODE_OPEN_FILE:
-			pass
+			Graph.load_dialogs(path)
+			
 
 func warn(what : String):
 	Warn.dialog_text = what

@@ -18,6 +18,7 @@ func set_options(options : Array) -> void:
 		if opt is String:
 			var line = LineEdit.new()
 			line.text = opt
+			set_slot(get_child_count()-1, false, TYPE_BOOL, Color(1,1,1,1), true, TYPE_BOOL, Color(1,1,1,1))
 			add_child(line)
 	move_child($Button, get_child_count())
 

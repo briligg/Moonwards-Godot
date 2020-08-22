@@ -35,6 +35,7 @@ func  _ready():
 	ov_label.text = "Name override (Leave empty if none): "
 	
 	override_edit = LineEdit.new()
+	override_edit.text = override
 	override_edit.size_flags_horizontal = SIZE_EXPAND_FILL
 	
 	var label = Label.new()
@@ -48,6 +49,7 @@ func  _ready():
 	label2.text = "Dialog:"
 	
 	content_edit = TextEdit.new()
+	content_edit.text = content
 	content_edit.size_flags_vertical = SIZE_EXPAND_FILL
 	content_edit.size_flags_horizontal = SIZE_EXPAND_FILL
 	
