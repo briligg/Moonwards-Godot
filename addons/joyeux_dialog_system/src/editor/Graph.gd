@@ -77,8 +77,8 @@ func load_dialogs(path : String) -> void:
 			create_option(true, offsets.get(key), fload.get_value("matches", key))
 	get_node("Start").offset = offsets.get("Start")
 	for connection in fload.get_value("config", "connections"):
-		var node : GraphNode = get_node(connection.get("from"))
-		if node.is_slot_enabled_right(connection.get("from_port")) and not node.is_slot_enabled_left(connection.get("from_port")):
+#		var node : GraphNode = get_node(connection.get("from"))
+#		if node.is_slot_enabled_right(connection.get("from_port")) and not node.is_slot_enabled_left(connection.get("from_port")):
 			connect_node(connection.get("from"),
 				connection.get("from_port"),
 				connection.get("to"), 
