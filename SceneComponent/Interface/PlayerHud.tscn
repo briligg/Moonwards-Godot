@@ -5,7 +5,8 @@
 [ext_resource path="res://SceneComponent/Interface/Hud/InteractsMenu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SceneComponent/Interface/PlayerHud.gd" type="Script" id=4]
 [ext_resource path="res://SceneComponent/Interface/Hud/FlightSpeedDisplay.tscn" type="PackedScene" id=5]
-[ext_resource path="res://SceneComponent/Interface/Hud/HudReticle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://SceneComponent/Interface/Hud/HudCrosshair.tscn" type="PackedScene" id=6]
+
 
 [node name="PlayerHud" type="Spatial"]
 script = ExtResource( 4 )

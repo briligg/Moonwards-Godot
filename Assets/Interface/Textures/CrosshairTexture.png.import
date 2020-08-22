@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/ReticleTexture.png-eeb1ab2aee9c44e1c0cffe8c09ed991b.s3tc.stex"
-path.etc2="res://.import/ReticleTexture.png-eeb1ab2aee9c44e1c0cffe8c09ed991b.etc2.stex"
+path.s3tc="res://.import/CrosshairTexture.png-81f86e7cb095a1808ead4d788643c3c9.s3tc.stex"
+path.etc2="res://.import/CrosshairTexture.png-81f86e7cb095a1808ead4d788643c3c9.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Interface/Textures/ReticleTexture.png"
-dest_files=[ "res://.import/ReticleTexture.png-eeb1ab2aee9c44e1c0cffe8c09ed991b.s3tc.stex", "res://.import/ReticleTexture.png-eeb1ab2aee9c44e1c0cffe8c09ed991b.etc2.stex" ]
+source_file="res://Assets/Interface/Textures/CrosshairTexture.png"
+dest_files=[ "res://.import/CrosshairTexture.png-81f86e7cb095a1808ead4d788643c3c9.s3tc.stex", "res://.import/CrosshairTexture.png-81f86e7cb095a1808ead4d788643c3c9.etc2.stex" ]
 
 [params]
 

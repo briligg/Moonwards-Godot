@@ -25,6 +25,8 @@ func _ready() -> void :
 func _set_crosshair(is_active : bool) -> void :
 	if is_active :
 		show()
+		Helpers.capture_mouse(true)
+#		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		ray_cast.enable()
 	else :
 		hide()
