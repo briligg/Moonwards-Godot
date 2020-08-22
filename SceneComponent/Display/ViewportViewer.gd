@@ -77,7 +77,11 @@ func _on_area_input_event(_camera, event, click_pos, _click_normal, _shape_idx):
 	percentage_pos.y *= -1
 	percentage_pos += Vector2(1, 1)
 	percentage_pos = percentage_pos / 2
-
+	
+	#Account for screen scale
+	percentage_pos.x *= screen.scale.x
+	percentage_pos.y *= screen.scale.y
+	
 	var viewport_click_pos = Vector2(percentage_pos.x * viewport.size.x, percentage_pos.y * viewport.size.y)
 	#Set the position in event
 	event.position = viewport_click_pos
