@@ -87,7 +87,7 @@ func _input(event):
 			entity.get_node("Model").visible = !is_first_person
 			
 			#Hud Reticle should be active when in first person mode.
-			Signals.Hud.emit_signal(Signals.Hud.RETICLE_ACTIVITY_SET, is_first_person)
+			Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON, is_first_person)
 
 func _update_cam_pos(delta : float = 0.016667) -> void:
 	#The player is in camera fly mode.
@@ -135,13 +135,13 @@ func _get_cam_normal() -> Vector3:
 func disable():
 	if is_first_person :
 		entity.get_node("Model").show()
-		Signals.Hud.emit_signal(Signals.Hud.RETICLE_ACTIVITY_SET, false)
+		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON, false)
 	.disable()
 
 func enable():
 	#Turn on the aiming reticle if in first person.
 	if is_first_person :
-		Signals.Hud.emit_signal(Signals.Hud.RETICLE_ACTIVITY_SET, true)
+		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON, true)
 	if Network.network_instance.peer_id == entity.owner_peer_id:
 		camera.set_current(true)
 	.enable()

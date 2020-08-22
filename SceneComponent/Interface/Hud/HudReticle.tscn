@@ -24,6 +24,5 @@ __meta__ = {
 [node name="ReticleRayCast" type="RayCast" parent="."]
 enabled = true
 cast_to = Vector3( 0, 0, -100 )
-collision_mask = 1024
 collide_with_areas = true
 script = ExtResource( 3 )

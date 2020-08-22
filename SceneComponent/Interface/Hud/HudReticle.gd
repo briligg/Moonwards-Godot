@@ -19,21 +19,13 @@ func _physics_process(_delta) -> void :
 
 # Listen to SignalsManager to see when I should activate/deactivate.
 func _ready() -> void :
-	Signals.Hud.connect(Signals.Hud.RETICLE_ACTIVITY_SET, self, "_set_activity")
+	Signals.Hud.connect(Signals.Hud.SET_FIRST_PERSON, self, "_set_crosshair")
 
 # Determines if I should turn on when requested or not.
-func _set_activity(is_active : bool) -> void :
+func _set_crosshair(is_active : bool) -> void :
 	if is_active :
-		#Do not show any errors should this get called twice in a row.
-#		if not Signals.Hud.is_connected(Signals.Hud.SHOW_RETICLE, self, "show") :
-#			Signals.Hud.connect(Signals.Hud.SHOW_RETICLE, self, "show")
-#			Signals.Hud.connect(Signals.Hud.HIDE_RETICLE, self, "hide")
 		show()
-		ray_cast.activate()
+		ray_cast.enable()
 	else :
 		hide()
-		#Do not show any errors should this get called twice in a row.
-#		if Signals.Hud.is_connected(Signals.Hud.SHOW_RETICLE, self, "show") :
-#			Signals.Hud.disconnect(Signals.Hud.SHOW_RETICLE, self, "show")
-#			Signals.Hud.disconnect(Signals.Hud.HIDE_RETICLE, self, "hide")
-#		ray_cast.deactivate()
+		ray_cast.disable()
