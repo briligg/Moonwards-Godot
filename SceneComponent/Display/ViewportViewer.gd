@@ -48,12 +48,12 @@ func _on_area_input_event(_camera, event, click_pos, _click_normal, _shape_idx):
 	var screen_pos = screen.global_transform.origin
 	var screen_size = collision_box.scale
 	
+	#Convert the click position from world to local, using the viewport's world position
 	var real_click_pos = Vector2(abs(screen_pos.x) - abs(click_pos.x), 
 			abs(screen_pos.y) - abs(click_pos.y) )
 
 	var percentage_pos = Vector2(real_click_pos.x / screen_size.x, real_click_pos.y / screen_size.y)
 
-	#Convert to viewport coordinate system
 	#Convert pos to a range from (0 - 1)
 	percentage_pos.y *= -1
 	percentage_pos += Vector2(1, 1)
@@ -63,8 +63,10 @@ func _on_area_input_event(_camera, event, click_pos, _click_normal, _shape_idx):
 	percentage_pos.x *= screen.scale.x
 	percentage_pos.y *= screen.scale.y
 	
+	#Convert to viewport coordinates
 	var viewport_click_pos = Vector2(percentage_pos.x * viewport.size.x, percentage_pos.y * viewport.size.y)
-	#Set the position in event
+	
+	#Set the position in the event
 	event.position = viewport_click_pos
 	event.global_position = viewport_click_pos
 
