@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Interface/SlideControl.tres" type="Theme" id=1]
 [ext_resource path="res://SceneComponent/Display/SlidePresentation/Slide2DControl.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Displays/ArrowButton.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Displays/ArrowButtonNormal.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Displays/ArrowButtonHover.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Displays/ArrowButtonPressed.png" type="Texture" id=5]
 
 [sub_resource type="Shader" id=1]
 
@@ -45,7 +47,9 @@ anchor_right = 0.98
 anchor_bottom = 0.99
 margin_top = -0.399963
 margin_bottom = -0.199951
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -59,7 +63,9 @@ anchor_bottom = 0.99
 margin_top = 0.400024
 rect_rotation = 180.0
 rect_pivot_offset = Vector2( 76.8, 86.2 )
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
 expand = true
 
 [node name="TextContainer" type="Panel" parent="."]

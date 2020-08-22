@@ -36,7 +36,7 @@ script = SubResource( 4 )
 [node name="SlidePresentation" type="Spatial"]
 script = ExtResource( 1 )
 texture_slides = [ ExtResource( 4 ), null, ExtResource( 5 ) ]
-text_slides = [ "ONE", "TWO", "" ]
+text_slides = [ "ONE for crying out loud", "TWO", "" ]
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 1920, 1080 )
