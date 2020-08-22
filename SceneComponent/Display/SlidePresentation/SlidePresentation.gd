@@ -29,6 +29,11 @@ func _ready():
 	else:
 		slide_size = texture_slides.size()
 	
+	#At start of scene, make SlidePresentation display first slide.
+	if not text_slides.empty() :
+		$Viewport/SlideControl2.set_text(text_slides[0])
+		$Viewport/SlideControl2.set_texture(texture_slides[0])
+	
 func _on_next_pressed():
 	if slide_size > slide_index + 1:
 		slide_index += 1
