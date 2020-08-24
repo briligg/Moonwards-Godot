@@ -365,6 +365,16 @@ _global_script_classes=[ {
 "path": "res://Assets/SharedAssets/Shaders/StochasticTextureNode.gd"
 }, {
 "base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeUVEdit",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/CustomUVNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeUVPanner",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/PannerNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
 "class": "VisualShaderNodeVectorHeightMix",
 "language": "GDScript",
 "path": "res://Assets/SharedAssets/Shaders/VectorHeightMixNode.gd"
@@ -446,6 +456,8 @@ _global_script_class_icons={
 "VisualShaderNodeParallaxMapping": "",
 "VisualShaderNodeScalarHeightMix": "",
 "VisualShaderNodeStochasticTexture": "",
+"VisualShaderNodeUVEdit": "",
+"VisualShaderNodeUVPanner": "",
 "VisualShaderNodeVectorHeightMix": "",
 "Workstation": ""
 }
