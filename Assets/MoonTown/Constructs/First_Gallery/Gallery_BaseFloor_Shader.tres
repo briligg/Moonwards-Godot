@@ -1,0 +1,60 @@
+[gd_resource type="ShaderMaterial" load_steps=13 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/Shaders/LayeredFloor_Visualshader.tres" type="Shader" id=1]
+[ext_resource path="res://Assets/SharedAssets/Textures/Noises/Noise_Hev_01_1K_RGBA.png" type="Texture" id=2]
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Pavement_01/Pavement_01_2K_Normal.png" type="Texture" id=3]
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Pavement_01/Pavement_01_2K_Albedo.png" type="Texture" id=4]
+[ext_resource path="res://Assets/SharedAssets/Textures/Nature/Moss_01/Moss_01_2K_Normal.jpg" type="Texture" id=5]
+[ext_resource path="res://Assets/SharedAssets/Textures/Nature/Moss_01/Moss_01_2K_Rough_AO_Height.jpg" type="Texture" id=6]
+[ext_resource path="res://Assets/SharedAssets/Textures/Nature/Moss_01/Moss_01_2K_Diffuse.jpg" type="Texture" id=7]
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Pavement_01/Pavement_01_2K_Rough_AO_Height.png" type="Texture" id=8]
+[ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/First_Gallery_Upper_Foundation_Splatmap.png" type="Texture" id=9]
+[ext_resource path="res://Assets/SharedAssets/Textures/Nature/Rock_02/Rock020_2K_Roughness.jpg" type="Texture" id=10]
+[ext_resource path="res://Assets/SharedAssets/Textures/Nature/Rock_02/Rock_02_2K_Albedo.jpg" type="Texture" id=11]
+[ext_resource path="res://Assets/SharedAssets/Textures/Nature/Rock_02/Rock020_2K_Normal.jpg" type="Texture" id=12]
+
+
+
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/Color_A = Color( 0.529412, 0.580392, 0.509804, 1 )
+shader_param/UVScale_A = Vector3( 10, 10, 0 )
+shader_param/Color_A_Alt = Color( 0.431373, 0.447059, 0.270588, 1 )
+shader_param/NoiseInvert = false
+shader_param/NoiseIntensity = 1.0
+shader_param/NoiseAlpha = true
+shader_param/NoiseZ = false
+shader_param/UVScale_Noise = Vector3( 1, 1, 0 )
+shader_param/NoiseY = false
+shader_param/Color_B = Color( 0.564706, 0.564706, 0.564706, 1 )
+shader_param/UVScale_B = Vector3( 10, 10, 0 )
+shader_param/Color_B_Alt = Color( 0.254902, 0.254902, 0.254902, 1 )
+shader_param/Slope = 10.0
+shader_param/Slope_Mult = 3.0
+shader_param/Height_Mult_B = 1.0
+shader_param/Color_C = Color( 0.32549, 0.32549, 0.32549, 1 )
+shader_param/UVScale_C = Vector3( 50, 50, 0 )
+shader_param/Color_C_Alt = Color( 0.254902, 0.254902, 0.254902, 1 )
+shader_param/Height_Mult_C = 1.0
+shader_param/Metallic_A = null
+shader_param/Metallic_B = null
+shader_param/Metallic_C = null
+shader_param/Rough_Mult_A = 0.5
+shader_param/Rough_Mult_B = 1.0
+shader_param/Rough_Mult_C = 0.8
+shader_param/Specular_A = 1.0
+shader_param/Specular_B = 0.5
+shader_param/Specular_C = 0.5
+shader_param/Fresnel_Color = Color( 0.215686, 0.113725, 0.917647, 1 )
+shader_param/Albedo_A = ExtResource( 7 )
+shader_param/Noise_RGB = ExtResource( 2 )
+shader_param/Albedo_B = ExtResource( 11 )
+shader_param/Rough_B = ExtResource( 10 )
+shader_param/Albedo_C = ExtResource( 4 )
+shader_param/Splatmap = ExtResource( 9 )
+shader_param/Rough_C = ExtResource( 8 )
+shader_param/Rough_A = ExtResource( 6 )
+shader_param/NormalMap_A = ExtResource( 5 )
+shader_param/NormalMap_B = ExtResource( 12 )
+shader_param/NormalMap_C = ExtResource( 3 )

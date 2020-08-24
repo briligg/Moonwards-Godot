@@ -74,6 +74,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/joyeux_npc_editor/src/Core/Control_Components/MenuWTitles.gd"
 }, {
+"base": "Area",
+"class": "DynamicVisibilityTrigger",
+"language": "GDScript",
+"path": "res://SceneComponent/World/DynamicLoading/DynamicVisibilityTrigger.gd"
+}, {
 "base": "Reference",
 "class": "EntityData",
 "language": "GDScript",
@@ -299,6 +304,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Manager/ResourceManager/ResourceThreadedLoader.gd"
 }, {
+"base": "Area",
+"class": "ReversingVisibilityTrigger",
+"language": "GDScript",
+"path": "res://SceneComponent/World/DynamicLoading/ReversingVisibilityTrigger.gd"
+}, {
 "base": "AEntity",
 "class": "StaticEntity",
 "language": "GDScript",
@@ -308,6 +318,66 @@ _global_script_classes=[ {
 "class": "VehicleEntity",
 "language": "GDScript",
 "path": "res://Script/Entity/VehicleEntity.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeCheapContrast",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/CheapContrastNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeColorHue",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/ColorHueNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeDistanceWS",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/DistanceWSNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeLocationWS",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/LocationWSNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeNormalMultiply",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/NormalMultiplyNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeNormalWS",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/NormalWSNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeParallaxMapping",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/ParallaxMappingNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeScalarHeightMix",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/ScalarHeightMixNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeStochasticTexture",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/StochasticTextureNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeUVEdit",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/CustomUVNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeUVPanner",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/PannerNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeVectorHeightMix",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/VectorHeightMixNode.gd"
 }, {
 "base": "Node",
 "class": "Workstation",
@@ -328,6 +398,7 @@ _global_script_class_icons={
 "Custom_Wheel": "",
 "DoubleLabel": "",
 "DropDown": "",
+"DynamicVisibilityTrigger": "",
 "EntityData": "",
 "EntitySignals": "",
 "EnumHelper": "",
@@ -373,8 +444,21 @@ _global_script_class_icons={
 "PopupColor": "",
 "ResourceSignals": "",
 "ResourceThreadedLoader": "",
+"ReversingVisibilityTrigger": "",
 "StaticEntity": "",
 "VehicleEntity": "",
+"VisualShaderNodeCheapContrast": "",
+"VisualShaderNodeColorHue": "",
+"VisualShaderNodeDistanceWS": "",
+"VisualShaderNodeLocationWS": "",
+"VisualShaderNodeNormalMultiply": "",
+"VisualShaderNodeNormalWS": "",
+"VisualShaderNodeParallaxMapping": "",
+"VisualShaderNodeScalarHeightMix": "",
+"VisualShaderNodeStochasticTexture": "",
+"VisualShaderNodeUVEdit": "",
+"VisualShaderNodeUVPanner": "",
+"VisualShaderNodeVectorHeightMix": "",
 "Workstation": ""
 }
 
@@ -1827,8 +1911,11 @@ file_logging/max_log_files=30
 
 [rendering]
 
+threads/thread_model=2
+quality/filters/anisotropic_filter_level=16
 quality/shadows/filter_mode=2
+quality/reflections/irradiance_max_size=256
 quality/filters/use_nearest_mipmap_filter=true
 limits/rendering/max_renderable_elements=60000
 environment/default_clear_color=Color( 0, 0, 0, 1 )
-environment/default_environment="res://default_env.tres"
+quality/filters/msaa=1

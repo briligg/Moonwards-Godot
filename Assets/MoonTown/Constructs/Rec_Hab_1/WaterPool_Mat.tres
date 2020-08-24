@@ -1,0 +1,26 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Constructs/Rec_Hab_1/Shaders/WaterPool_Visualshader.tres" type="Shader" id=1]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/Color_A = null
+shader_param/UVScale_A = null
+shader_param/UVScale_B = null
+shader_param/Color_B = null
+shader_param/NoiseInvert = null
+shader_param/NoiseIntensity = null
+shader_param/NoiseAlpha = null
+shader_param/NoiseZ = null
+shader_param/UVScale_Noise = null
+shader_param/NoiseY = null
+shader_param/UVScale_Far = null
+shader_param/Color_Far = null
+shader_param/DistanceLerp = null
+shader_param/DistanceSmooth = null
+shader_param/Metallic_A_B_Far = null
+shader_param/Rough_AO_Int = null
+shader_param/Rough_AO_Far_Int = null
+shader_param/Specular_A_B_Far = null
+shader_param/Normal_Int = null
+shader_param/Normal_Far_Int = null

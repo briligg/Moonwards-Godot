@@ -1,0 +1,27 @@
+[gd_resource type="ShaderMaterial" load_steps=7 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Shaders/DistanceBased_Visualshader.tres" type="Shader" id=1]
+[ext_resource path="res://Assets/MoonTown/Constructs/Lalande_Crater/textures/Lalande_Whole_2k_Normals.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/SharedAssets/Textures/Nature_Textures/Rock_bumpyBrown_cc0textures/Rock03_nrm.jpg" type="Texture" id=3]
+[ext_resource path="res://Assets/SharedAssets/Textures/Nature_Textures/Rock_bumpyBrown_cc0textures/Rock03_rgh.jpg" type="Texture" id=4]
+[ext_resource path="res://Assets/SharedAssets/Textures/Nature_Textures/Rock_bumpyBrown_cc0textures/Rock03_col.jpg" type="Texture" id=5]
+[ext_resource path="res://Assets/MoonTown/Constructs/Lalande_Crater/textures/Lalande_2019_Whole_ImageTexture_Tint_4096_16colors_reducedDither.png" type="Texture" id=6]
+
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/Color = Color( 0.666667, 0.647059, 0.619608, 1 )
+shader_param/UVScale = Vector3( 200, 200, 1 )
+shader_param/UVScale_Far = Vector3( 1, 1, 1 )
+shader_param/Color_Far = Color( 0.666667, 0.647059, 0.619608, 1 )
+shader_param/DistanceLerp = 750.0
+shader_param/DistanceSmooth = 150.0
+shader_param/Metallic = null
+shader_param/Metallic_Far = null
+shader_param/Specular = 0.5
+shader_param/Specular_Far = 0.5
+shader_param/Albedo = ExtResource( 5 )
+shader_param/Albedo_Far = ExtResource( 6 )
+shader_param/Rough_AO_ = ExtResource( 4 )
+shader_param/NormalMap = ExtResource( 3 )
+shader_param/NormalMap_Far = ExtResource( 2 )

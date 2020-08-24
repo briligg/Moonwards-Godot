@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/Noise_Hev_01_1K_RGBA.png-dbec1e8432230205b3378343f3e2e2f6.s3tc.stex"
+path.etc2="res://.import/Noise_Hev_01_1K_RGBA.png-dbec1e8432230205b3378343f3e2e2f6.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://Assets/SharedAssets/Textures/Noises/Noise_Hev_01_1K_RGBA.png"
+dest_files=[ "res://.import/Noise_Hev_01_1K_RGBA.png-dbec1e8432230205b3378343f3e2e2f6.s3tc.stex", "res://.import/Noise_Hev_01_1K_RGBA.png-dbec1e8432230205b3378343f3e2e2f6.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=1
+compress/bptc_ldr=0
+compress/normal_map=2
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=0
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

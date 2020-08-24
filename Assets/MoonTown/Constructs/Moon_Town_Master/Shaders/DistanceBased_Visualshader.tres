@@ -1,0 +1,350 @@
+[gd_resource type="VisualShader" load_steps=33 format=2]
+
+[sub_resource type="VisualShaderNodeVectorOp" id=1]
+operator = 2
+
+[sub_resource type="VisualShaderNodeVectorOp" id=2]
+operator = 2
+
+[sub_resource type="VisualShaderNodeTextureUniform" id=3]
+uniform_name = "Albedo"
+
+[sub_resource type="VisualShaderNodeTextureUniform" id=4]
+uniform_name = "Albedo_Far"
+
+[sub_resource type="VisualShaderNodeColorUniform" id=5]
+uniform_name = "Color"
+
+[sub_resource type="VisualShaderNodeColorUniform" id=6]
+uniform_name = "Color_Far"
+
+[sub_resource type="VisualShaderNodeVectorOp" id=7]
+operator = 2
+
+[sub_resource type="VisualShaderNodeVectorOp" id=8]
+operator = 2
+
+[sub_resource type="VisualShaderNodeVectorInterp" id=9]
+
+[sub_resource type="VisualShaderNodeScalarInterp" id=10]
+
+[sub_resource type="VisualShaderNodeTextureUniform" id=11]
+uniform_name = "Rough_AO"
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeTextureUniform" id=12]
+uniform_name = "Rough_AO_Far"
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id=13]
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id=14]
+
+[sub_resource type="VisualShaderNodeScalarInterp" id=15]
+
+[sub_resource type="VisualShaderNodeScalarInterp" id=16]
+
+[sub_resource type="VisualShaderNodeScalarInterp" id=17]
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=18]
+uniform_name = "Metallic"
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=19]
+uniform_name = "Metallic_Far"
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=20]
+uniform_name = "Specular"
+
+[sub_resource type="VisualShaderNodeExpression" id=21]
+size = Vector2( 555, 257 )
+expression = "//Get distance to camera based on vertex
+DistanceFinal = clamp(smoothstep(Distance_min, Distance_max, -Vertex.z), 0.0, 1.0);"
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=22]
+uniform_name = "Specular_Far"
+
+[sub_resource type="VisualShaderNodeTextureUniform" id=23]
+uniform_name = "NormalMap"
+texture_type = 2
+
+[sub_resource type="VisualShaderNodeTextureUniform" id=24]
+uniform_name = "NormalMap_Far"
+texture_type = 2
+
+[sub_resource type="VisualShaderNodeVectorInterp" id=25]
+
+[sub_resource type="VisualShaderNodeInput" id=26]
+input_name = "color"
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=27]
+uniform_name = "DistanceLerp"
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=28]
+uniform_name = "DistanceSmooth"
+
+[sub_resource type="VisualShaderNodeInput" id=29]
+input_name = "vertex"
+
+[sub_resource type="VisualShaderNodeInput" id=30]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeVec3Uniform" id=31]
+uniform_name = "UVScale"
+
+[sub_resource type="VisualShaderNodeVec3Uniform" id=32]
+uniform_name = "UVScale_Far"
+
+[resource]
+code = "shader_type spatial;
+uniform vec4 Color : hint_color;
+uniform vec3 UVScale;
+uniform sampler2D Albedo;
+uniform vec3 UVScale_Far;
+uniform sampler2D Albedo_Far;
+uniform vec4 Color_Far : hint_color;
+uniform float DistanceLerp;
+uniform float DistanceSmooth;
+uniform float Metallic;
+uniform float Metallic_Far;
+uniform sampler2D Rough_AO : hint_albedo;
+uniform sampler2D Rough_AO_Far : hint_albedo;
+uniform float Specular;
+uniform float Specular_Far;
+uniform sampler2D NormalMap : hint_normal;
+uniform sampler2D NormalMap_Far : hint_normal;
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// ColorUniform:14
+	vec3 n_out14p0 = Color.rgb;
+	float n_out14p1 = Color.a;
+
+// Input:7
+	vec3 n_out7p0 = vec3(UV, 0.0);
+
+// VectorUniform:8
+	vec3 n_out8p0 = UVScale;
+
+// VectorOp:10
+	vec3 n_out10p0 = n_out7p0 * n_out8p0;
+
+// TextureUniform:12
+	vec3 n_out12p0;
+	float n_out12p1;
+	{
+		vec4 n_tex_read = texture(Albedo, n_out10p0.xy);
+		n_out12p0 = n_tex_read.rgb;
+		n_out12p1 = n_tex_read.a;
+	}
+
+// VectorOp:16
+	vec3 n_out16p0 = n_out14p0 * n_out12p0;
+
+// VectorUniform:9
+	vec3 n_out9p0 = UVScale_Far;
+
+// VectorOp:11
+	vec3 n_out11p0 = n_out7p0 * n_out9p0;
+
+// TextureUniform:13
+	vec3 n_out13p0;
+	float n_out13p1;
+	{
+		vec4 n_tex_read = texture(Albedo_Far, n_out11p0.xy);
+		n_out13p0 = n_tex_read.rgb;
+		n_out13p1 = n_tex_read.a;
+	}
+
+// ColorUniform:15
+	vec3 n_out15p0 = Color_Far.rgb;
+	float n_out15p1 = Color_Far.a;
+
+// VectorOp:17
+	vec3 n_out17p0 = n_out13p0 * n_out15p0;
+
+// Input:6
+	vec3 n_out6p0 = VERTEX;
+
+// ScalarUniform:4
+	float n_out4p0 = DistanceLerp;
+
+// ScalarUniform:5
+	float n_out5p0 = DistanceSmooth;
+
+// Expression:3
+	float n_out3p0;
+	n_out3p0 = 0.0;
+	{
+		//Get distance to camera based on vertex
+		n_out3p0 = clamp(smoothstep(n_out5p0, n_out4p0, -n_out6p0.z), 0.0, 1.0);
+	}
+
+// VectorMix:18
+	vec3 n_out18p0 = mix(n_out16p0, n_out17p0, vec3(n_out3p0));
+
+// ScalarUniform:27
+	float n_out27p0 = Metallic;
+
+// ScalarUniform:28
+	float n_out28p0 = Metallic_Far;
+
+// ScalarMix:25
+	float n_out25p0 = mix(n_out27p0, n_out28p0, n_out3p0);
+
+// TextureUniform:20
+	vec3 n_out20p0;
+	float n_out20p1;
+	{
+		vec4 n_tex_read = texture(Rough_AO, n_out10p0.xy);
+		n_out20p0 = n_tex_read.rgb;
+		n_out20p1 = n_tex_read.a;
+	}
+
+// VectorDecompose:22
+	float n_out22p0 = n_out20p0.x;
+	float n_out22p1 = n_out20p0.y;
+	float n_out22p2 = n_out20p0.z;
+
+// TextureUniform:21
+	vec3 n_out21p0;
+	float n_out21p1;
+	{
+		vec4 n_tex_read = texture(Rough_AO_Far, n_out11p0.xy);
+		n_out21p0 = n_tex_read.rgb;
+		n_out21p1 = n_tex_read.a;
+	}
+
+// VectorDecompose:23
+	float n_out23p0 = n_out21p0.x;
+	float n_out23p1 = n_out21p0.y;
+	float n_out23p2 = n_out21p0.z;
+
+// ScalarMix:19
+	float n_out19p0 = mix(n_out22p0, n_out23p0, n_out3p0);
+
+// ScalarUniform:29
+	float n_out29p0 = Specular;
+
+// ScalarUniform:30
+	float n_out30p0 = Specular_Far;
+
+// ScalarMix:26
+	float n_out26p0 = mix(n_out29p0, n_out30p0, n_out3p0);
+
+// ScalarMix:24
+	float n_out24p0 = mix(n_out22p1, n_out23p1, n_out3p0);
+
+// TextureUniform:31
+	vec3 n_out31p0;
+	float n_out31p1;
+	{
+		vec4 n_tex_read = texture(NormalMap, n_out10p0.xy);
+		n_out31p0 = n_tex_read.rgb;
+		n_out31p1 = n_tex_read.a;
+	}
+
+// TextureUniform:32
+	vec3 n_out32p0;
+	float n_out32p1;
+	{
+		vec4 n_tex_read = texture(NormalMap_Far, n_out11p0.xy);
+		n_out32p0 = n_tex_read.rgb;
+		n_out32p1 = n_tex_read.a;
+	}
+
+// VectorMix:33
+	vec3 n_out33p0 = mix(n_out31p0, n_out32p0, vec3(n_out3p0));
+
+// Output:0
+	ALBEDO = n_out18p0;
+	METALLIC = n_out25p0;
+	ROUGHNESS = n_out19p0;
+	SPECULAR = n_out26p0;
+	AO = n_out24p0;
+	NORMALMAP = n_out33p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -1332, -117 )
+nodes/fragment/0/position = Vector2( -200, 200 )
+nodes/fragment/3/node = SubResource( 21 )
+nodes/fragment/3/position = Vector2( -2000, 380 )
+nodes/fragment/3/size = Vector2( 555, 257 )
+nodes/fragment/3/input_ports = "0,1,Vertex;1,0,Distance_max;2,0,Distance_min;"
+nodes/fragment/3/output_ports = "0,0,DistanceFinal;"
+nodes/fragment/3/expression = "//Get distance to camera based on vertex
+DistanceFinal = clamp(smoothstep(Distance_min, Distance_max, -Vertex.z), 0.0, 1.0);"
+nodes/fragment/4/node = SubResource( 27 )
+nodes/fragment/4/position = Vector2( -2340, 440 )
+nodes/fragment/5/node = SubResource( 28 )
+nodes/fragment/5/position = Vector2( -2338, 506 )
+nodes/fragment/6/node = SubResource( 29 )
+nodes/fragment/6/position = Vector2( -2282, 287 )
+nodes/fragment/7/node = SubResource( 30 )
+nodes/fragment/7/position = Vector2( -2000, 100 )
+nodes/fragment/8/node = SubResource( 31 )
+nodes/fragment/8/position = Vector2( -2000, -60 )
+nodes/fragment/9/node = SubResource( 32 )
+nodes/fragment/9/position = Vector2( -2000, 280 )
+nodes/fragment/10/node = SubResource( 1 )
+nodes/fragment/10/position = Vector2( -1800, -60 )
+nodes/fragment/11/node = SubResource( 2 )
+nodes/fragment/11/position = Vector2( -1800, 140 )
+nodes/fragment/12/node = SubResource( 3 )
+nodes/fragment/12/position = Vector2( -1200, -260 )
+nodes/fragment/13/node = SubResource( 4 )
+nodes/fragment/13/position = Vector2( -1200, -60 )
+nodes/fragment/14/node = SubResource( 5 )
+nodes/fragment/14/position = Vector2( -1200, -400 )
+nodes/fragment/15/node = SubResource( 6 )
+nodes/fragment/15/position = Vector2( -1204, 204 )
+nodes/fragment/16/node = SubResource( 7 )
+nodes/fragment/16/position = Vector2( -1000, -220 )
+nodes/fragment/17/node = SubResource( 8 )
+nodes/fragment/17/position = Vector2( -1000, 0 )
+nodes/fragment/18/node = SubResource( 9 )
+nodes/fragment/18/position = Vector2( -800, -100 )
+nodes/fragment/19/node = SubResource( 10 )
+nodes/fragment/19/position = Vector2( -600, 480 )
+nodes/fragment/20/node = SubResource( 11 )
+nodes/fragment/20/position = Vector2( -1200, 400 )
+nodes/fragment/21/node = SubResource( 12 )
+nodes/fragment/21/position = Vector2( -1200, 600 )
+nodes/fragment/22/node = SubResource( 13 )
+nodes/fragment/22/position = Vector2( -1000, 480 )
+nodes/fragment/23/node = SubResource( 14 )
+nodes/fragment/23/position = Vector2( -1000, 680 )
+nodes/fragment/24/node = SubResource( 15 )
+nodes/fragment/24/position = Vector2( -600, 600 )
+nodes/fragment/25/node = SubResource( 16 )
+nodes/fragment/25/position = Vector2( -600, 200 )
+nodes/fragment/26/node = SubResource( 17 )
+nodes/fragment/26/position = Vector2( -600, 320 )
+nodes/fragment/27/node = SubResource( 18 )
+nodes/fragment/27/position = Vector2( -800, 200 )
+nodes/fragment/28/node = SubResource( 19 )
+nodes/fragment/28/position = Vector2( -800, 260 )
+nodes/fragment/29/node = SubResource( 20 )
+nodes/fragment/29/position = Vector2( -800, 340 )
+nodes/fragment/30/node = SubResource( 22 )
+nodes/fragment/30/position = Vector2( -800, 400 )
+nodes/fragment/31/node = SubResource( 23 )
+nodes/fragment/31/position = Vector2( -1200, 800 )
+nodes/fragment/32/node = SubResource( 24 )
+nodes/fragment/32/position = Vector2( -1200, 1000 )
+nodes/fragment/33/node = SubResource( 25 )
+nodes/fragment/33/position = Vector2( -600, 880 )
+nodes/fragment/34/node = SubResource( 26 )
+nodes/fragment/34/position = Vector2( -356, 30 )
+nodes/fragment/connections = PoolIntArray( 5, 0, 3, 2, 6, 0, 3, 0, 4, 0, 3, 1, 7, 0, 10, 0, 8, 0, 10, 1, 7, 0, 11, 0, 9, 0, 11, 1, 10, 0, 12, 0, 11, 0, 13, 0, 12, 0, 16, 1, 14, 0, 16, 0, 13, 0, 17, 0, 15, 0, 17, 1, 16, 0, 18, 0, 17, 0, 18, 1, 3, 0, 18, 2, 10, 0, 20, 0, 11, 0, 21, 0, 20, 0, 22, 0, 21, 0, 23, 0, 22, 0, 19, 0, 23, 0, 19, 1, 22, 1, 24, 0, 23, 1, 24, 1, 3, 0, 19, 2, 3, 0, 24, 2, 24, 0, 0, 6, 19, 0, 0, 3, 26, 0, 0, 4, 25, 0, 0, 2, 3, 0, 26, 2, 3, 0, 25, 2, 27, 0, 25, 0, 28, 0, 25, 1, 29, 0, 26, 0, 30, 0, 26, 1, 10, 0, 31, 0, 11, 0, 32, 0, 31, 0, 33, 0, 32, 0, 33, 1, 3, 0, 33, 2, 33, 0, 0, 8, 18, 0, 0, 0 )

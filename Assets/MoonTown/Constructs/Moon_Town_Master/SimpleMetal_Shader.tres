@@ -1,0 +1,28 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Shaders/LayeredBlendSimple_Visualshader.tres" type="Shader" id=1]
+[ext_resource path="res://Assets/SharedAssets/Textures/Nature_Textures/Lavastone_3/Lavastone_3_rgh.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/SharedAssets/Textures/Noises/Noise_Hev_03_1K_RGB.png" type="Texture" id=7]
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Asphalt_01/Asphalt_01_2K_Roughness.jpg" type="Texture" id=8]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/Color_A = Color( 0.815686, 0.815686, 0.815686, 1 )
+shader_param/Color_B = Color( 0.588235, 0.588235, 0.588235, 1 )
+shader_param/NoiseInvert = false
+shader_param/NoiseIntensity = 0.8
+shader_param/NoiseAlpha = false
+shader_param/NoiseZ = false
+shader_param/UVScale_Noise = Vector3( 10, 10, 0 )
+shader_param/NoiseY = false
+shader_param/Metallic_A = 1.0
+shader_param/Metallic_B = 1.0
+shader_param/UVScale_A = Vector3( 500, 500, 1 )
+shader_param/Rough_Mult_A = 0.5
+shader_param/UVScale_B = Vector3( 500, 500, 1 )
+shader_param/Rough_Mult_B = 0.5
+shader_param/Specular_A = 1.0
+shader_param/Specular_B = 1.0
+shader_param/Noise_RGB = ExtResource( 7 )
+shader_param/Rough_A = ExtResource( 8 )
+shader_param/Rough_B = ExtResource( 2 )

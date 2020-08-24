@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/Rock_01_2K_Albedo.jpg-50a04d72ff557ef81e8efeb2c4419114.s3tc.stex"
+path.etc2="res://.import/Rock_01_2K_Albedo.jpg-50a04d72ff557ef81e8efeb2c4419114.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://Assets/SharedAssets/Textures/Nature/Rock_01/Rock_01_2K_Albedo.jpg"
+dest_files=[ "res://.import/Rock_01_2K_Albedo.jpg-50a04d72ff557ef81e8efeb2c4419114.s3tc.stex", "res://.import/Rock_01_2K_Albedo.jpg-50a04d72ff557ef81e8efeb2c4419114.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=1
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

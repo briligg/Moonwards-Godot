@@ -5,6 +5,9 @@
 
 [node name="Rec_Hab_1" instance=ExtResource( 1 )]
 
+[node name="PoolWater" parent="LOD0/RecHabRetainingWalls_Opt" index="13"]
+transform = Transform( 0.98919, 0, -0.146638, 0, 1, 0, 0.146638, 0, 0.98919, -0.512617, -3.76451, -31.7296 )
+
 [node name="VerticalStairs_Pair_Top_S" parent="Marker_VerticalStairs_Pair_Top_S" index="0" instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 stairs_step_count = 3
