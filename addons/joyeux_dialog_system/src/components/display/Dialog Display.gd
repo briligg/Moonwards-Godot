@@ -1,4 +1,8 @@
 extends Control
+class_name DialogDisplay 
+
+signal finished
+
 onready var Controls = $HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls
 onready var CharName = $HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/CharName
 onready var Text = $HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/CurrentText
@@ -15,6 +19,9 @@ var matches : Dictionary = {}
 
 var next_node : String = ""
 var character_name : String = ""
+
+func _init(dialogPath : String):
+	dialog = dialogPath
 
 func _ready():
 	load_dialogs(dialog)

@@ -68,4 +68,7 @@ func play_3d_sound(input, signals, variables):
 	sound_player.play()
 
 func trigger_dialog(input, signals, variables):
-	pass
+	var path = _get_variable_from_port(variables, 0)
+	var dialog_display = DialogDisplay.new(path)
+	add_child(dialog_display)
+	dialog_display.connect("finished", dialog_display, "queue_free")
