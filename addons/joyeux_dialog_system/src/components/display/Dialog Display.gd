@@ -1,5 +1,4 @@
 extends Control
-class_name DialogDisplay 
 
 signal finished
 
@@ -20,8 +19,6 @@ var matches : Dictionary = {}
 var next_node : String = ""
 var character_name : String = ""
 
-func _init(dialogPath : String):
-	dialog = dialogPath
 
 func _ready():
 	load_dialogs(dialog)

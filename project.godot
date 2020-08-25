@@ -64,11 +64,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/Vehicle/AthleteRover/RoverWheel.gd"
 }, {
-"base": "Control",
-"class": "DialogDisplay",
-"language": "GDScript",
-"path": "res://addons/joyeux_dialog_system/src/components/display/Dialog Display.gd"
-}, {
 "base": "HBoxContainer",
 "class": "DoubleLabel",
 "language": "GDScript",
@@ -336,7 +331,6 @@ _global_script_class_icons={
 "BehaviorNode": "",
 "CameraController": "",
 "Custom_Wheel": "",
-"DialogDisplay": "",
 "DoubleLabel": "",
 "DropDown": "",
 "EntityData": "",

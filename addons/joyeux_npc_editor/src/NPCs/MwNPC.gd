@@ -4,6 +4,7 @@ extends NPCBase
 This is the actual class to be edited, extends the NPCBase and has the functions
 that appear in the Definitions file.
 """
+const DialogDisplay = preload("res://addons/joyeux_dialog_system/src/components/display/Dialog Display.tscn")
 
 signal user_input(action_name)
 signal see()
@@ -69,6 +70,7 @@ func play_3d_sound(input, signals, variables):
 
 func trigger_dialog(input, signals, variables):
 	var path = _get_variable_from_port(variables, 0)
-	var dialog_display = DialogDisplay.new(path)
+	var dialog_display = DialogDisplay.instance()
+	dialog_display.dialog = path
 	add_child(dialog_display)
 	dialog_display.connect("finished", dialog_display, "queue_free")
