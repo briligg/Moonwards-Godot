@@ -26,21 +26,30 @@ func load_dialogs(dialog):
 	
 	character_name = conf.get_value("config", "character_name")
 	
-	for key in conf.get_section_keys("dialogs"):
-		dialogs[key] = conf.get_value("dialogs", key)
+	if conf.has_section("dialogs"):
+		for key in conf.get_section_keys("dialogs"):
+			dialogs[key] = conf.get_value("dialogs", key)
 
-	for key in conf.get_section_keys("choices"):
-		choices[key] = conf.get_value("choices_triggers", key)
-		
-	for key in conf.get_section_keys("matches"):
-		matches[key] = conf.get_value("choices_triggers", key)
+	if conf.has_section("choices"):
+		for key in conf.get_section_keys("choices"):
+			choices[key] = conf.get_value("choices_triggers", key)
+	
+	if conf.has_section("matches"):
+		for key in conf.get_section_keys("matches"):
+			matches[key] = conf.get_value("choices_triggers", key)
 
 	for connection in conf.get_value("config", "connections"):
 		if connection.get("from") == "Start":
-			next_node = evaluate_node(connection.get("to"))
+			var temp = evaluate_node(connection.get("to"))
+			if temp is GDScriptFunctionState:
+				next_node = yield(temp, "completed")
+			elif temp is String:
+				next_node = temp
 	
 	
 func evaluate_node(node : String) -> String:
+	if node == "":
+		self.visible = false
 	if dialogs.has(node):
 		set_name(dialogs.get(node).get("name_override"))
 		set_text(dialogs.get(node).get("content"))
@@ -55,8 +64,8 @@ func evaluate_node(node : String) -> String:
 				
 	
 	if choices.has(node):
-		var answer : int = yield(ChoiceMenu.get_multi_answer(choices.get(node)), "completed")
-		return evaluate_node(choices.get(node)[answer].get("triggers"))
+		var answer = yield(ChoiceMenu.get_multi_answer(choices.get(node)), "completed")
+		return evaluate_node(answer)
 	
 	return ""
 
@@ -79,15 +88,27 @@ func _on_Auto_pressed():
 	if PauseButton.pressed:
 		return
 	yield(get_tree().create_timer(10*Text.text.length()),"timeout")
-	next_node =  yield(evaluate_node(next_node), "completed")
+	var temp = evaluate_node(next_node)
+	if temp is GDScriptFunctionState:
+		next_node = yield(temp, "completed")
+	elif temp is String:
+		next_node = temp
 	_on_Auto_pressed()
 
 func _on_Skip_pressed():
 	if PauseButton.pressed:
 		return
-	next_node =  yield(evaluate_node(next_node), "completed")
+	var temp = evaluate_node(next_node)
+	if temp is GDScriptFunctionState:
+		next_node = yield(temp, "completed")
+	elif temp is String:
+		next_node = temp
 	_on_Skip_pressed()
 
 func _on_Next_pressed():
-	next_node = yield(evaluate_node(next_node), "completed")
+	var temp = evaluate_node(next_node)
+	if temp is GDScriptFunctionState:
+		next_node = yield(temp, "completed")
+	elif temp is String:
+		next_node = temp
 	

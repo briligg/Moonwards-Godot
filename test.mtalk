@@ -3,10 +3,12 @@
 Start=Vector2( 280, 60 )
 GraphNode=Vector2( 620, 60 )
 GraphNode2=Vector2( 1040, 0 )
-GraphNode3=Vector2( 1040, 60 )
 GraphNode4=Vector2( 1040, 120 )
-ChoiceNode=Vector2( 820, 40 )
 GraphNode5=Vector2( 1180, 220 )
+ChoiceNode=Vector2( 820, 40 )
+GraphNode3=Vector2( 1040, 60 )
+GraphNode7=Vector2( 1280, 120 )
+GraphNode6=Vector2( 1260, -60 )
 
 [dialogs]
 
@@ -19,19 +21,13 @@ GraphNode={
 GraphNode2={
 "content": "Nothing",
 "name_override": "",
-"next": "",
+"next": "GraphNode6",
 "title": "Test1"
-}
-GraphNode3={
-"content": "nothing at all",
-"name_override": "",
-"next": "",
-"title": "Test 2"
 }
 GraphNode4={
 "content": "Quantum choice!",
 "name_override": "",
-"next": "",
+"next": "GraphNode7",
 "title": "Test 3"
 }
 GraphNode5={
@@ -39,6 +35,25 @@ GraphNode5={
 "name_override": "",
 "next": "",
 "title": "Ghosted choice...."
+}
+GraphNode3={
+"content": "nothing at all",
+"name_override": "",
+"next": "",
+"title": "Test 2"
+}
+GraphNode7={
+"content": "Debido al estado de superposicón cuántica de esta opción, hemos decidido
+continuar en español.",
+"name_override": "",
+"next": "",
+"title": ""
+}
+GraphNode6={
+"content": "Perhaps if you really keep on trying, you will get something",
+"name_override": "",
+"next": "",
+"title": "..."
 }
 
 [choices]
@@ -92,6 +107,16 @@ connections=[ {
 "from": "GraphNode",
 "from_port": 0,
 "to": "ChoiceNode",
+"to_port": 0
+}, {
+"from": "GraphNode2",
+"from_port": 0,
+"to": "GraphNode6",
+"to_port": 0
+}, {
+"from": "GraphNode4",
+"from_port": 0,
+"to": "GraphNode7",
 "to_port": 0
 } ]
 character_name="MR Manhattan"

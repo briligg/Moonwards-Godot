@@ -15,8 +15,8 @@ func get_multi_answer(opt : Array) -> int:
 	visible = true
 	options.visible = true
 	for option in opt:
-		if option.get(\"name\") is String:
-			options.add_option(option.get(\"name\"))
+		if option.get(\"name\") is String and option.get(\"name\") != \"\":
+			options.add_option(option.get(\"name\"), option.get(\"triggers\"))
 	var answer = yield(options, \"option_selected\")
 	options.visible = false
 	visible = false
@@ -40,19 +40,24 @@ var font = preload(\"res://Assets/Interface/Fonts/InteractsMenuDescription.tres\
 
 signal option_selected(idx)
 
-func add_option(option_name : String) -> void:
+var labels : Array = []
+
+func add_option(option_name : String, trigger : String) -> void:
 	var Opt = Button.new()
 	Opt.add_font_override(\"font\", font)
 	Opt.text = option_name
+	labels.append(trigger)
 	add_child(Opt)
 	Opt.name = str(get_child_count())
-	Opt.connect(\"presssed\", self, \"_on_child_pressed\", [get_child_count()])
+	Opt.connect(\"pressed\", self, \"_on_child_pressed\", [get_child_count()])
 	
 func _on_child_pressed(idx : int) -> void:
-	emit_signal(\"option_selected\", idx)
+	
+	emit_signal(\"option_selected\", labels[idx-1])
 	pass
 
 func clear():
+	labels.clear()
 	for child in get_children():
 		child.queue_free()
 "
