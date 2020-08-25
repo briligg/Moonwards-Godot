@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://SceneComponent/Display/ViewportViewer.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Slides/lightmask.png" type="Texture" id=2]
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/lightmask.png" type="Texture" id=2]
 
 [sub_resource type="GDScript" id=1]
 script/source = "tool
@@ -50,6 +50,7 @@ size = Vector2( 1920, 1080 )
 transparent_bg = true
 hdr = false
 usage = 0
+gui_snap_controls_to_pixels = false
 
 [node name="Area" type="Area" parent="."]
 

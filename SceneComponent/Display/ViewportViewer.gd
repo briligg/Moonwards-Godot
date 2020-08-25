@@ -1,7 +1,12 @@
 """
-
 	Use this class for showing-up independent screens within the game.
-
+	
+	A modified version of a standard Godot's Viewport that will handle the input
+	and distribute the events accordingly into viewport's UI controls.
+	
+	Assign the Context variable on the Inspector. Content is a scene that will be
+	displayed within the screen (viewport) - usually contains UI Controls that player
+	can click on the display.
 """
 
 tool
@@ -36,8 +41,6 @@ func _ready():
 		Log.trace(self, "_ready", "Screen View without a content")
 	
 	get_node("Area").connect("input_event", self, "_on_area_input_event")
-	get_node("InteractionTrigger").connect("body_entered", self, "_start_interaction")
-	get_node("InteractionTrigger").connect("body_exited", self, "_stop_interaction")
 	
 	
 	if hologram:
