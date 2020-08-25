@@ -465,11 +465,7 @@ _global_script_class_icons={
 "VisualShaderNodeUVEdit": "",
 "VisualShaderNodeUVPanner": "",
 "VisualShaderNodeVectorHeightMix": "",
-"Workstation": "",
-"Slide": "res://Assets/Icons/Slide.svg",
-"SlideViewport": "res://Assets/Icons/SlideViewport.svg",
-"StaticEntity": "",
-"VehicleEntity": ""
+"Workstation": ""
 }
 
 [application]
