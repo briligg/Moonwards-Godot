@@ -54,6 +54,7 @@ func load_dialogs(dialog):
 func evaluate_node(node : String) -> String:
 	if node == "":
 		self.visible = false
+		emit_signal("finished")
 	if dialogs.has(node):
 		set_name(dialogs.get(node).get("name_override"))
 		set_text(dialogs.get(node).get("content"))
