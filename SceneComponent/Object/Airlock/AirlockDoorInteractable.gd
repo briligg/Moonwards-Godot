@@ -14,7 +14,7 @@ func _ready():
 	title = "Airlock Dock"
 	
 
-func interact_with(interactor : Node) -> void :
+func interact_with(_interactor : Node) -> void :
 	if is_open:
 		close()
 	else:

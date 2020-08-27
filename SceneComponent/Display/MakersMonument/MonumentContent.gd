@@ -57,7 +57,7 @@ func stop() -> void:
 
 func _on_animation_finished(_name: String) -> void:
 	for b in containers[idx].get_children():
-		if b.is_class("Button"):
+		if b is Button:
 			b.disconnect("button_up", self, "_on_button_up")
 	
 	for c in containers:

@@ -49,13 +49,13 @@ func _get_input_port_type(port: int):
 func _get_output_port_count() -> int:
 	return 1
 
-func _get_output_port_name(port: int) -> String:
+func _get_output_port_name(_port: int) -> String:
 	return "mix"
 
-func _get_output_port_type(port: int) -> int:
+func _get_output_port_type(_port: int) -> int:
 	return VisualShaderNode.PORT_TYPE_SCALAR
 
-func _get_global_code(mode: int) -> String:
+func _get_global_code(_mode: int) -> String:
 	return """
 float ContrastScalarFunc(float _Inp, float _Contrast){
 	vec3 a = mix(vec3(0.0 - _Contrast, 0.0 - _Contrast, 0.0 - _Contrast), vec3(1.0 + _Contrast, 1.0 + _Contrast, 1.0 + _Contrast), _Inp);
@@ -69,7 +69,7 @@ float HeightScalarLerp(float _A, float _B, float _Weight, float _Height, float _
 }
 """
 
-func _get_code(input_vars: Array, output_vars: Array, mode: int, type: int) -> String:
+func _get_code(input_vars: Array, output_vars: Array, _mode: int, _type: int) -> String:
 	return "%s = HeightScalarLerp(%s,%s,%s,%s,%s);" % [output_vars[0], input_vars[0], input_vars[1], input_vars[2], input_vars[3], input_vars[4]]
 
 func _init():

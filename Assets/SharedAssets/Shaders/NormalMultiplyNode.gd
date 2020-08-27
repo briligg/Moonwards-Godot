@@ -37,20 +37,20 @@ func _get_input_port_type(port: int):
 func _get_output_port_count() -> int:
 	return 1
 
-func _get_output_port_name(port: int) -> String:
+func _get_output_port_name(_port: int) -> String:
 	return "op"
 
-func _get_output_port_type(port: int) -> int:
+func _get_output_port_type(_port: int) -> int:
 	return VisualShaderNode.PORT_TYPE_VECTOR
 
-func _get_global_code(mode: int) -> String:
+func _get_global_code(_mode: int) -> String:
 	return """
 vec3 NormalMultFunc(vec3 _Normal, float _Amount){
 	return vec3(_Normal.x * _Amount, _Normal.y * _Amount, 1.0);
 }
 """
 
-func _get_code(input_vars: Array, output_vars: Array, mode: int, type: int) -> String:
+func _get_code(input_vars: Array, output_vars: Array, _mode: int, _type: int) -> String:
 	return "%s = NormalMultFunc(%s,%s);" % [output_vars[0], input_vars[0], input_vars[1]]
 
 func _init():

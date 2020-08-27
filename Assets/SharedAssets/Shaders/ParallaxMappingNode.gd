@@ -57,14 +57,14 @@ func _get_input_port_type(port: int):
 func _get_output_port_count() -> int:
 	return 1
 
-func _get_output_port_name(port: int) -> String:
+func _get_output_port_name(_port: int) -> String:
 	return "uv"
 
-func _get_output_port_type(port: int) -> int:
+func _get_output_port_type(_port: int) -> int:
 	return VisualShaderNode.PORT_TYPE_VECTOR
 
 #Code based on Godot original code https://github.com/godotengine/godot/blob/00949f0c5fcc6a4f8382a4a97d5591fd9ec380f8/scene/resources/material.cpp#L814
-func _get_global_code(mode: int) -> String:
+func _get_global_code(_mode: int) -> String:
 	return """
 vec3 ParallaxMapping_Simple(vec3 _UV, sampler2D _HeightmapTexture, float _HeightRatio, bool _HeighInverted, float _StepsMin, float _StepsMax, vec3 _HeightmapFlip, vec3 _Vertex, vec3 _Normal, vec3 _Tangent, vec3 _Binormal) {
 	vec3 view_dir = normalize(normalize(-_Vertex)*mat3(_Tangent*_HeightmapFlip.x,-_Binormal*_HeightmapFlip.y,_Normal));
@@ -110,7 +110,7 @@ vec3 ParallaxMapping_Simple(vec3 _UV, sampler2D _HeightmapTexture, float _Height
 }
 """
 
-func _get_code(input_vars: Array, output_vars: Array, mode: int, type: int) -> String:
+func _get_code(input_vars: Array, output_vars: Array, _mode: int, _type: int) -> String:
 	var uvl = "vec3(UV, 0.0)"
 	if input_vars[0]:
 		uvl = input_vars[0]
