@@ -23,7 +23,10 @@ const HEAD_HEIGHT : float = 0.8
 #Determines if I should freely fly or not.
 var is_flying : bool = false
 #How fast the player is flying.
-var fly_speed : float = 90
+var fly_speed : float = 40
+
+const CHANGE_FLY_SPEED_BY : float = 2.0
+const SLOWEST_POSSIBLE_FLIGHT_SPEED : float = 0.05
 
 
 func _init().("Camera", true):
@@ -74,10 +77,10 @@ func _input(event):
 		Signals.Entities.emit_signal(Signals.Entities.FREE_CAMERA_TOGGLED)
 	
 	if event.is_action_pressed("zoom_in", true) :
-		fly_speed += 2
+		fly_speed += CHANGE_FLY_SPEED_BY
 		Signals.Hud.emit_signal(Signals.Hud.FLIGHT_VALUE_SET, fly_speed)
 	if event.is_action_pressed("zoom_out", true) :
-		fly_speed = max(0.05, fly_speed - 2)
+		fly_speed = max(SLOWEST_POSSIBLE_FLIGHT_SPEED, fly_speed - CHANGE_FLY_SPEED_BY)
 		Signals.Hud.emit_signal(Signals.Hud.FLIGHT_VALUE_SET, fly_speed)
 	
 	#Check if the player wants to switch to first person.
