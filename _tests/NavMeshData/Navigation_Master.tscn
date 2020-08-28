@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://_tests/NavMeshData/NavMesh_Test_First_Gallery.tscn" type="PackedScene" id=1]
+
+[node name="Navigation" type="Navigation"]
+
+[node name="NavMesh_Test_First_Gallery" parent="." instance=ExtResource( 1 )]
