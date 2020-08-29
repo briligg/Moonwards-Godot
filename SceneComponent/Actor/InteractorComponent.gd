@@ -1,4 +1,5 @@
 extends AComponent
+class_name InteractorComponent
 
 onready var interactor : Area = $Interactor
 

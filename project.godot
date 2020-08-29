@@ -239,6 +239,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/GameLogic/Interact/Interactor/Interactor.gd"
 }, {
+"base": "AComponent",
+"class": "InteractorComponent",
+"language": "GDScript",
+"path": "res://SceneComponent/Actor/InteractorComponent.gd"
+}, {
 "base": "AMovementController",
 "class": "KinematicMovement",
 "language": "GDScript",
@@ -431,6 +436,7 @@ _global_script_class_icons={
 "InspectorGadgetUtil": "",
 "Interactable": "",
 "Interactor": "",
+"InteractorComponent": "",
 "KinematicMovement": "",
 "LodModel": "",
 "LodSignals": "",
@@ -1890,6 +1896,11 @@ fly_down={
 toggle_camera_fly={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":true,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"unicode":0,"echo":false,"script":null)
+ ]
+}
+toggle_first_person={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":51,"unicode":0,"echo":false,"script":null)
  ]
 }
 

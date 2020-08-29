@@ -7,7 +7,7 @@ onready var description : RichTextLabel = get_node("HBox/DescriptionPanel/HBox/D
 var button_relations : Array = []
 
 #This is the current interactor component that has focus.
-var interactor_component = null
+var interactor_component : InteractorComponent = null
 
 #THe history of interactors.
 var interactor_history : Array = []
@@ -38,7 +38,7 @@ func _clear_button_parent() -> void :
 	button_relations = []
 
 #Add a button to the InteractsMenu.
-func _create_button(interact_name : String, info : String, interactable : Node) -> Button :
+func _create_button(interact_name : String, info : String, interactable : Interactable) -> Button :
 	#Create a separator to give buttons more space between each other.
 	#Add constant override has to be deferred 
 	#or else it will get overwritten by Godot.
@@ -117,7 +117,7 @@ func _interactable_entered(interactable_node : Interactable) -> void :
 	interactable_node.connect("title_changed", self, "_interactable_title_changed", [button])
 
 #Called from a signal. Remove the button corresponding to the interactable from the button list.
-func _interactable_left(interactable_node) -> void :
+func _interactable_left(interactable_node : Interactable) -> void :
 	#Move focus to another button if there is one.
 	var button : Button
 	var position_in_button_relations : int = 0
@@ -153,7 +153,7 @@ func _interactable_title_changed(new_title : String, button : Button) -> void :
 	button.text = new_title
 
 #Called from a signal. Disconnect the old interactor and connect the new one.
-func _new_interactor(new_interactor : Node) -> void :
+func _new_interactor(new_interactor : InteractorComponent) -> void :
 	if interactor_component != null :
 		interactor_component.lost_focus()
 #		interactor_component.disconnect(interactor_component.FOCUS_ROLLBACK, self, "_rollback_interactor_focus")
