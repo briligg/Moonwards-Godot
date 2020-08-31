@@ -145,13 +145,13 @@ func _on_control_button_button_up() -> void:
 		sequence_area.hide()
 		all_area.show()
 		animation_players[idx].stop(false)
-		control_button.text = "= HIDE ="
+		control_button.text = "= DYNAMIC VIEW ="
 		is_all = true
 	else:
 		sequence_area.show()
 		all_area.hide()
 		animation_players[idx].play("animation")
-		control_button.text = "= SHOW ALL ="
+		control_button.text = "= STATIC VIEW ="
 		is_all = false
 
 

@@ -55,16 +55,16 @@ __meta__ = {
 }
 
 [node name="ControlButton" type="Button" parent="VBoxContainer/BottomArea/CenterContainer"]
-margin_left = 824.0
+margin_left = 735.0
 margin_top = 20.0
-margin_right = 1095.0
+margin_right = 1185.0
 margin_bottom = 140.0
 rect_min_size = Vector2( 0, 120 )
 custom_colors/font_color_disabled = Color( 0.882353, 0.878431, 0.878431, 1 )
 custom_colors/font_color = Color( 0.882353, 0.878431, 0.878431, 1 )
 custom_colors/font_color_hover = Color( 0.882353, 0.878431, 0.878431, 1 )
 custom_colors/font_color_pressed = Color( 0.882353, 0.878431, 0.878431, 1 )
-text = "Show All"
+text = "= Static View ="
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
 [connection signal="button_up" from="VBoxContainer/BottomArea/CenterContainer/ControlButton" to="." method="_on_control_button_button_up"]
