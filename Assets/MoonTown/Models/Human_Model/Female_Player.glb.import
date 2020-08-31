@@ -2,16 +2,16 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/PlayerModel.glb-1c278244dc2b439b63612e54dadaa5fe.scn"
+path="res://.import/Female_Player.glb-3f2883e54dba55d2fbbed61f94d76c1b.scn"
 
 [deps]
 
-source_file="res://Assets/MoonTown/Models/Human_Model/PlayerModel.glb"
-dest_files=[ "res://.import/PlayerModel.glb-1c278244dc2b439b63612e54dadaa5fe.scn" ]
+source_file="res://Assets/MoonTown/Models/Human_Model/Female_Player.glb"
+dest_files=[ "res://.import/Female_Player.glb-3f2883e54dba55d2fbbed61f94d76c1b.scn" ]
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="LodModel (LodModel.gd)"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
