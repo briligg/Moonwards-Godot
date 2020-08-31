@@ -23,7 +23,6 @@ shape = SubResource( 8 )
 
 [node name="Ground_Passenger_Pod" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.813377 )
-visible = false
 
 [node name="PassengerPodDockInteractable" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19534, 0 )
