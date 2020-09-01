@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Moon_Town_Master.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SceneComponent/Interface/PlayerHud.tscn" type="PackedScene" id=2]
+[ext_resource path="res://_tests/NavMeshData/Navigation_Master.tscn" type="PackedScene" id=3]
 
 [sub_resource type="NavigationMesh" id=1]
 sample_partition_type/sample_partition_type = 1
@@ -30,3 +31,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5586, -0.00645447, 2.45308 
 
 [node name="1" type="Position3D" parent="SpawnPoints"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41.8903, 87.8381, -160.97 )
+
+[node name="Navigation" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.4318, 115.913, -171.358 )
