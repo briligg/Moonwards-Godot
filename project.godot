@@ -424,6 +424,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/GameLogic/MouseSimulatingRayCast/MouseSimulatingRayCast.gd"
 }, {
+"base": "NPCBase",
+"class": "MwNPC",
+"language": "GDScript",
+"path": "res://addons/joyeux_npc_editor/src/NPCs/MwNPC.gd"
+}, {
 "base": "Node",
 "class": "MwNode",
 "language": "GDScript",
@@ -438,6 +443,11 @@ _global_script_classes=[ {
 "class": "NPCBase",
 "language": "GDScript",
 "path": "res://addons/joyeux_npc_editor/src/NPCs/NPC.gd"
+}, {
+"base": "AComponent",
+"class": "NPCInput",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/NPCMovement.gd"
 }, {
 "base": "Node",
 "class": "NetworkManager",
@@ -648,9 +658,11 @@ _global_script_class_icons={
 "LodSignals": "",
 "MenuSignals": "",
 "MouseSimulatingRayCast": "",
+"MwNPC": "",
 "MwNode": "",
 "MwSpatial": "",
 "NPCBase": "",
+"NPCInput": "",
 "NetworkManager": "",
 "NetworkSignals": "",
 "NpcDefinitions": "",

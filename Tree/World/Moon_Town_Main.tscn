@@ -21,16 +21,16 @@ __meta__ = {
 
 [node name="PlayerHud" parent="." instance=ExtResource( 2 )]
 
-[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="."]
+[node name="Navigation" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.4318, 115.913, -171.358 )
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.4318, -115.913, 171.358 )
 navmesh = SubResource( 1 )
 
-[node name="Moon_Town_Master" parent="NavigationMeshInstance" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5586, -0.00645447, 2.45308 )
+[node name="Moon_Town_Master" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 1 )]
 
 [node name="SpawnPoints" type="Spatial" parent="."]
 
 [node name="1" type="Position3D" parent="SpawnPoints"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41.8903, 87.8381, -160.97 )
-
-[node name="Navigation" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.4318, 115.913, -171.358 )
