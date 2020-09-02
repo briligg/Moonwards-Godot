@@ -43,7 +43,6 @@ uv2_triplanar = true
 
 [node name="Screen" type="Spatial"]
 script = ExtResource( 1 )
-content_as_child = null
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 1920, 1080 )
