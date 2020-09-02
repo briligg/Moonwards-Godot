@@ -12,6 +12,9 @@
 tool
 extends Spatial
 
+#Emitted when the content has been added to viewport.
+signal content_prepared(content_node)
+
 # Member variables
 onready var screen: Node = self
 onready var collision_box: CollisionShape = get_node("Area/CollisionShape")
@@ -31,12 +34,14 @@ func _ready():
 		assert(content_as_child == null)
 		content_instance = content.instance()
 		viewport.add_child(content_instance)
+		call_deferred("emit_signal", "content_prepared", content_instance)
 	
 	elif content_as_child != null :
 		#The NodePath given must be a child of myself.
 		content_instance = get_node(content_as_child)
 		remove_child(content_instance)
 		viewport.add_child(content_instance)
+		call_deferred("emit_signal", "content_prepared", content_instance)
 	else:
 		Log.trace(self, "_ready", "Screen View without a content")
 	
