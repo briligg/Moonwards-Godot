@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://SceneComponent/Display/SlidePresentation/SlidePresentation.gd" type="Script" id=1]
-[ext_resource path="res://SceneComponent/Display/SlidePresentation/Slide2DControl.tscn" type="PackedScene" id=2]
 [ext_resource path="res://SceneComponent/Display/ViewportViewer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://Assets/SharedAssets/Textures/Tech_Textures/SolarPanelMask.jpg" type="Texture" id=5]
@@ -9,9 +8,7 @@
 [node name="SlidePresentation" type="Spatial"]
 script = ExtResource( 1 )
 texture_slides = [ ExtResource( 4 ), null, ExtResource( 5 ) ]
-text_slides = [ "ONE for crying out loud", "TWO", "" ]
+text_slides = [ "ONE for crying out loud The city is a jungle, you better take care. Never walk alone after midnight. If you don't believe me, you better beware. ABBA 1978", "TWO", "" ]
 
 [node name="Screen" parent="." instance=ExtResource( 3 )]
 content_as_child = NodePath("Slide2DControl")
-
-[node name="Slide2DControl" parent="Screen" instance=ExtResource( 2 )]
