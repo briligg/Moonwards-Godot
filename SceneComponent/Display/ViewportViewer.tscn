@@ -14,6 +14,10 @@ func e():
 extents = Vector3( 1, 1, 0.01 )
 script = SubResource( 1 )
 
+[sub_resource type="PlaneMesh" id=3]
+flip_faces = true
+size = Vector2( 2.2, 1.22 )
+
 [sub_resource type="ViewportTexture" id=4]
 viewport_path = NodePath("Viewport")
 
@@ -37,10 +41,6 @@ detail_albedo = ExtResource( 2 )
 uv2_scale = Vector3( 3, 3, 3 )
 uv2_triplanar = true
 
-[sub_resource type="PlaneMesh" id=3]
-flip_faces = true
-size = Vector2( 2.2, 1.22 )
-
 [node name="Screen" type="Spatial"]
 script = ExtResource( 1 )
 
@@ -60,7 +60,6 @@ transform = Transform( 1.1, 0, 0, 0, 0.625, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Quad" type="MeshInstance" parent="Area/CollisionShape"]
-transform = Transform( 0.909091, -1.58951e-07, -6.94796e-15, 0, -6.99382e-08, 1.6, -1.74846e-07, -1, -4.37114e-08, 0, 0, 0 )
-material_override = SubResource( 5 )
+transform = Transform( 0.909091, -1.92331e-07, -1.34513e-14, 0, -4.37114e-08, 1.6, -1.74846e-07, -1, -6.99382e-08, 0, 0, 0 )
 mesh = SubResource( 3 )
-material/0 = null
+material/0 = SubResource( 5 )

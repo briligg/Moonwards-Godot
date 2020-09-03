@@ -1,4 +1,7 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Icons/Presentation.svg" type="Texture" id=2]
 
 [node name="TooltipIcon" type="Control"]
 anchor_right = 1.0
@@ -6,3 +9,11 @@ anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )

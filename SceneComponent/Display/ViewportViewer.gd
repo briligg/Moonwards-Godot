@@ -23,6 +23,11 @@ onready var viewport: Node = get_node("Viewport")
 
 var content_instance = null
 
+#When track_camera is on, rotate myself to face the camera at all times.
+func _process(_delta : float) -> void :
+	var camera : Camera = get_tree().root.get_camera()
+	rotation_degrees = camera.rotation_degrees
+
 func _ready():
 	set_process_input(false)
 	content_instance = content.instance()
@@ -31,10 +36,8 @@ func _ready():
 	get_node("Area").connect("input_event", self, "_on_area_input_event")
 	
 	#Track the camera if the bool is true.
-	if track_camera :
-		var into_billboard_material : SpatialMaterial = $Area/CollisionShape/Quad.material_override
-		into_billboard_material.params_billboard_mode = into_billboard_material.BILLBOARD_ENABLED
-		into_billboard_material.params_billboard_keep_scale = true
+	if not track_camera :
+		set_process(false)
 	
 	if hologram:
 		var mat = $Area/CollisionShape/Quad.get_surface_material(0)

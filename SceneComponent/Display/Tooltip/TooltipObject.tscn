@@ -7,3 +7,4 @@
 
 [node name="Screen" parent="." instance=ExtResource( 1 )]
 content = ExtResource( 2 )
+track_camera = true
