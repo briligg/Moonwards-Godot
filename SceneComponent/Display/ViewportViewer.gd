@@ -28,7 +28,8 @@ var content_instance = null
 #When track_camera is on, rotate myself to face the camera at all times.
 func _process(_delta : float) -> void :
 	var camera : Camera = get_tree().root.get_camera()
-	rotation_degrees = camera.rotation_degrees
+	if camera != null:
+		rotation_degrees = camera.rotation_degrees
 
 func _ready():
 	set_process_input(false)
