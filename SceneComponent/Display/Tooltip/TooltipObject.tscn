@@ -7,4 +7,5 @@
 
 [node name="Screen" parent="." instance=ExtResource( 1 )]
 content = ExtResource( 2 )
+viewport_size = Vector2( 1080, 1080 )
 track_camera = true

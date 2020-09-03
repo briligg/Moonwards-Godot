@@ -14,6 +14,8 @@ extends Spatial
 
 # Member variables
 export(PackedScene) var content = null
+export(Vector2) var mesh_size = Vector2(1920,1080)
+export(Vector2) var viewport_size = Vector2(1920,1080)
 export(bool) var track_camera = false
 export(bool) var hologram = false
 
@@ -34,6 +36,11 @@ func _ready():
 	viewport.add_child(content_instance)
 	
 	get_node("Area").connect("input_event", self, "_on_area_input_event")
+	
+	#Adjust the scale of the collision shape to what the developer specified.
+	$Area/CollisionShape.scale = Vector3(mesh_size.x / 1745, mesh_size.y / 1728 ,1)
+	#Adjust the viewport screen size based on what the dev specified.
+	$Viewport.size = viewport_size
 	
 	#Track the camera if the bool is true.
 	if not track_camera :
