@@ -14,6 +14,7 @@ extends Spatial
 
 # Member variables
 export(PackedScene) var content = null
+export(bool) var track_camera = false
 export(bool) var hologram = false
 
 onready var screen: Node = self
@@ -28,6 +29,12 @@ func _ready():
 	viewport.add_child(content_instance)
 	
 	get_node("Area").connect("input_event", self, "_on_area_input_event")
+	
+	#Track the camera if the bool is true.
+	if track_camera :
+		var into_billboard_material : SpatialMaterial = $Area/CollisionShape/Quad.material_override
+		into_billboard_material.params_billboard_mode = into_billboard_material.BILLBOARD_ENABLED
+		into_billboard_material.params_billboard_keep_scale = true
 	
 	if hologram:
 		var mat = $Area/CollisionShape/Quad.get_surface_material(0)
