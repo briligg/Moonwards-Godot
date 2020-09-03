@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/ArrowButtonHover.png-1f289c3a1c64a62bece401dd8cca1fcd.s3tc.stex"
+path.etc2="res://.import/ArrowButtonHover.png-1f289c3a1c64a62bece401dd8cca1fcd.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://Assets/Displays/ArrowButtonHover.png"
+dest_files=[ "res://.import/ArrowButtonHover.png-1f289c3a1c64a62bece401dd8cca1fcd.s3tc.stex", "res://.import/ArrowButtonHover.png-1f289c3a1c64a62bece401dd8cca1fcd.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=2
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=true
+flags/srgb=0
+process/fix_alpha_border=false
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=1
+size_limit=0
+detect_3d=false
+svg/scale=1.0

@@ -1,0 +1,44 @@
+[gd_resource type="ShaderMaterial" load_steps=11 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Shaders/DistanceNoiseBlend_Visualshader.tres" type="Shader" id=1]
+[ext_resource path="res://Assets/MoonTown/Constructs/Lalande_Crater/textures/Lalande_Whole_2k_Normals.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/SharedAssets/Textures/Nature_Textures/Rock_bumpyBrown_cc0textures/Rock03_nrm.jpg" type="Texture" id=3]
+[ext_resource path="res://Assets/SharedAssets/Textures/Nature/Snow_01/Snow_01_2K_Roughness.png" type="Texture" id=4]
+[ext_resource path="res://Assets/SharedAssets/Textures/Nature/Snow_01/Snow_01_2K_Color.png" type="Texture" id=5]
+[ext_resource path="res://Assets/MoonTown/Constructs/Lalande_Crater/textures/Lalande_2019_Whole_ImageTexture_Tint_4096_16colors_reducedDither.png" type="Texture" id=6]
+[ext_resource path="res://Assets/SharedAssets/Textures/Nature/Sand_01/Sand_01_2K_Normal.jpg" type="Texture" id=7]
+[ext_resource path="res://Assets/SharedAssets/Textures/Nature/Sand_01/Sand_01_2K_Color.png" type="Texture" id=8]
+[ext_resource path="res://Assets/SharedAssets/Textures/Nature/Sand_01/Sand_01_2K_Roughness.jpg" type="Texture" id=9]
+[ext_resource path="res://Assets/SharedAssets/Textures/Noises/Noise_Hev_01_1K_RGB.png" type="Texture" id=10]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/Color_A = Color( 0.478431, 0.478431, 0.478431, 1 )
+shader_param/UVScale_A = Vector3( 1500, 1500, 0 )
+shader_param/UVScale_B = Vector3( 1000, 1000, 0 )
+shader_param/Color_B = Color( 0.505882, 0.505882, 0.505882, 1 )
+shader_param/NoiseInvert = false
+shader_param/NoiseIntensity = 1.1
+shader_param/NoiseAlpha = false
+shader_param/NoiseZ = true
+shader_param/UVScale_Noise = Vector3( 500, 250, 0 )
+shader_param/NoiseY = false
+shader_param/UVScale_Far = Vector3( 1, 1, 1 )
+shader_param/Color_Far = Color( 0.478431, 0.478431, 0.478431, 1 )
+shader_param/DistanceLerp = 700.0
+shader_param/DistanceSmooth = 50.0
+shader_param/Metallic_A_B_Far = null
+shader_param/Rough_AO_Int = Vector3( 1, 1, 1 )
+shader_param/Rough_AO_Far_Int = Vector3( 1, 1, 1 )
+shader_param/Specular_A_B_Far = Vector3( 0.5, 0.5, 0.5 )
+shader_param/Normal_Int = 0.85
+shader_param/Normal_Far_Int = 1.0
+shader_param/Albedo_A = ExtResource( 8 )
+shader_param/Albedo_B = ExtResource( 5 )
+shader_param/Noise_RGB = ExtResource( 10 )
+shader_param/Albedo_Far = ExtResource( 6 )
+shader_param/Rough_AO_A = ExtResource( 9 )
+shader_param/Rough_AO_B = ExtResource( 4 )
+shader_param/NormalMap_A = ExtResource( 3 )
+shader_param/NormalMap_B = ExtResource( 7 )
+shader_param/NormalMap_Far = ExtResource( 2 )

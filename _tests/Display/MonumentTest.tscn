@@ -28,8 +28,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49521, 0, 0 )
 [node name="MakersMonument2" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.99302, -6.62498, -7.30037 )
 
+[node name="Screen" parent="MakersMonument2" index="1"]
+hologram = false
+
 [node name="MakersMonument" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11474, -6.62498, -7.30037 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -6.5, -7.3 )
 
 [node name="Camera1" type="Camera" parent="MakersMonument"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8877, 0.885342 )
@@ -39,3 +42,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.50064, 3.61618 )
 __meta__ = {
 "_editor_description_": ""
 }
+
+[editable path="MakersMonument2"]

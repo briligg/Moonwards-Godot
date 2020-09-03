@@ -1,0 +1,42 @@
+[gd_resource type="ShaderMaterial" load_steps=8 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Constructs/Center_Atrium/Shaders/Layered2Wall_Visualshader.tres" type="Shader" id=1]
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Marble_01/Marble_01_2K_Albedo.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/SharedAssets/Textures/Noises/Noise_Hev_03_1K_RGB.png" type="Texture" id=3]
+[ext_resource path="res://Assets/SharedAssets/Textures/Nature/Leaves_01/Leaves_01_2K_Diffuse.jpg" type="Texture" id=4]
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Marble_02/Marble_02_2K_Normal.jpg" type="Texture" id=5]
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Marble_02/Marble_02_2K_Albedo.jpg" type="Texture" id=7]
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Marble_02/Marble_02_2K_Roughness.jpg" type="Texture" id=8]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/Color_A = Color( 1, 0.823529, 0.823529, 1 )
+shader_param/UVScale_A = Vector3( 1, 1, 0 )
+shader_param/Color_A_Alt = Color( 0.764706, 0.662745, 0.662745, 1 )
+shader_param/NoiseInvert_B = false
+shader_param/NoiseIntensity_B = 1.0
+shader_param/NoiseZ_B = false
+shader_param/UVScale_Noise_B = Vector3( 1, 1, 0 )
+shader_param/NoiseY_B = false
+shader_param/Color_B = Color( 0.988235, 0.623529, 0.623529, 1 )
+shader_param/UVScale_B = Vector3( 10, 10, 0 )
+shader_param/Color_B_Alt = Color( 0.745098, 0.8, 0.709804, 1 )
+shader_param/NoiseInvert_A = true
+shader_param/NoiseIntensity_A = 1.0
+shader_param/NoiseZ_A = true
+shader_param/UVScale_Noise_A = Vector3( 2, 2, 0 )
+shader_param/NoiseY_A = false
+shader_param/Rough_Mult_A = 10.0
+shader_param/Rough_Mult_B = 40.0
+shader_param/Specular_A = 0.5
+shader_param/Specular_B = 0.2
+shader_param/Heightmap_A = ExtResource( 2 )
+shader_param/Albedo_A = ExtResource( 7 )
+shader_param/Noise_B_RGB = ExtResource( 3 )
+shader_param/Albedo_B = ExtResource( 4 )
+shader_param/Noise_A_RGB = ExtResource( 3 )
+shader_param/Rough_A = ExtResource( 8 )
+shader_param/Rough_B = ExtResource( 8 )
+shader_param/Albedo_B_Mix = ExtResource( 4 )
+shader_param/NormalMap_A = ExtResource( 5 )
+shader_param/NormalMap_B = ExtResource( 5 )

@@ -239,6 +239,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/GameLogic/Interact/Interactor/Interactor.gd"
 }, {
+"base": "AComponent",
+"class": "InteractorComponent",
+"language": "GDScript",
+"path": "res://SceneComponent/Actor/InteractorComponent.gd"
+}, {
 "base": "AMovementController",
 "class": "KinematicMovement",
 "language": "GDScript",
@@ -319,6 +324,66 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Entity/VehicleEntity.gd"
 }, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeCheapContrast",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/CheapContrastNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeColorHue",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/ColorHueNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeDistanceWS",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/DistanceWSNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeLocationWS",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/LocationWSNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeNormalMultiply",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/NormalMultiplyNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeNormalWS",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/NormalWSNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeParallaxMapping",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/ParallaxMappingNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeScalarHeightMix",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/ScalarHeightMixNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeStochasticTexture",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/StochasticTextureNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeUVEdit",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/CustomUVNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeUVPanner",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/PannerNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeVectorHeightMix",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/VectorHeightMixNode.gd"
+}, {
 "base": "Node",
 "class": "Workstation",
 "language": "GDScript",
@@ -371,6 +436,7 @@ _global_script_class_icons={
 "InspectorGadgetUtil": "",
 "Interactable": "",
 "Interactor": "",
+"InteractorComponent": "",
 "KinematicMovement": "",
 "LodModel": "",
 "LodSignals": "",
@@ -387,6 +453,18 @@ _global_script_class_icons={
 "ReversingVisibilityTrigger": "",
 "StaticEntity": "",
 "VehicleEntity": "",
+"VisualShaderNodeCheapContrast": "",
+"VisualShaderNodeColorHue": "",
+"VisualShaderNodeDistanceWS": "",
+"VisualShaderNodeLocationWS": "",
+"VisualShaderNodeNormalMultiply": "",
+"VisualShaderNodeNormalWS": "",
+"VisualShaderNodeParallaxMapping": "",
+"VisualShaderNodeScalarHeightMix": "",
+"VisualShaderNodeStochasticTexture": "",
+"VisualShaderNodeUVEdit": "",
+"VisualShaderNodeUVPanner": "",
+"VisualShaderNodeVectorHeightMix": "",
 "Workstation": ""
 }
 
@@ -406,6 +484,7 @@ Signals="*res://Script/Manager/SignalsManager/SignalsManager.gd"
 Groups="*res://Script/Manager/GroupsManager/GroupsManager.gd"
 Scene="*res://Script/Manager/SceneManager/SceneManager.gd"
 Network="*res://Script/Network/NetworkManager/NetworkManager.gd"
+VisibilityManager="*res://Script/Manager/VisualTriggerManager/VisibilityManager.tscn"
 AL_DebugDraw="*res://Script/DebugHelper/debug_draw_3d.gd"
 Hud="*res://Script/Manager/HudManager/HudManager.gd"
 Nodes="*res://addons/joyeux_npc_editor/src/Core/Nodes.gd"
@@ -441,6 +520,26 @@ enabled=PoolStringArray( "QuickPluginManager", "editor_icon_previewer", "joyeux_
 
 [importer_defaults]
 
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 2,
+"compress/normal_map": 1,
+"detect_3d": true,
+"flags/anisotropic": false,
+"flags/filter": true,
+"flags/mipmaps": true,
+"flags/repeat": 1,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
 scene={
 "animation/clip_1/end_frame": 0,
 "animation/clip_1/loops": false,
@@ -1493,26 +1592,6 @@ scene={
 "nodes/storage": 0,
 "skins/use_named_skins": true
 }
-texture={
-"compress/bptc_ldr": 0,
-"compress/hdr_mode": 0,
-"compress/lossy_quality": 0.7,
-"compress/mode": 2,
-"compress/normal_map": 0,
-"detect_3d": true,
-"flags/anisotropic": false,
-"flags/filter": true,
-"flags/mipmaps": true,
-"flags/repeat": 1,
-"flags/srgb": 2,
-"process/HDR_as_SRGB": false,
-"process/fix_alpha_border": true,
-"process/invert_color": false,
-"process/premult_alpha": false,
-"size_limit": 0,
-"stream": false,
-"svg/scale": 1.0
-}
 
 [input]
 
@@ -1838,8 +1917,12 @@ file_logging/max_log_files=30
 
 [rendering]
 
+threads/thread_model=2
+quality/filters/anisotropic_filter_level=16
 quality/shadows/filter_mode=2
+quality/reflections/irradiance_max_size=256
 quality/filters/use_nearest_mipmap_filter=true
 limits/rendering/max_renderable_elements=60000
 environment/default_clear_color=Color( 0, 0, 0, 1 )
+quality/filters/msaa=1
 environment/default_environment="res://default_env.tres"

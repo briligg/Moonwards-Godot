@@ -151,9 +151,6 @@ func _on_area_exited(area):
 			$Interactable.display_info = ""
 			_dock_door_interactable = null
 
-func _align_rover_to_dock(rover):
-	pass
-
 func _reparent(node, new_parent):
 	var p = node.get_parent()
 	p.remove_child(node)

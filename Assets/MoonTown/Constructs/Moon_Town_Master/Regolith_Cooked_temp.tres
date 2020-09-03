@@ -1,0 +1,12 @@
+[gd_resource type="SpatialMaterial" format=2]
+
+[resource]
+resource_name = "Regolith_Cooked_temp"
+params_cull_mode = 2
+albedo_color = Color( 0.588772, 0.621, 0.646606, 1 )
+roughness = 0.5
+emission_enabled = true
+emission = Color( 0, 0, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false

@@ -34,7 +34,7 @@ func get_look_direction(var position):
 	var flat_position = global_transform.origin
 	flat_position.y = position.y
 	
-	var deg = rad2deg(global_transform.basis.z.angle_to((flat_position - position).normalized()))
+#	var deg = rad2deg(global_transform.basis.z.angle_to((flat_position - position).normalized()))
 	
 	if rad2deg(global_transform.basis.z.angle_to((flat_position - position).normalized())) < 90.0:
 		return global_transform.basis.z

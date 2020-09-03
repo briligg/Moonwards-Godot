@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Script/Manager/VisualTriggerManager/VisibilityManager.gd" type="Script" id=1]
+
+[node name="VisibilityManager" type="Spatial"]
+script = ExtResource( 1 )
+log_lod_changes = true
+log_vt_changes = true

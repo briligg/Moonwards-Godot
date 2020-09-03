@@ -146,7 +146,7 @@ func _go_to_camera_stage() -> void:
 	camera_pivot.set_enabled(false)
 
 
-func _on_Interactable_interacted_by(_interactor: Node):
-	self._interactor = _interactor
+func _on_Interactable_interacted_by(interactor: Node):
+	self._interactor = interactor
 	yield(get_tree(), "idle_frame")
 	activate()
