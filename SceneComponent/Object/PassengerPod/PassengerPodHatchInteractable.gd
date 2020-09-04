@@ -18,7 +18,7 @@ func interacted_by(interactor):
 
 
 func close_hatch():
-	anim.play("Close" ,1, 1, false)
+	anim.play("Close")
 	is_hatch_open = false
 	hatch_collision.disabled = false
 	$Interactable.display_info = "Open Hatch"
