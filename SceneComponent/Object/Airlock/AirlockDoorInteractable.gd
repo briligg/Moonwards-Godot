@@ -7,7 +7,7 @@ export(String) var animation_name
 export(bool) var is_dock_door: bool = false
 
 onready var anim = get_node(animation_player)
-var is_open: bool = true
+var is_open: bool = false
 
 
 func _ready():
