@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://SceneComponent/Interface/Hud/TooltipDisplay.gd" type="Script" id=1]
+
+[node name="TooltipDisplay" type="PanelContainer"]
+visible = false
+anchor_left = 0.2
+anchor_right = 0.8
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vert" type="VBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1145.0
+margin_bottom = 1073.0
+
+[node name="Top" type="HBoxContainer" parent="Vert"]
+margin_right = 1138.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="PageLeft" type="Button" parent="Vert/Top"]
+margin_right = 161.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="Vert/Top"]
+margin_left = 165.0
+margin_right = 972.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+text = "Tooltip Name"
+align = 1
+
+[node name="PageRight" type="Button" parent="Vert/Top"]
+margin_left = 976.0
+margin_right = 1138.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="BBText" type="RichTextLabel" parent="Vert"]
+margin_top = 44.0
+margin_right = 1138.0
+margin_bottom = 1020.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 24.0
+bbcode_enabled = true
+
+[node name="Bottom" type="HBoxContainer" parent="Vert"]
+margin_top = 1024.0
+margin_right = 1138.0
+margin_bottom = 1066.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Page" type="Label" parent="Vert/Bottom"]
+margin_right = 945.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+text = "Tooltip Name"
+align = 1
+
+[node name="Quit" type="Button" parent="Vert/Bottom"]
+margin_left = 949.0
+margin_right = 1138.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
