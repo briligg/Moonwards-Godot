@@ -64,25 +64,27 @@ func _process(delta : float) -> void :
 		_process_drag(mouse_pos)
 		return
 	
-	#Check if the mouse is near the corners.
+	#Check if the mouse is to the right or near the corner of Chat.
 	if(mouse_pos.x >= (rect_size.x + rect_position.x) - MOUSE_RESIZE_LEEWAY &&
 			mouse_pos.x <= (rect_size.x + rect_position.x) + MOUSE_RESIZE_LEEWAY) :
-		if(mouse_pos.y >= rect_position.y - MOUSE_RESIZE_LEEWAY &&
-				mouse_pos.y <= rect_position.y + MOUSE_RESIZE_LEEWAY) :
-			Input.set_default_cursor_shape(Input.CURSOR_DRAG)
-			lock_x_drag = false
-			lock_y_drag = false
-		else :
-			Input.set_default_cursor_shape(Input.CURSOR_HSIZE)
-			lock_y_drag = true
-			lock_x_drag = false
+		if(mouse_pos.y >= rect_position.y - MOUSE_RESIZE_LEEWAY) :
+			if(mouse_pos.y <= rect_position.y + MOUSE_RESIZE_LEEWAY) :
+				Input.set_default_cursor_shape(Input.CURSOR_DRAG)
+				lock_x_drag = false
+				lock_y_drag = false
+			else :
+				Input.set_default_cursor_shape(Input.CURSOR_HSIZE)
+				lock_y_drag = true
+				lock_x_drag = false
 		
 		#Start handling the player resizing the window.
 		if Input.is_mouse_button_pressed(BUTTON_MASK_LEFT) :
 			is_processing_drag = true
 	
+	#Check if the mouse is at the top edge.
 	elif(mouse_pos.y >= rect_position.y - MOUSE_RESIZE_LEEWAY &&
-			mouse_pos.y <= rect_position.y + MOUSE_RESIZE_LEEWAY) :
+			mouse_pos.y <= rect_position.y + MOUSE_RESIZE_LEEWAY &&
+			mouse_pos.x <= (rect_size.x + rect_position.x) + MOUSE_RESIZE_LEEWAY) :
 		Input.set_default_cursor_shape(Input.CURSOR_VSIZE)
 		lock_x_drag = true
 		lock_y_drag = false
@@ -90,6 +92,8 @@ func _process(delta : float) -> void :
 		#Start handling the player resizing the window.
 		if Input.is_mouse_button_pressed(BUTTON_MASK_LEFT) :
 			is_processing_drag = true
+	
+	#The mouse is not near any edge.
 	else :
 		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 		lock_x_drag = false
