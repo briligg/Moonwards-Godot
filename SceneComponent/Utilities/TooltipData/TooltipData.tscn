@@ -4,4 +4,4 @@
 
 [node name="TooltipData" type="Node"]
 script = ExtResource( 1 )
-bbtext_fields = PoolStringArray( "" )
+bbtext_fields = PoolStringArray( "Off", "Oomph" )
