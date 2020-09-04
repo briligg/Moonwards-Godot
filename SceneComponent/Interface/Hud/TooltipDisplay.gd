@@ -2,6 +2,10 @@ extends PanelContainer
 
 onready var text : RichTextLabel = $Vert/BBText
 onready var title_node : Label = $Vert/Top/Title
+onready var page_node : Label = $Vert/Bottom/Page
+
+#All the tooltip data currently in use.
+var current_data : TooltipData
 
 var current_page : int = 1
 var total_pages_in_data : int = 0
@@ -16,13 +20,16 @@ func _activate(tooltip_data : TooltipData) -> void :
 	#Set current page to 1 and determine how many pages are in the data.
 	current_page = 0
 	total_pages_in_data = tooltip_data.bbtext_fields.size()
+	page_node.text = str(current_page+1) + "/" + str(total_pages_in_data)
 	
 	#Set the text display to the first entry of the data.
 	if tooltip_data.bbtext_fields.size() > 0 :
-		text.bbcode_text = tooltip_data.bbtext_fields[current_page - 1]
+		text.bbcode_text = tooltip_data.bbtext_fields[current_page]
 	
 	#Make the title on the display match the title in the data.
 	title_node.text = tooltip_data.title
+	
+	current_data = tooltip_data
 
 #Connect to signals.
 func _ready() -> void :
@@ -31,3 +38,12 @@ func _ready() -> void :
 	
 	#Listen for the different buttons in the menu.
 	$Vert/Bottom/Quit.connect("pressed", self, "hide")
+	$Vert/Top/PageLeft.connect("pressed", self, "page_change", [-1])
+	$Vert/Top/PageRight.connect("pressed", self, "page_change", [1])
+
+#Change current page by the amount of pages specified by the integer.
+func page_change(move_pages : int) -> void :
+	# warning-ignore:narrowing_conversion
+	current_page = clamp(current_page + move_pages, 0, total_pages_in_data - 1)
+	text.bbcode_text = current_data.bbtext_fields[current_page]
+	page_node.text = str(current_page + 1) + "/" + str(total_pages_in_data)
