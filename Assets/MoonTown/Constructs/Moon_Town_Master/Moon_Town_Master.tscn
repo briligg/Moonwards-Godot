@@ -1556,7 +1556,7 @@ shape = SubResource( 88 )
 
 [node name="Third_Gallery" parent="Marker_all_Constructs/Empty_ThirdGallery" index="0" instance=ExtResource( 24 )]
 
-[node name="Billboard" parent="." index="84" instance=ExtResource( 34 )]
+[node name="Billboard" parent="." index="61" instance=ExtResource( 34 )]
 transform = Transform( -0.993254, 0, 0.115959, 0, 1, 0, -0.115959, 0, -0.993254, -39.8064, 88.2657, -154.623 )
 
 [editable path="Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor/Molten_Soil_Reactor"]
