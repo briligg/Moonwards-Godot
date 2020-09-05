@@ -29,6 +29,7 @@ alignment = 1
 margin_right = 161.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
+text = "Previous Page"
 
 [node name="Title" type="Label" parent="Vert/Top"]
 margin_left = 165.0
@@ -45,6 +46,7 @@ margin_left = 976.0
 margin_right = 1138.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
+text = "Next Page"
 
 [node name="BBText" type="RichTextLabel" parent="Vert"]
 margin_top = 44.0
@@ -77,3 +79,4 @@ margin_left = 949.0
 margin_right = 1138.0
 margin_bottom = 42.0
 size_flags_horizontal = 3
+text = "Close"
