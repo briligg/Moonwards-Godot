@@ -17,6 +17,9 @@ script = ExtResource( 8 )
 
 [node name="LOD0" parent="." instance=ExtResource( 5 )]
 
+[node name="AirlockDoor1_LOD0" parent="LOD0" index="0"]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 1.58, 0 )
+
 [node name="KinematicBody" type="KinematicBody" parent="LOD0/AirlockDoor1_LOD0" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, 0, 0 )
 
@@ -32,6 +35,9 @@ title = "Airlock Door"
 animation_player = NodePath("../../../AnimationPlayer")
 animation_name = "Door1"
 is_dock_door = true
+
+[node name="AirlockDoor2_LOD0" parent="LOD0" index="1"]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 1.58, 10.571 )
 
 [node name="KinematicBody2" type="KinematicBody" parent="LOD0/AirlockDoor2_LOD0" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, 0.00121951, -0.000195503 )
