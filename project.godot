@@ -327,7 +327,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "TooltipData",
 "language": "GDScript",
-"path": "res://SceneComponent/Utilities/TooltipData/TooltipData.gd"
+"path": "res://Script/GameLogic/Tooltip/TooltipData.gd"
 }, {
 "base": "AEntity",
 "class": "VehicleEntity",
