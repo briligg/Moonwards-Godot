@@ -29,7 +29,11 @@ func _activate(tooltip_data : TooltipData) -> void :
 	#Make the title on the display match the title in the data.
 	title_node.text = tooltip_data.title
 	
+	#Keep a memory of the current tooltip and watch for if it gets freed.
+	if current_data != null :
+		current_data.disconnect("freed", self, "_tooltip_freed")
 	current_data = tooltip_data
+	tooltip_data.connect("freed", self, "_tooltip_freed")
 
 #Connect to signals.
 func _ready() -> void :
@@ -37,9 +41,17 @@ func _ready() -> void :
 	Signals.Hud.connect(Signals.Hud.TOOLTIP_MENU_DISPLAYED, self, "_activate") 
 	
 	#Listen for the different buttons in the menu.
-	$Vert/Bottom/Quit.connect("pressed", self, "hide")
+	$Vert/Bottom/Quit.connect("pressed", self, "close_display")
 	$Vert/Top/PageLeft.connect("pressed", self, "page_change", [-1])
 	$Vert/Top/PageRight.connect("pressed", self, "page_change", [1])
+
+#Called by TooltipData signal when the currently displayed Tooltip is freed.
+func _tooltip_freed() -> void :
+	current_data = null
+	close_display()
+
+func close_display() -> void :
+	hide()
 
 #Change current page by the amount of pages specified by the integer.
 func page_change(move_pages : int) -> void :

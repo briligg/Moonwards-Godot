@@ -1,7 +1,13 @@
 extends Node
 class_name TooltipData
 
+signal freed()
 
-export var bbtext_fields : PoolStringArray = []
+var bbtext_fields : PoolStringArray = []
 
-export var title : String
+var title : String
+
+
+func free_myself() -> void :
+	emit_signal("freed")
+	queue_free()
