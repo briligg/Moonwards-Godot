@@ -34,6 +34,12 @@ func _activate(tooltip_data : TooltipData) -> void :
 		current_data.disconnect("freed", self, "_tooltip_freed")
 	current_data = tooltip_data
 	tooltip_data.connect("freed", self, "_tooltip_freed")
+	
+	#Hightlight the RichTextLabel as the UI with focus.
+	text.grab_focus()
+	
+	#Start accepting input that handles the display.
+	set_process_input(true)
 
 #Listen for input when I am visible. This controls paging, scrolling, and exitting.
 func _input(event : InputEvent) -> void :
@@ -45,11 +51,23 @@ func _input(event : InputEvent) -> void :
 	elif event.is_action_pressed("ui_page_up") || event.is_action_pressed("ui_right") :
 		page_change(1)
 	
+	#Close the Tooltip display.
 	elif event.is_action_pressed("ui_cancel") :
 		close_display()
+	
+	#Scroll the text downwards.
+	elif event.is_action_pressed("ui_down", true) :
+		text.get_v_scroll().value += text.get_v_scroll().step * 10
+	
+	#Scroll the text upwards.
+	elif event.is_action_pressed("ui_up", true) :
+		text.get_v_scroll().value -= text.get_v_scroll().step * 10
 
 #Connect to signals.
 func _ready() -> void :
+	#Do not listen to player input until a TooltipButton activates me.
+	set_process_input(false)
+	
 	#Listen for when tooltip has been requested.
 	Signals.Hud.connect(Signals.Hud.TOOLTIP_MENU_DISPLAYED, self, "_activate") 
 	
@@ -65,6 +83,9 @@ func _tooltip_freed() -> void :
 
 func close_display() -> void :
 	hide()
+	
+	#Stop reading the player's input.
+	set_process_input(false)
 
 #Change current page by the amount of pages specified by the integer.
 func page_change(move_pages : int) -> void :
