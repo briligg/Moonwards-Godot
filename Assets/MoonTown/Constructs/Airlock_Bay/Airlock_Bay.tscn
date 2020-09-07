@@ -61,6 +61,12 @@ propagation = 0.2
 interior = true
 data = SubResource( 1 )
 
+[node name="LOD1" parent="." index="8"]
+visible = false
+
+[node name="LOD2" parent="." index="9"]
+visible = false
+
 [node name="ReflectionProbe" type="ReflectionProbe" parent="." index="10"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -79.0365, 3.18574, -2.24032 )
 extents = Vector3( 83.2733, 9.83605, 13.9452 )
