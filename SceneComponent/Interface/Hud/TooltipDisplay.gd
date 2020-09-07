@@ -35,6 +35,19 @@ func _activate(tooltip_data : TooltipData) -> void :
 	current_data = tooltip_data
 	tooltip_data.connect("freed", self, "_tooltip_freed")
 
+#Listen for input when I am visible. This controls paging, scrolling, and exitting.
+func _input(event : InputEvent) -> void :
+	#Move to the previous page.
+	if event.is_action_pressed("ui_page_down") || event.is_action_pressed("ui_left") :
+		page_change(-1)
+	
+	#Move to the next page.
+	elif event.is_action_pressed("ui_page_up") || event.is_action_pressed("ui_right") :
+		page_change(1)
+	
+	elif event.is_action_pressed("ui_cancel") :
+		close_display()
+
 #Connect to signals.
 func _ready() -> void :
 	#Listen for when tooltip has been requested.
