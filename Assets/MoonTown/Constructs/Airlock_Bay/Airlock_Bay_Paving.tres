@@ -12,14 +12,14 @@
 [resource]
 shader = ExtResource( 4 )
 shader_param/Color_A = Color( 0.815686, 0.815686, 0.815686, 1 )
-shader_param/UVScale_A = Vector3( 500, 500, 1 )
-shader_param/UVScale_B = Vector3( 500, 500, 1 )
+shader_param/UVScale_A = Vector3( 80, 80, 1 )
+shader_param/UVScale_B = Vector3( 80, 80, 1 )
 shader_param/Color_B = Color( 0.588235, 0.588235, 0.588235, 1 )
 shader_param/NoiseInvert = false
-shader_param/NoiseIntensity = 0.8
-shader_param/NoiseAlpha = false
+shader_param/NoiseIntensity = 0.65
+shader_param/NoiseAlpha = true
 shader_param/NoiseZ = false
-shader_param/UVScale_Noise = Vector3( 10, 10, 0 )
+shader_param/UVScale_Noise = Vector3( 3, 3, 0 )
 shader_param/NoiseY = false
 shader_param/Metallic_A = null
 shader_param/Metallic_B = null
