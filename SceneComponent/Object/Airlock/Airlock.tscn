@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/MoonTown/Models/Airlock/Animation.anim" type="Animation" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Airlock/LOD1.scn" type="PackedScene" id=3]
 [ext_resource path="res://SceneComponent/Object/Airlock/AirlockDoorInteractable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/MoonTown/Models/Airlock/LOD0.scn" type="PackedScene" id=5]
@@ -72,7 +71,6 @@ visible = false
 visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/OpenExterior = ExtResource( 1 )
 anims/OpenInterior = SubResource( 3 )
 
 [editable path="LOD0"]
