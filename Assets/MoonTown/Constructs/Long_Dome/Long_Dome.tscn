@@ -11,5 +11,11 @@ material/0 = ExtResource( 2 )
 [node name="LOD1" parent="." index="2"]
 visible = false
 
+[node name="Ground1" parent="LOD1" index="2"]
+material/0 = ExtResource( 2 )
+
 [node name="LOD2" parent="." index="3"]
 visible = false
+
+[node name="Ground2" parent="LOD2" index="2"]
+material/0 = ExtResource( 2 )
