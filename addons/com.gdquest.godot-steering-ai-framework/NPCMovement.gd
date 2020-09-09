@@ -1,4 +1,4 @@
-extends Node
+extends AComponent
 """This node should be child of a KinematicBody"""
 # Holds extra information and our character
 var Agent : GSAIKinematicBody3DAgent
@@ -86,6 +86,9 @@ func _enter_tree():
 	Follow = GSAIFollowPath.new(Agent, current_path)
 	LookAhead = GSAILookWhereYouGo.new(Agent)
 	set_physics_process(false)
+
+func _init(name : String = "NPCInput", req_net_owner : bool = true):
+	pass
 	
 func _ready():
 	
@@ -112,11 +115,16 @@ func _ready():
 	
 	set_physics_process(true)
 
-func _physics_process(delta):
+func _server_process(delta):
 	if PathBlend and FollowBlend and FleeBlend and Priority:
 		Priority.calculate_steering(acceleration)
+		_handle_input(acceleration, delta)
 		update_agent(acceleration.linear, acceleration.angular)
-		Agent._apply_steering(acceleration, delta)
+		
+func _handle_input(acceleration : GSAITargetAcceleration, delta : float):
+	entity.input = acceleration.linear.normalized()
+	Agent._apply_orientation_steering(acceleration.angular, delta)
+	
 
 func _unhandled_input(event):
 	if event is InputEventKey:
