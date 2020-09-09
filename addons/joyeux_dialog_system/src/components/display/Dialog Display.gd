@@ -104,6 +104,7 @@ func _on_Skip_pressed():
 	if PauseButton.pressed:
 		return
 	var temp = evaluate_node(next_node)
+	yield(get_tree().create_timer(0.1),"timeout")
 	if temp is GDScriptFunctionState:
 		next_node = yield(temp, "completed")
 	elif temp is String:
