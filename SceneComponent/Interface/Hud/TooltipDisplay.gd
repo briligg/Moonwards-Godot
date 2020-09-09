@@ -35,9 +35,6 @@ func _activate(tooltip_data : TooltipData) -> void :
 	current_data = tooltip_data
 	tooltip_data.connect("freed", self, "_tooltip_freed")
 	
-	#Hightlight the RichTextLabel as the UI with focus.
-	text.grab_focus()
-	
 	#Start accepting input that handles the display.
 	set_process_input(true)
 
