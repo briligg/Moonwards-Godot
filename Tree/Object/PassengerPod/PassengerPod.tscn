@@ -4,7 +4,7 @@
 [ext_resource path="res://SceneComponent/Object/PassengerPod/PassengerPodHatchInteractable.tscn" type="PackedScene" id=2]
 [ext_resource path="res://SceneComponent/Object/PassengerPod/PassengerPodDockInteractable.tscn" type="PackedScene" id=4]
 
-[sub_resource type="CapsuleShape" id=3]
+[sub_resource type="CapsuleShape" id=1]
 radius = 2.11219
 height = 15.9382
 
@@ -15,15 +15,13 @@ data = PoolVector3Array( 0.9818, -1.0064, -0.0011, -0.4909, -1.9899, -0.0011, 0.
 mode = 1
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="HatchCollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.802005, 7.68192 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.973679, 8.48277 )
 shape = SubResource( 2 )
 
 [node name="Model" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
 
 [node name="PassengerPodDockInteractable" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19534, 0 )
@@ -36,4 +34,4 @@ hatch_collision_path = NodePath("../HatchCollisionShape")
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49167, 0 )
 
 [node name="AirlockLatch" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275563, 8.56058 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275563, 9.30216 )
