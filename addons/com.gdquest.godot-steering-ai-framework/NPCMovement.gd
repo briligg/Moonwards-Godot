@@ -85,7 +85,7 @@ func _enter_tree():
 	Pursue = GSAIPursue.new(Agent, special_target)
 	Follow = GSAIFollowPath.new(Agent, current_path)
 	LookAhead = GSAILookWhereYouGo.new(Agent)
-	set_physics_process(false)
+#	set_physics_process(false)
 
 func _init().("NPCInput", false):
 	pass
@@ -113,10 +113,8 @@ func _ready():
 	Priority.add(FollowBlend)#2: Follow who I am supposed to (if i am supposed to)
 	Priority.add(FleeBlend)#3: Run away if i am supposed to
 	Priority.add(PathBlend) #4 : Follow a path
-	entity.owner_peer_id = 1
-	set_enabled(true)
 
-func _server_process(delta):
+func _process_server(delta):
 	print("AA")
 	if PathBlend and FollowBlend and FleeBlend and Priority:
 		Priority.calculate_steering(acceleration)
@@ -129,9 +127,9 @@ func _handle_input(acceleration : GSAITargetAcceleration, delta : float):
 	entity.look_dir = acceleration.linear
 	Agent._apply_orientation_steering(acceleration.angular, delta)
 
-func _client_process(delta):
+func _process_client(delta):
 	
-	entity.global_transform.origin = entity.server_pos
+	entity.global_transform.origin = entity.srv_pos
 
 
 func _unhandled_input(event):

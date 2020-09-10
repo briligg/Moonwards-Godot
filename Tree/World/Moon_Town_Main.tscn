@@ -33,12 +33,15 @@ navmesh = SubResource( 1 )
 
 [node name="NPC3" parent="Navigation" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.68645, -4.89104, 5.06851 )
+enable_on_spawn = true
 
 [node name="NPC2" parent="Navigation" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.64692, -4.89104, 4.67493 )
+enable_on_spawn = true
 
 [node name="NPC" parent="Navigation" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9659, -16.8917, -18.1275 )
+enable_on_spawn = true
 
 [node name="SpawnPoints" type="Spatial" parent="."]
 
