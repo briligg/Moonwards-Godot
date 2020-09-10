@@ -1,7 +1,7 @@
 extends Spatial
 
 onready var collision = get_parent().get_node("CollisionShape")
-
+onready var hatch_collision = get_parent().get_node("HatchCollisionShape")
 # The latch that goes into the airlock door
 onready var airlock_latch = get_parent().get_node("AirlockLatch")
 
@@ -58,6 +58,7 @@ func dock_with(rover):
 	pod.transform = target_xfm
 	pod.transform.origin.y -= HALF_HEIGHT + .1
 	_reparent(collision, rover)
+	_reparent(hatch_collision, rover)
 	collision.transform.origin.y = target_xfm.origin.y - HALF_HEIGHT + .1
 	docked_to = rover
 	is_docked = true
@@ -80,6 +81,10 @@ func undock():
 	collision.transform.origin = Vector3.ZERO
 	# Offset because the pivot is broken on the pod model
 	collision.transform.origin.z = -1
+	
+	var hxfm = hatch_collision.global_transform
+	_reparent(hatch_collision, pod)
+	hatch_collision.global_transform = hxfm
 	
 	docked_to = null
 	is_docked = false
