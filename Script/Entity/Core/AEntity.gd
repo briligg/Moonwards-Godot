@@ -27,7 +27,7 @@ func _ready() -> void:
 	add_to_group(Groups.ENTITIES)
 	Signals.Entities.emit_signal(Signals.Entities.ENTITY_CREATED, self)
 	# Because godot, right?
-	set_enabled(true)
+	set_enabled(enabled)
 
 func add_component(_name: String, _comp: Node) -> void:
 	# Add error checking here.
