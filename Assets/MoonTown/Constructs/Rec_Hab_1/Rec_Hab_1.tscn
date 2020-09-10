@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Rec_Hab_1/Rec_Hab_1.glb" type="PackedScene" id=1]
 [ext_resource path="res://SceneComponent/Utilities/VerticalStairs/VerticalStairs.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/MoonTown/Constructs/Rec_Hab_1/RecHab_main_walls.material" type="Material" id=4]
 [ext_resource path="res://Assets/MoonTown/Constructs/Rec_Hab_1/Lavastone3-temp.material" type="Material" id=5]
 [ext_resource path="res://Assets/MoonTown/Constructs/Rec_Hab_1/RegolithFused-temp.material" type="Material" id=6]
+[ext_resource path="res://Assets/MoonTown/Constructs/Rec_Hab_1/Water.material" type="Material" id=7]
 
 [node name="Rec_Hab_1" instance=ExtResource( 1 )]
 
@@ -111,10 +112,10 @@ interactions_active = true
 stairs_step_count = 11
 generate_editor_visual = false
 
+[node name="PoolWater001" parent="LOD1" index="1"]
+material/0 = ExtResource( 7 )
+
 [node name="TubehabLOD1" parent="LOD1" index="4"]
 material/0 = ExtResource( 6 )
 material/1 = ExtResource( 5 )
 material/2 = ExtResource( 4 )
-
-[node name="LOD2" parent="." index="12"]
-visible = false
