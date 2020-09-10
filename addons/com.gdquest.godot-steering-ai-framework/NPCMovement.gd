@@ -113,7 +113,7 @@ func _ready():
 	Priority.add(FollowBlend)#2: Follow who I am supposed to (if i am supposed to)
 	Priority.add(FleeBlend)#3: Run away if i am supposed to
 	Priority.add(PathBlend) #4 : Follow a path
-	
+	entity.owner_peer_id = 1
 	set_enabled(true)
 
 func _server_process(delta):
@@ -137,7 +137,7 @@ func _client_process(delta):
 func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.is_action_pressed("use"):
-			update_target(Vector3(5))
+			update_target(Vector3(5,5,5))
 
 func update_target(pos : Vector3):
 	# Remember to update the target of the NPCs! Otherwise they could run away 
