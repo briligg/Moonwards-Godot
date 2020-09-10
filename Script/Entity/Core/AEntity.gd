@@ -9,6 +9,8 @@ enum EntityType {
 	StaticObject,
 }
 
+export(bool) var enable_on_spawn = false
+
 var entity_type = EntityType.Undefined
 
 var enabled = false setget set_enabled
@@ -20,6 +22,8 @@ var entity_name: String = ""
 var components: Dictionary = {}
 
 func _ready() -> void:
+	if enable_on_spawn:
+		enabled = true
 	add_to_group(Groups.ENTITIES)
 	Signals.Entities.emit_signal(Signals.Entities.ENTITY_CREATED, self)
 	# Because godot, right?
