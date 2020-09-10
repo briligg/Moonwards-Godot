@@ -5,7 +5,7 @@ onready var hatch_collision = get_parent().get_node("HatchCollisionShape")
 # The latch that goes into the airlock door
 onready var airlock_latch = get_parent().get_node("AirlockLatch")
 
-const HALF_HEIGHT = 2.23
+const HALF_HEIGHT = 1.47
 
 # Is docked to a rover?
 var is_docked = false

@@ -816,7 +816,7 @@ audio_file = ExtResource( 55 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.6243, 104.935, -237.975 )
 
 [node name="PassengerPod2" parent="." index="31" instance=ExtResource( 73 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.624, 100.703, -236.604 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.624, 100.374, -232.84 )
 
 [node name="Lalande_MoonTown" parent="." index="32"]
 material_override = ExtResource( 64 )
