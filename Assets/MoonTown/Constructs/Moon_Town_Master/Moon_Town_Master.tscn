@@ -651,7 +651,7 @@ shape = SubResource( 47 )
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 122.585, 109, -180.953 )
 
 [node name="PassengerPod" parent="." index="28" instance=ExtResource( 73 )]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 122.585, 100.563, -158.051 )
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 122.585, 100.222, -183.514 )
 
 [node name="Audio-Tour-Markers" type="Spatial" parent="." index="29"]
 

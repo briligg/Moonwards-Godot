@@ -78,24 +78,71 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 6.5, 0 )
 [node name="effector_r_b" type="Position3D" parent="effectors"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 6.5, -9 )
 
+[node name="ik_magnets" type="Spatial" parent="."]
+
+[node name="magnet_l_f" type="Position3D" parent="ik_magnets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 7.5, 5 )
+
+[node name="magnet_l_m" type="Position3D" parent="ik_magnets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 7.5, 0 )
+
+[node name="magnet_l_b" type="Position3D" parent="ik_magnets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 7.5, -5 )
+
+[node name="magnet_r_f" type="Position3D" parent="ik_magnets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 7.5, 5 )
+
+[node name="magnet_r_m" type="Position3D" parent="ik_magnets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 7.5, 0 )
+
+[node name="magnet_r_b" type="Position3D" parent="ik_magnets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 7.5, -5 )
+
+[node name="home_targets" type="Spatial" parent="."]
+
+[node name="target_l_f" type="Position3D" parent="home_targets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 5 )
+
+[node name="target_l_m" type="Position3D" parent="home_targets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5, 0 )
+
+[node name="target_l_b" type="Position3D" parent="home_targets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, -5 )
+
+[node name="target_r_f" type="Position3D" parent="home_targets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, 5 )
+
+[node name="target_r_m" type="Position3D" parent="home_targets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5, 0 )
+
+[node name="target_r_b" type="Position3D" parent="home_targets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, -5 )
+
 [node name="left_front_wheel" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 6.5, 7 )
 
 [node name="left_mid_wheel" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 6.5, 0 )
 script = ExtResource( 4 )
 
 [node name="left_back_wheel" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 6.5, -7 )
 script = ExtResource( 4 )
 
 [node name="right_front_wheel" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 6.5, 7 )
 script = ExtResource( 4 )
 
 [node name="right_mid_wheel" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 6.5, 0 )
 script = ExtResource( 4 )
 
 [node name="right_back_wheel" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 6.5, -7 )
 script = ExtResource( 4 )
 
 [node name="Model" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0 )
 
 [node name="Legs" parent="Model" index="0"]
 bones/3/bound_children = [  ]
