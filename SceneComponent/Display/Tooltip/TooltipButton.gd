@@ -3,8 +3,6 @@ extends Spatial
 #Buttons for the TooltipData to use.
 var tooltip_data : TooltipData = TooltipData.new()
 
-#When hovered over, this is true. When not hovered, this is false.
-#var mouse_hovered : bool = false
 
 #Allows pressed animation.
 var pressed : bool = false
@@ -16,8 +14,17 @@ export var bbtext_fields : PoolStringArray = []
 
 export var title : String
 
+func _hovered(hovered_over : bool) -> void :
+	if hovered_over :
+		anim_player.play("hovered")
+	else : 
+		anim_player.play("unhovered")
 
 func _ready() -> void:
+	#This allows me to have hover functionality.
+	$Area.connect("mouse_entered", self, "_hovered", [true])
+	$Area.connect("mouse_exited", self, "_hovered", [false])
+	
 	#Make sure tooltip_data is deleted when I am being freed.
 	connect("tree_exiting", tooltip_data, "free_myself")
 	
