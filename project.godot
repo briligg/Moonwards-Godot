@@ -239,17 +239,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/GameLogic/Interact/Interactor/Interactor.gd"
 }, {
-"base": "AComponent",
-"class": "InteractorComponent",
-"language": "GDScript",
-"path": "res://SceneComponent/Actor/InteractorComponent.gd"
-}, {
 "base": "AMovementController",
 "class": "KinematicMovement",
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/Humanoid/HumanoidMovement.gd"
 }, {
-"base": "Area",
+"base": "Spatial",
 "class": "LodModel",
 "language": "GDScript",
 "path": "res://Script/ExtensionClass/LodModel.gd"
@@ -436,7 +431,6 @@ _global_script_class_icons={
 "InspectorGadgetUtil": "",
 "Interactable": "",
 "Interactor": "",
-"InteractorComponent": "",
 "KinematicMovement": "",
 "LodModel": "",
 "LodSignals": "",

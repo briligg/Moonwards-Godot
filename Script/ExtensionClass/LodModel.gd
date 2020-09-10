@@ -1,4 +1,4 @@
-extends Area
+extends Spatial
 class_name LodModel
 
 var _lods = {}
@@ -7,7 +7,7 @@ var lod_enabled: bool = false
 var lod_state setget _set_illegal
 
 func _ready() -> void:
-	_generate_col_shape()
+#	_generate_col_shape()
 	if self.has_node("LOD0") and self.has_node("LOD1") and self.has_node("LOD2"):
 		_lods[0] = $LOD0
 		_lods[1] = $LOD1
@@ -38,13 +38,14 @@ func hide_all()-> void:
 		_lods[i].visible = false;
 	lod_state = VisibilityManager.LodState.HIDDEN
 
-func _generate_col_shape():
-	var col = CollisionShape.new()
-	var shape = SphereShape.new()
-	shape.radius = 0.1
-	shape.margin = 0.1
-	col.shape = shape
-	self.add_child(col)
+# Generate collision shapes for distance based LOD - currently legacy code.
+#func _generate_col_shape():
+#	var col = CollisionShape.new()
+#	var shape = SphereShape.new()
+#	shape.radius = 0.1
+#	shape.margin = 0.1
+#	col.shape = shape
+#	self.add_child(col)
 
 func _set_illegal(_val) -> void:
 	Log.warning(self, "", "Set is illegal.")
