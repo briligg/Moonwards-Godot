@@ -132,6 +132,7 @@ nodes/rotate/position = Vector2( -100, 260 )
 node_connections = [ "output", 0, "Blend2", "Blend2 2", 0, "rotate", "Blend2 2", 1, "Animation", "Blend2", 0, "color", "Blend2", 1, "Blend2 2" ]
 
 [node name="Reticle" type="TextureRect"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
