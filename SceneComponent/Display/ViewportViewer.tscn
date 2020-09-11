@@ -52,6 +52,8 @@ usage = 0
 gui_snap_controls_to_pixels = false
 
 [node name="Area" type="Area" parent="."]
+collision_layer = 2147484672
+collision_mask = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 transform = Transform( 1.1, 0, 0, 0, 0.625, 0, 0, 0, 1, 0, 0, 0 )

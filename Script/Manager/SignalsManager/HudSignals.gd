@@ -18,6 +18,7 @@ const INTERACTABLE_LEFT_REACH : String = "interactable_left_reach"
 const INTERACT_OCCURED : String = "interact_occured"
 const NEW_INTERACTOR_GRABBED_FOCUS : String = "new_interactor_grabbed_focus"
 const SET_FIRST_PERSON : String = "set_first_person"
+const SET_FIRST_PERSON_POSSIBLE_CLICK : String = "set_first_person_possible_click"
 const VISIBLE_HUDS_SET : String = "visible_huds_set"
 
 # Define the actual signal.
@@ -36,4 +37,5 @@ signal interactable_left_reach(interactable_node)
 signal interact_occured(interactable_user_node)
 signal new_interactor_grabbed_focus(new_interactor_component_node)
 signal set_first_person(is_active_bool)
+signal set_first_person_possible_click(click_is_possible_bool)
 signal visible_huds_set(show_flag_int)

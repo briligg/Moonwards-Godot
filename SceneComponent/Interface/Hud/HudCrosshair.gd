@@ -3,8 +3,32 @@ extends TextureRect
 
 var camera : Camera
 
+#How many click events are currently possible.
+#Animation will play until the integer is set to zero.
+var clicks_possible : int = 0
+
 onready var ray_cast : RayCast = get_node("ReticleRayCast")
 
+
+#Called by signal. A click event is possible. Makes sure that no click event is possible before shutting off animation.
+func _click_possible(click_is_possible : bool) -> void :
+	if click_is_possible :
+		clicks_possible += 1
+		$Tree.active = true
+		
+	else :
+		# warning-ignore:narrowing_conversion
+		clicks_possible = max(clicks_possible - 1, 0)
+		
+		if clicks_possible == 0 :
+			$Tree.active = false
+			modulate = Color(1,1,1,1)
+			rect_rotation = 0
+			rect_pivot_offset = Vector2(5,5)
+			margin_bottom = 5
+			margin_top = -5
+			margin_left = -5
+			margin_right = 5
 
 func _physics_process(_delta) -> void :
 	var current_camera : Camera = get_tree().root.get_camera()
@@ -20,6 +44,7 @@ func _physics_process(_delta) -> void :
 # Listen to SignalsManager to see when I should activate/deactivate.
 func _ready() -> void :
 	Signals.Hud.connect(Signals.Hud.SET_FIRST_PERSON, self, "_set_crosshair")
+	Signals.Hud.connect(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_CLICK, self, "_click_possible")
 
 # Determines if I should turn on when requested or not.
 func _set_crosshair(is_active : bool) -> void :
