@@ -24,7 +24,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( -80, 0, 0 ) ]
+"values": [ Vector3( 0, 0, 0 ), Vector3( -120, 0, 0 ) ]
 }
 
 [node name="Airlock" type="Area"]
