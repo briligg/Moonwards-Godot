@@ -16,7 +16,7 @@
 extents = Vector3( 2.76811, 3.79233, 3.79236 )
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 4, 2, 4 )
+extents = Vector3( 2.37922, 1.3206, 3.42429 )
 
 [node name="AthleteRover" type="RigidBody" groups=[
 "athlete_rover",
@@ -52,11 +52,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.70634, 0 )
 dist = 25.0
 
 [node name="rootcol" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.93608, 0 )
 shape = SubResource( 2 )
 
 [node name="DockLatch" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.71109, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.56089, 0 )
 
 [node name="effectors" type="Spatial" parent="."]
 
@@ -78,32 +78,71 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 6.5, 0 )
 [node name="effector_r_b" type="Position3D" parent="effectors"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 6.5, -9 )
 
+[node name="ik_magnets" type="Spatial" parent="."]
+
+[node name="magnet_l_f" type="Position3D" parent="ik_magnets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 7.5, 5 )
+
+[node name="magnet_l_m" type="Position3D" parent="ik_magnets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 7.5, 0 )
+
+[node name="magnet_l_b" type="Position3D" parent="ik_magnets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 7.5, -5 )
+
+[node name="magnet_r_f" type="Position3D" parent="ik_magnets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 7.5, 5 )
+
+[node name="magnet_r_m" type="Position3D" parent="ik_magnets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 7.5, 0 )
+
+[node name="magnet_r_b" type="Position3D" parent="ik_magnets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 7.5, -5 )
+
+[node name="home_targets" type="Spatial" parent="."]
+
+[node name="target_l_f" type="Position3D" parent="home_targets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 5 )
+
+[node name="target_l_m" type="Position3D" parent="home_targets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5, 0 )
+
+[node name="target_l_b" type="Position3D" parent="home_targets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, -5 )
+
+[node name="target_r_f" type="Position3D" parent="home_targets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, 5 )
+
+[node name="target_r_m" type="Position3D" parent="home_targets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5, 0 )
+
+[node name="target_r_b" type="Position3D" parent="home_targets"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, -5 )
+
 [node name="left_front_wheel" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 6.5, 7 )
 
 [node name="left_mid_wheel" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 6.5, 0 )
 script = ExtResource( 4 )
 
 [node name="left_back_wheel" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 6.5, -7 )
 script = ExtResource( 4 )
 
 [node name="right_front_wheel" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 6.5, 7 )
 script = ExtResource( 4 )
 
 [node name="right_mid_wheel" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 6.5, 0 )
 script = ExtResource( 4 )
 
 [node name="right_back_wheel" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 6.5, -7 )
 script = ExtResource( 4 )
 
 [node name="Model" parent="." instance=ExtResource( 6 )]
-
-[node name="Legs" parent="Model" index="0"]
-bones/3/bound_children = [  ]
-bones/7/bound_children = [  ]
-bones/11/bound_children = [  ]
-bones/15/bound_children = [  ]
-bones/19/bound_children = [  ]
-bones/23/bound_children = [  ]
+transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0 )
 
 [node name="WheelBackLBoneAttachment" parent="Model/Legs" index="1"]
 transform = Transform( 0.00490884, 0.798927, -0.601408, 0.999981, -0.00614417, 4.65661e-09, -0.00369515, -0.601397, -0.798942, 15.7619, 6.13141, -11.8435 )

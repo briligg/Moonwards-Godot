@@ -40,12 +40,24 @@ func setup_movement() -> void:
 		["Thigh.Back.R", "Foot.Back.R"],
 	]
 	var ik_magnets: Array = [
-		Vector3(5.0, 10.0, 5.0),
-		Vector3(8.0, 10.0, 0.0),
-		Vector3(5.0, 10.0, -5.0),
-		Vector3(-5.0, 10.0, 5.0),
-		Vector3(-8.0, 10.0, 0.0),
-		Vector3(-5.0, 10.0, -5.0)
+		Vector3($"../ik_magnets/magnet_l_f".transform.origin.x, 
+				$"../ik_magnets/magnet_l_f".transform.origin.y,
+				$"../ik_magnets/magnet_l_f".transform.origin.z),
+		Vector3($"../ik_magnets/magnet_l_m".transform.origin.x, 
+				$"../ik_magnets/magnet_l_m".transform.origin.y,
+				$"../ik_magnets/magnet_l_m".transform.origin.z),
+		Vector3($"../ik_magnets/magnet_l_b".transform.origin.x, 
+				$"../ik_magnets/magnet_l_b".transform.origin.y,
+				$"../ik_magnets/magnet_l_b".transform.origin.z),
+		Vector3($"../ik_magnets/magnet_r_f".transform.origin.x, 
+				$"../ik_magnets/magnet_r_f".transform.origin.y,
+				$"../ik_magnets/magnet_r_f".transform.origin.z),
+		Vector3($"../ik_magnets/magnet_r_m".transform.origin.x, 
+				$"../ik_magnets/magnet_r_m".transform.origin.y,
+				$"../ik_magnets/magnet_r_m".transform.origin.z),
+		Vector3($"../ik_magnets/magnet_r_b".transform.origin.x, 
+				$"../ik_magnets/magnet_r_b".transform.origin.y,
+				$"../ik_magnets/magnet_r_b".transform.origin.z),
 	]
 	# 2nd arg is the rotation offset for IK
 	var ik_ee: Array = [
@@ -59,12 +71,30 @@ func setup_movement() -> void:
 	# _ready is called on children first so can't use the parent (entity) wheels var - cleaner self-contained anyway
 	# 2nd arg is the initial position
 	var home_target: Array = [
-		[$"../left_front_wheel", Vector3(7.5, 6.5, 9.0)],
-		[$"../left_mid_wheel", Vector3(12.0, 6.5, 0.0)],
-		[$"../left_back_wheel", Vector3(7.5, 6.5, -9.0)],
-		[$"../right_front_wheel", Vector3(-7.5, 6.5, 9.0)],
-		[$"../right_mid_wheel", Vector3(-12.0, 6.5, 0.0)],
-		[$"../right_back_wheel", Vector3(-7.5, 6.5, -9.0)],
+		[$"../left_front_wheel", 
+		Vector3($"../left_front_wheel".transform.origin.x, 
+				$"../left_front_wheel".transform.origin.y,
+				$"../left_front_wheel".transform.origin.z)],
+		[$"../left_mid_wheel", 
+		Vector3($"../left_mid_wheel".transform.origin.x, 
+				$"../left_mid_wheel".transform.origin.y,
+				$"../left_mid_wheel".transform.origin.z)],
+		[$"../left_back_wheel", 
+		Vector3($"../left_back_wheel".transform.origin.x, 
+				$"../left_back_wheel".transform.origin.y,
+				$"../left_back_wheel".transform.origin.z)],
+		[$"../right_front_wheel", 
+		Vector3($"../right_front_wheel".transform.origin.x, 
+				$"../right_front_wheel".transform.origin.y,
+				$"../right_front_wheel".transform.origin.z)],
+		[$"../right_mid_wheel", 
+		Vector3($"../right_mid_wheel".transform.origin.x, 
+				$"../right_mid_wheel".transform.origin.y,
+				$"../right_mid_wheel".transform.origin.z)],
+		[$"../right_back_wheel", 
+		Vector3($"../right_back_wheel".transform.origin.x, 
+				$"../right_back_wheel".transform.origin.y,
+				$"../right_back_wheel".transform.origin.z)],
 	]
 	var wheel_mesh: Array = [
 		$"../Model/Legs/WheelFrontLBoneAttachment/Leg-FrontLWheel",

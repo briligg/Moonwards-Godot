@@ -651,7 +651,7 @@ shape = SubResource( 47 )
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 122.585, 109, -180.953 )
 
 [node name="PassengerPod" parent="." index="28" instance=ExtResource( 73 )]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 122.585, 100.563, -158.051 )
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 122.585, 100.222, -183.514 )
 
 [node name="Audio-Tour-Markers" type="Spatial" parent="." index="29"]
 
@@ -816,7 +816,7 @@ audio_file = ExtResource( 55 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.6243, 104.935, -237.975 )
 
 [node name="PassengerPod2" parent="." index="31" instance=ExtResource( 73 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.624, 100.703, -236.604 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.624, 100.374, -232.84 )
 
 [node name="Lalande_MoonTown" parent="." index="32"]
 material_override = ExtResource( 64 )
@@ -1556,7 +1556,7 @@ shape = SubResource( 88 )
 
 [node name="Third_Gallery" parent="Marker_all_Constructs/Empty_ThirdGallery" index="0" instance=ExtResource( 24 )]
 
-[node name="Billboard" parent="." index="84" instance=ExtResource( 34 )]
+[node name="Billboard" parent="." index="61" instance=ExtResource( 34 )]
 transform = Transform( -0.993254, 0, 0.115959, 0, 1, 0, -0.115959, 0, -0.993254, -39.8064, 88.2657, -154.623 )
 
 [editable path="Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor/Molten_Soil_Reactor"]
