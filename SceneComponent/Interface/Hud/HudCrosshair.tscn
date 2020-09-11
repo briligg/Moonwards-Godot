@@ -38,7 +38,7 @@ tracks/0/keys = {
 "values": [ 0.0, 45.0, 90.0 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 resource_name = "scale"
 length = 2.0
 loop = true
@@ -103,35 +103,36 @@ tracks/4/keys = {
 "values": [ Vector2( 5, 5 ), Vector2( 7, 7 ) ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=8]
+[sub_resource type="AnimationNodeAnimation" id=4]
 animation = "scale"
 
-[sub_resource type="AnimationNodeBlend2" id=9]
+[sub_resource type="AnimationNodeBlend2" id=5]
 
-[sub_resource type="AnimationNodeBlend2" id=10]
+[sub_resource type="AnimationNodeBlend2" id=6]
 
-[sub_resource type="AnimationNodeAnimation" id=4]
+[sub_resource type="AnimationNodeAnimation" id=7]
 animation = "color"
 
-[sub_resource type="AnimationNodeAnimation" id=5]
+[sub_resource type="AnimationNodeAnimation" id=8]
 animation = "rotate"
 
-[sub_resource type="AnimationNodeBlendTree" id=6]
+[sub_resource type="AnimationNodeBlendTree" id=9]
 graph_offset = Vector2( -351.083, -9.75 )
-nodes/Animation/node = SubResource( 8 )
+nodes/Animation/node = SubResource( 4 )
 nodes/Animation/position = Vector2( -100, 420 )
-nodes/Blend2/node = SubResource( 10 )
+nodes/Blend2/node = SubResource( 6 )
 nodes/Blend2/position = Vector2( 360, 100 )
-"nodes/Blend2 2/node" = SubResource( 9 )
+"nodes/Blend2 2/node" = SubResource( 5 )
 "nodes/Blend2 2/position" = Vector2( 120, 280 )
-nodes/color/node = SubResource( 4 )
+nodes/color/node = SubResource( 7 )
 nodes/color/position = Vector2( 120, 40 )
 nodes/output/position = Vector2( 560, 160 )
-nodes/rotate/node = SubResource( 5 )
+nodes/rotate/node = SubResource( 8 )
 nodes/rotate/position = Vector2( -100, 260 )
-node_connections = [ "output", 0, "Blend2", "Blend2", 0, "color", "Blend2", 1, "Blend2 2", "Blend2 2", 0, "rotate", "Blend2 2", 1, "Animation" ]
+node_connections = [ "output", 0, "Blend2", "Blend2 2", 0, "rotate", "Blend2 2", 1, "Animation", "Blend2", 0, "color", "Blend2", 1, "Blend2 2" ]
 
 [node name="Reticle" type="TextureRect"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -159,10 +160,10 @@ script = ExtResource( 3 )
 [node name="Anim" type="AnimationPlayer" parent="."]
 anims/color = SubResource( 1 )
 anims/rotate = SubResource( 2 )
-anims/scale = SubResource( 7 )
+anims/scale = SubResource( 3 )
 
 [node name="Tree" type="AnimationTree" parent="."]
-tree_root = SubResource( 6 )
+tree_root = SubResource( 9 )
 anim_player = NodePath("../Anim")
 root_motion_track = NodePath(".:rect_rotation")
 parameters/Blend2/blend_amount = 0.5

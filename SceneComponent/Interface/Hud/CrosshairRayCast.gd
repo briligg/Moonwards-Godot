@@ -18,14 +18,16 @@ func _input(event) -> void :
 
 #Determine when I am colliding. If I am, then let Hud know.
 func _physics_process(_delta : float) -> void:
-	if is_colliding() && get_collider().has_signal("input_event") && previous_collider != get_collider():
+	if is_colliding() &&  previous_collider != get_collider():
+		if previous_collider != null :
+			previous_collider.emit_signal("mouse_exited")
 		previous_collider = get_collider()
+		previous_collider.emit_signal("mouse_entered")
 		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_CLICK, true)
 	
-	elif is_colliding() :
-		pass
-	
-	else :
+	elif not is_colliding() :
+		if previous_collider != null :
+			previous_collider.emit_signal("mouse_exited")
 		previous_collider = null
 		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_CLICK, false)
 
