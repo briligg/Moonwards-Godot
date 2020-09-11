@@ -1,11 +1,137 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Interface/Textures/CrosshairTexture.png" type="Texture" id=1]
 [ext_resource path="res://SceneComponent/Interface/Hud/HudCrosshair.gd" type="Script" id=2]
 [ext_resource path="res://SceneComponent/Interface/Hud/CrosshairRayCast.gd" type="Script" id=3]
 
+[sub_resource type="Animation" id=1]
+resource_name = "color"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1.62 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.945098, 1, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "rotate"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 45.0, 90.0 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "scale"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:margin_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -5.0, -7.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -5.0, -7.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:margin_right")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 5.0, 7.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:margin_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 5.0, 7.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:rect_pivot_offset")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 5, 5 ), Vector2( 7, 7 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "scale"
+
+[sub_resource type="AnimationNodeBlend2" id=9]
+
+[sub_resource type="AnimationNodeBlend2" id=10]
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "color"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "rotate"
+
+[sub_resource type="AnimationNodeBlendTree" id=6]
+graph_offset = Vector2( -351.083, -9.75 )
+nodes/Animation/node = SubResource( 8 )
+nodes/Animation/position = Vector2( -100, 420 )
+nodes/Blend2/node = SubResource( 10 )
+nodes/Blend2/position = Vector2( 360, 100 )
+"nodes/Blend2 2/node" = SubResource( 9 )
+"nodes/Blend2 2/position" = Vector2( 120, 280 )
+nodes/color/node = SubResource( 4 )
+nodes/color/position = Vector2( 120, 40 )
+nodes/output/position = Vector2( 560, 160 )
+nodes/rotate/node = SubResource( 5 )
+nodes/rotate/position = Vector2( -100, 260 )
+node_connections = [ "output", 0, "Blend2", "Blend2", 0, "color", "Blend2", 1, "Blend2 2", "Blend2 2", 0, "rotate", "Blend2 2", 1, "Animation" ]
+
 [node name="Reticle" type="TextureRect"]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -14,6 +140,8 @@ margin_left = -5.0
 margin_top = -5.0
 margin_right = 5.0
 margin_bottom = 5.0
+rect_rotation = 29.3796
+rect_pivot_offset = Vector2( 5, 5 )
 texture = ExtResource( 1 )
 expand = true
 script = ExtResource( 2 )
@@ -24,5 +152,18 @@ __meta__ = {
 [node name="ReticleRayCast" type="RayCast" parent="."]
 enabled = true
 cast_to = Vector3( 0, 0, -100 )
+collision_mask = 1024
 collide_with_areas = true
 script = ExtResource( 3 )
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+anims/color = SubResource( 1 )
+anims/rotate = SubResource( 2 )
+anims/scale = SubResource( 7 )
+
+[node name="Tree" type="AnimationTree" parent="."]
+tree_root = SubResource( 6 )
+anim_player = NodePath("../Anim")
+root_motion_track = NodePath(".:rect_rotation")
+parameters/Blend2/blend_amount = 0.5
+"parameters/Blend2 2/blend_amount" = 0.5
