@@ -319,6 +319,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Entity/StaticEntity.gd"
 }, {
+"base": "WindowDialog",
+"class": "TextPopup",
+"language": "GDScript",
+"path": "res://addons/joyeux_dialog_system/src/components/text_popup.gd"
+}, {
 "base": "AEntity",
 "class": "VehicleEntity",
 "language": "GDScript",
@@ -452,6 +457,7 @@ _global_script_class_icons={
 "ResourceThreadedLoader": "",
 "ReversingVisibilityTrigger": "",
 "StaticEntity": "",
+"TextPopup": "",
 "VehicleEntity": "",
 "VisualShaderNodeCheapContrast": "",
 "VisualShaderNodeColorHue": "",
@@ -516,7 +522,7 @@ convert_text_resources_to_binary_on_export=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "QuickPluginManager", "editor_icon_previewer", "joyeux_npc_editor", "moonwards_lock_nodes" )
+enabled=PoolStringArray( "QuickPluginManager", "editor_icon_previewer", "joyeux_dialog_system", "joyeux_npc_editor", "moonwards_lock_nodes" )
 
 [importer_defaults]
 

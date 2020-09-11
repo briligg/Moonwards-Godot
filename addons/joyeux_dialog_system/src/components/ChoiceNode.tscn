@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/joyeux_dialog_system/src/components/ChoiceNode.gd" type="Script" id=1]
+
+[node name="ChoiceNode" type="GraphNode"]
+margin_right = 122.0
+margin_bottom = 113.0
+title = "Choice"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color( 1, 1, 1, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 106.0
+margin_bottom = 38.0
+text = "Input"
+
+[node name="Button" type="Button" parent="."]
+margin_left = 16.0
+margin_top = 39.0
+margin_right = 106.0
+margin_bottom = 59.0
+text = "+"
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

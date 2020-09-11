@@ -1,0 +1,333 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Interface/Fonts/InteractsMenuDescription.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Interface/InteractsMenu.tres" type="Theme" id=2]
+[ext_resource path="res://addons/joyeux_dialog_system/src/components/display/Dialog Display.gd" type="Script" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends PanelContainer
+
+onready var options = $CenterContainer/Options
+onready var text = $CenterContainer/TextInput
+
+func get_multi_answer(opt : Array) -> int:
+	options.clear()
+	visible = true
+	options.visible = true
+	for option in opt:
+		if option.get(\"name\") is String and option.get(\"name\") != \"\":
+			options.add_option(option.get(\"name\"), option.get(\"triggers\"))
+	var answer = yield(options, \"option_selected\")
+	options.visible = false
+	visible = false
+	print(answer)
+	return answer
+	
+func get_text_answer() -> String:
+	text.clear()
+	visible = true
+	text.visible = true
+	var answer = yield(text, \"text_input\")
+	text.visible = false
+	visible = false
+	return answer
+"
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends VBoxContainer
+
+var font = preload(\"res://Assets/Interface/Fonts/InteractsMenuDescription.tres\")
+
+signal option_selected(idx)
+
+var labels : Array = []
+
+func add_option(option_name : String, trigger : String) -> void:
+	var Opt = Button.new()
+	Opt.add_font_override(\"font\", font)
+	Opt.text = option_name
+	labels.append(trigger)
+	add_child(Opt)
+	Opt.name = str(get_child_count())
+	Opt.connect(\"pressed\", self, \"_on_child_pressed\", [get_child_count()])
+	
+func _on_child_pressed(idx : int) -> void:
+	
+	emit_signal(\"option_selected\", labels[idx-1])
+	pass
+
+func clear():
+	labels.clear()
+	for child in get_children():
+		child.queue_free()
+"
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends HBoxContainer
+onready var Text = $Text
+signal text_input(text)
+
+func _on_Go_pressed(_text = \"\") -> void:
+	if _text != \"\":
+		emit_signal(\"text_input\", _text)
+	emit_signal(\"text_input\", Text.text)
+
+func clear() -> void:
+	Text.clear()
+"
+
+[node name="Dialog Display" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+dialog = "res://test.mtalk"
+
+[node name="HBC" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSpacer3" type="Control" parent="HBC"]
+margin_right = 100.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="VBC" type="VBoxContainer" parent="HBC"]
+margin_left = 104.0
+margin_right = 1816.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="HBC/VBC"]
+margin_right = 1712.0
+margin_bottom = 35.0
+text = "Title of the dialog!"
+
+[node name="Spacer" type="Control" parent="HBC/VBC"]
+margin_top = 39.0
+margin_right = 1712.0
+margin_bottom = 365.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer2" type="Control" parent="HBC/VBC"]
+margin_top = 369.0
+margin_right = 1712.0
+margin_bottom = 695.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextContainer" type="PanelContainer" parent="HBC/VBC"]
+margin_top = 699.0
+margin_right = 1712.0
+margin_bottom = 1026.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBC/VBC/TextContainer"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 1710.0
+margin_bottom = 325.0
+
+[node name="Spacer1" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 323.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBC/VBC/TextContainer/HBoxContainer"]
+margin_left = 54.0
+margin_right = 1654.0
+margin_bottom = 323.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CharName" type="Label" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
+margin_right = 1600.0
+margin_bottom = 35.0
+text = "Sample"
+
+[node name="HSeparator" type="HSeparator" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
+margin_top = 39.0
+margin_right = 1600.0
+margin_bottom = 43.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentText" type="RichTextLabel" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
+margin_top = 47.0
+margin_right = 1600.0
+margin_bottom = 284.0
+size_flags_vertical = 3
+text = "Lorem ipsum dolor sit amet consectetur adipiscing elit, tristique a aliquam euismod et vestibulum cum, quisque auctor commodo egestas torquent iaculis. Inceptos hendrerit gravida conubia mi placerat feugiat curabitur platea, molestie primis lacus duis vehicula cras pharetra, habitasse libero fermentum netus morbi leo rutrum. Magna ultricies dignissim lacinia ligula etiam consequat molestie risus imperdiet aenean senectus arcu, accumsan est interdum mauris cum semper egestas faucibus ac convallis fames, dis rutrum et ad elementum nec neque massa tempor potenti felis."
+
+[node name="Controls" type="HBoxContainer" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
+margin_top = 288.0
+margin_right = 1600.0
+margin_bottom = 311.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer1" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls"]
+margin_right = 20.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="Auto" type="Button" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls"]
+margin_left = 24.0
+margin_right = 61.0
+margin_bottom = 23.0
+text = "Auto"
+
+[node name="Spacer2" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls"]
+margin_left = 65.0
+margin_right = 85.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="Skip" type="Button" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls"]
+margin_left = 89.0
+margin_right = 122.0
+margin_bottom = 23.0
+text = "Skip"
+
+[node name="Spacer3" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls"]
+margin_left = 126.0
+margin_right = 146.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="Pause" type="Button" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls"]
+margin_left = 150.0
+margin_right = 196.0
+margin_bottom = 23.0
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
+text = "Pause"
+
+[node name="Spacer4" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls"]
+margin_left = 200.0
+margin_right = 1559.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 20, 0 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Next" type="Button" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls"]
+margin_left = 1563.0
+margin_right = 1600.0
+margin_bottom = 23.0
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
+text = "Next"
+
+[node name="Spacer1" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
+margin_top = 315.0
+margin_right = 1600.0
+margin_bottom = 315.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="HSeparator2" type="HSeparator" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
+margin_top = 319.0
+margin_right = 1600.0
+margin_bottom = 323.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer2" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer"]
+margin_left = 1658.0
+margin_right = 1708.0
+margin_bottom = 323.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="Spacer3" type="Control" parent="HBC/VBC"]
+margin_top = 1030.0
+margin_right = 1712.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+
+[node name="HSpacer2" type="Control" parent="HBC"]
+margin_left = 1820.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="Brancher" type="PanelContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Brancher"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 1918.0
+margin_bottom = 1078.0
+
+[node name="Options" type="VBoxContainer" parent="Brancher/CenterContainer"]
+visible = false
+margin_left = 958.0
+margin_top = 538.0
+margin_right = 958.0
+margin_bottom = 538.0
+script = SubResource( 2 )
+
+[node name="TextInput" type="HBoxContainer" parent="Brancher/CenterContainer"]
+visible = false
+margin_left = 742.0
+margin_top = 517.0
+margin_right = 1173.0
+margin_bottom = 558.0
+script = SubResource( 3 )
+
+[node name="Label" type="Label" parent="Brancher/CenterContainer/TextInput"]
+margin_top = 3.0
+margin_right = 179.0
+margin_bottom = 38.0
+text = "Say something:"
+
+[node name="Text" type="LineEdit" parent="Brancher/CenterContainer/TextInput"]
+margin_left = 183.0
+margin_right = 393.0
+margin_bottom = 41.0
+rect_min_size = Vector2( 210, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Go" type="Button" parent="Brancher/CenterContainer/TextInput"]
+margin_left = 397.0
+margin_right = 431.0
+margin_bottom = 41.0
+custom_fonts/font = ExtResource( 1 )
+text = "Go"
+[connection signal="pressed" from="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls/Auto" to="." method="_on_Auto_pressed"]
+[connection signal="pressed" from="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls/Skip" to="." method="_on_Skip_pressed"]
+[connection signal="pressed" from="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls/Next" to="." method="_on_Next_pressed"]
+[connection signal="text_entered" from="Brancher/CenterContainer/TextInput/Text" to="Brancher/CenterContainer/TextInput" method="_on_Go_pressed"]
+[connection signal="pressed" from="Brancher/CenterContainer/TextInput/Go" to="Brancher/CenterContainer/TextInput" method="_on_Go_pressed"]

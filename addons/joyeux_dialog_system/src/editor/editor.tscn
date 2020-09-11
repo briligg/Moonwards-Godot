@@ -1,0 +1,158 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/joyeux_dialog_system/src/editor/Graph.gd" type="Script" id=1]
+[ext_resource path="res://addons/joyeux_dialog_system/src/editor/editor.gd" type="Script" id=2]
+[ext_resource path="res://addons/joyeux_dialog_system/src/editor/FileDialog.gd" type="Script" id=3]
+
+[node name="PanelContainer" type="PanelContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 200 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBC" type="VBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1913.0
+margin_bottom = 1073.0
+
+[node name="PanelContainer" type="PanelContainer" parent="VBC"]
+margin_right = 1906.0
+margin_bottom = 38.0
+
+[node name="HBC" type="HBoxContainer" parent="VBC/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1899.0
+margin_bottom = 31.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="File" type="MenuButton" parent="VBC/PanelContainer/HBC"]
+margin_right = 51.0
+margin_bottom = 24.0
+text = "  File  "
+items = [ "Open", null, 0, false, false, 0, 0, null, "", false, "Save", null, 0, false, false, 1, 0, null, "", false ]
+
+[node name="VS" type="VSeparator" parent="VBC/PanelContainer/HBC"]
+margin_left = 55.0
+margin_right = 59.0
+margin_bottom = 24.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBC" type="HBoxContainer" parent="VBC/PanelContainer/HBC"]
+margin_left = 63.0
+margin_right = 1892.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBC/PanelContainer/HBC/HBC"]
+margin_top = 5.0
+margin_right = 110.0
+margin_bottom = 19.0
+text = "Character Name: "
+
+[node name="CharName" type="LineEdit" parent="VBC/PanelContainer/HBC/HBC"]
+margin_left = 114.0
+margin_right = 1829.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Graph" type="GraphEdit" parent="VBC"]
+margin_top = 42.0
+margin_right = 1906.0
+margin_bottom = 1066.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+right_disconnects = true
+script = ExtResource( 1 )
+
+[node name="PopupMenu" type="PopupMenu" parent="VBC/Graph"]
+margin_right = 84.0
+margin_bottom = 88.0
+items = [ "Dialog", null, 0, false, false, 0, 0, null, "", false, "", null, 0, false, false, 1, 0, null, "", true, "Choice", null, 0, false, false, 2, 0, null, "", false, "Text Input", null, 0, false, false, 3, 0, null, "", false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="GraphNode" parent="VBC/Graph"]
+margin_right = 140.0
+margin_bottom = 78.0
+mouse_filter = 1
+title = "Dialog Start"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 1
+slot/0/right_color = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBC/Graph/Start"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 124.0
+margin_bottom = 72.0
+text = "
+Next Dialog
+"
+align = 2
+
+[node name="Dialogs" type="Control" parent="VBC/Graph"]
+margin_left = 7.0
+margin_top = -35.0
+margin_right = 1899.0
+margin_bottom = -11.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FileDialog" type="FileDialog" parent="VBC/Graph/Dialogs"]
+visible = true
+margin_left = 637.558
+margin_top = 343.473
+margin_right = 1318.56
+margin_bottom = 724.473
+window_title = "Guardar un Archivo"
+filters = PoolStringArray( "*.mtalk ; Dialog files" )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AcceptDialog" type="AcceptDialog" parent="VBC/Graph/Dialogs"]
+visible = true
+margin_left = 372.657
+margin_top = 425.413
+margin_right = 561.657
+margin_bottom = 531.413
+size_flags_horizontal = 5
+size_flags_vertical = 5
+window_title = "¡Alerta!"
+dialog_autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="connection_request" from="VBC/Graph" to="VBC/Graph" method="_on_GraphEdit_connection_request"]
+[connection signal="delete_nodes_request" from="VBC/Graph" to="VBC/Graph" method="_on_GraphEdit_delete_nodes_request"]
+[connection signal="disconnection_request" from="VBC/Graph" to="VBC/Graph" method="_on_GraphEdit_disconnection_request"]
+[connection signal="popup_request" from="VBC/Graph" to="VBC/Graph" method="_on_GraphEdit_popup_request"]
+[connection signal="id_pressed" from="VBC/Graph/PopupMenu" to="VBC/Graph" method="_on_PopupMenu_id_pressed"]
+[connection signal="file_selected" from="VBC/Graph/Dialogs/FileDialog" to="." method="_on_FileDialog_file_selected"]
+[connection signal="confirmed" from="VBC/Graph/Dialogs/AcceptDialog" to="." method="_on_AcceptDialog_confirmed"]
