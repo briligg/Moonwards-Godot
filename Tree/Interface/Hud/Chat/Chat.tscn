@@ -96,7 +96,7 @@ margin_right = 572.0
 margin_bottom = 214.0
 mouse_filter = 2
 editable = false
-placeholder_text = "Press 'H' for help."
+placeholder_text = "Press 'CTRL+H' for help."
 placeholder_alpha = 1.0
 script = ExtResource( 7 )
 
