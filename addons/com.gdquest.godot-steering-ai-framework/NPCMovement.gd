@@ -12,7 +12,8 @@ export (int, 0, 178, 2) var align_tolerance := 5
 export (int, 0, 180, 2) var angular_deceleration_radius := 45 
 # Holds the linear and angular components calculated by our steering behaviors.
 onready var acceleration := GSAITargetAcceleration.new()
-
+var world_ref : WorldNavigator = null
+var path : Array = []
 var current_target : GSAIAgentLocation = GSAIAgentLocation.new() 
 var special_target : GSAISteeringAgent = GSAISteeringAgent.new()
 var current_path : GSAIPath = GSAIPath.new([Vector3(1,1,1), Vector3(2,2,5)])
@@ -85,13 +86,15 @@ func _enter_tree():
 	Pursue = GSAIPursue.new(Agent, special_target)
 	Follow = GSAIFollowPath.new(Agent, current_path)
 	LookAhead = GSAILookWhereYouGo.new(Agent)
-#	set_physics_process(false)
 
 func _init().("NPCInput", false):
 	pass
 
 	
 func _ready():
+	var world = get_tree().get_nodes_in_group("WorldNav")
+	if world.size() > 0:
+		world_ref = world [0] 
 	
 	Agent.linear_speed_max = linear_speed_max
 	Agent.linear_acceleration_max = linear_acceleration_max
@@ -101,41 +104,57 @@ func _ready():
 	Agent.angular_drag_percentage = 0.1
 	FleeBlend.add(Evade, 1)
 	FleeBlend.add(FleeTarget, 1)
+	FleeBlend.add(Avoid, 1) #Avoid is added everywhere, to get better consistency 
 	
 	FollowBlend.add(Seek, 1)
 	FollowBlend.add(Face, 1)
+	FollowBlend.add(Avoid, 1)
 	
 	PathBlend.add(Follow, 1)
 	PathBlend.add(LookAhead, 1)
+	PathBlend.add(Avoid, 1) 
 	PathBlend.is_enabled = true
 	# The order these are added has importance so the NPC behaves like this:
-	Priority.add(Avoid)# Priority 1: Not to collide with other people
-	Priority.add(FollowBlend)#2: Follow who I am supposed to (if i am supposed to)
-	Priority.add(FleeBlend)#3: Run away if i am supposed to
-	Priority.add(PathBlend) #4 : Follow a path
+	Priority.add(FollowBlend)#Priority 1: Follow who I am supposed to (if i am supposed to)
+	Priority.add(FleeBlend)#2: Run away if i am supposed to
+	Priority.add(PathBlend) #3 : Follow a path
+	
+	get_navpath(entity.translation)
+	
 
 func _process_server(delta):
-	print("AA")
+	if (current_target.position - entity.translation).length() <= arrival_tolerance:
+		var temp = path.pop_front()
+		if temp != null:
+			update_target(temp)
+		print("Poping!")
 	if PathBlend and FollowBlend and FleeBlend and Priority:
 		Priority.calculate_steering(acceleration)
+#		Agent._apply_steering(acceleration, delta)
+#		Agent._apply_orientation_steering(acceleration.angular, delta)
 		_handle_input(acceleration, delta)
-		update_agent(acceleration.linear, acceleration.angular)
 		
 func _handle_input(acceleration : GSAITargetAcceleration, delta : float):
-	print("a")
-	entity.input.z = acceleration.linear.normalized().length()
-	entity.look_dir = acceleration.linear
-	Agent._apply_orientation_steering(acceleration.angular, delta)
+#	entity.input = -acceleration.linear.normalized()
+#	print("target", current_target.position)
+#	print("accel", acceleration.linear)
+#	print("input ", entity.look_dir.normalized().cross(acceleration.linear))
+#	print("translation", entity.translation)
+	#Agent._apply_orientation_steering(acceleration.angular, delta)
+	update_agent(acceleration.linear, acceleration.angular)
+	entity.look_dir = entity.global_transform.origin - acceleration.linear.normalized()
+	entity.input.z = 1
+#	entity.look_dir.rotated(Vector3.UP, acceleration.angular)
+#	direction_to(acceleration.linear.normalized())
 
 func _process_client(delta):
-	
 	entity.global_transform.origin = entity.srv_pos
 
 
 func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.is_action_pressed("use"):
-			update_target(Vector3(5,5,5))
+			get_navpath(entity.translation-Vector3(5,0,5))
 
 func update_target(pos : Vector3):
 	# Remember to update the target of the NPCs! Otherwise they could run away 
@@ -143,6 +162,15 @@ func update_target(pos : Vector3):
 	current_target.position = pos
 	special_target.position = pos
 
+func get_navpath(to : Vector3):
+	path = Array(world_ref.get_navmesh_path(entity.translation, to))
+	print(path)
+	current_path.create_path(path)
+	var temp = path.pop_front()
+	if temp != null:
+		update_target(temp)
+		
+	
 func update_agent(velocity : Vector3, angular_velocity : float):
 	Agent.position = get_parent().translation
 	Agent.orientation = get_parent().rotation_degrees.y
