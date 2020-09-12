@@ -154,7 +154,7 @@ func _process_client(delta):
 func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.is_action_pressed("use"):
-			get_navpath(entity.translation-Vector3(5,0,5))
+			get_navpath(entity.translation-Vector3(rand_range(-5,5),0,rand_range(-5,5)))
 
 func update_target(pos : Vector3):
 	# Remember to update the target of the NPCs! Otherwise they could run away 
