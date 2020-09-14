@@ -106,7 +106,7 @@ func update_stairs_climbing(delta):
 		if entity.climb_point + 1 >= entity.stairs.climb_points.size() :
 			stop_climb_stairs()
 	else:
-		#Automatically move towards the climbing point horizontally.
+		#Automatically move towards the climbing point horizontally when you first grab on.
 		var flat_velocity = (entity.stairs.climb_points[entity.climb_point] - kb_pos) * delta * 50.0
 		flat_velocity.y = 0.0
 		entity.velocity += flat_velocity
