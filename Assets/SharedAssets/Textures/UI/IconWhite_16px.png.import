@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/IconWhite_16px.png-d3a92b26c2a135948c429d2c7ff797cf.s3tc.stex"
+path.etc2="res://.import/IconWhite_16px.png-d3a92b26c2a135948c429d2c7ff797cf.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://Assets/SharedAssets/Textures/UI/IconWhite_16px.png"
+dest_files=[ "res://.import/IconWhite_16px.png-d3a92b26c2a135948c429d2c7ff797cf.s3tc.stex", "res://.import/IconWhite_16px.png-d3a92b26c2a135948c429d2c7ff797cf.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=2
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

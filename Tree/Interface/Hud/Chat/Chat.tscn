@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Interface/ChatTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/SharedAssets/Textures/UI/IconTest_32px.png" type="Texture" id=2]
+[ext_resource path="res://Tree/Interface/Hud/Styles/HUDTheme_Small.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/SharedAssets/Textures/UI/IconWhite_16px.png" type="Texture" id=4]
+[ext_resource path="res://Tree/Interface/Hud/Styles/Chat_StyleboxFlat.tres" type="StyleBox" id=5]
 [ext_resource path="res://Assets/Interface/StyleBoxes/ChatMainBGPanel.tres" type="StyleBox" id=6]
 [ext_resource path="res://Tree/Interface/Hud/Chat/ChatInput.gd" type="Script" id=7]
 [ext_resource path="res://Tree/Interface/Hud/Chat/Chat.gd" type="Script" id=8]
@@ -25,9 +28,10 @@ tracks/0/keys = {
 [node name="Chat" type="PanelContainer" groups=[
 "Chat",
 ]]
-anchor_top = 0.8
+anchor_top = 0.712
 anchor_right = 0.3
 anchor_bottom = 1.0
+margin_top = 1.03998
 grow_horizontal = 0
 grow_vertical = 0
 focus_mode = 1
@@ -43,26 +47,32 @@ __meta__ = {
 margin_left = 2.0
 margin_top = 2.0
 margin_right = 574.0
-margin_bottom = 216.0
+margin_bottom = 310.0
 alignment = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="V"]
 margin_right = 572.0
-margin_bottom = 39.0
+margin_bottom = 32.0
+alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="V/HBoxContainer"]
 margin_right = 65.0
-margin_bottom = 39.0
+margin_bottom = 32.0
+theme = ExtResource( 3 )
 
 [node name="TextureButton" type="TextureButton" parent="V/HBoxContainer/MarginContainer"]
 margin_right = 65.0
-margin_bottom = 39.0
-texture_normal = ExtResource( 2 )
+margin_bottom = 32.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
 expand = true
 
 [node name="Label" type="Label" parent="V/HBoxContainer/MarginContainer"]
+margin_top = 2.0
 margin_right = 65.0
-margin_bottom = 39.0
+margin_bottom = 30.0
+custom_styles/normal = ExtResource( 5 )
 text = "Global"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -70,46 +80,50 @@ __meta__ = {
 
 [node name="MarginContainer2" type="MarginContainer" parent="V/HBoxContainer"]
 margin_left = 69.0
-margin_right = 126.0
-margin_bottom = 39.0
+margin_right = 125.0
+margin_bottom = 32.0
+theme = ExtResource( 3 )
 
 [node name="TextureButton" type="TextureButton" parent="V/HBoxContainer/MarginContainer2"]
-margin_right = 57.0
-margin_bottom = 39.0
-texture_normal = ExtResource( 2 )
+margin_right = 56.0
+margin_bottom = 32.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
 expand = true
 
 [node name="Label" type="Label" parent="V/HBoxContainer/MarginContainer2"]
-margin_right = 57.0
-margin_bottom = 39.0
+margin_top = 2.0
+margin_right = 56.0
+margin_bottom = 30.0
+custom_styles/normal = ExtResource( 5 )
 text = "Local"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Container" type="Container" parent="V/HBoxContainer"]
-margin_left = 130.0
+margin_left = 129.0
 margin_right = 536.0
-margin_bottom = 39.0
+margin_bottom = 32.0
 size_flags_horizontal = 3
 
 [node name="MarginContainer3" type="MarginContainer" parent="V/HBoxContainer"]
 margin_left = 540.0
 margin_right = 572.0
-margin_bottom = 39.0
+margin_bottom = 32.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="V/HBoxContainer/MarginContainer3"]
 margin_right = 32.0
-margin_bottom = 39.0
+margin_bottom = 32.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="V/HBoxContainer/MarginContainer3/VBoxContainer"]
-margin_top = 3.0
 margin_right = 32.0
-margin_bottom = 35.0
+margin_bottom = 32.0
 texture = ExtResource( 2 )
 stretch_mode = 5
 
@@ -131,9 +145,9 @@ text = "'Enter' to start inputing text. 'Enter' again to send message.
 'CTRL+H' to go back to Chat Display."
 
 [node name="Tabs" type="TabContainer" parent="V"]
-margin_top = 43.0
+margin_top = 36.0
 margin_right = 572.0
-margin_bottom = 189.0
+margin_bottom = 283.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -160,9 +174,9 @@ scroll_following = true
 script = ExtResource( 9 )
 
 [node name="ChatInput" type="LineEdit" parent="V"]
-margin_top = 193.0
+margin_top = 287.0
 margin_right = 572.0
-margin_bottom = 214.0
+margin_bottom = 308.0
 mouse_filter = 2
 editable = false
 placeholder_text = "Press 'CTRL+H' for help."
