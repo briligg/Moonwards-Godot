@@ -1,8 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Center_Atrium/Center_Atrium.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Hexpane_Window/Hexpane_Window.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/MoonTown/Constructs/Center_Atrium/Atrium_MainWall_Shader.tres" type="Material" id=3]
+[ext_resource path="res://Assets/MoonTown/Constructs/Center_Atrium/Shaders/Center_Atrium_Foundation_Shader.tres" type="Material" id=4]
+[ext_resource path="res://Assets/MoonTown/Constructs/Center_Atrium/MirrorFlat.material" type="Material" id=5]
+[ext_resource path="res://Assets/MoonTown/Constructs/Center_Atrium/Center_Columns.material" type="Material" id=6]
+[ext_resource path="res://Assets/MoonTown/Constructs/Center_Atrium/White_Semigloss.material" type="Material" id=7]
+[ext_resource path="res://Assets/MoonTown/Constructs/Center_Atrium/BloodRed_Matte.material" type="Material" id=8]
 
 [sub_resource type="GIProbeData" id=1]
 bounds = AABB( -45.6825, -30.536, -52.471, 91.365, 61.072, 104.942 )
@@ -21,6 +26,11 @@ propagation = 0.66
 cast_shadow = 2
 extra_cull_margin = 1.0
 material/0 = ExtResource( 3 )
+material/1 = ExtResource( 4 )
+material/2 = ExtResource( 7 )
+material/3 = ExtResource( 5 )
+material/4 = ExtResource( 6 )
+material/5 = ExtResource( 8 )
 
 [node name="OmniLight" type="OmniLight" parent="." index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9486, -1.73356, -29.8064 )
@@ -48,13 +58,13 @@ transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0
 [node name="Hexpane_Window" parent="Markers/Marker_HexpaneWindow003" index="0" instance=ExtResource( 2 )]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 
-[node name="LOD1" parent="." index="6"]
+[node name="LOD1" parent="." index="5"]
 visible = false
 
-[node name="LOD2" parent="." index="7"]
+[node name="LOD2" parent="." index="6"]
 visible = false
 
-[node name="ReflectionProbe" type="ReflectionProbe" parent="." index="8"]
+[node name="ReflectionProbe" type="ReflectionProbe" parent="." index="7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8179, -29.9222 )
 max_distance = 10.0
 extents = Vector3( 44.0007, 28.3008, 50.1673 )
