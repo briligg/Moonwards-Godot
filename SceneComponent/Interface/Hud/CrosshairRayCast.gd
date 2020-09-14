@@ -32,10 +32,10 @@ func _physics_process(_delta : float) -> void:
 		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_CLICK, false)
 
 func _ready() :
-	set_process_unhandled_input(false)
+	set_process_input(false)
 
 func enable() -> void :
-	set_process_unhandled_input(true)
+	set_process_input(true)
 
 func disable() -> void :
-	set_process_unhandled_input(false)
+	set_process_input(false)
