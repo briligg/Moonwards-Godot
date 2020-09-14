@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Tree/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/SharedAssets/Textures/UI/IconTest_64px.png" type="Texture" id=2]
 [ext_resource path="res://Assets/SharedAssets/Textures/UI/IconTest_32px.png" type="Texture" id=3]
+[ext_resource path="res://Tree/Interface/Hud/Styles/HUDTheme_Small.tres" type="Theme" id=4]
 
 [node name="ToolsBar" type="PanelContainer"]
 anchor_right = 1.0
@@ -19,92 +20,93 @@ custom_constants/separation = 14
 alignment = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 886.0
+margin_top = 902.0
 margin_right = 1920.0
-margin_bottom = 960.0
+margin_bottom = 962.0
+theme = ExtResource( 4 )
 custom_constants/separation = 8
 alignment = 2
 
 [node name="VBoxContainer6" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-margin_left = 1802.0
-margin_right = 1836.0
-margin_bottom = 74.0
+margin_left = 1808.0
+margin_right = 1840.0
+margin_bottom = 60.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer6"]
-margin_right = 34.0
-margin_bottom = 38.0
+margin_right = 32.0
+margin_bottom = 24.0
 text = "[6]"
 align = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer6"]
-margin_top = 42.0
-margin_right = 34.0
-margin_bottom = 74.0
+margin_top = 28.0
+margin_right = 32.0
+margin_bottom = 60.0
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer6/MarginContainer"]
-margin_right = 34.0
+margin_right = 32.0
 margin_bottom = 32.0
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer6/MarginContainer"]
-margin_right = 34.0
+margin_right = 32.0
 margin_bottom = 32.0
 texture = ExtResource( 3 )
 stretch_mode = 5
 
 [node name="VBoxContainer8" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-margin_left = 1844.0
-margin_right = 1878.0
-margin_bottom = 74.0
+margin_left = 1848.0
+margin_right = 1880.0
+margin_bottom = 60.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer8"]
-margin_right = 34.0
-margin_bottom = 38.0
+margin_right = 32.0
+margin_bottom = 24.0
 text = "[7]"
 align = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer8"]
-margin_top = 42.0
-margin_right = 34.0
-margin_bottom = 74.0
+margin_top = 28.0
+margin_right = 32.0
+margin_bottom = 60.0
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer8/MarginContainer"]
-margin_right = 34.0
+margin_right = 32.0
 margin_bottom = 32.0
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer8/MarginContainer"]
-margin_right = 34.0
+margin_right = 32.0
 margin_bottom = 32.0
 texture = ExtResource( 3 )
 stretch_mode = 5
 
 [node name="VBoxContainer7" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-margin_left = 1886.0
+margin_left = 1888.0
 margin_right = 1920.0
-margin_bottom = 74.0
+margin_bottom = 60.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer7"]
-margin_right = 34.0
-margin_bottom = 38.0
+margin_right = 32.0
+margin_bottom = 24.0
 text = "[8]"
 align = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer7"]
-margin_top = 42.0
-margin_right = 34.0
-margin_bottom = 74.0
+margin_top = 28.0
+margin_right = 32.0
+margin_bottom = 60.0
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer7/MarginContainer"]
-margin_right = 34.0
+margin_right = 32.0
 margin_bottom = 32.0
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer7/MarginContainer"]
-margin_right = 34.0
+margin_right = 32.0
 margin_bottom = 32.0
 texture = ExtResource( 3 )
 stretch_mode = 5
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 974.0
+margin_top = 976.0
 margin_right = 1920.0
 margin_bottom = 1080.0
 custom_constants/separation = 10
@@ -113,7 +115,7 @@ alignment = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 1560.0
 margin_right = 1624.0
-margin_bottom = 106.0
+margin_bottom = 104.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
 margin_right = 64.0
@@ -132,14 +134,14 @@ stretch_mode = 5
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
 margin_top = 68.0
 margin_right = 64.0
-margin_bottom = 106.0
+margin_bottom = 104.0
 text = "[1]"
 align = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 1634.0
 margin_right = 1698.0
-margin_bottom = 106.0
+margin_bottom = 104.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
 margin_right = 64.0
@@ -158,14 +160,14 @@ stretch_mode = 5
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
 margin_top = 68.0
 margin_right = 64.0
-margin_bottom = 106.0
+margin_bottom = 104.0
 text = "[2]"
 align = 1
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 1708.0
 margin_right = 1772.0
-margin_bottom = 106.0
+margin_bottom = 104.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer3"]
 margin_right = 64.0
@@ -184,14 +186,14 @@ stretch_mode = 5
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer3"]
 margin_top = 68.0
 margin_right = 64.0
-margin_bottom = 106.0
+margin_bottom = 104.0
 text = "[3]"
 align = 1
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 1782.0
 margin_right = 1846.0
-margin_bottom = 106.0
+margin_bottom = 104.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer4"]
 margin_right = 64.0
@@ -210,14 +212,14 @@ stretch_mode = 5
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer4"]
 margin_top = 68.0
 margin_right = 64.0
-margin_bottom = 106.0
+margin_bottom = 104.0
 text = "[4]"
 align = 1
 
 [node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 1856.0
 margin_right = 1920.0
-margin_bottom = 106.0
+margin_bottom = 104.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer5"]
 margin_right = 64.0
@@ -236,6 +238,6 @@ stretch_mode = 5
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer5"]
 margin_top = 68.0
 margin_right = 64.0
-margin_bottom = 106.0
+margin_bottom = 104.0
 text = "[5]"
 align = 1

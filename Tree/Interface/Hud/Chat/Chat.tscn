@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Interface/ChatTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/SharedAssets/Textures/UI/IconTest_32px.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Interface/StyleBoxes/ChatMainBGPanel.tres" type="StyleBox" id=6]
 [ext_resource path="res://Tree/Interface/Hud/Chat/ChatInput.gd" type="Script" id=7]
 [ext_resource path="res://Tree/Interface/Hud/Chat/Chat.gd" type="Script" id=8]
@@ -45,10 +46,77 @@ margin_right = 574.0
 margin_bottom = 216.0
 alignment = 2
 
+[node name="HBoxContainer" type="HBoxContainer" parent="V"]
+margin_right = 572.0
+margin_bottom = 39.0
+
+[node name="MarginContainer" type="MarginContainer" parent="V/HBoxContainer"]
+margin_right = 65.0
+margin_bottom = 39.0
+
+[node name="TextureButton" type="TextureButton" parent="V/HBoxContainer/MarginContainer"]
+margin_right = 65.0
+margin_bottom = 39.0
+texture_normal = ExtResource( 2 )
+expand = true
+
+[node name="Label" type="Label" parent="V/HBoxContainer/MarginContainer"]
+margin_right = 65.0
+margin_bottom = 39.0
+text = "Global"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer2" type="MarginContainer" parent="V/HBoxContainer"]
+margin_left = 69.0
+margin_right = 126.0
+margin_bottom = 39.0
+
+[node name="TextureButton" type="TextureButton" parent="V/HBoxContainer/MarginContainer2"]
+margin_right = 57.0
+margin_bottom = 39.0
+texture_normal = ExtResource( 2 )
+expand = true
+
+[node name="Label" type="Label" parent="V/HBoxContainer/MarginContainer2"]
+margin_right = 57.0
+margin_bottom = 39.0
+text = "Local"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Container" parent="V/HBoxContainer"]
+margin_left = 130.0
+margin_right = 536.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="V/HBoxContainer"]
+margin_left = 540.0
+margin_right = 572.0
+margin_bottom = 39.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="V/HBoxContainer/MarginContainer3"]
+margin_right = 32.0
+margin_bottom = 39.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="V/HBoxContainer/MarginContainer3/VBoxContainer"]
+margin_top = 3.0
+margin_right = 32.0
+margin_bottom = 35.0
+texture = ExtResource( 2 )
+stretch_mode = 5
+
 [node name="HelpPage" type="RichTextLabel" parent="V"]
 visible = false
 margin_right = 572.0
-margin_bottom = 177.0
+margin_bottom = 92.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "'Enter' to start inputing text. 'Enter' again to send message.
@@ -63,6 +131,7 @@ text = "'Enter' to start inputing text. 'Enter' again to send message.
 'CTRL+H' to go back to Chat Display."
 
 [node name="Tabs" type="TabContainer" parent="V"]
+margin_top = 43.0
 margin_right = 572.0
 margin_bottom = 189.0
 grow_horizontal = 2

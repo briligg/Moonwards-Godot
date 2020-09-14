@@ -15,6 +15,9 @@ margin_left = 20.0
 margin_bottom = -20.0
 
 [node name="InteractDisplay" parent="." instance=ExtResource( 3 )]
+visible = true
+anchor_left = 0.36
+anchor_right = 0.733
 
 [node name="GeneralInfo" parent="." instance=ExtResource( 5 )]
 margin_left = 20.0
