@@ -201,7 +201,13 @@ func start_climb_stairs(target_stairs) -> void:
 func stop_climb_stairs() -> void :
 	is_climbing = false
 	entity.climb_point = -1
-	entity.velocity += Vector3(0, 0, 0)
+#	entity.velocity += Vector3(0, 0, 10)
+	
+	entity.global_transform.origin.y += 0.2
+	
+	#Move the entitiy forward based on the climbing direction
+	var get_off : Vector2 = Vector2.UP.rotated(entity.model.rotation.y)
+	entity.global_transform.origin += Vector3(get_off.x * -0.8, 0, get_off.y * -0.8)
 	
 	#Make myself face the same direction as the camera.
 	entity.model.global_transform.basis = entity.global_transform.basis
