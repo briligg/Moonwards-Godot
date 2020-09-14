@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Tree/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=1]
-[ext_resource path="res://Assets/SharedAssets/Textures/UI/IconTest_64px.png" type="Texture" id=2]
+[ext_resource path="res://Assets/SharedAssets/Textures/UI/IconTest_32px.png" type="Texture" id=2]
 
 [node name="GeneralInfo" type="PanelContainer"]
 anchor_right = 1.0
@@ -31,14 +31,6 @@ size_flags_horizontal = 3
 margin_right = 80.0
 margin_bottom = 38.0
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer"]
-margin_right = 80.0
-margin_bottom = 38.0
-text = "10:45"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/MarginContainer"]
 margin_right = 80.0
 margin_bottom = 38.0
@@ -46,83 +38,99 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer"]
+margin_right = 80.0
+margin_bottom = 38.0
+text = "10:45"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 42.0
 margin_right = 1920.0
-margin_bottom = 106.0
-size_flags_horizontal = 3
+margin_bottom = 80.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer3"]
-margin_right = 86.0
-margin_bottom = 64.0
+margin_right = 54.0
+margin_bottom = 38.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer3/MarginContainer"]
+margin_right = 54.0
+margin_bottom = 38.0
+grow_horizontal = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer3/MarginContainer"]
-margin_right = 86.0
-margin_bottom = 64.0
+margin_right = 54.0
+margin_bottom = 38.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer3/MarginContainer/HBoxContainer"]
-margin_right = 64.0
-margin_bottom = 64.0
+margin_right = 32.0
+margin_bottom = 38.0
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer3/MarginContainer/HBoxContainer/VBoxContainer"]
-margin_right = 64.0
-margin_bottom = 64.0
+margin_top = 3.0
+margin_right = 32.0
+margin_bottom = 35.0
 texture = ExtResource( 2 )
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3/MarginContainer/HBoxContainer"]
-margin_left = 68.0
-margin_top = 13.0
-margin_right = 86.0
-margin_bottom = 51.0
+margin_left = 36.0
+margin_right = 54.0
+margin_bottom = 38.0
 text = "0"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer3/MarginContainer"]
-margin_right = 86.0
-margin_bottom = 64.0
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 58.0
+margin_right = 62.0
+margin_bottom = 38.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 66.0
+margin_right = 120.0
+margin_bottom = 38.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer3/MarginContainer2"]
+margin_right = 54.0
+margin_bottom = 38.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer3"]
-margin_left = 90.0
-margin_right = 176.0
-margin_bottom = 64.0
-
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer3/MarginContainer2"]
-margin_right = 86.0
-margin_bottom = 64.0
+margin_right = 54.0
+margin_bottom = 38.0
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer3/MarginContainer2/HBoxContainer"]
-margin_right = 64.0
-margin_bottom = 64.0
+margin_right = 32.0
+margin_bottom = 38.0
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer3/MarginContainer2/HBoxContainer/VBoxContainer"]
-margin_right = 64.0
-margin_bottom = 64.0
+margin_top = 3.0
+margin_right = 32.0
+margin_bottom = 35.0
 texture = ExtResource( 2 )
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3/MarginContainer2/HBoxContainer"]
-margin_left = 68.0
-margin_top = 13.0
-margin_right = 86.0
-margin_bottom = 51.0
+margin_left = 36.0
+margin_right = 54.0
+margin_bottom = 38.0
 text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer3/MarginContainer2"]
-margin_right = 86.0
-margin_bottom = 64.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
