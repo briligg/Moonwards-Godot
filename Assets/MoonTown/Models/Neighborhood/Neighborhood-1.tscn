@@ -5,22 +5,22 @@
 
 [node name="Neighborhood-1" instance=ExtResource( 1 )]
 
-[node name="Example-Dwelling-1" parent="." index="30" instance=ExtResource( 2 )]
+[node name="Example-Dwelling-1" parent="." index="4" instance=ExtResource( 2 )]
 
-[node name="ReflectionProbe" type="ReflectionProbe" parent="." index="31"]
+[node name="ReflectionProbe" type="ReflectionProbe" parent="." index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.61544, 0 )
 extents = Vector3( 25.613, 16.1321, 21.7938 )
 
-[node name="GIProbe" type="GIProbe" parent="." index="32"]
+[node name="GIProbe" type="GIProbe" parent="." index="6"]
 transform = Transform( 0.998884, 0, -0.0472285, 0, 1, 0, 0.0472285, 0, 0.998884, 0, 9.44808, 0 )
 extents = Vector3( 27.0138, 19.2007, 26.8897 )
 
-[node name="OmniLight" type="OmniLight" parent="." index="33"]
+[node name="OmniLight" type="OmniLight" parent="." index="7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3296, 18.6561, 0 )
 light_energy = 1.49
 omni_range = 13.5014
 
-[node name="OmniLight2" type="OmniLight" parent="." index="34"]
+[node name="OmniLight2" type="OmniLight" parent="." index="8"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.05585, 6.94877, 1.15402 )
 light_energy = 0.75
 omni_range = 7.81411
