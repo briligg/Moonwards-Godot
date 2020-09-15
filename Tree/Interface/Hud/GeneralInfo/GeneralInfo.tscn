@@ -32,18 +32,18 @@ size_flags_horizontal = 3
 custom_constants/separation = 10
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
-margin_right = 75.0
+margin_right = 95.0
 margin_bottom = 36.0
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/MarginContainer"]
-margin_right = 75.0
+margin_right = 95.0
 margin_bottom = 36.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer"]
-margin_right = 75.0
+margin_right = 95.0
 margin_bottom = 36.0
 text = "10:45"
 align = 1
@@ -54,19 +54,19 @@ __meta__ = {
 }
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
-margin_left = 85.0
-margin_right = 230.0
+margin_left = 105.0
+margin_right = 270.0
 margin_bottom = 36.0
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/MarginContainer2"]
-margin_right = 145.0
+margin_right = 165.0
 margin_bottom = 36.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer2"]
-margin_right = 145.0
+margin_right = 165.0
 margin_bottom = 36.0
 text = "LOCATION"
 align = 1
@@ -84,11 +84,11 @@ theme = ExtResource( 3 )
 custom_constants/separation = 10
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer3"]
-margin_right = 42.0
+margin_right = 52.0
 margin_bottom = 27.0
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer3/MarginContainer"]
-margin_right = 42.0
+margin_right = 52.0
 margin_bottom = 27.0
 grow_horizontal = 2
 __meta__ = {
@@ -96,7 +96,7 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer3/MarginContainer"]
-margin_right = 42.0
+margin_right = 52.0
 margin_bottom = 27.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer3/MarginContainer/HBoxContainer"]
@@ -113,7 +113,7 @@ stretch_mode = 5
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3/MarginContainer/HBoxContainer"]
 margin_left = 31.0
 margin_top = 1.0
-margin_right = 42.0
+margin_right = 52.0
 margin_bottom = 25.0
 text = "0"
 valign = 1
@@ -122,19 +122,19 @@ __meta__ = {
 }
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer3"]
-margin_left = 52.0
-margin_right = 94.0
+margin_left = 62.0
+margin_right = 114.0
 margin_bottom = 27.0
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer3/MarginContainer2"]
-margin_right = 42.0
+margin_right = 52.0
 margin_bottom = 27.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer3/MarginContainer2"]
-margin_right = 42.0
+margin_right = 52.0
 margin_bottom = 27.0
 alignment = 1
 
@@ -152,7 +152,7 @@ stretch_mode = 5
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3/MarginContainer2/HBoxContainer"]
 margin_left = 31.0
 margin_top = 1.0
-margin_right = 42.0
+margin_right = 52.0
 margin_bottom = 25.0
 text = "0"
 __meta__ = {
