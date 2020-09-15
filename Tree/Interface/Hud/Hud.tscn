@@ -1,14 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Tree/Interface/Hud/Hud.gd" type="Script" id=1]
 [ext_resource path="res://Tree/Interface/Hud/Chat/Chat.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tree/Interface/Hud/InteractDisplay/InteractDisplay.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tree/Interface/Hud/ToolsBar/ToolsBar.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Tree/Interface/Hud/GeneralInfo/GeneralInfo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Tree/Interface/Hud/Radial/RadialSelector.tscn" type="PackedScene" id=6]
 
 [node name="Hud" type="CanvasLayer"]
 layer = 8
 script = ExtResource( 1 )
+
+[node name="RadialSelector" parent="." instance=ExtResource( 6 )]
 
 [node name="Chat" parent="." instance=ExtResource( 2 )]
 margin_left = 20.0
