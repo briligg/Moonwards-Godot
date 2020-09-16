@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Tree/Interface/Hud/Hud.gd" type="Script" id=1]
 [ext_resource path="res://Tree/Interface/Hud/Chat/Chat.tscn" type="PackedScene" id=2]
@@ -6,6 +6,13 @@
 [ext_resource path="res://Tree/Interface/Hud/ToolsBar/ToolsBar.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Tree/Interface/Hud/GeneralInfo/GeneralInfo.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Tree/Interface/Hud/Radial/RadialSelector.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Tree/Interface/Hud/Apps/GraphicNovel/GraphicNovelApp.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Tree/Interface/Hud/Apps/NPC/NPCApp.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Tree/Interface/Hud/Apps/Filming/FilmingApp.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Tree/Interface/Hud/Apps/Library/LibraryApp.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Tree/Interface/Hud/Apps/Event/EventApp.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Tree/Interface/Hud/Apps/Collaboration/CollaborationApp.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Tree/Interface/Hud/Apps/Building/BuildingApp.tscn" type="PackedScene" id=13]
 
 [node name="Hud" type="CanvasLayer"]
 layer = 8
@@ -28,10 +35,31 @@ margin_top = 20.0
 margin_right = -20.0
 margin_bottom = -20.0
 
-[node name="ToolsBar" parent="." instance=ExtResource( 4 )]
-margin_left = 20.0
-margin_top = 18.8108
-margin_right = -20.0
-margin_bottom = -21.1892
-
 [node name="IgnoreHudShowCalls" type="Node" parent="."]
+
+[node name="Apps" type="Container" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToolsBar" parent="Apps" instance=ExtResource( 4 )]
+
+[node name="BuildingApp" parent="Apps" instance=ExtResource( 13 )]
+
+[node name="CollaborationApp" parent="Apps" instance=ExtResource( 12 )]
+
+[node name="EventApp" parent="Apps" instance=ExtResource( 11 )]
+
+[node name="FilmingApp" parent="Apps" instance=ExtResource( 9 )]
+
+[node name="GraphicNovelApp" parent="Apps" instance=ExtResource( 7 )]
+
+[node name="LibraryApp" parent="Apps" instance=ExtResource( 10 )]
+
+[node name="NPCApp" parent="Apps" instance=ExtResource( 8 )]
