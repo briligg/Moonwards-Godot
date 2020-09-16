@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Assets/SharedAssets/Textures/UI/IconTest_128px.png" type="Texture" id=1]
 [ext_resource path="res://Tree/Interface/Hud/Styles/HUDTheme_Small.tres" type="Theme" id=2]
@@ -15,6 +15,13 @@
 [ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_ActionVictory.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_ActionBackward.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_ActionFist.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Mouth_10.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Mouth_09.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Mouth_04.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Mouth_07.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Mouth_06.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Mouth_01.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Mouth_05.png" type="Texture" id=22]
 
 [node name="RadialSelector" type="PanelContainer"]
 anchor_left = 0.5
@@ -112,7 +119,6 @@ __meta__ = {
 }
 
 [node name="ContainerExpression" type="VBoxContainer" parent="."]
-visible = false
 margin_right = 1100.0
 margin_bottom = 442.0
 grow_vertical = 2
@@ -419,7 +425,7 @@ margin_bottom = 134.0
 [node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer/HBoxContainer"]
 margin_right = 140.0
 margin_bottom = 134.0
-icon = ExtResource( 1 )
+icon = ExtResource( 21 )
 flat = true
 
 [node name="MarginContainer7" type="MarginContainer" parent="ContainerExpression/HBoxContainer3"]
@@ -438,7 +444,7 @@ margin_bottom = 134.0
 [node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer7/HBoxContainer"]
 margin_right = 140.0
 margin_bottom = 134.0
-icon = ExtResource( 1 )
+icon = ExtResource( 22 )
 flat = true
 
 [node name="MarginContainer6" type="MarginContainer" parent="ContainerExpression/HBoxContainer3"]
@@ -457,7 +463,7 @@ margin_bottom = 134.0
 [node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer6/HBoxContainer"]
 margin_right = 140.0
 margin_bottom = 134.0
-icon = ExtResource( 1 )
+icon = ExtResource( 20 )
 flat = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="ContainerExpression/HBoxContainer3"]
@@ -476,7 +482,7 @@ margin_bottom = 134.0
 [node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer2/HBoxContainer"]
 margin_right = 140.0
 margin_bottom = 134.0
-icon = ExtResource( 1 )
+icon = ExtResource( 19 )
 flat = true
 
 [node name="MarginContainer3" type="MarginContainer" parent="ContainerExpression/HBoxContainer3"]
@@ -495,7 +501,7 @@ margin_bottom = 134.0
 [node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer3/HBoxContainer"]
 margin_right = 140.0
 margin_bottom = 134.0
-icon = ExtResource( 1 )
+icon = ExtResource( 18 )
 flat = true
 
 [node name="MarginContainer4" type="MarginContainer" parent="ContainerExpression/HBoxContainer3"]
@@ -514,7 +520,7 @@ margin_bottom = 134.0
 [node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer4/HBoxContainer"]
 margin_right = 140.0
 margin_bottom = 134.0
-icon = ExtResource( 1 )
+icon = ExtResource( 17 )
 flat = true
 
 [node name="MarginContainer5" type="MarginContainer" parent="ContainerExpression/HBoxContainer3"]
@@ -533,11 +539,12 @@ margin_bottom = 134.0
 [node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer5/HBoxContainer"]
 margin_right = 140.0
 margin_bottom = 134.0
-icon = ExtResource( 1 )
+icon = ExtResource( 16 )
 flat = true
 
 [node name="ContainerActions" type="VBoxContainer" parent="."]
-margin_right = 1100.0
+visible = false
+margin_right = 780.0
 margin_bottom = 442.0
 grow_vertical = 2
 size_flags_vertical = 4
@@ -545,14 +552,14 @@ custom_constants/separation = 20
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions"]
-margin_right = 1100.0
+margin_right = 780.0
 margin_bottom = 134.0
 custom_constants/separation = 20
 alignment = 1
 
 [node name="MarginContainer3" type="MarginContainer" parent="ContainerActions/HBoxContainer"]
-margin_left = 320.0
-margin_right = 460.0
+margin_left = 160.0
+margin_right = 300.0
 margin_bottom = 134.0
 
 [node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer/MarginContainer3"]
@@ -570,8 +577,8 @@ icon = ExtResource( 9 )
 flat = true
 
 [node name="MarginContainer4" type="MarginContainer" parent="ContainerActions/HBoxContainer"]
-margin_left = 480.0
-margin_right = 620.0
+margin_left = 320.0
+margin_right = 460.0
 margin_bottom = 134.0
 
 [node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer/MarginContainer4"]
@@ -589,8 +596,8 @@ icon = ExtResource( 5 )
 flat = true
 
 [node name="MarginContainer5" type="MarginContainer" parent="ContainerActions/HBoxContainer"]
-margin_left = 640.0
-margin_right = 780.0
+margin_left = 480.0
+margin_right = 620.0
 margin_bottom = 134.0
 
 [node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer/MarginContainer5"]
@@ -609,14 +616,14 @@ flat = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ContainerActions"]
 margin_top = 154.0
-margin_right = 1100.0
+margin_right = 780.0
 margin_bottom = 288.0
 custom_constants/separation = 20
 alignment = 1
 
 [node name="MarginContainer3" type="MarginContainer" parent="ContainerActions/HBoxContainer2"]
-margin_left = 320.0
-margin_right = 460.0
+margin_left = 160.0
+margin_right = 300.0
 margin_bottom = 134.0
 
 [node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer2/MarginContainer3"]
@@ -634,8 +641,8 @@ icon = ExtResource( 8 )
 flat = true
 
 [node name="MarginContainer4" type="MarginContainer" parent="ContainerActions/HBoxContainer2"]
-margin_left = 480.0
-margin_right = 620.0
+margin_left = 320.0
+margin_right = 460.0
 margin_bottom = 134.0
 
 [node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer2/MarginContainer4"]
@@ -653,8 +660,8 @@ icon = ExtResource( 11 )
 flat = true
 
 [node name="MarginContainer5" type="MarginContainer" parent="ContainerActions/HBoxContainer2"]
-margin_left = 640.0
-margin_right = 780.0
+margin_left = 480.0
+margin_right = 620.0
 margin_bottom = 134.0
 
 [node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer2/MarginContainer5"]
@@ -673,14 +680,13 @@ flat = true
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="ContainerActions"]
 margin_top = 308.0
-margin_right = 1100.0
+margin_right = 780.0
 margin_bottom = 442.0
 custom_constants/separation = 20
 alignment = 1
 
 [node name="MarginContainer7" type="MarginContainer" parent="ContainerActions/HBoxContainer3"]
-margin_left = 160.0
-margin_right = 300.0
+margin_right = 140.0
 margin_bottom = 134.0
 
 [node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer3/MarginContainer7"]
@@ -698,8 +704,8 @@ icon = ExtResource( 15 )
 flat = true
 
 [node name="MarginContainer6" type="MarginContainer" parent="ContainerActions/HBoxContainer3"]
-margin_left = 320.0
-margin_right = 460.0
+margin_left = 160.0
+margin_right = 300.0
 margin_bottom = 134.0
 
 [node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer3/MarginContainer6"]
@@ -717,8 +723,8 @@ icon = ExtResource( 10 )
 flat = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="ContainerActions/HBoxContainer3"]
-margin_left = 480.0
-margin_right = 620.0
+margin_left = 320.0
+margin_right = 460.0
 margin_bottom = 134.0
 
 [node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer3/MarginContainer2"]
@@ -736,8 +742,8 @@ icon = ExtResource( 14 )
 flat = true
 
 [node name="MarginContainer3" type="MarginContainer" parent="ContainerActions/HBoxContainer3"]
-margin_left = 640.0
-margin_right = 780.0
+margin_left = 480.0
+margin_right = 620.0
 margin_bottom = 134.0
 
 [node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer3/MarginContainer3"]
@@ -755,8 +761,8 @@ icon = ExtResource( 3 )
 flat = true
 
 [node name="MarginContainer4" type="MarginContainer" parent="ContainerActions/HBoxContainer3"]
-margin_left = 800.0
-margin_right = 940.0
+margin_left = 640.0
+margin_right = 780.0
 margin_bottom = 134.0
 
 [node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer3/MarginContainer4"]
