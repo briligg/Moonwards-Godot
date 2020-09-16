@@ -38,7 +38,7 @@ func _ready() -> void:
 func clean_selected() -> void:
 	selected.set_surface_material(0, _unselected_mat)
 
-func set_selected(idx : int) -> void:
+func set_selected(_idx : int) -> void:
 	selected.set_surface_material(0, _selected_mat)
 
 func set_colors(pants : Color, shirt : Color, skin : Color, hair : Color, shoes : Color) -> void:

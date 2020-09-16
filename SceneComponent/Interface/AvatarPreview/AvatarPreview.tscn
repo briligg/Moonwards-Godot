@@ -6,11 +6,11 @@
 
 [sub_resource type="SpatialMaterial" id=1]
 
-[sub_resource type="ProceduralSky" id=14]
+[sub_resource type="ProceduralSky" id=2]
 
-[sub_resource type="Environment" id=15]
+[sub_resource type="Environment" id=3]
 background_mode = 2
-background_sky = SubResource( 14 )
+background_sky = SubResource( 2 )
 
 [node name="AvatarPreview" type="Spatial"]
 script = ExtResource( 3 )
@@ -21,7 +21,6 @@ transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
 
 [node name="MalePlayerModel" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
-visible = false
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0745523, 0.149967 )
@@ -33,7 +32,7 @@ visible = false
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 15 )
+environment = SubResource( 3 )
 
 [editable path="FemalePlayerModel"]
 
