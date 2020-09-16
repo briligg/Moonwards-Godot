@@ -18,13 +18,17 @@ __meta__ = {
 }
 
 [node name="ContainerMain" type="HBoxContainer" parent="."]
-margin_right = 802.0
-margin_bottom = 150.0
-custom_constants/separation = 250
+visible = false
+margin_top = 146.0
+margin_right = 1100.0
+margin_bottom = 296.0
+size_flags_vertical = 4
+custom_constants/separation = 150
 alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="ContainerMain"]
-margin_right = 253.0
+margin_left = 199.0
+margin_right = 452.0
 margin_bottom = 150.0
 
 [node name="Panel" type="Panel" parent="ContainerMain/MarginContainer"]
@@ -60,8 +64,8 @@ __meta__ = {
 }
 
 [node name="MarginContainer2" type="MarginContainer" parent="ContainerMain"]
-margin_left = 503.0
-margin_right = 802.0
+margin_left = 602.0
+margin_right = 901.0
 margin_bottom = 150.0
 
 [node name="Panel" type="Panel" parent="ContainerMain/MarginContainer2"]
@@ -101,6 +105,7 @@ visible = false
 margin_right = 1100.0
 margin_bottom = 442.0
 grow_vertical = 2
+size_flags_vertical = 4
 custom_constants/separation = 20
 alignment = 1
 
@@ -521,10 +526,10 @@ icon = ExtResource( 1 )
 flat = true
 
 [node name="ContainerActions" type="VBoxContainer" parent="."]
-visible = false
 margin_right = 1100.0
 margin_bottom = 442.0
 grow_vertical = 2
+size_flags_vertical = 4
 custom_constants/separation = 20
 alignment = 1
 
