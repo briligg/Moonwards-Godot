@@ -8,10 +8,10 @@ enum SLOTS{
 	SHOES
 }
 
-var pants_color : = Color(1,1,1)
-var shirt_color : = Color(1,1,1)
-var skin_color : = Color(1,1,1)
-var hair_color : = Color(1,1,1)
+var pants_color : = Color(0,0,1)
+var shirt_color : = Color(0.1,0.4,1)
+var skin_color : = Color(0.59,0.4,0)
+var hair_color : = Color(0.1,0.1,0.1)
 var shoes_color : = Color(1,1,1)
 
 var current_slot : int = SLOTS.PANTS
