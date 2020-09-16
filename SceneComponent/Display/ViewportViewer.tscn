@@ -60,6 +60,6 @@ transform = Transform( 1.1, 0, 0, 0, 0.625, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Quad" type="MeshInstance" parent="Area/CollisionShape"]
-transform = Transform( 0.909091, -1.58951e-07, -6.94796e-15, 0, -6.99382e-08, 1.6, -1.74846e-07, -1, -4.37114e-08, 0, 0, 0 )
+transform = Transform( 0.909091, -1.92331e-07, -1.34513e-14, 0, -4.37114e-08, 1.6, -1.74846e-07, -1, -6.99382e-08, 0, 0, 0 )
 mesh = SubResource( 3 )
 material/0 = SubResource( 5 )

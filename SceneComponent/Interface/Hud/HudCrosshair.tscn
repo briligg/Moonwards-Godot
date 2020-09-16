@@ -129,7 +129,7 @@ nodes/color/position = Vector2( 120, 40 )
 nodes/output/position = Vector2( 560, 160 )
 nodes/rotate/node = SubResource( 8 )
 nodes/rotate/position = Vector2( -100, 260 )
-node_connections = [ "output", 0, "Blend2", "Blend2 2", 0, "rotate", "Blend2 2", 1, "Animation", "Blend2", 0, "color", "Blend2", 1, "Blend2 2" ]
+node_connections = [ "output", 0, "Blend2", "Blend2", 0, "color", "Blend2", 1, "Blend2 2", "Blend2 2", 0, "rotate", "Blend2 2", 1, "Animation" ]
 
 [node name="Reticle" type="TextureRect"]
 visible = false

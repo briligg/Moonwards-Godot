@@ -14,6 +14,9 @@ extends Spatial
 
 # Member variables
 export(PackedScene) var content = null
+export(Vector2) var mesh_size = Vector2(1920,1080)
+export(Vector2) var viewport_size = Vector2(1920,1080)
+export(bool) var track_camera = false
 export(bool) var hologram = false
 
 onready var screen: Node = self
@@ -22,12 +25,27 @@ onready var viewport: Node = get_node("Viewport")
 
 var content_instance = null
 
+#When track_camera is on, rotate myself to face the camera at all times.
+func _process(_delta : float) -> void :
+	var camera : Camera = get_tree().root.get_camera()
+	if camera != null:
+		rotation_degrees = camera.rotation_degrees
+
 func _ready():
 	set_process_input(false)
 	content_instance = content.instance()
 	viewport.add_child(content_instance)
 	
 	get_node("Area").connect("input_event", self, "_on_area_input_event")
+	
+	#Adjust the scale of the collision shape to what the developer specified.
+	$Area/CollisionShape.scale = Vector3(mesh_size.x / 1745, mesh_size.y / 1728 ,1)
+	#Adjust the viewport screen size based on what the dev specified.
+	$Viewport.size = viewport_size
+	
+	#Track the camera if the bool is true.
+	if not track_camera :
+		set_process(false)
 	
 	if hologram:
 		var mat = $Area/CollisionShape/Quad.get_surface_material(0)
