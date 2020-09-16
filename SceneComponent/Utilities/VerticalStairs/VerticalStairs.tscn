@@ -7,10 +7,12 @@
 
 [sub_resource type="BoxShape" id=1]
 
-[node name="Area" type="Area"]
+[node name="Vertical-Stairs" type="Area"]
 collision_layer = 32768
 collision_mask = 0
 script = ExtResource( 1 )
+display_info = "Mount Moontown's vertical stairs."
+title = "Vertical Stairs"
 stair_step = ExtResource( 2 )
 stair_top = ExtResource( 4 )
 stair_bottom = ExtResource( 3 )
