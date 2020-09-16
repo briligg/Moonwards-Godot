@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Male_Player.glb-6b0abc438ddddf4dacdb49fbcfa2335d.scn"
+path="res://.import/FemalePlayerModel.glb-07165c1a6f91399a32ca5edf17dc12ae.scn"
 
 [deps]
 
-source_file="res://Assets/MoonTown/Models/Human_Model/Male_Player.glb"
-dest_files=[ "res://.import/Male_Player.glb-6b0abc438ddddf4dacdb49fbcfa2335d.scn" ]
+source_file="res://Assets/MoonTown/Models/Human_Model/FemalePlayerModel.glb"
+dest_files=[ "res://.import/FemalePlayerModel.glb-07165c1a6f91399a32ca5edf17dc12ae.scn" ]
 
 [params]
 
@@ -17,7 +17,7 @@ nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
 materials/location=1
-materials/storage=1
+materials/storage=0
 materials/keep_on_reimport=true
 meshes/compress=true
 meshes/ensure_tangents=true
