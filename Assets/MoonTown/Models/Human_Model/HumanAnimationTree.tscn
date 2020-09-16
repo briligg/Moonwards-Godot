@@ -1,0 +1,90 @@
+[gd_scene load_steps=15 format=2]
+
+[sub_resource type="AnimationNodeAnimation" id=1]
+animation = "Flail-loop"
+
+[sub_resource type="AnimationNodeTransition" id=2]
+input_count = 2
+xfade_time = 0.25
+input_0/name = "Up"
+input_0/auto_advance = false
+input_1/name = "Down"
+input_1/auto_advance = false
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "ClimbDown-loop"
+
+[sub_resource type="AnimationNodeTimeSeek" id=4]
+
+[sub_resource type="AnimationNodeTimeSeek" id=5]
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "ClimbUp-loop"
+
+[sub_resource type="AnimationNodeTransition" id=7]
+input_count = 3
+xfade_time = 0.25
+input_0/name = "OnGround"
+input_0/auto_advance = false
+input_1/name = "Flailing"
+input_1/auto_advance = false
+input_2/name = "Climbing"
+input_2/auto_advance = false
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "MoonWalking-loop"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "MoonWalkingBack-loop"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "MoonWalkingRight-loop"
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "MoonWalkingLeft-loop"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "CasualStance"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=13]
+blend_point_0/node = SubResource( 8 )
+blend_point_0/pos = Vector2( 0, 1 )
+blend_point_1/node = SubResource( 9 )
+blend_point_1/pos = Vector2( 0, -1 )
+blend_point_2/node = SubResource( 10 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 11 )
+blend_point_3/pos = Vector2( -1, 0 )
+blend_point_4/node = SubResource( 12 )
+blend_point_4/pos = Vector2( 0, 0 )
+
+[sub_resource type="AnimationNodeBlendTree" id=14]
+graph_offset = Vector2( -171.282, -7.77084 )
+nodes/Animation/node = SubResource( 1 )
+nodes/Animation/position = Vector2( 320, 240 )
+nodes/ClimbDirection/node = SubResource( 2 )
+nodes/ClimbDirection/position = Vector2( 880, 400 )
+nodes/ClimbDown/node = SubResource( 3 )
+nodes/ClimbDown/position = Vector2( 260, 500 )
+nodes/ClimbProgressDown/node = SubResource( 4 )
+nodes/ClimbProgressDown/position = Vector2( 540, 540 )
+nodes/ClimbProgressUp/node = SubResource( 5 )
+nodes/ClimbProgressUp/position = Vector2( 600, 380 )
+nodes/ClimbUp/node = SubResource( 6 )
+nodes/ClimbUp/position = Vector2( 300, 380 )
+nodes/State/node = SubResource( 7 )
+nodes/State/position = Vector2( 680, 100 )
+nodes/Walking/node = SubResource( 13 )
+nodes/Walking/position = Vector2( 320, 40 )
+nodes/output/position = Vector2( 1020, 160 )
+node_connections = [ "output", 0, "State", "State", 0, "Walking", "State", 1, "Animation", "State", 2, "ClimbDirection", "ClimbProgressUp", 0, "ClimbUp", "ClimbDirection", 0, "ClimbProgressUp", "ClimbDirection", 1, "ClimbProgressDown", "ClimbProgressDown", 0, "ClimbDown" ]
+
+[node name="AnimationTree" type="AnimationTree"]
+tree_root = SubResource( 14 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/ClimbDirection/current = 0
+parameters/ClimbProgressDown/seek_position = 1.0
+parameters/ClimbProgressUp/seek_position = 1.0
+parameters/State/current = 0
+parameters/Walking/blend_position = Vector2( 0, 0 )
