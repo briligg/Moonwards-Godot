@@ -78,8 +78,6 @@ func _on_SaveButton_pressed() -> void:
 	Signals.Network.emit_signal(Signals.Network.CLIENT_COLOR_CHANGED, [pants_color, shirt_color, hair_color, skin_color, shoes_color])
 
 func _on_SlotOption_item_selected(ID : int) -> void:
-	get_node(avatar_preview).clean_selected()
-	get_node(avatar_preview).set_selected(ID)
 	current_slot = ID
 	switch_slot()
 

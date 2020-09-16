@@ -17,7 +17,7 @@ var _skin_mat : SpatialMaterial
 var _hair_mat : SpatialMaterial
 var _shoes_mat : SpatialMaterial
 var _selected_mat : SpatialMaterial = load("res://Tree/Interface/MainMenu/OptionsOld/selected.material")
-var _unselected_mat : SpatialMaterial = load("res://Tree/Interface/MainMenu/OptionsOld/unselected.material")
+
 
 func _ready() -> void:
 	_pants_mat = base_material.duplicate()
@@ -37,14 +37,6 @@ func _ready() -> void:
 	avatar_male.set_surface_material(0, _skin_mat)
 	avatar_male.set_surface_material(1, _hair_mat)
 	avatar_male.set_surface_material(4, _shoes_mat)
-	
-func clean_selected() -> void:
-	avatar_female.set_surface_material(0, _unselected_mat)
-	avatar_male.set_surface_material(0, _unselected_mat)
-
-func set_selected(_idx : int) -> void:
-	avatar_female.set_surface_material(0, _selected_mat)
-	avatar_male.set_surface_material(0, _selected_mat)
 
 func set_colors(pants : Color, shirt : Color, skin : Color, hair : Color, shoes : Color) -> void:
 	_pants_mat.albedo_color = pants
