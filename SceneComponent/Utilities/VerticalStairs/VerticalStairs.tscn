@@ -18,7 +18,7 @@ stair_top = ExtResource( 4 )
 stair_bottom = ExtResource( 3 )
 stair_step_length = 0.54
 stair_bottom_length = 2.52
-stair_width = 0.54
+stair_width = 0.34
 stairs_step_count = 5
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
