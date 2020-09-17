@@ -2,6 +2,8 @@ extends MouseSimulatingRayCast
 class_name InteractorRayCast
 
 
+onready var viewport : Viewport = get_tree().root
+
 #A new interactabled is in reach. null if interactable left with no replacement.
 signal new_interactable(interactable_interactable)
 signal no_interactable_in_reach()
@@ -20,6 +22,10 @@ func _new_collider(new_collider : Interactable) -> void :
 		return
 	
 	emit_signal("new_interactable", new_collider)
+
+func _physics_process(_delta : float) -> void :
+	var camera : Camera = viewport.get_camera()
+	rotation.x = -camera.rotation.x
 
 func _ready() -> void :
 	connect("collider_changed", self, "_new_collider")
