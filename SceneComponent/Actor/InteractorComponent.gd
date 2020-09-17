@@ -1,7 +1,7 @@
 extends AComponent
 class_name InteractorComponent
 
-onready var interactor : Area = $Interactor
+onready var interactor : InteractorRayCast = $InteractorRayCast
 
 #These allow us to call signals using actual variables instead of strings.
 #const FOCUS_ROLLBACK : String = "focus_returned"
@@ -31,26 +31,26 @@ func _input(event : InputEvent) -> void :
 		return
 	
 	if event.is_action_pressed("interact_with_closest") :
-		var interactable = interactor.get_closest_interactable()
+		var interactable = interactor.get_interactable()
 		if interactable != null :
-			menu_interact_request(interactable)
+			player_requested_interact(interactable)
 
 func _make_hud_display_interactable(interactable : Interactable = null) -> void :
-	Signals.Hud.emit_signal(Signals.Hud.CLOSEST_INTERACTABLE_CHANGED, interactable)
+	Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_ENTERED_REACH, interactable)
 
 #Make Interactor have my Entity variable as it's user.
 func _ready() -> void :
 	interactor.owning_entity = self.entity
 	
-	interactor.connect("interactable_entered_area", self, "relay_signal", [INTERACTABLE_ENTERED_REACH])
-	interactor.connect("interactable_left_area", self, "relay_signal", [INTERACTABLE_LEFT_REACH])
+	interactor.connect("new_interactable", self, "relay_signal", [INTERACTABLE_ENTERED_REACH])
+	interactor.connect("no_interactable_in_reach", self, "relay_signal", [INTERACTABLE_LEFT_REACH])
 	
 	if grab_focus_at_ready :
 		grab_focus()
 
 #Return what interactables are in reach.
-func get_interactables() -> Array :
-	return interactor.get_potential_interacts()
+func get_interactable() -> Array :
+	return interactor.get_potential_interact()
 
 #Become the current Interactor in use.
 func grab_focus() -> void:
@@ -59,33 +59,28 @@ func grab_focus() -> void:
 	Signals.Hud.emit_signal(Signals.Hud.NEW_INTERACTOR_GRABBED_FOCUS, self)
 	
 	#Display what is the closest interactable.
-	interactor.connect("closest_interactable_changed", self, "_make_hud_display_interactable")
-	
-	for area in interactor.get_overlapping_areas():
-		if area is Interactable:
-			emit_signal(INTERACTABLE_ENTERED_REACH, area)
+	interactor.connect("new_interactable", self, "_make_hud_display_interactable")
+	interactor.connect("no_interactables_in_reach", self, "_make_hud_display_interactable")
 
 #Another interactor has grabbed focus. Perform cleanup.
 func lost_focus() -> void :
 	has_focus = false
-	interactor.disconnect("closest_interactable_changed", self, "_make_hud_display_interactable")
-	for area in interactor.get_overlapping_areas():
-		if area is Interactable:
-			emit_signal(INTERACTABLE_LEFT_REACH, area)
+	interactor.disconnect("new_interactable", self, "_make_hud_display_interactable")
+	interactor.disconnect("no_interactables_in_reach", self, "_make_hud_display_interactable")
 
-#Pass the interactor signals we are listening to onwards.
-func relay_signal(attribute = null, signal_name = "interactable_made_impossible") -> void :
-	emit_signal(signal_name, attribute)
-	
 #An Interactable has been chosen from InteractsMenu. Perform the appropriate logic for the Interactable.
-func menu_interact_request(interactable : Interactable)->void:
+func player_requested_interact(interactable : Interactable)->void:
 	Log.trace(self, "", "Interacted with %s " %interactable)
 	if interactable.is_networked():
 		rpc_id(1, "request_interact", [interactor.get_path(), interactable.get_path()])
 		#I removed entity.owner_peer_id from the now empty array.
 	else :
 		interactor.interact(interactable)
-		
+
+#Pass the interactor signals we are listening to onwards.
+func relay_signal(attribute = null, signal_name = "interactable_made_impossible") -> void :
+	emit_signal(signal_name, attribute)
+	
 mastersync func request_interact(args : Array) -> void :
 	Log.warning(self, "", "Client %s requested an interaction" %entity.owner_peer_id)
 	rpc_id(get_tree().get_rpc_sender_id(), "execute_interact", args)
@@ -97,11 +92,11 @@ puppetsync func execute_interact(args: Array):
 	_interactor.interact(_interactable)
 
 func disable():
-	$Interactor.enabled = false
+	interactor.enabled = false
 	.disable()
 
 func enable():
 	if is_net_owner():
-		$Interactor.enabled = true
+		interactor.enabled = true
 	.enable()
 

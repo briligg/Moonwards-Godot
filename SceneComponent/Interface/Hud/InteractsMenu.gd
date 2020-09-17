@@ -15,7 +15,8 @@ var interactor_history_pointers : Array = []
 
 #Listen for when interacts are possible.
 func _ready() -> void :
-	Signals.Hud.connect(Signals.Hud.NEW_INTERACTOR_GRABBED_FOCUS, self, "_new_interactor")
+	pass
+#	Signals.Hud.connect(Signals.Hud.NEW_INTERACTOR_GRABBED_FOCUS, self, "_new_interactor")
 
 #Called from a signal. One of the buttons corresponding to the interactables has been pressed.
 func _button_pressed(interactable : Node) -> void :
