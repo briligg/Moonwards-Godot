@@ -1,12 +1,28 @@
-[gd_resource type="Theme" load_steps=5 format=2]
+[gd_resource type="Theme" load_steps=10 format=2]
 
 [ext_resource path="res://Tree/Interface/Hud/Styles/Apps/ContainerApp_StyleboxFlat.tres" type="StyleBox" id=1]
 [ext_resource path="res://Assets/Interface/Fonts/HUD_Roboto.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Tree/Interface/Hud/Styles/Apps/PanelApp_StyleboxFlat.tres" type="StyleBox" id=3]
 [ext_resource path="res://Tree/Interface/Hud/Styles/Apps/LabelApp_StyleboxFlat.tres" type="StyleBox" id=4]
+[ext_resource path="res://Tree/Interface/Hud/Styles/Apps/APP_Button_Normal_Flat.tres" type="StyleBox" id=5]
+[ext_resource path="res://Tree/Interface/Hud/Styles/Apps/APP_Button_Pressed_Flat.tres" type="StyleBox" id=6]
+[ext_resource path="res://Tree/Interface/Hud/Styles/Apps/APP_Button_Hover_Flat.tres" type="StyleBox" id=7]
+[ext_resource path="res://Tree/Interface/Hud/Styles/Apps/APP_Button_Disabled_Flat.tres" type="StyleBox" id=8]
+[ext_resource path="res://Tree/Interface/Hud/Styles/Apps/APP_Button_Focus_Flat.tres" type="StyleBox" id=9]
 
 [resource]
 default_font = ExtResource( 2 )
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = ExtResource( 8 )
+Button/styles/focus = ExtResource( 9 )
+Button/styles/hover = ExtResource( 7 )
+Button/styles/normal = ExtResource( 5 )
+Button/styles/pressed = ExtResource( 6 )
 Label/colors/font_color = Color( 1, 1, 1, 1 )
 Label/colors/font_color_shadow = Color( 0, 0, 0, 1 )
 Label/colors/font_outline_modulate = Color( 0.952941, 0.415686, 0.415686, 1 )

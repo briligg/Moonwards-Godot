@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://Tree/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Tree/Interface/Hud/Styles/Apps/HUDApps.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Building/T_IconPlanes.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconFace.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Building/T_IconArea_Alt.png" type="Texture" id=4]
@@ -36,233 +36,231 @@ margin_bottom = 1080.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 1920.0
-margin_bottom = 118.0
+margin_bottom = 114.0
 custom_constants/separation = 30
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-margin_left = 633.0
-margin_right = 717.0
-margin_bottom = 118.0
+margin_left = 663.0
+margin_right = 737.0
+margin_bottom = 114.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_right = 84.0
-margin_bottom = 78.0
+margin_right = 74.0
+margin_bottom = 74.0
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer"]
-margin_right = 84.0
-margin_bottom = 78.0
+margin_right = 74.0
+margin_bottom = 74.0
 
 [node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer"]
-margin_right = 84.0
-margin_bottom = 78.0
+margin_right = 74.0
+margin_bottom = 74.0
 toggle_mode = true
 icon = ExtResource( 7 )
 flat = true
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_top = 82.0
-margin_right = 84.0
-margin_bottom = 118.0
+margin_top = 78.0
+margin_right = 74.0
+margin_bottom = 114.0
 text = "[1]"
 align = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-margin_left = 747.0
-margin_right = 831.0
-margin_bottom = 118.0
+margin_left = 767.0
+margin_right = 841.0
+margin_bottom = 114.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
-margin_right = 84.0
-margin_bottom = 78.0
+margin_right = 74.0
+margin_bottom = 74.0
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer"]
-margin_right = 84.0
-margin_bottom = 78.0
+margin_right = 74.0
+margin_bottom = 74.0
 
 [node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer"]
-margin_right = 84.0
-margin_bottom = 78.0
+margin_right = 74.0
+margin_bottom = 74.0
 toggle_mode = true
 icon = ExtResource( 4 )
 flat = true
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
-margin_top = 82.0
-margin_right = 84.0
-margin_bottom = 118.0
+margin_top = 78.0
+margin_right = 74.0
+margin_bottom = 114.0
 text = "[2]"
 align = 1
 
 [node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-margin_left = 861.0
+margin_left = 871.0
 margin_right = 945.0
-margin_bottom = 118.0
+margin_bottom = 114.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer5"]
-margin_right = 84.0
-margin_bottom = 78.0
+margin_right = 74.0
+margin_bottom = 74.0
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer5/MarginContainer"]
-margin_right = 84.0
-margin_bottom = 78.0
+margin_right = 74.0
+margin_bottom = 74.0
 
 [node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/MarginContainer"]
-margin_right = 84.0
-margin_bottom = 78.0
+margin_right = 74.0
+margin_bottom = 74.0
 toggle_mode = true
 icon = ExtResource( 8 )
 flat = true
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer5"]
-margin_top = 82.0
-margin_right = 84.0
-margin_bottom = 118.0
+margin_top = 78.0
+margin_right = 74.0
+margin_bottom = 114.0
 text = "[3]"
 align = 1
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 margin_left = 975.0
-margin_right = 1059.0
-margin_bottom = 118.0
+margin_right = 1049.0
+margin_bottom = 114.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer4"]
-margin_right = 84.0
-margin_bottom = 78.0
+margin_right = 74.0
+margin_bottom = 74.0
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer4/MarginContainer"]
-margin_right = 84.0
-margin_bottom = 78.0
+margin_right = 74.0
+margin_bottom = 74.0
 
 [node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer4/MarginContainer"]
-margin_right = 84.0
-margin_bottom = 78.0
+margin_right = 74.0
+margin_bottom = 74.0
 toggle_mode = true
 icon = ExtResource( 5 )
 flat = true
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer4"]
-margin_top = 82.0
-margin_right = 84.0
-margin_bottom = 118.0
+margin_top = 78.0
+margin_right = 74.0
+margin_bottom = 114.0
 text = "[4]"
 align = 1
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-margin_left = 1089.0
-margin_right = 1173.0
-margin_bottom = 118.0
+margin_left = 1079.0
+margin_right = 1153.0
+margin_bottom = 114.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
-margin_right = 84.0
-margin_bottom = 78.0
+margin_right = 74.0
+margin_bottom = 74.0
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer3/MarginContainer"]
-margin_right = 84.0
-margin_bottom = 78.0
+margin_right = 74.0
+margin_bottom = 74.0
 
 [node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/MarginContainer"]
-margin_right = 84.0
-margin_bottom = 78.0
+margin_right = 74.0
+margin_bottom = 74.0
 toggle_mode = true
 icon = ExtResource( 2 )
 flat = true
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
-margin_top = 82.0
-margin_right = 84.0
-margin_bottom = 118.0
+margin_top = 78.0
+margin_right = 74.0
+margin_bottom = 114.0
 text = "[5]"
 align = 1
 
 [node name="VBoxContainer6" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-margin_left = 1203.0
-margin_right = 1287.0
-margin_bottom = 118.0
+margin_left = 1183.0
+margin_right = 1257.0
+margin_bottom = 114.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer6"]
-margin_right = 84.0
-margin_bottom = 78.0
+margin_right = 74.0
+margin_bottom = 74.0
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer6/MarginContainer"]
-margin_right = 84.0
-margin_bottom = 78.0
+margin_right = 74.0
+margin_bottom = 74.0
 
 [node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer6/MarginContainer"]
-margin_right = 84.0
-margin_bottom = 78.0
+margin_right = 74.0
+margin_bottom = 74.0
 toggle_mode = true
 icon = ExtResource( 6 )
 flat = true
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer6"]
-margin_top = 82.0
-margin_right = 84.0
-margin_bottom = 118.0
+margin_top = 78.0
+margin_right = 74.0
+margin_bottom = 114.0
 text = "[6]"
 align = 1
 
 [node name="Container" type="Container" parent="VBoxContainer"]
-margin_top = 122.0
+margin_top = 118.0
 margin_right = 1920.0
-margin_bottom = 982.0
+margin_bottom = 990.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 986.0
+margin_top = 994.0
 margin_right = 1920.0
 margin_bottom = 1080.0
-custom_constants/separation = 15
+custom_constants/separation = 32
 alignment = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 1497.0
-margin_right = 1536.0
-margin_bottom = 94.0
+margin_left = 1533.0
+margin_right = 1562.0
+margin_bottom = 86.0
 custom_constants/separation = 10
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
-margin_right = 39.0
-margin_bottom = 42.0
+margin_right = 29.0
+margin_bottom = 38.0
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer2/VBoxContainer/MarginContainer2"]
-margin_right = 39.0
-margin_bottom = 42.0
+margin_right = 29.0
+margin_bottom = 38.0
 
 [node name="Button" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer/MarginContainer2"]
-margin_right = 39.0
-margin_bottom = 42.0
+margin_right = 29.0
+margin_bottom = 38.0
 toggle_mode = true
 icon = ExtResource( 10 )
-flat = true
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
-margin_top = 52.0
-margin_right = 39.0
-margin_bottom = 94.0
+margin_top = 48.0
+margin_right = 29.0
+margin_bottom = 86.0
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer2/VBoxContainer/MarginContainer3"]
-margin_right = 39.0
-margin_bottom = 42.0
+margin_right = 29.0
+margin_bottom = 38.0
 
 [node name="Button" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer/MarginContainer3"]
-margin_right = 39.0
-margin_bottom = 42.0
+margin_right = 29.0
+margin_bottom = 38.0
 toggle_mode = true
 icon = ExtResource( 9 )
-flat = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 1551.0
-margin_right = 1651.0
-margin_bottom = 94.0
+margin_left = 1594.0
+margin_right = 1694.0
+margin_bottom = 86.0
 alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
-margin_top = 29.0
+margin_top = 25.0
 margin_right = 100.0
-margin_bottom = 65.0
+margin_bottom = 61.0
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/MarginContainer2"]
 margin_right = 100.0
@@ -278,106 +276,94 @@ margin_bottom = 36.0
 text = "20/40"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 1666.0
+margin_left = 1726.0
 margin_right = 1920.0
-margin_bottom = 94.0
+margin_bottom = 86.0
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer2/MarginContainer"]
-margin_right = 254.0
-margin_bottom = 94.0
+margin_right = 194.0
+margin_bottom = 86.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/MarginContainer"]
-margin_right = 254.0
-margin_bottom = 94.0
+margin_right = 194.0
+margin_bottom = 86.0
 custom_constants/separation = 10
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer"]
-margin_right = 254.0
-margin_bottom = 42.0
+margin_right = 194.0
+margin_bottom = 38.0
 
 [node name="Button6" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
-margin_right = 39.0
-margin_bottom = 42.0
+margin_right = 29.0
+margin_bottom = 38.0
 icon = ExtResource( 17 )
-flat = true
 
 [node name="Button7" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 43.0
-margin_right = 82.0
-margin_bottom = 42.0
+margin_left = 33.0
+margin_right = 62.0
+margin_bottom = 38.0
 icon = ExtResource( 18 )
-flat = true
 
 [node name="Button9" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 86.0
-margin_right = 125.0
-margin_bottom = 42.0
+margin_left = 66.0
+margin_right = 95.0
+margin_bottom = 38.0
 icon = ExtResource( 3 )
-flat = true
 
 [node name="Button10" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 129.0
-margin_right = 168.0
-margin_bottom = 42.0
+margin_left = 99.0
+margin_right = 128.0
+margin_bottom = 38.0
 icon = ExtResource( 19 )
-flat = true
 
 [node name="Button11" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 172.0
-margin_right = 211.0
-margin_bottom = 42.0
+margin_left = 132.0
+margin_right = 161.0
+margin_bottom = 38.0
 icon = ExtResource( 20 )
-flat = true
 
 [node name="Button12" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 215.0
-margin_right = 254.0
-margin_bottom = 42.0
+margin_left = 165.0
+margin_right = 194.0
+margin_bottom = 38.0
 icon = ExtResource( 21 )
-flat = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer"]
-margin_top = 52.0
-margin_right = 254.0
-margin_bottom = 94.0
+margin_top = 48.0
+margin_right = 194.0
+margin_bottom = 86.0
 
 [node name="Button6" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_right = 39.0
-margin_bottom = 42.0
+margin_right = 29.0
+margin_bottom = 38.0
 icon = ExtResource( 16 )
-flat = true
 
 [node name="Button" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 43.0
-margin_right = 82.0
-margin_bottom = 42.0
+margin_left = 33.0
+margin_right = 62.0
+margin_bottom = 38.0
 icon = ExtResource( 14 )
-flat = true
 
 [node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 86.0
-margin_right = 125.0
-margin_bottom = 42.0
+margin_left = 66.0
+margin_right = 95.0
+margin_bottom = 38.0
 icon = ExtResource( 15 )
-flat = true
 
 [node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 129.0
-margin_right = 168.0
-margin_bottom = 42.0
+margin_left = 99.0
+margin_right = 128.0
+margin_bottom = 38.0
 icon = ExtResource( 11 )
-flat = true
 
 [node name="Button4" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 172.0
-margin_right = 211.0
-margin_bottom = 42.0
+margin_left = 132.0
+margin_right = 161.0
+margin_bottom = 38.0
 icon = ExtResource( 12 )
-flat = true
 
 [node name="Button5" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 215.0
-margin_right = 254.0
-margin_bottom = 42.0
+margin_left = 165.0
+margin_right = 194.0
+margin_bottom = 38.0
 icon = ExtResource( 13 )
-flat = true

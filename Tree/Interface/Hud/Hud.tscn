@@ -45,6 +45,7 @@ margin_left = 20.0
 margin_top = 20.0
 margin_right = -20.0
 margin_bottom = -20.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -55,13 +56,19 @@ visible = false
 [node name="BuildingApp" parent="Apps" instance=ExtResource( 13 )]
 
 [node name="CollaborationApp" parent="Apps" instance=ExtResource( 12 )]
+visible = false
 
 [node name="EventApp" parent="Apps" instance=ExtResource( 11 )]
+visible = false
 
 [node name="FilmingApp" parent="Apps" instance=ExtResource( 9 )]
+visible = false
 
 [node name="GraphicNovelApp" parent="Apps" instance=ExtResource( 7 )]
+visible = false
 
 [node name="LibraryApp" parent="Apps" instance=ExtResource( 10 )]
+visible = false
 
 [node name="NPCApp" parent="Apps" instance=ExtResource( 8 )]
+visible = false
