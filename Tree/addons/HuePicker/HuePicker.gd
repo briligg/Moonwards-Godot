@@ -31,12 +31,9 @@ func _ready() -> void:
 func color_changed(value : Color) -> void:
 	color = value
 	
-	#TODO: This line is so we know to update the hue spinner if a property
-	#is set from within the Godot editor. Will cause problems for downstream
-	#Plugins, so try to figure out a way to determine that we're SPECIFICALLY
-	#editing this property from the Inspector, somehow.  Hack!!!
-	if Engine.editor_hint == true and $Hue_Circle != null: 
-		hue_circle.set_hue(value.h)
+	#Make sure the HueCircle changes color appropriately
+	if $HueCircle != null :
+		$HueCircle.set_hue(value.h)
 	
 	emit_signal('color_changed', value)
 	

@@ -8,10 +8,10 @@ enum SLOTS{
 	SHOES
 }
 
-var pants_color : = Color(1,1,1)
-var shirt_color : = Color(1,1,1)
-var skin_color : = Color(1,1,1)
-var hair_color : = Color(1,1,1)
+var pants_color : = Color(0,0,1)
+var shirt_color : = Color(0.1,0.4,1)
+var skin_color : = Color(0.59,0.4,0)
+var hair_color : = Color(0.1,0.1,0.1)
 var shoes_color : = Color(1,1,1)
 
 var current_slot : int = SLOTS.PANTS
@@ -78,8 +78,6 @@ func _on_SaveButton_pressed() -> void:
 	Signals.Network.emit_signal(Signals.Network.CLIENT_COLOR_CHANGED, [pants_color, shirt_color, hair_color, skin_color, shoes_color])
 
 func _on_SlotOption_item_selected(ID : int) -> void:
-	get_node(avatar_preview).clean_selected()
-	get_node(avatar_preview).set_selected(ID)
 	current_slot = ID
 	switch_slot()
 
