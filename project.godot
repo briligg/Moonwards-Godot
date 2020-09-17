@@ -264,6 +264,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Manager/SignalsManager/MenuSignals.gd"
 }, {
+"base": "RayCast",
+"class": "MouseSimulatingRayCast",
+"language": "GDScript",
+"path": "res://Script/GameLogic/MouseSimulatingRayCast/MouseSimulatingRayCast.gd"
+}, {
 "base": "Node",
 "class": "MwNode",
 "language": "GDScript",
@@ -451,6 +456,7 @@ _global_script_class_icons={
 "LodModel": "",
 "LodSignals": "",
 "MenuSignals": "",
+"MouseSimulatingRayCast": "",
 "MwNode": "",
 "MwSpatial": "",
 "NPCBase": "",

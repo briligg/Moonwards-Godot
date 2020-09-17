@@ -10,7 +10,7 @@ var is_active : bool = false
 #Animation will play until the integer is set to zero.
 var clicks_possible : int = 0
 
-onready var ray_cast : RayCast = get_node("ReticleRayCast")
+onready var ray_cast : RayCast = get_node("ClickableRayCast")
 
 
 #Called by signal. A click event is possible. Makes sure that no click event is possible before shutting off animation.

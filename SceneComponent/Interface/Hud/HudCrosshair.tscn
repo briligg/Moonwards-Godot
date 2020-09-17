@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Interface/Textures/CrosshairTexture.png" type="Texture" id=1]
 [ext_resource path="res://SceneComponent/Interface/Hud/HudCrosshair.gd" type="Script" id=2]
-[ext_resource path="res://SceneComponent/Interface/Hud/CrosshairRayCast.gd" type="Script" id=3]
+[ext_resource path="res://Script/GameLogic/MouseSimulatingRayCast/MouseSimulatingRayCast.gd" type="Script" id=3]
+[ext_resource path="res://SceneComponent/Interface/Hud/ClickableRayCast.gd" type="Script" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "color"
@@ -129,7 +130,7 @@ nodes/color/position = Vector2( 120, 40 )
 nodes/output/position = Vector2( 560, 160 )
 nodes/rotate/node = SubResource( 8 )
 nodes/rotate/position = Vector2( -100, 260 )
-node_connections = [ "output", 0, "Blend2", "Blend2", 0, "color", "Blend2", 1, "Blend2 2", "Blend2 2", 0, "rotate", "Blend2 2", 1, "Animation" ]
+node_connections = [ "output", 0, "Blend2", "Blend2 2", 0, "rotate", "Blend2 2", 1, "Animation", "Blend2", 0, "color", "Blend2", 1, "Blend2 2" ]
 
 [node name="Reticle" type="TextureRect"]
 visible = false
@@ -150,7 +151,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ReticleRayCast" type="RayCast" parent="."]
+[node name="ClickableRayCast" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, 0, -100 )
+collision_mask = 1024
+collide_with_areas = true
+script = ExtResource( 4 )
+
+[node name="InteractorRayCast" type="RayCast" parent="."]
 enabled = true
 cast_to = Vector3( 0, 0, -100 )
 collision_mask = 1024
