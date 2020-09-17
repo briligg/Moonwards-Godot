@@ -5,6 +5,8 @@
 [ext_resource path="res://Tree/Interface/Hud/Styles/Panel_StyleboxFlat.tres" type="StyleBox" id=3]
 [ext_resource path="res://Tree/Interface/Hud/Styles/Container_StyleboxFlat.tres" type="StyleBox" id=4]
 
+
+
 [resource]
 default_font = ExtResource( 2 )
 Label/colors/font_color = Color( 1, 1, 1, 1 )

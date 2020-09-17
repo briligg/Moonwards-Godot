@@ -1,9 +1,9 @@
 [gd_resource type="Theme" load_steps=5 format=2]
 
-[ext_resource path="res://Tree/Interface/Hud/Styles/LabelBig_StyleboxFlat.tres" type="StyleBox" id=1]
+[ext_resource path="res://Tree/Interface/Hud/Styles/Apps/ContainerApp_StyleboxFlat.tres" type="StyleBox" id=1]
 [ext_resource path="res://Assets/Interface/Fonts/HUD_Roboto.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Tree/Interface/Hud/Styles/Panel_StyleboxFlat.tres" type="StyleBox" id=3]
-[ext_resource path="res://Tree/Interface/Hud/Styles/Container_StyleboxFlat.tres" type="StyleBox" id=4]
+[ext_resource path="res://Tree/Interface/Hud/Styles/Apps/PanelApp_StyleboxFlat.tres" type="StyleBox" id=3]
+[ext_resource path="res://Tree/Interface/Hud/Styles/Apps/LabelApp_StyleboxFlat.tres" type="StyleBox" id=4]
 
 [resource]
 default_font = ExtResource( 2 )
@@ -15,6 +15,6 @@ Label/constants/shadow_as_outline = 0
 Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
 Label/fonts/font = null
-Label/styles/normal = ExtResource( 1 )
+Label/styles/normal = ExtResource( 4 )
 Panel/styles/panel = ExtResource( 3 )
-PanelContainer/styles/panel = ExtResource( 4 )
+PanelContainer/styles/panel = ExtResource( 1 )
