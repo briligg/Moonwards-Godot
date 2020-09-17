@@ -4,7 +4,7 @@ class_name InteractorRayCast
 
 #A new interactabled is in reach. null if interactable left with no replacement.
 signal new_interactable(interactable_interactable)
-signal no_interactables_in_reach()
+signal no_interactable_in_reach()
 
 #Emitted when the player interects with the interactable.
 signal interacted_with(interactable_interactable)
@@ -16,7 +16,7 @@ var owning_entity : AEntity
 
 func _new_collider(new_collider : Interactable) -> void :
 	if new_collider == null :
-		emit_signal("no_interactables_in_reach")
+		emit_signal("no_interactable_in_reach")
 		return
 	
 	emit_signal("new_interactable", new_collider)

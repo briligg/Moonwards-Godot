@@ -7,14 +7,10 @@ onready var interactor : InteractorRayCast = $InteractorRayCast
 #const FOCUS_ROLLBACK : String = "focus_returned"
 const INTERACTABLE_ENTERED_REACH : String = "interactable_entered_reach"
 const INTERACTABLE_LEFT_REACH : String = "interactable_left_reach"
-const INTERACT_MADE_IMPOSSIBLE : String = "interact_made_impossible"
-const INTERACT_MADE_POSSIBLE : String = "interact_made_possible"
 
 #signal focus_returned()
 signal interactable_entered_reach(interactable)
 signal interactable_left_reach(interactable)
-signal interact_made_impossible()
-signal interact_made_possible(interact_info_string)
 
 #Call grab_focus immediately at startup.
 export var grab_focus_at_ready : bool = true
@@ -43,7 +39,7 @@ func _ready() -> void :
 	interactor.owning_entity = self.entity
 	
 	interactor.connect("new_interactable", self, "relay_signal", [INTERACTABLE_ENTERED_REACH])
-	interactor.connect("no_interactable_in_reach", self, "relay_signal", [INTERACTABLE_LEFT_REACH])
+	interactor.connect("no_interactable_in_reach", self, "relay_signal", [null, INTERACTABLE_LEFT_REACH])
 	
 	if grab_focus_at_ready :
 		grab_focus()
@@ -60,13 +56,13 @@ func grab_focus() -> void:
 	
 	#Display what is the closest interactable.
 	interactor.connect("new_interactable", self, "_make_hud_display_interactable")
-	interactor.connect("no_interactables_in_reach", self, "_make_hud_display_interactable")
+	interactor.connect("no_interactable_in_reach", self, "_make_hud_display_interactable")
 
 #Another interactor has grabbed focus. Perform cleanup.
 func lost_focus() -> void :
 	has_focus = false
 	interactor.disconnect("new_interactable", self, "_make_hud_display_interactable")
-	interactor.disconnect("no_interactables_in_reach", self, "_make_hud_display_interactable")
+	interactor.disconnect("no_interactable_in_reach", self, "_make_hud_display_interactable")
 
 #An Interactable has been chosen from InteractsMenu. Perform the appropriate logic for the Interactable.
 func player_requested_interact(interactable : Interactable)->void:

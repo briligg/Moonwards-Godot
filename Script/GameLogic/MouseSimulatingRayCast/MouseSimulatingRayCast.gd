@@ -19,5 +19,5 @@ func _physics_process(_delta : float) -> void:
 	elif not is_colliding() :
 		if previous_collider != null :
 			previous_collider.emit_signal("mouse_exited")
+			emit_signal("collider_changed", null)
 		previous_collider = null
-		emit_signal("collider_changed", null)
