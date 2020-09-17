@@ -1,0 +1,20 @@
+[gd_resource type="Theme" load_steps=5 format=2]
+
+[ext_resource path="res://Tree/Interface/Hud/Styles/LabelBig_StyleboxFlat.tres" type="StyleBox" id=1]
+[ext_resource path="res://Assets/Interface/Fonts/HUD_Roboto.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Tree/Interface/Hud/Styles/Panel_StyleboxFlat.tres" type="StyleBox" id=3]
+[ext_resource path="res://Tree/Interface/Hud/Styles/Container_StyleboxFlat.tres" type="StyleBox" id=4]
+
+[resource]
+default_font = ExtResource( 2 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+Label/colors/font_outline_modulate = Color( 0.952941, 0.415686, 0.415686, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = null
+Label/styles/normal = ExtResource( 1 )
+Panel/styles/panel = ExtResource( 3 )
+PanelContainer/styles/panel = ExtResource( 4 )

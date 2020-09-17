@@ -5,6 +5,8 @@
 [ext_resource path="res://Assets/Interface/Fonts/HUD_Roboto.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Tree/Interface/Hud/Styles/LabelBig_StyleboxFlat.tres" type="StyleBox" id=4]
 
+
+
 [resource]
 default_font = ExtResource( 3 )
 Label/colors/font_color = Color( 1, 1, 1, 1 )
