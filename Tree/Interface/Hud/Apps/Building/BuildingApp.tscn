@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Tree/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Building/T_IconPlanes.png" type="Texture" id=2]
@@ -18,6 +18,9 @@
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconSelect.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconVertex.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconEdges.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconDivide.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconMerge.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconScale.png" type="Texture" id=21]
 
 [node name="BuildingApp" type="PanelContainer"]
 anchor_right = 1.0
@@ -214,8 +217,8 @@ custom_constants/separation = 15
 alignment = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 1480.0
-margin_right = 1519.0
+margin_left = 1497.0
+margin_right = 1536.0
 margin_bottom = 94.0
 custom_constants/separation = 10
 
@@ -251,46 +254,28 @@ icon = ExtResource( 9 )
 flat = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 1534.0
+margin_left = 1551.0
 margin_right = 1651.0
 margin_bottom = 94.0
 alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
-margin_top = 9.0
-margin_right = 117.0
-margin_bottom = 45.0
+margin_top = 29.0
+margin_right = 100.0
+margin_bottom = 65.0
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/MarginContainer2"]
-margin_right = 117.0
+margin_right = 100.0
 margin_bottom = 36.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/MarginContainer2"]
-margin_right = 117.0
+margin_right = 100.0
 margin_bottom = 36.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/MarginContainer2/HBoxContainer"]
 margin_right = 100.0
 margin_bottom = 36.0
-text = "56/44"
-
-[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
-margin_top = 49.0
-margin_right = 117.0
-margin_bottom = 85.0
-
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/MarginContainer3"]
-margin_right = 117.0
-margin_bottom = 36.0
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/MarginContainer3"]
-margin_right = 117.0
-margin_bottom = 36.0
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/MarginContainer3/HBoxContainer2"]
-margin_right = 117.0
-margin_bottom = 36.0
-text = "100/56"
+text = "20/40"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 1666.0
@@ -328,6 +313,27 @@ margin_left = 86.0
 margin_right = 125.0
 margin_bottom = 42.0
 icon = ExtResource( 3 )
+flat = true
+
+[node name="Button10" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 129.0
+margin_right = 168.0
+margin_bottom = 42.0
+icon = ExtResource( 19 )
+flat = true
+
+[node name="Button11" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 172.0
+margin_right = 211.0
+margin_bottom = 42.0
+icon = ExtResource( 20 )
+flat = true
+
+[node name="Button12" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 215.0
+margin_right = 254.0
+margin_bottom = 42.0
+icon = ExtResource( 21 )
 flat = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer"]
