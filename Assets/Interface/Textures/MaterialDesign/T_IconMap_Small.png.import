@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/T_IconCamera.png-1963d6b2ad3e7c154f3d43a711f6cf2a.s3tc.stex"
-path.etc2="res://.import/T_IconCamera.png-1963d6b2ad3e7c154f3d43a711f6cf2a.etc2.stex"
+path.s3tc="res://.import/T_IconMap_Small.png-86b166cd6c5fea6f1efd954cbb28da44.s3tc.stex"
+path.etc2="res://.import/T_IconMap_Small.png-86b166cd6c5fea6f1efd954cbb28da44.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Interface/Textures/MaterialDesign/T_IconCamera.png"
-dest_files=[ "res://.import/T_IconCamera.png-1963d6b2ad3e7c154f3d43a711f6cf2a.s3tc.stex", "res://.import/T_IconCamera.png-1963d6b2ad3e7c154f3d43a711f6cf2a.etc2.stex" ]
+source_file="res://Assets/Interface/Textures/MaterialDesign/T_IconMap_Small.png"
+dest_files=[ "res://.import/T_IconMap_Small.png-86b166cd6c5fea6f1efd954cbb28da44.s3tc.stex", "res://.import/T_IconMap_Small.png-86b166cd6c5fea6f1efd954cbb28da44.etc2.stex" ]
 
 [params]
 

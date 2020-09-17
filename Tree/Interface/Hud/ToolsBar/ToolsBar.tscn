@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Tree/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconVideoCamera.png" type="Texture" id=2]
@@ -6,10 +6,11 @@
 [ext_resource path="res://Tree/Interface/Hud/Styles/HUDTheme_Small.tres" type="Theme" id=4]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconAI.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconBuilding_Alt.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconMap.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconShare.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconShareBig.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconMap_Small.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconCamera.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconEvent.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconExpand.png" type="Texture" id=11]
 
 [node name="ToolsBar" type="PanelContainer"]
 anchor_right = 1.0
@@ -33,67 +34,15 @@ theme = ExtResource( 4 )
 custom_constants/separation = 8
 alignment = 2
 
-[node name="VBoxContainer6" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-margin_left = 1796.0
-margin_right = 1832.0
-margin_bottom = 64.0
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer6"]
-margin_right = 36.0
-margin_bottom = 24.0
-text = "[6]"
-align = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer6"]
-margin_top = 28.0
-margin_right = 36.0
-margin_bottom = 64.0
-
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer6/MarginContainer"]
-margin_right = 36.0
-margin_bottom = 36.0
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer6/MarginContainer"]
-margin_right = 36.0
-margin_bottom = 36.0
-texture = ExtResource( 9 )
-stretch_mode = 5
-
-[node name="VBoxContainer8" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-margin_left = 1840.0
-margin_right = 1876.0
-margin_bottom = 64.0
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer8"]
-margin_right = 36.0
-margin_bottom = 24.0
-text = "[7]"
-align = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer8"]
-margin_top = 28.0
-margin_right = 36.0
-margin_bottom = 64.0
-
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer8/MarginContainer"]
-margin_right = 36.0
-margin_bottom = 36.0
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer8/MarginContainer"]
-margin_right = 36.0
-margin_bottom = 36.0
-texture = ExtResource( 2 )
-stretch_mode = 5
-
 [node name="VBoxContainer7" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-margin_left = 1884.0
-margin_right = 1920.0
+margin_left = 1752.0
+margin_right = 1788.0
 margin_bottom = 64.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer7"]
 margin_right = 36.0
 margin_bottom = 24.0
-text = "[8]"
+text = "[6]"
 align = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer7"]
@@ -111,6 +60,103 @@ margin_bottom = 36.0
 texture = ExtResource( 8 )
 stretch_mode = 5
 
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer7/MarginContainer"]
+margin_right = 36.0
+margin_bottom = 36.0
+flat = true
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 1796.0
+margin_right = 1832.0
+margin_bottom = 64.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer6"]
+margin_right = 36.0
+margin_bottom = 24.0
+text = "[7]"
+align = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer6"]
+margin_top = 28.0
+margin_right = 36.0
+margin_bottom = 64.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer6/MarginContainer"]
+margin_right = 36.0
+margin_bottom = 36.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer6/MarginContainer"]
+margin_right = 36.0
+margin_bottom = 36.0
+texture = ExtResource( 9 )
+stretch_mode = 5
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer6/MarginContainer"]
+margin_right = 36.0
+margin_bottom = 36.0
+flat = true
+
+[node name="VBoxContainer8" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 1840.0
+margin_right = 1876.0
+margin_bottom = 64.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer8"]
+margin_right = 36.0
+margin_bottom = 24.0
+text = "[8]"
+align = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer8"]
+margin_top = 28.0
+margin_right = 36.0
+margin_bottom = 64.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer8/MarginContainer"]
+margin_right = 36.0
+margin_bottom = 36.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer8/MarginContainer"]
+margin_right = 36.0
+margin_bottom = 36.0
+texture = ExtResource( 2 )
+stretch_mode = 5
+
+[node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer8/MarginContainer"]
+margin_right = 36.0
+margin_bottom = 36.0
+flat = true
+
+[node name="VBoxContainer9" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 1884.0
+margin_right = 1920.0
+margin_bottom = 64.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer9"]
+margin_right = 36.0
+margin_bottom = 24.0
+align = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer9"]
+margin_top = 28.0
+margin_right = 36.0
+margin_bottom = 64.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer9/MarginContainer"]
+margin_right = 36.0
+margin_bottom = 36.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer9/MarginContainer"]
+margin_right = 36.0
+margin_bottom = 36.0
+texture = ExtResource( 11 )
+stretch_mode = 5
+
+[node name="Button4" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer9/MarginContainer"]
+margin_right = 36.0
+margin_bottom = 36.0
+flat = true
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 968.0
 margin_right = 1920.0
@@ -118,35 +164,9 @@ margin_bottom = 1080.0
 custom_constants/separation = 10
 alignment = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 1520.0
 margin_right = 1592.0
-margin_bottom = 112.0
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
-margin_right = 72.0
-margin_bottom = 72.0
-
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer2/VBoxContainer/MarginContainer"]
-margin_right = 72.0
-margin_bottom = 72.0
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2/VBoxContainer/MarginContainer"]
-margin_right = 72.0
-margin_bottom = 72.0
-texture = ExtResource( 7 )
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
-margin_top = 76.0
-margin_right = 72.0
-margin_bottom = 112.0
-text = "[1]"
-align = 1
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 1602.0
-margin_right = 1674.0
 margin_bottom = 112.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
@@ -163,16 +183,21 @@ margin_bottom = 72.0
 texture = ExtResource( 6 )
 stretch_mode = 5
 
+[node name="Button5" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/MarginContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+flat = true
+
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
 margin_top = 76.0
 margin_right = 72.0
 margin_bottom = 112.0
-text = "[2]"
+text = "[1]"
 align = 1
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 1684.0
-margin_right = 1756.0
+margin_left = 1602.0
+margin_right = 1674.0
 margin_bottom = 112.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer3"]
@@ -189,16 +214,21 @@ margin_bottom = 72.0
 texture = ExtResource( 3 )
 stretch_mode = 5
 
+[node name="Button8" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer3/MarginContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+flat = true
+
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer3"]
 margin_top = 76.0
 margin_right = 72.0
 margin_bottom = 112.0
-text = "[3]"
+text = "[2]"
 align = 1
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 1766.0
-margin_right = 1838.0
+margin_left = 1684.0
+margin_right = 1756.0
 margin_bottom = 112.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer4"]
@@ -215,16 +245,21 @@ margin_bottom = 72.0
 texture = ExtResource( 10 )
 stretch_mode = 5
 
+[node name="Button7" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer4/MarginContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+flat = true
+
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer4"]
 margin_top = 76.0
 margin_right = 72.0
 margin_bottom = 112.0
-text = "[4]"
+text = "[3]"
 align = 1
 
 [node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 1848.0
-margin_right = 1920.0
+margin_left = 1766.0
+margin_right = 1838.0
 margin_bottom = 112.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer5"]
@@ -241,7 +276,43 @@ margin_bottom = 72.0
 texture = ExtResource( 5 )
 stretch_mode = 5
 
+[node name="Button6" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer5/MarginContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+flat = true
+
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer5"]
+margin_top = 76.0
+margin_right = 72.0
+margin_bottom = 112.0
+text = "[4]"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 1848.0
+margin_right = 1920.0
+margin_bottom = 112.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer2/VBoxContainer/MarginContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2/VBoxContainer/MarginContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+texture = ExtResource( 7 )
+stretch_mode = 5
+
+[node name="Button7" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer/MarginContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+flat = true
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
 margin_top = 76.0
 margin_right = 72.0
 margin_bottom = 112.0
