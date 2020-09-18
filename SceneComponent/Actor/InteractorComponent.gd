@@ -45,8 +45,8 @@ func _ready() -> void :
 		grab_focus()
 
 #Return what interactables are in reach.
-func get_interactable() -> Array :
-	return interactor.get_potential_interact()
+func get_interactable() -> Interactable :
+	return interactor.get_interactable()
 
 #Become the current Interactor in use.
 func grab_focus() -> void:

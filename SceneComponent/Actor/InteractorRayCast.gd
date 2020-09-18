@@ -16,8 +16,8 @@ signal interacted_with(interactable_interactable)
 var owning_entity : AEntity
 
 
-func _new_collider(new_collider : Interactable) -> void :
-	if new_collider == null :
+func _new_collider(new_collider) -> void :
+	if new_collider == null ||  not new_collider is Interactable :
 		emit_signal("no_interactable_in_reach")
 		return
 	
@@ -30,8 +30,12 @@ func _physics_process(_delta : float) -> void :
 func _ready() -> void :
 	connect("collider_changed", self, "_new_collider")
 
+#Return the interactable I am colliding with. Null if no Interactable is being touched.
 func get_interactable() -> Interactable :
-	return previous_collider
+	if previous_collider is Interactable :
+		return previous_collider
+	else :
+		return null
 
 #Interact with the given interactable.
 func interact(interactable : Interactable) -> void :
