@@ -74,6 +74,7 @@ visible = false
 visible = false
 
 [node name="RadialSelectorPP" type="TextureRect" parent="."]
+visible = false
 material = ExtResource( 15 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -85,6 +86,7 @@ __meta__ = {
 }
 
 [node name="RadialSelectorPanel" type="Panel" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -1.41425
@@ -95,6 +97,7 @@ __meta__ = {
 }
 
 [node name="RadialSelector" parent="." instance=ExtResource( 6 )]
+visible = false
 margin_left = -403.0
 margin_top = -72.0
 margin_right = 403.0

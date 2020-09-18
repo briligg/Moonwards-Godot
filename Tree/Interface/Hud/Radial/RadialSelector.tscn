@@ -75,6 +75,7 @@ margin_right = 806.0
 margin_bottom = 144.0
 
 [node name="ContainerMain" type="HBoxContainer" parent="."]
+visible = false
 margin_top = 143.0
 margin_right = 1030.0
 margin_bottom = 287.0
@@ -578,7 +579,6 @@ margin_bottom = 130.0
 icon = ExtResource( 16 )
 
 [node name="ContainerActions" type="VBoxContainer" parent="."]
-visible = false
 margin_right = 1030.0
 margin_bottom = 430.0
 grow_vertical = 2
