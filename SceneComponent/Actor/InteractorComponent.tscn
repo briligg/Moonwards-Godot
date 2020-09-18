@@ -1,24 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://SceneComponent/Actor/InteractorComponent.gd" type="Script" id=1]
-[ext_resource path="res://Script/GameLogic/Interact/Interactor/Interactor.gd" type="Script" id=2]
 [ext_resource path="res://SceneComponent/Actor/InteractorRayCast.gd" type="Script" id=3]
-
-[sub_resource type="SphereShape" id=1]
-radius = 1.97071
 
 [node name="Interactor" type="Spatial"]
 script = ExtResource( 1 )
 require_net_owner = true
 grab_focus_at_ready = false
-
-[node name="Interactor" type="Area" parent="."]
-collision_layer = 0
-collision_mask = 32768
-script = ExtResource( 2 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Interactor"]
-shape = SubResource( 1 )
 
 [node name="InteractorRayCast" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )

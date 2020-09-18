@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Interface/Textures/CrosshairTexture.png" type="Texture" id=1]
 [ext_resource path="res://SceneComponent/Interface/Hud/HudCrosshair.gd" type="Script" id=2]
-[ext_resource path="res://Script/GameLogic/MouseSimulatingRayCast/MouseSimulatingRayCast.gd" type="Script" id=3]
 [ext_resource path="res://SceneComponent/Interface/Hud/ClickableRayCast.gd" type="Script" id=4]
 
 [sub_resource type="Animation" id=1]
@@ -157,13 +156,6 @@ cast_to = Vector3( 0, 0, -100 )
 collision_mask = 1024
 collide_with_areas = true
 script = ExtResource( 4 )
-
-[node name="InteractorRayCast" type="RayCast" parent="."]
-enabled = true
-cast_to = Vector3( 0, 0, -100 )
-collision_mask = 1024
-collide_with_areas = true
-script = ExtResource( 3 )
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 anims/color = SubResource( 1 )
