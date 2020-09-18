@@ -75,7 +75,6 @@ margin_right = 806.0
 margin_bottom = 144.0
 
 [node name="ContainerMain" type="HBoxContainer" parent="."]
-visible = false
 margin_top = 143.0
 margin_right = 1030.0
 margin_bottom = 287.0
@@ -104,7 +103,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ButtonLeft" type="Button" parent="ContainerMain/MarginContainer/MarginContainer"]
+[node name="Button_Actions" type="Button" parent="ContainerMain/MarginContainer/MarginContainer"]
 margin_right = 294.0
 margin_bottom = 144.0
 __meta__ = {
@@ -148,7 +147,7 @@ __meta__ = {
 margin_right = 362.0
 margin_bottom = 144.0
 
-[node name="ButtonLeft" type="Button" parent="ContainerMain/MarginContainer2/MarginContainer"]
+[node name="Button_Expressions" type="Button" parent="ContainerMain/MarginContainer2/MarginContainer"]
 margin_right = 362.0
 margin_bottom = 144.0
 __meta__ = {
@@ -201,7 +200,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer/MarginContainer/HBoxContainer"]
+[node name="Button_Expression_0" type="Button" parent="ContainerExpression/HBoxContainer/MarginContainer/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 33 )
@@ -219,7 +218,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer/MarginContainer2/HBoxContainer"]
+[node name="Button_Expression_1" type="Button" parent="ContainerExpression/HBoxContainer/MarginContainer2/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 32 )
@@ -237,7 +236,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer/MarginContainer3/HBoxContainer"]
+[node name="Button_Expression_2" type="Button" parent="ContainerExpression/HBoxContainer/MarginContainer3/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 28 )
@@ -255,7 +254,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer/MarginContainer4/HBoxContainer"]
+[node name="Button_Expression_3" type="Button" parent="ContainerExpression/HBoxContainer/MarginContainer4/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 27 )
@@ -273,7 +272,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer/MarginContainer5/HBoxContainer"]
+[node name="Button_Expression_4" type="Button" parent="ContainerExpression/HBoxContainer/MarginContainer5/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 1 )
@@ -291,7 +290,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer/MarginContainer6/HBoxContainer"]
+[node name="Button_Expression_5" type="Button" parent="ContainerExpression/HBoxContainer/MarginContainer6/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 35 )
@@ -309,7 +308,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer/MarginContainer7/HBoxContainer"]
+[node name="Button_Expression_6" type="Button" parent="ContainerExpression/HBoxContainer/MarginContainer7/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 34 )
@@ -333,7 +332,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer2/MarginContainer/HBoxContainer"]
+[node name="Button_Expression_7" type="Button" parent="ContainerExpression/HBoxContainer2/MarginContainer/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 24 )
@@ -351,7 +350,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer2/MarginContainer2/HBoxContainer"]
+[node name="Button_Expression_8" type="Button" parent="ContainerExpression/HBoxContainer2/MarginContainer2/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 23 )
@@ -369,7 +368,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer2/MarginContainer3/HBoxContainer"]
+[node name="Button_Expression_9" type="Button" parent="ContainerExpression/HBoxContainer2/MarginContainer3/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 25 )
@@ -387,7 +386,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer2/MarginContainer4/HBoxContainer"]
+[node name="Button_Expression_10" type="Button" parent="ContainerExpression/HBoxContainer2/MarginContainer4/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 31 )
@@ -405,7 +404,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer2/MarginContainer5/HBoxContainer"]
+[node name="Button_Expression_11" type="Button" parent="ContainerExpression/HBoxContainer2/MarginContainer5/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 29 )
@@ -423,7 +422,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer2/MarginContainer6/HBoxContainer"]
+[node name="Button_Expression_12" type="Button" parent="ContainerExpression/HBoxContainer2/MarginContainer6/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 30 )
@@ -441,7 +440,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer2/MarginContainer7/HBoxContainer"]
+[node name="Button_Expression_13" type="Button" parent="ContainerExpression/HBoxContainer2/MarginContainer7/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 26 )
@@ -465,7 +464,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer/HBoxContainer"]
+[node name="Button_Expression_14" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 21 )
@@ -483,7 +482,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer7/HBoxContainer"]
+[node name="Button_Expression_15" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer7/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 22 )
@@ -501,7 +500,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer6/HBoxContainer"]
+[node name="Button_Expression_16" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer6/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 20 )
@@ -519,7 +518,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer2/HBoxContainer"]
+[node name="Button_Expression_17" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer2/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 19 )
@@ -537,7 +536,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer3/HBoxContainer"]
+[node name="Button_Expression_18" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer3/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 18 )
@@ -555,7 +554,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer4/HBoxContainer"]
+[node name="Button_Expression_19" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer4/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 17 )
@@ -573,12 +572,13 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer5/HBoxContainer"]
+[node name="Button_Expression_20" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer5/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 16 )
 
 [node name="ContainerActions" type="VBoxContainer" parent="."]
+visible = false
 margin_right = 1030.0
 margin_bottom = 430.0
 grow_vertical = 2
@@ -604,7 +604,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerActions/HBoxContainer/MarginContainer/HBoxContainer"]
+[node name="Button_Action_0" type="Button" parent="ContainerActions/HBoxContainer/MarginContainer/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 43 )
@@ -622,7 +622,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerActions/HBoxContainer/MarginContainer2/HBoxContainer"]
+[node name="Button_Action_1" type="Button" parent="ContainerActions/HBoxContainer/MarginContainer2/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 38 )
@@ -640,7 +640,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerActions/HBoxContainer/MarginContainer3/HBoxContainer"]
+[node name="Button_Action_2" type="Button" parent="ContainerActions/HBoxContainer/MarginContainer3/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 56 )
@@ -658,7 +658,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerActions/HBoxContainer/MarginContainer4/HBoxContainer"]
+[node name="Button_Action_3" type="Button" parent="ContainerActions/HBoxContainer/MarginContainer4/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 45 )
@@ -676,7 +676,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerActions/HBoxContainer/MarginContainer5/HBoxContainer"]
+[node name="Button_Action_4" type="Button" parent="ContainerActions/HBoxContainer/MarginContainer5/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 39 )
@@ -694,7 +694,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerActions/HBoxContainer/MarginContainer6/HBoxContainer"]
+[node name="Button_Action_5" type="Button" parent="ContainerActions/HBoxContainer/MarginContainer6/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 36 )
@@ -712,7 +712,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerActions/HBoxContainer/MarginContainer7/HBoxContainer"]
+[node name="Button_Action_6" type="Button" parent="ContainerActions/HBoxContainer/MarginContainer7/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 44 )
@@ -736,7 +736,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerActions/HBoxContainer2/MarginContainer/HBoxContainer"]
+[node name="Button_Action_7" type="Button" parent="ContainerActions/HBoxContainer2/MarginContainer/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 53 )
@@ -754,7 +754,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerActions/HBoxContainer2/MarginContainer2/HBoxContainer"]
+[node name="Button_Action_8" type="Button" parent="ContainerActions/HBoxContainer2/MarginContainer2/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 37 )
@@ -772,7 +772,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerActions/HBoxContainer2/MarginContainer3/HBoxContainer"]
+[node name="Button_Action_9" type="Button" parent="ContainerActions/HBoxContainer2/MarginContainer3/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 40 )
@@ -790,7 +790,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerActions/HBoxContainer2/MarginContainer4/HBoxContainer"]
+[node name="Button_Action_10" type="Button" parent="ContainerActions/HBoxContainer2/MarginContainer4/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 41 )
@@ -808,7 +808,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerActions/HBoxContainer2/MarginContainer5/HBoxContainer"]
+[node name="Button_Action_11" type="Button" parent="ContainerActions/HBoxContainer2/MarginContainer5/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 48 )
@@ -826,7 +826,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerActions/HBoxContainer2/MarginContainer6/HBoxContainer"]
+[node name="Button_Action_12" type="Button" parent="ContainerActions/HBoxContainer2/MarginContainer6/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 47 )
@@ -844,7 +844,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerActions/HBoxContainer2/MarginContainer7/HBoxContainer"]
+[node name="Button_Action_13" type="Button" parent="ContainerActions/HBoxContainer2/MarginContainer7/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 49 )
@@ -868,7 +868,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerActions/HBoxContainer3/MarginContainer/HBoxContainer"]
+[node name="Button_Action_14" type="Button" parent="ContainerActions/HBoxContainer3/MarginContainer/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 55 )
@@ -886,7 +886,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerActions/HBoxContainer3/MarginContainer7/HBoxContainer"]
+[node name="Button_Action_15" type="Button" parent="ContainerActions/HBoxContainer3/MarginContainer7/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 50 )
@@ -904,7 +904,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerActions/HBoxContainer3/MarginContainer6/HBoxContainer"]
+[node name="Button_Action_16" type="Button" parent="ContainerActions/HBoxContainer3/MarginContainer6/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 54 )
@@ -922,7 +922,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerActions/HBoxContainer3/MarginContainer2/HBoxContainer"]
+[node name="Button_Action_17" type="Button" parent="ContainerActions/HBoxContainer3/MarginContainer2/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 51 )
@@ -940,7 +940,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerActions/HBoxContainer3/MarginContainer3/HBoxContainer"]
+[node name="Button_Action_18" type="Button" parent="ContainerActions/HBoxContainer3/MarginContainer3/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 52 )
@@ -958,7 +958,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerActions/HBoxContainer3/MarginContainer4/HBoxContainer"]
+[node name="Button_Action_19" type="Button" parent="ContainerActions/HBoxContainer3/MarginContainer4/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 46 )
@@ -976,7 +976,7 @@ margin_bottom = 130.0
 margin_right = 130.0
 margin_bottom = 130.0
 
-[node name="ButtonLeft2" type="Button" parent="ContainerActions/HBoxContainer3/MarginContainer5/HBoxContainer"]
+[node name="Button_Action_20" type="Button" parent="ContainerActions/HBoxContainer3/MarginContainer5/HBoxContainer"]
 margin_right = 130.0
 margin_bottom = 130.0
 icon = ExtResource( 42 )

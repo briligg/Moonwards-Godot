@@ -51,9 +51,9 @@ __meta__ = {
 }
 
 [node name="ToolsBar" parent="Apps" instance=ExtResource( 4 )]
+visible = false
 
 [node name="BuildingApp" parent="Apps" instance=ExtResource( 13 )]
-visible = false
 
 [node name="CollaborationApp" parent="Apps" instance=ExtResource( 12 )]
 visible = false

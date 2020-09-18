@@ -42,7 +42,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer"]
+[node name="Label_Time" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer"]
 margin_right = 95.0
 margin_bottom = 36.0
 text = "10:45"
@@ -65,7 +65,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer2"]
+[node name="Label_Location" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer2"]
 margin_right = 165.0
 margin_bottom = 36.0
 text = "LOCATION"
@@ -104,7 +104,7 @@ margin_right = 39.0
 margin_bottom = 33.0
 alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer3/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Button_FriendsOnline" type="Button" parent="VBoxContainer/HBoxContainer3/MarginContainer/HBoxContainer/VBoxContainer"]
 margin_right = 39.0
 margin_bottom = 33.0
 icon = ExtResource( 2 )
@@ -151,7 +151,7 @@ margin_right = 39.0
 margin_bottom = 33.0
 alignment = 1
 
-[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer3/MarginContainer2/HBoxContainer/VBoxContainer"]
+[node name="Button_Messages" type="Button" parent="VBoxContainer/HBoxContainer3/MarginContainer2/HBoxContainer/VBoxContainer"]
 margin_right = 39.0
 margin_bottom = 33.0
 icon = ExtResource( 4 )

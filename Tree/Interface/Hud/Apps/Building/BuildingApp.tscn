@@ -53,7 +53,7 @@ margin_bottom = 74.0
 margin_right = 74.0
 margin_bottom = 74.0
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+[node name="Button_Tool_0" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer"]
 margin_right = 74.0
 margin_bottom = 74.0
 toggle_mode = true
@@ -80,7 +80,7 @@ margin_bottom = 74.0
 margin_right = 74.0
 margin_bottom = 74.0
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer"]
+[node name="Button_Tool_1" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer"]
 margin_right = 74.0
 margin_bottom = 74.0
 toggle_mode = true
@@ -107,7 +107,7 @@ margin_bottom = 74.0
 margin_right = 74.0
 margin_bottom = 74.0
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/MarginContainer"]
+[node name="Button_Tool_2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/MarginContainer"]
 margin_right = 74.0
 margin_bottom = 74.0
 toggle_mode = true
@@ -134,7 +134,7 @@ margin_bottom = 74.0
 margin_right = 74.0
 margin_bottom = 74.0
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer4/MarginContainer"]
+[node name="Button_Tool_3" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer4/MarginContainer"]
 margin_right = 74.0
 margin_bottom = 74.0
 toggle_mode = true
@@ -161,7 +161,7 @@ margin_bottom = 74.0
 margin_right = 74.0
 margin_bottom = 74.0
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/MarginContainer"]
+[node name="Button_Tool_4" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/MarginContainer"]
 margin_right = 74.0
 margin_bottom = 74.0
 toggle_mode = true
@@ -188,7 +188,7 @@ margin_bottom = 74.0
 margin_right = 74.0
 margin_bottom = 74.0
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer6/MarginContainer"]
+[node name="Button_Tool_5" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer6/MarginContainer"]
 margin_right = 74.0
 margin_bottom = 74.0
 toggle_mode = true
@@ -230,7 +230,7 @@ margin_bottom = 38.0
 margin_right = 29.0
 margin_bottom = 38.0
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer/MarginContainer2"]
+[node name="Button_Help" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer/MarginContainer2"]
 margin_right = 29.0
 margin_bottom = 38.0
 toggle_mode = true
@@ -245,7 +245,7 @@ margin_bottom = 86.0
 margin_right = 29.0
 margin_bottom = 38.0
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer/MarginContainer3"]
+[node name="Button_Save" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer/MarginContainer3"]
 margin_right = 29.0
 margin_bottom = 38.0
 toggle_mode = true
@@ -283,7 +283,7 @@ margin_bottom = 36.0
 margin_right = 100.0
 margin_bottom = 36.0
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer2/HBoxContainer"]
+[node name="Label_ResourceCount" type="Label" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer2/HBoxContainer"]
 margin_right = 100.0
 margin_bottom = 36.0
 text = "20/40"
@@ -298,36 +298,36 @@ custom_constants/separation = 10
 margin_right = 194.0
 margin_bottom = 38.0
 
-[node name="Button6" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button_Vertex" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer2"]
 margin_right = 29.0
 margin_bottom = 38.0
 icon = ExtResource( 17 )
 
-[node name="Button7" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button_Edges" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 33.0
 margin_right = 62.0
 margin_bottom = 38.0
 icon = ExtResource( 18 )
 
-[node name="Button9" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button_Faces" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 66.0
 margin_right = 95.0
 margin_bottom = 38.0
 icon = ExtResource( 3 )
 
-[node name="Button10" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button_Divide" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 99.0
 margin_right = 128.0
 margin_bottom = 38.0
 icon = ExtResource( 19 )
 
-[node name="Button11" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button_Combine" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 132.0
 margin_right = 161.0
 margin_bottom = 38.0
 icon = ExtResource( 20 )
 
-[node name="Button12" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button_Scale" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 165.0
 margin_right = 194.0
 margin_bottom = 38.0
@@ -338,36 +338,36 @@ margin_top = 48.0
 margin_right = 194.0
 margin_bottom = 86.0
 
-[node name="Button6" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Button_Select" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_right = 29.0
 margin_bottom = 38.0
 icon = ExtResource( 16 )
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Button_Move" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 33.0
 margin_right = 62.0
 margin_bottom = 38.0
 icon = ExtResource( 14 )
 
-[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Button_Add" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 66.0
 margin_right = 95.0
 margin_bottom = 38.0
 icon = ExtResource( 15 )
 
-[node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Button_Remove" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 99.0
 margin_right = 128.0
 margin_bottom = 38.0
 icon = ExtResource( 11 )
 
-[node name="Button4" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Button_Undo" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 132.0
 margin_right = 161.0
 margin_bottom = 38.0
 icon = ExtResource( 12 )
 
-[node name="Button5" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Button_Redo" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 165.0
 margin_right = 194.0
 margin_bottom = 38.0

@@ -52,42 +52,43 @@ alignment = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="V"]
 margin_right = 572.0
-margin_bottom = 28.0
+margin_bottom = 31.0
 alignment = 1
 
 [node name="MarginContainer4" type="MarginContainer" parent="V/HBoxContainer"]
 margin_right = 27.0
-margin_bottom = 28.0
+margin_bottom = 31.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="V/HBoxContainer/MarginContainer4"]
 margin_right = 27.0
-margin_bottom = 28.0
+margin_bottom = 31.0
 alignment = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="V/HBoxContainer/MarginContainer4/VBoxContainer"]
-margin_top = 1.0
+margin_top = 4.0
 margin_right = 27.0
-margin_bottom = 28.0
+margin_bottom = 31.0
 texture = ExtResource( 10 )
 stretch_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="V/HBoxContainer"]
 margin_left = 31.0
 margin_right = 108.0
-margin_bottom = 28.0
+margin_bottom = 31.0
 theme = ExtResource( 3 )
 
 [node name="Button" type="Button" parent="V/HBoxContainer/MarginContainer"]
 margin_right = 77.0
-margin_bottom = 28.0
+margin_bottom = 31.0
 flat = true
 
-[node name="Label" type="Label" parent="V/HBoxContainer/MarginContainer"]
+[node name="Label_GlobalChannel" type="Label" parent="V/HBoxContainer/MarginContainer"]
+margin_top = 1.0
 margin_right = 77.0
-margin_bottom = 28.0
+margin_bottom = 29.0
 custom_styles/normal = ExtResource( 5 )
 text = "Global"
 __meta__ = {
@@ -97,17 +98,18 @@ __meta__ = {
 [node name="MarginContainer2" type="MarginContainer" parent="V/HBoxContainer"]
 margin_left = 112.0
 margin_right = 180.0
-margin_bottom = 28.0
+margin_bottom = 31.0
 theme = ExtResource( 3 )
 
 [node name="Button" type="Button" parent="V/HBoxContainer/MarginContainer2"]
 margin_right = 68.0
-margin_bottom = 28.0
+margin_bottom = 31.0
 flat = true
 
-[node name="Label" type="Label" parent="V/HBoxContainer/MarginContainer2"]
+[node name="Label_LocalChannel" type="Label" parent="V/HBoxContainer/MarginContainer2"]
+margin_top = 1.0
 margin_right = 68.0
-margin_bottom = 28.0
+margin_bottom = 29.0
 custom_styles/normal = ExtResource( 5 )
 text = "Local"
 __meta__ = {
@@ -117,28 +119,19 @@ __meta__ = {
 [node name="Container" type="Container" parent="V/HBoxContainer"]
 margin_left = 184.0
 margin_right = 541.0
-margin_bottom = 28.0
+margin_bottom = 31.0
 size_flags_horizontal = 3
 
 [node name="MarginContainer3" type="MarginContainer" parent="V/HBoxContainer"]
 margin_left = 545.0
 margin_right = 572.0
-margin_bottom = 28.0
+margin_bottom = 31.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="V/HBoxContainer/MarginContainer3"]
+[node name="Button_Mic" type="Button" parent="V/HBoxContainer/MarginContainer3"]
 margin_right = 27.0
-margin_bottom = 28.0
-alignment = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="V/HBoxContainer/MarginContainer3/VBoxContainer"]
-margin_top = 1.0
-margin_right = 27.0
-margin_bottom = 28.0
-texture = ExtResource( 2 )
-stretch_mode = 5
+margin_bottom = 31.0
+icon = ExtResource( 2 )
+flat = true
 
 [node name="HelpPage" type="RichTextLabel" parent="V"]
 visible = false
@@ -158,7 +151,7 @@ text = "'Enter' to start inputing text. 'Enter' again to send message.
 'CTRL+H' to go back to Chat Display."
 
 [node name="Tabs" type="TabContainer" parent="V"]
-margin_top = 32.0
+margin_top = 35.0
 margin_right = 572.0
 margin_bottom = 283.0
 grow_horizontal = 2
