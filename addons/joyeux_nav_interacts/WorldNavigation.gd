@@ -3,6 +3,9 @@ class_name WorldNavigator
 
 var astar : AStar = AStar.new()
 
+func _enter_tree():
+	add_to_group("Navigator") #This is for ease of access
+	#There can only be one Navigator accounted per scene
 
 func get_astar_from_paths(parent : Node) -> void:
 	var vertices : PoolVector3Array = PoolVector3Array()
@@ -60,11 +63,16 @@ func find_shortest_path(from: Vector3, to : Vector3):
 			return absoulut
 
 
-func get_navmesh_path(from: Vector3, to: Vector3):
+func get_navmesh_path(from: Vector3, to: Vector3, global : bool = false):
 	to = get_closest_point(to)
 	from = get_closest_point(from)
 	print(get_node("NavMesh_Test_First_Gallery"))
 	var path_points = get_simple_path(from, to, true)
+	if global:
+		var temp : Array = []
+		for points in path_points:
+			temp.append(to_global(points))
+		path_points = temp
 	return path_points
 
 

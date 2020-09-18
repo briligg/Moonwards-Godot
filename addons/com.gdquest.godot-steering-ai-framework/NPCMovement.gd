@@ -71,6 +71,9 @@ func _enter_tree():
 	#This is just a small explaination that should popup if used as tool
 	#you would notice something's wrong when you try to use this node and errors 
 	#pop up
+	var world = get_tree().get_nodes_in_group("Navigator")
+	if world.size() > 0:
+		world_ref = world [0] 
 	Agent = GSAIKinematicBody3DAgent.new(get_parent())
 	var NPCAgents = []
 	for node in get_tree().get_nodes_in_group("NPC"):
@@ -92,9 +95,7 @@ func _init().("NPCInput", false):
 
 	
 func _ready():
-	var world = get_tree().get_nodes_in_group("WorldNav")
-	if world.size() > 0:
-		world_ref = world [0] 
+
 	
 	Agent.linear_speed_max = linear_speed_max
 	Agent.linear_acceleration_max = linear_acceleration_max
@@ -154,7 +155,7 @@ func _process_client(delta):
 func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.is_action_pressed("use"):
-			get_navpath(entity.translation-Vector3(rand_range(-5,5),0,rand_range(-5,5)))
+			get_navpath(get_tree().get_nodes_in_group("Navigator")[0].get_nearest_workstation(entity.translation).translation)
 
 func update_target(pos : Vector3):
 	# Remember to update the target of the NPCs! Otherwise they could run away 
@@ -163,8 +164,8 @@ func update_target(pos : Vector3):
 	special_target.position = pos
 
 func get_navpath(to : Vector3):
-	path = Array(world_ref.get_navmesh_path(entity.translation, to))
-	print(path)
+	path = Array(world_ref.get_navmesh_path(entity.translation, to, true))
+#	print(path)
 	current_path.create_path(path)
 	var temp = path.pop_front()
 	if temp != null:
@@ -173,6 +174,6 @@ func get_navpath(to : Vector3):
 	
 func update_agent(velocity : Vector3, angular_velocity : float):
 	Agent.position = get_parent().translation
-	Agent.orientation = get_parent().rotation_degrees.y
+	Agent.orientation = entity.rotation_degrees.y
 	Agent.linear_velocity = velocity
 	Agent.angular_velocity = angular_velocity

@@ -10,9 +10,12 @@ enum CATEGORY {
 	ENTERTAINMENT,
 	OTHERS
 }
+
 var progress : float = 0.0
 var in_queue_for_use : Array = []
 var current_worker : Worker = null
+var orientation : Vector3 = Vector3.ZERO
+var position : Vector3 = Vector3.ZERO
 
 export(bool) var uses_queue : bool = false
 export(bool) var call_best_first : bool = false
@@ -22,7 +25,13 @@ export(CATEGORY) var category : int = CATEGORY.WORK
 func _enter_tree():
 	add_to_group("Workstations")
 	connect("body_entered", self, "_on_body_entered")
-	
+
+func _ready():
+	var pos = get_node("NPCPosition")
+	if pos:
+		orientation = pos.rotation_degrees
+		position = pos.translation
+
 func check_for_next():
 	if not uses_queue:
 		return

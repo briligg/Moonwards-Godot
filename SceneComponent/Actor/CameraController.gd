@@ -6,6 +6,7 @@ class_name CameraController
 onready var camera: Camera = $Camera
 onready var pivot: Spatial = $Pivot
 
+export(bool) var overriden = false #Use for bots only
 export(bool) var allow_first_person = false
 export(float) var dist: float = .5
 export(float) var max_pitch: float = 55
@@ -53,10 +54,11 @@ func _process(_delta: float) -> void:
 		entity.get_node("Model").visible = false
 	
 	var _new_rot = Vector3(deg2rad(pitch), deg2rad(yaw), 0.0)
-	camera.set_rotation(_new_rot)
+	if not overriden:
+		camera.set_rotation(_new_rot)
 	_update_cam_pos()
 	
-	if not is_flying :
+	if not is_flying:
 		entity.look_dir = global_transform.origin - _get_cam_normal() * dist
 		#Below was code that did not seem to have a reason for being here.
 		#Leave it here until we figure out if it should be here.
