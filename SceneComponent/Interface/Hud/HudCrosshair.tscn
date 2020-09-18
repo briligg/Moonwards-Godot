@@ -141,7 +141,6 @@ margin_left = -5.0
 margin_top = -5.0
 margin_right = 5.0
 margin_bottom = 5.0
-rect_rotation = 29.3796
 rect_pivot_offset = Vector2( 5, 5 )
 texture = ExtResource( 1 )
 expand = true
