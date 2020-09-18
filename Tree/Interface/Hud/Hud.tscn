@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Tree/Interface/Hud/Hud.gd" type="Script" id=1]
 [ext_resource path="res://Tree/Interface/Hud/Chat/Chat.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Tree/Interface/Hud/Apps/Building/BuildingApp.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Tree/Interface/Hud/Styles/Radial/Background_Theme.tres" type="Theme" id=14]
 [ext_resource path="res://Tree/Interface/Hud/Shaders/Blur_Material.tres" type="Material" id=15]
+[ext_resource path="res://Assets/Interface/Textures/T_UI_White.png" type="Texture" id=16]
 
 [node name="Hud" type="CanvasLayer"]
 layer = 8
@@ -76,6 +77,7 @@ visible = false
 material = ExtResource( 15 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+texture = ExtResource( 16 )
 expand = true
 stretch_mode = 1
 __meta__ = {
