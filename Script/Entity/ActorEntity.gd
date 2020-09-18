@@ -2,6 +2,8 @@ extends AEntity
 class_name ActorEntity
 # Entity class, serves as a medium between Components to communicate.
 
+signal on_forces_integrated(state)
+
 ## Spatial Entity common data
 
 onready var model = $Model
@@ -51,3 +53,6 @@ func _process_client(_delta: float) -> void:
 		rset_id(1, "input", input)
 		rset_id(1, "fly_input_float", fly_input_float)
 		rset_id(1, "look_dir", look_dir)
+
+func _integrate_forces(state):
+	emit_signal("on_forces_integrated", state)

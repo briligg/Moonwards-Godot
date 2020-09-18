@@ -3,10 +3,10 @@ extends Node
 signal scene_changed
 
 ### Temporary, until proper scene management is implemented.
-#var world_scene: String = "res://_tests/NewDemo/TestScene.tscn"
+var world_scene: String = "res://_tests/NewDemo/TestScene.tscn"
 #var world_scene: String = "res://Tree/World/Moon_Town_Main.tscn"
 #var world_scene: String = "res://_tests/Display/BaseDisplayTest.tscn"
-var world_scene: String = "res://Tree/World/Moon_Town_Main.tscn"
+#var world_scene: String = "res://Tree/World/Moon_Town_Main.tscn"
 #var world_scene: String = "res://_tests/RoverTest.tscn"
 var main_menu: String = "res://Tree/Interface/MainMenu/MainMenu.tscn"
 const PLAYER_SCENE: PackedScene = preload("res://Tree/Actor/Player/HumanPlayer.tscn")

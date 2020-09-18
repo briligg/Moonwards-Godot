@@ -13,7 +13,9 @@
 radius = 0.287522
 height = 1.04841
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="RigidBody"]
+mode = 2
+custom_integrator = true
 script = ExtResource( 6 )
 
 [node name="AnimationController" parent="." instance=ExtResource( 4 )]
