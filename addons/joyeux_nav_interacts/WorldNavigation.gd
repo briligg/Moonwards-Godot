@@ -2,11 +2,27 @@ extends Navigation
 class_name WorldNavigator
 
 var astar : AStar = AStar.new()
+var m = SpatialMaterial.new()
 
 func _enter_tree():
 	add_to_group("Navigator") #This is for ease of access
+	m.flags_unshaded = true
+	m.flags_use_point_size = true
+	m.albedo_color = Color.white
 	#There can only be one Navigator accounted per scene
-
+func draw_path(begin : Vector3, end : Vector3, p):
+	var im = get_node("Draw")
+	im.set_material_override(m)
+	im.clear()
+	im.begin(Mesh.PRIMITIVE_POINTS, null)
+	im.add_vertex(begin)
+	im.add_vertex(end)
+	im.end()
+	im.begin(Mesh.PRIMITIVE_LINE_STRIP, null)
+	for x in p:
+		im.add_vertex(x+Vector3(0,0.2,0))
+	im.end()
+	
 func get_astar_from_paths(parent : Node) -> void:
 	var vertices : PoolVector3Array = PoolVector3Array()
 	var astar_array : Array = []
@@ -66,8 +82,9 @@ func find_shortest_path(from: Vector3, to : Vector3):
 func get_navmesh_path(from: Vector3, to: Vector3, global : bool = false):
 	to = get_closest_point(to)
 	from = get_closest_point(from)
-	print(get_node("NavMesh_Test_First_Gallery"))
 	var path_points = get_simple_path(from, to, true)
+	if get_node("Draw") is ImmediateGeometry:
+		draw_path(from, to, path_points)
 	if global:
 		var temp : Array = []
 		for points in path_points:

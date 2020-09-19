@@ -83,12 +83,12 @@ func _enter_tree():
 	Avoid =  GSAIAvoidCollisions.new(Agent, Proximity)
 	FleeTarget = GSAIFlee.new(Agent, current_target)
 	Seek  = GSAISeek.new(Agent, current_target)
-	Face =  GSAIFace.new(Agent, current_target)
+	Face =  GSAIFace.new(Agent, current_target, true)
 	Evade = GSAIEvade.new(Agent, special_target)
 	print("####################################################################", special_target)
 	Pursue = GSAIPursue.new(Agent, special_target)
 	Follow = GSAIFollowPath.new(Agent, current_path)
-	LookAhead = GSAILookWhereYouGo.new(Agent)
+	LookAhead = GSAILookWhereYouGo.new(Agent, true)
 
 func _init().("NPCInput", false):
 	pass
@@ -111,11 +111,12 @@ func _ready():
 	FollowBlend.add(Face, 1)
 	FollowBlend.add(Avoid, 1)
 	
-	PathBlend.add(Follow, 1)
+#	PathBlend.add(Follow, 1)
 	PathBlend.add(LookAhead, 1)
 	PathBlend.add(Avoid, 1) 
 	PathBlend.is_enabled = true
 	# The order these are added has importance so the NPC behaves like this:
+#	Priority.add(Face)
 	Priority.add(FollowBlend)#Priority 1: Follow who I am supposed to (if i am supposed to)
 	Priority.add(FleeBlend)#2: Run away if i am supposed to
 	Priority.add(PathBlend) #3 : Follow a path
@@ -141,12 +142,15 @@ func _handle_input(acceleration : GSAITargetAcceleration, delta : float):
 #	print("accel", acceleration.linear)
 #	print("input ", entity.look_dir.normalized().cross(acceleration.linear))
 #	print("translation", entity.translation)
-	#Agent._apply_orientation_steering(acceleration.angular, delta)
+#	#Agent._apply_orientation_steering(acceleration.angular, delta)
 	update_agent(acceleration.linear, acceleration.angular)
-	entity.look_dir = entity.global_transform.origin - acceleration.linear.normalized()
-	entity.input.z = 1
+#	entity.look_dir = acceleration.linear
+#	entity.look_dir.rotated(Vector3.UP, entity.global_transform.origin.angle_to(entity.to_global(current_target.position)))
+#	entity.look_dir = -(current_target.position - translation)
+	entity.input.z = acceleration.linear.length()
 #	entity.look_dir.rotated(Vector3.UP, acceleration.angular)
-#	direction_to(acceleration.linear.normalized())
+	entity.look_dir = entity.global_transform.basis.z.rotated(Vector3.UP, entity.global_transform.origin.angle_to(entity.to_global(current_target.position)))
+#	entity.look_dir = entity.global_transform.origin.direction_to(acceleration.linear.normalized())
 
 func _process_client(delta):
 	entity.global_transform.origin = entity.srv_pos

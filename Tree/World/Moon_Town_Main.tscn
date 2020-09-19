@@ -36,29 +36,23 @@ navmesh = SubResource( 1 )
 
 [node name="Moon_Town_Master" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 1 )]
 
-[node name="Workstation" parent="Navigation/NavigationMeshInstance/Moon_Town_Master" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -108.198, 87.039, -173.321 )
-
-[node name="Workstation2" parent="Navigation/NavigationMeshInstance/Moon_Town_Master" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.29934, 87.0388, -164.205 )
-
-[node name="Workstation3" parent="Navigation/NavigationMeshInstance/Moon_Town_Master" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -115.356, 75.072, -179.09 )
-
-[node name="Workstation4" parent="Navigation/NavigationMeshInstance/Moon_Town_Master" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.4568, 99.0873, -190.108 )
-
-[node name="NPC3" parent="Navigation" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.68645, -4.89104, 5.06851 )
-enable_on_spawn = true
-
-[node name="NPC2" parent="Navigation" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.64692, -4.89104, 4.67493 )
-enable_on_spawn = true
-
 [node name="NPC" parent="Navigation" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9659, -16.8917, -18.1275 )
 enable_on_spawn = true
+
+[node name="Workstation" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -79.7662, -28.874, -1.963 )
+
+[node name="Workstation2" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.7311, -28.8742, 7.153 )
+
+[node name="Workstation3" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -86.9242, -40.841, -7.73199 )
+
+[node name="Workstation4" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.025, -16.8257, -18.75 )
+
+[node name="Draw" type="ImmediateGeometry" parent="Navigation"]
 
 [node name="SpawnPoints" type="Spatial" parent="."]
 
