@@ -85,7 +85,6 @@ func _enter_tree():
 	Seek  = GSAISeek.new(Agent, current_target)
 	Face =  GSAIFace.new(Agent, current_target, true)
 	Evade = GSAIEvade.new(Agent, special_target)
-	print("####################################################################", special_target)
 	Pursue = GSAIPursue.new(Agent, special_target)
 	Follow = GSAIFollowPath.new(Agent, current_path)
 	LookAhead = GSAILookWhereYouGo.new(Agent, true)
@@ -93,10 +92,7 @@ func _enter_tree():
 func _init().("NPCInput", false):
 	pass
 
-	
 func _ready():
-
-	
 	Agent.linear_speed_max = linear_speed_max
 	Agent.linear_acceleration_max = linear_acceleration_max
 	Agent.linear_drag_percentage = 0.05
@@ -129,28 +125,15 @@ func _process_server(delta):
 		var temp = path.pop_front()
 		if temp != null:
 			update_target(temp)
-		print("Poping!")
 	if PathBlend and FollowBlend and FleeBlend and Priority:
 		Priority.calculate_steering(acceleration)
-#		Agent._apply_steering(acceleration, delta)
-#		Agent._apply_orientation_steering(acceleration.angular, delta)
 		_handle_input(acceleration, delta)
 		
 func _handle_input(acceleration : GSAITargetAcceleration, delta : float):
-#	entity.input = -acceleration.linear.normalized()
-#	print("target", current_target.position)
-#	print("accel", acceleration.linear)
-#	print("input ", entity.look_dir.normalized().cross(acceleration.linear))
-#	print("translation", entity.translation)
-#	#Agent._apply_orientation_steering(acceleration.angular, delta)
 	update_agent(acceleration.linear, acceleration.angular)
-#	entity.look_dir = acceleration.linear
-#	entity.look_dir.rotated(Vector3.UP, entity.global_transform.origin.angle_to(entity.to_global(current_target.position)))
-#	entity.look_dir = -(current_target.position - translation)
+#	Agent._apply_steering(acceleration, delta)
+	entity.look_dir = entity.global_transform.origin-acceleration.linear
 	entity.input.z = acceleration.linear.length()
-#	entity.look_dir.rotated(Vector3.UP, acceleration.angular)
-	entity.look_dir = entity.global_transform.basis.z.rotated(Vector3.UP, entity.global_transform.origin.angle_to(entity.to_global(current_target.position)))
-#	entity.look_dir = entity.global_transform.origin.direction_to(acceleration.linear.normalized())
 
 func _process_client(delta):
 	entity.global_transform.origin = entity.srv_pos
