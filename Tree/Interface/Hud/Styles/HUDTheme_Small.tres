@@ -1,12 +1,25 @@
-[gd_resource type="Theme" load_steps=5 format=2]
+[gd_resource type="Theme" load_steps=7 format=2]
 
 [ext_resource path="res://Tree/Interface/Hud/Styles/Panel_StyleboxFlat.tres" type="StyleBox" id=1]
 [ext_resource path="res://Tree/Interface/Hud/Styles/Container_StyleboxFlat.tres" type="StyleBox" id=2]
 [ext_resource path="res://Assets/Interface/Fonts/HUD_Roboto_Small.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Tree/Interface/Hud/Styles/LabelSmall_StyleboxFlat.tres" type="StyleBox" id=4]
+[ext_resource path="res://Tree/Interface/Hud/Styles/ToolsBarButton.tres" type="StyleBox" id=5]
+[ext_resource path="res://Tree/Interface/Hud/Styles/ToolsBarButtonPressed.tres" type="StyleBox" id=6]
 
 [resource]
 default_font = ExtResource( 3 )
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 0
+Button/fonts/font = null
+Button/styles/disabled = ExtResource( 5 )
+Button/styles/focus = ExtResource( 5 )
+Button/styles/hover = ExtResource( 5 )
+Button/styles/normal = ExtResource( 5 )
+Button/styles/pressed = ExtResource( 6 )
 Label/colors/font_color = Color( 1, 1, 1, 1 )
 Label/colors/font_color_shadow = Color( 0, 0, 0, 1 )
 Label/colors/font_outline_modulate = Color( 0.952941, 0.415686, 0.415686, 1 )

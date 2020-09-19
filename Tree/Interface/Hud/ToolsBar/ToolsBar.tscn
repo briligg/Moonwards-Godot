@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Tree/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconVideoCamera.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconCamera.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconEvent.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconExpand.png" type="Texture" id=11]
+[ext_resource path="res://Tree/Interface/Hud/ToolsBar/Button_Map.gd" type="Script" id=12]
 
 [node name="ToolsBar" type="PanelContainer"]
 anchor_right = 1.0
@@ -55,6 +56,7 @@ margin_right = 36.0
 margin_bottom = 36.0
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer7/MarginContainer"]
+visible = false
 margin_right = 36.0
 margin_bottom = 36.0
 texture = ExtResource( 8 )
@@ -63,7 +65,8 @@ stretch_mode = 5
 [node name="Button_Map" type="Button" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer7/MarginContainer"]
 margin_right = 36.0
 margin_bottom = 36.0
-flat = true
+icon = ExtResource( 8 )
+script = ExtResource( 12 )
 
 [node name="VBoxContainer6" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_Static"]
 margin_left = 1796.0

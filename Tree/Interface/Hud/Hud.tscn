@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Tree/Interface/Hud/Hud.gd" type="Script" id=1]
 [ext_resource path="res://Tree/Interface/Hud/Chat/Chat.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Tree/Interface/Hud/Styles/Radial/Background_Theme.tres" type="Theme" id=14]
 [ext_resource path="res://Tree/Interface/Hud/Shaders/Blur_Material.tres" type="Material" id=15]
 [ext_resource path="res://Assets/Interface/Textures/T_UI_White.png" type="Texture" id=16]
+[ext_resource path="res://Tree/Interface/Hud/Map/HudMap.tscn" type="PackedScene" id=17]
 
 [node name="Hud" type="CanvasLayer"]
 layer = 8
@@ -51,9 +52,9 @@ __meta__ = {
 }
 
 [node name="ToolsBar" parent="Apps" instance=ExtResource( 4 )]
-visible = false
 
 [node name="BuildingApp" parent="Apps" instance=ExtResource( 13 )]
+visible = false
 
 [node name="CollaborationApp" parent="Apps" instance=ExtResource( 12 )]
 visible = false
@@ -104,3 +105,5 @@ margin_right = 403.0
 margin_bottom = 72.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Map" parent="." instance=ExtResource( 17 )]
