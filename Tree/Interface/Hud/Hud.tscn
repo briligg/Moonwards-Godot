@@ -13,10 +13,10 @@
 [ext_resource path="res://Tree/Interface/Hud/Apps/Event/EventApp.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Tree/Interface/Hud/Apps/Collaboration/CollaborationApp.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Tree/Interface/Hud/Apps/Building/BuildingApp.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Tree/Interface/Hud/Styles/Radial/Background_Theme.tres" type="Theme" id=14]
 [ext_resource path="res://Tree/Interface/Hud/Shaders/Blur_Material.tres" type="Material" id=15]
 [ext_resource path="res://Assets/Interface/Textures/T_UI_White.png" type="Texture" id=16]
 [ext_resource path="res://Tree/Interface/Hud/Map/HudMap.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Tree/Interface/Hud/Apps/Map/MapApp.tscn" type="PackedScene" id=18]
 
 [node name="Hud" type="CanvasLayer"]
 layer = 8
@@ -39,6 +39,17 @@ margin_bottom = -20.0
 
 [node name="IgnoreHudShowCalls" type="Node" parent="."]
 
+[node name="AppBackground" type="TextureRect" parent="."]
+material = ExtResource( 15 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 16 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Apps" type="Container" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -52,15 +63,24 @@ __meta__ = {
 }
 
 [node name="ToolsBar" parent="Apps" instance=ExtResource( 4 )]
+visible = false
 
 [node name="BuildingApp" parent="Apps" instance=ExtResource( 13 )]
+visible = false
+
+[node name="LibraryApp" parent="Apps" instance=ExtResource( 10 )]
+visible = false
+
+[node name="EventApp" parent="Apps" instance=ExtResource( 11 )]
+visible = false
+
+[node name="NPCApp" parent="Apps" instance=ExtResource( 8 )]
 visible = false
 
 [node name="CollaborationApp" parent="Apps" instance=ExtResource( 12 )]
 visible = false
 
-[node name="EventApp" parent="Apps" instance=ExtResource( 11 )]
-visible = false
+[node name="MapApp" parent="Apps" instance=ExtResource( 18 )]
 
 [node name="FilmingApp" parent="Apps" instance=ExtResource( 9 )]
 visible = false
@@ -68,13 +88,7 @@ visible = false
 [node name="GraphicNovelApp" parent="Apps" instance=ExtResource( 7 )]
 visible = false
 
-[node name="LibraryApp" parent="Apps" instance=ExtResource( 10 )]
-visible = false
-
-[node name="NPCApp" parent="Apps" instance=ExtResource( 8 )]
-visible = false
-
-[node name="RadialSelectorPP" type="TextureRect" parent="."]
+[node name="RadialBackground" type="TextureRect" parent="."]
 visible = false
 material = ExtResource( 15 )
 anchor_right = 1.0
@@ -82,17 +96,6 @@ anchor_bottom = 1.0
 texture = ExtResource( 16 )
 expand = true
 stretch_mode = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RadialSelectorPanel" type="Panel" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -1.41425
-margin_bottom = -1.41431
-theme = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
