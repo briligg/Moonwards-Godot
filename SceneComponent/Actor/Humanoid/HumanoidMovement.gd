@@ -8,7 +8,7 @@ export(float) var movement_speed = 4
 
 # Input vectors
 var horizontal_vector: Vector3 = Vector3.ZERO
-var jump_requested: bool = false
+var vertical_vector: Vector3 = Vector3.ZERO
 var is_jumping: bool = false
 var jump_velocity: Vector3 = Vector3.ZERO
 
@@ -43,10 +43,10 @@ func _integrate_client(args):
 func _integrate_server(args):
 	var state = args[0]
 	entity.is_grounded = is_grounded()
+	reset_input()
 	handle_input()
 	rotate_body(state)
-	if entity.is_grounded and jump_requested:
-		jump_requested = false
+	if entity.is_grounded and vertical_vector.y > 0:
 		jump_velocity.y = initial_jump_velocity
 	
 	update_movement(state)
@@ -73,10 +73,14 @@ func rotate_body(state) -> void:
 	var theta = atan2(o.x - t.x, o.z - t.z)
 	entity.model.set_rotation(Vector3(0, theta, 0))
 
+func reset_input():
+	horizontal_vector = Vector3()
+	vertical_vector = Vector3()
+
 func handle_input() -> void:
 	# Adding a timeout after the jump makes sure the jump velocity is consistent and not triggered multiple times.
 	if entity.state.state != ActorEntityState.State.IN_AIR and entity.input.y > 0:
-		jump_requested = true
+		vertical_vector.y = 1
 	
 	horizontal_vector = Vector3(entity.input.x, 0, entity.input.z).normalized()
 
@@ -99,3 +103,5 @@ func update_movement(state):
 	if jump_velocity.y > 0:
 		is_jumping = true
 		jump_velocity.y -= 1.6 * 0.016
+	else:
+		is_jumping = false
