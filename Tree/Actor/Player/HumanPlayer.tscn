@@ -16,6 +16,8 @@ extents = Vector3( 0.216828, 0.141395, 0.850509 )
 mode = 2
 custom_integrator = true
 can_sleep = false
+axis_lock_angular_x = true
+axis_lock_angular_z = true
 script = ExtResource( 6 )
 
 [node name="AnimationController" parent="." instance=ExtResource( 4 )]
@@ -26,7 +28,6 @@ allow_first_person = true
 dist = 3.0
 
 [node name="HumanoidMovement" parent="." instance=ExtResource( 5 )]
-in_air_speed = 0.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.84771, 0 )
