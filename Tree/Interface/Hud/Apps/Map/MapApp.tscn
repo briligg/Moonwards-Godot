@@ -20,16 +20,20 @@ custom_constants/separation = 14
 alignment = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 28.0
 margin_right = 1920.0
 margin_bottom = 1028.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
-margin_left = 210.0
-margin_right = 1710.0
-margin_bottom = 1000.0
+margin_right = 1920.0
+margin_bottom = 1028.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 1042.0
