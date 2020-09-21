@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/Interface/StyleBoxes/ChatLineEdit.tres" type="StyleBox" id=5]
 [ext_resource path="res://Assets/Interface/Fonts/ChatFont.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Assets/Interface/Textures/Map-Mock-up.png" type="Texture" id=7]
-[ext_resource path="res://Tree/Interface/Hud/Map/HudMap.gd" type="Script" id=8]
+[ext_resource path="res://Tree/Interface/Hud/Apps/Map/HudMap.gd" type="Script" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.392157 )

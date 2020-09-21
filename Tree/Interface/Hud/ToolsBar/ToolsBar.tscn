@@ -54,6 +54,7 @@ margin_bottom = 64.0
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer7/MarginContainer"]
 margin_right = 36.0
 margin_bottom = 36.0
+mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer7/MarginContainer"]
 visible = false

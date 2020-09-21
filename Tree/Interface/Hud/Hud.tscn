@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Tree/Interface/Hud/Hud.gd" type="Script" id=1]
 [ext_resource path="res://Tree/Interface/Hud/Chat/Chat.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Tree/Interface/Hud/InteractDisplay/InteractDisplay.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tree/Interface/Hud/ToolsBar/ToolsBar.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Tree/Interface/Hud/GeneralInfo/GeneralInfo.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Tree/Interface/Hud/Radial/RadialSelector.tscn" type="PackedScene" id=6]
@@ -13,9 +12,9 @@
 [ext_resource path="res://Tree/Interface/Hud/Apps/Event/EventApp.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Tree/Interface/Hud/Apps/Collaboration/CollaborationApp.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Tree/Interface/Hud/Apps/Building/BuildingApp.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Tree/Interface/Hud/AppsContainer.gd" type="Script" id=14]
 [ext_resource path="res://Tree/Interface/Hud/Shaders/Blur_Material.tres" type="Material" id=15]
 [ext_resource path="res://Assets/Interface/Textures/T_UI_White.png" type="Texture" id=16]
-[ext_resource path="res://Tree/Interface/Hud/Map/HudMap.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Tree/Interface/Hud/Apps/Map/MapApp.tscn" type="PackedScene" id=18]
 
 [node name="Hud" type="CanvasLayer"]
@@ -25,11 +24,6 @@ script = ExtResource( 1 )
 [node name="Chat" parent="." instance=ExtResource( 2 )]
 margin_left = 20.0
 margin_bottom = -20.0
-
-[node name="InteractDisplay" parent="." instance=ExtResource( 3 )]
-visible = true
-anchor_left = 0.36
-anchor_right = 0.733
 
 [node name="GeneralInfo" parent="." instance=ExtResource( 5 )]
 margin_left = 20.0
@@ -59,6 +53,7 @@ margin_top = 20.0
 margin_right = -20.0
 margin_bottom = -20.0
 mouse_filter = 2
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -109,5 +104,3 @@ margin_right = 403.0
 margin_bottom = 72.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Map" parent="." instance=ExtResource( 17 )]
