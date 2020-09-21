@@ -42,6 +42,17 @@ func enable() -> void:
 	set_process_input(true)
 	Log.trace(self, "enable", "Component %s has been enabled" %comp_name)
 
+func invoke_network_based(server_func: String, client_func: String, args):
+	if !get_tree().network_peer:
+		return
+	if get_tree().is_network_server() and entity.owner_peer_id == get_tree().get_network_unique_id():
+		call(server_func, args)
+		call(client_func, args)
+	elif get_tree().is_network_server():
+		call(server_func, args)
+	else:
+		call(client_func, args)
+
 func _process_network(delta) -> void:
 	if !get_tree().network_peer:
 		return
