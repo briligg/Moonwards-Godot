@@ -15,6 +15,7 @@ extents = Vector3( 0.216828, 0.141395, 0.850509 )
 [node name="Player" type="RigidBody"]
 mode = 2
 custom_integrator = true
+can_sleep = false
 script = ExtResource( 6 )
 
 [node name="AnimationController" parent="." instance=ExtResource( 4 )]
