@@ -66,6 +66,7 @@ stretch_mode = 5
 [node name="Button_Map" type="Button" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer7/MarginContainer"]
 margin_right = 36.0
 margin_bottom = 36.0
+action_mode = 0
 icon = ExtResource( 8 )
 script = ExtResource( 12 )
 
