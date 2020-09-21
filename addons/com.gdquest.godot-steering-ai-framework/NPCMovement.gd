@@ -4,8 +4,8 @@ extends AComponent
 var Agent : GSAIKinematicBody3DAgent 
 export (float, 0, 100, 5) var linear_speed_max := 10.0
 export (float, 0, 100, 0.1) var linear_acceleration_max := 1.0 
-export (float, 0, 50, 0.1) var arrival_tolerance := 0.5 
-export (float, 0, 50, 0.1) var deceleration_radius := 5.0
+export (float, 0, 50, 0.1) var arrival_tolerance := 0.7
+export (float, 0, 50, 0.1) var deceleration_radius := 1.0
 export (int, 0, 1080, 10) var angular_speed_max := 270 
 export (int, 0, 2048, 10) var angular_accel_max := 45 
 export (int, 0, 178, 2) var align_tolerance := 5 
@@ -121,19 +121,25 @@ func _ready():
 	
 
 func _process_server(delta):
-	if (current_target.position - entity.translation).length() <= arrival_tolerance:
-		var temp = path.pop_front()
-		if temp != null:
-			update_target(temp)
 	if PathBlend and FollowBlend and FleeBlend and Priority:
-		Priority.calculate_steering(acceleration)
-		_handle_input(acceleration, delta)
+		if (current_target.position - entity.translation).length() < arrival_tolerance:
+			var temp = path.pop_front()
+			if temp != null:
+				update_target(temp)
+			else:
+				entity.input = Vector3.ZERO
+		else:
+			print("distance: ",(current_target.position - entity.translation).length(), "tolerance: ", arrival_tolerance)
+			Priority.calculate_steering(acceleration)
+			
+			_handle_npc_input(acceleration, delta)
 		
-func _handle_input(acceleration : GSAITargetAcceleration, delta : float):
+func _handle_npc_input(acceleration : GSAITargetAcceleration, delta : float):
 	update_agent(acceleration.linear, acceleration.angular)
 #	Agent._apply_steering(acceleration, delta)
 	entity.look_dir = entity.global_transform.origin-acceleration.linear
 	entity.input.z = acceleration.linear.length()
+	entity.input.y = acceleration.linear.y
 
 func _process_client(delta):
 	entity.global_transform.origin = entity.srv_pos

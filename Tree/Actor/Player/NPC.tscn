@@ -15,10 +15,9 @@ height = 1.04841
 
 [node name="NPC" type="KinematicBody"]
 script = ExtResource( 6 )
+enable_on_spawn = true
 
 [node name="AnimationController" parent="." instance=ExtResource( 4 )]
-
-[node name="HumanoidMovement" parent="." instance=ExtResource( 5 )]
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.813433, 0 )
@@ -31,7 +30,10 @@ __meta__ = {
 "NPC",
 ]]
 script = ExtResource( 1 )
-arrival_tolerance = 0.1
+linear_speed_max = 5.0
+linear_acceleration_max = 0.5
+arrival_tolerance = 0.7
+deceleration_radius = 6.8
 
 [node name="Model" parent="." instance=ExtResource( 7 )]
 
@@ -44,3 +46,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70766, 0 )
 
 [node name="Camera" parent="." instance=ExtResource( 3 )]
 overriden = true
+
+[node name="HumanoidMovement" parent="." instance=ExtResource( 5 )]
