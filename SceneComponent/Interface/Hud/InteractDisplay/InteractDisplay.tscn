@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Tree/Interface/Hud/InteractDisplay/InteractDisplay.gd" type="Script" id=1]
+[ext_resource path="res://SceneComponent/Interface/Hud/InteractDisplay/InteractDisplay.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Interface/Fonts/InteractDisplayFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/Interface/StyleBoxes/InteractDisplayBackground.tres" type="StyleBox" id=3]
+
 
 [node name="InteractDisplay" type="Label"]
 visible = false

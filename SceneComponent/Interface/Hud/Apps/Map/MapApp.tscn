@@ -4,7 +4,8 @@
 [ext_resource path="res://Assets/Interface/Textures/Map-Mock-up.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconRemove.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconAdd.png" type="Texture" id=4]
-[ext_resource path="res://Tree/Interface/Hud/Apps/Map/HudMap.gd" type="Script" id=5]
+[ext_resource path="res://SceneComponent/Interface/Hud/Apps/Map/HudMap.gd" type="Script" id=5]
+
 
 
 [node name="MapApp" type="PanelContainer"]

@@ -1,21 +1,26 @@
 [gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Tree/Interface/Hud/Hud.gd" type="Script" id=1]
-[ext_resource path="res://Tree/Interface/Hud/Chat/Chat.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Tree/Interface/Hud/ToolsBar/ToolsBar.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Tree/Interface/Hud/GeneralInfo/GeneralInfo.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Tree/Interface/Hud/Radial/RadialSelector.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Tree/Interface/Hud/Apps/GraphicNovel/GraphicNovelApp.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Tree/Interface/Hud/Apps/NPC/NPCApp.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Tree/Interface/Hud/Apps/Filming/FilmingApp.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Tree/Interface/Hud/Apps/Library/LibraryApp.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Tree/Interface/Hud/Apps/Event/EventApp.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Tree/Interface/Hud/Apps/Collaboration/CollaborationApp.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Tree/Interface/Hud/Apps/Building/BuildingApp.tscn" type="PackedScene" id=13]
+[ext_resource path="res://SceneComponent/Interface/Hud/Chat/Chat.tscn" type="PackedScene" id=2]
+[ext_resource path="res://SceneComponent/Interface/Hud/Apps/ToolsBar/ToolsBar.tscn" type="PackedScene" id=4]
+[ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/GeneralInfo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://SceneComponent/Interface/Hud/Radial/RadialSelector.tscn" type="PackedScene" id=6]
+[ext_resource path="res://SceneComponent/Interface/Hud/Apps/GraphicNovel/GraphicNovelApp.tscn" type="PackedScene" id=7]
+[ext_resource path="res://SceneComponent/Interface/Hud/Apps/NPC/NPCApp.tscn" type="PackedScene" id=8]
+[ext_resource path="res://SceneComponent/Interface/Hud/Apps/Filming/FilmingApp.tscn" type="PackedScene" id=9]
+[ext_resource path="res://SceneComponent/Interface/Hud/Apps/Library/LibraryApp.tscn" type="PackedScene" id=10]
+[ext_resource path="res://SceneComponent/Interface/Hud/Apps/Event/EventApp.tscn" type="PackedScene" id=11]
+[ext_resource path="res://SceneComponent/Interface/Hud/Apps/Collaboration/CollaborationApp.tscn" type="PackedScene" id=12]
+[ext_resource path="res://SceneComponent/Interface/Hud/Apps/Building/BuildingApp.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Tree/Interface/Hud/AppsContainer.gd" type="Script" id=14]
 [ext_resource path="res://Assets/Interface/Hud/Shaders/Blur_Material.tres" type="Material" id=15]
 [ext_resource path="res://Assets/Interface/Textures/T_UI_White.png" type="Texture" id=16]
-[ext_resource path="res://Tree/Interface/Hud/Apps/Map/MapApp.tscn" type="PackedScene" id=18]
+[ext_resource path="res://SceneComponent/Interface/Hud/Apps/Map/MapApp.tscn" type="PackedScene" id=18]
+
+
+
+
+
 
 
 [node name="Hud" type="CanvasLayer"]
