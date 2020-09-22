@@ -27,14 +27,13 @@ func _process_server(_delta):
 		update_animation(_delta)
 
 func update_animation(_delta):
-	if entity.state.changed:
-		if entity.state.state == ActorEntityState.State.IN_AIR:
-			entity.animation_tree.set("parameters/State/current", 1)
-		elif entity.state.state == ActorEntityState.State.CLIMBING:
-			entity.animation_tree.set("parameters/State/current", 2)
-		else:
-			entity.animation_tree.set("parameters/State/current", 0)
-	
+	if entity.state.state == ActorEntityState.State.IN_AIR:
+		entity.animation_tree.set("parameters/State/current", 1)
+	elif entity.state.state == ActorEntityState.State.CLIMBING:
+		entity.animation_tree.set("parameters/State/current", 2)
+	else:
+		entity.animation_tree.set("parameters/State/current", 0)
+
 	if entity.state.state == ActorEntityState.State.CLIMBING:
 		update_climb_animation(_delta)
 	else:

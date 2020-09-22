@@ -122,6 +122,7 @@ func update_movement(state):
 		vel += Vector3.DOWN * 1.6 
 	
 	state.set_linear_velocity(vel)
+	entity.velocity = state.linear_velocity
 	
 func update_server_values():
 	entity.srv_pos = entity.global_transform.origin
