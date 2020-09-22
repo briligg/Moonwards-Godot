@@ -18,7 +18,7 @@ export(Color) var pants_color
 export(Color) var hair_color
 export(Color) var skin_color
 export(Color) var shoes_color
-
+var actor : Spatial = null
 
 func _init(file:= "", state:= ""):
 	NPC_File = file 
@@ -62,7 +62,7 @@ func play_global_sound(input, signals, variables):
 	var sound_player = AudioStreamPlayer.new()
 	sound_player.stream = load(path)
 	sound_player.connect("finished", sound_player, "queue_free")
-	add_child(sound_player)
+	actor.add_child(sound_player)
 	sound_player.play()
 
 func play_3d_sound(input, signals, variables):
@@ -70,12 +70,12 @@ func play_3d_sound(input, signals, variables):
 	var sound_player = AudioStreamPlayer3D.new()
 	sound_player.stream = load(path)
 	sound_player.connect("finished", sound_player, "queue_free")
-	add_child(sound_player)
+	actor.add_child(sound_player)
 	sound_player.play()
 
 func trigger_dialog(input, signals, variables):
 	var path = _get_variable_from_port(variables, 0)
 	var dialog_display = DialogDisplay.instance()
 	dialog_display.dialog = path
-	add_child(dialog_display)
+	actor.add_child(dialog_display)
 	dialog_display.connect("finished", dialog_display, "queue_free")

@@ -38,7 +38,6 @@ navmesh = SubResource( 1 )
 
 [node name="NPC" parent="Navigation" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9659, -16.8917, -18.1275 )
-enable_on_spawn = true
 
 [node name="Workstation" parent="Navigation" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -79.7662, -28.874, -1.963 )
