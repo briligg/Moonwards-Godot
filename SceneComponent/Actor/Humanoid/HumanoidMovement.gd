@@ -46,9 +46,9 @@ func _integrate_server(args):
 	reset_input()
 	handle_input()
 	rotate_body(state)
+	calculate_horizontal(state)
 	if entity.is_grounded and vertical_vector.y > 0:
-		jump_velocity.y = initial_jump_velocity
-	
+		update_jump_velocity(state)
 	update_movement(state)
 	state.integrate_forces()
 	
@@ -81,27 +81,35 @@ func handle_input() -> void:
 	# Adding a timeout after the jump makes sure the jump velocity is consistent and not triggered multiple times.
 	if entity.state.state != ActorEntityState.State.IN_AIR and entity.input.y > 0:
 		vertical_vector.y = 1
-	
-	horizontal_vector = Vector3(entity.input.x, 0, entity.input.z).normalized()
+
+func calculate_horizontal(state):
+	horizontal_vector += entity.input.z * entity.model.transform.basis.z
+	horizontal_vector += entity.input.x * entity.model.transform.basis.x
+
+func update_jump_velocity(state):
+	jump_velocity = Vector3()
+	jump_velocity.y = initial_jump_velocity
+	jump_velocity += horizontal_vector.normalized() * movement_speed
+	is_jumping = true
 
 func update_movement(state):
-	horizontal_vector = Vector3()
-	if entity.is_grounded:
-		horizontal_vector += entity.input.z * entity.model.transform.basis.z
-		horizontal_vector += entity.input.x * entity.model.transform.basis.x
+	var vel = Vector3()
 	
+	# Jump velocity simulation
+	if is_jumping:
+		vel += jump_velocity
+		# Update current jump velocity to reflect gravity simulation
+		jump_velocity -= Vector3(0, 1.6 * 0.016, 0)
+		if entity.is_grounded:
+			if jump_velocity.y < 0:
+				is_jumping = false
 	# Actual movement
-	var vel = horizontal_vector.normalized() * movement_speed
+	elif entity.is_grounded:
+		vel += horizontal_vector.normalized() * movement_speed
+	
 	# Gravity simulation
 	vel += Vector3.DOWN * 1.6 
-	# Jump velocity simulation
-	vel += jump_velocity
 	
 	state.set_linear_velocity(vel)
 	
-	# Update current jump velocity to reflect gravity simulation
-	if jump_velocity.y > 0:
-		is_jumping = true
-		jump_velocity.y -= 1.6 * 0.016
-	else:
-		is_jumping = false
+
