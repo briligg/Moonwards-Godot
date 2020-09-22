@@ -1,4 +1,3 @@
-extends AComponent
 class_name Worker
 
 signal workstation_assigned(where) 
@@ -7,9 +6,6 @@ signal stopped_working()
 var working : bool = false
 var current_station : Interactable = null
 var experience : float = 0.0
-
-func _init().("WorkController", false):
-	pass
 
 func start_working(station : Interactable): 
 	working = true

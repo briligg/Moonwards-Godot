@@ -21,6 +21,7 @@ export(bool) var uses_queue : bool = false
 export(bool) var call_best_first : bool = false
 export(bool) var gives_xp : bool = false
 export(CATEGORY) var category : int = CATEGORY.WORK
+export(String) var subcategory : String = ""
 
 func _enter_tree():
 	add_to_group("Workstations")
@@ -30,7 +31,8 @@ func _ready():
 	var pos = get_node("NPCPosition")
 	if pos:
 		orientation = pos.rotation_degrees
-		position = pos.translation
+		position = translation + pos.translation
+
 
 func check_for_next():
 	if not uses_queue:
