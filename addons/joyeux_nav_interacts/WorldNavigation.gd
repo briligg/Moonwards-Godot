@@ -82,7 +82,11 @@ func find_shortest_path(from: Vector3, to : Vector3):
 func get_navmesh_path(from: Vector3, to: Vector3, global : bool = false):
 	to = get_closest_point(to)
 	from = get_closest_point(from)
-	var path_points = get_simple_path(from, to, true)
+	var path_points = Array(get_simple_path(from, to, true))
+	if path_points.back() != to:
+		var path2 = Array(get_simple_path(to, from, true))
+		path2.invert()
+		path_points.append(path2)
 	if get_node("Draw") is ImmediateGeometry:
 		draw_path(from, to, path_points)
 	if global:
