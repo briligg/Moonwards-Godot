@@ -1,9 +1,6 @@
-extends Node
-
 class_name NPCBase
 
 signal next_state(force)
-onready var actor = get_parent()
 
 var destination : Vector3 = Vector3.ZERO
 var has_destination : bool = false
@@ -16,6 +13,8 @@ var behaviors : Dictionary = {} #Stores the loaded behaviors
 
 export(String, FILE, "*.jsm") var NPC_File : String = "" #This works just fine! :D
 export(String) var initial_state : String = ""
+
+
 
 func _ready():
 	randomize()

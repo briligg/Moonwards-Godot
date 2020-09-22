@@ -1,4 +1,5 @@
 extends NPCBase
+class_name MwNPC
 
 """
 This is the actual class to be edited, extends the NPCBase and has the functions
@@ -18,6 +19,10 @@ export(Color) var hair_color
 export(Color) var skin_color
 export(Color) var shoes_color
 
+
+func _init(file:= "", state:= ""):
+	NPC_File = file 
+	initial_state = state
 
 func property_check(input, signals, variables):
 	#input is object, get the specific variable in the variable port and then
