@@ -23,7 +23,7 @@ func get_nearest_workstation(position : Vector3, filter = ANY):
 				break
 	for station in Workstations:
 		if station.category == filter or filter == ANY:
-			if get_navmesh_path(position, nearest.translation).size() < nearest_size:
+			if get_navmesh_path(position, station.translation).size() < nearest_size:
 				nearest = station
-				nearest_size = get_navmesh_path(position, nearest.translation).size()
+				nearest_size = get_navmesh_path(position, station.translation).size()
 	return nearest
