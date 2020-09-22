@@ -62,7 +62,7 @@ func _integrate_server(args):
 func update_state(state):
 	if is_flying:
 		entity.state.state = ActorEntityState.State.FLY
-	elif is_jumping:
+	elif is_jumping or !entity.is_grounded:
 		entity.state.state = ActorEntityState.State.IN_AIR
 	elif is_climbing:
 		entity.state.state = ActorEntityState.State.CLIMBING
@@ -106,9 +106,9 @@ func update_movement(state):
 	
 	# Jump velocity simulation
 	if is_jumping:
-		vel += jump_velocity
+		jump_velocity -= Vector3(0, 1.625 * 0.016, 0)
+		vel = jump_velocity
 		# Update current jump velocity to reflect gravity simulation
-		jump_velocity -= Vector3(0, 1.6 * 0.016, 0)
 		if entity.is_grounded:
 			if jump_velocity.y < 0:
 				is_jumping = false
@@ -117,10 +117,10 @@ func update_movement(state):
 			calculate_debug_values()
 	# Actual movement
 	elif entity.is_grounded:
-		vel += horizontal_vector.normalized() * movement_speed
-	
-	# Gravity simulation
-	vel += Vector3.DOWN * 1.6 
+		vel = horizontal_vector.normalized() * movement_speed
+	else:
+		# Gravity simulation
+		vel += Vector3.DOWN * 1.6 
 	
 	state.set_linear_velocity(vel)
 	
