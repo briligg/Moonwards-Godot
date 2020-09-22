@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Tree/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconVideoCamera.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconLibrary.png" type="Texture" id=3]
-[ext_resource path="res://Tree/Interface/Hud/Styles/HUDTheme_Small.tres" type="Theme" id=4]
+[ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme_Small.tres" type="Theme" id=4]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconAI.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconBuilding_Alt.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconShareBig.png" type="Texture" id=7]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconExpand.png" type="Texture" id=11]
 [ext_resource path="res://Tree/Interface/Hud/ToolsBar/Button_Map.gd" type="Script" id=12]
 [ext_resource path="res://Tree/Interface/Hud/ToolsBar/Button_Expand.gd" type="Script" id=13]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "hide"

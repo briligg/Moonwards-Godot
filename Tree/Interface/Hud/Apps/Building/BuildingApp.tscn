@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://Tree/Interface/Hud/Styles/Apps/HUDApps.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Interface/Hud/Styles/Apps/HUDApps.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Building/T_IconPlanes.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconFace.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Building/T_IconArea_Alt.png" type="Texture" id=4]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconDivide.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconMerge.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconScale.png" type="Texture" id=21]
+
 
 [node name="BuildingApp" type="PanelContainer"]
 anchor_right = 1.0

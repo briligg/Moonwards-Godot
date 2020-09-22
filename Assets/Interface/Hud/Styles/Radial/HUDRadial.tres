@@ -1,13 +1,13 @@
 [gd_resource type="Theme" load_steps=10 format=2]
 
-[ext_resource path="res://Tree/Interface/Hud/Styles/Radial/ContainerRadial_StyleboxFlat.tres" type="StyleBox" id=1]
+[ext_resource path="res://Assets/Interface/Hud/Styles/Radial/ContainerRadial_StyleboxFlat.tres" type="StyleBox" id=1]
 [ext_resource path="res://Assets/Interface/Fonts/HUD_Roboto.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Tree/Interface/Hud/Styles/Radial/PanelRadial_StyleboxFlat.tres" type="StyleBox" id=3]
-[ext_resource path="res://Tree/Interface/Hud/Styles/Radial/Button_Disabled_Flat.tres" type="StyleBox" id=4]
-[ext_resource path="res://Tree/Interface/Hud/Styles/Radial/LabelRadial_StyleboxFlat.tres" type="StyleBox" id=5]
-[ext_resource path="res://Tree/Interface/Hud/Styles/Radial/Button_Normal_Flat.tres" type="StyleBox" id=7]
-[ext_resource path="res://Tree/Interface/Hud/Styles/Radial/Button_Pressed_Flat.tres" type="StyleBox" id=8]
-[ext_resource path="res://Tree/Interface/Hud/Styles/Radial/Button_Focus_Flat.tres" type="StyleBox" id=9]
+[ext_resource path="res://Assets/Interface/Hud/Styles/Radial/PanelRadial_StyleboxFlat.tres" type="StyleBox" id=3]
+[ext_resource path="res://Assets/Interface/Hud/Styles/Radial/Button_Disabled_Flat.tres" type="StyleBox" id=4]
+[ext_resource path="res://Assets/Interface/Hud/Styles/Radial/LabelRadial_StyleboxFlat.tres" type="StyleBox" id=5]
+[ext_resource path="res://Assets/Interface/Hud/Styles/Radial/Button_Normal_Flat.tres" type="StyleBox" id=7]
+[ext_resource path="res://Assets/Interface/Hud/Styles/Radial/Button_Pressed_Flat.tres" type="StyleBox" id=8]
+[ext_resource path="res://Assets/Interface/Hud/Styles/Radial/Button_Focus_Flat.tres" type="StyleBox" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.156863 )

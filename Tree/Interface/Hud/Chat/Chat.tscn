@@ -2,13 +2,14 @@
 
 [ext_resource path="res://Assets/Interface/ChatTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconMicOn.png" type="Texture" id=2]
-[ext_resource path="res://Tree/Interface/Hud/Styles/HUDTheme_Small.tres" type="Theme" id=3]
-[ext_resource path="res://Tree/Interface/Hud/Styles/Chat_StyleboxFlat.tres" type="StyleBox" id=5]
+[ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme_Small.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Interface/Hud/Styles/Chat_StyleboxFlat.tres" type="StyleBox" id=5]
 [ext_resource path="res://Assets/Interface/StyleBoxes/ChatMainBGPanel.tres" type="StyleBox" id=6]
 [ext_resource path="res://Tree/Interface/Hud/Chat/ChatInput.gd" type="Script" id=7]
 [ext_resource path="res://Tree/Interface/Hud/Chat/Chat.gd" type="Script" id=8]
 [ext_resource path="res://Tree/Interface/Hud/Chat/ChatDisplay.gd" type="Script" id=9]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconChat.png" type="Texture" id=10]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "Visibility"

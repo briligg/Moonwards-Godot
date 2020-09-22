@@ -13,9 +13,10 @@
 [ext_resource path="res://Tree/Interface/Hud/Apps/Collaboration/CollaborationApp.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Tree/Interface/Hud/Apps/Building/BuildingApp.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Tree/Interface/Hud/AppsContainer.gd" type="Script" id=14]
-[ext_resource path="res://Tree/Interface/Hud/Shaders/Blur_Material.tres" type="Material" id=15]
+[ext_resource path="res://Assets/Interface/Hud/Shaders/Blur_Material.tres" type="Material" id=15]
 [ext_resource path="res://Assets/Interface/Textures/T_UI_White.png" type="Texture" id=16]
 [ext_resource path="res://Tree/Interface/Hud/Apps/Map/MapApp.tscn" type="PackedScene" id=18]
+
 
 [node name="Hud" type="CanvasLayer"]
 layer = 8
