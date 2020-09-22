@@ -6,6 +6,11 @@ export(float) var initial_jump_velocity = 4
 export(float) var climb_speed = 10
 export(float) var movement_speed = 4
 
+# Debug variables
+var dbg_initial_jump_pos = Vector3()
+var dbg_rest_jump_pos = Vector3()
+var dbg_total_jump_height: float = 0.0
+
 # Input vectors
 var horizontal_vector: Vector3 = Vector3.ZERO
 var vertical_vector: Vector3 = Vector3.ZERO
@@ -50,7 +55,7 @@ func _integrate_server(args):
 	if entity.is_grounded and vertical_vector.y > 0:
 		update_jump_velocity(state)
 	update_movement(state)
-	state.integrate_forces()
+#	state.integrate_forces()
 	update_state(state)
 	update_server_values()
 	
@@ -89,7 +94,8 @@ func calculate_horizontal(state):
 	horizontal_vector += entity.input.x * entity.model.transform.basis.x
 
 func update_jump_velocity(state):
-	jump_height = 0
+	dbg_initial_jump_pos = entity.global_transform.origin
+	dbg_rest_jump_pos = Vector3()
 	jump_velocity = Vector3()
 	jump_velocity.y = initial_jump_velocity
 	jump_velocity += horizontal_vector.normalized() * movement_speed
@@ -103,10 +109,12 @@ func update_movement(state):
 		vel += jump_velocity
 		# Update current jump velocity to reflect gravity simulation
 		jump_velocity -= Vector3(0, 1.6 * 0.016, 0)
-		jump_height += jump_velocity.y * 0.016
 		if entity.is_grounded:
 			if jump_velocity.y < 0:
 				is_jumping = false
+		# Debug jump
+		if jump_velocity.y <= 0 and dbg_rest_jump_pos.is_equal_approx(Vector3()):
+			calculate_debug_values()
 	# Actual movement
 	elif entity.is_grounded:
 		vel += horizontal_vector.normalized() * movement_speed
@@ -118,3 +126,7 @@ func update_movement(state):
 	
 func update_server_values():
 	entity.srv_pos = entity.global_transform.origin
+
+func calculate_debug_values():
+	dbg_rest_jump_pos = entity.global_transform.origin
+	dbg_total_jump_height = dbg_rest_jump_pos.y - dbg_initial_jump_pos.y
