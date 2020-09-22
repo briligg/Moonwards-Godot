@@ -32,7 +32,7 @@ func color_changed(value : Color) -> void:
 	color = value
 	
 	#Make sure the HueCircle changes color appropriately
-	if $HueCircle != null :
+	if has_node("HueCircle") : 
 		$HueCircle.set_hue(value.h)
 	
 	emit_signal('color_changed', value)
