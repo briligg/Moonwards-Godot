@@ -2,9 +2,9 @@ extends AMovementController
 class_name KinematicMovement
 
 # Component for kinematic movement
-export(float) var initial_jump_velocity = 4
+export(float) var initial_jump_velocity = 2.2
 export(float) var climb_speed = 10
-export(float) var movement_speed = 4
+export(float) var movement_speed = 3.2
 
 # Debug variables
 var dbg_initial_jump_pos = Vector3()
@@ -55,7 +55,6 @@ func _integrate_server(args):
 	if entity.is_grounded and vertical_vector.y > 0:
 		update_jump_velocity(state)
 	update_movement(state)
-#	state.integrate_forces()
 	update_state(state)
 	update_server_values()
 	
@@ -66,7 +65,7 @@ func update_state(state):
 		entity.state.state = ActorEntityState.State.IN_AIR
 	elif is_climbing:
 		entity.state.state = ActorEntityState.State.CLIMBING
-	elif state.linear_velocity.length() > 0.1:
+	elif abs(state.linear_velocity.length()) > 0:
 		entity.state.state = ActorEntityState.State.MOVING
 	elif abs(state.linear_velocity.y) > 0.1 or !entity.is_grounded:
 		entity.state.state = ActorEntityState.State.IN_AIR
