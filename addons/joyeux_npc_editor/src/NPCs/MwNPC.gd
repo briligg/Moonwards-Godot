@@ -19,6 +19,8 @@ export(Color) var hair_color
 export(Color) var skin_color
 export(Color) var shoes_color
 var actor : Spatial = null
+var worker : Worker = null
+var navigator : NPCInput = null
 
 func _init(file:= "", state:= ""):
 	NPC_File = file 
@@ -79,3 +81,11 @@ func trigger_dialog(input, signals, variables):
 	dialog_display.dialog = path
 	actor.add_child(dialog_display)
 	dialog_display.connect("finished", dialog_display, "queue_free")
+
+func find_workstation(input, signals, variables):
+	var filter = _get_variable_from_port(variables, 1)
+	var destination = navigator.world_ref.get_nearest_workstation(actor.translation, filter).position
+	_emit_signal_from_port(input, signals, 0) #This is, emmits a Vector3 position
+	
+func set_objective(input, _signals, _variables):
+	navigator.get_navpath(input) #Input should be Vector3

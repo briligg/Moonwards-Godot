@@ -8,6 +8,7 @@ enum CATEGORY {
 	WORK, 
 	FOOD,
 	ENTERTAINMENT,
+	PERSON,
 	OTHERS
 }
 
@@ -46,7 +47,7 @@ func do_work(amount: float, experience : float) -> float:
 	progress += (amount * experience)/100
 	if progress >= 100:
 		is_available = true
-		current_worker.stop_working()
+		current_worker.stop_working(category)
 		check_for_next()
 	if gives_xp:
 		return amount/100

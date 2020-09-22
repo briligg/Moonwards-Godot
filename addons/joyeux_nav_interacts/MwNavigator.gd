@@ -1,8 +1,10 @@
 extends WorldNavigator
+class_name MwNavigator
 enum {
 	WORK, 
 	FOOD,
 	ENTERTAINMENT,
+	PERSON,
 	OTHERS,
 	ANY	
 }
@@ -19,11 +21,11 @@ func get_nearest_workstation(position : Vector3, filter = ANY):
 		for station in Workstations:
 			if station.category == filter or filter == ANY:
 				nearest = station
-				nearest_size = get_navmesh_path(position, nearest.translation).size()
+				nearest_size = get_navmesh_path(position, nearest.position).size()
 				break
 	for station in Workstations:
 		if station.category == filter or filter == ANY:
-			if get_navmesh_path(position, station.translation).size() < nearest_size:
+			if get_navmesh_path(position, station.position).size() < nearest_size:
 				nearest = station
-				nearest_size = get_navmesh_path(position, station.translation).size()
+				nearest_size = get_navmesh_path(position, station.position).size()
 	return nearest

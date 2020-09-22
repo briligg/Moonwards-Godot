@@ -4,25 +4,6 @@ class_name NpcDefinitions
 
 #Class ID will be assigned from 27 and on, in the order classes are declared
 
-	
-var CLASS_MISC = {
-	"_color" : Color(.5,.5,.1,1),
-	"_object_type" : "Any",
-	"_variables":{
-		"Character" : "CLASS_CHARACTER",
-		"Projectile" : "CLASS_PROJECTILE"
-	}
-}
-
-var CLASS_PROJECTILE = {
-	"_color" : Color(.1, .3,.5,1),
-	"_object_type" : "Projectile",
-	"_variables" : {
-		"Owner" : "CLASS_CHARACTER",
-		"Damage" : TYPE_REAL,
-		"Target" : "CLASS_CHARACTER"
-	}
-}
 
 var CLASS_CHARACTER =  {
 	"_color" : Color(.5,.5,.1,1),
@@ -35,6 +16,21 @@ var CLASS_CHARACTER =  {
 		"shield" : TYPE_REAL,
 		"target_location" : TYPE_VECTOR3}
 	}
+
+var CLASS_WORKSTATION = {
+	"_color" : Color(0,0,0,1),
+	"_object_type" : "Misc",
+	"_variables" : {
+		"category" : [
+				"WORK",
+				"FOOD",
+				"ENTERTAINMENT",
+				"PERSON",
+				"OTHERS"
+			]
+	}
+}
+
 #Do not use spaces, numbers or symbols in function defintions. 
 #_s_ prefix indicates the label would be replaced with a special component
 #This prefix only works in the input label.
@@ -52,7 +48,6 @@ var _functions = {
 	},
 	"match" : {
 		"_category" : "inhibitors",
-		"_code" : "FuncRef?", #This hasn't been implemented yet
 		"_input_ports" : [
 			{"_label_title":"String input", "_type" : TYPE_STRING},
 			{"_label_title":"_s_text_edit", "_type" : TYPE_NIL}
@@ -63,7 +58,6 @@ var _functions = {
 	},
 	"tri_v_decision" : {
 		"_category" : "inhibitors",
-		"_code" : "FuncRef?", #This hasn't been implemented yet
 		"_input_ports" : [
 			{"_label_title":"Value", "_type" : Nodes.TYPE_ANY},
 			{"_label_title":"Weight 1", "_type" : TYPE_REAL},
@@ -79,7 +73,6 @@ var _functions = {
 	},
 	"parallel_trigger" : {
 		"_category" : "misc",
-		"_code" : "<actual code>",
 		"_input_ports" : [
 			{"_label_title":"Signal Entry","_type":Nodes.TYPE_ANY},
 			],
@@ -90,7 +83,6 @@ var _functions = {
 	}, 
 	"set_objective" : {
 		"_category" : "actions",
-		"_code" : "<actual code>",
 		"_input_ports" : [
 			{"_label_title":"Objective position","_type":TYPE_VECTOR3},
 			],
@@ -100,7 +92,6 @@ var _functions = {
 	},
 	"trigger_dialog" : {
 		"_category" : "actions",
-		"_code" : "<actual code>",
 		"_input_ports" : [
 			{"_label_title":"_s_file:*.mtalk ; Dialog File","_type":Nodes.TYPE_ANY},
 			],
@@ -108,9 +99,18 @@ var _functions = {
 			{"_label_title":"","_type":TYPE_NIL},
 			]
 	},
+	"find_workstation" : {
+		"_category" : "actions",
+		"_input_ports" : [
+			{"_label_title":"Trigger","_type":Nodes.TYPE_ANY},
+			],
+		"_output_ports" : [
+			{"_label_title":"Position","_type":TYPE_VECTOR3},
+			]
+	},
+	
 	"play_global_sound" : {
 		"_category" : "actions",
-		"_code" : "<actual code>",
 		"_input_ports" : [
 			{"_label_title":"_s_file:*.ogg ; OGG Audio,*.wav ; WAV audio,*.mp3 ; MP3 Audio","_type":Nodes.TYPE_ANY},
 			],
@@ -120,7 +120,6 @@ var _functions = {
 	},
 	"play_pos_sound" : {
 		"_category" : "actions",
-		"_code" : "<actual code>",
 		"_input_ports" : [
 			{"_label_title":"_s_file:*.ogg ; OGG Audio,*.wav ; WAV audio,*.mp3 ; MP3 Audio","_type":Nodes.TYPE_ANY},
 			],
@@ -130,7 +129,6 @@ var _functions = {
 	},
 	"force_next_state" : {
 		"_category" : "actions",
-		"_code" : "<actual code>",
 		"_input_ports" : [
 			{"_label_title":"Trigger","_type":Nodes.TYPE_ANY},
 			],
@@ -152,5 +150,17 @@ var _stimulus = {
 	"see" :{
 		"_output_name": "Object seen",
 		"_output_type": TYPE_OBJECT,
+	},
+	"interacted_by" :{
+		"_output_name": "Interactor",
+		"_output_type": TYPE_OBJECT,
+	},
+	"stopped_working" :{
+		"_output_name": "Category",
+		"_output_type": TYPE_STRING,
+	},
+	"workstation_assigned" :{
+		"_output_name": "Position",
+		"_output_type": TYPE_VECTOR3,
 	}
 }

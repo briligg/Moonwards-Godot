@@ -1,4 +1,5 @@
 extends AComponent
+class_name NPCInput
 """This node should be child of a KinematicBody"""
 # Holds extra information and our character
 var Agent : GSAIKinematicBody3DAgent 
@@ -144,12 +145,6 @@ func _handle_npc_input(acceleration : GSAITargetAcceleration, delta : float):
 func _process_client(delta):
 	entity.global_transform.origin = entity.srv_pos
 
-
-func _unhandled_input(event):
-	if event is InputEventKey:
-		if event.is_action_pressed("use"):
-			get_navpath(get_tree().get_nodes_in_group("Navigator")[0].get_nearest_workstation(entity.translation).translation)
-
 func update_target(pos : Vector3):
 	# Remember to update the target of the NPCs! Otherwise they could run away 
 	# to their workstation instead of following your character (just an example)
@@ -166,7 +161,7 @@ func get_navpath(to : Vector3):
 		
 	
 func update_agent(velocity : Vector3, angular_velocity : float):
-	Agent.position = get_parent().translation
+	Agent.position = entity.translation
 	Agent.orientation = entity.rotation_degrees.y
 	Agent.linear_velocity = velocity
 	Agent.angular_velocity = angular_velocity

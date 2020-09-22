@@ -1,3 +1,4 @@
+extends Node
 class_name NPCBase
 
 signal next_state(force)

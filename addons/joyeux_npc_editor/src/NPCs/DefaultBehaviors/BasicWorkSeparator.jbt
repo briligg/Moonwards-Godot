@@ -1,0 +1,92 @@
+[variables]
+
+States=[  ]
+Save=[  ]
+CLAYER=[  ]
+stopped_working=[ null ]
+parallel_trigger=[ null, null ]
+parallel_trigger2=[ null, null ]
+parallel_trigger3=[ null, null ]
+match=[ null, "WORK" ]
+match2=[ null, "FOOD" ]
+parallel_trigger4=[ null, null ]
+match5=[ null, "OTHERS" ]
+match3=[ null, "ENTERTAINMENT" ]
+match4=[ null, "PERSON" ]
+Behaviors=[  ]
+GraphEditFilter=[  ]
+
+[node_signals]
+
+stopped_working=[ "stopped_working_output_0" ]
+parallel_trigger=[ "parallel_trigger_output_0", "parallel_trigger_output_1" ]
+parallel_trigger2=[ "parallel_trigger2_output_0", "parallel_trigger2_output_1" ]
+parallel_trigger3=[ "parallel_trigger3_output_0", "parallel_trigger3_output_1" ]
+match=[ "match_output_0" ]
+match2=[ "match2_output_0" ]
+parallel_trigger4=[ "parallel_trigger4_output_0", "parallel_trigger4_output_1" ]
+match5=[ "match5_output_0" ]
+match3=[ "match3_output_0" ]
+match4=[ "match4_output_0" ]
+
+[node_offsets]
+
+stopped_working=Vector2( -480, 120 )
+parallel_trigger=Vector2( -220, 120 )
+parallel_trigger2=Vector2( 40, 20 )
+parallel_trigger3=Vector2( 40, 200 )
+match=Vector2( 340, -60 )
+match2=Vector2( 340, 60 )
+parallel_trigger4=Vector2( 40, 360 )
+match5=Vector2( 340, 420 )
+match3=Vector2( 340, 180 )
+match4=Vector2( 340, 300 )
+
+[ai_config]
+
+connections=[ {
+"from": "stopped_working",
+"from_port": 0,
+"to": "parallel_trigger",
+"to_port": 0
+}, {
+"from": "parallel_trigger",
+"from_port": 0,
+"to": "parallel_trigger2",
+"to_port": 0
+}, {
+"from": "parallel_trigger",
+"from_port": 1,
+"to": "parallel_trigger3",
+"to_port": 0
+}, {
+"from": "parallel_trigger2",
+"from_port": 0,
+"to": "match",
+"to_port": 0
+}, {
+"from": "parallel_trigger2",
+"from_port": 1,
+"to": "match2",
+"to_port": 0
+}, {
+"from": "parallel_trigger3",
+"from_port": 0,
+"to": "match3",
+"to_port": 0
+}, {
+"from": "parallel_trigger3",
+"from_port": 1,
+"to": "parallel_trigger4",
+"to_port": 0
+}, {
+"from": "parallel_trigger4",
+"from_port": 0,
+"to": "match4",
+"to_port": 0
+}, {
+"from": "parallel_trigger4",
+"from_port": 1,
+"to": "match5",
+"to_port": 0
+} ]

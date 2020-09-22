@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://addons/com.gdquest.godot-steering-ai-framework/NPCMovement.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/Nametag/NametagComponent.tscn" type="PackedScene" id=2]
@@ -7,7 +7,8 @@
 [ext_resource path="res://SceneComponent/Actor/Humanoid/HumanoidMovement.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Script/Entity/ActorEntity.gd" type="Script" id=6]
 [ext_resource path="res://Assets/MoonTown/Models/Human_Model/FemalePlayerModel.tscn" type="PackedScene" id=7]
-[ext_resource path="res://SceneComponent/Actor/InteractorComponent.tscn" type="PackedScene" id=8]
+[ext_resource path="res://addons/joyeux_nav_interacts/Workstation.tscn" type="PackedScene" id=8]
+[ext_resource path="res://addons/joyeux_nav_interacts/MwAI.gd" type="Script" id=9]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.287522
@@ -32,14 +33,9 @@ __meta__ = {
 script = ExtResource( 1 )
 linear_speed_max = 5.0
 linear_acceleration_max = 0.5
-arrival_tolerance = 0.7
 deceleration_radius = 6.8
 
 [node name="Model" parent="." instance=ExtResource( 7 )]
-
-[node name="Interactor" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.879645, 0 )
-grab_focus_at_ready = true
 
 [node name="Nametag" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70766, 0 )
@@ -48,3 +44,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70766, 0 )
 overriden = true
 
 [node name="HumanoidMovement" parent="." instance=ExtResource( 5 )]
+
+[node name="AIHandler" type="Spatial" parent="."]
+script = ExtResource( 9 )
+enabled = true
+NPC_input_path = NodePath("../NPCInput")
+
+[node name="Workstation" parent="." instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
