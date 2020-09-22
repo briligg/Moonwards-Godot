@@ -2,7 +2,7 @@ extends AMovementController
 class_name KinematicMovement
 
 # Component for kinematic movement
-export(float) var initial_jump_velocity = 6
+export(float) var initial_jump_velocity = 4
 export(float) var climb_speed = 10
 export(float) var movement_speed = 4
 
