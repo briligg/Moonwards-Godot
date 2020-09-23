@@ -210,6 +210,11 @@ _global_script_classes=[ {
 "path": "res://Script/Manager/SignalsManager/HudSignals.gd"
 }, {
 "base": "AComponent",
+"class": "HumanoidMovementDebug",
+"language": "GDScript",
+"path": "res://SceneComponent/Actor/Debug/HumanoidMovementDebug.gd"
+}, {
+"base": "AComponent",
 "class": "InputController",
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/Humanoid/HumanoidInput.gd"
@@ -450,6 +455,7 @@ _global_script_class_icons={
 "GameClient": "",
 "GameServer": "",
 "HudSignals": "",
+"HumanoidMovementDebug": "",
 "InputController": "",
 "InspectorGadget": "",
 "InspectorGadgetBase": "",

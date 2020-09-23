@@ -20,7 +20,6 @@ var state: ActorEntityState = ActorEntityState.new()
 # `MASTER`
 # Input vector
 master var input: Vector3 = Vector3.ZERO
-master var fly_input_float : float = 0
 
 # `REMOTE`
 # Look dir of our actor
@@ -51,7 +50,6 @@ func _process_client(_delta: float) -> void:
 	# Setgetters are an option, try to find a cleaner way.
 	if self.owner_peer_id == get_tree().get_network_unique_id():
 		rset_id(1, "input", input)
-		rset_id(1, "fly_input_float", fly_input_float)
 		rset_id(1, "look_dir", look_dir)
 
 func _integrate_forces(state):
