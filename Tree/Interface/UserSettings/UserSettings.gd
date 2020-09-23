@@ -18,7 +18,7 @@ var current_slot : int = SLOTS.PANTS
 
 # Needs to use the paths before it's ready, so it will crash using onready
 var username_edit : String = "ModelDisplay/UsernameEdit"
-var gender_edit : String = "VBoxContainer/Gender"
+var gender_edit : String = "VBoxContainer/Buttons/VBoxContainer/Gender"
 var avatar_preview : String = "ModelDisplay/ViewportContainer/Viewport/AvatarPreview"
 var hue_picker : String = "VBoxContainer/HuePicker"
 var button_containter : String = "ModelDisplay/ViewportContainer"

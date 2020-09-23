@@ -56,6 +56,7 @@ render_target_update_mode = 3
 
 [node name="Female" type="Control" parent="ModelDisplay/ViewportContainer"]
 script = ExtResource( 3 )
+slot_option_path = NodePath("../../../VBoxContainer/Buttons/V2/SlotOption")
 
 [node name="Pants2" type="Button" parent="ModelDisplay/ViewportContainer/Female"]
 margin_left = 124.0
@@ -208,6 +209,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
+slot_option_path = NodePath("../../../VBoxContainer/Buttons/V2/SlotOption")
 
 [node name="Shirt" type="Button" parent="ModelDisplay/ViewportContainer/Male"]
 margin_left = 130.0
@@ -359,38 +361,53 @@ alignment = 1
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 574.0
-margin_bottom = 485.0
+margin_bottom = 560.0
 rect_clip_content = true
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color( 0.588235, 0.4, 0, 1 )
 
-[node name="GenderLabel" type="Label" parent="VBoxContainer"]
-margin_top = 500.0
+[node name="Buttons" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 575.0
 margin_right = 574.0
-margin_bottom = 514.0
+margin_bottom = 613.0
+custom_constants/separation = 26
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Buttons"]
+margin_left = 204.0
+margin_right = 280.0
+margin_bottom = 38.0
+
+[node name="Label" type="Label" parent="VBoxContainer/Buttons/VBoxContainer"]
+margin_right = 76.0
+margin_bottom = 14.0
 text = "Gender:"
 align = 1
 
-[node name="Gender" type="OptionButton" parent="VBoxContainer"]
-margin_top = 529.0
-margin_right = 574.0
-margin_bottom = 549.0
+[node name="Gender" type="OptionButton" parent="VBoxContainer/Buttons/VBoxContainer"]
+margin_top = 18.0
+margin_right = 76.0
+margin_bottom = 38.0
 text = "Female"
 items = [ "Female", null, false, 0, null, "Male", null, false, 1, null ]
 selected = 0
 
-[node name="ColorSlotLabel" type="Label" parent="VBoxContainer"]
-margin_top = 564.0
-margin_right = 574.0
-margin_bottom = 578.0
-text = "Color Slot:"
+[node name="V2" type="VBoxContainer" parent="VBoxContainer/Buttons"]
+margin_left = 306.0
+margin_right = 370.0
+margin_bottom = 38.0
+
+[node name="Label" type="Label" parent="VBoxContainer/Buttons/V2"]
+margin_right = 64.0
+margin_bottom = 14.0
+text = "Slot:"
 align = 1
 
-[node name="SlotOption" type="OptionButton" parent="VBoxContainer"]
-margin_top = 593.0
-margin_right = 574.0
-margin_bottom = 613.0
+[node name="SlotOption" type="OptionButton" parent="VBoxContainer/Buttons/V2"]
+margin_top = 18.0
+margin_right = 64.0
+margin_bottom = 38.0
 text = "Pants"
 items = [ "Pants", null, false, 0, null, "Shirt", null, false, 1, null, "Skin", null, false, 2, null, "Hair", null, false, 3, null, "Shoes", null, false, 4, null ]
 selected = 0
@@ -438,6 +455,6 @@ __meta__ = {
 [connection signal="pressed" from="ModelDisplay/ViewportContainer/Male/Shoe" to="ModelDisplay/ViewportContainer/Male" method="_on_shoes_selected"]
 [connection signal="pressed" from="ModelDisplay/ViewportContainer/Male/Shoe2" to="ModelDisplay/ViewportContainer/Male" method="_on_shoes_selected"]
 [connection signal="Hue_Selected" from="VBoxContainer/HuePicker" to="." method="_on_HuePicker_Hue_Selected"]
-[connection signal="item_selected" from="VBoxContainer/Gender" to="." method="_on_Gender_item_selected"]
-[connection signal="item_selected" from="VBoxContainer/SlotOption" to="." method="_on_SlotOption_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/Buttons/VBoxContainer/Gender" to="." method="_on_Gender_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/Buttons/V2/SlotOption" to="." method="_on_SlotOption_item_selected"]
 [connection signal="pressed" from="VBoxContainer/SaveButton" to="." method="_on_SaveButton_pressed"]
