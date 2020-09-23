@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/Map-Mock-up.png-723dfcf14ea6742be0c97b87acf26575.s3tc.stex"
+path.etc2="res://.import/Map-Mock-up.png-723dfcf14ea6742be0c97b87acf26575.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://Assets/Interface/Textures/Map-Mock-up.png"
+dest_files=[ "res://.import/Map-Mock-up.png-723dfcf14ea6742be0c97b87acf26575.s3tc.stex", "res://.import/Map-Mock-up.png-723dfcf14ea6742be0c97b87acf26575.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=1
+compress/bptc_ldr=0
+compress/normal_map=1
+flags/repeat=1
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=1
+process/fix_alpha_border=false
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

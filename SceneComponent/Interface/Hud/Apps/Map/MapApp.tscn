@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Interface/Hud/Styles/Apps/HUDApps.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Interface/Textures/Map-Mock-up.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconRemove.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconAdd.png" type="Texture" id=4]
+[ext_resource path="res://SceneComponent/Interface/Hud/Apps/Map/HudMap.gd" type="Script" id=5]
+
+
+
+[node name="MapApp" type="PanelContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+custom_constants/separation = 14
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1920.0
+margin_bottom = 1028.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+margin_right = 1920.0
+margin_bottom = 1028.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 1042.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+alignment = 1
+
+[node name="Label_Location" type="Label" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 589.0
+margin_top = 1.0
+margin_right = 732.0
+margin_bottom = 37.0
+text = "Location:"
+
+[node name="Label_Location_Value" type="Label" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 736.0
+margin_top = 1.0
+margin_right = 894.0
+margin_bottom = 37.0
+text = "<location>"
+
+[node name="HideMapButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 898.0
+margin_right = 1041.0
+margin_bottom = 38.0
+text = " Hide Map "
+
+[node name="Label_FloorNum" type="Label" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 1045.0
+margin_top = 1.0
+margin_right = 1140.0
+margin_bottom = 37.0
+text = "Floor:"
+
+[node name="Label_FloorNum_Value" type="Label" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 1144.0
+margin_top = 1.0
+margin_right = 1256.0
+margin_bottom = 37.0
+text = "<floor>"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 1260.0
+margin_right = 1264.0
+margin_bottom = 38.0
+
+[node name="Button_Up" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 1268.0
+margin_right = 1297.0
+margin_bottom = 38.0
+icon = ExtResource( 4 )
+
+[node name="Button_Down" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 1301.0
+margin_right = 1330.0
+margin_bottom = 38.0
+icon = ExtResource( 3 )

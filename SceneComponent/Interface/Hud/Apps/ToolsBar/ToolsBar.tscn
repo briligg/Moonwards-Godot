@@ -1,0 +1,413 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconVideoCamera.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconLibrary.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme_Small.tres" type="Theme" id=4]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconAI.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconBuilding_Alt.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconShareBig.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconMap_Small.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconCamera.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconEvent.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconExpand.png" type="Texture" id=11]
+[ext_resource path="res://SceneComponent/Interface/Hud/Apps/ToolsBar/Button_Map.gd" type="Script" id=12]
+[ext_resource path="res://SceneComponent/Interface/Hud/Apps/ToolsBar/Button_Expand.gd" type="Script" id=13]
+
+
+
+[sub_resource type="Animation" id=1]
+resource_name = "hide"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBoxContainer/HBoxContainer_Dynamic:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("VBoxContainer/HBoxContainer_Dynamic:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("VBoxContainer/HBoxContainer_Static/VBoxContainer9/MarginContainer/TextureRect:rect_rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 180.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "show"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBoxContainer/HBoxContainer_Static/VBoxContainer9/MarginContainer/TextureRect:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -180.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("VBoxContainer/HBoxContainer_Dynamic:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("VBoxContainer/HBoxContainer_Dynamic:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="ToolsBar" type="PanelContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+custom_constants/separation = 14
+alignment = 2
+
+[node name="HBoxContainer_Static" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 890.0
+margin_right = 1920.0
+margin_bottom = 954.0
+theme = ExtResource( 4 )
+custom_constants/separation = 8
+alignment = 2
+
+[node name="VBoxContainer7" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_Static"]
+margin_left = 1752.0
+margin_right = 1788.0
+margin_bottom = 64.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer7"]
+margin_right = 36.0
+margin_bottom = 24.0
+text = "[6]"
+align = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer7"]
+margin_top = 28.0
+margin_right = 36.0
+margin_bottom = 64.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer7/MarginContainer"]
+margin_right = 36.0
+margin_bottom = 36.0
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer7/MarginContainer"]
+visible = false
+margin_right = 36.0
+margin_bottom = 36.0
+texture = ExtResource( 8 )
+stretch_mode = 5
+
+[node name="Button_Map" type="Button" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer7/MarginContainer"]
+margin_right = 36.0
+margin_bottom = 36.0
+action_mode = 0
+icon = ExtResource( 8 )
+script = ExtResource( 12 )
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_Static"]
+margin_left = 1796.0
+margin_right = 1832.0
+margin_bottom = 64.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer6"]
+margin_right = 36.0
+margin_bottom = 24.0
+text = "[7]"
+align = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer6"]
+margin_top = 28.0
+margin_right = 36.0
+margin_bottom = 64.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer6/MarginContainer"]
+margin_right = 36.0
+margin_bottom = 36.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer6/MarginContainer"]
+margin_right = 36.0
+margin_bottom = 36.0
+texture = ExtResource( 9 )
+stretch_mode = 5
+
+[node name="Button_Camera" type="Button" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer6/MarginContainer"]
+margin_right = 36.0
+margin_bottom = 36.0
+flat = true
+
+[node name="VBoxContainer8" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_Static"]
+margin_left = 1840.0
+margin_right = 1876.0
+margin_bottom = 64.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer8"]
+margin_right = 36.0
+margin_bottom = 24.0
+text = "[8]"
+align = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer8"]
+margin_top = 28.0
+margin_right = 36.0
+margin_bottom = 64.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer8/MarginContainer"]
+margin_right = 36.0
+margin_bottom = 36.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer8/MarginContainer"]
+margin_right = 36.0
+margin_bottom = 36.0
+texture = ExtResource( 2 )
+stretch_mode = 5
+
+[node name="Button_Video" type="Button" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer8/MarginContainer"]
+margin_right = 36.0
+margin_bottom = 36.0
+flat = true
+
+[node name="VBoxContainer9" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_Static"]
+margin_left = 1884.0
+margin_right = 1920.0
+margin_bottom = 64.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer9"]
+margin_right = 36.0
+margin_bottom = 24.0
+align = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer9"]
+margin_top = 28.0
+margin_right = 36.0
+margin_bottom = 64.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer9/MarginContainer"]
+margin_right = 36.0
+margin_bottom = 36.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer9/MarginContainer"]
+margin_right = 36.0
+margin_bottom = 36.0
+texture = ExtResource( 11 )
+stretch_mode = 5
+
+[node name="Button_Expand" type="Button" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer9/MarginContainer"]
+margin_right = 36.0
+margin_bottom = 36.0
+flat = true
+script = ExtResource( 13 )
+
+[node name="HBoxContainer_Dynamic" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 968.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+custom_constants/separation = 10
+alignment = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_Dynamic"]
+margin_left = 1520.0
+margin_right = 1592.0
+margin_bottom = 112.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer2"]
+margin_right = 72.0
+margin_bottom = 72.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer2/MarginContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer2/MarginContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+texture = ExtResource( 6 )
+stretch_mode = 5
+
+[node name="Button_Build" type="Button" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer2/MarginContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+flat = true
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer2"]
+margin_top = 76.0
+margin_right = 72.0
+margin_bottom = 112.0
+text = "[1]"
+align = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_Dynamic"]
+margin_left = 1602.0
+margin_right = 1674.0
+margin_bottom = 112.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer3"]
+margin_right = 72.0
+margin_bottom = 72.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer3/MarginContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer3/MarginContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+texture = ExtResource( 3 )
+stretch_mode = 5
+
+[node name="Button_Library" type="Button" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer3/MarginContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+flat = true
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer3"]
+margin_top = 76.0
+margin_right = 72.0
+margin_bottom = 112.0
+text = "[2]"
+align = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_Dynamic"]
+margin_left = 1684.0
+margin_right = 1756.0
+margin_bottom = 112.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer4"]
+margin_right = 72.0
+margin_bottom = 72.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer4/MarginContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer4/MarginContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+texture = ExtResource( 10 )
+stretch_mode = 5
+
+[node name="Button_Events" type="Button" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer4/MarginContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+flat = true
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer4"]
+margin_top = 76.0
+margin_right = 72.0
+margin_bottom = 112.0
+text = "[3]"
+align = 1
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_Dynamic"]
+margin_left = 1766.0
+margin_right = 1838.0
+margin_bottom = 112.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer5"]
+margin_right = 72.0
+margin_bottom = 72.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer5/MarginContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer5/MarginContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+texture = ExtResource( 5 )
+stretch_mode = 5
+
+[node name="Button_NPC" type="Button" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer5/MarginContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+flat = true
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer5"]
+margin_top = 76.0
+margin_right = 72.0
+margin_bottom = 112.0
+text = "[4]"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_Dynamic"]
+margin_left = 1848.0
+margin_right = 1920.0
+margin_bottom = 112.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer/MarginContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer/MarginContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+texture = ExtResource( 7 )
+stretch_mode = 5
+
+[node name="Button_Share" type="Button" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer/MarginContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+flat = true
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer"]
+margin_top = 76.0
+margin_right = 72.0
+margin_bottom = 112.0
+text = "[5]"
+align = 1
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+anims/hide = SubResource( 1 )
+anims/show = SubResource( 2 )

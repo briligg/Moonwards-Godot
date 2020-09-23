@@ -1,0 +1,375 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Assets/Interface/Hud/Styles/Apps/HUDApps.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Building/T_IconPlanes.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconFace.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Building/T_IconArea_Alt.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Building/T_IconCut.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Building/T_IconLibrary.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Building/T_IconLocation.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Building/T_IconExtrude_Alt.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconSave.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconQuestion.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconRemove.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconUndo.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconRedo.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconMove.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconAdd.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconSelect.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconVertex.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconEdges.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconDivide.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconMerge.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconScale.png" type="Texture" id=21]
+
+
+[node name="BuildingApp" type="PanelContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+
+[node name="HBoxContainer_MainTools" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1920.0
+margin_bottom = 114.0
+custom_constants/separation = 30
+alignment = 1
+
+[node name="VBoxContainer_Tool_0" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_MainTools"]
+margin_left = 663.0
+margin_right = 737.0
+margin_bottom = 114.0
+
+[node name="MarginContainer_Tool_0" type="MarginContainer" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_0"]
+margin_right = 74.0
+margin_bottom = 74.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_0/MarginContainer_Tool_0"]
+margin_right = 74.0
+margin_bottom = 74.0
+
+[node name="Button_Tool_0" type="Button" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_0/MarginContainer_Tool_0"]
+margin_right = 74.0
+margin_bottom = 74.0
+toggle_mode = true
+icon = ExtResource( 7 )
+flat = true
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_0"]
+margin_top = 78.0
+margin_right = 74.0
+margin_bottom = 114.0
+text = "[1]"
+align = 1
+
+[node name="VBoxContainer_Tool_1" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_MainTools"]
+margin_left = 767.0
+margin_right = 841.0
+margin_bottom = 114.0
+
+[node name="MarginContainer_Tool_1" type="MarginContainer" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_1"]
+margin_right = 74.0
+margin_bottom = 74.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_1/MarginContainer_Tool_1"]
+margin_right = 74.0
+margin_bottom = 74.0
+
+[node name="Button_Tool_1" type="Button" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_1/MarginContainer_Tool_1"]
+margin_right = 74.0
+margin_bottom = 74.0
+toggle_mode = true
+icon = ExtResource( 4 )
+flat = true
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_1"]
+margin_top = 78.0
+margin_right = 74.0
+margin_bottom = 114.0
+text = "[2]"
+align = 1
+
+[node name="VBoxContainer_Tool_2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_MainTools"]
+margin_left = 871.0
+margin_right = 945.0
+margin_bottom = 114.0
+
+[node name="MarginContainer_Tool_2" type="MarginContainer" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_2"]
+margin_right = 74.0
+margin_bottom = 74.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_2/MarginContainer_Tool_2"]
+margin_right = 74.0
+margin_bottom = 74.0
+
+[node name="Button_Tool_2" type="Button" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_2/MarginContainer_Tool_2"]
+margin_right = 74.0
+margin_bottom = 74.0
+toggle_mode = true
+icon = ExtResource( 8 )
+flat = true
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_2"]
+margin_top = 78.0
+margin_right = 74.0
+margin_bottom = 114.0
+text = "[3]"
+align = 1
+
+[node name="VBoxContainer_Tool_3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_MainTools"]
+margin_left = 975.0
+margin_right = 1049.0
+margin_bottom = 114.0
+
+[node name="MarginContainer_Tool_3" type="MarginContainer" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_3"]
+margin_right = 74.0
+margin_bottom = 74.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_3/MarginContainer_Tool_3"]
+margin_right = 74.0
+margin_bottom = 74.0
+
+[node name="Button_Tool_3" type="Button" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_3/MarginContainer_Tool_3"]
+margin_right = 74.0
+margin_bottom = 74.0
+toggle_mode = true
+icon = ExtResource( 5 )
+flat = true
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_3"]
+margin_top = 78.0
+margin_right = 74.0
+margin_bottom = 114.0
+text = "[4]"
+align = 1
+
+[node name="VBoxContainer_Tool_4" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_MainTools"]
+margin_left = 1079.0
+margin_right = 1153.0
+margin_bottom = 114.0
+
+[node name="MarginContainer_Tool_4" type="MarginContainer" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_4"]
+margin_right = 74.0
+margin_bottom = 74.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_4/MarginContainer_Tool_4"]
+margin_right = 74.0
+margin_bottom = 74.0
+
+[node name="Button_Tool_4" type="Button" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_4/MarginContainer_Tool_4"]
+margin_right = 74.0
+margin_bottom = 74.0
+toggle_mode = true
+icon = ExtResource( 2 )
+flat = true
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_4"]
+margin_top = 78.0
+margin_right = 74.0
+margin_bottom = 114.0
+text = "[5]"
+align = 1
+
+[node name="VBoxContainer_Tool_5" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_MainTools"]
+margin_left = 1183.0
+margin_right = 1257.0
+margin_bottom = 114.0
+
+[node name="MarginContainer_Tool_5" type="MarginContainer" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_5"]
+margin_right = 74.0
+margin_bottom = 74.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_5/MarginContainer_Tool_5"]
+margin_right = 74.0
+margin_bottom = 74.0
+
+[node name="Button_Tool_5" type="Button" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_5/MarginContainer_Tool_5"]
+margin_right = 74.0
+margin_bottom = 74.0
+toggle_mode = true
+icon = ExtResource( 6 )
+flat = true
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_5"]
+margin_top = 78.0
+margin_right = 74.0
+margin_bottom = 114.0
+text = "[6]"
+align = 1
+
+[node name="Container" type="Container" parent="VBoxContainer"]
+margin_top = 118.0
+margin_right = 1920.0
+margin_bottom = 990.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 994.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+custom_constants/separation = 32
+alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 1541.0
+margin_right = 1570.0
+margin_bottom = 86.0
+custom_constants/separation = 10
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+margin_right = 29.0
+margin_bottom = 38.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer2/VBoxContainer/MarginContainer2"]
+margin_right = 29.0
+margin_bottom = 38.0
+
+[node name="Button_Help" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer/MarginContainer2"]
+margin_right = 29.0
+margin_bottom = 38.0
+toggle_mode = true
+icon = ExtResource( 10 )
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 48.0
+margin_right = 29.0
+margin_bottom = 86.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer2/VBoxContainer/MarginContainer3"]
+margin_right = 29.0
+margin_bottom = 38.0
+
+[node name="Button_Save" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer/MarginContainer3"]
+margin_right = 29.0
+margin_bottom = 38.0
+toggle_mode = true
+icon = ExtResource( 9 )
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 1602.0
+margin_right = 1920.0
+margin_bottom = 86.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer2/MarginContainer2"]
+margin_right = 318.0
+margin_bottom = 86.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/MarginContainer2"]
+margin_right = 318.0
+margin_bottom = 86.0
+custom_constants/separation = 24
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer"]
+margin_right = 100.0
+margin_bottom = 86.0
+alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer2"]
+margin_top = 25.0
+margin_right = 100.0
+margin_bottom = 61.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer2"]
+margin_right = 100.0
+margin_bottom = 36.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer2"]
+margin_right = 100.0
+margin_bottom = 36.0
+
+[node name="Label_ResourceCount" type="Label" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer2/HBoxContainer"]
+margin_right = 100.0
+margin_bottom = 36.0
+text = "20/40"
+
+[node name="VBoxContainerTools" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer"]
+margin_left = 124.0
+margin_right = 318.0
+margin_bottom = 86.0
+custom_constants/separation = 10
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainerTools"]
+margin_right = 194.0
+margin_bottom = 38.0
+
+[node name="Button_Vertex" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer2"]
+margin_right = 29.0
+margin_bottom = 38.0
+icon = ExtResource( 17 )
+
+[node name="Button_Edges" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer2"]
+margin_left = 33.0
+margin_right = 62.0
+margin_bottom = 38.0
+icon = ExtResource( 18 )
+
+[node name="Button_Faces" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer2"]
+margin_left = 66.0
+margin_right = 95.0
+margin_bottom = 38.0
+icon = ExtResource( 3 )
+
+[node name="Button_Divide" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer2"]
+margin_left = 99.0
+margin_right = 128.0
+margin_bottom = 38.0
+icon = ExtResource( 19 )
+
+[node name="Button_Combine" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer2"]
+margin_left = 132.0
+margin_right = 161.0
+margin_bottom = 38.0
+icon = ExtResource( 20 )
+
+[node name="Button_Scale" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer2"]
+margin_left = 165.0
+margin_right = 194.0
+margin_bottom = 38.0
+icon = ExtResource( 21 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainerTools"]
+margin_top = 48.0
+margin_right = 194.0
+margin_bottom = 86.0
+
+[node name="Button_Select" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer"]
+margin_right = 29.0
+margin_bottom = 38.0
+icon = ExtResource( 16 )
+
+[node name="Button_Move" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer"]
+margin_left = 33.0
+margin_right = 62.0
+margin_bottom = 38.0
+icon = ExtResource( 14 )
+
+[node name="Button_Add" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer"]
+margin_left = 66.0
+margin_right = 95.0
+margin_bottom = 38.0
+icon = ExtResource( 15 )
+
+[node name="Button_Remove" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer"]
+margin_left = 99.0
+margin_right = 128.0
+margin_bottom = 38.0
+icon = ExtResource( 11 )
+
+[node name="Button_Undo" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer"]
+margin_left = 132.0
+margin_right = 161.0
+margin_bottom = 38.0
+icon = ExtResource( 12 )
+
+[node name="Button_Redo" type="Button" parent="VBoxContainer/HBoxContainer2/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer"]
+margin_left = 165.0
+margin_right = 194.0
+margin_bottom = 38.0
+icon = ExtResource( 13 )

@@ -1,0 +1,1210 @@
+[gd_scene load_steps=57 format=2]
+
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Eyebrows_02.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Interface/Hud/Styles/Radial/HUDRadial.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_ActionClap.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconExpressions.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_ActionForward.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconActions.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_ActionThumbsUp.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_ActionLeft.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_ActionThumbsDown.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_ActionHandShake.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_ActionStop.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_ActionRight.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_ActionVictory.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_ActionBackward.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_ActionFist.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Mouth_10.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Mouth_09.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Mouth_04.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Mouth_07.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Mouth_06.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Mouth_01.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Mouth_05.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Eyes_03.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Eyes_07.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Eyes_02.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Eyes_06.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Eyebrows_01.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Eyebrows_03.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Eyes_04.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Eyes_05.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Eyes_01.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Eyebrows_07.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Eyebrows_06.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Eyebrows_04.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Eyebrows_05.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Head_06.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Arms_02.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Head_02.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Head_05.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Arms_03.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Arms_04.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Body_07.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Head_01.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Head_07.png" type="Texture" id=44]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Head_04.png" type="Texture" id=45]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Body_06.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Arms_06.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Arms_05.png" type="Texture" id=48]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Arms_07.png" type="Texture" id=49]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Body_02.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Body_04.png" type="Texture" id=51]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Body_05.png" type="Texture" id=52]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Arms_01.png" type="Texture" id=53]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Body_03.png" type="Texture" id=54]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Body_01.png" type="Texture" id=55]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Head_03.png" type="Texture" id=56]
+
+
+[node name="RadialSelector" type="PanelContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+margin_right = 806.0
+margin_bottom = 144.0
+
+[node name="ContainerMain" type="HBoxContainer" parent="."]
+margin_top = 143.0
+margin_right = 1030.0
+margin_bottom = 287.0
+size_flags_vertical = 4
+custom_constants/separation = 150
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ContainerMain"]
+margin_left = 112.0
+margin_right = 406.0
+margin_bottom = 144.0
+
+[node name="Panel" type="Panel" parent="ContainerMain/MarginContainer"]
+margin_right = 294.0
+margin_bottom = 144.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="ContainerMain/MarginContainer"]
+margin_right = 294.0
+margin_bottom = 144.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_Actions" type="Button" parent="ContainerMain/MarginContainer/MarginContainer"]
+margin_right = 294.0
+margin_bottom = 144.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerMain/MarginContainer/MarginContainer"]
+margin_right = 294.0
+margin_bottom = 144.0
+
+[node name="Label2" type="Label" parent="ContainerMain/MarginContainer/MarginContainer/HBoxContainer"]
+margin_top = 54.0
+margin_right = 146.0
+margin_bottom = 90.0
+text = "ACTIONS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ContainerMain/MarginContainer/MarginContainer/HBoxContainer"]
+margin_left = 150.0
+margin_right = 294.0
+margin_bottom = 144.0
+texture = ExtResource( 6 )
+
+[node name="MarginContainer2" type="MarginContainer" parent="ContainerMain"]
+margin_left = 556.0
+margin_right = 918.0
+margin_bottom = 144.0
+
+[node name="Panel" type="Panel" parent="ContainerMain/MarginContainer2"]
+margin_right = 362.0
+margin_bottom = 144.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="ContainerMain/MarginContainer2"]
+margin_right = 362.0
+margin_bottom = 144.0
+
+[node name="Button_Expressions" type="Button" parent="ContainerMain/MarginContainer2/MarginContainer"]
+margin_right = 362.0
+margin_bottom = 144.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerMain/MarginContainer2/MarginContainer"]
+margin_right = 362.0
+margin_bottom = 144.0
+
+[node name="TextureRect" type="TextureRect" parent="ContainerMain/MarginContainer2/MarginContainer/HBoxContainer"]
+margin_right = 144.0
+margin_bottom = 144.0
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="ContainerMain/MarginContainer2/MarginContainer/HBoxContainer"]
+margin_left = 148.0
+margin_top = 54.0
+margin_right = 362.0
+margin_bottom = 90.0
+text = "EXPRESSIONS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContainerExpression" type="VBoxContainer" parent="."]
+visible = false
+margin_right = 1030.0
+margin_bottom = 430.0
+grow_vertical = 2
+size_flags_vertical = 4
+custom_constants/separation = 20
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerExpression"]
+margin_right = 1030.0
+margin_bottom = 130.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ContainerExpression/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerExpression/HBoxContainer/MarginContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerExpression/HBoxContainer/MarginContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Expression_0" type="Button" parent="ContainerExpression/HBoxContainer/MarginContainer/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 33 )
+
+[node name="MarginContainer2" type="MarginContainer" parent="ContainerExpression/HBoxContainer"]
+margin_left = 150.0
+margin_right = 280.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerExpression/HBoxContainer/MarginContainer2"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerExpression/HBoxContainer/MarginContainer2"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Expression_1" type="Button" parent="ContainerExpression/HBoxContainer/MarginContainer2/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 32 )
+
+[node name="MarginContainer3" type="MarginContainer" parent="ContainerExpression/HBoxContainer"]
+margin_left = 300.0
+margin_right = 430.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerExpression/HBoxContainer/MarginContainer3"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerExpression/HBoxContainer/MarginContainer3"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Expression_2" type="Button" parent="ContainerExpression/HBoxContainer/MarginContainer3/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 28 )
+
+[node name="MarginContainer4" type="MarginContainer" parent="ContainerExpression/HBoxContainer"]
+margin_left = 450.0
+margin_right = 580.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerExpression/HBoxContainer/MarginContainer4"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerExpression/HBoxContainer/MarginContainer4"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Expression_3" type="Button" parent="ContainerExpression/HBoxContainer/MarginContainer4/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 27 )
+
+[node name="MarginContainer5" type="MarginContainer" parent="ContainerExpression/HBoxContainer"]
+margin_left = 600.0
+margin_right = 730.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerExpression/HBoxContainer/MarginContainer5"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerExpression/HBoxContainer/MarginContainer5"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Expression_4" type="Button" parent="ContainerExpression/HBoxContainer/MarginContainer5/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 1 )
+
+[node name="MarginContainer6" type="MarginContainer" parent="ContainerExpression/HBoxContainer"]
+margin_left = 750.0
+margin_right = 880.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerExpression/HBoxContainer/MarginContainer6"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerExpression/HBoxContainer/MarginContainer6"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Expression_5" type="Button" parent="ContainerExpression/HBoxContainer/MarginContainer6/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 35 )
+
+[node name="MarginContainer7" type="MarginContainer" parent="ContainerExpression/HBoxContainer"]
+margin_left = 900.0
+margin_right = 1030.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerExpression/HBoxContainer/MarginContainer7"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerExpression/HBoxContainer/MarginContainer7"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Expression_6" type="Button" parent="ContainerExpression/HBoxContainer/MarginContainer7/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 34 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ContainerExpression"]
+margin_top = 150.0
+margin_right = 1030.0
+margin_bottom = 280.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ContainerExpression/HBoxContainer2"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerExpression/HBoxContainer2/MarginContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerExpression/HBoxContainer2/MarginContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Expression_7" type="Button" parent="ContainerExpression/HBoxContainer2/MarginContainer/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 24 )
+
+[node name="MarginContainer2" type="MarginContainer" parent="ContainerExpression/HBoxContainer2"]
+margin_left = 150.0
+margin_right = 280.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerExpression/HBoxContainer2/MarginContainer2"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerExpression/HBoxContainer2/MarginContainer2"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Expression_8" type="Button" parent="ContainerExpression/HBoxContainer2/MarginContainer2/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 23 )
+
+[node name="MarginContainer3" type="MarginContainer" parent="ContainerExpression/HBoxContainer2"]
+margin_left = 300.0
+margin_right = 430.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerExpression/HBoxContainer2/MarginContainer3"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerExpression/HBoxContainer2/MarginContainer3"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Expression_9" type="Button" parent="ContainerExpression/HBoxContainer2/MarginContainer3/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 25 )
+
+[node name="MarginContainer4" type="MarginContainer" parent="ContainerExpression/HBoxContainer2"]
+margin_left = 450.0
+margin_right = 580.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerExpression/HBoxContainer2/MarginContainer4"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerExpression/HBoxContainer2/MarginContainer4"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Expression_10" type="Button" parent="ContainerExpression/HBoxContainer2/MarginContainer4/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 31 )
+
+[node name="MarginContainer5" type="MarginContainer" parent="ContainerExpression/HBoxContainer2"]
+margin_left = 600.0
+margin_right = 730.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerExpression/HBoxContainer2/MarginContainer5"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerExpression/HBoxContainer2/MarginContainer5"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Expression_11" type="Button" parent="ContainerExpression/HBoxContainer2/MarginContainer5/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 29 )
+
+[node name="MarginContainer6" type="MarginContainer" parent="ContainerExpression/HBoxContainer2"]
+margin_left = 750.0
+margin_right = 880.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerExpression/HBoxContainer2/MarginContainer6"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerExpression/HBoxContainer2/MarginContainer6"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Expression_12" type="Button" parent="ContainerExpression/HBoxContainer2/MarginContainer6/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 30 )
+
+[node name="MarginContainer7" type="MarginContainer" parent="ContainerExpression/HBoxContainer2"]
+margin_left = 900.0
+margin_right = 1030.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerExpression/HBoxContainer2/MarginContainer7"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerExpression/HBoxContainer2/MarginContainer7"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Expression_13" type="Button" parent="ContainerExpression/HBoxContainer2/MarginContainer7/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 26 )
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ContainerExpression"]
+margin_top = 300.0
+margin_right = 1030.0
+margin_bottom = 430.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ContainerExpression/HBoxContainer3"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerExpression/HBoxContainer3/MarginContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerExpression/HBoxContainer3/MarginContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Expression_14" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 21 )
+
+[node name="MarginContainer7" type="MarginContainer" parent="ContainerExpression/HBoxContainer3"]
+margin_left = 150.0
+margin_right = 280.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerExpression/HBoxContainer3/MarginContainer7"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerExpression/HBoxContainer3/MarginContainer7"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Expression_15" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer7/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 22 )
+
+[node name="MarginContainer6" type="MarginContainer" parent="ContainerExpression/HBoxContainer3"]
+margin_left = 300.0
+margin_right = 430.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerExpression/HBoxContainer3/MarginContainer6"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerExpression/HBoxContainer3/MarginContainer6"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Expression_16" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer6/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 20 )
+
+[node name="MarginContainer2" type="MarginContainer" parent="ContainerExpression/HBoxContainer3"]
+margin_left = 450.0
+margin_right = 580.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerExpression/HBoxContainer3/MarginContainer2"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerExpression/HBoxContainer3/MarginContainer2"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Expression_17" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer2/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 19 )
+
+[node name="MarginContainer3" type="MarginContainer" parent="ContainerExpression/HBoxContainer3"]
+margin_left = 600.0
+margin_right = 730.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerExpression/HBoxContainer3/MarginContainer3"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerExpression/HBoxContainer3/MarginContainer3"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Expression_18" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer3/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 18 )
+
+[node name="MarginContainer4" type="MarginContainer" parent="ContainerExpression/HBoxContainer3"]
+margin_left = 750.0
+margin_right = 880.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerExpression/HBoxContainer3/MarginContainer4"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerExpression/HBoxContainer3/MarginContainer4"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Expression_19" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer4/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 17 )
+
+[node name="MarginContainer5" type="MarginContainer" parent="ContainerExpression/HBoxContainer3"]
+margin_left = 900.0
+margin_right = 1030.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerExpression/HBoxContainer3/MarginContainer5"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerExpression/HBoxContainer3/MarginContainer5"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Expression_20" type="Button" parent="ContainerExpression/HBoxContainer3/MarginContainer5/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 16 )
+
+[node name="ContainerActions" type="VBoxContainer" parent="."]
+visible = false
+margin_right = 1030.0
+margin_bottom = 430.0
+grow_vertical = 2
+size_flags_vertical = 4
+custom_constants/separation = 20
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions"]
+margin_right = 1030.0
+margin_bottom = 130.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ContainerActions/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer/MarginContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions/HBoxContainer/MarginContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Action_0" type="Button" parent="ContainerActions/HBoxContainer/MarginContainer/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 43 )
+
+[node name="MarginContainer2" type="MarginContainer" parent="ContainerActions/HBoxContainer"]
+margin_left = 150.0
+margin_right = 280.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer/MarginContainer2"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions/HBoxContainer/MarginContainer2"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Action_1" type="Button" parent="ContainerActions/HBoxContainer/MarginContainer2/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 38 )
+
+[node name="MarginContainer3" type="MarginContainer" parent="ContainerActions/HBoxContainer"]
+margin_left = 300.0
+margin_right = 430.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer/MarginContainer3"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions/HBoxContainer/MarginContainer3"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Action_2" type="Button" parent="ContainerActions/HBoxContainer/MarginContainer3/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 56 )
+
+[node name="MarginContainer4" type="MarginContainer" parent="ContainerActions/HBoxContainer"]
+margin_left = 450.0
+margin_right = 580.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer/MarginContainer4"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions/HBoxContainer/MarginContainer4"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Action_3" type="Button" parent="ContainerActions/HBoxContainer/MarginContainer4/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 45 )
+
+[node name="MarginContainer5" type="MarginContainer" parent="ContainerActions/HBoxContainer"]
+margin_left = 600.0
+margin_right = 730.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer/MarginContainer5"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions/HBoxContainer/MarginContainer5"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Action_4" type="Button" parent="ContainerActions/HBoxContainer/MarginContainer5/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 39 )
+
+[node name="MarginContainer6" type="MarginContainer" parent="ContainerActions/HBoxContainer"]
+margin_left = 750.0
+margin_right = 880.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer/MarginContainer6"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions/HBoxContainer/MarginContainer6"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Action_5" type="Button" parent="ContainerActions/HBoxContainer/MarginContainer6/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 36 )
+
+[node name="MarginContainer7" type="MarginContainer" parent="ContainerActions/HBoxContainer"]
+margin_left = 900.0
+margin_right = 1030.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer/MarginContainer7"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions/HBoxContainer/MarginContainer7"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Action_6" type="Button" parent="ContainerActions/HBoxContainer/MarginContainer7/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 44 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ContainerActions"]
+margin_top = 150.0
+margin_right = 1030.0
+margin_bottom = 280.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ContainerActions/HBoxContainer2"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer2/MarginContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions/HBoxContainer2/MarginContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Action_7" type="Button" parent="ContainerActions/HBoxContainer2/MarginContainer/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 53 )
+
+[node name="MarginContainer2" type="MarginContainer" parent="ContainerActions/HBoxContainer2"]
+margin_left = 150.0
+margin_right = 280.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer2/MarginContainer2"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions/HBoxContainer2/MarginContainer2"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Action_8" type="Button" parent="ContainerActions/HBoxContainer2/MarginContainer2/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 37 )
+
+[node name="MarginContainer3" type="MarginContainer" parent="ContainerActions/HBoxContainer2"]
+margin_left = 300.0
+margin_right = 430.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer2/MarginContainer3"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions/HBoxContainer2/MarginContainer3"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Action_9" type="Button" parent="ContainerActions/HBoxContainer2/MarginContainer3/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 40 )
+
+[node name="MarginContainer4" type="MarginContainer" parent="ContainerActions/HBoxContainer2"]
+margin_left = 450.0
+margin_right = 580.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer2/MarginContainer4"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions/HBoxContainer2/MarginContainer4"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Action_10" type="Button" parent="ContainerActions/HBoxContainer2/MarginContainer4/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 41 )
+
+[node name="MarginContainer5" type="MarginContainer" parent="ContainerActions/HBoxContainer2"]
+margin_left = 600.0
+margin_right = 730.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer2/MarginContainer5"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions/HBoxContainer2/MarginContainer5"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Action_11" type="Button" parent="ContainerActions/HBoxContainer2/MarginContainer5/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 48 )
+
+[node name="MarginContainer6" type="MarginContainer" parent="ContainerActions/HBoxContainer2"]
+margin_left = 750.0
+margin_right = 880.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer2/MarginContainer6"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions/HBoxContainer2/MarginContainer6"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Action_12" type="Button" parent="ContainerActions/HBoxContainer2/MarginContainer6/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 47 )
+
+[node name="MarginContainer7" type="MarginContainer" parent="ContainerActions/HBoxContainer2"]
+margin_left = 900.0
+margin_right = 1030.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer2/MarginContainer7"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions/HBoxContainer2/MarginContainer7"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Action_13" type="Button" parent="ContainerActions/HBoxContainer2/MarginContainer7/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 49 )
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ContainerActions"]
+margin_top = 300.0
+margin_right = 1030.0
+margin_bottom = 430.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ContainerActions/HBoxContainer3"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer3/MarginContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions/HBoxContainer3/MarginContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Action_14" type="Button" parent="ContainerActions/HBoxContainer3/MarginContainer/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 55 )
+
+[node name="MarginContainer7" type="MarginContainer" parent="ContainerActions/HBoxContainer3"]
+margin_left = 150.0
+margin_right = 280.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer3/MarginContainer7"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions/HBoxContainer3/MarginContainer7"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Action_15" type="Button" parent="ContainerActions/HBoxContainer3/MarginContainer7/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 50 )
+
+[node name="MarginContainer6" type="MarginContainer" parent="ContainerActions/HBoxContainer3"]
+margin_left = 300.0
+margin_right = 430.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer3/MarginContainer6"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions/HBoxContainer3/MarginContainer6"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Action_16" type="Button" parent="ContainerActions/HBoxContainer3/MarginContainer6/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 54 )
+
+[node name="MarginContainer2" type="MarginContainer" parent="ContainerActions/HBoxContainer3"]
+margin_left = 450.0
+margin_right = 580.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer3/MarginContainer2"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions/HBoxContainer3/MarginContainer2"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Action_17" type="Button" parent="ContainerActions/HBoxContainer3/MarginContainer2/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 51 )
+
+[node name="MarginContainer3" type="MarginContainer" parent="ContainerActions/HBoxContainer3"]
+margin_left = 600.0
+margin_right = 730.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer3/MarginContainer3"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions/HBoxContainer3/MarginContainer3"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Action_18" type="Button" parent="ContainerActions/HBoxContainer3/MarginContainer3/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 52 )
+
+[node name="MarginContainer4" type="MarginContainer" parent="ContainerActions/HBoxContainer3"]
+margin_left = 750.0
+margin_right = 880.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer3/MarginContainer4"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions/HBoxContainer3/MarginContainer4"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Action_19" type="Button" parent="ContainerActions/HBoxContainer3/MarginContainer4/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 46 )
+
+[node name="MarginContainer5" type="MarginContainer" parent="ContainerActions/HBoxContainer3"]
+margin_left = 900.0
+margin_right = 1030.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActions/HBoxContainer3/MarginContainer5"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActions/HBoxContainer3/MarginContainer5"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="Button_Action_20" type="Button" parent="ContainerActions/HBoxContainer3/MarginContainer5/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 42 )
+
+[node name="ContainerActionsOld" type="VBoxContainer" parent="."]
+visible = false
+margin_right = 1030.0
+margin_bottom = 430.0
+grow_vertical = 2
+size_flags_vertical = 4
+custom_constants/separation = 20
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActionsOld"]
+margin_right = 1030.0
+margin_bottom = 130.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="ContainerActionsOld/HBoxContainer"]
+margin_left = 300.0
+margin_right = 430.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActionsOld/HBoxContainer/MarginContainer3"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActionsOld/HBoxContainer/MarginContainer3"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="ButtonLeft2" type="Button" parent="ContainerActionsOld/HBoxContainer/MarginContainer3/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 9 )
+
+[node name="MarginContainer4" type="MarginContainer" parent="ContainerActionsOld/HBoxContainer"]
+margin_left = 450.0
+margin_right = 580.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActionsOld/HBoxContainer/MarginContainer4"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActionsOld/HBoxContainer/MarginContainer4"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="ButtonLeft2" type="Button" parent="ContainerActionsOld/HBoxContainer/MarginContainer4/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 5 )
+
+[node name="MarginContainer5" type="MarginContainer" parent="ContainerActionsOld/HBoxContainer"]
+margin_left = 600.0
+margin_right = 730.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActionsOld/HBoxContainer/MarginContainer5"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActionsOld/HBoxContainer/MarginContainer5"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="ButtonLeft2" type="Button" parent="ContainerActionsOld/HBoxContainer/MarginContainer5/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 7 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ContainerActionsOld"]
+margin_top = 150.0
+margin_right = 1030.0
+margin_bottom = 280.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="ContainerActionsOld/HBoxContainer2"]
+margin_left = 300.0
+margin_right = 430.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActionsOld/HBoxContainer2/MarginContainer3"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActionsOld/HBoxContainer2/MarginContainer3"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="ButtonLeft2" type="Button" parent="ContainerActionsOld/HBoxContainer2/MarginContainer3/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 8 )
+
+[node name="MarginContainer4" type="MarginContainer" parent="ContainerActionsOld/HBoxContainer2"]
+margin_left = 450.0
+margin_right = 580.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActionsOld/HBoxContainer2/MarginContainer4"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActionsOld/HBoxContainer2/MarginContainer4"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="ButtonLeft2" type="Button" parent="ContainerActionsOld/HBoxContainer2/MarginContainer4/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 11 )
+
+[node name="MarginContainer5" type="MarginContainer" parent="ContainerActionsOld/HBoxContainer2"]
+margin_left = 600.0
+margin_right = 730.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActionsOld/HBoxContainer2/MarginContainer5"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActionsOld/HBoxContainer2/MarginContainer5"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="ButtonLeft2" type="Button" parent="ContainerActionsOld/HBoxContainer2/MarginContainer5/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 12 )
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ContainerActionsOld"]
+margin_top = 300.0
+margin_right = 1030.0
+margin_bottom = 430.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="MarginContainer7" type="MarginContainer" parent="ContainerActionsOld/HBoxContainer3"]
+margin_left = 150.0
+margin_right = 280.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActionsOld/HBoxContainer3/MarginContainer7"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActionsOld/HBoxContainer3/MarginContainer7"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="ButtonLeft2" type="Button" parent="ContainerActionsOld/HBoxContainer3/MarginContainer7/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 15 )
+
+[node name="MarginContainer6" type="MarginContainer" parent="ContainerActionsOld/HBoxContainer3"]
+margin_left = 300.0
+margin_right = 430.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActionsOld/HBoxContainer3/MarginContainer6"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActionsOld/HBoxContainer3/MarginContainer6"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="ButtonLeft2" type="Button" parent="ContainerActionsOld/HBoxContainer3/MarginContainer6/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 10 )
+
+[node name="MarginContainer2" type="MarginContainer" parent="ContainerActionsOld/HBoxContainer3"]
+margin_left = 450.0
+margin_right = 580.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActionsOld/HBoxContainer3/MarginContainer2"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActionsOld/HBoxContainer3/MarginContainer2"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="ButtonLeft2" type="Button" parent="ContainerActionsOld/HBoxContainer3/MarginContainer2/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 14 )
+
+[node name="MarginContainer3" type="MarginContainer" parent="ContainerActionsOld/HBoxContainer3"]
+margin_left = 600.0
+margin_right = 730.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActionsOld/HBoxContainer3/MarginContainer3"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActionsOld/HBoxContainer3/MarginContainer3"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="ButtonLeft2" type="Button" parent="ContainerActionsOld/HBoxContainer3/MarginContainer3/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 3 )
+
+[node name="MarginContainer4" type="MarginContainer" parent="ContainerActionsOld/HBoxContainer3"]
+margin_left = 750.0
+margin_right = 880.0
+margin_bottom = 130.0
+
+[node name="Panel" type="Panel" parent="ContainerActionsOld/HBoxContainer3/MarginContainer4"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerActionsOld/HBoxContainer3/MarginContainer4"]
+margin_right = 130.0
+margin_bottom = 130.0
+
+[node name="ButtonLeft2" type="Button" parent="ContainerActionsOld/HBoxContainer3/MarginContainer4/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+icon = ExtResource( 13 )

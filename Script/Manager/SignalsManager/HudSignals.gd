@@ -16,6 +16,7 @@ const HIDE_RETICLE : String = "hide_reticle"
 const INTERACTABLE_ENTERED_REACH : String = "interactable_entered_reach"
 const INTERACTABLE_LEFT_REACH : String = "interactable_left_reach"
 const INTERACT_OCCURED : String = "interact_occured"
+const MAP_VISIBILITY_SET : String = "map_visibility_set"
 const NEW_INTERACTOR_GRABBED_FOCUS : String = "new_interactor_grabbed_focus"
 const SET_FIRST_PERSON : String = "set_first_person"
 const SET_FIRST_PERSON_POSSIBLE_CLICK : String = "set_first_person_possible_click"
@@ -36,6 +37,7 @@ signal hide_reticle()
 signal interactable_entered_reach(interactable_node)
 signal interactable_left_reach(interactable_node)
 signal interact_occured(interactable_user_node)
+signal map_visibility_set(became_visible_bool)
 signal new_interactor_grabbed_focus(new_interactor_component_node)
 signal set_first_person(is_active_bool)
 signal set_first_person_possible_click(click_is_possible_bool)
