@@ -3,7 +3,7 @@ class_name KinematicMovement
 
 # Component for kinematic movement
 export(float) var initial_jump_velocity = 2.2
-export(float) var climb_speed = 10
+export(float) var climb_speed = 1.5
 export(float) var movement_speed = 3.2
 
 # Debug variables
@@ -54,14 +54,17 @@ func _integrate_server(args):
 	calculate_horizontal(state)
 	if entity.is_grounded and vertical_vector.y > 0:
 		update_jump_velocity(state)
-	update_movement(state)
+	if is_climbing:
+		update_stairs_climbing(0.016, state)
+	else:
+		update_movement(state)
 	update_state(state)
 	update_server_values()
 	
 func update_state(state):
 	if is_flying:
 		entity.state.state = ActorEntityState.State.FLY
-	elif is_jumping or !entity.is_grounded:
+	elif is_jumping or !entity.is_grounded and !is_climbing:
 		entity.state.state = ActorEntityState.State.IN_AIR
 	elif is_climbing:
 		entity.state.state = ActorEntityState.State.CLIMBING
@@ -73,6 +76,8 @@ func update_state(state):
 		entity.state.state = ActorEntityState.State.IDLE
 
 func rotate_body(state) -> void:
+	if is_climbing:
+		return
 	# Rotate
 	var o = entity.global_transform.origin
 	var t = entity.look_dir
@@ -130,3 +135,87 @@ func update_server_values():
 func calculate_debug_values():
 	dbg_rest_jump_pos = entity.global_transform.origin
 	dbg_total_jump_height = dbg_rest_jump_pos.y - dbg_initial_jump_pos.y
+
+### TEMPORARY CLIMBING CODE
+# to be moved elsewhere.
+
+func start_climb_stairs(target_stairs) -> void:
+	#Do nothing if the player is already in climbing state.
+	if entity.state.state == ActorEntityState.State.CLIMBING:
+		return
+	
+#	entity.mode = RigidBody.MODE_KINEMATIC
+	
+	entity.stairs = target_stairs
+	is_climbing = true
+	
+	#Get which direction I should face when climbing the stairs.
+	var kb_pos = entity.global_transform.origin
+	entity.climb_look_direction = entity.stairs.get_look_direction(kb_pos)
+	
+	#Get the closest step to start climbing from.
+	for index in entity.stairs.climb_points.size():
+		if entity.climb_point == -1 or entity.stairs.climb_points[index].distance_to(kb_pos) < entity.stairs.climb_points[entity.climb_point].distance_to(kb_pos):
+			entity.climb_point = index
+	
+	#Rotate the model to best fit the stairs.
+	var a = entity.model.global_transform
+	var target_transform = a.looking_at(entity.model.global_transform.origin - entity.climb_look_direction, Vector3(0, 1, 0))
+	entity.model.global_transform.basis = target_transform.basis
+	
+	#Automatically move towards the climbing point horizontally when you first grab on.
+#	var flat_velocity = (entity.stairs.climb_points[entity.climb_point] - kb_pos) * 50.0
+#	flat_velocity.y = 0.0
+#	entity.velocity += flat_velocity
+#	entity.velocity += Vector3(0, input_direction * delta * climb_speed, 0)
+	entity.global_transform.origin = entity.stairs.climb_points[entity.climb_point]
+
+#Stop climbing stairs.
+func stop_climb_stairs() -> void :
+	is_climbing = false
+	entity.climb_point = -1
+#	entity.velocity += Vector3(0, 0, 10)
+	
+	entity.global_transform.origin.y += 0.2
+	
+	#Move the entitiy forward based on the climbing direction
+	var get_off : Vector2 = Vector2.UP.rotated(entity.model.rotation.y)
+	entity.global_transform.origin += Vector3(get_off.x * -0.8, 0, get_off.y * -0.8)
+	
+	#Make myself face the same direction as the camera.
+	entity.model.global_transform.basis = entity.global_transform.basis
+#	entity.mode = RigidBody.MODE_CHARACTER
+
+func update_stairs_climbing(delta, state):
+	var kb_pos = entity.global_transform.origin
+	
+	#Check for next climb point.
+	if entity.climb_point + 1 < entity.stairs.climb_points.size() and kb_pos.y > entity.stairs.climb_points[entity.climb_point].y:
+		entity.climb_point += 1
+	#Check for previous climb point.
+	elif entity.climb_point - 1 >= 0 and kb_pos.y < entity.stairs.climb_points[entity.climb_point - 1].y:
+		entity.climb_point -= 1
+	
+	var input_direction = entity.input.z
+	
+	if entity.climb_point == entity.stairs.climb_points.size() - 1 and kb_pos.y > entity.stairs.climb_points[entity.climb_point].y and not input_direction <= 0.0:
+		# Add the movement velocity using delta to make sure physics are consistent regardless of framerate.
+		entity.velocity += horizontal_vector * delta
+		
+		#Stop climbing at the top when too far away from the stairs.
+		if entity.climb_point + 1 >= entity.stairs.climb_points.size() :
+			stop_climb_stairs()
+	
+	#When moving down and at the bottom of the stairs, let go.
+	if input_direction < 0.0 and on_ground.is_colliding():
+		stop_climb_stairs()
+	
+#	entity.velocity = entity.move_and_slide(entity.velocity, Vector3.UP, slide)
+#	entity.global_transform.origin += Vector3.UP
+	
+	state.set_linear_velocity(Vector3.UP * climb_speed * entity.input.z)
+	entity.velocity = state.linear_velocity
+	
+	# Update the values that are used for networking.
+	entity.srv_pos = entity.global_transform.origin
+	entity.srv_vel = entity.velocity
