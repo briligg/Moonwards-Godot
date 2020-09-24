@@ -62,7 +62,7 @@ margin_right = 280.0
 margin_bottom = 120.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-items = [ "test", null, false, "test2", null, false, "Say_test", null, false, "simple", null, false, "Use", null, false ]
+items = [ "simple", null, false, "Use", null, false, "Say_test", null, false ]
 
 [node name="selection" type="HBoxContainer" parent="ViewMenuSplit/Container"]
 margin_top = 148.0
@@ -97,7 +97,6 @@ margin_bottom = 194.0
 margin_top = 198.0
 margin_right = 280.0
 margin_bottom = 1036.0
-rect_min_size = Vector2( 0, 400 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -114,6 +113,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 node_path = NodePath("../../../../../TemplateNPC")
+subnames = ""
+editable = true
 property_blacklist = [ "NPC_File" ]
 custom_gadget_paths = {
 
@@ -127,6 +128,7 @@ container_type_hints = {
 ":dictionary_value:[keys]": "",
 ":dictionary_value:[values]": ""
 }
+filter_built_in_properties = true
 
 [node name="HSeparator2" type="HSeparator" parent="ViewMenuSplit/Container"]
 margin_top = 1040.0
@@ -146,7 +148,7 @@ margin_left = 433.528
 margin_top = 153.245
 margin_right = 515.528
 margin_bottom = 241.245
-items = [ "test", null, 0, false, false, 0, 0, null, "", false, "test2", null, 0, false, false, 1, 0, null, "", false, "Say_test", null, 0, false, false, 2, 0, null, "", false, "simple", null, 0, false, false, 3, 0, null, "", false, "Use", null, 0, false, false, 4, 0, null, "", false ]
+items = [ "simple", null, 0, false, false, 0, 0, null, "", false, "Use", null, 0, false, false, 1, 0, null, "", false, "Say_test", null, 0, false, false, 2, 0, null, "", false ]
 
 [node name="Save" type="FileDialog" parent="ViewMenuSplit/StatesGraphEdit"]
 visible = true
