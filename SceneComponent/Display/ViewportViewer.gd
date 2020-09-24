@@ -23,6 +23,8 @@ onready var screen: Node = self
 onready var collision_box: CollisionShape = get_node("Area/CollisionShape")
 onready var viewport: Node = get_node("Viewport")
 
+var screen_parent: Node = null
+
 var content_instance = null
 
 #When track_camera is on, rotate myself to face the camera at all times.
@@ -65,8 +67,14 @@ func _on_area_input_event(_camera, event, click_pos, _click_normal, _shape_idx):
 	#Convert the click position from world to local, using the viewport's world position
 	var real_click_pos = click_pos - screen_pos 
 
-	var percentage_pos = Vector2(real_click_pos.x / screen_size.x, real_click_pos.y / screen_size.y)
-
+	#Compensate for rotation for the x axis
+	var x_compens = cos(deg2rad(screen_parent.rotation_degrees.y))
+	var z_compens = sin(deg2rad(screen_parent.rotation_degrees.y))
+	var x_axis = x_compens * real_click_pos.x / screen_size.x
+	var z_axis = -z_compens * real_click_pos.z / screen_size.x
+	
+	var percentage_pos = Vector2(x_axis + z_axis, real_click_pos.y / screen_size.y )
+	var zclick_pos = real_click_pos.z / screen_size.x
 	#Convert pos to a range from (0 - 1)
 	percentage_pos.y *= -1
 	percentage_pos += Vector2(1, 1)

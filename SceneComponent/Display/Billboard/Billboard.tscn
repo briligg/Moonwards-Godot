@@ -16,7 +16,3 @@ text_slides = [ "We have big plans for how you can use this space. It’s going 
 
 [node name="Screen" parent="." instance=ExtResource( 1 )]
 content = ExtResource( 2 )
-mesh_size = Vector2( 1920, 1080 )
-viewport_size = Vector2( 1920, 1080 )
-track_camera = false
-hologram = false

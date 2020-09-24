@@ -33,7 +33,8 @@ func _ready() -> void :
 	if not text_slides.empty() :
 		slide_control.set_text(text_slides[0])
 		slide_control.set_texture(texture_slides[0])
-
+	screen.screen_parent = self
+	
 #Go to next slide. Cycle to beginning if already at last slide.
 func _on_next_pressed() -> void :
 	#If we have more slides to go to, go to the next one.
