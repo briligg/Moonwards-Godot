@@ -17,12 +17,6 @@
 [ext_resource path="res://Assets/Interface/Textures/T_UI_White.png" type="Texture" id=16]
 [ext_resource path="res://SceneComponent/Interface/Hud/Apps/Map/MapApp.tscn" type="PackedScene" id=18]
 
-
-
-
-
-
-
 [node name="Hud" type="CanvasLayer"]
 layer = 8
 script = ExtResource( 1 )
@@ -64,7 +58,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ToolsBar" parent="Apps" instance=ExtResource( 4 )]
+[node name="ToolsBarApp" parent="Apps" instance=ExtResource( 4 )]
 
 [node name="BuildingApp" parent="Apps" instance=ExtResource( 13 )]
 visible = false

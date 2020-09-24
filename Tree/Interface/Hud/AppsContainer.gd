@@ -14,6 +14,11 @@ func _ready() -> void :
 			previous_app = app
 			break
 
+#Change the active app by passing it's node name.
+func change_app(app_name : String) -> void :
+	assert(has_node(app_name))
+	new_active_app(get_node(app_name))
+
 #A new app node has become active. Hide the previous app.
 func new_active_app(app_node : Node) -> void :
 	current_app.hide()

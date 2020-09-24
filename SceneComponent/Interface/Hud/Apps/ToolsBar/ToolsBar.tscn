@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconVideoCamera.png" type="Texture" id=2]
@@ -13,8 +13,7 @@
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconExpand.png" type="Texture" id=11]
 [ext_resource path="res://SceneComponent/Interface/Hud/Apps/ToolsBar/Button_Map.gd" type="Script" id=12]
 [ext_resource path="res://SceneComponent/Interface/Hud/Apps/ToolsBar/Button_Expand.gd" type="Script" id=13]
-
-
+[ext_resource path="res://SceneComponent/Interface/Hud/Apps/ToolsBar/ToolsBarRoot.gd" type="Script" id=14]
 
 [sub_resource type="Animation" id=1]
 resource_name = "hide"
@@ -100,6 +99,7 @@ tracks/2/keys = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
