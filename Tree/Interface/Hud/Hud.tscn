@@ -33,7 +33,7 @@ margin_bottom = -20.0
 
 [node name="IgnoreHudShowCalls" type="Node" parent="."]
 
-[node name="AppBackground" type="TextureRect" parent="."]
+[node name="Blur" type="TextureRect" parent="."]
 visible = false
 material = ExtResource( 15 )
 anchor_right = 1.0
