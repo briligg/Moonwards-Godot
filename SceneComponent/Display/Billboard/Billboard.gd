@@ -18,7 +18,8 @@ export(Array, String) var text_slides
 var slide_index: int = 0
 var slide_size: int = 0
 
-func _ready():
+#Listen to the buttons and verify that slides are setup correctly.
+func _ready() -> void :
 	slide_control.connect("next_pressed", self, "_on_next_pressed")
 	slide_control.connect("prev_pressed", self, "_on_prev_pressed")
 	
@@ -32,8 +33,9 @@ func _ready():
 	if not text_slides.empty() :
 		slide_control.set_text(text_slides[0])
 		slide_control.set_texture(texture_slides[0])
-	
-func _on_next_pressed():
+
+#Go to next slide. Cycle to beginning if already at last slide.
+func _on_next_pressed() -> void :
 	#If we have more slides to go to, go to the next one.
 	if slide_size > slide_index + 1:
 		slide_index += 1
@@ -44,9 +46,13 @@ func _on_next_pressed():
 	slide_control.texture = texture_slides[slide_index]
 	slide_control.text = text_slides[slide_index]
 
-func _on_prev_pressed():
+#Go to previous slide. Cycle to the last slide if at the first slide already.
+func _on_prev_pressed() -> void :
+	#Move to the previous slide if there are still previous slides remaining.
 	if slide_index > 0:
 		slide_index -= 1
+	
+	#We are at the first slide, move to the last slide of the list.
 	else:
 		slide_index = slide_size - 1
 	slide_control.texture = texture_slides[slide_index]
