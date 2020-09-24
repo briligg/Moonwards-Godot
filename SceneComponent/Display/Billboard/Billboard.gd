@@ -43,8 +43,8 @@ func _on_next_pressed() -> void :
 	#We have reached the end of the slides. Cycle back to the beginning.
 	else:
 		slide_index = 0
-	slide_control.texture = texture_slides[slide_index]
-	slide_control.text = text_slides[slide_index]
+	slide_control.set_texture(texture_slides[slide_index])
+	slide_control.set_text(text_slides[slide_index])
 
 #Go to previous slide. Cycle to the last slide if at the first slide already.
 func _on_prev_pressed() -> void :
@@ -55,6 +55,6 @@ func _on_prev_pressed() -> void :
 	#We are at the first slide, move to the last slide of the list.
 	else:
 		slide_index = slide_size - 1
-	slide_control.texture = texture_slides[slide_index]
-	slide_control.text = text_slides[slide_index]
+	slide_control.set_texture(texture_slides[slide_index])
+	slide_control.set_text(text_slides[slide_index])
 

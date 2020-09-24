@@ -6,7 +6,6 @@
 [ext_resource path="res://Assets/Displays/ArrowButtonHover.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Displays/ArrowButtonPressed.png" type="Texture" id=5]
 
-
 [sub_resource type="Shader" id=1]
 
 [sub_resource type="ShaderMaterial" id=2]
@@ -36,6 +35,7 @@ anchor_bottom = 0.8
 margin_bottom = -6.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
+expand = true
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
