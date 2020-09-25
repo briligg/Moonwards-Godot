@@ -334,6 +334,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Entity/VehicleEntity.gd"
 }, {
+"base": "Interactable",
+"class": "VerticalStairs",
+"language": "GDScript",
+"path": "res://SceneComponent/Utilities/VerticalStairs/VerticalStairs.gd"
+}, {
 "base": "VisualShaderNodeCustom",
 "class": "VisualShaderNodeCheapContrast",
 "language": "GDScript",
@@ -465,6 +470,7 @@ _global_script_class_icons={
 "TextPopup": "",
 "TooltipData": "",
 "VehicleEntity": "",
+"VerticalStairs": "",
 "VisualShaderNodeCheapContrast": "",
 "VisualShaderNodeColorHue": "",
 "VisualShaderNodeDistanceWS": "",
