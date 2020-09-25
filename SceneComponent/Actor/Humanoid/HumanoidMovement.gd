@@ -164,20 +164,13 @@ func start_climb_stairs(target_stairs) -> void:
 	entity.model.global_transform.basis = target_transform.basis
 	
 	#Automatically move towards the climbing point horizontally when you first grab on.
-#	var flat_velocity = (entity.stairs.climb_points[entity.climb_point] - kb_pos) * 50.0
-#	flat_velocity.y = 0.0
-#	entity.velocity += flat_velocity
-#	entity.velocity += Vector3(0, input_direction * delta * climb_speed, 0)
 	entity.global_transform.origin = entity.stairs.climb_points[entity.climb_point]
 	entity.global_transform.origin += -entity.climb_look_direction * 0.35
 
 #Stop climbing stairs.
 func stop_climb_stairs() -> void :
 	is_climbing = false
-	entity.climb_point = -1
-#	entity.velocity += Vector3(0, 0, 10)
-	
-	entity.global_transform.origin.y += 0.2
+#	entity.climb_point = -1
 	
 	#Move the entitiy forward based on the climbing direction
 	var get_off : Vector2 = Vector2.UP.rotated(entity.model.rotation.y)
@@ -185,7 +178,6 @@ func stop_climb_stairs() -> void :
 	
 	#Make myself face the same direction as the camera.
 	entity.model.global_transform.basis = entity.global_transform.basis
-#	entity.mode = RigidBody.MODE_CHARACTER
 
 func update_stairs_climbing(delta, state):
 	var kb_pos = entity.global_transform.origin
@@ -197,15 +189,12 @@ func update_stairs_climbing(delta, state):
 	elif entity.climb_point - 1 >= 0 and kb_pos.y < entity.stairs.climb_points[entity.climb_point - 1].y:
 		entity.climb_point -= 1
 	
+	#Make it easier to read which direction we are climbing.
 	var input_direction = entity.input.z
 	
-	if entity.climb_point == entity.stairs.climb_points.size() - 1 and kb_pos.y > entity.stairs.climb_points[entity.climb_point].y and not input_direction <= 0.0:
-		# Add the movement velocity using delta to make sure physics are consistent regardless of framerate.
-		entity.velocity += horizontal_vector * delta
-		
-		#Stop climbing at the top when too far away from the stairs.
-		if entity.climb_point + 1 >= entity.stairs.climb_points.size() :
-			stop_climb_stairs()
+	#Stop climbing at the top of the stairs.
+	if entity.climb_point + 1 >= entity.stairs.climb_points.size() and kb_pos.y > entity.stairs.climb_points[entity.climb_point].y and not input_direction <= 0.0:
+		stop_climb_stairs()
 	
 	#When moving down and at the bottom of the stairs, let go.
 	if input_direction < 0.0 and on_ground.is_colliding():
