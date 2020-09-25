@@ -1,5 +1,6 @@
 tool
 extends Interactable
+class_name VerticalStairs
 
 var climb_points = []
 var step_size = 0.535

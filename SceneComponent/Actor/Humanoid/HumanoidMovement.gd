@@ -42,7 +42,7 @@ func is_grounded() -> bool:
 func _integrate_forces(state):
 	invoke_network_based("_integrate_server", "_integrate_client", [state])
 	
-func _integrate_client(args):
+func _integrate_client(_args):
 	pass
 	
 func _integrate_server(args):
@@ -61,7 +61,7 @@ func _integrate_server(args):
 	update_state(state)
 	update_server_values()
 	
-func update_state(state):
+func update_state(state : PhysicsDirectBodyState):
 	if is_flying:
 		entity.state.state = ActorEntityState.State.FLY
 	elif is_jumping or !entity.is_grounded and !is_climbing:
@@ -75,7 +75,7 @@ func update_state(state):
 	else:
 		entity.state.state = ActorEntityState.State.IDLE
 
-func rotate_body(state) -> void:
+func rotate_body(_state : PhysicsDirectBodyState) -> void:
 	if is_climbing:
 		return
 	# Rotate
@@ -93,11 +93,11 @@ func handle_input() -> void:
 	if entity.state.state != ActorEntityState.State.IN_AIR and entity.input.y > 0:
 		vertical_vector.y = 1
 
-func calculate_horizontal(state):
+func calculate_horizontal(_state : PhysicsDirectBodyState):
 	horizontal_vector += entity.input.z * entity.model.transform.basis.z
 	horizontal_vector += entity.input.x * entity.model.transform.basis.x
 
-func update_jump_velocity(state):
+func update_jump_velocity(_state : PhysicsDirectBodyState):
 	dbg_initial_jump_pos = entity.global_transform.origin
 	dbg_rest_jump_pos = Vector3()
 	jump_velocity = Vector3()
@@ -105,7 +105,7 @@ func update_jump_velocity(state):
 	jump_velocity += horizontal_vector.normalized() * movement_speed
 	is_jumping = true
 
-func update_movement(state):
+func update_movement(state : PhysicsDirectBodyState):
 	var vel = Vector3()
 	
 	# Jump velocity simulation
@@ -139,7 +139,7 @@ func calculate_debug_values():
 ### TEMPORARY CLIMBING CODE
 # to be moved elsewhere.
 
-func start_climb_stairs(target_stairs) -> void:
+func start_climb_stairs(target_stairs : VerticalStairs) -> void:
 	#Do nothing if the player is already in climbing state.
 	if entity.state.state == ActorEntityState.State.CLIMBING:
 		return
@@ -168,18 +168,26 @@ func start_climb_stairs(target_stairs) -> void:
 	entity.global_transform.origin += -entity.climb_look_direction * 0.35
 
 #Stop climbing stairs.
-func stop_climb_stairs() -> void :
+func stop_climb_stairs(state : PhysicsDirectBodyState) -> void :
 	is_climbing = false
 #	entity.climb_point = -1
 	
 	#Move the entitiy forward based on the climbing direction
 	var get_off : Vector2 = Vector2.UP.rotated(entity.model.rotation.y)
-	entity.global_transform.origin += Vector3(get_off.x * -0.8, 0, get_off.y * -0.8)
+	state.set_linear_velocity(Vector3(get_off.x * -100, 0, get_off.y * -100))
+#	entity.global_transform.origin += Vector3(get_off.x * -0.8, 0, get_off.y * -0.8)
 	
 	#Make myself face the same direction as the camera.
 	entity.model.global_transform.basis = entity.global_transform.basis
+	
+	entity.velocity = state.linear_velocity
+	
+	# Update the values that are used for networking.
+	entity.srv_pos = entity.global_transform.origin
+	entity.srv_vel = entity.velocity
 
-func update_stairs_climbing(delta, state):
+#Eventually we need to make this work with delta.
+func update_stairs_climbing(_delta : float, state : PhysicsDirectBodyState) -> void :
 	var kb_pos = entity.global_transform.origin
 	
 	#Check for next climb point.
@@ -194,14 +202,13 @@ func update_stairs_climbing(delta, state):
 	
 	#Stop climbing at the top of the stairs.
 	if entity.climb_point + 1 >= entity.stairs.climb_points.size() and kb_pos.y > entity.stairs.climb_points[entity.climb_point].y and not input_direction <= 0.0:
-		stop_climb_stairs()
+		stop_climb_stairs(state)
+		return
 	
 	#When moving down and at the bottom of the stairs, let go.
 	if input_direction < 0.0 and on_ground.is_colliding():
-		stop_climb_stairs()
-	
-#	entity.velocity = entity.move_and_slide(entity.velocity, Vector3.UP, slide)
-#	entity.global_transform.origin += Vector3.UP
+		stop_climb_stairs(state)
+		return
 	
 	state.set_linear_velocity(Vector3.UP * climb_speed * entity.input.z)
 	entity.velocity = state.linear_velocity
