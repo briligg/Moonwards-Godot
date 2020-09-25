@@ -169,6 +169,7 @@ func start_climb_stairs(target_stairs) -> void:
 #	entity.velocity += flat_velocity
 #	entity.velocity += Vector3(0, input_direction * delta * climb_speed, 0)
 	entity.global_transform.origin = entity.stairs.climb_points[entity.climb_point]
+	entity.global_transform.origin += -entity.climb_look_direction * 0.35
 
 #Stop climbing stairs.
 func stop_climb_stairs() -> void :
