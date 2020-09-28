@@ -6,7 +6,7 @@ var body_counter: int = 0
 func _ready():
 	$PlayArea.connect("body_entered", self, "_on_body_entered")
 	$PlayArea.connect("body_exited", self, "_on_body_exited")
-
+	$Screen.screen_parent = self
 
 func _on_body_entered(_body: Node) -> void:
 	if body_counter == 0:
