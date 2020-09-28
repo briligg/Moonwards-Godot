@@ -6,6 +6,11 @@
 [ext_resource path="res://Assets/Interface/Hud/Styles/LabelBig_StyleboxFlat.tres" type="StyleBox" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.862745 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 
 [resource]
 default_font = ExtResource( 3 )
