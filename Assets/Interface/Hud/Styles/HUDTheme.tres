@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=10 format=2]
+[gd_resource type="Theme" load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Interface/Hud/Styles/Panel_StyleboxFlat.tres" type="StyleBox" id=1]
 [ext_resource path="res://Assets/Interface/Hud/Styles/Container_StyleboxFlat.tres" type="StyleBox" id=2]
@@ -8,13 +8,11 @@
 [ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsTabBg.tres" type="StyleBox" id=6]
 [ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsTabDisabled.tres" type="StyleBox" id=7]
 [ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsPanel.tres" type="StyleBox" id=8]
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0, 0, 0, 0.862745 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+[ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsButtonPressed.tres" type="StyleBox" id=9]
+[ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsButtonNormal.tres" type="StyleBox" id=10]
+[ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsButtonDisabled.tres" type="StyleBox" id=11]
+[ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsButtonHover.tres" type="StyleBox" id=12]
+[ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsButtonFocus.tres" type="StyleBox" id=13]
 
 [resource]
 default_font = ExtResource( 3 )
@@ -25,11 +23,11 @@ Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 Button/constants/hseparation = 2
 Button/fonts/font = null
 Button/styles/ButtonBackground = null
-Button/styles/disabled = null
-Button/styles/focus = null
-Button/styles/hover = null
-Button/styles/normal = SubResource( 1 )
-Button/styles/pressed = null
+Button/styles/disabled = ExtResource( 11 )
+Button/styles/focus = ExtResource( 13 )
+Button/styles/hover = ExtResource( 12 )
+Button/styles/normal = ExtResource( 10 )
+Button/styles/pressed = ExtResource( 9 )
 ItemList/colors/font_color = Color( 0.63, 0.63, 0.63, 1 )
 ItemList/colors/font_color_selected = Color( 1, 1, 1, 1 )
 ItemList/colors/guide_color = Color( 0, 0, 0, 0.1 )
