@@ -24,6 +24,7 @@ __meta__ = {
 navmesh = SubResource( 1 )
 
 [node name="Moon_Town_Master" parent="NavigationMeshInstance" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5586, -0.00645447, 2.45308 )
 
 [node name="SpawnPoints" type="Spatial" parent="."]
 

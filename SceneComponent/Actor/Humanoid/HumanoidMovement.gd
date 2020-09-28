@@ -7,9 +7,11 @@ export(float) var climb_speed = 1.5
 export(float) var movement_speed = 3.2
 
 # Debug variables
-var dbg_initial_jump_pos = Vector3()
-var dbg_rest_jump_pos = Vector3()
+var dbg_initial_jump_pos: Vector3 = Vector3()
+var dbg_rest_jump_pos: Vector3 = Vector3()
 var dbg_total_jump_height: float = 0.0
+var dbg_ground_normal: Vector3 = Vector3()
+var dbg_ground_slope: float = 0.0
 
 # Input vectors
 var horizontal_vector: Vector3 = Vector3.ZERO
@@ -64,14 +66,14 @@ func _integrate_server(args):
 func update_anim_state(phys_state : PhysicsDirectBodyState):
 	if is_flying:
 		entity.state.state = ActorEntityState.State.FLY
-	elif is_jumping or !entity.is_grounded and !is_climbing:
-		entity.state.state = ActorEntityState.State.IN_AIR
+#	elif is_jumping or !entity.is_grounded and !is_climbing:
+#		entity.state.state = ActorEntityState.State.IN_AIR
 	elif is_climbing:
 		entity.state.state = ActorEntityState.State.CLIMBING
 	elif abs(phys_state.linear_velocity.length()) > 0:
 		entity.state.state = ActorEntityState.State.MOVING
-	elif abs(phys_state.linear_velocity.y) > 0.1 or !entity.is_grounded:
-		entity.state.state = ActorEntityState.State.IN_AIR
+#	elif abs(phys_state.linear_velocity.y) > 0.1 or !entity.is_grounded:
+#		entity.state.state = ActorEntityState.State.IN_AIR
 	else:
 		entity.state.state = ActorEntityState.State.IDLE
 
@@ -94,8 +96,13 @@ func handle_input() -> void:
 		vertical_vector.y = 1
 
 func calculate_horizontal(_phys_state : PhysicsDirectBodyState):
+	dbg_ground_normal = normal_detect.get_collision_normal()
+	dbg_ground_slope = rad2deg(acos(dbg_ground_normal.dot(Vector3.UP)))
 	horizontal_vector += entity.input.z * entity.model.transform.basis.z
 	horizontal_vector += entity.input.x * entity.model.transform.basis.x
+#	horizontal_vector = horizontal_vector.rotated(Vector3.RIGHT, deg2rad(dbg_ground_slope))
+	if horizontal_vector.x != 0 or horizontal_vector.z != 0:
+		horizontal_vector += Vector3.UP * -sin(dbg_ground_slope) * 2
 
 func update_jump_velocity(_phys_state : PhysicsDirectBodyState):
 	dbg_initial_jump_pos = entity.global_transform.origin
