@@ -1,11 +1,16 @@
-shader_type spatial;
+shader_type spatial; 
+render_mode cull_back;
+
+uniform sampler2D Texture : hint_albedo;
 
 uniform vec3 Angle;
 uniform vec3 AngleTarget;
-uniform vec4 Color: hint_color;
+uniform vec4 Color : hint_color = vec4(0.0,0.0,1.0,1.0);
 
 void fragment() {
-	METALLIC = 1.0f;
+	ALBEDO = texture(Texture,UV).rgb * Color.rgb;
+	//ALBEDO = Color.rgb;
+	METALLIC = 0.0f;
 	SPECULAR = 1.0f;
-	ROUGHNESS = 0.0f;
+	ROUGHNESS = 1.0f;
 }
