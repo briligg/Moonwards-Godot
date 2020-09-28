@@ -4,7 +4,7 @@ class_name KinematicMovement
 # Component for kinematic movement
 export(float) var initial_jump_velocity = 2.2
 export(float) var climb_speed = 1.5
-export(float) var movement_speed = 3.2
+export(float) var movement_speed = 5.2
 
 # Debug variables
 var dbg_initial_jump_pos: Vector3 = Vector3()
@@ -12,6 +12,7 @@ var dbg_rest_jump_pos: Vector3 = Vector3()
 var dbg_total_jump_height: float = 0.0
 var dbg_ground_normal: Vector3 = Vector3()
 var dbg_ground_slope: float = 0.0
+var dbg_speed: float = 0.0
 
 # Input vectors
 var horizontal_vector: Vector3 = Vector3.ZERO
@@ -39,7 +40,8 @@ func _ready() -> void:
 	entity.connect("on_forces_integrated", self, "_integrate_forces")
 
 func is_grounded() -> bool:
-	return on_ground.is_colliding()
+	return (on_ground.is_colliding() or $OnGround2.is_colliding() or $OnGround3.is_colliding()
+			or $OnGround4.is_colliding() or $OnGround5.is_colliding())
 
 func _integrate_forces(state):
 	invoke_network_based("_integrate_server", "_integrate_client", [state])
@@ -49,10 +51,11 @@ func _integrate_client(_args):
 	
 func _integrate_server(args):
 	var phys_state = args[0]
-	entity.is_grounded = is_grounded()
 	reset_input()
 	handle_input()
 	rotate_body(phys_state)
+	calculate_slope()
+	entity.is_grounded = is_grounded()
 	calculate_horizontal(phys_state)
 	if entity.is_grounded and vertical_vector.y > 0:
 		update_jump_velocity(phys_state)
@@ -66,14 +69,14 @@ func _integrate_server(args):
 func update_anim_state(phys_state : PhysicsDirectBodyState):
 	if is_flying:
 		entity.state.state = ActorEntityState.State.FLY
-#	elif is_jumping or !entity.is_grounded and !is_climbing:
-#		entity.state.state = ActorEntityState.State.IN_AIR
+	elif is_jumping or !entity.is_grounded and !is_climbing:
+		entity.state.state = ActorEntityState.State.IN_AIR
 	elif is_climbing:
 		entity.state.state = ActorEntityState.State.CLIMBING
 	elif abs(phys_state.linear_velocity.length()) > 0:
 		entity.state.state = ActorEntityState.State.MOVING
-#	elif abs(phys_state.linear_velocity.y) > 0.1 or !entity.is_grounded:
-#		entity.state.state = ActorEntityState.State.IN_AIR
+	elif abs(phys_state.linear_velocity.y) > 0.1 or !entity.is_grounded:
+		entity.state.state = ActorEntityState.State.IN_AIR
 	else:
 		entity.state.state = ActorEntityState.State.IDLE
 
@@ -95,15 +98,25 @@ func handle_input() -> void:
 	if entity.state.state != ActorEntityState.State.IN_AIR and entity.input.y > 0:
 		vertical_vector.y = 1
 
-func calculate_horizontal(_phys_state : PhysicsDirectBodyState):
-	dbg_ground_normal = normal_detect.get_collision_normal()
+func calculate_slope():
+	dbg_ground_normal = normal_detect.get_collision_normal().normalized()
 	dbg_ground_slope = rad2deg(acos(dbg_ground_normal.dot(Vector3.UP)))
+#	on_ground.rotate_y(dbg_ground_slope)
+
+func calculate_horizontal(_phys_state : PhysicsDirectBodyState):
 	horizontal_vector += entity.input.z * entity.model.transform.basis.z
 	horizontal_vector += entity.input.x * entity.model.transform.basis.x
-#	horizontal_vector = horizontal_vector.rotated(Vector3.RIGHT, deg2rad(dbg_ground_slope))
-	if horizontal_vector.x != 0 or horizontal_vector.z != 0:
-		horizontal_vector += Vector3.UP * -sin(dbg_ground_slope) * 2
-
+#	horizontal_vector = horizontal_vector.rotated(entity.model.transform.basis.x, deg2rad(dbg_ground_slope))
+#	horizontal_vector.y *= sign(entity.input.z)
+	if dbg_ground_slope > 5:
+		var slide_direction = horizontal_vector.slide(dbg_ground_normal)
+		horizontal_vector.y = slide_direction.y
+		# We'll use this to snap the ground if we're going down
+		# To eliminate the jitters caused by on_ground not reading properly
+		if sign(horizontal_vector.y) == -1:
+			horizontal_vector.y += -3 * cos(deg2rad(dbg_ground_slope))
+		horizontal_vector = horizontal_vector.normalized()
+	
 func update_jump_velocity(_phys_state : PhysicsDirectBodyState):
 	dbg_initial_jump_pos = entity.global_transform.origin
 	dbg_rest_jump_pos = Vector3()
@@ -132,6 +145,8 @@ func update_movement(phys_state : PhysicsDirectBodyState):
 	else:
 		# Gravity simulation
 		vel += Vector3.DOWN * 1.6 
+	
+	dbg_speed = vel.length()
 	
 	phys_state.set_linear_velocity(vel)
 	entity.velocity = phys_state.linear_velocity
