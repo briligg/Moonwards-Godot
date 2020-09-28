@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=14 format=2]
+[gd_resource type="Theme" load_steps=18 format=2]
 
 [ext_resource path="res://Assets/Interface/Hud/Styles/Panel_StyleboxFlat.tres" type="StyleBox" id=1]
 [ext_resource path="res://Assets/Interface/Hud/Styles/Container_StyleboxFlat.tres" type="StyleBox" id=2]
@@ -13,6 +13,10 @@
 [ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsButtonDisabled.tres" type="StyleBox" id=11]
 [ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsButtonHover.tres" type="StyleBox" id=12]
 [ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsButtonFocus.tres" type="StyleBox" id=13]
+[ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsVScrollBar.tres" type="StyleBox" id=14]
+[ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsVScrollBarGrabberHighlighted.tres" type="StyleBox" id=15]
+[ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsVScrollBarGrabber.tres" type="StyleBox" id=16]
+[ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsVScrollBarGrabberPressed.tres" type="StyleBox" id=17]
 
 [resource]
 default_font = ExtResource( 3 )
@@ -28,6 +32,15 @@ Button/styles/focus = ExtResource( 13 )
 Button/styles/hover = ExtResource( 12 )
 Button/styles/normal = ExtResource( 10 )
 Button/styles/pressed = ExtResource( 9 )
+HScrollBar/icons/decrement = null
+HScrollBar/icons/decrement_highlight = null
+HScrollBar/icons/increment = null
+HScrollBar/icons/increment_highlight = null
+HScrollBar/styles/grabber = ExtResource( 16 )
+HScrollBar/styles/grabber_highlight = ExtResource( 15 )
+HScrollBar/styles/grabber_pressed = ExtResource( 17 )
+HScrollBar/styles/scroll = ExtResource( 14 )
+HScrollBar/styles/scroll_focus = ExtResource( 14 )
 ItemList/colors/font_color = Color( 0.63, 0.63, 0.63, 1 )
 ItemList/colors/font_color_selected = Color( 1, 1, 1, 1 )
 ItemList/colors/guide_color = Color( 0, 0, 0, 0.1 )
@@ -72,3 +85,12 @@ TabContainer/styles/panel = ExtResource( 8 )
 TabContainer/styles/tab_bg = ExtResource( 6 )
 TabContainer/styles/tab_disabled = ExtResource( 7 )
 TabContainer/styles/tab_fg = ExtResource( 5 )
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = ExtResource( 16 )
+VScrollBar/styles/grabber_highlight = ExtResource( 15 )
+VScrollBar/styles/grabber_pressed = ExtResource( 17 )
+VScrollBar/styles/scroll = ExtResource( 14 )
+VScrollBar/styles/scroll_focus = ExtResource( 14 )
