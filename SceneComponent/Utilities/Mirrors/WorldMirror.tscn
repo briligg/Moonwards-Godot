@@ -9,7 +9,7 @@
 script = ExtResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( -1.26723e-06, 1.15202e-07, 4, 7.77818, 0.707107, 0, -7.77818, 0.707107, -6.51683e-07, 0, 0, 0 )
+transform = Transform( 4, 0, 0, 0, 0.707107, -7.77818, 0, 0.707107, 7.77817, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
