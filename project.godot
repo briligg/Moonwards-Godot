@@ -250,11 +250,6 @@ _global_script_classes=[ {
 "path": "res://SceneComponent/Actor/Humanoid/HumanoidMovement.gd"
 }, {
 "base": "Spatial",
-"class": "LODManager_GD",
-"language": "GDScript",
-"path": "res://SceneComponent/Utilities/Mirrors/MirrorAutoManaged.gd"
-}, {
-"base": "Spatial",
 "class": "LodModel",
 "language": "GDScript",
 "path": "res://Script/ExtensionClass/LodModel.gd"
@@ -403,6 +398,11 @@ _global_script_classes=[ {
 "class": "Workstation",
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/NPCWorkstation.gd"
+}, {
+"base": "Spatial",
+"class": "WorldMirror",
+"language": "GDScript",
+"path": "res://SceneComponent/Utilities/Mirrors/MirrorAutoManaged.gd"
 } ]
 _global_script_class_icons={
 "AComponent": "",
@@ -453,7 +453,6 @@ _global_script_class_icons={
 "Interactor": "",
 "InteractorComponent": "",
 "KinematicMovement": "",
-"LODManager_GD": "",
 "LodModel": "",
 "LodSignals": "",
 "MenuSignals": "",
@@ -483,7 +482,8 @@ _global_script_class_icons={
 "VisualShaderNodeUVEdit": "",
 "VisualShaderNodeUVPanner": "",
 "VisualShaderNodeVectorHeightMix": "",
-"Workstation": ""
+"Workstation": "",
+"WorldMirror": ""
 }
 
 [application]

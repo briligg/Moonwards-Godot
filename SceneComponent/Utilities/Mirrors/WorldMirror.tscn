@@ -1,7 +1,20 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://SceneComponent/Utilities/Mirrors/MirrorGeneric.tres" type="Material" id=1]
+[ext_resource path="res://SceneComponent/Utilities/Mirrors/MirrorAutoManaged.gd" type="Script" id=2]
+
+[sub_resource type="PlaneMesh" id=1]
 
 [node name="Spatial" type="Spatial"]
+script = ExtResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 4, 0, 0, 0, 0.707107, -7.77818, 0, 0.707107, 7.77817, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 1 )
 
-[node name="Camera" type="Camera" parent="MeshInstance"]
+[node name="Viewport" type="Viewport" parent="."]
+
+[node name="Camera" type="Camera" parent="Viewport"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.299401, 0 )
+projection = 2

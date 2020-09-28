@@ -1,8 +1,26 @@
 extends Spatial
-class_name LODManager_GD
+class_name WorldMirror
 
-export(float) var Mirror_DistanceCap := 1000.0 setget set_LODDistanceMax
+export(float) var DistanceCap := 1000.0 setget set_DistanceCap
+export(float) var CamRenderCap := 1000.0 setget set_CamRenderCap
+export(float) var CamHeight := 1000.0 setget set_CamHeight
+export(Vector3) var Angle := Vector3(0.0,0.0,0.0) setget set_Angle
+export(Vector3) var Angle_Target := Vector3(0.0,0.0,0.0) setget set_AngleTarget
 
+func set_DistanceCap(value : float) -> void:
+	DistanceCap = value
+	
+func set_CamRenderCap(value : float) -> void:
+	CamRenderCap = value
+
+func set_CamHeight(value : float) -> void:
+	CamHeight = value
+	
+func set_Angle(value : Vector3) -> void:
+	Angle = value
+	
+func set_AngleTarget(value : Vector3) -> void:
+	Angle_Target = value
 
 func _ready() -> void:
 	if not Engine.is_editor_hint():
@@ -12,18 +30,8 @@ func _ready() -> void:
 
 
 func _process(delta : float) -> void:
-	if Engine.is_editor_hint():
-		#PlayerCamEditor = get_tree().root.get_child(0).get_viewport().get_camera()
-		#PlayerCamEditor = get_tree().get_edited_scene_root().get_parent().get_camera()
-		#print(PlayerCamEditor.trans)
-		#print(PlayerCamEditor)
-		if not LODsEditorSet:
-			#_editor_function()
-			pass
-		else:
-			#print(PlayerCamEditor.get_camera_transform().origin)
-			pass
-			#_editorTick_function()
+	if not Engine.is_editor_hint():
+		pass
 	
 
 func getMainData():
