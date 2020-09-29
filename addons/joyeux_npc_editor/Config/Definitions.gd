@@ -103,6 +103,7 @@ var _functions = {
 		"_category" : "actions",
 		"_input_ports" : [
 			{"_label_title":"Trigger","_type":Nodes.TYPE_ANY},
+			{"_label_title": "_s_enum_dropdown_category_WORKSTATION", "_type":TYPE_NIL}
 			],
 		"_output_ports" : [
 			{"_label_title":"Position","_type":TYPE_VECTOR3},

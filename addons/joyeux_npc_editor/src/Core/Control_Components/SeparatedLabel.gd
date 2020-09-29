@@ -12,11 +12,27 @@ func get_class_dropdown(classname : String) -> Control:
 		dropdown.add_item(variant)
 	return Menu
 
+func get_class_enum_dropdown(variable_classname : String) -> Control:
+	var variable_name = variable_classname.split("_", false)[0]
+	var classname = variable_classname.split("_", false)[1]
+	if not Nodes.custom_types.has(classname):
+		return null
+	if not Nodes.custom_types.get(classname).has(variable_name):
+		return null
+	var Menu = EnumDropDown.new()
+	var dropdown = Menu.get_popup()
+	for enumcomp in Nodes.custom_types.get(classname).get(variable_name):
+		dropdown.add_item(enumcomp)
+	return Menu
+
 func filter_input_label(input : String) -> void:
 	var Label1 : Control
 	var processed : String
 	if input.begins_with("_s_prop_dropdown_"):
 		processed = input.trim_prefix("_s_prop_dropdown_")
+		input = input.trim_suffix(processed)
+	elif input.begins_with("_s_enum_dropdown"):
+		processed = input.trim_prefix("_s_enum_dropdown_")
 		input = input.trim_suffix(processed)
 	elif input.begins_with("_s_file:"):
 		processed = input.trim_prefix("_s_file:")
@@ -26,6 +42,8 @@ func filter_input_label(input : String) -> void:
 			Label1 = FileLabel.new(processed)
 		"_s_text_edit":
 			Label1 = LineEdit.new() 
+		"_s_enum_dropdown_":
+			Label1 = get_class_enum_dropdown(processed)
 		"_s_prop_dropdown_":
 			Label1 = get_class_dropdown(processed)
 		"_s_int":

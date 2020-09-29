@@ -27,16 +27,15 @@ func load_nodes() -> void:
 		
 		for connection in connections:
 			#First load and create the nodes
+			var filtered = Nodes.filter_node_name(connection.get(name))
 			var unfiltered = connection.get(name)
 			var type 
-			
-			unfiltered = Nodes.filter_node_name(unfiltered)
 			for cat in Nodes.Graphs:
-				if Nodes.Graphs.get(cat).has(unfiltered):
+				if Nodes.Graphs.get(cat).has(filtered):
 					type = cat
-					print(cat)
+#					print(cat)
 			var offset = OutputFile.get_value("node_offsets", unfiltered)
-			if not has_node(unfiltered):
+			if not has_node(connection.get(name)):
 				add_node(type, unfiltered, offset)
 				print("Node added: ", unfiltered)
 			for child in get_node(unfiltered).get_child_count():
@@ -97,8 +96,11 @@ func recursive_get_variable(node : Node):
 		return node.text
 	elif node is SpinBox:
 		return node.value
-	elif node is MenuButton:
-		return node.get_popup().text
+	elif node is EnumDropDown:
+		print("It's enum, idx is ", node.index)
+		return node.index
+	elif node is DropDown:
+		return node.text
 	else:
 		for child in node.get_children():
 			var found = recursive_get_variable(child)
@@ -115,7 +117,9 @@ func recursive_set_variable(node : Node, variable):
 	elif node is SpinBox:
 		node.value = variable
 		return 
-	elif node is MenuButton:
+	elif node is EnumDropDown:
+		node.set_index(variable)
+	elif node is DropDown:
 		node.get_popup().text = variable
 		return 
 	else:
