@@ -150,7 +150,10 @@ func compile(connections):
 					node.get_connection_input_count()):
 				
 				if node.is_slot_enabled_right(inputs):
-					node_info.append(str(node.name,"_output_",inputs))
+					if Nodes.Graphs.stimulus.has(Nodes.filter_node_name(node.name)):
+						node_info.append(Nodes.filter_node_name(node.name))
+					else:
+						node_info.append(str(node.name,"_output_",inputs))
 			OutputFile.set_value("node_signals", node.name, node_info)
 			OutputFile.set_value("node_offsets", node.name, node.offset)
 	OutputFile.set_value("ai_config", "connections", connections)

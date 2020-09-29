@@ -29,6 +29,7 @@ func _ready():
 	
 	BehaviorTree._create_signal("interacted_by")
 	get_node(Interactable_Path).connect("interacted_by", self, "_on_interacted")
+	add_child(BehaviorTree)
 	
 func _on_interacted(anything):
 	BehaviorTree.emit_signal("interacted_by", anything)

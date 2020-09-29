@@ -1,8 +1,9 @@
 [variables]
 
+CLAYER=[  ]
+Behaviors=[  ]
 States=[  ]
 Save=[  ]
-CLAYER=[  ]
 stopped_working=[ null ]
 parallel_trigger=[ null, null ]
 parallel_trigger2=[ null, null ]
@@ -13,24 +14,23 @@ match2=[ null, "FOOD" ]
 match3=[ null, "ENTERTAINMENT" ]
 match4=[ null, "PERSON" ]
 match5=[ null, "OTHERS" ]
+interacted_by=[ null ]
 find_workstation=[ null, 1 ]
 find_workstation2=[ null, 2 ]
 find_workstation3=[ null, 3 ]
 find_workstation4=[ null, 0 ]
 find_workstation5=[ null, 2 ]
+trigger_dialog=[ "res://Assets/Dialogs/Busy.mtalk" ]
 set_objective=[ null ]
 set_objective2=[ null ]
 set_objective3=[ null ]
 set_objective4=[ null ]
-Behaviors=[  ]
 set_objective5=[ null ]
-trigger_dialog=[ "res://Assets/Dialogs/Busy.mtalk" ]
-interacted_by=[ null ]
 GraphEditFilter=[  ]
 
 [node_signals]
 
-stopped_working=[ "stopped_working_output_0" ]
+stopped_working=[ "stopped_working" ]
 parallel_trigger=[ "parallel_trigger_output_0", "parallel_trigger_output_1" ]
 parallel_trigger2=[ "parallel_trigger2_output_0", "parallel_trigger2_output_1" ]
 parallel_trigger3=[ "parallel_trigger3_output_0", "parallel_trigger3_output_1" ]
@@ -40,18 +40,18 @@ match2=[ "match2_output_0" ]
 match3=[ "match3_output_0" ]
 match4=[ "match4_output_0" ]
 match5=[ "match5_output_0" ]
+interacted_by=[ "interacted_by" ]
 find_workstation=[ "find_workstation_output_0" ]
 find_workstation2=[ "find_workstation2_output_0" ]
 find_workstation3=[ "find_workstation3_output_0" ]
 find_workstation4=[ "find_workstation4_output_0" ]
 find_workstation5=[ "find_workstation5_output_0" ]
+trigger_dialog=[  ]
 set_objective=[  ]
 set_objective2=[  ]
 set_objective3=[  ]
 set_objective4=[  ]
 set_objective5=[  ]
-trigger_dialog=[  ]
-interacted_by=[ "interacted_by_output_0" ]
 
 [node_offsets]
 
@@ -65,18 +65,18 @@ match2=Vector2( 340, 60 )
 match3=Vector2( 340, 180 )
 match4=Vector2( 340, 300 )
 match5=Vector2( 340, 420 )
+interacted_by=Vector2( -520, 560 )
 find_workstation=Vector2( 700, -60 )
 find_workstation2=Vector2( 700, 60 )
 find_workstation3=Vector2( 700, 180 )
 find_workstation4=Vector2( 700, 300 )
 find_workstation5=Vector2( 700, 420 )
+trigger_dialog=Vector2( -80, 560 )
 set_objective=Vector2( 1160, -100 )
 set_objective2=Vector2( 1160, 80 )
 set_objective3=Vector2( 1160, 240 )
 set_objective4=Vector2( 1160, 360 )
 set_objective5=Vector2( 1160, 480 )
-trigger_dialog=Vector2( -80, 560 )
-interacted_by=Vector2( -520, 560 )
 
 [ai_config]
 
