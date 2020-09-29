@@ -2,6 +2,7 @@ extends Spatial
 class_name WorldMirror
 
 export(bool) var SimpleMirror := false setget set_SimpleMirror
+export(bool) var TickCapture := true setget set_TickCapture
 export(float) var DistanceCap := 100.0 setget set_DistanceCap
 export(float) var CamRenderCap := 100.0 setget set_CamRenderCap
 export(float) var CamHeight := 100.0 setget set_CamHeight
@@ -19,6 +20,9 @@ var playerCamera
 
 func set_SimpleMirror(value : bool) -> void:
 	SimpleMirror = value
+	
+func set_TickCapture(value : bool) -> void:
+	TickCapture = value
 
 func set_DistanceCap(value : float) -> void:
 	DistanceCap = value
@@ -121,8 +125,9 @@ func _ready() -> void:
 
 func _process(_delta : float) -> void:
 	if not Engine.is_editor_hint():
-		getMirrorEffect()
-		printTexture()
+		if TickCapture:
+			getMirrorEffect()
+			printTexture()
 		return
 
 func _enter_tree():
