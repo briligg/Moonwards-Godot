@@ -67,7 +67,8 @@ func getMirrorEffect():
 
 
 func getMainData():
-	playerCamera = get_tree().get_root().get_viewport().get_camera() 
+	#playerCamera = get_tree().get_root().get_viewport().get_camera() 
+	playerCamera = get_tree().get_root().get_camera()
 	#var playerLoc
 	#if is_instance_valid(playerCam):
 	#	playerLoc = playerCam.get_global_transform().origin
