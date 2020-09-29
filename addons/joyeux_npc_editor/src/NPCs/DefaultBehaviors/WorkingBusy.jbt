@@ -1,7 +1,9 @@
 [variables]
 
 States=[  ]
+Save=[  ]
 CLAYER=[  ]
+stopped_working=[ null ]
 parallel_trigger=[ null, null ]
 parallel_trigger2=[ null, null ]
 parallel_trigger3=[ null, null ]
@@ -16,17 +18,19 @@ find_workstation2=[ null, 2 ]
 find_workstation3=[ null, 3 ]
 find_workstation4=[ null, 0 ]
 find_workstation5=[ null, 2 ]
-stopped_working=[ null ]
 set_objective=[ null ]
-parallel_trigger5=[ null, null ]
-interacted_by=[ null ]
+set_objective2=[ null ]
+set_objective3=[ null ]
+set_objective4=[ null ]
 Behaviors=[  ]
-trigger_dialog=[ "" ]
-Save=[  ]
+set_objective5=[ null ]
+trigger_dialog=[ "res://Assets/Dialogs/Busy.mtalk" ]
+interacted_by=[ null ]
 GraphEditFilter=[  ]
 
 [node_signals]
 
+stopped_working=[ "stopped_working_output_0" ]
 parallel_trigger=[ "parallel_trigger_output_0", "parallel_trigger_output_1" ]
 parallel_trigger2=[ "parallel_trigger2_output_0", "parallel_trigger2_output_1" ]
 parallel_trigger3=[ "parallel_trigger3_output_0", "parallel_trigger3_output_1" ]
@@ -41,14 +45,17 @@ find_workstation2=[ "find_workstation2_output_0" ]
 find_workstation3=[ "find_workstation3_output_0" ]
 find_workstation4=[ "find_workstation4_output_0" ]
 find_workstation5=[ "find_workstation5_output_0" ]
-stopped_working=[ "stopped_working_output_0" ]
 set_objective=[  ]
-parallel_trigger5=[ "parallel_trigger5_output_0", "parallel_trigger5_output_1" ]
-interacted_by=[ "interacted_by_output_0" ]
+set_objective2=[  ]
+set_objective3=[  ]
+set_objective4=[  ]
+set_objective5=[  ]
 trigger_dialog=[  ]
+interacted_by=[ "interacted_by_output_0" ]
 
 [node_offsets]
 
+stopped_working=Vector2( -520, 120 )
 parallel_trigger=Vector2( -220, 100 )
 parallel_trigger2=Vector2( 40, 20 )
 parallel_trigger3=Vector2( 40, 200 )
@@ -63,11 +70,13 @@ find_workstation2=Vector2( 700, 60 )
 find_workstation3=Vector2( 700, 180 )
 find_workstation4=Vector2( 700, 300 )
 find_workstation5=Vector2( 700, 420 )
-stopped_working=Vector2( -520, 120 )
-set_objective=Vector2( 1400, 100 )
-parallel_trigger5=Vector2( 1040, -60 )
+set_objective=Vector2( 1160, -100 )
+set_objective2=Vector2( 1160, 80 )
+set_objective3=Vector2( 1160, 240 )
+set_objective4=Vector2( 1160, 360 )
+set_objective5=Vector2( 1160, 480 )
+trigger_dialog=Vector2( -80, 560 )
 interacted_by=Vector2( -520, 560 )
-trigger_dialog=Vector2( -120, 560 )
 
 [ai_config]
 
@@ -142,13 +151,33 @@ connections=[ {
 "to": "find_workstation5",
 "to_port": 0
 }, {
-"from": "find_workstation",
-"from_port": 0,
-"to": "parallel_trigger5",
-"to_port": 0
-}, {
 "from": "interacted_by",
 "from_port": 0,
 "to": "trigger_dialog",
+"to_port": 0
+}, {
+"from": "find_workstation",
+"from_port": 0,
+"to": "set_objective",
+"to_port": 0
+}, {
+"from": "find_workstation2",
+"from_port": 0,
+"to": "set_objective2",
+"to_port": 0
+}, {
+"from": "find_workstation3",
+"from_port": 0,
+"to": "set_objective3",
+"to_port": 0
+}, {
+"from": "find_workstation4",
+"from_port": 0,
+"to": "set_objective4",
+"to_port": 0
+}, {
+"from": "find_workstation5",
+"from_port": 0,
+"to": "set_objective5",
 "to_port": 0
 } ]

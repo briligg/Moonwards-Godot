@@ -1,0 +1,23 @@
+[offsets]
+
+Start=Vector2( 280, 40 )
+GraphNode=Vector2( 520, 40 )
+
+[dialogs]
+
+GraphNode={
+"content": "I'm sorry, I'm busy right now, could you come back later?",
+"name_override": "",
+"next": "",
+"title": "Busy!"
+}
+
+[config]
+
+connections=[ {
+"from": "Start",
+"from_port": 0,
+"to": "GraphNode",
+"to_port": 0
+} ]
+character_name="Phill"

@@ -48,7 +48,9 @@ overriden = true
 [node name="AIHandler" type="Spatial" parent="."]
 script = ExtResource( 9 )
 enabled = true
+NPC_File = "res://Assets/Characters/Phill.jsm"
 NPC_input_path = NodePath("../NPCInput")
+Interactable_Path = NodePath("../Workstation")
 
 [node name="Workstation" parent="." instance=ExtResource( 8 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )

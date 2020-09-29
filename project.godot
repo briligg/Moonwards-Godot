@@ -89,6 +89,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Manager/SignalsManager/EntitySignals.gd"
 }, {
+"base": "DropDown",
+"class": "EnumDropDown",
+"language": "GDScript",
+"path": "res://addons/joyeux_npc_editor/src/Core/Control_Components/EnumDropDown.gd"
+}, {
 "base": "Reference",
 "class": "EnumHelper",
 "language": "GDScript",
@@ -424,6 +429,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Manager/SignalsManager/MenuSignals.gd"
 }, {
+"base": "NPCBase",
+"class": "MwNPC",
+"language": "GDScript",
+"path": "res://addons/joyeux_npc_editor/src/NPCs/MwNPC.gd"
+}, {
+"base": "WorldNavigator",
+"class": "MwNavigator",
+"language": "GDScript",
+"path": "res://addons/joyeux_nav_interacts/MwNavigator.gd"
+}, {
 "base": "RayCast",
 "class": "MouseSimulatingRayCast",
 "language": "GDScript",
@@ -574,7 +589,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/SharedAssets/Shaders/VectorHeightMixNode.gd"
 }, {
-"base": "AComponent",
+"base": "Reference",
 "class": "Worker",
 "language": "GDScript",
 "path": "res://addons/joyeux_nav_interacts/MwWorker.gd"
@@ -606,6 +621,7 @@ _global_script_class_icons={
 "DynamicVisibilityTrigger": "",
 "EntityData": "",
 "EntitySignals": "",
+"EnumDropDown": "",
 "EnumHelper": "",
 "FileLabel": "",
 "GSAIAgentLocation": "",
@@ -672,6 +688,8 @@ _global_script_class_icons={
 "LodModel": "",
 "LodSignals": "",
 "MenuSignals": "",
+"MwNPC": "",
+"MwNavigator": "",
 "MouseSimulatingRayCast": "",
 "MwNPC": "",
 "MwNode": "",
@@ -759,6 +777,26 @@ enabled=PoolStringArray( "QuickPluginManager", "editor_icon_previewer", "joyeux_
 
 [importer_defaults]
 
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 2,
+"compress/normal_map": 1,
+"detect_3d": true,
+"flags/anisotropic": false,
+"flags/filter": true,
+"flags/mipmaps": true,
+"flags/repeat": 1,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
 scene={
 "animation/clip_1/end_frame": 0,
 "animation/clip_1/loops": false,
@@ -1810,26 +1848,6 @@ scene={
 "nodes/root_type": "LodModel (LodModel.gd)",
 "nodes/storage": 0,
 "skins/use_named_skins": true
-}
-texture={
-"compress/bptc_ldr": 0,
-"compress/hdr_mode": 0,
-"compress/lossy_quality": 0.7,
-"compress/mode": 2,
-"compress/normal_map": 0,
-"detect_3d": true,
-"flags/anisotropic": false,
-"flags/filter": true,
-"flags/mipmaps": true,
-"flags/repeat": 1,
-"flags/srgb": 2,
-"process/HDR_as_SRGB": false,
-"process/fix_alpha_border": true,
-"process/invert_color": false,
-"process/premult_alpha": false,
-"size_limit": 0,
-"stream": false,
-"svg/scale": 1.0
 }
 
 [input]
