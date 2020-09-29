@@ -7,6 +7,7 @@ that appear in the Definitions file.
 """
 const DialogDisplay = preload("res://addons/joyeux_dialog_system/src/components/display/Dialog Display.tscn")
 
+signal interacted_by(something)
 signal user_input(action_name)
 signal see()
 signal hear()

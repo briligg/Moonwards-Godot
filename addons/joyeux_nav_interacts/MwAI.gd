@@ -18,7 +18,7 @@ func _init().("AI handler", false):
 
 func _ready():
 	BehaviorTree = MwNPC.new(NPC_File, initial_state)
-	BehaviorTree.naviagtor = get_node(NPC_input_path)
+	BehaviorTree.navigator = get_node(NPC_input_path)
 	BehaviorTree.worker = worker
 	BehaviorTree.actor = entity
 	
@@ -28,10 +28,10 @@ func _ready():
 	worker.connect("workstation_assigned", self, "_on_worker_assigned")
 	
 	BehaviorTree._create_signal("interacted_by")
-	get_node(Interactable_Path).connect("interacted_by", self, "on_interacted")
+	get_node(Interactable_Path).connect("interacted_by", self, "_on_interacted")
 	
-func _on_interacted():
-	BehaviorTree.emit_signal("interacted_by")
+func _on_interacted(anything):
+	BehaviorTree.emit_signal("interacted_by", anything)
 
 func _on_worker_stopped():
 	BehaviorTree.emit_signal("stopped_working")
