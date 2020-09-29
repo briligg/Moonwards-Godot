@@ -9,8 +9,10 @@ const DialogDisplay = preload("res://addons/joyeux_dialog_system/src/components/
 
 signal interacted_by(something)
 signal user_input(action_name)
-signal see()
-signal hear()
+signal stopped_working()
+signal workstation_assigned(which)
+signal see(what)
+signal hear(what)
 
 export(String) var character_name
 
@@ -77,7 +79,9 @@ func play_3d_sound(input, signals, variables):
 	sound_player.play()
 
 func trigger_dialog(input, signals, variables):
+	print("Trigger")
 	var path = _get_variable_from_port(variables, 0)
+	print(variables)
 	var dialog_display = DialogDisplay.instance()
 	dialog_display.dialog = path
 	actor.add_child(dialog_display)
