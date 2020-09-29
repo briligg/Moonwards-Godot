@@ -106,7 +106,7 @@ var _functions = {
 			{"_label_title": "_s_enum_dropdown_category_WORKSTATION", "_type":TYPE_NIL}
 			],
 		"_output_ports" : [
-			{"_label_title":"Position","_type":TYPE_VECTOR3},
+			{"_label_title":"Station Position","_type":TYPE_VECTOR3},
 			]
 	},
 	
