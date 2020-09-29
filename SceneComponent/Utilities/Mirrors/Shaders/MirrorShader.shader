@@ -1,5 +1,5 @@
 shader_type spatial; 
-render_mode cull_back;
+render_mode cull_back; //unshaded; //Really needed ?
 
 uniform sampler2D Texture : hint_albedo;
 
