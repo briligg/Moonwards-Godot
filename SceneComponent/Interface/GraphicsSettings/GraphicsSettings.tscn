@@ -1,0 +1,87 @@
+[gd_scene format=2]
+
+[node name="GraphicsSettings" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.1
+anchor_top = 0.03
+anchor_right = 0.9
+anchor_bottom = 0.03
+margin_right = 40.0
+margin_bottom = 40.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resolutions" type="OptionButton" parent="HBoxContainer"]
+margin_left = 661.0
+margin_right = 765.0
+margin_bottom = 40.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.01
+disabled = true
+text = "Resolutions"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckButton" type="CheckButton" parent="HBoxContainer"]
+margin_left = 769.0
+margin_right = 915.0
+margin_bottom = 40.0
+text = "Fullscreen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.2
+anchor_top = 0.1
+anchor_right = 0.8
+anchor_bottom = 0.4
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FOV" type="VBoxContainer" parent="VBoxContainer"]
+margin_right = 1192.0
+margin_bottom = 34.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/FOV"]
+margin_right = 1192.0
+margin_bottom = 14.0
+text = "Field of View"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/FOV"]
+margin_top = 18.0
+margin_right = 1192.0
+margin_bottom = 34.0
+
+[node name="Brightness" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 38.0
+margin_right = 1192.0
+margin_bottom = 72.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/Brightness"]
+margin_right = 1192.0
+margin_bottom = 14.0
+text = "Brightness"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/Brightness"]
+margin_top = 18.0
+margin_right = 1192.0
+margin_bottom = 34.0
