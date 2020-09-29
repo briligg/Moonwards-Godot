@@ -24,5 +24,6 @@ shadow_atlas_quad_3 = 0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 keep_aspect = 0
 projection = 2
+current = true
 near = 0.38
 far = 500.0

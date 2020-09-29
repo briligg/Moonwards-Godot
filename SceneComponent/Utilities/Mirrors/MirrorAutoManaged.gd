@@ -57,24 +57,30 @@ func getMirrorEffect():
 	# Simple mirror in case of projection only needed, or earth directional system
 	if SimpleMirror:
 		localCamera.set_global_transform(cTransform)
-		localCamera.set_frustum(1.0, Vector2(0.0,0.0), 0.38, 500.0)
+		localCamera.set_frustum(1.0, Vector2(0.0,0.0), 0.38, 800.0)
 		return
 	
 	# Player camera location, based on the LODs manager
 	var playerCamPos = Vector3.ZERO
 	if is_instance_valid(playerCamera):
 		playerCamPos = playerCamera.get_global_transform().origin
+	else:
+		localCamera.set_global_transform(cTransform)
+		localCamera.set_frustum(1.0, Vector2(0.0,0.0), 0.38, 800.0)
+		return
 	
 	# Main parameters to compute reflection alike mirror
 	var mTransform = Transform(Basis(), Vector3.ZERO)
+	var mSize = 4.0
 	if is_instance_valid(localPlane):
 		mTransform = localPlane.get_global_transform()
+		mSize = localPlane.get_aabb().size.x
 	
 	var mNormal = mTransform.basis.z.normalized()
 	var mPlane = Plane(mNormal, mTransform.origin.dot(mNormal))
 	
-	var mOffset = -mTransform.xform_inv(playerCamPos)
-	mOffset = Vector2(mOffset.x,mOffset.y)
+	var mOffset = mTransform.xform_inv(playerCamPos)
+	mOffset = Vector2(-mOffset.x,-mOffset.y)
 	var mProjection = mPlane.project(playerCamPos)
 	var mPosition = playerCamPos + (mProjection - playerCamPos) * CamErrorBias
 	
@@ -83,19 +89,17 @@ func getMirrorEffect():
 	
 	if is_instance_valid(localCamera):
 		localCamera.set_global_transform(cTransform)
-		localCamera.set_frustum(8.0, mOffset, mProjection.distance_to(playerCamPos), 500.0) #localPlane.scale.get get the scale rather automatically
-	else:
-		cTransform = Transform(Vector3(-1.0,0.0,0.0),Vector3(0.0,0.0,-1.0),Vector3(0.0,-1.0,0.0),Vector3(0.0,CamHeight,0.0))
-		localCamera.set_global_transform(cTransform)
-		localCamera.set_frustum(1.0, Vector2(0.0,0.0), 0.38, 500.0)
+		localCamera.set_frustum(mSize, mOffset, mProjection.distance_to(playerCamPos), 800.0) #localPlane.scale.get get the scale rather automatically
 		return
 
 
 func getMainData():
 	#playerCamera = get_tree().get_root().get_viewport().get_camera() 
 	playerCamera = get_tree().get_root().get_camera()
+	if playerCamera != null:
+		print("Mirror: Player Camera Found")
 	if localCamera != null:
-		print("Mirror Camera Found")
+		print("Mirror: Local Camera Found")
 		if SimpleMirror:
 			localCamera.set_global_transform(Transform(Vector3(-1.0,0.0,0.0),Vector3(0.0,0.0,-1.0),Vector3(0.0,-1.0,0.0),Vector3(0.0,CamHeight,0.0)))
 		else:
