@@ -85,11 +85,11 @@ size_flags_stretch_ratio = 0.1
 texture = ExtResource( 4 )
 
 [node name="HBoxContainer_Middle" type="HBoxContainer" parent="VBoxContainer/HBoxContainer_Head"]
-margin_left = 866.0
+margin_left = 504.0
 margin_top = 168.0
-margin_right = 1364.0
+margin_right = 1726.0
 margin_bottom = 214.0
-size_flags_horizontal = 6
+size_flags_horizontal = 7
 size_flags_vertical = 8
 custom_constants/separation = 20
 alignment = 1
@@ -99,27 +99,32 @@ visible = false
 margin_right = 52.0
 margin_bottom = 78.0
 focus_neighbour_right = NodePath("../Button_Avatar")
+size_flags_horizontal = 3
 text = "HOME"
 
 [node name="Button_Avatar" type="Button" parent="VBoxContainer/HBoxContainer_Head/HBoxContainer_Middle"]
-margin_right = 139.0
+margin_right = 394.0
 margin_bottom = 46.0
+grow_horizontal = 2
 focus_neighbour_right = NodePath("../Button_Destination")
+size_flags_horizontal = 3
 text = "AVATAR"
 
 [node name="Button_Destination" type="Button" parent="VBoxContainer/HBoxContainer_Head/HBoxContainer_Middle"]
-margin_left = 159.0
-margin_right = 386.0
+margin_left = 414.0
+margin_right = 808.0
 margin_bottom = 46.0
 focus_neighbour_right = NodePath("../Button_Apps")
+size_flags_horizontal = 3
 custom_styles/normal = ExtResource( 17 )
 text = "DESTINATION"
 
 [node name="Button_Apps" type="Button" parent="VBoxContainer/HBoxContainer_Head/HBoxContainer_Middle"]
-margin_left = 406.0
-margin_right = 498.0
+margin_left = 828.0
+margin_right = 1222.0
 margin_bottom = 46.0
 focus_neighbour_right = NodePath("../Button_Settings")
+size_flags_horizontal = 3
 text = "APPS"
 
 [node name="Button_Settings" type="Button" parent="VBoxContainer/HBoxContainer_Head/HBoxContainer_Middle"]
@@ -128,6 +133,7 @@ margin_left = 266.0
 margin_right = 338.0
 margin_bottom = 78.0
 focus_neighbour_right = NodePath("../../HBoxContainer_Right/Button_About")
+size_flags_horizontal = 3
 text = "SETTINGS"
 
 [node name="HBoxContainer_Right" type="HBoxContainer" parent="VBoxContainer/HBoxContainer_Head"]
