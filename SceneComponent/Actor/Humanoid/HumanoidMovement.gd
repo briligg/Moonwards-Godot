@@ -5,6 +5,7 @@ class_name HumanoidMovement
 export(float) var initial_jump_velocity = 2.2
 export(float) var climb_speed = 1.5
 export(float) var movement_speed = 5.2
+export(float) var gravity = 1.625
 
 # Debug variables
 var dbg_initial_jump_pos: Vector3 = Vector3()
@@ -107,13 +108,14 @@ func calculate_horizontal(_phys_state : PhysicsDirectBodyState):
 	horizontal_vector += entity.input.z * entity.model.transform.basis.z
 	horizontal_vector += entity.input.x * entity.model.transform.basis.x
 
-	if dbg_ground_slope > 5:
+	if dbg_ground_slope > 1:
 		var slide_direction = horizontal_vector.slide(dbg_ground_normal)
 		horizontal_vector.y = slide_direction.y
 		# We'll use this to snap the ground if we're going down
 		# To eliminate the jitters caused by on_ground not reading properly
 		if sign(horizontal_vector.y) == -1:
-			horizontal_vector.y += -3 * cos(deg2rad(dbg_ground_slope))
+			# Gravity, times slope coefficient, times slope coefficient multiplier
+			horizontal_vector.y += -gravity * (sin(deg2rad(dbg_ground_slope)) * 1.3)
 		horizontal_vector = horizontal_vector.normalized()
 	
 func update_jump_velocity(_phys_state : PhysicsDirectBodyState):
@@ -129,7 +131,7 @@ func update_movement(phys_state : PhysicsDirectBodyState):
 	
 	# Jump velocity simulation
 	if is_jumping:
-		jump_velocity -= Vector3(0, 1.625 * 0.016, 0)
+		jump_velocity -= Vector3(0, gravity * 0.016, 0)
 		vel = jump_velocity
 		# Update current jump velocity to reflect gravity simulation
 		if entity.is_grounded:
@@ -143,7 +145,7 @@ func update_movement(phys_state : PhysicsDirectBodyState):
 		vel = horizontal_vector.normalized() * movement_speed
 	else:
 		# Gravity simulation
-		vel += Vector3.DOWN * 1.6 
+		vel += Vector3.DOWN * gravity
 	
 	dbg_speed = vel.length()
 	
