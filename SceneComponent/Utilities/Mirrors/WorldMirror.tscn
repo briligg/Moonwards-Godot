@@ -21,7 +21,7 @@ shadow_atlas_quad_2 = 0
 shadow_atlas_quad_3 = 0
 
 [node name="Camera" type="Camera" parent="Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 2, 0 )
 keep_aspect = 0
 projection = 2
 current = true
