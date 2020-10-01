@@ -629,12 +629,10 @@ __meta__ = {
 
 [node name="NPCEditor" parent="NPCEditor" instance=ExtResource( 10 )]
 margin_bottom = 1.0
-[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="About" to="." method="_on_About_pressed"]
 [connection signal="focus_entered" from="HBoxContainer/VBoxContainer/Destination" to="HBoxContainer" method="_button_highlighted" binds= [ "Destination" ]]
 [connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/Destination" to="HBoxContainer" method="_button_highlighted" binds= [ "Destination" ]]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Destination" to="HBoxContainer/Panel/Tab" method="_on_StartGame_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/Destination" to="." method="_on_StartGame_pressed"]
 [connection signal="focus_entered" from="HBoxContainer/VBoxContainer/Avatar" to="HBoxContainer" method="_button_highlighted" binds= [ "Avatar" ]]
 [connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/Avatar" to="HBoxContainer" method="_button_highlighted" binds= [ "Avatar" ]]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Avatar" to="HBoxContainer/Panel/Tab" method="_on_Avatar_pressed"]
@@ -647,6 +645,3 @@ margin_bottom = 1.0
 [connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/Apps" to="HBoxContainer" method="_button_highlighted" binds= [ "Apps" ]]
 [connection signal="focus_entered" from="HBoxContainer/VBoxContainer/Display" to="HBoxContainer" method="_button_highlighted" binds= [ "Display" ]]
 [connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/Display" to="HBoxContainer" method="_button_highlighted" binds= [ "Display" ]]
-[connection signal="pressed" from="HBoxContainer/Panel/Tab/DestinationTab/StartGame/JoinMainServer" to="." method="_on_JoinMainServer_pressed"]
-[connection signal="pressed" from="HBoxContainer/Panel/Tab/DestinationTab/StartGame/StartCustomServer" to="." method="_on_StartCustomServer_pressed"]
-[connection signal="pressed" from="HBoxContainer/Panel/Tab/DestinationTab/StartGame/JoinServer" to="." method="_on_JoinServer_pressed"]
