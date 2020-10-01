@@ -1,5 +1,5 @@
 extends AMovementController
-class_name KinematicMovement
+class_name HumanoidMovement
 
 # Component for kinematic movement
 export(float) var initial_jump_velocity = 2.2
@@ -106,8 +106,7 @@ func calculate_slope():
 func calculate_horizontal(_phys_state : PhysicsDirectBodyState):
 	horizontal_vector += entity.input.z * entity.model.transform.basis.z
 	horizontal_vector += entity.input.x * entity.model.transform.basis.x
-#	horizontal_vector = horizontal_vector.rotated(entity.model.transform.basis.x, deg2rad(dbg_ground_slope))
-#	horizontal_vector.y *= sign(entity.input.z)
+
 	if dbg_ground_slope > 5:
 		var slide_direction = horizontal_vector.slide(dbg_ground_normal)
 		horizontal_vector.y = slide_direction.y

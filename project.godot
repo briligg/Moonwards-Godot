@@ -209,6 +209,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Manager/SignalsManager/HudSignals.gd"
 }, {
+"base": "AMovementController",
+"class": "HumanoidMovement",
+"language": "GDScript",
+"path": "res://SceneComponent/Actor/Humanoid/HumanoidMovement.gd"
+}, {
 "base": "AComponent",
 "class": "HumanoidMovementDebug",
 "language": "GDScript",
@@ -253,11 +258,6 @@ _global_script_classes=[ {
 "class": "InteractorRayCast",
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/InteractorRayCast.gd"
-}, {
-"base": "AMovementController",
-"class": "KinematicMovement",
-"language": "GDScript",
-"path": "res://SceneComponent/Actor/Humanoid/HumanoidMovement.gd"
 }, {
 "base": "Spatial",
 "class": "LodModel",
@@ -460,6 +460,7 @@ _global_script_class_icons={
 "GameClient": "",
 "GameServer": "",
 "HudSignals": "",
+"HumanoidMovement": "",
 "HumanoidMovementDebug": "",
 "InputController": "",
 "InspectorGadget": "",
@@ -469,7 +470,6 @@ _global_script_class_icons={
 "Interactor": "",
 "InteractorComponent": "",
 "InteractorRayCast": "",
-"KinematicMovement": "",
 "LodModel": "",
 "LodSignals": "",
 "MenuSignals": "",
