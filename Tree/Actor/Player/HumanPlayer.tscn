@@ -11,12 +11,12 @@
 [ext_resource path="res://SceneComponent/Actor/Debug/HumanoidMovementDebug.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CapsuleShape" id=1]
-radius = 0.275941
-height = 1.12528
+radius = 0.23
+height = 1.22402
 
 [node name="Player" type="RigidBody"]
 mode = 2
-custom_integrator = true
+mass = 10.0
 can_sleep = false
 axis_lock_angular_x = true
 axis_lock_angular_z = true
@@ -32,7 +32,7 @@ dist = 3.0
 [node name="HumanoidMovement" parent="." instance=ExtResource( 5 )]
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0175913, 0.861506, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0175913, 0.839999, 0 )
 shape = SubResource( 1 )
 __meta__ = {
 "_editor_description_": ""

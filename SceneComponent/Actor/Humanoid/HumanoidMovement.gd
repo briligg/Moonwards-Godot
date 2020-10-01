@@ -21,6 +21,10 @@ var vertical_vector: Vector3 = Vector3.ZERO
 var is_jumping: bool = false
 var jump_velocity: Vector3 = Vector3.ZERO
 
+# Normal raycast normalized offset multiplier, depending on movement direction
+# Basically equal to player radius
+var raycast_offset_multipler: float = 0.23
+
 #Whether we are currently flying or not.
 var is_flying : bool = false
 
@@ -58,6 +62,7 @@ func _integrate_server(args):
 	calculate_slope()
 	entity.is_grounded = is_grounded()
 	calculate_horizontal(phys_state)
+	update_raycasts()
 	if entity.is_grounded and vertical_vector.y > 0:
 		update_jump_velocity(phys_state)
 	if is_climbing:
@@ -66,7 +71,7 @@ func _integrate_server(args):
 		update_movement(phys_state)
 	update_anim_state(phys_state)
 	update_server_values(phys_state)
-	
+#
 func update_anim_state(phys_state : PhysicsDirectBodyState):
 	if is_flying:
 		entity.state.state = ActorEntityState.State.FLY
@@ -117,7 +122,12 @@ func calculate_horizontal(_phys_state : PhysicsDirectBodyState):
 			# Gravity, times slope coefficient, times slope coefficient multiplier
 			horizontal_vector.y += -gravity * (sin(deg2rad(dbg_ground_slope)) * 1.3)
 		horizontal_vector = horizontal_vector.normalized()
-	
+
+func update_raycasts():
+	var vec = horizontal_vector.normalized() * raycast_offset_multipler
+	vec.y = 0.3
+	normal_detect.transform.origin = vec
+
 func update_jump_velocity(_phys_state : PhysicsDirectBodyState):
 	dbg_initial_jump_pos = entity.global_transform.origin
 	dbg_rest_jump_pos = Vector3()

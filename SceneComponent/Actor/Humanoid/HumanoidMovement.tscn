@@ -32,6 +32,5 @@ enabled = true
 cast_to = Vector3( 0, -0.18, 0 )
 
 [node name="NormalDetect" type="RayCast" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0 )
 enabled = true
 cast_to = Vector3( 0, -0.7, 0 )
