@@ -6,7 +6,7 @@
 [ext_resource path="res://SceneComponent/Audio/AudioSphere/AudioSphereAnimations.gd" type="Script" id=5]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.05, 0.05, 0.05 )
+extents = Vector3( 0.2, 0.2, 0.2 )
 
 [sub_resource type="ArrayMesh" id=2]
 surfaces/0 = {

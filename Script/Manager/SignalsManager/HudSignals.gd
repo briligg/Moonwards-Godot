@@ -7,7 +7,6 @@ const name = "Hud"
 # Define the signal's string name.
 const CHAT_TYPING_STARTED : String = "chat_typing"
 const CHAT_TYPING_FINISHED : String = "chat_finished_typing"
-const CLOSEST_INTERACTABLE_CHANGED : String = "closest_interactable_changed"
 const EXTRA_INFO_DISPLAYED : String = "extra_info_displayed"
 const FLIGHT_VALUE_SET : String = "flight_value_set"
 const HIDDEN_HUDS_SET : String = "hidden_huds_set"
@@ -27,7 +26,6 @@ const VISIBLE_HUDS_SET : String = "visible_huds_set"
 #warning-ignore:unused_signal
 signal chat_finished_typing()
 signal chat_typing()
-signal closest_interactable_changed(interactable)
 #warning-ignore:unused_signal
 signal extra_info_displayed(title_text, info_text)
 signal flight_value_set(new_value_float)
