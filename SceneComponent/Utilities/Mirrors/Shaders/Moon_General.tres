@@ -1,0 +1,6 @@
+[gd_resource type="SpatialMaterial" format=2]
+
+[resource]
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.0

@@ -11,4 +11,6 @@ shader_param/MirrorEffectDistanceMax = 10.0
 shader_param/MirrorEffectIntensity = 0.1
 shader_param/VAngle = 0.0
 shader_param/HAngle = 0.0
+shader_param/_pr_perturb_scale = 1.0
+shader_param/_pr_viewport_rect = Plane( -1, -1, 2, 2 )
 shader_param/TextureTester = ExtResource( 2 )
