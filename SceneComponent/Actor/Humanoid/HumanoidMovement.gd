@@ -23,8 +23,8 @@ var jump_velocity: Vector3 = Vector3.ZERO
 
 # Normal raycast normalized offset multiplier, depending on movement direction
 # Basically equal to player radius
-var raycast_offset_multipler: float = 0.23
-
+var raycast_offset_multipler: float = 0.14
+var slope_coef_mul: float = 1.23
 #Whether we are currently flying or not.
 var is_flying : bool = false
 
@@ -79,9 +79,9 @@ func update_anim_state(phys_state : PhysicsDirectBodyState):
 		entity.state.state = ActorEntityState.State.IN_AIR
 	elif is_climbing:
 		entity.state.state = ActorEntityState.State.CLIMBING
-	elif abs(phys_state.linear_velocity.length()) > 0:
+	elif abs(entity.velocity.length()) > 0:
 		entity.state.state = ActorEntityState.State.MOVING
-	elif abs(phys_state.linear_velocity.y) > 0.1 or !entity.is_grounded:
+	elif abs(entity.velocity.y) > 0.1 or !entity.is_grounded:
 		entity.state.state = ActorEntityState.State.IN_AIR
 	else:
 		entity.state.state = ActorEntityState.State.IDLE
@@ -120,7 +120,7 @@ func calculate_horizontal(_phys_state : PhysicsDirectBodyState):
 		# To eliminate the jitters caused by on_ground not reading properly
 		if sign(horizontal_vector.y) == -1:
 			# Gravity, times slope coefficient, times slope coefficient multiplier
-			horizontal_vector.y += -gravity * (sin(deg2rad(dbg_ground_slope)) * 1.3)
+			horizontal_vector.y += -gravity * (sin(deg2rad(dbg_ground_slope)) * slope_coef_mul)
 		horizontal_vector = horizontal_vector.normalized()
 
 func update_raycasts():
@@ -164,7 +164,7 @@ func update_movement(phys_state : PhysicsDirectBodyState):
 	
 func update_server_values(phys_state):
 	entity.srv_pos = entity.global_transform.origin
-	entity.srv_vel = phys_state.linear_velocity
+	entity.srv_vel = entity.velocity
 	
 func calculate_debug_values():
 	dbg_rest_jump_pos = entity.global_transform.origin
@@ -211,12 +211,6 @@ func stop_climb_stairs(phys_state : PhysicsDirectBodyState, is_stairs_top) -> vo
 	#Make myself face the same direction as the camera.
 	entity.model.global_transform.basis = entity.global_transform.basis
 	
-	entity.velocity = phys_state.linear_velocity
-	
-	# Update the values that are used for networking.
-	entity.srv_pos = entity.global_transform.origin
-	entity.srv_vel = entity.velocity
-
 #Eventually we need to make this work with delta.
 func update_stairs_climbing(_delta : float, phys_state : PhysicsDirectBodyState) -> void :
 	var kb_pos = entity.global_transform.origin
@@ -243,7 +237,3 @@ func update_stairs_climbing(_delta : float, phys_state : PhysicsDirectBodyState)
 	
 	phys_state.set_linear_velocity(Vector3.UP * climb_speed * entity.input.z)
 	entity.velocity = phys_state.linear_velocity
-	
-	# Update the values that are used for networking.
-	entity.srv_pos = entity.global_transform.origin
-	entity.srv_vel = entity.velocity
