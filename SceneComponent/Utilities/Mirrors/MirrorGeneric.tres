@@ -7,3 +7,6 @@ shader = ExtResource( 1 )
 shader_param/Angle = null
 shader_param/AngleTarget = null
 shader_param/Color = Color( 0, 0, 1, 1 )
+shader_param/MirrorEffect = true
+shader_param/MirrorEffectDistanceMax = 100.0
+shader_param/MirrorEffectIntensity = 0.1

@@ -1,14 +1,13 @@
 extends Spatial
 class_name WorldMirror
 
-export(bool) var SimpleMirror := false setget set_SimpleMirror
+export(bool) var SimpleMirror := true setget set_SimpleMirror
+export(bool) var MirrorEffect := true setget set_MirrorEffect
 export(bool) var TickCapture := true setget set_TickCapture
 export(float) var DistanceCap := 100.0 setget set_DistanceCap
 export(float) var CamRenderCap := 100.0 setget set_CamRenderCap
 export(float) var CamHeight := 100.0 setget set_CamHeight
 export(float) var CamErrorBias := 3.5 setget set_CamErrorBias
-export(Vector3) var Angle := Vector3(0.0,0.0,0.0) setget set_Angle
-export(Vector3) var Angle_Target := Vector3(0.0,0.0,0.0) setget set_AngleTarget
 
 export(Color) var ColorMod := Color(1.0,1.0,1.0,1.0) setget set_ColorMod
 
@@ -36,14 +35,12 @@ func set_CamHeight(value : float) -> void:
 func set_CamErrorBias(value : float) -> void:
 	CamErrorBias = value
 	
-func set_Angle(value : Vector3) -> void:
-	Angle = value
-	
-func set_AngleTarget(value : Vector3) -> void:
-	Angle_Target = value
-	
 func set_ColorMod(value : Color) -> void:
 	ColorMod = value
+	
+func set_MirrorEffect(value : bool) -> void:
+	MirrorEffect = value
+
 
 func printTexture():
 	if localViewport != null and localPlane != null:
@@ -108,6 +105,13 @@ func getMainData():
 			localCamera.set_global_transform(Transform(Vector3(-1.0,0.0,0.0),Vector3(0.0,0.0,-1.0),Vector3(0.0,-1.0,0.0),Vector3(0.0,CamHeight,0.0)))
 		else:
 			localCamera.set_global_transform(Transform(Vector3(1.0,0.0,0.0),Vector3(0.0,1.0,0.0),Vector3(0.0,0.0,-1.0),Vector3(0.0,CamErrorBias,0.0)))
+		if localViewport != null:
+			if MirrorEffect:
+				localViewport.size.x = 1024
+				localViewport.size.y = 2560
+			else:
+				localViewport.size.x = 1024*2
+				localViewport.size.y = 2560*2
 		#localCamera.get_position_in_parent()
 		#localCamera.current = true
 	
