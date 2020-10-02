@@ -61,9 +61,8 @@ func _integrate_server(args):
 	entity.is_grounded = is_grounded()
 	
 	if !entity.is_grounded and !is_jumping:
+		update_entity_values()
 		return
-
-	
 	reset_input()
 	handle_input()
 	rotate_body(phys_state)
@@ -76,6 +75,7 @@ func _integrate_server(args):
 		update_stairs_climbing(0.016, phys_state)
 	else:
 		update_movement(phys_state)
+	update_entity_values()
 	update_anim_state(phys_state)
 	update_server_values(phys_state)
 #
@@ -114,7 +114,6 @@ func handle_input() -> void:
 func calculate_slope():
 	dbg_ground_normal = normal_detect.get_collision_normal().normalized()
 	dbg_ground_slope = rad2deg(acos(dbg_ground_normal.dot(Vector3.UP)))
-#	on_ground.rotate_y(dbg_ground_slope)
 
 func calculate_horizontal(_phys_state : PhysicsDirectBodyState):
 	horizontal_vector += entity.input.z * entity.model.transform.basis.z
@@ -143,8 +142,8 @@ func update_jump_velocity(_phys_state : PhysicsDirectBodyState):
 	jump_velocity += horizontal_vector.normalized() * movement_speed
 	is_jumping = true
 
-var vel = Vector3()
 func update_movement(phys_state : PhysicsDirectBodyState):
+	var vel = Vector3()
 	# Jump simulation
 	if is_jumping:
 		# Get our character off the ground, such as grounded() is no longer true
@@ -163,8 +162,10 @@ func update_movement(phys_state : PhysicsDirectBodyState):
 	dbg_speed = vel.length()
 	
 	phys_state.set_linear_velocity(vel)
-	entity.velocity = phys_state.linear_velocity
-	
+
+func update_entity_values():
+	entity.velocity = entity.linear_velocity
+
 func update_server_values(phys_state):
 	entity.srv_pos = entity.global_transform.origin
 	entity.srv_vel = entity.velocity
@@ -239,4 +240,3 @@ func update_stairs_climbing(_delta : float, phys_state : PhysicsDirectBodyState)
 		return
 	
 	phys_state.set_linear_velocity(Vector3.UP * climb_speed * entity.input.z)
-	entity.velocity = phys_state.linear_velocity
