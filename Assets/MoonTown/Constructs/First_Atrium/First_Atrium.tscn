@@ -97,7 +97,10 @@ omni_attenuation = 0.25
 
 [node name="VerticalStair_TunnelBottom" parent="Markers/Marker-VerticalStair_TunnelBottom" index="0" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
+networked = true
+interactions_active = true
 stairs_step_count = 2
+generate_editor_visual = false
 
 [node name="HealthCentrifuge" parent="Markers/Marker_HealthCentrifuge" index="0" instance=ExtResource( 2 )]
 
@@ -119,17 +122,29 @@ transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -83.930
 [node name="Hexpane_Window" parent="Markers/Marker_HexWindow5" index="0" instance=ExtResource( 3 )]
 
 [node name="Vertical-Stairs-1" parent="Markers/Marker_Vertical-Stairs-1" index="0" instance=ExtResource( 4 )]
+networked = true
+interactions_active = true
 stairs_step_count = 2
+generate_editor_visual = false
 
 [node name="Vertical-Stairs-2" parent="Markers/Marker_Vertical-Stairs-2" index="0" instance=ExtResource( 4 )]
+networked = true
+interactions_active = true
 stairs_step_count = 2
+generate_editor_visual = false
 
 [node name="Vertical-Stairs-3" parent="Markers/Marker_Vertical-Stairs-3" index="0" instance=ExtResource( 4 )]
+networked = true
+interactions_active = true
 stairs_step_count = 2
+generate_editor_visual = false
 
 [node name="VerticalStair_TunnelTop" parent="Markers/Marker_VerticalStair_TunnelTop" index="0" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
+networked = true
+interactions_active = true
 stairs_step_count = 4
+generate_editor_visual = false
 
 [node name="LOD1" parent="." index="11"]
 visible = false
