@@ -136,9 +136,8 @@ func update_jump_velocity(_phys_state : PhysicsDirectBodyState):
 	jump_velocity += horizontal_vector.normalized() * movement_speed
 	is_jumping = true
 
+var vel = Vector3()
 func update_movement(phys_state : PhysicsDirectBodyState):
-	var vel = Vector3()
-	
 	# Jump velocity simulation
 	if is_jumping:
 		jump_velocity -= Vector3(0, gravity * 0.016, 0)
@@ -155,7 +154,9 @@ func update_movement(phys_state : PhysicsDirectBodyState):
 		vel = horizontal_vector.normalized() * movement_speed
 	else:
 		# Gravity simulation
-		vel += Vector3.DOWN * gravity
+		if abs(vel.y) <= abs(gravity):
+			vel += Vector3.DOWN * gravity
+		vel += Vector3.DOWN * gravity * 0.016
 	
 	dbg_speed = vel.length()
 	
