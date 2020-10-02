@@ -49,6 +49,8 @@ func is_grounded() -> bool:
 			or $OnGround4.is_colliding() or $OnGround5.is_colliding())
 
 func _integrate_forces(state):
+	if !self.enabled:
+		return
 	invoke_network_based("_integrate_server", "_integrate_client", [state])
 	
 func _integrate_client(_args):
@@ -56,11 +58,15 @@ func _integrate_client(_args):
 	
 func _integrate_server(args):
 	var phys_state = args[0]
+	entity.is_grounded = is_grounded()
+	
+	if !entity.is_grounded and !is_jumping and !is_climbing:
+		update_entity_values()
+		return
 	reset_input()
 	handle_input()
 	rotate_body(phys_state)
 	calculate_slope()
-	entity.is_grounded = is_grounded()
 	calculate_horizontal(phys_state)
 	update_raycasts()
 	if entity.is_grounded and vertical_vector.y > 0:
@@ -69,6 +75,7 @@ func _integrate_server(args):
 		update_stairs_climbing(0.016, phys_state)
 	else:
 		update_movement(phys_state)
+	update_entity_values()
 	update_anim_state(phys_state)
 	update_server_values(phys_state)
 #
@@ -107,7 +114,6 @@ func handle_input() -> void:
 func calculate_slope():
 	dbg_ground_normal = normal_detect.get_collision_normal().normalized()
 	dbg_ground_slope = rad2deg(acos(dbg_ground_normal.dot(Vector3.UP)))
-#	on_ground.rotate_y(dbg_ground_slope)
 
 func calculate_horizontal(_phys_state : PhysicsDirectBodyState):
 	horizontal_vector += entity.input.z * entity.model.transform.basis.z
@@ -136,33 +142,30 @@ func update_jump_velocity(_phys_state : PhysicsDirectBodyState):
 	jump_velocity += horizontal_vector.normalized() * movement_speed
 	is_jumping = true
 
-var vel = Vector3()
 func update_movement(phys_state : PhysicsDirectBodyState):
-	# Jump velocity simulation
+	var vel = Vector3()
+	# Jump simulation
 	if is_jumping:
+		# Get our character off the ground, such as grounded() is no longer true
 		jump_velocity -= Vector3(0, gravity * 0.016, 0)
 		vel = jump_velocity
-		# Update current jump velocity to reflect gravity simulation
-		if entity.is_grounded:
-			if jump_velocity.y < 0:
-				is_jumping = false
+		# Let godot physics take control after we're off the ground
+		if !entity.is_grounded:
+			is_jumping = false
 		# Debug jump
 		if jump_velocity.y <= 0 and dbg_rest_jump_pos.is_equal_approx(Vector3()):
 			calculate_debug_values()
 	# Actual movement
 	elif entity.is_grounded:
 		vel = horizontal_vector.normalized() * movement_speed
-	else:
-		# Gravity simulation
-		if abs(vel.y) <= abs(gravity):
-			vel += Vector3.DOWN * gravity
-		vel += Vector3.DOWN * gravity * 0.016
 	
 	dbg_speed = vel.length()
 	
 	phys_state.set_linear_velocity(vel)
-	entity.velocity = phys_state.linear_velocity
-	
+
+func update_entity_values():
+	entity.velocity = entity.linear_velocity
+
 func update_server_values(phys_state):
 	entity.srv_pos = entity.global_transform.origin
 	entity.srv_vel = entity.velocity
@@ -177,7 +180,8 @@ func start_climb_stairs(target_stairs : VerticalStairs) -> void:
 	#Do nothing if the player is already in climbing state.
 	if entity.state.state == ActorEntityState.State.CLIMBING:
 		return
-		
+	
+	entity.custom_integrator = true
 	entity.stairs = target_stairs
 	is_climbing = true
 	
@@ -206,11 +210,12 @@ func stop_climb_stairs(phys_state : PhysicsDirectBodyState, is_stairs_top) -> vo
 	is_climbing = false
 
 	if is_stairs_top:
-		var push_force = entity.model.transform.basis.z * 100 + Vector3.UP * 100
+		var push_force = entity.model.transform.basis.z.normalized() * 1.5 + Vector3.UP * 2
 		entity.set_linear_velocity(push_force)
 
 	#Make myself face the same direction as the camera.
 	entity.model.global_transform.basis = entity.global_transform.basis
+	entity.custom_integrator = false
 	
 #Eventually we need to make this work with delta.
 func update_stairs_climbing(_delta : float, phys_state : PhysicsDirectBodyState) -> void :
@@ -237,4 +242,3 @@ func update_stairs_climbing(_delta : float, phys_state : PhysicsDirectBodyState)
 		return
 	
 	phys_state.set_linear_velocity(Vector3.UP * climb_speed * entity.input.z)
-	entity.velocity = phys_state.linear_velocity

@@ -3,8 +3,11 @@ class_name HumanoidMovementDebug
 
 var is_flying: bool = false
 var movement_input: Vector3 = Vector3()
-export(float) var speed = 6
-var speed_multiplier = 1
+export(float) var fly_speed = 6
+var fly_speed_mul = 1
+
+# Debug variables
+var dbg_speed: float = 0.0
 
 func _init().("HumanoidMovementDebug", true):
 	pass
@@ -12,13 +15,20 @@ func _init().("HumanoidMovementDebug", true):
 func _ready() -> void:
 	pass
 
+func _process(_delta):
+	$Speed.set_text("Movement Speed: %s m/s" %dbg_speed)
+	$Velocity.text = "Velocity: X: %3.2f, Y: %3.2f, Z %3.2f" %[entity.velocity.x, 
+			entity.velocity.y, entity.velocity.z]
+
 func _physics_process(_delta: float) -> void:
+	dbg_speed = entity.velocity.length()
 	_check_flight_mode()
 	if !is_flying:
 		return
 	_handle_input()
 	_rotate_body()
 	_update_movement(_delta)
+
 
 func _check_flight_mode():
 	#Fly upwards if the player requested it.
@@ -53,8 +63,12 @@ func _toggle_fly() -> void :
 	#SHut off collision detection for the entity.
 	entity.set_collision_mask_bit(0, !is_flying)
 	entity.set_collision_layer_bit(0, !is_flying)
-	entity.mode = RigidBody.MODE_KINEMATIC
-	entity.get_component("AMovementController").disable()
+	if is_flying:
+		entity.get_component("AMovementController").disable()
+		entity.mode = RigidBody.MODE_KINEMATIC
+	else:
+		entity.get_component("AMovementController").enable()
+		entity.mode = RigidBody.MODE_CHARACTER
 
 func _rotate_body() -> void:
 	# Rotate
@@ -67,4 +81,4 @@ func _update_movement(delta):
 	var mov = movement_input.z * entity.model.transform.basis.z
 	mov += movement_input.x * entity.model.transform.basis.x
 	mov.y = movement_input.y
-	entity.global_transform.origin += mov * delta * speed * speed_multiplier
+	entity.global_transform.origin += mov * delta * fly_speed * fly_speed_mul
