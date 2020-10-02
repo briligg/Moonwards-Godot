@@ -50,7 +50,6 @@ script = ExtResource( 9 )
 enabled = true
 NPC_File = "res://Assets/Characters/Phill.jsm"
 initial_state = "WorkingBusy"
-NPC_input_path = NodePath("../NPCInput")
 Interactable_Path = NodePath("../Workstation")
 
 [node name="Workstation" parent="." instance=ExtResource( 8 )]

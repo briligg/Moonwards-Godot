@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://addons/inspector-gadget/src/inspector_gadget.gd" type="Script" id=1]
 [ext_resource path="res://addons/joyeux_npc_editor/src/interface/States/code/States.gd" type="Script" id=2]
 [ext_resource path="res://addons/joyeux_npc_editor/src/interface/States/code/StatesGraphEdit.gd" type="Script" id=3]
 [ext_resource path="res://addons/joyeux_npc_editor/src/interface/States/code/States_FileDialog.gd" type="Script" id=4]
+[ext_resource path="res://addons/joyeux_npc_editor/src/icons/icon_reload.svg" type="Texture" id=5]
 
 [node name="States" type="VSplitContainer"]
 anchor_right = 1.0
@@ -67,34 +68,45 @@ items = [ "simple", null, false, "Use", null, false, "Say_test", null, false ]
 [node name="selection" type="HBoxContainer" parent="ViewMenuSplit/Container"]
 margin_top = 148.0
 margin_right = 280.0
-margin_bottom = 162.0
+margin_bottom = 170.0
 
 [node name="title" type="Label" parent="ViewMenuSplit/Container/selection"]
+margin_top = 4.0
 margin_right = 59.0
-margin_bottom = 14.0
+margin_bottom = 18.0
 text = "Selected:"
 
 [node name="name" type="Label" parent="ViewMenuSplit/Container/selection"]
 margin_left = 63.0
-margin_right = 280.0
-margin_bottom = 14.0
+margin_top = 4.0
+margin_right = 248.0
+margin_bottom = 18.0
 size_flags_horizontal = 3
 text = " None"
 align = 1
 
-[node name="Add" type="Button" parent="ViewMenuSplit/Container"]
-margin_top = 166.0
+[node name="Refresh" type="Button" parent="ViewMenuSplit/Container/selection"]
+margin_left = 252.0
 margin_right = 280.0
-margin_bottom = 186.0
+margin_bottom = 22.0
+icon = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Add" type="Button" parent="ViewMenuSplit/Container"]
+margin_top = 174.0
+margin_right = 280.0
+margin_bottom = 194.0
 text = "Add to Tree"
 
 [node name="HSeparator" type="HSeparator" parent="ViewMenuSplit/Container"]
-margin_top = 190.0
+margin_top = 198.0
 margin_right = 280.0
-margin_bottom = 194.0
+margin_bottom = 202.0
 
 [node name="InspectorGadgetScrollContainer" type="ScrollContainer" parent="ViewMenuSplit/Container"]
-margin_top = 198.0
+margin_top = 206.0
 margin_right = 280.0
 margin_bottom = 1036.0
 size_flags_horizontal = 3
@@ -105,7 +117,7 @@ __meta__ = {
 
 [node name="InspectorGadget" type="MarginContainer" parent="ViewMenuSplit/Container/InspectorGadgetScrollContainer"]
 margin_right = 280.0
-margin_bottom = 838.0
+margin_bottom = 830.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 1 )
@@ -168,6 +180,7 @@ __meta__ = {
 [connection signal="pressed" from="ViewMenuSplit/Container/type2/Open" to="." method="_on_Open_pressed"]
 [connection signal="pressed" from="ViewMenuSplit/Container/type2/Save" to="." method="_on_Save_pressed"]
 [connection signal="item_selected" from="ViewMenuSplit/Container/ScrollContainer/Behaviors" to="." method="_on_Behaviors_item_selected"]
+[connection signal="pressed" from="ViewMenuSplit/Container/selection/Refresh" to="." method="_on_Refresh_pressed"]
 [connection signal="pressed" from="ViewMenuSplit/Container/Add" to="." method="_on_Add_pressed"]
 [connection signal="connection_request" from="ViewMenuSplit/StatesGraphEdit" to="ViewMenuSplit/StatesGraphEdit" method="_on_StatesGraphEdit_connection_request"]
 [connection signal="disconnection_request" from="ViewMenuSplit/StatesGraphEdit" to="ViewMenuSplit/StatesGraphEdit" method="_on_StatesGraphEdit_disconnection_request"]

@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/icon_reload_small.svg-68f50e392b6d1da56b2fa373bec1ac6b.image"
+
+[deps]
+
+source_file="res://addons/joyeux_npc_editor/src/icons/icon_reload_small.svg"
+dest_files=[ "res://.import/icon_reload_small.svg-68f50e392b6d1da56b2fa373bec1ac6b.image" ]
+
+[params]
+

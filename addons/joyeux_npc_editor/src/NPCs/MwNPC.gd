@@ -42,6 +42,12 @@ func match(input, signals, variables):
 	if input == _get_variable_from_port(variables, 1):
 		_emit_signal_from_port(true, signals, 0)
 
+func delay(input, signals, variables):
+	var time = float(_get_variable_from_port(variables, 1))
+	if time > 0:
+		yield(get_tree().create_timer(time), "timeout")
+	_emit_signal_from_port(input, signals, 0)
+
 func parallel_trigger(input, signals, variables):
 	#Takes the contents of a signal and distributes it along other two nodes
 	_emit_signal_from_port(input, signals, 0)

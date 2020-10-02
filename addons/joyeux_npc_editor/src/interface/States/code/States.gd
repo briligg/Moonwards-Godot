@@ -90,9 +90,10 @@ func load_behaviors_in(path : String) -> void:
 				if file_name.ends_with(".jbt"):
 					var BT = ConfigFile.new()
 					BT.load(file_name)
-					Behaviors.append(BT)
-					Behavior_routes.append(Dir.get_current_dir()+"/"+file_name)
-					Behavior_names.append(file_name.trim_suffix(".jbt"))
+					if Behavior_names.find(file_name.trim_suffix(".jbt"))==-1:
+						Behaviors.append(BT)
+						Behavior_routes.append(Dir.get_current_dir()+"/"+file_name)
+						Behavior_names.append(file_name.trim_suffix(".jbt"))
 				else:
 					print_debug("Found a file that is not a BT")
 			elif file_name.is_valid_filename() and file_name != "." and file_name != "..":
@@ -147,3 +148,8 @@ func _on_Save_file_selected(path):
 	else:
 		save_states(path)
 
+func _on_Refresh_pressed():
+	for element in Nodes.behavior_paths:
+		load_behaviors_in(element)
+	#Loads User Defined Behaviors
+	list_behaviors()

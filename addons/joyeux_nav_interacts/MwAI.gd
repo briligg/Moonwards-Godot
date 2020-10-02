@@ -6,7 +6,6 @@ Interface to connect all signals to a behavior tree and provide its functionalit
 
 export(String, FILE, "*.jsm") var NPC_File : String = "" #This works just fine! :D
 export(String) var initial_state : String = ""
-export(NodePath) var NPC_input_path : NodePath = ""
 export(NodePath) var Interactable_Path : NodePath = ""
 
 
@@ -18,7 +17,7 @@ func _init().("AI handler", false):
 
 func _ready():
 	BehaviorTree = MwNPC.new(NPC_File, initial_state)
-	BehaviorTree.navigator = get_node(NPC_input_path)
+	BehaviorTree.navigator = entity.get_component("NPCInput")
 	BehaviorTree.worker = worker
 	BehaviorTree.actor = entity
 	

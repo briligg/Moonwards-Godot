@@ -56,6 +56,16 @@ var _functions = {
 			{"_label_title" : "Does Match", "_type" : TYPE_BOOL },
 		]
 	},
+	"delay" : {
+		"_category" : "inhibitors",
+		"_input_ports" : [
+			{"_label_title":"Trigger", "_type" : Nodes.TYPE_ANY},
+			{"_label_title":"_s_float", "_type" : TYPE_NIL}
+		],
+		"_output_ports" : [
+			{"_label_title" : "Next", "_type" : Nodes.TYPE_ANY },
+		]
+	},
 	"tri_v_decision" : {
 		"_category" : "inhibitors",
 		"_input_ports" : [
