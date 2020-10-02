@@ -26,14 +26,13 @@ size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer2"]
 margin_right = 922.0
-margin_bottom = 1066.0
+margin_bottom = 531.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer2/Button"]
-margin_top = 535.0
-margin_right = 200.0
-margin_bottom = 1066.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
@@ -42,8 +41,9 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2/Button/VBoxContainer"]
+margin_left = 361.0
 margin_top = 156.0
-margin_right = 200.0
+margin_right = 561.0
 margin_bottom = 356.0
 size_flags_horizontal = 6
 texture = ExtResource( 1 )
@@ -53,9 +53,50 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/Button/VBoxContainer"]
 margin_top = 360.0
-margin_right = 200.0
+margin_right = 922.0
 margin_bottom = 374.0
-text = "START CUSTOM SERVER"
+text = "CREATE CUSTOM SERVER"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer2"]
+margin_top = 535.0
+margin_right = 922.0
+margin_bottom = 1066.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer2/Button2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2/Button2/VBoxContainer"]
+margin_left = 361.0
+margin_top = 156.0
+margin_right = 561.0
+margin_bottom = 356.0
+size_flags_horizontal = 6
+size_flags_vertical = 0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/Button2/VBoxContainer"]
+margin_top = 360.0
+margin_right = 922.0
+margin_bottom = 374.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "JOIN MASTER"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -68,45 +109,58 @@ margin_bottom = 1066.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
 margin_right = 922.0
 margin_bottom = 531.0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/Button2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/Button2/VBoxContainer"]
-margin_left = 361.0
-margin_top = 156.0
-margin_right = 561.0
-margin_bottom = 356.0
-size_flags_horizontal = 6
-size_flags_vertical = 0
-texture = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Button2/VBoxContainer"]
-margin_top = 360.0
+[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
 margin_right = 922.0
-margin_bottom = 374.0
+margin_bottom = 136.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 140.0
+margin_right = 922.0
+margin_bottom = 154.0
+text = "ADDRESS IP"
+
+[node name="TextEdit_Address" type="TextEdit" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 158.0
+margin_right = 922.0
+margin_bottom = 227.0
 size_flags_horizontal = 3
-size_flags_vertical = 0
-text = "JOIN SERVER"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+size_flags_vertical = 3
+text = "sdfsf"
+
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 231.0
+margin_right = 922.0
+margin_bottom = 299.0
+size_flags_vertical = 3
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 303.0
+margin_right = 922.0
+margin_bottom = 317.0
+text = "PASSWORD"
+
+[node name="TextEdit_Password" type="TextEdit" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 321.0
+margin_right = 922.0
+margin_bottom = 390.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "sdfsdf"
+caret_block_mode = true
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 394.0
+margin_right = 922.0
+margin_bottom = 531.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
 
 [node name="Button3" type="Button" parent="HBoxContainer/VBoxContainer"]
 margin_top = 535.0
