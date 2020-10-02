@@ -15,11 +15,10 @@
 [ext_resource path="res://SceneComponent/Interface/Hud/Apps/ToolsBar/Button_Expand.gd" type="Script" id=13]
 [ext_resource path="res://SceneComponent/Interface/Hud/Apps/ToolsBar/ToolsBarRoot.gd" type="Script" id=14]
 
-[sub_resource type="Theme" id=3]
+[sub_resource type="Theme" id=1]
 default_font = ExtResource( 4 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "hide"
+[sub_resource type="Animation" id=2]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("VBoxContainer/HBoxContainer_Dynamic:visible")
@@ -58,8 +57,7 @@ tracks/2/keys = {
 "values": [ 0.0, 180.0 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "show"
+[sub_resource type="Animation" id=3]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("VBoxContainer/HBoxContainer_Static/VBoxContainer9/MarginContainer/TextureRect:rect_rotation")
@@ -117,7 +115,7 @@ alignment = 2
 margin_top = 890.0
 margin_right = 1920.0
 margin_bottom = 954.0
-theme = SubResource( 3 )
+theme = SubResource( 1 )
 custom_constants/separation = 8
 alignment = 2
 
@@ -278,7 +276,6 @@ stretch_mode = 5
 [node name="Button_Build" type="Button" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer2/MarginContainer"]
 margin_right = 72.0
 margin_bottom = 72.0
-flat = true
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer2"]
 margin_top = 76.0
@@ -411,5 +408,5 @@ text = "[5]"
 align = 1
 
 [node name="Anim" type="AnimationPlayer" parent="."]
-anims/hide = SubResource( 1 )
-anims/show = SubResource( 2 )
+anims/hide = SubResource( 2 )
+anims/show = SubResource( 3 )

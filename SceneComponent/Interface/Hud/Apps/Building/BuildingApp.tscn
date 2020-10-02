@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/Interface/Hud/Styles/Apps/HUDApps.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Building/T_IconPlanes.png" type="Texture" id=2]
@@ -21,11 +21,14 @@
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconDivide.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconMerge.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconScale.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconClear.png" type="Texture" id=22]
+[ext_resource path="res://SceneComponent/Interface/Hud/Apps/Building/BuildingApp.gd" type="Script" id=23]
 
 [node name="BuildingApp" type="PanelContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -215,6 +218,28 @@ margin_right = 1920.0
 margin_bottom = 1080.0
 custom_constants/separation = 32
 alignment = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 1480.0
+margin_right = 1509.0
+margin_bottom = 86.0
+custom_constants/separation = 10
+alignment = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
+margin_top = 48.0
+margin_right = 29.0
+margin_bottom = 86.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/MarginContainer2"]
+margin_right = 29.0
+margin_bottom = 38.0
+
+[node name="Button_Exit" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/MarginContainer2"]
+margin_right = 29.0
+margin_bottom = 38.0
+toggle_mode = true
+icon = ExtResource( 22 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 1541.0
