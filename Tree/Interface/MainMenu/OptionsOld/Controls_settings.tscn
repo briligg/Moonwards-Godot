@@ -3,8 +3,6 @@
 [ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/Controls_settings.gd" type="Script" id=1]
 [ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/control_option_component.tscn" type="PackedScene" id=2]
 
-
-
 [node name="Controls" type="Tabs"]
 anchor_left = 0.5
 anchor_top = 0.5

@@ -1,0 +1,147 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Interface/Textures/CrosshairTexture.png" type="Texture" id=1]
+
+[node name="Destination" type="PanelContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1913.0
+margin_bottom = 1073.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 62
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 922.0
+margin_bottom = 1066.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer2"]
+margin_right = 922.0
+margin_bottom = 1066.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer2/Button"]
+margin_top = 535.0
+margin_right = 200.0
+margin_bottom = 1066.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2/Button/VBoxContainer"]
+margin_top = 156.0
+margin_right = 200.0
+margin_bottom = 356.0
+size_flags_horizontal = 6
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/Button/VBoxContainer"]
+margin_top = 360.0
+margin_right = 200.0
+margin_bottom = 374.0
+text = "START CUSTOM SERVER"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 984.0
+margin_right = 1906.0
+margin_bottom = 1066.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_right = 922.0
+margin_bottom = 531.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/Button2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/Button2/VBoxContainer"]
+margin_left = 361.0
+margin_top = 156.0
+margin_right = 561.0
+margin_bottom = 356.0
+size_flags_horizontal = 6
+size_flags_vertical = 0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Button2/VBoxContainer"]
+margin_top = 360.0
+margin_right = 922.0
+margin_bottom = 374.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "JOIN SERVER"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 535.0
+margin_right = 922.0
+margin_bottom = 1066.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/Button3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/Button3/VBoxContainer"]
+margin_left = 361.0
+margin_top = 156.0
+margin_right = 561.0
+margin_bottom = 356.0
+size_flags_horizontal = 6
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Button3/VBoxContainer"]
+margin_top = 360.0
+margin_right = 922.0
+margin_bottom = 374.0
+text = "JOIN SERVER"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Tree/Interface/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Interface/Textures/menu_splash.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Theme_Footer.tres" type="Theme" id=15]
 [ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Theme_Header.tres" type="Theme" id=16]
 [ext_resource path="res://Tree/Interface/MainMenu/Style/MM_MainButtonStyleFlat.tres" type="StyleBox" id=17]
+[ext_resource path="res://Tree/Interface/MainMenu/Destination.tscn" type="PackedScene" id=18]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.588235 )
@@ -180,6 +181,8 @@ margin_left = 4.0
 margin_top = 8.0
 margin_right = -4.0
 margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="VBoxContainer_Avatar" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
 visible = false
@@ -190,6 +193,7 @@ margin_top = 8.0
 margin_right = -4.0
 margin_bottom = -4.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="UserSettings" parent="VBoxContainer/TabContainer/VBoxContainer_Avatar" instance=ExtResource( 9 )]
 anchor_left = 0.0
@@ -207,6 +211,14 @@ margin_left = 4.0
 margin_top = 8.0
 margin_right = -4.0
 margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Destination" parent="VBoxContainer/TabContainer/VBoxContainer_Destination" instance=ExtResource( 18 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1872.0
+margin_bottom = 14.0
 
 [node name="VBoxContainer_Apps" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
 visible = false
@@ -261,6 +273,8 @@ margin_left = 4.0
 margin_top = 8.0
 margin_right = -4.0
 margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="HBoxContainer_Settings_Tab" type="HBoxContainer" parent="VBoxContainer/TabContainer/VBoxContainer_Settings"]
 margin_right = 1872.0
@@ -553,7 +567,6 @@ use_hidden_tabs_for_min_size = true
 script = ExtResource( 8 )
 
 [node name="DestinationTab" type="HBoxContainer" parent="HBoxContainer/Panel/Tab"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
