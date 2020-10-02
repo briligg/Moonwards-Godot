@@ -28,7 +28,10 @@ var navigator : NPCInput = null
 func _init(file:= "", state:= ""):
 	NPC_File = file 
 	initial_state = state
-
+func _ready():
+	var colors = [pants_color, shirt_color, hair_color, skin_color, shoes_color]
+	actor.get_component("ModelComponent").set_colors(colors)
+	
 func property_check(input, signals, variables):
 	#input is object, get the specific variable in the variable port and then
 	#passes it to the next node
