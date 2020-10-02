@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/control_option_component.gd" type="Script" id=1]
-[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Empty.tres" type="StyleBox" id=2]
 
 [node name="ui_right" type="HBoxContainer"]
 margin_top = 36.0
@@ -23,7 +22,6 @@ text = "Default control name"
 margin_left = 214.0
 margin_right = 218.0
 margin_bottom = 20.0
-custom_styles/separator = ExtResource( 2 )
 
 [node name="Button" type="Button" parent="."]
 margin_left = 222.0
