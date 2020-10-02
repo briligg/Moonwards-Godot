@@ -2,15 +2,13 @@
 
 [ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/LabelSliderMix/LabelSliderMix.gd" type="Script" id=1]
 
-
-
-
-
-
 [node name="SliderOption" type="HBoxContainer"]
 margin_right = 310.0
 margin_bottom = 45.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="_Spacer" type="Label" parent="."]
 margin_top = 15.0

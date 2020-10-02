@@ -184,6 +184,25 @@ margin_bottom = -4.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="VBoxContainer_Destination" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 8.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Destination" parent="VBoxContainer/TabContainer/VBoxContainer_Destination" instance=ExtResource( 18 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1872.0
+margin_bottom = 784.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
 [node name="VBoxContainer_Avatar" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
 visible = false
 anchor_right = 1.0
@@ -200,25 +219,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1892.0
-margin_bottom = 804.0
-
-[node name="VBoxContainer_Destination" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 8.0
-margin_right = -4.0
-margin_bottom = -4.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Destination" parent="VBoxContainer/TabContainer/VBoxContainer_Destination" instance=ExtResource( 18 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 1872.0
-margin_bottom = 14.0
+margin_bottom = 784.0
 
 [node name="VBoxContainer_Apps" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
 visible = false
@@ -266,7 +268,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer_Settings" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -438,6 +439,7 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
 anchor_left = 0.1
 anchor_top = 0.3
 anchor_right = 0.9

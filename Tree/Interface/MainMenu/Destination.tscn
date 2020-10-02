@@ -24,13 +24,13 @@ margin_bottom = 1066.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer2"]
+[node name="Button_CreateServer" type="Button" parent="HBoxContainer/VBoxContainer2"]
 margin_right = 922.0
 margin_bottom = 531.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer2/Button"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer2/Button_CreateServer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
@@ -40,7 +40,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2/Button/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2/Button_CreateServer/VBoxContainer"]
 margin_left = 361.0
 margin_top = 156.0
 margin_right = 561.0
@@ -51,7 +51,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/Button/VBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/Button_CreateServer/VBoxContainer"]
 margin_top = 360.0
 margin_right = 922.0
 margin_bottom = 374.0
@@ -61,14 +61,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer2"]
+[node name="Button_JoinMaster" type="Button" parent="HBoxContainer/VBoxContainer2"]
 margin_top = 535.0
 margin_right = 922.0
 margin_bottom = 1066.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer2/Button2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer2/Button_JoinMaster"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
@@ -78,7 +78,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2/Button2/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2/Button_JoinMaster/VBoxContainer"]
 margin_left = 361.0
 margin_top = 156.0
 margin_right = 561.0
@@ -90,7 +90,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/Button2/VBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/Button_JoinMaster/VBoxContainer"]
 margin_top = 360.0
 margin_right = 922.0
 margin_bottom = 374.0
@@ -162,14 +162,14 @@ margin_bottom = 531.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 
-[node name="Button3" type="Button" parent="HBoxContainer/VBoxContainer"]
+[node name="Button_JoinServer" type="Button" parent="HBoxContainer/VBoxContainer"]
 margin_top = 535.0
 margin_right = 922.0
 margin_bottom = 1066.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/Button3"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/Button_JoinServer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
@@ -179,7 +179,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/Button3/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/Button_JoinServer/VBoxContainer"]
 margin_left = 361.0
 margin_top = 156.0
 margin_right = 561.0
@@ -190,7 +190,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Button3/VBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Button_JoinServer/VBoxContainer"]
 margin_top = 360.0
 margin_right = 922.0
 margin_bottom = 374.0
