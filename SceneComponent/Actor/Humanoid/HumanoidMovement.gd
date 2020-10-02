@@ -60,7 +60,7 @@ func _integrate_server(args):
 	var phys_state = args[0]
 	entity.is_grounded = is_grounded()
 	
-	if !entity.is_grounded and !is_jumping:
+	if !entity.is_grounded and !is_jumping and !is_climbing:
 		update_entity_values()
 		return
 	reset_input()
@@ -180,7 +180,8 @@ func start_climb_stairs(target_stairs : VerticalStairs) -> void:
 	#Do nothing if the player is already in climbing state.
 	if entity.state.state == ActorEntityState.State.CLIMBING:
 		return
-		
+	
+	entity.custom_integrator = true
 	entity.stairs = target_stairs
 	is_climbing = true
 	
@@ -209,11 +210,12 @@ func stop_climb_stairs(phys_state : PhysicsDirectBodyState, is_stairs_top) -> vo
 	is_climbing = false
 
 	if is_stairs_top:
-		var push_force = entity.model.transform.basis.z * 100 + Vector3.UP * 100
+		var push_force = entity.model.transform.basis.z.normalized() * 1.5 + Vector3.UP * 2
 		entity.set_linear_velocity(push_force)
 
 	#Make myself face the same direction as the camera.
 	entity.model.global_transform.basis = entity.global_transform.basis
+	entity.custom_integrator = false
 	
 #Eventually we need to make this work with delta.
 func update_stairs_climbing(_delta : float, phys_state : PhysicsDirectBodyState) -> void :
