@@ -22,7 +22,6 @@
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconMerge.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconScale.png" type="Texture" id=21]
 
-
 [node name="BuildingApp" type="PanelContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
