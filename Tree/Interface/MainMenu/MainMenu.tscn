@@ -220,7 +220,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="HBoxContainer_Apps_Tab" type="HBoxContainer" parent="VBoxContainer/TabContainer/VBoxContainer_Apps"]
-margin_right = 1892.0
+margin_right = 1872.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 
@@ -237,8 +237,8 @@ text = "OTHER EDITOR"
 
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer/TabContainer/VBoxContainer_Apps"]
 margin_top = 24.0
-margin_right = 1892.0
-margin_bottom = 804.0
+margin_right = 1872.0
+margin_bottom = 784.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 tabs_visible = false
@@ -261,6 +261,51 @@ margin_left = 4.0
 margin_top = 8.0
 margin_right = -4.0
 margin_bottom = -4.0
+
+[node name="HBoxContainer_Settings_Tab" type="HBoxContainer" parent="VBoxContainer/TabContainer/VBoxContainer_Settings"]
+margin_right = 1872.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="Button_Sett_Visual" type="Button" parent="VBoxContainer/TabContainer/VBoxContainer_Settings/HBoxContainer_Settings_Tab"]
+margin_right = 90.0
+margin_bottom = 20.0
+text = "NPC EDITOR"
+
+[node name="Button_Sett_Controls" type="Button" parent="VBoxContainer/TabContainer/VBoxContainer_Settings/HBoxContainer_Settings_Tab"]
+margin_left = 94.0
+margin_right = 201.0
+margin_bottom = 20.0
+text = "OTHER EDITOR"
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer/TabContainer/VBoxContainer_Settings"]
+margin_top = 24.0
+margin_right = 1872.0
+margin_bottom = 784.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tabs_visible = false
+
+[node name="VBoxContainer_Sett_Visuals" type="VBoxContainer" parent="VBoxContainer/TabContainer/VBoxContainer_Settings/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 8.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer_Sett_Controls" type="VBoxContainer" parent="VBoxContainer/TabContainer/VBoxContainer_Settings/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 8.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="VBoxContainer_About" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
 visible = false
@@ -379,7 +424,6 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-visible = false
 anchor_left = 0.1
 anchor_top = 0.3
 anchor_right = 0.9
@@ -509,6 +553,7 @@ use_hidden_tabs_for_min_size = true
 script = ExtResource( 8 )
 
 [node name="DestinationTab" type="HBoxContainer" parent="HBoxContainer/Panel/Tab"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
