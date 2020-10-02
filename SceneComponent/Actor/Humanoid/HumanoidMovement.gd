@@ -49,6 +49,8 @@ func is_grounded() -> bool:
 			or $OnGround4.is_colliding() or $OnGround5.is_colliding())
 
 func _integrate_forces(state):
+	if !self.enabled:
+		return
 	invoke_network_based("_integrate_server", "_integrate_client", [state])
 	
 func _integrate_client(_args):
@@ -56,11 +58,16 @@ func _integrate_client(_args):
 	
 func _integrate_server(args):
 	var phys_state = args[0]
+	entity.is_grounded = is_grounded()
+	
+	if !entity.is_grounded and !is_jumping:
+		return
+
+	
 	reset_input()
 	handle_input()
 	rotate_body(phys_state)
 	calculate_slope()
-	entity.is_grounded = is_grounded()
 	calculate_horizontal(phys_state)
 	update_raycasts()
 	if entity.is_grounded and vertical_vector.y > 0:
@@ -138,25 +145,20 @@ func update_jump_velocity(_phys_state : PhysicsDirectBodyState):
 
 var vel = Vector3()
 func update_movement(phys_state : PhysicsDirectBodyState):
-	# Jump velocity simulation
+	# Jump simulation
 	if is_jumping:
+		# Get our character off the ground, such as grounded() is no longer true
 		jump_velocity -= Vector3(0, gravity * 0.016, 0)
 		vel = jump_velocity
-		# Update current jump velocity to reflect gravity simulation
-		if entity.is_grounded:
-			if jump_velocity.y < 0:
-				is_jumping = false
+		# Let godot physics take control after we're off the ground
+		if !entity.is_grounded:
+			is_jumping = false
 		# Debug jump
 		if jump_velocity.y <= 0 and dbg_rest_jump_pos.is_equal_approx(Vector3()):
 			calculate_debug_values()
 	# Actual movement
 	elif entity.is_grounded:
 		vel = horizontal_vector.normalized() * movement_speed
-	else:
-		# Gravity simulation
-		if abs(vel.y) <= abs(gravity):
-			vel += Vector3.DOWN * gravity
-		vel += Vector3.DOWN * gravity * 0.016
 	
 	dbg_speed = vel.length()
 	
