@@ -3,16 +3,20 @@ extends Container
 export var button_radius = 100 #in godot position units
 export var radial_width = 50 #in godot position units
 
+#The different reachable submenus for the radial buttons.
 onready var actions : VBoxContainer = $ContainerActions
 onready var expressions : VBoxContainer = $ContainerExpression
+
+#This is the menu you see when first bringing up RadialMenu.
 onready var main : HBoxContainer = $ContainerMain
 
 
+#Listen for RadialMenu action to be pressed.
 func _input(event : InputEvent) -> void :
 	if event.is_action_pressed("radial_menu") :
 		toggle_visibility()
 
-# Place buttons in the correct location.
+# Place buttons in the correct location and listen for radial button presses.
 func _ready():
 	var button : Button
 	button = $ContainerMain/MarginContainer/MarginContainer/Button_Actions
@@ -24,6 +28,7 @@ func _ready():
 	hide()
 	place_buttons()
 
+#This brings up the submenu that is related to the pressed button.
 func _show_menu(submenu : Control) -> void :
 	submenu.show()
 	main.hide()
