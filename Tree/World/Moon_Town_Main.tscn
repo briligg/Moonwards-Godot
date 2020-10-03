@@ -39,19 +39,55 @@ navmesh = SubResource( 1 )
 [node name="NPC" parent="Navigation" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9659, -16.8917, -18.1275 )
 
-[node name="Workstation" parent="Navigation" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -79.7662, -28.874, -1.963 )
-
 [node name="Workstation2" parent="Navigation" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.7311, -28.8742, 7.153 )
+transform = Transform( -0.0815558, 0, -0.996669, 0, 1, 0, 0.996669, 0, -0.0815558, -13.7973, -28.8367, 2.47589 )
 
-[node name="Workstation3" parent="Navigation" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -86.9242, -40.841, -7.73199 )
+[node name="Workstation12" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( 0.266717, 0, -0.963775, 0, 1, 0, 0.963775, 0, 0.266717, -10.4478, -28.8367, 2.47589 )
 
 [node name="Workstation4" parent="Navigation" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.025, -16.8257, -18.75 )
+transform = Transform( 0.250279, 0, 0.968174, 0, 1, 0, -0.968174, 0, 0.250279, -21.9726, -16.8257, 1.77498 )
+
+[node name="Workstation11" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( -0.26421, 0, 0.964465, 0, 1, 0, -0.964465, 0, -0.26421, -19.0135, -16.8257, 1.77498 )
 
 [node name="Draw" type="ImmediateGeometry" parent="Navigation"]
+
+[node name="Workstation5" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -130.133, -92.4919, -120.231 )
+category = 2
+
+[node name="Workstation6" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -130.439, -92.4919, -118.46 )
+category = 2
+
+[node name="Workstation7" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -132.781, -92.4919, -102.445 )
+category = 2
+
+[node name="Workstation8" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -134.247, -92.4919, -91.446 )
+category = 2
+
+[node name="Workstation9" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -134.492, -92.4919, -89.2836 )
+category = 2
+
+[node name="Workstation10" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -136.854, -92.4919, -73.6209 )
+category = 2
+
+[node name="NPC2" parent="Navigation" instance=ExtResource( 4 )]
+transform = Transform( 0.690567, 0, -0.723269, 0, 1, 0, 0.723269, 0, 0.690567, -124.567, -93.1605, -120.982 )
+
+[node name="NPC4" parent="Navigation" instance=ExtResource( 4 )]
+transform = Transform( -0.351319, 0, -0.936256, 0, 1, 0, 0.936256, 0, -0.351319, -119.662, -93.1605, -117.06 )
+
+[node name="NPC3" parent="Navigation" instance=ExtResource( 4 )]
+transform = Transform( -0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -130.282, -93.9604, -117.354 )
+
+[node name="NPC5" parent="Navigation" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2581, -7.5555, -3.61078 )
 
 [node name="SpawnPoints" type="Spatial" parent="."]
 
