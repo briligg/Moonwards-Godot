@@ -181,26 +181,24 @@ tabs_visible = false
 [node name="VBoxContainer_Home" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 2.0
-margin_top = 2.0
-margin_right = -2.0
-margin_bottom = -2.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = -12.0
+margin_bottom = -12.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer_Destination" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 2.0
-margin_top = 2.0
-margin_right = -2.0
-margin_bottom = -2.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = -12.0
+margin_bottom = -12.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Destination" parent="VBoxContainer/TabContainer/VBoxContainer_Destination" instance=ExtResource( 18 )]
-visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 1856.0
@@ -209,56 +207,54 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer_Avatar" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 2.0
-margin_top = 2.0
-margin_right = -2.0
-margin_bottom = -2.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = -12.0
+margin_bottom = -12.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="UserSettings" parent="VBoxContainer/TabContainer/VBoxContainer_Avatar" instance=ExtResource( 9 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1876.0
-margin_bottom = 792.0
+margin_right = 1856.0
+margin_bottom = 772.0
 
 [node name="VBoxContainer_Apps" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 2.0
-margin_top = 2.0
-margin_right = -2.0
-margin_bottom = -2.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = -12.0
+margin_bottom = -12.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="HBoxContainer_Apps_Tab" type="HBoxContainer" parent="VBoxContainer/TabContainer/VBoxContainer_Apps"]
-margin_right = 1876.0
+margin_right = 1856.0
 margin_bottom = 45.0
 size_flags_horizontal = 3
 theme = ExtResource( 16 )
 custom_constants/separation = 20
 
 [node name="Button_NPCEditor" type="Button" parent="VBoxContainer/TabContainer/VBoxContainer_Apps/HBoxContainer_Apps_Tab"]
-margin_right = 306.0
+margin_right = 302.0
 margin_bottom = 45.0
 size_flags_horizontal = 3
 text = "NPC EDITOR"
 
 [node name="Button_OtherEditor" type="Button" parent="VBoxContainer/TabContainer/VBoxContainer_Apps/HBoxContainer_Apps_Tab"]
-margin_left = 326.0
-margin_right = 632.0
+margin_left = 322.0
+margin_right = 625.0
 margin_bottom = 45.0
 size_flags_horizontal = 3
 text = "OTHER EDITOR"
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/TabContainer/VBoxContainer_Apps/HBoxContainer_Apps_Tab"]
-margin_left = 652.0
-margin_right = 1876.0
+margin_left = 645.0
+margin_right = 1856.0
 margin_bottom = 45.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -267,8 +263,8 @@ custom_styles/separator = ExtResource( 22 )
 
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer/TabContainer/VBoxContainer_Apps"]
 margin_top = 49.0
-margin_right = 1876.0
-margin_bottom = 792.0
+margin_right = 1856.0
+margin_bottom = 772.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 23 )
@@ -285,39 +281,38 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer_Settings" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 2.0
-margin_top = 2.0
-margin_right = -2.0
-margin_bottom = -2.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = -12.0
+margin_bottom = -12.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="HBoxContainer_Settings_Tab" type="HBoxContainer" parent="VBoxContainer/TabContainer/VBoxContainer_Settings"]
-margin_right = 1876.0
+margin_right = 1856.0
 margin_bottom = 45.0
 size_flags_horizontal = 3
 theme = ExtResource( 16 )
 custom_constants/separation = 20
 
 [node name="Button_Sett_Visual" type="Button" parent="VBoxContainer/TabContainer/VBoxContainer_Settings/HBoxContainer_Settings_Tab"]
-margin_right = 306.0
+margin_right = 302.0
 margin_bottom = 45.0
 size_flags_horizontal = 3
 text = "VISUALS"
 
 [node name="Button_Sett_Controls" type="Button" parent="VBoxContainer/TabContainer/VBoxContainer_Settings/HBoxContainer_Settings_Tab"]
-margin_left = 326.0
-margin_right = 632.0
+margin_left = 322.0
+margin_right = 625.0
 margin_bottom = 45.0
 size_flags_horizontal = 3
 text = "CONTROLS"
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/TabContainer/VBoxContainer_Settings/HBoxContainer_Settings_Tab"]
-margin_left = 652.0
-margin_right = 1876.0
+margin_left = 645.0
+margin_right = 1856.0
 margin_bottom = 45.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.0
@@ -325,8 +320,8 @@ custom_styles/separator = ExtResource( 22 )
 
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer/TabContainer/VBoxContainer_Settings"]
 margin_top = 49.0
-margin_right = 1876.0
-margin_bottom = 792.0
+margin_right = 1856.0
+margin_bottom = 772.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 23 )
@@ -346,8 +341,8 @@ size_flags_vertical = 3
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 0.0
-margin_right = 1872.0
-margin_bottom = 739.0
+margin_right = 1852.0
+margin_bottom = 719.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -377,49 +372,48 @@ size_flags_vertical = 3
 [node name="VBoxContainer_About" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 2.0
-margin_top = 2.0
-margin_right = -2.0
-margin_bottom = -2.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = -12.0
+margin_bottom = -12.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="About" parent="VBoxContainer/TabContainer/VBoxContainer_About" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1876.0
-margin_bottom = 792.0
+margin_right = 1856.0
+margin_bottom = 772.0
 
 [node name="VBoxContainer_Quit" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 2.0
-margin_top = 2.0
-margin_right = -2.0
-margin_bottom = -2.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = -12.0
+margin_bottom = -12.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/VBoxContainer_Quit"]
-margin_top = 382.0
-margin_right = 1872.0
-margin_bottom = 402.0
+margin_top = 374.0
+margin_right = 1856.0
+margin_bottom = 398.0
 size_flags_horizontal = 7
 size_flags_vertical = 4
 alignment = 1
 
 [node name="Button_Quit_Yes" type="Button" parent="VBoxContainer/TabContainer/VBoxContainer_Quit/HBoxContainer"]
-margin_left = 887.0
-margin_right = 927.0
-margin_bottom = 20.0
+margin_left = 877.0
+margin_right = 914.0
+margin_bottom = 24.0
 text = "Quit"
 
 [node name="Button_Quit_No" type="Button" parent="VBoxContainer/TabContainer/VBoxContainer_Quit/HBoxContainer"]
-margin_left = 931.0
-margin_right = 985.0
-margin_bottom = 20.0
+margin_left = 918.0
+margin_right = 979.0
+margin_bottom = 24.0
 text = "Cancel"
 
 [node name="HBoxContainer_Footer" type="HBoxContainer" parent="VBoxContainer"]
