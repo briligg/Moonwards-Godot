@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Tree/Interface/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Interface/Textures/menu_splash.png" type="Texture" id=2]
@@ -21,6 +21,8 @@
 [ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Theme_SubHeader.tres" type="Theme" id=19]
 [ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/Settings.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/Controls_settings.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Empty.tres" type="StyleBox" id=22]
+[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_PanelMain.tres" type="StyleBox" id=23]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.588235 )
@@ -176,34 +178,34 @@ margin_bottom = 1014.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 14 )
+custom_styles/panel = ExtResource( 23 )
 tabs_visible = false
 
 [node name="VBoxContainer_Home" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 8.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = -12.0
+margin_bottom = -12.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer_Destination" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 8.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = -12.0
+margin_bottom = -12.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Destination" parent="VBoxContainer/TabContainer/VBoxContainer_Destination" instance=ExtResource( 18 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1872.0
-margin_bottom = 784.0
+margin_right = 1856.0
+margin_bottom = 772.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -211,10 +213,10 @@ size_flags_vertical = 3
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 8.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = -12.0
+margin_bottom = -12.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -228,10 +230,10 @@ margin_bottom = 784.0
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 8.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = -12.0
+margin_bottom = -12.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -243,15 +245,26 @@ theme = ExtResource( 19 )
 custom_constants/separation = 20
 
 [node name="Button_NPCEditor" type="Button" parent="VBoxContainer/TabContainer/VBoxContainer_Apps/HBoxContainer_Apps_Tab"]
-margin_right = 201.0
+margin_right = 305.0
 margin_bottom = 42.0
+size_flags_horizontal = 3
 text = "NPC EDITOR"
 
 [node name="Button_OtherEditor" type="Button" parent="VBoxContainer/TabContainer/VBoxContainer_Apps/HBoxContainer_Apps_Tab"]
-margin_left = 221.0
-margin_right = 464.0
+margin_left = 325.0
+margin_right = 630.0
 margin_bottom = 42.0
+size_flags_horizontal = 3
 text = "OTHER EDITOR"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/TabContainer/VBoxContainer_Apps/HBoxContainer_Apps_Tab"]
+margin_left = 650.0
+margin_right = 1872.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+custom_styles/separator = ExtResource( 22 )
 
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer/TabContainer/VBoxContainer_Apps"]
 margin_top = 46.0
@@ -272,12 +285,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer_Settings" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 8.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = -12.0
+margin_bottom = -12.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -289,15 +303,25 @@ theme = ExtResource( 19 )
 custom_constants/separation = 20
 
 [node name="Button_Sett_Visual" type="Button" parent="VBoxContainer/TabContainer/VBoxContainer_Settings/HBoxContainer_Settings_Tab"]
-margin_right = 143.0
+margin_right = 305.0
 margin_bottom = 42.0
+size_flags_horizontal = 3
 text = "VISUALS"
 
 [node name="Button_Sett_Controls" type="Button" parent="VBoxContainer/TabContainer/VBoxContainer_Settings/HBoxContainer_Settings_Tab"]
-margin_left = 163.0
-margin_right = 344.0
+margin_left = 325.0
+margin_right = 630.0
 margin_bottom = 42.0
+size_flags_horizontal = 3
 text = "CONTROLS"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/TabContainer/VBoxContainer_Settings/HBoxContainer_Settings_Tab"]
+margin_left = 650.0
+margin_right = 1872.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+custom_styles/separator = ExtResource( 22 )
 
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer/TabContainer/VBoxContainer_Settings"]
 margin_top = 46.0
@@ -308,7 +332,6 @@ size_flags_vertical = 3
 tabs_visible = false
 
 [node name="VBoxContainer_Sett_Visuals" type="VBoxContainer" parent="VBoxContainer/TabContainer/VBoxContainer_Settings/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -328,6 +351,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer_Sett_Controls" type="VBoxContainer" parent="VBoxContainer/TabContainer/VBoxContainer_Settings/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -345,16 +369,18 @@ anchor_bottom = 0.0
 margin_left = 0.0
 margin_top = 0.0
 margin_right = 1864.0
-margin_bottom = 34.0
+margin_bottom = 726.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="VBoxContainer_About" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 8.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = -12.0
+margin_bottom = -12.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -368,10 +394,10 @@ margin_bottom = 784.0
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 8.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = -12.0
+margin_bottom = -12.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
