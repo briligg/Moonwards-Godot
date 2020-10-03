@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://Assets/Interface/Textures/OpenMoji/T_Expression_Eyebrows_02.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Interface/Hud/Styles/Radial/HUDRadial.tres" type="Theme" id=2]
@@ -56,7 +56,9 @@
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Body_03.png" type="Texture" id=54]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Body_01.png" type="Texture" id=55]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Actions/T_IconActions_Head_03.png" type="Texture" id=56]
+[ext_resource path="res://SceneComponent/Interface/Hud/Radial/RadialSelector.gd" type="Script" id=57]
 
+[sub_resource type="Theme" id=1]
 
 [node name="RadialSelector" type="PanelContainer"]
 anchor_left = 0.5
@@ -66,6 +68,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource( 2 )
+script = ExtResource( 57 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -76,16 +79,14 @@ margin_right = 806.0
 margin_bottom = 144.0
 
 [node name="ContainerMain" type="HBoxContainer" parent="."]
-margin_top = 143.0
-margin_right = 1030.0
-margin_bottom = 287.0
+margin_right = 806.0
+margin_bottom = 144.0
 size_flags_vertical = 4
 custom_constants/separation = 150
 alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="ContainerMain"]
-margin_left = 112.0
-margin_right = 406.0
+margin_right = 294.0
 margin_bottom = 144.0
 
 [node name="Panel" type="Panel" parent="ContainerMain/MarginContainer"]
@@ -114,6 +115,7 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="ContainerMain/MarginContainer/MarginContainer"]
 margin_right = 294.0
 margin_bottom = 144.0
+mouse_filter = 2
 
 [node name="Label2" type="Label" parent="ContainerMain/MarginContainer/MarginContainer/HBoxContainer"]
 margin_top = 54.0
@@ -128,11 +130,13 @@ __meta__ = {
 margin_left = 150.0
 margin_right = 294.0
 margin_bottom = 144.0
+mouse_filter = 2
+theme = SubResource( 1 )
 texture = ExtResource( 6 )
 
 [node name="MarginContainer2" type="MarginContainer" parent="ContainerMain"]
-margin_left = 556.0
-margin_right = 918.0
+margin_left = 444.0
+margin_right = 806.0
 margin_bottom = 144.0
 
 [node name="Panel" type="Panel" parent="ContainerMain/MarginContainer2"]
@@ -158,10 +162,12 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="ContainerMain/MarginContainer2/MarginContainer"]
 margin_right = 362.0
 margin_bottom = 144.0
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="ContainerMain/MarginContainer2/MarginContainer/HBoxContainer"]
 margin_right = 144.0
 margin_bottom = 144.0
+mouse_filter = 2
 texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="ContainerMain/MarginContainer2/MarginContainer/HBoxContainer"]

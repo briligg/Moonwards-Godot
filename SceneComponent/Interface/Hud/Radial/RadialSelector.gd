@@ -3,8 +3,18 @@ extends Container
 export var button_radius = 100 #in godot position units
 export var radial_width = 50 #in godot position units
 
-# Called when the node enters the scene tree for the first time.
+
+func _input(event : InputEvent) -> void :
+	if event.is_action_pressed("radial_menu") :
+		visible = !visible
+
+# Place buttons in the correct location.
 func _ready():
+	var actions : Button
+	actions = $ContainerMain/MarginContainer/MarginContainer/Button_Actions
+	actions.connect("pressed", self, "hide")
+	
+	hide()
 	place_buttons()
 
 #Repositions the buttons
