@@ -27,6 +27,19 @@ func _ready():
 	
 	hide()
 	place_buttons()
+	
+	#Tenporary solution. Go through each button in the submenus and hide the menu
+	#if they are pressed.
+	_recurse_children(actions)
+	_recurse_children(expressions)
+
+#Temporary function for hiding the RadialSelector when a sub menu is pressed..
+func _recurse_children(node : Node) -> void :
+	if node is Button :
+		node.connect("pressed", self, "toggle_visibility")
+	
+	for child in node.get_children() :
+		_recurse_children(child)
 
 #This brings up the submenu that is related to the pressed button.
 func _show_menu(submenu : Control) -> void :
