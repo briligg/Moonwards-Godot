@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/Settings.gd" type="Script" id=1]
-[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_StyleSeparator.tres" type="StyleBox" id=2]
 
 [node name="Settings" type="Tabs"]
 anchor_right = 1.0
@@ -23,24 +22,12 @@ __meta__ = {
 
 [node name="Video" type="VBoxContainer" parent="Row2"]
 margin_right = 1920.0
-margin_bottom = 182.0
-
-[node name="Label" type="Label" parent="Row2/Video"]
-margin_right = 1920.0
-margin_bottom = 14.0
-text = "Video"
-
-[node name="HSeparator" type="HSeparator" parent="Row2/Video"]
-margin_top = 18.0
-margin_right = 1920.0
-margin_bottom = 38.0
-custom_styles/separator = ExtResource( 2 )
-custom_constants/separation = 20
+margin_bottom = 188.0
+custom_constants/separation = 16
 
 [node name="Resolution" type="HBoxContainer" parent="Row2/Video"]
-margin_top = 42.0
 margin_right = 1920.0
-margin_bottom = 62.0
+margin_bottom = 20.0
 
 [node name="Label" type="Label" parent="Row2/Video/Resolution"]
 margin_top = 3.0
@@ -57,9 +44,9 @@ text = "1366 x 768"
 align = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Row2/Video"]
-margin_top = 66.0
+margin_top = 36.0
 margin_right = 1920.0
-margin_bottom = 86.0
+margin_bottom = 56.0
 
 [node name="Label2" type="Label" parent="Row2/Video/HBoxContainer"]
 margin_top = 3.0
@@ -77,9 +64,9 @@ align = 0
 items = [ "Windowed", null, 0, false, false, 0, 0, null, "", false, "Borderless", null, 0, false, false, 1, 0, null, "", false, "Fullscreen", null, 0, false, false, 2, 0, null, "", false ]
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Row2/Video"]
-margin_top = 90.0
+margin_top = 72.0
 margin_right = 1920.0
-margin_bottom = 130.0
+margin_bottom = 112.0
 
 [node name="Label2" type="Label" parent="Row2/Video/HBoxContainer2"]
 margin_top = 13.0
@@ -93,9 +80,9 @@ margin_right = 117.0
 margin_bottom = 40.0
 
 [node name="ModelQuality" type="HBoxContainer" parent="Row2/Video"]
-margin_top = 134.0
+margin_top = 128.0
 margin_right = 1920.0
-margin_bottom = 154.0
+margin_bottom = 148.0
 
 [node name="Label" type="Label" parent="Row2/Video/ModelQuality"]
 margin_top = 3.0
@@ -112,9 +99,9 @@ align = 0
 items = [ "Low", null, 0, false, false, -1, 0, null, "", false, "Medium", null, 0, false, false, -1, 0, null, "", false, "High", null, 0, false, false, -1, 0, null, "", false ]
 
 [node name="FPSLimit" type="HBoxContainer" parent="Row2/Video"]
-margin_top = 158.0
+margin_top = 164.0
 margin_right = 1920.0
-margin_bottom = 182.0
+margin_bottom = 188.0
 
 [node name="Label" type="Label" parent="Row2/Video/FPSLimit"]
 margin_top = 5.0

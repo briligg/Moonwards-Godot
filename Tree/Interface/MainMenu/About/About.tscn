@@ -1,54 +1,46 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Tree/Interface/MainMenu/Style/MM_StyleSeparator.tres" type="StyleBox" id=1]
-
-[sub_resource type="StyleBoxFlat" id=1]
-content_margin_left = 10.0
-content_margin_right = 10.0
-content_margin_top = 10.0
-content_margin_bottom = 10.0
-bg_color = Color( 0.120504, 0.120504, 0.120504, 0.588235 )
 
 [node name="About" type="PanelContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Parent" type="HBoxContainer" parent="."]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 1910.0
-margin_bottom = 1070.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1913.0
+margin_bottom = 1073.0
 alignment = 1
 
 [node name="Credits" type="VBoxContainer" parent="Parent"]
-margin_right = 948.0
-margin_bottom = 1060.0
+margin_right = 951.0
+margin_bottom = 1066.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="Parent/Credits"]
-margin_right = 948.0
+margin_right = 951.0
 margin_bottom = 31.0
 text = "CREDITS
 "
 
 [node name="HSeparator2" type="HSeparator" parent="Parent/Credits"]
 margin_top = 35.0
-margin_right = 948.0
+margin_right = 951.0
 margin_bottom = 55.0
 custom_styles/separator = ExtResource( 1 )
 custom_constants/separation = 20
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Parent/Credits"]
 margin_top = 59.0
-margin_right = 948.0
-margin_bottom = 1060.0
+margin_right = 951.0
+margin_bottom = 1066.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Founder: Kim Holder
@@ -58,29 +50,29 @@ Programmers:
 Version:"
 
 [node name="License" type="VBoxContainer" parent="Parent"]
-margin_left = 952.0
-margin_right = 1900.0
-margin_bottom = 1060.0
+margin_left = 955.0
+margin_right = 1906.0
+margin_bottom = 1066.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="Parent/License"]
-margin_right = 948.0
+margin_right = 951.0
 margin_bottom = 31.0
 text = "LICENSE
 "
 
 [node name="HSeparator2" type="HSeparator" parent="Parent/License"]
 margin_top = 35.0
-margin_right = 948.0
+margin_right = 951.0
 margin_bottom = 55.0
 custom_styles/separator = ExtResource( 1 )
 custom_constants/separation = 20
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Parent/License"]
 margin_top = 59.0
-margin_right = 948.0
-margin_bottom = 1060.0
+margin_right = 951.0
+margin_bottom = 1066.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Copyright 2019-2020 Moonwards

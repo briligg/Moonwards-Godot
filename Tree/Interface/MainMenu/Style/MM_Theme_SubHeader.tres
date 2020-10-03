@@ -2,7 +2,8 @@
 
 [ext_resource path="res://Assets/Interface/Fonts/MainMenu_Header_Roboto.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Tree/Interface/MainMenu/Style/MM_ButtonStyleFlat.tres" type="StyleBox" id=2]
-[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Theme/MM_ButtonPressed.tres" type="StyleBox" id=3]
+[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Theme/MM_ButtonHeaderPressed.tres" type="StyleBox" id=3]
+
 
 
 [resource]
