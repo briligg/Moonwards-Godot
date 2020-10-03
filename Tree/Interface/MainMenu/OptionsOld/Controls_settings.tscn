@@ -18,197 +18,195 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 665.0
-margin_top = 398.0
-margin_right = 1255.0
-margin_bottom = 682.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HSeparator2" type="HSeparator" parent="CenterContainer/VBoxContainer"]
-margin_right = 590.0
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+margin_right = 1920.0
 margin_bottom = 4.0
+custom_styles/separator = ExtResource( 3 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 8.0
-margin_right = 590.0
-margin_bottom = 252.0
+margin_right = 1920.0
+margin_bottom = 380.0
 
-[node name="VSeparator" type="VSeparator" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
 margin_right = 4.0
-margin_bottom = 244.0
+margin_bottom = 372.0
+custom_styles/separator = ExtResource( 3 )
 
-[node name="Sub1" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="Sub1" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 margin_left = 8.0
 margin_right = 280.0
-margin_bottom = 244.0
+margin_bottom = 372.0
 
-[node name="move_forwards" parent="CenterContainer/VBoxContainer/HBoxContainer/Sub1" instance=ExtResource( 2 )]
+[node name="move_forwards" parent="VBoxContainer/HBoxContainer/Sub1" instance=ExtResource( 2 )]
 margin_top = 0.0
 margin_right = 272.0
 margin_bottom = 20.0
 Label_text = "Move forwards"
 
-[node name="HSeparator7" type="HSeparator" parent="CenterContainer/VBoxContainer/HBoxContainer/Sub1"]
+[node name="HSeparator7" type="HSeparator" parent="VBoxContainer/HBoxContainer/Sub1"]
 margin_top = 24.0
 margin_right = 272.0
 margin_bottom = 28.0
 custom_styles/separator = ExtResource( 3 )
 
-[node name="move_backwards" parent="CenterContainer/VBoxContainer/HBoxContainer/Sub1" instance=ExtResource( 2 )]
+[node name="move_backwards" parent="VBoxContainer/HBoxContainer/Sub1" instance=ExtResource( 2 )]
 margin_top = 32.0
 margin_right = 272.0
 margin_bottom = 52.0
 Label_text = "Move Backwards"
 
-[node name="HSeparator2" type="HSeparator" parent="CenterContainer/VBoxContainer/HBoxContainer/Sub1"]
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/HBoxContainer/Sub1"]
 margin_top = 56.0
 margin_right = 272.0
 margin_bottom = 60.0
 custom_styles/separator = ExtResource( 3 )
 
-[node name="move_left" parent="CenterContainer/VBoxContainer/HBoxContainer/Sub1" instance=ExtResource( 2 )]
+[node name="move_left" parent="VBoxContainer/HBoxContainer/Sub1" instance=ExtResource( 2 )]
 margin_top = 64.0
 margin_right = 272.0
 margin_bottom = 84.0
 Label_text = "Move Left"
 
-[node name="HSeparator3" type="HSeparator" parent="CenterContainer/VBoxContainer/HBoxContainer/Sub1"]
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/HBoxContainer/Sub1"]
 margin_top = 88.0
 margin_right = 272.0
 margin_bottom = 92.0
 custom_styles/separator = ExtResource( 3 )
 
-[node name="move_right" parent="CenterContainer/VBoxContainer/HBoxContainer/Sub1" instance=ExtResource( 2 )]
+[node name="move_right" parent="VBoxContainer/HBoxContainer/Sub1" instance=ExtResource( 2 )]
 margin_top = 96.0
 margin_right = 272.0
 margin_bottom = 116.0
 Label_text = "Move Right"
 
-[node name="HSeparator" type="HSeparator" parent="CenterContainer/VBoxContainer/HBoxContainer/Sub1"]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/HBoxContainer/Sub1"]
 margin_top = 120.0
 margin_right = 272.0
 margin_bottom = 124.0
 custom_styles/separator = ExtResource( 3 )
 
-[node name="jump" parent="CenterContainer/VBoxContainer/HBoxContainer/Sub1" instance=ExtResource( 2 )]
+[node name="jump" parent="VBoxContainer/HBoxContainer/Sub1" instance=ExtResource( 2 )]
 margin_top = 128.0
 margin_right = 272.0
 margin_bottom = 148.0
 Label_text = "Jump"
 
-[node name="HSeparator8" type="HSeparator" parent="CenterContainer/VBoxContainer/HBoxContainer/Sub1"]
+[node name="HSeparator8" type="HSeparator" parent="VBoxContainer/HBoxContainer/Sub1"]
 margin_top = 152.0
 margin_right = 272.0
 margin_bottom = 156.0
 custom_styles/separator = ExtResource( 3 )
 
-[node name="ui_menu_options" parent="CenterContainer/VBoxContainer/HBoxContainer/Sub1" instance=ExtResource( 2 )]
+[node name="ui_menu_options" parent="VBoxContainer/HBoxContainer/Sub1" instance=ExtResource( 2 )]
 margin_top = 160.0
 margin_right = 272.0
 margin_bottom = 180.0
 Label_text = "Options menu"
 
-[node name="HSeparator10" type="HSeparator" parent="CenterContainer/VBoxContainer/HBoxContainer/Sub1"]
+[node name="HSeparator10" type="HSeparator" parent="VBoxContainer/HBoxContainer/Sub1"]
 margin_top = 184.0
 margin_right = 272.0
 margin_bottom = 188.0
 custom_styles/separator = ExtResource( 3 )
 
-[node name="show_diagram" parent="CenterContainer/VBoxContainer/HBoxContainer/Sub1" instance=ExtResource( 2 )]
+[node name="show_diagram" parent="VBoxContainer/HBoxContainer/Sub1" instance=ExtResource( 2 )]
 margin_top = 192.0
 margin_right = 272.0
 margin_bottom = 212.0
 Label_text = "Display controls"
 
-[node name="HSeparator11" type="HSeparator" parent="CenterContainer/VBoxContainer/HBoxContainer/Sub1"]
+[node name="HSeparator11" type="HSeparator" parent="VBoxContainer/HBoxContainer/Sub1"]
 margin_top = 216.0
 margin_right = 272.0
 margin_bottom = 220.0
 custom_styles/separator = ExtResource( 3 )
 
-[node name="player_back_in_time" parent="CenterContainer/VBoxContainer/HBoxContainer/Sub1" instance=ExtResource( 2 )]
+[node name="player_back_in_time" parent="VBoxContainer/HBoxContainer/Sub1" instance=ExtResource( 2 )]
 margin_top = 224.0
 margin_right = 272.0
 margin_bottom = 244.0
 Label_text = "Get unstuck"
 
-[node name="VSeparator3" type="VSeparator" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="HSeparator13" type="HSeparator" parent="VBoxContainer/HBoxContainer/Sub1"]
+margin_top = 248.0
+margin_right = 272.0
+margin_bottom = 252.0
+custom_styles/separator = ExtResource( 3 )
+
+[node name="debug_force_camera" parent="VBoxContainer/HBoxContainer/Sub1" instance=ExtResource( 2 )]
+margin_top = 256.0
+margin_right = 272.0
+margin_bottom = 276.0
+Label_text = "Enable Fly Camera"
+
+[node name="HSeparator12" type="HSeparator" parent="VBoxContainer/HBoxContainer/Sub1"]
+margin_top = 280.0
+margin_right = 272.0
+margin_bottom = 284.0
+custom_styles/separator = ExtResource( 3 )
+
+[node name="toggle_chat" parent="VBoxContainer/HBoxContainer/Sub1" instance=ExtResource( 2 )]
+margin_top = 288.0
+margin_right = 272.0
+margin_bottom = 308.0
+Label_text = "Use chat / send message"
+
+[node name="HSeparator14" type="HSeparator" parent="VBoxContainer/HBoxContainer/Sub1"]
+margin_top = 312.0
+margin_right = 272.0
+margin_bottom = 316.0
+custom_styles/separator = ExtResource( 3 )
+
+[node name="alt" parent="VBoxContainer/HBoxContainer/Sub1" instance=ExtResource( 2 )]
+margin_top = 320.0
+margin_right = 272.0
+margin_bottom = 340.0
+Label_text = "Change facial expression"
+
+[node name="HSeparator15" type="HSeparator" parent="VBoxContainer/HBoxContainer/Sub1"]
+margin_top = 344.0
+margin_right = 272.0
+margin_bottom = 348.0
+custom_styles/separator = ExtResource( 3 )
+
+[node name="shift" parent="VBoxContainer/HBoxContainer/Sub1" instance=ExtResource( 2 )]
+margin_top = 352.0
+margin_right = 272.0
+margin_bottom = 372.0
+Label_text = "Change player speed"
+
+[node name="VSeparator3" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
 margin_left = 284.0
 margin_right = 306.0
-margin_bottom = 244.0
+margin_bottom = 372.0
 custom_styles/separator = ExtResource( 3 )
 custom_constants/separation = 22
 
-[node name="Sub2" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="Sub2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 margin_left = 310.0
-margin_right = 582.0
-margin_bottom = 244.0
+margin_right = 310.0
+margin_bottom = 372.0
 
-[node name="debug_force_camera" parent="CenterContainer/VBoxContainer/HBoxContainer/Sub2" instance=ExtResource( 2 )]
-margin_top = 0.0
-margin_right = 272.0
-margin_bottom = 20.0
-Label_text = "Enable Fly Camera"
-
-[node name="HSeparator12" type="HSeparator" parent="CenterContainer/VBoxContainer/HBoxContainer/Sub2"]
-margin_top = 24.0
-margin_right = 272.0
-margin_bottom = 28.0
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+margin_top = 384.0
+margin_right = 1920.0
+margin_bottom = 1056.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_styles/separator = ExtResource( 3 )
 
-[node name="toggle_chat" parent="CenterContainer/VBoxContainer/HBoxContainer/Sub2" instance=ExtResource( 2 )]
-margin_top = 32.0
-margin_right = 272.0
-margin_bottom = 52.0
-Label_text = "Use chat / send message"
-
-[node name="HSeparator14" type="HSeparator" parent="CenterContainer/VBoxContainer/HBoxContainer/Sub2"]
-margin_top = 56.0
-margin_right = 272.0
-margin_bottom = 60.0
-custom_styles/separator = ExtResource( 3 )
-
-[node name="alt" parent="CenterContainer/VBoxContainer/HBoxContainer/Sub2" instance=ExtResource( 2 )]
-margin_top = 64.0
-margin_right = 272.0
-margin_bottom = 84.0
-Label_text = "Change facial expression"
-
-[node name="HSeparator15" type="HSeparator" parent="CenterContainer/VBoxContainer/HBoxContainer/Sub2"]
-margin_top = 88.0
-margin_right = 272.0
-margin_bottom = 92.0
-custom_styles/separator = ExtResource( 3 )
-
-[node name="shift" parent="CenterContainer/VBoxContainer/HBoxContainer/Sub2" instance=ExtResource( 2 )]
-margin_top = 96.0
-margin_right = 272.0
-margin_bottom = 116.0
-Label_text = "Change player speed"
-
-[node name="VSeparator2" type="VSeparator" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 586.0
-margin_right = 590.0
-margin_bottom = 244.0
-
-[node name="HSeparator" type="HSeparator" parent="CenterContainer/VBoxContainer"]
-margin_top = 256.0
-margin_right = 590.0
-margin_bottom = 260.0
-
-[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 264.0
-margin_right = 590.0
-margin_bottom = 284.0
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 1060.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+size_flags_vertical = 9
 text = "Save settings"
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]

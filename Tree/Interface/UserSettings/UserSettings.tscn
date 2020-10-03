@@ -1,15 +1,23 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Tree/Interface/UserSettings/UserSettings.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/AvatarPreview/AvatarPreview.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tree/Interface/UserSettings/Visual_Selector.gd" type="Script" id=3]
 [ext_resource path="res://Tree/addons/HuePicker/HuePicker.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Empty.tres" type="StyleBox" id=5]
 
-[node name="UserSettings" type="HBoxContainer"]
-anchor_left = 0.2
-anchor_top = 0.2
-anchor_right = 0.8
-anchor_bottom = 0.8
+[node name="UserSettings" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UserSettings_Sub" type="HBoxContainer" parent="."]
+margin_right = 1920.0
+margin_bottom = 1023.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 7
@@ -20,21 +28,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ModelDisplay" type="VBoxContainer" parent="."]
-margin_right = 574.0
-margin_bottom = 648.0
+[node name="ModelDisplay" type="VBoxContainer" parent="UserSettings_Sub"]
+margin_right = 958.0
+margin_bottom = 1023.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Label" type="Label" parent="ModelDisplay"]
-margin_right = 574.0
+[node name="Label" type="Label" parent="UserSettings_Sub/ModelDisplay"]
+margin_right = 958.0
 margin_bottom = 14.0
 text = "NAME"
 
-[node name="UsernameEdit" type="LineEdit" parent="ModelDisplay"]
+[node name="UsernameEdit" type="LineEdit" parent="UserSettings_Sub/ModelDisplay"]
 margin_top = 18.0
-margin_right = 574.0
+margin_right = 958.0
 margin_bottom = 42.0
 size_flags_horizontal = 3
 text = "Player1"
@@ -43,28 +51,28 @@ context_menu_enabled = false
 caret_blink = true
 caret_position = 7
 
-[node name="ViewportContainer" type="ViewportContainer" parent="ModelDisplay"]
+[node name="ViewportContainer" type="ViewportContainer" parent="UserSettings_Sub/ModelDisplay"]
 margin_top = 46.0
-margin_right = 574.0
-margin_bottom = 648.0
+margin_right = 958.0
+margin_bottom = 1023.0
 size_flags_vertical = 3
 stretch = true
 
-[node name="Viewport" type="Viewport" parent="ModelDisplay/ViewportContainer"]
-size = Vector2( 574, 602 )
+[node name="Viewport" type="Viewport" parent="UserSettings_Sub/ModelDisplay/ViewportContainer"]
+size = Vector2( 958, 977 )
 own_world = true
 transparent_bg = true
 handle_input_locally = false
 msaa = 3
 render_target_update_mode = 3
 
-[node name="AvatarPreview" parent="ModelDisplay/ViewportContainer/Viewport" instance=ExtResource( 2 )]
+[node name="AvatarPreview" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Viewport" instance=ExtResource( 2 )]
 
-[node name="Female" type="Control" parent="ModelDisplay/ViewportContainer"]
+[node name="Female" type="Control" parent="UserSettings_Sub/ModelDisplay/ViewportContainer"]
 script = ExtResource( 3 )
-slot_option_path = NodePath("../../../VBoxContainer/Buttons/V2/SlotOption")
+slot_option_path = NodePath("../../../../UserSettings_sUB/VBoxContainer/Buttons/V2/SlotOption")
 
-[node name="Pants2" type="Button" parent="ModelDisplay/ViewportContainer/Female"]
+[node name="Pants2" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Female"]
 margin_left = 124.0
 margin_top = 121.0
 margin_right = 152.0
@@ -78,7 +86,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Pants" type="Button" parent="ModelDisplay/ViewportContainer/Female"]
+[node name="Pants" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Female"]
 margin_left = 151.0
 margin_top = 125.0
 margin_right = 178.0
@@ -92,7 +100,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Shirt" type="Button" parent="ModelDisplay/ViewportContainer/Female"]
+[node name="Shirt" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Female"]
 margin_left = 131.0
 margin_top = 58.0
 margin_right = 173.0
@@ -105,7 +113,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Pants3" type="Button" parent="ModelDisplay/ViewportContainer/Female"]
+[node name="Pants3" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Female"]
 margin_left = 135.0
 margin_top = 121.0
 margin_right = 167.0
@@ -115,7 +123,7 @@ action_mode = 0
 enabled_focus_mode = 0
 flat = true
 
-[node name="Skin4" type="Button" parent="ModelDisplay/ViewportContainer/Female"]
+[node name="Skin4" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Female"]
 margin_left = 114.0
 margin_top = 95.0
 margin_right = 130.0
@@ -129,7 +137,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Skin5" type="Button" parent="ModelDisplay/ViewportContainer/Female"]
+[node name="Skin5" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Female"]
 margin_left = 169.0
 margin_top = 66.0
 margin_right = 195.0
@@ -139,7 +147,7 @@ action_mode = 0
 enabled_focus_mode = 0
 flat = true
 
-[node name="Hair" type="Button" parent="ModelDisplay/ViewportContainer/Female"]
+[node name="Hair" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Female"]
 margin_left = 131.0
 margin_top = 15.0
 margin_right = 170.0
@@ -149,7 +157,7 @@ action_mode = 0
 enabled_focus_mode = 0
 flat = true
 
-[node name="Skin3" type="Button" parent="ModelDisplay/ViewportContainer/Female"]
+[node name="Skin3" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Female"]
 margin_left = 140.0
 margin_top = 23.0
 margin_right = 158.0
@@ -159,7 +167,7 @@ action_mode = 0
 enabled_focus_mode = 0
 flat = true
 
-[node name="Skin" type="Button" parent="ModelDisplay/ViewportContainer/Female"]
+[node name="Skin" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Female"]
 margin_left = 130.0
 margin_top = 197.0
 margin_right = 148.0
@@ -170,7 +178,7 @@ action_mode = 0
 enabled_focus_mode = 0
 flat = true
 
-[node name="Shoe" type="Button" parent="ModelDisplay/ViewportContainer/Female"]
+[node name="Shoe" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Female"]
 margin_left = 126.0
 margin_top = 248.0
 margin_right = 147.0
@@ -181,7 +189,7 @@ action_mode = 0
 enabled_focus_mode = 0
 flat = true
 
-[node name="Skin2" type="Button" parent="ModelDisplay/ViewportContainer/Female"]
+[node name="Skin2" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Female"]
 margin_left = 157.0
 margin_top = 200.0
 margin_right = 182.0
@@ -195,7 +203,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Shoes2" type="Button" parent="ModelDisplay/ViewportContainer/Female"]
+[node name="Shoes2" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Female"]
 margin_left = 166.0
 margin_top = 252.0
 margin_right = 190.0
@@ -209,15 +217,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Male" type="Control" parent="ModelDisplay/ViewportContainer"]
+[node name="Male" type="Control" parent="UserSettings_Sub/ModelDisplay/ViewportContainer"]
 visible = false
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
-slot_option_path = NodePath("../../../VBoxContainer/Buttons/V2/SlotOption")
+slot_option_path = NodePath("../../../../UserSettings_sUB/VBoxContainer/Buttons/V2/SlotOption")
 
-[node name="Shirt" type="Button" parent="ModelDisplay/ViewportContainer/Male"]
+[node name="Shirt" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Male"]
 margin_left = 130.0
 margin_top = 58.0
 margin_right = 174.0
@@ -227,7 +235,7 @@ action_mode = 0
 enabled_focus_mode = 0
 flat = true
 
-[node name="Pants3" type="Button" parent="ModelDisplay/ViewportContainer/Male"]
+[node name="Pants3" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Male"]
 margin_left = 134.0
 margin_top = 126.0
 margin_right = 169.0
@@ -237,7 +245,7 @@ action_mode = 0
 enabled_focus_mode = 0
 flat = true
 
-[node name="Pants2" type="Button" parent="ModelDisplay/ViewportContainer/Male"]
+[node name="Pants2" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Male"]
 margin_left = 153.0
 margin_top = 136.0
 margin_right = 176.0
@@ -248,7 +256,7 @@ action_mode = 0
 enabled_focus_mode = 0
 flat = true
 
-[node name="Pants" type="Button" parent="ModelDisplay/ViewportContainer/Male"]
+[node name="Pants" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Male"]
 margin_left = 131.0
 margin_top = 131.0
 margin_right = 153.0
@@ -259,7 +267,7 @@ action_mode = 0
 enabled_focus_mode = 0
 flat = true
 
-[node name="Skin4" type="Button" parent="ModelDisplay/ViewportContainer/Male"]
+[node name="Skin4" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Male"]
 margin_left = 118.0
 margin_top = 62.0
 margin_right = 132.0
@@ -270,7 +278,7 @@ action_mode = 0
 enabled_focus_mode = 0
 flat = true
 
-[node name="Skin6" type="Button" parent="ModelDisplay/ViewportContainer/Male"]
+[node name="Skin6" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Male"]
 margin_left = 133.0
 margin_top = 196.0
 margin_right = 153.0
@@ -281,7 +289,7 @@ action_mode = 0
 enabled_focus_mode = 0
 flat = true
 
-[node name="Skin5" type="Button" parent="ModelDisplay/ViewportContainer/Male"]
+[node name="Skin5" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Male"]
 margin_left = 168.0
 margin_top = 63.0
 margin_right = 195.0
@@ -292,7 +300,7 @@ action_mode = 0
 enabled_focus_mode = 0
 flat = true
 
-[node name="Hair" type="Button" parent="ModelDisplay/ViewportContainer/Male"]
+[node name="Hair" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Male"]
 margin_left = 131.0
 margin_top = 12.0
 margin_right = 168.0
@@ -302,7 +310,7 @@ action_mode = 0
 enabled_focus_mode = 0
 flat = true
 
-[node name="Skin3" type="Button" parent="ModelDisplay/ViewportContainer/Male"]
+[node name="Skin3" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Male"]
 margin_left = 142.0
 margin_top = 21.0
 margin_right = 158.0
@@ -312,7 +320,7 @@ action_mode = 0
 enabled_focus_mode = 0
 flat = true
 
-[node name="Skin" type="Button" parent="ModelDisplay/ViewportContainer/Male"]
+[node name="Skin" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Male"]
 margin_left = 132.0
 margin_top = 198.0
 margin_right = 149.0
@@ -322,7 +330,7 @@ action_mode = 0
 enabled_focus_mode = 0
 flat = true
 
-[node name="Skin2" type="Button" parent="ModelDisplay/ViewportContainer/Male"]
+[node name="Skin2" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Male"]
 margin_left = 160.0
 margin_top = 201.0
 margin_right = 185.0
@@ -332,7 +340,7 @@ action_mode = 0
 enabled_focus_mode = 0
 flat = true
 
-[node name="Shoe" type="Button" parent="ModelDisplay/ViewportContainer/Male"]
+[node name="Shoe" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Male"]
 margin_left = 130.0
 margin_top = 246.0
 margin_right = 147.0
@@ -342,7 +350,7 @@ action_mode = 0
 enabled_focus_mode = 0
 flat = true
 
-[node name="Shoe2" type="Button" parent="ModelDisplay/ViewportContainer/Male"]
+[node name="Shoe2" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Male"]
 margin_left = 164.0
 margin_top = 250.0
 margin_right = 197.0
@@ -355,43 +363,43 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 578.0
-margin_right = 1152.0
-margin_bottom = 648.0
+[node name="VBoxContainer" type="VBoxContainer" parent="UserSettings_Sub"]
+margin_left = 962.0
+margin_right = 1920.0
+margin_bottom = 1023.0
 size_flags_horizontal = 3
 custom_constants/separation = 15
 alignment = 1
 
-[node name="HuePicker" parent="VBoxContainer" instance=ExtResource( 4 )]
+[node name="HuePicker" parent="UserSettings_Sub/VBoxContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 574.0
-margin_bottom = 560.0
+margin_right = 958.0
+margin_bottom = 970.0
 rect_clip_content = true
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color( 0.588235, 0.4, 0, 1 )
 
-[node name="Buttons" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 575.0
-margin_right = 574.0
-margin_bottom = 613.0
+[node name="Buttons" type="HBoxContainer" parent="UserSettings_Sub/VBoxContainer"]
+margin_top = 985.0
+margin_right = 958.0
+margin_bottom = 1023.0
 custom_constants/separation = 26
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Buttons"]
-margin_left = 204.0
-margin_right = 280.0
+[node name="VBoxContainer" type="VBoxContainer" parent="UserSettings_Sub/VBoxContainer/Buttons"]
+margin_left = 396.0
+margin_right = 472.0
 margin_bottom = 38.0
 
-[node name="Label" type="Label" parent="VBoxContainer/Buttons/VBoxContainer"]
+[node name="Label" type="Label" parent="UserSettings_Sub/VBoxContainer/Buttons/VBoxContainer"]
 margin_right = 76.0
 margin_bottom = 14.0
 text = "Gender:"
 align = 1
 
-[node name="Gender" type="OptionButton" parent="VBoxContainer/Buttons/VBoxContainer"]
+[node name="Gender" type="OptionButton" parent="UserSettings_Sub/VBoxContainer/Buttons/VBoxContainer"]
 margin_top = 18.0
 margin_right = 76.0
 margin_bottom = 38.0
@@ -399,18 +407,18 @@ text = "Female"
 items = [ "Female", null, false, 0, null, "Male", null, false, 1, null ]
 selected = 0
 
-[node name="V2" type="VBoxContainer" parent="VBoxContainer/Buttons"]
-margin_left = 306.0
-margin_right = 370.0
+[node name="V2" type="VBoxContainer" parent="UserSettings_Sub/VBoxContainer/Buttons"]
+margin_left = 498.0
+margin_right = 562.0
 margin_bottom = 38.0
 
-[node name="Label" type="Label" parent="VBoxContainer/Buttons/V2"]
+[node name="Label" type="Label" parent="UserSettings_Sub/VBoxContainer/Buttons/V2"]
 margin_right = 64.0
 margin_bottom = 14.0
 text = "Slot:"
 align = 1
 
-[node name="SlotOption" type="OptionButton" parent="VBoxContainer/Buttons/V2"]
+[node name="SlotOption" type="OptionButton" parent="UserSettings_Sub/VBoxContainer/Buttons/V2"]
 margin_top = 18.0
 margin_right = 64.0
 margin_bottom = 38.0
@@ -418,48 +426,56 @@ text = "Pants"
 items = [ "Pants", null, false, 0, null, "Shirt", null, false, 1, null, "Skin", null, false, 2, null, "Hair", null, false, 3, null, "Shoes", null, false, 4, null ]
 selected = 0
 
-[node name="SaveButton" type="Button" parent="VBoxContainer"]
-margin_top = 628.0
-margin_right = 574.0
-margin_bottom = 648.0
-size_flags_horizontal = 7
-text = "Save"
-
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="UserSettings_Sub"]
 visible = false
-margin_left = 844.0
-margin_right = 844.0
-margin_bottom = 352.0
+margin_left = 1152.0
+margin_right = 1152.0
+margin_bottom = 648.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="text_changed" from="ModelDisplay/UsernameEdit" to="." method="_on_UsernameTextEdit_text_changed"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Female/Pants2" to="ModelDisplay/ViewportContainer/Female" method="_on_pants_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Female/Pants" to="ModelDisplay/ViewportContainer/Female" method="_on_pants_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Female/Shirt" to="ModelDisplay/ViewportContainer/Female" method="_on_shirt_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Female/Pants3" to="ModelDisplay/ViewportContainer/Female" method="_on_pants_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Female/Skin4" to="ModelDisplay/ViewportContainer/Female" method="_on_skin_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Female/Skin5" to="ModelDisplay/ViewportContainer/Female" method="_on_skin_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Female/Hair" to="ModelDisplay/ViewportContainer/Female" method="_on_hair_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Female/Skin3" to="ModelDisplay/ViewportContainer/Female" method="_on_skin_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Female/Skin" to="ModelDisplay/ViewportContainer/Female" method="_on_skin_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Female/Shoe" to="ModelDisplay/ViewportContainer/Female" method="_on_shoes_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Female/Skin2" to="ModelDisplay/ViewportContainer/Female" method="_on_skin_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Female/Shoes2" to="ModelDisplay/ViewportContainer/Female" method="_on_shoes_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Male/Shirt" to="ModelDisplay/ViewportContainer/Male" method="_on_shirt_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Male/Pants3" to="ModelDisplay/ViewportContainer/Male" method="_on_pants_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Male/Pants2" to="ModelDisplay/ViewportContainer/Male" method="_on_pants_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Male/Pants" to="ModelDisplay/ViewportContainer/Male" method="_on_pants_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Male/Skin4" to="ModelDisplay/ViewportContainer/Male" method="_on_skin_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Male/Skin6" to="ModelDisplay/ViewportContainer/Male" method="_on_skin_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Male/Skin5" to="ModelDisplay/ViewportContainer/Male" method="_on_skin_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Male/Hair" to="ModelDisplay/ViewportContainer/Male" method="_on_hair_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Male/Skin3" to="ModelDisplay/ViewportContainer/Male" method="_on_skin_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Male/Skin" to="ModelDisplay/ViewportContainer/Male" method="_on_skin_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Male/Skin2" to="ModelDisplay/ViewportContainer/Male" method="_on_skin_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Male/Shoe" to="ModelDisplay/ViewportContainer/Male" method="_on_shoes_selected"]
-[connection signal="pressed" from="ModelDisplay/ViewportContainer/Male/Shoe2" to="ModelDisplay/ViewportContainer/Male" method="_on_shoes_selected"]
-[connection signal="Hue_Selected" from="VBoxContainer/HuePicker" to="." method="_on_HuePicker_Hue_Selected"]
-[connection signal="item_selected" from="VBoxContainer/Buttons/VBoxContainer/Gender" to="." method="_on_Gender_item_selected"]
-[connection signal="item_selected" from="VBoxContainer/Buttons/V2/SlotOption" to="." method="_on_SlotOption_item_selected"]
-[connection signal="pressed" from="VBoxContainer/SaveButton" to="." method="_on_SaveButton_pressed"]
+
+[node name="HSeparator" type="HSeparator" parent="."]
+margin_top = 1027.0
+margin_right = 1920.0
+margin_bottom = 1056.0
+custom_styles/separator = ExtResource( 5 )
+custom_constants/separation = 29
+
+[node name="SaveButton" type="Button" parent="."]
+margin_top = 1060.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+size_flags_horizontal = 7
+size_flags_vertical = 9
+text = "Save"
+[connection signal="text_changed" from="UserSettings_Sub/ModelDisplay/UsernameEdit" to="UserSettings_Sub" method="_on_UsernameTextEdit_text_changed"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Female/Pants2" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Female" method="_on_pants_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Female/Pants" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Female" method="_on_pants_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Female/Shirt" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Female" method="_on_shirt_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Female/Pants3" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Female" method="_on_pants_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Female/Skin4" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Female" method="_on_skin_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Female/Skin5" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Female" method="_on_skin_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Female/Hair" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Female" method="_on_hair_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Female/Skin3" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Female" method="_on_skin_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Female/Skin" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Female" method="_on_skin_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Female/Shoe" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Female" method="_on_shoes_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Female/Skin2" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Female" method="_on_skin_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Female/Shoes2" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Female" method="_on_shoes_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Male/Shirt" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Male" method="_on_shirt_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Male/Pants3" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Male" method="_on_pants_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Male/Pants2" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Male" method="_on_pants_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Male/Pants" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Male" method="_on_pants_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Male/Skin4" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Male" method="_on_skin_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Male/Skin6" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Male" method="_on_skin_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Male/Skin5" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Male" method="_on_skin_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Male/Hair" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Male" method="_on_hair_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Male/Skin3" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Male" method="_on_skin_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Male/Skin" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Male" method="_on_skin_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Male/Skin2" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Male" method="_on_skin_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Male/Shoe" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Male" method="_on_shoes_selected"]
+[connection signal="pressed" from="UserSettings_Sub/ModelDisplay/ViewportContainer/Male/Shoe2" to="UserSettings_Sub/ModelDisplay/ViewportContainer/Male" method="_on_shoes_selected"]
+[connection signal="Hue_Selected" from="UserSettings_Sub/VBoxContainer/HuePicker" to="UserSettings_Sub" method="_on_HuePicker_Hue_Selected"]
+[connection signal="item_selected" from="UserSettings_Sub/VBoxContainer/Buttons/VBoxContainer/Gender" to="UserSettings_Sub" method="_on_Gender_item_selected"]
+[connection signal="item_selected" from="UserSettings_Sub/VBoxContainer/Buttons/V2/SlotOption" to="UserSettings_Sub" method="_on_SlotOption_item_selected"]
+[connection signal="pressed" from="SaveButton" to="UserSettings_Sub" method="_on_SaveButton_pressed"]

@@ -34,51 +34,51 @@ __meta__ = {
 }
 
 [node name="Row1" type="VBoxContainer" parent="MarginContainer/Main"]
-margin_right = 179.0
+margin_right = 210.0
 margin_bottom = 216.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Options" type="VBoxContainer" parent="MarginContainer/Main/Row1"]
-margin_right = 179.0
+margin_right = 210.0
 margin_bottom = 22.0
 
 [node name="Label" type="Label" parent="MarginContainer/Main/Row1/Options"]
-margin_right = 179.0
+margin_right = 210.0
 margin_bottom = 14.0
 text = "Misc"
 align = 1
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/Main/Row1/Options"]
 margin_top = 18.0
-margin_right = 179.0
+margin_right = 210.0
 margin_bottom = 22.0
 
 [node name="Row2" type="VBoxContainer" parent="MarginContainer/Main"]
-margin_left = 183.0
+margin_left = 214.0
 margin_right = 425.0
 margin_bottom = 216.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Video" type="VBoxContainer" parent="MarginContainer/Main/Row2"]
-margin_right = 242.0
-margin_bottom = 142.0
+margin_right = 211.0
+margin_bottom = 166.0
 
 [node name="Label" type="Label" parent="MarginContainer/Main/Row2/Video"]
-margin_right = 242.0
+margin_right = 211.0
 margin_bottom = 14.0
 text = "Video"
 align = 1
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/Main/Row2/Video"]
 margin_top = 18.0
-margin_right = 242.0
+margin_right = 211.0
 margin_bottom = 22.0
 
 [node name="Resolution" type="HBoxContainer" parent="MarginContainer/Main/Row2/Video"]
 margin_top = 26.0
-margin_right = 242.0
+margin_right = 211.0
 margin_bottom = 46.0
 
 [node name="Label" type="Label" parent="MarginContainer/Main/Row2/Video/Resolution"]
@@ -89,30 +89,52 @@ text = "Resolution:"
 
 [node name="Resolution" type="MenuButton" parent="MarginContainer/Main/Row2/Video/Resolution"]
 margin_left = 76.0
-margin_right = 159.0
+margin_right = 211.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "1366 x 768"
 align = 0
 
-[node name="ScreenMode" type="MenuButton" parent="MarginContainer/Main/Row2/Video/Resolution"]
-margin_left = 163.0
-margin_right = 242.0
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Main/Row2/Video"]
+margin_top = 50.0
+margin_right = 211.0
+margin_bottom = 70.0
+
+[node name="Label2" type="Label" parent="MarginContainer/Main/Row2/Video/HBoxContainer"]
+margin_top = 3.0
+margin_right = 95.0
+margin_bottom = 17.0
+text = "Window Mode:"
+
+[node name="ScreenMode" type="MenuButton" parent="MarginContainer/Main/Row2/Video/HBoxContainer"]
+margin_left = 99.0
+margin_right = 211.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "Windowed"
+align = 0
 items = [ "Windowed", null, 0, false, false, 0, 0, null, "", false, "Borderless", null, 0, false, false, 1, 0, null, "", false, "Fullscreen", null, 0, false, false, 2, 0, null, "", false ]
 
-[node name="VSync" type="CheckButton" parent="MarginContainer/Main/Row2/Video"]
-margin_top = 50.0
-margin_right = 242.0
-margin_bottom = 90.0
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Main/Row2/Video"]
+margin_top = 74.0
+margin_right = 211.0
+margin_bottom = 114.0
+
+[node name="Label2" type="Label" parent="MarginContainer/Main/Row2/Video/HBoxContainer2"]
+margin_top = 13.0
+margin_right = 37.0
+margin_bottom = 27.0
 text = "VSync"
 
+[node name="VSync" type="CheckButton" parent="MarginContainer/Main/Row2/Video/HBoxContainer2"]
+margin_left = 41.0
+margin_right = 117.0
+margin_bottom = 40.0
+
 [node name="ModelQuality" type="HBoxContainer" parent="MarginContainer/Main/Row2/Video"]
-margin_top = 94.0
-margin_right = 242.0
-margin_bottom = 114.0
+margin_top = 118.0
+margin_right = 211.0
+margin_bottom = 138.0
 
 [node name="Label" type="Label" parent="MarginContainer/Main/Row2/Video/ModelQuality"]
 margin_top = 3.0
@@ -129,9 +151,9 @@ align = 0
 items = [ "Low", null, 0, false, false, -1, 0, null, "", false, "Medium", null, 0, false, false, -1, 0, null, "", false, "High", null, 0, false, false, -1, 0, null, "", false ]
 
 [node name="FPSLimit" type="HBoxContainer" parent="MarginContainer/Main/Row2/Video"]
-margin_top = 118.0
-margin_right = 242.0
-margin_bottom = 142.0
+margin_top = 142.0
+margin_right = 211.0
+margin_bottom = 166.0
 
 [node name="Label" type="Label" parent="MarginContainer/Main/Row2/Video/FPSLimit"]
 margin_top = 5.0
@@ -141,7 +163,7 @@ text = "FPS limit:"
 
 [node name="FPSSlider" type="HSlider" parent="MarginContainer/Main/Row2/Video/FPSLimit"]
 margin_left = 64.0
-margin_right = 164.0
+margin_right = 133.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
 min_value = 24.0
@@ -150,8 +172,8 @@ value = 24.0
 ticks_on_borders = true
 
 [node name="FPSSpin" type="SpinBox" parent="MarginContainer/Main/Row2/Video/FPSLimit"]
-margin_left = 168.0
-margin_right = 242.0
+margin_left = 137.0
+margin_right = 211.0
 margin_bottom = 24.0
 min_value = 24.0
 max_value = 140.0

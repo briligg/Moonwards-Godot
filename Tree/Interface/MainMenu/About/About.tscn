@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_StyleSeparator.tres" type="StyleBox" id=1]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 10.0
@@ -32,16 +34,19 @@ size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="Parent/Credits"]
 margin_right = 948.0
-margin_bottom = 14.0
-text = "Credits:"
+margin_bottom = 31.0
+text = "CREDITS
+"
 
 [node name="HSeparator2" type="HSeparator" parent="Parent/Credits"]
-margin_top = 18.0
+margin_top = 35.0
 margin_right = 948.0
-margin_bottom = 22.0
+margin_bottom = 55.0
+custom_styles/separator = ExtResource( 1 )
+custom_constants/separation = 20
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Parent/Credits"]
-margin_top = 26.0
+margin_top = 59.0
 margin_right = 948.0
 margin_bottom = 1060.0
 size_flags_horizontal = 3
@@ -61,21 +66,24 @@ size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="Parent/License"]
 margin_right = 948.0
-margin_bottom = 14.0
-text = "License:"
+margin_bottom = 31.0
+text = "LICENSE
+"
 
 [node name="HSeparator2" type="HSeparator" parent="Parent/License"]
-margin_top = 18.0
+margin_top = 35.0
 margin_right = 948.0
-margin_bottom = 22.0
+margin_bottom = 55.0
+custom_styles/separator = ExtResource( 1 )
+custom_constants/separation = 20
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Parent/License"]
-margin_top = 26.0
+margin_top = 59.0
 margin_right = 948.0
 margin_bottom = 1060.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Copyright 2019 Moonwards
+text = "Copyright 2019-2020 Moonwards
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
