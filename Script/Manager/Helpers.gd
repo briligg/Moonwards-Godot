@@ -22,3 +22,8 @@ func capture_mouse(capture_mouse : bool) -> void :
 		is_capture_mode = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		Signals.Menus.emit_signal("set_mouse_to_captured", false)
+
+#Show the mouse and center it on the screen.
+func center_mouse() -> void :
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

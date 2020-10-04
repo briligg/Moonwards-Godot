@@ -83,6 +83,10 @@ func place_buttons():
 func toggle_visibility() -> void :
 	visible = !visible
 	
+	#Center the mouse when we are visible.
+	if visible :
+		Helpers.center_mouse()
+	
 	main.show()
 	expressions.hide()
 	actions.hide()
