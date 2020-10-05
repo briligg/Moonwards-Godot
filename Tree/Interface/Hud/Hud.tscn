@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Tree/Interface/Hud/Hud.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/Hud/Chat/Chat.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=3]
 [ext_resource path="res://SceneComponent/Interface/Hud/Apps/ToolsBar/ToolsBar.tscn" type="PackedScene" id=4]
 [ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/GeneralInfo.tscn" type="PackedScene" id=5]
 [ext_resource path="res://SceneComponent/Interface/Hud/Radial/RadialSelector.tscn" type="PackedScene" id=6]
@@ -15,13 +16,8 @@
 [ext_resource path="res://Tree/Interface/Hud/AppsContainer.gd" type="Script" id=14]
 [ext_resource path="res://Assets/Interface/Hud/Shaders/Blur_Material.tres" type="Material" id=15]
 [ext_resource path="res://Assets/Interface/Textures/T_UI_White.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Interface/Hud/Styles/HUDGeneralInfo.tres" type="Theme" id=17]
 [ext_resource path="res://SceneComponent/Interface/Hud/Apps/Map/MapApp.tscn" type="PackedScene" id=18]
-
-
-
-
-
-
 
 [node name="Hud" type="CanvasLayer"]
 layer = 8
@@ -36,10 +32,11 @@ margin_left = 20.0
 margin_top = 20.0
 margin_right = -20.0
 margin_bottom = -20.0
+theme = ExtResource( 17 )
 
 [node name="IgnoreHudShowCalls" type="Node" parent="."]
 
-[node name="AppBackground" type="TextureRect" parent="."]
+[node name="Blur" type="TextureRect" parent="."]
 visible = false
 material = ExtResource( 15 )
 anchor_right = 1.0
@@ -59,12 +56,13 @@ margin_top = 20.0
 margin_right = -20.0
 margin_bottom = -20.0
 mouse_filter = 2
+theme = ExtResource( 3 )
 script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ToolsBar" parent="Apps" instance=ExtResource( 4 )]
+[node name="ToolsBarApp" parent="Apps" instance=ExtResource( 4 )]
 
 [node name="BuildingApp" parent="Apps" instance=ExtResource( 13 )]
 visible = false

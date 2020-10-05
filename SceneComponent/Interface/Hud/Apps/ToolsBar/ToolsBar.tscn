@@ -1,9 +1,9 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Interface/Hud/Styles/ToolsBarTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconVideoCamera.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconLibrary.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme_Small.tres" type="Theme" id=4]
+[ext_resource path="res://Assets/Interface/Fonts/HUD_Roboto_Small.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconAI.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconBuilding_Alt.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconShareBig.png" type="Texture" id=7]
@@ -13,8 +13,10 @@
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconExpand.png" type="Texture" id=11]
 [ext_resource path="res://SceneComponent/Interface/Hud/Apps/ToolsBar/Button_Map.gd" type="Script" id=12]
 [ext_resource path="res://SceneComponent/Interface/Hud/Apps/ToolsBar/Button_Expand.gd" type="Script" id=13]
+[ext_resource path="res://SceneComponent/Interface/Hud/Apps/ToolsBar/ToolsBarRoot.gd" type="Script" id=14]
 
-
+[sub_resource type="Theme" id=3]
+default_font = ExtResource( 4 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "hide"
@@ -100,6 +102,7 @@ tracks/2/keys = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -114,104 +117,104 @@ alignment = 2
 margin_top = 890.0
 margin_right = 1920.0
 margin_bottom = 954.0
-theme = ExtResource( 4 )
+theme = SubResource( 3 )
 custom_constants/separation = 8
 alignment = 2
 
 [node name="VBoxContainer7" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_Static"]
-margin_left = 1752.0
-margin_right = 1788.0
+margin_left = 1737.0
+margin_right = 1778.0
 margin_bottom = 64.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer7"]
-margin_right = 36.0
+margin_right = 41.0
 margin_bottom = 24.0
 text = "[6]"
 align = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer7"]
 margin_top = 28.0
-margin_right = 36.0
+margin_right = 41.0
 margin_bottom = 64.0
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer7/MarginContainer"]
-margin_right = 36.0
+margin_right = 41.0
 margin_bottom = 36.0
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer7/MarginContainer"]
 visible = false
-margin_right = 36.0
+margin_right = 41.0
 margin_bottom = 36.0
 texture = ExtResource( 8 )
 stretch_mode = 5
 
 [node name="Button_Map" type="Button" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer7/MarginContainer"]
-margin_right = 36.0
+margin_right = 41.0
 margin_bottom = 36.0
 action_mode = 0
 icon = ExtResource( 8 )
 script = ExtResource( 12 )
 
 [node name="VBoxContainer6" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_Static"]
-margin_left = 1796.0
-margin_right = 1832.0
+margin_left = 1786.0
+margin_right = 1827.0
 margin_bottom = 64.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer6"]
-margin_right = 36.0
+margin_right = 41.0
 margin_bottom = 24.0
 text = "[7]"
 align = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer6"]
 margin_top = 28.0
-margin_right = 36.0
+margin_right = 41.0
 margin_bottom = 64.0
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer6/MarginContainer"]
-margin_right = 36.0
+margin_right = 41.0
 margin_bottom = 36.0
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer6/MarginContainer"]
-margin_right = 36.0
+margin_right = 41.0
 margin_bottom = 36.0
 texture = ExtResource( 9 )
 stretch_mode = 5
 
 [node name="Button_Camera" type="Button" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer6/MarginContainer"]
-margin_right = 36.0
+margin_right = 41.0
 margin_bottom = 36.0
 flat = true
 
 [node name="VBoxContainer8" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_Static"]
-margin_left = 1840.0
+margin_left = 1835.0
 margin_right = 1876.0
 margin_bottom = 64.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer8"]
-margin_right = 36.0
+margin_right = 41.0
 margin_bottom = 24.0
 text = "[8]"
 align = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer8"]
 margin_top = 28.0
-margin_right = 36.0
+margin_right = 41.0
 margin_bottom = 64.0
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer8/MarginContainer"]
-margin_right = 36.0
+margin_right = 41.0
 margin_bottom = 36.0
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer8/MarginContainer"]
-margin_right = 36.0
+margin_right = 41.0
 margin_bottom = 36.0
 texture = ExtResource( 2 )
 stretch_mode = 5
 
 [node name="Button_Video" type="Button" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer8/MarginContainer"]
-margin_right = 36.0
+margin_right = 41.0
 margin_bottom = 36.0
 flat = true
 
@@ -368,7 +371,6 @@ stretch_mode = 5
 [node name="Button_NPC" type="Button" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer5/MarginContainer"]
 margin_right = 72.0
 margin_bottom = 72.0
-flat = true
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_Dynamic/VBoxContainer5"]
 margin_top = 76.0

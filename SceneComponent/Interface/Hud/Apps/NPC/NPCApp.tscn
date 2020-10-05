@@ -1,12 +1,28 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=1]
+[ext_resource path="res://addons/joyeux_npc_editor/src/interface/NPCEditorSuite.tscn" type="PackedScene" id=2]
+[ext_resource path="res://SceneComponent/Interface/Hud/Apps/NPC/NPCApp.gd" type="Script" id=3]
 
-
-[node name="NPCApp" type="PanelContainer"]
+[node name="NPCApp" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.05
+anchor_top = 0.01
+anchor_right = 0.95
+anchor_bottom = 0.95
+
+[node name="Close" type="Button" parent="."]
+anchor_left = 0.92
+anchor_top = 0.019
+anchor_right = 0.95
+anchor_bottom = 0.04
+text = "X"
 __meta__ = {
 "_edit_use_anchors_": false
 }
