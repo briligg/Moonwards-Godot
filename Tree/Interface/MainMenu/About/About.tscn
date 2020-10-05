@@ -43,11 +43,20 @@ margin_right = 951.0
 margin_bottom = 1066.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Founder: Kim Holder
-Patrons:
-Programmers:
+text = "Team: Kim Holder
+	Karim Rizk
+	Yael Atletl Bueno Rojas
+	Zach Shae
+Contributors: Pavel Lixonov
+	Hendrik Weirsma
+	Manuel Fischer
+	David Palacios
+	Pedro Oliveira
+	
+	
+	
 
-Version:"
+Version: 0.0.1"
 
 [node name="License" type="VBoxContainer" parent="Parent"]
 margin_left = 955.0
