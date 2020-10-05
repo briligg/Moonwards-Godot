@@ -15,7 +15,7 @@ func _crash(value) -> void :
 #Listen to the buttons being pressed.
 func _ready() -> void :
 	var quit : Button
-	quit = $VBoxContainer/HBoxContainer_Head/HBoxContainer_Right/Button_Quit_Icon
+	quit = $VBoxContainer/TRButtons/Button_Quit_Icon
 	quit.connect("pressed", self, "_quit_pressed")
 
 #Show the main menu.

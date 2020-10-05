@@ -60,7 +60,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 20.0
@@ -72,33 +72,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer_Head" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 1880.0
-margin_bottom = 214.0
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+anchor_right = 0.27
+anchor_bottom = 0.212
 size_flags_horizontal = 3
-theme = ExtResource( 16 )
-custom_constants/separation = 43
-
-[node name="HBoxContainer_Left" type="HBoxContainer" parent="VBoxContainer/HBoxContainer_Head"]
-margin_right = 500.0
-margin_bottom = 214.0
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer_Head/HBoxContainer_Left"]
-margin_right = 500.0
-margin_bottom = 214.0
-size_flags_stretch_ratio = 0.1
 texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="HBoxContainer_Middle" type="HBoxContainer" parent="VBoxContainer/HBoxContainer_Head"]
-margin_left = 543.0
-margin_top = 169.0
-margin_right = 1667.0
-margin_bottom = 214.0
+[node name="HBoxContainer_Middle" type="HBoxContainer" parent="VBoxContainer"]
+anchor_left = 0.27
+anchor_top = 0.173
+anchor_right = 1.0
+anchor_bottom = 0.21
+grow_vertical = 0
 size_flags_horizontal = 7
 size_flags_vertical = 8
 custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Button_Home" type="Button" parent="VBoxContainer/HBoxContainer_Head/HBoxContainer_Middle"]
+[node name="Button_Home" type="Button" parent="VBoxContainer/HBoxContainer_Middle"]
 visible = false
 margin_right = 52.0
 margin_bottom = 78.0
@@ -106,31 +104,31 @@ focus_neighbour_right = NodePath("../Button_Avatar")
 size_flags_horizontal = 3
 text = "HOME"
 
-[node name="Button_Destination" type="Button" parent="VBoxContainer/HBoxContainer_Head/HBoxContainer_Middle"]
-margin_right = 361.0
-margin_bottom = 45.0
+[node name="Button_Destination" type="Button" parent="VBoxContainer/HBoxContainer_Middle"]
+margin_right = 444.0
+margin_bottom = 38.0
 focus_neighbour_right = NodePath("../Button_Apps")
 size_flags_horizontal = 3
 text = "DESTINATION"
 
-[node name="Button_Avatar" type="Button" parent="VBoxContainer/HBoxContainer_Head/HBoxContainer_Middle"]
-margin_left = 381.0
-margin_right = 742.0
-margin_bottom = 45.0
+[node name="Button_Avatar" type="Button" parent="VBoxContainer/HBoxContainer_Middle"]
+margin_left = 464.0
+margin_right = 908.0
+margin_bottom = 38.0
 grow_horizontal = 2
 focus_neighbour_right = NodePath("../Button_Destination")
 size_flags_horizontal = 3
 text = "AVATAR"
 
-[node name="Button_Apps" type="Button" parent="VBoxContainer/HBoxContainer_Head/HBoxContainer_Middle"]
-margin_left = 762.0
-margin_right = 1124.0
-margin_bottom = 45.0
+[node name="Button_Apps" type="Button" parent="VBoxContainer/HBoxContainer_Middle"]
+margin_left = 928.0
+margin_right = 1372.0
+margin_bottom = 38.0
 focus_neighbour_right = NodePath("../Button_Settings")
 size_flags_horizontal = 3
 text = "APPS"
 
-[node name="Button_Settings" type="Button" parent="VBoxContainer/HBoxContainer_Head/HBoxContainer_Middle"]
+[node name="Button_Settings" type="Button" parent="VBoxContainer/HBoxContainer_Middle"]
 visible = false
 margin_left = 266.0
 margin_right = 338.0
@@ -139,62 +137,37 @@ focus_neighbour_right = NodePath("../../HBoxContainer_Right/Button_About")
 size_flags_horizontal = 3
 text = "SETTINGS"
 
-[node name="HBoxContainer_Right" type="HBoxContainer" parent="VBoxContainer/HBoxContainer_Head"]
-margin_left = 1710.0
-margin_right = 1880.0
-margin_bottom = 57.0
-size_flags_horizontal = 8
-size_flags_vertical = 0
-custom_constants/separation = 4
-alignment = 2
-
-[node name="Button_Settings_Icon" type="Button" parent="VBoxContainer/HBoxContainer_Head/HBoxContainer_Right"]
-margin_right = 54.0
-margin_bottom = 57.0
-focus_neighbour_right = NodePath("../Button_Quit")
-icon = ExtResource( 12 )
-
-[node name="Button_About_Icon" type="Button" parent="VBoxContainer/HBoxContainer_Head/HBoxContainer_Right"]
-margin_left = 58.0
-margin_right = 112.0
-margin_bottom = 57.0
-focus_neighbour_right = NodePath("../Button_Quit")
-icon = ExtResource( 11 )
-
-[node name="Button_Quit_Icon" type="Button" parent="VBoxContainer/HBoxContainer_Head/HBoxContainer_Right"]
-margin_left = 116.0
-margin_right = 170.0
-margin_bottom = 57.0
-focus_neighbour_right = NodePath("../../HBoxContainer_Middle/Button_Home")
-icon = ExtResource( 13 )
-
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
-margin_top = 218.0
-margin_right = 1880.0
-margin_bottom = 1014.0
+anchor_top = 0.212
+anchor_right = 1.0
+anchor_bottom = 0.96
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 14 )
 custom_styles/panel = ExtResource( 23 )
 tabs_visible = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="VBoxContainer_Home" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 12.0
-margin_top = 12.0
-margin_right = -12.0
-margin_bottom = -12.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer_Destination" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 12.0
-margin_top = 12.0
-margin_right = -12.0
-margin_bottom = -12.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -207,12 +180,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer_Avatar" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 12.0
-margin_top = 12.0
-margin_right = -12.0
-margin_bottom = -12.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -223,12 +197,13 @@ margin_right = 1856.0
 margin_bottom = 772.0
 
 [node name="VBoxContainer_Apps" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 12.0
-margin_top = 12.0
-margin_right = -12.0
-margin_bottom = -12.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -281,12 +256,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer_Settings" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 12.0
-margin_top = 12.0
-margin_right = -12.0
-margin_bottom = -12.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -370,12 +346,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer_About" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 12.0
-margin_top = 12.0
-margin_right = -12.0
-margin_bottom = -12.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -386,12 +363,13 @@ margin_right = 1856.0
 margin_bottom = 772.0
 
 [node name="VBoxContainer_Quit" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 12.0
-margin_top = 12.0
-margin_right = -12.0
-margin_bottom = -12.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
@@ -416,23 +394,57 @@ margin_right = 979.0
 margin_bottom = 24.0
 text = "Cancel"
 
-[node name="HBoxContainer_Footer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 1018.0
-margin_right = 1880.0
-margin_bottom = 1040.0
+[node name="AboutSection" type="HBoxContainer" parent="VBoxContainer"]
+anchor_top = 0.97
+anchor_right = 1.0
+anchor_bottom = 1.0
 theme = ExtResource( 15 )
 
-[node name="Label_Version" type="Label" parent="VBoxContainer/HBoxContainer_Footer"]
+[node name="Label_Version" type="Label" parent="VBoxContainer/AboutSection"]
+margin_top = 4.0
 margin_right = 1545.0
-margin_bottom = 22.0
+margin_bottom = 26.0
 size_flags_horizontal = 3
 text = "Game Version 0.0.1"
 
-[node name="Label_Info" type="Label" parent="VBoxContainer/HBoxContainer_Footer"]
+[node name="Label_Info" type="Label" parent="VBoxContainer/AboutSection"]
 margin_left = 1549.0
+margin_top = 4.0
 margin_right = 1880.0
-margin_bottom = 22.0
+margin_bottom = 26.0
 text = "Created by Kim, 2019-2020, MIT Licensed"
+
+[node name="TRButtons" type="HBoxContainer" parent="VBoxContainer"]
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+custom_constants/separation = 4
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_Settings_Icon" type="Button" parent="VBoxContainer/TRButtons"]
+margin_right = 54.0
+margin_bottom = 54.0
+focus_neighbour_right = NodePath("../Button_Quit")
+icon = ExtResource( 12 )
+
+[node name="Button_About_Icon" type="Button" parent="VBoxContainer/TRButtons"]
+margin_left = 58.0
+margin_right = 112.0
+margin_bottom = 54.0
+focus_neighbour_right = NodePath("../Button_Quit")
+icon = ExtResource( 11 )
+
+[node name="Button_Quit_Icon" type="Button" parent="VBoxContainer/TRButtons"]
+margin_left = 116.0
+margin_right = 170.0
+margin_bottom = 54.0
+focus_neighbour_right = NodePath("../../HBoxContainer_Middle/Button_Home")
+icon = ExtResource( 13 )
 
 [node name="Logo" type="TextureRect" parent="."]
 visible = false
