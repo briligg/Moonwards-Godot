@@ -77,6 +77,8 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
 anchor_right = 0.27
 anchor_bottom = 0.212
+margin_left = -1.18921
+margin_right = -1.18921
 size_flags_horizontal = 3
 texture = ExtResource( 4 )
 expand = true
@@ -93,6 +95,7 @@ anchor_bottom = 0.21
 grow_vertical = 0
 size_flags_horizontal = 7
 size_flags_vertical = 8
+theme = ExtResource( 16 )
 custom_constants/separation = 20
 __meta__ = {
 "_edit_use_anchors_": false
@@ -108,7 +111,7 @@ text = "HOME"
 
 [node name="Button_Destination" type="Button" parent="VBoxContainer/TabButtons"]
 margin_right = 444.0
-margin_bottom = 38.0
+margin_bottom = 45.0
 focus_neighbour_right = NodePath("../Button_Apps")
 size_flags_horizontal = 3
 text = "DESTINATION"
@@ -116,7 +119,7 @@ text = "DESTINATION"
 [node name="Button_Avatar" type="Button" parent="VBoxContainer/TabButtons"]
 margin_left = 464.0
 margin_right = 908.0
-margin_bottom = 38.0
+margin_bottom = 45.0
 grow_horizontal = 2
 focus_neighbour_right = NodePath("../Button_Destination")
 size_flags_horizontal = 3
@@ -125,7 +128,7 @@ text = "AVATAR"
 [node name="Button_Apps" type="Button" parent="VBoxContainer/TabButtons"]
 margin_left = 928.0
 margin_right = 1372.0
-margin_bottom = 38.0
+margin_bottom = 45.0
 focus_neighbour_right = NodePath("../Button_Settings")
 size_flags_horizontal = 3
 text = "APPS"
@@ -149,7 +152,8 @@ theme = ExtResource( 14 )
 custom_styles/panel = ExtResource( 23 )
 tabs_visible = false
 __meta__ = {
-"_edit_lock_": true
+"_edit_lock_": true,
+"_edit_use_anchors_": false
 }
 
 [node name="Destination" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
@@ -195,8 +199,8 @@ size_flags_vertical = 3
 [node name="UserSettings" parent="VBoxContainer/TabContainer/Avatar" instance=ExtResource( 9 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1856.0
-margin_bottom = 772.0
+margin_right = 1876.0
+margin_bottom = 773.0
 
 [node name="Apps" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
 visible = false
@@ -422,6 +426,7 @@ anchor_right = 1.0
 grow_horizontal = 0
 size_flags_horizontal = 8
 size_flags_vertical = 0
+theme = ExtResource( 16 )
 custom_constants/separation = 4
 alignment = 2
 __meta__ = {
@@ -430,21 +435,21 @@ __meta__ = {
 
 [node name="Button_Settings_Icon" type="Button" parent="VBoxContainer/TRButtons"]
 margin_right = 54.0
-margin_bottom = 54.0
+margin_bottom = 57.0
 focus_neighbour_right = NodePath("../Button_Quit")
 icon = ExtResource( 12 )
 
 [node name="Button_About_Icon" type="Button" parent="VBoxContainer/TRButtons"]
 margin_left = 58.0
 margin_right = 112.0
-margin_bottom = 54.0
+margin_bottom = 57.0
 focus_neighbour_right = NodePath("../Button_Quit")
 icon = ExtResource( 11 )
 
 [node name="Button_Quit_Icon" type="Button" parent="VBoxContainer/TRButtons"]
 margin_left = 116.0
 margin_right = 170.0
-margin_bottom = 54.0
+margin_bottom = 57.0
 focus_neighbour_right = NodePath("../../HBoxContainer_Middle/Button_Home")
 icon = ExtResource( 13 )
 

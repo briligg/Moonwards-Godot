@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Assets/Interface/Textures/CrosshairTexture.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconCreateServer.png" type="Texture" id=1]
 [ext_resource path="res://SceneComponent/Interface/MainMenu/Destination.gd" type="Script" id=2]
+[ext_resource path="res://Tree/Interface/MainMenu/Style/MMD_Theme/MMD_Theme.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconOfficialServer.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconJoinServer.png" type="Texture" id=5]
 
 [node name="Destination" type="PanelContainer"]
 anchor_right = 1.0
@@ -25,6 +28,7 @@ margin_right = 922.0
 margin_bottom = 1066.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 3 )
 
 [node name="Button_CreateServer" type="Button" parent="HBoxContainer/VBoxContainer2"]
 margin_right = 922.0
@@ -35,28 +39,32 @@ size_flags_vertical = 3
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer2/Button_CreateServer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -0.943878
+margin_bottom = -0.943848
 size_flags_horizontal = 3
 size_flags_vertical = 3
-alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2/Button_CreateServer/VBoxContainer"]
-margin_left = 361.0
-margin_top = 156.0
-margin_right = 561.0
-margin_bottom = 356.0
+margin_left = 389.0
+margin_top = 59.0
+margin_right = 533.0
+margin_bottom = 203.0
 size_flags_horizontal = 6
+size_flags_vertical = 6
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/Button_CreateServer/VBoxContainer"]
-margin_top = 360.0
+margin_top = 473.0
 margin_right = 922.0
-margin_bottom = 374.0
+margin_bottom = 531.0
+size_flags_vertical = 10
+theme = ExtResource( 3 )
 text = "CREATE CUSTOM SERVER"
 align = 1
 __meta__ = {
@@ -81,23 +89,24 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2/Button_JoinMaster/VBoxContainer"]
-margin_left = 361.0
-margin_top = 156.0
-margin_right = 561.0
-margin_bottom = 356.0
+margin_left = 389.0
+margin_top = 162.0
+margin_right = 533.0
+margin_bottom = 306.0
 size_flags_horizontal = 6
-size_flags_vertical = 0
-texture = ExtResource( 1 )
+size_flags_vertical = 6
+texture = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/Button_JoinMaster/VBoxContainer"]
-margin_top = 360.0
+margin_top = 473.0
 margin_right = 922.0
-margin_bottom = 374.0
+margin_bottom = 531.0
 size_flags_horizontal = 3
-size_flags_vertical = 0
+size_flags_vertical = 8
+theme = ExtResource( 3 )
 text = "JOIN MASTER"
 align = 1
 __meta__ = {
@@ -170,32 +179,37 @@ margin_right = 922.0
 margin_bottom = 1066.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 3 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/Button_JoinServer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 3 )
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/Button_JoinServer/VBoxContainer"]
-margin_left = 361.0
-margin_top = 156.0
-margin_right = 561.0
-margin_bottom = 356.0
+margin_left = 389.0
+margin_top = 162.0
+margin_right = 533.0
+margin_bottom = 306.0
 size_flags_horizontal = 6
-texture = ExtResource( 1 )
+size_flags_vertical = 6
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Button_JoinServer/VBoxContainer"]
-margin_top = 360.0
+margin_top = 473.0
 margin_right = 922.0
-margin_bottom = 374.0
+margin_bottom = 531.0
+size_flags_vertical = 8
+theme = ExtResource( 3 )
 text = "JOIN SERVER"
 align = 1
 __meta__ = {

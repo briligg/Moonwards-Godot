@@ -1,0 +1,5 @@
+[gd_resource type="StyleBoxFlat" format=2]
+
+[resource]
+border_width_top = 8
+border_width_bottom = 8
