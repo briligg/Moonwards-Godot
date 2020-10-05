@@ -29,7 +29,7 @@ signal chat_typing()
 #warning-ignore:unused_signal
 signal extra_info_displayed(title_text, info_text)
 signal flight_value_set(new_value_float)
-signal hidden_huds_set(hide_flag_int)
+signal hidden_huds_set(huds_affect_flag_int, became_visible)
 signal hide_interacts_menu_requested()
 signal hide_reticle()
 signal interactable_entered_reach(interactable_node)

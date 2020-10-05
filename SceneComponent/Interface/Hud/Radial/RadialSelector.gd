@@ -86,6 +86,10 @@ func toggle_visibility() -> void :
 	#Center the mouse when we are visible.
 	if visible :
 		Helpers.center_mouse()
+		Hud.hide(Hud.flags.AppMenusAll)
+	
+	else :
+		Hud.show(Hud.flags.AppMenusAll)
 	
 	main.show()
 	expressions.hide()
