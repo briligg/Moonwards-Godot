@@ -43,15 +43,21 @@ margin_right = 951.0
 margin_bottom = 1066.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Team: Kim \"Moonwards\" Holder
+text = "Team: 
+	Kim \"Moonwards\" Holder
 	Karim \"Blue\" Rizk
 	Yael Atletl \"810-Dude\" Bueno Rojas
 	Zachary \"Zach777\" Shea
-Contributors: Pavel \"MolbOrg\" Lixonov
+	
+Contributors: 
+	Pavel \"MolbOrg\" Lixonov
 	Hendrik \"Gyrth\" Weirsma
 	Manuel \"TheDuriel\" Fischer
 	David \"Hevedy\" Palacios
 	Pedro \"Paavs\" Oliveira
+	Adrian \"Siuda\" Winkler
+	
+	
 	
 	
 	
