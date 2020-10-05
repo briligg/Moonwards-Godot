@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Tree/Interface/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Interface/Textures/menu_splash.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Theme.tres" type="Theme" id=14]
 [ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Theme_Footer.tres" type="Theme" id=15]
 [ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Theme_Header.tres" type="Theme" id=16]
+[ext_resource path="res://Tree/Interface/MainMenu/MenuParent.gd" type="Script" id=17]
 [ext_resource path="res://Tree/Interface/MainMenu/Destination.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/Settings.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/Controls_settings.tscn" type="PackedScene" id=21]
@@ -68,6 +69,7 @@ margin_top = 20.0
 margin_right = -20.0
 margin_bottom = -20.0
 theme = ExtResource( 14 )
+script = ExtResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -83,7 +85,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer_Middle" type="HBoxContainer" parent="VBoxContainer"]
+[node name="TabButtons" type="HBoxContainer" parent="VBoxContainer"]
 anchor_left = 0.27
 anchor_top = 0.173
 anchor_right = 1.0
@@ -96,7 +98,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button_Home" type="Button" parent="VBoxContainer/HBoxContainer_Middle"]
+[node name="Button_Home" type="Button" parent="VBoxContainer/TabButtons"]
 visible = false
 margin_right = 52.0
 margin_bottom = 78.0
@@ -104,14 +106,14 @@ focus_neighbour_right = NodePath("../Button_Avatar")
 size_flags_horizontal = 3
 text = "HOME"
 
-[node name="Button_Destination" type="Button" parent="VBoxContainer/HBoxContainer_Middle"]
+[node name="Button_Destination" type="Button" parent="VBoxContainer/TabButtons"]
 margin_right = 444.0
 margin_bottom = 38.0
 focus_neighbour_right = NodePath("../Button_Apps")
 size_flags_horizontal = 3
 text = "DESTINATION"
 
-[node name="Button_Avatar" type="Button" parent="VBoxContainer/HBoxContainer_Middle"]
+[node name="Button_Avatar" type="Button" parent="VBoxContainer/TabButtons"]
 margin_left = 464.0
 margin_right = 908.0
 margin_bottom = 38.0
@@ -120,7 +122,7 @@ focus_neighbour_right = NodePath("../Button_Destination")
 size_flags_horizontal = 3
 text = "AVATAR"
 
-[node name="Button_Apps" type="Button" parent="VBoxContainer/HBoxContainer_Middle"]
+[node name="Button_Apps" type="Button" parent="VBoxContainer/TabButtons"]
 margin_left = 928.0
 margin_right = 1372.0
 margin_bottom = 38.0
@@ -128,7 +130,7 @@ focus_neighbour_right = NodePath("../Button_Settings")
 size_flags_horizontal = 3
 text = "APPS"
 
-[node name="Button_Settings" type="Button" parent="VBoxContainer/HBoxContainer_Middle"]
+[node name="Button_Settings" type="Button" parent="VBoxContainer/TabButtons"]
 visible = false
 margin_left = 266.0
 margin_right = 338.0

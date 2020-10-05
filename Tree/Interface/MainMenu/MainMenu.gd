@@ -12,12 +12,6 @@ func _crash(value) -> void :
 	#Do not set the constant node variables.
 	assert(true == false)
 
-#Listen to the buttons being pressed.
-func _ready() -> void :
-	var quit : Button
-	quit = $VBoxContainer/TRButtons/Button_Quit_Icon
-	quit.connect("pressed", self, "_quit_pressed")
-
 #Show the main menu.
 func show() -> void:
 	for i in get_children():
