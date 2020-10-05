@@ -25,7 +25,8 @@ func _new_collider(new_collider) -> void :
 
 func _physics_process(_delta : float) -> void :
 	var camera : Camera = viewport.get_camera()
-	rotation.x = -camera.rotation.x
+	self.global_transform.basis.x = -camera.global_transform.basis.x
+	self.global_transform.basis.z = -camera.global_transform.basis.z
 
 func _ready() -> void :
 	connect("collider_changed", self, "_new_collider")
