@@ -37,6 +37,8 @@ func _ready() -> void :
 	
 #Go to next slide. Cycle to beginning if already at last slide.
 func _on_next_pressed() -> void :
+	if slide_size <= 0:
+		return
 	#If we have more slides to go to, go to the next one.
 	if slide_size > slide_index + 1:
 		slide_index += 1
@@ -49,6 +51,8 @@ func _on_next_pressed() -> void :
 
 #Go to previous slide. Cycle to the last slide if at the first slide already.
 func _on_prev_pressed() -> void :
+	if slide_size <= 0:
+		return
 	#Move to the previous slide if there are still previous slides remaining.
 	if slide_index > 0:
 		slide_index -= 1
