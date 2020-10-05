@@ -11,9 +11,6 @@
 [ext_resource path="res://Tree/Interface/UserSettings/UserSettings.tscn" type="PackedScene" id=9]
 [ext_resource path="res://addons/joyeux_npc_editor/src/interface/behaviors/code/Behaviour_tree_editor.tscn" type="PackedScene" id=10]
 
-
-
-
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.588235 )
 border_width_left = 2

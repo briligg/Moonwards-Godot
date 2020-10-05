@@ -404,11 +404,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/InteractorComponent.gd"
 }, {
-"base": "AMovementController",
-"class": "KinematicMovement",
-"language": "GDScript",
-"path": "res://SceneComponent/Actor/InteractorComponent.gd"
-}, {
 "base": "MouseSimulatingRayCast",
 "class": "InteractorRayCast",
 "language": "GDScript",
@@ -428,6 +423,11 @@ _global_script_classes=[ {
 "class": "MenuSignals",
 "language": "GDScript",
 "path": "res://Script/Manager/SignalsManager/MenuSignals.gd"
+}, {
+"base": "RayCast",
+"class": "MouseSimulatingRayCast",
+"language": "GDScript",
+"path": "res://Script/GameLogic/MouseSimulatingRayCast/MouseSimulatingRayCast.gd"
 }, {
 "base": "NPCBase",
 "class": "MwNPC",
@@ -684,10 +684,11 @@ _global_script_class_icons={
 "Interactable": "",
 "InteractorArea": "",
 "InteractorComponent": "",
-"KinematicMovement": "",
+"InteractorRayCast": "",
 "LodModel": "",
 "LodSignals": "",
 "MenuSignals": "",
+"MouseSimulatingRayCast": "",
 "MwNPC": "",
 "MwNavigator": "",
 "MouseSimulatingRayCast": "",
