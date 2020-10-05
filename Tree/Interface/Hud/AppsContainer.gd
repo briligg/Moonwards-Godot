@@ -10,6 +10,13 @@ onready var blur : TextureRect = get_node("../Blur")
 #Lets us blur the background when reverting if needed.
 var previous_app_blurred : bool = false
 
+#Called from a signal. Determine if I should hide or view myself.
+func _hud_visibility(_flag, become_visible : bool) -> void :
+	if not Hud.has_flag(Hud.flags.AppMenusAll) :
+		return
+	
+	visible = become_visible
+
 #Look for the visible app and set it as current.
 func _ready() -> void :
 	for app in get_children() :
@@ -17,6 +24,10 @@ func _ready() -> void :
 			current_app = app
 			previous_app = app
 			break
+	
+	#Hide myself if all apps are suppose to be hidden.
+	Signals.Hud.connect(Signals.Hud.HIDDEN_HUDS_SET, self, "_hud_visibility", [false])
+	Signals.Hud.connect(Signals.Hud.VISIBLE_HUDS_SET, self, "_hud_visibility", [true])
 
 #Change the active app by passing it's node name.
 func change_app(app_name : String, blur_background : bool = false) -> void :
