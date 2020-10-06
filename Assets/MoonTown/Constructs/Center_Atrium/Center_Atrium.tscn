@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Center_Atrium/Center_Atrium.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Hexpane_Window/Hexpane_Window.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/MoonTown/Constructs/Center_Atrium/Center_Columns.material" type="Material" id=6]
 [ext_resource path="res://Assets/MoonTown/Constructs/Center_Atrium/White_Semigloss.material" type="Material" id=7]
 [ext_resource path="res://Assets/MoonTown/Constructs/Center_Atrium/BloodRed_Matte.material" type="Material" id=8]
+[ext_resource path="res://SceneComponent/Display/Tooltip/TooltipButton.tscn" type="PackedScene" id=9]
 
 [sub_resource type="GIProbeData" id=1]
 bounds = AABB( -45.6825, -30.536, -52.471, 91.365, 61.072, 104.942 )
@@ -22,6 +23,11 @@ propagation = 0.66
 
 [node name="Center_Atrium" instance=ExtResource( 1 )]
 
+[node name="MirrorWindow-Tooltip" parent="." index="0" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5053, 4.62928, -77.8893 )
+bbtext_fields = PoolStringArray( "The giant mirror outside this window is angled at 45 degrees so that it always reflects the Earth towards the interior of this habitat. The Earth moves very little in the sky because the moon is tidally locked, with one side always facing Earth. Here on the moon\'s equator, it stays almost straight above you, wobbling around by 15 degrees or so over the months. It would always be visible in this mirror. This design means that very little of the sky is visible directly, and there are several meters of packed dirt between a viewer and the sky in most  directions. If you look up at the patch of sky you can view straight on, any cosmic ray particles coming from there are zooming through you - probably without stopping until they also go through the floor of this hab and continue on for a meter or two. ", "Being zoomed through by a cosmic ray isn\'t that dangerous. What\'s dangerous is long-term exposure to the cascades of other particles with rather high energy that are produced once a cosmic ray hits an atomic nucleus. Those particles are coming at you from the areas around the window well that have less than 5 or 6 meters of packed dirt around them. Mostly from the areas with 1 to 3 meters of dirt blocking the path. That\'s enough dirt for a cosmic ray to have probably smashed something apart, but not enough dirt after that for all the smashed bits to have smashed still other bits, losing energy and finally being absorbed into some other atom. When those hurling sub-atomic particles fly through you, they leave a trail of ionized particles. That is to say, they either pull electrons off of the atoms they pass near or add extra ones to them, making them reactive.", "Unplanned chemical reactions in your body are a bad thing. Your body is actually pretty good at handling that, it has to do that all the time. Free radicals are just something best kept to a minimum. What your body doesn\'t know how to repair is the avalanche of destruction along the path of the particularly high energy particles in the cascade. Those particles are capable of ripping apart strands of DNA, punching holes in cell walls, and breaking any organelles in their way as they zoom through. We don\'t really know what chronic exposure to something like that would do. They\'ve put a few poor little mice in the path of the beam of a particle accelerator for a few hours to see what it did to them. How much can be determined from extrapolating that to humans is limited. At any rate, it wasn\'t good. So, you can gaze at the Earth out this window for a while because most places in these habitats you are very well protected. But don\'t, like, sleep here, or put your work desk beside it, or something like that. " )
+title = "Viewing the sky by mirror"
+
 [node name="CenterAtrium_Structures_LOD0" parent="LOD0" index="0"]
 cast_shadow = 2
 extra_cull_margin = 1.0
@@ -32,14 +38,14 @@ material/3 = ExtResource( 5 )
 material/4 = ExtResource( 6 )
 material/5 = ExtResource( 8 )
 
-[node name="OmniLight" type="OmniLight" parent="." index="1"]
+[node name="OmniLight" type="OmniLight" parent="." index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9486, -1.73356, -29.8064 )
 light_indirect_energy = 0.47
 light_specular = 0.1
 omni_range = 76.0
 omni_attenuation = 2.0
 
-[node name="GIProbe" type="GIProbe" parent="." index="2"]
+[node name="GIProbe" type="GIProbe" parent="." index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39774, 1.54666, -30.6783 )
 extents = Vector3( 45.6825, 30.536, 52.471 )
 energy = 0.17
@@ -58,13 +64,13 @@ transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0
 [node name="Hexpane_Window" parent="Markers/Marker_HexpaneWindow003" index="0" instance=ExtResource( 2 )]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 
-[node name="LOD1" parent="." index="5"]
+[node name="LOD1" parent="." index="6"]
 visible = false
 
-[node name="LOD2" parent="." index="6"]
+[node name="LOD2" parent="." index="7"]
 visible = false
 
-[node name="ReflectionProbe" type="ReflectionProbe" parent="." index="7"]
+[node name="ReflectionProbe" type="ReflectionProbe" parent="." index="8"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8179, -29.9222 )
 max_distance = 10.0
 extents = Vector3( 44.0007, 28.3008, 50.1673 )
