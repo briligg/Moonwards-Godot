@@ -9,4 +9,5 @@ func _ready() -> void :
 	button.connect("pressed", self, "pressed", ["BuildingApp", false])
 
 func pressed(app_name : String, blur_background : bool) -> void :
-	get_parent().change_app(app_name, blur_background)
+	if get_parent().has_method("change_app") :
+		get_parent().change_app(app_name, blur_background)
