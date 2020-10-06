@@ -42,3 +42,8 @@ func get_interactable() -> Interactable :
 func interact(interactable : Interactable) -> void :
 	interactable.interact_with(owning_entity)
 	emit_signal("interacted_with", interactable)
+
+#When true is passed, I am processing collisions. False makes me disabled.
+func set_activity(is_active : bool) :
+	set_collision_mask_bit(0, is_active)
+	set_collision_mask_bit(15, is_active)
