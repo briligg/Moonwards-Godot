@@ -17,10 +17,9 @@ func _init().("AI handler", false):
 
 func _ready():
 	BehaviorTree = MwNPC.new(NPC_File, initial_state)
+	BehaviorTree.actor = entity
 	BehaviorTree.navigator = entity.get_component("NPCInput")
 	BehaviorTree.worker = worker
-	BehaviorTree.actor = entity
-	
 	BehaviorTree._create_signal("workstation_assigned")
 	BehaviorTree._create_signal("stopped_working")
 	worker.connect("stopped_working", self, "_on_worker_stopped")
@@ -29,6 +28,7 @@ func _ready():
 	BehaviorTree._create_signal("interacted_by")
 	get_node(Interactable_Path).connect("interacted_by", self, "_on_interacted")
 	add_child(BehaviorTree)
+	BehaviorTree.load_colors()
 	
 func _on_interacted(anything):
 	BehaviorTree.emit_signal("interacted_by", anything)

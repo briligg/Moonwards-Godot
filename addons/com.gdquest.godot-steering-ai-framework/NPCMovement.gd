@@ -130,7 +130,6 @@ func _process_server(delta):
 			else:
 				entity.input = Vector3.ZERO
 		else:
-			print("distance: ",(current_target.position - entity.translation).length(), "tolerance: ", arrival_tolerance)
 			Priority.calculate_steering(acceleration)
 			
 			_handle_npc_input(acceleration, delta)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://addons/com.gdquest.godot-steering-ai-framework/NPCMovement.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/Nametag/NametagComponent.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/MoonTown/Models/Human_Model/FemalePlayerModel.tscn" type="PackedScene" id=7]
 [ext_resource path="res://addons/joyeux_nav_interacts/Workstation.tscn" type="PackedScene" id=8]
 [ext_resource path="res://addons/joyeux_nav_interacts/MwAI.gd" type="Script" id=9]
+[ext_resource path="res://Script/Component/ModelComponent.gd" type="Script" id=10]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.287522
@@ -43,7 +44,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70766, 0 )
 [node name="Camera" parent="." instance=ExtResource( 3 )]
 overriden = true
 
+[node name="ModelComponent" type="Spatial" parent="."]
+script = ExtResource( 10 )
+enabled = true
+mesh_path = NodePath("../Model/Female_Player/Skeleton/FemaleBody-LOD0")
+
 [node name="HumanoidMovement" parent="." instance=ExtResource( 5 )]
+
+[node name="Workstation" parent="." instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
 
 [node name="AIHandler" type="Spatial" parent="."]
 script = ExtResource( 9 )
@@ -52,5 +61,4 @@ NPC_File = "res://Assets/Characters/Phill.jsm"
 initial_state = "WorkingBusy"
 Interactable_Path = NodePath("../Workstation")
 
-[node name="Workstation" parent="." instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
+[editable path="Model"]

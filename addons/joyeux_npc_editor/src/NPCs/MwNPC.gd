@@ -28,7 +28,8 @@ var navigator : NPCInput = null
 func _init(file:= "", state:= ""):
 	NPC_File = file 
 	initial_state = state
-func _ready():
+
+func load_colors():
 	var colors = [pants_color, shirt_color, hair_color, skin_color, shoes_color]
 	actor.get_component("ModelComponent").set_colors(colors)
 	

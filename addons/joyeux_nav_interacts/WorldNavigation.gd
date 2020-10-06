@@ -10,7 +10,7 @@ func _enter_tree():
 	m.flags_use_point_size = true
 	m.albedo_color = Color.white
 	#There can only be one Navigator accounted per scene
-func draw_path(begin : Vector3, end : Vector3, p):
+func draw_path(begin : Vector3, end : Vector3, p : Array):
 	var im = get_node("Draw")
 	im.set_material_override(m)
 	im.clear()
@@ -20,6 +20,8 @@ func draw_path(begin : Vector3, end : Vector3, p):
 	im.end()
 	im.begin(Mesh.PRIMITIVE_LINE_STRIP, null)
 	for x in p:
+		if not x is Vector3:
+			continue
 		im.add_vertex(x+Vector3(0,0.2,0))
 	im.end()
 	
@@ -86,7 +88,8 @@ func get_navmesh_path(from: Vector3, to: Vector3, global : bool = false):
 	if path_points.back() != to:
 		var path2 = Array(get_simple_path(to, from, true))
 		path2.invert()
-		path_points.append(path2)
+		for point in path2:
+			path_points.append(point)
 	if get_node("Draw") is ImmediateGeometry:
 		draw_path(from, to, path_points)
 	if global:
