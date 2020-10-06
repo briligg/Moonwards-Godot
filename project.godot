@@ -245,9 +245,9 @@ _global_script_classes=[ {
 "path": "res://Script/GameLogic/Interact/Interactable/Interactable.gd"
 }, {
 "base": "Area",
-"class": "Interactor",
+"class": "InteractorArea",
 "language": "GDScript",
-"path": "res://Script/GameLogic/Interact/Interactor/Interactor.gd"
+"path": "res://Script/GameLogic/Interact/Interactor/InteractorArea.gd"
 }, {
 "base": "AComponent",
 "class": "InteractorComponent",
@@ -467,7 +467,7 @@ _global_script_class_icons={
 "InspectorGadgetBase": "",
 "InspectorGadgetUtil": "",
 "Interactable": "",
-"Interactor": "",
+"InteractorArea": "",
 "InteractorComponent": "",
 "InteractorRayCast": "",
 "LodModel": "",

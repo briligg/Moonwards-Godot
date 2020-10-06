@@ -2,15 +2,20 @@ extends AComponent
 class_name InteractorComponent
 
 onready var interactor_ray : InteractorRayCast = $InteractorRayCast
+onready var interactor_area : InteractorArea = $InteractorArea
 
 #These allow us to call signals using actual variables instead of strings.
 #const FOCUS_ROLLBACK : String = "focus_returned"
 const INTERACTABLE_ENTERED_REACH : String = "interactable_entered_reach"
 const INTERACTABLE_LEFT_REACH : String = "interactable_left_reach"
+const INTERACTABLE_ENTERED_AREA_REACH : String = "interactable_entered_area_reach"
+const INTERACTABLE_LEFT_AREA_REACH : String = "interactable_left_area_reach"
 
 #signal focus_returned()
 signal interactable_entered_reach(interactable)
 signal interactable_left_reach(interactable)
+signal interactable_entered_area_reach(interactable)
+signal interactable_left_area_reach(interactable)
 
 #Call grab_focus immediately at startup.
 export var grab_focus_at_ready : bool = true
@@ -41,12 +46,20 @@ func _ready() -> void :
 	interactor_ray.connect("new_interactable", self, "relay_signal", [INTERACTABLE_ENTERED_REACH])
 	interactor_ray.connect("no_interactable_in_reach", self, "relay_signal", [null, INTERACTABLE_LEFT_REACH])
 	
+	#Listen for the Interactor Area signals.
+	interactor_area.connect("interactable_entered_area", self, "relay_signal", [INTERACTABLE_ENTERED_AREA_REACH])
+	interactor_area.connect("interactable_left_area", self, "relay_signal", [INTERACTABLE_LEFT_AREA_REACH])
+	
 	if grab_focus_at_ready :
 		grab_focus()
 
-#Return what interactables are in reach.
+#Return the closest interactable.
 func get_interactable() -> Interactable :
 	return interactor_ray.get_interactable()
+
+#Return the Interactables that the Area is colliding with.
+func get_interactables() -> Array :
+	return interactor_area.get_interactables()
 
 #Become the current Interactor in use.
 func grab_focus() -> void:
