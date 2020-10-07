@@ -11,6 +11,7 @@ export(Mesh) var stair_bottom
 export(float) var stair_step_length
 export(float) var stair_bottom_length
 export(float) var stair_width
+export(float) var stair_top_length = 1
 export(int) var stairs_step_count
 
 export(bool) var generate_editor_visual = false setget test_in_editor
@@ -60,10 +61,11 @@ func generate_stairs():
 	bottom.transform.origin.y = -1 * stairs_step_count * stair_step_length
 	
 func update_collision():
+	var col_length = _total_length + stair_top_length
 	$CollisionShape.scale.x = stair_width
 	$CollisionShape.scale.z = stair_width
-	$CollisionShape.scale.y = _total_length / 2
-	$CollisionShape.transform.origin.y = -_total_length / 2
+	$CollisionShape.scale.y = col_length / 2
+	$CollisionShape.transform.origin.y = (-col_length / 2) + stair_top_length
 	
 	var step_position = $CollisionShape.global_transform.origin
 	var max_y = step_position.y + $CollisionShape.scale.y
