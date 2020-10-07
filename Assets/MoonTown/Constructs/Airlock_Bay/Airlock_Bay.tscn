@@ -110,6 +110,6 @@ extents = Vector3( 83.2733, 9.83605, 13.9452 )
 enable_shadows = true
 
 [node name="GarageAirlock-Tooltip" parent="." index="11" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.7512, -4.98163, -5.1929 )
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -31.8032, 5.38868, 0.029593 )
 bbtext_fields = PoolStringArray( "This airlock defines the maximum size of an object that can be brought into the habitats. It can fit something over 8 meters wide and tall, and up to 20 m long. Almost everything inside the habs was made outside, on the surface and in the factories, so this airlock is used fairly often to bring in some large piece of infrastructure - water tanks and treatment equipment for the neighborhoods, the artificial gravity carousels (in pieces), large heat exchangers (like the tubular ones in the next hab). People\'s homes are fabricated outside and brought in through here, usually in one piece. The lower floor of the Airlock Bay is mostly used by robots handling traffic of this kind. Sometimes they need to prepare an item for further transport through the habs, or do some assembly that\'s easier done in this out-of-the-way area. ", "Occasionally, some machine will be brought into this airlock so that it can be examined and worked on directly by a person in a shirt-sleeve environment. As robots and androids advance, this is rarely necessary, but it provides a more intuitive work environment the engineers sometimes prefer." )
 title = "The Garage Airlock"
