@@ -62,25 +62,21 @@ func _ready() -> void :
 			var new_child = child #Errors can occur from appending for variables to arrays.
 			move_children.append(new_child)
 	
+	#Move all collision nodes found in the root node to the InteractorArea.
 	for child in move_children :
 		remove_child(child)
 		interactor_area.add_child(child)
 	
+	#Activate the InteractorArea or remove it from the scene tree.
 	if has_collision :
-#		call_deferred("_reparent_col", move_children)
 		interactor_area.connect("interactable_entered_area", self, "relay_signal", [INTERACTABLE_ENTERED_AREA_REACH])
 		interactor_area.connect("interactable_left_area", self, "relay_signal", [INTERACTABLE_LEFT_AREA_REACH])
 	else :
 		interactor_area.queue_free()
+		interactor_area = null
 	
 	if grab_focus_at_ready :
 		grab_focus()
-
-#Move a collision shape from the root to Area.
-func _reparent_col(col_shapes : Array) -> void :
-	for child in col_shapes :
-		remove_child(child)
-		interactor_area.add_child(child)
 
 #Return the closest interactable.
 func get_interactable() -> Interactable :
@@ -88,6 +84,8 @@ func get_interactable() -> Interactable :
 
 #Return the Interactables that the Area is colliding with.
 func get_interactables() -> Array :
+	if interactor_area == null :
+		return []
 	return interactor_area.get_interactables()
 
 #Become the current Interactor in use.
