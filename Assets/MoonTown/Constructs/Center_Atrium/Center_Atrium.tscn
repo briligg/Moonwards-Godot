@@ -25,8 +25,24 @@ propagation = 0.66
 
 [node name="MirrorWindow-Tooltip" parent="." index="0" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5053, 4.62928, -77.8893 )
-bbtext_fields = PoolStringArray( "The giant mirror outside this window is angled at 45 degrees so that it always reflects the Earth towards the interior of this habitat. The Earth moves very little in the sky because the moon is tidally locked, with one side always facing Earth. Here on the moon\'s equator, it stays almost straight above you, wobbling around by 15 degrees or so over the months. It would always be visible in this mirror. This design means that very little of the sky is visible directly, and there are several meters of packed dirt between a viewer and the sky in most  directions. If you look up at the patch of sky you can view straight on, any cosmic ray particles coming from there are zooming through you - probably without stopping until they also go through the floor of this hab and continue on for a meter or two. ", "Being zoomed through by a cosmic ray isn\'t that dangerous. What\'s dangerous is long-term exposure to the cascades of other particles with rather high energy that are produced once a cosmic ray hits an atomic nucleus. Those particles are coming at you from the areas around the window well that have less than 5 or 6 meters of packed dirt around them. Mostly from the areas with 1 to 3 meters of dirt blocking the path. That\'s enough dirt for a cosmic ray to have probably smashed something apart, but not enough dirt after that for all the smashed bits to have smashed still other bits, losing energy and finally being absorbed into some other atom. When those hurling sub-atomic particles fly through you, they leave a trail of ionized particles. That is to say, they either pull electrons off of the atoms they pass near or add extra ones to them, making them reactive.", "Unplanned chemical reactions in your body are a bad thing. Your body is actually pretty good at handling that, it has to do that all the time. Free radicals are just something best kept to a minimum. What your body doesn\'t know how to repair is the avalanche of destruction along the path of the particularly high energy particles in the cascade. Those particles are capable of ripping apart strands of DNA, punching holes in cell walls, and breaking any organelles in their way as they zoom through. We don\'t really know what chronic exposure to something like that would do. They\'ve put a few poor little mice in the path of the beam of a particle accelerator for a few hours to see what it did to them. How much can be determined from extrapolating that to humans is limited. At any rate, it wasn\'t good. So, you can gaze at the Earth out this window for a while because most places in these habitats you are very well protected. But don\'t, like, sleep here, or put your work desk beside it, or something like that. " )
+bbtext_fields = PoolStringArray( "The giant mirror outside this window is angled at 45 degrees so that it always reflects the Earth towards the interior of this habitat. The Earth moves very little in the sky because the moon is tidally locked, with one side always facing Earth. Here on the moon\'s equator, it stays almost straight above you, wobbling around by 15 degrees or so over the months. It would always be visible in this mirror. This design means that very little of the sky is visible directly. There are several meters of packed dirt between a viewer and the sky in most  directions, enough to protect you from cosmic rays. If you look up at the patch of sky you can view straight on, any cosmic ray particles coming from there are zooming through you - probably without stopping until they also go through the floor of this hab and continue on for a meter or two. ", "Being zoomed through by most cosmic ray particles leads to little damage. It\'s the small number of them that are HZE - heavy, fast ones - that do the damage that\'s worrying. The other dangerous exposure is to the cascades of other particles that are produced once a cosmic ray hits an atomic nucleus. Those particles are coming at you from the areas around the window well that have less than 5 or 6 meters of packed dirt around them. Mostly from the areas with 1 to 3 meters of dirt blocking the path. That\'s enough dirt for a cosmic ray to have probably smashed something apart, but not enough dirt after that for all the smashed bits to have smashed still other bits, losing energy and finally being absorbed into some other atom. If a shower of such particles hits you, the damage is more because there are so many particles.", "What is the damage they do\? They create ions along the path they take through your body. That is to say, they either pull electrons off of the atoms they pass near or add extra ones to them, making them reactive. Unplanned chemical reactions in your body are a bad thing. Your body has systems to repair them, as they happen regulary. But if there are too many of them it will fall behind on the cleanup, and then damage can accumulate. And then there is the matter that ion trails caused by HZE are so intense and focussed, they can snap strands of DNA and otherwise play havoc with whatever cells are in their way.", "We don\'t really know what chronic exposure to these things would do. They\'ve put a few poor little mice in the path of a particle accelerator beam for a few hours to see what it did to them. How much can be determined from extrapolating that to humans is limited. At any rate, it wasn\'t good - cancer risk and neurological damage increase with dose. So, you can gaze at the Earth out this window for a while because most places in these habitats you are very well protected. But don\'t, like, sleep here, or something.                **Ref: [url]https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6275046/[/url]" )
 title = "Viewing the sky by mirror"
+
+[node name="RadBlind-Tooltip" parent="." index="1" instance=ExtResource( 9 )]
+transform = Transform( -0.542236, 0, -0.840226, 0, 1, 0, 0.840226, 0, -0.542236, 8.20142, -10.688, -69.0069 )
+bbtext_fields = PoolStringArray( "The design of the roof above creates a direct view of the sky while also protecting you from roughly 90% of the cosmic ray damage you\'d get if the arches weren\'t there. The amount of sunlight that enters between the arches is enough to grow many kinds of plants in this space, including crops. That is true all year, and through most of each day. The arches are aligned to the path of the sun in the sky. That path varies little over the seasons as the moon is barely tilted at all on its axis. The psychological benefit to Moon Town citizens of sun on their faces and a view of the sky is significant, the more so the longer they live here.", "The arches have a skin of 5 cm of plastic on the top and bottom, the rest is basalt stone. Plastic contains a lot of hydrogen, which is good at absorbing loose subatomic particles created by passing cosmic rays. The sheer mass of the basalt slows down and blocks cosmic rays enough that what makes it through can be sopped up by the plastic. You\'ll  notice that from most directions, a particle would have to pass through a lot of stone and plastic before reaching you, meaning that few of them do.                          When a solar storm strikes Moon Town, the inner portion of the arches slide across, blocking the great majority of the x-rays and gamma rays of these storms such that the remainder isn\'t a concern. ", "Within the stone there are channels containing cables of lunar basalt fiber that hold the roof down. The outward pressure of the air is the principle force acting on these arches. There is 800 g per square cm pressing up (11.4 psi). As the gravity is so low, the weight of the arches pressing down doesn\'t come close to counteracting that. Stone is a poor material for supporting tension loads, so the cables endure the tension instead." )
+title = "Radiation Blind Roofs"
+
+[node name="RadBlind-Tooltip-Light" type="OmniLight" parent="RadBlind-Tooltip" index="2"]
+transform = Transform( 1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, 1, 0, 1.3896, 0 )
+
+[node name="CenterAtriumPlan-Tooltip" parent="." index="2" instance=ExtResource( 9 )]
+transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 19.7032, -10.6869, -71.4596 )
+bbtext_fields = PoolStringArray( "When the town was young, crops were grown here. After the town expanded and built the Farm Atrium habitats, it was converted into a space for the businesses that had started to set up offices here. The configuration of this hab - two sides with a set of massive columns between, containing 13 floors - was originally for the sake of radiation control, thermal management (they contain the water pipes that absorb heat and carry it to the radiators), and for access to the moveable plant beds that were rotated in and out of the light over the day. After those were moved, the spaces between the columns were nicely suited for being individual offices - 152 of them.", "Now that Moon Town has sophisticated industrial infrastructure, a wide variety of companies are here. Some of these offices are fictional portrayals of enterprises that will really appear once infrastructure on the moon is adequate. Some are held by real organizations and businesses working to get us to that day. Setting up offices here is one of the options open to advanced users who want to show off their space development concepts and projects, in a medium like no other.", "The foundation floor, at the bottom, is reserved for displaying large models. They might be proposed additions to Moon Town\'s infrastructure, enriching the portrayal of how technology will work on the future moon. They might be models of the real-world technology being developed to allow us to build on the moon. They might be for an event that uses the power of this medium to enlighten a broader audience about space development.                          Contact us if you have an interest in using this space - for space :) Email moonwards1@gmail.com" )
+title = "The Role of Center Atrium"
+
+[node name="OmniLight" type="OmniLight" parent="CenterAtriumPlan-Tooltip" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20783, 0.554565 )
 
 [node name="CenterAtrium_Structures_LOD0" parent="LOD0" index="0"]
 cast_shadow = 2
@@ -38,14 +54,14 @@ material/3 = ExtResource( 5 )
 material/4 = ExtResource( 6 )
 material/5 = ExtResource( 8 )
 
-[node name="OmniLight" type="OmniLight" parent="." index="2"]
+[node name="OmniLight" type="OmniLight" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9486, -1.73356, -29.8064 )
 light_indirect_energy = 0.47
 light_specular = 0.1
 omni_range = 76.0
 omni_attenuation = 2.0
 
-[node name="GIProbe" type="GIProbe" parent="." index="3"]
+[node name="GIProbe" type="GIProbe" parent="." index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39774, 1.54666, -30.6783 )
 extents = Vector3( 45.6825, 30.536, 52.471 )
 energy = 0.17
@@ -64,13 +80,13 @@ transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0
 [node name="Hexpane_Window" parent="Markers/Marker_HexpaneWindow003" index="0" instance=ExtResource( 2 )]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 
-[node name="LOD1" parent="." index="6"]
+[node name="LOD1" parent="." index="8"]
 visible = false
 
-[node name="LOD2" parent="." index="7"]
+[node name="LOD2" parent="." index="9"]
 visible = false
 
-[node name="ReflectionProbe" type="ReflectionProbe" parent="." index="8"]
+[node name="ReflectionProbe" type="ReflectionProbe" parent="." index="10"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8179, -29.9222 )
 max_distance = 10.0
 extents = Vector3( 44.0007, 28.3008, 50.1673 )
