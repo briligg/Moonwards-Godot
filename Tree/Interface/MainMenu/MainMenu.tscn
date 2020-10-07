@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Tree/Interface/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Interface/Textures/menu_splash.png" type="Texture" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Theme_Header.tres" type="Theme" id=16]
 [ext_resource path="res://Tree/Interface/MainMenu/MenuParent.gd" type="Script" id=17]
 [ext_resource path="res://SceneComponent/Interface/MainMenu/Destination.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Tree/Interface/MainMenu/QuitMenu.gd" type="Script" id=19]
 [ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/Settings.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/Controls_settings.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Empty.tres" type="StyleBox" id=22]
@@ -379,6 +380,7 @@ margin_bottom = -2.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
+script = ExtResource( 19 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Quit"]
 margin_top = 374.0
