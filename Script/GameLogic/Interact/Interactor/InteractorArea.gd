@@ -1,5 +1,5 @@
 extends Area
-class_name Interactor
+class_name InteractorArea
 
 """
 	Gives a node the ability to interact with interactables.
@@ -77,7 +77,7 @@ func get_closest_interactable() -> Interactable :
 	return closest_interactable
 
 #Return what interactables can be interacted with
-func get_potential_interacts() -> Array :
+func get_interactables() -> Array :
 	return interactables
 
 #Interact with the given interactable.

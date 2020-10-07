@@ -2,18 +2,26 @@ extends AComponent
 class_name InteractorComponent
 
 onready var interactor_ray : InteractorRayCast = $InteractorRayCast
+onready var interactor_area : InteractorArea = $InteractorArea
 
 #These allow us to call signals using actual variables instead of strings.
 #const FOCUS_ROLLBACK : String = "focus_returned"
 const INTERACTABLE_ENTERED_REACH : String = "interactable_entered_reach"
 const INTERACTABLE_LEFT_REACH : String = "interactable_left_reach"
+const INTERACTABLE_ENTERED_AREA_REACH : String = "interactable_entered_area_reach"
+const INTERACTABLE_LEFT_AREA_REACH : String = "interactable_left_area_reach"
 
 #signal focus_returned()
 signal interactable_entered_reach(interactable)
 signal interactable_left_reach(interactable)
+signal interactable_entered_area_reach(interactable)
+signal interactable_left_area_reach(interactable)
 
 #Call grab_focus immediately at startup.
 export var grab_focus_at_ready : bool = true
+
+#Determines if the RayCast Interactor should be active or not.
+export var disable_ray_cast : bool = false
 
 var has_focus : bool = false
 
@@ -38,15 +46,49 @@ func _make_hud_display_interactable(interactable : Interactable = null) -> void 
 func _ready() -> void :
 	interactor_ray.owning_entity = self.entity
 	
-	interactor_ray.connect("new_interactable", self, "relay_signal", [INTERACTABLE_ENTERED_REACH])
-	interactor_ray.connect("no_interactable_in_reach", self, "relay_signal", [null, INTERACTABLE_LEFT_REACH])
+	#Listen to the Ray Cast.
+	if disable_ray_cast :
+		interactor_ray.set_activity(false)
+	else :
+		interactor_ray.connect("new_interactable", self, "relay_signal", [INTERACTABLE_ENTERED_REACH])
+		interactor_ray.connect("no_interactable_in_reach", self, "relay_signal", [null, INTERACTABLE_LEFT_REACH])
+	
+	#Listen for the Interactor Area signals if there is a collision shape child.
+	var has_collision : bool
+	var move_children : Array = []
+	for child in get_children() :
+		if child is CollisionShape || child is CollisionPolygon :
+			has_collision = true
+			var new_child = child #Errors can occur from appending for variables to arrays.
+			move_children.append(new_child)
+	
+	for child in move_children :
+		remove_child(child)
+		interactor_area.add_child(child)
+	
+	if has_collision :
+#		call_deferred("_reparent_col", move_children)
+		interactor_area.connect("interactable_entered_area", self, "relay_signal", [INTERACTABLE_ENTERED_AREA_REACH])
+		interactor_area.connect("interactable_left_area", self, "relay_signal", [INTERACTABLE_LEFT_AREA_REACH])
+	else :
+		interactor_area.queue_free()
 	
 	if grab_focus_at_ready :
 		grab_focus()
 
-#Return what interactables are in reach.
+#Move a collision shape from the root to Area.
+func _reparent_col(col_shapes : Array) -> void :
+	for child in col_shapes :
+		remove_child(child)
+		interactor_area.add_child(child)
+
+#Return the closest interactable.
 func get_interactable() -> Interactable :
 	return interactor_ray.get_interactable()
+
+#Return the Interactables that the Area is colliding with.
+func get_interactables() -> Array :
+	return interactor_area.get_interactables()
 
 #Become the current Interactor in use.
 func grab_focus() -> void:

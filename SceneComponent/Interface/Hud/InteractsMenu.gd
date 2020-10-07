@@ -15,13 +15,12 @@ var interactor_history_pointers : Array = []
 
 #Listen for when interacts are possible.
 func _ready() -> void :
-	pass
-#	Signals.Hud.connect(Signals.Hud.NEW_INTERACTOR_GRABBED_FOCUS, self, "_new_interactor")
+	Signals.Hud.connect(Signals.Hud.NEW_INTERACTOR_GRABBED_FOCUS, self, "_new_interactor")
 
 #Called from a signal. One of the buttons corresponding to the interactables has been pressed.
 func _button_pressed(interactable : Node) -> void :
 	#Interact with desired interactable
-	interactor_component.menu_interact_request(interactable)
+	interactor_component.player_requested_interact(interactable)
 
 #Remove all buttons and separators for Interactables.
 func _clear_button_parent() -> void :
@@ -157,16 +156,14 @@ func _interactable_title_changed(new_title : String, button : Button) -> void :
 func _new_interactor(new_interactor : InteractorComponent) -> void :
 	if interactor_component != null :
 		interactor_component.lost_focus()
-#		interactor_component.disconnect(interactor_component.FOCUS_ROLLBACK, self, "_rollback_interactor_focus")
-		interactor_component.disconnect(interactor_component.INTERACTABLE_ENTERED_REACH, self, "_interactable_entered")
-		interactor_component.disconnect(interactor_component.INTERACTABLE_LEFT_REACH, self, "_interactable_left")
+		interactor_component.disconnect(interactor_component.INTERACTABLE_ENTERED_AREA_REACH, self, "_interactable_entered")
+		interactor_component.disconnect(interactor_component.INTERACTABLE_LEFT_AREA_REACH, self, "_interactable_left")
 		
 		#Clear whatever Interactables are present from the old Interactor.
 		_clear_button_parent()
 		
-#	new_interactor.connect(new_interactor.FOCUS_ROLLBACK, self, "_rollback_interactor_focus")
-	new_interactor.connect(new_interactor.INTERACTABLE_ENTERED_REACH, self, "_interactable_entered")
-	new_interactor.connect(new_interactor.INTERACTABLE_LEFT_REACH, self, "_interactable_left")
+	new_interactor.connect(new_interactor.INTERACTABLE_ENTERED_AREA_REACH, self, "_interactable_entered")
+	new_interactor.connect(new_interactor.INTERACTABLE_LEFT_AREA_REACH, self, "_interactable_left")
 	interactor_component = new_interactor
 	
 	#Add the new Interactables to the scene tree.
