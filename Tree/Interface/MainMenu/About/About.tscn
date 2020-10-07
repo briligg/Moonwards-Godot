@@ -52,17 +52,10 @@ text = "Team:
 Contributors: 
 	Pavel \"MolbOrg\" Lixonov
 	Hendrik \"Gyrth\" Weirsma
+	Adrian \"Siuda\" Winkler
 	Manuel \"TheDuriel\" Fischer
 	David \"Hevedy\" Palacios
-	Pedro \"Paavs\" Oliveira
-	Adrian \"Siuda\" Winkler
-	
-	
-	
-	
-	
-
-Version: 0.0.1"
+	Pedro \"Paavs\" Oliveira"
 
 [node name="License" type="VBoxContainer" parent="Parent"]
 margin_left = 955.0

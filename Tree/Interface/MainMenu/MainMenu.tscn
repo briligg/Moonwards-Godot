@@ -159,7 +159,6 @@ __meta__ = {
 }
 
 [node name="Destination" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 2.0
@@ -265,6 +264,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Settings" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 2.0
@@ -412,17 +412,17 @@ theme = ExtResource( 15 )
 
 [node name="Label_Version" type="Label" parent="VBoxContainer/AboutSection"]
 margin_top = 4.0
-margin_right = 1545.0
+margin_right = 1488.0
 margin_bottom = 26.0
 size_flags_horizontal = 3
 text = "Game Version 0.0.1"
 
 [node name="Label_Info" type="Label" parent="VBoxContainer/AboutSection"]
-margin_left = 1549.0
+margin_left = 1492.0
 margin_top = 4.0
 margin_right = 1880.0
 margin_bottom = 26.0
-text = "Created by Kim, 2019-2020, MIT Licensed"
+text = "Created by Kim Holder, 2019-2020, MIT Licensed"
 
 [node name="TRButtons" type="HBoxContainer" parent="VBoxContainer"]
 anchor_left = 1.0
