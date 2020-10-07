@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Tree/Interface/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Interface/Textures/menu_splash.png" type="Texture" id=2]
@@ -24,6 +24,8 @@
 [ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Empty.tres" type="StyleBox" id=22]
 [ext_resource path="res://Tree/Interface/MainMenu/Style/MM_PanelMain.tres" type="StyleBox" id=23]
 [ext_resource path="res://Tree/Interface/MainMenu/SettingsMenu.gd" type="Script" id=24]
+[ext_resource path="res://addons/joyeux_npc_editor/src/interface/NPCEditorSuite.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Tree/Interface/MainMenu/Apps.gd" type="Script" id=26]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.588235 )
@@ -205,7 +207,6 @@ margin_right = 1876.0
 margin_bottom = 773.0
 
 [node name="Apps" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 2.0
@@ -214,30 +215,31 @@ margin_right = -2.0
 margin_bottom = -2.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource( 26 )
 
 [node name="HBoxContainer_Apps_Tab" type="HBoxContainer" parent="VBoxContainer/TabContainer/Apps"]
-margin_right = 1856.0
+margin_right = 1876.0
 margin_bottom = 45.0
 size_flags_horizontal = 3
 theme = ExtResource( 16 )
 custom_constants/separation = 20
 
 [node name="Button_NPCEditor" type="Button" parent="VBoxContainer/TabContainer/Apps/HBoxContainer_Apps_Tab"]
-margin_right = 302.0
+margin_right = 306.0
 margin_bottom = 45.0
 size_flags_horizontal = 3
 text = "NPC EDITOR"
 
 [node name="Button_OtherEditor" type="Button" parent="VBoxContainer/TabContainer/Apps/HBoxContainer_Apps_Tab"]
-margin_left = 322.0
-margin_right = 625.0
+margin_left = 326.0
+margin_right = 632.0
 margin_bottom = 45.0
 size_flags_horizontal = 3
 text = "OTHER EDITOR"
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/TabContainer/Apps/HBoxContainer_Apps_Tab"]
-margin_left = 645.0
-margin_right = 1856.0
+margin_left = 652.0
+margin_right = 1876.0
 margin_bottom = 45.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -246,22 +248,18 @@ custom_styles/separator = ExtResource( 22 )
 
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer/TabContainer/Apps"]
 margin_top = 49.0
-margin_right = 1856.0
-margin_bottom = 772.0
+margin_right = 1876.0
+margin_bottom = 773.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 23 )
 tabs_visible = false
 
-[node name="VBoxContainer_NPCEditor" type="VBoxContainer" parent="VBoxContainer/TabContainer/Apps/TabContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="NPCEditorSuite" parent="VBoxContainer/TabContainer/Apps/TabContainer" instance=ExtResource( 25 )]
 margin_left = 2.0
 margin_top = 2.0
 margin_right = -2.0
 margin_bottom = -2.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="Settings" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
 visible = false
