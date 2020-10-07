@@ -231,6 +231,8 @@ script = ExtResource( 2 )
 
 [resource]
 code = "shader_type spatial;
+render_mode specular_schlick_ggx;
+
 uniform vec4 Color_A : hint_color;
 uniform vec3 UVScale_A;
 uniform sampler2D Albedo_A;

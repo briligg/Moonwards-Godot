@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Center_Atrium/Center_Atrium.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Hexpane_Window/Hexpane_Window.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/MoonTown/Constructs/Center_Atrium/White_Semigloss.material" type="Material" id=7]
 [ext_resource path="res://Assets/MoonTown/Constructs/Center_Atrium/BloodRed_Matte.material" type="Material" id=8]
 [ext_resource path="res://SceneComponent/Display/Tooltip/TooltipButton.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/MoonTown/Models/Perseverance_Rover/Perseverance.tscn" type="PackedScene" id=10]
 
 [sub_resource type="GIProbeData" id=1]
 bounds = AABB( -45.6825, -30.536, -52.471, 91.365, 61.072, 104.942 )
@@ -75,3 +76,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8179, -29.9222 )
 max_distance = 10.0
 extents = Vector3( 44.0007, 28.3008, 50.1673 )
 box_projection = true
+
+[node name="Perseverance" parent="." index="9" instance=ExtResource( 10 )]
+transform = Transform( -0.492864, 0, -0.870106, 0, 1, 0, 0.870106, 0, -0.492864, 20.7524, -26.8682, -32.7712 )
+
+[node name="OmniLight" type="OmniLight" parent="Perseverance" index="38"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.14063, 0 )
+shadow_enabled = true
