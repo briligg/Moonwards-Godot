@@ -64,9 +64,8 @@ func dock_with(rover):
 	pod.transform = target_xfm
 	pod.transform.origin.y -= HALF_HEIGHT + .1
 	for col in collision_shapes:
-		_reparent(col, rover)
-	_reparent(hatch_collision, rover)
-#	collision.transform.origin.y = target_xfm.origin.y - HALF_HEIGHT + .1
+		_reparent(col, rover, true)
+	_reparent(hatch_collision, rover, true)
 	docked_to = rover
 	is_docked = true
 	
@@ -79,17 +78,14 @@ func dock_with(rover):
 
 func undock():
 	$Interactable.title = "Dock Passenger Pod"
-	_reparent(pod, orig_parent)
+	_reparent(pod, orig_parent, true)
 	
 	pod.global_transform = docked_to.get_node("DockLatch").global_transform
 	pod.global_transform.origin.y -= HALF_HEIGHT + .1
 	
 	for col in collision_shapes:
 		_reparent(col, pod, true)
-#	collision.transform.origin = Vector3.ZERO
-	# Offset because the pivot is broken on the pod model
-#	collision.transform.origin.z = -1
-	
+
 	var hxfm = hatch_collision.global_transform
 	_reparent(hatch_collision, pod)
 	hatch_collision.global_transform = hxfm
@@ -164,11 +160,11 @@ func _on_area_exited(area):
 			$Interactable.display_info = ""
 			_dock_door_interactable = null
 
-func _reparent(node, new_parent, sync_pos = false):
+func _reparent(node, new_parent, keep_world_pos = false):
 	var pos = node.global_transform.origin
 	var p = node.get_parent()
 	p.remove_child(node)
 	new_parent.add_child(node)
 	node.owner = new_parent
-	if sync_pos:
+	if keep_world_pos:
 		node.global_transform.origin = pos
