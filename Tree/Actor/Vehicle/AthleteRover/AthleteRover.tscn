@@ -29,7 +29,7 @@ script = ExtResource( 10 )
 disable_ray_cast = true
 
 [node name="CollisionShape" type="CollisionShape" parent="Interactor"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.28379, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.27213, 0 )
 shape = SubResource( 1 )
 
 [node name="RoverRideInteractable" parent="." instance=ExtResource( 8 )]
