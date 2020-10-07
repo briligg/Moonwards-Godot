@@ -220,9 +220,10 @@ func stop_climb_stairs(phys_state : PhysicsDirectBodyState, is_stairs_top) -> vo
 #Eventually we need to make this work with delta.
 func update_stairs_climbing(_delta : float, phys_state : PhysicsDirectBodyState) -> void :
 	var kb_pos = entity.global_transform.origin
-	
+	# Offset from the top of the stairs to climb off when reached
+	var top_offset = 2
 	#Check for next climb point.
-	if entity.climb_point + 1 < entity.stairs.climb_points.size() and kb_pos.y > entity.stairs.climb_points[entity.climb_point].y:
+	if entity.climb_point + 1 < entity.stairs.climb_points.size() - top_offset and kb_pos.y > entity.stairs.climb_points[entity.climb_point].y:
 		entity.climb_point += 1
 	#Check for previous climb point.
 	elif entity.climb_point - 1 >= 0 and kb_pos.y < entity.stairs.climb_points[entity.climb_point - 1].y:
@@ -232,7 +233,7 @@ func update_stairs_climbing(_delta : float, phys_state : PhysicsDirectBodyState)
 	var input_direction = entity.input.z
 	
 	#Stop climbing at the top of the stairs.
-	if entity.climb_point + 1 >= entity.stairs.climb_points.size() and kb_pos.y > entity.stairs.climb_points[entity.climb_point].y and not input_direction <= 0.0:
+	if entity.climb_point + 1 >= entity.stairs.climb_points.size() - top_offset and kb_pos.y > entity.stairs.climb_points[entity.climb_point].y and not input_direction <= 0.0:
 		stop_climb_stairs(phys_state, true)
 		return
 	
