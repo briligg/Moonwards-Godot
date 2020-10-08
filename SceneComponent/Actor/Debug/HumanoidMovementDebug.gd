@@ -4,7 +4,7 @@ class_name HumanoidMovementDebug
 var is_flying: bool = false
 var movement_input: Vector3 = Vector3()
 export(float) var fly_speed = 6
-var fly_speed_mul = 1
+var fly_speed_mul = 5
 
 # Debug variables
 var dbg_speed: float = 0.0

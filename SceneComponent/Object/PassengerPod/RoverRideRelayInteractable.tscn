@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Script/GameLogic/Interact/Interactable/Interactable.gd" type="Script" id=1]
+[ext_resource path="res://SceneComponent/Object/PassengerPod/RoverRideRelayInteractable.gd" type="Script" id=2]
+
+[node name="RoverRideRelayInteractable" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="RoverDetection" type="Area" parent="."]
+monitorable = false
+
+[node name="Interactable" type="Area" parent="."]
+script = ExtResource( 1 )

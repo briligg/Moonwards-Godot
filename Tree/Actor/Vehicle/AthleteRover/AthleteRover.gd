@@ -1,5 +1,4 @@
 extends VehicleEntity
-
 # Animation states, more can be added, used by the animation_controller
 enum Anim_States {
 	NONE,
