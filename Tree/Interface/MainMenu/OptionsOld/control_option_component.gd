@@ -5,6 +5,9 @@ var reading = false
 var current_scancode = null
 onready var titlelabel = get_node("Label")
 
+#What action to edit when setting input.
+export var action_to_edit : String = "action_name"
+
 func update_labels():
 	#Updates text from labels
 	get_node("Button").text = OS.get_scancode_string(current_scancode)
@@ -58,8 +61,8 @@ func _on_change_control_pressed():
 func _on_Popup_confirmed():
 	var Event = InputEventKey.new()
 	Event.scancode = current_scancode
-	InputMap.action_erase_event (str(name), InputMap.get_action_list(str(name))[0])
-	InputMap.action_add_event (str(name), Event)
+	InputMap.action_erase_event (str(action_to_edit), InputMap.get_action_list(str(name))[0])
+	InputMap.action_add_event (str(action_to_edit), Event)
 	get_node("Button").text = OS.get_scancode_string(current_scancode)
 	update_labels()
 	reading = false

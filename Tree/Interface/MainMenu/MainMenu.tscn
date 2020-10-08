@@ -207,6 +207,7 @@ margin_right = 1876.0
 margin_bottom = 773.0
 
 [node name="Apps" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 2.0
