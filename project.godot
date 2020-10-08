@@ -209,6 +209,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Manager/SignalsManager/HudSignals.gd"
 }, {
+"base": "AMovementController",
+"class": "HumanoidMovement",
+"language": "GDScript",
+"path": "res://SceneComponent/Actor/Humanoid/HumanoidMovement.gd"
+}, {
 "base": "AComponent",
 "class": "HumanoidMovementDebug",
 "language": "GDScript",
@@ -253,11 +258,6 @@ _global_script_classes=[ {
 "class": "InteractorRayCast",
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/InteractorRayCast.gd"
-}, {
-"base": "AMovementController",
-"class": "KinematicMovement",
-"language": "GDScript",
-"path": "res://SceneComponent/Actor/Humanoid/HumanoidMovement.gd"
 }, {
 "base": "Spatial",
 "class": "LodModel",
@@ -348,6 +348,11 @@ _global_script_classes=[ {
 "class": "VehicleEntity",
 "language": "GDScript",
 "path": "res://Script/Entity/VehicleEntity.gd"
+}, {
+"base": "Interactable",
+"class": "VerticalStairs",
+"language": "GDScript",
+"path": "res://SceneComponent/Utilities/VerticalStairs/VerticalStairs.gd"
 }, {
 "base": "VisualShaderNodeCustom",
 "class": "VisualShaderNodeCheapContrast",
@@ -455,6 +460,7 @@ _global_script_class_icons={
 "GameClient": "",
 "GameServer": "",
 "HudSignals": "",
+"HumanoidMovement": "",
 "HumanoidMovementDebug": "",
 "InputController": "",
 "InspectorGadget": "",
@@ -464,7 +470,6 @@ _global_script_class_icons={
 "InteractorArea": "",
 "InteractorComponent": "",
 "InteractorRayCast": "",
-"KinematicMovement": "",
 "LodModel": "",
 "LodSignals": "",
 "MenuSignals": "",
@@ -483,6 +488,7 @@ _global_script_class_icons={
 "TextPopup": "",
 "TooltipData": "",
 "VehicleEntity": "",
+"VerticalStairs": "",
 "VisualShaderNodeCheapContrast": "",
 "VisualShaderNodeColorHue": "",
 "VisualShaderNodeDistanceWS": "",
