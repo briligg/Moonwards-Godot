@@ -2,7 +2,7 @@ extends AComponent
 class_name NPCInput
 """This node should be child of a KinematicBody"""
 # Holds extra information and our character
-var Agent : GSAIKinematicBody3DAgent 
+var Agent : GSAIRigidBody3DAgent 
 export (float, 0, 100, 5) var linear_speed_max := 10.0
 export (float, 0, 100, 0.1) var linear_acceleration_max := 1.0 
 export (float, 0, 50, 0.1) var arrival_tolerance := 0.7
@@ -75,7 +75,7 @@ func _enter_tree():
 	var world = get_tree().get_nodes_in_group("Navigator")
 	if world.size() > 0:
 		world_ref = world [0] 
-	Agent = GSAIKinematicBody3DAgent.new(get_parent())
+	Agent = GSAIRigidBody3DAgent.new(get_parent())
 	var NPCAgents = []
 	for node in get_tree().get_nodes_in_group("NPC"):
 		if node.get("Agent"):

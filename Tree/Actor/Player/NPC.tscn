@@ -15,7 +15,10 @@
 radius = 0.287522
 height = 1.04841
 
-[node name="NPC" type="KinematicBody"]
+[node name="NPC" type="RigidBody"]
+mode = 2
+mass = 10.0
+can_sleep = false
 script = ExtResource( 6 )
 enable_on_spawn = true
 
