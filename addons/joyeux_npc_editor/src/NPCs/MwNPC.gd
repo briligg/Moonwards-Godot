@@ -97,6 +97,10 @@ func trigger_dialog(input, signals, variables):
 	actor.add_child(dialog_display)
 	dialog_display.connect("finished", dialog_display, "queue_free")
 
+func request_workstation(input, signals, variables):
+	var filter = _get_variable_from_port(variables, 1)
+	navigator.world_ref.request_workstation(worker)
+
 func find_workstation(input, signals, variables):
 	var filter = _get_variable_from_port(variables, 1)
 	var destination = navigator.world_ref.get_nearest_workstation(actor.translation, filter).position

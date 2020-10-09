@@ -119,7 +119,16 @@ var _functions = {
 			{"_label_title":"Station Position","_type":TYPE_VECTOR3},
 			]
 	},
-	
+	"request_workstation" : {
+		"_category" : "actions",
+		"_input_ports" : [
+			{"_label_title":"Trigger","_type":Nodes.TYPE_ANY},
+			{"_label_title": "_s_enum_dropdown_category_WORKSTATION", "_type":TYPE_NIL}
+			],
+		"_output_ports" : [
+			{"_label_title":"","_type":TYPE_NIL},
+			]
+	},
 	"play_global_sound" : {
 		"_category" : "actions",
 		"_input_ports" : [
@@ -173,5 +182,9 @@ var _stimulus = {
 	"workstation_assigned" :{
 		"_output_name": "Position",
 		"_output_type": TYPE_VECTOR3,
+	},
+	"request_rejected" :{
+		"_output_name": "Trigger",
+		"_output_type": Nodes.TYPE_ANY,
 	}
 }

@@ -9,6 +9,7 @@ const types = [
 	]
 
 signal workstation_assigned(where) 
+signal request_rejected()
 signal stopped_working(type)
 
 var working : bool = false
