@@ -23,7 +23,7 @@ func _input(event):
 			capture_mouse(true)
 
 #Load the user file. Create it if it does not exist.
-func _ready() -> void :
+func _init() -> void :
 	load_user_file()
 
 #Decide whether the mouse should be captured or not.
@@ -64,17 +64,17 @@ func load_user_file() -> void :
 	var is_default : bool = false #Don't recreate Events when using default.
 	if not dir.file_exists(SAVE_LOCATION) :
 		dir.make_dir("user://Moonwards/")
-#		var file : File = File.new()
-#		file.open(SAVE_LOCATION, file.WRITE)
-#
-#		for action in editable_actions :
-#			var array : Array = get_action(action)
-#			file.store_string(("[%s]" % action) + "\n") #Section
-#			file.store_string(("event_type=\"%s\"" % array[0]) + "\n") 
-#			file.store_string(("scancode=%s" % array[1]) + "\n")
-#
-#		file.close()
-#		is_default = true
+		var file : File = File.new()
+		file.open(SAVE_LOCATION, file.WRITE)
+
+		for action in editable_actions :
+			var array : Array = get_action(action)
+			file.store_string(("[%s]" % action) + "\n") #Section
+			file.store_string(("event_type=\"%s\"" % array[0]) + "\n") 
+			file.store_string(("scancode=%s" % array[1]) + "\n")
+
+		file.close()
+		is_default = true
 	
 	#Load the user file.
 	user_file.load(SAVE_LOCATION)
@@ -94,7 +94,8 @@ func load_user_file() -> void :
 			event = InputEventMouseButton.new()
 			event.button_index = user_file.get_value(action, "scancode")
 		
-		
+		InputMap.action_erase_events(action)
+		InputMap.action_add_event(action, event)
 
 #Save user info to the file.
 func save_user_file() -> void :

@@ -5,6 +5,9 @@ var reading = false
 var current_scancode = null
 onready var titlelabel = get_node("Label")
 
+#This is emitted when a new input is confirmed.
+signal new_input_confirmed()
+
 #What action to edit when setting input.
 export var action_to_edit : String = "action_name"
 
