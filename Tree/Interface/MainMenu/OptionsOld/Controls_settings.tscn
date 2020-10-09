@@ -35,123 +35,123 @@ custom_styles/separator = ExtResource( 3 )
 [node name="HBox" type="HBoxContainer" parent="ButtonList"]
 margin_top = 8.0
 margin_right = 1920.0
-margin_bottom = 392.0
+margin_bottom = 316.0
 
 [node name="VSeparator" type="VSeparator" parent="ButtonList/HBox"]
 margin_right = 4.0
-margin_bottom = 384.0
+margin_bottom = 308.0
 custom_styles/separator = ExtResource( 3 )
 
 [node name="Sub1" type="VBoxContainer" parent="ButtonList/HBox"]
 margin_left = 8.0
-margin_right = 296.0
-margin_bottom = 384.0
+margin_right = 280.0
+margin_bottom = 308.0
 
 [node name="move_forwards" parent="ButtonList/HBox/Sub1" instance=ExtResource( 2 )]
 margin_top = 0.0
-margin_right = 288.0
+margin_right = 272.0
 margin_bottom = 24.0
 Label_text = "Move forwards"
 action_to_edit = "move_forwards"
 
 [node name="HSeparator7" type="HSeparator" parent="ButtonList/HBox/Sub1"]
 margin_top = 28.0
-margin_right = 288.0
+margin_right = 272.0
 margin_bottom = 32.0
 custom_styles/separator = ExtResource( 3 )
 
 [node name="move_backwards" parent="ButtonList/HBox/Sub1" instance=ExtResource( 2 )]
-margin_right = 288.0
+margin_right = 272.0
 margin_bottom = 60.0
 Label_text = "Move Backwards"
 action_to_edit = "move_backwards"
 
 [node name="HSeparator2" type="HSeparator" parent="ButtonList/HBox/Sub1"]
 margin_top = 64.0
-margin_right = 288.0
+margin_right = 272.0
 margin_bottom = 68.0
 custom_styles/separator = ExtResource( 3 )
 
 [node name="move_left" parent="ButtonList/HBox/Sub1" instance=ExtResource( 2 )]
 margin_top = 72.0
-margin_right = 288.0
+margin_right = 272.0
 margin_bottom = 96.0
 Label_text = "Move Left"
 action_to_edit = "move_left"
 
 [node name="HSeparator3" type="HSeparator" parent="ButtonList/HBox/Sub1"]
 margin_top = 100.0
-margin_right = 288.0
+margin_right = 272.0
 margin_bottom = 104.0
 custom_styles/separator = ExtResource( 3 )
 
 [node name="move_right" parent="ButtonList/HBox/Sub1" instance=ExtResource( 2 )]
 margin_top = 108.0
-margin_right = 288.0
+margin_right = 272.0
 margin_bottom = 132.0
 Label_text = "Move Right"
 action_to_edit = "move_right"
 
 [node name="HSeparator" type="HSeparator" parent="ButtonList/HBox/Sub1"]
 margin_top = 136.0
-margin_right = 288.0
+margin_right = 272.0
 margin_bottom = 140.0
 custom_styles/separator = ExtResource( 3 )
 
 [node name="jump" parent="ButtonList/HBox/Sub1" instance=ExtResource( 2 )]
 margin_top = 144.0
-margin_right = 288.0
+margin_right = 272.0
 margin_bottom = 168.0
 Label_text = "Jump"
 action_to_edit = "jump"
 
 [node name="HSeparator8" type="HSeparator" parent="ButtonList/HBox/Sub1"]
 margin_top = 172.0
-margin_right = 288.0
+margin_right = 272.0
 margin_bottom = 176.0
 custom_styles/separator = ExtResource( 3 )
 
-[node name="InteractsMenu" parent="ButtonList/HBox/Sub1" instance=ExtResource( 2 )]
+[node name="interact_with_closest" parent="ButtonList/HBox/Sub1" instance=ExtResource( 2 )]
 margin_top = 180.0
-margin_right = 288.0
+margin_right = 272.0
 margin_bottom = 204.0
+Label_text = "Interact with pointed at Interactable"
+action_to_edit = "interact_with_closest"
+
+[node name="HSeparator11" type="HSeparator" parent="ButtonList/HBox/Sub1"]
+margin_top = 208.0
+margin_right = 272.0
+margin_bottom = 212.0
+custom_styles/separator = ExtResource( 3 )
+
+[node name="use" parent="ButtonList/HBox/Sub1" instance=ExtResource( 2 )]
+margin_top = 216.0
+margin_right = 272.0
+margin_bottom = 240.0
 Label_text = "Interacts Menu"
 action_to_edit = "use"
 
 [node name="HSeparator10" type="HSeparator" parent="ButtonList/HBox/Sub1"]
-margin_top = 208.0
-margin_right = 288.0
-margin_bottom = 212.0
-custom_styles/separator = ExtResource( 3 )
-
-[node name="show_diagram" parent="ButtonList/HBox/Sub1" instance=ExtResource( 2 )]
-visible = false
-margin_top = 216.0
-margin_right = 288.0
-margin_bottom = 240.0
-Label_text = "Display controls"
-
-[node name="HSeparator11" type="HSeparator" parent="ButtonList/HBox/Sub1"]
-visible = false
-margin_top = 216.0
-margin_right = 288.0
-margin_bottom = 220.0
+margin_top = 244.0
+margin_right = 272.0
+margin_bottom = 248.0
 custom_styles/separator = ExtResource( 3 )
 
 [node name="player_back_in_time" parent="ButtonList/HBox/Sub1" instance=ExtResource( 2 )]
-margin_top = 216.0
-margin_right = 288.0
-margin_bottom = 240.0
+margin_top = 252.0
+margin_right = 272.0
+margin_bottom = 276.0
 Label_text = "Get unstuck"
 action_to_edit = "player_back_in_time"
 
 [node name="HSeparator13" type="HSeparator" parent="ButtonList/HBox/Sub1"]
-margin_top = 244.0
-margin_right = 288.0
-margin_bottom = 248.0
+margin_top = 280.0
+margin_right = 272.0
+margin_bottom = 284.0
 custom_styles/separator = ExtResource( 3 )
 
-[node name="toggle_chat" parent="ButtonList/HBox/Sub1" instance=ExtResource( 2 )]
+[node name="start_typing_chat" parent="ButtonList/HBox/Sub1" instance=ExtResource( 2 )]
+visible = false
 margin_top = 252.0
 margin_right = 288.0
 margin_bottom = 276.0
@@ -159,12 +159,13 @@ Label_text = "Use chat / send message"
 action_to_edit = "start_typing_chat"
 
 [node name="HSeparator14" type="HSeparator" parent="ButtonList/HBox/Sub1"]
-margin_top = 280.0
-margin_right = 288.0
-margin_bottom = 284.0
+margin_top = 288.0
+margin_right = 272.0
+margin_bottom = 292.0
 custom_styles/separator = ExtResource( 3 )
 
-[node name="alt" parent="ButtonList/HBox/Sub1" instance=ExtResource( 2 )]
+[node name="RadialMenu" parent="ButtonList/HBox/Sub1" instance=ExtResource( 2 )]
+visible = false
 margin_top = 288.0
 margin_right = 288.0
 margin_bottom = 312.0
@@ -172,45 +173,47 @@ Label_text = "Actions/Expressions"
 action_to_edit = "radial_menu"
 
 [node name="HSeparator12" type="HSeparator" parent="ButtonList/HBox/Sub1"]
-margin_top = 316.0
-margin_right = 288.0
-margin_bottom = 320.0
+margin_top = 296.0
+margin_right = 272.0
+margin_bottom = 300.0
 custom_styles/separator = ExtResource( 3 )
 
 [node name="FlyCamera" parent="ButtonList/HBox/Sub1" instance=ExtResource( 2 )]
-margin_top = 324.0
+visible = false
+margin_top = 296.0
 margin_right = 288.0
-margin_bottom = 348.0
+margin_bottom = 320.0
 Label_text = "Enable Fly Camera"
 action_to_edit = "toggle_camera_fly"
 
 [node name="HSeparator15" type="HSeparator" parent="ButtonList/HBox/Sub1"]
-margin_top = 352.0
-margin_right = 288.0
-margin_bottom = 356.0
+margin_top = 304.0
+margin_right = 272.0
+margin_bottom = 308.0
 custom_styles/separator = ExtResource( 3 )
 
 [node name="HumanFlight" parent="ButtonList/HBox/Sub1" instance=ExtResource( 2 )]
-margin_top = 360.0
+visible = false
+margin_top = 304.0
 margin_right = 288.0
-margin_bottom = 384.0
+margin_bottom = 328.0
 Label_text = "Toggle Human Flight"
 action_to_edit = "toggle_fly"
 
 [node name="VSeparator3" type="VSeparator" parent="ButtonList/HBox"]
-margin_left = 300.0
-margin_right = 322.0
-margin_bottom = 384.0
+margin_left = 284.0
+margin_right = 306.0
+margin_bottom = 308.0
 custom_styles/separator = ExtResource( 3 )
 custom_constants/separation = 22
 
 [node name="Sub2" type="VBoxContainer" parent="ButtonList/HBox"]
-margin_left = 326.0
-margin_right = 326.0
-margin_bottom = 384.0
+margin_left = 310.0
+margin_right = 310.0
+margin_bottom = 308.0
 
 [node name="HSeparator" type="HSeparator" parent="ButtonList"]
-margin_top = 396.0
+margin_top = 320.0
 margin_right = 1920.0
 margin_bottom = 1052.0
 size_flags_horizontal = 3
