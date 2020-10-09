@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://SceneComponent/Actor/Humanoid/HumanoidInput.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SceneComponent/Interface/Nametag/NametagComponent.tscn" type="PackedScene" id=2]
@@ -9,20 +9,21 @@
 [ext_resource path="res://Assets/MoonTown/Models/Human_Model/FemalePlayerModel.tscn" type="PackedScene" id=7]
 [ext_resource path="res://SceneComponent/Actor/InteractorComponent.tscn" type="PackedScene" id=8]
 [ext_resource path="res://SceneComponent/Actor/Debug/HumanoidMovementDebug.tscn" type="PackedScene" id=9]
+[ext_resource path="res://SceneComponent/Actor/AnchorMovement.tscn" type="PackedScene" id=10]
 
-[sub_resource type="PhysicsMaterial" id=2]
+[sub_resource type="PhysicsMaterial" id=1]
 friction = 0.771
 rough = true
 bounce = 0.644
 
-[sub_resource type="CapsuleShape" id=1]
+[sub_resource type="CapsuleShape" id=2]
 radius = 0.23
 height = 1.22402
 
 [node name="Player" type="RigidBody"]
 mode = 2
 mass = 10.0
-physics_material_override = SubResource( 2 )
+physics_material_override = SubResource( 1 )
 can_sleep = false
 axis_lock_angular_x = true
 axis_lock_angular_z = true
@@ -39,7 +40,7 @@ dist = 3.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0175913, 0.839999, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -56,3 +57,5 @@ grab_focus_at_ready = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70766, 0 )
 
 [node name="HumanoidMovementDebug" parent="." instance=ExtResource( 9 )]
+
+[node name="AnchorMovement" parent="." instance=ExtResource( 10 )]

@@ -7,6 +7,9 @@ export(float) var climb_speed = 1.5
 export(float) var movement_speed = 5.2
 export(float) var gravity = 1.625
 
+onready var on_ground : Node = $OnGround
+onready var normal_detect : Node = $NormalDetect
+
 # Debug variables
 var dbg_initial_jump_pos: Vector3 = Vector3()
 var dbg_rest_jump_pos: Vector3 = Vector3()
@@ -28,8 +31,7 @@ var slope_coef_mul: float = 1.23
 #Whether we are currently flying or not.
 var is_flying : bool = false
 
-onready var on_ground : Node = $OnGround
-onready var normal_detect : Node = $NormalDetect
+
 #Whether I am climbing or not.
 var is_climbing : bool = false
 
