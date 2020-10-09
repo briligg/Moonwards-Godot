@@ -29,4 +29,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1706, -5.7139, -23.0185 )
 [node name="SpawnPoints" type="Spatial" parent="."]
 
 [node name="1" type="Position3D" parent="SpawnPoints"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 101, -202.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 77, 94.5777, -234 )

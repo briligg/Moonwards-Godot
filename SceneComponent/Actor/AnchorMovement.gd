@@ -13,11 +13,11 @@ func _init().("AnchorMovement", false) -> void :
 	pass
 
 func _ready():
-		entity.connect("on_forces_integrated", self, "_integrate_forces")
-		
+	self.enabled = true
+	entity.connect("on_forces_integrated", self, "_integrate_forces")
+
 func _integrate_forces(state):
 		invoke_network_based("_integrate_server", "_integrate_client", [state])
-	
 
 func _integrate_server(state) -> void:
 	if process_mode == ProcessMode.IntegrateForces:
@@ -42,3 +42,6 @@ func enable():
 
 func disable():
 	pass
+
+func set_enabled(val):
+	enabled = true

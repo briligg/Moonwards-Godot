@@ -12,15 +12,16 @@
 [ext_resource path="res://SceneComponent/Actor/AnchorMovement.tscn" type="PackedScene" id=10]
 
 [sub_resource type="PhysicsMaterial" id=1]
-friction = 0.771
 rough = true
-bounce = 0.644
+bounce = 0.2
 
 [sub_resource type="CapsuleShape" id=2]
 radius = 0.23
 height = 1.22402
 
 [node name="Player" type="RigidBody"]
+collision_layer = 3
+collision_mask = 3
 mode = 2
 mass = 10.0
 physics_material_override = SubResource( 1 )
