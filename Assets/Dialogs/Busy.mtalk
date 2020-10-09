@@ -20,4 +20,4 @@ connections=[ {
 "to": "GraphNode",
 "to_port": 0
 } ]
-character_name="Phill"
+character_name="RamsesII"

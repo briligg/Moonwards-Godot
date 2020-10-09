@@ -36,7 +36,9 @@ func _ready():
 	get_node(Interactable_Path).connect("interacted_by", self, "_on_interacted")
 	add_child(BehaviorTree)
 	
+	
 	#Load settings
+	
 	BehaviorTree.load_colors()
 	
 func _on_interacted(anything):

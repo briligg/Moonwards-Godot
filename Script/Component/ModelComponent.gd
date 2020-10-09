@@ -11,7 +11,7 @@ func _init().("ModelComponent", false):
 func _ready() -> void:
 	var count = mesh.get_surface_material_count()
 	for i in range(count):
-		var mat = mesh.get_surface_material(i).duplicate()
+		var mat = mesh.mesh.surface_get_material(i).duplicate()
 		mesh.set_surface_material(i, mat)
 
 func set_colors(colors: Array) -> void:
@@ -19,7 +19,7 @@ func set_colors(colors: Array) -> void:
 		return
 		
 	var count = mesh.get_surface_material_count()
-	for i in range(count):
-		var mat = mesh.get_surface_material(i)
+	for i in range(colors.size()):
+		var mat = mesh.mesh.surface_get_material(i)
 		mat.albedo_color = colors[i]
 		mesh.set_surface_material(i, mat)

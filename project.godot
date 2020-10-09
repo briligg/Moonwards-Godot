@@ -439,16 +439,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/joyeux_nav_interacts/MwNavigator.gd"
 }, {
-"base": "RayCast",
-"class": "MouseSimulatingRayCast",
-"language": "GDScript",
-"path": "res://Script/GameLogic/MouseSimulatingRayCast/MouseSimulatingRayCast.gd"
-}, {
-"base": "NPCBase",
-"class": "MwNPC",
-"language": "GDScript",
-"path": "res://addons/joyeux_npc_editor/src/NPCs/MwNPC.gd"
-}, {
 "base": "Node",
 "class": "MwNode",
 "language": "GDScript",
@@ -691,8 +681,6 @@ _global_script_class_icons={
 "MouseSimulatingRayCast": "",
 "MwNPC": "",
 "MwNavigator": "",
-"MouseSimulatingRayCast": "",
-"MwNPC": "",
 "MwNode": "",
 "MwSpatial": "",
 "NPCBase": "",

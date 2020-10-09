@@ -8,11 +8,7 @@ that appear in the Definitions file.
 const DialogDisplay = preload("res://addons/joyeux_dialog_system/src/components/display/Dialog Display.tscn")
 
 signal interacted_by(something)
-signal user_input(action_name)
-signal stopped_working()
 signal workstation_assigned(which)
-signal see(what)
-signal hear(what)
 
 export(String) var character_name
 
@@ -32,6 +28,7 @@ func _init(file:= "", state:= ""):
 func load_colors():
 	var colors = [pants_color, shirt_color, hair_color, skin_color, shoes_color]
 	actor.get_component("ModelComponent").set_colors(colors)
+	actor.get_component("NametagComponent").set_name(character_name)
 	
 func property_check(input, signals, variables):
 	#input is object, get the specific variable in the variable port and then
@@ -89,11 +86,10 @@ func play_3d_sound(input, signals, variables):
 	sound_player.play()
 
 func trigger_dialog(input, signals, variables):
-	print("Trigger")
 	var path = _get_variable_from_port(variables, 0)
-	print(variables)
 	var dialog_display = DialogDisplay.instance()
 	dialog_display.dialog = path
+	dialog_display.name_override = character_name 
 	actor.add_child(dialog_display)
 	dialog_display.connect("finished", dialog_display, "queue_free")
 

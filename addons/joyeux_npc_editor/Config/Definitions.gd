@@ -9,12 +9,14 @@ var CLASS_CHARACTER =  {
 	"_color" : Color(.5,.5,.1,1),
 	"_object_type" : "Character",
 	"_variables" : {
-		"team" : TYPE_INT,
+		"character_name" : TYPE_STRING,
 		"translation" : TYPE_VECTOR3,
-		"type" : TYPE_STRING,
-		"health" : TYPE_REAL,
-		"shield" : TYPE_REAL,
-		"target_location" : TYPE_VECTOR3}
+		"pants_color" : TYPE_COLOR,
+		"shirt_color" : TYPE_COLOR,
+		"hair_color" : TYPE_COLOR,
+		"skin_color" : TYPE_COLOR,
+		"shoes_color" : TYPE_COLOR
+		}
 	}
 
 var CLASS_WORKSTATION = {
@@ -159,18 +161,6 @@ var _functions = {
 }
 
 var _stimulus = {
-	"hear" :{
-		"_output_name": "Emmiter Data",
-		"_output_type": TYPE_OBJECT,
-	},
-	"user_input" :{
-		"_output_name": "Action Name",
-		"_output_type": TYPE_STRING,
-	},
-	"see" :{
-		"_output_name": "Object seen",
-		"_output_type": TYPE_OBJECT,
-	},
 	"interacted_by" :{
 		"_output_name": "Interactor",
 		"_output_type": TYPE_OBJECT,
