@@ -161,6 +161,20 @@ var _functions = {
 }
 
 var _stimulus = {
+	#This section exposes engine signals
+	"ready" :{
+		"_output_name": "Trigger",
+		"_output_type": Nodes.TYPE_ANY,
+	},
+	"tree_exiting" :{
+		"_output_name": "Trigger",
+		"_output_type": Nodes.TYPE_ANY,
+	}, 
+	"visibility_changed" :{
+		"_output_name": "Trigger",
+		"_output_type": Nodes.TYPE_ANY,
+	},
+	#This section is for user designed signals
 	"interacted_by" :{
 		"_output_name": "Interactor",
 		"_output_type": TYPE_OBJECT,
@@ -176,5 +190,6 @@ var _stimulus = {
 	"request_rejected" :{
 		"_output_name": "Trigger",
 		"_output_type": Nodes.TYPE_ANY,
-	}
+	},
+	
 }

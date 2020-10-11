@@ -37,7 +37,7 @@ navmesh = SubResource( 1 )
 [node name="Moon_Town_Master" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 1 )]
 
 [node name="NPC" parent="Navigation" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9659, -16.8917, -18.1275 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6185, -27.6406, 1.53706 )
 
 [node name="Workstation2" parent="Navigation" instance=ExtResource( 6 )]
 transform = Transform( -0.0815558, 0, -0.996669, 0, 1, 0, 0.996669, 0, -0.0815558, -13.7973, -28.8367, 2.47589 )

@@ -34,6 +34,6 @@ func get_nearest_workstation(position : Vector3, filter : int = ANY):
 func request_workstation(worker : Worker, filter : int = ANY):
 	for station in Workstations:
 		if station.category == filter or filter == ANY:
-				if station.request_workstation(worker):
-					return
+			if station.request_workstation(worker):
+				return
 	worker.emit_signal("request_rejected")

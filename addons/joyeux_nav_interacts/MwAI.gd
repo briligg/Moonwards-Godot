@@ -45,10 +45,10 @@ func _on_interacted(anything):
 	BehaviorTree.emit_signal("interacted_by", anything)
 
 func _on_worker_stopped():
-	BehaviorTree.emit_signal("stopped_working")
+	BehaviorTree.emit_signal("stopped_working", null) #Signals must have at least 1 variable
 
 func _on_request_rejected():
-	BehaviorTree.emit_signal("stopped_working")
+	BehaviorTree.emit_signal("request_rejected", null)
 
 func _on_worker_assigned(where):
 	BehaviorTree.emit_signal("workstation_assigned", where)

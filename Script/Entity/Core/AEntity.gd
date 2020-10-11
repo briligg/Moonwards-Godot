@@ -34,8 +34,10 @@ func add_component(_name: String, _comp: Node) -> void:
 	components[_name] = _comp
 
 func get_component(_name: String) -> Node:
-	return components[_name]
-
+	if components.has(_name):
+		return components[_name]
+	else:
+		return null
 func disable() -> void:
 	for comp in components.values():
 		comp.disable()

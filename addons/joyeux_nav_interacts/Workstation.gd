@@ -31,8 +31,11 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	for path in Exclude:
-		Exclude.append(get_node(path))
-		Exclude.erase(path)
+		if path is Object:
+			continue
+		else:
+			Exclude.append(get_node(path))
+			Exclude.erase(path)
 	var pos = get_node("NPCPosition")
 	if pos:
 		orientation = pos.rotation_degrees
@@ -85,8 +88,11 @@ func assign(worker : Worker) -> void:
 	worker.emit_signal("workstation_assigned", translation)
 
 func request_workstation(worker : Worker) -> bool:
-	if worker in Exclude:
-		return false
+	print("Workstation: request recived from ", worker)
+	if get_parent() is AEntity:
+		if get_parent().get_component("AI handler") != null:
+			if get_parent().get_component("AI handler").worker == worker:
+				return false
 	if uses_queue:
 		in_queue_for_use.append(worker)
 		return true
