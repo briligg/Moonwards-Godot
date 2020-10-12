@@ -12,9 +12,15 @@ signal new_input_confirmed()
 export var action_to_edit : String = "action_name"
 
 func update_labels():
+	#Do not do anything if I am a defunct button.
+	if current_scancode == null :
+		return
+	
 	#Updates text from labels
-	get_node("Button").text = OS.get_scancode_string(current_scancode)
-	get_node("Confirm/CenterContainer/Label2").text = OS.get_scancode_string(current_scancode)
+	get_node("Button").text = OS.get_scancode_string(InputMap.get_action_list(action_to_edit)[0].scancode)
+	get_node("Confirm/CenterContainer/Label2").text = OS.get_scancode_string(InputMap.get_action_list(action_to_edit)[0].scancode)
+#	get_node("Button").text = OS.get_scancode_string(current_scancode)
+#	get_node("Confirm/CenterContainer/Label2").text = OS.get_scancode_string(current_scancode)
 	
 func get_title():
 	return Label_text
