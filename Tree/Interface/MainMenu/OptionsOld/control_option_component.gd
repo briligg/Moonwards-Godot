@@ -17,14 +17,13 @@ func update_labels():
 		return
 	
 	#Updates text from labels
-	get_node("Button").text = OS.get_scancode_string(InputMap.get_action_list(action_to_edit)[0].scancode)
-	get_node("Confirm/CenterContainer/Label2").text = OS.get_scancode_string(InputMap.get_action_list(action_to_edit)[0].scancode)
-#	get_node("Button").text = OS.get_scancode_string(current_scancode)
-#	get_node("Confirm/CenterContainer/Label2").text = OS.get_scancode_string(current_scancode)
+	var event : InputEventKey = InputMap.get_action_list(action_to_edit)[0]
+	var scancode : String = OS.get_scancode_string(event.scancode)
+	get_node("Button").text = scancode
+	get_node("Confirm/CenterContainer/Label2").text = scancode
 	
 func get_title():
 	return Label_text
-	
 	
 func update_title(text):
 	if(Engine.is_editor_hint()):

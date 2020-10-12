@@ -11,6 +11,8 @@ func _defaults_pressed() -> void :
 	for child in $ButtonList/HBox/Sub2.get_children() :
 		if child is HBoxContainer :
 			child.update_labels()
+	
+	_on_Button_pressed()
 
 func _on_Button_pressed():
 	Helpers.save_user_file()
