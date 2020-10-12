@@ -86,17 +86,20 @@ func load_user_file() -> void :
 	
 	#Start creating the InputEvents needed.
 	for action in editable_actions :
-		var event : InputEvent
-		var type : String = user_file.get_value(action, "event_type")
-		if type == "Key" :
-			event = InputEventKey.new()
-			event.scancode = user_file.get_value(action, "scancode")
-		elif type == "MouseButton" :
-			event = InputEventMouseButton.new()
-			event.button_index = user_file.get_value(action, "scancode")
-		
-		InputMap.action_erase_events(action)
-		InputMap.action_add_event(action, event)
+		#Check that the file actually contains the action listed.
+		if(user_file.has_section_key(action, "event_type") &&
+				user_file.has_section_key(action, "scancode")) :
+			var event : InputEvent
+			var type : String = user_file.get_value(action, "event_type")
+			if type == "Key" :
+				event = InputEventKey.new()
+				event.scancode = user_file.get_value(action, "scancode")
+			elif type == "MouseButton" :
+				event = InputEventMouseButton.new()
+				event.button_index = user_file.get_value(action, "scancode")
+			
+			InputMap.action_erase_events(action)
+			InputMap.action_add_event(action, event)
 
 #Save user info to the file.
 func save_user_file() -> void :
