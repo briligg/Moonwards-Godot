@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Models/Ground_Passenger_Pod/Ground_Passenger_Pod_NoCol.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SceneComponent/Object/PassengerPod/PassengerPodHatchInteractable.tscn" type="PackedScene" id=2]
@@ -16,7 +16,7 @@ extents = Vector3( 1.58848, 3.27706, 8.08906 )
 extents = Vector3( 1.50035, 1, 0.356883 )
 
 [sub_resource type="BoxShape" id=4]
-extents = Vector3( 2.19356, 1.38934, 8.46978 )
+extents = Vector3( 2.19356, 1.38934, 3.80969 )
 
 [sub_resource type="ConvexPolygonShape" id=5]
 points = PoolVector3Array( -1, -0.147256, 8.25489, -1, 0.147256, 8.25489, -1, 0.147256, -8.25489, -1, -0.147256, -8.25489, -1, -0.147256, -8.25489, -1, 0.147256, -8.25489, 1, 0.147256, -8.25489, 1, -0.147256, -8.25489, 1, -0.147256, -8.25489, 1, 0.147256, -8.25489, 1, 0.147256, 8.25489, 1, -0.147256, 8.25489, 1, -0.147256, 8.25489, 1, 0.147256, 8.25489, -1, 0.147256, 8.25489, -1, -0.147256, 8.25489, -1, -0.147256, -8.25489, 1, -0.147256, -8.25489, 1, -0.147256, 8.25489, -1, -0.147256, 8.25489, 1, 0.147256, -8.25489, -1, 0.147256, -8.25489, -1, 0.147256, 8.25489, 1, 0.147256, 8.25489 )
@@ -51,6 +51,15 @@ points = PoolVector3Array( -2.39819, -1, 0.309262, -2.39819, 1, 0.309262, -2.398
 [sub_resource type="ConvexPolygonShape" id=15]
 points = PoolVector3Array( -1.91802, -1, 1, -1.91802, -0.298355, 1, -1.91802, -0.298355, -1, -1.91802, -1, -1, -1.91802, -1, -1, -1.91802, -0.298355, -1, 1.91802, -0.298355, -1, 1.91802, -1, -1, 1.91802, -1, -1, 1.91802, -0.298355, -1, 1.91802, -0.298355, 1, 1.91802, -1, 1, 1.91802, -1, 1, 1.91802, -0.298355, 1, -1.91802, -0.298355, 1, -1.91802, -1, 1, -1.91802, -1, -1, 1.91802, -1, -1, 1.91802, -1, 1, -1.91802, -1, 1, 1.91802, -0.298355, -1, -1.91802, -0.298355, -1, -1.91802, -0.298355, 1, 1.91802, -0.298355, 1 )
 
+[sub_resource type="ConvexPolygonShape" id=16]
+points = PoolVector3Array( -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.782352, -0.5, -0.5, -0.782352, -0.5, -0.5, -0.782352, -0.5, 0.5, -0.782352, 0.5, 0.5, -0.782352, 0.5, -0.5, -0.782352, 0.5, -0.5, -0.782352, 0.5, 0.5, -0.782352, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.782352, 0.5, -0.5, -0.782352, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.782352, -0.5, 0.5, -0.782352, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5 )
+
+[sub_resource type="ConvexPolygonShape" id=17]
+points = PoolVector3Array( 0.183408, -0.5, 0.5, 0.183408, 0.5, 0.5, 0.183408, 0.5, -0.5, 0.183408, -0.5, -0.5, 0.183408, -0.5, -0.5, 0.183408, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.183408, 0.5, 0.5, 0.183408, -0.5, 0.5, 0.183408, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.183408, -0.5, 0.5, 0.5, 0.5, -0.5, 0.183408, 0.5, -0.5, 0.183408, 0.5, 0.5, 0.5, 0.5, 0.5 )
+
+[sub_resource type="ConvexPolygonShape" id=18]
+points = PoolVector3Array( 0.183408, -0.5, 0.5, 0.183408, 0.5, 0.5, 0.183408, 0.5, -0.5, 0.183408, -0.5, -0.5, 0.183408, -0.5, -0.5, 0.183408, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.183408, 0.5, 0.5, 0.183408, -0.5, 0.5, 0.183408, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.183408, -0.5, 0.5, 0.5, 0.5, -0.5, 0.183408, 0.5, -0.5, 0.183408, 0.5, 0.5, 0.5, 0.5, 0.5 )
+
 [node name="PassengerPod" type="RigidBody"]
 mode = 1
 
@@ -62,7 +71,7 @@ shape = SubResource( 1 )
 
 [node name="PassengerPodDockInteractable" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19534, 0 )
-collision_paths = [ NodePath("../CollisionShape"), NodePath("../CollisionShape2"), NodePath("../CollisionShape3"), NodePath("../CollisionShape4"), NodePath("../CollisionShape5"), NodePath("../CollisionShape6"), NodePath("../CollisionShape7"), NodePath("../CollisionShape8"), NodePath("../CollisionShape9"), NodePath("../CollisionShape10"), NodePath("../CollisionShape11") ]
+collision_paths = [ NodePath("../CollisionShape"), NodePath("../CollisionShape2"), NodePath("../CollisionShape3"), NodePath("../CollisionShape4"), NodePath("../CollisionShape5"), NodePath("../CollisionShape6"), NodePath("../CollisionShape7"), NodePath("../CollisionShape8"), NodePath("../CollisionShape9"), NodePath("../CollisionShape10"), NodePath("../CollisionShape11"), NodePath("../AnchorCollisionShape"), NodePath("../AnchorCollisionShape2"), NodePath("../AnchorCollisionShape3") ]
 
 [node name="PassengerPodHatchInteractable" parent="." instance=ExtResource( 2 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 1.5, 0, 0, 7.77341 )
@@ -79,12 +88,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.41369 )
 shape = SubResource( 3 )
 
 [node name="AnchorMovementArea" parent="." instance=ExtResource( 5 )]
+gravity = 30.0
+linear_damp = 500.0
+angular_damp = 500.0
 monitorable = false
 collision_layer = 2
-collision_mask = 2
+collision_mask = 2147483650
 
 [node name="CollisionShape" type="CollisionShape" parent="AnchorMovementArea"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.224662 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.50321 )
 shape = SubResource( 4 )
 
 [node name="DockLatch" type="Position3D" parent="."]
@@ -136,5 +148,17 @@ shape = SubResource( 14 )
 [node name="CollisionShape11" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.627022, 0, 0, 0, 1, 0.0259009, -0.862453, 8.30669 )
 shape = SubResource( 15 )
+
+[node name="AnchorCollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 9.3844, 8.39058e-05, -0.499579, -0.0138121 )
+shape = SubResource( 16 )
+
+[node name="AnchorCollisionShape2" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.0514438, 0, 0, 0, 13.6635, 2.06352, -0.499579, -0.0138121 )
+shape = SubResource( 17 )
+
+[node name="AnchorCollisionShape3" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.0514438, 0, 0, 0, 13.6635, -2.68912, -0.499579, -0.0138121 )
+shape = SubResource( 18 )
 
 [editable path="RoverRideRelayInteractable"]

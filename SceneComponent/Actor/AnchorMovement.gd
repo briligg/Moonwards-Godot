@@ -16,13 +16,14 @@ func _ready():
 	self.enabled = true
 	entity.connect("on_forces_integrated", self, "_integrate_forces")
 
-func _integrate_forces(state):
-		invoke_network_based("_integrate_server", "_integrate_client", [state])
+func _integrate_forces(args):
+		invoke_network_based("_integrate_server", "_integrate_client", [args])
 
-func _integrate_server(state) -> void:
-	if process_mode == ProcessMode.IntegrateForces:
-		if entity.movement_anchor.is_anchored:
-			self.global_transform.origin += entity.movement_anchor.movement_delta
+func _integrate_server(args) -> void:
+	var state = args[0]
+#	if process_mode == ProcessMode.IntegrateForces:
+#		if entity.movement_anchor.is_anchored:
+#			self.global_transform.origin += entity.movement_anchor.movement_delta
 
 func _integrate_client(state):
 	pass

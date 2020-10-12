@@ -51,8 +51,6 @@ func is_grounded() -> bool:
 			or $OnGround4.is_colliding() or $OnGround5.is_colliding())
 
 func _integrate_forces(state):
-	if !self.enabled:
-		return
 	invoke_network_based("_integrate_server", "_integrate_client", [state])
 	
 func _integrate_client(_args):
@@ -61,12 +59,23 @@ func _integrate_client(_args):
 func _integrate_server(args):
 	var phys_state = args[0]
 	entity.is_grounded = is_grounded()
-	
+	if entity.movement_anchor.is_anchored:
+		entity.global_transform.origin = (
+				entity.movement_anchor.anchor_node.global_transform.origin - 
+				entity.movement_anchor.origin_pos_delta + Vector3(0,0.05, 0))
+		phys_state.linear_velocity = Vector3(0,0,0)
+		entity.custom_integrator = true
+		return
+	else:
+		entity.custom_integrator = false
+		
 	if !entity.is_grounded and !is_jumping and !is_climbing:
 		update_entity_values()
 		return
+	
 	reset_input()
-	handle_input()
+	if self.enabled:
+		handle_input()
 	rotate_body(phys_state)
 	calculate_slope()
 	calculate_horizontal(phys_state)
