@@ -6,7 +6,7 @@ signal joined_master()
 signal joined_server(server_ip_address_string)
 signal started_custom_server()
 
-onready var ip_address : TextEdit = $HBoxContainer/VBoxContainer/VBoxContainer/TextEdit_Addressnnect
+onready var ip_address : TextEdit = $HBoxContainer/VBoxContainer/VBoxContainer/TextEdit_Address
 
 #What the main server IP is.
 const MAIN_SERVER_IP : String = "45.77.54.168"

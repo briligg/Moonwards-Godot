@@ -115,7 +115,7 @@ custom_styles/separator = ExtResource( 3 )
 margin_top = 180.0
 margin_right = 381.0
 margin_bottom = 204.0
-Label_text = "Interact with pointed at Interactable"
+Label_text = "Interact"
 action_to_edit = "interact_with_closest"
 
 [node name="HSeparator11" type="HSeparator" parent="ButtonList/HBox/Sub1"]
