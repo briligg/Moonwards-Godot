@@ -16,8 +16,8 @@ radius = 0.287522
 height = 1.04841
 
 [node name="NPC" type="RigidBody"]
-collision_layer = 32769
-collision_mask = 32769
+collision_layer = 65537
+collision_mask = 65537
 mode = 2
 mass = 10.0
 can_sleep = false
@@ -44,6 +44,7 @@ deceleration_radius = 6.8
 
 [node name="Workstation" parent="." instance=ExtResource( 8 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
+usable_by_players = true
 maximum_progress = 20
 category = 3
 
@@ -67,5 +68,6 @@ script = ExtResource( 9 )
 enabled = true
 NPC_File = "res://Assets/Characters/Phill.jsm"
 initial_state = "WorkingBusy"
+Interactable_Path = NodePath("../Workstation")
 
 [editable path="Model"]

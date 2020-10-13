@@ -17,7 +17,7 @@ var in_queue_for_use : Array = []
 var current_worker : Worker = null
 var lookdir : Vector3 = Vector3.ZERO
 var position : Vector3 = Vector3.ZERO
-
+export(bool) var usable_by_players = false
 export(bool) var uses_queue : bool = false
 export(bool) var call_best_first : bool = false
 export(bool) var gives_xp : bool = false
@@ -33,6 +33,10 @@ func _enter_tree() -> void:
 	set_active(true)
 
 func _ready() -> void:
+	if not usable_by_players:
+		set_active(false)
+		set_collision_mask_bit(16, true)
+		set_collision_layer_bit(16, true)
 	for path in Exclude:
 		if path is Object:
 			continue
