@@ -28,7 +28,6 @@
 [ext_resource path="res://Tree/Interface/MainMenu/Apps.gd" type="Script" id=26]
 [ext_resource path="res://Tree/Interface/MainMenu/Background.gd" type="Script" id=27]
 
-
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.588235 )
 border_width_left = 2
