@@ -22,7 +22,7 @@ workstation_assigned=[ null ]
 Save=[  ]
 interacted_by=[ null ]
 trigger_dialog=[ "res://Assets/Dialogs/Busy.mtalk" ]
-ready=[ null ]
+on_ready=[ null ]
 request_workstation=[ null, 0 ]
 match2=[ null, "FOOD" ]
 Behaviors=[  ]
@@ -50,7 +50,7 @@ stopped_working=[ "stopped_working" ]
 workstation_assigned=[ "workstation_assigned" ]
 interacted_by=[ "interacted_by" ]
 trigger_dialog=[  ]
-ready=[ "ready" ]
+on_ready=[ "on_ready" ]
 request_workstation=[  ]
 match2=[ "match2_output_0" ]
 match=[ "match_output_0" ]
@@ -76,7 +76,7 @@ stopped_working=Vector2( -640, 100 )
 workstation_assigned=Vector2( -660, 300 )
 interacted_by=Vector2( -680, 520 )
 trigger_dialog=Vector2( -360, 480 )
-ready=Vector2( -660, 680 )
+on_ready=Vector2( -660, 680 )
 request_workstation=Vector2( -360, 640 )
 match2=Vector2( 340, 60 )
 match=Vector2( 340, -40 )
@@ -159,7 +159,7 @@ connections=[ {
 "to": "trigger_dialog",
 "to_port": 0
 }, {
-"from": "ready",
+"from": "on_ready",
 "from_port": 0,
 "to": "request_workstation",
 "to_port": 0

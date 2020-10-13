@@ -35,5 +35,6 @@ func request_workstation(worker : Worker, filter : int = ANY):
 	for station in Workstations:
 		if station.category == filter or filter == ANY:
 			if station.request_workstation(worker):
+				print("looking for ", filter)
 				return
 	worker.emit_signal("request_rejected")

@@ -41,9 +41,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6185, -27.6406, 1.53706 )
 
 [node name="Workstation2" parent="Navigation" instance=ExtResource( 6 )]
 transform = Transform( -0.0815558, 0, -0.996669, 0, 1, 0, 0.996669, 0, -0.0815558, -13.7973, -28.8367, 2.47589 )
+maximum_progress = 30
+
+[node name="Workstation14" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( -0.380215, 0, 0.924898, 0, 1, 0, -0.924898, 0, -0.380215, -15.044, -28.8367, 13.1342 )
+maximum_progress = 30
+
+[node name="Workstation15" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( 0.417724, 0, 0.908574, 0, 1, 0, -0.908574, 0, 0.417724, -8.03083, -28.8367, 13.1342 )
+maximum_progress = 30
 
 [node name="Workstation12" parent="Navigation" instance=ExtResource( 6 )]
 transform = Transform( 0.266717, 0, -0.963775, 0, 1, 0, 0.963775, 0, 0.266717, -10.4478, -28.8367, 2.47589 )
+maximum_progress = 30
 
 [node name="Workstation4" parent="Navigation" instance=ExtResource( 6 )]
 transform = Transform( 0.250279, 0, 0.968174, 0, 1, 0, -0.968174, 0, 0.250279, -21.9726, -16.8257, 1.77498 )
@@ -77,6 +87,14 @@ category = 2
 transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -136.854, -92.4919, -73.6209 )
 category = 2
 
+[node name="Workstation3" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( -0.380748, 0, 0.924679, 0, 1, 0, -0.924679, 0, -0.380748, 39.3092, -7.72221, -5.85707 )
+category = 1
+
+[node name="Workstation13" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( 0.154918, 0, -0.987927, 0, 1, 0, 0.987927, 0, 0.154918, 39.3092, -7.72221, -5.05145 )
+category = 1
+
 [node name="NPC2" parent="Navigation" instance=ExtResource( 4 )]
 transform = Transform( 0.690567, 0, -0.723269, 0, 1, 0, 0.723269, 0, 0.690567, -124.567, -93.1605, -120.982 )
 
@@ -84,7 +102,7 @@ transform = Transform( 0.690567, 0, -0.723269, 0, 1, 0, 0.723269, 0, 0.690567, -
 transform = Transform( -0.351319, 0, -0.936256, 0, 1, 0, 0.936256, 0, -0.351319, -119.662, -93.1605, -117.06 )
 
 [node name="NPC3" parent="Navigation" instance=ExtResource( 4 )]
-transform = Transform( -0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -130.282, -93.9604, -117.354 )
+transform = Transform( -0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -126.468, -93.1711, -117.354 )
 
 [node name="NPC5" parent="Navigation" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2581, -7.5555, -3.61078 )

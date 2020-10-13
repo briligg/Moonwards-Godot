@@ -2,7 +2,7 @@ extends Node
 class_name NPCBase
 
 signal next_state(force)
-
+signal on_ready(none)
 var destination : Vector3 = Vector3.ZERO
 var has_destination : bool = false
 var is_occpuied : bool = false
@@ -16,10 +16,12 @@ export(String, FILE, "*.jsm") var NPC_File : String = "" #This works just fine! 
 export(String) var initial_state : String = ""
 
 
-
 func _ready():
 	randomize()
 	_load_states(NPC_File)
+	yield(get_tree().create_timer(3), "timeout")
+	print("Ready!")
+	emit_signal("on_ready", null)
 	
 
 func _create_signal(signal_name : String):

@@ -35,20 +35,19 @@ func _ready():
 	BehaviorTree._create_signal("interacted_by")
 	get_node(Interactable_Path).connect("interacted_by", self, "_on_interacted")
 	add_child(BehaviorTree)
-	
-	
 	#Load settings
-	
 	BehaviorTree.load_colors()
 	
+func _process_server(delta):
+	worker.work(delta)
 func _on_interacted(anything):
 	BehaviorTree.emit_signal("interacted_by", anything)
 
-func _on_worker_stopped():
-	BehaviorTree.emit_signal("stopped_working", null) #Signals must have at least 1 variable
+func _on_worker_stopped(category):
+	BehaviorTree.emit_signal("stopped_working", category)
 
 func _on_request_rejected():
-	BehaviorTree.emit_signal("request_rejected", null)
+	BehaviorTree.emit_signal("request_rejected", null)  #Signals must carry at least 1 variable
 
 func _on_worker_assigned(where):
 	BehaviorTree.emit_signal("workstation_assigned", where)

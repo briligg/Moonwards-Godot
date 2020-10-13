@@ -16,6 +16,7 @@ onready var acceleration := GSAITargetAcceleration.new()
 var world_ref : WorldNavigator = null
 var path : Array = []
 var current_target : GSAIAgentLocation = GSAIAgentLocation.new() 
+var facing_target : GSAIAgentLocation = GSAIAgentLocation.new()
 var special_target : GSAISteeringAgent = GSAISteeringAgent.new()
 var current_path : GSAIPath = GSAIPath.new([Vector3(1,1,1), Vector3(2,2,5)])
 var personal_space : float = 1.5
@@ -36,6 +37,7 @@ var Seek : GSAISeek
 
 # Facing is more of an educated gesture towards someone you're listening to 
 var Face : GSAIFace 
+var Face2 : GSAIFace 
 
 # NPCs may evade their problems, may evade you, or may evade another NPC 
 # (the only limit is your imagination :D) 
@@ -85,6 +87,8 @@ func _enter_tree():
 	FleeTarget = GSAIFlee.new(Agent, current_target)
 	Seek  = GSAISeek.new(Agent, current_target)
 	Face =  GSAIFace.new(Agent, current_target, true)
+	Face2 =  GSAIFace.new(Agent, facing_target, true)
+	Face2.is_enabled = false
 	Evade = GSAIEvade.new(Agent, special_target)
 	Pursue = GSAIPursue.new(Agent, special_target)
 	Follow = GSAIFollowPath.new(Agent, current_path)
@@ -113,7 +117,7 @@ func _ready():
 	PathBlend.add(Avoid, 1) 
 	PathBlend.is_enabled = true
 	# The order these are added has importance so the NPC behaves like this:
-#	Priority.add(Face)
+	Priority.add(Face2)
 	Priority.add(FollowBlend)#Priority 1: Follow who I am supposed to (if i am supposed to)
 	Priority.add(FleeBlend)#2: Run away if i am supposed to
 	Priority.add(PathBlend) #3 : Follow a path
@@ -129,6 +133,9 @@ func _process_server(delta):
 				update_target(temp)
 			else:
 				entity.input = Vector3.ZERO
+				Face2.is_enabled = true
+				yield(get_tree().create_timer(2), "timeout")
+				Face2.is_enabled = false
 		else:
 			Priority.calculate_steering(acceleration)
 			
@@ -152,12 +159,12 @@ func update_target(pos : Vector3):
 
 func get_navpath(to : Vector3):
 	path = Array(world_ref.get_navmesh_path(entity.translation, to))
-#	print(path)
+	print(path)
 	current_path.create_path(path)
 	var temp = path.pop_front()
 	if temp != null:
 		update_target(temp)
-		
+
 	
 func update_agent(velocity : Vector3, angular_velocity : float):
 	Agent.position = entity.translation

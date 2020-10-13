@@ -162,7 +162,7 @@ var _functions = {
 
 var _stimulus = {
 	#This section exposes engine signals
-	"ready" :{
+	"on_ready" :{
 		"_output_name": "Trigger",
 		"_output_type": Nodes.TYPE_ANY,
 	},

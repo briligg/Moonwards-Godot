@@ -85,7 +85,9 @@ func get_navmesh_path(from: Vector3, to: Vector3, global : bool = false):
 	to = get_closest_point(to)
 	from = get_closest_point(from)
 	var path_points = Array(get_simple_path(from, to, true))
-	if path_points.back() != to:
+	print("Difference = ", (path_points.back() - to).length())
+	if (path_points.back()- to).length() > 1:
+		print((path_points.back() - to).length())
 		var path2 = Array(get_simple_path(to, from, true))
 		path2.invert()
 		for point in path2:

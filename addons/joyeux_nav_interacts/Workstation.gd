@@ -21,6 +21,7 @@ var position : Vector3 = Vector3.ZERO
 export(bool) var uses_queue : bool = false
 export(bool) var call_best_first : bool = false
 export(bool) var gives_xp : bool = false
+export(int) var maximum_progress : int = 100
 export(CATEGORY) var category : int = CATEGORY.WORK
 export(String) var subcategory : String = ""
 export(Array, NodePath) var Exclude : Array = []
@@ -28,6 +29,7 @@ export(Array, NodePath) var Exclude : Array = []
 func _enter_tree() -> void:
 	add_to_group("Workstations")
 	connect("body_entered", self, "_on_body_entered")
+	set_active(true)
 
 func _ready() -> void:
 	for path in Exclude:
@@ -43,6 +45,7 @@ func _ready() -> void:
 
 
 func check_for_next() -> void:
+	progress = 0
 	if not uses_queue:
 		return
 	if call_best_first:
@@ -51,8 +54,9 @@ func check_for_next() -> void:
 		assign(select_neareast())
 	
 func do_work(amount: float, experience : float) -> float:
-	progress += (amount * experience)/100
-	if progress >= 100:
+	progress += (amount + 1 * experience)/100
+	print(progress)
+	if progress >= maximum_progress:
 		is_available = true
 		current_worker.stop_working(category)
 		check_for_next()
@@ -85,7 +89,7 @@ func assign(worker : Worker) -> void:
 		return
 	is_available = false
 	current_worker = worker
-	worker.emit_signal("workstation_assigned", translation)
+	worker.emit_signal("workstation_assigned", position)
 
 func request_workstation(worker : Worker) -> bool:
 	print("Workstation: request recived from ", worker)
@@ -100,14 +104,21 @@ func request_workstation(worker : Worker) -> bool:
 		assign(worker)
 		return true
 	else:
+		print("Busy!")
 		return false
 
 func _on_body_entered(entity) -> void:
+	print("A worker arrived!")
 	if entity == get_parent():
 		return
 	var worker : Worker = entity.get_component("AI handler").worker
 	if worker:
 		if worker == current_worker:
+			entity.get_component("NPCInput").facing_target.position = translation
+			entity.get_component("NPCInput").Face2.is_enabled = true
+			yield(get_tree().create_timer(2), "timeout")
+			entity.get_component("NPCInput").Face2.is_enabled = false
+			print("The worker has arrived")
 			worker.start_working(self)
 			_change_state_on_user(worker)
 			
