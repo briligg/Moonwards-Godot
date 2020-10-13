@@ -65,7 +65,7 @@ margin_right = 922.0
 margin_bottom = 531.0
 size_flags_vertical = 10
 theme = ExtResource( 3 )
-text = "CREATE CUSTOM SERVER"
+text = "CREATE SERVER"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
