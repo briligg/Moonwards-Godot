@@ -2161,6 +2161,7 @@ radial_menu={
 3d_physics/layer_6="LOD"
 3d_physics/layer_11="FP Clickables"
 3d_physics/layer_16="Interactions"
+3d_physics/layer_17="Workstations"
 
 [logging]
 
