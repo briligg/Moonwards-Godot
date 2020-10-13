@@ -26,7 +26,7 @@ func _init(file:= "", state:= ""):
 	initial_state = state
 
 func load_colors():
-	var colors = [pants_color, shirt_color, hair_color, skin_color, shoes_color]
+	var colors = [skin_color, hair_color, shirt_color, pants_color, shoes_color]
 	actor.get_component("ModelComponent").set_colors(colors)
 	actor.get_component("NametagComponent").set_name(character_name)
 	

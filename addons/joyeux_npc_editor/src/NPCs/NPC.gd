@@ -72,7 +72,7 @@ func _load_behavior_script(AI_file : String, behavior_name : String = ""):
 func _start_machine():
 	print("Machine Started!")
 	for state in states.keys():
-		if state.begins_with("_start") or state == initial_state:
+		if (state.begins_with("_start") and initial_state == "") or state == initial_state:
 			current_state = state 
 			_change_behavior(behaviors.get(current_state))
 			return
