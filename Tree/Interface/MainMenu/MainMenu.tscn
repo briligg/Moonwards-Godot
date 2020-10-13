@@ -1,7 +1,7 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Tree/Interface/MainMenu/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Interface/Textures/menu_splash.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/1.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Interface/MainMenu.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/Interface/Textures/MoonwardsLogo2020_HeavyOutline_500px.png" type="Texture" id=4]
 [ext_resource path="res://Tree/Interface/MainMenu/About/About.tscn" type="PackedScene" id=5]
@@ -26,6 +26,8 @@
 [ext_resource path="res://Tree/Interface/MainMenu/SettingsMenu.gd" type="Script" id=24]
 [ext_resource path="res://addons/joyeux_npc_editor/src/interface/NPCEditorSuite.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Tree/Interface/MainMenu/Apps.gd" type="Script" id=26]
+[ext_resource path="res://Tree/Interface/MainMenu/Background.gd" type="Script" id=27]
+
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.588235 )
@@ -60,6 +62,7 @@ anchor_bottom = 1.0
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 7
+script = ExtResource( 27 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
