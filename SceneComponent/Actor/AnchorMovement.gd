@@ -21,17 +21,23 @@ func _integrate_forces(args):
 
 func _integrate_server(args) -> void:
 	var state = args[0]
-#	if process_mode == ProcessMode.IntegrateForces:
-#		if entity.movement_anchor.is_anchored:
-#			self.global_transform.origin += entity.movement_anchor.movement_delta
-
+	if process_mode == ProcessMode.IntegrateForces:
+		if entity.movement_anchor_data.is_anchored:
+			_update_entity_pos()
+			
 func _integrate_client(state):
 	pass
 
 func _process_server(delta: float) -> void:
 	if process_mode == ProcessMode.PhysicsProcess:
-		if entity.movement_anchor.is_anchored:
-			self.global_transform.origin += entity.movement_anchor.movement_delta
+		if entity.movement_anchor_data.is_anchored:
+			_update_entity_pos()
+
+func _update_entity_pos():
+	entity.global_transform.origin = (
+			entity.movement_anchor_data.anchor_node.global_transform.origin - 
+			entity.movement_anchor_data.origin_pos_delta + Vector3(0,0.05, 0))
+	entity.linear_velocity = Vector3(0,0,0)
 
 func _process_client(state):
 	pass

@@ -52,18 +52,16 @@ func is_grounded() -> bool:
 
 func _integrate_forces(state):
 	invoke_network_based("_integrate_server", "_integrate_client", [state])
-	
+
 func _integrate_client(_args):
 	pass
 	
 func _integrate_server(args):
 	var phys_state = args[0]
 	entity.is_grounded = is_grounded()
-	if entity.movement_anchor.is_anchored:
-		entity.global_transform.origin = (
-				entity.movement_anchor.anchor_node.global_transform.origin - 
-				entity.movement_anchor.origin_pos_delta + Vector3(0,0.05, 0))
-		phys_state.linear_velocity = Vector3(0,0,0)
+	# Don't do a thing if you're anchored, stupid...
+	# I still feel this needs to be somewhere else, regardless.
+	if entity.movement_anchor_data.is_anchored:
 		entity.custom_integrator = true
 		return
 	else:
