@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://addons/com.gdquest.godot-steering-ai-framework/NPCMovement.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/Nametag/NametagComponent.tscn" type="PackedScene" id=2]
@@ -7,30 +7,13 @@
 [ext_resource path="res://SceneComponent/Actor/Humanoid/HumanoidMovement.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Script/Entity/ActorEntity.gd" type="Script" id=6]
 [ext_resource path="res://Assets/MoonTown/Models/Human_Model/FemalePlayerModel.tscn" type="PackedScene" id=7]
-[ext_resource path="res://addons/joyeux_nav_interacts/Workstation.gd" type="Script" id=8]
+[ext_resource path="res://addons/joyeux_nav_interacts/Workstation.tscn" type="PackedScene" id=8]
 [ext_resource path="res://addons/joyeux_nav_interacts/MwAI.gd" type="Script" id=9]
 [ext_resource path="res://Script/Component/ModelComponent.gd" type="Script" id=10]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.287522
 height = 1.04841
-
-[sub_resource type="BoxShape" id=2]
-
-[sub_resource type="SpatialMaterial" id=3]
-flags_transparent = true
-albedo_color = Color( 1, 0, 0, 0.415686 )
-emission_enabled = true
-emission = Color( 0.2, 0.537255, 0, 1 )
-emission_energy = 1.0
-emission_operator = 0
-emission_on_uv2 = false
-
-[sub_resource type="SphereMesh" id=4]
-material = SubResource( 3 )
-flip_faces = true
-radial_segments = 8
-rings = 4
 
 [node name="NPC" type="RigidBody"]
 collision_layer = 32769
@@ -56,7 +39,13 @@ __meta__ = {
 script = ExtResource( 1 )
 linear_speed_max = 5.0
 linear_acceleration_max = 0.5
+arrival_tolerance = 0.6
 deceleration_radius = 6.8
+
+[node name="Workstation" parent="." instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
+maximum_progress = 20
+category = 3
 
 [node name="Model" parent="." instance=ExtResource( 7 )]
 
@@ -73,48 +62,10 @@ mesh_path = NodePath("../Model/Female_Player/Skeleton/FemaleBody-LOD0")
 
 [node name="HumanoidMovement" parent="." instance=ExtResource( 5 )]
 
-[node name="Workstation" type="Area" parent="."]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
-script = ExtResource( 8 )
-display_info = "Example Workstation"
-title = "Work"
-category = 3
-
-[node name="CollisionShape" type="CollisionShape" parent="Workstation"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-shape = SubResource( 2 )
-
-[node name="NPCPosition" type="Position3D" parent="Workstation"]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0.182675, 0 )
-
-[node name="OrientationIndicator" type="Position3D" parent="Workstation/NPCPosition"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
-
-[node name="MeshInstance4" type="MeshInstance" parent="Workstation/NPCPosition"]
-transform = Transform( -7.08353e-09, 0, 0.162052, 0, 0.162052, 0, -0.162052, 0, -7.08353e-09, -1.07321e-09, 0.16653, -0.0245522 )
-mesh = SubResource( 4 )
-material/0 = null
-
-[node name="MeshInstance" type="MeshInstance" parent="Workstation"]
-transform = Transform( 0.431875, 0, 0, 0, 0.431875, 0, 0, 0, 0.431875, 0, 0, 0 )
-mesh = SubResource( 4 )
-material/0 = null
-
-[node name="MeshInstance2" type="MeshInstance" parent="Workstation"]
-transform = Transform( 0.431875, 0, 0, 0, 0.431875, 0, 0, 0, 0.431875, 0, 0.534009, 0 )
-mesh = SubResource( 4 )
-material/0 = null
-
-[node name="MeshInstance3" type="MeshInstance" parent="Workstation"]
-transform = Transform( 0.431875, 0, 0, 0, 0.431875, 0, 0, 0, 0.431875, 0, 1.04509, 0 )
-mesh = SubResource( 4 )
-material/0 = null
-
 [node name="AIHandler" type="Spatial" parent="."]
 script = ExtResource( 9 )
 enabled = true
 NPC_File = "res://Assets/Characters/Phill.jsm"
 initial_state = "WorkingBusy"
-Interactable_Path = NodePath("../Workstation")
 
 [editable path="Model"]

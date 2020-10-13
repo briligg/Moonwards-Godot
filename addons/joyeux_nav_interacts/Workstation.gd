@@ -15,7 +15,7 @@ enum CATEGORY {
 var progress : float = 0.0
 var in_queue_for_use : Array = []
 var current_worker : Worker = null
-var orientation : Vector3 = Vector3.ZERO
+var lookdir : Vector3 = Vector3.ZERO
 var position : Vector3 = Vector3.ZERO
 
 export(bool) var uses_queue : bool = false
@@ -26,6 +26,7 @@ export(CATEGORY) var category : int = CATEGORY.WORK
 export(String) var subcategory : String = ""
 export(Array, NodePath) var Exclude : Array = []
 
+onready var pos = $NPCPosition
 func _enter_tree() -> void:
 	add_to_group("Workstations")
 	connect("body_entered", self, "_on_body_entered")
@@ -38,12 +39,9 @@ func _ready() -> void:
 		else:
 			Exclude.append(get_node(path))
 			Exclude.erase(path)
-	var pos = get_node("NPCPosition")
 	if pos:
-		orientation = pos.rotation_degrees
-		position = translation + pos.translation
-
-
+		position = get_parent().to_local(to_global(pos.translation))
+		lookdir = (translation - pos.translation)/2
 func check_for_next() -> void:
 	progress = 0
 	if not uses_queue:
@@ -114,10 +112,7 @@ func _on_body_entered(entity) -> void:
 	var worker : Worker = entity.get_component("AI handler").worker
 	if worker:
 		if worker == current_worker:
-			entity.get_component("NPCInput").facing_target.position = translation
-			entity.get_component("NPCInput").Face2.is_enabled = true
-			yield(get_tree().create_timer(2), "timeout")
-			entity.get_component("NPCInput").Face2.is_enabled = false
+			entity.get_component("NPCInput").get_navpath(translation)
 			print("The worker has arrived")
 			worker.start_working(self)
 			_change_state_on_user(worker)
