@@ -50,6 +50,10 @@ func _ready() -> void :
 		
 		next_file = dir.get_next()
 	
+	#Shuffle the textures around.
+	randomize()
+	textures.shuffle()
+	
 	#Make the first and second picture have the correct texture.
 	if textures.size() >= 1 :
 		one.texture = textures[0]
