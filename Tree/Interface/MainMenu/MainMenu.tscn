@@ -20,12 +20,13 @@
 [ext_resource path="res://SceneComponent/Interface/MainMenu/Destination.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Tree/Interface/MainMenu/QuitMenu.gd" type="Script" id=19]
 [ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/Settings.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/Controls_settings.tscn" type="PackedScene" id=21]
+[ext_resource path="res://SceneComponent/Interface/CustomControls/CustomControls.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Empty.tres" type="StyleBox" id=22]
 [ext_resource path="res://Tree/Interface/MainMenu/Style/MM_PanelMain.tres" type="StyleBox" id=23]
 [ext_resource path="res://Tree/Interface/MainMenu/SettingsMenu.gd" type="Script" id=24]
 [ext_resource path="res://addons/joyeux_npc_editor/src/interface/NPCEditorSuite.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Tree/Interface/MainMenu/Apps.gd" type="Script" id=26]
+
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.588235 )
