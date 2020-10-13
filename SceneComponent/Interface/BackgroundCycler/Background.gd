@@ -4,6 +4,9 @@ extends Control
 #Where the texture files are located.
 const FILE_LOC : String = "res://Assets/Interface/Textures/MainMenuBackgrounds/"
 
+#How long to wait between image cycles.
+export var image_wait_time : float = 6
+
 #These are the two texture rects.
 onready var anim : AnimationPlayer = $A
 onready var one : TextureRect = get_node("1")
@@ -39,6 +42,10 @@ func _next_picture() -> void :
 
 #Load the StreamTextures to display them later.
 func _ready() -> void :
+	#Set the timer's wait time based on what the developer specified.
+	timer.wait_time = image_wait_time
+	timer.start()
+	
 	var dir : Directory = Directory.new()
 	dir.open(FILE_LOC)
 	dir.list_dir_begin(true)
