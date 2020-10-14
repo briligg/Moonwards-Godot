@@ -34,7 +34,7 @@ func _process_server(delta: float) -> void:
 			_update_entity_pos()
 
 func _update_entity_pos():
-	entity.global_transform.origin = entity.movement_anchor_data.anchor_position
+	entity.global_transform.origin = entity.movement_anchor_data.get_anchor_position()
 
 func _process_client(state):
 	pass

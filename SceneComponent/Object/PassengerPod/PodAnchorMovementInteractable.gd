@@ -12,10 +12,8 @@ func interacted_by(body):
 
 func attach_anchor(body):
 	if body is AEntity:
-		body.movement_anchor_data.anchor_node = self
-		body.movement_anchor_data.is_anchored = true
+		body.movement_anchor_data.attach(self)
  
 func detach_anchor(body):
 	if body is AEntity:
-		body.movement_anchor_data.anchor_node = null
-		body.movement_anchor_data.is_anchored = false
+		body.movement_anchor_data.detach()
