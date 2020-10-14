@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Rec_Hab_1/Rec_Hab_1.glb" type="PackedScene" id=1]
 [ext_resource path="res://SceneComponent/Utilities/VerticalStairs/VerticalStairs.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/MoonTown/Constructs/Rec_Hab_1/WaterPool_Mat.tres" type="Material" id=3]
 [ext_resource path="res://Assets/MoonTown/Constructs/Rec_Hab_1/RecHab_main_walls.material" type="Material" id=4]
 [ext_resource path="res://Assets/MoonTown/Constructs/Rec_Hab_1/Lavastone3-temp.material" type="Material" id=5]
 [ext_resource path="res://Assets/MoonTown/Constructs/Rec_Hab_1/RegolithFused-temp.material" type="Material" id=6]
@@ -13,11 +12,7 @@
 [node name="RecHabRetainingWalls_Opt" parent="LOD0" index="1"]
 material/0 = ExtResource( 5 )
 
-[node name="Pool_Water" parent="LOD0/RecHabRetainingWalls_Opt" index="12"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.442827, -3.98463, -31.4966 )
-material/0 = ExtResource( 3 )
-
-[node name="RecHab_Opt" parent="LOD0/RecHabRetainingWalls_Opt" index="18"]
+[node name="RecHab_Opt" parent="LOD0/RecHabRetainingWalls_Opt" index="17"]
 material/0 = ExtResource( 4 )
 
 [node name="VerticalStairs_Pair_Top_S" parent="Marker_VerticalStairs_Pair_Top_S" index="0" instance=ExtResource( 2 )]
@@ -26,6 +21,7 @@ display_info = "Interactable"
 title = "Title"
 networked = true
 interactions_active = true
+stair_top_length = 1.0
 stairs_step_count = 3
 generate_editor_visual = false
 
@@ -35,6 +31,7 @@ display_info = "Interactable"
 title = "Title"
 networked = true
 interactions_active = true
+stair_top_length = 1.0
 stairs_step_count = 3
 generate_editor_visual = false
 
@@ -44,6 +41,7 @@ display_info = "Interactable"
 title = "Title"
 networked = true
 interactions_active = true
+stair_top_length = 1.0
 stairs_step_count = 3
 generate_editor_visual = false
 
@@ -53,6 +51,7 @@ display_info = "Interactable"
 title = "Title"
 networked = true
 interactions_active = true
+stair_top_length = 1.0
 stairs_step_count = 9
 generate_editor_visual = false
 
@@ -62,6 +61,7 @@ display_info = "Interactable"
 title = "Title"
 networked = true
 interactions_active = true
+stair_top_length = 1.0
 stairs_step_count = 9
 generate_editor_visual = false
 
@@ -71,6 +71,7 @@ display_info = "Interactable"
 title = "Title"
 networked = true
 interactions_active = true
+stair_top_length = 1.0
 stairs_step_count = 1
 generate_editor_visual = false
 
@@ -80,6 +81,7 @@ display_info = "Interactable"
 title = "Title"
 networked = true
 interactions_active = true
+stair_top_length = 1.0
 stairs_step_count = 4
 generate_editor_visual = false
 
@@ -92,6 +94,7 @@ display_info = "Interactable"
 title = "Title"
 networked = true
 interactions_active = true
+stair_top_length = 1.0
 stairs_step_count = 1
 generate_editor_visual = false
 
@@ -100,6 +103,7 @@ display_info = "Interactable"
 title = "Title"
 networked = true
 interactions_active = true
+stair_top_length = 1.0
 stairs_step_count = 11
 generate_editor_visual = false
 
@@ -109,6 +113,7 @@ display_info = "Interactable"
 title = "Title"
 networked = true
 interactions_active = true
+stair_top_length = 1.0
 stairs_step_count = 11
 generate_editor_visual = false
 
