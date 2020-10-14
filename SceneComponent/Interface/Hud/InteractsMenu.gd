@@ -166,6 +166,9 @@ func _new_interactor(new_interactor : InteractorComponent) -> void :
 	new_interactor.connect(new_interactor.INTERACTABLE_LEFT_AREA_REACH, self, "_interactable_left")
 	interactor_component = new_interactor
 	
+	#Remove the text that may be present from the previous Interactor.
+	description.text = ""
+	
 	#Add the new Interactables to the scene tree.
 	for interactable in new_interactor.get_interactables() :
 		_interactable_entered(interactable)
