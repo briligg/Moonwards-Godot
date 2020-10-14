@@ -83,6 +83,10 @@ transform = Transform( 1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.6656, 0.0161567 )
 shape = SubResource( 2 )
 
+[node name="Interactable" parent="RoverRideRelayInteractable" index="1"]
+display_info = ""
+title = "Control Rover"
+
 [node name="CollisionShape" type="CollisionShape" parent="RoverRideRelayInteractable/Interactable" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.41369 )
 shape = SubResource( 3 )
