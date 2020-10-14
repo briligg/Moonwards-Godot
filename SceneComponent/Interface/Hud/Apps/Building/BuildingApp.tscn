@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/Interface/Hud/Styles/Apps/HUDApps.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Building/T_IconPlanes.png" type="Texture" id=2]
@@ -21,12 +21,14 @@
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconDivide.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconMerge.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconScale.png" type="Texture" id=21]
-
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconClear.png" type="Texture" id=22]
+[ext_resource path="res://SceneComponent/Interface/Hud/Apps/Building/BuildingApp.gd" type="Script" id=23]
 
 [node name="BuildingApp" type="PanelContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -37,14 +39,14 @@ margin_bottom = 1080.0
 
 [node name="HBoxContainer_MainTools" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 1920.0
-margin_bottom = 114.0
+margin_bottom = 74.0
 custom_constants/separation = 30
 alignment = 1
 
 [node name="VBoxContainer_Tool_0" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_MainTools"]
 margin_left = 663.0
 margin_right = 737.0
-margin_bottom = 114.0
+margin_bottom = 74.0
 
 [node name="MarginContainer_Tool_0" type="MarginContainer" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_0"]
 margin_right = 74.0
@@ -61,17 +63,10 @@ toggle_mode = true
 icon = ExtResource( 7 )
 flat = true
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_0"]
-margin_top = 78.0
-margin_right = 74.0
-margin_bottom = 114.0
-text = "[1]"
-align = 1
-
 [node name="VBoxContainer_Tool_1" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_MainTools"]
 margin_left = 767.0
 margin_right = 841.0
-margin_bottom = 114.0
+margin_bottom = 74.0
 
 [node name="MarginContainer_Tool_1" type="MarginContainer" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_1"]
 margin_right = 74.0
@@ -88,17 +83,10 @@ toggle_mode = true
 icon = ExtResource( 4 )
 flat = true
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_1"]
-margin_top = 78.0
-margin_right = 74.0
-margin_bottom = 114.0
-text = "[2]"
-align = 1
-
 [node name="VBoxContainer_Tool_2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_MainTools"]
 margin_left = 871.0
 margin_right = 945.0
-margin_bottom = 114.0
+margin_bottom = 74.0
 
 [node name="MarginContainer_Tool_2" type="MarginContainer" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_2"]
 margin_right = 74.0
@@ -115,17 +103,10 @@ toggle_mode = true
 icon = ExtResource( 8 )
 flat = true
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_2"]
-margin_top = 78.0
-margin_right = 74.0
-margin_bottom = 114.0
-text = "[3]"
-align = 1
-
 [node name="VBoxContainer_Tool_3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_MainTools"]
 margin_left = 975.0
 margin_right = 1049.0
-margin_bottom = 114.0
+margin_bottom = 74.0
 
 [node name="MarginContainer_Tool_3" type="MarginContainer" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_3"]
 margin_right = 74.0
@@ -142,17 +123,10 @@ toggle_mode = true
 icon = ExtResource( 5 )
 flat = true
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_3"]
-margin_top = 78.0
-margin_right = 74.0
-margin_bottom = 114.0
-text = "[4]"
-align = 1
-
 [node name="VBoxContainer_Tool_4" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_MainTools"]
 margin_left = 1079.0
 margin_right = 1153.0
-margin_bottom = 114.0
+margin_bottom = 74.0
 
 [node name="MarginContainer_Tool_4" type="MarginContainer" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_4"]
 margin_right = 74.0
@@ -169,17 +143,10 @@ toggle_mode = true
 icon = ExtResource( 2 )
 flat = true
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_4"]
-margin_top = 78.0
-margin_right = 74.0
-margin_bottom = 114.0
-text = "[5]"
-align = 1
-
 [node name="VBoxContainer_Tool_5" type="VBoxContainer" parent="VBoxContainer/HBoxContainer_MainTools"]
 margin_left = 1183.0
 margin_right = 1257.0
-margin_bottom = 114.0
+margin_bottom = 74.0
 
 [node name="MarginContainer_Tool_5" type="MarginContainer" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_5"]
 margin_right = 74.0
@@ -196,15 +163,8 @@ toggle_mode = true
 icon = ExtResource( 6 )
 flat = true
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer_MainTools/VBoxContainer_Tool_5"]
-margin_top = 78.0
-margin_right = 74.0
-margin_bottom = 114.0
-text = "[6]"
-align = 1
-
 [node name="Container" type="Container" parent="VBoxContainer"]
-margin_top = 118.0
+margin_top = 78.0
 margin_right = 1920.0
 margin_bottom = 990.0
 size_flags_horizontal = 3
@@ -216,6 +176,28 @@ margin_right = 1920.0
 margin_bottom = 1080.0
 custom_constants/separation = 32
 alignment = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 1480.0
+margin_right = 1509.0
+margin_bottom = 86.0
+custom_constants/separation = 10
+alignment = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
+margin_top = 48.0
+margin_right = 29.0
+margin_bottom = 86.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/MarginContainer2"]
+margin_right = 29.0
+margin_bottom = 38.0
+
+[node name="Button_Exit" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/MarginContainer2"]
+margin_right = 29.0
+margin_bottom = 38.0
+toggle_mode = true
+icon = ExtResource( 22 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 1541.0
