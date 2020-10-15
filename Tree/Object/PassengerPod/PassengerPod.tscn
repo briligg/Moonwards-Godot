@@ -26,7 +26,7 @@ albedo_texture = SubResource( 4 )
 
 [sub_resource type="PlaneMesh" id=6]
 flip_faces = true
-size = Vector2( 3, 1.6 )
+size = Vector2( 2, 0.4 )
 
 [sub_resource type="ConvexPolygonShape" id=7]
 points = PoolVector3Array( -1, -0.147256, 8.25489, -1, 0.147256, 8.25489, -1, 0.147256, -8.25489, -1, -0.147256, -8.25489, -1, -0.147256, -8.25489, -1, 0.147256, -8.25489, 1, 0.147256, -8.25489, 1, -0.147256, -8.25489, 1, -0.147256, -8.25489, 1, 0.147256, -8.25489, 1, 0.147256, 8.25489, 1, -0.147256, 8.25489, 1, -0.147256, 8.25489, 1, 0.147256, 8.25489, -1, 0.147256, 8.25489, -1, -0.147256, 8.25489, -1, -0.147256, -8.25489, 1, -0.147256, -8.25489, 1, -0.147256, 8.25489, -1, -0.147256, 8.25489, 1, 0.147256, -8.25489, -1, 0.147256, -8.25489, -1, 0.147256, 8.25489, 1, 0.147256, 8.25489 )
@@ -105,13 +105,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.41369 )
 shape = SubResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="RoverRideRelayInteractable/Interactable/CollisionShape"]
-transform = Transform( 1, 6.51683e-07, -5.30863e-14, -5.30863e-14, 1.62921e-07, 1, 6.51683e-07, -1, 1.62921e-07, 0, 0, 0.171695 )
+transform = Transform( 1, 6.51683e-07, -5.30863e-14, -5.30863e-14, 1.62921e-07, 1, 6.51683e-07, -1, 1.62921e-07, 0, 0.733987, -0.123919 )
 material_override = SubResource( 5 )
 mesh = SubResource( 6 )
 material/0 = null
 
 [node name="Viewport" type="Viewport" parent="RoverRideRelayInteractable/Interactable/CollisionShape/MeshInstance"]
-size = Vector2( 800, 600 )
+size = Vector2( 800, 180 )
 transparent_bg = true
 
 [node name="Label" type="Label" parent="RoverRideRelayInteractable/Interactable/CollisionShape/MeshInstance/Viewport"]
