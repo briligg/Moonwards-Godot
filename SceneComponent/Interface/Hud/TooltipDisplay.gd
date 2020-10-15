@@ -1,6 +1,6 @@
 extends PanelContainer
 
-onready var text : RichTextLabel = $Vert/BBText
+onready var text : RichTextLabel = $Vert/TextHolder/BBText
 onready var title_node : Label = $Vert/Top/Title
 onready var page_node : Label = $Vert/Bottom/Page
 
