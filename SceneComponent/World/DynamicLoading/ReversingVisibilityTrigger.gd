@@ -48,22 +48,38 @@ func process_visibility() -> void:
 	if is_set:
 		return;
 	is_set = true;
-	
+	var c = 0
 	for path in show_lod0_list:
 		_process_lod_node(path, 0)
+		if c % VisibilityManager.iterations_per_frame == 0:
+			yield(get_tree(), "idle_frame")
+		c += 1
 	for path in show_lod1_list:
 		_process_lod_node(path, 1)
+		if c % VisibilityManager.iterations_per_frame == 0:
+			yield(get_tree(), "idle_frame")
+		c += 1
 	for path in show_lod2_list:
 		_process_lod_node(path, 2)
+		if c % VisibilityManager.iterations_per_frame == 0:
+			yield(get_tree(), "idle_frame")
+		c += 1
 	for path in hide_list:
 		_process_lod_node(path, 255)
+		if c % VisibilityManager.iterations_per_frame == 0:
+			yield(get_tree(), "idle_frame")
+		c += 1
 
 func reverse_visibility() -> void:
 	is_set = false;
 	
+	var c = 0
 	for node in _previous_states.keys():
 		var state = _previous_states[node]
 		node.call_deferred("set_lod", state)
+		if c % VisibilityManager.iterations_per_frame == 0:
+			yield(get_tree(), "idle_frame")
+		c += 1
 	_previous_states.clear()
 
 func _process_lod_node(path, lod_level) -> void:
