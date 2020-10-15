@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://SceneComponent/Interface/Hud/TooltipDisplay.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Interface/TooltipDisplay.tres" type="Theme" id=2]
 [ext_resource path="res://Assets/Interface/StyleBoxes/TooltipDisplayBackgroundPanel.tres" type="StyleBox" id=3]
 [ext_resource path="res://Assets/Interface/StyleBoxes/TooltipDisplayHSeparator.tres" type="StyleBox" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="TooltipDisplay" type="PanelContainer"]
 visible = false
@@ -59,10 +61,26 @@ margin_right = 1144.0
 margin_bottom = 48.0
 custom_styles/separator = ExtResource( 4 )
 
-[node name="BBText" type="RichTextLabel" parent="Vert"]
+[node name="TextHolder" type="HBoxContainer" parent="Vert"]
 margin_top = 52.0
 margin_right = 1144.0
 margin_bottom = 1019.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 24.0
+alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="Vert/TextHolder"]
+margin_right = 14.0
+margin_bottom = 967.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+custom_styles/separator = SubResource( 1 )
+
+[node name="BBText" type="RichTextLabel" parent="Vert/TextHolder"]
+margin_left = 18.0
+margin_right = 1144.0
+margin_bottom = 967.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 24.0
