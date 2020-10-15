@@ -41,14 +41,21 @@ func on_body_entered(body) -> void:
 		if body.owner_peer_id == get_tree().get_network_unique_id() and VisibilityManager.log_vt_changes:
 			Log.trace(self, "on_body_entered", "Processing visibility for %s, in %s"
 					%[body.name, self.name])
-			process_visibility()
+		process_visibility()
 
 func process_visibility() -> void:
 	if is_set:
 		return;
 	is_set = true;
-	get_tree().call_group(Groups.DYNAMIC_VISIBILITY, "unset")
 	
+	var dvts = get_tree().get_nodes_in_group(Groups.DYNAMIC_VISIBILITY)
+	dvts.erase(self)
+	for node in dvts:
+		node.call_deferred("unset")
+		if !is_set:
+			return
+
+	var c = 0
 	for node in get_tree().get_nodes_in_group(Groups.LOD_MODELS):
 		var path = get_path_to(node)
 		if path in show_lod0_list:
@@ -61,6 +68,12 @@ func process_visibility() -> void:
 			node.call_deferred("hide_all")
 		else:
 			orphan_op(node)
+		if c % VisibilityManager.iterations_per_frame == 0:
+			yield(get_tree(), "idle_frame")
+		if !is_set:
+			return
+		c += 1
+
 
 func orphan_op(node):
 	match orphan_node_op:

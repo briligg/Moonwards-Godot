@@ -340,6 +340,11 @@ _global_script_classes=[ {
 "path": "res://addons/joyeux_dialog_system/src/components/text_popup.gd"
 }, {
 "base": "Node",
+"class": "ThreadWorker",
+"language": "GDScript",
+"path": "res://Script/Threading/ThreadWorker.gd"
+}, {
+"base": "Node",
 "class": "TooltipData",
 "language": "GDScript",
 "path": "res://Script/GameLogic/Tooltip/TooltipData.gd"
@@ -486,6 +491,7 @@ _global_script_class_icons={
 "ReversingVisibilityTrigger": "",
 "StaticEntity": "",
 "TextPopup": "",
+"ThreadWorker": "",
 "TooltipData": "",
 "VehicleEntity": "",
 "VerticalStairs": "",
