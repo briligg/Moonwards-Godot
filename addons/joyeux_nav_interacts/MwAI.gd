@@ -34,6 +34,7 @@ func _ready():
 	#Workstation setup
 	BehaviorTree._create_signal("interacted_by")
 	get_node(Interactable_Path).connect("interacted_by", self, "_on_interacted")
+	get_node(Interactable_Path).title = BehaviorTree.character_name
 	add_child(BehaviorTree)
 	#Load settings
 	BehaviorTree.load_colors()
