@@ -44,6 +44,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://SceneComponent/Object/Airlock/AirlockDoorInteractable.gd"
 }, {
+"base": "AComponent",
+"class": "AnchorMovementComponent",
+"language": "GDScript",
+"path": "res://SceneComponent/Actor/AnchorMovement.gd"
+}, {
+"base": "Reference",
+"class": "AnchorMovementData",
+"language": "GDScript",
+"path": "res://Script/GameLogic/AnchorMovementData.gd"
+}, {
 "base": "Reference",
 "class": "AudioSignals",
 "language": "GDScript",
@@ -505,6 +515,11 @@ _global_script_classes=[ {
 "path": "res://addons/joyeux_dialog_system/src/components/text_popup.gd"
 }, {
 "base": "Node",
+"class": "ThreadWorker",
+"language": "GDScript",
+"path": "res://Script/Threading/ThreadWorker.gd"
+}, {
+"base": "Node",
 "class": "TooltipData",
 "language": "GDScript",
 "path": "res://Script/GameLogic/Tooltip/TooltipData.gd"
@@ -602,6 +617,8 @@ _global_script_class_icons={
 "ActorEntity": "",
 "ActorEntityState": "",
 "AirlockDoorInteractable": "",
+"AnchorMovementComponent": "",
+"AnchorMovementData": "",
 "AudioSignals": "",
 "BehaviorNode": "",
 "CameraController": "",
@@ -694,6 +711,7 @@ _global_script_class_icons={
 "ReversingVisibilityTrigger": "",
 "StaticEntity": "",
 "TextPopup": "",
+"ThreadWorker": "",
 "TooltipData": "",
 "VehicleEntity": "",
 "VerticalStairs": "",
@@ -2149,15 +2167,11 @@ toggle_first_person={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":51,"unicode":0,"echo":false,"script":null)
  ]
 }
-radial_menu={
-"deadzone": 0.5,
-"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":3,"pressed":false,"doubleclick":false,"script":null)
- ]
-}
 
 [layer_names]
 
 3d_physics/layer_1="World"
+3d_physics/layer_2="Player"
 3d_physics/layer_6="LOD"
 3d_physics/layer_11="FP Clickables"
 3d_physics/layer_16="Interactions"
@@ -2181,6 +2195,6 @@ quality/shadows/filter_mode=2
 quality/reflections/irradiance_max_size=256
 quality/filters/use_nearest_mipmap_filter=true
 limits/rendering/max_renderable_elements=60000
-environment/default_clear_color=Color( 0.447059, 0.447059, 0.447059, 1 )
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 quality/filters/msaa=1
 environment/default_environment="res://default_env.tres"

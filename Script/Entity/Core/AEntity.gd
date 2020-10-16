@@ -21,6 +21,9 @@ var entity_name: String = ""
 
 var components: Dictionary = {}
 
+## Movement Anchoring
+var movement_anchor_data = AnchorMovementData.new(self)
+
 func _ready() -> void:
 	if enable_on_spawn:
 		enabled = true

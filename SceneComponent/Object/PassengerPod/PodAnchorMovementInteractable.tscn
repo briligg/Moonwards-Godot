@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Script/GameLogic/Interact/Interactable/Interactable.gd" type="Script" id=1]
+[ext_resource path="res://SceneComponent/Object/PassengerPod/PodAnchorMovementInteractable.gd" type="Script" id=2]
+
+[sub_resource type="ConvexPolygonShape" id=1]
+points = PoolVector3Array( -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.782352, -0.5, -0.5, -0.782352, -0.5, -0.5, -0.782352, -0.5, 0.5, -0.782352, 0.5, 0.5, -0.782352, 0.5, -0.5, -0.782352, 0.5, -0.5, -0.782352, 0.5, 0.5, -0.782352, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.782352, 0.5, -0.5, -0.782352, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.782352, -0.5, 0.5, -0.782352, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5 )
+
+[sub_resource type="ConvexPolygonShape" id=2]
+points = PoolVector3Array( 0.183408, -0.5, 0.5, 0.183408, 0.5, 0.5, 0.183408, 0.5, -0.5, 0.183408, -0.5, -0.5, 0.183408, -0.5, -0.5, 0.183408, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.183408, 0.5, 0.5, 0.183408, -0.5, 0.5, 0.183408, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.183408, -0.5, 0.5, 0.5, 0.5, -0.5, 0.183408, 0.5, -0.5, 0.183408, 0.5, 0.5, 0.5, 0.5, 0.5 )
+
+[sub_resource type="ConvexPolygonShape" id=3]
+points = PoolVector3Array( 0.183408, -0.5, 0.5, 0.183408, 0.5, 0.5, 0.183408, 0.5, -0.5, 0.183408, -0.5, -0.5, 0.183408, -0.5, -0.5, 0.183408, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.183408, 0.5, 0.5, 0.183408, -0.5, 0.5, 0.183408, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.183408, -0.5, 0.5, 0.5, 0.5, -0.5, 0.183408, 0.5, -0.5, 0.183408, 0.5, 0.5, 0.5, 0.5, 0.5 )
+
+[node name="PodAnchorMovementInteractable" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Interactable" type="Area" parent="."]
+collision_layer = 2147516416
+collision_mask = 32768
+script = ExtResource( 1 )
+display_info = "Pod structure"
+title = "Grab a pole to stabilize your movement"
+
+[node name="CollisionShape" type="CollisionShape" parent="Interactable"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 9.3844, 8.39058e-05, -0.499579, -0.0138121 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Interactable"]
+transform = Transform( 1, 0, 0, 0, 0.0514438, 0, 0, 0, 13.6635, 2.06352, -0.499579, -0.0138121 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Interactable"]
+transform = Transform( 1, 0, 0, 0, 0.0514438, 0, 0, 0, 13.6635, -2.68912, -0.499579, -0.0138121 )
+shape = SubResource( 3 )

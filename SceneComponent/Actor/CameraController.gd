@@ -78,12 +78,14 @@ func _input(event):
 		is_flying = !is_flying
 		Signals.Entities.emit_signal(Signals.Entities.FREE_CAMERA_TOGGLED)
 	
-	if event.is_action_pressed("zoom_in", true) :
-		fly_speed += CHANGE_FLY_SPEED_BY
-		Signals.Hud.emit_signal(Signals.Hud.FLIGHT_VALUE_SET, fly_speed)
-	if event.is_action_pressed("zoom_out", true) :
-		fly_speed = max(SLOWEST_POSSIBLE_FLIGHT_SPEED, fly_speed - CHANGE_FLY_SPEED_BY)
-		Signals.Hud.emit_signal(Signals.Hud.FLIGHT_VALUE_SET, fly_speed)
+	#Change flight speed when in flight mode.
+	if is_flying :
+		if event.is_action_pressed("zoom_in", true) :
+			fly_speed += CHANGE_FLY_SPEED_BY
+			Signals.Hud.emit_signal(Signals.Hud.FLIGHT_VALUE_SET, fly_speed)
+		if event.is_action_pressed("zoom_out", true) :
+			fly_speed = max(SLOWEST_POSSIBLE_FLIGHT_SPEED, fly_speed - CHANGE_FLY_SPEED_BY)
+			Signals.Hud.emit_signal(Signals.Hud.FLIGHT_VALUE_SET, fly_speed)
 	
 	#Check if the player wants to switch to first person.
 	if event.is_action_pressed("toggle_first_person") && camera.is_current() && allow_first_person :
