@@ -9,9 +9,9 @@
 
 [node name="TooltipDisplay" type="PanelContainer"]
 visible = false
-anchor_left = 0.2
-anchor_right = 0.8
-anchor_bottom = 1.0
+anchor_left = 0.38
+anchor_right = 0.98
+anchor_bottom = 0.9
 theme = ExtResource( 2 )
 custom_styles/panel = ExtResource( 3 )
 script = ExtResource( 1 )
@@ -23,25 +23,25 @@ __meta__ = {
 margin_left = 4.0
 margin_top = 4.0
 margin_right = 1148.0
-margin_bottom = 1076.0
+margin_bottom = 968.0
 
 [node name="Top" type="HBoxContainer" parent="Vert"]
 margin_right = 1144.0
-margin_bottom = 40.0
+margin_bottom = 36.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
 [node name="PageLeft" type="Button" parent="Vert/Top"]
 margin_right = 162.0
-margin_bottom = 40.0
+margin_bottom = 36.0
 size_flags_horizontal = 3
 text = "Previous Page"
 
 [node name="Title" type="Label" parent="Vert/Top"]
 margin_left = 166.0
 margin_right = 977.0
-margin_bottom = 40.0
+margin_bottom = 36.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
@@ -51,20 +51,20 @@ align = 1
 [node name="PageRight" type="Button" parent="Vert/Top"]
 margin_left = 981.0
 margin_right = 1144.0
-margin_bottom = 40.0
+margin_bottom = 36.0
 size_flags_horizontal = 3
 text = "Next Page"
 
 [node name="HSeparator" type="HSeparator" parent="Vert"]
-margin_top = 44.0
+margin_top = 40.0
 margin_right = 1144.0
-margin_bottom = 48.0
+margin_bottom = 44.0
 custom_styles/separator = ExtResource( 4 )
 
 [node name="TextHolder" type="HBoxContainer" parent="Vert"]
-margin_top = 52.0
+margin_top = 48.0
 margin_right = 1144.0
-margin_bottom = 1019.0
+margin_bottom = 915.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 24.0
@@ -72,7 +72,7 @@ alignment = 1
 
 [node name="VSeparator" type="VSeparator" parent="Vert/TextHolder"]
 margin_right = 14.0
-margin_bottom = 967.0
+margin_bottom = 867.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.3
 custom_styles/separator = SubResource( 1 )
@@ -80,29 +80,29 @@ custom_styles/separator = SubResource( 1 )
 [node name="BBText" type="RichTextLabel" parent="Vert/TextHolder"]
 margin_left = 18.0
 margin_right = 1144.0
-margin_bottom = 967.0
+margin_bottom = 867.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 24.0
 bbcode_enabled = true
 
 [node name="HSeparator2" type="HSeparator" parent="Vert"]
-margin_top = 1023.0
+margin_top = 919.0
 margin_right = 1144.0
-margin_bottom = 1027.0
+margin_bottom = 923.0
 custom_styles/separator = ExtResource( 4 )
 
 [node name="Bottom" type="HBoxContainer" parent="Vert"]
-margin_top = 1031.0
+margin_top = 927.0
 margin_right = 1144.0
-margin_bottom = 1072.0
+margin_bottom = 964.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
 [node name="Page" type="Label" parent="Vert/Bottom"]
 margin_right = 950.0
-margin_bottom = 41.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
@@ -112,6 +112,6 @@ align = 1
 [node name="Quit" type="Button" parent="Vert/Bottom"]
 margin_left = 954.0
 margin_right = 1144.0
-margin_bottom = 41.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 text = "Close"
