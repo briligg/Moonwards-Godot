@@ -7,6 +7,9 @@ export(float) var climb_speed = 1.5
 export(float) var movement_speed = 5.2
 export(float) var gravity = 1.625
 
+onready var on_ground : Node = $OnGround
+onready var normal_detect : Node = $NormalDetect
+
 # Debug variables
 var dbg_initial_jump_pos: Vector3 = Vector3()
 var dbg_rest_jump_pos: Vector3 = Vector3()
@@ -28,8 +31,7 @@ var slope_coef_mul: float = 1.23
 #Whether we are currently flying or not.
 var is_flying : bool = false
 
-onready var on_ground : Node = $OnGround
-onready var normal_detect : Node = $NormalDetect
+
 #Whether I am climbing or not.
 var is_climbing : bool = false
 
@@ -49,22 +51,29 @@ func is_grounded() -> bool:
 			or $OnGround4.is_colliding() or $OnGround5.is_colliding())
 
 func _integrate_forces(state):
-	if !self.enabled:
-		return
 	invoke_network_based("_integrate_server", "_integrate_client", [state])
-	
+
 func _integrate_client(_args):
 	pass
 	
 func _integrate_server(args):
 	var phys_state = args[0]
 	entity.is_grounded = is_grounded()
-	
+	# Don't do a thing if you're anchored, stupid...
+	# I still feel this needs to be somewhere else, regardless.
+	if entity.movement_anchor_data.is_anchored:
+		entity.custom_integrator = true
+		return
+	else:
+		entity.custom_integrator = false
+		
 	if !entity.is_grounded and !is_jumping and !is_climbing:
 		update_entity_values()
 		return
+	
 	reset_input()
-	handle_input()
+	if self.enabled:
+		handle_input()
 	rotate_body(phys_state)
 	calculate_slope()
 	calculate_horizontal(phys_state)
