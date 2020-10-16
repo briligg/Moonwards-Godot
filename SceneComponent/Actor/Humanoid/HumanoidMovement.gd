@@ -228,6 +228,9 @@ func stop_climb_stairs(phys_state : PhysicsDirectBodyState, is_stairs_top) -> vo
 	
 #Eventually we need to make this work with delta.
 func update_stairs_climbing(_delta : float, phys_state : PhysicsDirectBodyState) -> void :
+	if vertical_vector.y > 0:
+		stop_climb_stairs(phys_state, false)
+	
 	var kb_pos = entity.global_transform.origin
 	# Offset from the top of the stairs to climb off when reached
 	var top_offset = 2
