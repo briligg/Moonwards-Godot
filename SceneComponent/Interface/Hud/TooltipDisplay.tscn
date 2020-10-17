@@ -1,17 +1,24 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://SceneComponent/Interface/Hud/TooltipDisplay.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Interface/TooltipDisplay.tres" type="Theme" id=2]
 [ext_resource path="res://Assets/Interface/StyleBoxes/TooltipDisplayBackgroundPanel.tres" type="StyleBox" id=3]
 [ext_resource path="res://Assets/Interface/StyleBoxes/TooltipDisplayHSeparator.tres" type="StyleBox" id=4]
+[ext_resource path="res://Assets/Interface/Fonts/TooltipDisplay/TooltipDisplayItalics.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Assets/Interface/Fonts/TooltipDisplay/TooltipDisplayBold.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Assets/Interface/Fonts/TooltipDisplay/TooltipDisplayNormal.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Assets/Interface/Fonts/TooltipDisplay/TooltipDisplayBoldItalics.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Assets/Interface/Fonts/TooltipDisplay/TooltipDisplayMono.tres" type="DynamicFont" id=9]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="TooltipDisplay" type="PanelContainer"]
-visible = false
-anchor_left = 0.38
-anchor_right = 0.98
-anchor_bottom = 0.9
+anchor_left = 0.8
+anchor_top = 0.06
+anchor_right = 1.0
+anchor_bottom = 0.86
+grow_horizontal = 0
+grow_vertical = 0
 theme = ExtResource( 2 )
 custom_styles/panel = ExtResource( 3 )
 script = ExtResource( 1 )
@@ -22,87 +29,93 @@ __meta__ = {
 [node name="Vert" type="VBoxContainer" parent="."]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 1148.0
-margin_bottom = 968.0
+margin_right = 380.0
+margin_bottom = 860.0
 
 [node name="Top" type="HBoxContainer" parent="Vert"]
-margin_right = 1144.0
-margin_bottom = 36.0
+margin_right = 376.0
+margin_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
 [node name="PageLeft" type="Button" parent="Vert/Top"]
-margin_right = 162.0
-margin_bottom = 36.0
+margin_right = 52.0
+margin_bottom = 32.0
 size_flags_horizontal = 3
-text = "Previous Page"
+text = "Last"
 
 [node name="Title" type="Label" parent="Vert/Top"]
-margin_left = 166.0
-margin_right = 977.0
-margin_bottom = 36.0
+margin_left = 56.0
+margin_right = 319.0
+margin_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
 text = "Tooltip Name"
 align = 1
+autowrap = true
 
 [node name="PageRight" type="Button" parent="Vert/Top"]
-margin_left = 981.0
-margin_right = 1144.0
-margin_bottom = 36.0
+margin_left = 323.0
+margin_right = 376.0
+margin_bottom = 32.0
 size_flags_horizontal = 3
-text = "Next Page"
+text = "Next"
 
 [node name="HSeparator" type="HSeparator" parent="Vert"]
-margin_top = 40.0
-margin_right = 1144.0
-margin_bottom = 44.0
+margin_top = 36.0
+margin_right = 376.0
+margin_bottom = 40.0
 custom_styles/separator = ExtResource( 4 )
 
 [node name="TextHolder" type="HBoxContainer" parent="Vert"]
-margin_top = 48.0
-margin_right = 1144.0
-margin_bottom = 915.0
+margin_top = 44.0
+margin_right = 376.0
+margin_bottom = 812.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 24.0
 alignment = 1
 
 [node name="VSeparator" type="VSeparator" parent="Vert/TextHolder"]
-margin_right = 14.0
-margin_bottom = 867.0
+margin_right = 4.0
+margin_bottom = 768.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.3
 custom_styles/separator = SubResource( 1 )
 
 [node name="BBText" type="RichTextLabel" parent="Vert/TextHolder"]
-margin_left = 18.0
-margin_right = 1144.0
-margin_bottom = 867.0
+margin_left = 8.0
+margin_right = 376.0
+margin_bottom = 768.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 24.0
+custom_fonts/mono_font = ExtResource( 9 )
+custom_fonts/bold_italics_font = ExtResource( 8 )
+custom_fonts/italics_font = ExtResource( 5 )
+custom_fonts/bold_font = ExtResource( 6 )
+custom_fonts/normal_font = ExtResource( 7 )
 bbcode_enabled = true
 
 [node name="HSeparator2" type="HSeparator" parent="Vert"]
-margin_top = 919.0
-margin_right = 1144.0
-margin_bottom = 923.0
+margin_top = 816.0
+margin_right = 376.0
+margin_bottom = 820.0
 custom_styles/separator = ExtResource( 4 )
 
 [node name="Bottom" type="HBoxContainer" parent="Vert"]
-margin_top = 927.0
-margin_right = 1144.0
-margin_bottom = 964.0
+margin_top = 824.0
+margin_right = 376.0
+margin_bottom = 856.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
 [node name="Page" type="Label" parent="Vert/Bottom"]
-margin_right = 950.0
-margin_bottom = 37.0
+margin_right = 310.0
+margin_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
@@ -110,8 +123,8 @@ text = "Tooltip Name"
 align = 1
 
 [node name="Quit" type="Button" parent="Vert/Bottom"]
-margin_left = 954.0
-margin_right = 1144.0
-margin_bottom = 37.0
+margin_left = 314.0
+margin_right = 376.0
+margin_bottom = 32.0
 size_flags_horizontal = 3
 text = "Close"
