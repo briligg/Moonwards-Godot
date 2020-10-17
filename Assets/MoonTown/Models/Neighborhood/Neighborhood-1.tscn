@@ -7,6 +7,9 @@
 [node name="Neighborhood-1" instance=ExtResource( 1 )]
 
 [node name="Tooltips" type="Spatial" parent="." index="0"]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Neighborhood-intro-tooltip" parent="Tooltips" index="0" instance=ExtResource( 3 )]
 transform = Transform( -0.7, 0, -3.25841e-07, 0, 0.7, 0, 2.28089e-07, 0, -1, 11.5784, 1.38147, -0.731741 )
@@ -15,8 +18,14 @@ title = "The First Neighborhood"
 
 [node name="Cable-suspension-tooltip" parent="Tooltips" index="1" instance=ExtResource( 3 )]
 transform = Transform( 0.456837, 0, 0.40645, 0.000336965, 0.499999, -0.00151496, -0.203225, 0.000829041, 0.913672, -0.302201, 4.60205, -9.2786 )
+bbtext_fields = PoolStringArray( "Like most large internal structures in the habitats, the main floors of this hab are supported largely by cables descending from the roof. It\'s the most efficient engineering approach in terms of materials needed and space used. The cables also reinforce the hab roofs, since the net force on them is up due to the air pressure and low gravity. The main suspension cables are generally between 8 and 15 meters apart. Houses and other structures often connect to nearby cables so that some proportion of their weight is suspended by them. It reduces the amount of material needed to make a dwelling structurally sound. Since packages for house construction have a mass budget, this is a way to stretch that budget. The tactic is especially useful if you want your home to practically float in mid-air, as many of the ones here do. That\'s why on floors with direct access to the ceiling, and sometimes ones with only one floor between them and the ceiling, people planning homes sometimes get together and arrange the installment of a new cable, a smaller one just for their homes. That way by leaning a bit on each other, and also hanging from their cable, they can stack their dwellings up in a way that looks very precarious but is actually quite stable. ", "World" )
+title = "Suspension cable architecture"
 
-[node name="Dwelling-architecture-tooltip" parent="Tooltips" index="2" instance=ExtResource( 3 )]
+[node name="Example-Dwelling-tooltip" parent="Tooltips" index="2" instance=ExtResource( 3 )]
+transform = Transform( 0.430653, 0.000684202, 0.508086, -0.0512157, 0.489966, 0.171002, -0.248828, -0.0996644, 0.84416, -0.0457787, 1.54193, -10.6936 )
+title = "Dwelling architecture principles"
+
+[node name="Dwelling-architecture-tooltip" parent="Tooltips" index="3" instance=ExtResource( 3 )]
 transform = Transform( -0.396103, -0.0180243, 0.131765, -0.032316, 0.382634, -0.280032, -0.0453703, -0.11518, -0.950905, -1.78939, 9.96947, 14.7125 )
 
 [node name="Example-Dwelling-1" parent="." index="5" instance=ExtResource( 2 )]
@@ -24,18 +33,30 @@ transform = Transform( -0.396103, -0.0180243, 0.131765, -0.032316, 0.382634, -0.
 [node name="ReflectionProbe" type="ReflectionProbe" parent="." index="6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.61544, 0 )
 extents = Vector3( 25.613, 16.1321, 21.7938 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GIProbe" type="GIProbe" parent="." index="7"]
 transform = Transform( 0.998884, 0, -0.0472285, 0, 1, 0, 0.0472285, 0, 0.998884, 0, 9.44808, 0 )
 extents = Vector3( 27.0138, 19.2007, 26.8897 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="OmniLight" type="OmniLight" parent="." index="8"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3296, 18.6561, 0 )
 light_energy = 1.49
 omni_range = 13.5014
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="OmniLight2" type="OmniLight" parent="." index="9"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.05585, 6.94877, 1.15402 )
 light_energy = 0.75
 omni_range = 7.81411
 omni_attenuation = 1.27456
+__meta__ = {
+"_edit_lock_": true
+}
