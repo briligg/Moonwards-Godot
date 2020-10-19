@@ -128,7 +128,9 @@ puppetsync func execute_interact(args: Array):
 	_interactor.interact(_interactable)
 
 func disable():
-	interactor_ray.enabled = false
+	#This gets called before _ready.
+	if interactor_ray != null :
+		interactor_ray.enabled = false
 	.disable()
 
 func enable():
