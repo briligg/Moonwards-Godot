@@ -18,6 +18,7 @@ func _ready() -> void :
 	
 	button = $TabButtons/Button_Destination
 	button.connect("pressed", self, "show_tab", ["Destination"])
+	button.call_deferred("grab_focus") #Make Destination button green at start
 	
 	button = $TabButtons/Button_Avatar
 	button.connect("pressed", self, "show_tab", ["Avatar"])
