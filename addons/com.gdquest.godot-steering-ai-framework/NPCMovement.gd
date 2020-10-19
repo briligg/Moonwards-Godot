@@ -145,8 +145,8 @@ func _handle_npc_input(acceleration : GSAITargetAcceleration, delta : float):
 	update_agent(acceleration.linear, acceleration.angular)
 #	Agent._apply_steering(acceleration, delta)
 	entity.look_dir = entity.global_transform.origin-acceleration.linear
-	entity.input.z = acceleration.linear.length()
-	entity.input.y = acceleration.linear.y
+	entity.input.z = acceleration.linear.normalized().length()
+	entity.input.y = acceleration.linear.normalized().y
 
 func _process_client(delta):
 	entity.global_transform.origin = entity.srv_pos
