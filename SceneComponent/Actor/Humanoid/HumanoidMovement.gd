@@ -4,7 +4,7 @@ class_name HumanoidMovement
 # Component for kinematic movement
 export(float) var initial_jump_velocity = 2.2
 export(float) var climb_speed = 1.5
-export(float) var movement_speed = 5.2
+export(float) var movement_speed = 3
 export(float) var gravity = 1.625
 
 onready var on_ground : Node = $OnGround
@@ -33,6 +33,7 @@ var slope_coef_mul: float = 1
 #Whether we are currently flying or not.
 var is_flying : bool = false
 
+var is_groundcast_enabled: bool = true
 
 #Whether I am climbing or not.
 var is_climbing : bool = false
@@ -49,6 +50,8 @@ func _ready() -> void:
 	entity.connect("on_forces_integrated", self, "_integrate_forces")
 
 func is_grounded() -> bool:
+	if !is_groundcast_enabled:
+		return false
 	return (on_ground.is_colliding() or $OnGround2.is_colliding() or $OnGround3.is_colliding()
 			or $OnGround4.is_colliding() or $OnGround5.is_colliding())
 
@@ -156,11 +159,14 @@ func update_jump_velocity(_phys_state : PhysicsDirectBodyState):
 	jump_velocity.y = initial_jump_velocity
 	jump_velocity += horizontal_vector.normalized() * movement_speed
 	is_jumping = true
+	entity.is_grounded = false
+	disable_ground_cast_for_seconds(0.2)
+	
 
 func update_movement(phys_state : PhysicsDirectBodyState):
 	var vel = Vector3()
 	# Jump simulation
-	if is_jumping:
+	if is_jumping and !entity.is_grounded:
 		# Get our character off the ground, such as grounded() is no longer true
 		jump_velocity -= Vector3(0, gravity * 0.016, 0)
 		vel = jump_velocity
@@ -188,6 +194,12 @@ func update_server_values(phys_state):
 func calculate_debug_values():
 	dbg_rest_jump_pos = entity.global_transform.origin
 	dbg_total_jump_height = dbg_rest_jump_pos.y - dbg_initial_jump_pos.y
+
+func disable_ground_cast_for_seconds(duration = 0.0):
+	if duration != 0.0:
+		is_groundcast_enabled = false
+		yield(get_tree().create_timer(duration), "timeout")
+		is_groundcast_enabled = true
 
 ### TEMPORARY CLIMBING CODE
 # to be moved elsewhere.
