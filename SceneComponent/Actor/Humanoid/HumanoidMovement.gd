@@ -16,6 +16,7 @@ var dbg_rest_jump_pos: Vector3 = Vector3()
 var dbg_total_jump_height: float = 0.0
 var dbg_ground_normal: Vector3 = Vector3()
 var dbg_ground_slope: float = 0.0
+var dbg_ground_slope_center: float = 0.0
 var dbg_speed: float = 0.0
 
 # Input vectors
@@ -26,8 +27,9 @@ var jump_velocity: Vector3 = Vector3.ZERO
 
 # Normal raycast normalized offset multiplier, depending on movement direction
 # Basically equal to player radius
-var raycast_offset_multipler: float = 0.14
-var slope_coef_mul: float = 1.23
+var raycast_offset_multipler: float = 0.22
+# Multiplier for gravity's effect based on how steep a slope is
+var slope_coef_mul: float = 1
 #Whether we are currently flying or not.
 var is_flying : bool = false
 
@@ -122,7 +124,9 @@ func handle_input() -> void:
 
 func calculate_slope():
 	dbg_ground_normal = normal_detect.get_collision_normal().normalized()
+	var norm2 = $NormalDetect2.get_collision_normal().normalized()
 	dbg_ground_slope = rad2deg(acos(dbg_ground_normal.dot(Vector3.UP)))
+	dbg_ground_slope_center = + rad2deg(acos(dbg_ground_normal.dot(Vector3.UP)))
 
 func calculate_horizontal(_phys_state : PhysicsDirectBodyState):
 	horizontal_vector += entity.input.z * entity.model.transform.basis.z
@@ -135,7 +139,9 @@ func calculate_horizontal(_phys_state : PhysicsDirectBodyState):
 		# To eliminate the jitters caused by on_ground not reading properly
 		if sign(horizontal_vector.y) == -1:
 			# Gravity, times slope coefficient, times slope coefficient multiplier
-			horizontal_vector.y += -gravity * (sin(deg2rad(dbg_ground_slope)) * slope_coef_mul)
+			var slope_mul = max(sin(deg2rad(dbg_ground_slope)), 
+					sin(deg2rad(dbg_ground_slope_center)))
+			horizontal_vector.y += -gravity * slope_mul * slope_coef_mul
 		horizontal_vector = horizontal_vector.normalized()
 
 func update_raycasts():

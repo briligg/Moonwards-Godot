@@ -8,30 +8,38 @@ enabled = true
 
 [node name="OnGround" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+visible = false
 enabled = true
 cast_to = Vector3( 0, -0.3, 0 )
 
 [node name="OnGround2" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0.17 )
+visible = false
 enabled = true
 cast_to = Vector3( 0, -0.3, 0 )
 
 [node name="OnGround3" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, -0.175 )
+visible = false
 enabled = true
 cast_to = Vector3( 0, -0.3, 0 )
 
 [node name="OnGround4" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.175, 0.27, 0 )
+visible = false
 enabled = true
 cast_to = Vector3( 0, -0.3, 0 )
 
 [node name="OnGround5" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.175, 0.27, 0 )
+visible = false
 enabled = true
 cast_to = Vector3( 0, -0.3, 0 )
 
 [node name="NormalDetect" type="RayCast" parent="."]
-visible = false
+enabled = true
+cast_to = Vector3( 0, -0.7, 0 )
+
+[node name="NormalDetect2" type="RayCast" parent="."]
 enabled = true
 cast_to = Vector3( 0, -0.7, 0 )
