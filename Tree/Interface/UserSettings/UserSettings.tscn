@@ -64,13 +64,13 @@ own_world = true
 transparent_bg = true
 handle_input_locally = false
 msaa = 3
+usage = 3
 render_target_update_mode = 3
 
 [node name="AvatarPreview" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Viewport" instance=ExtResource( 2 )]
 
 [node name="Female" type="Control" parent="UserSettings_Sub/ModelDisplay/ViewportContainer"]
 script = ExtResource( 3 )
-slot_option_path = NodePath("../../../../UserSettings_sUB/VBoxContainer/Buttons/V2/SlotOption")
 
 [node name="Pants2" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Female"]
 margin_left = 124.0
@@ -223,7 +223,6 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
-slot_option_path = NodePath("../../../../UserSettings_sUB/VBoxContainer/Buttons/V2/SlotOption")
 
 [node name="Shirt" type="Button" parent="UserSettings_Sub/ModelDisplay/ViewportContainer/Male"]
 margin_left = 130.0
