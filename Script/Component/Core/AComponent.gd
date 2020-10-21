@@ -42,12 +42,13 @@ func enable() -> void:
 	set_process_input(true)
 	Log.trace(self, "enable", "Component %s has been enabled" %comp_name)
 
-func invoke_network_based(server_func: String, client_func: String, args):
+func invoke_network_based(server_func: String, client_func: String, args, call_client_on_hosted_srv = false):
 	if !get_tree().network_peer:
 		return
 	if get_tree().is_network_server() and entity.owner_peer_id == get_tree().get_network_unique_id():
 		call(server_func, args)
-		call(client_func, args)
+		if call_client_on_hosted_srv:
+			call(client_func, args)
 	elif get_tree().is_network_server():
 		call(server_func, args)
 	else:

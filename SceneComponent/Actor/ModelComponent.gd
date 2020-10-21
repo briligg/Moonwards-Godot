@@ -3,14 +3,12 @@ extends AComponent
 # Temporary until this is done dynamically.
 export (NodePath) var mesh_path : NodePath
 onready var mesh: MeshInstance = get_node(mesh_path)
-onready var animation: AnimationPlayer = $AnimationPlayer
 
 func _init().("ModelComponent", false):
 	pass
 
-func _ready() -> void:
-	set_colors()
-
+#func _ready() -> void:
+#	set_colors()
 
 func set_colors(colors: Array = []) -> void:
 	if colors.size() == 0:

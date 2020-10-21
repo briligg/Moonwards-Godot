@@ -9,7 +9,8 @@
 [ext_resource path="res://Assets/MoonTown/Models/Human_Model/FemalePlayerModel.tscn" type="PackedScene" id=7]
 [ext_resource path="res://SceneComponent/Actor/Workstation.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Tree/Actor/Player/NPC/MwAI.gd" type="Script" id=9]
-[ext_resource path="res://Script/Component/ModelComponent.gd" type="Script" id=10]
+[ext_resource path="res://SceneComponent/Actor/ModelComponent.gd" type="Script" id=10]
+
 
 
 

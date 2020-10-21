@@ -58,8 +58,14 @@ func is_grounded() -> bool:
 func _integrate_forces(state):
 	invoke_network_based("_integrate_server", "_integrate_client", [state])
 
-func _integrate_client(_args):
-	pass
+func _integrate_client(args):
+	var phys_state = args[0]
+	entity.is_grounded = is_grounded()
+	entity.global_transform.origin = entity.srv_pos
+	entity.velocity = entity.srv_vel
+	phys_state.linear_velocity = entity.srv_vel
+	rotate_body(phys_state)
+	update_anim_state(phys_state)
 	
 func _integrate_server(args):
 	var phys_state = args[0]
@@ -68,14 +74,20 @@ func _integrate_server(args):
 	# I still feel this needs to be somewhere else, regardless.
 	if entity.movement_anchor_data.is_anchored:
 		entity.custom_integrator = true
+		update_entity_values()
+		update_server_values(phys_state)
 		return
 	else:
 		entity.custom_integrator = false
-		
+	
+	# Just free-falling in the air
 	if !entity.is_grounded and !is_jumping and !is_climbing:
 		update_entity_values()
+		update_server_values(phys_state)
 		return
+	main_logic_routine(phys_state)
 	
+func main_logic_routine(phys_state):
 	reset_input()
 	if self.enabled:
 		handle_input()
@@ -106,6 +118,15 @@ func update_anim_state(phys_state : PhysicsDirectBodyState):
 		entity.state.state = ActorEntityState.State.IN_AIR
 	else:
 		entity.state.state = ActorEntityState.State.IDLE
+		
+#func update_client_anim_state(phys_state : PhysicsDirectBodyState):
+#	if entity.is_grounded:
+#		if abs(entity.velocity.length()) > 0:
+#			entity.state.state = ActorEntityState.State.MOVING
+#		else:
+#			entity.state.state = ActorEntityState.State.IDLE
+#	else:
+#		entity.state.state = ActorEntityState.State.IN_AIR
 
 func rotate_body(_phys_state : PhysicsDirectBodyState) -> void:
 	if is_climbing:
