@@ -7,9 +7,11 @@
 [ext_resource path="res://SceneComponent/Actor/Humanoid/HumanoidMovement.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Script/Entity/ActorEntity.gd" type="Script" id=6]
 [ext_resource path="res://Assets/MoonTown/Models/Human_Model/FemalePlayerModel.tscn" type="PackedScene" id=7]
-[ext_resource path="res://addons/joyeux_nav_interacts/Workstation.tscn" type="PackedScene" id=8]
-[ext_resource path="res://addons/joyeux_nav_interacts/MwAI.gd" type="Script" id=9]
+[ext_resource path="res://SceneComponent/Actor/Workstation.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Tree/Actor/Player/NPC/MwAI.gd" type="Script" id=9]
 [ext_resource path="res://Script/Component/ModelComponent.gd" type="Script" id=10]
+
+
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.287522

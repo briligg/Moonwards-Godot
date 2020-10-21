@@ -447,7 +447,7 @@ _global_script_classes=[ {
 "base": "WorldNavigator",
 "class": "MwNavigator",
 "language": "GDScript",
-"path": "res://addons/joyeux_nav_interacts/MwNavigator.gd"
+"path": "res://Tree/World/MwNavigator.gd"
 }, {
 "base": "Node",
 "class": "MwNode",
@@ -597,12 +597,12 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "Worker",
 "language": "GDScript",
-"path": "res://addons/joyeux_nav_interacts/MwWorker.gd"
+"path": "res://Tree/Actor/Player/NPC/MwWorker.gd"
 }, {
 "base": "Interactable",
 "class": "Workstation",
 "language": "GDScript",
-"path": "res://addons/joyeux_nav_interacts/Workstation.gd"
+"path": "res://SceneComponent/Actor/Workstation.gd"
 }, {
 "base": "Navigation",
 "class": "WorldNavigator",

@@ -1,6 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://addons/joyeux_nav_interacts/Workstation.gd" type="Script" id=1]
+[ext_resource path="res://SceneComponent/Actor/Workstation.gd" type="Script" id=1]
+
 
 [sub_resource type="SpatialMaterial" id=1]
 flags_transparent = true
