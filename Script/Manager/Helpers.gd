@@ -12,7 +12,7 @@ var user_file : ConfigFile = ConfigFile.new()
 var editable_actions : Array = [
 	"move_forwards", "move_backwards", "move_left", "move_right",
 	"jump", "interact_with_closest", "use", "toggle_first_person",
-	"fly_up", "fly_down"
+	"fly_up", "fly_down", "toggle_camera_fly", "mainmenu_toggle"
 ]
 
 var is_capture_mode : bool = false
