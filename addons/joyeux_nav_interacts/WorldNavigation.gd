@@ -1,6 +1,7 @@
 extends Navigation
 class_name WorldNavigator
 
+export(bool) var debug_draw : bool = false
 var astar : AStar = AStar.new()
 var m = SpatialMaterial.new()
 
@@ -90,6 +91,8 @@ func get_navmesh_path(from: Vector3, to: Vector3, global : bool = false):
 		path2.invert()
 		for point in path2:
 			path_points.append(point)
+	if get_node("Draw") is ImmediateGeometry and debug_draw:
+		draw_path(from, to, path_points)
 	if global:
 		var temp : Array = []
 		for points in path_points:
