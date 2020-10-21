@@ -13,10 +13,11 @@ background_mode = 2
 background_sky = SubResource( 2 )
 
 [sub_resource type="PlaneMesh" id=4]
+size = Vector2( 0.6, 2 )
 
 [sub_resource type="SpatialMaterial" id=5]
 flags_transparent = true
-albedo_color = Color( 0.164706, 0.164706, 0.164706, 0.898039 )
+albedo_color = Color( 0.34902, 0.239216, 0.25098, 1 )
 
 [node name="AvatarPreview" type="Spatial"]
 script = ExtResource( 3 )
