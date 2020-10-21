@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Tree/Interface/MainMenu/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Interface/Textures/menu_splash.png" type="Texture" id=2]
+[ext_resource path="res://SceneComponent/Interface/BackgroundCycler/BackgroundCycler.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Interface/MainMenu.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/Interface/Textures/MoonwardsLogo2020_HeavyOutline_500px.png" type="Texture" id=4]
 [ext_resource path="res://Tree/Interface/MainMenu/About/About.tscn" type="PackedScene" id=5]
@@ -10,6 +10,22 @@
 [ext_resource path="res://Tree/Interface/MainMenu/MainMenuTab.gd" type="Script" id=8]
 [ext_resource path="res://Tree/Interface/UserSettings/UserSettings.tscn" type="PackedScene" id=9]
 [ext_resource path="res://addons/joyeux_npc_editor/src/interface/behaviors/code/Behaviour_tree_editor.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconAbout_Menu.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconSettings_Menu.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconPower_Menu.png" type="Texture" id=13]
+[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Theme.tres" type="Theme" id=14]
+[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Theme_Footer.tres" type="Theme" id=15]
+[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Theme_Header.tres" type="Theme" id=16]
+[ext_resource path="res://Tree/Interface/MainMenu/MenuParent.gd" type="Script" id=17]
+[ext_resource path="res://SceneComponent/Interface/MainMenu/Destination.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Tree/Interface/MainMenu/QuitMenu.gd" type="Script" id=19]
+[ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/Settings.tscn" type="PackedScene" id=20]
+[ext_resource path="res://SceneComponent/Interface/CustomControls/CustomControls.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Empty.tres" type="StyleBox" id=22]
+[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_PanelMain.tres" type="StyleBox" id=23]
+[ext_resource path="res://Tree/Interface/MainMenu/SettingsMenu.gd" type="Script" id=24]
+[ext_resource path="res://addons/joyeux_npc_editor/src/interface/NPCEditorSuite.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Tree/Interface/MainMenu/Apps.gd" type="Script" id=26]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.588235 )
@@ -38,26 +54,407 @@ func _on_NPCs_pressed():
 layer = 10
 script = ExtResource( 1 )
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" parent="." instance=ExtResource( 2 )]
+
+[node name="VBoxContainer" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 2 )
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+theme = ExtResource( 14 )
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+anchor_right = 0.27
+anchor_bottom = 0.212
+margin_left = -1.18921
+margin_right = -1.18921
+size_flags_horizontal = 3
+texture = ExtResource( 4 )
 expand = true
-stretch_mode = 7
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabButtons" type="HBoxContainer" parent="VBoxContainer"]
+anchor_left = 0.27
+anchor_top = 0.173
+anchor_right = 1.0
+anchor_bottom = 0.21
+grow_vertical = 0
+size_flags_horizontal = 7
+size_flags_vertical = 8
+theme = ExtResource( 16 )
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_Home" type="Button" parent="VBoxContainer/TabButtons"]
+visible = false
+margin_right = 52.0
+margin_bottom = 78.0
+focus_neighbour_right = NodePath("../Button_Avatar")
+size_flags_horizontal = 3
+text = "HOME"
+
+[node name="Button_Destination" type="Button" parent="VBoxContainer/TabButtons"]
+margin_right = 444.0
+margin_bottom = 45.0
+focus_neighbour_right = NodePath("../Button_Apps")
+size_flags_horizontal = 3
+text = "DESTINATION"
+
+[node name="Button_Avatar" type="Button" parent="VBoxContainer/TabButtons"]
+margin_left = 464.0
+margin_right = 908.0
+margin_bottom = 45.0
+grow_horizontal = 2
+focus_neighbour_right = NodePath("../Button_Destination")
+size_flags_horizontal = 3
+text = "AVATAR"
+
+[node name="Button_Apps" type="Button" parent="VBoxContainer/TabButtons"]
+margin_left = 928.0
+margin_right = 1372.0
+margin_bottom = 45.0
+focus_neighbour_right = NodePath("../Button_Settings")
+size_flags_horizontal = 3
+text = "APPS"
+
+[node name="Button_Settings" type="Button" parent="VBoxContainer/TabButtons"]
+visible = false
+margin_left = 266.0
+margin_right = 338.0
+margin_bottom = 78.0
+focus_neighbour_right = NodePath("../../HBoxContainer_Right/Button_About")
+size_flags_horizontal = 3
+text = "SETTINGS"
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
+anchor_top = 0.212
+anchor_right = 1.0
+anchor_bottom = 0.96
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 14 )
+custom_styles/panel = ExtResource( 23 )
+tabs_visible = false
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
+[node name="Destination" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Destination" parent="VBoxContainer/TabContainer/Destination" instance=ExtResource( 18 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1876.0
+margin_bottom = 773.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Home" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Avatar" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="UserSettings" parent="VBoxContainer/TabContainer/Avatar" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1876.0
+margin_bottom = 773.0
+
+[node name="Apps" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 26 )
+
+[node name="HBoxContainer_Apps_Tab" type="HBoxContainer" parent="VBoxContainer/TabContainer/Apps"]
+margin_right = 1876.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+theme = ExtResource( 16 )
+custom_constants/separation = 20
+
+[node name="Button_NPCEditor" type="Button" parent="VBoxContainer/TabContainer/Apps/HBoxContainer_Apps_Tab"]
+margin_right = 306.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+text = "NPC EDITOR"
+
+[node name="Button_OtherEditor" type="Button" parent="VBoxContainer/TabContainer/Apps/HBoxContainer_Apps_Tab"]
+margin_left = 326.0
+margin_right = 632.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+text = "OTHER EDITOR"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/TabContainer/Apps/HBoxContainer_Apps_Tab"]
+margin_left = 652.0
+margin_right = 1876.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+custom_styles/separator = ExtResource( 22 )
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer/TabContainer/Apps"]
+margin_top = 49.0
+margin_right = 1876.0
+margin_bottom = 773.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 23 )
+tabs_visible = false
+
+[node name="NPCEditorSuite" parent="VBoxContainer/TabContainer/Apps/TabContainer" instance=ExtResource( 25 )]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
+
+[node name="Settings" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 24 )
+
+[node name="HBoxContainer_Settings_Tab" type="HBoxContainer" parent="VBoxContainer/TabContainer/Settings"]
+margin_right = 1876.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+theme = ExtResource( 16 )
+custom_constants/separation = 20
+
+[node name="Button_Sett_Visual" type="Button" parent="VBoxContainer/TabContainer/Settings/HBoxContainer_Settings_Tab"]
+margin_right = 306.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+text = "VISUALS"
+
+[node name="Button_Sett_Controls" type="Button" parent="VBoxContainer/TabContainer/Settings/HBoxContainer_Settings_Tab"]
+margin_left = 326.0
+margin_right = 632.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+text = "CONTROLS"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/TabContainer/Settings/HBoxContainer_Settings_Tab"]
+margin_left = 652.0
+margin_right = 1876.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+custom_styles/separator = ExtResource( 22 )
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer/TabContainer/Settings"]
+margin_top = 49.0
+margin_right = 1876.0
+margin_bottom = 773.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 23 )
+tabs_visible = false
+
+[node name="VBoxContainer_Sett_Visuals" type="VBoxContainer" parent="VBoxContainer/TabContainer/Settings/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Settings" parent="VBoxContainer/TabContainer/Settings/TabContainer/VBoxContainer_Sett_Visuals" instance=ExtResource( 20 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 0.0
+margin_right = 1872.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer_Sett_Controls" type="VBoxContainer" parent="VBoxContainer/TabContainer/Settings/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Controls" parent="VBoxContainer/TabContainer/Settings/TabContainer/VBoxContainer_Sett_Controls" instance=ExtResource( 21 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 1864.0
+margin_bottom = 726.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="About" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="About" parent="VBoxContainer/TabContainer/About" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1856.0
+margin_bottom = 772.0
+
+[node name="Quit" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+script = ExtResource( 19 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Quit"]
+margin_top = 374.0
+margin_right = 1876.0
+margin_bottom = 398.0
+size_flags_horizontal = 7
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Button_Quit_Yes" type="Button" parent="VBoxContainer/TabContainer/Quit/HBoxContainer"]
+margin_left = 887.0
+margin_right = 924.0
+margin_bottom = 24.0
+text = "Quit"
+
+[node name="Button_Quit_No" type="Button" parent="VBoxContainer/TabContainer/Quit/HBoxContainer"]
+margin_left = 928.0
+margin_right = 989.0
+margin_bottom = 24.0
+text = "Cancel"
+
+[node name="AboutSection" type="HBoxContainer" parent="VBoxContainer"]
+anchor_top = 0.97
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 15 )
+
+[node name="Label_Version" type="Label" parent="VBoxContainer/AboutSection"]
+margin_top = 4.0
+margin_right = 1488.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+text = "Game Version 0.0.1"
+
+[node name="Label_Info" type="Label" parent="VBoxContainer/AboutSection"]
+margin_left = 1492.0
+margin_top = 4.0
+margin_right = 1880.0
+margin_bottom = 26.0
+text = "Created by Kim Holder, 2019-2020, MIT Licensed"
+
+[node name="TRButtons" type="HBoxContainer" parent="VBoxContainer"]
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource( 16 )
+custom_constants/separation = 4
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_Settings_Icon" type="Button" parent="VBoxContainer/TRButtons"]
+margin_right = 54.0
+margin_bottom = 57.0
+focus_neighbour_right = NodePath("../Button_Quit")
+icon = ExtResource( 12 )
+
+[node name="Button_About_Icon" type="Button" parent="VBoxContainer/TRButtons"]
+margin_left = 58.0
+margin_right = 112.0
+margin_bottom = 57.0
+focus_neighbour_right = NodePath("../Button_Quit")
+icon = ExtResource( 11 )
+
+[node name="Button_Quit_Icon" type="Button" parent="VBoxContainer/TRButtons"]
+margin_left = 116.0
+margin_right = 170.0
+margin_bottom = 57.0
+focus_neighbour_right = NodePath("../../HBoxContainer_Middle/Button_Home")
+icon = ExtResource( 13 )
+
 [node name="Logo" type="TextureRect" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.25
-margin_left = -480.0
-margin_right = 480.0
+visible = false
+margin_right = 385.0
+margin_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_vertical = 5
+size_flags_horizontal = 3
+size_flags_vertical = 7
 texture = ExtResource( 4 )
 expand = true
 stretch_mode = 6
@@ -66,6 +463,7 @@ __meta__ = {
 }
 
 [node name="Quit" type="Button" parent="."]
+visible = false
 anchor_top = 0.92
 anchor_right = 0.07
 anchor_bottom = 1.0
@@ -81,6 +479,7 @@ __meta__ = {
 }
 
 [node name="About" type="Button" parent="."]
+visible = false
 anchor_left = 0.93
 anchor_top = 0.92
 anchor_right = 1.0
@@ -98,6 +497,7 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
 anchor_left = 0.1
 anchor_top = 0.3
 anchor_right = 0.9
@@ -306,10 +706,11 @@ rect_min_size = Vector2( 14, 0 )
 custom_styles/separator = SubResource( 2 )
 
 [node name="UserSettings" parent="HBoxContainer/Panel/Tab/AvatarTab" instance=ExtResource( 9 )]
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = 18.0
+margin_right = 1251.0
+margin_bottom = 536.0
 
 [node name="EmptyOtherTab" type="Control" parent="HBoxContainer/Panel/Tab"]
 visible = false
@@ -318,20 +719,16 @@ anchor_bottom = 1.0
 
 [node name="About" parent="HBoxContainer" instance=ExtResource( 5 )]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 1152.0
+margin_left = 968.0
+margin_right = 1536.0
 margin_bottom = 540.0
 focus_neighbour_left = NodePath("../../Quit")
 focus_neighbour_top = NodePath("../VBoxContainer/Display")
 focus_neighbour_bottom = NodePath("../VBoxContainer/Destination")
 
 [node name="NPCEditor" type="WindowDialog" parent="."]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -348,11 +745,9 @@ __meta__ = {
 
 [node name="NPCEditor" parent="NPCEditor" instance=ExtResource( 10 )]
 margin_bottom = 1.0
-[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="About" to="." method="_on_About_pressed"]
 [connection signal="focus_entered" from="HBoxContainer/VBoxContainer/Destination" to="HBoxContainer" method="_button_highlighted" binds= [ "Destination" ]]
 [connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/Destination" to="HBoxContainer" method="_button_highlighted" binds= [ "Destination" ]]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/Destination" to="." method="_on_StartGame_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Destination" to="HBoxContainer/Panel/Tab" method="_on_StartGame_pressed"]
 [connection signal="focus_entered" from="HBoxContainer/VBoxContainer/Avatar" to="HBoxContainer" method="_button_highlighted" binds= [ "Avatar" ]]
 [connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/Avatar" to="HBoxContainer" method="_button_highlighted" binds= [ "Avatar" ]]
@@ -366,6 +761,3 @@ margin_bottom = 1.0
 [connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/Apps" to="HBoxContainer" method="_button_highlighted" binds= [ "Apps" ]]
 [connection signal="focus_entered" from="HBoxContainer/VBoxContainer/Display" to="HBoxContainer" method="_button_highlighted" binds= [ "Display" ]]
 [connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/Display" to="HBoxContainer" method="_button_highlighted" binds= [ "Display" ]]
-[connection signal="pressed" from="HBoxContainer/Panel/Tab/DestinationTab/StartGame/JoinMainServer" to="." method="_on_JoinMainServer_pressed"]
-[connection signal="pressed" from="HBoxContainer/Panel/Tab/DestinationTab/StartGame/StartCustomServer" to="." method="_on_StartCustomServer_pressed"]
-[connection signal="pressed" from="HBoxContainer/Panel/Tab/DestinationTab/StartGame/JoinServer" to="." method="_on_JoinServer_pressed"]

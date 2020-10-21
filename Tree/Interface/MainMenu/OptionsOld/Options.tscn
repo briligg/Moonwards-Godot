@@ -6,9 +6,7 @@
 [ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/Settings.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/LabelSliderMix/LabelSliderMix.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/LabelOptionButton/LabelOptionButton.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/Controls_settings.tscn" type="PackedScene" id=7]
-
-
+[ext_resource path="res://SceneComponent/Interface/CustomControls/CustomControls.tscn" type="PackedScene" id=7]
 
 
 
@@ -55,18 +53,19 @@ __meta__ = {
 [node name="Player" type="Tabs" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 41.0
+margin_top = 51.0
 
 [node name="UserSettings" parent="Player" instance=ExtResource( 3 )]
 
 [node name="Settings" parent="." instance=ExtResource( 4 )]
-margin_top = 41.0
+visible = false
+margin_top = 51.0
 
 [node name="Dev" type="Tabs" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 41.0
+margin_top = 51.0
 
 [node name="MarginContainer" type="CenterContainer" parent="Dev"]
 anchor_right = 1.0
@@ -80,10 +79,10 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Dev/MarginContainer"]
-margin_left = 322.0
-margin_top = 71.0
-margin_right = 622.0
-margin_bottom = 452.0
+margin_left = 270.0
+margin_top = 29.0
+margin_right = 673.0
+margin_bottom = 484.0
 
 [node name="sPlayerSpeed" parent="Dev/MarginContainer/VBoxContainer" instance=ExtResource( 5 )]
 margin_right = 300.0
@@ -183,6 +182,6 @@ anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 0.0
-margin_top = 41.0
+margin_top = 51.0
 margin_right = 0.0
 margin_bottom = 0.0
