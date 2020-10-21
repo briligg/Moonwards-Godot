@@ -11,7 +11,7 @@ var user_file : ConfigFile = ConfigFile.new()
 #These are the actions that are editable.
 var editable_actions : Array = [
 	"move_forwards", "move_backwards", "move_left", "move_right",
-	"jump", "interact_with_closest", "use", "player_back_in_time"
+	"jump", "interact_with_closest", "use"
 ]
 
 var is_capture_mode : bool = false

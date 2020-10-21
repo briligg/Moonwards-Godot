@@ -5,7 +5,6 @@
 [ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/control_option_component.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Empty.tres" type="StyleBox" id=4]
 
-
 [node name="Controls" type="Tabs"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -36,17 +35,17 @@ custom_styles/separator = ExtResource( 4 )
 [node name="HBox" type="HBoxContainer" parent="ButtonList"]
 margin_top = 8.0
 margin_right = 1920.0
-margin_bottom = 344.0
+margin_bottom = 308.0
 
 [node name="VSeparator" type="VSeparator" parent="ButtonList/HBox"]
 margin_right = 4.0
-margin_bottom = 336.0
+margin_bottom = 300.0
 custom_styles/separator = ExtResource( 4 )
 
 [node name="Sub1" type="VBoxContainer" parent="ButtonList/HBox"]
 margin_left = 8.0
 margin_right = 280.0
-margin_bottom = 336.0
+margin_bottom = 300.0
 
 [node name="move_forwards" parent="ButtonList/HBox/Sub1" instance=ExtResource( 3 )]
 margin_top = 0.0
@@ -139,6 +138,7 @@ margin_bottom = 248.0
 custom_styles/separator = ExtResource( 4 )
 
 [node name="player_back_in_time" parent="ButtonList/HBox/Sub1" instance=ExtResource( 3 )]
+visible = false
 margin_top = 252.0
 margin_right = 272.0
 margin_bottom = 276.0
@@ -146,9 +146,10 @@ Label_text = "Get unstuck"
 action_to_edit = "player_back_in_time"
 
 [node name="HSeparator13" type="HSeparator" parent="ButtonList/HBox/Sub1"]
-margin_top = 280.0
+visible = false
+margin_top = 252.0
 margin_right = 272.0
-margin_bottom = 284.0
+margin_bottom = 256.0
 custom_styles/separator = ExtResource( 4 )
 
 [node name="start_typing_chat" parent="ButtonList/HBox/Sub1" instance=ExtResource( 3 )]
@@ -160,9 +161,9 @@ Label_text = "Use chat / send message"
 action_to_edit = "start_typing_chat"
 
 [node name="HSeparator14" type="HSeparator" parent="ButtonList/HBox/Sub1"]
-margin_top = 288.0
+margin_top = 252.0
 margin_right = 272.0
-margin_bottom = 292.0
+margin_bottom = 256.0
 custom_styles/separator = ExtResource( 4 )
 
 [node name="RadialMenu" parent="ButtonList/HBox/Sub1" instance=ExtResource( 3 )]
@@ -174,9 +175,9 @@ Label_text = "Actions/Expressions"
 action_to_edit = "radial_menu"
 
 [node name="HSeparator12" type="HSeparator" parent="ButtonList/HBox/Sub1"]
-margin_top = 296.0
+margin_top = 260.0
 margin_right = 272.0
-margin_bottom = 300.0
+margin_bottom = 264.0
 custom_styles/separator = ExtResource( 4 )
 
 [node name="FlyCamera" parent="ButtonList/HBox/Sub1" instance=ExtResource( 3 )]
@@ -188,9 +189,9 @@ Label_text = "Enable Fly Camera"
 action_to_edit = "toggle_camera_fly"
 
 [node name="HSeparator15" type="HSeparator" parent="ButtonList/HBox/Sub1"]
-margin_top = 304.0
+margin_top = 268.0
 margin_right = 272.0
-margin_bottom = 308.0
+margin_bottom = 272.0
 custom_styles/separator = ExtResource( 4 )
 
 [node name="HumanFlight" parent="ButtonList/HBox/Sub1" instance=ExtResource( 3 )]
@@ -202,26 +203,26 @@ Label_text = "Toggle Human Flight"
 action_to_edit = "toggle_fly"
 
 [node name="DefaultControls" type="Button" parent="ButtonList/HBox/Sub1"]
-margin_top = 312.0
+margin_top = 276.0
 margin_right = 272.0
-margin_bottom = 336.0
+margin_bottom = 300.0
 size_flags_vertical = 9
 text = "Set to default"
 
 [node name="VSeparator3" type="VSeparator" parent="ButtonList/HBox"]
 margin_left = 284.0
 margin_right = 306.0
-margin_bottom = 336.0
+margin_bottom = 300.0
 custom_styles/separator = ExtResource( 4 )
 custom_constants/separation = 22
 
 [node name="Sub2" type="VBoxContainer" parent="ButtonList/HBox"]
 margin_left = 310.0
 margin_right = 310.0
-margin_bottom = 336.0
+margin_bottom = 300.0
 
 [node name="HSeparator" type="HSeparator" parent="ButtonList"]
-margin_top = 348.0
+margin_top = 312.0
 margin_right = 1920.0
 margin_bottom = 1052.0
 size_flags_horizontal = 3
