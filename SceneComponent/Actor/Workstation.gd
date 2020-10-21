@@ -17,7 +17,8 @@ var in_queue_for_use : Array = []
 var current_worker : Worker = null
 var lookdir : Vector3 = Vector3.ZERO
 var position : Vector3 = Vector3.ZERO
-export(bool) var usable_by_players = false
+export(bool) var debug_vis : bool = false
+export(bool) var usable_by_players : bool = false
 export(bool) var uses_queue : bool = false
 export(bool) var call_best_first : bool = false
 export(bool) var gives_xp : bool = false
@@ -46,6 +47,9 @@ func _ready() -> void:
 	if pos:
 		position = get_parent().to_local(to_global(pos.translation))
 		lookdir = (translation - pos.translation)/2
+	if not debug_vis:
+		$Debugvis.queue_free()
+		
 func check_for_next() -> void:
 	progress = 0
 	if not uses_queue:
