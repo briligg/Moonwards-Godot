@@ -19,9 +19,12 @@ var owning_entity : AEntity
 func _new_collider(new_collider) -> void :
 	if new_collider == null ||  not new_collider is Interactable :
 		emit_signal("no_interactable_in_reach")
+		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_INTERACT, false)
 		return
 	
 	emit_signal("new_interactable", new_collider)
+	
+	Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_INTERACT, true)
 
 func _physics_process(_delta : float) -> void :
 	var camera : Camera = viewport.get_camera()
