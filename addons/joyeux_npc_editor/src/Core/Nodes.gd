@@ -87,7 +87,7 @@ func save_custom_paths():
 	var Conf = ConfigFile.new()
 	if behavior_paths.size() < 2:
 		return
-	for idx in range(2, behavior_paths.size()):
+	for idx in range(0, behavior_paths.size()):
 		Conf.set_value("behaviors", str(idx), behavior_paths[idx])
 	if user_override != "":
 		Conf.set_value("overrides", str(0), user_override)
