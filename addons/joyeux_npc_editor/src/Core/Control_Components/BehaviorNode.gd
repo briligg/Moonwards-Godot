@@ -13,7 +13,7 @@ func _ready():
 func _on_connection_to(slot : int, type : int):
 	if get_slot_type_left(slot) == Nodes.TYPE_ANY:
 		for slots in get_child_count():
-			if get_slot_type_right(slots):
+			if get_slot_type_right(slots) == Nodes.TYPE_ANY:
 				set_slot(slots, 
 					is_slot_enabled_left(slots), 
 					get_slot_type_left(slots),
