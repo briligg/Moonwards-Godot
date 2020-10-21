@@ -95,7 +95,7 @@ func load_behaviors_in(path : String) -> void:
 						Behavior_routes.append(Dir.get_current_dir()+"/"+file_name)
 						Behavior_names.append(file_name.trim_suffix(".jbt"))
 				else:
-					print_debug("Found a file that is not a BT")
+					pass
 			elif file_name.is_valid_filename() and file_name != "." and file_name != "..":
 				load_behaviors_in(file_name)
 			file_name = Dir.get_next()

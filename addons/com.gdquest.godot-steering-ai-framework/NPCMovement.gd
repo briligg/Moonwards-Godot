@@ -159,7 +159,6 @@ func update_target(pos : Vector3):
 
 func get_navpath(to : Vector3):
 	path = Array(world_ref.get_navmesh_path(entity.translation, to))
-	print(path)
 	current_path.create_path(path)
 	var temp = path.pop_front()
 	if temp != null:

@@ -19,8 +19,7 @@ export(String) var initial_state : String = ""
 func _ready():
 	randomize()
 	_load_states(NPC_File)
-	yield(get_tree().create_timer(3), "timeout")
-	print("Ready!")
+	yield(get_tree().create_timer(1), "timeout")
 	emit_signal("on_ready", null)
 	
 
@@ -66,11 +65,9 @@ func _load_behavior_script(AI_file : String, behavior_name : String = ""):
 	#Loads and stores all behavior files included in the state machine
 	var bt_file = ConfigFile.new()
 	bt_file.load(AI_file)
-	print("Behaviors loaded!")
 	behaviors[behavior_name] = bt_file
 	
 func _start_machine():
-	print("Machine Started!")
 	for state in states.keys():
 		if (state.begins_with("_start") and initial_state == "") or state == initial_state:
 			current_state = state 
@@ -143,7 +140,6 @@ func _define_connection(behavior : ConfigFile, from : String, from_port : int , 
 	var function =_clean_function_name(to) 
 	#name cleaned up
 	if has_signal(signal_name) and has_method(function):
-		print("connection defined!, signal = ", signal_name," function is ", function)
 		connect(signal_name, self, function, connection_bindings) 
 	else:
 		print_debug("Warning: Either a signal (", signal_name
