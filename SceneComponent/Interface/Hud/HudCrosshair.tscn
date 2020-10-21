@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Interface/Textures/CrosshairTexture.png" type="Texture" id=1]
 [ext_resource path="res://SceneComponent/Interface/Hud/HudCrosshair.gd" type="Script" id=2]
@@ -22,7 +22,23 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=2]
-resource_name = "rotate"
+resource_name = "interactable"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1.62 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.00784314, 1, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
 length = 1.2
 loop = true
 tracks/0/type = "value"
@@ -38,8 +54,7 @@ tracks/0/keys = {
 "values": [ 0.0, 45.0, 90.0 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "scale"
+[sub_resource type="Animation" id=4]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -103,33 +118,47 @@ tracks/4/keys = {
 "values": [ Vector2( 5, 5 ), Vector2( 7, 7 ) ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=4]
+[sub_resource type="AnimationNodeAnimation" id=5]
 animation = "scale"
-
-[sub_resource type="AnimationNodeBlend2" id=5]
 
 [sub_resource type="AnimationNodeBlend2" id=6]
 
-[sub_resource type="AnimationNodeAnimation" id=7]
+[sub_resource type="AnimationNodeBlend2" id=7]
+
+[sub_resource type="AnimationNodeTransition" id=8]
+input_count = 2
+input_0/name = "Clickable"
+input_0/auto_advance = false
+input_1/name = "Interactable"
+input_1/auto_advance = false
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "interactable"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
 animation = "color"
 
-[sub_resource type="AnimationNodeAnimation" id=8]
+[sub_resource type="AnimationNodeAnimation" id=11]
 animation = "rotate"
 
-[sub_resource type="AnimationNodeBlendTree" id=9]
-graph_offset = Vector2( -351.083, -9.75 )
-nodes/Animation/node = SubResource( 4 )
+[sub_resource type="AnimationNodeBlendTree" id=12]
+graph_offset = Vector2( -169.782, -37.706 )
+nodes/Animation/node = SubResource( 5 )
 nodes/Animation/position = Vector2( -100, 420 )
-nodes/Blend2/node = SubResource( 6 )
+nodes/Blend2/node = SubResource( 7 )
 nodes/Blend2/position = Vector2( 360, 100 )
-"nodes/Blend2 2/node" = SubResource( 5 )
+"nodes/Blend2 2/node" = SubResource( 6 )
 "nodes/Blend2 2/position" = Vector2( 120, 280 )
-nodes/color/node = SubResource( 7 )
-nodes/color/position = Vector2( 120, 40 )
+nodes/HighlightType/node = SubResource( 8 )
+nodes/HighlightType/position = Vector2( 140, 40 )
+nodes/Interactable/node = SubResource( 9 )
+nodes/Interactable/position = Vector2( -160, 100 )
+nodes/color/node = SubResource( 10 )
+nodes/color/position = Vector2( -160, -60 )
 nodes/output/position = Vector2( 560, 160 )
-nodes/rotate/node = SubResource( 8 )
+nodes/rotate/node = SubResource( 11 )
 nodes/rotate/position = Vector2( -100, 260 )
-node_connections = [ "output", 0, "Blend2", "Blend2 2", 0, "rotate", "Blend2 2", 1, "Animation", "Blend2", 0, "color", "Blend2", 1, "Blend2 2" ]
+node_connections = [ "output", 0, "Blend2", "Blend2 2", 0, "rotate", "Blend2 2", 1, "Animation", "Blend2", 0, "HighlightType", "Blend2", 1, "Blend2 2", "HighlightType", 0, "color", "HighlightType", 1, "Interactable" ]
 
 [node name="Reticle" type="TextureRect"]
 visible = false
@@ -158,12 +187,14 @@ script = ExtResource( 4 )
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 anims/color = SubResource( 1 )
-anims/rotate = SubResource( 2 )
-anims/scale = SubResource( 3 )
+anims/interactable = SubResource( 2 )
+anims/rotate = SubResource( 3 )
+anims/scale = SubResource( 4 )
 
 [node name="Tree" type="AnimationTree" parent="."]
-tree_root = SubResource( 9 )
+tree_root = SubResource( 12 )
 anim_player = NodePath("../Anim")
 root_motion_track = NodePath(".:rect_rotation")
 parameters/Blend2/blend_amount = 0.5
 "parameters/Blend2 2/blend_amount" = 0.5
+parameters/HighlightType/current = 1
