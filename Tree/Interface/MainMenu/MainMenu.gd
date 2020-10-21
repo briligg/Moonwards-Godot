@@ -24,7 +24,7 @@ func hide() -> void:
 		if i is Control:
 			i.visible = false
 
-func _on_Quit_pressed() -> void:
+func _quit_pressed() -> void:
 #	Options.save_user_settings()
 	get_tree().quit()
 
@@ -47,16 +47,13 @@ func _on_About_pressed():
 		about.show()
 		about_button.text = "Hide About"
 
-func _on_StartGame_pressed():
-	pass
-
-func _on_JoinMainServer_pressed():
+#func _on_JoinMainServer_pressed():
 	# Until we have config files
-	_on_JoinServer_pressed()
+#	_on_JoinServer_pressed()
 
-func _on_StartCustomServer_pressed():
-	Signals.Network.emit_signal(Signals.Network.GAME_SERVER_REQUESTED, 5000)
+#func _on_StartCustomServer_pressed():
+#	Signals.Network.emit_signal(Signals.Network.GAME_SERVER_REQUESTED, 5000)
 
-func _on_JoinServer_pressed():
-	var ipv4_address : String = CUSTOM_SERVER_ADDRESS_FIELD.text
-	Signals.Network.emit_signal(Signals.Network.GAME_CLIENT_REQUESTED, ipv4_address, 5000)
+#func _on_JoinServer_pressed():
+#	var ipv4_address : String = CUSTOM_SERVER_ADDRESS_FIELD.text
+#	Signals.Network.emit_signal(Signals.Network.GAME_CLIENT_REQUESTED, ipv4_address, 5000)

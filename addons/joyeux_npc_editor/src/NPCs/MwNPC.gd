@@ -1,4 +1,5 @@
 extends NPCBase
+class_name MwNPC
 
 """
 This is the actual class to be edited, extends the NPCBase and has the functions
@@ -6,9 +7,8 @@ that appear in the Definitions file.
 """
 const DialogDisplay = preload("res://addons/joyeux_dialog_system/src/components/display/Dialog Display.tscn")
 
-signal user_input(action_name)
-signal see()
-signal hear()
+signal interacted_by(something)
+signal workstation_assigned(which)
 
 export(String) var character_name
 
@@ -17,8 +17,19 @@ export(Color) var pants_color
 export(Color) var hair_color
 export(Color) var skin_color
 export(Color) var shoes_color
+var actor : Spatial = null
+var worker : Worker = null
+var navigator : NPCInput = null
 
+func _init(file:= "", state:= ""):
+	NPC_File = file 
+	initial_state = state
 
+func load_colors():
+	var colors = [skin_color, hair_color, shirt_color, pants_color, shoes_color]
+	actor.get_component("ModelComponent").set_colors(colors)
+	actor.get_component("NametagComponent").set_name(character_name)
+	
 func property_check(input, signals, variables):
 	#input is object, get the specific variable in the variable port and then
 	#passes it to the next node
@@ -31,6 +42,12 @@ func match(input, signals, variables):
 	#calls the next node
 	if input == _get_variable_from_port(variables, 1):
 		_emit_signal_from_port(true, signals, 0)
+
+func delay(input, signals, variables):
+	var time = float(_get_variable_from_port(variables, 1))
+	if time > 0:
+		yield(get_tree().create_timer(time), "timeout")
+	_emit_signal_from_port(input, signals, 0)
 
 func parallel_trigger(input, signals, variables):
 	#Takes the contents of a signal and distributes it along other two nodes
@@ -57,7 +74,7 @@ func play_global_sound(input, signals, variables):
 	var sound_player = AudioStreamPlayer.new()
 	sound_player.stream = load(path)
 	sound_player.connect("finished", sound_player, "queue_free")
-	add_child(sound_player)
+	actor.add_child(sound_player)
 	sound_player.play()
 
 func play_3d_sound(input, signals, variables):
@@ -65,12 +82,27 @@ func play_3d_sound(input, signals, variables):
 	var sound_player = AudioStreamPlayer3D.new()
 	sound_player.stream = load(path)
 	sound_player.connect("finished", sound_player, "queue_free")
-	add_child(sound_player)
+	actor.add_child(sound_player)
 	sound_player.play()
 
 func trigger_dialog(input, signals, variables):
 	var path = _get_variable_from_port(variables, 0)
 	var dialog_display = DialogDisplay.instance()
 	dialog_display.dialog = path
-	add_child(dialog_display)
+	dialog_display.name_override = character_name 
+	actor.add_child(dialog_display)
 	dialog_display.connect("finished", dialog_display, "queue_free")
+
+func request_workstation(input, signals, variables):
+	if worker.current_station != null:
+		return
+	var filter = _get_variable_from_port(variables, 1)
+	navigator.world_ref.request_workstation(worker, filter)
+
+func find_workstation(input, signals, variables):
+	var filter = _get_variable_from_port(variables, 1)
+	var destination = navigator.world_ref.get_nearest_workstation(actor.translation, filter).position
+	_emit_signal_from_port(input, signals, 0) #This is, emmits a Vector3 position
+	
+func set_objective(input, _signals, _variables):
+	navigator.get_navpath(input) #Input should be Vector3

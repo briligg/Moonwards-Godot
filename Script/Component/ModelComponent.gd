@@ -11,6 +11,7 @@ func _init().("ModelComponent", false):
 func _ready() -> void:
 	set_colors()
 
+
 func set_colors(colors: Array = []) -> void:
 	if colors.size() == 0:
 		return

@@ -1,0 +1,176 @@
+[variables]
+
+States=[  ]
+parallel_trigger=[ null, null ]
+CLAYER=[  ]
+parallel_trigger2=[ null, null ]
+parallel_trigger3=[ null, null ]
+parallel_trigger4=[ null, null ]
+match5=[ null, "OTHERS" ]
+match3=[ null, "PERSON" ]
+match4=[ null, "ENTERTAINMENT" ]
+request_rejected=[ null ]
+request_workstation2=[ null, 0 ]
+request_workstation6=[ null, 1 ]
+request_workstation5=[ null, 3 ]
+request_workstation4=[ null, 2 ]
+request_workstation3=[ null, 4 ]
+set_objective=[ null ]
+force_next_state=[ null ]
+stopped_working=[ null ]
+workstation_assigned=[ null ]
+Save=[  ]
+interacted_by=[ null ]
+trigger_dialog=[ "res://Assets/Dialogs/Busy.mtalk" ]
+on_ready=[ null ]
+request_workstation=[ null, 0 ]
+match2=[ null, "FOOD" ]
+Behaviors=[  ]
+match=[ null, "WORK" ]
+GraphEditFilter=[  ]
+
+[node_signals]
+
+parallel_trigger=[ "parallel_trigger_output_0", "parallel_trigger_output_1" ]
+parallel_trigger2=[ "parallel_trigger2_output_0", "parallel_trigger2_output_1" ]
+parallel_trigger3=[ "parallel_trigger3_output_0", "parallel_trigger3_output_1" ]
+parallel_trigger4=[ "parallel_trigger4_output_0", "parallel_trigger4_output_1" ]
+match5=[ "match5_output_0" ]
+match3=[ "match3_output_0" ]
+match4=[ "match4_output_0" ]
+request_rejected=[ "request_rejected" ]
+request_workstation2=[  ]
+request_workstation6=[  ]
+request_workstation5=[  ]
+request_workstation4=[  ]
+request_workstation3=[  ]
+set_objective=[  ]
+force_next_state=[  ]
+stopped_working=[ "stopped_working" ]
+workstation_assigned=[ "workstation_assigned" ]
+interacted_by=[ "interacted_by" ]
+trigger_dialog=[  ]
+on_ready=[ "on_ready" ]
+request_workstation=[  ]
+match2=[ "match2_output_0" ]
+match=[ "match_output_0" ]
+
+[node_offsets]
+
+parallel_trigger=Vector2( -220, 100 )
+parallel_trigger2=Vector2( 40, 20 )
+parallel_trigger3=Vector2( 40, 200 )
+parallel_trigger4=Vector2( 40, 360 )
+match5=Vector2( 340, 420 )
+match3=Vector2( 340, 180 )
+match4=Vector2( 340, 300 )
+request_rejected=Vector2( -660, -80 )
+request_workstation2=Vector2( 740, 420 )
+request_workstation6=Vector2( 740, -60 )
+request_workstation5=Vector2( 740, 60 )
+request_workstation4=Vector2( 740, 180 )
+request_workstation3=Vector2( 740, 300 )
+set_objective=Vector2( -320, 320 )
+force_next_state=Vector2( -240, -80 )
+stopped_working=Vector2( -640, 100 )
+workstation_assigned=Vector2( -660, 300 )
+interacted_by=Vector2( -680, 520 )
+trigger_dialog=Vector2( -360, 480 )
+on_ready=Vector2( -660, 680 )
+request_workstation=Vector2( -360, 640 )
+match2=Vector2( 340, 60 )
+match=Vector2( 340, -40 )
+
+[ai_config]
+
+connections=[ {
+"from": "stopped_working",
+"from_port": 0,
+"to": "parallel_trigger",
+"to_port": 0
+}, {
+"from": "parallel_trigger",
+"from_port": 0,
+"to": "parallel_trigger2",
+"to_port": 0
+}, {
+"from": "parallel_trigger",
+"from_port": 1,
+"to": "parallel_trigger3",
+"to_port": 0
+}, {
+"from": "parallel_trigger2",
+"from_port": 1,
+"to": "match2",
+"to_port": 0
+}, {
+"from": "parallel_trigger3",
+"from_port": 0,
+"to": "match3",
+"to_port": 0
+}, {
+"from": "parallel_trigger3",
+"from_port": 1,
+"to": "parallel_trigger4",
+"to_port": 0
+}, {
+"from": "parallel_trigger4",
+"from_port": 0,
+"to": "match4",
+"to_port": 0
+}, {
+"from": "parallel_trigger4",
+"from_port": 1,
+"to": "match5",
+"to_port": 0
+}, {
+"from": "match5",
+"from_port": 0,
+"to": "request_workstation2",
+"to_port": 0
+}, {
+"from": "match2",
+"from_port": 0,
+"to": "request_workstation5",
+"to_port": 0
+}, {
+"from": "match3",
+"from_port": 0,
+"to": "request_workstation4",
+"to_port": 0
+}, {
+"from": "match4",
+"from_port": 0,
+"to": "request_workstation3",
+"to_port": 0
+}, {
+"from": "request_rejected",
+"from_port": 0,
+"to": "force_next_state",
+"to_port": 0
+}, {
+"from": "workstation_assigned",
+"from_port": 0,
+"to": "set_objective",
+"to_port": 0
+}, {
+"from": "interacted_by",
+"from_port": 0,
+"to": "trigger_dialog",
+"to_port": 0
+}, {
+"from": "on_ready",
+"from_port": 0,
+"to": "request_workstation",
+"to_port": 0
+}, {
+"from": "parallel_trigger2",
+"from_port": 0,
+"to": "match",
+"to_port": 0
+}, {
+"from": "match",
+"from_port": 0,
+"to": "request_workstation6",
+"to_port": 0
+} ]

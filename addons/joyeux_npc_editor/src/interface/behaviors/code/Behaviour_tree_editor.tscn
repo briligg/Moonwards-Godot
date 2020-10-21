@@ -18,12 +18,12 @@ __meta__ = {
 }
 
 [node name="States" parent="." instance=ExtResource( 1 )]
-visible = false
 
 [node name="Behaviors" parent="." instance=ExtResource( 2 )]
 visible = false
 
 [node name="Settings" type="VBoxContainer" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -118,7 +118,7 @@ margin_left = 273.0
 margin_right = 348.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
-text = "/home/bowser/.local/share/godot/app_userdata/CernansPromise/behaviors"
+text = "C:/Users/biodude/AppData/Roaming/Godot/app_userdata/CernansPromise/behaviors"
 align = 2
 editable = false
 
@@ -176,7 +176,7 @@ margin_left = 423.812
 margin_top = 177.884
 margin_right = 919.812
 margin_bottom = 598.884
-window_title = "Open a Directory"
+window_title = "Abrir un Directorio"
 mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -229,7 +229,7 @@ margin_left = 663.0
 margin_top = -578.0
 margin_right = 1088.0
 margin_bottom = -355.0
-window_title = "Open a Directory"
+window_title = "Abrir un Directorio"
 mode = 2
 script = ExtResource( 6 )
 __meta__ = {

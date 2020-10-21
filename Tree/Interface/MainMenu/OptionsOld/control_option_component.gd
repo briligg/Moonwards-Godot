@@ -5,14 +5,25 @@ var reading = false
 var current_scancode = null
 onready var titlelabel = get_node("Label")
 
+#This is emitted when a new input is confirmed.
+signal new_input_confirmed()
+
+#What action to edit when setting input.
+export var action_to_edit : String = "action_name"
+
 func update_labels():
+	#Do not do anything if I am a defunct button.
+	if current_scancode == null :
+		return
+	
 	#Updates text from labels
-	get_node("Button").text = OS.get_scancode_string(current_scancode)
-	get_node("Confirm/CenterContainer/Label2").text = OS.get_scancode_string(current_scancode)
+	var event : InputEventKey = InputMap.get_action_list(action_to_edit)[0]
+	var scancode : String = OS.get_scancode_string(event.scancode)
+	get_node("Button").text = scancode
+	get_node("Confirm/CenterContainer/Label2").text = scancode
 	
 func get_title():
 	return Label_text
-	
 	
 func update_title(text):
 	if(Engine.is_editor_hint()):
@@ -58,8 +69,8 @@ func _on_change_control_pressed():
 func _on_Popup_confirmed():
 	var Event = InputEventKey.new()
 	Event.scancode = current_scancode
-	InputMap.action_erase_event (str(name), InputMap.get_action_list(str(name))[0])
-	InputMap.action_add_event (str(name), Event)
+	InputMap.action_erase_event (str(action_to_edit), InputMap.get_action_list(str(name))[0])
+	InputMap.action_add_event (str(action_to_edit), Event)
 	get_node("Button").text = OS.get_scancode_string(current_scancode)
 	update_labels()
 	reading = false

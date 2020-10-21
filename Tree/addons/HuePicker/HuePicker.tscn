@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Tree/addons/HuePicker/HuePicker.gd" type="Script" id=1]
 [ext_resource path="res://Tree/addons/HuePicker/icon.png" type="Texture" id=2]
@@ -9,24 +9,29 @@
 [ext_resource path="res://Tree/addons/HuePicker/indicator.png" type="Texture" id=7]
 [ext_resource path="res://Tree/addons/HuePicker/checkerboard.png" type="Texture" id=9]
 
-[sub_resource type="ShaderMaterial" id=1]
+[sub_resource type="StyleBoxFlat" id=8]
+
+[sub_resource type="Theme" id=1]
+PanelContainer/styles/panel = SubResource( 8 )
+
+[sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 3 )
 shader_param/hue = 0.0
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 5 )
 shader_param/color1 = null
 shader_param/color2 = null
 
-[sub_resource type="ShaderMaterial" id=3]
+[sub_resource type="ShaderMaterial" id=4]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/hue = 0.0
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id=5]
 shader = ExtResource( 6 )
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=6]
 draw_center = false
 border_width_left = 1
 border_width_top = 1
@@ -34,7 +39,7 @@ border_width_right = 1
 border_width_bottom = 1
 shadow_size = 2
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=7]
 draw_center = false
 border_width_left = 1
 border_width_top = 1
@@ -50,6 +55,7 @@ shadow_size = 2
 [node name="HuePicker" type="Control"]
 anchor_right = 0.2
 anchor_bottom = 0.2
+theme = SubResource( 1 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true,
@@ -60,7 +66,7 @@ color = Color( 1, 1, 1, 1 )
 
 [node name="HueRect" type="ColorRect" parent="."]
 visible = false
-material = SubResource( 1 )
+material = SubResource( 2 )
 margin_left = 56.0
 margin_top = 56.0
 margin_right = 200.0
@@ -72,7 +78,7 @@ anchor_bottom = 1.0
 script = ExtResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="HueCircle"]
-material = SubResource( 2 )
+material = SubResource( 3 )
 margin_left = 131.906
 margin_top = 47.906
 margin_right = 254.094
@@ -80,7 +86,7 @@ margin_bottom = 170.094
 mouse_filter = 1
 
 [node name="SatVal" type="PanelContainer" parent="HueCircle/ColorRect"]
-material = SubResource( 3 )
+material = SubResource( 4 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
@@ -89,7 +95,7 @@ __meta__ = {
 }
 
 [node name="indicator_sv" type="Sprite" parent="HueCircle/ColorRect"]
-material = SubResource( 4 )
+material = SubResource( 5 )
 texture = ExtResource( 7 )
 
 [node name="indicator_h" type="PanelContainer" parent="HueCircle"]
@@ -102,7 +108,7 @@ margin_bottom = 120.96
 rect_rotation = 90.0
 rect_pivot_offset = Vector2( 4.32001, 12.96 )
 mouse_filter = 2
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -113,7 +119,7 @@ margin_left = 84.0
 margin_top = 189.0
 margin_right = 111.0
 margin_bottom = 216.0
-custom_styles/panel = SubResource( 6 )
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

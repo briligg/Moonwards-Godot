@@ -33,32 +33,32 @@ __meta__ = {
 }
 
 [node name="Buttons" type="VBoxContainer" parent="Parent"]
-margin_right = 142.0
+margin_right = 173.0
 margin_bottom = 952.0
 theme = ExtResource( 4 )
 custom_constants/separation = 12
 alignment = 1
 
 [node name="bContinue" type="Button" parent="Parent/Buttons"]
-margin_top = 422.0
-margin_right = 142.0
-margin_bottom = 450.0
+margin_top = 407.0
+margin_right = 173.0
+margin_bottom = 445.0
 text = "Continue"
 
 [node name="bAbout" type="Button" parent="Parent/Buttons"]
-margin_top = 462.0
-margin_right = 142.0
-margin_bottom = 490.0
+margin_top = 457.0
+margin_right = 173.0
+margin_bottom = 495.0
 text = "About"
 
 [node name="bQuit" type="Button" parent="Parent/Buttons"]
-margin_top = 502.0
-margin_right = 142.0
-margin_bottom = 530.0
+margin_top = 507.0
+margin_right = 173.0
+margin_bottom = 545.0
 text = "Quit"
 
 [node name="Features" type="TabContainer" parent="Parent"]
-margin_left = 146.0
+margin_left = 177.0
 margin_right = 1858.0
 margin_bottom = 952.0
 size_flags_horizontal = 3
@@ -72,14 +72,6 @@ anchor_bottom = 1.0
 
 [node name="About" parent="Parent/Features" instance=ExtResource( 3 )]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 0.0
-margin_bottom = 0.0
 custom_styles/panel = SubResource( 2 )
 [connection signal="pressed" from="Parent/Buttons/bContinue" to="." method="_on_bContinue_pressed"]
 [connection signal="pressed" from="Parent/Buttons/bAbout" to="." method="_on_bAbout_pressed"]

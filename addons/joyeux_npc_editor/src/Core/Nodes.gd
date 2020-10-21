@@ -4,13 +4,13 @@ const TYPE_ANY = 28
 onready var Definitions
 const Colors = [
 	Color(0,0,0,0),
-	Color(0.2,0,0,1),
-	Color(0.2,0.8,0.4,1),
-	Color(0.2,1.2,1.2,1),
-	Color(0.2,0.2,0.4,1),
+	Color("#c96ef0"),
+	Color("#42f5ce"),
+	Color("#45c4ff"),
+	Color("#ffbe45"),
 	Color(0.2,0.4,0.4,1),
 	Color(0.4,0.4,0.4,1),
-	Color(0.4,0,0),
+	Color("#00ff44"),
 	Color(0.6,0.4,0.4,1),
 	Color(0.6,0.6,0.4,1),
 	Color(0.6,0.6,0.6,1),
@@ -20,18 +20,18 @@ const Colors = [
 	Color(1,0.8,0.8,1),
 	Color(1,1,0.8,1),
 	Color(1,1,1,1),
-	Color(1,0,1,1),
-	Color(1,1,0,1),
-	Color(0.5, 0.2, 0.2, 1),
+	Color("#f50076"),
+	Color("#ff1717"),
+	Color("#ffff21"),
 	Color(0.1,0.6,0.1, 1),
 	Color(0.6, 0.2, 0.7, 1),
 	Color(0.9,0.1,0.9,1),
 	Color(0.2,0,0.2,1),
-	Color(0.7, 0, 0.5),
+	Color("#00ef44"),
 	Color(0.5, 0, 0.5),
 	Color(0.2, 1, 0.1),
 	Color(1,0.5,0.2,1),
-	Color(0.1,0.2,0.3,1)
+	Color("#ffffff")
 	]
 var Graphs : Dictionary = {
 	"actions" : {
