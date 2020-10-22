@@ -44,7 +44,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Apps" type="Container" parent="."]
+[node name="Apps" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 20.0
@@ -54,9 +54,6 @@ margin_bottom = -20.0
 mouse_filter = 2
 theme = ExtResource( 3 )
 script = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ToolsBarApp" parent="Apps" instance=ExtResource( 4 )]
 
@@ -104,3 +101,4 @@ margin_right = 403.0
 margin_bottom = 72.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+[connection signal="app_changed" from="Apps" to="GeneralInfo" method="hide_panels"]
