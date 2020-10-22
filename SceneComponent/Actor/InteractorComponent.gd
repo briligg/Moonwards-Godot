@@ -75,7 +75,7 @@ func _ready() -> void :
 		interactor_area.queue_free()
 		interactor_area = null
 	
-	if grab_focus_at_ready :
+	if grab_focus_at_ready && is_net_owner() :
 		grab_focus()
 
 #Return the closest interactable.
