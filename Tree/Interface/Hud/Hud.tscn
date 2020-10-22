@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Tree/Interface/Hud/Hud.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/Hud/Chat/Chat.tscn" type="PackedScene" id=2]
@@ -16,7 +16,6 @@
 [ext_resource path="res://Tree/Interface/Hud/AppsContainer.gd" type="Script" id=14]
 [ext_resource path="res://Assets/Interface/Hud/Shaders/Blur_Material.tres" type="Material" id=15]
 [ext_resource path="res://Assets/Interface/Textures/T_UI_White.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Interface/Hud/Styles/HUDGeneralInfo.tres" type="Theme" id=17]
 [ext_resource path="res://SceneComponent/Interface/Hud/Apps/Map/MapApp.tscn" type="PackedScene" id=18]
 
 [node name="Hud" type="CanvasLayer"]
@@ -32,7 +31,6 @@ margin_left = 20.0
 margin_top = 20.0
 margin_right = -20.0
 margin_bottom = -20.0
-theme = ExtResource( 17 )
 
 [node name="Blur" type="TextureRect" parent="."]
 visible = false
