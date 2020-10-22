@@ -34,8 +34,6 @@ margin_right = -20.0
 margin_bottom = -20.0
 theme = ExtResource( 17 )
 
-[node name="IgnoreHudShowCalls" type="Node" parent="."]
-
 [node name="Blur" type="TextureRect" parent="."]
 visible = false
 material = ExtResource( 15 )
