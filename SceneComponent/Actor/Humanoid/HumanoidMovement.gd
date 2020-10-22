@@ -223,10 +223,10 @@ func disable_ground_cast_for_seconds(duration = 0.0):
 		is_groundcast_enabled = true
 
 ### TEMPORARY CLIMBING CODE
-# to be moved elsewhere.
+# to be moved elsewhere and possibly reworked.
 func start_climb_stairs(target_stairs : VerticalStairs) -> void:
 	#Do nothing if the player is already in climbing state.
-	if entity.state.state == ActorEntityState.State.CLIMBING:
+	if is_climbing:
 		return
 	
 	entity.custom_integrator = true
