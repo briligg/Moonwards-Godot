@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Interface/Hud/Styles/ToolsBarTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconVideoCamera.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconQuestion.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Interface/Textures/HudPanelMenu.png" type="Texture" id=16]
 [ext_resource path="res://SceneComponent/Interface/Hud/Apps/ToolsBar/PanelPopup.gd" type="Script" id=17]
+[ext_resource path="res://SceneComponent/Interface/Hud/Apps/ToolsBar/HelpButton.gd" type="Script" id=18]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 4 )
@@ -138,6 +139,7 @@ anchor_bottom = 1.0
 action_mode = 0
 icon = ExtResource( 15 )
 expand_icon = true
+script = ExtResource( 18 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
