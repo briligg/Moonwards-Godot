@@ -17,7 +17,8 @@ var in_queue_for_use : Array = []
 var current_worker : Worker = null
 var lookdir : Vector3 = Vector3.ZERO
 var position : Vector3 = Vector3.ZERO
-export(bool) var usable_by_players = false
+export(bool) var debug_vis : bool = false #If enabled, lets players see debug positions in game
+export(bool) var usable_by_players : bool = false
 export(bool) var uses_queue : bool = false
 export(bool) var call_best_first : bool = false
 export(bool) var gives_xp : bool = false
@@ -46,6 +47,9 @@ func _ready() -> void:
 	if pos:
 		position = get_parent().to_local(to_global(pos.translation))
 		lookdir = (translation - pos.translation)/2
+	if not debug_vis:
+		$Debugvis.queue_free()
+		
 func check_for_next() -> void:
 	progress = 0
 	if not uses_queue:
@@ -57,7 +61,6 @@ func check_for_next() -> void:
 	
 func do_work(amount: float, experience : float) -> float:
 	progress += (amount + 1 * experience)/100
-	print(progress)
 	if progress >= maximum_progress:
 		is_available = true
 		current_worker.stop_working(category)
@@ -94,7 +97,7 @@ func assign(worker : Worker) -> void:
 	worker.emit_signal("workstation_assigned", position)
 
 func request_workstation(worker : Worker) -> bool:
-	print("Workstation: request recived from ", worker)
+	Log.trace(self, "request_workstation", str("Recieved request from: ", worker))
 	if get_parent() is AEntity:
 		if get_parent().get_component("AI handler") != null:
 			if get_parent().get_component("AI handler").worker == worker:
@@ -106,18 +109,15 @@ func request_workstation(worker : Worker) -> bool:
 		assign(worker)
 		return true
 	else:
-		print("Busy!")
 		return false
 
 func _on_body_entered(entity) -> void:
-	print("A worker arrived!")
 	if entity == get_parent():
 		return
 	var worker : Worker = entity.get_component("AI handler").worker
 	if worker:
 		if worker == current_worker:
 			entity.get_component("NPCInput").get_navpath(translation)
-			print("The worker has arrived")
 			worker.start_working(self)
 			_change_state_on_user(worker)
 			

@@ -161,7 +161,7 @@ func _load_functions() -> void:
 	var functions : Dictionary = Definitions.get("_functions")
 	var function_names = functions.keys()
 	if not _are_valid_identifiers(function_names):
-		print_debug("A function name is not correct, please verify your definitions.")
+		Log.warning(self,"_load_functions", "A function name is not correct, please verify your definitions.")
 		return
 	for function in function_names:
 		var data : Dictionary = functions.get(function)

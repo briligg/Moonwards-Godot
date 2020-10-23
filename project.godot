@@ -447,7 +447,7 @@ _global_script_classes=[ {
 "base": "WorldNavigator",
 "class": "MwNavigator",
 "language": "GDScript",
-"path": "res://Tree/World/MwNavigator.gd"
+"path": "res://Tree/World/Navigation/MwNavigator.gd"
 }, {
 "base": "Node",
 "class": "MwNode",
@@ -467,7 +467,7 @@ _global_script_classes=[ {
 "base": "AComponent",
 "class": "NPCInput",
 "language": "GDScript",
-"path": "res://addons/com.gdquest.godot-steering-ai-framework/NPCMovement.gd"
+"path": "res://SceneComponent/Actor/AI/NPCMovement.gd"
 }, {
 "base": "Node",
 "class": "NetworkManager",
@@ -597,12 +597,12 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "Worker",
 "language": "GDScript",
-"path": "res://Tree/Actor/Player/NPC/MwWorker.gd"
+"path": "res://SceneComponent/Actor/AI/MwWorker.gd"
 }, {
 "base": "Interactable",
 "class": "Workstation",
 "language": "GDScript",
-"path": "res://SceneComponent/Actor/Workstation.gd"
+"path": "res://SceneComponent/Actor/AI/Workstation.gd"
 }, {
 "base": "Navigation",
 "class": "WorldNavigator",

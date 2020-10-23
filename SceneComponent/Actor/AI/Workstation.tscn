@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://SceneComponent/Actor/AI/Workstation.gd" type="Script" id=1]
+
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.581019, 1, 0.235292 )
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+albedo_color = Color( 1, 0, 0, 0.415686 )
+emission_enabled = true
+emission = Color( 0.2, 0.537255, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SphereMesh" id=3]
+material = SubResource( 2 )
+flip_faces = true
+radial_segments = 8
+rings = 4
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+flags_unshaded = true
+albedo_color = Color( 0.890196, 0.611765, 0.0784314, 0.52549 )
+
+[node name="Workstation" type="Area"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 1 )
+display_info = "Example Workstation"
+title = "Work"
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1.5264, 0, 0, 0, 1.5264, 0, 0, 0, 1.5264, 2.07061, 1, 0 )
+shape = SubResource( 1 )
+
+[node name="NPCPosition" type="Position3D" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.67144, 0.182675, 7.30611e-08 )
+
+[node name="Debugvis" type="Spatial" parent="."]
+
+[node name="MeshInstance4" type="MeshInstance" parent="Debugvis"]
+transform = Transform( 0.162052, 0, 1.02141e-14, 0, 0.162052, 0, -1.02141e-14, 0, 0.162052, 0, 0.349, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="MeshInstance" type="MeshInstance" parent="Debugvis"]
+transform = Transform( 0.431875, 0, 4.08562e-14, 0, 0.431875, 0, -4.08562e-14, 0, 0.431875, 1.83768, -0.000324994, 7.30611e-08 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Debugvis"]
+transform = Transform( 0.431875, 0, 4.08562e-14, 0, 0.431875, 0, -4.08562e-14, 0, 0.431875, 1.83768, 0.533675, 7.30611e-08 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="Debugvis"]
+transform = Transform( 0.431875, 0, 4.08562e-14, 0, 0.431875, 0, -4.08562e-14, 0, 0.431875, 1.83768, 1.04467, 7.30611e-08 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
