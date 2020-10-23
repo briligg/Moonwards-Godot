@@ -17,7 +17,7 @@ var in_queue_for_use : Array = []
 var current_worker : Worker = null
 var lookdir : Vector3 = Vector3.ZERO
 var position : Vector3 = Vector3.ZERO
-export(bool) var debug_vis : bool = false
+export(bool) var debug_vis : bool = false #If enabled, lets players see debug positions in game
 export(bool) var usable_by_players : bool = false
 export(bool) var uses_queue : bool = false
 export(bool) var call_best_first : bool = false
@@ -97,6 +97,7 @@ func assign(worker : Worker) -> void:
 	worker.emit_signal("workstation_assigned", position)
 
 func request_workstation(worker : Worker) -> bool:
+	Log.trace(self, "request_workstation", str("Recieved request from: ", worker))
 	if get_parent() is AEntity:
 		if get_parent().get_component("AI handler") != null:
 			if get_parent().get_component("AI handler").worker == worker:

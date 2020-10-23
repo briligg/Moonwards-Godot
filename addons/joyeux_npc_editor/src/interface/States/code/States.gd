@@ -62,7 +62,7 @@ func save_variables():
 func save_states(file : String):
 	#First we save the routes to the nodes used in the machine
 	if Graph.get_connection_list().size() == 0:
-		print_debug("WARNING: Attempting to save a State Machine with no connections")
+		Log.warning(self, "save_states", "Attempting to save a State Machine with no connections")
 	var names : Array = Graph.get_unique_nodes()
 	for _name in names:
 		var idx : int = Behavior_names.find(_name)
@@ -101,7 +101,7 @@ func load_behaviors_in(path : String) -> void:
 			file_name = Dir.get_next()
 		Dir.list_dir_end()
 	else:
-		print_debug("Error accessing ", path)
+		Log.error(self,"load_behaviors_in", "Error accessing " + path)
 
 func save_SM_connections():
 	var list = Graph.get_connection_list()

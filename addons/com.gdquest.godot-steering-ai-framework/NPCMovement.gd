@@ -70,7 +70,7 @@ onready var Priority : GSAIPriority = GSAIPriority.new(Agent)
 func _enter_tree():
 	var check = load("res://addons/com.gdquest.godot-steering-ai-framework/GSAISteeringAgent.gd")
 	if not check is Resource:
-		print_debug("This node depends on Steering AI Framework")
+		Log.error(self,"_enter_tree", "This node depends on Steering AI Framework")
 	#This is just a small explaination that should popup if used as tool
 	#you would notice something's wrong when you try to use this node and errors 
 	#pop up

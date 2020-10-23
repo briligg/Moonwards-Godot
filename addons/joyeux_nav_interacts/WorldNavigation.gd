@@ -1,7 +1,7 @@
 extends Navigation
 class_name WorldNavigator
 
-export(bool) var debug_draw : bool = false
+export(bool) var debug_draw : bool = false #If enabled, draws a white line path of the last requested path
 var astar : AStar = AStar.new()
 var m = SpatialMaterial.new()
 

@@ -37,7 +37,7 @@ func _load_states(state_file : String):
 		_load_variables()
 		_start_machine()
 	else:
-		print_debug("Error: No State Machine File selected")
+		Log.warning(self,"_load_states", "Error: No State Machine File selected")
 
 func _load_variables():
 	for key in ai_script.get_section_keys("variables"):
@@ -73,7 +73,7 @@ func _start_machine():
 			current_state = state 
 			_change_behavior(behaviors.get(current_state))
 			return
-	print_debug("Error: This states file has no start state defined")
+	Log.error(self,"_stat_machine" ,"This states file has no start state defined")
 
 func _next_state(force : bool = false, condition = null):
 	#Sets the next state in the machine
@@ -142,8 +142,8 @@ func _define_connection(behavior : ConfigFile, from : String, from_port : int , 
 	if has_signal(signal_name) and has_method(function):
 		connect(signal_name, self, function, connection_bindings) 
 	else:
-		print_debug("Warning: Either a signal (", signal_name
-			, ") or a method (", function, ")is missing from the NPC")
+		Log.error(self,"_define_connection", str("Either a signal (", signal_name
+			, ") or a method (", function, ")is missing from the NPC"))
 		
 func _undefine_connection(behavior : ConfigFile):
 	for connection in behavior.get_value("ai_config", "connections", []):
