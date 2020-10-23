@@ -13,12 +13,29 @@ signal interacted_by(interactor_ray_cast)
 signal title_changed(new_title_string)
 signal display_info_changed(new_description_string)
 
+# Flags that are only processed if is_networked evaluates to true.
+# CLIENT_SERVER: Runs on both the requesting client & the server. This is the default state.
+#    Actions that require both validation, and need to run on both sides as both the state & player prespective get changed, for example.
+# SERVER_ONLY: Only runs on the server, these are actions that will likely be propagated inherently by existing features. 
+#    Things such as climbing stairs, modifying positions, etc.
+# CLIENT_ONLY: Only happens locally on the client, but still requests permission from the server. 
+#    Actions that may need validation, or that need to be tracked.
+# PROPAGATED: Runs on both the server, the requesting client, and all other clients.
+enum NetworkMode {
+	CLIENT_SERVER,
+	CLIENT_ONLY,
+	SERVER_ONLY,
+	PROPAGATED,
+}
+
 #This is what is displayed when an interactor can interact with me.
 export var display_info : String = "Interactable" setget set_display_info
 #This string is displayed in the text of the InteractsMenu button.
 export var title : String = "Title" setget set_title
-#True means that players online can see the interactable be used by others.
-export var networked : bool = true
+#Interactions will be requested from the server before bouncing back to the requesting client(s).
+export var is_networked: bool = true
+### Supplementary networking flags, these are only checked for if `is_networked` is true.
+export(NetworkMode) var network_mode = NetworkMode.CLIENT_SERVER
 # Whether or not this interactable is available  to receive interactions.
 var is_available: bool = true
 #Whether or not this interactable has active collision detection.
@@ -42,7 +59,7 @@ func interact_with(interactor : Node) -> void :
 	emit_signal("interacted_by", interactor)
 
 func is_networked() -> bool :
-	return networked
+	return is_networked
 
 #Turns on or shuts off this interactables collision detection.
 func set_active(become_active : bool) -> void :

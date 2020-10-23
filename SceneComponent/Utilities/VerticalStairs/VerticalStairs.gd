@@ -1,4 +1,4 @@
-tool
+#tool
 extends Interactable
 class_name VerticalStairs
 
