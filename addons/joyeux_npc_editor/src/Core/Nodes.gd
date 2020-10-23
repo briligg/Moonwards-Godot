@@ -54,7 +54,7 @@ var Graphs : Dictionary = {
 var custom_types : Dictionary = {}
 var user_override : String = "" 
 var proj_override : String = "" 
-var behavior_paths = [
+var behavior_paths : Array = [
 	"res://addons/joyeux_npc_editor/src/NPCs/DefaultBehaviors/",
 	OS.get_user_data_dir()+"/behaviors"
 ]
@@ -66,7 +66,7 @@ func override_default(which : int, dir : String):
 		1:
 			user_override = dir
 		_:
-			if behavior_paths < which and which  >= 0:
+			if behavior_paths.size() < which and which  >= 0:
 				behavior_paths[which] = dir
 
 func load_custom_paths():
@@ -81,7 +81,8 @@ func load_custom_paths():
 		behavior_paths[1] = Conf.get_value("overrides", "1")
 	
 	for key in Conf.get_section_keys("behaviors"):
-		behavior_paths.append(Conf.get_value("behaviors", key))
+		if not behavior_paths.has(Conf.get_value("behaviors", key)):
+			behavior_paths.append(Conf.get_value("behaviors", key))
 
 func save_custom_paths():
 	var Conf = ConfigFile.new()
