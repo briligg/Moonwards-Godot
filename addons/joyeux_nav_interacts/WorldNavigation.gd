@@ -1,6 +1,7 @@
 extends Navigation
 class_name WorldNavigator
 
+export(bool) var debug_draw : bool = false #If enabled, draws a white line path of the last requested path
 var astar : AStar = AStar.new()
 var m = SpatialMaterial.new()
 
@@ -85,14 +86,12 @@ func get_navmesh_path(from: Vector3, to: Vector3, global : bool = false):
 	to = get_closest_point(to)
 	from = get_closest_point(from)
 	var path_points = Array(get_simple_path(from, to, true))
-	print("Difference = ", (path_points.back() - to).length())
 	if (path_points.back()- to).length() > 1:
-		print((path_points.back() - to).length())
 		var path2 = Array(get_simple_path(to, from, true))
 		path2.invert()
 		for point in path2:
 			path_points.append(point)
-	if get_node("Draw") is ImmediateGeometry:
+	if get_node("Draw") is ImmediateGeometry and debug_draw:
 		draw_path(from, to, path_points)
 	if global:
 		var temp : Array = []

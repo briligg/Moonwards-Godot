@@ -119,13 +119,24 @@ func relay_signal(attribute = null, signal_name = "interactable_made_impossible"
 	
 mastersync func request_interact(args : Array) -> void :
 	Log.warning(self, "", "Client %s requested an interaction" %entity.owner_peer_id)
-	rpc_id(get_tree().get_rpc_sender_id(), "execute_interact", args)
+	var interactable = get_node(args[1])
+	Log.warning(self, "", "Interact mode: %s" %interactable.network_mode)
+	match interactable.network_mode:
+		interactable.NetworkMode.CLIENT_SERVER:
+			execute_interact(args)
+			rpc_id(get_tree().get_rpc_sender_id(), "execute_interact", args)
+		interactable.NetworkMode.CLIENT_ONLY:
+			rpc_id(get_tree().get_rpc_sender_id(), "execute_interact", args)
+		interactable.NetworkMode.SERVER_ONLY:
+			execute_interact(args)
+		interactable.NetworkMode.PROPAGATED:
+			rpc("execute_interact", args)
 
 puppetsync func execute_interact(args: Array):
 	Log.warning(self, "", "Client %s interacted request executed" %entity.owner_peer_id)
-	var _interactor = get_node(args[0])
-	var _interactable = get_node(args[1])
-	_interactor.interact(_interactable)
+	var interactor = get_node(args[0])
+	var interactable = get_node(args[1])
+	interactor.interact(interactable)
 
 func disable():
 	#This gets called before _ready.

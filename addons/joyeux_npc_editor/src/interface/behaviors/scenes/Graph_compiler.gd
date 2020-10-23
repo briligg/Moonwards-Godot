@@ -33,11 +33,9 @@ func load_nodes() -> void:
 			for cat in Nodes.Graphs:
 				if Nodes.Graphs.get(cat).has(filtered):
 					type = cat
-#					print(cat)
 			var offset = OutputFile.get_value("node_offsets", unfiltered)
 			if not has_node(connection.get(name)):
 				add_node(type, unfiltered, offset)
-				print("Node added: ", unfiltered)
 			for child in get_node(unfiltered).get_child_count():
 				var variables = OutputFile.get_value("variables", unfiltered)
 				if child < variables.size():
@@ -97,7 +95,6 @@ func recursive_get_variable(node : Node):
 	elif node is SpinBox:
 		return node.value
 	elif node is EnumDropDown:
-		print("It's enum, idx is ", node.index)
 		return node.index
 	elif node is DropDown:
 		return node.text
