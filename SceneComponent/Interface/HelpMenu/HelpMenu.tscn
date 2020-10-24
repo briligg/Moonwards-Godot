@@ -1,0 +1,80 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/HelpPanel.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="HelpPanel" type="Panel" groups=[
+"hud_general_info",
+]]
+anchor_left = 0.32
+anchor_top = 0.05
+anchor_right = 0.68
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HelpMenu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="InitialMenu" type="VBoxContainer" parent="HelpMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSeparator2" type="VSeparator" parent="HelpMenu/InitialMenu"]
+margin_right = 691.0
+margin_bottom = 41.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+custom_styles/separator = SubResource( 1 )
+custom_constants/separation = 0
+
+[node name="Keys" type="RichTextLabel" parent="HelpMenu/InitialMenu"]
+margin_top = 47.0
+margin_right = 691.0
+margin_bottom = 874.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Welcome to Moonward's help menu.
+
+Below you can see what the controls are for playing Moonwards."
+
+[node name="GotoMap" type="Button" parent="HelpMenu/InitialMenu"]
+margin_top = 880.0
+margin_right = 691.0
+margin_bottom = 900.0
+text = "How to use Map"
+
+[node name="GotoEvent" type="Button" parent="HelpMenu/InitialMenu"]
+margin_top = 906.0
+margin_right = 691.0
+margin_bottom = 926.0
+text = "How to setup events"
+
+[node name="GotoApps" type="Button" parent="HelpMenu/InitialMenu"]
+margin_top = 932.0
+margin_right = 691.0
+margin_bottom = 952.0
+text = "What are apps?"
+
+[node name="GotoRecording" type="Button" parent="HelpMenu/InitialMenu"]
+margin_top = 958.0
+margin_right = 691.0
+margin_bottom = 978.0
+text = "how to record screen"
+
+[node name="VSeparator" type="VSeparator" parent="HelpMenu/InitialMenu"]
+margin_top = 984.0
+margin_right = 691.0
+margin_bottom = 1026.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+custom_styles/separator = SubResource( 1 )
+custom_constants/separation = 0
