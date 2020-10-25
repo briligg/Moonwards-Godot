@@ -1,8 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/HelpPanel.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/HelpMenu/HelpMenu.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Interface/MainMenu.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Interface/Textures/LeftArrowHover.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Interface/Textures/LeftArrowNormal.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Interface/Textures/LeftArrowButtonPressed.png" type="Texture" id=6]
+[ext_resource path="res://SceneComponent/Interface/HelpMenu/GotoApps.gd" type="Script" id=7]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -10,7 +14,6 @@
 "hud_general_info",
 ]]
 anchor_left = 0.32
-anchor_top = 0.05
 anchor_right = 0.68
 anchor_bottom = 1.0
 theme = ExtResource( 3 )
@@ -19,70 +22,124 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HelpMenu" type="Control" parent="."]
-anchor_right = 1.0
+[node name="Alignment" type="VBoxContainer" parent="."]
+anchor_left = 0.02
+anchor_right = 0.98
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopSection" type="HBoxContainer" parent="Alignment"]
+margin_right = 663.0
+margin_bottom = 35.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.02
+alignment = 1
+
+[node name="Label" type="Label" parent="Alignment/TopSection"]
+margin_right = 663.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.94
+text = "Help"
+align = 1
+
+[node name="BackButton" type="TextureButton" parent="Alignment/TopSection/Label"]
+visible = false
+anchor_top = 0.1
+anchor_right = 0.05
+anchor_bottom = 1.0
+size_flags_stretch_ratio = 0.47
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="Alignment"]
+margin_top = 39.0
+margin_right = 663.0
+margin_bottom = 43.0
+
+[node name="HelpMenu" type="Control" parent="Alignment"]
+margin_top = 47.0
+margin_right = 663.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InitialMenu" type="VBoxContainer" parent="HelpMenu"]
-anchor_left = 0.02
-anchor_right = 0.98
+[node name="InitialMenu" type="VBoxContainer" parent="Alignment/HelpMenu"]
+anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/separation = 16
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VSeparator2" type="VSeparator" parent="HelpMenu/InitialMenu"]
+[node name="VSeparator2" type="VSeparator" parent="Alignment/HelpMenu/InitialMenu"]
 margin_right = 663.0
-margin_bottom = 35.0
+margin_bottom = 36.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
 custom_styles/separator = SubResource( 1 )
 custom_constants/separation = 0
 
-[node name="Keys" type="RichTextLabel" parent="HelpMenu/InitialMenu"]
-margin_top = 51.0
+[node name="Keys" type="RichTextLabel" parent="Alignment/HelpMenu/InitialMenu"]
+margin_top = 52.0
 margin_right = 663.0
-margin_bottom = 770.0
+margin_bottom = 776.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Welcome to Moonward's help menu.
 
 Below you can see what the controls are for playing Moonwards."
 
-[node name="GotoMap" type="Button" parent="HelpMenu/InitialMenu"]
-margin_top = 786.0
+[node name="GotoMap" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
+margin_top = 792.0
 margin_right = 663.0
-margin_bottom = 821.0
+margin_bottom = 827.0
 text = "How to use Map"
 
-[node name="GotoEvent" type="Button" parent="HelpMenu/InitialMenu"]
-margin_top = 837.0
+[node name="GotoEvent" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
+margin_top = 843.0
 margin_right = 663.0
-margin_bottom = 872.0
+margin_bottom = 878.0
 text = "How to setup events"
 
-[node name="GotoApps" type="Button" parent="HelpMenu/InitialMenu"]
-margin_top = 888.0
+[node name="GotoApps" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
+margin_top = 894.0
 margin_right = 663.0
-margin_bottom = 923.0
+margin_bottom = 929.0
 text = "What are apps?"
+script = ExtResource( 7 )
 
-[node name="GotoRecording" type="Button" parent="HelpMenu/InitialMenu"]
-margin_top = 939.0
+[node name="GotoRecording" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
+margin_top = 945.0
 margin_right = 663.0
-margin_bottom = 974.0
+margin_bottom = 980.0
 text = "how to record screen"
 
-[node name="VSeparator" type="VSeparator" parent="HelpMenu/InitialMenu"]
-margin_top = 990.0
+[node name="VSeparator" type="VSeparator" parent="Alignment/HelpMenu/InitialMenu"]
+margin_top = 996.0
 margin_right = 663.0
-margin_bottom = 1026.0
+margin_bottom = 1033.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
 custom_styles/separator = SubResource( 1 )
 custom_constants/separation = 0
+
+[node name="AppsHelp" type="Control" parent="Alignment/HelpMenu"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
