@@ -36,7 +36,8 @@ var is_flying : bool = false
 var is_groundcast_enabled: bool = true
 
 #Whether I am climbing or not.
-var is_climbing : bool = false
+# Puppetsync hack for now
+puppetsync var is_climbing : bool = false
 
 func _init():
 	pass
@@ -255,7 +256,9 @@ func stop_climb_stairs(phys_state : PhysicsDirectBodyState, is_stairs_top) -> vo
 	#Make myself face the same direction as the camera.
 	entity.model.global_transform.basis = entity.global_transform.basis
 	entity.custom_integrator = false
-	
+	if is_network_master():
+		rset("is_climbing", is_climbing)
+
 #Eventually we need to make this work with delta.
 func update_stairs_climbing(_delta : float, phys_state : PhysicsDirectBodyState) -> void :
 	if vertical_vector.y > 0:
