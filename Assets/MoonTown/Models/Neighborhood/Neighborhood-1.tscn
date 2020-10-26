@@ -17,11 +17,13 @@ extents = Vector3( 27.0138, 19.2007, 26.8897 )
 
 [node name="OmniLight" type="OmniLight" parent="." index="7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3296, 18.6561, 0 )
+light_color = Color( 0.996078, 1, 0.972549, 1 )
 light_energy = 1.49
-omni_range = 13.5014
+omni_range = 22.0
+omni_attenuation = 1.68179
 
 [node name="OmniLight2" type="OmniLight" parent="." index="8"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.05585, 6.94877, 1.15402 )
-light_energy = 0.75
-omni_range = 7.81411
-omni_attenuation = 1.27456
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.05585, 6.06739, 1.15402 )
+light_energy = 1.38
+omni_range = 9.2
+omni_attenuation = 1.10957
