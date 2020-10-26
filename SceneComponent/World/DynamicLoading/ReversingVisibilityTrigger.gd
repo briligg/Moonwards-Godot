@@ -29,20 +29,22 @@ func on_body_entered(body) -> void:
 		return
 	
 	if body is AEntity:
-		if body.owner_peer_id == get_tree().get_network_unique_id() and VisibilityManager.log_vt_changes:
-			Log.trace(self, "on_body_entered", "Reversing visibility states for %s, in %s"
-					%[body.name, self.name])
+		if body.owner_peer_id == Network.network_instance.peer_id:
 			process_visibility()
-		
+			if  VisibilityManager.log_vt_changes:
+				Log.trace(self, "on_body_entered", "Reversing visibility states for %s, in %s"
+						%[body.name, self.name])
+
 func on_body_exited(body) -> void:
 	if VisibilityManager.disable_all_triggers:
 		return
 		
 	if body is AEntity:
-		if body.owner_peer_id == get_tree().get_network_unique_id() and VisibilityManager.log_vt_changes:
-			Log.trace(self, "on_body_exited", "Processing visibility for %s, in %s"
-					%[body.name, self.name])
+		if body.owner_peer_id == Network.network_instance.peer_id:
 			reverse_visibility()
+			if VisibilityManager.log_vt_changes:
+				Log.trace(self, "on_body_exited", "Processing visibility for %s, in %s"
+						%[body.name, self.name])
 	
 func process_visibility() -> void:
 	if is_set:
