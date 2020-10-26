@@ -20,7 +20,8 @@ func _ready() -> void:
 	#TODO: Remove this & refactor parts that may depend on it.
 	if !is_net_owner() and require_net_owner:
 		disable()
-
+	Signals.Network.connect(NetworkSignals.NEW_PLAYER_POST_LOAD, self, "sync_for_new_player")
+	
 func disable() -> void:
 	enabled = false
 	set_process(false)
@@ -83,3 +84,6 @@ func _get_comp_name() -> String:
 
 func is_net_owner() -> bool:
 	return Network.network_instance.peer_id == entity.owner_peer_id
+
+puppet func sync_for_new_player(peer_id):
+	pass

@@ -16,7 +16,7 @@ func _ready() -> void:
 	interactable.connect("interacted_by", self, "interacted_by")
 	interactable.display_info = "Take control of the rover"
 	interactable.title = "Athlete Rover"
-
+	
 func interacted_by(e) -> void:
 	if !self.is_active :
 		call_deferred("take_control", e)
@@ -60,13 +60,13 @@ func return_control(e) -> void:
 	update_network()
 
 func update_network():
-	rset("controller_peer_id", entity.owner_peer_id)
-	rset("is_active", entity.is_active)
+	rset("controller_peer_id", controller_peer_id)
+	rset("is_active", is_active)
 
 func disable():
 	pass
 
 func sync_for_new_player(peer_id):
-	rset_id(peer_id, "netsync_state", is_active)
+	rset_id(peer_id, "is_active", is_active)
 	rset_id(peer_id, "controller_peer_id", controller_peer_id)
 	
