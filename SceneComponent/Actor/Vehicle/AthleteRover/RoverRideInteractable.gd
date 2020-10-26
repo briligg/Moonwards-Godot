@@ -62,3 +62,8 @@ func return_control(e) -> void:
 
 func disable():
 	pass
+
+func sync_for_new_player(peer_id):
+	rset_id(peer_id, "netsync_state", is_active)
+	rset_id(peer_id, "controller_peer_id", controller_peer_id)
+	
