@@ -5,7 +5,7 @@ var entity
 # The actual game object that we're anchored to
 var anchor_node: Node setget ,get_anchor_node
 # The generated position node to anchor ourselves to
-onready var anchor_pos3d_node: Position3D 
+var anchor_pos3d_node: Spatial 
 # Position of the anchor_node, typically used as the position to place the anchored entity
 #var anchor_position: Vector3 setget , get_anchor_position
 
@@ -13,7 +13,7 @@ var is_anchored: bool = false setget set_is_anchored, get_is_anchored
 
 func _init(_entity):
 	entity = _entity
-	anchor_pos3d_node = Position3D.new()
+	anchor_pos3d_node = Spatial.new()
 	entity.add_child(anchor_pos3d_node)
 	anchor_pos3d_node.owner = entity
 	anchor_pos3d_node.global_transform.origin = entity.global_transform.origin

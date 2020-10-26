@@ -3,9 +3,8 @@ extends AComponent
 var interactee
 var interactee_cam
 
-var is_active = false
-
 # Hack
+remotesync var is_active = false
 remotesync var controller_peer_id = -1
 
 onready var interactable = $Interactable
@@ -38,11 +37,11 @@ func take_control(e):
 	entity.get_component("Interactor").grab_focus()
 	
 	entity.owner_peer_id = Network.network_instance.peer_id
-	rset("controller_peer_id", entity.owner_peer_id)
-	
+
 	is_active = true
 	interactable.is_available = false
-
+	update_network()
+	
 func return_control(e) -> void:
 	if e.owner_peer_id != self.controller_peer_id:
 		return
@@ -51,7 +50,6 @@ func return_control(e) -> void:
 	entity.get_component("Camera").camera.current = false
 	entity.get_component("RoverInput").enabled = false
 	entity.owner_peer_id = -1
-	rset("controller_peer_id", -1)
 	is_active = false
 	interactable.is_available = true
 	
@@ -59,6 +57,11 @@ func return_control(e) -> void:
 	interactee.enable()
 	interactee.get_component("Interactor").grab_focus()
 	interactee.get_component("Camera").camera.current = true
+	update_network()
+
+func update_network():
+	rset("controller_peer_id", entity.owner_peer_id)
+	rset("is_active", entity.is_active)
 
 func disable():
 	pass
