@@ -4,8 +4,8 @@ var interactee
 var interactee_cam
 
 # Hack
-remotesync var is_active = false
-remotesync var controller_peer_id = -1
+puppetsync var is_ridable = true
+puppetsync var controller_peer_id = -1
 
 onready var interactable = $Interactable
 
@@ -16,57 +16,71 @@ func _ready() -> void:
 	interactable.connect("interacted_by", self, "interacted_by")
 	interactable.display_info = "Take control of the rover"
 	interactable.title = "Athlete Rover"
-	
+
+# This only runs on the server.
 func interacted_by(e) -> void:
-	if !self.is_active :
-		call_deferred("take_control", e)
-	elif self.is_active:
-		call_deferred("return_control", e)
+	var path = e.get_path()
+	
+	if self.is_ridable :
+		if self.controller_peer_id == -1:
+			rpc_id(get_tree().get_rpc_sender_id(), "deferred_take_control", path)
+			update_control_state(Network.network_instance.peer_id, false)
+	elif !self.is_ridable:
+		if get_tree().get_rpc_sender_id() == self.controller_peer_id:
+			rpc_id(get_tree().get_rpc_sender_id(), "deferred_return_control", path)
+			update_control_state(-1, true)
+	update_network()
+
+puppetsync func deferred_take_control(path):
+	call_deferred("take_control", get_node(path))
+
+puppetsync func deferred_return_control(path):
+	call_deferred("return_control", get_node(path))
 
 func take_control(e):
-	if self.controller_peer_id != -1 :
-		return
-		
 	interactable.display_info = "Dismount the rover"
 	interactee = e
 	interactee.disable()
 	VisibilityManager.switch_context()
 	
+	# Entity being the rover
 	entity.get_component("Camera").camera.current = true
 	entity.get_component("RoverInput").enabled = true
 	entity.get_component("Interactor").grab_focus()
 	
-	entity.owner_peer_id = Network.network_instance.peer_id
-
-	is_active = true
-	interactable.is_available = false
-	update_network()
+	update_control_state(Network.network_instance.peer_id, false)
+	
+#	entity.owner_peer_id = Network.network_instance.peer_id
+#	self.controller_peer_id = Network.network_instance.peer_id
+#	is_ridable = true
+#	interactable.is_available = false
 	
 func return_control(e) -> void:
-	if e.owner_peer_id != self.controller_peer_id:
-		return
-		
 	interactable.display_info = "Take control of the rover"
 	entity.get_component("Camera").camera.current = false
 	entity.get_component("RoverInput").enabled = false
-	entity.owner_peer_id = -1
-	is_active = false
-	interactable.is_available = true
+	
+	update_control_state(-1, true)
 	
 	VisibilityManager.reverse_context()
 	interactee.enable()
 	interactee.get_component("Interactor").grab_focus()
 	interactee.get_component("Camera").camera.current = true
-	update_network()
+
+func update_control_state(peer_id, return_control = false):
+	entity.owner_peer_id = peer_id
+	self.controller_peer_id = peer_id
+	is_ridable = return_control
+	interactable.is_available = return_control
 
 func update_network():
 	rset("controller_peer_id", controller_peer_id)
-	rset("is_active", is_active)
+	rset("is_ridable", is_ridable)
 
 func disable():
 	pass
 
-func sync_for_new_player(peer_id):
-	rset_id(peer_id, "is_active", is_active)
+puppet func sync_for_new_player(peer_id):
+	rset_id(peer_id, "is_ridable", is_ridable)
 	rset_id(peer_id, "controller_peer_id", controller_peer_id)
 	
