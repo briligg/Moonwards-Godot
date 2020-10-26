@@ -43,6 +43,10 @@ const CLIENT_COLOR_CHANGED: String = "client_color_changed"
 
 signal client_color_changed(colors)
 
+const NEW_PLAYER_POST_LOAD: String = "new_player_post_load"
+
+signal new_player_post_load(peer_id)
+
 
 ### IN GAME EVENTS
 

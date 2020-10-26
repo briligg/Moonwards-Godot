@@ -124,7 +124,8 @@ mastersync func request_interact(args : Array) -> void :
 	match interactable.network_mode:
 		interactable.NetworkMode.CLIENT_SERVER:
 			execute_interact(args)
-			rpc_id(get_tree().get_rpc_sender_id(), "execute_interact", args)
+			if !is_network_master():
+				rpc_id(get_tree().get_rpc_sender_id(), "execute_interact", args)
 		interactable.NetworkMode.CLIENT_ONLY:
 			rpc_id(get_tree().get_rpc_sender_id(), "execute_interact", args)
 		interactable.NetworkMode.SERVER_ONLY:

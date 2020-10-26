@@ -15,15 +15,27 @@ func _ready():
 	
 
 func interact_with(_interactor : Node) -> void :
-	if is_open:
-		close()
-	else:
-		open()
+	update_door()
 
 func open():
 	anim.play(animation_name, -1, 0.65, false)
-	is_open = !is_open
 
 func close():
 	anim.play(animation_name, -1, -0.65, true)
+
+func update_door():
+	if !is_open:
+		open()
+	else:
+		close()
 	is_open = !is_open
+
+puppet func netsync_door(val):
+	if val == is_open:
+		return
+	else:
+		update_door()
+
+func sync_for_new_player(peer_id):
+	rpc_id(peer_id, "netsync_door", is_open )
+	

@@ -36,6 +36,8 @@ export var title : String = "Title" setget set_title
 export var is_networked: bool = true
 ### Supplementary networking flags, these are only checked for if `is_networked` is true.
 export(NetworkMode) var network_mode = NetworkMode.CLIENT_SERVER
+# Whether we should sync the state of this interactable for a newly joined player
+export(bool) var is_sync_for_new_player = true
 # Whether or not this interactable is available  to receive interactions.
 var is_available: bool = true
 #Whether or not this interactable has active collision detection.
@@ -46,6 +48,7 @@ var owning_entity: AEntity = null
 func _ready() -> void :
 	collision_layer = 32768
 	collision_mask = 0
+	Signals.Network.connect(NetworkSignals.NEW_PLAYER_POST_LOAD, self, "sync_for_new_player")
 
 func get_info() -> String :
 	#Show what the display info should be for interacting with me.
@@ -77,3 +80,6 @@ func set_display_info(new_display_info : String) -> void :
 func set_title(new_title : String) -> void :
 	title = new_title
 	emit_signal("title_changed", title)
+
+func sync_for_new_player(peer_id):
+	pass

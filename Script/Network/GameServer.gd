@@ -50,6 +50,7 @@ master func initialize_entity_data(name, colors):
 	entities[entity_data.peer_id] = entity_data
 	crpc(self, "add_player", entity_data.serialize(), [peer_id])
 	Log.trace(self, "", "SERVER CONNECTED: %s" %peer_id)
+	Signals.Network.emit_signal(NetworkSignals.NEW_PLAYER_POST_LOAD, peer_id)
 
 func _host_game() -> void:
 	var err = server_peer.create_server(port, max_players)
