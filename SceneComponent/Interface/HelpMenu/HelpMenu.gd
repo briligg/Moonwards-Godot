@@ -2,6 +2,9 @@ extends Control
 
 
 const APPS : String = "AppsHelp"
+const EVENTS : String = "EventHelp"
+const MAP : String = "MapHelp"
+const RECORD_SCREEN : String = "RecordScreenHelp"
 const START : String = "InitialMenu"
 
 onready var start : VBoxContainer = get_node(START)

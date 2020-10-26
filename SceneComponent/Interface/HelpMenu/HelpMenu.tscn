@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/Interface/Textures/LeftArrowHover.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Interface/Textures/LeftArrowNormal.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Interface/Textures/LeftArrowButtonPressed.png" type="Texture" id=6]
-[ext_resource path="res://SceneComponent/Interface/HelpMenu/GotoApps.gd" type="Script" id=7]
+[ext_resource path="res://SceneComponent/Interface/HelpMenu/InitialMenu.gd" type="Script" id=8]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -80,6 +80,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/separation = 16
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -119,7 +120,6 @@ margin_top = 894.0
 margin_right = 663.0
 margin_bottom = 929.0
 text = "What are apps?"
-script = ExtResource( 7 )
 
 [node name="GotoRecording" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
 margin_top = 945.0
@@ -140,6 +140,58 @@ custom_constants/separation = 0
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Alignment/HelpMenu/AppsHelp"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "There are five planned apps:
+
+Builder
+"
+
+[node name="MapHelp" type="Control" parent="Alignment/HelpMenu"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Alignment/HelpMenu/MapHelp"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "The map will be a way to make navigating Moon Town as simple as possible.
+
+ As of now the planned functionality has not been implemented."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EventHelp" type="Control" parent="Alignment/HelpMenu"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Alignment/HelpMenu/EventHelp"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RecordScreenHelp" type="Control" parent="Alignment/HelpMenu"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Alignment/HelpMenu/RecordScreenHelp"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Giving players the option to record the Moonwards game window from within the game makes video creation easier for everyone. 
+ We have not implemented screen recording yet. But when we do, we will fill out this help section with all the details."
 __meta__ = {
 "_edit_use_anchors_": false
 }
