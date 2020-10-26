@@ -118,15 +118,6 @@ func update_anim_state(phys_state : PhysicsDirectBodyState):
 		entity.state.state = ActorEntityState.State.IN_AIR
 	else:
 		entity.state.state = ActorEntityState.State.IDLE
-		
-#func update_client_anim_state(phys_state : PhysicsDirectBodyState):
-#	if entity.is_grounded:
-#		if abs(entity.velocity.length()) > 0:
-#			entity.state.state = ActorEntityState.State.MOVING
-#		else:
-#			entity.state.state = ActorEntityState.State.IDLE
-#	else:
-#		entity.state.state = ActorEntityState.State.IN_AIR
 
 func rotate_body(_phys_state : PhysicsDirectBodyState) -> void:
 	if is_climbing:
