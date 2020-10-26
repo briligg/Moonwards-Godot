@@ -24,71 +24,43 @@ material/0 = ExtResource( 4 )
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 display_info = "Interactable"
 title = "Title"
-networked = true
-interactions_active = true
-stair_top_length = 1.0
 stairs_step_count = 3
-generate_editor_visual = false
 
 [node name="VerticalStairs_Pair_Top_S2" parent="Marker_VerticalStairs_Pair_Top_S" index="1" instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 1.497 )
 display_info = "Interactable"
 title = "Title"
-networked = true
-interactions_active = true
-stair_top_length = 1.0
 stairs_step_count = 3
-generate_editor_visual = false
 
 [node name="VerticalStairs_Top_N" parent="Marker_VerticalStairs_Top_N" index="0" instance=ExtResource( 2 )]
 transform = Transform( -1.63913e-07, 0, 1, 0, 1, 0, -1, 0, -1.63913e-07, 0, 0, 0 )
 display_info = "Interactable"
 title = "Title"
-networked = true
-interactions_active = true
-stair_top_length = 1.0
 stairs_step_count = 3
-generate_editor_visual = false
 
 [node name="VerticalStairs_Pair_Pool_N" parent="Marker_VerticalStairs_Pair_Pool_N" index="0" instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0 )
 display_info = "Interactable"
 title = "Title"
-networked = true
-interactions_active = true
-stair_top_length = 1.0
 stairs_step_count = 9
-generate_editor_visual = false
 
 [node name="VerticalStairs_Pair_Pool_N2" parent="Marker_VerticalStairs_Pair_Pool_N" index="1" instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, -1.497 )
 display_info = "Interactable"
 title = "Title"
-networked = true
-interactions_active = true
-stair_top_length = 1.0
 stairs_step_count = 9
-generate_editor_visual = false
 
 [node name="VerticalStairs_Pool_S" parent="Marker_VerticalStairs_Pool_S" index="0" instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0 )
 display_info = "Interactable"
 title = "Title"
-networked = true
-interactions_active = true
-stair_top_length = 1.0
 stairs_step_count = 1
-generate_editor_visual = false
 
 [node name="VerticalStairs_N _Bottom" parent="Marler_VerticalStairs_N _Bottom" index="0" instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0 )
 display_info = "Interactable"
 title = "Title"
-networked = true
-interactions_active = true
-stair_top_length = 1.0
 stairs_step_count = 4
-generate_editor_visual = false
 
 [node name="Marker_VerticalStairs_Pool_Entrance" parent="." index="9"]
 transform = Transform( -0.98945, 0, 0.144874, 0, 1, 0, -0.144874, 0, -0.98945, -9.41365, -1.28658, -0.166504 )
@@ -97,30 +69,21 @@ transform = Transform( -0.98945, 0, 0.144874, 0, 1, 0, -0.144874, 0, -0.98945, -
 transform = Transform( -1.63913e-07, 0, -1, 0, 1, 0, 1, 0, -1.63913e-07, 0, 0, 0 )
 display_info = "Interactable"
 title = "Title"
-networked = true
-interactions_active = true
-stair_top_length = 1.0
 stairs_step_count = 1
-generate_editor_visual = false
 
 [node name="VerticalStairs_Pair_Entrance" parent="Marker_VerticalStairs_Pair_Entrance" index="0" instance=ExtResource( 2 )]
 display_info = "Interactable"
 title = "Title"
-networked = true
-interactions_active = true
-stair_top_length = 1.0
 stairs_step_count = 11
-generate_editor_visual = false
 
 [node name="VerticalStairs_Pair_Entrance2" parent="Marker_VerticalStairs_Pair_Entrance" index="1" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.497, 0, 0 )
 display_info = "Interactable"
 title = "Title"
-networked = true
-interactions_active = true
-stair_top_length = 1.0
 stairs_step_count = 11
-generate_editor_visual = false
+
+[node name="LOD1" parent="." index="11"]
+visible = false
 
 [node name="PoolWater001" parent="LOD1" index="1"]
 material/0 = ExtResource( 7 )
@@ -129,3 +92,28 @@ material/0 = ExtResource( 7 )
 material/0 = ExtResource( 6 )
 material/1 = ExtResource( 5 )
 material/2 = ExtResource( 4 )
+
+[node name="LOD2" parent="." index="12"]
+visible = false
+
+[node name="OmniLight" type="OmniLight" parent="." index="13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4016, 2.98582, -8.60019 )
+light_energy = 1.47
+omni_range = 20.0
+
+[node name="OmniLight2" type="OmniLight" parent="." index="14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.59961, 2.98582, -53.9983 )
+light_energy = 1.47
+omni_range = 20.0
+
+[node name="SpotLight" type="SpotLight" parent="." index="15"]
+transform = Transform( 1, 0, 0, 0, 0.0440029, 0.999031, 0, -0.999031, 0.0440029, 0.816763, 6.38326, -27.2905 )
+spot_range = 68.6
+spot_attenuation = 1.31951
+
+[node name="SpotLight2" type="SpotLight" parent="." index="16"]
+transform = Transform( 0.408359, -0.666396, 0.623827, -0.824008, 0.0249311, 0.56603, -0.392753, -0.745181, -0.538934, 19.1075, -4.73647, -54.2595 )
+light_energy = 2.57
+spot_range = 103.1
+spot_attenuation = 1.31951
+spot_angle = 57.4
