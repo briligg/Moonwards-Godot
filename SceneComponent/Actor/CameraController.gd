@@ -21,6 +21,9 @@ var pitch: float = 0.0
 var is_first_person : bool = false
 const HEAD_HEIGHT : float = 0.8
 
+#If I should respond to the mouse or not.
+var mouse_respond : bool = true
+
 #Determines if I should freely fly or not.
 var is_flying : bool = false
 #How fast the player is flying.
@@ -34,6 +37,9 @@ func _init().("Camera", true):
 	pass
 	
 func _ready() -> void:
+	#Stop camera rotation when mouse is active.
+	Signals.Menus.connect(Signals.Menus.SET_MOUSE_TO_CAPTURED, self, "_respond_to_mouse")
+	
 	yaw = 0.0
 	pitch = 0.0
 	_update_cam_pos()
@@ -54,7 +60,7 @@ func _process(_delta: float) -> void:
 		entity.get_node("Model").visible = false
 	
 	var _new_rot = Vector3(deg2rad(pitch), deg2rad(yaw), 0.0)
-	if not overriden:
+	if not overriden && mouse_respond :
 		camera.set_rotation(_new_rot)
 	_update_cam_pos()
 	
@@ -95,6 +101,10 @@ func _input(event):
 			
 			#Hud Reticle should be active when in first person mode.
 			Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON, is_first_person)
+
+#Called by signal. If true, do not rotate the camera.
+func _respond_to_mouse(mouse_active : bool) -> void :
+	mouse_respond = mouse_active
 
 func _update_cam_pos(delta : float = 0.016667) -> void:
 	#The player is in camera fly mode.
