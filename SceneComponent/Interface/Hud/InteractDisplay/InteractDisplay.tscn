@@ -4,7 +4,6 @@
 [ext_resource path="res://Assets/Interface/Fonts/InteractDisplayFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/Interface/StyleBoxes/InteractDisplayBackground.tres" type="StyleBox" id=3]
 
-
 [node name="InteractDisplay" type="Label"]
 visible = false
 anchor_left = 0.6
