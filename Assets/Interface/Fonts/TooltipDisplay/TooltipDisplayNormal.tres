@@ -4,7 +4,7 @@
 
 [resource]
 resource_name = "Sans"
-size = 12
+size = 14
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )

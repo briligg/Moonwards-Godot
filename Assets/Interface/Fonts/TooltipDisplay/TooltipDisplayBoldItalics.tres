@@ -4,5 +4,5 @@
 
 [resource]
 resource_name = "BoldItalic"
-size = 12
+size = 14
 font_data = ExtResource( 1 )
