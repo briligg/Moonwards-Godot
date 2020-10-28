@@ -84,3 +84,4 @@ func _player_connected(peer_id) -> void:
 func _player_disconnected(peer_id) -> void:
 	crpc(self, "remove_player", peer_id, [peer_id])
 	Log.trace(self, "", "DISCONNECTED: %s" %peer_id)
+	Signals.Network.emit_signal(NetworkSignals.CLIENT_DISCONNECTED, peer_id)

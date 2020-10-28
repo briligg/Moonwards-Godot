@@ -4,6 +4,16 @@ class_name NetworkSignals
 ### Until we or godot implements proper class_name handling
 const name = "Network"
 
+### CONNECTION 
+# When a player is connected
+const CLIENT_CONNECTED: String = "client_connected"
+
+signal client_connected(peer_id)
+
+const CLIENT_DISCONNECTED: String = "client_disconnected"
+
+signal client_disconnected(peer_id)
+
 ### LOBBY MANAGEMENT 
 
 # Fired when a request is received for a game to be started. 
@@ -24,10 +34,9 @@ signal game_client_requested(ip, port)
 # Fired when the process is initiated as a client, is connected & is ready
 const GAME_CLIENT_READY: String = "game_client_ready"
 
-signal game_client_ready
+signal game_client_ready()
 
 ### LOADING & DATA MANAGEMENT
-
 
 # Fired when a connected player client has finished loading.
 # param `peer_id`: The player's peer_id
@@ -42,6 +51,10 @@ signal client_name_changed(name)
 const CLIENT_COLOR_CHANGED: String = "client_color_changed"
 
 signal client_color_changed(colors)
+
+const NEW_PLAYER_PRE_LOAD: String = "new_player_pre_load"
+
+signal new_player_pre_load(peer_id)
 
 const NEW_PLAYER_POST_LOAD: String = "new_player_post_load"
 

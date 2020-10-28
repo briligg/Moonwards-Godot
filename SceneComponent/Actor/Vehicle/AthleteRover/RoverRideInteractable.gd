@@ -3,7 +3,6 @@ extends AComponent
 var interactee
 var interactee_cam
 
-# Hack
 puppetsync var is_ridable = true
 puppetsync var controller_peer_id = -1
 
@@ -16,6 +15,7 @@ func _ready() -> void:
 	interactable.connect("interacted_by", self, "interacted_by")
 	interactable.display_info = "Take control of the rover"
 	interactable.title = "Athlete Rover"
+	Signals.Network.connect(NetworkSignals.CLIENT_DISCONNECTED, self, "_client_disconnected")
 
 # This only runs on the server.
 func interacted_by(e) -> void:
@@ -24,11 +24,11 @@ func interacted_by(e) -> void:
 	if self.is_ridable :
 		if self.controller_peer_id == -1:
 			rpc_id(get_tree().get_rpc_sender_id(), "deferred_take_control", path)
-			update_control_state(Network.network_instance.peer_id, false)
+			rpc("update_control_state", get_tree().get_rpc_sender_id(), false)
 	elif !self.is_ridable:
 		if get_tree().get_rpc_sender_id() == self.controller_peer_id:
 			rpc_id(get_tree().get_rpc_sender_id(), "deferred_return_control", path)
-			update_control_state(-1, true)
+			rpc("update_control_state", -1, true)
 	update_network()
 
 puppetsync func deferred_take_control(path):
@@ -48,26 +48,22 @@ func take_control(e):
 	entity.get_component("RoverInput").enabled = true
 	entity.get_component("Interactor").grab_focus()
 	
-	update_control_state(Network.network_instance.peer_id, false)
-	
-#	entity.owner_peer_id = Network.network_instance.peer_id
-#	self.controller_peer_id = Network.network_instance.peer_id
-#	is_ridable = true
-#	interactable.is_available = false
+#	update_control_state(Network.network_instance.peer_id, false)
 	
 func return_control(e) -> void:
 	interactable.display_info = "Take control of the rover"
 	entity.get_component("Camera").camera.current = false
 	entity.get_component("RoverInput").enabled = false
 	
-	update_control_state(-1, true)
+#	update_control_state(-1, true)
 	
 	VisibilityManager.reverse_context()
 	interactee.enable()
 	interactee.get_component("Interactor").grab_focus()
 	interactee.get_component("Camera").camera.current = true
 
-func update_control_state(peer_id, return_control = false):
+puppetsync func update_control_state(peer_id, return_control = false):
+	# owner_peer_id in use to validate driving requests
 	entity.owner_peer_id = peer_id
 	self.controller_peer_id = peer_id
 	is_ridable = return_control
@@ -83,4 +79,10 @@ func disable():
 puppet func sync_for_new_player(peer_id):
 	rset_id(peer_id, "is_ridable", is_ridable)
 	rset_id(peer_id, "controller_peer_id", controller_peer_id)
+	
+
+func _client_disconnected(peer_id):
+	update_control_state(-1, true)
+	update_network()
+	
 	
