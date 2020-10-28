@@ -1,4 +1,4 @@
-extends PanelContainer
+extends Control
 
 
 #Listen to when we should close the BuildingApp.
