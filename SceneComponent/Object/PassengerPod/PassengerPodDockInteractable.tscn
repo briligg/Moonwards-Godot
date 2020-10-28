@@ -19,6 +19,7 @@ collision_mask = 32768
 script = ExtResource( 1 )
 display_info = "Dock"
 title = "Passenger Pod"
+network_mode = 3
 
 [node name="CollisionShape" type="CollisionShape" parent="Interactable"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
