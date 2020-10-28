@@ -37,7 +37,7 @@ func _update_labels(name : String) -> void:
 	type = name
 	var Placeholder
 	if Nodes.Graphs.get(name).get(node_name) is Node:
-		Placeholder = Nodes.Graphs.get(name).get(node_name).duplicate()
+		Placeholder = Nodes.Graphs.get(name).get(node_name).duplicate(7)
 	else:
 		Placeholder = Nodes.Graphs.get(name).get(node_name).instance()
 	$ViewMenuSplit/Container/selection/name.text = str(Placeholder.title)
@@ -57,7 +57,7 @@ func _on_Add_pressed() -> void:
 		return
 	var instanced = Nodes.Graphs.get(type).get(node_name)
 	if instanced is Node:
-		instanced = instanced.duplicate()
+		instanced = instanced.duplicate(7)
 	else:
 		instanced = instanced.instance()
 	instanced.name = instanced.title 

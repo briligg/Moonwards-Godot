@@ -2,7 +2,7 @@ tool
 extends Node
 const TYPE_ANY = 28
 onready var Definitions
-const Colors = [
+var Colors = [
 	Color(0,0,0,0),
 	Color("#c96ef0"),
 	Color("#42f5ce"),
@@ -121,7 +121,7 @@ func _get_port_name(data : Dictionary, port : int, input : bool = true) -> Strin
 	else:
 		return ""
 
-func _get_port_type(data : Dictionary, port : int, input : bool = true) -> int:
+func _get_port_type(data : Dictionary, port : int, input : bool = true):
 	var ports : Array = []
 	if input:
 		ports = data.get("_input_ports")
@@ -136,11 +136,11 @@ func _get_type(type) -> int:
 	if type is int:
 		return type # The type is already a number we don't have to do anything
 	elif type is String: #Type is custom, we have to find it
-		var custom : bool = custom_types.has(type)
+		var custom : bool = custom_types.has(type.trim_prefix("CLASS_"))
 		if custom == false:
 			return TYPE_NIL #If not defined we return NIL
 		else:
-			return 28+custom_types.get(type.trim_prefix("CLASS_")).idx #28 is the Any type, this one is locked out.
+			return 28+Definitions.get(type).idx #28 is the Any type, this one is locked out.
 	return TYPE_NIL
 
 func _load_signals() -> void:
@@ -203,6 +203,7 @@ func _load_definitions() -> void:
 	for Class in Classes:
 		idx = idx + 1
 		Definitions.get(Class)["idx"] = idx
+		Colors.append(Definitions.get(Class)["_color"])
 		custom_types[Class.trim_prefix("CLASS_")] = Definitions.get(Class).get("_variables")
 
 func _color_from_class(id : String) -> Color:
