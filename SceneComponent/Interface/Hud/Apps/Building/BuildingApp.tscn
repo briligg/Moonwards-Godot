@@ -159,10 +159,9 @@ flat = true
 [node name="BottomButtons" type="HBoxContainer" parent="."]
 anchor_left = 0.676
 anchor_top = 0.8
-anchor_right = 1.0
+anchor_right = 0.995
 anchor_bottom = 1.0
 grow_horizontal = 0
-grow_vertical = 0
 custom_constants/separation = 12
 alignment = 2
 __meta__ = {
@@ -170,7 +169,7 @@ __meta__ = {
 }
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="BottomButtons"]
-margin_right = 46.0
+margin_right = 45.0
 margin_bottom = 216.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -179,15 +178,15 @@ alignment = 2
 
 [node name="Button_Exit" type="Button" parent="BottomButtons/VBoxContainer2"]
 margin_top = 178.0
-margin_right = 46.0
+margin_right = 45.0
 margin_bottom = 216.0
 size_flags_horizontal = 3
 toggle_mode = true
 icon = ExtResource( 22 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BottomButtons"]
-margin_left = 58.0
-margin_right = 104.0
+margin_left = 57.0
+margin_right = 102.0
 margin_bottom = 216.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -196,32 +195,32 @@ alignment = 2
 
 [node name="Button_Help" type="Button" parent="BottomButtons/VBoxContainer"]
 margin_top = 130.0
-margin_right = 46.0
+margin_right = 45.0
 margin_bottom = 168.0
 toggle_mode = true
 icon = ExtResource( 10 )
 
 [node name="Button_Save" type="Button" parent="BottomButtons/VBoxContainer"]
 margin_top = 178.0
-margin_right = 46.0
+margin_right = 45.0
 margin_bottom = 216.0
 toggle_mode = true
 icon = ExtResource( 9 )
 
 [node name="MarginContainer2" type="MarginContainer" parent="BottomButtons"]
-margin_left = 116.0
-margin_right = 622.0
+margin_left = 114.0
+margin_right = 612.0
 margin_bottom = 216.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 10.96
 
 [node name="Panel" type="Panel" parent="BottomButtons/MarginContainer2"]
-margin_right = 506.0
+margin_right = 498.0
 margin_bottom = 216.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BottomButtons/MarginContainer2"]
-margin_right = 506.0
+margin_right = 498.0
 margin_bottom = 216.0
 custom_constants/separation = 24
 alignment = 1
@@ -251,103 +250,103 @@ text = "20/40"
 
 [node name="VBoxContainerTools" type="VBoxContainer" parent="BottomButtons/MarginContainer2/HBoxContainer"]
 margin_left = 124.0
-margin_right = 506.0
+margin_right = 498.0
 margin_bottom = 216.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 10
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools"]
-margin_right = 382.0
+margin_right = 374.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Button_Vertex" type="Button" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer2"]
-margin_right = 60.0
+margin_right = 59.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 17 )
 
 [node name="Button_Edges" type="Button" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer2"]
-margin_left = 64.0
-margin_right = 124.0
+margin_left = 63.0
+margin_right = 122.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 18 )
 
 [node name="Button_Faces" type="Button" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer2"]
-margin_left = 128.0
-margin_right = 188.0
+margin_left = 126.0
+margin_right = 185.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 3 )
 
 [node name="Button_Divide" type="Button" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer2"]
-margin_left = 192.0
-margin_right = 253.0
+margin_left = 189.0
+margin_right = 248.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 19 )
 
 [node name="Button_Combine" type="Button" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer2"]
-margin_left = 257.0
-margin_right = 317.0
+margin_left = 252.0
+margin_right = 311.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 20 )
 
 [node name="Button_Scale" type="Button" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer2"]
-margin_left = 321.0
-margin_right = 382.0
+margin_left = 315.0
+margin_right = 374.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 21 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools"]
 margin_top = 113.0
-margin_right = 382.0
+margin_right = 374.0
 margin_bottom = 216.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Button_Select" type="Button" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer"]
-margin_right = 60.0
+margin_right = 59.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 16 )
 
 [node name="Button_Move" type="Button" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer"]
-margin_left = 64.0
-margin_right = 124.0
+margin_left = 63.0
+margin_right = 122.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 14 )
 
 [node name="Button_Add" type="Button" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer"]
-margin_left = 128.0
-margin_right = 188.0
+margin_left = 126.0
+margin_right = 185.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 15 )
 
 [node name="Button_Remove" type="Button" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer"]
-margin_left = 192.0
-margin_right = 253.0
+margin_left = 189.0
+margin_right = 248.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 11 )
 
 [node name="Button_Undo" type="Button" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer"]
-margin_left = 257.0
-margin_right = 317.0
+margin_left = 252.0
+margin_right = 311.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 12 )
 
 [node name="Button_Redo" type="Button" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer"]
-margin_left = 321.0
-margin_right = 382.0
+margin_left = 315.0
+margin_right = 374.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 13 )
