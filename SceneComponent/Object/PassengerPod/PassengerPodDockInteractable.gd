@@ -168,3 +168,28 @@ func _reparent(node, new_parent, keep_world_pos = false):
 	node.owner = new_parent
 	if keep_world_pos:
 		node.global_transform.origin = pos
+
+func sync_for_new_player(peer_id):
+	# Returning, still WIP code.
+	return
+	if get_tree().is_network_server():
+		if is_docked:
+			var col_positions = []
+			for col in collision_shapes:
+				col_positions.append(col.global_transform.origin)
+			rpc_id(peer_id, "_dock_for_new_player", docked_to.get_path())
+	
+puppet func _dock_for_new_player(rover_path, pod_pos, col_pos_arr):
+	# Returning, still WIP code.
+	return
+	$Interactable.title = "Undock Passenger Pod"
+	var rover = get_node(rover_path)
+#	_reparent(pod, rover)
+	var target_xfm = rover.get_node("DockLatch").transform
+	pod.transform = target_xfm
+	pod.transform.origin.y -= HALF_HEIGHT + .1
+#	for col in collision_shapes:
+#		_reparent(col, rover, true)
+	_reparent(hatch_collision, rover, true)
+	docked_to = rover
+	is_docked = true
