@@ -2,15 +2,13 @@
 
 [ext_resource path="res://SceneComponent/Actor/Vehicle/Speedometer.gd" type="Script" id=1]
 
-
-
 [node name="Speedometer" type="Spatial"]
 script = ExtResource( 1 )
 
 [node name="SpeedLbl" type="Label" parent="."]
-margin_left = 8.0
-margin_top = 14.0
-margin_right = 96.0
+margin_left = 254.0
+margin_top = 7.0
+margin_right = 516.0
 margin_bottom = 49.0
 text = "Speedometer"
 __meta__ = {
