@@ -116,26 +116,26 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, -5 )
 
 [node name="left_front_wheel" parent="." instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 6.5, 7 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 8.70783, 7 )
 
 [node name="left_mid_wheel" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 6.5, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 8.70783, 0 )
 script = ExtResource( 4 )
 
 [node name="left_back_wheel" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 6.5, -7 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 8.70783, -7 )
 script = ExtResource( 4 )
 
 [node name="right_front_wheel" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 6.5, 7 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 8.70783, 7 )
 script = ExtResource( 4 )
 
 [node name="right_mid_wheel" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 6.5, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 8.70783, 0 )
 script = ExtResource( 4 )
 
 [node name="right_back_wheel" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 6.5, -7 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 8.70783, -7 )
 script = ExtResource( 4 )
 
 [node name="Model" parent="." instance=ExtResource( 6 )]
