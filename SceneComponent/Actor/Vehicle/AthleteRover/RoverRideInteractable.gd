@@ -76,13 +76,14 @@ func update_network():
 func disable():
 	pass
 
-puppet func sync_for_new_player(peer_id):
+func sync_for_new_player(peer_id):
 	rset_id(peer_id, "is_ridable", is_ridable)
 	rset_id(peer_id, "controller_peer_id", controller_peer_id)
 	
 
 func _client_disconnected(peer_id):
-	update_control_state(-1, true)
-	update_network()
+	if peer_id == controller_peer_id:
+		update_control_state(-1, true)
+		update_network()
 	
 	
