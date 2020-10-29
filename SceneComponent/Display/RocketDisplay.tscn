@@ -1161,7 +1161,6 @@ camera_path = NodePath("CameraPivot/CameraPosition/Camera")
 script = ExtResource( 4 )
 display_info = "Animate through rocket parts"
 title = "Bucknell Rocket"
-networked = false
 
 [node name="CollisionShape" type="CollisionShape" parent="Controller/Interactable"]
 transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 13.0599 )

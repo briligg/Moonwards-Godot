@@ -38,11 +38,6 @@ func _process(delta : float) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("use"):
-		if main_ui.visible:
-			main_ui.visible = false
-		else:
-			main_ui.visible = true
 	if event.is_action_pressed("ui_left"):
 		if main_ui.visible:
 			previous_stage()
@@ -62,10 +57,13 @@ func animation_finished(_animation_name : String) -> void:
 
 
 func activate() -> void:
+	#Show the mouse.
+	Helpers.capture_mouse(false)
+	
 	_interactor.disable()
 	
 	set_process_input(true)
-	main_ui.visible = false
+	main_ui.visible = true
 	
 	_return_camera = get_tree().root.get_camera()
 	camera.global_transform = _return_camera.global_transform
