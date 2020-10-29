@@ -13,9 +13,16 @@ var interactor_component : InteractorComponent = null
 var interactor_history : Array = []
 var interactor_history_pointers : Array = []
 
+#This determines if player's can activate me or not.
+var can_be_shown : bool = true
+
 #Listen for when interacts are possible.
 func _ready() -> void :
 	Signals.Hud.connect(Signals.Hud.NEW_INTERACTOR_GRABBED_FOCUS, self, "_new_interactor")
+	
+	#Hide InteractsMenu if chatting.
+	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_STARTED, self, "_set_menu_showable", [false])
+	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_FINISHED, self, "_set_menu_showable", [true])
 
 #Called from a signal. One of the buttons corresponding to the interactables has been pressed.
 func _button_pressed(interactable : Node) -> void :
@@ -172,3 +179,13 @@ func _new_interactor(new_interactor : InteractorComponent) -> void :
 	#Add the new Interactables to the scene tree.
 	for interactable in new_interactor.get_interactables() :
 		_interactable_entered(interactable)
+
+#Determines if I can become visible or not.
+func _set_menu_showable(is_showable : bool) -> void :
+	can_be_shown = is_showable
+	
+	if can_be_shown :
+		set_process_input(true)
+	else :
+		set_process_input(false)
+		hide()

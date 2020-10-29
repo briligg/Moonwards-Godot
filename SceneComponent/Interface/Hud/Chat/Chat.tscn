@@ -10,8 +10,6 @@
 [ext_resource path="res://SceneComponent/Interface/Hud/Chat/ChatDisplay.gd" type="Script" id=9]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconChat.png" type="Texture" id=10]
 
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "Visibility"
 tracks/0/type = "value"

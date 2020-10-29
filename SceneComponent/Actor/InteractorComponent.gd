@@ -1,6 +1,9 @@
 extends AComponent
 class_name InteractorComponent
 
+#When chatting, do not interact with objects.
+var can_interact : bool = true
+
 onready var interactor_ray : InteractorRayCast = $InteractorRayCast
 onready var interactor_area : InteractorArea = $InteractorArea
 
@@ -31,7 +34,7 @@ func _init().("Interactor", true) -> void :
 
 #Check for when the player wants to interact with the closest interactable.
 func _input(event : InputEvent) -> void :
-	if not(has_focus) :
+	if not(has_focus) || not can_interact :
 		return
 	
 	if event.is_action_pressed("interact_with_closest") :
@@ -44,6 +47,10 @@ func _make_hud_display_interactable(interactable : Interactable = null) -> void 
 
 #Make Interactor have my Entity variable as it's user.
 func _ready() -> void :
+	#Listen for when chat starts and stops to know when to avoid interacting.
+	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_STARTED, self, "_set_can_interact", [false])
+	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_FINISHED, self, "_set_can_interact", [true])
+	
 	interactor_ray.owning_entity = self.entity
 	
 	#Listen to the Ray Cast.
@@ -77,6 +84,10 @@ func _ready() -> void :
 	
 	if grab_focus_at_ready && is_net_owner() :
 		grab_focus()
+
+#Called by signal. When false, do not allow the player to press interact. When true, player can interact.
+func _set_can_interact(set_can_interact : bool) -> void :
+	can_interact = set_can_interact
 
 #Return the closest interactable.
 func get_interactable() -> Interactable :
