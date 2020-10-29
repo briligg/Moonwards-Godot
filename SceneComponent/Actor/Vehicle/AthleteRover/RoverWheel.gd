@@ -5,10 +5,10 @@ export var ENABLE_DEBUG: bool = false # TODO remove this if not needed
 
 # Control properties
 export var wheel_radius: float = 0.75 # Physical radius, needs to match the mesh - use debug visualization to ensure
-export var max_spring_force: float = 14580.0 # Should be about 6x the weight  14580.0
-export var spring_force: float = 2200.0 # About 1/6th the max force
+export var max_spring_force: float = 17580.0 # Should be about 6x the weight  14580.0
+export var spring_force: float = 3500.0 # About 1/4th the max force
 export var stifness: float = 0.05 # 0.15
-export var damping_force: float = 0.05
+export var damping_force: float = 0.07
 export var traction_x: float = 0.95
 export var traction_z: float = 0.04
 export var normal_cast_to: Vector3 = Vector3(0.0, -11.5, 0.0) # A value close, but lesser than the max extension intended for a leg
@@ -103,9 +103,10 @@ func _physics_process(delta: float) -> void:
 func apply_engine_force(_force: Vector3) -> void:
 	if is_grounded:
 		# apply_impulse uses the rotation of the global coordinate system, but is centered at the object's origin
-		vehicle_entity.apply_impulse(
-			vehicle_entity.global_transform.basis.xform( vehicle_entity.to_local(collision_pos) ),
-			_force)
+		vehicle_entity.add_force(
+				_force,
+				vehicle_entity.global_transform.basis.xform( vehicle_entity.to_local(collision_pos) )
+			)
 
 
 func apply_jump_force(_force: Vector3) -> void:
