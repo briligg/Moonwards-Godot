@@ -71,7 +71,7 @@ func activate() -> void:
 	camera.current = true
 	
 	_current_stage = 1
-	_go_to__current_stage()
+	_go_to_current_stage()
 
 
 func deactivate() -> void:
@@ -99,17 +99,17 @@ func next_stage() -> void:
 	if display_animation_player.is_playing():
 		return
 	_current_stage += 1
-	_go_to__current_stage()
+	_go_to_current_stage()
 
 
 func previous_stage() -> void:
 	if display_animation_player.is_playing():
 		return
 	_current_stage -= 1
-	_go_to__current_stage()
+	_go_to_current_stage()
 
 
-func _go_to__current_stage() -> void:
+func _go_to_current_stage() -> void:
 	if range(1, MAX_STAGES + 1).has(_current_stage):
 		if _current_stage == 1:
 			previous_button.text = "Quit"
