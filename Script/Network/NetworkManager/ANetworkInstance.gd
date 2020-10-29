@@ -31,8 +31,11 @@ func _start():
 
 # `PUPPETSYNC`
 puppetsync func remove_player(_peer_id: int) -> void:
-	entities.erase(_peer_id)
-	entities_container.get_node(str(_peer_id)).queue_free()
+	if entities.has(_peer_id):
+		entities.erase(_peer_id)
+
+	if entities_container.has_node(str(_peer_id)):
+		entities_container.get_node(str(_peer_id)).queue_free()
 
 # `PUPPETSYNC`
 # Adds a new player to the game
