@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Tree/Interface/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/BackgroundCycler/BackgroundCycler.tscn" type="PackedScene" id=2]
@@ -26,6 +26,8 @@
 [ext_resource path="res://Tree/Interface/MainMenu/SettingsMenu.gd" type="Script" id=24]
 [ext_resource path="res://addons/joyeux_npc_editor/src/interface/NPCEditorSuite.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Tree/Interface/MainMenu/Apps.gd" type="Script" id=26]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconAI.png" type="Texture" id=27]
+[ext_resource path="res://Tree/Interface/MainMenu/Style/MMD_Theme/MMD_Theme.tres" type="Theme" id=28]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.588235 )
@@ -209,37 +211,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 26 )
 
-[node name="HBoxContainer_Apps_Tab" type="HBoxContainer" parent="VBoxContainer/TabContainer/Apps"]
-margin_right = 1876.0
-margin_bottom = 45.0
-size_flags_horizontal = 3
-theme = ExtResource( 16 )
-custom_constants/separation = 20
-
-[node name="Button_NPCEditor" type="Button" parent="VBoxContainer/TabContainer/Apps/HBoxContainer_Apps_Tab"]
-margin_right = 306.0
-margin_bottom = 45.0
-size_flags_horizontal = 3
-text = "NPC EDITOR"
-
-[node name="Button_OtherEditor" type="Button" parent="VBoxContainer/TabContainer/Apps/HBoxContainer_Apps_Tab"]
-margin_left = 326.0
-margin_right = 632.0
-margin_bottom = 45.0
-size_flags_horizontal = 3
-text = "OTHER EDITOR"
-
-[node name="VSeparator" type="VSeparator" parent="VBoxContainer/TabContainer/Apps/HBoxContainer_Apps_Tab"]
-margin_left = 652.0
-margin_right = 1876.0
-margin_bottom = 45.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 4.0
-custom_styles/separator = ExtResource( 22 )
-
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer/TabContainer/Apps"]
-margin_top = 49.0
 margin_right = 1876.0
 margin_bottom = 773.0
 size_flags_horizontal = 3
@@ -247,7 +219,58 @@ size_flags_vertical = 3
 custom_styles/panel = ExtResource( 23 )
 tabs_visible = false
 
+[node name="ButtonGrid" type="Control" parent="VBoxContainer/TabContainer/Apps/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
+
+[node name="NpcEditor" type="Button" parent="VBoxContainer/TabContainer/Apps/TabContainer/ButtonGrid"]
+anchor_right = 0.5
+anchor_bottom = 0.5
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/Apps/TabContainer/ButtonGrid/NpcEditor"]
+anchor_left = 0.35
+anchor_top = 0.15
+anchor_right = 0.65
+anchor_bottom = 0.55
+margin_top = -0.943878
+margin_bottom = -0.943878
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 32, 32 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource( 27 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Apps/TabContainer/ButtonGrid/NpcEditor"]
+anchor_top = 0.917
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 10
+theme = ExtResource( 28 )
+text = "CREATE SERVER"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="NPCEditorSuite" parent="VBoxContainer/TabContainer/Apps/TabContainer" instance=ExtResource( 25 )]
+visible = false
 margin_left = 2.0
 margin_top = 2.0
 margin_right = -2.0

@@ -3,6 +3,8 @@ extends Control
 
 onready var tabs : TabContainer = $TabContainer
 
+#Emitted when one of the buttons are pressed.
+signal tab_changed(button_name)
 
 #Connect all the buttons so that they show the correct parent.
 func _ready() -> void :
@@ -30,4 +32,5 @@ func _ready() -> void :
 func show_tab(tab_name : String) -> void :
 	#If this assert fails the tab_name must be invalid.
 	assert(tabs.has_node(tab_name))
+	emit_signal("tab_changed", tab_name)
 	tabs.current_tab = tabs.get_node(tab_name).get_position_in_parent()
