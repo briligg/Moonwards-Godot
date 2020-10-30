@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Tree/Interface/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/BackgroundCycler/BackgroundCycler.tscn" type="PackedScene" id=2]
@@ -28,6 +28,9 @@
 [ext_resource path="res://Tree/Interface/MainMenu/Apps.gd" type="Script" id=26]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconAI.png" type="Texture" id=27]
 [ext_resource path="res://Tree/Interface/MainMenu/Style/MMD_Theme/MMD_Theme.tres" type="Theme" id=28]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconBuilding_Alt.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconEvent.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconLibrary.png" type="Texture" id=31]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.588235 )
@@ -154,6 +157,7 @@ __meta__ = {
 }
 
 [node name="Destination" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 2.0
@@ -200,7 +204,6 @@ margin_right = 1876.0
 margin_bottom = 773.0
 
 [node name="Apps" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 2.0
@@ -219,17 +222,20 @@ size_flags_vertical = 3
 custom_styles/panel = ExtResource( 23 )
 tabs_visible = false
 
-[node name="ButtonGrid" type="Control" parent="VBoxContainer/TabContainer/Apps/TabContainer"]
+[node name="ButtonGrid" type="GridContainer" parent="VBoxContainer/TabContainer/Apps/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 2.0
 margin_top = 2.0
 margin_right = -2.0
 margin_bottom = -2.0
+custom_constants/vseparation = 14
+custom_constants/hseparation = 14
+columns = 2
 
 [node name="NpcEditor" type="Button" parent="VBoxContainer/TabContainer/Apps/TabContainer/ButtonGrid"]
-anchor_right = 0.5
-anchor_bottom = 0.5
+margin_right = 929.0
+margin_bottom = 377.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -263,7 +269,137 @@ grow_horizontal = 0
 grow_vertical = 0
 size_flags_vertical = 10
 theme = ExtResource( 28 )
-text = "CREATE SERVER"
+text = "NPC EDITOR"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Building" type="Button" parent="VBoxContainer/TabContainer/Apps/TabContainer/ButtonGrid"]
+margin_left = 943.0
+margin_right = 1872.0
+margin_bottom = 377.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/Apps/TabContainer/ButtonGrid/Building"]
+anchor_left = 0.35
+anchor_top = 0.15
+anchor_right = 0.65
+anchor_bottom = 0.55
+margin_top = -0.943878
+margin_bottom = -0.943878
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 32, 32 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource( 29 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Apps/TabContainer/ButtonGrid/Building"]
+anchor_top = 0.917
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 10
+theme = ExtResource( 28 )
+text = "BUILDINGS"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Events" type="Button" parent="VBoxContainer/TabContainer/Apps/TabContainer/ButtonGrid"]
+margin_top = 391.0
+margin_right = 929.0
+margin_bottom = 768.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/Apps/TabContainer/ButtonGrid/Events"]
+anchor_left = 0.35
+anchor_top = 0.15
+anchor_right = 0.65
+anchor_bottom = 0.55
+margin_top = -0.943878
+margin_bottom = -0.943878
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 32, 32 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource( 30 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Apps/TabContainer/ButtonGrid/Events"]
+anchor_top = 0.917
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 10
+theme = ExtResource( 28 )
+text = "EVENTS"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Library" type="Button" parent="VBoxContainer/TabContainer/Apps/TabContainer/ButtonGrid"]
+margin_left = 943.0
+margin_top = 391.0
+margin_right = 1872.0
+margin_bottom = 768.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/Apps/TabContainer/ButtonGrid/Library"]
+anchor_left = 0.35
+anchor_top = 0.15
+anchor_right = 0.65
+anchor_bottom = 0.55
+margin_top = -0.943878
+margin_bottom = -0.943878
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 32, 32 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource( 31 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Apps/TabContainer/ButtonGrid/Library"]
+anchor_top = 0.917
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 10
+theme = ExtResource( 28 )
+text = "LIBRARY"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
