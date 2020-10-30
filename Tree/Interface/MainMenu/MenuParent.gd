@@ -28,7 +28,6 @@ func _ready() -> void :
 	button = $TabButtons/Button_Apps
 	button.connect("pressed", self, "show_tab", ["Apps"])
 
-
 func show_tab(tab_name : String) -> void :
 	#If this assert fails the tab_name must be invalid.
 	assert(tabs.has_node(tab_name))
