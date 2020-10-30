@@ -69,7 +69,7 @@ __meta__ = {
 }
 
 [node name="SpotLight3" type="SpotLight" parent="Lighting" index="4"]
-transform = Transform( 0.750574, 0.0450569, 0.659248, 0.168957, 0.951423, -0.257388, -0.638821, 0.304573, 0.7065, 32.8579, -0.482118, -1.89228 )
+transform = Transform( 0.750574, 0.0450565, 0.659249, 0.168957, 0.951423, -0.257388, -0.638821, 0.304573, 0.7065, 32.8579, -0.482118, -1.89228 )
 spot_range = 41.1
 spot_attenuation = 1.23114
 spot_angle = 60.0
@@ -169,6 +169,9 @@ __meta__ = {
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 40.4303, -5.36765, -6.53485 )
 spot_range = 3.68427
 spot_angle = 56.2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="SpotLight8" type="SpotLight" parent="Lighting" index="15"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 30.6645, -5.36765, 3.3062 )
@@ -182,6 +185,114 @@ __meta__ = {
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 33.0475, -5.44141, 11.0083 )
 spot_range = 6.63072
 spot_angle = 67.9965
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SpotLight11" type="SpotLight" parent="Lighting" index="17"]
+transform = Transform( 1, 0, 0, 0, -0.0376728, 0.99929, 0, -0.99929, -0.0376728, -24.7928, -8.61302, 0.109541 )
+spot_range = 14.9115
+spot_angle = 60.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="OmniLight6" type="OmniLight" parent="Lighting" index="18"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.528, -117.103, -21.3071 )
+light_energy = 1.79
+light_indirect_energy = 6.49
+light_specular = 0.08
+omni_range = 47.1
+omni_attenuation = 1.8025
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="OmniLight7" type="OmniLight" parent="Lighting" index="19"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -99.528, -69.1032, -19.3071 )
+light_color = Color( 0.984314, 0.988235, 0.956863, 1 )
+light_energy = 1.65
+light_indirect_energy = 5.86
+light_specular = 0.08
+omni_range = 50.9
+omni_attenuation = 1.56917
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/OmniLight7" index="0"]
+transform = Transform( 0.927045, 0.139229, -0.348142, 0.352331, -0.00585562, 0.935857, 0.12826, -0.990243, -0.0544831, -19.7546, 23.2322, 2.32202 )
+shadow_enabled = true
+spot_range = 28.2316
+spot_angle = 56.9111
+
+[node name="SpotLight2" type="SpotLight" parent="Lighting/OmniLight7" index="1"]
+transform = Transform( 0.872027, 0.0457049, -0.48732, 0.489459, -0.0814285, 0.868216, 0, -0.995631, -0.0933785, 42.9652, 4.37205, 8.22209 )
+light_color = Color( 0.992157, 0.992157, 0.992157, 1 )
+light_energy = 1.57
+shadow_enabled = true
+spot_range = 23.1823
+spot_attenuation = 0.659754
+spot_angle = 56.6
+spot_angle_attenuation = 1.86607
+
+[node name="OmniLight" type="OmniLight" parent="Lighting/OmniLight7" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.3268, -7.01611, 0 )
+light_color = Color( 0.968719, 1, 0.839844, 1 )
+omni_range = 25.8224
+
+[node name="OmniLight8" type="OmniLight" parent="Lighting" index="20"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.52802, -56.7779, -3.30708 )
+light_color = Color( 0.984314, 0.988235, 0.956863, 1 )
+light_indirect_energy = 3.35
+light_specular = 0.08
+omni_range = 110.0
+omni_attenuation = 1.56917
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SpotLight12" type="SpotLight" parent="Lighting" index="21"]
+transform = Transform( -0.0205411, 0, -0.999789, 0, 1, 0, 0.999789, 0, -0.0205411, -88.4828, -19.7902, -10.4508 )
+light_energy = 3.93
+shadow_bias = 0.0
+shadow_reverse_cull_face = true
+spot_range = 52.7651
+spot_angle = 60.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="OmniLight9" type="OmniLight" parent="Lighting" index="22"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0327, -22.8558, -6.15027 )
+light_color = Color( 0.996078, 1, 0.913725, 1 )
+omni_range = 14.2
+omni_attenuation = 1.18921
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="OmniLight" type="OmniLight" parent="Lighting/OmniLight9" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4596, -4.11851, 3.05449 )
+light_color = Color( 0.984314, 0.988235, 0.976471, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="OmniLight2" type="OmniLight" parent="Lighting/OmniLight9" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4256, -4.11851, 4.86791 )
+light_color = Color( 0.984314, 0.988235, 0.976471, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="OmniLight3" type="OmniLight" parent="Lighting/OmniLight9" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.9761, -3.73037, 6.52738 )
+light_color = Color( 1, 0.976471, 0.913725, 1 )
+shadow_enabled = true
+omni_range = 10.0642
 
 [node name="Tooltips" type="Spatial" parent="." index="1"]
 __meta__ = {
