@@ -1,11 +1,11 @@
 extends Panel
 
+onready var help_menu : Control = $Alignment/HelpMenu
+onready var back_button : TextureButton = $Alignment/TopSection/Label/BackButton
 
 #Listen to back button presses.
 func _ready() -> void :
-	var back : TextureButton = $Alignment/TopSection/Label/BackButton
-	
-	back.connect("pressed", self, "back_pressed")
+	back_button.connect("pressed", self, "back_pressed")
 
 func back_pressed() -> void :
 	var menus : Control = $Alignment/HelpMenu
@@ -13,7 +13,8 @@ func back_pressed() -> void :
 
 #Hide the panel. Clean up anything that needs cleaning up.
 func hide_panel() -> void :
-	$HelpMenu.back_to_start()
+	help_menu.back_to_start()
+	back_button.hide()
 	hide()
 
 #Toggle the help menu on or off.
@@ -21,4 +22,4 @@ func toggle_help_menu() -> void :
 	visible = !visible
 
 func display_back_button(become_visible : bool) -> void :
-	$Alignment/TopSection/Label/BackButton.visible = become_visible
+	back_button.visible = become_visible
