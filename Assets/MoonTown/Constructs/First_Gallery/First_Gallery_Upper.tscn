@@ -70,6 +70,7 @@ __meta__ = {
 
 [node name="SpotLight3" type="SpotLight" parent="Lighting" index="4"]
 transform = Transform( 0.750574, 0.0450565, 0.659249, 0.168957, 0.951423, -0.257388, -0.638821, 0.304573, 0.7065, 32.8579, -0.482118, -1.89228 )
+shadow_enabled = true
 spot_range = 41.1
 spot_attenuation = 1.23114
 spot_angle = 60.0
