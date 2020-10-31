@@ -31,7 +31,7 @@ __meta__ = {
 
 [node name="TextureRect" type="TextureRect" parent="ColorRect"]
 anchor_right = 1.0
-anchor_bottom = 0.8
+anchor_bottom = 0.74
 margin_bottom = -6.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -42,12 +42,10 @@ __meta__ = {
 }
 
 [node name="NextBtn" type="TextureButton" parent="."]
-anchor_left = 0.9
-anchor_top = 0.83
-anchor_right = 0.98
-anchor_bottom = 0.99
-margin_top = -0.399963
-margin_bottom = -0.199951
+anchor_left = 0.53
+anchor_top = 0.75
+anchor_right = 0.57
+anchor_bottom = 0.83
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 4 )
@@ -57,13 +55,12 @@ __meta__ = {
 }
 
 [node name="PrevBtn" type="TextureButton" parent="."]
-anchor_left = 0.02
-anchor_top = 0.83
-anchor_right = 0.1
-anchor_bottom = 0.99
-margin_top = 0.400024
+anchor_left = 0.43
+anchor_top = 0.75
+anchor_right = 0.47
+anchor_bottom = 0.83
 rect_rotation = 180.0
-rect_pivot_offset = Vector2( 76.8, 86.2 )
+rect_pivot_offset = Vector2( 38, 43 )
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 4 )
@@ -71,9 +68,9 @@ expand = true
 
 [node name="TextContainer" type="Panel" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.1
+anchor_left = 0.02
 anchor_top = 0.8
-anchor_right = 0.9
+anchor_right = 0.98
 anchor_bottom = 1.0
 margin_top = 18.0
 __meta__ = {
