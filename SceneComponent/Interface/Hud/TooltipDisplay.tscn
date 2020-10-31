@@ -47,7 +47,7 @@ alignment = 1
 margin_right = 82.0
 margin_bottom = 36.0
 size_flags_horizontal = 3
-text = "Last"
+text = "Prev"
 
 [node name="Title" type="Label" parent="Vert/Top"]
 margin_left = 86.0
