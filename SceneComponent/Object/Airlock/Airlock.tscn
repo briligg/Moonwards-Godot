@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
+[ext_resource path="res://SceneComponent/Object/Airlock/AirlockManager.gd" type="Script" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Airlock/LOD1.scn" type="PackedScene" id=3]
 [ext_resource path="res://SceneComponent/Object/Airlock/AirlockDoorInteractable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/MoonTown/Models/Airlock/LOD0.scn" type="PackedScene" id=5]
@@ -45,6 +46,7 @@ tracks/0/keys = {
 script = ExtResource( 8 )
 
 [node name="LOD0" parent="." instance=ExtResource( 5 )]
+script = ExtResource( 1 )
 
 [node name="AirlockDoor_Exterior_LOD0" parent="LOD0" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00488389, 1.58298, 0.237398 )
