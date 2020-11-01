@@ -8,7 +8,9 @@ signal closed()
 #Emitted when entity interacts with me while closed.
 signal opened()
 #Emitted when I am completely closed and will not let air out.
-signal sealed()
+signal finished()
+
+const FINISHED : String = "finished"
 
 export(String) var animation_name
 # If this door is dockable to a passenger pod
@@ -21,12 +23,13 @@ var is_open: bool = false
 
 #Called when an airlock has finished opening or shutting.
 func _animation_finished(_anim_name) -> void :
-	emit_signal("sealed")
-	
-	anim.disconnect("animation_finished", self, "_animation_finished")
+	emit_signal("finished")
 
 func _ready():
 	title = "Airlock Dock"
+	
+	#Listen for when animations are finished
+	anim.connect("animation_finished", self, "_animation_finished")
 
 func interact_with(_interactor : Node) -> void :
 		if is_open:
@@ -50,6 +53,3 @@ func open():
 func close():
 	anim.play(animation_name, -1, -0.65, true)
 	is_open = false
-	
-	if not anim.is_connected("animation_finished", self, "_animation_finished") :
-		anim.connect("animation_finished", self, "_animation_finished")
