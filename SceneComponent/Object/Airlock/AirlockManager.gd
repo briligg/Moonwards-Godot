@@ -10,11 +10,14 @@ func _ready() -> void :
 	
 	for airlock in airlock_array :
 		airlock.connect("opened", self, "_airlock_opened", [airlock])
-		airlock.connect("closed", self, "_airlock_closed")
+		airlock.connect("closed", self, "_airlock_closed", [airlock])
 
 #Called when something interacts with an open airlock door.
-func _airlock_closed() -> void :
+func _airlock_closed(airlock : AirlockDoorInteractable) -> void :
 	open_airlock = null
+	
+	#Close the airlock
+	airlock.close()
 
 #Called when something interacts with a closed airlock door.
 func _airlock_opened(airlock : AirlockDoorInteractable) -> void :

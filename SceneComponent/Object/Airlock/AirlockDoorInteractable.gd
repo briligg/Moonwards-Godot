@@ -29,10 +29,10 @@ func _ready():
 	title = "Airlock Dock"
 
 func interact_with(_interactor : Node) -> void :
-        if is_open:
-                emit_signal("closed")
-        else:
-                emit_signal("opened")
+		if is_open:
+				emit_signal("closed")
+		else:
+				emit_signal("opened")
 
 puppet func netsync_door(val):
 	if val == is_open:
