@@ -4,6 +4,8 @@ onready var hatch_collision = get_parent().get_node("HatchCollisionShape")
 # The latch that goes into the airlock door
 onready var airlock_latch = get_parent().get_node("AirlockLatch")
 
+onready var original_path
+
 const HALF_HEIGHT = 1.47
 
 export(Array, NodePath) var collision_paths
@@ -18,6 +20,9 @@ var docked_to: AEntity
 
 # Original parent of the pod at spawn
 var orig_parent
+# Placeholder that exist in the original parent, for RPCing newly joined players
+# when the pod is docked
+var placeholder_node
 
 # The interactable of the door we're docked with or potentially docking with
 var _dock_door_interactable
@@ -31,6 +36,7 @@ func _ready() -> void:
 	$Interactable.owning_entity = self.pod
 	$Interactable.display_info = "Dock to rover"
 	$Interactable.connect("interacted_by", self, "interacted_by")
+	$Interactable.connect("sync_for_new_player", self, "sync_for_new_player")
 	$Interactable.title = "Dock Passenger Pod"
 	$Interactable.display_info = ""
 	orig_parent = pod.get_parent()
@@ -75,8 +81,17 @@ func dock_with(rover):
 
 	pod.mode = RigidBody.MODE_STATIC
 	rover.mode = RigidBody.MODE_RIGID
+	
+	placeholder_node = Spatial.new()
+	orig_parent.add_child(placeholder_node)
+	placeholder_node.name = get_parent().name
+	var placeholder_comp = Spatial.new()
+	placeholder_node.add_child(placeholder_comp)
+	placeholder_comp.name = self.name
 
 func undock():
+	placeholder_node.free()
+	
 	$Interactable.title = "Dock Passenger Pod"
 	_reparent(pod, orig_parent, true)
 	
@@ -170,26 +185,31 @@ func _reparent(node, new_parent, keep_world_pos = false):
 		node.global_transform.origin = pos
 
 func sync_for_new_player(peer_id):
-	# Returning, still WIP code.
-	return
 	if get_tree().is_network_server():
 		if is_docked:
 			var col_positions = []
 			for col in collision_shapes:
 				col_positions.append(col.global_transform.origin)
-			rpc_id(peer_id, "_dock_for_new_player", docked_to.get_path())
+			placeholder_node.get_node(self.name).rpc_id(peer_id, "_dock_for_new_player", docked_to.get_path(), 
+					pod.global_transform.origin, col_positions, 
+					hatch_collision.global_transform.origin)
+#			rpc_id(peer_id, "test")
 	
-puppet func _dock_for_new_player(rover_path, pod_pos, col_pos_arr):
-	# Returning, still WIP code.
-	return
+puppet func _dock_for_new_player(rover_path, pod_pos, col_pos_arr, col_hatch_pos):
 	$Interactable.title = "Undock Passenger Pod"
 	var rover = get_node(rover_path)
-#	_reparent(pod, rover)
+	_reparent(pod, rover)
 	var target_xfm = rover.get_node("DockLatch").transform
 	pod.transform = target_xfm
 	pod.transform.origin.y -= HALF_HEIGHT + .1
-#	for col in collision_shapes:
-#		_reparent(col, rover, true)
-	_reparent(hatch_collision, rover, true)
+	for i in range(collision_shapes.size()):
+		_reparent(collision_shapes[i], rover)
+		collision_shapes[i].global_transform.origin = col_pos_arr[i]
+		
+	_reparent(hatch_collision, rover)
+	hatch_collision.global_transform.origin = col_hatch_pos
 	docked_to = rover
 	is_docked = true
+
+puppet func test():
+	pass

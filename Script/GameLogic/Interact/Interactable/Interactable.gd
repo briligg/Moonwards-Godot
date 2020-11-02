@@ -9,6 +9,7 @@ class_name Interactable
 """
 
 signal interacted_by(interactor_ray_cast)
+signal sync_for_new_player(peer_id)
 
 signal title_changed(new_title_string)
 signal display_info_changed(new_description_string)
@@ -82,4 +83,4 @@ func set_title(new_title : String) -> void :
 	emit_signal("title_changed", title)
 
 func sync_for_new_player(peer_id):
-	pass
+	emit_signal("sync_for_new_player", peer_id)

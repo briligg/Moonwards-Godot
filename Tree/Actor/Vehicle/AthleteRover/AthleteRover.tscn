@@ -141,6 +141,14 @@ script = ExtResource( 4 )
 [node name="Model" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0 )
 
+[node name="Legs" parent="Model" index="0"]
+bones/3/bound_children = [  ]
+bones/7/bound_children = [  ]
+bones/11/bound_children = [  ]
+bones/15/bound_children = [  ]
+bones/19/bound_children = [  ]
+bones/23/bound_children = [  ]
+
 [node name="WheelBackLBoneAttachment" parent="Model/Legs" index="1"]
 transform = Transform( 0.00490884, 0.798927, -0.601408, 0.999981, -0.00614417, 4.65661e-09, -0.00369515, -0.601397, -0.798942, 15.7619, 6.13141, -11.8435 )
 
