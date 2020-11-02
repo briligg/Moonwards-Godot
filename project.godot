@@ -723,7 +723,8 @@ _global_script_class_icons={
 "VisualShaderNodeVectorHeightMix": "",
 "Worker": "",
 "Workstation": "",
-"WorldNavigator": ""
+"WorldNavigator": "",
+"WorldMirror": ""
 }
 
 [application]
@@ -746,6 +747,7 @@ VisibilityManager="*res://Script/Manager/VisualTriggerManager/VisibilityManager.
 AL_DebugDraw="*res://Script/DebugHelper/debug_draw_3d.gd"
 Hud="*res://Script/Manager/HudManager/HudManager.gd"
 Nodes="*res://addons/joyeux_npc_editor/src/Core/Nodes.gd"
+ReflectMaterialManager="*res://addons/Silicon.vfx.planar_reflection/reflect_material_manager.gd"
 
 [compression]
 
@@ -774,7 +776,7 @@ convert_text_resources_to_binary_on_export=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "QuickPluginManager", "editor_icon_previewer", "joyeux_dialog_system", "joyeux_npc_editor", "moonwards_lock_nodes" )
+enabled=PoolStringArray( "QuickPluginManager", "Silicon.vfx.planar_reflection", "editor_icon_previewer", "joyeux_dialog_system", "joyeux_npc_editor", "moonwards_lock_nodes" )
 
 [importer_defaults]
 

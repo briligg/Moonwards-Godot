@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://SceneComponent/Utilities/Mirrors/Shaders/MirrorShader.shader" type="Shader" id=1]
+[ext_resource path="res://Assets/SharedAssets/Textures/Miscellaneous/Mirror_Tester.jpg" type="Texture" id=2]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/Color = Color( 1, 1, 1, 1 )
+shader_param/MirrorEffect = true
+shader_param/MirrorEffectDistanceMax = 10.0
+shader_param/MirrorEffectIntensity = 0.1
+shader_param/VAngle = 0.0
+shader_param/HAngle = 0.0
+shader_param/_pr_perturb_scale = 1.0
+shader_param/_pr_viewport_rect = Plane( -1, -1, 2, 2 )
+shader_param/TextureTester = ExtResource( 2 )
