@@ -38,11 +38,6 @@ func _process(delta : float) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("use"):
-		if main_ui.visible:
-			main_ui.visible = false
-		else:
-			main_ui.visible = true
 	if event.is_action_pressed("ui_left"):
 		if main_ui.visible:
 			previous_stage()
@@ -62,10 +57,13 @@ func animation_finished(_animation_name : String) -> void:
 
 
 func activate() -> void:
+	#Show the mouse.
+	Helpers.capture_mouse(false)
+	
 	_interactor.disable()
 	
 	set_process_input(true)
-	main_ui.visible = false
+	main_ui.visible = true
 	
 	_return_camera = get_tree().root.get_camera()
 	camera.global_transform = _return_camera.global_transform
@@ -73,7 +71,7 @@ func activate() -> void:
 	camera.current = true
 	
 	_current_stage = 1
-	_go_to__current_stage()
+	_go_to_current_stage()
 
 
 func deactivate() -> void:
@@ -101,17 +99,17 @@ func next_stage() -> void:
 	if display_animation_player.is_playing():
 		return
 	_current_stage += 1
-	_go_to__current_stage()
+	_go_to_current_stage()
 
 
 func previous_stage() -> void:
 	if display_animation_player.is_playing():
 		return
 	_current_stage -= 1
-	_go_to__current_stage()
+	_go_to_current_stage()
 
 
-func _go_to__current_stage() -> void:
+func _go_to_current_stage() -> void:
 	if range(1, MAX_STAGES + 1).has(_current_stage):
 		if _current_stage == 1:
 			previous_button.text = "Quit"
