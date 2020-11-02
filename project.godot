@@ -439,11 +439,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/GameLogic/MouseSimulatingRayCast/MouseSimulatingRayCast.gd"
 }, {
-"base": "NPCBase",
-"class": "MwNPC",
-"language": "GDScript",
-"path": "res://addons/joyeux_npc_editor/src/NPCs/MwNPC.gd"
-}, {
 "base": "WorldNavigator",
 "class": "MwNavigator",
 "language": "GDScript",
@@ -696,7 +691,6 @@ _global_script_class_icons={
 "LodSignals": "",
 "MenuSignals": "",
 "MouseSimulatingRayCast": "",
-"MwNPC": "",
 "MwNavigator": "",
 "MwNode": "",
 "MwSpatial": "",
@@ -2165,6 +2159,11 @@ toggle_camera_fly={
 toggle_first_person={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":51,"unicode":0,"echo":false,"script":null)
+ ]
+}
+radial_menu={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":3,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
 

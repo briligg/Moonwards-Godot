@@ -1,5 +1,8 @@
-extends Container
+extends Control
 
+
+signal app_changed(old_app, new_app)
+signal app_reverted(old_app_being_reverted_to)
 
 #Provide simple undo and switching functionality.
 var current_app : Node = null
@@ -45,6 +48,9 @@ func new_active_app(app_node : Node, blurred_background : bool = false) -> void 
 	#Show the blurred background if specified.
 	previous_app_blurred = blur.visible
 	blur.visible = blurred_background
+	
+	#Let anything listening know the app has been changed.
+	emit_signal("app_changed", previous_app, app_node)
 
 #Go back to the previous app.
 func revert_active_app() -> void :
@@ -53,3 +59,5 @@ func revert_active_app() -> void :
 	previous_app.visible = true
 	
 	blur.visible = previous_app_blurred
+	
+	emit_signal("app_reverted")

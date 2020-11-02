@@ -7,11 +7,6 @@
 [ext_resource path="res://Tree/World/Navigation/MwNavigator.gd" type="Script" id=5]
 [ext_resource path="res://SceneComponent/Actor/AI/Workstation.tscn" type="PackedScene" id=6]
 
-
-
-
-
-
 [sub_resource type="NavigationMesh" id=1]
 sample_partition_type/sample_partition_type = 1
 cell/size = 0.1
@@ -38,7 +33,6 @@ script = ExtResource( 5 )
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.4318, -115.913, 171.358 )
 navmesh = SubResource( 1 )
-
 
 [node name="Moon_Town_Master" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 1 )]
 
@@ -113,8 +107,7 @@ transform = Transform( -0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819,
 [node name="NPC5" parent="Navigation" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2581, -7.5555, -3.61078 )
 
-
 [node name="SpawnPoints" type="Spatial" parent="."]
 
 [node name="1" type="Position3D" parent="SpawnPoints"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.37902, 111.449, -189.653 )
+transform = Transform( -0.901742, 0, 0.432275, 0, 1, 0, -0.432275, 0, -0.901742, -33.9664, 88.7014, -186.764 )
