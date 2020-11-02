@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/HelpPanel.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/HelpMenu/HelpMenu.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Interface/Textures/LeftArrowButtonPressed.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Interface/Hud/Styles/HelpMenuPanel.tres" type="StyleBox" id=7]
 [ext_resource path="res://SceneComponent/Interface/HelpMenu/InitialMenu.gd" type="Script" id=8]
+[ext_resource path="res://SceneComponent/Interface/HelpMenu/Keys.gd" type="Script" id=9]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -99,9 +100,8 @@ margin_right = 846.0
 margin_bottom = 776.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Welcome to Moonward's help menu.
-
-Below you can see what the controls are for playing Moonwards."
+text = "Text gets overwritten by script."
+script = ExtResource( 9 )
 
 [node name="GotoMap" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
 margin_top = 792.0
