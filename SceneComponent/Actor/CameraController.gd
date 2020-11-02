@@ -147,7 +147,7 @@ func _update_cam_pos(delta : float = 0.016667) -> void:
 		inside_body.y = 0
 		var cam_pos_holder : Vector3 = new_cam_pos
 		cam_pos_holder.y = 0
-		new_cam_pos.y += HEAD_HEIGHT - (((cam_pos_holder.distance_to(inside_body) / dist)) * HEAD_HEIGHT)
+		new_cam_pos.y += HEAD_HEIGHT - (((max(0.01,cam_pos_holder.distance_to(inside_body)) / dist)) * HEAD_HEIGHT)
 
 	camera.global_transform.origin = new_cam_pos
 	pass
