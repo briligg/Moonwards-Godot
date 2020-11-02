@@ -1,7 +1,5 @@
 extends CanvasLayer
-"""
-	Hud Singleton Scene Script
-"""
+
 
 var _active: bool = false
 

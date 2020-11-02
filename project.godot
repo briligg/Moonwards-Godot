@@ -44,6 +44,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://SceneComponent/Object/Airlock/AirlockDoorInteractable.gd"
 }, {
+"base": "AComponent",
+"class": "AnchorMovementComponent",
+"language": "GDScript",
+"path": "res://SceneComponent/Actor/AnchorMovement.gd"
+}, {
+"base": "Reference",
+"class": "AnchorMovementData",
+"language": "GDScript",
+"path": "res://Script/GameLogic/AnchorMovementData.gd"
+}, {
 "base": "Reference",
 "class": "AudioSignals",
 "language": "GDScript",
@@ -89,6 +99,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Manager/SignalsManager/EntitySignals.gd"
 }, {
+"base": "DropDown",
+"class": "EnumDropDown",
+"language": "GDScript",
+"path": "res://addons/joyeux_npc_editor/src/Core/Control_Components/EnumDropDown.gd"
+}, {
 "base": "Reference",
 "class": "EnumHelper",
 "language": "GDScript",
@@ -98,6 +113,151 @@ _global_script_classes=[ {
 "class": "FileLabel",
 "language": "GDScript",
 "path": "res://addons/joyeux_npc_editor/src/Core/Control_Components/FileSeparator.gd"
+}, {
+"base": "Reference",
+"class": "GSAIAgentLocation",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/GSAIAgentLocation.gd"
+}, {
+"base": "GSAISteeringBehavior",
+"class": "GSAIArrive",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/Behaviors/GSAIArrive.gd"
+}, {
+"base": "GSAIGroupBehavior",
+"class": "GSAIAvoidCollisions",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/Behaviors/GSAIAvoidCollisions.gd"
+}, {
+"base": "GSAISteeringBehavior",
+"class": "GSAIBlend",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/Behaviors/GSAIBlend.gd"
+}, {
+"base": "GSAIGroupBehavior",
+"class": "GSAICohesion",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/Behaviors/GSAICohesion.gd"
+}, {
+"base": "GSAIPursue",
+"class": "GSAIEvade",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/Behaviors/GSAIEvade.gd"
+}, {
+"base": "GSAIMatchOrientation",
+"class": "GSAIFace",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/Behaviors/GSAIFace.gd"
+}, {
+"base": "GSAISeek",
+"class": "GSAIFlee",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/Behaviors/GSAIFlee.gd"
+}, {
+"base": "GSAIArrive",
+"class": "GSAIFollowPath",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/Behaviors/GSAIFollowPath.gd"
+}, {
+"base": "GSAISteeringBehavior",
+"class": "GSAIGroupBehavior",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/GSAIGroupBehavior.gd"
+}, {
+"base": "GSAIProximity",
+"class": "GSAIInfiniteProximity",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/Proximities/GSAIInfiniteProximity.gd"
+}, {
+"base": "GSAISpecializedAgent",
+"class": "GSAIKinematicBody2DAgent",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/Agents/GSAIKinematicBody2DAgent.gd"
+}, {
+"base": "GSAISpecializedAgent",
+"class": "GSAIKinematicBody3DAgent",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/Agents/GSAIKinematicBody3DAgent.gd"
+}, {
+"base": "GSAIMatchOrientation",
+"class": "GSAILookWhereYouGo",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/Behaviors/GSAILookWhereYouGo.gd"
+}, {
+"base": "GSAISteeringBehavior",
+"class": "GSAIMatchOrientation",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/Behaviors/GSAIMatchOrientation.gd"
+}, {
+"base": "Reference",
+"class": "GSAIPath",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/GSAIPath.gd"
+}, {
+"base": "GSAISteeringBehavior",
+"class": "GSAIPriority",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/Behaviors/GSAIPriority.gd"
+}, {
+"base": "Reference",
+"class": "GSAIProximity",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/Proximities/GSAIProximity.gd"
+}, {
+"base": "GSAISteeringBehavior",
+"class": "GSAIPursue",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/Behaviors/GSAIPursue.gd"
+}, {
+"base": "GSAIProximity",
+"class": "GSAIRadiusProximity",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/Proximities/GSAIRadiusProximity.gd"
+}, {
+"base": "GSAISpecializedAgent",
+"class": "GSAIRigidBody2DAgent",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/Agents/GSAIRigidBody2DAgent.gd"
+}, {
+"base": "GSAISpecializedAgent",
+"class": "GSAIRigidBody3DAgent",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/Agents/GSAIRigidBody3DAgent.gd"
+}, {
+"base": "GSAISteeringBehavior",
+"class": "GSAISeek",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/Behaviors/GSAISeek.gd"
+}, {
+"base": "GSAIGroupBehavior",
+"class": "GSAISeparation",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/Behaviors/GSAISeparation.gd"
+}, {
+"base": "GSAISteeringAgent",
+"class": "GSAISpecializedAgent",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/Agents/GSAISpecializedAgent.gd"
+}, {
+"base": "GSAIAgentLocation",
+"class": "GSAISteeringAgent",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/GSAISteeringAgent.gd"
+}, {
+"base": "Reference",
+"class": "GSAISteeringBehavior",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/GSAISteeringBehavior.gd"
+}, {
+"base": "Reference",
+"class": "GSAITargetAcceleration",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/GSAITargetAcceleration.gd"
+}, {
+"base": "Reference",
+"class": "GSAIUtils",
+"language": "GDScript",
+"path": "res://addons/com.gdquest.godot-steering-ai-framework/GSAIUtils.gd"
 }, {
 "base": "InspectorGadgetBase",
 "class": "GadgetAABB",
@@ -209,6 +369,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Manager/SignalsManager/HudSignals.gd"
 }, {
+"base": "AMovementController",
+"class": "HumanoidMovement",
+"language": "GDScript",
+"path": "res://SceneComponent/Actor/Humanoid/HumanoidMovement.gd"
+}, {
+"base": "AComponent",
+"class": "HumanoidMovementDebug",
+"language": "GDScript",
+"path": "res://SceneComponent/Actor/Debug/HumanoidMovementDebug.gd"
+}, {
 "base": "AComponent",
 "class": "InputController",
 "language": "GDScript",
@@ -235,19 +405,19 @@ _global_script_classes=[ {
 "path": "res://Script/GameLogic/Interact/Interactable/Interactable.gd"
 }, {
 "base": "Area",
-"class": "Interactor",
+"class": "InteractorArea",
 "language": "GDScript",
-"path": "res://Script/GameLogic/Interact/Interactor/Interactor.gd"
+"path": "res://Script/GameLogic/Interact/Interactor/InteractorArea.gd"
 }, {
 "base": "AComponent",
 "class": "InteractorComponent",
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/InteractorComponent.gd"
 }, {
-"base": "AMovementController",
-"class": "KinematicMovement",
+"base": "MouseSimulatingRayCast",
+"class": "InteractorRayCast",
 "language": "GDScript",
-"path": "res://SceneComponent/Actor/Humanoid/HumanoidMovement.gd"
+"path": "res://SceneComponent/Actor/InteractorRayCast.gd"
 }, {
 "base": "Spatial",
 "class": "LodModel",
@@ -264,6 +434,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Manager/SignalsManager/MenuSignals.gd"
 }, {
+"base": "RayCast",
+"class": "MouseSimulatingRayCast",
+"language": "GDScript",
+"path": "res://Script/GameLogic/MouseSimulatingRayCast/MouseSimulatingRayCast.gd"
+}, {
+"base": "WorldNavigator",
+"class": "MwNavigator",
+"language": "GDScript",
+"path": "res://Tree/World/Navigation/MwNavigator.gd"
+}, {
 "base": "Node",
 "class": "MwNode",
 "language": "GDScript",
@@ -278,6 +458,11 @@ _global_script_classes=[ {
 "class": "NPCBase",
 "language": "GDScript",
 "path": "res://addons/joyeux_npc_editor/src/NPCs/NPC.gd"
+}, {
+"base": "AComponent",
+"class": "NPCInput",
+"language": "GDScript",
+"path": "res://SceneComponent/Actor/AI/NPCMovement.gd"
 }, {
 "base": "Node",
 "class": "NetworkManager",
@@ -325,6 +510,11 @@ _global_script_classes=[ {
 "path": "res://addons/joyeux_dialog_system/src/components/text_popup.gd"
 }, {
 "base": "Node",
+"class": "ThreadWorker",
+"language": "GDScript",
+"path": "res://Script/Threading/ThreadWorker.gd"
+}, {
+"base": "Node",
 "class": "TooltipData",
 "language": "GDScript",
 "path": "res://Script/GameLogic/Tooltip/TooltipData.gd"
@@ -333,6 +523,11 @@ _global_script_classes=[ {
 "class": "VehicleEntity",
 "language": "GDScript",
 "path": "res://Script/Entity/VehicleEntity.gd"
+}, {
+"base": "Interactable",
+"class": "VerticalStairs",
+"language": "GDScript",
+"path": "res://SceneComponent/Utilities/VerticalStairs/VerticalStairs.gd"
 }, {
 "base": "VisualShaderNodeCustom",
 "class": "VisualShaderNodeCheapContrast",
@@ -394,15 +589,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/SharedAssets/Shaders/VectorHeightMixNode.gd"
 }, {
-"base": "Node",
+"base": "Reference",
+"class": "Worker",
+"language": "GDScript",
+"path": "res://SceneComponent/Actor/AI/MwWorker.gd"
+}, {
+"base": "Interactable",
 "class": "Workstation",
 "language": "GDScript",
-"path": "res://SceneComponent/Actor/NPCWorkstation.gd"
+"path": "res://SceneComponent/Actor/AI/Workstation.gd"
 }, {
-"base": "Spatial",
-"class": "WorldMirror",
+"base": "Navigation",
+"class": "WorldNavigator",
 "language": "GDScript",
-"path": "res://SceneComponent/Utilities/Mirrors/MirrorAutoManaged.gd"
+"path": "res://addons/joyeux_nav_interacts/WorldNavigation.gd"
 } ]
 _global_script_class_icons={
 "AComponent": "",
@@ -412,6 +612,8 @@ _global_script_class_icons={
 "ActorEntity": "",
 "ActorEntityState": "",
 "AirlockDoorInteractable": "",
+"AnchorMovementComponent": "",
+"AnchorMovementData": "",
 "AudioSignals": "",
 "BehaviorNode": "",
 "CameraController": "",
@@ -421,8 +623,38 @@ _global_script_class_icons={
 "DynamicVisibilityTrigger": "",
 "EntityData": "",
 "EntitySignals": "",
+"EnumDropDown": "",
 "EnumHelper": "",
 "FileLabel": "",
+"GSAIAgentLocation": "",
+"GSAIArrive": "",
+"GSAIAvoidCollisions": "",
+"GSAIBlend": "",
+"GSAICohesion": "",
+"GSAIEvade": "",
+"GSAIFace": "",
+"GSAIFlee": "",
+"GSAIFollowPath": "",
+"GSAIGroupBehavior": "",
+"GSAIInfiniteProximity": "",
+"GSAIKinematicBody2DAgent": "",
+"GSAIKinematicBody3DAgent": "",
+"GSAILookWhereYouGo": "",
+"GSAIMatchOrientation": "",
+"GSAIPath": "",
+"GSAIPriority": "",
+"GSAIProximity": "",
+"GSAIPursue": "",
+"GSAIRadiusProximity": "",
+"GSAIRigidBody2DAgent": "",
+"GSAIRigidBody3DAgent": "",
+"GSAISeek": "",
+"GSAISeparation": "",
+"GSAISpecializedAgent": "",
+"GSAISteeringAgent": "",
+"GSAISteeringBehavior": "",
+"GSAITargetAcceleration": "",
+"GSAIUtils": "",
 "GadgetAABB": "",
 "GadgetBasis": "",
 "GadgetBool": "",
@@ -445,20 +677,25 @@ _global_script_class_icons={
 "GameClient": "",
 "GameServer": "",
 "HudSignals": "",
+"HumanoidMovement": "",
+"HumanoidMovementDebug": "",
 "InputController": "",
 "InspectorGadget": "",
 "InspectorGadgetBase": "",
 "InspectorGadgetUtil": "",
 "Interactable": "",
-"Interactor": "",
+"InteractorArea": "",
 "InteractorComponent": "",
-"KinematicMovement": "",
+"InteractorRayCast": "",
 "LodModel": "",
 "LodSignals": "",
 "MenuSignals": "",
+"MouseSimulatingRayCast": "",
+"MwNavigator": "",
 "MwNode": "",
 "MwSpatial": "",
 "NPCBase": "",
+"NPCInput": "",
 "NetworkManager": "",
 "NetworkSignals": "",
 "NpcDefinitions": "",
@@ -468,8 +705,10 @@ _global_script_class_icons={
 "ReversingVisibilityTrigger": "",
 "StaticEntity": "",
 "TextPopup": "",
+"ThreadWorker": "",
 "TooltipData": "",
 "VehicleEntity": "",
+"VerticalStairs": "",
 "VisualShaderNodeCheapContrast": "",
 "VisualShaderNodeColorHue": "",
 "VisualShaderNodeDistanceWS": "",
@@ -482,7 +721,9 @@ _global_script_class_icons={
 "VisualShaderNodeUVEdit": "",
 "VisualShaderNodeUVPanner": "",
 "VisualShaderNodeVectorHeightMix": "",
+"Worker": "",
 "Workstation": "",
+"WorldNavigator": "",
 "WorldMirror": ""
 }
 
@@ -1914,7 +2155,7 @@ fly_down={
 }
 toggle_camera_fly={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":true,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":76,"unicode":0,"echo":false,"script":null)
  ]
 }
 toggle_first_person={
@@ -1922,13 +2163,20 @@ toggle_first_person={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":51,"unicode":0,"echo":false,"script":null)
  ]
 }
+radial_menu={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":3,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
 
 [layer_names]
 
 3d_physics/layer_1="World"
+3d_physics/layer_2="Player"
 3d_physics/layer_6="LOD"
 3d_physics/layer_11="FP Clickables"
 3d_physics/layer_16="Interactions"
+3d_physics/layer_17="Workstations"
 
 [logging]
 
@@ -1948,6 +2196,5 @@ quality/shadows/filter_mode=2
 quality/reflections/irradiance_max_size=256
 quality/filters/use_nearest_mipmap_filter=true
 limits/rendering/max_renderable_elements=60000
-environment/default_clear_color=Color( 0.447059, 0.447059, 0.447059, 1 )
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 quality/filters/msaa=1
-environment/default_environment="res://default_env.tres"

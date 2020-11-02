@@ -2,7 +2,7 @@ extends Spatial
 export(NodePath) var hatch_collision_path
 onready var hatch_collision = get_node(hatch_collision_path)
 
-onready var anim = get_parent().get_node("Model/LOD0/HatchAnimation")
+onready var anim = get_parent().get_node("Model/LOD0/AnimationPlayer")
 
 var is_hatch_open: bool = false
 
@@ -15,7 +15,6 @@ func interacted_by(interactor):
 		close_hatch()
 	else:
 		open_hatch()
-
 
 func close_hatch():
 	anim.play("Close")

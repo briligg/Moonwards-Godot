@@ -4,13 +4,13 @@ const TYPE_ANY = 28
 onready var Definitions
 const Colors = [
 	Color(0,0,0,0),
-	Color(0.2,0,0,1),
-	Color(0.2,0.8,0.4,1),
-	Color(0.2,1.2,1.2,1),
-	Color(0.2,0.2,0.4,1),
+	Color("#c96ef0"),
+	Color("#42f5ce"),
+	Color("#45c4ff"),
+	Color("#ffbe45"),
 	Color(0.2,0.4,0.4,1),
 	Color(0.4,0.4,0.4,1),
-	Color(0.4,0,0),
+	Color("#00ff44"),
 	Color(0.6,0.4,0.4,1),
 	Color(0.6,0.6,0.4,1),
 	Color(0.6,0.6,0.6,1),
@@ -20,18 +20,18 @@ const Colors = [
 	Color(1,0.8,0.8,1),
 	Color(1,1,0.8,1),
 	Color(1,1,1,1),
-	Color(1,0,1,1),
-	Color(1,1,0,1),
-	Color(0.5, 0.2, 0.2, 1),
+	Color("#f50076"),
+	Color("#ff1717"),
+	Color("#ffff21"),
 	Color(0.1,0.6,0.1, 1),
 	Color(0.6, 0.2, 0.7, 1),
 	Color(0.9,0.1,0.9,1),
 	Color(0.2,0,0.2,1),
-	Color(0.7, 0, 0.5),
+	Color("#00ef44"),
 	Color(0.5, 0, 0.5),
 	Color(0.2, 1, 0.1),
 	Color(1,0.5,0.2,1),
-	Color(0.1,0.2,0.3,1)
+	Color("#ffffff")
 	]
 var Graphs : Dictionary = {
 	"actions" : {
@@ -54,7 +54,7 @@ var Graphs : Dictionary = {
 var custom_types : Dictionary = {}
 var user_override : String = "" 
 var proj_override : String = "" 
-var behavior_paths = [
+var behavior_paths : Array = [
 	"res://addons/joyeux_npc_editor/src/NPCs/DefaultBehaviors/",
 	OS.get_user_data_dir()+"/behaviors"
 ]
@@ -66,7 +66,7 @@ func override_default(which : int, dir : String):
 		1:
 			user_override = dir
 		_:
-			if behavior_paths < which and which  >= 0:
+			if behavior_paths.size() < which and which  >= 0:
 				behavior_paths[which] = dir
 
 func load_custom_paths():
@@ -81,13 +81,14 @@ func load_custom_paths():
 		behavior_paths[1] = Conf.get_value("overrides", "1")
 	
 	for key in Conf.get_section_keys("behaviors"):
-		behavior_paths.append(Conf.get_value("behaviors", key))
+		if not behavior_paths.has(Conf.get_value("behaviors", key)):
+			behavior_paths.append(Conf.get_value("behaviors", key))
 
 func save_custom_paths():
 	var Conf = ConfigFile.new()
 	if behavior_paths.size() < 2:
 		return
-	for idx in range(2, behavior_paths.size()):
+	for idx in range(0, behavior_paths.size()):
 		Conf.set_value("behaviors", str(idx), behavior_paths[idx])
 	if user_override != "":
 		Conf.set_value("overrides", str(0), user_override)
@@ -160,7 +161,7 @@ func _load_functions() -> void:
 	var functions : Dictionary = Definitions.get("_functions")
 	var function_names = functions.keys()
 	if not _are_valid_identifiers(function_names):
-		print_debug("A function name is not correct, please verify your definitions.")
+		Log.warning(self,"_load_functions", "A function name is not correct, please verify your definitions.")
 		return
 	for function in function_names:
 		var data : Dictionary = functions.get(function)

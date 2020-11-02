@@ -4,7 +4,7 @@ extends Label
 """
 
 func _ready() -> void :
-	Signals.Hud.connect(Signals.Hud.CLOSEST_INTERACTABLE_CHANGED, self, "show_interact_info")
+	Signals.Hud.connect(Signals.Hud.INTERACTABLE_ENTERED_REACH, self, "show_interact_info")
 
 #Let the user know what interaction is possible.
 func show_interact_info(new_interactable : Interactable) -> void :

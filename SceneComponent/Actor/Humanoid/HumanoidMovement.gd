@@ -1,26 +1,40 @@
 extends AMovementController
-class_name KinematicMovement
+class_name HumanoidMovement
 
 # Component for kinematic movement
-export(float) var on_ground_speed = 25
-export(float) var in_air_speed = 3
-export(float) var jump_force = 250
+export(float) var initial_jump_velocity = 2.2
+export(float) var climb_speed = 1.5
+export(float) var movement_speed = 3
+export(float) var gravity = 1.625
 
-export(float) var climb_speed = 10
-export(float) var speed = 30
+onready var on_ground : Node = $OnGround
+onready var normal_detect : Node = $NormalDetect
+
+# Debug variables
+var dbg_initial_jump_pos: Vector3 = Vector3()
+var dbg_rest_jump_pos: Vector3 = Vector3()
+var dbg_total_jump_height: float = 0.0
+var dbg_ground_normal: Vector3 = Vector3()
+var dbg_ground_slope: float = 0.0
+var dbg_ground_slope_center: float = 0.0
+var dbg_speed: float = 0.0
 
 # Input vectors
 var horizontal_vector: Vector3 = Vector3.ZERO
 var vertical_vector: Vector3 = Vector3.ZERO
-var ground_normal: Vector3 = Vector3.UP
-var jump_timeout: float
-var old_normal : Vector3 = Vector3.DOWN
+var is_jumping: bool = false
+var jump_velocity: Vector3 = Vector3.ZERO
 
+# Normal raycast normalized offset multiplier, depending on movement direction
+# Basically equal to player radius
+var raycast_offset_multipler: float = 0.22
+# Multiplier for gravity's effect based on how steep a slope is
+var slope_coef_mul: float = 1
 #Whether we are currently flying or not.
 var is_flying : bool = false
 
-onready var on_ground : Node = $OnGround
-onready var normal_detect : Node = $NormalDetect
+var is_groundcast_enabled: bool = true
+
 #Whether I am climbing or not.
 var is_climbing : bool = false
 
@@ -33,153 +47,168 @@ func _ready() -> void:
 	normal_detect.add_exception(entity)
 	
 	Signals.Entities.connect(Signals.Entities.FLY_TOGGLED, self, "_toggle_fly")
+	entity.connect("on_forces_integrated", self, "_integrate_forces")
 
 func is_grounded() -> bool:
-	return on_ground.is_colliding()
+	if !is_groundcast_enabled:
+		return false
+	return (on_ground.is_colliding() or $OnGround2.is_colliding() or $OnGround3.is_colliding()
+			or $OnGround4.is_colliding() or $OnGround5.is_colliding())
 
-func _physics_process(_delta: float) -> void:
-	handle_input(_delta)
+func _integrate_forces(state):
+	invoke_network_based("_integrate_server", "_integrate_client", [state])
+
+func _integrate_client(_args):
+	pass
+	
+func _integrate_server(args):
+	var phys_state = args[0]
 	entity.is_grounded = is_grounded()
-	# Only get the ground normal if the Raycast is colliding with something or else we get weird values.
-	if on_ground.is_colliding():
-		ground_normal = on_ground.get_collision_normal()
-
-func _process_client(delta: float) -> void:
-	# Rotate only on the client
-	# The server will adjust accordingly to the velocity vector.
-	rotate_body(delta)
-	var t = entity.srv_pos
-	var v = entity.srv_vel
-	# This needs to be cleaned up
-	if not is_network_master():
-		entity.velocity = v
-		entity.global_transform.origin = t
-	update_state()
-
-func _process_server(delta: float) -> void:
-	rotate_body(delta)
-	
-	if entity.state.state == ActorEntityState.State.FLY :
-		update_fly(delta)
-	elif entity.state.state == ActorEntityState.State.CLIMBING:
-		update_stairs_climbing(delta)
+	# Don't do a thing if you're anchored, stupid...
+	# I still feel this needs to be somewhere else, regardless.
+	if entity.movement_anchor_data.is_anchored:
+		entity.custom_integrator = true
+		return
 	else:
-		update_movement(delta)
-	update_state()
+		entity.custom_integrator = false
+		
+	if !entity.is_grounded and !is_jumping and !is_climbing:
+		update_entity_values()
+		return
+	
+	reset_input()
+	if self.enabled:
+		handle_input()
+	rotate_body(phys_state)
+	calculate_slope()
+	calculate_horizontal(phys_state)
+	update_raycasts()
+	if entity.is_grounded and vertical_vector.y > 0:
+		update_jump_velocity(phys_state)
+	if is_climbing:
+		update_stairs_climbing(0.016, phys_state)
+	else:
+		update_movement(phys_state)
+	update_entity_values()
+	update_anim_state(phys_state)
+	update_server_values(phys_state)
+#
+func update_anim_state(phys_state : PhysicsDirectBodyState):
+	if is_flying:
+		entity.state.state = ActorEntityState.State.FLY
+	elif is_jumping or !entity.is_grounded and !is_climbing:
+		entity.state.state = ActorEntityState.State.IN_AIR
+	elif is_climbing:
+		entity.state.state = ActorEntityState.State.CLIMBING
+	elif abs(entity.velocity.length()) > 0:
+		entity.state.state = ActorEntityState.State.MOVING
+	elif abs(entity.velocity.y) > 0.1 or !entity.is_grounded:
+		entity.state.state = ActorEntityState.State.IN_AIR
+	else:
+		entity.state.state = ActorEntityState.State.IDLE
 
-#Toggle whether the player is flying or not.
-func _toggle_fly() -> void :
-	is_flying = !is_flying
-	
-	#SHut off collision detection for the entity.
-	entity.set_collision_mask_bit(0, !is_flying)
-	entity.set_collision_layer_bit(0, !is_flying)
+func rotate_body(_phys_state : PhysicsDirectBodyState) -> void:
+	if is_climbing:
+		return
+	# Rotate
+	var o = entity.global_transform.origin
+	var t = entity.look_dir
+	var theta = atan2(o.x - t.x, o.z - t.z)
+	entity.model.set_rotation(Vector3(0, theta, 0))
 
-func update_fly(delta) -> void :
-	entity.velocity += (horizontal_vector*90) * delta 
-	entity.velocity.y += (entity.fly_input_float * 3600) * delta
+func reset_input():
+	horizontal_vector = Vector3()
+	vertical_vector = Vector3()
+
+func handle_input() -> void:
+	# Adding a timeout after the jump makes sure the jump velocity is consistent and not triggered multiple times.
+	if entity.state.state != ActorEntityState.State.IN_AIR and entity.input.y > 0:
+		vertical_vector.y = 1
+
+func calculate_slope():
+	dbg_ground_normal = normal_detect.get_collision_normal().normalized()
+	var norm2 = $NormalDetect2.get_collision_normal().normalized()
+	dbg_ground_slope = rad2deg(acos(dbg_ground_normal.dot(Vector3.UP)))
+	dbg_ground_slope_center = + rad2deg(acos(dbg_ground_normal.dot(Vector3.UP)))
+
+func calculate_horizontal(_phys_state : PhysicsDirectBodyState):
+	horizontal_vector += entity.input.z * entity.model.transform.basis.z
+	horizontal_vector += entity.input.x * entity.model.transform.basis.x
+
+	if dbg_ground_slope > 1:
+		var slide_direction = horizontal_vector.slide(dbg_ground_normal)
+		horizontal_vector.y = slide_direction.y
+		# We'll use this to snap the ground if we're going down
+		# To eliminate the jitters caused by on_ground not reading properly
+		if sign(horizontal_vector.y) == -1:
+			# Gravity, times slope coefficient, times slope coefficient multiplier
+			var slope_mul = max(sin(deg2rad(dbg_ground_slope)), 
+					sin(deg2rad(dbg_ground_slope_center)))
+			horizontal_vector.y += -gravity * slope_mul * slope_coef_mul
+		horizontal_vector = horizontal_vector.normalized()
+
+func update_raycasts():
+	var vec = horizontal_vector.normalized() * raycast_offset_multipler
+	vec.y = 0.3
+	normal_detect.transform.origin = vec
+
+func update_jump_velocity(_phys_state : PhysicsDirectBodyState):
+	dbg_initial_jump_pos = entity.global_transform.origin
+	dbg_rest_jump_pos = Vector3()
+	jump_velocity = Vector3()
+	jump_velocity.y = initial_jump_velocity
+	jump_velocity += horizontal_vector.normalized() * movement_speed
+	is_jumping = true
+	entity.is_grounded = false
+	disable_ground_cast_for_seconds(0.2)
 	
-	entity.velocity = entity.move_and_slide(entity.velocity, Vector3.UP, false)
-	entity.velocity = Vector3.ZERO
+
+func update_movement(phys_state : PhysicsDirectBodyState):
+	var vel = Vector3()
+	# Jump simulation
+	if is_jumping and !entity.is_grounded:
+		# Get our character off the ground, such as grounded() is no longer true
+		jump_velocity -= Vector3(0, gravity * 0.016, 0)
+		vel = jump_velocity
+		# Let godot physics take control after we're off the ground
+		if !entity.is_grounded:
+			is_jumping = false
+		# Debug jump
+		if jump_velocity.y <= 0 and dbg_rest_jump_pos.is_equal_approx(Vector3()):
+			calculate_debug_values()
+	# Actual movement
+	elif entity.is_grounded:
+		vel = horizontal_vector.normalized() * movement_speed
 	
-	#Update the values for networking.
+	dbg_speed = vel.length()
+	
+	phys_state.set_linear_velocity(vel)
+
+func update_entity_values():
+	entity.velocity = entity.linear_velocity
+
+func update_server_values(phys_state):
 	entity.srv_pos = entity.global_transform.origin
 	entity.srv_vel = entity.velocity
+	
+func calculate_debug_values():
+	dbg_rest_jump_pos = entity.global_transform.origin
+	dbg_total_jump_height = dbg_rest_jump_pos.y - dbg_initial_jump_pos.y
 
-func update_stairs_climbing(delta):
-	var kb_pos = entity.global_transform.origin
-	
-	#Check for next climb point.
-	if entity.climb_point + 1 < entity.stairs.climb_points.size() and kb_pos.y > entity.stairs.climb_points[entity.climb_point].y:
-		entity.climb_point += 1
-	#Check for previous climb point.
-	elif entity.climb_point - 1 >= 0 and kb_pos.y < entity.stairs.climb_points[entity.climb_point - 1].y:
-		entity.climb_point -= 1
-	
-	var input_direction = entity.input.z
-	
-	if entity.climb_point == entity.stairs.climb_points.size() - 1 and kb_pos.y > entity.stairs.climb_points[entity.climb_point].y and not input_direction <= 0.0:
-		# Add the movement velocity using delta to make sure physics are consistent regardless of framerate.
-		entity.velocity += horizontal_vector * delta
-		
-		#Stop climbing at the top when too far away from the stairs.
-		if entity.climb_point + 1 >= entity.stairs.climb_points.size() :
-			stop_climb_stairs()
-	else:
-		#Automatically move towards the climbing point horizontally when you first grab on.
-		var flat_velocity = (entity.stairs.climb_points[entity.climb_point] - kb_pos) * delta * 50.0
-		flat_velocity.y = 0.0
-		entity.velocity += flat_velocity
-		entity.velocity += Vector3(0, input_direction * delta * climb_speed, 0)
-	
-	#When moving down and at the bottom of the stairs, let go.
-	if input_direction < 0.0 and on_ground.is_colliding():
-		stop_climb_stairs()
-	
-	entity.velocity = entity.move_and_slide(entity.velocity, Vector3.UP, false)
-	entity.velocity *= 0.9
-	
-	# Update the values that are used for networking.
-	entity.srv_pos = entity.global_transform.origin
-	entity.srv_vel = entity.velocity
+func disable_ground_cast_for_seconds(duration = 0.0):
+	if duration != 0.0:
+		is_groundcast_enabled = false
+		yield(get_tree().create_timer(duration), "timeout")
+		is_groundcast_enabled = true
 
-func update_movement(delta):
-	var movement_direction = horizontal_vector.normalized()
-	var _velocity_direction = entity.velocity.normalized()
-	var normal = normal_detect.get_collision_normal().normalized()
-	
-	# Use the normal of the ground detect if the normal detect isn't colliding.
-	if not normal_detect.is_colliding():
-		normal = on_ground.get_collision_normal().normalized()
-	# Move the raycast towards the movement direction to detect the ground better. Makes the ramps walkable.
-	on_ground.cast_to = (normal * -2.0 + movement_direction).normalized() * 0.5
-	
-	# Only start ground normal assisted walking when the character is on the ground.
-	if entity.state.state != ActorEntityState.State.IN_AIR:
-		var slide_direction = movement_direction.slide(normal)
-		var adjusted_horizontal_vector = slide_direction * horizontal_vector.length()
-		
-		# When the ground normal is steeper than a threshold start adding vertical movement to help the character walk up ramps.
-		if ground_normal.angle_to(Vector3(0.0, 1.0, 0.0)) > 0.1:
-			horizontal_vector.y = adjusted_horizontal_vector.y
-		horizontal_vector.z = adjusted_horizontal_vector.z
-		horizontal_vector.x = adjusted_horizontal_vector.x
-		
-		# When the ground normal changes suddenly, retarget the velocity so it's flat to the ground.
-		if jump_timeout <= 0.0 and (old_normal - normal).length() > 0.1:
-			old_normal = normal
-			# This makes the character snap to the ground normal and not shoot off a ramp.
-			entity.velocity = entity.velocity.slide(normal)
-	
-	# Don't let the character slide off slanted surfaces, but do slide when no ground is found, like edges.
-	var slide = horizontal_vector != Vector3.ZERO and entity.is_grounded
-	
-	# Add the movement velocity using delta to make sure physics are consistent regardless of framerate.
-	entity.velocity += horizontal_vector * delta
-	
-	# Apply the gravity towards the down direction.
-	if !is_climbing:
-		entity.velocity += (WorldConstants.GRAVITY) * Vector3.DOWN * delta
-	
-	# TODO the stop_on_slope is ignored in Godot 3.2, check if 4.0 fixes this or create workaround.
-	entity.velocity = entity.move_and_slide(entity.velocity, Vector3.UP, slide)
-	
-	# Add some velcity damping when on the floor, aka friction.
-	if entity.state.state != ActorEntityState.State.IN_AIR:
-		entity.velocity *= 0.9
-	else:
-		# A very small amount of air resistance.
-		entity.velocity *= 0.999
-	
-	# Update the values that are use for networking.
-	entity.srv_pos = entity.global_transform.origin
-	entity.srv_vel = entity.velocity
-
-func start_climb_stairs(target_stairs) -> void:
+### TEMPORARY CLIMBING CODE
+# to be moved elsewhere.
+func start_climb_stairs(target_stairs : VerticalStairs) -> void:
 	#Do nothing if the player is already in climbing state.
 	if entity.state.state == ActorEntityState.State.CLIMBING:
 		return
 	
+	entity.custom_integrator = true
 	entity.stairs = target_stairs
 	is_climbing = true
 	
@@ -193,63 +222,54 @@ func start_climb_stairs(target_stairs) -> void:
 			entity.climb_point = index
 	
 	#Rotate the model to best fit the stairs.
-	var a = entity.model.global_transform
-	var target_transform = a.looking_at(entity.model.global_transform.origin - entity.climb_look_direction, Vector3(0, 1, 0))
-	entity.model.global_transform.basis = target_transform.basis
+	var a = entity.global_transform
+	var target_transform = a.looking_at(entity.global_transform.origin - entity.climb_look_direction, Vector3(0, 1, 0))
+	entity.model.transform.basis = target_transform.basis
+	
+	#Automatically move towards the climbing point horizontally when you first grab on.
+	entity.global_transform.origin = entity.stairs.climb_points[entity.climb_point]
+	entity.global_transform.origin += -entity.climb_look_direction * 0.35
 
 #Stop climbing stairs.
-func stop_climb_stairs() -> void :
+# is_stairs_top indicates if the player is at the top (true)
+# or the bottom (false) of the stairs.
+func stop_climb_stairs(phys_state : PhysicsDirectBodyState, is_stairs_top) -> void :
 	is_climbing = false
-	entity.climb_point = -1
-#	entity.velocity += Vector3(0, 0, 10)
-	
-	entity.global_transform.origin.y += 0.2
-	
-	#Move the entitiy forward based on the climbing direction
-	var get_off : Vector2 = Vector2.UP.rotated(entity.model.rotation.y)
-	entity.global_transform.origin += Vector3(get_off.x * -0.8, 0, get_off.y * -0.8)
-	
+
+	if is_stairs_top:
+		var push_force = entity.model.transform.basis.z.normalized() * 1.5 + Vector3.UP * 2
+		entity.set_linear_velocity(push_force)
+
 	#Make myself face the same direction as the camera.
 	entity.model.global_transform.basis = entity.global_transform.basis
-
-func update_state():
-	if is_flying :
-		entity.state.state = ActorEntityState.State.FLY
-	elif !entity.is_grounded and !is_climbing:
-		entity.state.state = ActorEntityState.State.IN_AIR
-	elif is_climbing :
-		entity.state.state = ActorEntityState.State.CLIMBING
-	elif Vector2(entity.velocity.x, entity.velocity.z).length() > 0.1:
-		entity.state.state = ActorEntityState.State.MOVING
-	elif abs(entity.velocity.y) > 0.1 or !entity.is_grounded:
-		entity.state.state = ActorEntityState.State.IN_AIR
-	else:
-		entity.state.state = ActorEntityState.State.IDLE
-
-func handle_input(delta : float) -> void:
-	# Adding a timeout after the jump makes sure the jump velocity is consistent and not triggered multiple times.
-	if(jump_timeout > 0.0 and on_ground):
-		jump_timeout -= delta
-	elif entity.state.state != ActorEntityState.State.IN_AIR and entity.input.y > 0:
-		entity.velocity += Vector3.UP * jump_force * delta
-		jump_timeout = 2.0
+	entity.custom_integrator = false
 	
-	var forward = entity.model.global_transform.basis.z
-	var left = entity.model.global_transform.basis.x
+#Eventually we need to make this work with delta.
+func update_stairs_climbing(_delta : float, phys_state : PhysicsDirectBodyState) -> void :
+	if vertical_vector.y > 0:
+		stop_climb_stairs(phys_state, false)
 	
-	var _speed = on_ground_speed
-	# Use a smaller movement speed when the character is in the air.
-	if entity.state.state == ActorEntityState.State.IN_AIR:
-		_speed = in_air_speed
+	var kb_pos = entity.global_transform.origin
+	# Offset from the top of the stairs to climb off when reached
+	var top_offset = 2
+	#Check for next climb point.
+	if entity.climb_point + 1 < entity.stairs.climb_points.size() - top_offset and kb_pos.y > entity.stairs.climb_points[entity.climb_point].y:
+		entity.climb_point += 1
+	#Check for previous climb point.
+	elif entity.climb_point - 1 >= 0 and kb_pos.y < entity.stairs.climb_points[entity.climb_point - 1].y:
+		entity.climb_point -= 1
 	
-	horizontal_vector = (entity.input.z * forward + entity.input.x * left) * _speed
-
-func rotate_body(_delta: float) -> void:
-	# Rotate
-	if entity.state.state == ActorEntityState.State.CLIMBING:
+	#Make it easier to read which direction we are climbing.
+	var input_direction = entity.input.z
+	
+	#Stop climbing at the top of the stairs.
+	if entity.climb_point + 1 >= entity.stairs.climb_points.size() - top_offset and kb_pos.y > entity.stairs.climb_points[entity.climb_point].y and not input_direction <= 0.0:
+		stop_climb_stairs(phys_state, true)
 		return
-	else:
-		var o = entity.global_transform.origin
-		var t = entity.look_dir
-		var theta = atan2(o.x - t.x, o.z - t.z)
-		entity.set_rotation(Vector3(0, theta, 0))
+	
+	#When moving down and at the bottom of the stairs, let go.
+	if input_direction < 0.0 and on_ground.is_colliding():
+		stop_climb_stairs(phys_state, false)
+		return
+	
+	phys_state.set_linear_velocity(Vector3.UP * climb_speed * entity.input.z)

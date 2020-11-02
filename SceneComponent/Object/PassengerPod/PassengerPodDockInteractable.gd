@@ -1,11 +1,14 @@
 extends Spatial
 
-onready var collision = get_parent().get_node("CollisionShape")
 onready var hatch_collision = get_parent().get_node("HatchCollisionShape")
 # The latch that goes into the airlock door
 onready var airlock_latch = get_parent().get_node("AirlockLatch")
 
 const HALF_HEIGHT = 1.47
+
+export(Array, NodePath) var collision_paths
+var collision_shapes: Array
+
 
 # Is docked to a rover?
 var is_docked = false
@@ -22,6 +25,9 @@ var _dock_door_interactable
 onready var pod = get_parent()
 
 func _ready() -> void:
+	for path in collision_paths:
+		collision_shapes.append(get_node(path))
+	
 	$Interactable.owning_entity = self.pod
 	$Interactable.display_info = "Dock to rover"
 	$Interactable.connect("interacted_by", self, "interacted_by")
@@ -57,9 +63,9 @@ func dock_with(rover):
 	var target_xfm = rover.get_node("DockLatch").transform
 	pod.transform = target_xfm
 	pod.transform.origin.y -= HALF_HEIGHT + .1
-	_reparent(collision, rover)
-	_reparent(hatch_collision, rover)
-	collision.transform.origin.y = target_xfm.origin.y - HALF_HEIGHT + .1
+	for col in collision_shapes:
+		_reparent(col, rover, true)
+	_reparent(hatch_collision, rover, true)
 	docked_to = rover
 	is_docked = true
 	
@@ -72,16 +78,14 @@ func dock_with(rover):
 
 func undock():
 	$Interactable.title = "Dock Passenger Pod"
-	_reparent(pod, orig_parent)
+	_reparent(pod, orig_parent, true)
 	
 	pod.global_transform = docked_to.get_node("DockLatch").global_transform
 	pod.global_transform.origin.y -= HALF_HEIGHT + .1
 	
-	_reparent(collision, pod)
-	collision.transform.origin = Vector3.ZERO
-	# Offset because the pivot is broken on the pod model
-	collision.transform.origin.z = -1
-	
+	for col in collision_shapes:
+		_reparent(col, pod, true)
+
 	var hxfm = hatch_collision.global_transform
 	_reparent(hatch_collision, pod)
 	hatch_collision.global_transform = hxfm
@@ -156,8 +160,11 @@ func _on_area_exited(area):
 			$Interactable.display_info = ""
 			_dock_door_interactable = null
 
-func _reparent(node, new_parent):
+func _reparent(node, new_parent, keep_world_pos = false):
+	var pos = node.global_transform.origin
 	var p = node.get_parent()
 	p.remove_child(node)
 	new_parent.add_child(node)
 	node.owner = new_parent
+	if keep_world_pos:
+		node.global_transform.origin = pos

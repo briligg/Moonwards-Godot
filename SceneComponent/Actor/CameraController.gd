@@ -6,6 +6,7 @@ class_name CameraController
 onready var camera: Camera = $Camera
 onready var pivot: Spatial = $Pivot
 
+export(bool) var overriden = false #Use for bots only
 export(bool) var allow_first_person = false
 export(float) var dist: float = .5
 export(float) var max_pitch: float = 55
@@ -20,6 +21,9 @@ var pitch: float = 0.0
 var is_first_person : bool = false
 const HEAD_HEIGHT : float = 0.8
 
+#If I should respond to the mouse or not.
+var mouse_respond : bool = true
+
 #Determines if I should freely fly or not.
 var is_flying : bool = false
 #How fast the player is flying.
@@ -33,6 +37,9 @@ func _init().("Camera", true):
 	pass
 	
 func _ready() -> void:
+	#Stop camera rotation when mouse is active.
+	Signals.Menus.connect(Signals.Menus.SET_MOUSE_TO_CAPTURED, self, "_respond_to_mouse")
+	
 	yaw = 0.0
 	pitch = 0.0
 	_update_cam_pos()
@@ -53,10 +60,11 @@ func _process(_delta: float) -> void:
 		entity.get_node("Model").visible = false
 	
 	var _new_rot = Vector3(deg2rad(pitch), deg2rad(yaw), 0.0)
-	camera.set_rotation(_new_rot)
+	if not overriden && mouse_respond :
+		camera.set_rotation(_new_rot)
 	_update_cam_pos()
 	
-	if not is_flying :
+	if not is_flying and not overriden:
 		entity.look_dir = global_transform.origin - _get_cam_normal() * dist
 		#Below was code that did not seem to have a reason for being here.
 		#Leave it here until we figure out if it should be here.
@@ -76,12 +84,14 @@ func _input(event):
 		is_flying = !is_flying
 		Signals.Entities.emit_signal(Signals.Entities.FREE_CAMERA_TOGGLED)
 	
-	if event.is_action_pressed("zoom_in", true) :
-		fly_speed += CHANGE_FLY_SPEED_BY
-		Signals.Hud.emit_signal(Signals.Hud.FLIGHT_VALUE_SET, fly_speed)
-	if event.is_action_pressed("zoom_out", true) :
-		fly_speed = max(SLOWEST_POSSIBLE_FLIGHT_SPEED, fly_speed - CHANGE_FLY_SPEED_BY)
-		Signals.Hud.emit_signal(Signals.Hud.FLIGHT_VALUE_SET, fly_speed)
+	#Change flight speed when in flight mode.
+	if is_flying :
+		if event.is_action_pressed("zoom_in", true) :
+			fly_speed += CHANGE_FLY_SPEED_BY
+			Signals.Hud.emit_signal(Signals.Hud.FLIGHT_VALUE_SET, fly_speed)
+		if event.is_action_pressed("zoom_out", true) :
+			fly_speed = max(SLOWEST_POSSIBLE_FLIGHT_SPEED, fly_speed - CHANGE_FLY_SPEED_BY)
+			Signals.Hud.emit_signal(Signals.Hud.FLIGHT_VALUE_SET, fly_speed)
 	
 	#Check if the player wants to switch to first person.
 	if event.is_action_pressed("toggle_first_person") && camera.is_current() && allow_first_person :
@@ -91,6 +101,10 @@ func _input(event):
 			
 			#Hud Reticle should be active when in first person mode.
 			Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON, is_first_person)
+
+#Called by signal. If true, do not rotate the camera.
+func _respond_to_mouse(mouse_active : bool) -> void :
+	mouse_respond = mouse_active
 
 func _update_cam_pos(delta : float = 0.016667) -> void:
 	#The player is in camera fly mode.
@@ -127,6 +141,13 @@ func _update_cam_pos(delta : float = 0.016667) -> void:
 	var ray = get_world().direct_space_state.intersect_ray(pivot.global_transform.origin, new_cam_pos, excluded_cull_bodies)
 	if not ray.empty():
 		new_cam_pos = ray["position"]
+		
+		#Make the camera higher if a collision is making us zoom in.
+		var inside_body : Vector3 = entity.global_transform.origin
+		inside_body.y = 0
+		var cam_pos_holder : Vector3 = new_cam_pos
+		cam_pos_holder.y = 0
+		new_cam_pos.y += HEAD_HEIGHT - (((max(0.01,cam_pos_holder.distance_to(inside_body)) / dist)) * HEAD_HEIGHT)
 
 	camera.global_transform.origin = new_cam_pos
 	pass

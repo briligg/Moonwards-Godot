@@ -13,14 +13,21 @@ var interactor_component : InteractorComponent = null
 var interactor_history : Array = []
 var interactor_history_pointers : Array = []
 
+#This determines if player's can activate me or not.
+var can_be_shown : bool = true
+
 #Listen for when interacts are possible.
 func _ready() -> void :
 	Signals.Hud.connect(Signals.Hud.NEW_INTERACTOR_GRABBED_FOCUS, self, "_new_interactor")
+	
+	#Hide InteractsMenu if chatting.
+	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_STARTED, self, "_set_menu_showable", [false])
+	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_FINISHED, self, "_set_menu_showable", [true])
 
 #Called from a signal. One of the buttons corresponding to the interactables has been pressed.
 func _button_pressed(interactable : Node) -> void :
 	#Interact with desired interactable
-	interactor_component.menu_interact_request(interactable)
+	interactor_component.player_requested_interact(interactable)
 
 #Remove all buttons and separators for Interactables.
 func _clear_button_parent() -> void :
@@ -156,18 +163,29 @@ func _interactable_title_changed(new_title : String, button : Button) -> void :
 func _new_interactor(new_interactor : InteractorComponent) -> void :
 	if interactor_component != null :
 		interactor_component.lost_focus()
-#		interactor_component.disconnect(interactor_component.FOCUS_ROLLBACK, self, "_rollback_interactor_focus")
-		interactor_component.disconnect(interactor_component.INTERACTABLE_ENTERED_REACH, self, "_interactable_entered")
-		interactor_component.disconnect(interactor_component.INTERACTABLE_LEFT_REACH, self, "_interactable_left")
+		interactor_component.disconnect(interactor_component.INTERACTABLE_ENTERED_AREA_REACH, self, "_interactable_entered")
+		interactor_component.disconnect(interactor_component.INTERACTABLE_LEFT_AREA_REACH, self, "_interactable_left")
 		
 		#Clear whatever Interactables are present from the old Interactor.
 		_clear_button_parent()
 		
-#	new_interactor.connect(new_interactor.FOCUS_ROLLBACK, self, "_rollback_interactor_focus")
-	new_interactor.connect(new_interactor.INTERACTABLE_ENTERED_REACH, self, "_interactable_entered")
-	new_interactor.connect(new_interactor.INTERACTABLE_LEFT_REACH, self, "_interactable_left")
+	new_interactor.connect(new_interactor.INTERACTABLE_ENTERED_AREA_REACH, self, "_interactable_entered")
+	new_interactor.connect(new_interactor.INTERACTABLE_LEFT_AREA_REACH, self, "_interactable_left")
 	interactor_component = new_interactor
+	
+	#Remove the text that may be present from the previous Interactor.
+	description.text = ""
 	
 	#Add the new Interactables to the scene tree.
 	for interactable in new_interactor.get_interactables() :
 		_interactable_entered(interactable)
+
+#Determines if I can become visible or not.
+func _set_menu_showable(is_showable : bool) -> void :
+	can_be_shown = is_showable
+	
+	if can_be_shown :
+		set_process_input(true)
+	else :
+		set_process_input(false)
+		hide()

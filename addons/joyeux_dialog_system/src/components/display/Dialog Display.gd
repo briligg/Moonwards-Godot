@@ -18,17 +18,18 @@ var matches : Dictionary = {}
 
 var next_node : String = ""
 var character_name : String = ""
-
+var name_override : String = "" #For use with MwNPCs
 
 func _ready():
-	load_dialogs(dialog)
+	load_dialogs(dialog, name_override)
 	
 
-func load_dialogs(dialog):
+func load_dialogs(dialog : String, name_override : String = ""):
 	var conf = ConfigFile.new()
 	conf.load(dialog)
-	
-	character_name = conf.get_value("config", "character_name")
+	character_name = name_override
+	if name_override == "":
+		character_name = conf.get_value("config", "character_name")
 	
 	if conf.has_section("dialogs"):
 		for key in conf.get_section_keys("dialogs"):

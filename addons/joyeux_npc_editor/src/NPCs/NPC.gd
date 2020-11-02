@@ -1,10 +1,8 @@
 extends Node
-
 class_name NPCBase
 
 signal next_state(force)
-onready var actor = get_parent()
-
+signal on_ready(none)
 var destination : Vector3 = Vector3.ZERO
 var has_destination : bool = false
 var is_occpuied : bool = false
@@ -17,12 +15,17 @@ var behaviors : Dictionary = {} #Stores the loaded behaviors
 export(String, FILE, "*.jsm") var NPC_File : String = "" #This works just fine! :D
 export(String) var initial_state : String = ""
 
+
 func _ready():
 	randomize()
 	_load_states(NPC_File)
+	yield(get_tree().create_timer(1), "timeout")
+	emit_signal("on_ready", null)
 	
 
 func _create_signal(signal_name : String):
+	if signal_name == "":
+		return
 	if not has_signal(signal_name):
 		add_user_signal(signal_name)
 
@@ -34,7 +37,7 @@ func _load_states(state_file : String):
 		_load_variables()
 		_start_machine()
 	else:
-		print_debug("Error: No State Machine File selected")
+		Log.warning(self,"_load_states", "Error: No State Machine File selected")
 
 func _load_variables():
 	for key in ai_script.get_section_keys("variables"):
@@ -66,11 +69,11 @@ func _load_behavior_script(AI_file : String, behavior_name : String = ""):
 	
 func _start_machine():
 	for state in states.keys():
-		if state.begins_with("_start") or state == initial_state:
+		if (state.begins_with("_start") and initial_state == "") or state == initial_state:
 			current_state = state 
 			_change_behavior(behaviors.get(current_state))
 			return
-	print_debug("Error: This states file has no start state defined")
+	Log.error(self,"_stat_machine" ,"This states file has no start state defined")
 
 func _next_state(force : bool = false, condition = null):
 	#Sets the next state in the machine
@@ -100,7 +103,7 @@ func _get_var_or_meta(string):
 	return get(string)
 
 func _get_variable_from_port(variables : Array, port : int):
-	if not port >= variables.size():
+	if port < variables.size()-1:
 		return
 	return variables[port]
 
@@ -108,8 +111,9 @@ func _get_variable_from_port(variables : Array, port : int):
 		
 func _change_behavior(behavior : ConfigFile):
 	#loads the behavior provided
-	for signals in behavior.get_section_keys("node_signals"):
-		_create_signal(signals)
+	for nodes in behavior.get_section_keys("node_signals"):
+		for signals in behavior.get_value("node_signals", nodes, ""):
+			_create_signal(signals)
 	for connection in behavior.get_value("ai_config", "connections", []):
 		_define_connection(behavior, 
 			connection.get("from"),
@@ -124,9 +128,11 @@ func _clean_function_name(f_name)->String:
 		f_name = f_name.replace(str(number), "")
 	return f_name
 
-func _define_connection(behavior : ConfigFile, from : String, from_port : String , to: String, to_port : String):
+func _define_connection(behavior : ConfigFile, from : String, from_port : int , to: String, to_port : int):
 	#The only information passed from signal to
-	var signal_name = from+"_output_"+from_port
+	var signal_name = from+"_output_"+str(from_port)
+	if Nodes.Graphs.stimulus.has(Nodes.filter_node_name(from)):
+		signal_name = Nodes.filter_node_name(from)
 	var connection_bindings : Array = []
 	#add the signals related to this node to the bindings
 	connection_bindings.append(behavior.get_value("node_signals", to, []))
@@ -134,9 +140,10 @@ func _define_connection(behavior : ConfigFile, from : String, from_port : String
 	var function =_clean_function_name(to) 
 	#name cleaned up
 	if has_signal(signal_name) and has_method(function):
-			connect(signal_name, self, function, connection_bindings) 
+		connect(signal_name, self, function, connection_bindings) 
 	else:
-		print_debug("Warning: Either a signal or a method is missing from the NPC")
+		Log.error(self,"_define_connection", str("Either a signal (", signal_name
+			, ") or a method (", function, ")is missing from the NPC"))
 		
 func _undefine_connection(behavior : ConfigFile):
 	for connection in behavior.get_value("ai_config", "connections", []):

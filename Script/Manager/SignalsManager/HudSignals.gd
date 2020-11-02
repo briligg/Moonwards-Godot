@@ -7,7 +7,6 @@ const name = "Hud"
 # Define the signal's string name.
 const CHAT_TYPING_STARTED : String = "chat_typing"
 const CHAT_TYPING_FINISHED : String = "chat_finished_typing"
-const CLOSEST_INTERACTABLE_CHANGED : String = "closest_interactable_changed"
 const EXTRA_INFO_DISPLAYED : String = "extra_info_displayed"
 const FLIGHT_VALUE_SET : String = "flight_value_set"
 const HIDDEN_HUDS_SET : String = "hidden_huds_set"
@@ -20,6 +19,7 @@ const MAP_VISIBILITY_SET : String = "map_visibility_set"
 const NEW_INTERACTOR_GRABBED_FOCUS : String = "new_interactor_grabbed_focus"
 const SET_FIRST_PERSON : String = "set_first_person"
 const SET_FIRST_PERSON_POSSIBLE_CLICK : String = "set_first_person_possible_click"
+const SET_FIRST_PERSON_POSSIBLE_INTERACT : String = "set_first_person_possible_interact"
 const TOOLTIP_MENU_DISPLAYED : String = "tooltip_menu_displayed"
 const VISIBLE_HUDS_SET : String = "visible_huds_set"
 
@@ -27,11 +27,10 @@ const VISIBLE_HUDS_SET : String = "visible_huds_set"
 #warning-ignore:unused_signal
 signal chat_finished_typing()
 signal chat_typing()
-signal closest_interactable_changed(interactable)
 #warning-ignore:unused_signal
 signal extra_info_displayed(title_text, info_text)
 signal flight_value_set(new_value_float)
-signal hidden_huds_set(hide_flag_int)
+signal hidden_huds_set(huds_affect_flag_int, became_visible)
 signal hide_interacts_menu_requested()
 signal hide_reticle()
 signal interactable_entered_reach(interactable_node)
@@ -41,5 +40,6 @@ signal map_visibility_set(became_visible_bool)
 signal new_interactor_grabbed_focus(new_interactor_component_node)
 signal set_first_person(is_active_bool)
 signal set_first_person_possible_click(click_is_possible_bool)
+signal set_first_person_possible_interact(interact_is_possible_bool)
 signal tooltip_menu_displayed(tooltip_data)
 signal visible_huds_set(show_flag_int)

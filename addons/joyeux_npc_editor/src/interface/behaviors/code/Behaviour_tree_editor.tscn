@@ -18,12 +18,12 @@ __meta__ = {
 }
 
 [node name="States" parent="." instance=ExtResource( 1 )]
+visible = false
 
 [node name="Behaviors" parent="." instance=ExtResource( 2 )]
 visible = false
 
 [node name="Settings" type="VBoxContainer" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -50,17 +50,18 @@ rect_min_size = Vector2( 30, 0 )
 
 [node name="Locations" type="VBoxContainer" parent="Settings/HBoxContainer"]
 margin_left = 34.0
-margin_right = 656.0
+margin_right = 1871.0
 margin_bottom = 1006.0
+size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="Settings/HBoxContainer/Locations"]
-margin_right = 622.0
+margin_right = 1837.0
 margin_bottom = 14.0
 text = "Information"
 
 [node name="HSeparator" type="HSeparator" parent="Settings/HBoxContainer/Locations"]
 margin_top = 18.0
-margin_right = 622.0
+margin_right = 1837.0
 margin_bottom = 22.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -68,8 +69,9 @@ __meta__ = {
 
 [node name="Project Location" type="HBoxContainer" parent="Settings/HBoxContainer/Locations"]
 margin_top = 26.0
-margin_right = 622.0
+margin_right = 1837.0
 margin_bottom = 50.0
+size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="Settings/HBoxContainer/Locations/Project Location"]
 margin_top = 5.0
@@ -79,22 +81,21 @@ text = "Current in project default Behaviors location:"
 
 [node name="Path" type="LineEdit" parent="Settings/HBoxContainer/Locations/Project Location"]
 margin_left = 290.0
-margin_right = 590.0
+margin_right = 1805.0
 margin_bottom = 24.0
-rect_min_size = Vector2( 300, 0 )
-text = "none"
-align = 2
+size_flags_horizontal = 3
+text = "res://addons/joyeux_npc_editor/src/NPCs/DefaultBehaviors/"
 editable = false
 
 [node name="ProjLoc" type="Button" parent="Settings/HBoxContainer/Locations/Project Location"]
-margin_left = 594.0
-margin_right = 622.0
+margin_left = 1809.0
+margin_right = 1837.0
 margin_bottom = 24.0
 icon = ExtResource( 7 )
 
 [node name="HSeparator2" type="HSeparator" parent="Settings/HBoxContainer/Locations"]
 margin_top = 54.0
-margin_right = 622.0
+margin_right = 1837.0
 margin_bottom = 58.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -102,35 +103,33 @@ __meta__ = {
 
 [node name="User Location" type="HBoxContainer" parent="Settings/HBoxContainer/Locations"]
 margin_top = 62.0
-margin_right = 622.0
+margin_right = 1837.0
 margin_bottom = 86.0
+size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="Settings/HBoxContainer/Locations/User Location"]
 margin_top = 5.0
-margin_right = 286.0
+margin_right = 269.0
 margin_bottom = 19.0
-size_flags_horizontal = 3
 text = "Current in user default Behaviors location:"
 
 [node name="Path" type="LineEdit" parent="Settings/HBoxContainer/Locations/User Location"]
-margin_left = 290.0
-margin_right = 590.0
+margin_left = 273.0
+margin_right = 1805.0
 margin_bottom = 24.0
-rect_min_size = Vector2( 300, 0 )
 size_flags_horizontal = 3
-text = "none"
-align = 2
+text = "C:/Users/biodude/AppData/Roaming/Godot/app_userdata/CernansPromise/behaviors"
 editable = false
 
 [node name="UserLoc" type="Button" parent="Settings/HBoxContainer/Locations/User Location"]
-margin_left = 594.0
-margin_right = 622.0
+margin_left = 1809.0
+margin_right = 1837.0
 margin_bottom = 24.0
 icon = ExtResource( 7 )
 
 [node name="HSeparator4" type="HSeparator" parent="Settings/HBoxContainer/Locations"]
 margin_top = 90.0
-margin_right = 622.0
+margin_right = 1837.0
 margin_bottom = 94.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -138,13 +137,13 @@ __meta__ = {
 
 [node name="Label2" type="Label" parent="Settings/HBoxContainer/Locations"]
 margin_top = 98.0
-margin_right = 622.0
+margin_right = 1837.0
 margin_bottom = 112.0
 text = "User defined paths"
 
 [node name="HSeparator3" type="HSeparator" parent="Settings/HBoxContainer/Locations"]
 margin_top = 116.0
-margin_right = 622.0
+margin_right = 1837.0
 margin_bottom = 120.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -152,21 +151,22 @@ __meta__ = {
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Settings/HBoxContainer/Locations"]
 margin_top = 124.0
-margin_right = 622.0
-margin_bottom = 948.0
+margin_right = 1837.0
+margin_bottom = 927.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ItemList" type="VBoxContainer" parent="Settings/HBoxContainer/Locations/ScrollContainer"]
-margin_right = 622.0
-margin_bottom = 824.0
+margin_right = 1837.0
+margin_bottom = 803.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 5 )
 
 [node name="Add" type="Button" parent="Settings/HBoxContainer/Locations/ScrollContainer/ItemList"]
-margin_right = 622.0
-margin_bottom = 20.0
+margin_top = 84.0
+margin_right = 1837.0
+margin_bottom = 104.0
 hint_tooltip = "Add new location"
 text = "+"
 
@@ -182,34 +182,32 @@ __meta__ = {
 }
 
 [node name="Apply" type="Button" parent="Settings/HBoxContainer/Locations"]
-margin_top = 952.0
-margin_right = 622.0
-margin_bottom = 982.0
+margin_top = 931.0
+margin_right = 1837.0
+margin_bottom = 961.0
 rect_min_size = Vector2( 0, 30 )
 size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
 text = "Apply"
 
 [node name="Control2" type="Control" parent="Settings/HBoxContainer/Locations"]
-margin_top = 986.0
-margin_right = 622.0
+margin_top = 965.0
+margin_right = 1837.0
 margin_bottom = 1006.0
-rect_min_size = Vector2( 30, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Control3" type="Control" parent="Settings/HBoxContainer"]
-margin_left = 660.0
-margin_right = 690.0
-margin_bottom = 1006.0
-rect_min_size = Vector2( 30, 0 )
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Settings/HBoxContainer"]
-margin_left = 694.0
+margin_left = 1875.0
 margin_right = 1912.0
 margin_bottom = 1006.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_stretch_ratio = 0.02
 
 [node name="Dialogs" type="Control" parent="Settings"]
 margin_top = 1044.0
