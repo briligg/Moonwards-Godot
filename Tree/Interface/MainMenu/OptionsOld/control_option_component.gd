@@ -69,8 +69,16 @@ func _on_change_control_pressed():
 func _on_Popup_confirmed():
 	var Event = InputEventKey.new()
 	Event.scancode = current_scancode
-	InputMap.action_erase_event (str(action_to_edit), InputMap.get_action_list(str(name))[0])
+	var event_list : Array = InputMap.get_action_list(str(name))
+	
+	InputMap.action_erase_events(str(action_to_edit))
 	InputMap.action_add_event (str(action_to_edit), Event)
+	
+	#Re add any extra events at the end.
+	event_list.pop_front()
+	for extra_event in event_list :
+		InputMap.action_add_event(str(action_to_edit), extra_event)
+	
 	get_node("Button").text = OS.get_scancode_string(current_scancode)
 	update_labels()
 	reading = false
