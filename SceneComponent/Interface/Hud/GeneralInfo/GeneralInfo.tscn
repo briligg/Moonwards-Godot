@@ -18,9 +18,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HelpPanel" parent="." instance=ExtResource( 9 )]
-visible = false
-
 [node name="MenuPanel" type="PanelContainer" parent="." groups=[
 "hud_general_info",
 ]]
@@ -209,3 +206,6 @@ text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HelpPanel" parent="." instance=ExtResource( 9 )]
+visible = false

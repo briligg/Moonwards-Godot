@@ -26,12 +26,6 @@ script = ExtResource( 1 )
 margin_left = 20.0
 margin_bottom = -20.0
 
-[node name="GeneralInfo" parent="." instance=ExtResource( 5 )]
-margin_left = 20.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = -20.0
-
 [node name="Blur" type="TextureRect" parent="."]
 visible = false
 material = ExtResource( 15 )
@@ -43,6 +37,12 @@ stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="GeneralInfo" parent="." instance=ExtResource( 5 )]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
 
 [node name="Apps" type="Control" parent="."]
 anchor_right = 1.0

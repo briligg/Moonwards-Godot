@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/HelpPanel.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/HelpMenu/HelpMenu.gd" type="Script" id=2]
@@ -6,39 +6,43 @@
 [ext_resource path="res://Assets/Interface/Textures/LeftArrowHover.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Interface/Textures/LeftArrowNormal.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Interface/Textures/LeftArrowButtonPressed.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Interface/Hud/Styles/HelpMenuPanel.tres" type="StyleBox" id=7]
 [ext_resource path="res://SceneComponent/Interface/HelpMenu/InitialMenu.gd" type="Script" id=8]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
-[node name="HelpPanel" type="Panel" groups=[
+[node name="HelpPanel" type="PanelContainer" groups=[
 "hud_general_info",
 ]]
 anchor_left = 0.32
-anchor_right = 0.68
+anchor_right = 0.77
 anchor_bottom = 1.0
+rect_min_size = Vector2( 257, 0 )
 theme = ExtResource( 3 )
+custom_styles/panel = ExtResource( 7 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Alignment" type="VBoxContainer" parent="."]
-anchor_left = 0.02
-anchor_right = 0.98
-anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 862.0
+margin_bottom = 1078.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TopSection" type="HBoxContainer" parent="Alignment"]
-margin_right = 663.0
+margin_right = 859.0
 margin_bottom = 35.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.02
 alignment = 1
 
 [node name="Label" type="Label" parent="Alignment/TopSection"]
-margin_right = 663.0
+margin_right = 859.0
 margin_bottom = 35.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 8.94
@@ -62,13 +66,13 @@ __meta__ = {
 
 [node name="HSeparator" type="HSeparator" parent="Alignment"]
 margin_top = 39.0
-margin_right = 663.0
+margin_right = 859.0
 margin_bottom = 43.0
 
 [node name="HelpMenu" type="Control" parent="Alignment"]
 margin_top = 47.0
-margin_right = 663.0
-margin_bottom = 1080.0
+margin_right = 859.0
+margin_bottom = 1076.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 2 )
@@ -86,7 +90,7 @@ __meta__ = {
 }
 
 [node name="VSeparator2" type="VSeparator" parent="Alignment/HelpMenu/InitialMenu"]
-margin_right = 663.0
+margin_right = 859.0
 margin_bottom = 36.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
@@ -95,8 +99,8 @@ custom_constants/separation = 0
 
 [node name="Keys" type="RichTextLabel" parent="Alignment/HelpMenu/InitialMenu"]
 margin_top = 52.0
-margin_right = 663.0
-margin_bottom = 776.0
+margin_right = 859.0
+margin_bottom = 772.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Welcome to Moonward's help menu.
@@ -104,33 +108,33 @@ text = "Welcome to Moonward's help menu.
 Below you can see what the controls are for playing Moonwards."
 
 [node name="GotoMap" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 792.0
-margin_right = 663.0
-margin_bottom = 827.0
+margin_top = 788.0
+margin_right = 859.0
+margin_bottom = 823.0
 text = "How to use Map"
 
 [node name="GotoEvent" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 843.0
-margin_right = 663.0
-margin_bottom = 878.0
+margin_top = 839.0
+margin_right = 859.0
+margin_bottom = 874.0
 text = "How to setup events"
 
 [node name="GotoApps" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 894.0
-margin_right = 663.0
-margin_bottom = 929.0
+margin_top = 890.0
+margin_right = 859.0
+margin_bottom = 925.0
 text = "What are apps?"
 
 [node name="GotoRecording" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 945.0
-margin_right = 663.0
-margin_bottom = 980.0
+margin_top = 941.0
+margin_right = 859.0
+margin_bottom = 976.0
 text = "how to record screen"
 
 [node name="VSeparator" type="VSeparator" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 996.0
-margin_right = 663.0
-margin_bottom = 1033.0
+margin_top = 992.0
+margin_right = 859.0
+margin_bottom = 1029.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
 custom_styles/separator = SubResource( 1 )
