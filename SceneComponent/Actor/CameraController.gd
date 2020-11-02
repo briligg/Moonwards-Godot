@@ -141,6 +141,13 @@ func _update_cam_pos(delta : float = 0.016667) -> void:
 	var ray = get_world().direct_space_state.intersect_ray(pivot.global_transform.origin, new_cam_pos, excluded_cull_bodies)
 	if not ray.empty():
 		new_cam_pos = ray["position"]
+		
+		#Make the camera higher if a collision is making us zoom in.
+		var inside_body : Vector3 = entity.global_transform.origin
+		inside_body.y = 0
+		var cam_pos_holder : Vector3 = new_cam_pos
+		cam_pos_holder.y = 0
+		new_cam_pos.y += HEAD_HEIGHT - (((cam_pos_holder.distance_to(inside_body) / dist)) * HEAD_HEIGHT)
 
 	camera.global_transform.origin = new_cam_pos
 	pass
