@@ -11,7 +11,7 @@
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
-[node name="HelpPanel" type="PanelContainer" groups=[
+[node name="HelpPanel" type="Panel" groups=[
 "hud_general_info",
 ]]
 anchor_left = 0.32
@@ -21,28 +21,24 @@ rect_min_size = Vector2( 257, 0 )
 theme = ExtResource( 3 )
 custom_styles/panel = ExtResource( 7 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Alignment" type="VBoxContainer" parent="."]
-margin_left = 2.0
-margin_top = 2.0
-margin_right = 862.0
-margin_bottom = 1078.0
+anchor_left = 0.01
+anchor_right = 0.99
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TopSection" type="HBoxContainer" parent="Alignment"]
-margin_right = 859.0
+margin_right = 846.0
 margin_bottom = 35.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.02
 alignment = 1
 
 [node name="Label" type="Label" parent="Alignment/TopSection"]
-margin_right = 859.0
+margin_right = 846.0
 margin_bottom = 35.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 8.94
@@ -66,13 +62,13 @@ __meta__ = {
 
 [node name="HSeparator" type="HSeparator" parent="Alignment"]
 margin_top = 39.0
-margin_right = 859.0
+margin_right = 846.0
 margin_bottom = 43.0
 
 [node name="HelpMenu" type="Control" parent="Alignment"]
 margin_top = 47.0
-margin_right = 859.0
-margin_bottom = 1076.0
+margin_right = 846.0
+margin_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 2 )
@@ -90,7 +86,7 @@ __meta__ = {
 }
 
 [node name="VSeparator2" type="VSeparator" parent="Alignment/HelpMenu/InitialMenu"]
-margin_right = 859.0
+margin_right = 846.0
 margin_bottom = 36.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
@@ -99,8 +95,8 @@ custom_constants/separation = 0
 
 [node name="Keys" type="RichTextLabel" parent="Alignment/HelpMenu/InitialMenu"]
 margin_top = 52.0
-margin_right = 859.0
-margin_bottom = 772.0
+margin_right = 846.0
+margin_bottom = 776.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Welcome to Moonward's help menu.
@@ -108,33 +104,33 @@ text = "Welcome to Moonward's help menu.
 Below you can see what the controls are for playing Moonwards."
 
 [node name="GotoMap" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 788.0
-margin_right = 859.0
-margin_bottom = 823.0
+margin_top = 792.0
+margin_right = 846.0
+margin_bottom = 827.0
 text = "How to use Map"
 
 [node name="GotoEvent" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 839.0
-margin_right = 859.0
-margin_bottom = 874.0
+margin_top = 843.0
+margin_right = 846.0
+margin_bottom = 878.0
 text = "How to setup events"
 
 [node name="GotoApps" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 890.0
-margin_right = 859.0
-margin_bottom = 925.0
+margin_top = 894.0
+margin_right = 846.0
+margin_bottom = 929.0
 text = "What are apps?"
 
 [node name="GotoRecording" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 941.0
-margin_right = 859.0
-margin_bottom = 976.0
+margin_top = 945.0
+margin_right = 846.0
+margin_bottom = 980.0
 text = "how to record screen"
 
 [node name="VSeparator" type="VSeparator" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 992.0
-margin_right = 859.0
-margin_bottom = 1029.0
+margin_top = 996.0
+margin_right = 846.0
+margin_bottom = 1033.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
 custom_styles/separator = SubResource( 1 )
@@ -151,9 +147,13 @@ __meta__ = {
 [node name="RichTextLabel" type="RichTextLabel" parent="Alignment/HelpMenu/AppsHelp"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-text = "There are five planned apps:
+text = "What are Apps?
 
-Builder
+    Apps are tools within the game that allow you to engage in much more complex activity here. Some will be a standard part of Moonwards, some will be things you can add on if you wish, like the Recording App, which expands on simple recording of the game to enable true storytelling. Apps can also be built by people in the community and added to the Library.
+	
+    When you click the arrow button on the far right of the row in the bottom right of the game window, another row of buttons appears. Those are the Apps that are installed. From left to right: the Building App, for creating your home or market kiosk, the Library App, for adding items from the library (including objects, textures, decals, audio, and tools), the Event App, for announcing and setting up events, the NPC app, for creating non-player characters (AI), and the Collaboration App, which has a bunch of tools that help groups of people do any app activity together, over time.
+	
+    Here there will be basic instructions in what Apps are and how to use them. Links to the manual page online for each App will be listed.
 "
 
 [node name="MapHelp" type="Control" parent="Alignment/HelpMenu"]
@@ -164,9 +164,17 @@ anchor_bottom = 1.0
 [node name="RichTextLabel" type="RichTextLabel" parent="Alignment/HelpMenu/MapHelp"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-text = "The map will be a way to make navigating Moon Town as simple as possible.
+text = "Note: Map coming soon.
 
- As of now the planned functionality has not been implemented."
+Clicking the map button will bring up a schematic 3d map centered on your location. You are marked with a red dot. The name of the habitat you are in and what floor you are on is listed in the bottom left of the map window. If you are outside, the map zone is listed there.
+
+    Zoom view: + and - buttons, mouse scroll wheel
+    Pan: Hold left mouse button and drag
+    Show Area: when the cursor is over a map feature that can be shown in higher detail, clicking the left mouse button will load a top down view of it.
+    The main landmarks in the town are labelled. Other locations can be searched for, and if listed, their place on the map will be marked with a star.
+    If you then click the compass icon, a navigation arrow will appear in game pointing in the direction of your destination. It will continue to do so until you arrive, and then it will turn into a star.
+    Click the Hide Map button to close the map. If you are in the process of navigating to a destination, it will still be starred on the map if you open it again.
+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -182,6 +190,14 @@ __meta__ = {
 [node name="RichTextLabel" type="RichTextLabel" parent="Alignment/HelpMenu/EventHelp"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+text = "Note: Coming soon.
+
+You can hold events in your neighborhood common areas, or in the event area of a market if you reserve it, or in one of the town's major event venues if you rent it.
+You use the Event App (icon) to set up an event.
+Start by selecting the date, time, and place of your event. Choose what notifications to create for it: a note on the calendar of friends, an invitation message sent to friends, a listing in the game's event calendar, a sign or billboard in your neighborhood. Add text and images to the notifications.
+Place and program items for the event. They will appear at the start of the event and vanish at the end. Possible items include lights, audio, displays, decorations, furnishings, interactive objects, stage areas (which have useful tools for formats like interviews, presentations, and such), game areas (which allow attendees to play games together), and AI characters.
+When your event is over, the event area will revert to how it was before.
+There will be a manual page guiding you through all the details of how to use this tool. This section will provide only basics and a link to load that page."
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -194,8 +210,16 @@ anchor_bottom = 1.0
 [node name="RichTextLabel" type="RichTextLabel" parent="Alignment/HelpMenu/RecordScreenHelp"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-text = "Giving players the option to record the Moonwards game window from within the game makes video creation easier for everyone. 
- We have not implemented screen recording yet. But when we do, we will fill out this help section with all the details."
+text = "Note: Coming soon.
+
+    You can hold events in your neighborhood common areas, or in the event area of a market if you reserve it, or in one of the town's major event venues if you rent it.
+	
+    You use the Event App (icon) to set up an event.
+    Start by selecting the date, time, and place of your event. Choose what notifications to create for it: a note on the calendar of friends, an invitation message sent to friends, a listing in the game's event calendar, a sign or billboard in your neighborhood. Add text and images to the notifications.
+    Place and program items for the event. They will appear at the start of the event and vanish at the end. Possible items include lights, audio, displays, decorations, furnishings, interactive objects, stage areas (which have useful tools for formats like interviews, presentations, and such), game areas (which allow attendees to play games together), and AI characters.
+    When your event is over, the event area will revert to how it was before.
+    There will be a manual page guiding you through all the details of how to use this tool. This section will provide only basics and a link to load that page.
+"
 __meta__ = {
 "_edit_use_anchors_": false
 }

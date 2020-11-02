@@ -1,4 +1,4 @@
-extends PanelContainer
+extends Panel
 
 onready var help_menu : Control = $Alignment/HelpMenu
 onready var back_button : TextureButton = $Alignment/TopSection/Label/BackButton
