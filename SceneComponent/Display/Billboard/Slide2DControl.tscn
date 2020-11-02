@@ -2,9 +2,9 @@
 
 [ext_resource path="res://Assets/Interface/SlideControl.tres" type="Theme" id=1]
 [ext_resource path="res://SceneComponent/Display/Billboard/Slide2DControl.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Displays/ArrowButtonNormal.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Displays/ArrowButtonHover.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Displays/ArrowButtonPressed.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Displays/ThickArrowButtonNormal.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Displays/ThickArrowButtonPressed.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Displays/ThickArrowButtonHover.png" type="Texture" id=8]
 
 [sub_resource type="Shader" id=1]
 
@@ -46,9 +46,9 @@ anchor_left = 0.53
 anchor_top = 0.75
 anchor_right = 0.57
 anchor_bottom = 0.83
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 4 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 8 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -61,9 +61,9 @@ anchor_right = 0.47
 anchor_bottom = 0.83
 rect_rotation = 180.0
 rect_pivot_offset = Vector2( 38, 43 )
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 4 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 8 )
 expand = true
 
 [node name="TextContainer" type="Panel" parent="."]
