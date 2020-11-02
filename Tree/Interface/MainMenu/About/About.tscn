@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_StyleSeparator.tres" type="StyleBox" id=1]
+[ext_resource path="res://Assets/Interface/MainMenu/Style/MM_StyleSeparator.tres" type="StyleBox" id=1]
+
 
 [node name="About" type="PanelContainer"]
 anchor_right = 1.0

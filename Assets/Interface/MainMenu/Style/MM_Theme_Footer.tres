@@ -1,7 +1,8 @@
 [gd_resource type="Theme" load_steps=3 format=2]
 
-[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_EmptyPanel.tres" type="StyleBox" id=1]
+[ext_resource path="res://Assets/Interface/MainMenu/Style/MM_EmptyPanel.tres" type="StyleBox" id=1]
 [ext_resource path="res://Assets/Interface/Fonts/MainMenu_Footer_Roboto.tres" type="DynamicFont" id=2]
+
 
 [resource]
 default_font = ExtResource( 2 )
