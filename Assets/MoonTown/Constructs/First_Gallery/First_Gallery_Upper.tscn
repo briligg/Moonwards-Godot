@@ -551,5 +551,7 @@ transform = Transform( -1.62921e-06, 0, 10, 0, 10, 0, -10, 0, -1.62921e-06, 0, 0
 [node name="Neighborhood-1" parent="Marker_Neighborhood" index="0" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0473042, -0.0408044, 0.0451846 )
 
+[node name="Marker_SharedFaciliites" parent="." index="32"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.608, -5.248, 3.042 )
+
 [node name="Shared-Facilities-1" parent="Marker_SharedFaciliites" index="0" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038805, 0.0268655, 0.00756454 )
