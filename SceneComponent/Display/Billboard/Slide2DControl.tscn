@@ -24,7 +24,7 @@ __meta__ = {
 material = SubResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.121569, 0.121569, 0.121569, 0.129412 )
+color = Color( 0.121569, 0.121569, 0.121569, 0.870588 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
