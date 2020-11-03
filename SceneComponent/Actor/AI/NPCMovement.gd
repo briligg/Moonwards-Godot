@@ -6,11 +6,13 @@ var Agent : GSAIRigidBody3DAgent
 export (float, 0, 100, 5) var linear_speed_max := 10.0
 export (float, 0, 100, 0.1) var linear_acceleration_max := 1.0 
 export (float, 0, 50, 0.1) var arrival_tolerance := 0.7
+export (float, 0, 50, 0.1) var recalculation_tolerance := 2
 export (float, 0, 50, 0.1) var deceleration_radius := 1.0
 export (int, 0, 1080, 10) var angular_speed_max := 270 
 export (int, 0, 2048, 10) var angular_accel_max := 45 
 export (int, 0, 178, 2) var align_tolerance := 5 
 export (int, 0, 180, 2) var angular_deceleration_radius := 45 
+export (bool) var uses_GSAIPATH : bool = false
 # Holds the linear and angular components calculated by our steering behaviors.
 onready var acceleration := GSAITargetAcceleration.new()
 var world_ref : WorldNavigator = null
@@ -19,7 +21,8 @@ var current_target : GSAIAgentLocation = GSAIAgentLocation.new()
 var facing_target : GSAIAgentLocation = GSAIAgentLocation.new()
 var special_target : GSAISteeringAgent = GSAISteeringAgent.new()
 var current_path : GSAIPath = GSAIPath.new([Vector3(1,1,1), Vector3(2,2,5)])
-var personal_space : float = 1.5
+var personal_space : float = 3
+var objective : Vector3 = Vector3.ZERO
 
 # First, we setup our NPCs personal space, so they don't hit each other
 # and get hard feelings 
@@ -88,10 +91,9 @@ func _enter_tree():
 	Seek  = GSAISeek.new(Agent, current_target)
 	Face =  GSAIFace.new(Agent, current_target, true)
 	Face2 =  GSAIFace.new(Agent, facing_target, true)
-	Face2.is_enabled = false
 	Evade = GSAIEvade.new(Agent, special_target)
 	Pursue = GSAIPursue.new(Agent, special_target)
-	Follow = GSAIFollowPath.new(Agent, current_path)
+	Follow = GSAIFollowPath.new(Agent, current_path, 0.7)
 	LookAhead = GSAILookWhereYouGo.new(Agent, true)
 
 func _init().("NPCInput", false):
@@ -108,28 +110,39 @@ func _ready():
 	FleeBlend.add(FleeTarget, 1)
 	FleeBlend.add(Avoid, 1) #Avoid is added everywhere, to get better consistency 
 	
-	FollowBlend.add(Seek, 1)
-	FollowBlend.add(Face, 1)
+	FollowBlend.add(Seek, .8)
+	FollowBlend.add(Face, .8)
 	FollowBlend.add(Avoid, 1)
-	
-#	PathBlend.add(Follow, 1)
+	if not uses_GSAIPATH:
+		PathBlend.is_enabled = false
+	PathBlend.add(Follow, 1)
 	PathBlend.add(LookAhead, 1)
 	PathBlend.add(Avoid, 1) 
-	PathBlend.is_enabled = true
 	# The order these are added has importance so the NPC behaves like this:
 	Priority.add(Face2)
+	Priority.add(PathBlend) #3 : Follow a path
 	Priority.add(FollowBlend)#Priority 1: Follow who I am supposed to (if i am supposed to)
 	Priority.add(FleeBlend)#2: Run away if i am supposed to
-	Priority.add(PathBlend) #3 : Follow a path
 	
 	get_navpath(entity.translation)
 	
+func is_far_from_target() -> bool:
+	if path.front() == null:
+		return false
+	var distance_in_path = (path.front()-current_target.position).length()
+	print("dpath", distance_in_path)
+	var distance_in_world = (current_target.position-entity.translation).length()
+	print("dworld", distance_in_world)
+	if abs(distance_in_path-distance_in_world) > recalculation_tolerance:
+		return true
+	return false
 
 func _process_server(delta):
 	if PathBlend and FollowBlend and FleeBlend and Priority:
-		if (current_target.position - entity.translation).length() < arrival_tolerance:
+		if (current_target.position - entity.translation).length() < arrival_tolerance:# and not uses_GSAIPATH:
 			var temp = path.pop_front()
 			if temp != null:
+				
 				update_target(temp)
 			else:
 				entity.input = Vector3.ZERO
@@ -137,8 +150,8 @@ func _process_server(delta):
 				yield(get_tree().create_timer(2), "timeout")
 				Face2.is_enabled = false
 		else:
-			Priority.calculate_steering(acceleration)
 			
+			Priority.calculate_steering(acceleration)
 			_handle_npc_input(acceleration, delta)
 		
 func _handle_npc_input(acceleration : GSAITargetAcceleration, delta : float):
@@ -146,7 +159,10 @@ func _handle_npc_input(acceleration : GSAITargetAcceleration, delta : float):
 #	Agent._apply_steering(acceleration, delta)
 	entity.look_dir = entity.global_transform.origin-acceleration.linear
 	entity.input.z = acceleration.linear.normalized().length()
-	entity.input.y = acceleration.linear.normalized().y
+	if acceleration.linear.normalized().y >= 0.2:
+		entity.input.y = acceleration.linear.normalized().y
+	else: 
+		entity.input.y = 0
 
 func _process_client(delta):
 	entity.global_transform.origin = entity.srv_pos
@@ -158,7 +174,9 @@ func update_target(pos : Vector3):
 	special_target.position = pos
 
 func get_navpath(to : Vector3):
+	objective = to
 	path = Array(world_ref.get_navmesh_path(entity.translation, to))
+	
 	current_path.create_path(path)
 	var temp = path.pop_front()
 	if temp != null:
