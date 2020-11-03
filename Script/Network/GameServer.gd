@@ -56,6 +56,7 @@ func _host_game() -> void:
 	var err = server_peer.create_server(port, max_players)
 	if err == OK:
 		get_tree().set_network_peer(server_peer)
+		server_peer.always_ordered = Network.IS_ALWAYS_ORDERED
 	elif err == ERR_CANT_CREATE:
 		Log.critical(self, "", "Could not create server peer.")
 	elif err == ERR_ALREADY_EXISTS:

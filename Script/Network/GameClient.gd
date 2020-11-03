@@ -24,6 +24,7 @@ func _ready() -> void:
 func _join_server() -> void:
 	var peer = NetworkedMultiplayerENet.new()
 	peer.create_client(ip, port)
+	peer.always_ordered = Network.IS_ALWAYS_ORDERED
 	get_tree().set_network_peer(peer)
 	self.peer_id = get_tree().get_network_unique_id()
 
