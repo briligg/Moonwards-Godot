@@ -159,7 +159,7 @@ func _handle_npc_input(acceleration : GSAITargetAcceleration, delta : float):
 #	Agent._apply_steering(acceleration, delta)
 	entity.look_dir = entity.global_transform.origin-acceleration.linear
 	entity.input.z = acceleration.linear.normalized().length()
-	if acceleration.linear.normalized().y >= 0.2:
+	if acceleration.linear.normalized().y >= 0.3:
 		entity.input.y = acceleration.linear.normalized().y
 	else: 
 		entity.input.y = 0

@@ -29,7 +29,6 @@ __meta__ = {
 ] instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.4318, 115.913, -171.358 )
 script = ExtResource( 5 )
-debug_draw = true
 
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.4318, -115.913, 171.358 )
