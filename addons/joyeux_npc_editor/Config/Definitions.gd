@@ -41,7 +41,7 @@ var _functions = {
 		"_category" : "inhibitors",
 		"_code" : "FuncRef?", #This hasn't been implemented yet
 		"_input_ports" : [
-			{"_label_title":"Object input", "_type" : TYPE_OBJECT},
+			{"_label_title":"Object input", "_type" : "CLASS_CHARACTER"},
 			{"_label_title":"_s_prop_dropdown_CHARACTER", "_type" : TYPE_NIL}
 		],
 		"_output_ports" : [
@@ -177,7 +177,7 @@ var _stimulus = {
 	#This section is for user designed signals
 	"interacted_by" :{
 		"_output_name": "Interactor",
-		"_output_type": TYPE_OBJECT,
+		"_output_type": "CLASS_CHARACTER",
 	},
 	"stopped_working" :{
 		"_output_name": "Category",
