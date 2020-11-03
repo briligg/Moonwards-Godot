@@ -62,6 +62,14 @@ func _integrate_forces(state):
 func _integrate_client(args):
 	var phys_state = args[0]
 	entity.is_grounded = is_grounded()
+	
+	# Return as now movement is handled by the anchor component.
+	if entity.movement_anchor_data.is_anchored:
+		entity.custom_integrator = true
+		return
+	else:
+		entity.custom_integrator = false
+	
 	entity.global_transform.origin = entity.srv_pos
 	entity.velocity = entity.srv_vel
 	phys_state.linear_velocity = entity.srv_vel
