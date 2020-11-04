@@ -1,5 +1,8 @@
 extends Spatial
 
+#### Some spaghetti code this is! A masterpiece, composed by yours truely.
+#### Seriously though, refactor this as soon as you get the chance.
+
 onready var hatch_collision = get_parent().get_node("HatchCollisionShape")
 # The latch that goes into the airlock door
 onready var airlock_latch = get_parent().get_node("AirlockLatch")
@@ -178,8 +181,10 @@ func undock_to_airlock(rover):
 	pod.mode = RigidBody.MODE_STATIC
 	
 	targ = rover.global_transform.origin - (rover.global_transform.basis.z).normalized() * dock_door_clearance
-	var dir = (targ - rover.global_transform.origin).normalized()
+	var dir
 	while(is_docking):
+		targ = rover.global_transform.origin - (rover.global_transform.basis.z).normalized() * dock_door_clearance
+		dir = (targ - rover.global_transform.origin).normalized()
 		rover.global_translate(dir * 0.016)
 		if rover.global_transform.origin.distance_to(targ) <= 0.05:
 			break
