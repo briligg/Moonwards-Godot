@@ -215,12 +215,16 @@ puppet func set_physics_mode(mode):
 
 func sync_for_new_player(peer_id):
 	if get_tree().is_network_server():
+		var col_positions = []
+		for col in collision_shapes:
+			col_positions.append(col.global_transform.origin)
 		if is_docked:
-			var col_positions = []
-			for col in collision_shapes:
-				col_positions.append(col.global_transform.origin)
 			placeholder_node.get_node(self.name).rpc_id(peer_id, "_dock_for_new_player", docked_to.get_path(), 
 					pod.global_transform.origin, col_positions, 
+					hatch_collision.global_transform.origin)
+		else:
+			rpc("_syncpos_for_new_player", pod.global_transform.origin, 
+					col_positions, 
 					hatch_collision.global_transform.origin)
 
 puppet func _dock_for_new_player(rover_path, pod_pos, col_pos_arr, col_hatch_pos):
@@ -239,3 +243,9 @@ puppet func _dock_for_new_player(rover_path, pod_pos, col_pos_arr, col_hatch_pos
 	generate_placeholder()
 	docked_to = rover
 	is_docked = true
+
+puppet func _syncpos_for_new_player(pod_pos, col_pos_arr, col_hatch_pos):
+	pod.global_transform.origin = pod_pos
+	for i in range(collision_shapes.size()):
+		collision_shapes[i].global_transform.origin = col_pos_arr[i]
+	hatch_collision.global_transform.origin = col_hatch_pos
