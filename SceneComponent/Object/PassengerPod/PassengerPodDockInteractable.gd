@@ -8,12 +8,19 @@ onready var original_path
 
 const HALF_HEIGHT = 1.47
 
+# How far away to move from the dock door, to allow for easier movement
+export(float) var dock_door_clearance = 1.5
+
+export(float) var dock_anim_speed = 0.022
+
 export(Array, NodePath) var collision_paths
 var collision_shapes: Array
 
 
 # Is docked to a rover?
 var is_docked = false
+# Are we currently in the process of docking or undocking?
+var is_docking = false
 
 # The rover it's docked to, if any
 var docked_to: AEntity
@@ -40,11 +47,12 @@ func _ready() -> void:
 	$Interactable.title = "Dock Passenger Pod"
 	$Interactable.display_info = ""
 	orig_parent = pod.get_parent()
-#	if is_network_master():
 	$AirlockDetector.connect("area_entered", self, "_on_area_entered")
 	$AirlockDetector.connect("area_exited", self, "_on_area_exited")
 	
 func interacted_by(interactor):
+	if is_docking:
+		return
 	if interactor.is_in_group("athlete_rover"):
 		if !is_docked:
 			call_deferred("align_and_dock_with", interactor)
@@ -69,14 +77,14 @@ func generate_placeholder():
 	placeholder_comp.name = self.name
 
 func align_and_dock_with(rover):
+	is_docking = true
 	rover.mode = RigidBody.MODE_KINEMATIC
 	var rover_anchor = rover.get_node("DockLatch")
 	var pod_anchor = get_parent().get_node("DockLatch")
 	var original_rover_pos = rover.global_transform.origin
-	var lerp_speed = 0.016
 	
 	while(!_lerp_to_coroutine(rover, rover_anchor.global_transform.origin, 
-			pod_anchor.global_transform.origin, lerp_speed)):
+			pod_anchor.global_transform.origin, dock_anim_speed) and is_docking):
 		yield(get_tree(), "physics_frame")
 	
 	rpc("pup_dock_with", rover.get_path())
@@ -84,11 +92,14 @@ func align_and_dock_with(rover):
 	dock_with(rover)
 	pod.mode = RigidBody.MODE_STATIC
 	
-	var targz = Vector3(rover.global_transform.origin.x, rover.global_transform.origin.y, original_rover_pos.z)
-	while(!_lerp_to_coroutine(rover, rover.global_transform.origin, targz, lerp_speed)):
+	# If we're docked to the door or nearby, go backwards a little to give room for movement.
+#	if _dock_door_interactable:
+	var targz = rover.global_transform.origin - (rover.global_transform.basis.z).normalized() * dock_door_clearance
+	while(!_lerp_to_coroutine(rover, rover.global_transform.origin, targz, dock_anim_speed) and is_docking):
 		yield(get_tree(), "physics_frame")
 
 	rover.mode = RigidBody.MODE_RIGID
+	is_docking = false
 	
 func dock_with(rover):
 	$Interactable.title = "Undock Passenger Pod"
@@ -110,6 +121,7 @@ puppet func pup_dock_with(rover_path):
 	dock_with(rover)
 
 func undock():
+	is_docking = true
 	if placeholder_node:
 		placeholder_node.queue_free()
 	yield(get_tree(), "physics_frame")
@@ -129,47 +141,52 @@ func undock():
 	
 	docked_to = null
 	is_docked = false
+	is_docking = false
 
 puppet func pup_undock():
 	undock()
 
 # Undock from rover and into the airlock
 func undock_to_airlock(rover):
+	is_docking = true
 	rover.mode = RigidBody.MODE_KINEMATIC
 	var original_rover_pos = rover.global_transform.origin
-	var lerp_speed = 0.016
 	
 	var targ = Quat(_dock_door_interactable.global_transform.basis).normalized()
-	while(!_slerp_to_coroutine(rover, targ, lerp_speed)):
+	while(!_slerp_to_coroutine(rover, targ, dock_anim_speed) and is_docking):
 		yield(get_tree(), "physics_frame")
 #
 	# Align XY axes
 	var targxy = Vector3(_dock_door_interactable.global_transform.origin.x, 
 			_dock_door_interactable.global_transform.origin.y,
 			airlock_latch.global_transform.origin.z)
-	while(!_lerp_to_coroutine(rover, airlock_latch.global_transform.origin, targxy, lerp_speed)):
+	while(!_lerp_to_coroutine(rover, airlock_latch.global_transform.origin, targxy, dock_anim_speed) and is_docking):
 		yield(get_tree(), "physics_frame")
 		
 	# ALign Z axis
 	var targz = Vector3(airlock_latch.global_transform.origin.x, 
 			airlock_latch.global_transform.origin.y,
 			_dock_door_interactable.global_transform.origin.z)
-	while(!_lerp_to_coroutine(rover, airlock_latch.global_transform.origin, targz, lerp_speed)):
+	while(!_lerp_to_coroutine(rover, airlock_latch.global_transform.origin, targz, dock_anim_speed) and is_docking):
 		yield(get_tree(), "physics_frame")
 	
 	rpc("pup_undock")
 	undock()
+	# Because undock will reset this.
+	is_docking = true
 	rpc("set_physics_mode", RigidBody.MODE_STATIC)
 	pod.mode = RigidBody.MODE_STATIC
 	
-	var dir = (original_rover_pos - rover.global_transform.origin).normalized()
-	while(true):
+	targ = rover.global_transform.origin - (rover.global_transform.basis.z).normalized() * dock_door_clearance
+	var dir = (targ - rover.global_transform.origin).normalized()
+	while(is_docking):
 		rover.global_translate(dir * 0.016)
-		if rover.global_transform.origin.distance_to(original_rover_pos) <= 0.05:
+		if rover.global_transform.origin.distance_to(targ) <= 0.05:
 			break
 		yield(get_tree(), "physics_frame")
 		
 	rover.mode = RigidBody.MODE_RIGID
+	is_docking = false
 
 
 func _slerp_to_coroutine(rover: Node, target: Quat, speed:float ) -> bool:
