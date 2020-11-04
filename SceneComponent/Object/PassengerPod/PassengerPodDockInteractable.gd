@@ -40,20 +40,35 @@ func _ready() -> void:
 	$Interactable.title = "Dock Passenger Pod"
 	$Interactable.display_info = ""
 	orig_parent = pod.get_parent()
+#	if is_network_master():
 	$AirlockDetector.connect("area_entered", self, "_on_area_entered")
 	$AirlockDetector.connect("area_exited", self, "_on_area_exited")
 	
 func interacted_by(interactor):
 	if interactor.is_in_group("athlete_rover"):
 		if !is_docked:
-			call_deferred("dock_with", interactor)
+			call_deferred("align_and_dock_with", interactor)
 		elif is_docked and interactor == docked_to:
 			if _dock_door_interactable != null:
 				call_deferred("undock_to_airlock", interactor)
 			else:
+				rpc("pup_undock")
+				rpc("set_physics_mode", RigidBody.MODE_RIGID)
 				call_deferred("undock")
+				pod.mode = RigidBody.MODE_RIGID
 
-func dock_with(rover):
+func generate_placeholder():
+	if !is_network_master():
+		return
+	
+	placeholder_node = Spatial.new()
+	orig_parent.add_child(placeholder_node)
+	placeholder_node.name = get_parent().name
+	var placeholder_comp = Spatial.new()
+	placeholder_node.add_child(placeholder_comp)
+	placeholder_comp.name = self.name
+
+func align_and_dock_with(rover):
 	rover.mode = RigidBody.MODE_KINEMATIC
 	var rover_anchor = rover.get_node("DockLatch")
 	var pod_anchor = get_parent().get_node("DockLatch")
@@ -63,7 +78,19 @@ func dock_with(rover):
 	while(!_lerp_to_coroutine(rover, rover_anchor.global_transform.origin, 
 			pod_anchor.global_transform.origin, lerp_speed)):
 		yield(get_tree(), "physics_frame")
-		
+	
+	rpc("pup_dock_with", rover.get_path())
+	rpc("set_physics_mode", RigidBody.MODE_STATIC)
+	dock_with(rover)
+	pod.mode = RigidBody.MODE_STATIC
+	
+	var targz = Vector3(rover.global_transform.origin.x, rover.global_transform.origin.y, original_rover_pos.z)
+	while(!_lerp_to_coroutine(rover, rover.global_transform.origin, targz, lerp_speed)):
+		yield(get_tree(), "physics_frame")
+
+	rover.mode = RigidBody.MODE_RIGID
+	
+func dock_with(rover):
 	$Interactable.title = "Undock Passenger Pod"
 	_reparent(pod, rover)
 	var target_xfm = rover.get_node("DockLatch").transform
@@ -72,25 +99,20 @@ func dock_with(rover):
 	for col in collision_shapes:
 		_reparent(col, rover, true)
 	_reparent(hatch_collision, rover, true)
+	if placeholder_node == null:
+		generate_placeholder()
+	
 	docked_to = rover
 	is_docked = true
 	
-	var targz = Vector3(rover.global_transform.origin.x, rover.global_transform.origin.y, original_rover_pos.z)
-	while(!_lerp_to_coroutine(rover, rover.global_transform.origin, targz, lerp_speed)):
-		yield(get_tree(), "physics_frame")
-
-	pod.mode = RigidBody.MODE_STATIC
-	rover.mode = RigidBody.MODE_RIGID
-	
-	placeholder_node = Spatial.new()
-	orig_parent.add_child(placeholder_node)
-	placeholder_node.name = get_parent().name
-	var placeholder_comp = Spatial.new()
-	placeholder_node.add_child(placeholder_comp)
-	placeholder_comp.name = self.name
+puppet func pup_dock_with(rover_path):
+	var rover = get_node(rover_path)
+	dock_with(rover)
 
 func undock():
-	placeholder_node.free()
+	if placeholder_node:
+		placeholder_node.queue_free()
+	yield(get_tree(), "physics_frame")
 	
 	$Interactable.title = "Dock Passenger Pod"
 	_reparent(pod, orig_parent, true)
@@ -107,7 +129,9 @@ func undock():
 	
 	docked_to = null
 	is_docked = false
-	pod.mode = RigidBody.MODE_RIGID
+
+puppet func pup_undock():
+	undock()
 
 # Undock from rover and into the airlock
 func undock_to_airlock(rover):
@@ -133,7 +157,9 @@ func undock_to_airlock(rover):
 	while(!_lerp_to_coroutine(rover, airlock_latch.global_transform.origin, targz, lerp_speed)):
 		yield(get_tree(), "physics_frame")
 	
+	rpc("pup_undock")
 	undock()
+	rpc("set_physics_mode", RigidBody.MODE_STATIC)
 	pod.mode = RigidBody.MODE_STATIC
 	
 	var dir = (original_rover_pos - rover.global_transform.origin).normalized()
@@ -184,6 +210,9 @@ func _reparent(node, new_parent, keep_world_pos = false):
 	if keep_world_pos:
 		node.global_transform.origin = pos
 
+puppet func set_physics_mode(mode):
+	pod.mode = mode
+
 func sync_for_new_player(peer_id):
 	if get_tree().is_network_server():
 		if is_docked:
@@ -193,8 +222,7 @@ func sync_for_new_player(peer_id):
 			placeholder_node.get_node(self.name).rpc_id(peer_id, "_dock_for_new_player", docked_to.get_path(), 
 					pod.global_transform.origin, col_positions, 
 					hatch_collision.global_transform.origin)
-#			rpc_id(peer_id, "test")
-	
+
 puppet func _dock_for_new_player(rover_path, pod_pos, col_pos_arr, col_hatch_pos):
 	$Interactable.title = "Undock Passenger Pod"
 	var rover = get_node(rover_path)
@@ -208,8 +236,6 @@ puppet func _dock_for_new_player(rover_path, pod_pos, col_pos_arr, col_hatch_pos
 		
 	_reparent(hatch_collision, rover)
 	hatch_collision.global_transform.origin = col_hatch_pos
+	generate_placeholder()
 	docked_to = rover
 	is_docked = true
-
-puppet func test():
-	pass

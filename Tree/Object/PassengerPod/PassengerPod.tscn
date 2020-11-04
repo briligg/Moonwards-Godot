@@ -72,6 +72,7 @@ points = PoolVector3Array( 0.183408, -0.5, 0.5, 0.183408, 0.5, 0.5, 0.183408, 0.
 
 [node name="PassengerPod" type="RigidBody"]
 mode = 1
+mass = 5000.0
 
 [node name="HatchCollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.973679, 8.48277 )
