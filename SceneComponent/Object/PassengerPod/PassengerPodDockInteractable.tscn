@@ -12,6 +12,8 @@ height = 12.551
 
 [node name="PassengerPodDockInteractable" type="Spatial"]
 script = ExtResource( 2 )
+dock_door_clearance = 1.0
+dock_anim_speed = 0.03
 
 [node name="Interactable" type="Area" parent="."]
 collision_layer = 32768

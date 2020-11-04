@@ -128,7 +128,7 @@ align = 1
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49167, 0 )
 
 [node name="AirlockLatch" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275563, 9.30216 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43131, 9.8757 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00262239, 1.35137, -0.961006 )
