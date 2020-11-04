@@ -26,6 +26,9 @@ export var grab_focus_at_ready : bool = true
 #Determines if the RayCast Interactor should be active or not.
 export var disable_ray_cast : bool = false
 
+#Determines the legnth of the ray cast.
+export var ray_cast_length : float = 5.0
+
 var has_focus : bool = false
 
 #This function is required by AComponent.
@@ -52,6 +55,8 @@ func _ready() -> void :
 	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_FINISHED, self, "_set_can_interact", [true])
 	
 	interactor_ray.owning_entity = self.entity
+	
+	interactor_ray.cast_to.z = ray_cast_length
 	
 	#Listen to the Ray Cast.
 	if disable_ray_cast :
