@@ -32,11 +32,8 @@ func _ready() -> void:
 	collision_mask = 32768
 	enabled = false
 	
-	connect("area_exited", self, "_interactable_left")
 	connect("area_entered", self, "_interactable_entered")
-
-func _interactable_left(interactable_area : Area) -> void :
-	emit_signal("interactable_left_area", interactable_area)
+	connect("area_exited", self, "_interactable_exited")
 
 #Determine what Interactables I am touching.
 func _physics_process(_delta : float) -> void:
@@ -85,9 +82,21 @@ func interact(interactable) -> void :
 	interactable.interact_with(owning_entity)
 	emit_signal("interacted_with", interactable)
 
+#Called from the Interactable when it has left.
+func interactable_left(interactable : Interactable) -> void :
+	emit_signal("interactable_left_area", interactable)
+
+#Called from the Interactable when interaction is possible.
+func new_interactable(interactable : Interactable) -> void :
+	emit_signal("interactable_entered_area", interactable)
+
 #An interactable has entered my area.
-func _interactable_entered(interactable_node) -> void :
-	emit_signal("interactable_entered_area", interactable_node)
+func _interactable_entered(interactable_node : Interactable) -> void :
+	interactable_node.new_possible_interactor(self)
+
+#Interactable left my area.
+func _interactable_exited(interactable : Interactable) -> void :
+	interactable.interactor_left(self)
 
 func set_enabled(val: bool) -> void:
 	if !val:

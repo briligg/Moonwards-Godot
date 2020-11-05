@@ -32,6 +32,8 @@ enum NetworkMode {
 export var display_info : String = "Interactable" setget set_display_info
 #This string is displayed in the text of the InteractsMenu button.
 export var title : String = "Title" setget set_title
+#This is the max distance the interactor can be before the interaction is no longer valid.
+export var max_interaction_distance : float = 10.0
 #Interactions will be requested from the server before bouncing back to the requesting client(s).
 export var is_networked: bool = true
 ### Supplementary networking flags, these are only checked for if `is_networked` is true.
@@ -42,6 +44,29 @@ var is_available: bool = true
 export var interactions_active : bool = true setget set_active
 
 var owning_entity: AEntity = null
+
+#Keep track of these Interactors and let them know when they are within range.
+var possible_interactors : Array = []
+
+#Tracks interactors that I have told of myself. Keeps instance ids.
+var told_interactors : Array = []
+
+#Let all possible interactors know if they are within range.
+func _physics_process(_delta : float) -> void :
+	for interactor in possible_interactors :
+		#True when we have told the interactor they were in range.
+		var told_before : bool = told_interactors.has(interactor.get_instance_id())
+		
+		#Get how far we are from the interactor
+		var distance : float = global_transform.origin.distance_to(interactor.global_transform.origin)
+		
+		if(distance < max_interaction_distance && 
+				not told_before):
+			interactor.new_interactable(self)
+			told_interactors.append(interactor.get_instance_id())
+		elif distance > max_interaction_distance && told_before :
+			interactor.interactable_left(self)
+			told_interactors.remove(told_interactors.find(interactor.get_instance_id()))
 
 func _ready() -> void :
 	collision_layer = 32768
@@ -54,12 +79,29 @@ func get_info() -> String :
 func get_title() -> String :
 	return title
 
+#Called by an interactor when it no longer sees me within the physics system.
+func interactor_left(interactor) -> void :
+	if not possible_interactors.has(interactor) :
+		return
+	
+	possible_interactors.remove(possible_interactors.find(interactor))
+	if told_interactors.has(interactor.get_instance_id()) :
+		told_interactors.remove(told_interactors.find(interactor.get_instance_id()))
+		#Let the interactor know they have officially left me
+		interactor.interactable_left(self)
+
 func interact_with(interactor : Node) -> void :
 	#Someone requested interaction with me.
 	emit_signal("interacted_by", interactor)
 
+# warning-ignore:function_conflicts_variable
 func is_networked() -> bool :
 	return is_networked
+
+#Called by an interactor. Lets me know to tell it when it is within reach of me.
+func new_possible_interactor(interactor : Spatial) -> void :
+	if not possible_interactors.has(interactor) :
+		possible_interactors.append(interactor)
 
 #Turns on or shuts off this interactables collision detection.
 func set_active(become_active : bool) -> void :
