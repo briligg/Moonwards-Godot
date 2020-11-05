@@ -70,13 +70,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000977993, 1.58566, 10.5709 
 [node name="CollisionShape" type="CollisionShape" parent="LOD0/AirlockDoor_Interior_LOD0/KinematicBody"]
 shape = SubResource( 2 )
 
-[node name="AirlockDoorInteractable2" parent="LOD0/AirlockDoor_Interior_LOD0" index="1" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0039059, -1.63869, -0.138201 )
+[node name="AirlockDoorInteractable" parent="LOD0/AirlockDoor_Interior_LOD0" index="1" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0039059, -1.72093, 0.11333 )
 display_info = "Open Airlock Door"
 title = "Airlock Door"
 animation_player = NodePath("../../../AnimationPlayer")
 animation_name = "OpenInterior"
-is_dock_door = true
 
 [node name="LOD1" parent="." instance=ExtResource( 3 )]
 visible = false
