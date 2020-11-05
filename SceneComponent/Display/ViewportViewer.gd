@@ -74,7 +74,10 @@ func _on_area_input_event(_camera, event, click_pos, _click_normal, _shape_idx):
 	var z_axis = -z_compens * real_click_pos.z / screen_size.x
 	
 	var percentage_pos = Vector2(x_axis + z_axis, real_click_pos.y / screen_size.y )
-	var zclick_pos = real_click_pos.z / screen_size.x
+	
+	#unused variables
+#	var zclick_pos = real_click_pos.z / screen_size.x
+	
 	#Convert pos to a range from (0 - 1)
 	percentage_pos.y *= -1
 	percentage_pos += Vector2(1, 1)
