@@ -11,5 +11,6 @@ agent/max_climb = 0.76
 agent/max_slope = 72.0
 
 [node name="NavMesh_Test_First_Gallery" type="NavigationMeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0 )
 navmesh = SubResource( 1 )
 script = ExtResource( 1 )
