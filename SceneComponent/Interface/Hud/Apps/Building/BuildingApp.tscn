@@ -267,6 +267,7 @@ margin_right = 59.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 17 )
+expand_icon = true
 
 [node name="Button_Edges" type="Button" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer2"]
 margin_left = 63.0
@@ -274,6 +275,7 @@ margin_right = 122.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 18 )
+expand_icon = true
 
 [node name="Button_Faces" type="Button" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer2"]
 margin_left = 126.0
@@ -281,6 +283,7 @@ margin_right = 185.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 3 )
+expand_icon = true
 
 [node name="Button_Divide" type="Button" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer2"]
 margin_left = 189.0
@@ -288,6 +291,7 @@ margin_right = 248.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 19 )
+expand_icon = true
 
 [node name="Button_Combine" type="Button" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer2"]
 margin_left = 252.0
@@ -295,6 +299,7 @@ margin_right = 311.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 20 )
+expand_icon = true
 
 [node name="Button_Scale" type="Button" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer2"]
 margin_left = 315.0
@@ -302,6 +307,7 @@ margin_right = 374.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 21 )
+expand_icon = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools"]
 margin_top = 113.0
@@ -315,6 +321,7 @@ margin_right = 59.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 16 )
+expand_icon = true
 
 [node name="Button_Move" type="Button" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer"]
 margin_left = 63.0
@@ -322,6 +329,7 @@ margin_right = 122.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 14 )
+expand_icon = true
 
 [node name="Button_Add" type="Button" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer"]
 margin_left = 126.0
@@ -329,6 +337,7 @@ margin_right = 185.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 15 )
+expand_icon = true
 
 [node name="Button_Remove" type="Button" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer"]
 margin_left = 189.0
@@ -336,6 +345,7 @@ margin_right = 248.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 11 )
+expand_icon = true
 
 [node name="Button_Undo" type="Button" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer"]
 margin_left = 252.0
@@ -343,6 +353,7 @@ margin_right = 311.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 12 )
+expand_icon = true
 
 [node name="Button_Redo" type="Button" parent="BottomButtons/MarginContainer2/HBoxContainer/VBoxContainerTools/HBoxContainer"]
 margin_left = 315.0
@@ -350,3 +361,4 @@ margin_right = 374.0
 margin_bottom = 103.0
 size_flags_horizontal = 3
 icon = ExtResource( 13 )
+expand_icon = true
