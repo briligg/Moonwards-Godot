@@ -9,7 +9,9 @@ func get_class_dropdown(classname : String) -> Control:
 	var Menu = DropDown.new()
 	var dropdown = Menu.get_popup()
 	for variant in Nodes.custom_types.get(classname):
-		dropdown.add_item(variant)
+		if Nodes.custom_types.get(classname).get(variant) is String or Nodes.custom_types.get(classname).get(variant) is int:
+			dropdown.add_item(variant)
+			Menu.set_meta(variant, Nodes.custom_types.get(classname).get(variant))
 	return Menu
 
 func get_class_enum_dropdown(variable_classname : String) -> Control:
