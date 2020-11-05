@@ -70,7 +70,7 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
-anchor_right = 0.27
+anchor_right = 0.403
 anchor_bottom = 0.212
 margin_left = -1.18921
 margin_right = -1.18921
