@@ -4,7 +4,8 @@
 [ext_resource path="res://SceneComponent/Interface/AvatarPreview/AvatarPreview.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tree/Interface/UserSettings/Visual_Selector.gd" type="Script" id=3]
 [ext_resource path="res://Tree/addons/HuePicker/HuePicker.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Empty.tres" type="StyleBox" id=5]
+[ext_resource path="res://Assets/Interface/MainMenu/Style/MM_Empty.tres" type="StyleBox" id=5]
+
 
 [node name="UserSettings" type="VBoxContainer"]
 anchor_right = 1.0

@@ -6,11 +6,24 @@ extends CanvasLayer
 #Const variable nodes.
 onready var CUSTOM_SERVER_ADDRESS_FIELD : TextEdit = get_node( "HBoxContainer/Panel/Tab/DestinationTab/StartGame/InputServer/Ipv4Address") setget _crash
 
+#The two nodes I need to handle.
+onready var start : Control = $VBoxContainer
+onready var full_window : Tabs = $FullWindow
 
 #warning-ignore:unused_argument
 func _crash(value) -> void :
 	#Do not set the constant node variables.
 	assert(true == false)
+
+func back_to_start_menu() -> void :
+	start.show()
+	full_window.hide()
+
+#Bring up one of the fullscreen apps.
+func fullscreen(tab_name : String) -> void :
+	start.hide()
+	full_window.change_tab(tab_name)
+	full_window.show()
 
 #Show the main menu.
 func show() -> void:

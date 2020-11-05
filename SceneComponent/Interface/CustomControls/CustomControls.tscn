@@ -1,9 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Interface/MainMenu/Style/MM_Theme.tres" type="Theme" id=1]
 [ext_resource path="res://SceneComponent/Interface/CustomControls/CustomControls.gd" type="Script" id=2]
 [ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/control_option_component.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Empty.tres" type="StyleBox" id=4]
+[ext_resource path="res://Assets/Interface/MainMenu/Style/MM_Empty.tres" type="StyleBox" id=4]
+
 
 [node name="Controls" type="Tabs"]
 anchor_left = 0.5
