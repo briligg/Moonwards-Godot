@@ -12,6 +12,7 @@
 [node name="GeneralInfo" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 theme = ExtResource( 1 )
 script = ExtResource( 7 )
 __meta__ = {
@@ -26,6 +27,7 @@ anchor_left = 0.4
 anchor_top = 0.2
 anchor_right = 0.6
 anchor_bottom = 0.8
+mouse_filter = 2
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -34,6 +36,7 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="MenuPanel"]
 margin_right = 384.0
 margin_bottom = 648.0
+mouse_filter = 2
 custom_constants/separation = 23
 alignment = 1
 script = ExtResource( 6 )
@@ -209,3 +212,4 @@ __meta__ = {
 
 [node name="HelpPanel" parent="." instance=ExtResource( 9 )]
 visible = false
+mouse_filter = 2
