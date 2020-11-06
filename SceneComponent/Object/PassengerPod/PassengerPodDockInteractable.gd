@@ -153,15 +153,15 @@ puppet func pup_undock():
 func undock_to_airlock(rover):
 	is_docking = true
 	rover.mode = RigidBody.MODE_KINEMATIC
-	var original_rover_pos = rover.global_transform.origin
+	var dock_point = _dock_door_interactable.dock_point
 	
-	var targ = Quat(_dock_door_interactable.global_transform.basis).normalized()
+	var targ = Quat(dock_point.global_transform.basis).normalized()
 	while(!_slerp_to_coroutine(rover, targ, dock_anim_speed) and is_docking):
 		yield(get_tree(), "physics_frame")
 #
 	# Align XY axes
-	var targxy = Vector3(_dock_door_interactable.global_transform.origin.x, 
-			_dock_door_interactable.global_transform.origin.y,
+	var targxy = Vector3(dock_point.global_transform.origin.x, 
+			dock_point.global_transform.origin.y,
 			airlock_latch.global_transform.origin.z)
 	while(!_lerp_to_coroutine(rover, airlock_latch.global_transform.origin, targxy, dock_anim_speed) and is_docking):
 		yield(get_tree(), "physics_frame")
@@ -169,7 +169,7 @@ func undock_to_airlock(rover):
 	# ALign Z axis
 	var targz = Vector3(airlock_latch.global_transform.origin.x, 
 			airlock_latch.global_transform.origin.y,
-			_dock_door_interactable.global_transform.origin.z)
+			dock_point.global_transform.origin.z)
 	while(!_lerp_to_coroutine(rover, airlock_latch.global_transform.origin, targz, dock_anim_speed) and is_docking):
 		yield(get_tree(), "physics_frame")
 	
