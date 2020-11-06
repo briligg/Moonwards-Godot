@@ -23,6 +23,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.2322, 4.9519, -0.00354957 
 light_energy = 0.58
 light_indirect_energy = 0.5
 light_specular = 0.65
+shadow_enabled = true
 omni_range = 19.7
 omni_attenuation = 0.5
 
@@ -31,18 +32,47 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -90.9008, 4.17155, -0.00354957
 light_energy = 0.28
 light_indirect_energy = 0.5
 light_specular = 0.45
+shadow_enabled = true
 omni_range = 27.0
 omni_attenuation = 1.93187
 
-[node name="OmniLight3" type="OmniLight" parent="." index="3"]
+[node name="OmniLight5" type="OmniLight" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -71.077, 4.17155, -0.00354957 )
+light_energy = 0.28
+light_indirect_energy = 0.5
+light_specular = 0.45
+shadow_enabled = true
+omni_range = 37.8
+omni_attenuation = 1.93187
+
+[node name="OmniLight3" type="OmniLight" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -129.666, 4.53356, -0.00354957 )
 light_energy = 0.5
 light_indirect_energy = 0.55
 light_specular = 0.3
+shadow_enabled = true
 omni_range = 26.0
 omni_attenuation = 1.6245
 
-[node name="OmniLight4" type="OmniLight" parent="." index="4"]
+[node name="OmniLight6" type="OmniLight" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -101.862, -1.73966, -2.3743 )
+light_energy = 0.5
+light_indirect_energy = 0.55
+light_specular = 0.3
+shadow_enabled = true
+omni_range = 55.4
+omni_attenuation = 1.6245
+
+[node name="OmniLight7" type="OmniLight" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.8586, -1.73966, 3.7801 )
+light_energy = 0.5
+light_indirect_energy = 0.55
+light_specular = 0.3
+shadow_enabled = true
+omni_range = 55.4
+omni_attenuation = 1.6245
+
+[node name="OmniLight4" type="OmniLight" parent="." index="7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -156.741, 4.53356, 11.8596 )
 light_color = Color( 0.803922, 0.847059, 0.54902, 1 )
 light_energy = 2.31
@@ -53,7 +83,73 @@ shadow_bias = -2.41
 omni_range = 26.0
 omni_attenuation = 1.6245
 
-[node name="GIProbe" type="GIProbe" parent="." index="5"]
+[node name="OmniLight8" type="OmniLight" parent="." index="8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.6126, 3.71949, 10.6758 )
+light_energy = 0.75
+shadow_enabled = true
+omni_range = 5.43953
+
+[node name="OmniLight9" type="OmniLight" parent="." index="9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -71.4018, 3.71949, 10.6758 )
+light_energy = 0.75
+shadow_enabled = true
+omni_range = 10.7
+
+[node name="OmniLight10" type="OmniLight" parent="." index="10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -91.3464, 3.71949, 10.6758 )
+light_energy = 0.75
+shadow_enabled = true
+omni_range = 10.7
+
+[node name="OmniLight11" type="OmniLight" parent="." index="11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -111.291, 3.71949, 10.6758 )
+light_energy = 0.75
+shadow_enabled = true
+omni_range = 10.7
+
+[node name="OmniLight12" type="OmniLight" parent="." index="12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -128.097, 3.71949, -9.31476 )
+light_energy = 0.75
+shadow_enabled = true
+omni_range = 10.7
+
+[node name="OmniLight13" type="OmniLight" parent="." index="13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -108.46, 3.71949, -9.31476 )
+light_energy = 0.75
+shadow_enabled = true
+omni_range = 10.7
+
+[node name="OmniLight14" type="OmniLight" parent="." index="14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6467, 3.71949, -9.31476 )
+light_energy = 0.75
+shadow_enabled = true
+omni_range = 10.7
+
+[node name="OmniLight15" type="OmniLight" parent="." index="15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68.3908, 3.71949, -9.31476 )
+light_energy = 0.75
+shadow_enabled = true
+omni_range = 10.7
+
+[node name="OmniLight16" type="OmniLight" parent="." index="16"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48.3117, 3.71949, -9.31476 )
+light_energy = 0.75
+shadow_enabled = true
+omni_range = 10.7
+
+[node name="OmniLight17" type="OmniLight" parent="." index="17"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.2966, 3.71949, 0.6678 )
+light_energy = 0.75
+shadow_enabled = true
+omni_range = 10.7
+
+[node name="OmniLight18" type="OmniLight" parent="." index="18"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.49894, 3.71949, 0.6678 )
+light_energy = 0.75
+shadow_enabled = true
+omni_range = 10.7
+
+[node name="GIProbe" type="GIProbe" parent="." index="19"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -86.8261, 0.707192, -0.536925 )
 subdiv = 0
 extents = Vector3( 90.892, 14.32, 15.3547 )
@@ -98,18 +194,18 @@ transform = Transform( -4.88762e-07, 0, -3, 0, 3, 0, 3, 0, -4.88762e-07, 0, 0, 0
 
 [node name="Airlock" parent="Markers/Marker_GarageAirlock" index="0" instance=ExtResource( 2 )]
 
-[node name="LOD1" parent="." index="8"]
+[node name="LOD1" parent="." index="22"]
 visible = false
 
-[node name="LOD2" parent="." index="9"]
+[node name="LOD2" parent="." index="23"]
 visible = false
 
-[node name="ReflectionProbe" type="ReflectionProbe" parent="." index="10"]
+[node name="ReflectionProbe" type="ReflectionProbe" parent="." index="24"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -79.0365, 3.18574, -2.24032 )
 extents = Vector3( 83.2733, 9.83605, 13.9452 )
 enable_shadows = true
 
-[node name="GarageAirlock-Tooltip" parent="." index="11" instance=ExtResource( 3 )]
+[node name="GarageAirlock-Tooltip" parent="." index="25" instance=ExtResource( 3 )]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -31.8032, 5.38868, 0.029593 )
 bbtext_fields = PoolStringArray( "This airlock defines the maximum size of an object that can be brought into the habitats. It can fit something over 8 meters wide and tall, and up to 20 m long. Almost everything inside the habs was made outside, on the surface and in the factories, so this airlock is used fairly often to bring in some large piece of infrastructure - water tanks and treatment equipment for the neighborhoods, the artificial gravity carousels (in pieces), large heat exchangers (like the tubular ones in the next hab). People\'s homes are fabricated outside and brought in through here, usually in one piece. The lower floor of the Airlock Bay is mostly used by robots handling traffic of this kind. Sometimes they need to prepare an item for further transport through the habs, or do some assembly that\'s easier done in this out-of-the-way area. ", "Occasionally, some machine will be brought into this airlock so that it can be examined and worked on directly by a person in a shirt-sleeve environment. As robots and androids advance, this is rarely necessary, but it provides a more intuitive work environment the engineers sometimes prefer." )
 title = "The Garage Airlock"
