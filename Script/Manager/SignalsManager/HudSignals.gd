@@ -12,6 +12,8 @@ const FLIGHT_VALUE_SET : String = "flight_value_set"
 const HIDDEN_HUDS_SET : String = "hidden_huds_set"
 const HIDE_INTERACTS_MENU_REQUESTED: String = "hide_interacts_menu_requested"
 const HIDE_RETICLE : String = "hide_reticle"
+const INTERACTABLE_DISPLAY_HIDDEN : String = "interactable_display_hidden"
+const INTERACTABLE_DISPLAY_SHOWN : String = "interactable_display_shown"
 const INTERACTABLE_ENTERED_REACH : String = "interactable_entered_reach"
 const INTERACTABLE_LEFT_REACH : String = "interactable_left_reach"
 const INTERACT_OCCURED : String = "interact_occured"
@@ -33,6 +35,8 @@ signal flight_value_set(new_value_float)
 signal hidden_huds_set(huds_affect_flag_int, became_visible)
 signal hide_interacts_menu_requested()
 signal hide_reticle()
+signal interactable_display_hidden()
+signal interactable_display_shown(interactable_title, uses_interacts_menu_only_bool)
 signal interactable_entered_reach(interactable_node)
 signal interactable_left_reach(interactable_node)
 signal interact_occured(interactable_user_node)

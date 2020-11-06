@@ -6,10 +6,11 @@
 
 [node name="InteractDisplay" type="Label"]
 visible = false
-anchor_left = 0.6
-anchor_top = 0.9
-anchor_right = 0.87
-anchor_bottom = 0.9
+anchor_left = 0.995
+anchor_top = 0.006
+anchor_right = 0.995
+anchor_bottom = 0.006
+grow_horizontal = 0
 custom_styles/normal = ExtResource( 3 )
 custom_fonts/font = ExtResource( 2 )
 text = "Hello World"

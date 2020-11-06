@@ -43,7 +43,11 @@ func _input(event : InputEvent) -> void :
 			player_requested_interact(interactable)
 
 func _make_hud_display_interactable(interactable : Interactable = null) -> void :
-	Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_ENTERED_REACH, interactable)
+	if interactable == null :
+		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_HIDDEN)
+	else :
+		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_SHOWN, 
+				interactable.title, disable_ray_cast)
 
 #Make Interactor have my Entity variable as it's user.
 func _ready() -> void :
@@ -108,6 +112,11 @@ func grab_focus() -> void:
 	#Display what is the closest interactable.
 	interactor_ray.connect("new_interactable", self, "_make_hud_display_interactable")
 	interactor_ray.connect("no_interactable_in_reach", self, "_make_hud_display_interactable")
+	
+	#Let the InteractsDisplay know if I only use InteractsMenu.
+	if disable_ray_cast :
+		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_SHOWN, 
+				"", disable_ray_cast)
 
 #Another interactor has grabbed focus. Perform cleanup.
 func lost_focus() -> void :
