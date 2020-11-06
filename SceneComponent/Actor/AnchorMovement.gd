@@ -20,21 +20,30 @@ func _integrate_forces(args):
 		invoke_network_based("_integrate_server", "_integrate_client", [args])
 
 func _integrate_server(args) -> void:
-	var state = args[0]
 	if process_mode == ProcessMode.IntegrateForces:
 		if entity.movement_anchor_data.is_anchored:
-			_update_entity_pos()
+			_server_update_entity_values()
 			
-func _integrate_client(state):
-	pass
+func _integrate_client(args):
+	if process_mode == ProcessMode.IntegrateForces:
+		if entity.movement_anchor_data.is_anchored:
+			_client_update_entity_values()
+
+func _server_update_entity_values():
+	var pos = entity.movement_anchor_data.get_anchor_position()
+	entity.global_transform.origin = pos
+	entity.srv_pos = pos
+		
+func _client_update_entity_values():
+	# Small hack, to not have to sync anchor state for newly joined players.
+	if entity.owner_peer_id == Network.network_instance.peer_id:
+		var pos = entity.movement_anchor_data.get_anchor_position()
+		entity.global_transform.origin = pos
+	else:
+		entity.global_transform.origin = entity.srv_pos
 
 func _process_server(delta: float) -> void:
-	if process_mode == ProcessMode.PhysicsProcess:
-		if entity.movement_anchor_data.is_anchored:
-			_update_entity_pos()
-
-func _update_entity_pos():
-	entity.global_transform.origin = entity.movement_anchor_data.get_anchor_position()
+	pass
 
 func _process_client(state):
 	pass

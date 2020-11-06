@@ -9,12 +9,7 @@
 [ext_resource path="res://Assets/MoonTown/Models/Human_Model/FemalePlayerModel.tscn" type="PackedScene" id=7]
 [ext_resource path="res://SceneComponent/Actor/AI/Workstation.tscn" type="PackedScene" id=8]
 [ext_resource path="res://SceneComponent/Actor/AI/MwAI.gd" type="Script" id=9]
-[ext_resource path="res://Script/Component/ModelComponent.gd" type="Script" id=10]
-
-
-
-
-
+[ext_resource path="res://SceneComponent/Actor/ModelComponent.gd" type="Script" id=10]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.287522

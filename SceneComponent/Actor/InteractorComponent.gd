@@ -82,7 +82,7 @@ func _ready() -> void :
 		interactor_area.queue_free()
 		interactor_area = null
 	
-	if grab_focus_at_ready :
+	if grab_focus_at_ready && is_net_owner() :
 		grab_focus()
 
 #Called by signal. When false, do not allow the player to press interact. When true, player can interact.
@@ -127,30 +127,43 @@ func player_requested_interact(interactable : Interactable)->void:
 #Pass the interactor signals we are listening to onwards.
 func relay_signal(attribute = null, signal_name = "interactable_made_impossible") -> void :
 	emit_signal(signal_name, attribute)
-	
-mastersync func request_interact(args : Array) -> void :
+
+# This is always run on the server, after a client requests a specific interact.
+master func request_interact(args : Array) -> void :
 	Log.warning(self, "", "Client %s requested an interaction" %entity.owner_peer_id)
 	var interactable = get_node(args[1])
 	Log.warning(self, "", "Interact mode: %s" %interactable.network_mode)
 	match interactable.network_mode:
 		interactable.NetworkMode.CLIENT_SERVER:
+			# Run it on the server
 			execute_interact(args)
-			rpc_id(get_tree().get_rpc_sender_id(), "execute_interact", args)
+			# If I'm the server, then I already ran my own request in the line above.
+			if get_tree().get_rpc_sender_id() != 1:
+				rpc_id(get_tree().get_rpc_sender_id(), "execute_interact", args)
 		interactable.NetworkMode.CLIENT_ONLY:
-			rpc_id(get_tree().get_rpc_sender_id(), "execute_interact", args)
+			# If server is also a client, just run it locally.
+			if get_tree().get_rpc_sender_id() == 1:
+				execute_interact(args)
+			else:
+				rpc_id(get_tree().get_rpc_sender_id(), "execute_interact", args)
 		interactable.NetworkMode.SERVER_ONLY:
+			# Since this func only runs on the server, we can safely run locally.
 			execute_interact(args)
 		interactable.NetworkMode.PROPAGATED:
+			# Run it once on the server, then propagate it to all clients
+			execute_interact(args)
 			rpc("execute_interact", args)
 
-puppetsync func execute_interact(args: Array):
+puppet func execute_interact(args: Array):
 	Log.warning(self, "", "Client %s interacted request executed" %entity.owner_peer_id)
 	var interactor = get_node(args[0])
 	var interactable = get_node(args[1])
 	interactor.interact(interactable)
 
 func disable():
-	interactor_ray.enabled = false
+	#This gets called before _ready.
+	if interactor_ray != null :
+		interactor_ray.enabled = false
 	.disable()
 
 func enable():

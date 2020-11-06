@@ -142,7 +142,7 @@ margin_right = 922.0
 margin_bottom = 227.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "sdfsf"
+text = "127.0.0.1"
 
 [node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
 margin_top = 231.0
@@ -154,15 +154,15 @@ size_flags_vertical = 3
 margin_top = 303.0
 margin_right = 922.0
 margin_bottom = 317.0
-text = "PASSWORD"
+text = "PORT"
 
-[node name="TextEdit_Password" type="TextEdit" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+[node name="TextEdit_Port" type="TextEdit" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
 margin_top = 321.0
 margin_right = 922.0
 margin_bottom = 390.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "sdfsdf"
+text = "5000"
 caret_block_mode = true
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/VBoxContainer"]

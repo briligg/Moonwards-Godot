@@ -36,7 +36,8 @@ var is_flying : bool = false
 var is_groundcast_enabled: bool = true
 
 #Whether I am climbing or not.
-var is_climbing : bool = false
+# Puppetsync hack for now
+puppetsync var is_climbing : bool = false
 
 func _init():
 	pass
@@ -58,8 +59,22 @@ func is_grounded() -> bool:
 func _integrate_forces(state):
 	invoke_network_based("_integrate_server", "_integrate_client", [state])
 
-func _integrate_client(_args):
-	pass
+func _integrate_client(args):
+	var phys_state = args[0]
+	entity.is_grounded = is_grounded()
+	
+	# Return as now movement is handled by the anchor component.
+	if entity.movement_anchor_data.is_anchored:
+		entity.custom_integrator = true
+		return
+	else:
+		entity.custom_integrator = false
+	
+	entity.global_transform.origin = entity.srv_pos
+	entity.velocity = entity.srv_vel
+	phys_state.linear_velocity = entity.srv_vel
+	rotate_body(phys_state)
+	update_anim_state(phys_state)
 	
 func _integrate_server(args):
 	var phys_state = args[0]
@@ -68,14 +83,20 @@ func _integrate_server(args):
 	# I still feel this needs to be somewhere else, regardless.
 	if entity.movement_anchor_data.is_anchored:
 		entity.custom_integrator = true
+		update_entity_values()
+		update_server_values(phys_state)
 		return
 	else:
 		entity.custom_integrator = false
-		
+	
+	# Just free-falling in the air
 	if !entity.is_grounded and !is_jumping and !is_climbing:
 		update_entity_values()
+		update_server_values(phys_state)
 		return
+	main_logic_routine(phys_state)
 	
+func main_logic_routine(phys_state):
 	reset_input()
 	if self.enabled:
 		handle_input()
@@ -202,10 +223,10 @@ func disable_ground_cast_for_seconds(duration = 0.0):
 		is_groundcast_enabled = true
 
 ### TEMPORARY CLIMBING CODE
-# to be moved elsewhere.
+# to be moved elsewhere and possibly reworked.
 func start_climb_stairs(target_stairs : VerticalStairs) -> void:
 	#Do nothing if the player is already in climbing state.
-	if entity.state.state == ActorEntityState.State.CLIMBING:
+	if is_climbing:
 		return
 	
 	entity.custom_integrator = true
@@ -243,7 +264,9 @@ func stop_climb_stairs(phys_state : PhysicsDirectBodyState, is_stairs_top) -> vo
 	#Make myself face the same direction as the camera.
 	entity.model.global_transform.basis = entity.global_transform.basis
 	entity.custom_integrator = false
-	
+	if is_network_master():
+		rset("is_climbing", is_climbing)
+
 #Eventually we need to make this work with delta.
 func update_stairs_climbing(_delta : float, phys_state : PhysicsDirectBodyState) -> void :
 	if vertical_vector.y > 0:

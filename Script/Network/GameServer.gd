@@ -50,11 +50,13 @@ master func initialize_entity_data(name, colors):
 	entities[entity_data.peer_id] = entity_data
 	crpc(self, "add_player", entity_data.serialize(), [peer_id])
 	Log.trace(self, "", "SERVER CONNECTED: %s" %peer_id)
+	Signals.Network.emit_signal(NetworkSignals.NEW_PLAYER_POST_LOAD, peer_id)
 
 func _host_game() -> void:
 	var err = server_peer.create_server(port, max_players)
 	if err == OK:
 		get_tree().set_network_peer(server_peer)
+		server_peer.always_ordered = Network.IS_ALWAYS_ORDERED
 	elif err == ERR_CANT_CREATE:
 		Log.critical(self, "", "Could not create server peer.")
 	elif err == ERR_ALREADY_EXISTS:
@@ -83,3 +85,4 @@ func _player_connected(peer_id) -> void:
 func _player_disconnected(peer_id) -> void:
 	crpc(self, "remove_player", peer_id, [peer_id])
 	Log.trace(self, "", "DISCONNECTED: %s" %peer_id)
+	Signals.Network.emit_signal(NetworkSignals.CLIENT_DISCONNECTED, peer_id)

@@ -21,6 +21,7 @@ collision_mask = 32768
 script = ExtResource( 1 )
 display_info = "Pod structure"
 title = "Grab a pole to stabilize your movement"
+network_mode = 3
 
 [node name="CollisionShape" type="CollisionShape" parent="Interactable"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 9.3844, 8.39058e-05, -0.499579, -0.0138121 )

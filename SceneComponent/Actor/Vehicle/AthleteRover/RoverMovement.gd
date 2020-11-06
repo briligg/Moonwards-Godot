@@ -1,8 +1,8 @@
 extends AComponent
 
 # Control properties
-export var engine_power: float = 4000.0 # At most 6x the weight
-export var max_steering_angle: float = 40.0 # Wheel steering angle
+export var engine_power: float = 11000.0 # At most 6x the weight
+export var max_steering_angle: float = 15.0 # Wheel steering angle
 export var steering_speed: float = 2.0 # How fast the wheel turns
 export var power_per_wheel: float # Set in _ready
 
@@ -11,7 +11,8 @@ export var power_per_wheel: float # Set in _ready
 # to actuate before allowing another jump attempt
 var _jump_timer: float = 0.0
 var jump_cooldown: float = 2.0
-var m_b_center_mass: Vector3 = Vector3(0.0, 0, 0.0) # Main body center of mass, currently matches the rootcol pos
+# Main body center of mass, currently matches the rootcol pos
+var m_b_center_mass: Vector3 = Vector3(0.0, 0, 0.0)  
 # Collision mask to determine how close the center of mass is from the ground - should only want the ground, so any
 # load/cargo below the body should be in a different layer
 var coll_mask: int = 1
@@ -47,10 +48,10 @@ func _process_server(delta: float) -> void:
 		(1.0 - exp(-steering_speed * delta)))
 	
 	# 4 wheel drive, middle wheels do not exert engine force - can be changed, but works well
-	entity.wheels[0].apply_engine_force(entity.input.x * entity.global_transform.basis.z * power_per_wheel * delta)
-	entity.wheels[3].apply_engine_force(entity.input.x * entity.global_transform.basis.z * power_per_wheel * delta)
-	entity.wheels[2].apply_engine_force(entity.input.x * entity.global_transform.basis.z * power_per_wheel * delta)
-	entity.wheels[5].apply_engine_force(entity.input.x * entity.global_transform.basis.z * power_per_wheel * delta)
+	entity.wheels[0].apply_engine_force(entity.input.x * entity.global_transform.basis.z * power_per_wheel)# * delta)
+	entity.wheels[3].apply_engine_force(entity.input.x * entity.global_transform.basis.z * power_per_wheel)# * delta)
+	entity.wheels[2].apply_engine_force(entity.input.x * entity.global_transform.basis.z * power_per_wheel / 1.5)# * delta)
+	entity.wheels[5].apply_engine_force(entity.input.x * entity.global_transform.basis.z * power_per_wheel / 1.5)# * delta)
 	entity.srv_pos = entity.global_transform.origin
 	entity.srv_basis = entity.global_transform.basis
 

@@ -38,10 +38,11 @@ func on_body_entered(body) -> void:
 		return
 		
 	if body is AEntity:
-		if body.owner_peer_id == get_tree().get_network_unique_id() and VisibilityManager.log_vt_changes:
-			Log.trace(self, "on_body_entered", "Processing visibility for %s, in %s"
-					%[body.name, self.name])
-		process_visibility()
+		if body.owner_peer_id == get_tree().get_network_unique_id():
+			process_visibility()
+			if VisibilityManager.log_vt_changes:
+				Log.trace(self, "on_body_entered", "Processing visibility for %s, in %s"
+						%[body.name, self.name])
 
 func process_visibility() -> void:
 	if is_set:

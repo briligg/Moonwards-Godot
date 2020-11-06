@@ -21,5 +21,6 @@ func _on_body_exited(body):
 		is_rover_available = false
 
 func interacted_by(interactor):
-	var interact = rover.get_node("RoverRideInteractable")
-	interact.interacted_by(interactor)
+	# A bit hacky now
+	var interactable = rover.get_node("RoverRideInteractable").get_node("Interactable")
+	interactor.get_component("Interactor").player_requested_interact(interactable)

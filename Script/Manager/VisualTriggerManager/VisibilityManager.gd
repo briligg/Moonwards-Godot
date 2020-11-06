@@ -19,7 +19,7 @@ export(bool) var log_vt_changes = false
 ####
 
 # The maximum  amount of LOD changes to be performed every frame
-export(int) var iterations_per_frame  = 4
+export(int) var iterations_per_frame  = 8
 
 export(LodState) var default_lod_state = LodState.LOD0
 
