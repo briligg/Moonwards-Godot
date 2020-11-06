@@ -43,8 +43,6 @@ func _input(event : InputEvent) -> void :
 			player_requested_interact(interactable)
 
 func _make_hud_display_interactable(interactable : Interactable = null) -> void :
-	Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_ENTERED_REACH, interactable)
-	
 	if interactable == null :
 		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_HIDDEN)
 	else :
