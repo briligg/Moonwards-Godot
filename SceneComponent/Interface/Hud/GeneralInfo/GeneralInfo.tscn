@@ -64,22 +64,24 @@ text = "Quit game"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 size_flags_horizontal = 3
+theme = ExtResource( 3 )
 custom_constants/separation = 10
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
-margin_right = 95.0
+margin_right = 59.0
 margin_bottom = 36.0
 
 [node name="Panel" type="Panel" parent="HBoxContainer/MarginContainer"]
-margin_right = 95.0
+margin_right = 59.0
 margin_bottom = 36.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label_Time" type="Label" parent="HBoxContainer/MarginContainer"]
-margin_right = 95.0
-margin_bottom = 36.0
+margin_top = 6.0
+margin_right = 59.0
+margin_bottom = 30.0
 text = "10:45"
 align = 1
 valign = 1
@@ -89,20 +91,21 @@ __meta__ = {
 }
 
 [node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
-margin_left = 105.0
-margin_right = 270.0
+margin_left = 69.0
+margin_right = 175.0
 margin_bottom = 36.0
 
 [node name="Panel" type="Panel" parent="HBoxContainer/MarginContainer2"]
-margin_right = 165.0
+margin_right = 106.0
 margin_bottom = 36.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label_Location" type="Label" parent="HBoxContainer/MarginContainer2"]
-margin_right = 165.0
-margin_bottom = 36.0
+margin_top = 6.0
+margin_right = 106.0
+margin_bottom = 30.0
 text = "LOCATION"
 align = 1
 valign = 1
@@ -112,11 +115,12 @@ __meta__ = {
 }
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="."]
-margin_left = 5.0
-margin_top = 45.0
-margin_right = 205.0
+margin_top = 30.0
 theme = ExtResource( 3 )
 custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer3"]
 margin_right = 52.0
@@ -151,6 +155,7 @@ margin_top = 37.0
 margin_right = 39.0
 margin_bottom = 64.0
 texture = ExtResource( 2 )
+expand = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="HBoxContainer3/MarginContainer/HBoxContainer"]
@@ -198,6 +203,7 @@ margin_top = 37.0
 margin_right = 39.0
 margin_bottom = 64.0
 texture = ExtResource( 4 )
+expand = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="HBoxContainer3/MarginContainer2/HBoxContainer"]
