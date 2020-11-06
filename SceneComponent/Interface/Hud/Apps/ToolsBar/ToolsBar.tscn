@@ -106,6 +106,7 @@ anchor_top = 0.82
 anchor_right = 1.0
 anchor_bottom = 0.994
 grow_horizontal = 0
+grow_vertical = 0
 theme = ExtResource( 1 )
 script = ExtResource( 14 )
 __meta__ = {

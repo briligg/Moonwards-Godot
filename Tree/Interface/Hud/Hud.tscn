@@ -23,8 +23,6 @@ layer = 8
 script = ExtResource( 1 )
 
 [node name="Chat" parent="." instance=ExtResource( 2 )]
-margin_left = 20.0
-margin_bottom = -20.0
 
 [node name="Blur" type="TextureRect" parent="."]
 visible = false
