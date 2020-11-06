@@ -1,12 +1,15 @@
 extends Interactable
 class_name AirlockDoorInteractable
 
-export(NodePath) var animation_player
+export(NodePath) var animation_player_path
+export(NodePath) var dock_point_path
 export(String) var animation_name
 # If this door is dockable to a passenger pod
 export(bool) var is_dock_door: bool = false
 
-onready var anim = get_node(animation_player)
+onready var anim = get_node(animation_player_path)
+onready var dock_point = get_node_or_null(dock_point_path)
+
 var is_open: bool = false
 
 
