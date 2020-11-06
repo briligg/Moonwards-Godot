@@ -77,6 +77,9 @@ title = "Airlock Door"
 animation_player = NodePath("../../../AnimationPlayer")
 animation_name = "OpenInterior"
 
+[node name="DockPoint" type="Position3D" parent="LOD0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00488389, -0.13527, 0.237398 )
+
 [node name="LOD1" parent="." instance=ExtResource( 3 )]
 visible = false
 

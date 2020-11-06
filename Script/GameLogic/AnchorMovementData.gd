@@ -24,10 +24,17 @@ func attach(node: Node):
 	self.is_anchored = true
 
 func detach():
-	anchor_node = null
-	Helpers.call_deferred("reparent", anchor_pos3d_node, entity, true)
-	self.is_anchored = false
+	call_deferred("detach_deferred")
 
+func detach_deferred():
+	var pos = get_anchor_position()
+	anchor_node = null
+	Helpers.reparent(anchor_pos3d_node, entity, true)
+	self.is_anchored = false
+	
+	entity.global_transform.origin = pos
+	anchor_pos3d_node.global_transform.origin = pos
+	
 func get_anchor_node() -> Node:
 	return anchor_node
 
