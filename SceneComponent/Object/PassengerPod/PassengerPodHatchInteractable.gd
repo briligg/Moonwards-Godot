@@ -2,7 +2,7 @@ extends Spatial
 export(NodePath) var hatch_collision_path
 onready var hatch_collision = get_node(hatch_collision_path)
 
-onready var anim = get_parent().get_node("Model/LOD0/AnimationPlayer")
+onready var anim = get_parent().get_node("Model/AnimationPlayer")
 
 var is_hatch_open: bool = false
 

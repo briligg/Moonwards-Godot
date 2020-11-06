@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconCreateServer.png" type="Texture" id=1]
 [ext_resource path="res://SceneComponent/Interface/MainMenu/Destination.gd" type="Script" id=2]
-[ext_resource path="res://Tree/Interface/MainMenu/Style/MMD_Theme/MMD_Theme.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Interface/MainMenu/Style/MMD_Theme/MMD_Theme.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconOfficialServer.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconJoinServer.png" type="Texture" id=5]
 
@@ -28,7 +28,6 @@ margin_right = 922.0
 margin_bottom = 1066.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 3 )
 
 [node name="Button_CreateServer" type="Button" parent="HBoxContainer/VBoxContainer2"]
 margin_right = 922.0
@@ -179,7 +178,6 @@ margin_right = 922.0
 margin_bottom = 1066.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 3 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/Button_JoinServer"]
 anchor_right = 1.0

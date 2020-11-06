@@ -604,6 +604,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/AI/Workstation.gd"
 }, {
+"base": "Spatial",
+"class": "WorldMirror",
+"language": "GDScript",
+"path": "res://SceneComponent/Utilities/Mirrors/MirrorAutoManaged.gd"
+}, {
 "base": "Navigation",
 "class": "WorldNavigator",
 "language": "GDScript",
@@ -729,6 +734,7 @@ _global_script_class_icons={
 "VisualShaderNodeVectorHeightMix": "",
 "Worker": "",
 "Workstation": "",
+"WorldMirror": "",
 "WorldNavigator": ""
 }
 
@@ -2196,3 +2202,4 @@ quality/filters/use_nearest_mipmap_filter=true
 limits/rendering/max_renderable_elements=60000
 environment/default_clear_color=Color( 0, 0, 0, 1 )
 quality/filters/msaa=1
+environment/default_environment="res://default_env.tres"

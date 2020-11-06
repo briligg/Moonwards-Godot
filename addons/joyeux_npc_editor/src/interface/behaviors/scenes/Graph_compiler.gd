@@ -61,7 +61,7 @@ func add_node(type : String, node_name : String, offset : Vector2 = Vector2.ZERO
 	var filtered = Nodes.filter_node_name(node_name)
 	var instanced = Nodes.Graphs.get(type).get(filtered)
 	if instanced is Node:
-		instanced = instanced.duplicate()
+		instanced = instanced.duplicate(7)
 	else:
 		instanced = instanced.instance()
 	instanced.offset = offset

@@ -1,49 +1,83 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconUsers.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme_Small.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconMail.png" type="Texture" id=4]
+[ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/Panel.gd" type="Script" id=5]
+[ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/MenuButtons.gd" type="Script" id=6]
+[ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/GeneralInfo.gd" type="Script" id=7]
+[ext_resource path="res://SceneComponent/Interface/HelpMenu/HelpMenu.tscn" type="PackedScene" id=9]
 
-
-[node name="GeneralInfo" type="PanelContainer"]
+[node name="GeneralInfo" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 theme = ExtResource( 1 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 1920.0
-margin_bottom = 1080.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource( 1 )
-custom_constants/separation = 10
+[node name="MenuPanel" type="PanelContainer" parent="." groups=[
+"hud_general_info",
+]]
+visible = false
+anchor_left = 0.4
+anchor_top = 0.2
+anchor_right = 0.6
+anchor_bottom = 0.8
+mouse_filter = 2
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 1920.0
-margin_bottom = 36.0
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPanel"]
+margin_right = 384.0
+margin_bottom = 648.0
+mouse_filter = 2
+custom_constants/separation = 23
+alignment = 1
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Graphics" type="Button" parent="MenuPanel/VBoxContainer"]
+margin_top = 241.0
+margin_right = 384.0
+margin_bottom = 281.0
+text = "Graphics"
+
+[node name="MainMenu" type="Button" parent="MenuPanel/VBoxContainer"]
+margin_top = 304.0
+margin_right = 384.0
+margin_bottom = 344.0
+text = "Main Menu"
+
+[node name="Quit" type="Button" parent="MenuPanel/VBoxContainer"]
+margin_top = 367.0
+margin_right = 384.0
+margin_bottom = 407.0
+text = "Quit game"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 size_flags_horizontal = 3
 custom_constants/separation = 10
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
 margin_right = 95.0
 margin_bottom = 36.0
 
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/MarginContainer"]
+[node name="Panel" type="Panel" parent="HBoxContainer/MarginContainer"]
 margin_right = 95.0
 margin_bottom = 36.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label_Time" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer"]
+[node name="Label_Time" type="Label" parent="HBoxContainer/MarginContainer"]
 margin_right = 95.0
 margin_bottom = 36.0
 text = "10:45"
@@ -54,19 +88,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
 margin_left = 105.0
 margin_right = 270.0
 margin_bottom = 36.0
 
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/MarginContainer2"]
+[node name="Panel" type="Panel" parent="HBoxContainer/MarginContainer2"]
 margin_right = 165.0
 margin_bottom = 36.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label_Location" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer2"]
+[node name="Label_Location" type="Label" parent="HBoxContainer/MarginContainer2"]
 margin_right = 165.0
 margin_bottom = 36.0
 text = "LOCATION"
@@ -77,41 +111,41 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 46.0
-margin_right = 1920.0
-margin_bottom = 79.0
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+margin_left = 5.0
+margin_top = 45.0
+margin_right = 205.0
 theme = ExtResource( 3 )
 custom_constants/separation = 10
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer3"]
-margin_right = 64.0
-margin_bottom = 33.0
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer3"]
+margin_right = 52.0
+margin_bottom = 27.0
 
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer3/MarginContainer"]
-margin_right = 64.0
-margin_bottom = 33.0
+[node name="Panel" type="Panel" parent="HBoxContainer3/MarginContainer"]
+margin_right = 52.0
+margin_bottom = 27.0
 grow_horizontal = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer3/MarginContainer"]
-margin_right = 64.0
-margin_bottom = 33.0
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer3/MarginContainer"]
+margin_right = 52.0
+margin_bottom = 27.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer3/MarginContainer/HBoxContainer"]
-margin_right = 39.0
-margin_bottom = 33.0
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer3/MarginContainer/HBoxContainer"]
+margin_right = 27.0
+margin_bottom = 27.0
 alignment = 1
 
-[node name="Button_FriendsOnline" type="Button" parent="VBoxContainer/HBoxContainer3/MarginContainer/HBoxContainer/VBoxContainer"]
-margin_right = 39.0
-margin_bottom = 33.0
+[node name="Button_FriendsOnline" type="Button" parent="HBoxContainer3/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_right = 27.0
+margin_bottom = 27.0
 icon = ExtResource( 2 )
 flat = true
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer3/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer3/MarginContainer/HBoxContainer/VBoxContainer"]
 visible = false
 margin_top = 37.0
 margin_right = 39.0
@@ -119,46 +153,46 @@ margin_bottom = 64.0
 texture = ExtResource( 2 )
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3/MarginContainer/HBoxContainer"]
-margin_left = 43.0
-margin_top = 4.0
-margin_right = 64.0
-margin_bottom = 28.0
+[node name="Label" type="Label" parent="HBoxContainer3/MarginContainer/HBoxContainer"]
+margin_left = 31.0
+margin_top = 1.0
+margin_right = 52.0
+margin_bottom = 25.0
 text = "0"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer3"]
-margin_left = 74.0
-margin_right = 138.0
-margin_bottom = 33.0
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer3"]
+margin_left = 62.0
+margin_right = 114.0
+margin_bottom = 27.0
 
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer3/MarginContainer2"]
-margin_right = 64.0
-margin_bottom = 33.0
+[node name="Panel" type="Panel" parent="HBoxContainer3/MarginContainer2"]
+margin_right = 52.0
+margin_bottom = 27.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer3/MarginContainer2"]
-margin_right = 64.0
-margin_bottom = 33.0
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer3/MarginContainer2"]
+margin_right = 52.0
+margin_bottom = 27.0
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer3/MarginContainer2/HBoxContainer"]
-margin_right = 39.0
-margin_bottom = 33.0
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer3/MarginContainer2/HBoxContainer"]
+margin_right = 27.0
+margin_bottom = 27.0
 alignment = 1
 
-[node name="Button_Messages" type="Button" parent="VBoxContainer/HBoxContainer3/MarginContainer2/HBoxContainer/VBoxContainer"]
-margin_right = 39.0
-margin_bottom = 33.0
+[node name="Button_Messages" type="Button" parent="HBoxContainer3/MarginContainer2/HBoxContainer/VBoxContainer"]
+margin_right = 27.0
+margin_bottom = 27.0
 icon = ExtResource( 4 )
 flat = true
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer3/MarginContainer2/HBoxContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer3/MarginContainer2/HBoxContainer/VBoxContainer"]
 visible = false
 margin_top = 37.0
 margin_right = 39.0
@@ -166,12 +200,16 @@ margin_bottom = 64.0
 texture = ExtResource( 4 )
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3/MarginContainer2/HBoxContainer"]
-margin_left = 43.0
-margin_top = 4.0
-margin_right = 64.0
-margin_bottom = 28.0
+[node name="Label" type="Label" parent="HBoxContainer3/MarginContainer2/HBoxContainer"]
+margin_left = 31.0
+margin_top = 1.0
+margin_right = 52.0
+margin_bottom = 25.0
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HelpPanel" parent="." instance=ExtResource( 9 )]
+visible = false
+mouse_filter = 2

@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=2]
 
-[ext_resource path="res://Assets/MoonTown/Models/Ground_Passenger_Pod/Ground_Passenger_Pod_NoCol.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/MoonTown/Models/Ground_Passenger_Pod/GroundPassengerPod_Full_NoCol.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SceneComponent/Object/PassengerPod/PassengerPodHatchInteractable.tscn" type="PackedScene" id=2]
 [ext_resource path="res://SceneComponent/Object/PassengerPod/RoverRideRelayInteractable.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SceneComponent/Object/PassengerPod/PassengerPodDockInteractable.tscn" type="PackedScene" id=4]

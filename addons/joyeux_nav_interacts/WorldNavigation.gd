@@ -86,13 +86,15 @@ func get_navmesh_path(from: Vector3, to: Vector3, global : bool = false):
 	to = get_closest_point(to)
 	from = get_closest_point(from)
 	var path_points = Array(get_simple_path(from, to, true))
+	if path_points.size() < 1:
+		return [from]
 	if (path_points.back()- to).length() > 1:
-		var path2 = Array(get_simple_path(to, from, true))
+		var path2 = Array(get_simple_path(to, get_closest_point(path_points.back()), true))
 		path2.invert()
 		for point in path2:
 			path_points.append(point)
 	if get_node("Draw") is ImmediateGeometry and debug_draw:
-		draw_path(from, to, path_points)
+		draw_path(path_points.front(), path_points.back(), path_points)
 	if global:
 		var temp : Array = []
 		for points in path_points:

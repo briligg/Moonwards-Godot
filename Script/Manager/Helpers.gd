@@ -59,6 +59,13 @@ func get_action(action_name : String) -> Array :
 	
 	return [event_type, scancode] 
 
+#Return human readable format of the input.
+func get_action_string(action_name : String) -> String :
+	var event_scancode : int = get_action(action_name)[1]
+	var event_string : String
+	event_string = OS.get_scancode_string(event_scancode)
+	return event_string
+
 #Load the user file which stores all the player's personal settings.
 func load_user_file() -> void :
 	#Create the user file if it does not already exist.

@@ -11,8 +11,8 @@
 sample_partition_type/sample_partition_type = 1
 cell/size = 0.1
 cell/height = 0.1
-agent/height = 0.1
-agent/radius = 0.2
+agent/height = 1.7
+agent/radius = 0.7
 agent/max_climb = 0.27
 agent/max_slope = 69.7
 filter/filter_walkable_low_height_spans = true
@@ -96,13 +96,13 @@ transform = Transform( 0.154918, 0, -0.987927, 0, 1, 0, 0.987927, 0, 0.154918, 3
 category = 1
 
 [node name="NPC2" parent="Navigation" instance=ExtResource( 4 )]
-transform = Transform( 0.690567, 0, -0.723269, 0, 1, 0, 0.723269, 0, 0.690567, -124.567, -93.1605, -120.982 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -124.567, -92.8121, -119.958 )
 
 [node name="NPC4" parent="Navigation" instance=ExtResource( 4 )]
-transform = Transform( -0.351319, 0, -0.936256, 0, 1, 0, 0.936256, 0, -0.351319, -119.662, -93.1605, -117.06 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -119.662, -93.0778, -117.06 )
 
 [node name="NPC3" parent="Navigation" instance=ExtResource( 4 )]
-transform = Transform( -0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -126.468, -93.1711, -117.354 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -126.468, -92.9996, -117.354 )
 
 [node name="NPC5" parent="Navigation" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2581, -7.5555, -3.61078 )

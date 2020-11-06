@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Tree/Interface/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/BackgroundCycler/BackgroundCycler.tscn" type="PackedScene" id=2]
@@ -13,19 +13,26 @@
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconAbout_Menu.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconSettings_Menu.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconPower_Menu.png" type="Texture" id=13]
-[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Theme.tres" type="Theme" id=14]
-[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Theme_Footer.tres" type="Theme" id=15]
-[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Theme_Header.tres" type="Theme" id=16]
+[ext_resource path="res://Assets/Interface/MainMenu/Style/MM_Theme.tres" type="Theme" id=14]
+[ext_resource path="res://Assets/Interface/MainMenu/Style/MM_Theme_Footer.tres" type="Theme" id=15]
+[ext_resource path="res://Assets/Interface/MainMenu/Style/MM_Theme_Header.tres" type="Theme" id=16]
 [ext_resource path="res://Tree/Interface/MainMenu/MenuParent.gd" type="Script" id=17]
 [ext_resource path="res://SceneComponent/Interface/MainMenu/Destination.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Tree/Interface/MainMenu/QuitMenu.gd" type="Script" id=19]
 [ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/Settings.tscn" type="PackedScene" id=20]
 [ext_resource path="res://SceneComponent/Interface/CustomControls/CustomControls.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_Empty.tres" type="StyleBox" id=22]
-[ext_resource path="res://Tree/Interface/MainMenu/Style/MM_PanelMain.tres" type="StyleBox" id=23]
+[ext_resource path="res://Assets/Interface/MainMenu/Style/MM_Empty.tres" type="StyleBox" id=22]
+[ext_resource path="res://Assets/Interface/MainMenu/Style/MM_PanelMain.tres" type="StyleBox" id=23]
 [ext_resource path="res://Tree/Interface/MainMenu/SettingsMenu.gd" type="Script" id=24]
-[ext_resource path="res://addons/joyeux_npc_editor/src/interface/NPCEditorSuite.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Tree/Interface/MainMenu/FullWindow.gd" type="Script" id=25]
 [ext_resource path="res://Tree/Interface/MainMenu/Apps.gd" type="Script" id=26]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconAI.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Interface/MainMenu/Style/MMD_Theme/MMD_Theme.tres" type="Theme" id=28]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconBuilding_Alt.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconEvent.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconLibrary.png" type="Texture" id=31]
+[ext_resource path="res://SceneComponent/Interface/Hud/Apps/NPC/NPCApp.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=33]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.588235 )
@@ -50,7 +57,9 @@ func _on_NPCs_pressed():
 	popup_centered_clamped(Vector2(1920,1080))
 "
 
-[node name="MainMenu" type="CanvasLayer"]
+[node name="MainMenu" type="CanvasLayer" groups=[
+"MainMenu",
+]]
 layer = 10
 script = ExtResource( 1 )
 
@@ -70,10 +79,13 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
-anchor_right = 0.27
-anchor_bottom = 0.212
-margin_left = -1.18921
-margin_right = -1.18921
+anchor_top = -0.016
+anchor_right = 0.405
+anchor_bottom = 0.215
+margin_left = 1.97089
+margin_top = 4.16315
+margin_right = -1.78918
+margin_bottom = -15.5969
 size_flags_horizontal = 3
 texture = ExtResource( 4 )
 expand = true
@@ -207,51 +219,189 @@ margin_right = -2.0
 margin_bottom = -2.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 14 )
 script = ExtResource( 26 )
 
-[node name="HBoxContainer_Apps_Tab" type="HBoxContainer" parent="VBoxContainer/TabContainer/Apps"]
-margin_right = 1876.0
-margin_bottom = 45.0
-size_flags_horizontal = 3
-theme = ExtResource( 16 )
-custom_constants/separation = 20
-
-[node name="Button_NPCEditor" type="Button" parent="VBoxContainer/TabContainer/Apps/HBoxContainer_Apps_Tab"]
-margin_right = 306.0
-margin_bottom = 45.0
-size_flags_horizontal = 3
-text = "NPC EDITOR"
-
-[node name="Button_OtherEditor" type="Button" parent="VBoxContainer/TabContainer/Apps/HBoxContainer_Apps_Tab"]
-margin_left = 326.0
-margin_right = 632.0
-margin_bottom = 45.0
-size_flags_horizontal = 3
-text = "OTHER EDITOR"
-
-[node name="VSeparator" type="VSeparator" parent="VBoxContainer/TabContainer/Apps/HBoxContainer_Apps_Tab"]
-margin_left = 652.0
-margin_right = 1876.0
-margin_bottom = 45.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 4.0
-custom_styles/separator = ExtResource( 22 )
-
-[node name="TabContainer" type="TabContainer" parent="VBoxContainer/TabContainer/Apps"]
-margin_top = 49.0
+[node name="ButtonGrid" type="GridContainer" parent="VBoxContainer/TabContainer/Apps"]
 margin_right = 1876.0
 margin_bottom = 773.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/panel = ExtResource( 23 )
-tabs_visible = false
+custom_constants/vseparation = 14
+custom_constants/hseparation = 14
+columns = 2
 
-[node name="NPCEditorSuite" parent="VBoxContainer/TabContainer/Apps/TabContainer" instance=ExtResource( 25 )]
-margin_left = 2.0
-margin_top = 2.0
-margin_right = -2.0
-margin_bottom = -2.0
+[node name="NpcEditor" type="Button" parent="VBoxContainer/TabContainer/Apps/ButtonGrid"]
+margin_right = 931.0
+margin_bottom = 379.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/Apps/ButtonGrid/NpcEditor"]
+anchor_left = 0.35
+anchor_top = 0.15
+anchor_right = 0.65
+anchor_bottom = 0.55
+margin_top = -0.943878
+margin_bottom = -0.943878
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 32, 32 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource( 27 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Apps/ButtonGrid/NpcEditor"]
+anchor_top = 0.917
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 10
+theme = ExtResource( 28 )
+text = "NPC EDITOR"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Building" type="Button" parent="VBoxContainer/TabContainer/Apps/ButtonGrid"]
+margin_left = 945.0
+margin_right = 1876.0
+margin_bottom = 379.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/Apps/ButtonGrid/Building"]
+anchor_left = 0.35
+anchor_top = 0.15
+anchor_right = 0.65
+anchor_bottom = 0.55
+margin_top = -0.943878
+margin_bottom = -0.943878
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 32, 32 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource( 29 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Apps/ButtonGrid/Building"]
+anchor_top = 0.917
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 10
+theme = ExtResource( 28 )
+text = "BUILDINGS"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Events" type="Button" parent="VBoxContainer/TabContainer/Apps/ButtonGrid"]
+margin_top = 393.0
+margin_right = 931.0
+margin_bottom = 772.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/Apps/ButtonGrid/Events"]
+anchor_left = 0.35
+anchor_top = 0.15
+anchor_right = 0.65
+anchor_bottom = 0.55
+margin_top = -0.943878
+margin_bottom = -0.943878
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 32, 32 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource( 30 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Apps/ButtonGrid/Events"]
+anchor_top = 0.917
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 10
+theme = ExtResource( 28 )
+text = "EVENTS"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Library" type="Button" parent="VBoxContainer/TabContainer/Apps/ButtonGrid"]
+margin_left = 945.0
+margin_top = 393.0
+margin_right = 1876.0
+margin_bottom = 772.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/Apps/ButtonGrid/Library"]
+anchor_left = 0.35
+anchor_top = 0.15
+anchor_right = 0.65
+anchor_bottom = 0.55
+margin_top = -0.943878
+margin_bottom = -0.943878
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 32, 32 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource( 31 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Apps/ButtonGrid/Library"]
+anchor_top = 0.917
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 10
+theme = ExtResource( 28 )
+text = "LIBRARY"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Settings" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
 visible = false
@@ -446,6 +596,15 @@ margin_right = 170.0
 margin_bottom = 57.0
 focus_neighbour_right = NodePath("../../HBoxContainer_Middle/Button_Home")
 icon = ExtResource( 13 )
+
+[node name="FullWindow" type="Tabs" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 33 )
+script = ExtResource( 25 )
+
+[node name="NPCEditor" parent="FullWindow" instance=ExtResource( 32 )]
 
 [node name="Logo" type="TextureRect" parent="."]
 visible = false

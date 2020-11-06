@@ -1,15 +1,11 @@
-[gd_resource type="Theme" load_steps=14 format=2]
+[gd_resource type="Theme" load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Interface/Fonts/MainMenuFont.tres" type="DynamicFont" id=1]
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0, 0, 0, 0.784314 )
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0, 0, 0, 0.588235 )
+[ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsButtonDisabled.tres" type="StyleBox" id=2]
+[ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsButtonPressed.tres" type="StyleBox" id=3]
+[ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsButtonNormal.tres" type="StyleBox" id=4]
+[ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsButtonHover.tres" type="StyleBox" id=5]
+[ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsButtonFocus.tres" type="StyleBox" id=6]
 
 [sub_resource type="StyleBoxFlat" id=4]
 content_margin_left = 10.0
@@ -59,11 +55,11 @@ Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
 Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 Button/constants/hseparation = 20
 Button/fonts/font = null
-Button/styles/disabled = SubResource( 1 )
-Button/styles/focus = null
-Button/styles/hover = SubResource( 2 )
-Button/styles/normal = SubResource( 3 )
-Button/styles/pressed = null
+Button/styles/disabled = ExtResource( 2 )
+Button/styles/focus = ExtResource( 6 )
+Button/styles/hover = ExtResource( 5 )
+Button/styles/normal = ExtResource( 4 )
+Button/styles/pressed = ExtResource( 3 )
 Label/colors/font_color = Color( 1, 1, 1, 1 )
 Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
 Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
