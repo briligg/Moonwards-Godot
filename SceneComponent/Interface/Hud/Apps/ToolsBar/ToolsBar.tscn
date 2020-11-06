@@ -58,7 +58,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 180.0 ]
+"values": [ 180.0, 0.0 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -73,7 +73,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -180.0, 0.0 ]
+"values": [ 0.0, -180.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("VBoxContainer/HBoxContainer_Dynamic:visible")
@@ -82,7 +82,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5 ),
+"times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -119,9 +119,9 @@ custom_constants/separation = 14
 alignment = 2
 
 [node name="HBoxContainer_Static" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 65.0
+margin_top = 151.0
 margin_right = 537.0
-margin_bottom = 101.0
+margin_bottom = 187.0
 theme = SubResource( 1 )
 custom_constants/separation = 8
 alignment = 2
@@ -255,8 +255,10 @@ margin_bottom = 36.0
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer9/MarginContainer"]
 margin_right = 36.0
 margin_bottom = 36.0
+rect_pivot_offset = Vector2( 18, 18 )
 texture = ExtResource( 11 )
 stretch_mode = 5
+flip_v = true
 
 [node name="Button_Expand" type="Button" parent="VBoxContainer/HBoxContainer_Static/VBoxContainer9/MarginContainer"]
 margin_right = 36.0
@@ -265,6 +267,8 @@ flat = true
 script = ExtResource( 13 )
 
 [node name="HBoxContainer_Dynamic" type="HBoxContainer" parent="VBoxContainer"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
 margin_top = 115.0
 margin_right = 537.0
 margin_bottom = 187.0

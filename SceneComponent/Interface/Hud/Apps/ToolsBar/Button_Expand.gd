@@ -1,7 +1,7 @@
 extends Button
 
 
-var is_collapsed : bool = false
+var is_collapsed : bool = true
 
 func _pressed() -> void :
 	#Make it so I rotate perfectly.
