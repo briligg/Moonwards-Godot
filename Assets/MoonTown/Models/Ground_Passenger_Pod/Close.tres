@@ -3,7 +3,7 @@
 [resource]
 length = 0.4
 tracks/0/type = "value"
-tracks/0/path = NodePath("Ground_Passenger_Pod_LOD0/PassengerPod_Hatch_LOD0:rotation_degrees")
+tracks/0/path = NodePath("LOD0/PassengerPodHatch:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
