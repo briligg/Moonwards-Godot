@@ -12,7 +12,7 @@ var processing_door : bool = false
 func _ready() -> void :
 	var airlock_array : Array
 	airlock_array = [$AirlockDoor_Exterior_LOD0/AirlockDoorInteractable,
-	$AirlockDoor_Interior_LOD0/AirlockDoorInteractable2]
+	$AirlockDoor_Interior_LOD0/AirlockDoorInteractable]
 	
 	for airlock in airlock_array :
 		airlock.connect("opened", self, "_airlock_opened", [airlock])
