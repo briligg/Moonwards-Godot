@@ -12,11 +12,6 @@ onready var dock_point = get_node_or_null(dock_point_path)
 
 var is_open: bool = false
 
-
-func _ready():
-	title = "Airlock Dock"
-	
-
 func interact_with(_interactor : Node) -> void :
 	update_door()
 
