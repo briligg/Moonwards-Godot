@@ -10,7 +10,7 @@ cell_size = 2.84037
 to_cell_xform = Transform( 0.352066, 0, 0, 0, 0.352066, 0, 0, 0, 0.352066, 32, 5.04159, 5.40588 )
 dynamic_data = PoolIntArray( 0, 7, 64, 16, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1065353216, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 8
-energy = 1.21
+energy = 1.29
 bias = 1.5
 normal_bias = 0.0
 propagation = 0.2
@@ -85,76 +85,77 @@ omni_attenuation = 1.6245
 
 [node name="OmniLight8" type="OmniLight" parent="." index="8"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.6126, 3.71949, 10.6758 )
-light_energy = 0.75
+light_energy = 0.5
 shadow_enabled = true
-omni_range = 5.43953
+omni_range = 5.4
 
 [node name="OmniLight9" type="OmniLight" parent="." index="9"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -71.4018, 3.71949, 10.6758 )
-light_energy = 0.75
+light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
 
 [node name="OmniLight10" type="OmniLight" parent="." index="10"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -91.3464, 3.71949, 10.6758 )
-light_energy = 0.75
+light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
 
 [node name="OmniLight11" type="OmniLight" parent="." index="11"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -111.291, 3.71949, 10.6758 )
-light_energy = 0.75
+light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
 
 [node name="OmniLight12" type="OmniLight" parent="." index="12"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -128.097, 3.71949, -9.31476 )
-light_energy = 0.75
+light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
 
 [node name="OmniLight13" type="OmniLight" parent="." index="13"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -108.46, 3.71949, -9.31476 )
-light_energy = 0.75
+light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
 
 [node name="OmniLight14" type="OmniLight" parent="." index="14"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6467, 3.71949, -9.31476 )
-light_energy = 0.75
+light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
 
 [node name="OmniLight15" type="OmniLight" parent="." index="15"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68.3908, 3.71949, -9.31476 )
-light_energy = 0.75
+light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
 
 [node name="OmniLight16" type="OmniLight" parent="." index="16"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48.3117, 3.71949, -9.31476 )
-light_energy = 0.75
+light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
 
 [node name="OmniLight17" type="OmniLight" parent="." index="17"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.2966, 3.71949, 0.6678 )
-light_energy = 0.75
+light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
 
 [node name="OmniLight18" type="OmniLight" parent="." index="18"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.49894, 3.71949, 0.6678 )
-light_energy = 0.75
+light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
 
 [node name="GIProbe" type="GIProbe" parent="." index="19"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -86.8261, 0.707192, -0.536925 )
+visible = false
 subdiv = 0
 extents = Vector3( 90.892, 14.32, 15.3547 )
 dynamic_range = 8
-energy = 1.21
+energy = 1.29
 propagation = 0.2
 interior = true
 data = SubResource( 1 )
