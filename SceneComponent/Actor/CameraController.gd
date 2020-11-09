@@ -10,8 +10,12 @@ export(bool) var overriden = false #Use for bots only
 export(bool) var allow_first_person = false
 export(float) var dist: float = .5
 export(float) var max_pitch: float = 55
+export(float) var max_pitch_fp_increase = 30
 export(float) var cull_col_distance: float = 0.1
 onready var excluded_cull_bodies = [entity]
+
+#What max pitch value we started with.
+onready var max_pitch_start : float = max_pitch
 
 var mouse_sensitivity: float = 0.1
 var yaw: float = 0.0
@@ -96,11 +100,7 @@ func _input(event):
 	#Check if the player wants to switch to first person.
 	if event.is_action_pressed("toggle_first_person") && camera.is_current() && allow_first_person :
 		if entity.has_node("Model") :
-			is_first_person = !is_first_person
-			entity.get_node("Model").visible = !is_first_person
-			
-			#Hud Reticle should be active when in first person mode.
-			Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON, is_first_person)
+			_set_first_person(!is_first_person)
 
 #Called by signal. If true, do not rotate the camera.
 func _respond_to_mouse(mouse_active : bool) -> void :
@@ -152,20 +152,33 @@ func _update_cam_pos(delta : float = 0.016667) -> void:
 	camera.global_transform.origin = new_cam_pos
 	pass
 
+#Set whether we are in first person or not.
+func _set_first_person(become_first_person : bool) -> void :
+	is_first_person = become_first_person
+	entity.get_node("Model").visible = !become_first_person
+	
+	#Increase the amount of possible pitch
+	if become_first_person :
+		max_pitch = max_pitch_start + max_pitch_fp_increase
+	else :
+		max_pitch = max_pitch_start
+	
+	#Hud Reticle should be active when in first person mode.
+	Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON, is_first_person)
+
 # Ray normal from the exact center of the viewport
 func _get_cam_normal() -> Vector3:
 	return camera.project_ray_normal(get_viewport().get_visible_rect().size * 0.5)
 	
 func disable():
 	if is_first_person :
-		entity.get_node("Model").show()
-		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON, false)
+		_set_first_person(false)
 	.disable()
 
 func enable():
 	#Turn on the aiming reticle if in first person.
 	if is_first_person :
-		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON, true)
+		_set_first_person(true)
 	if Network.network_instance.peer_id == entity.owner_peer_id:
 		camera.set_current(true)
 	.enable()
