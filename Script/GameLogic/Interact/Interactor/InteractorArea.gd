@@ -14,11 +14,8 @@ var closest_interactable : Interactable
 var enabled: bool setget set_enabled
 
 #The closest interactable has changed.
-signal closest_interactable_changed(interactable)
 signal interactable_entered_area(interactable_node)
 signal interactable_left_area(interactable_node)
-signal interact_made_possible(string_closest_potential_interact)
-signal interact_made_impossible()
 
 signal interacted_with(interactable)
 
@@ -38,44 +35,18 @@ func _ready() -> void:
 func _interactable_left(interactable_area : Area) -> void :
 	emit_signal("interactable_left_area", interactable_area)
 
-#Determine what Interactables I am touching.
 func _physics_process(_delta : float) -> void:
-	#Get the interactable I am colliding with.
-	var closest_body : Area = null
-	var closest_body_distance : float = 99999999999.0
-	interactables = get_overlapping_areas()
-	for body in interactables :
-		var position_from_me : float
-		position_from_me = (global_transform.origin - body.global_transform.origin).length()
-		#Determine if the new body is closer.
-		if position_from_me < closest_body_distance :
-			closest_body_distance = position_from_me
-			closest_body = body
-
-	#Exit if I am not touching anything.
-	if closest_body == null :
-		#If I was colliding with something before but am not now,
-		#emit a signal saying that.
-		if previous_collider != null :
-			emit_signal("interact_made_impossible")
-			emit_signal("closest_interactable_changed", null)
-		interactables = []
-		previous_collider = null
-		closest_interactable = null
-		return
+	# Set the interactable I am colliding with, that are within distance.
+	# This is rather inefficient, optimize when you get the chance.
+	interactables = []
+	var _interactables = get_overlapping_areas()
+	for interactable in _interactables:
+		var dist = interactable.global_transform.origin.distance_to(
+				self.global_transform.origin)
+		if dist > interactable.max_interact_distance:
+			interactables.append(interactable)
+			
 	
-	#Return the interactable's name and notify listener's of it.
-	if previous_collider != closest_body :
-		var interact_info : String = closest_body.get_info()
-		emit_signal("interact_made_possible", interact_info)
-		emit_signal("closest_interactable_changed", closest_body)
-		previous_collider = closest_body
-		closest_interactable = closest_body
-
-#Returns null if there is no Interactable.
-func get_closest_interactable() -> Interactable :
-	return closest_interactable
-
 #Return what interactables can be interacted with
 func get_interactables() -> Array :
 	return interactables
