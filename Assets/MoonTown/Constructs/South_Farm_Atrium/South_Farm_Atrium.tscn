@@ -3,3 +3,33 @@
 [ext_resource path="res://Assets/MoonTown/Constructs/South_Farm_Atrium/South_Farm_Atrium.glb" type="PackedScene" id=1]
 
 [node name="South_Farm_Atrium" instance=ExtResource( 1 )]
+
+[node name="OmniLight" type="OmniLight" parent="." index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.81268, 27.2501, -19.3255 )
+light_energy = 0.76
+omni_range = 30.0892
+
+[node name="OmniLight2" type="OmniLight" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.70003, 27.2501, -74.8628 )
+light_energy = 0.76
+omni_range = 30.0892
+
+[node name="OmniLight3" type="OmniLight" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.952, 27.2501, -130.835 )
+light_energy = 0.76
+omni_range = 30.0892
+
+[node name="OmniLight4" type="OmniLight" parent="." index="7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.96905, 27.2501, -186.558 )
+light_energy = 0.76
+omni_range = 30.0892
+
+[node name="OmniLight5" type="OmniLight" parent="." index="8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6637, 27.2501, -242.793 )
+light_energy = 0.76
+omni_range = 30.0892
+
+[node name="OmniLight6" type="OmniLight" parent="." index="9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.494, 27.2501, -299.028 )
+light_energy = 0.76
+omni_range = 30.0892

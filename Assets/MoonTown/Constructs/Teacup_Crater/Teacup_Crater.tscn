@@ -21,12 +21,26 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12658, -48.459, 0 )
 omni_range = 38.2719
 omni_attenuation = 1.51572
 
-[node name="OmniLight2" type="OmniLight" parent="." index="1"]
+[node name="OmniLight3" type="OmniLight" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.6971, -5.8597, -100.642 )
+light_color = Color( 0.996078, 1, 0.909804, 1 )
+shadow_enabled = true
+omni_range = 46.3515
+omni_attenuation = 1.10957
+
+[node name="OmniLight4" type="OmniLight" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -105.056, -5.8597, -49.2257 )
+light_color = Color( 0.996078, 1, 0.909804, 1 )
+shadow_enabled = true
+omni_range = 46.3515
+omni_attenuation = 1.10957
+
+[node name="OmniLight2" type="OmniLight" parent="." index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12658, -1.41826, 12.3777 )
 omni_range = 38.2719
 omni_attenuation = 1.51572
 
-[node name="GIProbe" type="GIProbe" parent="." index="3"]
+[node name="GIProbe" type="GIProbe" parent="." index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.1593, 0 )
 extents = Vector3( 140.196, 43.5424, 141.65 )
 energy = 0.19
