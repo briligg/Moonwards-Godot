@@ -274,6 +274,7 @@ func start_climb_stairs(target_stairs : VerticalStairs) -> void:
 # or the bottom (false) of the stairs.
 func stop_climb_stairs(phys_state : PhysicsDirectBodyState, is_stairs_top) -> void :
 	is_climbing = false
+	entity.climb_point = 0
 
 	if is_stairs_top:
 		var push_force = entity.model.transform.basis.z.normalized() * 1.5 + Vector3.UP * 2
