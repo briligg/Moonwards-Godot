@@ -35,6 +35,9 @@ var is_flying : bool = false
 
 var is_groundcast_enabled: bool = true
 
+#This is the stairs we are climbing's climb point plus one at the top created by us.
+var climb_points : Array = []
+
 #Whether I am climbing or not.
 # Puppetsync hack for now
 puppetsync var is_climbing : bool = false
@@ -242,6 +245,18 @@ func start_climb_stairs(target_stairs : VerticalStairs) -> void:
 		if entity.climb_point == -1 or entity.stairs.climb_points[index].distance_to(kb_pos) < entity.stairs.climb_points[entity.climb_point].distance_to(kb_pos):
 			entity.climb_point = index
 	
+	#This is for future purposes so that we can make a smoother stairs top dismount.
+	#It will for making an imaginary point that the player moves towards when dismounting stairs.
+	#Do this after getting closest step so we don't initially grab onto imaginary point.
+	#We have to initialize the array like this because Godot passes arrays be reference.
+#	climb_points.clear()
+#	for point in entity.stairs.climb_points :
+#		var new_point : Vector3 = point
+#		climb_points.append(new_point)
+#	entity.climb_points = climb_points
+	climb_points = target_stairs.climb_points
+	entity.climb_points = climb_points
+	
 	#Rotate the model to best fit the stairs.
 	var a = entity.global_transform
 	var target_transform = a.looking_at(entity.global_transform.origin - entity.climb_look_direction, Vector3(0, 1, 0))
@@ -256,37 +271,37 @@ func start_climb_stairs(target_stairs : VerticalStairs) -> void:
 # or the bottom (false) of the stairs.
 func stop_climb_stairs(phys_state : PhysicsDirectBodyState, is_stairs_top) -> void :
 	is_climbing = false
+	entity.climb_point = 0
 
 	if is_stairs_top:
-		var push_force = entity.model.transform.basis.z.normalized() * 1.5 + Vector3.UP * 2
+		var push_force = entity.model.transform.basis.z.normalized() * 2
 		entity.set_linear_velocity(push_force)
 
-	#Make myself face the same direction as the camera.
-	entity.model.global_transform.basis = entity.global_transform.basis
 	entity.custom_integrator = false
 	if is_network_master():
 		rset("is_climbing", is_climbing)
 
 #Eventually we need to make this work with delta.
 func update_stairs_climbing(_delta : float, phys_state : PhysicsDirectBodyState) -> void :
+	#If player jumped, let go of stairs.
 	if vertical_vector.y > 0:
 		stop_climb_stairs(phys_state, false)
 	
 	var kb_pos = entity.global_transform.origin
-	# Offset from the top of the stairs to climb off when reached
-	var top_offset = 2
+
 	#Check for next climb point.
-	if entity.climb_point + 1 < entity.stairs.climb_points.size() - top_offset and kb_pos.y > entity.stairs.climb_points[entity.climb_point].y:
+	if entity.climb_point + 1 < climb_points.size() and kb_pos.y > climb_points[entity.climb_point].y:
 		entity.climb_point += 1
 	#Check for previous climb point.
-	elif entity.climb_point - 1 >= 0 and kb_pos.y < entity.stairs.climb_points[entity.climb_point - 1].y:
+	elif entity.climb_point - 1 >= 0 and kb_pos.y < climb_points[entity.climb_point - 1].y:
 		entity.climb_point -= 1
 	
 	#Make it easier to read which direction we are climbing.
 	var input_direction = entity.input.z
 	
 	#Stop climbing at the top of the stairs.
-	if entity.climb_point + 1 >= entity.stairs.climb_points.size() - top_offset and kb_pos.y > entity.stairs.climb_points[entity.climb_point].y and not input_direction <= 0.0:
+	var top_offset : float = 0.4
+	if entity.climb_point + 1 >= climb_points.size() and kb_pos.y > climb_points[entity.climb_point].y - top_offset and not input_direction <= 0.0:
 		stop_climb_stairs(phys_state, true)
 		return
 	
