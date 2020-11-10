@@ -43,7 +43,7 @@ func _physics_process(_delta : float) -> void:
 	for interactable in _interactables:
 		var dist = interactable.global_transform.origin.distance_to(
 				self.global_transform.origin)
-		if dist > interactable.max_interact_distance:
+		if dist < interactable.max_interact_distance:
 			interactables.append(interactable)
 			
 	

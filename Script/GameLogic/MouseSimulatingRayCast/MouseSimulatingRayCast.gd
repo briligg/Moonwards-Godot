@@ -1,23 +1,19 @@
 extends RayCast
 class_name MouseSimulatingRayCast
 
+signal collided(new_collider_node_or_null)
 
-signal collider_changed(new_collider_node_or_null)
-
-var previous_collider = null
-
-
+var prev_frame_collider
 #Determine when I am colliding. If I am, then let Hud know.
 func _physics_process(_delta : float) -> void:
-	if is_colliding() &&  previous_collider != get_collider():
-		if previous_collider != null :
-			previous_collider.emit_signal("mouse_exited")
-		previous_collider = get_collider()
-		previous_collider.emit_signal("mouse_entered")
-		emit_signal("collider_changed", previous_collider)
+	if is_colliding():
+		var collider = get_collider()
+		collider.emit_signal("mouse_entered")
+		emit_signal("collided", collider)
+		prev_frame_collider = collider
 	
-	elif not is_colliding() :
-		if previous_collider != null :
-			previous_collider.emit_signal("mouse_exited")
-			emit_signal("collider_changed", null)
-		previous_collider = null
+	elif !is_colliding():
+		emit_signal("collided", null)
+		if  prev_frame_collider != null:
+			prev_frame_collider.emit_signal("mouse_exited")
+			prev_frame_collider = null
