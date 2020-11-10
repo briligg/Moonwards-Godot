@@ -6,7 +6,6 @@
 [ext_resource path="res://Tree/addons/HuePicker/HuePicker.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Interface/MainMenu/Style/MM_Empty.tres" type="StyleBox" id=5]
 
-
 [node name="UserSettings" type="VBoxContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0

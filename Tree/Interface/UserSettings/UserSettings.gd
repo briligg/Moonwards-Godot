@@ -72,9 +72,10 @@ func _on_SaveButton_pressed() -> void:
 	#Emit signals to let the Network know we changed things.
 	Signals.Network.emit_signal(Signals.Network.CLIENT_NAME_CHANGED, username)
 	
+	#Let Networking know we changed genders.
+	Signals.Network.emit_signal(Signals.Network.CLIENT_GENDER_CHANGED, gender)
+	
 	#Emit the shirt color signals.
-#	for clothing_color in [pants_color, shirt_color, hair_color, skin_color, shoes_color] :
-#		Signals.Network.emit_signal(Signals.Network.CLIENT_COLOR_CHANGED, clothing_color)
 	Signals.Network.emit_signal(Signals.Network.CLIENT_COLOR_CHANGED, [pants_color, shirt_color, hair_color, skin_color, shoes_color])
 
 func _on_SlotOption_item_selected(ID : int) -> void:

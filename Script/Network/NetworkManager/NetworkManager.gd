@@ -13,7 +13,8 @@ var network_instance = null
 var self_meta_data = {
 	"name" : "No name set",
 	# Temporary default values for testing
-	"colors": []
+	"colors": [],
+	"gender" : 0
 }
 
 func _ready() -> void:
@@ -40,6 +41,9 @@ func _set_game_client(_ip, _port) -> void:
 
 func _set_self_colors(colors: Array) -> void:
 	self_meta_data.colors = colors
+
+func _set_self_gender(gender : int) -> void :
+	self_meta_data.gender = gender
 
 func _set_self_name(name: String) -> void:
 	self_meta_data.name = name
