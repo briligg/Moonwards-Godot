@@ -7,10 +7,10 @@
 [ext_resource path="res://addons/Silicon.vfx.planar_reflection/planar_reflector.gd" type="Script" id=5]
 [ext_resource path="res://SceneComponent/Utilities/Mirrors/Shaders/Moon_General.tres" type="Material" id=6]
 
-[sub_resource type="QuadMesh" id=93]
+[sub_resource type="QuadMesh" id=1]
 size = Vector2( 8, 20 )
 
-[sub_resource type="GIProbeData" id=91]
+[sub_resource type="GIProbeData" id=2]
 bounds = AABB( -83.7084, -24.424, -38.0104, 167.417, 48.8481, 76.0209 )
 cell_size = 0.653972
 to_cell_xform = Transform( 1.52912, 0, 0, 0, 1.52912, 0, 0, 0, 1.52912, 128, 37.3472, 58.1224 )
@@ -20,7 +20,7 @@ energy = 0.44
 bias = 1.5
 normal_bias = 0.0
 
-[sub_resource type="GIProbeData" id=92]
+[sub_resource type="GIProbeData" id=3]
 bounds = AABB( -83.7084, -24.424, -38.0104, 167.417, 48.8481, 76.0209 )
 cell_size = 0.653972
 to_cell_xform = Transform( 1.52912, 0, 0, 0, 1.52912, 0, 0, 0, 1.52912, 128, 37.3472, 58.1224 )
@@ -35,7 +35,7 @@ normal_bias = 0.0
 [node name="PlanarReflector" type="MeshInstance" parent="LOD0" index="0"]
 transform = Transform( -1, 2.30405e-07, -2.30405e-07, 0, 0.707107, 0.707107, 3.25841e-07, 0.707107, -0.707107, -10.169, 7.05443, 35.9011 )
 layers = 3
-mesh = SubResource( 93 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 6 )
 script = ExtResource( 5 )
 __meta__ = {
@@ -55,7 +55,7 @@ subdiv = 2
 extents = Vector3( 26.4521, 24.424, 38.0104 )
 energy = 0.44
 propagation = 1.0
-data = SubResource( 91 )
+data = SubResource( 2 )
 
 [node name="GIProbe2" type="GIProbe" parent="." index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -73.4782, 3.27717, -2.66057 )
@@ -63,7 +63,7 @@ subdiv = 2
 extents = Vector3( 53.0676, 10.1553, 18.0953 )
 energy = 0.44
 propagation = 1.0
-data = SubResource( 92 )
+data = SubResource( 3 )
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="." index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.79848, 0.496809, 0.885615 )
@@ -119,10 +119,7 @@ omni_attenuation = 0.25
 
 [node name="VerticalStair_TunnelBottom" parent="Markers/Marker-VerticalStair_TunnelBottom" index="0" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
-networked = true
-interactions_active = true
 stairs_step_count = 2
-generate_editor_visual = false
 
 [node name="HealthCentrifuge" parent="Markers/Marker_HealthCentrifuge" index="0" instance=ExtResource( 2 )]
 
@@ -144,29 +141,17 @@ transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -83.930
 [node name="Hexpane_Window" parent="Markers/Marker_HexWindow5" index="0" instance=ExtResource( 3 )]
 
 [node name="Vertical-Stairs-1" parent="Markers/Marker_Vertical-Stairs-1" index="0" instance=ExtResource( 4 )]
-networked = true
-interactions_active = true
 stairs_step_count = 2
-generate_editor_visual = false
 
 [node name="Vertical-Stairs-2" parent="Markers/Marker_Vertical-Stairs-2" index="0" instance=ExtResource( 4 )]
-networked = true
-interactions_active = true
 stairs_step_count = 2
-generate_editor_visual = false
 
 [node name="Vertical-Stairs-3" parent="Markers/Marker_Vertical-Stairs-3" index="0" instance=ExtResource( 4 )]
-networked = true
-interactions_active = true
 stairs_step_count = 2
-generate_editor_visual = false
 
 [node name="VerticalStair_TunnelTop" parent="Markers/Marker_VerticalStair_TunnelTop" index="0" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
-networked = true
-interactions_active = true
 stairs_step_count = 4
-generate_editor_visual = false
 
 [node name="LOD1" parent="." index="11"]
 visible = false
