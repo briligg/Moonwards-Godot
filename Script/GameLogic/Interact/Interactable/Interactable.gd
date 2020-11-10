@@ -29,6 +29,8 @@ enum NetworkMode {
 	PROPAGATED,
 }
 
+
+export(float) var max_interact_distance = 5.0
 #This is what is displayed when an interactor can interact with me.
 export var display_info : String = "Interactable" setget set_display_info
 #This string is displayed in the text of the InteractsMenu button.

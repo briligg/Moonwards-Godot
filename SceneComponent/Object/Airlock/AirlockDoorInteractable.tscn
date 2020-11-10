@@ -3,11 +3,13 @@
 [ext_resource path="res://SceneComponent/Object/Airlock/AirlockDoorInteractable.gd" type="Script" id=1]
 
 [sub_resource type="SphereShape" id=1]
+radius = 0.897937
 
 [node name="AirlockDoorInteractable" type="Area"]
 script = ExtResource( 1 )
+display_info = "Open the airlock door"
+title = "Airlock Door"
 network_mode = 3
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 1 )

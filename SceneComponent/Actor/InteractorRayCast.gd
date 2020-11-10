@@ -11,20 +11,28 @@ signal no_interactable_in_reach()
 #Emitted when the player interects with the interactable.
 signal interacted_with(interactable_interactable)
 
+var available_interactable
 
 #This is what I pass as the interactor.
 var owning_entity : AEntity
 
-
-func _new_collider(new_collider) -> void :
-	if new_collider == null ||  not new_collider is Interactable :
+func _on_new_collider(new_collider) -> void :
+	if new_collider is Interactable:
+		# Distance to interactable
+		var dist = new_collider.global_transform.origin.distance_to(self.global_transform.origin)
+		if new_collider.max_interact_distance >= dist:
+			emit_signal("new_interactable", new_collider)
+			Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_INTERACT, true)
+			available_interactable = new_collider
+		else:
+			emit_signal("no_interactable_in_reach")
+			Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_INTERACT, false)
+			available_interactable = null
+			
+	elif new_collider == null || not new_collider is Interactable :
 		emit_signal("no_interactable_in_reach")
 		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_INTERACT, false)
-		return
-	
-	emit_signal("new_interactable", new_collider)
-	
-	Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_INTERACT, true)
+		available_interactable = null
 
 func _physics_process(_delta : float) -> void :
 	var camera : Camera = viewport.get_camera()
@@ -32,12 +40,12 @@ func _physics_process(_delta : float) -> void :
 	self.global_transform.basis.z = -camera.global_transform.basis.z
 
 func _ready() -> void :
-	connect("collider_changed", self, "_new_collider")
+	connect("collided", self, "_on_new_collider")
 
 #Return the interactable I am colliding with. Null if no Interactable is being touched.
 func get_interactable() -> Interactable :
-	if previous_collider is Interactable :
-		return previous_collider
+	if available_interactable:
+		return available_interactable
 	else :
 		return null
 

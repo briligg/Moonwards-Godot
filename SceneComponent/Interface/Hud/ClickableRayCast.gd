@@ -2,9 +2,14 @@ extends MouseSimulatingRayCast
 
 onready var viewport : Viewport = get_tree().root
 
+var prev_collider
 
 func _click_possible_status(_new_collider) -> void :
-	if not _new_collider == null :
+	if _new_collider == prev_frame_collider:
+		return
+	
+	prev_collider = _new_collider
+	if not _new_collider == null:
 		 Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_CLICK, true)
 	else : 
 		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_CLICK, false)
@@ -22,7 +27,7 @@ func _input(event) -> void :
 
 func _ready() :
 	set_process_input(false)
-	connect("collider_changed", self, "_click_possible_status")
+	connect("collided", self, "_click_possible_status")
 
 func enable() -> void :
 	set_process_input(true)
