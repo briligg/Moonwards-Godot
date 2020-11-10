@@ -35,6 +35,9 @@ var is_flying : bool = false
 
 var is_groundcast_enabled: bool = true
 
+#This is the stairs we are climbing's climb point plus one at the top created by us.
+var climb_points : Array = []
+
 #Whether I am climbing or not.
 # Puppetsync hack for now
 puppetsync var is_climbing : bool = false
@@ -241,6 +244,13 @@ func start_climb_stairs(target_stairs : VerticalStairs) -> void:
 	for index in entity.stairs.climb_points.size():
 		if entity.climb_point == -1 or entity.stairs.climb_points[index].distance_to(kb_pos) < entity.stairs.climb_points[entity.climb_point].distance_to(kb_pos):
 			entity.climb_point = index
+	
+	#Store the climb points of the stairs but add an imaginary one at the end for dismounting.
+	#Do this after getting closest step so we don't climb onto imaginary point.
+	climb_points = entity.stairs.climb_points
+	var t = climb_points[climb_points.size() - 1]
+	var new_point : Vector3 = t + (t - climb_points[climb_points.size() - 2])
+	climb_points.append(new_point)
 	
 	#Rotate the model to best fit the stairs.
 	var a = entity.global_transform
