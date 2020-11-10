@@ -44,6 +44,9 @@ func capture_mouse(capture_mouse : bool) -> void :
 func center_mouse() -> void :
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+	#Let everything know that the mouse is now visible
+	Signals.Menus.emit_signal("set_mouse_to_captured", false)
 
 #Get an action from the InputMap. Returns string for InputEventType and it's action identifier.
 func get_action(action_name : String) -> Array :
