@@ -60,7 +60,7 @@ func interacted_by(interactor):
 		if !is_docked:
 			call_deferred("align_and_dock_with", interactor)
 		elif is_docked and interactor == docked_to:
-			if _dock_door_interactable != null:
+			if _dock_door_interactable != null and !_dock_door_interactable.is_docked_to:
 				call_deferred("undock_to_airlock", interactor)
 			else:
 				rpc("pup_undock")
@@ -80,6 +80,9 @@ func generate_placeholder():
 	placeholder_comp.name = self.name
 
 func align_and_dock_with(rover):
+	if _dock_door_interactable:
+		_dock_door_interactable.request_close()
+
 	is_docking = true
 	rover.mode = RigidBody.MODE_KINEMATIC
 	var rover_anchor = rover.get_node("DockLatch")
@@ -100,9 +103,10 @@ func align_and_dock_with(rover):
 	var targz = rover.global_transform.origin - (rover.global_transform.basis.z).normalized() * dock_door_clearance
 	while(!_lerp_to_coroutine(rover, rover.global_transform.origin, targz, dock_anim_speed) and is_docking):
 		yield(get_tree(), "physics_frame")
-
+	
 	rover.mode = RigidBody.MODE_RIGID
 	is_docking = false
+
 	
 func dock_with(rover):
 	$Interactable.title = "Undock Passenger Pod"
@@ -152,6 +156,7 @@ puppet func pup_undock():
 # Undock from rover and into the airlock
 func undock_to_airlock(rover):
 	is_docking = true
+	
 	rover.mode = RigidBody.MODE_KINEMATIC
 	var dock_point = _dock_door_interactable.dock_point
 	
@@ -189,6 +194,9 @@ func undock_to_airlock(rover):
 		if rover.global_transform.origin.distance_to(targ) <= 0.05:
 			break
 		yield(get_tree(), "physics_frame")
+		
+	if _dock_door_interactable:
+		_dock_door_interactable.request_open()
 		
 	rover.mode = RigidBody.MODE_RIGID
 	is_docking = false
