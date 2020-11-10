@@ -267,7 +267,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector3( 0, -12.2078, 0.245176 ) ]
+"values": [ Vector3( 0, 11.295, 0.245176 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("CameraPivot:rotation_degrees")
@@ -1209,7 +1209,6 @@ size_flags_vertical = 3
 alignment = 2
 
 [node name="Info1" type="Label" parent="Controller/Control/VBoxContainer/MainWindow/Control"]
-visible = false
 margin_top = 927.0
 margin_right = 1712.0
 margin_bottom = 1080.0
@@ -1258,7 +1257,7 @@ size_flags_vertical = 4
 text = "Next"
 
 [node name="CameraPivot" type="Spatial" parent="Controller"]
-transform = Transform( 0.766044, -0.368688, 0.52654, 0, 0.819152, 0.573576, -0.642787, -0.439385, 0.627506, 0, -12.2078, 0.245176 )
+transform = Transform( 0.766044, -0.368688, 0.52654, 0, 0.819152, 0.573576, -0.642787, -0.439385, 0.627506, 0, 11.295, 0.245176 )
 script = ExtResource( 1 )
 
 [node name="CameraPosition" type="Spatial" parent="Controller/CameraPivot"]
@@ -1283,7 +1282,7 @@ stream = ExtResource( 8 )
 unit_db = -30.0
 
 [node name="Rocket" parent="Controller" instance=ExtResource( 5 )]
-transform = Transform( 0.75, 0, 0, 0, -3.27835e-08, -0.75, 0, 0.75, -3.27835e-08, 0, 0, 0 )
+transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -2.648, 0 )
 
 [node name="RocketBody" parent="Controller/Rocket" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8743e-06, 8.23752, -1.14441e-05 )
