@@ -60,7 +60,7 @@ func _mouse_capture_set(is_captured : bool) -> void :
 	
 	if is_captured :
 		show()
-		ray_cast.enable()
+w		ray_cast.enable()
 	else :
 		hide()
 		ray_cast.disable()
