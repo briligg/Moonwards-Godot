@@ -67,6 +67,7 @@ func _start_session() -> void:
 	# Add lobby host player
 	var entity = EntityData.new(1, "Server", _get_spawn())
 	entity.colors = Network.self_meta_data.colors
+	entity.gender = Network.self_meta_data.gender
 	if not self.is_host_player:
 		entity.is_empty = true
 	entities[1] = entity

@@ -26,6 +26,8 @@ func _ready() -> void:
 			self, "_set_self_colors")
 	Signals.Network.connect(Signals.Network.CLIENT_NAME_CHANGED, 
 			self, "_set_self_name")
+	Signals.Network.connect(Signals.Network.CLIENT_GENDER_CHANGED,
+			self, "_set_self_gender")
 
 func _set_game_server(is_host_player: bool = false) -> void:
 	var root = get_tree().get_root()

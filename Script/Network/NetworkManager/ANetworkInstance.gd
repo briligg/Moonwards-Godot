@@ -58,6 +58,7 @@ puppetsync func add_player(entity_data) -> void:
 	e.enable_on_owner()
 	e.global_transform.origin = entity_data.initial_pos
 	var model = e.get_component("ModelComponent")
+	model.set_gender(entity_data.gender)
 	model.set_colors(entity_data.colors)
 	
 ### Networking API
