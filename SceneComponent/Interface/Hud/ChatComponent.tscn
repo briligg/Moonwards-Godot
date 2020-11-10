@@ -3,7 +3,6 @@
 [ext_resource path="res://SceneComponent/Interface/Hud/ChatComponent.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/Hud/Chat/Chat.tscn" type="PackedScene" id=2]
 
-
 [node name="ChatComponent" type="Spatial"]
 script = ExtResource( 1 )
 
