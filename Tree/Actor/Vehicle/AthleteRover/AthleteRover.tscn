@@ -36,6 +36,9 @@ shape = SubResource( 1 )
 [node name="RoverRideInteractable" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.59981, 0 )
 
+[node name="Interactable" parent="RoverRideInteractable" index="0"]
+max_interact_distance = 50.0
+
 [node name="CollisionShape" parent="RoverRideInteractable/Interactable" index="0"]
 transform = Transform( 1, 0, 0, 0, 0.863141, 0, 0, 0, 1, 0, -1.9106, 0 )
 
