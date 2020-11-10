@@ -255,10 +255,8 @@ func start_climb_stairs(target_stairs : VerticalStairs) -> void:
 	#Now add the imaginary point.
 	var t = climb_points[climb_points.size() - 1]
 	var new_point : Vector3 = t + (t - climb_points[climb_points.size() - 2])
-	#Offset the position of the new point slightly so player steps off stairs.
-	new_point += entity.climb_look_direction * 100
-	new_point = Vector3(100,0,0)
-	climb_points.append(new_point)
+	climb_points[climb_points.size()-1] = new_point
+	entity.climb_points = climb_points
 	
 	#Rotate the model to best fit the stairs.
 	var a = entity.global_transform
@@ -277,7 +275,7 @@ func stop_climb_stairs(phys_state : PhysicsDirectBodyState, is_stairs_top) -> vo
 	entity.climb_point = 0
 
 	if is_stairs_top:
-		var push_force = entity.model.transform.basis.z.normalized() * 1.5 + Vector3.UP * 2
+		var push_force = entity.model.transform.basis.z.normalized() * 2
 		entity.set_linear_velocity(push_force)
 
 	entity.custom_integrator = false
@@ -291,27 +289,19 @@ func update_stairs_climbing(_delta : float, phys_state : PhysicsDirectBodyState)
 		stop_climb_stairs(phys_state, false)
 	
 	var kb_pos = entity.global_transform.origin
-	
-	#Determines which stair to compare to when climbing.
-	var climb_v : Vector3 = Vector3.UP
-	# Offset from the top of the stairs to climb off when reached
-	var top_offset = 2
+
 	#Check for next climb point.
-	if entity.climb_point + 1 < climb_points.size() - top_offset and kb_pos.y > climb_points[entity.climb_point].y:
-		climb_v = climb_points[entity.climb_point+1] - climb_points[entity.climb_point]
-		climb_v = climb_v.normalized()
+	if entity.climb_point + 1 < climb_points.size() and kb_pos.y > climb_points[entity.climb_point].y:
 		entity.climb_point += 1
 	#Check for previous climb point.
 	elif entity.climb_point - 1 >= 0 and kb_pos.y < climb_points[entity.climb_point - 1].y:
-		climb_v = climb_points[entity.climb_point] - climb_points[entity.climb_point-1]
-		climb_v = climb_v.normalized()
 		entity.climb_point -= 1
 	
 	#Make it easier to read which direction we are climbing.
 	var input_direction = entity.input.z
 	
 	#Stop climbing at the top of the stairs.
-	if entity.climb_point + 1 >= climb_points.size() - top_offset and kb_pos.y > climb_points[entity.climb_point].y and not input_direction <= 0.0:
+	if entity.climb_point + 1 >= climb_points.size() and kb_pos.y > climb_points[entity.climb_point].y and not input_direction <= 0.0:
 		stop_climb_stairs(phys_state, true)
 		return
 	
@@ -320,4 +310,4 @@ func update_stairs_climbing(_delta : float, phys_state : PhysicsDirectBodyState)
 		stop_climb_stairs(phys_state, false)
 		return
 	
-	phys_state.set_linear_velocity(climb_v * climb_speed * entity.input.z)
+	phys_state.set_linear_velocity(Vector3.UP * climb_speed * entity.input.z)
