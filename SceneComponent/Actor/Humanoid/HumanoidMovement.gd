@@ -247,7 +247,12 @@ func start_climb_stairs(target_stairs : VerticalStairs) -> void:
 	
 	#Store the climb points of the stairs but add an imaginary one at the end for dismounting.
 	#Do this after getting closest step so we don't initially grab onto imaginary point.
-	climb_points = entity.stairs.climb_points
+	#We have to initialize the array like this because Godot passes arrays be reference.
+	climb_points.clear()
+	for point in entity.stairs.climb_points :
+		var new_point : Vector3 = point
+		climb_points.append(new_point)
+	#Now add the imaginary point.
 	var t = climb_points[climb_points.size() - 1]
 	var new_point : Vector3 = t + (t - climb_points[climb_points.size() - 2])
 	climb_points.append(new_point)
@@ -285,17 +290,17 @@ func update_stairs_climbing(_delta : float, phys_state : PhysicsDirectBodyState)
 	# Offset from the top of the stairs to climb off when reached
 	var top_offset = 2
 	#Check for next climb point.
-	if entity.climb_point + 1 < entity.stairs.climb_points.size() - top_offset and kb_pos.y > entity.stairs.climb_points[entity.climb_point].y:
+	if entity.climb_point + 1 < climb_points.size() - top_offset and kb_pos.y > climb_points[entity.climb_point].y:
 		entity.climb_point += 1
 	#Check for previous climb point.
-	elif entity.climb_point - 1 >= 0 and kb_pos.y < entity.stairs.climb_points[entity.climb_point - 1].y:
+	elif entity.climb_point - 1 >= 0 and kb_pos.y < climb_points[entity.climb_point - 1].y:
 		entity.climb_point -= 1
 	
 	#Make it easier to read which direction we are climbing.
 	var input_direction = entity.input.z
 	
 	#Stop climbing at the top of the stairs.
-	if entity.climb_point + 1 >= entity.stairs.climb_points.size() - top_offset and kb_pos.y > entity.stairs.climb_points[entity.climb_point].y and not input_direction <= 0.0:
+	if entity.climb_point + 1 >= climb_points.size() - top_offset and kb_pos.y > climb_points[entity.climb_point].y and not input_direction <= 0.0:
 		stop_climb_stairs(phys_state, true)
 		return
 	
