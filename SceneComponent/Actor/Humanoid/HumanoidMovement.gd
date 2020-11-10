@@ -246,7 +246,7 @@ func start_climb_stairs(target_stairs : VerticalStairs) -> void:
 			entity.climb_point = index
 	
 	#Store the climb points of the stairs but add an imaginary one at the end for dismounting.
-	#Do this after getting closest step so we don't climb onto imaginary point.
+	#Do this after getting closest step so we don't initially grab onto imaginary point.
 	climb_points = entity.stairs.climb_points
 	var t = climb_points[climb_points.size() - 1]
 	var new_point : Vector3 = t + (t - climb_points[climb_points.size() - 2])
