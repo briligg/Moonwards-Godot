@@ -245,17 +245,16 @@ func start_climb_stairs(target_stairs : VerticalStairs) -> void:
 		if entity.climb_point == -1 or entity.stairs.climb_points[index].distance_to(kb_pos) < entity.stairs.climb_points[entity.climb_point].distance_to(kb_pos):
 			entity.climb_point = index
 	
-	#Store the climb points of the stairs but add an imaginary one at the end for dismounting.
+	#This is for future purposes so that we can make a smoother stairs top dismount.
+	#It will for making an imaginary point that the player moves towards when dismounting stairs.
 	#Do this after getting closest step so we don't initially grab onto imaginary point.
 	#We have to initialize the array like this because Godot passes arrays be reference.
-	climb_points.clear()
-	for point in entity.stairs.climb_points :
-		var new_point : Vector3 = point
-		climb_points.append(new_point)
-	#Now add the imaginary point.
-	var t = climb_points[climb_points.size() - 1]
-	var new_point : Vector3 = t + (t - climb_points[climb_points.size() - 2])
-	climb_points[climb_points.size()-1] = new_point
+#	climb_points.clear()
+#	for point in entity.stairs.climb_points :
+#		var new_point : Vector3 = point
+#		climb_points.append(new_point)
+#	entity.climb_points = climb_points
+	climb_points = target_stairs.climb_points
 	entity.climb_points = climb_points
 	
 	#Rotate the model to best fit the stairs.
@@ -301,7 +300,8 @@ func update_stairs_climbing(_delta : float, phys_state : PhysicsDirectBodyState)
 	var input_direction = entity.input.z
 	
 	#Stop climbing at the top of the stairs.
-	if entity.climb_point + 1 >= climb_points.size() and kb_pos.y > climb_points[entity.climb_point].y and not input_direction <= 0.0:
+	var top_offset : float = 0.4
+	if entity.climb_point + 1 >= climb_points.size() and kb_pos.y > climb_points[entity.climb_point].y - top_offset and not input_direction <= 0.0:
 		stop_climb_stairs(phys_state, true)
 		return
 	

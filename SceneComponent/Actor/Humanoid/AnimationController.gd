@@ -56,15 +56,15 @@ func update_climb_animation(_delta):
 	
 	#Determine where we should be setting our feet when climbing.
 	if entity.climb_point % 2 == 0:
-		climb_progress = abs((2.0 if climb_direction > 0.0 else 0.0) - abs((kb_pos.y - entity.stairs.climb_points[entity.climb_point].y) / entity.stairs.step_size))
+		climb_progress = abs((2.0 if climb_direction > 0.0 else 0.0) - abs((kb_pos.y - entity.climb_points[entity.climb_point].y) / entity.stairs.step_size))
 	else:
-		climb_progress = abs((2.0 if climb_direction > 0.0 else 0.0) - (1.0 + abs(kb_pos.y - entity.stairs.climb_points[entity.climb_point].y) / entity.stairs.step_size))
+		climb_progress = abs((2.0 if climb_direction > 0.0 else 0.0) - (1.0 + abs(kb_pos.y - entity.climb_points[entity.climb_point].y) / entity.stairs.step_size))
 	
 	#Which direction we are traveling in.
 	var forward_amount = entity.input.z
 	
 	#Determine which animation to play if we are at the top of the stairs or still climbing.
-	if entity.climb_point == entity.stairs.climb_points.size() - 1 and kb_pos.y > entity.stairs.climb_points[entity.climb_point].y and not forward_amount <= 0.0:
+	if entity.climb_point == entity.climb_points.size() - 1 and kb_pos.y > entity.climb_points[entity.climb_point].y and not forward_amount <= 0.0:
 		entity.animation_tree.set("parameters/State/current", anim_state.FLAILING)
 	else:
 		entity.animation_tree.set("parameters/State/current", anim_state.CLIMBING)
