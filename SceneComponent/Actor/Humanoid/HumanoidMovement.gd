@@ -261,8 +261,6 @@ func stop_climb_stairs(phys_state : PhysicsDirectBodyState, is_stairs_top) -> vo
 		var push_force = entity.model.transform.basis.z.normalized() * 1.5 + Vector3.UP * 2
 		entity.set_linear_velocity(push_force)
 
-	#Make myself face the same direction as the camera.
-	entity.model.global_transform.basis = entity.global_transform.basis
 	entity.custom_integrator = false
 	if is_network_master():
 		rset("is_climbing", is_climbing)
