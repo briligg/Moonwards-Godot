@@ -60,6 +60,7 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.71825, 0 )
 display_info = "Open Airlock Door"
 title = "Airlock Door"
+network_mode = 2
 animation_player_path = NodePath("../../../AnimationPlayer")
 dock_point_path = NodePath("../../DockPoint")
 animation_name = "OpenExterior"
@@ -77,6 +78,7 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0039059, -1.72093, 0.11333 )
 display_info = "Open Airlock Door"
 title = "Airlock Door"
+network_mode = 2
 animation_player_path = NodePath("../../../AnimationPlayer")
 animation_name = "OpenInterior"
 

@@ -21,6 +21,8 @@ onready var dock_point = get_node_or_null(dock_point_path)
 
 var is_open: bool = false
 
+var is_docked_to: bool = false
+
 #Called when an airlock has finished opening or shutting.
 func _animation_finished(_anim_name) -> void :
 	emit_signal("finished")
@@ -33,9 +35,9 @@ func _ready():
 
 func interact_with(_interactor : Node) -> void :
 		if is_open:
-				emit_signal("closed")
+				request_close()
 		else:
-				emit_signal("opened")
+				request_open()
 
 puppet func netsync_door(val):
 	if val == is_open:
@@ -45,6 +47,19 @@ puppet func netsync_door(val):
 
 func sync_for_new_player(peer_id):
 	rpc_id(peer_id, "netsync_door", is_open )
+
+puppet func request_close():
+	if is_open:
+		emit_signal("closed")
+		if is_network_master():
+			rpc("request_close")
+		
+
+puppet func request_open():
+	if !is_open:
+		emit_signal("opened")
+		if is_network_master():
+			rpc("request_open")
 
 func open():
 	anim.play(animation_name, -1, 0.65, false)
