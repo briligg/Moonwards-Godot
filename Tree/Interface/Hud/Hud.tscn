@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Tree/Interface/Hud/Hud.gd" type="Script" id=1]
-[ext_resource path="res://SceneComponent/Interface/Hud/Chat/Chat.tscn" type="PackedScene" id=2]
+[ext_resource path="res://SceneComponent/Interface/Hud/ChatComponent.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=3]
 [ext_resource path="res://SceneComponent/Interface/Hud/Apps/ToolsBar/ToolsBar.tscn" type="PackedScene" id=4]
 [ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/GeneralInfo.tscn" type="PackedScene" id=5]
@@ -22,9 +22,7 @@
 layer = 8
 script = ExtResource( 1 )
 
-[node name="Chat" parent="." instance=ExtResource( 2 )]
-margin_left = 20.0
-margin_bottom = -20.0
+[node name="ChatComponent" parent="." instance=ExtResource( 2 )]
 
 [node name="Blur" type="TextureRect" parent="."]
 visible = false
@@ -39,21 +37,16 @@ __meta__ = {
 }
 
 [node name="GeneralInfo" parent="." instance=ExtResource( 5 )]
-margin_left = 20.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = -20.0
 
 [node name="Apps" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = -20.0
 mouse_filter = 2
 theme = ExtResource( 3 )
 script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ToolsBarApp" parent="Apps" instance=ExtResource( 4 )]
 

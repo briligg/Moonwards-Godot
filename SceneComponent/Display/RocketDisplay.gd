@@ -26,6 +26,8 @@ func _ready() -> void:
 	set_process_input(false)
 	main_ui.visible = false
 	display_animation_player.connect("animation_finished", self, "animation_finished")
+	#Make sure the rocket is in a display position regardless of how it's saved.
+	display_animation_player.play("Stage0")
 
 
 func _process(delta : float) -> void:

@@ -106,6 +106,8 @@ anchor_top = 0.82
 anchor_right = 1.0
 anchor_bottom = 0.994
 grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
 theme = ExtResource( 1 )
 script = ExtResource( 14 )
 __meta__ = {
@@ -115,6 +117,7 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 537.6
 margin_bottom = 187.92
+mouse_filter = 2
 custom_constants/separation = 14
 alignment = 2
 
@@ -122,6 +125,7 @@ alignment = 2
 margin_top = 151.0
 margin_right = 537.0
 margin_bottom = 187.0
+mouse_filter = 2
 theme = SubResource( 1 )
 custom_constants/separation = 8
 alignment = 2
