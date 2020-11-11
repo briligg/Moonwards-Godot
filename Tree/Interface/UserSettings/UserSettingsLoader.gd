@@ -26,10 +26,13 @@ func _ready() -> void :
 	var colors : Array = _save_file.get_value("COLORS", "colors")
 	_menu.call_deferred("set_colors", colors)
 	
+	var username : String = _save_file.get_value("USERNAME", "username")
+	_menu.call_deferred("set_username", username)
+	
 	#Emit signals to let the Network know we loaded things.
 	Log.trace(self, "_ready", "Avatar Settings successfully loaded")
 	
-#	Signals.Network.emit_signal(Signals.Network.CLIENT_NAME_CHANGED, username)
+	Signals.Network.emit_signal(Signals.Network.CLIENT_NAME_CHANGED, username)
 	
 	#Let Networking know we changed genders.
 	Signals.Network.emit_signal(Signals.Network.CLIENT_GENDER_CHANGED, gender)
@@ -42,4 +45,5 @@ func _ready() -> void :
 func save() -> void :
 	_save_file.set_value("COLORS", "colors", _menu.get_colors())
 	_save_file.set_value("GENDER", "gender", _menu.gender)
+	_save_file.set_value("USERNAME", "username", _menu.username)
 	_save_file.save(Helpers.SAVE_FOLDER+FILE_NAME)

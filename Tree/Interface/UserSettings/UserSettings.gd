@@ -56,6 +56,10 @@ func set_colors(color_array) -> void :
 	#Update the slot so it points to the correct one.
 	switch_slot()
 
+func set_username(new_name : String) -> void :
+	username = new_name
+	$ModelDisplay/UsernameEdit.text = username
+
 func switch_slot() -> void:
 	if current_slot == SLOTS.PANTS:
 		get_node(hue_picker).color = pants_color
