@@ -7,9 +7,6 @@ onready var mesh: MeshInstance = get_node(mesh_path)
 func _init().("ModelComponent", false):
 	pass
 
-#func _ready() -> void:
-#	set_colors()
-
 func set_colors(colors: Array = []) -> void:
 	if colors.size() == 0:
 		return
