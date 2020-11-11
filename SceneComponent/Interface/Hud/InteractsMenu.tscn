@@ -9,10 +9,12 @@
 
 [node name="InteractsMenu" type="PanelContainer"]
 visible = false
-anchor_left = 0.3
-anchor_top = 0.2
-anchor_right = 0.7
-anchor_bottom = 0.8
+anchor_left = 0.628
+anchor_top = 0.054
+anchor_right = 1.0
+anchor_bottom = 0.904
+grow_horizontal = 0
+grow_vertical = 0
 theme = ExtResource( 2 )
 custom_styles/panel = ExtResource( 3 )
 script = ExtResource( 1 )
@@ -23,57 +25,58 @@ __meta__ = {
 [node name="HBox" type="HBoxContainer" parent="."]
 margin_left = 3.0
 margin_top = 3.0
-margin_right = 765.0
-margin_bottom = 645.0
+margin_right = 711.24
+margin_bottom = 915.0
 size_flags_horizontal = 3
 
 [node name="LeftSeparator" type="VSeparator" parent="HBox"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 4.0
-margin_bottom = 642.0
+margin_bottom = 912.0
 
 [node name="Buttons" type="VBoxContainer" parent="HBox"]
 margin_left = 8.0
-margin_right = 379.0
-margin_bottom = 642.0
+margin_right = 352.0
+margin_bottom = 912.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 10
 
 [node name="TopSeparator" type="HSeparator" parent="HBox/Buttons"]
-margin_right = 371.0
+margin_right = 344.0
 margin_bottom = 15.0
 custom_styles/separator = SubResource( 1 )
 custom_constants/separation = 15
 
 [node name="Center" type="VSeparator" parent="HBox"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 383.0
-margin_right = 387.0
-margin_bottom = 642.0
+margin_left = 356.0
+margin_right = 360.0
+margin_bottom = 912.0
 
 [node name="DescriptionPanel" type="PanelContainer" parent="HBox"]
-margin_left = 391.0
-margin_right = 762.0
-margin_bottom = 642.0
+margin_left = 364.0
+margin_right = 708.0
+margin_bottom = 912.0
+rect_min_size = Vector2( 140, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 4 )
 
 [node name="HBox" type="HBoxContainer" parent="HBox/DescriptionPanel"]
 margin_left = 3.0
-margin_right = 371.0
-margin_bottom = 642.0
+margin_right = 344.0
+margin_bottom = 912.0
 
 [node name="LeftSeparator" type="VSeparator" parent="HBox/DescriptionPanel/HBox"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 4.0
-margin_bottom = 642.0
+margin_bottom = 912.0
 
 [node name="Description" type="RichTextLabel" parent="HBox/DescriptionPanel/HBox"]
 margin_left = 8.0
-margin_right = 368.0
-margin_bottom = 642.0
+margin_right = 341.0
+margin_bottom = 912.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.1
