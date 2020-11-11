@@ -1,11 +1,11 @@
 extends Control
 
-# skin_color,  hair_color,  shirt_color,  pants_color,  shoes_color)
+#Opposite order as the Array since the tabs are in a unique order.
 enum SLOTS{
+	PANTS,
+	SHIRT,
 	SKIN,
 	HAIR,
-	SHIRT,
-	PANTS,
 	SHOES
 }
 
