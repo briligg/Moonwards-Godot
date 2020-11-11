@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Moon_Town_Master.tscn" type="PackedScene" id=1]
+[ext_resource path="res://SceneComponent/World/MoonTown/MoonTownAudioSpheres.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SceneComponent/Interface/PlayerHud.tscn" type="PackedScene" id=2]
 [ext_resource path="res://_tests/NavMeshData/Navigation_Master.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tree/Actor/Player/NPC.tscn" type="PackedScene" id=4]
@@ -33,6 +33,9 @@ script = ExtResource( 5 )
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.4318, -115.913, 171.358 )
 navmesh = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Moon_Town_Master" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 1 )]
 
@@ -62,6 +65,9 @@ transform = Transform( 0.250279, 0, 0.968174, 0, 1, 0, -0.968174, 0, 0.250279, -
 transform = Transform( -0.26421, 0, 0.964465, 0, 1, 0, -0.964465, 0, -0.26421, -19.0135, -16.8257, 1.77498 )
 
 [node name="Draw" type="ImmediateGeometry" parent="Navigation"]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Workstation5" parent="Navigation" instance=ExtResource( 6 )]
 transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -130.133, -92.4919, -120.231 )
@@ -108,6 +114,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -126.468, -92.9996, -117.354 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2581, -7.5555, -3.61078 )
 
 [node name="SpawnPoints" type="Spatial" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="1" type="Position3D" parent="SpawnPoints"]
 transform = Transform( 0.0777281, 0, -0.996975, 0, 1, 0, 0.996975, 0, 0.0777281, -45.5308, 88.7196, -168.08 )
+__meta__ = {
+"_edit_lock_": true
+}
