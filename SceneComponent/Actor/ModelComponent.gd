@@ -10,9 +10,12 @@ func _init().("ModelComponent", false):
 func set_colors(colors: Array = []) -> void:
 	if colors.size() == 0:
 		return
+	
+	#I don't know what the commented out code was used for.
 #	var count = mesh.get_surface_material_count()
-	for i in colors.size():
-		var mat = mesh.mesh.surface_get_material(i)
+
+	for i in range(0,colors.size()) :
+		var mat# = mesh.mesh.surface_get_material(i)
 		if mat:
 			mat = mat.duplicate()
 		else:

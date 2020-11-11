@@ -38,7 +38,7 @@ func _ready() -> void:
 	avatar_male.set_surface_material(1, _hair_mat)
 	avatar_male.set_surface_material(4, _shoes_mat)
 
-func set_colors(pants : Color, shirt : Color, skin : Color, hair : Color, shoes : Color) -> void:
+func set_colors(skin : Color, hair : Color, shirt : Color, pants : Color, shoes : Color) -> void:
 	_pants_mat.albedo_color = pants
 	_shirt_mat.albedo_color = shirt
 	_skin_mat.albedo_color = skin

@@ -47,7 +47,7 @@ func switch_slot() -> void:
 		get_node(hue_picker).color = hair_color
 	elif current_slot == SLOTS.SHOES:
 		get_node(hue_picker).color = shoes_color
-	get_node(avatar_preview).set_colors(pants_color, shirt_color, skin_color, hair_color, shoes_color)
+	get_node(avatar_preview).set_colors(skin_color, hair_color, shirt_color, pants_color, shoes_color)
 
 func _on_HuePicker_Hue_Selected(color : Color) -> void:
 	if current_slot == SLOTS.PANTS:
@@ -60,7 +60,7 @@ func _on_HuePicker_Hue_Selected(color : Color) -> void:
 		 hair_color = color
 	elif current_slot == SLOTS.SHOES:
 		 shoes_color = color
-	get_node(avatar_preview).set_colors( pants_color,  shirt_color,  skin_color,  hair_color,  shoes_color)
+	get_node(avatar_preview).set_colors( skin_color,  hair_color,  shirt_color,  pants_color,  shoes_color)
 
 func _on_CfgPlayer_pressed() -> void:
 	$WindowDialog.popup_centered()
