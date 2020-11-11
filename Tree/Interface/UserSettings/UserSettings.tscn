@@ -1,16 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Tree/Interface/UserSettings/UserSettings.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/AvatarPreview/AvatarPreview.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tree/Interface/UserSettings/Visual_Selector.gd" type="Script" id=3]
 [ext_resource path="res://Tree/addons/HuePicker/HuePicker.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Interface/MainMenu/Style/MM_Empty.tres" type="StyleBox" id=5]
+[ext_resource path="res://Tree/Interface/UserSettings/UserSettingsLoader.gd" type="Script" id=6]
 
 [node name="UserSettings" type="VBoxContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -37,6 +37,25 @@ func _ready() -> void:
 	get_node(gender_edit).selected = gender
 	get_node(button_containter).get_node("Viewport").size = get_node(button_containter).rect_size
 
+#Returns the colors in this order skin_color, hair_color, shirt_color, pants_color, shoes_color.
+func get_colors() -> Array :
+	return [skin_color, hair_color, shirt_color, pants_color, shoes_color]
+
+func set_gender(gender_id : int) -> void :
+	_on_Gender_item_selected(gender_id)
+
+#Pass colors in array in this order skin_color, hair_color, shirt_color, pants_color, shoes_color
+func set_colors(color_array) -> void :
+	skin_color = color_array[0]
+	hair_color = color_array[1]
+	shirt_color = color_array[2]
+	pants_color = color_array[3]
+	shoes_color = color_array[4]
+	get_node(avatar_preview).set_colors(skin_color,  hair_color,  shirt_color,  pants_color,  shoes_color)
+	
+	#Update the slot so it points to the correct one.
+	switch_slot()
+
 func switch_slot() -> void:
 	if current_slot == SLOTS.PANTS:
 		get_node(hue_picker).color = pants_color
@@ -78,6 +97,9 @@ func _on_SaveButton_pressed() -> void:
 	
 	#Emit the shirt color signals.
 	Signals.Network.emit_signal(Signals.Network.CLIENT_COLOR_CHANGED, [skin_color, hair_color, shirt_color, pants_color, shoes_color])
+	
+	#Save the user settings for later.
+	get_parent().save()
 
 func _on_SlotOption_item_selected(ID : int) -> void:
 	current_slot = ID
