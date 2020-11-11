@@ -2,11 +2,6 @@ extends Spatial
 
 export(SpatialMaterial) var base_material : SpatialMaterial
 
-#These determine what material applies to what part of the body.
-enum SELECTION {
-	
-}
-
 onready var avatar_female : Node = get_node("FemalePlayerModel/Female_Player/Skeleton/FemaleBody-LOD0")
 onready var avatar_skeleton_female : Node = $FemalePlayerModel/Female_Player/Skeleton
 onready var avatar_male : Node = $MalePlayerModel/Male_Player/Skeleton/Male_Player_LOD0

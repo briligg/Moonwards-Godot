@@ -1,10 +1,11 @@
 extends Control
 
+# skin_color,  hair_color,  shirt_color,  pants_color,  shoes_color)
 enum SLOTS{
-	PANTS,
-	SHIRT,
 	SKIN,
 	HAIR,
+	SHIRT,
+	PANTS,
 	SHOES
 }
 
@@ -60,7 +61,7 @@ func _on_HuePicker_Hue_Selected(color : Color) -> void:
 		 hair_color = color
 	elif current_slot == SLOTS.SHOES:
 		 shoes_color = color
-	get_node(avatar_preview).set_colors( skin_color,  hair_color,  shirt_color,  pants_color,  shoes_color)
+	get_node(avatar_preview).set_colors(skin_color,  hair_color,  shirt_color,  pants_color,  shoes_color)
 
 func _on_CfgPlayer_pressed() -> void:
 	$WindowDialog.popup_centered()
@@ -76,7 +77,7 @@ func _on_SaveButton_pressed() -> void:
 	Signals.Network.emit_signal(Signals.Network.CLIENT_GENDER_CHANGED, gender)
 	
 	#Emit the shirt color signals.
-	Signals.Network.emit_signal(Signals.Network.CLIENT_COLOR_CHANGED, [pants_color, shirt_color, hair_color, skin_color, shoes_color])
+	Signals.Network.emit_signal(Signals.Network.CLIENT_COLOR_CHANGED, [skin_color, hair_color, shirt_color, pants_color, shoes_color])
 
 func _on_SlotOption_item_selected(ID : int) -> void:
 	current_slot = ID

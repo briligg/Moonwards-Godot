@@ -15,7 +15,7 @@ func set_colors(colors: Array = []) -> void:
 #	var count = mesh.get_surface_material_count()
 
 	for i in range(0,colors.size()) :
-		var mat# = mesh.mesh.surface_get_material(i)
+		var mat = mesh.mesh.surface_get_material(i)
 		if mat:
 			mat = mat.duplicate()
 		else:
