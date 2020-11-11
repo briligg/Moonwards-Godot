@@ -16,7 +16,7 @@ func _process_client(_delta: float) -> void:
 	handle_input()
 
 func handle_input() -> void:
-	if ignore_inputs :
+	if ignore_inputs or MwInput.is_chat_active:
 		return
 	
 	if Input.is_action_pressed("jump"):

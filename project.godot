@@ -759,6 +759,7 @@ AL_DebugDraw="*res://Script/DebugHelper/debug_draw_3d.gd"
 Hud="*res://Script/Manager/HudManager/HudManager.gd"
 Nodes="*res://addons/joyeux_npc_editor/src/Core/Nodes.gd"
 ReflectMaterialManager="*res://addons/Silicon.vfx.planar_reflection/reflect_material_manager.gd"
+MwInput="*res://Script/Manager/InputManager/MwInputManager.tscn"
 
 [compression]
 

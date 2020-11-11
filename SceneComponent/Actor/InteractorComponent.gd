@@ -34,6 +34,9 @@ func _init().("Interactor", true) -> void :
 
 #Check for when the player wants to interact with the closest interactable.
 func _input(event : InputEvent) -> void :
+	if MwInput.is_chat_active:
+		return
+	
 	if not(has_focus) || not can_interact :
 		return
 	

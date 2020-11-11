@@ -9,6 +9,9 @@ func _process_client(_delta: float) -> void:
 	handle_input()
 
 func handle_input() -> void:
+	if MwInput.is_chat_active:
+		return
+	
 	entity.input = Vector3.ZERO
 	
 	entity.input.y = Input.get_action_strength("move_left") - Input.get_action_strength("move_right")
