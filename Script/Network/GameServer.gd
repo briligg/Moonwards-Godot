@@ -25,11 +25,12 @@ func _ready() -> void:
 	self.peer_id = get_tree().get_network_unique_id()
 	_start_session()
 
-master func initialize_entity_data(name, colors):
+master func initialize_entity_data(name, colors, gender : int):
 	var peer_id = Network.get_sender_id()
 	var entity_data = EntityData.new(peer_id, str(peer_id), _get_spawn())
 	entity_data.entity_name = name
 	entity_data.colors = colors
+	entity_data.gender = gender
 
 	# Send existing players to newly conencted peer for loading
 	var data = []
