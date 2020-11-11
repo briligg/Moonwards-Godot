@@ -66,9 +66,10 @@ func _host_game() -> void:
 func _start_session() -> void:
 	Log.trace(self, "", "Server instance started.")
 	# Add lobby host player
-	var entity = EntityData.new(1, "Server", _get_spawn())
+	var entity = EntityData.new(1, Network.self_meta_data.name, _get_spawn())
 	entity.colors = Network.self_meta_data.colors
 	entity.gender = Network.self_meta_data.gender
+	entity.entity_name = Network.self_meta_data.name
 	if not self.is_host_player:
 		entity.is_empty = true
 	entities[1] = entity

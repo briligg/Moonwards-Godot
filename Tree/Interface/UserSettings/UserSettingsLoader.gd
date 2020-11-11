@@ -29,15 +29,12 @@ func _ready() -> void :
 	var username : String = _save_file.get_value("USERNAME", "username")
 	_menu.call_deferred("set_username", username)
 	
-	#Emit signals to let the Network know we loaded things.
+	#If nothing crashed, it was successful.
 	Log.trace(self, "_ready", "Avatar Settings successfully loaded")
 	
+	#Emit signals to let the Network know we loaded things.
 	Signals.Network.emit_signal(Signals.Network.CLIENT_NAME_CHANGED, username)
-	
-	#Let Networking know we changed genders.
 	Signals.Network.emit_signal(Signals.Network.CLIENT_GENDER_CHANGED, gender)
-	
-	#Emit the shirt color signals.
 	Signals.Network.emit_signal(Signals.Network.CLIENT_COLOR_CHANGED, colors)
 	
 
