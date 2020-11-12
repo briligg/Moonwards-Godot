@@ -2,6 +2,7 @@ extends Node
 # Common helper functions
 
 const SAVE_LOCATION : String = "user://Moonwards/user_settings.ini"
+const SAVE_FOLDER : String = "user://Moonwards/"
 
 var Enum = EnumHelper.new()
 
