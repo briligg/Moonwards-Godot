@@ -1,0 +1,9 @@
+[gd_scene format=2]
+
+[node name="TutorialMenu" type="Panel"]
+anchor_left = 0.3
+anchor_right = 0.7
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
