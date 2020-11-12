@@ -10,8 +10,7 @@ var help : EnumHelper = EnumHelper.new()
 
 #Listen for when huds visibility requests happen.
 func _ready() -> void :
-	Signals.Hud.connect(Signals.Hud.VISIBLE_HUDS_SET, self, "_set_huds_visibility", [true])
-	Signals.Hud.connect(Signals.Hud.HIDDEN_HUDS_SET, self, "_set_huds_visibility", [false])
+	Signals.Hud.connect(Signals.Hud.HIDDEN_HUDS_SET, self, "_set_huds_visibility")
 
 #Called from signal. Sets the requested Huds to the requested visibility state.
 func _set_huds_visible(flag : int, visibility : bool) -> void :
