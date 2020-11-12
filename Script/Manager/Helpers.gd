@@ -13,13 +13,13 @@ var user_file : ConfigFile = ConfigFile.new()
 var editable_actions : Array = [
 	"move_forwards", "move_backwards", "move_left", "move_right",
 	"jump", "interact_with_closest", "use", "toggle_first_person",
-	"fly_up", "fly_down", "toggle_camera_fly", "mainmenu_toggle"
+	"fly_up", "fly_down", "toggle_camera_fly", "mouse_toggle"
 ]
 
 var is_capture_mode : bool = false
 
 func _input(event):
-	if event.is_action_pressed("mainmenu_toggle"):
+	if event.is_action_pressed("mouse_toggle"):
 		if is_capture_mode:
 			capture_mouse(false)
 		else:

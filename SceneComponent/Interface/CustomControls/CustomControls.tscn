@@ -5,7 +5,6 @@
 [ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/control_option_component.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Interface/MainMenu/Style/MM_Empty.tres" type="StyleBox" id=4]
 
-
 [node name="Controls" type="Tabs"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -248,12 +247,12 @@ margin_right = 272.0
 margin_bottom = 68.0
 custom_styles/separator = ExtResource( 4 )
 
-[node name="mainmenu_toggle" parent="ButtonList/HBox/Sub2" instance=ExtResource( 3 )]
+[node name="mouse_toggle" parent="ButtonList/HBox/Sub2" instance=ExtResource( 3 )]
 margin_top = 72.0
 margin_right = 272.0
 margin_bottom = 96.0
 Label_text = "toggle mouse"
-action_to_edit = "mainmenu_toggle"
+action_to_edit = "mouse_toggle"
 
 [node name="HSeparator18" type="HSeparator" parent="ButtonList/HBox/Sub2"]
 margin_top = 100.0
