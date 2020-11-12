@@ -113,8 +113,15 @@ func load_user_file() -> void :
 				event = InputEventMouseButton.new()
 				event.button_index = user_file.get_value(action, "scancode")
 			
+			#Now replace the first event in the action with the custom event.
+			var event_list : Array = InputMap.get_action_list(action)
+			event_list.pop_front()
 			InputMap.action_erase_events(action)
 			InputMap.action_add_event(action, event)
+			
+			#Add the extra events at the end. These events are not meant to be changed.
+			for extra_event in event_list :
+				InputMap.action_add_event(action, extra_event)
 
 #Save user info to the file.
 func save_user_file() -> void :
