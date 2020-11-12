@@ -27,6 +27,9 @@ Interact with Interactables such as the floating orb and vertical stairs by pres
 The screen you see around the neighborhood can be interacted with easily if you switch to first person. Press 3. Now aim at what you want to click on the screens and left click the mouse.
 
 The row of buttons on the bottom right is called the Tool Bar. The question mark button will bring up a useful little help menu if you need it."
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Close" type="Button" parent="."]
 anchor_left = 0.906

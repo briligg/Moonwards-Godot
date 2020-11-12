@@ -23,4 +23,4 @@ func toggle() -> void :
 	
 	#Bring up the other menus if I am being hidden.
 	else :
-		Hud.show(Hud.flags.AllExceptTutorial)
+		Hud.show(Hud.flags.RelevantToTutorial)
