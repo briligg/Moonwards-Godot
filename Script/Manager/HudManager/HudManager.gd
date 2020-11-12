@@ -10,7 +10,7 @@ enum flags {
 	AppMenusThatBlur = 4 #Hides App menus that blur the background.  
 	InteractsDisplay = 8,
 	RadialMenu = 16,
-	AllExceptTutorial, #Hide everything but the tutorial menu.
+	RelevantToTutorial = 32, #Hide everything needed to see the Tutorial Menu.
 	All = 64, #Hide everything hud related.
 	Rollback = 128
 }

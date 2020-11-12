@@ -14,12 +14,7 @@ func _ready() -> void :
 func _set_hud_visibility(hud_flag : int, is_visible : bool) -> void :
 	var enums : EnumHelper = EnumHelper.new()
 	#Toggle all but hud visibilty.
-	if enums.has_flag(hud_flag, Hud.flags.AllExceptTutorial) :
-		if is_visible :
-			show()
-		else :
-			hide()
-		
+	if enums.has_flag(hud_flag, Hud.flags.RelevantToTutorial) :
 		#Hide the tutorial menu if everything else is being shown.
 		#Otherwise show the tutorial menu.
 		$GeneralInfo.tutorial_menu_active(!is_visible)

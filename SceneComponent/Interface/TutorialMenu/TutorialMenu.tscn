@@ -6,9 +6,9 @@
 [node name="TutorialMenu" type="Panel" groups=[
 "TutorialMenu",
 ]]
-anchor_left = 0.34
-anchor_right = 0.86
-anchor_bottom = 1.0
+anchor_left = 0.44
+anchor_right = 1.0
+anchor_bottom = 0.92
 theme = ExtResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -17,8 +17,9 @@ __meta__ = {
 
 [node name="Text" type="RichTextLabel" parent="."]
 anchor_left = 0.02
+anchor_top = 0.02
 anchor_right = 0.98
-anchor_bottom = 1.0
+anchor_bottom = 0.98
 text = "Move around by using the WASD keys. Space bar to jump.
 
 Interact with Interactables such as the floating orb and vertical stairs by pressing F.

@@ -7,7 +7,7 @@ extends Panel
 func _close() -> void :
 	visible = false
 	
-	Hud.show(Hud.flags.AllExceptTutorial)
+	Hud.show(Hud.flags.RelevantToTutorial)
 
 #Close the tutorial menu if closed is pressed.
 func _ready() -> void :
@@ -19,7 +19,7 @@ func toggle() -> void :
 	
 	#If we are now visible. Hide all other menus.
 	if visible :
-		Hud.hide(Hud.flags.AllExceptTutorial)
+		Hud.hide(Hud.flags.RelevantToTutorial)
 	
 	#Bring up the other menus if I am being hidden.
 	else :
