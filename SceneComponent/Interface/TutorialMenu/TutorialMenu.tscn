@@ -19,11 +19,13 @@ __meta__ = {
 anchor_left = 0.02
 anchor_right = 0.98
 anchor_bottom = 1.0
-text = "Interactables can be interacted with and you can click Clickables.
+text = "Move around by using the WASD keys. Space bar to jump.
 
-WASD to move and Space to jump.
+Interact with Interactables such as the floating orb and vertical stairs by pressing F.
 
-Have fun"
+The screen you see around the neighborhood can be interacted with easily if you switch to first person. Press 3. Now aim at what you want to click on the screens and left click the mouse.
+
+The row of buttons on the bottom right is called the Tool Bar. The question mark button will bring up a useful little help menu if you need it."
 
 [node name="Close" type="Button" parent="."]
 anchor_left = 0.906
