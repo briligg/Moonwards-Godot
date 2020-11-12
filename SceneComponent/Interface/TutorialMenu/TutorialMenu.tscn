@@ -6,11 +6,30 @@
 [node name="TutorialMenu" type="Panel" groups=[
 "TutorialMenu",
 ]]
-anchor_left = 0.3
-anchor_right = 0.7
+anchor_left = 0.24
+anchor_right = 0.76
 anchor_bottom = 1.0
 theme = ExtResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Text" type="RichTextLabel" parent="."]
+anchor_left = 0.02
+anchor_right = 0.98
+anchor_bottom = 1.0
+text = "Interactables can be interacted with and you can click Clickables.
+
+WASD to move and Space to jump.
+
+Have fun"
+
+[node name="Close" type="Button" parent="."]
+anchor_left = 0.906
+anchor_top = 0.953
+anchor_right = 0.995
+anchor_bottom = 0.995
+grow_horizontal = 0
+grow_vertical = 0
+text = "Close"
