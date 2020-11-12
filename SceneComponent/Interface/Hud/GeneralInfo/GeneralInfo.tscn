@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconUsers.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/Panel.gd" type="Script" id=5]
 [ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/MenuButtons.gd" type="Script" id=6]
 [ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/GeneralInfo.gd" type="Script" id=7]
+[ext_resource path="res://SceneComponent/Interface/TutorialMenu/TutorialMenu.tscn" type="PackedScene" id=8]
 [ext_resource path="res://SceneComponent/Interface/HelpMenu/HelpMenu.tscn" type="PackedScene" id=9]
 
 [node name="GeneralInfo" type="Control"]
@@ -217,3 +218,6 @@ __meta__ = {
 [node name="HelpPanel" parent="." instance=ExtResource( 9 )]
 visible = false
 mouse_filter = 2
+
+[node name="TutorialMenu" parent="." instance=ExtResource( 8 )]
+visible = false

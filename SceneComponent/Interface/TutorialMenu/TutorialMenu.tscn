@@ -1,9 +1,16 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
 
-[node name="TutorialMenu" type="Panel"]
+[ext_resource path="res://SceneComponent/Interface/TutorialMenu/TutorialMenu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Interface/MainMenu.tres" type="Theme" id=2]
+
+[node name="TutorialMenu" type="Panel" groups=[
+"TutorialMenu",
+]]
 anchor_left = 0.3
 anchor_right = 0.7
 anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
