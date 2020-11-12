@@ -10,8 +10,9 @@ enum flags {
 	AppMenusThatBlur = 4 #Hides App menus that blur the background.  
 	InteractsDisplay = 8,
 	RadialMenu = 16,
-	All = 32, #Hide everything hud related.
-	Rollback = 64
+	AllExceptTutorial, #Hide everything but the tutorial menu.
+	All = 64, #Hide everything hud related.
+	Rollback = 128
 }
 
 var current_visibility : int = flags.All
@@ -30,7 +31,7 @@ func hide(hide_flag : int) -> void :
 	previous_visibility = current_visibility
 	current_visibility = hide_flag
 	
-	Signals.Hud.emit_signal(Signals.Hud.HIDDEN_HUDS_SET, hide_flag)
+	Signals.Hud.emit_signal(Signals.Hud.HIDDEN_HUDS_SET, hide_flag, false)
 
 #Make certain Hud menus show themselves.
 func show(show_flag : int) -> void :
@@ -40,4 +41,4 @@ func show(show_flag : int) -> void :
 	previous_visibility = current_visibility
 	current_visibility = show_flag
 	
-	Signals.Hud.emit_signal(Signals.Hud.VISIBLE_HUDS_SET, show_flag)
+	Signals.Hud.emit_signal(Signals.Hud.HIDDEN_HUDS_SET, show_flag, true)

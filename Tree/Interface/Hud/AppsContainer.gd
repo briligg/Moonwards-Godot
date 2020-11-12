@@ -29,8 +29,7 @@ func _ready() -> void :
 			break
 	
 	#Hide myself if all apps are suppose to be hidden.
-	Signals.Hud.connect(Signals.Hud.HIDDEN_HUDS_SET, self, "_hud_visibility", [false])
-	Signals.Hud.connect(Signals.Hud.VISIBLE_HUDS_SET, self, "_hud_visibility", [true])
+	Signals.Hud.connect(Signals.Hud.HIDDEN_HUDS_SET, self, "_hud_visibility")
 
 #Change the active app by passing it's node name.
 func change_app(app_name : String, blur_background : bool = false) -> void :
