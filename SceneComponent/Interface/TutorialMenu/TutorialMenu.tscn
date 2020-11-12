@@ -22,11 +22,13 @@ anchor_right = 0.98
 anchor_bottom = 0.98
 text = "Move around by using the WASD keys. Space bar to jump.
 
-Interact with Interactables such as the floating orb and vertical stairs by pressing F.
+Go into first person mode by pressing 3.
 
-The screen you see around the neighborhood can be interacted with easily if you switch to first person. Press 3. Now aim at what you want to click on the screens and left click the mouse.
+Aim at the floating orb or the stairs and press F to interact with them.
 
-The row of buttons on the bottom right is called the Tool Bar. The question mark button will bring up a useful little help menu if you need it."
+The screens around the neighborhood can be clicked. Use the mouse or aim at them in first person mode and left click to use them.
+
+The row of buttons on the bottom right is called the Tool Bar. The question mark button will bring up a useful little help menu if you need it. You can find this tutorial there if you need it."
 __meta__ = {
 "_edit_use_anchors_": false
 }
