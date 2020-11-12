@@ -125,5 +125,8 @@ max_distance = 10.0
 extents = Vector3( 44.0007, 28.3008, 50.1673 )
 box_projection = true
 
+[node name="CenterAtriumWalls_LOD1" parent="LOD1" index="1"]
+material/1 = ExtResource( 4 )
+
 [node name="LOD2" parent="." index="12"]
 visible = false
