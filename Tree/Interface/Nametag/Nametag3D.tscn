@@ -24,7 +24,7 @@ albedo_texture = SubResource( 1 )
 
 [sub_resource type="QuadMesh" id=3]
 flip_faces = true
-size = Vector2( 0.7, -0.5 )
+size = Vector2( 0.6, -0.2 )
 
 [sub_resource type="Environment" id=4]
 ambient_light_color = Color( 0.101961, 0.101961, 0.101961, 1 )

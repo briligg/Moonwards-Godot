@@ -6,6 +6,7 @@ func _init().("NametagComponent", false):
 func _ready() -> void:
 	call_deferred("set_name", entity.entity_name)
 	
+	#Become
 	if not is_net_owner() :
 		visible = true
 	
