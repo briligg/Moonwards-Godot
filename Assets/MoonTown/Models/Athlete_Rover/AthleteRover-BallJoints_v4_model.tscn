@@ -17,45 +17,57 @@ bones/15/bound_children = [ NodePath("WheelBackLBoneAttachment") ]
 bones/19/bound_children = [ NodePath("WheelFrontLBoneAttachment") ]
 bones/23/bound_children = [ NodePath("WheelBackRBoneAttachment") ]
 
-[node name="Ball_Joint_Athlete" parent="Legs" index="0"]
+[node name="Ball_Joint_Athlete" parent="Legs" index="1"]
 material/0 = ExtResource( 3 )
 material/1 = ExtResource( 4 )
 material/2 = ExtResource( 2 )
 material/3 = ExtResource( 6 )
 material/4 = ExtResource( 5 )
 
-[node name="WheelBackLBoneAttachment" parent="Legs" index="1"]
+[node name="SpotLight" type="SpotLight" parent="Legs/Ball_Joint_Athlete" index="1"]
+transform = Transform( -1, -2.30404e-07, 2.30404e-07, 0, 0.707107, 0.707107, -3.25841e-07, 0.707107, -0.707107, 2.0829, 6.9952, 3.1695 )
+shadow_enabled = true
+spot_range = 15.0
+spot_angle = 60.0
+
+[node name="SpotLight2" type="SpotLight" parent="Legs/Ball_Joint_Athlete" index="2"]
+transform = Transform( -1, -2.30404e-07, 2.30404e-07, 0, 0.707107, 0.707107, -3.25841e-07, 0.707107, -0.707107, -2.07378, 6.9952, 3.1695 )
+shadow_enabled = true
+spot_range = 15.0
+spot_angle = 60.0
+
+[node name="WheelBackLBoneAttachment" parent="Legs" index="2"]
 transform = Transform( 0.00490884, 0.798927, -0.601408, 0.999981, -0.00614417, 4.65661e-09, -0.00369515, -0.601397, -0.798942, 15.7619, 6.13141, -11.8435 )
 
 [node name="Leg-BackLWheel" parent="Legs/WheelBackLBoneAttachment" index="0"]
 transform = Transform( 0.00490887, 0.999981, -0.00369518, 0.798927, -0.0061442, -0.601397, -0.601408, 7.57497e-10, -0.798942, -4.76837e-07, 0, -1.90735e-06 )
 material/0 = ExtResource( 2 )
 
-[node name="WheelBackRBoneAttachment" parent="Legs" index="2"]
+[node name="WheelBackRBoneAttachment" parent="Legs" index="3"]
 transform = Transform( -0.798636, 2.094e-08, 0.601815, -2.19918e-08, 1, -7.81597e-14, -0.601815, -3.99691e-08, -0.798636, -15.7953, 6.13141, -11.7974 )
 
 [node name="Leg-BackRWheel" parent="Legs/WheelBackRBoneAttachment" index="0"]
 material/0 = ExtResource( 2 )
 
-[node name="WheelFrontLBoneAttachment" parent="Legs" index="3"]
+[node name="WheelFrontLBoneAttachment" parent="Legs" index="4"]
 transform = Transform( -0.798635, -3.30181e-08, 0.601815, -5.56857e-08, 1, 4.26326e-13, -0.601815, -4.02874e-08, -0.798635, 15.6942, 6.13141, 11.9316 )
 
 [node name="Leg-FrontLWheel" parent="Legs/WheelFrontLBoneAttachment" index="0"]
 material/0 = ExtResource( 2 )
 
-[node name="WheelFrontRBoneAttachment" parent="Legs" index="4"]
+[node name="WheelFrontRBoneAttachment" parent="Legs" index="5"]
 transform = Transform( 0.0049087, 0.798927, -0.601408, 0.999981, -0.006144, 2.79397e-09, -0.00369505, -0.601397, -0.798942, -15.7413, 6.13141, 11.8707 )
 
 [node name="Leg-FrontRWheel" parent="Legs/WheelFrontRBoneAttachment" index="0"]
 material/0 = ExtResource( 2 )
 
-[node name="WheellMiddleRBoneAttachment" parent="Legs" index="5"]
+[node name="WheellMiddleRBoneAttachment" parent="Legs" index="6"]
 transform = Transform( -1, -2.03814e-08, -5.96101e-08, -5.04201e-08, 1, 2.41584e-13, -6.74399e-08, 4.47559e-08, -1, -19.5691, 6.13141, -0.00982869 )
 
 [node name="Leg-MiddleRWheel" parent="Legs/WheellMiddleRBoneAttachment" index="0"]
 material/0 = ExtResource( 2 )
 
-[node name="WheelMiddleLBoneAttachment" parent="Legs" index="6"]
+[node name="WheelMiddleLBoneAttachment" parent="Legs" index="7"]
 transform = Transform( -1, -6.11162e-08, 2.50441e-06, -2.03768e-07, 1, 3.12639e-13, -2.58496e-06, -3.31399e-08, -1, 19.5691, 6.13141, -0.00983331 )
 
 [node name="Leg-MiiddleLWheel" parent="Legs/WheelMiddleLBoneAttachment" index="0"]
