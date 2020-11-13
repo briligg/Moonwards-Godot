@@ -414,11 +414,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/InteractorComponent.gd"
 }, {
-"base": "MouseSimulatingRayCast",
-"class": "InteractorRayCast",
-"language": "GDScript",
-"path": "res://SceneComponent/Actor/InteractorRayCast.gd"
-}, {
 "base": "Spatial",
 "class": "LodModel",
 "language": "GDScript",
@@ -696,7 +691,6 @@ _global_script_class_icons={
 "Interactable": "",
 "InteractorArea": "",
 "InteractorComponent": "",
-"InteractorRayCast": "",
 "LodModel": "",
 "LodSignals": "",
 "MenuSignals": "",

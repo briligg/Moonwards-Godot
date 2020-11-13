@@ -14,7 +14,7 @@ signal interactable_left_reach(interactable)
 signal interactable_entered_area_reach(interactable)
 signal interactable_left_area_reach(interactable)
 
-onready var interactor_ray : InteractorRayCast = $InteractorRayCast
+onready var interactor_ray : RayCast = $InteractorRayCast
 onready var interactor_area : InteractorArea = $InteractorArea
 
 #Call grab_focus immediately at startup.
@@ -41,15 +41,8 @@ func _ready() -> void :
 	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_STARTED, self, "_set_can_interact", [false])
 	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_FINISHED, self, "_set_can_interact", [true])
 	
-	interactor_ray.owning_entity = self.entity
-	
-	#Listen to the Ray Cast.
-	if disable_ray_cast :
-		interactor_ray.set_activity(false)
-	else :
-		interactor_ray.connect("new_interactable", self, "relay_signal", [INTERACTABLE_ENTERED_REACH])
-		interactor_ray.connect("no_interactable_in_reach", self, "relay_signal", [null, INTERACTABLE_LEFT_REACH])
-	
+	interactor_ray.add_exception(entity)
+
 	#Listen for the Interactor Area signals if there is a collision shape child.
 	var has_collision : bool
 	var move_children : Array = []
@@ -76,20 +69,19 @@ func _ready() -> void :
 		grab_focus()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if MwInput.is_chat_active:
+	if MwInput.is_chat_active or !enabled:
 		return
-
 	if entity.owner_peer_id == Network.network_instance.peer_id:
 		if (event is InputEventMouseMotion) and (event != null):
 			_latest_mouse_motion = event
-		elif event is InputEventMouseButton:
-			if event.button_index == BUTTON_LEFT and event.pressed:
-				_latest_mouse_click = event
-				
+		if event.is_action_pressed("left_click"):
+			_latest_mouse_click = event
+	
 func _physics_process(delta: float) -> void:
 	if entity.owner_peer_id == Network.network_instance.peer_id:
-		_try_update_interact()
-		_try_request_interact()
+		if !disable_ray_cast and can_interact:
+			_try_update_interact()
+			_try_request_interact()
 
 # Try to request an interaction.
 func _try_request_interact():
@@ -98,8 +90,8 @@ func _try_request_interact():
 	
 	var result = interactor_ray.get_collider()
 	if result is Interactable:
-		_make_hud_display_interactable(result)
-	player_requested_interact(result)
+		player_requested_interact(result)
+	_latest_mouse_click = null
 
 # Try to update the interaction state & UI display.
 func _try_update_interact():
@@ -125,11 +117,12 @@ func _try_update_interact():
 func _make_hud_display_interactable(interactable : Interactable = null) -> void :
 	if interactable == null :
 		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_HIDDEN)
+		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_INTERACT, false)
 	else :
 		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_SHOWN, 
 				interactable.title, disable_ray_cast)
-
-
+		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_INTERACT, true)
+				
 #Called by signal. When false, do not allow the player to press interact. When true, player can interact.
 func _set_can_interact(set_can_interact : bool) -> void :
 	can_interact = set_can_interact
@@ -169,10 +162,10 @@ func lost_focus() -> void :
 func player_requested_interact(interactable : Interactable)->void:
 	Log.trace(self, "", "Interacted with %s " %interactable)
 	if interactable.is_networked:
-		rpc_id(1, "request_interact", [interactor_ray.get_path(), interactable.get_path()])
+		rpc_id(1, "request_interact", [get_path(), interactable.get_path()])
 		#I removed entity.owner_peer_id from the now empty array.
 	else :
-		interactor_ray.interact(interactable)
+		interactable.interact_with(entity)
 
 #Pass the interactor signals we are listening to onwards.
 func relay_signal(attribute = null, signal_name = "interactable_made_impossible") -> void :
@@ -208,7 +201,7 @@ puppet func execute_interact(args: Array):
 	Log.warning(self, "", "Client %s interacted request executed" %entity.owner_peer_id)
 	var interactor = get_node(args[0])
 	var interactable = get_node(args[1])
-	interactor.interact(interactable)
+	interactable.interact_with(entity)
 
 func disable():
 	#This gets called before _ready.
