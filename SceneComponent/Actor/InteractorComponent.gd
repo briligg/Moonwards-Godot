@@ -1,12 +1,6 @@
 extends AComponent
 class_name InteractorComponent
 
-#When chatting, do not interact with objects.
-var can_interact : bool = true
-
-onready var interactor_ray : InteractorRayCast = $InteractorRayCast
-onready var interactor_area : InteractorArea = $InteractorArea
-
 #These allow us to call signals using actual variables instead of strings.
 #const FOCUS_ROLLBACK : String = "focus_returned"
 const INTERACTABLE_ENTERED_REACH : String = "interactable_entered_reach"
@@ -20,37 +14,26 @@ signal interactable_left_reach(interactable)
 signal interactable_entered_area_reach(interactable)
 signal interactable_left_area_reach(interactable)
 
+onready var interactor_ray : InteractorRayCast = $InteractorRayCast
+onready var interactor_area : InteractorArea = $InteractorArea
+
 #Call grab_focus immediately at startup.
 export var grab_focus_at_ready : bool = true
 
 #Determines if the RayCast Interactor should be active or not.
 export var disable_ray_cast : bool = false
 
+var _latest_mouse_motion: InputEventMouseMotion
+var _latest_mouse_click: InputEventMouseButton
+
+#When chatting, do not interact with objects.
+var can_interact : bool = true
+
 var has_focus : bool = false
 
 #This function is required by AComponent.
 func _init().("Interactor", true) -> void :
 	pass
-
-#Check for when the player wants to interact with the closest interactable.
-func _input(event : InputEvent) -> void :
-	if MwInput.is_chat_active:
-		return
-	
-	if not(has_focus) || not can_interact :
-		return
-	
-	if event.is_action_pressed("interact_with_closest") :
-		var interactable = interactor_ray.get_interactable()
-		if interactable != null :
-			player_requested_interact(interactable)
-
-func _make_hud_display_interactable(interactable : Interactable = null) -> void :
-	if interactable == null :
-		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_HIDDEN)
-	else :
-		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_SHOWN, 
-				interactable.title, disable_ray_cast)
 
 #Make Interactor have my Entity variable as it's user.
 func _ready() -> void :
@@ -92,6 +75,61 @@ func _ready() -> void :
 	if grab_focus_at_ready && is_net_owner() :
 		grab_focus()
 
+func _unhandled_input(event: InputEvent) -> void:
+	if MwInput.is_chat_active:
+		return
+
+	if entity.owner_peer_id == Network.network_instance.peer_id:
+		if (event is InputEventMouseMotion) and (event != null):
+			_latest_mouse_motion = event
+		elif event is InputEventMouseButton:
+			if event.button_index == BUTTON_LEFT and event.pressed:
+				_latest_mouse_click = event
+				
+func _physics_process(delta: float) -> void:
+	if entity.owner_peer_id == Network.network_instance.peer_id:
+		_try_update_interact()
+		_try_request_interact()
+
+# Try to request an interaction.
+func _try_request_interact():
+	if !_latest_mouse_click:
+		return
+	
+	var result = interactor_ray.get_collider()
+	if result is Interactable:
+		_make_hud_display_interactable(result)
+	player_requested_interact(result)
+
+# Try to update the interaction state & UI display.
+func _try_update_interact():
+	if !_latest_mouse_motion:
+		return
+		
+	var camera = get_tree().get_root().get_camera()
+	var from = camera.project_ray_origin(_latest_mouse_motion.position)
+	var to = from + camera.project_ray_normal(
+			_latest_mouse_motion.position) * 100
+			
+	interactor_ray.global_transform.origin = from
+	interactor_ray.cast_to = to
+	
+	var result = interactor_ray.get_collider()
+	if result is Interactable:
+		_make_hud_display_interactable(result)
+	else:
+		_make_hud_display_interactable(null)
+	
+	DebugDraw.c_draw_line(from, to, Color(1,1,0), 1.0)
+	
+func _make_hud_display_interactable(interactable : Interactable = null) -> void :
+	if interactable == null :
+		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_HIDDEN)
+	else :
+		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_SHOWN, 
+				interactable.title, disable_ray_cast)
+
+
 #Called by signal. When false, do not allow the player to press interact. When true, player can interact.
 func _set_can_interact(set_can_interact : bool) -> void :
 	can_interact = set_can_interact
@@ -130,7 +168,7 @@ func lost_focus() -> void :
 #An Interactable has been chosen from InteractsMenu. Perform the appropriate logic for the Interactable.
 func player_requested_interact(interactable : Interactable)->void:
 	Log.trace(self, "", "Interacted with %s " %interactable)
-	if interactable.is_networked():
+	if interactable.is_networked:
 		rpc_id(1, "request_interact", [interactor_ray.get_path(), interactable.get_path()])
 		#I removed entity.owner_peer_id from the now empty array.
 	else :

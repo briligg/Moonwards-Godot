@@ -34,11 +34,6 @@ func _on_new_collider(new_collider) -> void :
 		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_INTERACT, false)
 		available_interactable = null
 
-func _physics_process(_delta : float) -> void :
-	var camera : Camera = viewport.get_camera()
-	self.global_transform.basis.x = -camera.global_transform.basis.x
-	self.global_transform.basis.z = -camera.global_transform.basis.z
-
 func _ready() -> void :
 	connect("collided", self, "_on_new_collider")
 
