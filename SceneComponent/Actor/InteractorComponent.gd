@@ -25,7 +25,8 @@ export var disable_ray_cast : bool = false
 
 var _latest_mouse_motion: InputEventMouseMotion
 var _latest_mouse_click: InputEventMouseButton
-
+# what we collided with last frame
+var _prev_frame_collider
 #When chatting, do not interact with objects.
 var can_interact : bool = true
 
@@ -83,37 +84,45 @@ func _physics_process(delta: float) -> void:
 			_try_update_interact()
 			_try_request_interact()
 
-# Try to request an interaction.
-func _try_request_interact():
-	if !_latest_mouse_click:
-		return
-	
-	var result = interactor_ray.get_collider()
-	if result is Interactable:
-		player_requested_interact(result)
-	_latest_mouse_click = null
-
 # Try to update the interaction state & UI display.
 func _try_update_interact():
 	if !_latest_mouse_motion:
 		return
+	var result = interactor_ray.get_collider()
 		
 	var camera = get_tree().get_root().get_camera()
-	var from = camera.project_ray_origin(_latest_mouse_motion.position)
+	var from = entity.global_transform.origin#camera.project_ray_origin(_latest_mouse_motion.position)
 	var to = from + camera.project_ray_normal(
-			_latest_mouse_motion.position) * 100
+			_latest_mouse_motion.position) * 130
 			
 	interactor_ray.global_transform.origin = from
 	interactor_ray.cast_to = to
 	
-	var result = interactor_ray.get_collider()
+	# Call interactable APIs
 	if result is Interactable:
 		_make_hud_display_interactable(result)
+		result.emit_signal("mouse_entered")
+		_prev_frame_collider = result
+	# reset everything
 	else:
+		if _prev_frame_collider != null:
+			_prev_frame_collider.emit_signal("mouse_exited")
+			_prev_frame_collider = null
 		_make_hud_display_interactable(null)
-	
+		
 	DebugDraw.c_draw_line(from, to, Color(1,1,0), 1.0)
+
+# Try to request an interaction.
+func _try_request_interact():
+	if !_latest_mouse_click:
+		return
+	var result = interactor_ray.get_collider()
 	
+	if result is Interactable:
+		player_requested_interact(result)
+	_latest_mouse_click = null
+
+
 func _make_hud_display_interactable(interactable : Interactable = null) -> void :
 	if interactable == null :
 		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_HIDDEN)
