@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Audio_Tour_Indoor-Neighborhood.ogg-ae6771482ae703cf56b16616b16f8421.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-Neighborhood.ogg"
+dest_files=[ "res://.import/Audio_Tour_Indoor-Neighborhood.ogg-ae6771482ae703cf56b16616b16f8421.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
