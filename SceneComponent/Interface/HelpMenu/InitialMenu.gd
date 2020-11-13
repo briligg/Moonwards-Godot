@@ -16,3 +16,6 @@ func _ready() -> void :
 	
 	button = get_node("GotoRecording")
 	button.connect("pressed", par, "change_submenu_by_name", [par.RECORD_SCREEN])
+	
+	button = get_node("TutorialMenu")
+	button.connect("pressed", get_tree(), "call_group", ["TutorialMenu", "toggle"])
