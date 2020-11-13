@@ -6,7 +6,7 @@ func _init().("NametagComponent", false):
 func _ready() -> void:
 	call_deferred("set_name", entity.entity_name)
 	
-	#Become
+	#Become visible if I am over another player that is not the local user.
 	if not is_net_owner() :
 		visible = true
 	
