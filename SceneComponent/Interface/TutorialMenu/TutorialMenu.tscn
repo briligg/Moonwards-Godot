@@ -59,26 +59,27 @@ __meta__ = {
 
 [node name="Text" type="Label" parent="VWithTheme"]
 margin_right = 921.0
-margin_bottom = 105.0
+margin_bottom = 131.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
 text = "Move around by using the %s%s%s%s keys. %s to jump.
 Toggle first person mode by pressing %s.
+Toggle mouse cursor by right clicking the mouse or pressing %s.
 
-Aim at the floating orb or the stairs and press %s to interact with them."
+Aim at the floating orb or the stairs and left click the mouse or press %s to interact with them."
 autowrap = true
 
 [node name="OrbAndStair" type="HBoxContainer" parent="VWithTheme"]
-margin_top = 109.0
+margin_top = 135.0
 margin_right = 921.0
-margin_bottom = 324.0
+margin_bottom = 342.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="OrbStair" type="TextureRect" parent="VWithTheme/OrbAndStair"]
 margin_right = 458.0
-margin_bottom = 215.0
+margin_bottom = 207.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 4 )
@@ -88,7 +89,7 @@ stretch_mode = 6
 [node name="OrbStair2" type="TextureRect" parent="VWithTheme/OrbAndStair"]
 margin_left = 462.0
 margin_right = 921.0
-margin_bottom = 215.0
+margin_bottom = 207.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 3 )
@@ -96,9 +97,9 @@ expand = true
 stretch_mode = 6
 
 [node name="Text2" type="Label" parent="VWithTheme"]
-margin_top = 328.0
+margin_top = 346.0
 margin_right = 921.0
-margin_bottom = 392.0
+margin_bottom = 408.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
@@ -107,15 +108,15 @@ Use the mouse or aim at them in first person mode and left click to use them."
 autowrap = true
 
 [node name="Screens" type="HBoxContainer" parent="VWithTheme"]
-margin_top = 396.0
+margin_top = 412.0
 margin_right = 921.0
-margin_bottom = 611.0
+margin_bottom = 619.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Screen1" type="TextureRect" parent="VWithTheme/Screens"]
 margin_right = 458.0
-margin_bottom = 215.0
+margin_bottom = 207.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 6 )
@@ -125,7 +126,7 @@ stretch_mode = 6
 [node name="Screen2" type="TextureRect" parent="VWithTheme/Screens"]
 margin_left = 462.0
 margin_right = 921.0
-margin_bottom = 215.0
+margin_bottom = 207.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 5 )
@@ -133,9 +134,9 @@ expand = true
 stretch_mode = 6
 
 [node name="Text3" type="Label" parent="VWithTheme"]
-margin_top = 615.0
+margin_top = 623.0
 margin_right = 921.0
-margin_bottom = 694.0
+margin_bottom = 702.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
@@ -145,7 +146,7 @@ You can find this tutorial there if you need it."
 autowrap = true
 
 [node name="HelpButton" type="TextureRect" parent="VWithTheme"]
-margin_top = 698.0
+margin_top = 706.0
 margin_right = 921.0
 margin_bottom = 914.0
 size_flags_horizontal = 3

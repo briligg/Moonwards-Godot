@@ -9,5 +9,6 @@ func _ready() -> void :
 		Helpers.get_action_string("move_right"),
 		Helpers.get_action_string("jump"),
 		Helpers.get_action_string("toggle_first_person"),
+		Helpers.get_action_string("mouse_toggle"),
 		Helpers.get_action_string("interact_with_closest")
 	]
