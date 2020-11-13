@@ -1,9 +1,35 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/First_Gallery_Lower_UpperPart.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Tube_Habs/TubeHab_Mirror.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/Gallery_MainWall_Shader.tres" type="Material" id=3]
+[ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/Gallery_Celling_Shader_New.tres" type="Material" id=4]
+[ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/Gallery_BaseFloor_Shader_New.tres" type="Material" id=5]
 
 [node name="First_Gallery_Lower_UpperPart" instance=ExtResource( 1 )]
 
+[node name="FirstGalleryWalls_Upper001" parent="LOD0" index="2"]
+material/0 = ExtResource( 3 )
+
+[node name="UpBottom0" parent="LOD0" index="7"]
+material/0 = ExtResource( 5 )
+
+[node name="UpVaults0" parent="LOD0" index="8"]
+material/0 = ExtResource( 4 )
+
+[node name="LOD1" parent="." index="2"]
+visible = false
+
+[node name="LOD2" parent="." index="3"]
+visible = false
+
 [node name="TubeHab_Mirror" parent="Marker_Tubehab_1" index="0" instance=ExtResource( 2 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0 )
+
+[node name="OmniLight" type="OmniLight" parent="." index="7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 512.887, 408.149, 65.515 )
+omni_range = 36.4949
+
+[node name="OmniLight2" type="OmniLight" parent="." index="8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 450.784, 354.59, 55.5601 )
+omni_range = 36.4949
