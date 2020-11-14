@@ -4,10 +4,10 @@
 [ext_resource path="res://Assets/Interface/Fonts/NametagFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/Interface/Nametag3D.tres" type="Theme" id=3]
 
-[sub_resource type="ViewportTexture" id=1]
+[sub_resource type="ViewportTexture" id=5]
 viewport_path = NodePath("NametagHolder")
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=1]
 resource_local_to_scene = true
 flags_unshaded = true
 flags_do_not_receive_shadows = true
@@ -17,23 +17,24 @@ params_billboard_mode = 1
 params_billboard_keep_scale = true
 params_use_alpha_scissor = true
 params_alpha_scissor_threshold = 0.01
-albedo_texture = SubResource( 1 )
+albedo_color = Color( 0.925781, 0.922261, 0.922261, 1 )
+albedo_texture = SubResource( 5 )
 
-[sub_resource type="QuadMesh" id=3]
+[sub_resource type="QuadMesh" id=2]
 flip_faces = true
 size = Vector2( 3, -1.2 )
 
-[sub_resource type="Environment" id=4]
+[sub_resource type="Environment" id=3]
 ambient_light_color = Color( 0.101961, 0.101961, 0.101961, 1 )
 
-[sub_resource type="World" id=5]
-environment = SubResource( 4 )
+[sub_resource type="World" id=4]
+environment = SubResource( 3 )
 
 [node name="Nametag3D" type="MeshInstance"]
 transform = Transform( -1, 3.25841e-07, 3.25841e-07, -3.25841e-07, -1, 0, -3.25841e-07, 1.06173e-13, -1, 0, 0.71, 0 )
-material_override = SubResource( 2 )
+material_override = SubResource( 1 )
 cast_shadow = 0
-mesh = SubResource( 3 )
+mesh = SubResource( 2 )
 material/0 = null
 script = ExtResource( 1 )
 __meta__ = {
@@ -43,7 +44,7 @@ __meta__ = {
 [node name="NametagHolder" type="Viewport" parent="."]
 size = Vector2( 1000, 600 )
 own_world = true
-world = SubResource( 5 )
+world = SubResource( 4 )
 transparent_bg = true
 hdr = false
 disable_3d = true
