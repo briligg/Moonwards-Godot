@@ -10,19 +10,23 @@ viewport_path = NodePath("NametagHolder")
 [sub_resource type="SpatialMaterial" id=2]
 resource_local_to_scene = true
 flags_unshaded = true
+flags_fixed_size = true
 flags_do_not_receive_shadows = true
 flags_disable_ambient_light = true
-params_depth_draw_mode = 1
+params_depth_draw_mode = 3
 params_billboard_mode = 1
 params_billboard_keep_scale = true
 params_use_alpha_scissor = true
 params_alpha_scissor_threshold = 0.01
 albedo_color = Color( 0.925781, 0.922261, 0.922261, 1 )
 albedo_texture = SubResource( 1 )
+distance_fade_mode = 2
+distance_fade_min_distance = 15.0
+distance_fade_max_distance = 14.5
 
 [sub_resource type="QuadMesh" id=3]
 flip_faces = true
-size = Vector2( 3, -1.2 )
+size = Vector2( 0.75, -0.3 )
 
 [sub_resource type="Environment" id=4]
 ambient_light_color = Color( 0.101961, 0.101961, 0.101961, 1 )
