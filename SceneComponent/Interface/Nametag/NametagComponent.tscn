@@ -1,25 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://SceneComponent/Interface/Nametag/NametagComponent.gd" type="Script" id=1]
 [ext_resource path="res://Tree/Interface/Nametag/Nametag3D.tscn" type="PackedScene" id=2]
-
-[sub_resource type="ViewportTexture" id=1]
-viewport_path = NodePath("NametagHolder")
-
-[sub_resource type="SpatialMaterial" id=2]
-resource_local_to_scene = true
-flags_unshaded = true
-flags_do_not_receive_shadows = true
-flags_disable_ambient_light = true
-params_depth_draw_mode = 1
-params_billboard_mode = 1
-params_billboard_keep_scale = true
-params_use_alpha_scissor = true
-params_alpha_scissor_threshold = 0.01
-albedo_texture = SubResource( 1 )
 
 [node name="NametagComponent" type="Spatial"]
 script = ExtResource( 1 )
 
 [node name="Nametag3D" parent="." instance=ExtResource( 2 )]
-material_override = SubResource( 2 )
