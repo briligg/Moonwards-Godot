@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Moon_Town_Master.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SceneComponent/Interface/PlayerHud.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Tree/Actor/Player/NPC.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Tree/World/Navigation/MwNavigator.gd" type="Script" id=5]
 [ext_resource path="res://SceneComponent/Actor/AI/Workstation.tscn" type="PackedScene" id=6]
+[ext_resource path="res://SceneComponent/World/MoonTown/AudioTours/AudioTourIndoors.tscn" type="PackedScene" id=7]
 
 [sub_resource type="NavigationMesh" id=1]
 sample_partition_type/sample_partition_type = 1
@@ -111,3 +112,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2581, -7.5555, -3.61078 )
 
 [node name="1" type="Position3D" parent="SpawnPoints"]
 transform = Transform( 0.0777281, 0, -0.996975, 0, 1, 0, 0.996975, 0, 0.0777281, -45.5308, 88.7196, -168.08 )
+
+[node name="Audio-Tour-Markers" parent="." instance=ExtResource( 7 )]

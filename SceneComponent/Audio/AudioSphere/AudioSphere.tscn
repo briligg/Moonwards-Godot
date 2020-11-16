@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://SceneComponent/Audio/AudioSphere/AudioSphere.gd" type="Script" id=1]
+[ext_resource path="res://SceneComponent/Audio/AudioSphere/AudioSphere.tres" type="Material" id=2]
 [ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_intro.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/AudioMarkerPink.material" type="Material" id=4]
 [ext_resource path="res://SceneComponent/Audio/AudioSphere/AudioSphereAnimations.gd" type="Script" id=5]
@@ -22,8 +23,7 @@ surfaces/0 = {
 "vertex_count": 60
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Idle"
+[sub_resource type="Animation" id=4]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -39,8 +39,7 @@ tracks/0/keys = {
 "values": [ Vector3( 1, 1, 1 ), Vector3( 0.7, 0.7, 0.7 ), Vector3( 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "Interacted With"
+[sub_resource type="Animation" id=5]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("AudioTourMarker_Indoor:scale")
@@ -60,7 +59,6 @@ collision_layer = 32768
 collision_mask = 0
 script = ExtResource( 1 )
 display_info = "play audio recording"
-networked = false
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
@@ -70,9 +68,9 @@ shape = SubResource( 1 )
 
 [node name="AudioTourMarker_Indoor" type="MeshInstance" parent="."]
 mesh = SubResource( 2 )
-material/0 = null
+material/0 = ExtResource( 2 )
 
 [node name="AudioSphereAnimations" type="AnimationPlayer" parent="."]
-anims/Idle = SubResource( 3 )
-"anims/Interacted With" = SubResource( 4 )
+anims/Idle = SubResource( 4 )
+"anims/Interacted With" = SubResource( 5 )
 script = ExtResource( 5 )

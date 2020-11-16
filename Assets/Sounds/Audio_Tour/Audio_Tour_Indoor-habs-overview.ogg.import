@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Audio_Tour_Indoor-habs-overview.ogg-67ae464899ba7bb804978a897cf42c2c.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-habs-overview.ogg"
+dest_files=[ "res://.import/Audio_Tour_Indoor-habs-overview.ogg-67ae464899ba7bb804978a897cf42c2c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
