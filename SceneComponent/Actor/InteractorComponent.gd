@@ -92,7 +92,7 @@ func _try_update_interact():
 		
 	var camera = get_tree().get_root().get_camera()
 	var from = entity.global_transform.origin#camera.project_ray_origin(_latest_mouse_motion.position)
-	var to = from + camera.project_ray_normal(
+	var to = camera.project_ray_normal(
 			_latest_mouse_motion.position) * 130
 			
 	interactor_ray.global_transform.origin = from
