@@ -90,4 +90,3 @@ margin_right = 1920.0
 margin_bottom = 39.0
 pressed = true
 text = "Critical"
-[connection signal="toggled" from="Container/Filters/Trace" to="." method="_filter_toggled"]
