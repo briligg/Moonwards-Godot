@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-10.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Outdoor_6.ogg" type="AudioStream" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://SceneComponent/Audio/AudioSphere/AudioSphere.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Marker_Indoor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-Artificial-Gravity.ogg" type="AudioStream" id=8]
-[ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Moon_Town_Master.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Marker_Outdoor.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-vertical-stairs.ogg" type="AudioStream" id=11]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-Neighborhood.ogg" type="AudioStream" id=12]
@@ -27,8 +26,6 @@
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-Roofs.ogg" type="AudioStream" id=25]
 
 [node name="Spatial" type="Spatial"]
-
-[node name="Moon_Town_Master" parent="." instance=ExtResource( 9 )]
 
 [node name="Audio-Tour-Markers" type="Spatial" parent="."]
 
