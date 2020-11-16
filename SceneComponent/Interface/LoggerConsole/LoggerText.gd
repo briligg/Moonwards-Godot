@@ -20,6 +20,14 @@ var warning_text : PoolStringArray = PoolStringArray()
 var error_text : PoolStringArray = PoolStringArray()
 var critical_text : PoolStringArray = PoolStringArray()
 
+#This determines if we should write to the console when a log is received.
+var trace_active : bool = true
+var debug_active : bool = true
+var warning_active : bool = true
+var error_active : bool = true
+var critical_active : bool = true
+
+#This stores all log entries so that they can be displayed when toggled.
 var message_type_history : Array = []
 
 func _get_right_of_date(message : String) -> String :
@@ -37,8 +45,12 @@ func _on_trace_logged(message) -> void:
 	else :
 		message = "[color=#BBBBBB]"+message+"[/color]"
 		trace_alternate = true
-	bbcode_text += "\n" # new_line uses buggy append_bbcode func
-	bbcode_text += message
+	
+	#Write to the logger console if our boolean is true.
+	if trace_active :
+		bbcode_text += "\n" # new_line uses buggy append_bbcode func
+		bbcode_text += message
+	
 	trace_text.append("\n" + message)
 	message_type_history.append(TRACE)
 
@@ -50,8 +62,12 @@ func _on_debug_logged(message) -> void:
 	else :
 		message = "[color=#5050FF]"+message+"[/color]"
 		debug_alternate = true
-	bbcode_text += "\n" # new_line uses buggy append_bbcode func
-	bbcode_text += "[color=#03FC8C]" + message + "[/color]"
+	
+	#Write to the logger console if our boolean is true.
+	if debug_active :
+		bbcode_text += "\n" # new_line uses buggy append_bbcode func
+		bbcode_text += "[color=#03FC8C]" + message + "[/color]"
+		
 	debug_text.append("\n" + message)
 	message_type_history.append(DEBUG)
 
@@ -62,8 +78,12 @@ func _on_warning_logged(message) -> void:
 	else :
 		message = "[color=#CCAC00]"+message+"[/color]"
 		warning_alternate = true
-	bbcode_text += "\n" # new_line uses buggy append_bbcode func
-	bbcode_text += "[color=yellow]" + message + "[/color]"
+	
+	#Write to the logger console if our boolean is true.
+	if warning_active :
+		bbcode_text += "\n" # new_line uses buggy append_bbcode func
+		bbcode_text += "[color=yellow]" + message + "[/color]"
+		
 	warning_text.append("\n" + message)
 	message_type_history.append(WARNING)
 
@@ -75,8 +95,12 @@ func _on_error_logged(message) -> void:
 	else :
 		message = "[color=#FF5555]"+message+"[/color]"
 		error_alternate = true
-	bbcode_text += "\n" # new_line uses buggy append_bbcode func
-	bbcode_text += "[color=#FC5603]" + message + "[/color]"
+	
+	#Write to the logger console if our boolean is true.
+	if error_active :
+		bbcode_text += "\n" # new_line uses buggy append_bbcode func
+		bbcode_text += "[color=#FC5603]" + message + "[/color]"
+		
 	error_text.append("\n" + message)
 	message_type_history.append(ERROR)
 
@@ -88,8 +112,12 @@ func _on_critical_logged(message) -> void:
 	else :
 		message = "[color=#8FFF8F]"+message+"[/color]"
 		critical_alternate = true
-	bbcode_text += "\n" # new_line uses buggy append_bbcode func
-	bbcode_text += "[color=red]" + message + "[/color]"
+	
+	#Write to the logger console if our boolean is true.
+	if critical_active :
+		bbcode_text += "\n" # new_line uses buggy append_bbcode func
+		bbcode_text += "[color=red]" + message + "[/color]"
+	
 	critical_text.append("\n" + message)
 	message_type_history.append(CRITICAL)
 
@@ -108,6 +136,13 @@ func deferred_ready() -> void :
 #Filter out messages from levels you do not care about.
 func filter_text(trace : bool, debug : bool, warning : bool,
 					error : bool, critical : bool) -> void :
+	#Store what log severities are active and which are not.
+	trace_active = trace
+	debug_active = debug
+	warning_active = warning
+	error_active = error
+	critical_active = critical
+	
 	bbcode_text = ""
 					
 	#Setup an Array for determine which messages to

@@ -3,6 +3,11 @@ extends CanvasLayer
 func _ready() -> void :
 	$Panel.anchor_right = $Container.anchor_right
 	$Panel.anchor_bottom = $Container.anchor_bottom
+	
+	#Connect to all toggle buttons.
+	for child in get_node("Container/Filters").get_children() :
+		if child is CheckBox :
+			child.connect("toggled", self, "_filter_toggled")
 
 func _input(event: InputEvent) -> void:
 	#Toggle whether I am visible or not.
@@ -11,7 +16,7 @@ func _input(event: InputEvent) -> void:
 		for child in get_children() :
 			child.visible = visible_status
 
-
+#One of the toggle buttons have been pressed. Update what we listen for.
 func _filter_toggled(_button_pressed):
 	var trace = get_node("Container/Filters/Trace").pressed
 	var debug = get_node("Container/Filters/Debug").pressed
