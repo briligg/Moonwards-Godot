@@ -13,7 +13,8 @@ var network_instance = null
 var self_meta_data = {
 	"name" : "No name set",
 	# Temporary default values for testing
-	"colors": []
+	"colors": [],
+	"gender" : 0
 }
 
 func _ready() -> void:
@@ -25,6 +26,8 @@ func _ready() -> void:
 			self, "_set_self_colors")
 	Signals.Network.connect(Signals.Network.CLIENT_NAME_CHANGED, 
 			self, "_set_self_name")
+	Signals.Network.connect(Signals.Network.CLIENT_GENDER_CHANGED,
+			self, "_set_self_gender")
 
 func _set_game_server(is_host_player: bool = false) -> void:
 	var root = get_tree().get_root()
@@ -40,6 +43,9 @@ func _set_game_client(_ip, _port) -> void:
 
 func _set_self_colors(colors: Array) -> void:
 	self_meta_data.colors = colors
+
+func _set_self_gender(gender : int) -> void :
+	self_meta_data.gender = gender
 
 func _set_self_name(name: String) -> void:
 	self_meta_data.name = name

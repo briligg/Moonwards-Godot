@@ -52,6 +52,10 @@ const CLIENT_COLOR_CHANGED: String = "client_color_changed"
 
 signal client_color_changed(colors)
 
+const CLIENT_GENDER_CHANGED: String = "client_gender_changed"
+
+signal client_gender_changed(gender_int)
+
 const NEW_PLAYER_PRE_LOAD: String = "new_player_pre_load"
 
 signal new_player_pre_load(peer_id)

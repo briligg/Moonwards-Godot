@@ -29,7 +29,8 @@ func _join_server() -> void:
 	self.peer_id = get_tree().get_network_unique_id()
 
 func _connected_ok():
-	rpc_id(1, "initialize_entity_data", Network.self_meta_data.name, Network.self_meta_data.colors)
+	rpc_id(1, "initialize_entity_data", Network.self_meta_data.name, 
+		Network.self_meta_data.colors, Network.self_meta_data.gender)
 	Log.trace(self, "", "CONNECTED.")
 
 func _server_disconnected():

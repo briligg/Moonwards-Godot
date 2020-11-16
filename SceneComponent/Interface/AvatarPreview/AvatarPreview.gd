@@ -2,11 +2,6 @@ extends Spatial
 
 export(SpatialMaterial) var base_material : SpatialMaterial
 
-#These determine what material applies to what part of the body.
-enum SELECTION {
-	
-}
-
 onready var avatar_female : Node = get_node("FemalePlayerModel/Female_Player/Skeleton/FemaleBody-LOD0")
 onready var avatar_skeleton_female : Node = $FemalePlayerModel/Female_Player/Skeleton
 onready var avatar_male : Node = $MalePlayerModel/Male_Player/Skeleton/Male_Player_LOD0
@@ -38,7 +33,7 @@ func _ready() -> void:
 	avatar_male.set_surface_material(1, _hair_mat)
 	avatar_male.set_surface_material(4, _shoes_mat)
 
-func set_colors(pants : Color, shirt : Color, skin : Color, hair : Color, shoes : Color) -> void:
+func set_colors(skin : Color, hair : Color, shirt : Color, pants : Color, shoes : Color) -> void:
 	_pants_mat.albedo_color = pants
 	_shirt_mat.albedo_color = shirt
 	_skin_mat.albedo_color = skin

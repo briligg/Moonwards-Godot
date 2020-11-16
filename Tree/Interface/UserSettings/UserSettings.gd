@@ -1,5 +1,6 @@
 extends Control
 
+#Opposite order as the Array since the tabs are in a unique order.
 enum SLOTS{
 	PANTS,
 	SHIRT,
@@ -36,6 +37,29 @@ func _ready() -> void:
 	get_node(gender_edit).selected = gender
 	get_node(button_containter).get_node("Viewport").size = get_node(button_containter).rect_size
 
+#Returns the colors in this order skin_color, hair_color, shirt_color, pants_color, shoes_color.
+func get_colors() -> Array :
+	return [skin_color, hair_color, shirt_color, pants_color, shoes_color]
+
+func set_gender(gender_id : int) -> void :
+	_on_Gender_item_selected(gender_id)
+
+#Pass colors in array in this order skin_color, hair_color, shirt_color, pants_color, shoes_color
+func set_colors(color_array) -> void :
+	skin_color = color_array[0]
+	hair_color = color_array[1]
+	shirt_color = color_array[2]
+	pants_color = color_array[3]
+	shoes_color = color_array[4]
+	get_node(avatar_preview).set_colors(skin_color,  hair_color,  shirt_color,  pants_color,  shoes_color)
+	
+	#Update the slot so it points to the correct one.
+	switch_slot()
+
+func set_username(new_name : String) -> void :
+	username = new_name
+	$ModelDisplay/UsernameEdit.text = username
+
 func switch_slot() -> void:
 	if current_slot == SLOTS.PANTS:
 		get_node(hue_picker).color = pants_color
@@ -47,7 +71,7 @@ func switch_slot() -> void:
 		get_node(hue_picker).color = hair_color
 	elif current_slot == SLOTS.SHOES:
 		get_node(hue_picker).color = shoes_color
-	get_node(avatar_preview).set_colors(pants_color, shirt_color, skin_color, hair_color, shoes_color)
+	get_node(avatar_preview).set_colors(skin_color, hair_color, shirt_color, pants_color, shoes_color)
 
 func _on_HuePicker_Hue_Selected(color : Color) -> void:
 	if current_slot == SLOTS.PANTS:
@@ -60,7 +84,7 @@ func _on_HuePicker_Hue_Selected(color : Color) -> void:
 		 hair_color = color
 	elif current_slot == SLOTS.SHOES:
 		 shoes_color = color
-	get_node(avatar_preview).set_colors( pants_color,  shirt_color,  skin_color,  hair_color,  shoes_color)
+	get_node(avatar_preview).set_colors(skin_color,  hair_color,  shirt_color,  pants_color,  shoes_color)
 
 func _on_CfgPlayer_pressed() -> void:
 	$WindowDialog.popup_centered()
@@ -72,10 +96,14 @@ func _on_SaveButton_pressed() -> void:
 	#Emit signals to let the Network know we changed things.
 	Signals.Network.emit_signal(Signals.Network.CLIENT_NAME_CHANGED, username)
 	
+	#Let Networking know we changed genders.
+	Signals.Network.emit_signal(Signals.Network.CLIENT_GENDER_CHANGED, gender)
+	
 	#Emit the shirt color signals.
-#	for clothing_color in [pants_color, shirt_color, hair_color, skin_color, shoes_color] :
-#		Signals.Network.emit_signal(Signals.Network.CLIENT_COLOR_CHANGED, clothing_color)
-	Signals.Network.emit_signal(Signals.Network.CLIENT_COLOR_CHANGED, [pants_color, shirt_color, hair_color, skin_color, shoes_color])
+	Signals.Network.emit_signal(Signals.Network.CLIENT_COLOR_CHANGED, [skin_color, hair_color, shirt_color, pants_color, shoes_color])
+	
+	#Save the user settings for later.
+	get_parent().save()
 
 func _on_SlotOption_item_selected(ID : int) -> void:
 	current_slot = ID

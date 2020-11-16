@@ -25,11 +25,12 @@ func _ready() -> void:
 	self.peer_id = get_tree().get_network_unique_id()
 	_start_session()
 
-master func initialize_entity_data(name, colors):
+master func initialize_entity_data(name, colors, gender : int):
 	var peer_id = Network.get_sender_id()
 	var entity_data = EntityData.new(peer_id, str(peer_id), _get_spawn())
 	entity_data.entity_name = name
 	entity_data.colors = colors
+	entity_data.gender = gender
 
 	# Send existing players to newly conencted peer for loading
 	var data = []
@@ -65,8 +66,10 @@ func _host_game() -> void:
 func _start_session() -> void:
 	Log.trace(self, "", "Server instance started.")
 	# Add lobby host player
-	var entity = EntityData.new(1, "Server", _get_spawn())
+	var entity = EntityData.new(1, Network.self_meta_data.name, _get_spawn())
 	entity.colors = Network.self_meta_data.colors
+	entity.gender = Network.self_meta_data.gender
+	entity.entity_name = Network.self_meta_data.name
 	if not self.is_host_player:
 		entity.is_empty = true
 	entities[1] = entity
