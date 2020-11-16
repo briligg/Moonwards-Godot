@@ -20,6 +20,9 @@ onready var interactor_area : InteractorArea = $InteractorArea
 #Call grab_focus immediately at startup.
 export var grab_focus_at_ready : bool = true
 
+#How long the Ray cast is.
+export var ray_cast_length : float = 50
+
 #Determines if the RayCast Interactor should be active or not.
 export var disable_ray_cast : bool = false
 
@@ -93,7 +96,7 @@ func _try_update_interact():
 	var camera = get_tree().get_root().get_camera()
 	var from = entity.global_transform.origin#camera.project_ray_origin(_latest_mouse_motion.position)
 	var to = camera.project_ray_normal(
-			_latest_mouse_motion.position) * 130
+			_latest_mouse_motion.position) * ray_cast_length
 			
 	interactor_ray.cast_to = to
 	
