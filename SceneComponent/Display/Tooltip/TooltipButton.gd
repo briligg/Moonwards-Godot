@@ -8,7 +8,7 @@ var tooltip_data : TooltipData = TooltipData.new()
 var pressed : bool = false
 
 onready var anim_player : AnimationPlayer = $Anim
-onready var mesh : MeshInstance = $Area/Spatial
+onready var mesh : MeshInstance = $Model/Spatial
 
 export var bbtext_fields : PoolStringArray = []
 
@@ -22,13 +22,13 @@ func _hovered(hovered_over : bool) -> void :
 
 func _ready() -> void:
 	#This allows me to have hover functionality.
-	$Area.connect("mouse_entered", self, "_hovered", [true])
-	$Area.connect("mouse_exited", self, "_hovered", [false])
+	connect("mouse_entered", self, "_hovered", [true])
+	connect("mouse_exited", self, "_hovered", [false])
 	
 	#Make sure tooltip_data is deleted when I am being freed.
 	connect("tree_exiting", tooltip_data, "free_myself")
 	
-	get_node("Area").connect("input_event", self, "on_input_event")
+	connect("input_event", self, "on_input_event")
 	
 	#Set the TooltipData.
 	tooltip_data.bbtext_fields = bbtext_fields
