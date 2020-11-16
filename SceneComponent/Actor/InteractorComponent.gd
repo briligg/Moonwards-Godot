@@ -95,7 +95,6 @@ func _try_update_interact():
 	var to = camera.project_ray_normal(
 			_latest_mouse_motion.position) * 130
 			
-	interactor_ray.global_transform.origin = from
 	interactor_ray.cast_to = to
 	
 	# Call interactable APIs
@@ -109,8 +108,6 @@ func _try_update_interact():
 			_prev_frame_collider.emit_signal("mouse_exited")
 			_prev_frame_collider = null
 		_make_hud_display_interactable(null)
-		
-	DebugDraw.c_draw_line(from, to, Color(1,1,0), 1.0)
 
 # Try to request an interaction.
 func _try_request_interact():

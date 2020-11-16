@@ -53,6 +53,7 @@ __meta__ = {
 [node name="HumanoidInput" parent="." instance=ExtResource( 1 )]
 
 [node name="Interactor" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0 )
 grab_focus_at_ready = true
 
 [node name="Nametag" parent="." instance=ExtResource( 2 )]
