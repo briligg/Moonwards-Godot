@@ -33,6 +33,9 @@ var _prev_frame_collider
 #When chatting, do not interact with objects.
 var can_interact : bool = true
 
+#When the mouse is not captured avoid pressing touchscreen with this ray cast.
+var touchscreen_clickable : bool = false
+
 var has_focus : bool = false
 
 #This function is required by AComponent.
@@ -44,6 +47,8 @@ func _ready() -> void :
 	#Listen for when chat starts and stops to know when to avoid interacting.
 	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_STARTED, self, "_set_can_interact", [false])
 	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_FINISHED, self, "_set_can_interact", [true])
+	
+	Signals.Menus.connect(Signals.Menus.SET_MOUSE_TO_CAPTURED, self, "_mouse_captured")
 	
 	interactor_ray.add_exception(entity)
 
@@ -132,7 +137,7 @@ func _try_request_interact():
 		player_requested_interact(result)
 	
 	#If result is an Area listening for mouse event's, let it know we clicked.
-	elif result is Area :
+	elif result is Area && touchscreen_clickable :
 		var camera = get_tree().get_root().get_camera()
 		result.emit_signal("input_event", camera, _latest_mouse_click, interactor_ray.get_collision_point(), interactor_ray.get_collision_normal(), 0)
 	
@@ -151,6 +156,10 @@ func _make_hud_display_interactable(interactable : Interactable = null) -> void 
 #Called by signal. When false, do not allow the player to press interact. When true, player can interact.
 func _set_can_interact(set_can_interact : bool) -> void :
 	can_interact = set_can_interact
+
+#Prevent touchscreen double clicks.
+func _mouse_captured(mouse_captured : bool) -> void :
+	touchscreen_clickable  = mouse_captured
 
 #Return the closest interactable.
 func get_interactable() -> Interactable :
