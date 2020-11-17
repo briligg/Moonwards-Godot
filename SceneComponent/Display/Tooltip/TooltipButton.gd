@@ -16,8 +16,12 @@ export var title : String
 
 func _hovered(hovered_over : bool) -> void :
 	if hovered_over :
+		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_CLICK, 
+				true)
 		anim_player.play("hovered")
 	else : 
+		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_CLICK, 
+				false)
 		anim_player.play("unhovered")
 
 func _ready() -> void:

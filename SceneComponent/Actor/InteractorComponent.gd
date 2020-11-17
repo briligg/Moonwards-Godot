@@ -98,13 +98,16 @@ func _physics_process(_delta: float) -> void:
 func _try_update_interact():
 	if !_latest_mouse_motion:
 		return
-	var result = interactor_ray.get_collider()
 	
 	#Get where to cast to and cast to it.
 	var camera = get_tree().get_root().get_camera()
-	var to = camera.project_ray_normal(
+	var from = camera.project_ray_origin(_latest_mouse_motion.position)
+	var to = from + camera.project_ray_normal(
 			_latest_mouse_motion.position) * ray_cast_length
-	interactor_ray.cast_to = to
+	interactor_ray.global_transform.origin = from
+	interactor_ray.cast_to = interactor_ray.to_local(to)
+	
+	var result = interactor_ray.get_collider()
 	
 	#Let the previous collider know we left if a new one has replaced it's focus.
 	if result != _prev_frame_collider && _prev_frame_collider != null :
@@ -115,12 +118,13 @@ func _try_update_interact():
 		_make_hud_display_interactable(result)
 		result.emit_signal("mouse_entered")
 		_prev_frame_collider = result
-	
-	#If result is an Area it may be a Touchscreen.
-	elif result is Area &&  _prev_frame_collider != result :
-		result.emit_signal("mouse_entered")
-		_prev_frame_collider = result
-	
+	#If result is an Area it may be a Touchscreen or a Clickable.
+	elif result is Area :
+		if _prev_frame_collider != result :
+			if _prev_frame_collider != null:
+				_prev_frame_collider.emit_signal("mouse_exited")
+			result.emit_signal("mouse_entered")
+			_prev_frame_collider = result
 	else:
 		if _prev_frame_collider != null:
 			_prev_frame_collider.emit_signal("mouse_exited")
