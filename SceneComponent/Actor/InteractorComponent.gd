@@ -127,6 +127,9 @@ func _try_request_interact():
 	
 	#If result is an Area listening for mouse event's, let it know we clicked.
 	elif result is Area :
+		"""
+		 TooltipButtons are expecting a press and release.
+		"""
 		var camera = get_tree().get_root().get_camera()
 		result.emit_signal("input_event", camera, _latest_mouse_click, interactor_ray.get_collision_point(), interactor_ray.get_collision_normal(), 0)
 	
