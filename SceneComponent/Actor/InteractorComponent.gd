@@ -106,7 +106,7 @@ func _try_update_interact():
 		_prev_frame_collider = result
 	
 	#If result is an Area it may be a Touchscreen.
-	elif result is Area :
+	elif result is Area &&  _prev_frame_collider != result :
 		result.emit_signal("mouse_entered")
 		_prev_frame_collider = result
 	
