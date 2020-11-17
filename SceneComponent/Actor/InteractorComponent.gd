@@ -81,7 +81,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.is_action_pressed("left_click"):
 			_latest_mouse_click = event
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if entity.owner_peer_id == Network.network_instance.peer_id:
 		if !disable_ray_cast and can_interact:
 			_try_update_interact()
@@ -128,7 +128,6 @@ func _try_request_interact():
 	#If result is an Area listening for mouse event's, let it know we clicked.
 	elif result is Area :
 		var camera = get_tree().get_root().get_camera()
-		Log.debug(self, "_try_request_interact", str(_latest_mouse_click))
 		result.emit_signal("input_event", camera, _latest_mouse_click, interactor_ray.get_collision_point(), interactor_ray.get_collision_normal(), 0)
 	
 	_latest_mouse_click = null
@@ -219,7 +218,7 @@ master func request_interact(args : Array) -> void :
 
 puppet func execute_interact(args: Array):
 	Log.warning(self, "", "Client %s interacted request executed" %entity.owner_peer_id)
-	var interactor = get_node(args[0])
+#	var interactor = get_node(args[0])
 	var interactable = get_node(args[1])
 	interactable.interact_with(entity)
 
