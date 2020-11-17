@@ -99,6 +99,10 @@ func _try_update_interact():
 			_latest_mouse_motion.position) * ray_cast_length
 	interactor_ray.cast_to = to
 	
+	#Let the previous collider know we left if a new one has replaced it's focus.
+	if result != _prev_frame_collider && _prev_frame_collider != null :
+		_prev_frame_collider.emit_signal("mouse_exited")
+	
 	# Call interactable APIs
 	if result is Interactable:
 		_make_hud_display_interactable(result)
@@ -128,7 +132,7 @@ func _try_request_interact():
 	#If result is an Area listening for mouse event's, let it know we clicked.
 	elif result is Area :
 		"""
-		 TooltipButtons are expecting a press and release.
+		 TooltipButtons are expecting a press and release. This only sends a press.
 		"""
 		var camera = get_tree().get_root().get_camera()
 		result.emit_signal("input_event", camera, _latest_mouse_click, interactor_ray.get_collision_point(), interactor_ray.get_collision_normal(), 0)
