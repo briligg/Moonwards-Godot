@@ -47,8 +47,8 @@ func _physics_process(delta: float) -> void:
 	collision_pos = cast_res.hit_position
 	collision_normal = cast_res.hit_normal
 	if ENABLE_DEBUG: # TODO remove this if not needed
-		AL_DebugDraw.c_draw_cube(collision_pos, wheel_radius, Color(255,255,255)) 
-		AL_DebugDraw.c_draw_cube(global_transform.origin, .5, Color(255,0,255))
+		DebugDraw.c_draw_cube(collision_pos, wheel_radius, Color(255,255,255)) 
+		DebugDraw.c_draw_cube(global_transform.origin, .5, Color(255,0,255))
 	
 	if cast_res.is_hit:
 		is_grounded = true
@@ -79,9 +79,9 @@ func _physics_process(delta: float) -> void:
 		var final_force: Vector3 = suspension_vector + _force_x + _force_z
 		
 		if ENABLE_DEBUG: # TODO remove this if not needed
-			AL_DebugDraw.c_draw_ray(collision_pos, suspension_vector, Color(0,255,0))
-			AL_DebugDraw.c_draw_ray(collision_pos, _force_x, Color(255,0,0))
-			AL_DebugDraw.c_draw_ray(collision_pos, _force_z, Color(0,0,255))
+			DebugDraw.c_draw_ray(collision_pos, suspension_vector, Color(0,255,0))
+			DebugDraw.c_draw_ray(collision_pos, _force_x, Color(255,0,0))
+			DebugDraw.c_draw_ray(collision_pos, _force_z, Color(0,0,255))
 		
 		# apply_impulse uses the rotation of the global coordinate system, but is centered at the object's origin
 		vehicle_entity.apply_impulse(
@@ -116,7 +116,7 @@ func apply_jump_force(_force: Vector3) -> void:
 			vehicle_entity.global_transform.basis.xform( vehicle_entity.to_local(collision_pos) ),
 			_force * suspension_vector)
 		
-		AL_DebugDraw.c_draw_ray(collision_pos, _force*.01, Color(0,0,255), 2.0)
+		DebugDraw.c_draw_ray(collision_pos, _force*.01, Color(0,0,255), 2.0)
 
 
 func sphere_cast(origin: Vector3, to_offset: Vector3, radius: float) -> Sphere_Cast_Result:

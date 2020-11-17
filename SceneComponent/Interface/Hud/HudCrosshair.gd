@@ -1,8 +1,5 @@
 extends TextureRect
 
-
-var camera : Camera
-
 #Determines when I am active or not.
 var is_active : bool = false
 
@@ -10,9 +7,6 @@ var is_active : bool = false
 #Animation will play until the integer is set to zero.
 var clicks_possible : bool = false
 var interacts_possible : bool = false
-
-onready var ray_cast : RayCast = get_node("ClickableRayCast")
-
 
 #Called by signal. A click event is possible. Makes sure that no click event is possible before shutting off animation.
 func _click_possible(click_is_possible : bool, is_interactable : bool = false) -> void :
@@ -60,21 +54,8 @@ func _mouse_capture_set(is_captured : bool) -> void :
 	
 	if is_captured :
 		show()
-		ray_cast.enable()
 	else :
 		hide()
-		ray_cast.disable()
-
-func _physics_process(_delta) -> void :
-	var current_camera : Camera = get_tree().root.get_camera()
-	if current_camera != camera :
-		camera = current_camera
-		ray_cast.get_parent().remove_child(ray_cast)
-		current_camera.add_child(ray_cast)
-		
-		#Make sure Ray Cast has 0,0,0 transformation so it is directly
-		#on it's camera parent.
-		ray_cast.transform.origin = Vector3.ZERO
 
 # Listen to SignalsManager to see when I should activate/deactivate.
 func _ready() -> void :
@@ -91,8 +72,5 @@ func _set_crosshair(activity_set : bool) -> void :
 	if activity_set :
 		show()
 		Helpers.capture_mouse(true)
-#		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		ray_cast.enable()
 	else :
 		hide()
-		ray_cast.disable()

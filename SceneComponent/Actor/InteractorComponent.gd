@@ -1,12 +1,6 @@
 extends AComponent
 class_name InteractorComponent
 
-#When chatting, do not interact with objects.
-var can_interact : bool = true
-
-onready var interactor_ray : InteractorRayCast = $InteractorRayCast
-onready var interactor_area : InteractorArea = $InteractorArea
-
 #These allow us to call signals using actual variables instead of strings.
 #const FOCUS_ROLLBACK : String = "focus_returned"
 const INTERACTABLE_ENTERED_REACH : String = "interactable_entered_reach"
@@ -20,11 +14,27 @@ signal interactable_left_reach(interactable)
 signal interactable_entered_area_reach(interactable)
 signal interactable_left_area_reach(interactable)
 
+onready var interactor_ray : RayCast = $InteractorRayCast
+onready var interactor_area : InteractorArea = $InteractorArea
+
 #Call grab_focus immediately at startup.
 export var grab_focus_at_ready : bool = true
 
+#How long the Ray cast is.
+export var ray_cast_length : float = 50
+
 #Determines if the RayCast Interactor should be active or not.
 export var disable_ray_cast : bool = false
+
+var _latest_mouse_motion: InputEventMouseMotion
+var _latest_mouse_click: InputEventMouseButton
+# what we collided with last frame
+var _prev_frame_collider
+#When chatting, do not interact with objects.
+var can_interact : bool = true
+
+#When the mouse is not captured avoid pressing touchscreen with this ray cast.
+var touchscreen_clickable : bool = false
 
 var has_focus : bool = false
 
@@ -32,41 +42,16 @@ var has_focus : bool = false
 func _init().("Interactor", true) -> void :
 	pass
 
-#Check for when the player wants to interact with the closest interactable.
-func _input(event : InputEvent) -> void :
-	if MwInput.is_chat_active:
-		return
-	
-	if not(has_focus) || not can_interact :
-		return
-	
-	if event.is_action_pressed("interact_with_closest") :
-		var interactable = interactor_ray.get_interactable()
-		if interactable != null :
-			player_requested_interact(interactable)
-
-func _make_hud_display_interactable(interactable : Interactable = null) -> void :
-	if interactable == null :
-		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_HIDDEN)
-	else :
-		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_SHOWN, 
-				interactable.title, disable_ray_cast)
-
 #Make Interactor have my Entity variable as it's user.
 func _ready() -> void :
 	#Listen for when chat starts and stops to know when to avoid interacting.
 	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_STARTED, self, "_set_can_interact", [false])
 	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_FINISHED, self, "_set_can_interact", [true])
 	
-	interactor_ray.owning_entity = self.entity
+	Signals.Menus.connect(Signals.Menus.SET_MOUSE_TO_CAPTURED, self, "_mouse_captured")
 	
-	#Listen to the Ray Cast.
-	if disable_ray_cast :
-		interactor_ray.set_activity(false)
-	else :
-		interactor_ray.connect("new_interactable", self, "relay_signal", [INTERACTABLE_ENTERED_REACH])
-		interactor_ray.connect("no_interactable_in_reach", self, "relay_signal", [null, INTERACTABLE_LEFT_REACH])
-	
+	interactor_ray.add_exception(entity)
+
 	#Listen for the Interactor Area signals if there is a collision shape child.
 	var has_collision : bool
 	var move_children : Array = []
@@ -92,9 +77,93 @@ func _ready() -> void :
 	if grab_focus_at_ready && is_net_owner() :
 		grab_focus()
 
+func _unhandled_input(event: InputEvent) -> void:
+	if MwInput.is_chat_active or !enabled:
+		return
+	if entity.owner_peer_id == Network.network_instance.peer_id:
+		if (event is InputEventMouseMotion) and (event != null):
+			_latest_mouse_motion = event
+		if event.is_action_pressed("left_click"):
+			_latest_mouse_click = event
+		elif event.is_action_released("left_click") :
+			_latest_mouse_click = event
+	
+func _physics_process(_delta: float) -> void:
+	if entity.owner_peer_id == Network.network_instance.peer_id:
+		if !disable_ray_cast and can_interact:
+			_try_update_interact()
+			_try_request_interact()
+
+# Try to update the interaction state & UI display.
+func _try_update_interact():
+	if !_latest_mouse_motion:
+		return
+	
+	#Get where to cast to and cast to it.
+	var camera = get_tree().get_root().get_camera()
+	var from = camera.project_ray_origin(_latest_mouse_motion.position)
+	var to = from + camera.project_ray_normal(
+			_latest_mouse_motion.position) * ray_cast_length
+	interactor_ray.global_transform.origin = from
+	interactor_ray.cast_to = interactor_ray.to_local(to)
+	
+	var result = interactor_ray.get_collider()
+	
+	#Let the previous collider know we left if a new one has replaced it's focus.
+	if result != _prev_frame_collider && _prev_frame_collider != null :
+		_prev_frame_collider.emit_signal("mouse_exited")
+	
+	# Call interactable APIs
+	if result is Interactable:
+		_make_hud_display_interactable(result)
+		result.emit_signal("mouse_entered")
+		_prev_frame_collider = result
+	#If result is an Area it may be a Touchscreen or a Clickable.
+	elif result is Area :
+		if _prev_frame_collider != result :
+			if _prev_frame_collider != null:
+				_prev_frame_collider.emit_signal("mouse_exited")
+			result.emit_signal("mouse_entered")
+			_prev_frame_collider = result
+	else:
+		if _prev_frame_collider != null:
+			_prev_frame_collider.emit_signal("mouse_exited")
+			_prev_frame_collider = null
+		_make_hud_display_interactable(null)
+
+# Try to request an interaction.
+func _try_request_interact():
+	if !_latest_mouse_click:
+		return
+	var result = interactor_ray.get_collider()
+	
+	if result is Interactable:
+		player_requested_interact(result)
+	
+	#If result is an Area listening for mouse event's, let it know we clicked.
+	elif result is Area && touchscreen_clickable :
+		var camera = get_tree().get_root().get_camera()
+		result.emit_signal("input_event", camera, _latest_mouse_click, interactor_ray.get_collision_point(), interactor_ray.get_collision_normal(), 0)
+	
+	_latest_mouse_click = null
+
+
+func _make_hud_display_interactable(interactable : Interactable = null) -> void :
+	if interactable == null :
+		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_HIDDEN)
+		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_INTERACT, false)
+	else :
+		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_SHOWN, 
+				interactable.title, disable_ray_cast)
+		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_INTERACT, true)
+				
 #Called by signal. When false, do not allow the player to press interact. When true, player can interact.
 func _set_can_interact(set_can_interact : bool) -> void :
 	can_interact = set_can_interact
+
+#Prevent touchscreen double clicks.
+func _mouse_captured(mouse_captured : bool) -> void :
+	touchscreen_clickable  = mouse_captured
 
 #Return the closest interactable.
 func get_interactable() -> Interactable :
@@ -130,11 +199,11 @@ func lost_focus() -> void :
 #An Interactable has been chosen from InteractsMenu. Perform the appropriate logic for the Interactable.
 func player_requested_interact(interactable : Interactable)->void:
 	Log.trace(self, "", "Interacted with %s " %interactable)
-	if interactable.is_networked():
-		rpc_id(1, "request_interact", [interactor_ray.get_path(), interactable.get_path()])
+	if interactable.is_networked:
+		rpc_id(1, "request_interact", [get_path(), interactable.get_path()])
 		#I removed entity.owner_peer_id from the now empty array.
 	else :
-		interactor_ray.interact(interactable)
+		interactable.interact_with(entity)
 
 #Pass the interactor signals we are listening to onwards.
 func relay_signal(attribute = null, signal_name = "interactable_made_impossible") -> void :
@@ -168,9 +237,9 @@ master func request_interact(args : Array) -> void :
 
 puppet func execute_interact(args: Array):
 	Log.warning(self, "", "Client %s interacted request executed" %entity.owner_peer_id)
-	var interactor = get_node(args[0])
+#	var interactor = get_node(args[0])
 	var interactable = get_node(args[1])
-	interactor.interact(interactable)
+	interactable.interact_with(entity)
 
 func disable():
 	#This gets called before _ready.

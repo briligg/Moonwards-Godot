@@ -76,7 +76,7 @@ func on_jump_pressed() -> void:
 	var _d_s_s: PhysicsDirectSpaceState = entity.get_world().direct_space_state
 	var _res: Dictionary = _d_s_s.intersect_ray(_from, _to, jump_col_ignore, coll_mask)
 	
-	AL_DebugDraw.c_draw_line(_from, _to, Color(255,0,0), jump_cooldown)
+	DebugDraw.c_draw_line(_from, _to, Color(255,0,0), jump_cooldown)
 	if _res:
 		_dist = _from.distance_to(_res.position)
 	
