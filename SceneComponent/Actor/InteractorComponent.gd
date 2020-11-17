@@ -92,12 +92,11 @@ func _try_update_interact():
 	if !_latest_mouse_motion:
 		return
 	var result = interactor_ray.get_collider()
-		
+	
+	#Get where to cast to and cast to it.
 	var camera = get_tree().get_root().get_camera()
-	var from = entity.global_transform.origin#camera.project_ray_origin(_latest_mouse_motion.position)
 	var to = camera.project_ray_normal(
 			_latest_mouse_motion.position) * ray_cast_length
-			
 	interactor_ray.cast_to = to
 	
 	# Call interactable APIs
@@ -105,7 +104,13 @@ func _try_update_interact():
 		_make_hud_display_interactable(result)
 		result.emit_signal("mouse_entered")
 		_prev_frame_collider = result
-	# reset everything
+	
+	#If we are aiming at a Touchscreen(Clickable), use it's API.
+	# reset everything. Note: We may be aiming at meshes that 
+	#are not technically Touchscreens.
+	elif result is Area :
+		pass
+	
 	else:
 		if _prev_frame_collider != null:
 			_prev_frame_collider.emit_signal("mouse_exited")
