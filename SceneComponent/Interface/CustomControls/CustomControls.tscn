@@ -251,7 +251,7 @@ custom_styles/separator = ExtResource( 4 )
 margin_top = 72.0
 margin_right = 272.0
 margin_bottom = 96.0
-Label_text = "toggle mouse"
+Label_text = "Toggle Mouse"
 action_to_edit = "mouse_toggle"
 
 [node name="HSeparator18" type="HSeparator" parent="ButtonList/HBox/Sub2"]
@@ -264,13 +264,26 @@ custom_styles/separator = ExtResource( 4 )
 margin_top = 108.0
 margin_right = 272.0
 margin_bottom = 132.0
-Label_text = "flying camera"
+Label_text = "Flying Camera"
 action_to_edit = "toggle_camera_fly"
 
 [node name="HSeparator19" type="HSeparator" parent="ButtonList/HBox/Sub2"]
 margin_top = 136.0
 margin_right = 272.0
 margin_bottom = 140.0
+custom_styles/separator = ExtResource( 4 )
+
+[node name="chat_toggle_size" parent="ButtonList/HBox/Sub2" instance=ExtResource( 3 )]
+margin_top = 144.0
+margin_right = 272.0
+margin_bottom = 168.0
+Label_text = "Toggle Chat Size"
+action_to_edit = "chat_toggle_size"
+
+[node name="HSeparator20" type="HSeparator" parent="ButtonList/HBox/Sub2"]
+margin_top = 172.0
+margin_right = 272.0
+margin_bottom = 176.0
 custom_styles/separator = ExtResource( 4 )
 
 [node name="HSeparator" type="HSeparator" parent="ButtonList"]
