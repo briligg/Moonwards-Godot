@@ -105,11 +105,10 @@ func _try_update_interact():
 		result.emit_signal("mouse_entered")
 		_prev_frame_collider = result
 	
-	#If we are aiming at a Touchscreen(Clickable), use it's API.
-	# reset everything. Note: We may be aiming at meshes that 
-	#are not technically Touchscreens.
+	#If result is an Area it may be a Touchscreen.
 	elif result is Area :
-		pass
+		result.emit_signal("mouse_entered")
+		_prev_frame_collider = result
 	
 	else:
 		if _prev_frame_collider != null:
@@ -125,6 +124,13 @@ func _try_request_interact():
 	
 	if result is Interactable:
 		player_requested_interact(result)
+	
+	#If result is an Area listening for mouse event's, let it know we clicked.
+	elif result is Area :
+		var camera = get_tree().get_root().get_camera()
+		Log.debug(self, "_try_request_interact", str(_latest_mouse_click))
+		result.emit_signal("input_event", camera, _latest_mouse_click, interactor_ray.get_collision_point(), interactor_ray.get_collision_normal(), 0)
+	
 	_latest_mouse_click = null
 
 
