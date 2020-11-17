@@ -12,7 +12,7 @@ grab_focus_at_ready = false
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
 enabled = true
 cast_to = Vector3( 0, 0, -30 )
-collision_mask = 32769
+collision_mask = 33793
 collide_with_areas = true
 
 [node name="InteractorArea" type="Area" parent="."]

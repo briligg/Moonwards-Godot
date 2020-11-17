@@ -6,9 +6,9 @@ signal scene_changed
 #var world_scene: String = "res://_tests/NewDemo/TestScene.tscn"
 #var world_scene: String = "res://Tree/World/Moon_Town_Main.tscn"
 #var world_scene: String = "res://_tests/Display/BaseDisplayTest.tscn"
-#var world_scene: String = "res://Tree/World/Moon_Town_Main.tscn"
+var world_scene: String = "res://Tree/World/Moon_Town_Main.tscn"
 #var world_scene: String = "res://_tests/RoverTest.tscn"
-var world_scene : String = "res://_tests/Display/RocketDisplayTest.tscn"
+#var world_scene : String = "res://_tests/Display/RocketDisplayTest.tscn"
 var main_menu: String = "res://Tree/Interface/MainMenu/MainMenu.tscn"
 const PLAYER_SCENE: PackedScene = preload("res://Tree/Actor/Player/HumanPlayer.tscn")
 #const PLAYER_SCENE: PackedScene = preload("res://Tree/Actor/Vehicle/AthleteRover/AthleteRover.tscn")
