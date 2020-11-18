@@ -21,7 +21,7 @@ onready var _current_display : RichTextLabel = _chat_display_node
 onready var _panel_anchors : Array = [anchor_top,anchor_right,anchor_bottom,anchor_left]
 
 #Where the chat box is when fully open.
-const CHAT_RESIZE_TOP = 0.002
+const CHAT_RESIZE_TOP = 0.08
 const CHAT_RESIZE_BOTTOM = 0.90
 const CHAT_RESIZE_RIGHT = 0.999
 const CHAT_RESIZE_LEFT = 0.1
