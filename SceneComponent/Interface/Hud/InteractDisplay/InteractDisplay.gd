@@ -19,7 +19,7 @@ func _show_interact_info(interactable_title : String, uses_menu_only : bool) -> 
 	if uses_menu_only :
 		text = "Press " 
 		text += OS.get_scancode_string(InputMap.get_action_list("use")[0].scancode)
-		text += " to show InteractsMenu."
+		text += " to toggle InteractsMenu."
 		return
 	
 	text = "Press " + OS.get_scancode_string(InputMap.get_action_list("interact_with_closest")[0].scancode)
