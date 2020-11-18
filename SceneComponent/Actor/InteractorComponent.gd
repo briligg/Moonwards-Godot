@@ -119,17 +119,20 @@ func _try_update_interact():
 		_make_hud_display_interactable(result)
 		result.emit_signal("mouse_entered")
 		_prev_frame_collider = result
-	#If result is an Area it may be a Touchscreen or a Clickable.
+	
+	#If result is an Area it may be a Touchscreen/Clickable.
 	elif result is Area :
 		if _prev_frame_collider != result :
 			if _prev_frame_collider != null:
 				_prev_frame_collider.emit_signal("mouse_exited")
 			result.emit_signal("mouse_entered")
 			_prev_frame_collider = result
+			Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_CLICK, true)
 	else:
 		if _prev_frame_collider != null:
 			_prev_frame_collider.emit_signal("mouse_exited")
 			_prev_frame_collider = null
+			Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_CLICK, false)
 		_make_hud_display_interactable(null)
 
 # Try to request an interaction.
@@ -156,7 +159,6 @@ func _try_request_interact():
 	
 	_latest_mouse_click = null
 
-
 func _make_hud_display_interactable(interactable : Interactable = null) -> void :
 	if interactable == null :
 		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_HIDDEN)
@@ -165,7 +167,7 @@ func _make_hud_display_interactable(interactable : Interactable = null) -> void 
 		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_SHOWN, 
 				interactable.title, disable_ray_cast)
 		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_INTERACT, true)
-				
+
 #Called by signal. When false, do not allow the player to press interact. When true, player can interact.
 func _set_can_interact(set_can_interact : bool) -> void :
 	can_interact = set_can_interact
