@@ -10,4 +10,6 @@ func _update_text() -> void :
 	if not visible :
 		return
 	
-	text %= [Helpers.get_action_string("chat_toggle_size")]
+	text %= [ Helpers.get_action_string("chat_page_up"),
+		Helpers.get_action_string("chat_page_down"),
+		Helpers.get_action_string("chat_toggle_size")]

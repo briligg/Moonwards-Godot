@@ -141,8 +141,8 @@ margin_bottom = 92.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "'Enter' to start inputing text. 'Enter' again to send message.
-'T' to scroll chat display up.
-'G' to scroll chat display down.
+'%s' to scroll chat display up.
+'%s' to scroll chat display down.
 '%s' to toggle Chat between max and min vertical size.
 'CTRL+C' to expand Chat to the right.
 'CTRL+X' to shrink Chat to the left.
