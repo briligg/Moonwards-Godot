@@ -28,11 +28,11 @@ signal entry_selected
 
 var entries: Array = [
 	{"name": "Diane Osborne",
-	"sound": "test.ogg"},
-	{"name": "Awesome Sponsor",
-	"sound": "test.ogg"},
+	"sound": "DianeOsborne.ogg"},
+	{"name": "Awesome Donor",
+	"sound": "AwesomeDonor.ogg"},
 	{"name": "Awesome Contributor",
-	"sound": "test.ogg"},
+	"sound": "AwesomeContributor.ogg"},
 ]
 
 func _ready() -> void:
