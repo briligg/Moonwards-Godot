@@ -7,6 +7,7 @@ const LOCAL_IP: String = "127.0.0.1"
 const DEFAULT_PORT: int = 5000
 const DEFAULT_MAX_PLAYERS: int = 100
 const IS_ALWAYS_ORDERED = false
+const COMPRESS_MODE = NetworkedMultiplayerENet.COMPRESS_ZSTD
 var network_instance = null
 
 # This is to be moved to a more full system once persistence is setup

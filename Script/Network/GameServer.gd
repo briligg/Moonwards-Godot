@@ -58,6 +58,7 @@ func _host_game() -> void:
 	if err == OK:
 		get_tree().set_network_peer(server_peer)
 		server_peer.always_ordered = Network.IS_ALWAYS_ORDERED
+		server_peer.compression_mode = Network.COMPRESS_MODE
 	elif err == ERR_CANT_CREATE:
 		Log.critical(self, "", "Could not create server peer.")
 	elif err == ERR_ALREADY_EXISTS:
