@@ -9,7 +9,7 @@ signal started_custom_server()
 onready var ip_address : TextEdit = $HBoxContainer/VBoxContainer/VBoxContainer/TextEdit_Address
 onready var port_text : TextEdit = $HBoxContainer/VBoxContainer/VBoxContainer/TextEdit_Port
 #What the main server IP is.
-const MAIN_SERVER_IP : String = "45.77.54.168"
+const MAIN_SERVER_IP : String = "45.77.1.84"
 const DEFAULT_PORT : int = 5000
 
 
