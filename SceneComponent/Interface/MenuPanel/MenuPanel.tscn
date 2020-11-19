@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/MenuButtons.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/Panel.gd" type="Script" id=2]
@@ -8,16 +8,70 @@
 [ext_resource path="res://Assets/Interface/Textures/LeftArrowHover.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Interface/Textures/LeftArrowButtonPressed.png" type="Texture" id=7]
 
+[sub_resource type="Animation" id=1]
+resource_name = "Controls"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:anchor_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.31 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.4, 0.28 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:anchor_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.2 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:anchor_right")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.31 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.6, 0.72 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:anchor_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.8 ]
+}
+
 [node name="MenuPanel" type="Panel" groups=[
 "hud_general_info",
 ]]
-anchor_left = 0.4
+anchor_left = 0.26
 anchor_top = 0.2
-anchor_right = 0.6
+anchor_right = 0.74
 anchor_bottom = 0.8
 mouse_filter = 2
 custom_styles/panel = ExtResource( 3 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Back" type="TextureButton" parent="."]
 visible = false
@@ -34,6 +88,7 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
 anchor_left = 0.05
 anchor_right = 0.95
 anchor_bottom = 1.0
@@ -64,7 +119,9 @@ margin_bottom = 377.0
 text = "Quit game"
 
 [node name="Controls" parent="." instance=ExtResource( 4 )]
-visible = false
 anchor_top = 0.06
 anchor_right = 0.0
 anchor_bottom = 0.6
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+anims/Controls = SubResource( 1 )
