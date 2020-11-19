@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/MenuButtons.gd" type="Script" id=1]
+[ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/Panel.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsPanel.tres" type="StyleBox" id=3]
+
+[node name="MenuPanel" type="Panel" groups=[
+"hud_general_info",
+]]
+visible = false
+anchor_left = 0.4
+anchor_top = 0.2
+anchor_right = 0.6
+anchor_bottom = 0.8
+mouse_filter = 2
+custom_styles/panel = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.08
+anchor_right = 0.92
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/separation = 23
+alignment = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Graphics" type="Button" parent="VBoxContainer"]
+margin_top = 241.0
+margin_right = 384.0
+margin_bottom = 281.0
+text = "Controls"
+
+[node name="MainMenu" type="Button" parent="VBoxContainer"]
+margin_top = 304.0
+margin_right = 384.0
+margin_bottom = 344.0
+text = "Main Menu"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+margin_top = 367.0
+margin_right = 384.0
+margin_bottom = 407.0
+text = "Quit game"
