@@ -7,6 +7,7 @@ extends Node
 func _ready() -> void:
 	if CmdLineArgs.is_true("server"):
 		_run_headless_server()
+		VisualServer.viewport_set_active(get_tree().get_root().get_viewport_rid(), false)
 	else:
 		_run_normal()
 

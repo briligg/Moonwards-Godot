@@ -773,6 +773,7 @@ window/size/width=1920
 window/size/height=1080
 window/size/test_width=1280
 window/size/test_height=720
+window/vsync/use_vsync=false
 window/stretch/aspect="expand"
 
 [editor]
@@ -2203,7 +2204,6 @@ file_logging/max_log_files=30
 
 [rendering]
 
-threads/thread_model=2
 quality/filters/anisotropic_filter_level=16
 quality/shadows/filter_mode=2
 quality/reflections/irradiance_max_size=256

@@ -22,7 +22,7 @@ var state: ActorEntityState = ActorEntityState.new()
 # Input vector
 master var input: Vector3 = Vector3.ZERO
 # So clients are able to update their look direction without modifying
-# the original variable (Godot's mad about it even when marked as `remote`)
+# the original variable (Godot's mad about it even when marked as `remote`, makes sense tho)
 master var mlook_dir setget set_mlook_dir
 
 # `REMOTE`
@@ -32,7 +32,7 @@ puppet var look_dir: Vector3 = Vector3.FORWARD
 # `PUPPET`
 # The world position of this entity on the server
 puppet var srv_pos: Vector3 = Vector3.ZERO
-puppet var srv_vel: Vector3 = Vector3.ZERO
+#puppet var srv_vel: Vector3 = Vector3.ZERO
 
 # Velocity of the actor
 var velocity = Vector3()
@@ -42,9 +42,9 @@ var is_grounded: bool
 func _integrate_server(args) -> void:
 	if !get_tree().network_peer:
 		return
-	rset("srv_pos", srv_pos)
-	rset("srv_vel", srv_vel)
-	rset("look_dir", look_dir)
+	rset_unreliable("srv_pos", srv_pos)
+#	rset_unreliable("srv_vel", srv_vel)
+#	rset_unreliable("look_dir", look_dir)
 	
 func _integrate_client(args) -> void:
 	if !get_tree().network_peer:
