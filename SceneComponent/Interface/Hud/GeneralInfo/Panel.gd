@@ -1,4 +1,4 @@
-extends PanelContainer
+extends Panel
 
 
 func hide_panel() -> void :
