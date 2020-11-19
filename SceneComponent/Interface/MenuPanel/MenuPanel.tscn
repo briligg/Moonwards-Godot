@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/MenuButtons.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/Panel.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Interface/Textures/LeftArrowNormal.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Interface/Textures/LeftArrowHover.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Interface/Textures/LeftArrowButtonPressed.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconClear.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Controls"
@@ -177,6 +178,22 @@ anchor_bottom = 0.8
 mouse_filter = 2
 custom_styles/panel = ExtResource( 3 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Close" type="TextureButton" parent="."]
+anchor_left = 0.9
+anchor_right = 1.0
+anchor_bottom = 0.08
+margin_left = -30.0
+grow_horizontal = 0
+rect_min_size = Vector2( 0, 28 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 8 )
+expand = true
+stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -9,9 +9,10 @@ func _back_pressed() -> void :
 		$Anim.play_backwards("Controls")
 		$AnimVisibility.play("ShowMainSubmenu")
 
-#Listen for back being pressed so we can hide it.
+#Listen for back being pressed so we can hide it. Close panel if close is pressed.
 func _ready() -> void :
 	back.connect("pressed", self, "_back_pressed")
+	$Close.connect("pressed", self, "hide_panel")
 
 func controls_pressed() -> void :
 	var vbox : VBoxContainer = $VBoxContainer
