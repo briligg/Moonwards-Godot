@@ -20,6 +20,7 @@ __meta__ = {
 }
 
 [node name="MenuPanel" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 size_flags_horizontal = 3
