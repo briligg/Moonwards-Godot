@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/MenuButtons.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/Panel.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsPanel.tres" type="StyleBox" id=3]
+[ext_resource path="res://SceneComponent/Interface/CustomControls/CustomControls.tscn" type="PackedScene" id=4]
 
-[node name="MenuPanel" type="Panel" groups=[
+[node name="MenuPanel" type="PanelContainer" groups=[
 "hud_general_info",
 ]]
 anchor_left = 0.4
@@ -14,11 +15,15 @@ anchor_bottom = 0.8
 mouse_filter = 2
 custom_styles/panel = ExtResource( 3 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_left = 0.08
-anchor_right = 0.92
-anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 382.0
+margin_bottom = 646.0
 mouse_filter = 2
 custom_constants/separation = 23
 alignment = 1
@@ -28,19 +33,28 @@ __meta__ = {
 }
 
 [node name="Controls" type="Button" parent="VBoxContainer"]
-margin_top = 271.0
-margin_right = 322.0
-margin_bottom = 291.0
+margin_top = 269.0
+margin_right = 380.0
+margin_bottom = 289.0
 text = "Controls"
 
 [node name="MainMenu" type="Button" parent="VBoxContainer"]
-margin_top = 314.0
-margin_right = 322.0
-margin_bottom = 334.0
+margin_top = 312.0
+margin_right = 380.0
+margin_bottom = 332.0
 text = "Main Menu"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
-margin_top = 357.0
-margin_right = 322.0
-margin_bottom = 377.0
+margin_top = 355.0
+margin_right = 380.0
+margin_bottom = 375.0
 text = "Quit game"
+
+[node name="Controls" parent="." instance=ExtResource( 4 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 382.0
+margin_bottom = 646.0
