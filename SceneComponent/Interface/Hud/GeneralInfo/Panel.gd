@@ -5,8 +5,9 @@ onready var back : TextureButton = $Back
 
 func _back_pressed() -> void :
 	if not $VBoxContainer.visible :
-		back.hide()
 		controls_pressed()
+		$Anim.play_backwards("Controls")
+		$AnimVisibility.play("ShowMainSubmenu")
 
 #Listen for back being pressed so we can hide it.
 func _ready() -> void :
@@ -15,12 +16,12 @@ func _ready() -> void :
 func controls_pressed() -> void :
 	var vbox : VBoxContainer = $VBoxContainer
 	vbox.visible = !vbox.visible
-	var controls : Tabs = $Controls
-	controls.visible = !controls.visible
+	var controls : Control = $Controls
 	
-	#Let the player go back if they need to.
-	if controls.visible :
-		back.show()
+	#Showing Controls menu.
+	if not controls.visible :
+		$Anim.play("Controls")
+		$AnimVisibility.play("ShowControls")
 
 func hide_panel() -> void :
 	hide()
