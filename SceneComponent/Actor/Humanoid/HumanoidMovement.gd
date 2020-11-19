@@ -24,7 +24,7 @@ var horizontal_vector: Vector3 = Vector3.ZERO
 var vertical_vector: Vector3 = Vector3.ZERO
 var is_jumping: bool = false
 var jump_velocity: Vector3 = Vector3.ZERO
-
+var prev_srv_pos: Vector3 = Vector3.ZERO
 # Normal raycast normalized offset multiplier, depending on movement direction
 # Basically equal to player radius
 var raycast_offset_multipler: float = 0.22
@@ -62,6 +62,7 @@ func is_grounded() -> bool:
 func _integrate_forces(state):
 	invoke_network_based("_integrate_server", "_integrate_client", [state])
 
+
 func _integrate_client(args):
 	var phys_state = args[0]
 	entity.is_grounded = is_grounded()
@@ -73,12 +74,25 @@ func _integrate_client(args):
 	else:
 		entity.custom_integrator = false
 	
+	# Hacky hacky hacky haaacks~
+	# This is to simulate movement even if server packets fail to arrive
+	calculate_horizontal(phys_state)
+	if horizontal_vector.length() > 0:
+		var new_vel = (entity.srv_pos - prev_srv_pos).normalized() * movement_speed
+		if new_vel.length() > 0:
+				entity.velocity = new_vel
+	else:
+		entity.velocity = (entity.srv_pos - prev_srv_pos).normalized() * movement_speed
+		
+#	entity.linear_velocity = entity.velocity
 	entity.global_transform.origin = entity.srv_pos
-	entity.velocity = entity.srv_vel
-	phys_state.linear_velocity = entity.srv_vel
-	rotate_body(phys_state)
+#	rotate_body(phys_state)
 	update_anim_state(phys_state)
+	rotate_body(phys_state)
 	
+	prev_srv_pos = entity.srv_pos
+	reset_input()
+
 func _integrate_server(args):
 	var phys_state = args[0]
 	entity.is_grounded = is_grounded()
@@ -116,7 +130,7 @@ func main_logic_routine(phys_state):
 	update_entity_values()
 	update_anim_state(phys_state)
 	update_server_values(phys_state)
-#
+
 func update_anim_state(phys_state : PhysicsDirectBodyState):
 	if is_flying:
 		entity.state.state = ActorEntityState.State.FLY
@@ -213,7 +227,6 @@ func update_entity_values():
 
 func update_server_values(phys_state):
 	entity.srv_pos = entity.global_transform.origin
-	entity.srv_vel = entity.velocity
 	
 func calculate_debug_values():
 	dbg_rest_jump_pos = entity.global_transform.origin
