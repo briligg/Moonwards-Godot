@@ -119,9 +119,6 @@ margin_bottom = 377.0
 text = "Quit game"
 
 [node name="Controls" parent="." instance=ExtResource( 4 )]
-anchor_top = 0.06
-anchor_right = 0.0
-anchor_bottom = 0.6
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 anims/Controls = SubResource( 1 )
