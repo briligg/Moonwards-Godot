@@ -21,10 +21,11 @@ onready var _current_display : RichTextLabel = _chat_display_node
 onready var _panel_anchors : Array = [anchor_top,anchor_right,anchor_bottom,anchor_left]
 
 #Where the chat box is when fully open.
-const CHAT_RESIZE_TOP = 0.002
+const CHAT_RESIZE_TOP = 0.08
 const CHAT_RESIZE_BOTTOM = 0.90
 const CHAT_RESIZE_RIGHT = 0.999
 const CHAT_RESIZE_LEFT = 0.1
+const CHAT_LOWERED = 0.89
 
 #Determines how far the message can be heard.
 enum strength {
@@ -279,7 +280,7 @@ func hide_chat() -> void :
 
 #Make the chat as small as possible.
 func lower_chat() -> void :
-	anchor_top = 0.9
+	anchor_top = CHAT_LOWERED
 	_chat_is_raised = false
 
 #Bring the chat up to the maximum height.

@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Interface/ChatTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconMicOn.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme_Small.tres" type="Theme" id=3]
+[ext_resource path="res://SceneComponent/Interface/Hud/Chat/HelpPage.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Interface/Hud/Styles/Chat_StyleboxFlat.tres" type="StyleBox" id=5]
 [ext_resource path="res://Assets/Interface/StyleBoxes/ChatMainBGPanel.tres" type="StyleBox" id=6]
 [ext_resource path="res://SceneComponent/Interface/Hud/Chat/ChatInput.gd" type="Script" id=7]
@@ -140,15 +141,17 @@ margin_bottom = 92.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "'Enter' to start inputing text. 'Enter' again to send message.
-'T' to scroll chat display up.
-'G' to scroll chat display down.
-'CTRL+V' to toggle Chat between max and min vertical size.
+'%s' to scroll chat display up.
+'%s' to scroll chat display down.
+'%s' to toggle Chat between max and min vertical size.
 'CTRL+C' to expand Chat to the right.
 'CTRL+X' to shrink Chat to the left.
 'CTRL+1' to expand Chat upwards.
 'CTRL+Q' to shrink Chat downwards.
 'CTRL+2' to hide Chat.
-'CTRL+H' to go back to Chat Display."
+'CTRL+H' to go back to Chat Display.
+Resize Chat with mouse by dragging on edges of Chat with mouse cursor."
+script = ExtResource( 4 )
 
 [node name="Tabs" type="TabContainer" parent="V"]
 margin_top = 35.0
