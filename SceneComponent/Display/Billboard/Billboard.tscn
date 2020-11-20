@@ -9,3 +9,7 @@ script = ExtResource( 5 )
 
 [node name="Screen" parent="." instance=ExtResource( 1 )]
 content = ExtResource( 2 )
+mesh_size = Vector2( 5760, 3240 )
+viewport_size = Vector2( 5760, 3240 )
+track_camera = false
+hologram = false
