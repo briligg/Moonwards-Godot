@@ -28,6 +28,7 @@ export var disable_ray_cast : bool = false
 
 var _latest_mouse_motion: InputEventMouseMotion
 var _latest_mouse_click: InputEventMouseButton
+var _latest_mouse_release: InputEventMouseButton
 # what we collided with last frame
 var _prev_frame_collider
 #When chatting, do not interact with objects.
@@ -85,7 +86,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			_latest_mouse_motion = event
 		if event.is_action_pressed("left_click"):
 			_latest_mouse_click = event
-	
+		elif event.is_action_released("left_click") :
+			_latest_mouse_release = event
+
 func _physics_process(_delta: float) -> void:
 	if entity.owner_peer_id == Network.network_instance.peer_id:
 		if !disable_ray_cast and can_interact:
@@ -131,9 +134,17 @@ func _try_update_interact():
 
 # Try to request an interaction.
 func _try_request_interact():
+	#If we have released the mouse left click, let the touchscreen know.
+	var result = interactor_ray.get_collider()
+	if _latest_mouse_release :
+		if result is Area && touchscreen_clickable :
+			var camera = get_tree().get_root().get_camera()
+			result.emit_signal("input_event", camera, _latest_mouse_release, interactor_ray.get_collision_point(), interactor_ray.get_collision_normal(), 0)
+		_latest_mouse_release = null
+	
 	if !_latest_mouse_click:
 		return
-	var result = interactor_ray.get_collider()
+	
 	
 	if result is Interactable:
 		player_requested_interact(result)
