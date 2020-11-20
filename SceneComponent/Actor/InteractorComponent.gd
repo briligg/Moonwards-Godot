@@ -85,8 +85,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			_latest_mouse_motion = event
 		if event.is_action_pressed("left_click"):
 			_latest_mouse_click = event
-		elif event.is_action_released("left_click") :
-			_latest_mouse_click = event
 	
 func _physics_process(_delta: float) -> void:
 	if entity.owner_peer_id == Network.network_instance.peer_id:
