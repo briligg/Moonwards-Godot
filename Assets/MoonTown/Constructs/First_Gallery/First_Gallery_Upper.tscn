@@ -456,43 +456,58 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.219, 39.058, -17.13 )
 [node name="Carousel" parent="Marker_Carousel" index="0" instance=ExtResource( 2 )]
 
 [node name="Vertical-Stairs-1a" parent="Marker_Vertical-Stairs001" index="0" instance=ExtResource( 4 )]
+visible = false
 stairs_step_count = 18
 
 [node name="Vertical-Stairs-1b" parent="Marker_Vertical-Stairs001" index="1" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07, 0, 0 )
+visible = false
 stairs_step_count = 18
 
 [node name="Marker_Vertical-Stairs002" parent="." index="11"]
 transform = Transform( 0.0777978, 0, 0.996969, 0, 1, 0, -0.996969, 0, 0.0777978, 35.2925, -17.2804, -2.95547 )
 
 [node name="Vertical-Stairs-2a" parent="Marker_Vertical-Stairs002" index="0" instance=ExtResource( 4 )]
+visible = false
 stairs_step_count = 18
 
 [node name="Vertical-Stairs-2b" parent="Marker_Vertical-Stairs002" index="1" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07, 0, 0 )
+visible = false
 stairs_step_count = 18
 
 [node name="Vertical-Stairs-3a" parent="Marker_Vertical-Stairs003" index="0" instance=ExtResource( 4 )]
+visible = false
 stairs_step_count = 18
 
 [node name="Vertical-Stairs-3b" parent="Marker_Vertical-Stairs003" index="1" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07, 0, 0 )
+visible = false
 stairs_step_count = 18
 
 [node name="Vertical-Stairs-4a" parent="Marker_Vertical-Stairs004" index="0" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
+visible = false
 stairs_step_count = 16
 
 [node name="Vertical-Stairs-4b" parent="Marker_Vertical-Stairs004" index="1" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, -1.07 )
+visible = false
 stairs_step_count = 16
+
+[node name="Marker_Vertical-Stairs005" parent="." index="14"]
+visible = false
 
 [node name="Vertical-Stairs-5a" parent="Marker_Vertical-Stairs005" index="0" instance=ExtResource( 4 )]
 stairs_step_count = 11
 
 [node name="Vertical-Stairs-5b" parent="Marker_Vertical-Stairs005" index="1" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07, 0, 0 )
+visible = false
 stairs_step_count = 11
+
+[node name="Marker_Vertical-Stairs006" parent="." index="15"]
+visible = false
 
 [node name="Vertical-Stairs-6a" parent="Marker_Vertical-Stairs006" index="0" instance=ExtResource( 4 )]
 stairs_step_count = 18
@@ -500,6 +515,9 @@ stairs_step_count = 18
 [node name="Vertical-Stairs-6b" parent="Marker_Vertical-Stairs006" index="1" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07, 0, 0 )
 stairs_step_count = 18
+
+[node name="Marker_Vertical-Stairs007" parent="." index="16"]
+visible = false
 
 [node name="Vertical-Stairs-7a" parent="Marker_Vertical-Stairs007" index="0" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
@@ -509,6 +527,9 @@ stairs_step_count = 18
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, -1.07 )
 stairs_step_count = 18
 
+[node name="Marker_Vertical-Stairs008" parent="." index="17"]
+visible = false
+
 [node name="Vertical-Stairs-8a" parent="Marker_Vertical-Stairs008" index="0" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0 )
 stairs_step_count = 18
@@ -516,6 +537,9 @@ stairs_step_count = 18
 [node name="Vertical-Stairs-8b" parent="Marker_Vertical-Stairs008" index="1" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 1.07, 0, 0 )
 stairs_step_count = 18
+
+[node name="Marker_Vertical-Stairs009" parent="." index="18"]
+visible = false
 
 [node name="Vertical-Stairs-9a" parent="Marker_Vertical-Stairs009" index="0" instance=ExtResource( 4 )]
 transform = Transform( -1.49012e-07, 0, 1, 0, 1, 0, -1, 0, -1.49012e-07, 0, 0, 0 )
