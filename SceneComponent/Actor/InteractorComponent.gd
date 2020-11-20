@@ -154,7 +154,7 @@ func _make_hud_display_interactable(interactable : Interactable = null) -> void 
 		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_INTERACT, false)
 	else :
 		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_SHOWN, 
-				interactable.title, disable_ray_cast)
+				interactable.display_info, disable_ray_cast)
 		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_INTERACT, true)
 				
 #Called by signal. When false, do not allow the player to press interact. When true, player can interact.
