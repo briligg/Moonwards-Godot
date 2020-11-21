@@ -4,4 +4,6 @@
 
 [node name="DynamicVisibilityTrigger" type="Area"]
 monitorable = false
+collision_layer = 2147483650
+collision_mask = 2
 script = ExtResource( 1 )
