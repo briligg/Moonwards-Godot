@@ -4,6 +4,7 @@
 [ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Outside_BaseFloor_Shader.tres" type="Material" id=2]
 
 [node name="Long_Dome" instance=ExtResource( 1 )]
+visible = false
 
 [node name="Ground" parent="LOD0" index="2"]
 material/0 = ExtResource( 2 )
