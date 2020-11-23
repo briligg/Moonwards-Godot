@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Moon_Town_Master.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SceneComponent/Interface/PlayerHud.tscn" type="PackedScene" id=2]
-[ext_resource path="res://_tests/NavMeshData/Navigation_Master.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Tree/World/Navigation/NavMeshData/Navigation_Master.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tree/Actor/Player/NPC.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Tree/World/Navigation/MwNavigator.gd" type="Script" id=5]
 [ext_resource path="res://SceneComponent/Actor/AI/Workstation.tscn" type="PackedScene" id=6]
@@ -93,7 +93,7 @@ transform = Transform( -0.380748, 0, 0.924679, 0, 1, 0, -0.924679, 0, -0.380748,
 category = 1
 
 [node name="Workstation13" parent="Navigation" instance=ExtResource( 6 )]
-transform = Transform( 0.154918, 0, -0.987927, 0, 1, 0, 0.987927, 0, 0.154918, 39.3092, -7.72221, -5.05145 )
+transform = Transform( -0.330546, 0, -0.943789, 0, 1, 0, 0.943789, 0, -0.330546, 39.5096, -7.55453, -6.29144 )
 category = 1
 
 [node name="NPC2" parent="Navigation" instance=ExtResource( 4 )]

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/NPC-Navmesh-FGU.glb-098bb73041bb433930c5a73672112e19.scn"
+path="res://.import/NPC-Navmesh-FGU.glb-5cea87e612e21b6beb9d7b3e669d8b6e.scn"
 
 [deps]
 
-source_file="res://_tests/NPC-Navmesh-FGU.glb"
-dest_files=[ "res://.import/NPC-Navmesh-FGU.glb-098bb73041bb433930c5a73672112e19.scn" ]
+source_file="res://Tree/World/Navigation/NPC-Navmesh-FGU.glb"
+dest_files=[ "res://.import/NPC-Navmesh-FGU.glb-5cea87e612e21b6beb9d7b3e669d8b6e.scn" ]
 
 [params]
 
