@@ -58,3 +58,7 @@ func disable():
 
 func set_enabled(val):
 	enabled = true
+
+#Set the visibility of the status icons.
+func set_status_visibility(become_visible : bool) -> void :
+	$Holder.visible = become_visible
