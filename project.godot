@@ -414,6 +414,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/InteractorComponent.gd"
 }, {
+"base": "Reference",
+"class": "LoadingSignals",
+"language": "GDScript",
+"path": "res://Script/Manager/SignalsManager/LoadingSignals.gd"
+}, {
 "base": "Spatial",
 "class": "LodModel",
 "language": "GDScript",
@@ -696,6 +701,7 @@ _global_script_class_icons={
 "Interactable": "",
 "InteractorArea": "",
 "InteractorComponent": "",
+"LoadingSignals": "",
 "LodModel": "",
 "LodSignals": "",
 "MenuSignals": "",
