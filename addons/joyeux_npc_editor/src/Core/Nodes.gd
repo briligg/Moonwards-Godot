@@ -148,6 +148,8 @@ func _load_signals() -> void:
 	var signal_list : Dictionary = Definitions.get("_stimulus")
 	var signal_names : Array = signal_list.keys()
 	for signals in signal_names:
+		if Graphs.stimulus.has(signals):
+			continue
 		var data : Dictionary = signal_list.get(signals)
 		var current_node : GraphNode = GraphNode.new()
 		current_node.title = signals
@@ -166,6 +168,8 @@ func _load_functions() -> void:
 		return
 	for function in function_names:
 		var data : Dictionary = functions.get(function)
+		if Graphs.get(data.get("_category")).has(function):
+			continue
 		var current_node : GraphNode = BehaviorNode.new()
 		current_node.title = function
 		for ports in max(data.get("_input_ports").size(),data.get("_output_ports").size()):
