@@ -91,6 +91,7 @@ func _enter_tree():
 	Seek  = GSAISeek.new(Agent, current_target)
 	Face =  GSAIFace.new(Agent, current_target, true)
 	Face2 =  GSAIFace.new(Agent, facing_target, true)
+	Face2.is_enabled = false
 	Evade = GSAIEvade.new(Agent, special_target)
 	Pursue = GSAIPursue.new(Agent, special_target)
 	Follow = GSAIFollowPath.new(Agent, current_path, 0.7)
@@ -146,9 +147,9 @@ func _process_server(delta):
 				update_target(temp)
 			else:
 				entity.input = Vector3.ZERO
-				Face2.is_enabled = true
-				yield(get_tree().create_timer(2), "timeout")
-				Face2.is_enabled = false
+				#Face2.is_enabled = true
+				#yield(get_tree().create_timer(2), "timeout")
+				#Face2.is_enabled = false
 		else:
 			
 			Priority.calculate_steering(acceleration)

@@ -40,12 +40,30 @@ navmesh = SubResource( 1 )
 [node name="NPC" parent="Navigation" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6185, -27.6406, 1.53706 )
 
+[node name="NPC6" parent="Navigation" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.5979, -27.6406, 1.53706 )
+
+[node name="AIHandler" parent="Navigation/NPC6" index="9"]
+NPC_File = "res://Assets/Characters/Anto.jsm"
+
 [node name="Workstation2" parent="Navigation" instance=ExtResource( 6 )]
 transform = Transform( -0.0815558, 0, -0.996669, 0, 1, 0, 0.996669, 0, -0.0815558, -13.7973, -28.8367, 2.47589 )
 maximum_progress = 30
 
+[node name="Workstation17" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( -0.0815558, 0, -0.996669, 0, 1, 0, 0.996669, 0, -0.0815558, -12.7596, -28.8367, 2.56081 )
+maximum_progress = 30
+
+[node name="Workstation18" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( 0.0589754, 0, -0.99826, 0, 1, 0, 0.99826, 0, 0.0589754, -11.4222, -28.8367, 2.67024 )
+maximum_progress = 30
+
 [node name="Workstation14" parent="Navigation" instance=ExtResource( 6 )]
 transform = Transform( -0.380215, 0, 0.924898, 0, 1, 0, -0.924898, 0, -0.380215, -15.044, -28.8367, 13.1342 )
+maximum_progress = 30
+
+[node name="Workstation19" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( -0.0523361, 0, 0.998629, 0, 1, 0, -0.998629, 0, -0.0523361, -12.6294, -28.8367, 12.1416 )
 maximum_progress = 30
 
 [node name="Workstation15" parent="Navigation" instance=ExtResource( 6 )]
@@ -84,17 +102,62 @@ category = 2
 transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -134.492, -92.4919, -89.2836 )
 category = 2
 
+[node name="Workstation20" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -134.925, -92.4919, -86.315 )
+category = 2
+
+[node name="Workstation21" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -135.505, -92.4919, -82.3368 )
+category = 2
+
+[node name="Workstation" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( 0.0420153, 0, -0.999117, 0, 1, 0, 0.999117, 0, 0.0420153, -75.6305, -86.1201, -27.4607 )
+uses_queue = true
+category = 4
+
+[node name="Workstation26" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( -0.435985, 0, -0.899953, 0, 1, 0, 0.899953, 0, -0.435985, -3.03074, -4.71059, 0.331284 )
+uses_queue = true
+category = 4
+
+[node name="Workstation25" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( 0.527223, 0, -0.849727, 0, 1, 0, 0.849727, 0, 0.527223, 25.4205, -4.82702, -7.66705 )
+
+[node name="Workstation24" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( 0.288146, 0, 0.957586, 0, 1, 0, -0.957586, 0, 0.288146, 37.1603, -4.45908, 2.6683 )
+uses_queue = true
+category = 4
+
+[node name="Workstation23" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( 0.0420154, 0, -0.999117, 0, 1, 0, 0.999117, 0, 0.0420154, -70.8774, -84.2661, -21.3357 )
+uses_queue = true
+category = 4
+
+[node name="Workstation22" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -135.23, -92.4919, -84.2192 )
+category = 2
+
 [node name="Workstation10" parent="Navigation" instance=ExtResource( 6 )]
 transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -136.854, -92.4919, -73.6209 )
 category = 2
 
 [node name="Workstation3" parent="Navigation" instance=ExtResource( 6 )]
 transform = Transform( -0.380748, 0, 0.924679, 0, 1, 0, -0.924679, 0, -0.380748, 39.3092, -7.72221, -5.85707 )
+uses_queue = true
 category = 1
 
 [node name="Workstation13" parent="Navigation" instance=ExtResource( 6 )]
 transform = Transform( -0.330546, 0, -0.943789, 0, 1, 0, 0.943789, 0, -0.330546, 39.5096, -7.55453, -6.29144 )
+uses_queue = true
 category = 1
+
+[node name="Workstation16" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( -0.988126, 0, 0.15364, 0, 1, 0, -0.15364, 0, -0.988126, 39.6241, -7.55453, -5.759 )
+uses_queue = true
+category = 1
+
+[node name="Workstation27" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( 0.448368, 0, 0.893849, 0, 1, 0, -0.893849, 0, 0.448368, 20.8561, -16.9979, -11.876 )
 
 [node name="NPC2" parent="Navigation" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -124.567, -92.8121, -119.958 )
@@ -102,8 +165,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -124.567, -92.8121, -119.958 )
 [node name="NPC4" parent="Navigation" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -119.662, -93.0778, -117.06 )
 
+[node name="AIHandler" parent="Navigation/NPC4" index="9"]
+NPC_File = "res://Assets/Characters/Anto.jsm"
+
 [node name="NPC3" parent="Navigation" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -126.468, -92.9996, -117.354 )
+
+[node name="AIHandler" parent="Navigation/NPC3" index="9"]
+NPC_File = "res://Assets/Characters/Anto.jsm"
+initial_state = "WorkingCycle"
 
 [node name="NPC5" parent="Navigation" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2581, -7.5555, -3.61078 )
@@ -114,3 +184,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2581, -7.5555, -3.61078 )
 transform = Transform( 0.0777281, 0, -0.996975, 0, 1, 0, 0.996975, 0, 0.0777281, 1.7098, 100.276, -189 )
 
 [node name="Audio-Tour-Markers" parent="." instance=ExtResource( 7 )]
+
+[editable path="Navigation/NPC6"]
+
+[editable path="Navigation/NPC4"]
+
+[editable path="Navigation/NPC3"]
