@@ -51,6 +51,7 @@ var Graphs : Dictionary = {
 	}
 }
 
+var initiated : bool = false
 var custom_types : Dictionary = {}
 var user_override : String = "" 
 var proj_override : String = "" 
@@ -234,11 +235,12 @@ func Color(id) -> Color:
 	return Color(0)
 
 func initiate() -> void:
-	Definitions =  NpcDefinitions.new()
-	load_custom_paths()
-	_load_definitions()
-	_load_functions()
-	_load_signals()
+	if not initiated:
+		Definitions =  NpcDefinitions.new()
+		load_custom_paths()
+		_load_definitions()
+		_load_functions()
+		_load_signals()
 
 #	load_user_defined_nodes()
 """
