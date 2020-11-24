@@ -15,7 +15,7 @@ var skin_color : = Color(0.59,0.4,0)
 var hair_color : = Color(0.1,0.1,0.1)
 var shoes_color : = Color(1,1,1)
 
-var current_slot : int = SLOTS.PANTS
+var current_slot : int = SLOTS.SKIN
 
 # Needs to use the paths before it's ready, so it will crash using onready
 var username_edit : String = "ModelDisplay/UsernameEdit"
