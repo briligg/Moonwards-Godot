@@ -5,12 +5,12 @@ class_name VerticalStairs
 var climb_points = []
 var step_size = 0.535
 
-export(Mesh) var stair_step
-export(Mesh) var stair_top
-export(Mesh) var stair_bottom
-export(float) var stair_step_length
-export(float) var stair_bottom_length
-export(float) var stair_width
+export(Mesh) var stair_step_mesh
+export(Mesh) var stair_top_mesh
+export(Mesh) var stair_bottom_mesh
+export(float) var stair_step_length = 0.54
+export(float) var stair_bottom_length = 2.52
+export(float) var stair_width = 0.34
 export(float) var stair_top_length = 1
 export(int) var stairs_step_count
 
@@ -21,7 +21,11 @@ var _total_length: float = 0.0
 func _ready():
 	#Listen to when I am interacted with.
 	connect("interacted_by", self, "interacted_with")
-	generate_stairs()
+	if Engine.editor_hint:
+		generate_for_editor()
+	else:
+		generate_stairs()
+		
 	if is_inside_tree():
 		update_collision()
 
@@ -46,19 +50,24 @@ func get_look_direction(var position):
 func generate_stairs():
 	_total_length = (stairs_step_count * stair_step_length) + stair_bottom_length
 	
-	var top = MeshInstance.new()
-	top.mesh = stair_top
-	self.add_child(top)
-	top.transform.origin = Vector3(0, stair_step_length, 0)
+	# Initialize necessary mesh data
+	var mesh_path = stair_top_mesh.get_path()
+	var xfm = Transform(self.global_transform)
+	xfm = global_transform
+	xfm.origin += Vector3(0, stair_step_length, 0)
+	# Add the data to our multimesh factory
+	MultiMeshFactory.add_mesh_data(mesh_path, xfm)
+	
 	for i in range(0, stairs_step_count):
-		var step = MeshInstance.new()
-		step.mesh = stair_step
-		self.add_child(step)
-		step.transform.origin.y = -1 * i * stair_step_length
-	var bottom = MeshInstance.new()
-	bottom.mesh = stair_bottom
-	self.add_child(bottom)
-	bottom.transform.origin.y = -1 * stairs_step_count * stair_step_length
+		mesh_path = stair_step_mesh.get_path()
+		xfm = Transform(self.global_transform)
+		xfm.origin.y += -1 * i * stair_step_length
+		MultiMeshFactory.add_mesh_data(mesh_path, xfm)
+		
+	mesh_path = stair_bottom_mesh.get_path()
+	xfm = Transform(self.global_transform)
+	xfm.origin.y += -1 * stairs_step_count * stair_step_length
+	MultiMeshFactory.add_mesh_data(mesh_path, xfm)
 	
 func update_collision():
 	var col_length = _total_length + stair_top_length
@@ -78,13 +87,30 @@ func update_collision():
 		if step_position.y > max_y:
 			break
 
+func generate_for_editor():
+	_total_length = (stairs_step_count * stair_step_length) + stair_bottom_length
+	
+	var top = MeshInstance.new()
+	top.mesh = stair_top_mesh
+	self.add_child(top)
+	top.transform.origin = Vector3(0, stair_step_length, 0)
+	for i in range(0, stairs_step_count):
+		var step = MeshInstance.new()
+		step.mesh = stair_step_mesh
+		self.add_child(step)
+		step.transform.origin.y = -1 * i * stair_step_length
+	var bottom = MeshInstance.new()
+	bottom.mesh = stair_bottom_mesh
+	self.add_child(bottom)
+	bottom.transform.origin.y = -1 * stairs_step_count * stair_step_length
+	
 func test_in_editor(_val):
 	if _val:
 		for n in self.get_children():
 			if n != $CollisionShape:
 				self.remove_child(n)
 				n.queue_free()
-		generate_stairs()
+		generate_for_editor()
 		update_collision()
 		generate_editor_visual = _val
 	else:

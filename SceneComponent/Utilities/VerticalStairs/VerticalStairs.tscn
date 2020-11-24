@@ -14,12 +14,9 @@ script = ExtResource( 1 )
 max_interact_distance = 5.0
 display_info = "Mount Moontown's vertical stairs."
 title = "Vertical Stairs"
-stair_step = ExtResource( 2 )
-stair_top = ExtResource( 4 )
-stair_bottom = ExtResource( 3 )
-stair_step_length = 0.54
-stair_bottom_length = 2.52
-stair_width = 0.34
+stair_step_mesh = ExtResource( 2 )
+stair_top_mesh = ExtResource( 4 )
+stair_bottom_mesh = ExtResource( 3 )
 stairs_step_count = 5
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
