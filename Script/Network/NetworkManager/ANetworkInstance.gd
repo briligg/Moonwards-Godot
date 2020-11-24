@@ -18,7 +18,7 @@ func _ready() -> void:
 	world = yield(Scene.change_scene_to_async(Scene.world_scene), "scene_changed")
 	
 	world.name = "World"
-
+	world.connect("tree_exited", self, "_on_world_closed")
 	entities_container = Node.new()
 	entities_container.name = "entities"
 	world.add_child(entities_container)
@@ -111,3 +111,6 @@ puppet func _client_crpc_signal(params: Array):
 		
 	Log.trace(self, "", "Received RPC signal - params: %s" % [params])
 	Signals.get(str(params[0])).emit_signal(params[1], params[2])
+
+func _on_world_closed():
+	queue_free()
