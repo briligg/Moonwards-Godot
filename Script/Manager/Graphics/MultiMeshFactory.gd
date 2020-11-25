@@ -1,10 +1,4 @@
 extends Node
-
-class MeshFactoryData:
-	extends Reference
-	var mesh: Mesh
-	var transform_arr: Array
-	
 # Dictionary for runtime generated multimesh instances
 # Key: Mesh source path
 # Value: Array of Transforms
@@ -29,8 +23,17 @@ func add_mesh_data(mesh_path: String, transform: Transform):
 		multimesh_data_arr[mesh_path] = data
 
 func generate_multimeshes():
-	var world = get_tree().get_root().get_node("world")
 	for factory_data in multimesh_data_arr.values():
+#		if factory_data.transform_arr.size() < factory_data.minimum_count:
+#			continue
+		var spawn_parent 
+		if !factory_data.spawn_path.empty():
+			spawn_parent = get_node(factory_data.spawn_path)
+		else:
+			Log.warning(self, "generate_multimeshes", "Spawn path not specified for %s" 
+					%factory_data.mesh.resource_name)
+			spawn_parent = get_tree().get_root().get_node("world")
+		
 		var _multimesh = MultiMesh.new()
 		_multimesh.mesh = factory_data.mesh
 		_multimesh.transform_format = MultiMesh.TRANSFORM_3D
@@ -45,6 +48,7 @@ func generate_multimeshes():
 			)
 			
 		var multimesh_instance = MultiMeshInstance.new()
-		multimesh_instance.name = factory_data.mesh.resource_name
+		multimesh_instance.name = "MultiMesh%s" %factory_data.mesh.resource_name
 		multimesh_instance.multimesh = _multimesh
-		world.add_child(multimesh_instance)
+		spawn_parent.add_child(multimesh_instance)
+		

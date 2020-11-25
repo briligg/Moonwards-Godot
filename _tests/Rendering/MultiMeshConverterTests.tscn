@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Script/Graphics/MultiMeshConverter.gd" type="Script" id=1]
+[ext_resource path="res://Assets/MoonTown/Constructs/STEMP_Facilities/STEMP_Facilities.tscn" type="PackedScene" id=2]
+
+[node name="world" type="Spatial"]
+script = ExtResource( 1 )
+use_recursive = true
+minimum_instances = 0
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.000580284, 0.89637, -0.443305, -0.00117334, 0.443306, 0.89637, 0.999999, -5.82076e-11, 0.00130899, -23337, 20663, -40 )
+current = true
+far = 500000.0
+
+[node name="STEMP_Facilities" parent="." instance=ExtResource( 2 )]
+
+[editable path="STEMP_Facilities"]
