@@ -73,19 +73,24 @@ func calculate_nav_mesh():
 func _ready():
 	for child in get_children():
 		if child is Waypoint:
-			waypoints.append(child.translation)
+			waypoints.append(child)
 
-func find_nearest_waypoint(to : Vector3) -> Vector3:
-	var nearest : Vector3
+func find_nearest_waypoint(to : Vector3, offset : int = 0) -> Vector3:
+	var nearest : Waypoint
 	if waypoints.size()>0:
 		nearest = waypoints[0]
 	for waypoint in waypoints:
-		if waypoint.y - to.y < nearest.y - to.y:
-			if (waypoint-to).length() < 10:
+		if waypoint.translation.y - to.y < nearest.translation.y - to.y:
+			if (waypoint.translation-to).length() <= 50:
 				nearest = waypoint
-	if (nearest-to).length() > 10:
+	if (nearest.translation-to).length() > 50:
 		return to
-	return nearest
+	match offset:
+		1:
+			return nearest.translation + nearest.offset1
+		2:
+			return nearest.translation + nearest.offset2
+	return nearest.translation
 
 func find_shortest_path(from: Vector3, to : Vector3):
 	var absoulut = get_absolute_path(from, to)
@@ -102,13 +107,28 @@ func find_shortest_path(from: Vector3, to : Vector3):
 func get_navmesh_path(from: Vector3, to: Vector3, global : bool = false):
 	to = get_closest_point(to)
 	from = get_closest_point(from)
-	var path_points = Array(get_simple_path(from, to, true))
-	if path_points.size() < 1:
-		return [from]
-	if (path_points.back()- to).length() > 1:
-		path_points = Array(get_simple_path(from, find_nearest_waypoint(to)))
-		var path2 = Array(get_simple_path(to, get_closest_point(path_points.back()), true))
+	var path_points = Array(get_simple_path(from, to))
+	if path_points == null:
+		path_points = []
+	if path_points.size() < 1 or (path_points.back()- to).length() > 1:
 		
+		# First attempt to get the waypoint near the start:
+		
+		path_points = Array(get_simple_path(from, get_closest_point(find_nearest_waypoint(from, 1))))
+		#Using the first offset
+		if path_points.size() < 1:
+			#Using the second offset if the first didn't work
+			path_points = Array(get_simple_path(from, get_closest_point(find_nearest_waypoint(from, 2))))
+		
+		#Attempt to get the waypoint near the end
+		if path_points.size() < 1:
+			path_points = Array(get_simple_path(from, get_closest_point(find_nearest_waypoint(to, 1))))
+		if path_points.size() < 1:
+			path_points = Array(get_simple_path(from, get_closest_point(find_nearest_waypoint(to, 2))))
+			
+		var path2 = Array(get_simple_path(to, get_closest_point(find_nearest_waypoint(from, 1))))
+		if path2.size() < 1:
+			path2 = Array(get_simple_path(to, get_closest_point(find_nearest_waypoint(from, 2))))
 		path2.invert()
 		for point in path2:
 			path_points.append(point)
@@ -119,6 +139,8 @@ func get_navmesh_path(from: Vector3, to: Vector3, global : bool = false):
 		for points in path_points:
 			temp.append(to_global(points))
 		path_points = temp
+	if path_points.size() < 1:
+		return [from]
 	return path_points
 
 
