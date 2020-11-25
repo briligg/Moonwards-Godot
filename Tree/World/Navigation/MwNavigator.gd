@@ -32,8 +32,13 @@ func get_nearest_workstation(position : Vector3, filter : int = ANY):
 	return nearest
 
 func request_workstation(worker : Worker, filter : int = ANY):
+	var valid : Array = []
 	for station in Workstations:
 		if station.category == filter or filter == ANY:
-			if station.request_workstation(worker):
-				return
+			valid.append(station)
+	valid.shuffle()
+	for station in valid:
+		if station.request_workstation(worker):
+			return
 	worker.emit_signal("request_rejected")
+
