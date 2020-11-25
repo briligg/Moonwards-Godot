@@ -125,7 +125,6 @@ func _ready():
 	Priority.add(FollowBlend)#Priority 1: Follow who I am supposed to (if i am supposed to)
 	Priority.add(FleeBlend)#2: Run away if i am supposed to
 	
-	get_navpath(entity.translation)
 	
 func is_far_from_target() -> bool:
 	if path.front() == null:

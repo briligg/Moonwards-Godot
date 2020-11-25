@@ -4,6 +4,8 @@ class_name WorldNavigator
 export(bool) var debug_draw : bool = false #If enabled, draws a white line path of the last requested path
 var astar : AStar = AStar.new()
 var m = SpatialMaterial.new()
+var waypoints : Array = []
+
 
 func _enter_tree():
 	add_to_group("Navigator") #This is for ease of access
@@ -68,7 +70,22 @@ func calculate_nav_mesh():
 		add_child(NavMeshInstance)
 		add_child(MeshVis)
 
+func _ready():
+	for child in get_children():
+		if child is Waypoint:
+			waypoints.append(child.translation)
 
+func find_nearest_waypoint(to : Vector3) -> Vector3:
+	var nearest : Vector3
+	if waypoints.size()>0:
+		nearest = waypoints[0]
+	for waypoint in waypoints:
+		if waypoint.y - to.y < nearest.y - to.y:
+			if (waypoint-to).length() < 10:
+				nearest = waypoint
+	if (nearest-to).length() > 10:
+		return to
+	return nearest
 
 func find_shortest_path(from: Vector3, to : Vector3):
 	var absoulut = get_absolute_path(from, to)
@@ -89,7 +106,9 @@ func get_navmesh_path(from: Vector3, to: Vector3, global : bool = false):
 	if path_points.size() < 1:
 		return [from]
 	if (path_points.back()- to).length() > 1:
+		path_points = Array(get_simple_path(from, find_nearest_waypoint(to)))
 		var path2 = Array(get_simple_path(to, get_closest_point(path_points.back()), true))
+		
 		path2.invert()
 		for point in path2:
 			path_points.append(point)
