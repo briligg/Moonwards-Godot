@@ -14,7 +14,8 @@ func _ready() -> void:
 		_lods[2] = $LOD2
 		lod_enabled = true
 		add_to_group(Groups.LOD_MODELS)
-		set_lod(VisibilityManager.default_lod_state)
+		if !VisibilityManager.disable_default_lod:
+			set_lod(VisibilityManager.default_lod_state)
 	else:
 		lod_enabled = false
 

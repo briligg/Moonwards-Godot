@@ -13,6 +13,8 @@ signal queue_requested(fref)
 # For debugging purposes
 export(bool) var disable_all_triggers = false
 
+export(bool) var disable_default_lod = false
+
 export(bool) var log_lod_changes = false
 
 export(bool) var log_vt_changes = false
