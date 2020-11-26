@@ -6,6 +6,7 @@ class_name CameraController
 onready var camera: Camera = $Camera
 onready var pivot: Spatial = $Pivot
 
+export(bool) var enabled_at_start = false
 export(bool) var overriden = false #Use for bots only
 export(bool) var allow_first_person = false
 export(float) var dist: float = .5
@@ -48,6 +49,9 @@ func _ready() -> void:
 	pitch = 0.0
 	_update_cam_pos()
 	camera.set_as_toplevel(true)
+	
+	if not enabled_at_start :
+		call_deferred("disable")
 
 func _process(_delta: float) -> void:
 	#Set the camera back to regular mode if it is not the current camera.
@@ -168,12 +172,14 @@ func _get_cam_normal() -> Vector3:
 	return camera.project_ray_normal(get_viewport().get_visible_rect().size * 0.5)
 	
 func disable():
+	Log.debug(self, "disable", get_parent().name)
 	if is_first_person :
 		_set_first_person(false)
 	.disable()
 
 func enable():
 	#Turn on the aiming reticle if in first person.
+	Log.debug(self, "enable", get_parent().name)
 	if is_first_person :
 		_set_first_person(true)
 	if Network.network_instance.peer_id == entity.owner_peer_id:

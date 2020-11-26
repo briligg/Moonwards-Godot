@@ -36,6 +36,7 @@ script = ExtResource( 6 )
 
 [node name="CameraController" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.766189, 0 )
+enabled_at_start = true
 allow_first_person = true
 dist = 3.0
 
