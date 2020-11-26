@@ -12,21 +12,27 @@ func _ready() -> void:
 func _world_on_ready():
 	generate_multimeshes()
 
-func add_mesh_data(mesh_path: String, transform: Transform, lod_level):
-	if multimesh_data_arr.has(mesh_path):
-		multimesh_data_arr[mesh_path].transform_arr.append(transform)
+func add_mesh_data(_mesh: Mesh, mesh_instance: Node, transform: Transform, 
+		lod_level: String):
+
+	var mesh_name = _mesh.resource_name
+	var factory_data
+	if multimesh_data_arr.has(mesh_name):
+		factory_data = multimesh_data_arr[mesh_name]
 	else:
-		var _mesh = load(mesh_path)
-		var data = MeshFactoryData.new()
-		data.transform_arr.append(transform)
-		data.mesh = _mesh
-		data.lod_level = lod_level
-		multimesh_data_arr[mesh_path] = data
+		factory_data = MeshFactoryData.new()
+		multimesh_data_arr[mesh_name] = factory_data
+	
+	factory_data.transform_arr.append(transform)
+	factory_data.mesh = _mesh
+	if mesh_instance:
+		factory_data.instance_arr.append(mesh_instance)
+	factory_data.lod_level = lod_level
 
 func generate_multimeshes():
 	for factory_data in multimesh_data_arr.values():
-#		if factory_data.transform_arr.size() < factory_data.minimum_count:
-#			continue
+		if factory_data.transform_arr.size() < factory_data.minimum_count:
+			continue
 		var spawn_node 
 		if !factory_data.spawn_path.empty():
 			spawn_node = get_node(factory_data.spawn_path)
@@ -53,8 +59,12 @@ func generate_multimeshes():
 		var multimesh_instance = MultiMeshInstance.new()
 		multimesh_instance.name = "MultiMesh%s" %factory_data.mesh.resource_name
 		multimesh_instance.multimesh = _multimesh
-		spawn_node.get_node(factory_data.lod_level).add_child(multimesh_instance)
+		if factory_data.lod_level:
+			spawn_node.get_node(factory_data.lod_level).add_child(multimesh_instance)
+		else:
+			spawn_node.add_child(multimesh_instance)
 		
+		_remove_mesh_instances(factory_data)
 
 func _verify_spawn_node_lods(spawn_node):
 		if spawn_node.get_node_or_null("LOD0") == null:
@@ -69,3 +79,7 @@ func _verify_spawn_node_lods(spawn_node):
 			var n = Spatial.new()
 			n.name = "LOD2"
 			spawn_node.add_child(n)
+
+func _remove_mesh_instances(factory_data):
+	for instance in factory_data.instance_arr:
+		instance.queue_free()

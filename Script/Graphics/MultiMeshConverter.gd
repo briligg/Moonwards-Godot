@@ -5,8 +5,8 @@ class_name MultiMeshConverter
 
 # Recurse on all child nodes & their children
 export(bool) var is_enabled: bool = true
-export(bool) var use_recursive: bool = false
-export(int) var minimum_instances: int = 4
+export(bool) var use_recursive: bool = true
+export(int) var minimum_instances: int = 2
 
 func _ready() -> void:
 	generate_mesh_data(self)
@@ -27,9 +27,9 @@ func generate_mesh_data(node, starting_lod_level = "LOD0"):
 #			var factory_data = MeshFactoryData.new()
 #			factory_data.spawn_path = self.get_path()
 #			factory_data.mesh = child.mesh
-			MultiMeshFactory.add_mesh_data(child.mesh.resource_path, 
+			MultiMeshFactory.add_mesh_data(child.mesh, child,
 					child.global_transform, current_lod_level)
-			child.queue_free()
+#			child.queue_free()
 		if use_recursive:
 			if child.get_child_count() > 0:
 				generate_mesh_data(child, current_lod_level)

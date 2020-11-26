@@ -444,7 +444,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/GameLogic/MouseSimulatingRayCast/MouseSimulatingRayCast.gd"
 }, {
-"base": "Spatial",
+"base": "LodModel",
 "class": "MultiMeshConverter",
 "language": "GDScript",
 "path": "res://Script/Graphics/MultiMeshConverter.gd"

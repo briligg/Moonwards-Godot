@@ -5,8 +5,8 @@
 
 [node name="world" type="Spatial"]
 script = ExtResource( 1 )
-use_recursive = true
-minimum_instances = 0
+is_enabled = false
+minimum_instances = 4
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 238, 669, -318.618 )
@@ -14,5 +14,7 @@ current = true
 far = 500000.0
 
 [node name="STEMP_Facilities" parent="." instance=ExtResource( 2 )]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
 
 [editable path="STEMP_Facilities"]
