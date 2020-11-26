@@ -10,6 +10,8 @@ var transform_arr: Array
 # Array of instances to remove, if this becomes eligible to become a multimesh
 var instance_arr: Array
 
+var lod_level: String
+
 func remove_instances():
 	for instance in instance_arr:
 		instance.queue_free()

@@ -9,7 +9,7 @@ use_recursive = true
 minimum_instances = 0
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.000580284, 0.89637, -0.443305, -0.00117334, 0.443306, 0.89637, 0.999999, -5.82076e-11, 0.00130899, -23337, 20663, -40 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 238, 669, -318.618 )
 current = true
 far = 500000.0
 
