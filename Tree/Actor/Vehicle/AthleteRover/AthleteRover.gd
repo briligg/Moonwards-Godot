@@ -18,7 +18,8 @@ func _ready() -> void:
 	#This isnt owned until someone rides it
 	self.owner_peer_id = -1
 	self.set_network_master(1)
-	self.enable()
+#	self.enable()
+	self.disable()
 	self.get_component("Camera").camera.current = false
 	self.get_component("RoverInput").enabled = false
 	

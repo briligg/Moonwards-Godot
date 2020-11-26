@@ -1,20 +1,17 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Script/Graphics/MultiMeshConverter.gd" type="Script" id=1]
-[ext_resource path="res://Assets/MoonTown/Constructs/STEMP_Facilities/STEMP_Facilities.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Moon_Town_Master.tscn" type="PackedScene" id=2]
 
 [node name="world" type="Spatial"]
 script = ExtResource( 1 )
-is_enabled = false
 minimum_instances = 4
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 238, 669, -318.618 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 238, 20000, -318.618 )
 current = true
 far = 500000.0
 
-[node name="STEMP_Facilities" parent="." instance=ExtResource( 2 )]
-
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 
-[editable path="STEMP_Facilities"]
+[node name="Moon_Town_Master" parent="." instance=ExtResource( 2 )]
