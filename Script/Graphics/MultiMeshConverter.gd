@@ -11,6 +11,7 @@ export(int) var minimum_instances: int = 2
 func _ready() -> void:
 	generate_mesh_data(self)
 	MultiMeshFactory.generate_multimeshes()
+	._ready()
 
 func generate_mesh_data(node, starting_lod_level = "LOD0"):
 	if !is_enabled:
