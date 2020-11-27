@@ -3,7 +3,7 @@ class_name MeshFactoryData
 
 var mesh: Mesh
 # The minimum amount of instances to convert to multimesh
-var minimum_count: int = 4
+var minimum_count: int = 2
 # The node in which to place the multimesh
 var spawn_path: String = ""
 var transform_arr: Array

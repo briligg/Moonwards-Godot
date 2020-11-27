@@ -5,13 +5,17 @@
 
 [node name="world" type="Spatial"]
 script = ExtResource( 1 )
-minimum_instances = 4
+minimum_count = 3
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 238, 20000, -318.618 )
 current = true
 far = 500000.0
 
-[node name="DirectionalLight" type="DirectionalLight" parent="."]
-
 [node name="Moon_Town_Master" parent="." instance=ExtResource( 2 )]
+
+[node name="Billboard" parent="Moon_Town_Master" index="52"]
+texture_slides = [  ]
+text_slides = [  ]
+
+[editable path="Moon_Town_Master"]
