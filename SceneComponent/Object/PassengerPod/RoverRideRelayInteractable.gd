@@ -5,9 +5,9 @@ var is_rover_available = false
 
 func _animate_rover(now_ridable : bool) -> void :
 	if now_ridable :
-		$Interactable/CollisionShape/MeshInstance.show()
+		$Interactable/Anim.play("show")
 	else :
-		$Interactable/CollisionShape/MeshInstance.hide() 
+		$Interactable/Anim.play("hide")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,6 +24,10 @@ func _on_body_entered(body: Node):
 			
 			var rover_interactable = rover.get_node("RoverRideInteractable")
 			rover_interactable.connect(rover_interactable.RIDABLE_CHANGED, self, "_animate_rover")
+			
+			#Display the mesh if the Rover is ready to be driven.
+			if rover_interactable.is_ridable :
+				_animate_rover(true)
 
 func _on_body_exited(body):
 	if body == rover:
