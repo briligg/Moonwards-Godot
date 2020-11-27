@@ -14,9 +14,13 @@ func _on_body_entered(body: Node):
 		if body.get_node("RoverRideInteractable") != null:
 			rover = body
 			is_rover_available = true
+			
+			rover.connect(rover.RIDABLE_CHANGED, self, "_animate_rover")
 
 func _on_body_exited(body):
 	if body == rover:
+		if rover != null :
+			rover.disconnect(rover.RIDABLE_CHANGED, self, "_animate_rover")
 		body = null
 		is_rover_available = false
 
