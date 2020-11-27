@@ -6,7 +6,6 @@ class_name CameraController
 onready var camera: Camera = $Camera
 onready var pivot: Spatial = $Pivot
 
-export(bool) var enabled_at_start = false
 export(bool) var overriden = false #Use for bots only
 export(bool) var allow_first_person = false
 export(float) var dist: float = .5
@@ -49,15 +48,10 @@ func _ready() -> void:
 	pitch = 0.0
 	_update_cam_pos()
 	camera.set_as_toplevel(true)
-	
-	if not enabled_at_start :
-		call_deferred("disable")
 
 func _process(_delta: float) -> void:
 	#Set the camera back to regular mode if it is not the current camera.
 	if not camera.is_current() :
-		is_flying = false
-		
 		#Turn on the model if we were first person.
 		if allow_first_person :
 			entity.get_node("Model").visible = true
@@ -87,7 +81,8 @@ func _input(event):
 	#Check to see if the player has started camera free fly.
 	elif event.is_action_pressed("toggle_camera_fly") :
 		is_flying = !is_flying
-		Signals.Entities.emit_signal(Signals.Entities.FREE_CAMERA_TOGGLED)
+		
+		Signals.Entities.emit_signal(Signals.Entities.FREE_CAMERA_SET, is_flying)
 	
 	#Change flight speed when in flight mode.
 	if is_flying :
