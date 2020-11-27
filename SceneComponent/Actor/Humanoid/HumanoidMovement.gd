@@ -50,7 +50,6 @@ func _ready() -> void:
 	on_ground.add_exception(entity)
 	normal_detect.add_exception(entity)
 	
-	Signals.Entities.connect(Signals.Entities.FLY_TOGGLED, self, "_toggle_fly")
 	entity.connect("on_forces_integrated", self, "_integrate_forces")
 
 func is_grounded() -> bool:
