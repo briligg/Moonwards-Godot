@@ -2,6 +2,13 @@ extends Spatial
 
 var rover
 var is_rover_available = false
+
+func _animate_rover(now_ridable : bool) -> void :
+	if now_ridable :
+		$Interactable/CollisionShape/MeshInstance.show()
+	else :
+		$Interactable/CollisionShape/MeshInstance.hide() 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -15,12 +22,14 @@ func _on_body_entered(body: Node):
 			rover = body
 			is_rover_available = true
 			
-			rover.connect(rover.RIDABLE_CHANGED, self, "_animate_rover")
+			var rover_interactable = rover.get_node("RoverRideInteractable")
+			rover_interactable.connect(rover_interactable.RIDABLE_CHANGED, self, "_animate_rover")
 
 func _on_body_exited(body):
 	if body == rover:
 		if rover != null :
-			rover.disconnect(rover.RIDABLE_CHANGED, self, "_animate_rover")
+			var rover_interactable = rover.get_node("RoverRideInteractable")
+			rover_interactable.disconnect(rover_interactable.RIDABLE_CHANGED, self, "_animate_rover")
 		body = null
 		is_rover_available = false
 
