@@ -3,10 +3,12 @@
 [ext_resource path="res://Assets/Interface/MainMenu.tres" type="Theme" id=1]
 [ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/OptionsUI.gd" type="Script" id=2]
 [ext_resource path="res://Tree/Interface/UserSettings/UserSettings.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/Settings.tscn" type="PackedScene" id=4]
+[ext_resource path="res://SceneComponent/Interface/GraphicsSettings/GraphicsSettings.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/LabelSliderMix/LabelSliderMix.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/LabelOptionButton/LabelOptionButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://SceneComponent/Interface/CustomControls/CustomControls.tscn" type="PackedScene" id=7]
+
+
 
 
 
