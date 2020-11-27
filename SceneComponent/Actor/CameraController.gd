@@ -29,7 +29,7 @@ const HEAD_HEIGHT : float = 0.8
 var mouse_respond : bool = true
 
 #Determines if I should freely fly or not.
-var is_flying : bool = false
+var _is_flying : bool = false 
 #How fast the player is flying.
 var fly_speed : float = 40
 
@@ -66,7 +66,7 @@ func _process(_delta: float) -> void:
 		camera.set_rotation(_new_rot)
 	_update_cam_pos()
 	
-	if not is_flying and not overriden:
+	if not _is_flying and not overriden:
 		entity.look_dir = global_transform.origin - _get_cam_normal() * dist
 
 func _input(event):
@@ -80,12 +80,12 @@ func _input(event):
 	
 	#Check to see if the player has started camera free fly.
 	elif event.is_action_pressed("toggle_camera_fly") :
-		is_flying = !is_flying
+		_is_flying = !_is_flying
 		
-		Signals.Entities.emit_signal(Signals.Entities.FREE_CAMERA_SET, is_flying)
+		Signals.Entities.emit_signal(Signals.Entities.FREE_CAMERA_SET, _is_flying)
 	
 	#Change flight speed when in flight mode.
-	if is_flying :
+	if _is_flying :
 		if event.is_action_pressed("zoom_in", true) :
 			fly_speed += CHANGE_FLY_SPEED_BY
 			Signals.Hud.emit_signal(Signals.Hud.FLIGHT_VALUE_SET, fly_speed)
@@ -104,7 +104,7 @@ func _respond_to_mouse(mouse_active : bool) -> void :
 
 func _update_cam_pos(delta : float = 0.016667) -> void:
 	#The player is in camera fly mode.
-	if is_flying :
+	if _is_flying :
 		var input : Vector3 = Vector3.ZERO
 		input.z = int(Input.is_action_pressed("move_forwards")) + -int(Input.is_action_pressed("move_backwards"))
 		input.x = int(Input.is_action_pressed("move_left")) + -int(Input.is_action_pressed("move_right"))
