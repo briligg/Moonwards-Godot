@@ -152,7 +152,7 @@ margin_bottom = 62.0
 Label_text = "Fly downwards"
 action_to_edit = "fly_down"
 
-[node name="mainmenu_toggle" parent="HBox/Sub2" instance=ExtResource( 3 )]
+[node name="mouse_toggle" parent="HBox/Sub2" instance=ExtResource( 3 )]
 margin_top = 76.0
 margin_right = 272.0
 margin_bottom = 100.0
@@ -165,12 +165,6 @@ margin_right = 272.0
 margin_bottom = 138.0
 Label_text = "Flying Camera"
 action_to_edit = "toggle_camera_fly"
-
-[node name="HSeparator19" type="HSeparator" parent="HBox/Sub2"]
-margin_top = 152.0
-margin_right = 272.0
-margin_bottom = 156.0
-custom_styles/separator = ExtResource( 4 )
 
 [node name="Save" type="Button" parent="."]
 anchor_top = 1.0
