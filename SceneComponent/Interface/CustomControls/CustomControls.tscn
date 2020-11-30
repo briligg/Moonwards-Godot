@@ -155,74 +155,22 @@ action_to_edit = "fly_down"
 [node name="mainmenu_toggle" parent="HBox/Sub2" instance=ExtResource( 3 )]
 margin_top = 76.0
 margin_right = 272.0
-margin_bottom = 96.0
+margin_bottom = 100.0
 Label_text = "Toggle Mouse"
 action_to_edit = "mouse_toggle"
 
 [node name="toggle_camera_fly" parent="HBox/Sub2" instance=ExtResource( 3 )]
 margin_top = 114.0
 margin_right = 272.0
-margin_bottom = 132.0
+margin_bottom = 138.0
 Label_text = "Flying Camera"
 action_to_edit = "toggle_camera_fly"
 
 [node name="HSeparator19" type="HSeparator" parent="HBox/Sub2"]
-margin_top = 136.0
+margin_top = 152.0
 margin_right = 272.0
-margin_bottom = 140.0
+margin_bottom = 156.0
 custom_styles/separator = ExtResource( 4 )
-
-[node name="chat_toggle_size" parent="ButtonList/HBox/Sub2" instance=ExtResource( 3 )]
-margin_top = 144.0
-margin_right = 272.0
-margin_bottom = 168.0
-Label_text = "Toggle Chat Size"
-action_to_edit = "chat_toggle_size"
-
-[node name="HSeparator20" type="HSeparator" parent="ButtonList/HBox/Sub2"]
-margin_top = 172.0
-margin_right = 272.0
-margin_bottom = 176.0
-custom_styles/separator = ExtResource( 4 )
-
-[node name="chat_page_up" parent="ButtonList/HBox/Sub2" instance=ExtResource( 3 )]
-margin_top = 180.0
-margin_right = 272.0
-margin_bottom = 204.0
-Label_text = "Scroll Chat Up"
-action_to_edit = "chat_page_up"
-
-[node name="HSeparator21" type="HSeparator" parent="ButtonList/HBox/Sub2"]
-margin_top = 208.0
-margin_right = 272.0
-margin_bottom = 212.0
-custom_styles/separator = ExtResource( 4 )
-
-[node name="chat_page_down" parent="ButtonList/HBox/Sub2" instance=ExtResource( 3 )]
-margin_top = 216.0
-margin_right = 272.0
-margin_bottom = 240.0
-Label_text = "Scroll Chat Down"
-action_to_edit = "chat_page_down"
-
-[node name="HSeparator22" type="HSeparator" parent="ButtonList/HBox/Sub2"]
-margin_top = 244.0
-margin_right = 272.0
-margin_bottom = 248.0
-custom_styles/separator = ExtResource( 4 )
-
-[node name="HSeparator" type="HSeparator" parent="ButtonList"]
-margin_top = 324.0
-margin_right = 1920.0
-margin_bottom = 1052.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_styles/separator = ExtResource( 4 )
-
-[node name="Button" type="Button" parent="ButtonList"]
-margin_top = 1056.0
-margin_right = 1920.0
-margin_bottom = 1080.0
 
 [node name="Save" type="Button" parent="."]
 anchor_top = 1.0
