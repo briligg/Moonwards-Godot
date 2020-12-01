@@ -2,10 +2,10 @@ extends Control
 
 #Opposite order as the Array since the tabs are in a unique order.
 enum SLOTS{
-	PANTS,
-	SHIRT,
 	SKIN,
 	HAIR,
+	SHIRT,
+	PANTS,
 	SHOES
 }
 
@@ -15,7 +15,7 @@ var skin_color : = Color(0.59,0.4,0)
 var hair_color : = Color(0.1,0.1,0.1)
 var shoes_color : = Color(1,1,1)
 
-var current_slot : int = SLOTS.PANTS
+var current_slot : int = SLOTS.SKIN
 
 # Needs to use the paths before it's ready, so it will crash using onready
 var username_edit : String = "ModelDisplay/UsernameEdit"
@@ -33,7 +33,7 @@ var gender : int = GENDER_MALE
 func _ready() -> void:
 	get_node(username_edit).text = username
 	switch_slot()
-	_on_Gender_item_selected(gender)
+	set_gender(gender)
 	get_node(gender_edit).selected = gender
 	get_node(button_containter).get_node("Viewport").size = get_node(button_containter).rect_size
 
@@ -43,6 +43,7 @@ func get_colors() -> Array :
 
 func set_gender(gender_id : int) -> void :
 	_on_Gender_item_selected(gender_id)
+	get_node(gender_edit).selected = gender_id
 
 #Pass colors in array in this order skin_color, hair_color, shirt_color, pants_color, shoes_color
 func set_colors(color_array) -> void :
