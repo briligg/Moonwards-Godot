@@ -51,6 +51,7 @@ var Graphs : Dictionary = {
 	}
 }
 
+var initiated : bool = false
 var custom_types : Dictionary = {}
 var user_override : String = "" 
 var proj_override : String = "" 
@@ -147,14 +148,21 @@ func _load_signals() -> void:
 	var signal_list : Dictionary = Definitions.get("_stimulus")
 	var signal_names : Array = signal_list.keys()
 	for signals in signal_names:
+		if Graphs.stimulus.has(signals):
+			continue
 		var data : Dictionary = signal_list.get(signals)
 		var current_node : GraphNode = GraphNode.new()
+		var scene_to_save : PackedScene = PackedScene.new()
 		current_node.title = signals
-		current_node.add_child(DoubleLabel.new("", data.get("_output_name")))
+		var display_label = DoubleLabel.new("", data.get("_output_name"))
+		current_node.add_child(display_label, true)
+		display_label.add_owners(current_node)
 		current_node.set_slot(0,false,TYPE_NIL,0, true,
 			_get_type(data.get("_output_type")),  #the type may be a string, so we need to parse it
 			self.Color(data.get("_output_type"))) #Special case, color parses strings
-		Graphs.stimulus[signals]=current_node
+		scene_to_save.pack(current_node)
+		current_node.queue_free()
+		Graphs.stimulus[signals]=scene_to_save
 
 
 func _load_functions() -> void:
@@ -165,6 +173,9 @@ func _load_functions() -> void:
 		return
 	for function in function_names:
 		var data : Dictionary = functions.get(function)
+		if Graphs.get(data.get("_category")).has(function):
+			continue
+		var scene_to_save : PackedScene = PackedScene.new()
 		var current_node : GraphNode = BehaviorNode.new()
 		current_node.title = function
 		for ports in max(data.get("_input_ports").size(),data.get("_output_ports").size()):
@@ -176,18 +187,16 @@ func _load_functions() -> void:
 				_get_port_type(data, ports, false),
 				_get_port_type(data, ports, false),
 				self.Color(_get_port_type(data, ports, false)))
-			current_node.add_child(DoubleLabel.new(
+			var display_label = DoubleLabel.new(
 				_get_port_name(data, ports, true),
-				_get_port_name(data, ports, false)
-			))
+				_get_port_name(data, ports, false))
+			current_node.add_child(display_label, true)
+			display_label.add_owners(current_node)
 			#At this point we have created the node, let's store it
-		match data.get("_category"):
-			"inhibitors":
-				Graphs.inhibitors[function]=current_node
-			"actions":
-				Graphs.actions[function]=current_node
-			"misc":
-				Graphs.misc[function]=current_node
+		scene_to_save.pack(current_node)
+		current_node.queue_free()
+		Graphs[data.get("_category")][function]=scene_to_save
+
 
 
 func _load_definitions() -> void:
@@ -234,11 +243,12 @@ func Color(id) -> Color:
 	return Color(0)
 
 func initiate() -> void:
-	Definitions =  NpcDefinitions.new()
-	load_custom_paths()
-	_load_definitions()
-	_load_functions()
-	_load_signals()
+	if not initiated:
+		Definitions =  NpcDefinitions.new()
+		load_custom_paths()
+		_load_definitions()
+		_load_functions()
+		_load_signals()
 
 #	load_user_defined_nodes()
 """

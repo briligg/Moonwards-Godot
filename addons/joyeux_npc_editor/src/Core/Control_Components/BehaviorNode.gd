@@ -40,7 +40,6 @@ func  _on_disconnected_from(_slot:int):
 					Nodes.Color(Nodes.TYPE_ANY))
 
 func _on_dropdown_change(type, slot):
-	print(type)
 	for slots in get_child_count():
 					set_slot(slots, 
 					is_slot_enabled_left(slots), 

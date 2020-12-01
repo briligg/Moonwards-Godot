@@ -2,7 +2,6 @@ tool
 extends HBoxContainer
 class_name DoubleLabel
 
-
 func get_class_dropdown(classname : String) -> Control:
 	if not Nodes.custom_types.has(classname):
 		return null
@@ -65,18 +64,25 @@ func filter_input_label(input : String) -> void:
 	if Label1 == null:
 		return
 	Label1.rect_min_size = Vector2(50,20)
-	Label1.size_flags_horizontal = SIZE_EXPAND_FILL
-	add_child(Label1)
+	Label1.name = "L_Label"
+	add_child(Label1, true)
 
 func _init(left_title : String = "", right_title : String = ""):
 	filter_input_label(left_title)
 	var Label2 = Label.new()
-	Label2.size_flags_horizontal = SIZE_EXPAND_FILL
+	Label2.name = "R_Label"
 	Label2.text = right_title
 	add_child(Label2)
-	
-func _ready():
-	#Deletion of children that come to existnece due to duplication
-	get_child(3).free()
-	get_child(2).free()
 
+func _ready():
+	get_node("R_Label").size_flags_horizontal = SIZE_EXPAND_FILL
+	get_node("L_Label").align= Label.ALIGN_LEFT
+	get_node("L_Label").size_flags_horizontal = SIZE_EXPAND_FILL
+
+func add_owners(ownr : Node):
+	set_owner(ownr)
+	for child in get_children():
+		child.set_owner(ownr)
+		if child.get_child_count()>0:
+			for sub_child in child.get_children():
+				sub_child.set_owner(ownr)

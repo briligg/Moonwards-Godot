@@ -52,3 +52,4 @@ func _on_request_rejected():
 
 func _on_worker_assigned(where):
 	BehaviorTree.emit_signal("workstation_assigned", where)
+
