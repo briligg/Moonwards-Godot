@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/HelpPanel.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/HelpMenu/HelpMenu.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/Interface/Hud/Styles/HelpMenuPanel.tres" type="StyleBox" id=7]
 [ext_resource path="res://SceneComponent/Interface/HelpMenu/InitialMenu.gd" type="Script" id=8]
 [ext_resource path="res://SceneComponent/Interface/HelpMenu/Keys.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconClear.png" type="Texture" id=10]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -27,6 +28,7 @@ script = ExtResource( 1 )
 anchor_left = 0.01
 anchor_right = 0.99
 anchor_bottom = 1.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -34,6 +36,7 @@ __meta__ = {
 [node name="TopSection" type="HBoxContainer" parent="Alignment"]
 margin_right = 846.0
 margin_bottom = 35.0
+mouse_filter = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.02
 alignment = 1
@@ -41,6 +44,7 @@ alignment = 1
 [node name="Label" type="Label" parent="Alignment/TopSection"]
 margin_right = 846.0
 margin_bottom = 35.0
+mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 8.94
 text = "Help"
@@ -55,6 +59,22 @@ size_flags_stretch_ratio = 0.47
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
 texture_hover = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Close" type="TextureButton" parent="Alignment/TopSection/Label"]
+anchor_left = 0.9
+anchor_top = 0.12
+anchor_right = 1.0
+anchor_bottom = 1.0
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 10 )
+texture_focused = ExtResource( 10 )
 expand = true
 stretch_mode = 5
 __meta__ = {
