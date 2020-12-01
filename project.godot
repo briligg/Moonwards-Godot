@@ -589,6 +589,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/SharedAssets/Shaders/VectorHeightMixNode.gd"
 }, {
+"base": "Position3D",
+"class": "Waypoint",
+"language": "GDScript",
+"path": "res://addons/joyeux_nav_interacts/Waypoint.gd"
+}, {
 "base": "Reference",
 "class": "Worker",
 "language": "GDScript",
@@ -726,6 +731,7 @@ _global_script_class_icons={
 "VisualShaderNodeUVEdit": "",
 "VisualShaderNodeUVPanner": "",
 "VisualShaderNodeVectorHeightMix": "",
+"Waypoint": "",
 "Worker": "",
 "Workstation": "",
 "WorldMirror": "",

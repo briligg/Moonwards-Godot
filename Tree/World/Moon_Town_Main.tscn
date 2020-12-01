@@ -75,39 +75,39 @@ transform = Transform( 0.266717, 0, -0.963775, 0, 1, 0, 0.963775, 0, 0.266717, -
 maximum_progress = 30
 
 [node name="Workstation4" parent="Navigation" instance=ExtResource( 6 )]
-transform = Transform( 0.250279, 0, 0.968174, 0, 1, 0, -0.968174, 0, 0.250279, -21.9726, -16.8257, 1.77498 )
+transform = Transform( -0.444901, 0, -0.89558, 0, 1, 0, 0.89558, 0, -0.444901, -21.4443, -16.8257, -0.287415 )
 
 [node name="Workstation11" parent="Navigation" instance=ExtResource( 6 )]
-transform = Transform( -0.26421, 0, 0.964465, 0, 1, 0, -0.964465, 0, -0.26421, -19.0135, -16.8257, 1.77498 )
+transform = Transform( 0.0539049, 0, -0.998546, 0, 1, 0, 0.998546, 0, 0.0539049, -19.1224, -16.8257, -0.242096 )
 
 [node name="Draw" type="ImmediateGeometry" parent="Navigation"]
 
 [node name="Workstation5" parent="Navigation" instance=ExtResource( 6 )]
-transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -130.133, -92.4919, -120.231 )
+transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -128.229, -93.0064, -120.231 )
 category = 2
 
 [node name="Workstation6" parent="Navigation" instance=ExtResource( 6 )]
-transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -130.439, -92.4919, -118.46 )
+transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -128.535, -93.0064, -118.46 )
 category = 2
 
 [node name="Workstation7" parent="Navigation" instance=ExtResource( 6 )]
-transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -132.781, -92.4919, -102.445 )
+transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -132.033, -93.3533, -102.445 )
 category = 2
 
 [node name="Workstation8" parent="Navigation" instance=ExtResource( 6 )]
-transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -134.247, -92.4919, -91.446 )
+transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -133.499, -93.3533, -91.446 )
 category = 2
 
 [node name="Workstation9" parent="Navigation" instance=ExtResource( 6 )]
-transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -134.492, -92.4919, -89.2836 )
+transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -133.744, -93.3533, -89.2836 )
 category = 2
 
 [node name="Workstation20" parent="Navigation" instance=ExtResource( 6 )]
-transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -134.925, -92.4919, -86.315 )
+transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -134.177, -93.3533, -86.315 )
 category = 2
 
 [node name="Workstation21" parent="Navigation" instance=ExtResource( 6 )]
-transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -135.505, -92.4919, -82.3368 )
+transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -134.757, -93.3533, -82.3368 )
 category = 2
 
 [node name="Workstation" parent="Navigation" instance=ExtResource( 6 )]
@@ -134,11 +134,11 @@ uses_queue = true
 category = 4
 
 [node name="Workstation22" parent="Navigation" instance=ExtResource( 6 )]
-transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -135.23, -92.4919, -84.2192 )
+transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -134.482, -93.3533, -84.2192 )
 category = 2
 
 [node name="Workstation10" parent="Navigation" instance=ExtResource( 6 )]
-transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -136.854, -92.4919, -73.6209 )
+transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -136.106, -93.3533, -73.6209 )
 category = 2
 
 [node name="Workstation3" parent="Navigation" instance=ExtResource( 6 )]
