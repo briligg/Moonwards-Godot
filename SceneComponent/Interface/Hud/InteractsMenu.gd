@@ -36,10 +36,8 @@ func _clear_button_parent() -> void :
 		interactable.disconnect("display_info_changed", self, "_interactable_display_info_changed")
 		interactable.disconnect("title_changed", self, "_interactable_title_changed")
 	
-	var child_index : int = button_parent.get_child_count() - 1
-	while child_index > 0 :
-		button_parent.get_child(child_index).queue_free()
-		child_index -= 1
+	for child in button_parent.get_children() :
+		child.queue_free()
 	
 	interactables.clear()
 
@@ -91,6 +89,7 @@ func _interactable_display_info_changed(new_display_info : String, button : Butt
 func _interactable_entered(interactable_node : Interactable) -> void :
 	#Check that the Interctable is not already listed.
 	if interactables.has(interactable_node) :
+			Log.warning(self, "_interactable_entered", "%s is already in the Interacts Menu." % interactable_node.get_path())
 			return
 	
 	var button : Button = _create_button(interactable_node.get_title(), interactable_node.get_info(), interactable_node)
@@ -102,6 +101,7 @@ func _interactable_entered(interactable_node : Interactable) -> void :
 
 #Called from a signal. Remove the button corresponding to the interactable from the button list.
 func _interactable_left(interactable_node : Interactable) -> void :
+	#Exit if interactables does not have the interactable_node
 	if not interactables.has(interactable_node) :
 		Log.error(self, "_interactable_left", "%s not found in interactable list." % str(interactable_node.get_path()))
 		return
