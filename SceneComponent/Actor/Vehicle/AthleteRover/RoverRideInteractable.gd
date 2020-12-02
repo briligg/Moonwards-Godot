@@ -1,8 +1,5 @@
 extends AComponent
 
-#Emitted when the rover's ridable state changes.
-signal ridable_changed(now_ridable_bool)
-const RIDABLE_CHANGED:String = "ridable_changed"
 
 var interactee
 var interactee_cam
@@ -70,10 +67,6 @@ puppetsync func update_control_state(peer_id, return_control = false):
 	# owner_peer_id in use to validate driving requests
 	entity.owner_peer_id = peer_id
 	self.controller_peer_id = peer_id
-	
-	#Let listeners know when we have changed ridable state.
-	if is_ridable != return_control :
-		emit_signal(RIDABLE_CHANGED, return_control)
 
 	is_ridable = return_control
 	interactable.is_available = return_control
