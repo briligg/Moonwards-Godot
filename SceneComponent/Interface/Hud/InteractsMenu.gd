@@ -149,8 +149,12 @@ func _new_interactor(new_interactor : InteractorComponent) -> void :
 	description.text = ""
 	
 	#Add the new Interactables to the scene tree.
-	for interactable in new_interactor.get_interactables() :
+	var list_of_interactables : Array = new_interactor.get_interactables()
+	var path_to_interactables : PoolStringArray= []
+	for interactable in list_of_interactables :
 		_interactable_entered(interactable)
+		path_to_interactables.append(interactable.get_path())
+	Log.trace(self, "_new_interactor", "The new interactor has these inside %s." % str(path_to_interactables))
 
 #Determines if I can become visible or not.
 func _set_menu_showable(is_showable : bool) -> void :
