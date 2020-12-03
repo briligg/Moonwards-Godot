@@ -73,19 +73,7 @@ func _input(event):
 	if event is InputEventKey:
 		if Input.is_action_pressed("Shift") and Input.is_key_pressed(KEY_A):
 			popup_add_menu()
-		if Input.is_key_pressed(KEY_DELETE) and Currently_selected != null:
-			var all_connections : Array = get_connection_list()
-			for connection in all_connections:
-				var from_port = connection.get("from_port")
-				var from = connection.get("from")
-				var to_port = connection.get("to_port")
-				var to = connection.get("to")
-				if (Currently_selected.name == from or Currently_selected.name == to):
-					disconnect_node(from,from_port,to,to_port)
-			if is_instance_valid(Currently_selected):
-				Currently_selected.clear_all_slots()
-				Currently_selected.queue_free()
-				update()
+
 			
 func recursive_get_variable(node : Node):
 	if node is Label:
@@ -201,3 +189,22 @@ func _on_save_pressed():
 func _on_GraphEdit_popup_request(position):
 	last_mouse_pos = position
 	popup_add_menu()
+
+
+func _on_GraphEdit_delete_nodes_request():
+	for nodes in get_children():
+		if nodes is GraphNode:
+			if nodes.selected:
+				var all_connections : Array = get_connection_list()
+				for connection in all_connections:
+					var from_port = connection.get("from_port")
+					var from = connection.get("from")
+					var to_port = connection.get("to_port")
+					var to = connection.get("to")
+					if (nodes.name == from or nodes.name == to):
+						disconnect_node(from,from_port,to,to_port)
+				if is_instance_valid(nodes):
+					nodes.clear_all_slots()
+					nodes.queue_free()
+					update()
+

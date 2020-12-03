@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Assets/MoonTown/Models/Human_Model/MalePlayerModel.glb" type="PackedScene" id=1]
 [ext_resource path="res://SceneComponent/Interface/AvatarPreview/AvatarPreview.gd" type="Script" id=3]
 [ext_resource path="res://Assets/MoonTown/Models/Human_Model/FemalePlayerModel.tscn" type="PackedScene" id=4]
 
@@ -26,9 +25,6 @@ base_material = SubResource( 1 )
 [node name="FemalePlayerModel" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
 
-[node name="MalePlayerModel" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
-
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0745523, 0.149967 )
 current = true
@@ -47,5 +43,3 @@ mesh = SubResource( 4 )
 material/0 = SubResource( 5 )
 
 [editable path="FemalePlayerModel"]
-
-[editable path="MalePlayerModel"]

@@ -32,12 +32,16 @@ func _physics_process(_delta: float) -> void:
 
 func _check_flight_mode():
 	#Fly upwards if the player requested it.
-	if ProjectSettings.get("debug/settings/gameplay/humans_can_fly"):
+	if not MwInput.is_chat_active && ProjectSettings.get("debug/settings/gameplay/humans_can_fly"):
 		#Start flying if the player requested it.
 		if Input.is_action_just_pressed("toggle_fly"):
 			_toggle_fly()
 
 func _handle_input() -> void:
+	#Do nothing if the chat is active.
+	if MwInput.is_chat_active :
+		return
+	
 	if Input.is_action_pressed("fly_up") :
 		movement_input.y = 1
 	elif Input.is_action_pressed("fly_down") :

@@ -13,13 +13,14 @@ var user_file : ConfigFile = ConfigFile.new()
 var editable_actions : Array = [
 	"move_forwards", "move_backwards", "move_left", "move_right",
 	"jump", "interact_with_closest", "use", "toggle_first_person",
-	"fly_up", "fly_down", "toggle_camera_fly", "mainmenu_toggle"
+	"fly_up", "fly_down", "toggle_camera_fly", "mouse_toggle",
+	"chat_toggle_size", "chat_page_up", "chat_page_down"
 ]
 
 var is_capture_mode : bool = false
 
 func _input(event):
-	if event.is_action_pressed("mainmenu_toggle"):
+	if event.is_action_pressed("mouse_toggle"):
 		if is_capture_mode:
 			capture_mouse(false)
 		else:
@@ -113,8 +114,15 @@ func load_user_file() -> void :
 				event = InputEventMouseButton.new()
 				event.button_index = user_file.get_value(action, "scancode")
 			
+			#Now replace the first event in the action with the custom event.
+			var event_list : Array = InputMap.get_action_list(action)
+			event_list.pop_front()
 			InputMap.action_erase_events(action)
 			InputMap.action_add_event(action, event)
+			
+			#Add the extra events at the end. These events are not meant to be changed.
+			for extra_event in event_list :
+				InputMap.action_add_event(action, extra_event)
 
 #Save user info to the file.
 func save_user_file() -> void :

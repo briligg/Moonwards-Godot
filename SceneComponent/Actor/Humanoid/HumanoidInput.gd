@@ -7,9 +7,7 @@ func _init().("HumanoidInput", true):
 	pass
 
 func _ready() -> void:
-	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_STARTED, self, "set_ignore_inputs", [true])
-	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_FINISHED, self, "set_ignore_inputs", [false])
-	Signals.Entities.connect(Signals.Entities.FREE_CAMERA_TOGGLED, self, "toggle_ignore_inputs")
+	Signals.Entities.connect(Signals.Entities.FREE_CAMERA_SET, self, "set_ignore_inputs")
 	
 func _process_client(_delta: float) -> void:
 	entity.input = Vector3.ZERO
@@ -34,6 +32,3 @@ func handle_input() -> void:
 
 func set_ignore_inputs(ignore_bool : bool) -> void :
 	ignore_inputs = ignore_bool
-
-func toggle_ignore_inputs() -> void :
-	set_ignore_inputs(!ignore_inputs)

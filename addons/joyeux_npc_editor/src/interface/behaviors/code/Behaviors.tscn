@@ -94,7 +94,7 @@ margin_bottom = 33.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 text = "Stimulus"
-items = [ "hear", null, 0, false, false, 0, 0, null, "", false, "user_input", null, 0, false, false, 1, 0, null, "", false, "see", null, 0, false, false, 2, 0, null, "", false ]
+items = [ "on_ready", null, 0, false, false, 0, 0, null, "", false, "tree_exiting", null, 0, false, false, 1, 0, null, "", false, "visibility_changed", null, 0, false, false, 2, 0, null, "", false, "interacted_by", null, 0, false, false, 3, 0, null, "", false, "stopped_working", null, 0, false, false, 4, 0, null, "", false, "workstation_assigned", null, 0, false, false, 5, 0, null, "", false, "request_rejected", null, 0, false, false, 6, 0, null, "", false ]
 
 [node name="HS3" type="HSeparator" parent="ViewMenuSplit/Container/Panel/DropDowns"]
 margin_top = 37.0
@@ -108,7 +108,7 @@ margin_bottom = 70.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 text = "Inhibitions"
-items = [ "property_check", null, 0, false, false, 0, 0, null, "", false, "match", null, 0, false, false, 1, 0, null, "", false, "tri_v_decision", null, 0, false, false, 2, 0, null, "", false ]
+items = [ "property_check", null, 0, false, false, 0, 0, null, "", false, "match", null, 0, false, false, 1, 0, null, "", false, "delay", null, 0, false, false, 2, 0, null, "", false, "tri_v_decision", null, 0, false, false, 3, 0, null, "", false ]
 
 [node name="HS4" type="HSeparator" parent="ViewMenuSplit/Container/Panel/DropDowns"]
 margin_top = 74.0
@@ -122,7 +122,7 @@ margin_bottom = 107.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 text = "Actions"
-items = [ "set_objective", null, 0, false, false, 0, 0, null, "", false, "trigger_dialog", null, 0, false, false, 1, 0, null, "", false, "play_global_sound", null, 0, false, false, 2, 0, null, "", false, "play_pos_sound", null, 0, false, false, 3, 0, null, "", false, "force_next_state", null, 0, false, false, 4, 0, null, "", false ]
+items = [ "set_objective", null, 0, false, false, 0, 0, null, "", false, "trigger_dialog", null, 0, false, false, 1, 0, null, "", false, "find_workstation", null, 0, false, false, 2, 0, null, "", false, "request_workstation", null, 0, false, false, 3, 0, null, "", false, "play_global_sound", null, 0, false, false, 4, 0, null, "", false, "play_pos_sound", null, 0, false, false, 5, 0, null, "", false, "force_next_state", null, 0, false, false, 6, 0, null, "", false ]
 
 [node name="hs5" type="HSeparator" parent="ViewMenuSplit/Container/Panel/DropDowns"]
 margin_top = 111.0
@@ -241,7 +241,7 @@ __meta__ = {
 [node name="stimulus" type="PopupMenu" parent="ViewMenuSplit/GraphEdit/Behaviors"]
 margin_right = 82.0
 margin_bottom = 88.0
-items = [ "hear", null, 0, false, false, 0, 0, null, "", false, "user_input", null, 0, false, false, 1, 0, null, "", false, "see", null, 0, false, false, 2, 0, null, "", false ]
+items = [ "on_ready", null, 0, false, false, 0, 0, null, "", false, "tree_exiting", null, 0, false, false, 1, 0, null, "", false, "visibility_changed", null, 0, false, false, 2, 0, null, "", false, "interacted_by", null, 0, false, false, 3, 0, null, "", false, "stopped_working", null, 0, false, false, 4, 0, null, "", false, "workstation_assigned", null, 0, false, false, 5, 0, null, "", false, "request_rejected", null, 0, false, false, 6, 0, null, "", false ]
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -249,12 +249,12 @@ __meta__ = {
 [node name="inhibitors" type="PopupMenu" parent="ViewMenuSplit/GraphEdit/Behaviors"]
 margin_right = 82.0
 margin_bottom = 88.0002
-items = [ "property_check", null, 0, false, false, 0, 0, null, "", false, "match", null, 0, false, false, 1, 0, null, "", false, "tri_v_decision", null, 0, false, false, 2, 0, null, "", false ]
+items = [ "property_check", null, 0, false, false, 0, 0, null, "", false, "match", null, 0, false, false, 1, 0, null, "", false, "delay", null, 0, false, false, 2, 0, null, "", false, "tri_v_decision", null, 0, false, false, 3, 0, null, "", false ]
 
 [node name="actions" type="PopupMenu" parent="ViewMenuSplit/GraphEdit/Behaviors"]
 margin_right = 82.0
 margin_bottom = 88.0002
-items = [ "set_objective", null, 0, false, false, 0, 0, null, "", false, "trigger_dialog", null, 0, false, false, 1, 0, null, "", false, "play_global_sound", null, 0, false, false, 2, 0, null, "", false, "play_pos_sound", null, 0, false, false, 3, 0, null, "", false, "force_next_state", null, 0, false, false, 4, 0, null, "", false ]
+items = [ "set_objective", null, 0, false, false, 0, 0, null, "", false, "trigger_dialog", null, 0, false, false, 1, 0, null, "", false, "find_workstation", null, 0, false, false, 2, 0, null, "", false, "request_workstation", null, 0, false, false, 3, 0, null, "", false, "play_global_sound", null, 0, false, false, 4, 0, null, "", false, "play_pos_sound", null, 0, false, false, 5, 0, null, "", false, "force_next_state", null, 0, false, false, 6, 0, null, "", false ]
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -294,6 +294,7 @@ Start_path = ""
 [connection signal="pressed" from="ViewMenuSplit/Container/type2/Save" to="ViewMenuSplit/GraphEdit" method="_on_save_pressed"]
 [connection signal="pressed" from="ViewMenuSplit/Container/Add" to="." method="_on_Add_pressed"]
 [connection signal="connection_request" from="ViewMenuSplit/GraphEdit" to="ViewMenuSplit/GraphEdit" method="_on_GraphEdit_connection_request"]
+[connection signal="delete_nodes_request" from="ViewMenuSplit/GraphEdit" to="ViewMenuSplit/GraphEdit" method="_on_GraphEdit_delete_nodes_request"]
 [connection signal="disconnection_request" from="ViewMenuSplit/GraphEdit" to="ViewMenuSplit/GraphEdit" method="_on_GraphEdit_disconnection_request"]
 [connection signal="popup_request" from="ViewMenuSplit/GraphEdit" to="ViewMenuSplit/GraphEdit" method="_on_GraphEdit_popup_request"]
 [connection signal="id_pressed" from="ViewMenuSplit/GraphEdit/Behaviors" to="ViewMenuSplit/GraphEdit/Behaviors" method="_on_Behaviors_id_pressed"]

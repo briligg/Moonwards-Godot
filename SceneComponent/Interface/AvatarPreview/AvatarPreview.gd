@@ -4,7 +4,7 @@ export(SpatialMaterial) var base_material : SpatialMaterial
 
 onready var avatar_female : Node = get_node("FemalePlayerModel/Female_Player/Skeleton/FemaleBody-LOD0")
 onready var avatar_skeleton_female : Node = $FemalePlayerModel/Female_Player/Skeleton
-onready var avatar_male : Node = $MalePlayerModel/Male_Player/Skeleton/Male_Player_LOD0
+onready var avatar_male : Node = $FemalePlayerModel/Female_Player/Skeleton/Male_Player_LOD0
 
 var _pants_mat : SpatialMaterial
 var _shirt_mat : SpatialMaterial
@@ -27,11 +27,11 @@ func _ready() -> void:
 	avatar_female.set_surface_material(1, _hair_mat)
 	avatar_female.set_surface_material(4, _shoes_mat)
 	
-	avatar_male.set_surface_material(3, _pants_mat)
-	avatar_male.set_surface_material(2, _shirt_mat)
-	avatar_male.set_surface_material(0, _skin_mat)
-	avatar_male.set_surface_material(1, _hair_mat)
-	avatar_male.set_surface_material(4, _shoes_mat)
+	avatar_male.set("material/3", _pants_mat)
+	avatar_male.set("material/2", _shirt_mat)
+	avatar_male.set("material/0", _skin_mat)
+	avatar_male.set("material/1", _hair_mat)
+	avatar_male.set("material/4", _shoes_mat)
 
 func set_colors(skin : Color, hair : Color, shirt : Color, pants : Color, shoes : Color) -> void:
 	_pants_mat.albedo_color = pants

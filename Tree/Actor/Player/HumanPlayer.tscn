@@ -34,14 +34,17 @@ script = ExtResource( 6 )
 
 [node name="Model" parent="." instance=ExtResource( 7 )]
 
-[node name="AnimationController" parent="." instance=ExtResource( 4 )]
-
 [node name="CameraController" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.766189, 0 )
+enabled_at_start = true
 allow_first_person = true
 dist = 3.0
 
+[node name="HumanoidInput" parent="." instance=ExtResource( 1 )]
+
 [node name="HumanoidMovement" parent="." instance=ExtResource( 5 )]
+
+[node name="AnimationController" parent="." instance=ExtResource( 4 )]
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0175913, 0.839999, 0 )
@@ -49,8 +52,6 @@ shape = SubResource( 2 )
 __meta__ = {
 "_editor_description_": ""
 }
-
-[node name="HumanoidInput" parent="." instance=ExtResource( 1 )]
 
 [node name="Interactor" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68742, 0 )

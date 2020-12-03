@@ -2,14 +2,24 @@ extends AComponent
 
 signal jump_pressed
 
+var _ignore_inputs : bool = false setget _set_ignore_inputs
+
 func _init().("RoverInput", true):
 	self.enabled = false
 
 func _process_client(_delta: float) -> void:
 	handle_input()
 
+#Listen for when free camera is turned on or off.
+func _ready() -> void :
+	Signals.Entities.connect(Signals.Entities.FREE_CAMERA_SET, self, "_set_ignore_inputs")
+
+#Free camera has been set. Ignore inputs if need be.
+func _set_ignore_inputs(free_camera_active: bool) -> void :
+	_ignore_inputs = free_camera_active
+
 func handle_input() -> void:
-	if MwInput.is_chat_active:
+	if _ignore_inputs || MwInput.is_chat_active :
 		return
 	
 	entity.input = Vector3.ZERO
