@@ -11,3 +11,4 @@ monitorable = false
 
 [node name="Interactable" type="Area" parent="."]
 script = ExtResource( 1 )
+is_networked = false
