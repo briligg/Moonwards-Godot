@@ -31,5 +31,7 @@ func handle_input() -> void:
 	elif Input.is_action_pressed("move_right"):
 		entity.input.x += -1
 	
+	get_tree().set_input_as_handled()
+	
 func set_ignore_inputs(ignore_bool : bool) -> void :
 	ignore_inputs = ignore_bool
