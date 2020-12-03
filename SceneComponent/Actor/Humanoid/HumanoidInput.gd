@@ -7,6 +7,7 @@ func _init().("HumanoidInput", true):
 	pass
 
 func _ready() -> void:
+	Input.set_use_accumulated_input(false)
 	Signals.Entities.connect(Signals.Entities.FREE_CAMERA_SET, self, "set_ignore_inputs")
 	
 func _process_client(_delta: float) -> void:
@@ -29,6 +30,6 @@ func handle_input() -> void:
 		entity.input.x += 1
 	elif Input.is_action_pressed("move_right"):
 		entity.input.x += -1
-
+	
 func set_ignore_inputs(ignore_bool : bool) -> void :
 	ignore_inputs = ignore_bool
