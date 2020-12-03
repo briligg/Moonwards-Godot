@@ -7,7 +7,6 @@
 script = ExtResource( 1 )
 require_net_owner = true
 grab_focus_at_ready = false
-ray_cast_length = 8.0
 
 [node name="InteractorRayCast" type="RayCast" parent="."]
 enabled = true
