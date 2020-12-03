@@ -23,7 +23,7 @@ surfaces/0 = {
 "vertex_count": 60
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -39,7 +39,7 @@ tracks/0/keys = {
 "values": [ Vector3( 1, 1, 1 ), Vector3( 0.7, 0.7, 0.7 ), Vector3( 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("AudioTourMarker_Indoor:scale")
@@ -59,6 +59,7 @@ collision_layer = 32768
 collision_mask = 0
 script = ExtResource( 1 )
 display_info = "play audio recording"
+is_networked = false
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
@@ -71,6 +72,6 @@ mesh = SubResource( 2 )
 material/0 = ExtResource( 2 )
 
 [node name="AudioSphereAnimations" type="AnimationPlayer" parent="."]
-anims/Idle = SubResource( 4 )
-"anims/Interacted With" = SubResource( 5 )
+anims/Idle = SubResource( 3 )
+"anims/Interacted With" = SubResource( 4 )
 script = ExtResource( 5 )

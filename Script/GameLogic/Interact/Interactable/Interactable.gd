@@ -28,7 +28,7 @@ enum NetworkMode {
 	SERVER_ONLY,
 	PROPAGATED,
 }
-
+#If you do not want to have any networking on the Interactable, then set is_networked to false.
 
 export(float) var max_interact_distance = 5.0
 #This is what is displayed when an interactor can interact with me.
