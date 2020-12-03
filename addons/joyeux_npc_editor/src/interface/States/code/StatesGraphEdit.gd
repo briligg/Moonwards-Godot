@@ -2,9 +2,8 @@ tool
 extends GraphEdit
 
 var last_mouse_pos : Vector2 = Vector2.ZERO
-func _ready():
-	pass # Replace with function body.
 
+			
 func clear_graph():
 	for nodes in get_children():
 		if nodes is GraphNode:
@@ -49,3 +48,21 @@ func _on_States_id_pressed(id):
 	add_state($States.get_item_text(id), node_start_pos)
 
 
+
+
+func _on_StatesGraphEdit_delete_nodes_request():
+	for nodes in get_children():
+		if nodes is GraphNode:
+			if nodes.selected:
+				var all_connections : Array = get_connection_list()
+				for connection in all_connections:
+					var from_port = connection.get("from_port")
+					var from = connection.get("from")
+					var to_port = connection.get("to_port")
+					var to = connection.get("to")
+					if (nodes.name == from or nodes.name == to):
+						disconnect_node(from,from_port,to,to_port)
+				if is_instance_valid(nodes):
+					nodes.clear_all_slots()
+					nodes.queue_free()
+					update()
