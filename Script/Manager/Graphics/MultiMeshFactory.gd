@@ -90,7 +90,7 @@ func _remove_mesh_instances(factory_data):
 	var freeable_instances = []
 	
 	for instance in factory_data.instance_arr:
-		if instance.get_child_count() > 0:
+		if instance.get_child_count() > 0 and instance != null:
 			var inst_parent = instance.get_parent()
 			# Create and add a new placeholder to replace original instance
 			var new_inst = Spatial.new()
