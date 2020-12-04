@@ -13,7 +13,7 @@ func _world_on_ready():
 	generate_multimeshes()
 
 func add_mesh_data(mesh: Mesh, mesh_instance: Node, transform: Transform, 
-		lod_level: String, minimum_count):
+		lod_level: String, minimum_count, spawn_path = null):
 
 	var mesh_name = mesh.resource_name
 	var factory_data
@@ -27,6 +27,8 @@ func add_mesh_data(mesh: Mesh, mesh_instance: Node, transform: Transform,
 	factory_data.mesh = mesh
 	if mesh_instance:
 		factory_data.instance_arr.append(mesh_instance)
+	if spawn_path and factory_data.spawn_path.empty():
+		factory_data.spawn_path = spawn_path
 	factory_data.lod_level = lod_level
 	factory_data.minimum_count = minimum_count
 
