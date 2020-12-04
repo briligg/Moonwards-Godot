@@ -253,7 +253,7 @@ func start_climb_stairs(target_stairs : VerticalStairs) -> void:
 	entity.climb_look_direction = entity.stairs.get_look_direction(kb_pos)
 	
 	#Get the closest step to start climbing from.
-	for index in entity.stairs.climb_points.size():
+	for index in entity.stairs.climb_points.size() - 3: #Remove top stair so we start at the correct spot.
 		if entity.climb_point == -1 or entity.stairs.climb_points[index].distance_to(kb_pos) < entity.stairs.climb_points[entity.climb_point].distance_to(kb_pos):
 			entity.climb_point = index
 	
