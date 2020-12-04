@@ -55,19 +55,19 @@ func generate_stairs():
 	xfm = global_transform
 	xfm.origin += Vector3(0, stair_step_length, 0)
 	# Add the data to our multimesh factory
-	MultiMeshFactory.add_mesh_data(stair_top_mesh, null, xfm, 
-			"LOD0", 3)
+#	MultiMeshFactory.add_mesh_data(stair_top_mesh, null, xfm, 
+#			"LOD0", 3)
 
 	for i in range(0, stairs_step_count):
 		xfm = Transform(self.global_transform)
 		xfm.origin.y += -1 * i * stair_step_length
-		MultiMeshFactory.add_mesh_data(stair_step_mesh, null, xfm, 
-				"LOD0", 3)
+#		MultiMeshFactory.add_mesh_data(stair_step_mesh, null, xfm, 
+#				"LOD0", 3)
 		
 	xfm = Transform(self.global_transform)
 	xfm.origin.y += -1 * stairs_step_count * stair_step_length
-	MultiMeshFactory.add_mesh_data(stair_bottom_mesh, null, xfm, 
-			"LOD0", 3)
+#	MultiMeshFactory.add_mesh_data(stair_bottom_mesh, null, xfm, 
+#			"LOD0", 3)
 				
 func update_collision():
 	var col_length = _total_length + stair_top_length

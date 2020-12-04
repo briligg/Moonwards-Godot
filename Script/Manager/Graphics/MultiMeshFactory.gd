@@ -33,10 +33,13 @@ func add_mesh_data(mesh: Mesh, mesh_instance: Node, transform: Transform,
 	factory_data.minimum_count = minimum_count
 
 func generate_multimeshes():
+	for key in multimesh_data_arr.keys():
+		var factory_data = multimesh_data_arr[key]
+		if factory_data.transform_arr.size() < factory_data.minimum_count:
+			multimesh_data_arr.erase(key)
+	
 	for factory_data in multimesh_data_arr.values():
-#		if factory_data.transform_arr.size() < factory_data.minimum_count:
-#			continue
-#		_remove_mesh_instances(factory_data)
+		_remove_mesh_instances(factory_data)
 		var spawn_node 
 		if !factory_data.spawn_path.empty():
 			spawn_node = get_node(factory_data.spawn_path)
@@ -104,5 +107,6 @@ func _remove_mesh_instances(factory_data):
 			inst_parent.remove_child(instance)
 			new_inst.name = inst_parent.name
 		freeable_instances.append(instance)
+		
 	for freeable in freeable_instances:
 		freeable.free()

@@ -6,12 +6,14 @@ class_name MultiMeshConverter
 # Recurse on all child nodes & their children
 export(bool) var is_enabled: bool = true
 export(bool) var use_recursive: bool = true
-export(int) var minimum_count: int = 2
+export(int) var minimum_count: int = 3
+export(bool) var dbg_generate_on_ready: bool = false
 
 func _ready() -> void:
 	generate_mesh_data(self)
-	MultiMeshFactory.generate_multimeshes()
-	Log.error(self, "", "MMC READY!!")
+	if dbg_generate_on_ready:
+		MultiMeshFactory.generate_multimeshes()
+#	Log.error(self, "", "MMC READY!!")
 	._ready()
 
 func generate_mesh_data(node, starting_lod_level = "NOLOD"):
@@ -27,8 +29,7 @@ func generate_mesh_data(node, starting_lod_level = "NOLOD"):
 			current_lod_level = child.name
 		if child is MeshInstance:
 			MultiMeshFactory.add_mesh_data(child.mesh, child,
-					child.global_transform, current_lod_level, minimum_count)
-			child.queue_free()
+					child.global_transform, current_lod_level, minimum_count, self.get_path())
 		if use_recursive:
 			if child.get_child_count() > 0:
 				generate_mesh_data(child, current_lod_level)
