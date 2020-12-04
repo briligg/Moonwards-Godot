@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/DianeOsborne.ogg-1ef09c887adaf2352eb709f3c19145a3.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Monument/DianeOsborne.ogg"
+dest_files=[ "res://.import/DianeOsborne.ogg-1ef09c887adaf2352eb709f3c19145a3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

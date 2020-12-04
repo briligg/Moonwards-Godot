@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/AwesomeDonor.ogg-5616d4435d7632a9260e4aeed2f36084.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Monument/AwesomeDonor.ogg"
+dest_files=[ "res://.import/AwesomeDonor.ogg-5616d4435d7632a9260e4aeed2f36084.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
