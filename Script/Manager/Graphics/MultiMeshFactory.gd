@@ -33,6 +33,7 @@ func add_mesh_data(mesh: Mesh, mesh_instance: Node, transform: Transform,
 	factory_data.minimum_count = minimum_count
 
 func generate_multimeshes():
+	Log.debug(self, "generate_multimeshes", "MultiMeshFactory generated all data.")
 	for key in multimesh_data_arr.keys():
 		var factory_data = multimesh_data_arr[key]
 		if factory_data.transform_arr.size() < factory_data.minimum_count:
@@ -66,10 +67,18 @@ func generate_multimeshes():
 		var multimesh_instance = MultiMeshInstance.new()
 		multimesh_instance.name = "MMC%s" %factory_data.mesh.resource_name
 		multimesh_instance.multimesh = _multimesh
+		# Just to be safe, check that this was not instanced before, for whatever reason.
+		# This needs some proper cleanup.
 		if factory_data.lod_level:
-			spawn_node.get_node(factory_data.lod_level).add_child(multimesh_instance)
+			if !spawn_node.get_node(factory_data.lod_level).get_node_or_null(multimesh_instance.name):
+				spawn_node.get_node(factory_data.lod_level).add_child(multimesh_instance)
+			else:
+				multimesh_instance.free()
 		else:
-			spawn_node.add_child(multimesh_instance)
+			if spawn_node.get_node_or_null(multimesh_instance.name):
+				spawn_node.add_child(multimesh_instance)
+			else:
+				multimesh_instance.free()
 
 func _verify_spawn_node_lods(spawn_node):
 		if spawn_node.get_node_or_null("LOD0") == null:

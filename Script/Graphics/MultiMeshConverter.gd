@@ -28,8 +28,12 @@ func generate_mesh_data(node, starting_lod_level = "NOLOD"):
 		if child.name == "LOD0" || child.name == "LOD1" || child.name == "LOD2":
 			current_lod_level = child.name
 		if child is MeshInstance:
+			# Convert the child's global origin  to local to this node
+			# such as it doesn't spawn offset. You can't set MM global origin.
+			var xfm = child.global_transform
+			xfm.origin = to_local(xfm.origin)
 			MultiMeshFactory.add_mesh_data(child.mesh, child,
-					child.global_transform, current_lod_level, minimum_count, self.get_path())
+					xfm, current_lod_level, minimum_count, self.get_path())
 		if use_recursive:
 			if child.get_child_count() > 0:
 				generate_mesh_data(child, current_lod_level)
