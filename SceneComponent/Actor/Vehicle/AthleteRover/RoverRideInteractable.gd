@@ -56,7 +56,7 @@ func take_control(e):
 	
 #	update_control_state(Network.network_instance.peer_id, false)
 	
-func return_control(e) -> void:
+func return_control(_e) -> void:
 	interactable.display_info = "Take control of the rover"
 	entity.get_component("Camera").camera.current = false
 	entity.get_component("RoverInput").enabled = false

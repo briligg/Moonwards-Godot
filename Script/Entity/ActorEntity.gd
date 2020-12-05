@@ -39,14 +39,14 @@ var velocity = Vector3()
 
 var is_grounded: bool
 
-func _integrate_server(args) -> void:
+func _integrate_server(_args) -> void:
 	if !get_tree().network_peer:
 		return
 	rset_unreliable("srv_pos", srv_pos)
 #	rset_unreliable("srv_vel", srv_vel)
 #	rset_unreliable("look_dir", look_dir)
 	
-func _integrate_client(args) -> void:
+func _integrate_client(_args) -> void:
 	if !get_tree().network_peer:
 		return
 	# This needs to be validated on the server side.
@@ -56,9 +56,9 @@ func _integrate_client(args) -> void:
 		rset_id(1, "input", input)
 		rset_id(1, "mlook_dir", look_dir)
 
-func _integrate_forces(state):
-	emit_signal("on_forces_integrated", state)
-	invoke_network_based("_integrate_server", "_integrate_client", [state])
+func _integrate_forces(new_state):
+	emit_signal("on_forces_integrated", new_state)
+	invoke_network_based("_integrate_server", "_integrate_client", [new_state])
 
 func invoke_network_based(server_func: String, client_func: String, args):
 	if !get_tree().network_peer:

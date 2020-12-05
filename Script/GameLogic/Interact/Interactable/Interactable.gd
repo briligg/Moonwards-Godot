@@ -64,6 +64,7 @@ func interact_with(interactor : Node) -> void :
 	#Someone requested interaction with me.
 	emit_signal("interacted_by", interactor)
 
+# warning-ignore:function_conflicts_variable
 func is_networked() -> bool :
 	return is_networked
 
