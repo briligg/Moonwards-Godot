@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Main_Factory/Main_Factory.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Pressurized_Factories/PressurizedHangar_Giant.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/MoonTown/Models/Lava_Tanks/Lava_Tank_Large.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/MoonTown/Models/Tower_Radiators/TowerRadiator_3x.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Script/Graphics/MultiMeshConverter.gd" type="Script" id=5]
 
 [node name="Main_Factory" instance=ExtResource( 1 )]
 
@@ -36,6 +37,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 127.125, 37.9456, -112.199 )
 light_energy = 3.48
 omni_range = 141.304
 omni_attenuation = 1.27456
+
+[node name="Markers" parent="." index="6"]
+script = ExtResource( 5 )
 
 [node name="Lava_Tank_Large" parent="Markers/Empty_LavaTank_Large004" index="0" instance=ExtResource( 3 )]
 

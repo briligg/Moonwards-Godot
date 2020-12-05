@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Teacup_Crater/Teacup_Crater.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Truss_Triangular/Truss_Triangular_67m.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Script/Graphics/MultiMeshConverter.gd" type="Script" id=3]
 
 [sub_resource type="GIProbeData" id=1]
 bounds = AABB( -140.196, -43.5424, -141.65, 280.393, 87.0848, 283.299 )
@@ -46,6 +47,9 @@ extents = Vector3( 140.196, 43.5424, 141.65 )
 energy = 0.19
 propagation = 0.31
 data = SubResource( 1 )
+
+[node name="Markers" parent="." index="6"]
+script = ExtResource( 3 )
 
 [node name="Marker_Truss" parent="Markers" index="0"]
 transform = Transform( -0.880097, 0, 0.474794, 0, 1, 0, -0.474794, 0, -0.880097, -5.47424, -0.517575, 15.776 )
