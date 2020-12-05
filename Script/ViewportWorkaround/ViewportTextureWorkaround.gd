@@ -1,7 +1,7 @@
 extends Viewport
 
 
-func _ready() -> void :
+func _init() -> void :
 	call_deferred("_ready_deferred")
 
 func _ready_deferred() -> void :

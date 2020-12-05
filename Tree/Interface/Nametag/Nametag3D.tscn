@@ -3,9 +3,7 @@
 [ext_resource path="res://Tree/Interface/Nametag/Nametag3D.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Interface/Fonts/NametagFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/Interface/Nametag3D.tres" type="Theme" id=3]
-
-[sub_resource type="ViewportTexture" id=1]
-viewport_path = NodePath("NametagHolder")
+[ext_resource path="res://Script/ViewportWorkaround/ViewportTextureWorkaround.gd" type="Script" id=4]
 
 [sub_resource type="SpatialMaterial" id=2]
 resource_local_to_scene = true
@@ -19,7 +17,6 @@ params_billboard_keep_scale = true
 params_use_alpha_scissor = true
 params_alpha_scissor_threshold = 0.01
 albedo_color = Color( 0.925781, 0.922261, 0.922261, 1 )
-albedo_texture = SubResource( 1 )
 distance_fade_mode = 2
 distance_fade_min_distance = 15.0
 distance_fade_max_distance = 14.5
@@ -57,6 +54,7 @@ shadow_atlas_quad_0 = 0
 shadow_atlas_quad_1 = 0
 shadow_atlas_quad_2 = 0
 shadow_atlas_quad_3 = 0
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
