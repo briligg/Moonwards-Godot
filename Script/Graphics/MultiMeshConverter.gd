@@ -13,8 +13,8 @@ func _ready() -> void:
 	generate_mesh_data(self)
 	if dbg_generate_on_ready:
 		MultiMeshFactory.generate_multimeshes()
-#	Log.error(self, "", "MMC READY!!")
-	._ready()
+	Log.debug(self, "_ready", "MMC READY!!")
+	MultiMeshFactory.connect("meshes_generated", self, "_on_meshes_generated")
 
 func generate_mesh_data(node, starting_lod_level = "NOLOD"):
 	if !is_enabled:
@@ -37,3 +37,6 @@ func generate_mesh_data(node, starting_lod_level = "NOLOD"):
 		if use_recursive:
 			if child.get_child_count() > 0:
 				generate_mesh_data(child, current_lod_level)
+
+func _on_meshes_generated():
+	._ready_lod()

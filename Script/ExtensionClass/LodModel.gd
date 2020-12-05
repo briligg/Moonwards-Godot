@@ -7,7 +7,9 @@ var lod_enabled: bool = false
 var lod_state setget _set_illegal
 
 func _ready() -> void:
-#	_generate_col_shape()
+	_ready_lod()
+
+func _ready_lod():
 	if self.has_node("LOD0") and self.has_node("LOD1") and self.has_node("LOD2"):
 		_lods[0] = $LOD0
 		_lods[1] = $LOD1

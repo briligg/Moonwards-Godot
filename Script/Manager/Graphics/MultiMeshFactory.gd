@@ -2,6 +2,9 @@ extends Node
 # Dictionary for runtime generated multimesh instances
 # Key: Mesh source path
 # Value: Array of Transforms
+
+signal meshes_generated()
+
 var multimesh_data_arr = {}
 
 var multimesh_instances = {}
@@ -11,6 +14,7 @@ func _ready() -> void:
 	
 func _world_on_ready():
 	generate_multimeshes()
+	emit_signal("meshes_generated")
 
 func add_mesh_data(mesh: Mesh, mesh_instance: Node, transform: Transform, 
 		lod_level: String, minimum_count, spawn_path = null):
