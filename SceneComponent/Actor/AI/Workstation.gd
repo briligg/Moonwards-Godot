@@ -121,7 +121,7 @@ func _on_body_entered(entity) -> void:
 			worker.start_working(self)
 			_change_state_on_user(worker)
 			
-func _change_state_on_user(worker : Worker):
+func _change_state_on_user(_worker : Worker):
 	#This is meant for changing animation states, so it changes depending on the 
 	#type of workstation
 	pass
