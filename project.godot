@@ -2222,6 +2222,23 @@ radial_menu={
 file_logging/enable_file_logging=true
 file_logging/max_log_files=30
 
+[memory]
+
+limits/multithreaded_server/rid_pool_prealloc=240
+limits/message_queue/max_size_kb=2048
+
+[network]
+
+limits/debugger_stdout/max_chars_per_second=4096
+limits/debugger_stdout/max_messages_per_frame=1000
+limits/debugger_stdout/max_errors_per_second=10000
+limits/debugger_stdout/max_warnings_per_second=10000
+limits/webrtc/max_channel_in_buffer_kb=128
+limits/websocket_client/max_in_buffer_kb=128
+limits/websocket_client/max_out_buffer_kb=128
+limits/websocket_server/max_in_buffer_kb=128
+limits/websocket_server/max_out_buffer_kb=128
+
 [physics]
 
 3d/physics_engine="Bullet"
