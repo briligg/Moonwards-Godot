@@ -192,10 +192,6 @@ func grab_focus() -> void:
 	
 	Signals.Hud.emit_signal(Signals.Hud.NEW_INTERACTOR_GRABBED_FOCUS, self)
 	
-	#Display what is the closest interactable.
-	interactor_ray.connect("new_interactable", self, "_make_hud_display_interactable")
-	interactor_ray.connect("no_interactable_in_reach", self, "_make_hud_display_interactable")
-	
 	#Let the InteractsDisplay know if I only use InteractsMenu.
 	if disable_ray_cast :
 		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_SHOWN, 
@@ -204,8 +200,6 @@ func grab_focus() -> void:
 #Another interactor has grabbed focus. Perform cleanup.
 func lost_focus() -> void :
 	has_focus = false
-	interactor_ray.disconnect("new_interactable", self, "_make_hud_display_interactable")
-	interactor_ray.disconnect("no_interactable_in_reach", self, "_make_hud_display_interactable")
 
 #An Interactable has been chosen from InteractsMenu. Perform the appropriate logic for the Interactable.
 func player_requested_interact(interactable : Interactable)->void:
