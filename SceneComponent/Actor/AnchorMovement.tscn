@@ -2,18 +2,15 @@
 
 [ext_resource path="res://SceneComponent/Actor/AnchorMovement.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Displays/ExclamationMark.png" type="Texture" id=2]
+[ext_resource path="res://SceneComponent/Actor/AnchorMovementViewportSetup.gd" type="Script" id=3]
 
-[sub_resource type="ViewportTexture" id=2]
-viewport_path = NodePath("Holder/Display")
-
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=1]
 resource_local_to_scene = true
 flags_transparent = true
 flags_unshaded = true
 albedo_color = Color( 1, 0.964706, 0, 1 )
-albedo_texture = SubResource( 2 )
 
-[sub_resource type="PlaneMesh" id=1]
+[sub_resource type="PlaneMesh" id=2]
 size = Vector2( 0.75, 0.75 )
 
 [node name="AnchorMovement" type="Spatial"]
@@ -21,29 +18,30 @@ script = ExtResource( 1 )
 
 [node name="Holder" type="Spatial" parent="."]
 visible = false
+script = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Holder"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.5, -0.671 )
-material_override = SubResource( 3 )
-mesh = SubResource( 1 )
+material_override = SubResource( 1 )
+mesh = SubResource( 2 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="Holder"]
 transform = Transform( -1, -3.25841e-07, 5.30863e-14, 0, -1.62921e-07, -1, 3.25841e-07, -1, 1.62921e-07, 0, 0.5, 0.671 )
-material_override = SubResource( 3 )
-mesh = SubResource( 1 )
+material_override = SubResource( 1 )
+mesh = SubResource( 2 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="Holder"]
 transform = Transform( -1.62921e-07, 1, -1.62921e-07, 0, -1.62921e-07, -1, -1, -1.62921e-07, 2.65431e-14, -0.671, 0.5, 0 )
-material_override = SubResource( 3 )
-mesh = SubResource( 1 )
+material_override = SubResource( 1 )
+mesh = SubResource( 2 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="Holder"]
 transform = Transform( -1.62921e-07, -1, 1.62921e-07, 0, -1.62921e-07, -1, 1, -1.62921e-07, 2.65431e-14, 0.671, 0.5, 0 )
-material_override = SubResource( 3 )
-mesh = SubResource( 1 )
+material_override = SubResource( 1 )
+mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Display" type="Viewport" parent="Holder"]
