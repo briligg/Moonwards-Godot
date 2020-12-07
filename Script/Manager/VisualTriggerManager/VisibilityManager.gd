@@ -42,8 +42,11 @@ func _ready():
 	connect("queue_requested", self, "queue_thread_work")
 	
 # Register a lod model to context 
-func update_context(node: LodModel):
-	current_lod_context[node] = node.lod_state
+func update_context(node):
+	if node is LodModel:
+		current_lod_context[node] = node.lod_state
+	else:
+		current_lod_context[node] = node.visible
 
 func queue_thread_work(fref: FuncRef):
 	worker_thread.queue_thread_work(fref)

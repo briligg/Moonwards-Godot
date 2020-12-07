@@ -9,6 +9,10 @@ export(Array, NodePath) var show_lod2_list
 
 export(Array, NodePath) var hide_list
 
+# For non-LOD nodes
+export(Array, NodePath) var force_hide_list
+export(Array, NodePath) var force_show_list
+
 var _previous_states: Dictionary = {}
 
 var is_set: bool = false
@@ -71,6 +75,18 @@ func process_visibility() -> void:
 		if c % VisibilityManager.iterations_per_frame == 0:
 			yield(get_tree(), "idle_frame")
 		c += 1
+	for path in force_hide_list:
+		# Where false is node.visibility
+		_process_lod_node(path, false)
+		if c % VisibilityManager.iterations_per_frame == 0:
+			yield(get_tree(), "idle_frame")
+		c += 1
+	for path in force_show_list:
+		# Where true is node.visibility
+		_process_lod_node(path, true)
+		if c % VisibilityManager.iterations_per_frame == 0:
+			yield(get_tree(), "idle_frame")
+		c += 1
 
 func reverse_visibility() -> void:
 	is_set = false;
@@ -78,21 +94,31 @@ func reverse_visibility() -> void:
 	var c = 0
 	for node in _previous_states.keys():
 		var state = _previous_states[node]
-		node.call_deferred("set_lod", state)
+		_reverse_node_visibility(node, state)
+#		node.call_deferred("set_lod", state)
 		if c % VisibilityManager.iterations_per_frame == 0:
 			yield(get_tree(), "idle_frame")
 		c += 1
 	_previous_states.clear()
 
-func _process_lod_node(path, lod_level) -> void:
+func _reverse_node_visibility(node, state):
+	if node is LodModel:
+		node.call_deferred("set_lod", state)
+	else:
+		node.visible = state
+
+func _process_lod_node(path, state) -> void:
 	var node = get_node(path)
 	if node is LodModel:
 		_previous_states[node] = node.lod_state
-		node.call_deferred("set_lod", lod_level)
+		node.call_deferred("set_lod", state)
 		if VisibilityManager.log_vt_changes:
-			Log.trace(self, "process_rvt_node", "Node %s set to lod level: %s." %[path, lod_level]) 
+			Log.debug(self, "process_rvt_node", "Node %s set to lod level: %s." %[path, state]) 
 	else:
-		Log.warning(self, "process_rvt_node", "Node %s is not a LodModel." %path) 
+		_previous_states[node] = node.visibility
+		node.visible = state
+		if VisibilityManager.log_vt_changes:
+			Log.debug(self, "process_rvt_node", "Node %s set to visibility: %s." %[path, state]) 
 
 func _validate_paths(path_list: Array):
 	for path in path_list:

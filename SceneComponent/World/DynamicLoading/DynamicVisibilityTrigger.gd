@@ -13,11 +13,16 @@ export(bool) var pause_on_error: bool = false
 # The operation to perform on nodes not in any of the lists.
 export(NoListOp) var orphan_node_op = NoListOp.Hide
 
+# LOD lists
 export(Array, NodePath) var show_lod0_list
 export(Array, NodePath) var show_lod1_list
 export(Array, NodePath) var show_lod2_list
 
 export(Array, NodePath) var hide_list
+
+# For non-LOD nodes
+export(Array, NodePath) var force_hide_list
+export(Array, NodePath) var force_show_list
 
 var is_set: bool = false
 
@@ -55,7 +60,7 @@ func process_visibility() -> void:
 		node.call_deferred("unset")
 		if !is_set:
 			return
-
+	# This could use some optimization
 	var c = 0
 	for node in get_tree().get_nodes_in_group(Groups.LOD_MODELS):
 		var path = get_path_to(node)
@@ -74,7 +79,14 @@ func process_visibility() -> void:
 		if !is_set:
 			return
 		c += 1
-
+	for path in force_hide_list:
+		var node = get_node(path)
+		node.visible = false
+		VisibilityManager.update_context(node)
+	for path in force_show_list:
+		var node = get_node(path)
+		node.visible = true
+		VisibilityManager.update_context(node)
 
 func orphan_op(node):
 	match orphan_node_op:
