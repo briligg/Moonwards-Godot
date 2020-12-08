@@ -9,9 +9,3 @@
 transform = Transform( 0.86537, 0, 0.501133, 0, 1, 0, -0.501133, 0, 0.86537, -1.59228, 2.83805, -11.2914 )
 
 [node name="Toilet_Mark2" parent="LOD0/Toilet-Dwelling" index="0" instance=ExtResource( 2 )]
-
-[node name="LOD1" parent="." index="2"]
-visible = false
-
-[node name="LOD2" parent="." index="3"]
-visible = false
