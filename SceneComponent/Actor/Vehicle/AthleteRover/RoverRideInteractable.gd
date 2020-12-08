@@ -22,9 +22,14 @@ func interacted_by(e) -> void:
 	var path = e.get_path()
 	
 	if self.is_ridable :
+		#Rovers and other vehicles are not allowed to take control of me.
+		if e is VehicleEntity :
+			return
+		
 		if self.controller_peer_id == -1:
 			rpc_id(get_tree().get_rpc_sender_id(), "deferred_take_control", path)
 			rpc("update_control_state", get_tree().get_rpc_sender_id(), false)
+
 	elif !self.is_ridable:
 		if get_tree().get_rpc_sender_id() == self.controller_peer_id:
 			rpc_id(get_tree().get_rpc_sender_id(), "deferred_return_control", path)
