@@ -27,7 +27,8 @@ func set_lod(level: int)-> void:
 		
 	hide_all()
 	if level != VisibilityManager.LodState.HIDDEN:
-		_lods[level].visible = true;
+		if _lods[level] != null:
+			_lods[level].visible = true;
 		
 	lod_state = level
 	if VisibilityManager.log_lod_changes:
@@ -38,7 +39,10 @@ func hide_all()-> void:
 	if !lod_enabled:
 		return
 	for i in range(_lods.size()):
-		_lods[i].visible = false;
+		if _lods[i] == null:
+			Log.error(self, "hide_all", "LODx nodes do not exist for object: %s." %self.get_path())
+		else:
+			_lods[i].visible = false;
 	lod_state = VisibilityManager.LodState.HIDDEN
 
 # Generate collision shapes for distance based LOD - currently legacy code.
