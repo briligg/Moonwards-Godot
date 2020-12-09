@@ -47,11 +47,12 @@ func _add_log_message(message : String, type : int) -> void :
 	
 	#Color the message based on the color of the message before it.
 	if alternates[type] :
-		var color_string : String = get(TYPE_NAMES[type]+"_color_1").to_html(false)
+		var color_string : String = "#"+get(TYPE_NAMES[type]+"_color_2").to_html(true)
 		message = LOG_STRING % [color_string, message]
 		alternates[type] = false
 	else :
-		var color_string : String = get(TYPE_NAMES[type]+"_color_2").to_html(false)
+		var color_string : String =  "#"+get(TYPE_NAMES[type]+"_color_1").to_html(true)
+		color_string = color_string.to_upper()
 		message = LOG_STRING % [color_string, message]
 		alternates[type] = true
 	

@@ -31,8 +31,8 @@ margin_bottom = 281.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 bbcode_enabled = true
-bbcode_text = "This is fun."
-text = "This is fun."
+bbcode_text = "[color=#3232This is fun."
+text = "[color=#3232This is fun."
 scroll_following = true
 script = ExtResource( 2 )
 
