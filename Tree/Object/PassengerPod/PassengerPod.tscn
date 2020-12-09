@@ -180,7 +180,7 @@ shape = SubResource( 2 )
 [node name="Interactable" parent="RoverRideRelayInteractable" index="1"]
 collision_layer = 32768
 collision_mask = 32768
-display_info = ""
+display_info = "drive rover"
 title = "Control Rover"
 
 [node name="CollisionShape" type="CollisionShape" parent="RoverRideRelayInteractable/Interactable" index="0"]
