@@ -7,6 +7,18 @@ const WARNING = 2
 const ERROR = 4
 const CRITICAL = 8
 
+#What colors the lines of text are.
+export(Color) var trace_color_1  = Color("#FFFFFF")
+export(Color) var trace_color_2 = Color("#BBBBBB")
+export(Color) var debug_color_1 = Color("#00FF08")
+export(Color) var debug_color_2 = Color("#5AFF5A")
+export(Color) var warning_color_1 = Color("#FFEF00")
+export(Color) var warning_color_2 = Color("#FFEF5D")
+export(Color) var error_color_1 = Color("#FFA200")
+export(Color) var error_color_2 = Color("#FFC154")
+export(Color) var critical_color_1 = Color("#FF0000")
+export(Color) var critical_color_2 = Color("#FF5555")
+
 #Determines whether we should alternate the line or not.
 var trace_alternate : bool = false
 var debug_alternate : bool = false
