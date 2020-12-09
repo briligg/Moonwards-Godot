@@ -161,43 +161,33 @@ propagation = 0.2
 interior = true
 data = SubResource( 1 )
 
-[node name="Markers" parent="." index="20"]
+[node name="MMC" parent="." index="20"]
 script = ExtResource( 4 )
 
-[node name="Airlock" parent="Markers/Marker_Airlock_N1" index="0" instance=ExtResource( 2 )]
+[node name="Airlock" parent="MMC/Marker_Airlock_N1" index="0" instance=ExtResource( 2 )]
 
-[node name="Airlock" parent="Markers/Marker_Airlock_N2" index="0" instance=ExtResource( 2 )]
+[node name="Airlock" parent="MMC/Marker_Airlock_N2" index="0" instance=ExtResource( 2 )]
 
-[node name="Airlock" parent="Markers/Marker_Airlock_N3" index="0" instance=ExtResource( 2 )]
+[node name="Airlock" parent="MMC/Marker_Airlock_N3" index="0" instance=ExtResource( 2 )]
 
-[node name="Airlock" parent="Markers/Marker_Airlock_N4" index="0" instance=ExtResource( 2 )]
+[node name="Airlock" parent="MMC/Marker_Airlock_N4" index="0" instance=ExtResource( 2 )]
 
-[node name="Airlock" parent="Markers/Marker_Airlock_N5" index="0" instance=ExtResource( 2 )]
+[node name="Airlock" parent="MMC/Marker_Airlock_N5" index="0" instance=ExtResource( 2 )]
 
-[node name="Marker_Airlock_S1" parent="Markers" index="5"]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -51.4823, 3.38379, 15.4541 )
+[node name="Airlock" parent="MMC/Marker_Airlock_S1" index="0" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 
-[node name="Airlock" parent="Markers/Marker_Airlock_S1" index="0" instance=ExtResource( 2 )]
+[node name="Airlock" parent="MMC/Marker_Airlock_S2" index="0" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 
-[node name="Marker_Airlock_S2" parent="Markers" index="6"]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -71.4823, 3.38379, 15.4541 )
+[node name="Airlock" parent="MMC/Marker_Airlock_S3" index="0" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 
-[node name="Airlock" parent="Markers/Marker_Airlock_S2" index="0" instance=ExtResource( 2 )]
+[node name="Airlock" parent="MMC/Marker_Airlock_S4" index="0" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 
-[node name="Marker_Airlock_S3" parent="Markers" index="7"]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -91.4432, 3.38379, 15.4541 )
-
-[node name="Airlock" parent="Markers/Marker_Airlock_S3" index="0" instance=ExtResource( 2 )]
-
-[node name="Marker_Airlock_S4" parent="Markers" index="8"]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -111.443, 3.38379, 15.4541 )
-
-[node name="Airlock" parent="Markers/Marker_Airlock_S4" index="0" instance=ExtResource( 2 )]
-
-[node name="Marker_GarageAirlock" parent="Markers" index="10"]
+[node name="Airlock" parent="MMC/Marker_GarageAirlock" index="0" instance=ExtResource( 2 )]
 transform = Transform( -4.88762e-07, 0, -3, 0, 3, 0, 3, 0, -4.88762e-07, 0, 0, 0 )
-
-[node name="Airlock" parent="Markers/Marker_GarageAirlock" index="0" instance=ExtResource( 2 )]
 
 [node name="LOD1" parent="." index="22"]
 visible = false
