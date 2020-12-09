@@ -28,12 +28,14 @@ __meta__ = {
 [node name="LoggerText" type="RichTextLabel" parent="Container"]
 margin_right = 1920.0
 margin_bottom = 281.0
+focus_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 bbcode_enabled = true
 bbcode_text = "[color=#3232This is fun."
 text = "[color=#3232This is fun."
 scroll_following = true
+selection_enabled = true
 script = ExtResource( 2 )
 
 [node name="Filters" type="HBoxContainer" parent="Container"]
