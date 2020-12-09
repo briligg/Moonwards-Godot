@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/First_Atrium/First_Atrium.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Health_Centrifuge/HealthCentrifuge.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/MoonTown/Models/Hexpane_Window/Hexpane_Window.tscn" type="PackedScene" id=3]
-[ext_resource path="res://SceneComponent/Utilities/VerticalStairs/VerticalStairs.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/Silicon.vfx.planar_reflection/planar_reflector.gd" type="Script" id=5]
 [ext_resource path="res://SceneComponent/Utilities/Mirrors/Shaders/Moon_General.tres" type="Material" id=6]
 [ext_resource path="res://Script/Graphics/MultiMeshConverter.gd" type="Script" id=7]
@@ -116,50 +115,17 @@ light_specular = 0.02
 omni_range = 47.4
 omni_attenuation = 0.25
 
-[node name="Markers" parent="." index="10"]
+[node name="MMC-FirstAtrium" parent="." index="10"]
 script = ExtResource( 7 )
-minimum_count = 5
 
-[node name="Hexpane_Window" parent="Markers/Mariker_HexWindow1" index="0" instance=ExtResource( 3 )]
+[node name="Hexpane_Window" parent="MMC-FirstAtrium/Mariker_HexWindow1" index="0" instance=ExtResource( 3 )]
 
-[node name="VerticalStair_TunnelBottom" parent="Markers/Marker-VerticalStair_TunnelBottom" index="0" instance=ExtResource( 4 )]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
-stairs_step_count = 2
+[node name="HealthCentrifuge" parent="MMC-FirstAtrium/Marker_HealthCentrifuge" index="0" instance=ExtResource( 2 )]
 
-[node name="HealthCentrifuge" parent="Markers/Marker_HealthCentrifuge" index="0" instance=ExtResource( 2 )]
+[node name="Hexpane_Window" parent="MMC-FirstAtrium/Marker_HexWindow2" index="0" instance=ExtResource( 3 )]
 
-[node name="Hexpane_Window" parent="Markers/Marker_HexWindow2" index="0" instance=ExtResource( 3 )]
+[node name="Hexpane_Window" parent="MMC-FirstAtrium/Marker_HexWindow3" index="0" instance=ExtResource( 3 )]
 
-[node name="Marker_HexWindow3" parent="Markers" index="4"]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -83.9307, 6.73393, -2.14111 )
+[node name="Hexpane_Window" parent="MMC-FirstAtrium/Marker_HexWindow4" index="0" instance=ExtResource( 3 )]
 
-[node name="Hexpane_Window" parent="Markers/Marker_HexWindow3" index="0" instance=ExtResource( 3 )]
-
-[node name="Marker_HexWindow4" parent="Markers" index="5"]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -83.9307, 3.58696, 6.19141 )
-
-[node name="Hexpane_Window" parent="Markers/Marker_HexWindow4" index="0" instance=ExtResource( 3 )]
-
-[node name="Marker_HexWindow5" parent="Markers" index="6"]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -83.9307, 3.58573, -10.3247 )
-
-[node name="Hexpane_Window" parent="Markers/Marker_HexWindow5" index="0" instance=ExtResource( 3 )]
-
-[node name="Vertical-Stairs-1" parent="Markers/Marker_Vertical-Stairs-1" index="0" instance=ExtResource( 4 )]
-stairs_step_count = 2
-
-[node name="Vertical-Stairs-2" parent="Markers/Marker_Vertical-Stairs-2" index="0" instance=ExtResource( 4 )]
-stairs_step_count = 2
-
-[node name="Vertical-Stairs-3" parent="Markers/Marker_Vertical-Stairs-3" index="0" instance=ExtResource( 4 )]
-stairs_step_count = 2
-
-[node name="VerticalStair_TunnelTop" parent="Markers/Marker_VerticalStair_TunnelTop" index="0" instance=ExtResource( 4 )]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
-stairs_step_count = 4
-
-[node name="LOD1" parent="." index="11"]
-visible = false
-
-[node name="LOD2" parent="." index="12"]
-visible = false
+[node name="Hexpane_Window" parent="MMC-FirstAtrium/Marker_HexWindow5" index="0" instance=ExtResource( 3 )]
