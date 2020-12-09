@@ -1,5 +1,6 @@
 extends AComponent
 
+
 var interactee
 var interactee_cam
 
@@ -71,6 +72,7 @@ puppetsync func update_control_state(peer_id, return_control = false):
 	# owner_peer_id in use to validate driving requests
 	entity.owner_peer_id = peer_id
 	self.controller_peer_id = peer_id
+
 	is_ridable = return_control
 	interactable.is_available = return_control
 
