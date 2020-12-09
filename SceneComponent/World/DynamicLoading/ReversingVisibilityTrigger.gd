@@ -114,7 +114,7 @@ func _process_lod_node(path, state) -> void:
 		node.call_deferred("set_lod", state)
 		if VisibilityManager.log_vt_changes:
 			Log.debug(self, "process_rvt_node", "Node %s set to lod level: %s." %[path, state]) 
-	else:
+	elif node != null:
 		_previous_states[node] = node.visibility
 		node.visible = state
 		if VisibilityManager.log_vt_changes:

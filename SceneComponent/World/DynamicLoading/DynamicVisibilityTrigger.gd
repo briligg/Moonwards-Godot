@@ -79,14 +79,21 @@ func process_visibility() -> void:
 		if !is_set:
 			return
 		c += 1
+	# Code below can be better restructured
 	for path in force_hide_list:
-		var node = get_node(path)
-		node.visible = false
-		VisibilityManager.update_context(node)
+		var node = get_node_or_null(path)
+		if node != null:
+			node.visible = false
+			VisibilityManager.update_context(node)
+		else:
+			Log.error(self, "process_visibility", "Node does not exist: %s" %path)
 	for path in force_show_list:
-		var node = get_node(path)
-		node.visible = true
-		VisibilityManager.update_context(node)
+		var node = get_node_or_null(path)
+		if node != null:
+			node.visible = true
+			VisibilityManager.update_context(node)
+		else:
+			Log.error(self, "process_visibility", "Node does not exist: %s" %path)
 
 func orphan_op(node):
 	match orphan_node_op:
