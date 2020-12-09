@@ -116,9 +116,10 @@ func _try_update_interact():
 	
 	# Call interactable APIs
 	if result is Interactable:
-		_make_hud_display_interactable(result)
-		result.emit_signal("mouse_entered")
-		_prev_frame_collider = result
+		if interactor_ray.global_transform.origin.distance_to(interactor_ray.get_collision_point()) < result.max_interact_distance:
+			_make_hud_display_interactable(result)
+			result.emit_signal("mouse_entered")
+			_prev_frame_collider = result
 	#If result is an Area it may be a Touchscreen or a Clickable.
 	elif result is Area :
 		if _prev_frame_collider != result :
@@ -147,7 +148,8 @@ func _try_request_interact():
 	
 	
 	if result is Interactable:
-		player_requested_interact(result)
+		if interactor_ray.global_transform.origin.distance_to(interactor_ray.get_collision_point()) < result.max_interact_distance:
+			player_requested_interact(result)
 	
 	#If result is an Area listening for mouse event's, let it know we clicked.
 	elif result is Area && touchscreen_clickable :
