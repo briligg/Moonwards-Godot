@@ -788,8 +788,10 @@ formats/gzip/compression_level=5
 [debug]
 
 settings/crash_handler/message=""
+settings/gdscript/max_call_stack=4096
 gdscript/warnings/unused_signal=false
 gdscript/warnings/return_value_discarded=false
+settings/visual_script/max_call_stack=4096
 settings/gameplay/humans_can_fly=true
 
 [display]
