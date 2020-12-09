@@ -35,6 +35,20 @@ var actives : Array = [true,true,true,true,true]
 #This stores all log entries so that they can be displayed when toggled.
 var message_type_history : Array = []
 
+#Remove text from the Logger Console.
+func _clear_pressed() -> void :
+#	var unfiltered_message_types : Array = []
+#	if actives[TRACE]: unfiltered_message_types.append(TRACE)
+#	if actives[DEBUG]: unfiltered_message_types.append(DEBUG)
+#	if actives[WARNING]: unfiltered_message_types.append(WARNING)
+#	if actives[ERROR]: unfiltered_message_types.append(ERROR)
+#	if actives[CRITICAL]: unfiltered_message_types.append(CRITICAL)
+	log_messages = PoolStringArray()
+	message_type_history.clear()
+	bbcode_text = ""
+	actives =  [true,true,true,true,true]
+	alternates =  [false,false,false,false,false]
+
 func _get_right_of_date(message : String) -> String :
 	message = message.right(message.find("]", 0) + 1)
 	return message
@@ -90,6 +104,9 @@ func deferred_ready() -> void :
 	logger.connect("error_logged", self, "_on_error_logged")
 	# warning-ignore:return_value_discarded
 	logger.connect("critical_logged", self, "_on_critical_logged")
+	
+	#Listen for when text should be cleared.
+	get_node("../Filters/Clear").connect("pressed", self, "_clear_pressed")
 
 #Filter out messages from levels you do not care about.
 func filter_text(trace : bool, debug : bool, warning : bool,
