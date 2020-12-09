@@ -7,6 +7,9 @@ func _ready() -> void:
 	$Interactable.connect("sync_for_new_player", self, "sync_for_new_player")
 	
 func interacted_by(body):
+	if body is VehicleEntity :
+		return
+	
 	if body.movement_anchor_data.anchor_node == self:
 		detach_anchor(body)
 	else:
