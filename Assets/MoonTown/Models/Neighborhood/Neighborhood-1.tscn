@@ -88,3 +88,5 @@ omni_attenuation = 1.27456
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Example-Dwelling-2" parent="." index="10" instance=ExtResource( 2 )]
