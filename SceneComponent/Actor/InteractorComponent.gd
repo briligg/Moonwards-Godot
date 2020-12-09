@@ -29,6 +29,7 @@ export var disable_ray_cast : bool = false
 var _latest_mouse_motion: InputEventMouseMotion
 var _latest_mouse_click: InputEventMouseButton
 var _latest_mouse_release: InputEventMouseButton
+var _latest_mouse_scroll : InputEventMouseButton
 # what we collided with last frame
 var _prev_frame_collider
 #When chatting, do not interact with objects.
@@ -88,6 +89,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			_latest_mouse_click = event
 		elif event.is_action_released("left_click") :
 			_latest_mouse_release = event
+		
+		elif event.is_action_pressed("scroll_up") || event.is_action_pressed("scroll_down") :
+			_latest_mouse_scroll = event
 
 func _physics_process(_delta: float) -> void:
 	if entity.owner_peer_id == Network.network_instance.peer_id:
@@ -97,6 +101,8 @@ func _physics_process(_delta: float) -> void:
 
 # Try to update the interaction state & UI display.
 func _try_update_interact():
+	#We need mouse motion to determine what we are colliding with.
+	#Do nothing if mouse motion has not been set.
 	if !_latest_mouse_motion:
 		return
 	
@@ -120,13 +126,20 @@ func _try_update_interact():
 			_make_hud_display_interactable(result)
 			result.emit_signal("mouse_entered")
 			_prev_frame_collider = result
+	
 	#If result is an Area it may be a Touchscreen or a Clickable.
 	elif result is Area :
+		#If we are colliding with a new object, let the old object know.
 		if _prev_frame_collider != result :
 			if _prev_frame_collider != null:
 				_prev_frame_collider.emit_signal("mouse_exited")
+			
 			result.emit_signal("mouse_entered")
 			_prev_frame_collider = result
+		
+		#Let the new object know if we are scrolling with the scroll wheel.
+		result.emit_signal("input_event", camera, _latest_mouse_scroll, interactor_ray.get_collision_point(), interactor_ray.get_collision_normal(), 0)
+	
 	else:
 		if _prev_frame_collider != null:
 			_prev_frame_collider.emit_signal("mouse_exited")
