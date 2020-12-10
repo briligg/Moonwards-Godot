@@ -16,6 +16,7 @@ var peer_id: int = -1
 
 func _ready() -> void:
 	world = yield(Scene.change_scene_to_async(Scene.world_scene), "scene_changed")
+	yield(Signals.Loading, Signals.Loading.WORLD_POST_READY)
 	
 	world.name = "World"
 	world.connect("tree_exited", self, "_on_world_closed")

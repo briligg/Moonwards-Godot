@@ -8,8 +8,6 @@ enum NoListOp {
 	ShowLod2,
 }
 
-export(bool) var pause_on_error: bool = false
-
 # The operation to perform on nodes not in any of the lists.
 export(NoListOp) var orphan_node_op = NoListOp.Hide
 
@@ -17,10 +15,9 @@ export(NoListOp) var orphan_node_op = NoListOp.Hide
 export(Array, NodePath) var show_lod0_list
 export(Array, NodePath) var show_lod1_list
 export(Array, NodePath) var show_lod2_list
-
 export(Array, NodePath) var hide_list
 
-# For non-LOD nodes
+# For non-LOD nodes, these will hide/show normal nodes.
 export(Array, NodePath) var force_hide_list
 export(Array, NodePath) var force_show_list
 
@@ -33,6 +30,11 @@ func _ready() -> void:
 	_validate_paths(show_lod1_list)
 	_validate_paths(show_lod2_list)
 	_validate_paths(hide_list)
+	_validate_paths(force_hide_list)
+	_validate_paths(force_show_list)
+	
+	yield(Signals.Loading, Signals.Loading.WORLD_POST_READY)
+	
 	self.connect("body_entered", self, "on_body_entered")
 	for n in get_children():
 		if n is Area:
@@ -55,30 +57,26 @@ func process_visibility() -> void:
 	is_set = true;
 	
 	var dvts = get_tree().get_nodes_in_group(Groups.DYNAMIC_VISIBILITY)
+	# Remove ourselves to loop over only the other DVTs
 	dvts.erase(self)
 	for node in dvts:
 		node.call_deferred("unset")
 		if !is_set:
 			return
 	# This could use some optimization
-	var c = 0
-	for node in get_tree().get_nodes_in_group(Groups.LOD_MODELS):
-		var path = get_path_to(node)
-		if path in show_lod0_list:
-			node.call_deferred("set_lod", 0)
-		elif path in show_lod1_list:
-			node.call_deferred("set_lod", 1)
-		elif path in show_lod2_list:
-			node.call_deferred("set_lod", 2)
-		elif path in hide_list:
-			node.call_deferred("hide_all")
-		else:
-			orphan_op(node)
-		if c % VisibilityManager.iterations_per_frame == 0:
-			yield(get_tree(), "idle_frame")
-		if !is_set:
-			return
-		c += 1
+	for path in show_lod0_list:
+		var node = get_node(path)
+		_process_visibility_recursive(node, path, VisibilityManager.LodState.LOD0)
+	for path in show_lod1_list:
+		var node = get_node(path)
+		_process_visibility_recursive(node, path, VisibilityManager.LodState.LOD1)
+	for path in show_lod2_list:
+		var node = get_node(path)
+		_process_visibility_recursive(node, path, VisibilityManager.LodState.LOD2)
+	for path in hide_list:
+		var node = get_node(path)
+		_process_visibility_recursive(node, path, VisibilityManager.LodState.HIDDEN)
+
 	# Code below can be better restructured
 	for path in force_hide_list:
 		var node = get_node_or_null(path)
@@ -109,9 +107,30 @@ func orphan_op(node):
 func unset() -> void:
 	is_set = false
 
+func _process_visibility_recursive(node, path, lod_level):
+	# To account for nodes that were possibly removed or reparented at runtime
+	if node == null:
+		Log.error(self, "_process_visibility_recursive", 
+				"Entry %s yielded a null value when converted to node." %path)
+		return
+
+	if node is LodModel:
+		node.call_deferred("set_lod", lod_level)
+		
+	var children = node.get_children()
+	if children.empty():
+		return
+		
+	for child in children:
+		if child is LodModel:
+			child.call_deferred("set_lod", lod_level)
+		if child:
+			_process_visibility_recursive(child, child.get_path(), lod_level)
+
 func _validate_paths(path_list: Array):
 	for path in path_list:
 		if get_node(path) == null:
 			Log.error(self, "", "DVT Path %s is inavlid in %s." %[path, self.name])
-			if pause_on_error:
+			path_list.erase(path)
+			if VisibilityManager.pause_on_error:
 				assert(false)
