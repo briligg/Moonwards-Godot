@@ -6,23 +6,29 @@ var Agent : GSAIRigidBody3DAgent
 export (float, 0, 100, 5) var linear_speed_max := 10.0
 export (float, 0, 100, 0.1) var linear_acceleration_max := 1.0 
 export (float, 0, 50, 0.1) var arrival_tolerance := 0.7
-export (float, 0, 50, 0.1) var recalculation_tolerance := 2
+export (float, 0, 50, 0.1) var recalculation_tolerance := 10
 export (float, 0, 50, 0.1) var deceleration_radius := 1.0
 export (int, 0, 1080, 10) var angular_speed_max := 270 
 export (int, 0, 2048, 10) var angular_accel_max := 45 
 export (int, 0, 178, 2) var align_tolerance := 5 
 export (int, 0, 180, 2) var angular_deceleration_radius := 45 
 export (bool) var uses_GSAIPATH : bool = false
+export(float, 3, 100) var personal_space : float = 3
+
 # Holds the linear and angular components calculated by our steering behaviors.
 onready var acceleration := GSAITargetAcceleration.new()
+
 var world_ref : WorldNavigator = null
 var path : Array = []
+var objective : Vector3 = Vector3.ZERO
+var delta_time : float = 0.0
+
 var current_target : GSAIAgentLocation = GSAIAgentLocation.new() 
 var facing_target : GSAIAgentLocation = GSAIAgentLocation.new()
 var special_target : GSAISteeringAgent = GSAISteeringAgent.new()
 var current_path : GSAIPath = GSAIPath.new([Vector3(1,1,1), Vector3(2,2,5)])
-var personal_space : float = 3
-var objective : Vector3 = Vector3.ZERO
+
+
 
 # First, we setup our NPCs personal space, so they don't hit each other
 # and get hard feelings 
@@ -127,14 +133,16 @@ func _ready():
 	
 	
 func is_far_from_target() -> bool:
-	if path.front() == null:
+	if path.size() == 0:
 		return false
-	var distance_in_path = (path.front()-current_target.position).length()
-	print("dpath", distance_in_path)
-	var distance_in_world = (current_target.position-entity.translation).length()
-	print("dworld", distance_in_world)
+	var distance_in_path = current_target.position.distance_to(path.front())
+#	print("dpath", distance_in_path)
+	var distance_in_world = entity.translation.distance_to(current_target.position)
+#	print("dworld", distance_in_world)
 	if abs(distance_in_path-distance_in_world) > recalculation_tolerance:
+		print("far")
 		return true
+		
 	return false
 
 func _process_server(delta):
@@ -142,15 +150,16 @@ func _process_server(delta):
 		if (current_target.position - entity.translation).length() < arrival_tolerance:# and not uses_GSAIPATH:
 			var temp = path.pop_front()
 			if temp != null:
-				
+				delta_time = 0
 				update_target(temp)
 			else:
 				entity.input = Vector3.ZERO
-				#Face2.is_enabled = true
-				#yield(get_tree().create_timer(2), "timeout")
-				#Face2.is_enabled = false
+				delta_time = 0
 		else:
-			
+			delta_time += delta
+			if delta_time > 3: # or is_far_from_target():
+				get_navpath(objective)
+				delta_time = 0
 			Priority.calculate_steering(acceleration)
 			_handle_npc_input(acceleration, delta)
 		
@@ -159,8 +168,8 @@ func _handle_npc_input(acceleration : GSAITargetAcceleration, _delta : float):
 #	Agent._apply_steering(acceleration, delta)
 	entity.look_dir = entity.global_transform.origin-acceleration.linear
 	entity.input.z = acceleration.linear.normalized().length()
-	if acceleration.linear.normalized().y >= 0.3:
-		entity.input.y = acceleration.linear.normalized().y
+	if clamp(acceleration.linear.y, 0, 1) >= 0.2:
+		entity.input.y = 0.2
 	else: 
 		entity.input.y = 0
 
