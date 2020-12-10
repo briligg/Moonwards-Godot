@@ -168,9 +168,25 @@ func calculate_slope():
 	dbg_ground_slope = rad2deg(acos(dbg_ground_normal.dot(Vector3.UP)))
 	dbg_ground_slope_center = + rad2deg(acos(dbg_ground_normal.dot(Vector3.UP)))
 
+func vector_cut_treshold(vector : Vector3) -> Vector3:
+	vector = vector/10
+	if vector.x > 0.05:
+		vector.x = vector.x*10
+	else:
+		vector.x=0
+	if vector.y > 0.01:
+		vector.y = vector.y*10
+	else: 
+		vector.y=0
+	if vector.z > 0.05:
+		vector.z = vector.z*10
+	else:
+		vector.z = 0
+	return vector
+
 func calculate_horizontal(_phys_state : PhysicsDirectBodyState):
-	horizontal_vector += entity.input.z * entity.model.transform.basis.z
-	horizontal_vector += entity.input.x * entity.model.transform.basis.x
+	horizontal_vector += entity.input.z * vector_cut_treshold(entity.model.transform.basis.z)
+	horizontal_vector += entity.input.x * vector_cut_treshold(entity.model.transform.basis.x)
 
 	if dbg_ground_slope > 1:
 		var slide_direction = horizontal_vector.slide(dbg_ground_normal)
