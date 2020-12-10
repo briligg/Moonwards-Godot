@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Main_Factory/Main_Factory.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Pressurized_Factories/PressurizedHangar_Giant.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/MoonTown/Models/Lava_Tanks/Lava_Tank_Large.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/MoonTown/Models/Tower_Radiators/TowerRadiator_3x.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Script/Graphics/MultiMeshConverter.gd" type="Script" id=5]
 
 [node name="Main_Factory" instance=ExtResource( 1 )]
 
@@ -38,35 +37,32 @@ light_energy = 3.48
 omni_range = 141.304
 omni_attenuation = 1.27456
 
-[node name="Markers" parent="." index="6"]
-script = ExtResource( 5 )
+[node name="Lava_Tank_Large" parent="MMC-MainFactory/Empty_LavaTank_Large004" index="0" instance=ExtResource( 3 )]
 
-[node name="Lava_Tank_Large" parent="Markers/Empty_LavaTank_Large004" index="0" instance=ExtResource( 3 )]
+[node name="Lava_Tank_Large" parent="MMC-MainFactory/Empty_LavaTank_Large005" index="0" instance=ExtResource( 3 )]
 
-[node name="Lava_Tank_Large" parent="Markers/Empty_LavaTank_Large005" index="0" instance=ExtResource( 3 )]
+[node name="Lava_Tank_Large" parent="MMC-MainFactory/Empty_LavaTank_Talll000" index="0" instance=ExtResource( 3 )]
 
-[node name="Lava_Tank_Large" parent="Markers/Empty_LavaTank_Talll000" index="0" instance=ExtResource( 3 )]
+[node name="Lava_Tank_Large" parent="MMC-MainFactory/Empty_LavaTank_Talll001" index="0" instance=ExtResource( 3 )]
 
-[node name="Lava_Tank_Large" parent="Markers/Empty_LavaTank_Talll001" index="0" instance=ExtResource( 3 )]
+[node name="PressurizedHangar_Giant" parent="MMC-MainFactory/Empty_PressurizedHangar_Giant" index="0" instance=ExtResource( 2 )]
 
-[node name="PressurizedHangar_Giant" parent="Markers/Empty_PressurizedHangar_Giant" index="0" instance=ExtResource( 2 )]
+[node name="TowerRadiator_3x" parent="MMC-MainFactory/TowerRad_3x_Marker" index="0" instance=ExtResource( 4 )]
 
-[node name="TowerRadiator_3x" parent="Markers/TowerRad_3x_Marker" index="0" instance=ExtResource( 4 )]
+[node name="TowerRadiator_3x" parent="MMC-MainFactory/TowerRad_3x_Marker001" index="0" instance=ExtResource( 4 )]
 
-[node name="TowerRadiator_3x" parent="Markers/TowerRad_3x_Marker001" index="0" instance=ExtResource( 4 )]
+[node name="TowerRadiator_3x" parent="MMC-MainFactory/TowerRad_3x_Marker002" index="0" instance=ExtResource( 4 )]
 
-[node name="TowerRadiator_3x" parent="Markers/TowerRad_3x_Marker002" index="0" instance=ExtResource( 4 )]
+[node name="TowerRadiator_3x" parent="MMC-MainFactory/TowerRad_3x_Marker003" index="0" instance=ExtResource( 4 )]
 
-[node name="TowerRadiator_3x" parent="Markers/TowerRad_3x_Marker003" index="0" instance=ExtResource( 4 )]
+[node name="TowerRadiator_3x" parent="MMC-MainFactory/TowerRad_3x_Marker004" index="0" instance=ExtResource( 4 )]
 
-[node name="TowerRadiator_3x" parent="Markers/TowerRad_3x_Marker004" index="0" instance=ExtResource( 4 )]
+[node name="TowerRadiator_3x" parent="MMC-MainFactory/TowerRad_3x_Marker005" index="0" instance=ExtResource( 4 )]
 
-[node name="TowerRadiator_3x" parent="Markers/TowerRad_3x_Marker005" index="0" instance=ExtResource( 4 )]
+[node name="TowerRadiator_3x" parent="MMC-MainFactory/TowerRad_3x_Marker006" index="0" instance=ExtResource( 4 )]
 
-[node name="TowerRadiator_3x" parent="Markers/TowerRad_3x_Marker006" index="0" instance=ExtResource( 4 )]
+[node name="TowerRadiator_3x" parent="MMC-MainFactory/TowerRad_3x_Marker007" index="0" instance=ExtResource( 4 )]
 
-[node name="TowerRadiator_3x" parent="Markers/TowerRad_3x_Marker007" index="0" instance=ExtResource( 4 )]
+[node name="TowerRadiator_3x" parent="MMC-MainFactory/TowerRad_3x_Marker008" index="0" instance=ExtResource( 4 )]
 
-[node name="TowerRadiator_3x" parent="Markers/TowerRad_3x_Marker008" index="0" instance=ExtResource( 4 )]
-
-[node name="TowerRadiator_3x" parent="Markers/TowerRad_3x_Marker009" index="0" instance=ExtResource( 4 )]
+[node name="TowerRadiator_3x" parent="MMC-MainFactory/TowerRad_3x_Marker009" index="0" instance=ExtResource( 4 )]
