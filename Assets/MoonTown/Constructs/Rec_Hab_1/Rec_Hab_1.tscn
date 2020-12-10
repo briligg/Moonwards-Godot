@@ -32,8 +32,10 @@ display_info = "Interactable"
 title = "Title"
 stairs_step_count = 3
 
+[node name="Marker_VerticalStairs_Top_N" parent="." index="5"]
+transform = Transform( 0.98945, 0, -0.144874, 0, 1, 0, 0.144874, 0, 0.98945, 7.71058, 7.24394, -66.5568 )
+
 [node name="VerticalStairs_Top_N" parent="Marker_VerticalStairs_Top_N" index="0" instance=ExtResource( 2 )]
-transform = Transform( -1.63913e-07, 0, 1, 0, 1, 0, -1, 0, -1.63913e-07, 0, 0, 0 )
 display_info = "Interactable"
 title = "Title"
 stairs_step_count = 3
