@@ -18,6 +18,8 @@ export(bool) var disable_default_lod = false
 export(bool) var log_lod_changes = false
 
 export(bool) var log_vt_changes = false
+
+export(bool) var pause_on_error = false
 ####
 
 # The maximum  amount of LOD changes to be performed every frame
