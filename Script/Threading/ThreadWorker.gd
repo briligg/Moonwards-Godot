@@ -24,7 +24,7 @@ func queue_thread_work(fref: FuncRef):
 	mutex.unlock()
 	semaphore.post()
 
-func _thread_function(userdata):
+func _thread_function(_userdata):
 	while true:
 		semaphore.wait() # Wait until posted.
 

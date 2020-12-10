@@ -257,7 +257,7 @@ func sync_for_new_player(peer_id):
 					col_positions, 
 					hatch_collision.global_transform.origin)
 
-puppet func _dock_for_new_player(rover_path, pod_pos, col_pos_arr, col_hatch_pos):
+puppet func _dock_for_new_player(rover_path, _pod_pos, col_pos_arr, col_hatch_pos):
 	$Interactable.title = "Undock Passenger Pod"
 	var rover = get_node(rover_path)
 	_reparent(pod, rover)

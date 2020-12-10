@@ -1,7 +1,7 @@
 extends Spatial
 
 
-onready var chat : Spatial = $ChatComponent
+onready var chat : Spatial = $Hud/ChatComponent
 onready var interact_display : Label = $InteractDisplay
 onready var interacts_menu : PanelContainer = $InteractsMenu
 

@@ -154,7 +154,7 @@ func _process_server(delta):
 			Priority.calculate_steering(acceleration)
 			_handle_npc_input(acceleration, delta)
 		
-func _handle_npc_input(acceleration : GSAITargetAcceleration, delta : float):
+func _handle_npc_input(acceleration : GSAITargetAcceleration, _delta : float):
 	update_agent(acceleration.linear, acceleration.angular)
 #	Agent._apply_steering(acceleration, delta)
 	entity.look_dir = entity.global_transform.origin-acceleration.linear
@@ -164,7 +164,7 @@ func _handle_npc_input(acceleration : GSAITargetAcceleration, delta : float):
 	else: 
 		entity.input.y = 0
 
-func _process_client(delta):
+func _process_client(_delta):
 	entity.global_transform.origin = entity.srv_pos
 
 func update_target(pos : Vector3):

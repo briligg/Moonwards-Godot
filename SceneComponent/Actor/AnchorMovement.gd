@@ -19,12 +19,12 @@ func _ready():
 func _integrate_forces(args):
 		invoke_network_based("_integrate_server", "_integrate_client", [args])
 
-func _integrate_server(args) -> void:
+func _integrate_server(_args) -> void:
 	if process_mode == ProcessMode.IntegrateForces:
 		if entity.movement_anchor_data.is_anchored:
 			_server_update_entity_values()
 			
-func _integrate_client(args):
+func _integrate_client(_args):
 	if process_mode == ProcessMode.IntegrateForces:
 		if entity.movement_anchor_data.is_anchored:
 			_client_update_entity_values()
@@ -42,10 +42,10 @@ func _client_update_entity_values():
 	else:
 		entity.global_transform.origin = entity.srv_pos
 
-func _process_server(delta: float) -> void:
+func _process_server(_delta: float) -> void:
 	pass
 
-func _process_client(state):
+func _process_client(_state):
 	pass
 
 # A little hack
@@ -56,7 +56,7 @@ func enable():
 func disable():
 	pass
 
-func set_enabled(val):
+func set_enabled(_val):
 	enabled = true
 
 #Set the visibility of the status icons.

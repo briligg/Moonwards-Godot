@@ -16,6 +16,10 @@ func _init(_entity):
 	anchor_pos3d_node = Spatial.new()
 	entity.add_child(anchor_pos3d_node)
 	anchor_pos3d_node.owner = entity
+	call_deferred("_init_deferred")
+
+#Called by init because the line was causing an error inside init.
+func _init_deferred() -> void :
 	anchor_pos3d_node.global_transform.origin = entity.global_transform.origin
 
 func attach(node: Node):

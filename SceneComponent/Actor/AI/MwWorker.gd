@@ -27,6 +27,6 @@ func stop_working(type : int):
 	current_station = null
 	emit_signal("stopped_working", types[type])
 
-func work(delta):
+func work(_delta):
 	if working:
 		experience += current_station.do_work(1, experience)

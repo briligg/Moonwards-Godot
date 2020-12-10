@@ -10,7 +10,7 @@ func _ready() -> void:
 	$Interactable.connect("interacted_by", self, "interacted_by")
 	$Interactable.connect("sync_for_new_player", self, "sync_for_new_player")
 
-func interacted_by(interactor):
+func interacted_by(_interactor):
 	if is_hatch_open:
 		close_hatch()
 	else:

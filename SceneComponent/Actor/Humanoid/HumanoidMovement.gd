@@ -130,7 +130,7 @@ func main_logic_routine(phys_state):
 	update_anim_state(phys_state)
 	update_server_values(phys_state)
 
-func update_anim_state(phys_state : PhysicsDirectBodyState):
+func update_anim_state(_phys_state : PhysicsDirectBodyState):
 	if is_flying:
 		entity.state.state = ActorEntityState.State.FLY
 	elif is_jumping or !entity.is_grounded and !is_climbing:
@@ -224,7 +224,7 @@ func update_movement(phys_state : PhysicsDirectBodyState):
 func update_entity_values():
 	entity.velocity = entity.linear_velocity
 
-func update_server_values(phys_state):
+func update_server_values(_phys_state):
 	entity.srv_pos = entity.global_transform.origin
 	
 func calculate_debug_values():
@@ -281,7 +281,7 @@ func start_climb_stairs(target_stairs : VerticalStairs) -> void:
 #Stop climbing stairs.
 # is_stairs_top indicates if the player is at the top (true)
 # or the bottom (false) of the stairs.
-func stop_climb_stairs(phys_state : PhysicsDirectBodyState, is_stairs_top) -> void :
+func stop_climb_stairs(_phys_state : PhysicsDirectBodyState, is_stairs_top) -> void :
 	is_climbing = false
 	entity.climb_point = 0
 
