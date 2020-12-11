@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/First_Gallery_Lower_LowerPart.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Tube_Habs/TubeHab.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/MoonTown/Models/Tube_Habs/TubeHab_Mirror.tscn" type="PackedScene" id=3]
+[ext_resource path="res://SceneComponent/Object/ConstructionBoundary/ConstructionBoundary.tscn" type="PackedScene" id=4]
+
+[sub_resource type="BoxShape" id=1]
 
 [node name="First_Gallery_Lower_LowerPart" instance=ExtResource( 1 )]
 
@@ -10,3 +13,19 @@
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0 )
 
 [node name="TubeHab_Mirror" parent="Marker_TubeHab_Mirror" index="0" instance=ExtResource( 3 )]
+
+[node name="ConstructionBoundary" type="StaticBody" parent="." index="10" instance=ExtResource( 4 )]
+transform = Transform( 5, 0, 0, 0, 4, 0, 0, 0, 1, 8.44021, -28.2928, -12.4965 )
+input_ray_pickable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="ConstructionBoundary" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.237689, 0 )
+shape = SubResource( 1 )
+
+[node name="ConstructionBoundary2" type="StaticBody" parent="." index="11" instance=ExtResource( 4 )]
+transform = Transform( -4.81196, -0.102251, 0.270462, 0.242614, 3.85351, 0.263714, -1.3365, 1.06768, -0.925907, -6.70805, -37.6181, 49.4123 )
+input_ray_pickable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="ConstructionBoundary2" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.237689, 0 )
+shape = SubResource( 1 )
