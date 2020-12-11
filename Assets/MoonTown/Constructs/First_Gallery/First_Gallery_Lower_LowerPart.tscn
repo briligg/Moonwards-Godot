@@ -9,22 +9,30 @@
 
 [node name="First_Gallery_Lower_LowerPart" instance=ExtResource( 1 )]
 
+[node name="LowBeams1" parent="LOD1" index="3"]
+transform = Transform( 0.821001, 0, 0.570926, 0, 1, 0, -0.570926, 0, 0.821001, -111.324, -80.7138, 57.8379 )
+
 [node name="TubeHab" parent="Marker_TubeHab_Lower" index="0" instance=ExtResource( 2 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0 )
 
 [node name="TubeHab_Mirror" parent="Marker_TubeHab_Mirror" index="0" instance=ExtResource( 3 )]
 
-[node name="ConstructionBoundary" type="StaticBody" parent="." index="10" instance=ExtResource( 4 )]
+[node name="ConstructionBoundary" parent="." index="10" instance=ExtResource( 4 )]
 transform = Transform( 5, 0, 0, 0, 4, 0, 0, 0, 1, 8.44021, -28.2928, -12.4965 )
-input_ray_pickable = false
 
 [node name="CollisionShape" type="CollisionShape" parent="ConstructionBoundary" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.237689, 0 )
 shape = SubResource( 1 )
 
-[node name="ConstructionBoundary2" type="StaticBody" parent="." index="11" instance=ExtResource( 4 )]
+[node name="ConstructionBoundaryUpperRamp" parent="." index="11" instance=ExtResource( 4 )]
+transform = Transform( -3.97032, 0, 0.121592, 0, 3, 0, -0.486368, 0, -0.99258, 215.391, 163.625, 46.3415 )
+
+[node name="CollisionShape" type="CollisionShape" parent="ConstructionBoundaryUpperRamp" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.237689, 0 )
+shape = SubResource( 1 )
+
+[node name="ConstructionBoundary2" parent="." index="12" instance=ExtResource( 4 )]
 transform = Transform( -4.81196, -0.102251, 0.270462, 0.242614, 3.85351, 0.263714, -1.3365, 1.06768, -0.925907, -6.70805, -37.6181, 49.4123 )
-input_ray_pickable = false
 
 [node name="CollisionShape" type="CollisionShape" parent="ConstructionBoundary2" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.237689, 0 )
