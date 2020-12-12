@@ -87,7 +87,6 @@ func _process_visibility_recursive(node, visibility_state)-> void:
 	if node is LodModel:
 		node.call_deferred("set_lod", visibility_state)
 		_process_lod_node(node, visibility_state)
-		
 	var children = node.get_children()
 	if children.empty():
 		return
