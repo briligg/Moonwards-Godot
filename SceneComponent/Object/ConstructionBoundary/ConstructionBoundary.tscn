@@ -1,12 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Interface/Fonts/MonumentFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Script/ViewportWorkaround/ViewportTextureWorkaround.gd" type="Script" id=2]
+[ext_resource path="res://SceneComponent/Display/Tooltip/TooltipButton.tscn" type="PackedScene" id=3]
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=1]
 flags_transparent = true
 
-[sub_resource type="PlaneMesh" id=1]
+[sub_resource type="PlaneMesh" id=2]
 size = Vector2( 1, 1 )
 
 [node name="ConstructionBoundary" type="StaticBody"]
@@ -14,8 +15,8 @@ input_ray_pickable = false
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-material_override = SubResource( 2 )
-mesh = SubResource( 1 )
+material_override = SubResource( 1 )
+mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Viewport" type="Viewport" parent="MeshInstance"]
@@ -35,3 +36,8 @@ text = "Under
 Construction"
 align = 1
 valign = 1
+
+[node name="TooltipButton" parent="MeshInstance" instance=ExtResource( 3 )]
+transform = Transform( 1, -6.51683e-07, 5.30863e-14, 5.30863e-14, 1.62921e-07, 1, -6.51683e-07, -1, 1.62921e-07, 0, 0.325099, -5.29654e-08 )
+bbtext_fields = PoolStringArray( "Sorry for blocking this off. We are still in alpha so this section has not been developed yet. Feel free to look around elsewhere." )
+title = "Under Construction"
