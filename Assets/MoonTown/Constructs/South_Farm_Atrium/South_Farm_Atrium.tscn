@@ -4,11 +4,12 @@
 [ext_resource path="res://SceneComponent/Object/ConstructionBoundary/ConstructionBoundary.tscn" type="PackedScene" id=2]
 
 [sub_resource type="BoxShape" id=1]
+extents = Vector3( 1.90218, 2.71924, 1 )
 
 [node name="South_Farm_Atrium" instance=ExtResource( 1 )]
 
 [node name="ConstructionBoundary" parent="LOD0" index="3" instance=ExtResource( 2 )]
-transform = Transform( -0.687579, 0, 0.985115, 0, 3, 0, -3.94046, 0, -0.171895, -97.4336, -24.1895, 181.286 )
+transform = Transform( -0.171895, 0, 0.985115, 0, 1, 0, -0.985115, 0, -0.171895, -97.4336, -24.1895, 181.286 )
 
 [node name="CollisionShape" type="CollisionShape" parent="LOD0/ConstructionBoundary" index="1"]
 shape = SubResource( 1 )
