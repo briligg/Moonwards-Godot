@@ -60,7 +60,7 @@ func _get_code(input_vars: Array, output_vars: Array, mode: int, type: int) -> S
 func _init():
 	# Default values for the editor
 	if not get_input_port_default_value(0):
-		set_input_port_default_value(0, Vector3(UV.x,UV.y,0.0))
+		set_input_port_default_value(0, Vector3(0,0,0.0))
 	if not get_input_port_default_value(1):
 		set_input_port_default_value(1, Vector3(1.0,1.0,1.0))
 	if not get_input_port_default_value(2):
