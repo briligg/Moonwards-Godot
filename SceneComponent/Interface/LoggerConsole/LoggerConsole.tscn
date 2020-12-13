@@ -28,12 +28,12 @@ __meta__ = {
 [node name="LoggerText" type="RichTextLabel" parent="Container"]
 margin_right = 1920.0
 margin_bottom = 281.0
+focus_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 bbcode_enabled = true
-bbcode_text = "This is fun."
-text = "This is fun."
 scroll_following = true
+selection_enabled = true
 script = ExtResource( 2 )
 
 [node name="Filters" type="HBoxContainer" parent="Container"]
@@ -42,8 +42,16 @@ margin_right = 1920.0
 margin_bottom = 324.0
 alignment = 2
 
+[node name="Clear" type="Button" parent="Container/Filters"]
+margin_right = 93.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.08
+text = "Clear"
+
 [node name="FontSize" type="LineEdit" parent="Container/Filters"]
-margin_right = 1266.0
+margin_left = 97.0
+margin_right = 1265.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 text = "Hello World"
@@ -51,42 +59,42 @@ align = 1
 script = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="Container/Filters"]
-margin_left = 1270.0
-margin_right = 1348.0
+margin_left = 1269.0
+margin_right = 1347.0
 margin_bottom = 39.0
 text = "FILTERS:"
 
 [node name="Trace" type="CheckBox" parent="Container/Filters"]
-margin_left = 1352.0
-margin_right = 1452.0
+margin_left = 1351.0
+margin_right = 1451.0
 margin_bottom = 39.0
 pressed = true
 text = "Trace"
 
 [node name="Debug" type="CheckBox" parent="Container/Filters"]
-margin_left = 1456.0
-margin_right = 1564.0
+margin_left = 1455.0
+margin_right = 1563.0
 margin_bottom = 39.0
 pressed = true
 text = "Debug"
 
 [node name="Warning" type="CheckBox" parent="Container/Filters"]
-margin_left = 1568.0
-margin_right = 1702.0
+margin_left = 1567.0
+margin_right = 1701.0
 margin_bottom = 39.0
 pressed = true
 text = "Warning"
 
 [node name="Error" type="CheckBox" parent="Container/Filters"]
-margin_left = 1706.0
-margin_right = 1800.0
+margin_left = 1705.0
+margin_right = 1799.0
 margin_bottom = 39.0
 pressed = true
 text = "Error"
 
 [node name="Critical" type="CheckBox" parent="Container/Filters"]
-margin_left = 1804.0
-margin_right = 1920.0
+margin_left = 1803.0
+margin_right = 1919.0
 margin_bottom = 39.0
 pressed = true
 text = "Critical"
