@@ -19,9 +19,11 @@ export(String) var initial_state : String = ""
 func _ready():
 	randomize()
 	_load_states(NPC_File)
+	_emit_with_delay("on_ready")
+
+func _emit_with_delay(signl : String)->void:
 	yield(get_tree().create_timer(1), "timeout")
-	emit_signal("on_ready", null)
-	
+	emit_signal(signl, null)
 
 func _create_signal(signal_name : String):
 	if signal_name == "":
