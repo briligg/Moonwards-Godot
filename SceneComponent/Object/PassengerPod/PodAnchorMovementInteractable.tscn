@@ -19,8 +19,7 @@ script = ExtResource( 2 )
 collision_layer = 2147516416
 collision_mask = 32768
 script = ExtResource( 1 )
-max_interact_distance = 5.0
-display_info = "Pod structure"
+display_info = "grab onto a pole"
 title = "Grab a pole to stabilize your movement"
 network_mode = 3
 
