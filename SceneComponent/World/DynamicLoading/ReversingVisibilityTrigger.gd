@@ -55,20 +55,16 @@ func process_visibility()-> void:
 		return;
 	is_set = true;
 	for path in show_lod0_list:
-		var node = get_node(path)
-		_process_visibility_recursive(node, VisibilityManager.LodState.LOD0)
+		_process_visibility_recursive(path, VisibilityManager.LodState.LOD0)
 
 	for path in show_lod1_list:
-		var node = get_node(path)
-		_process_visibility_recursive(node, VisibilityManager.LodState.LOD1)
+		_process_visibility_recursive(path, VisibilityManager.LodState.LOD1)
 
 	for path in show_lod2_list:
-		var node = get_node(path)
-		_process_visibility_recursive(node, VisibilityManager.LodState.LOD2)
+		_process_visibility_recursive(path, VisibilityManager.LodState.LOD2)
 
 	for path in hide_list:
-		var node = get_node(path)
-		_process_visibility_recursive(node, VisibilityManager.LodState.HIDDEN)
+		_process_visibility_recursive(path, VisibilityManager.LodState.HIDDEN)
 
 
 func reverse_visibility()-> void:
@@ -83,7 +79,13 @@ func _reverse_node_visibility(node, visibility_state):
 	if node is LodModel:
 		node.call_deferred("set_lod", visibility_state)
 
-func _process_visibility_recursive(node, visibility_state)-> void:
+func _process_visibility_recursive(path, visibility_state)-> void:
+	var node = get_node(path)
+	if node == null:
+		Log.error(self, "_process_visibility_recursive", 
+				"Path %s is inavlid in RVT %s." %[path, self.name])
+		return
+	
 	if node is LodModel:
 		node.call_deferred("set_lod", visibility_state)
 		_process_lod_node(node, visibility_state)
@@ -94,7 +96,7 @@ func _process_visibility_recursive(node, visibility_state)-> void:
 	for child in children:
 		if child is LodModel:
 			_process_lod_node(child, visibility_state)
-		_process_visibility_recursive(child, visibility_state)
+		_process_visibility_recursive(child.get_path(), visibility_state)
 
 func _process_lod_node(node, visibility_state)-> void:
 	if node is LodModel:
