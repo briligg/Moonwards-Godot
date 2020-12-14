@@ -118,7 +118,7 @@ text = "HOME"
 
 [node name="Button_Destination" type="Button" parent="VBoxContainer/TabButtons"]
 margin_right = 444.0
-margin_bottom = 45.0
+margin_bottom = 43.0
 focus_neighbour_right = NodePath("../Button_Apps")
 size_flags_horizontal = 3
 text = "PLAY"
@@ -126,7 +126,7 @@ text = "PLAY"
 [node name="Button_Avatar" type="Button" parent="VBoxContainer/TabButtons"]
 margin_left = 464.0
 margin_right = 908.0
-margin_bottom = 45.0
+margin_bottom = 43.0
 grow_horizontal = 2
 focus_neighbour_right = NodePath("../Button_Destination")
 size_flags_horizontal = 3
@@ -135,7 +135,7 @@ text = "AVATAR"
 [node name="Button_Apps" type="Button" parent="VBoxContainer/TabButtons"]
 margin_left = 928.0
 margin_right = 1372.0
-margin_bottom = 45.0
+margin_bottom = 43.0
 focus_neighbour_right = NodePath("../Button_Settings")
 size_flags_horizontal = 3
 text = "APPS"
