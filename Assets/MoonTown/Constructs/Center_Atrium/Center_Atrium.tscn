@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Center_Atrium/Center_Atrium.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Hexpane_Window/Hexpane_Window.tscn" type="PackedScene" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://addons/Silicon.vfx.planar_reflection/planar_reflector.gd" type="Script" id=9]
 [ext_resource path="res://SceneComponent/Utilities/Mirrors/Shaders/Moon_General.tres" type="Material" id=10]
 [ext_resource path="res://SceneComponent/Display/Tooltip/TooltipButton.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Script/Graphics/MultiMeshConverter.gd" type="Script" id=12]
+[ext_resource path="res://Assets/MoonTown/Constructs/Center_Atrium/RegolithFused_Temp.material" type="Material" id=13]
 
 [sub_resource type="GIProbeData" id=1]
 bounds = AABB( -45.6825, -30.536, -52.471, 91.365, 61.072, 104.942 )
@@ -101,22 +103,25 @@ cull_mask = 1048574
 cast_shadow = 2
 extra_cull_margin = 1.0
 material/0 = ExtResource( 3 )
-material/1 = ExtResource( 4 )
+material/1 = ExtResource( 6 )
 material/2 = ExtResource( 7 )
 material/3 = ExtResource( 5 )
-material/4 = ExtResource( 6 )
-material/5 = ExtResource( 8 )
+material/4 = ExtResource( 8 )
+material/5 = ExtResource( 4 )
 
-[node name="Hexpane_Window" parent="Markers/Marker_HexpaneWindow" index="0" instance=ExtResource( 2 )]
+[node name="MMC-CenterAtrium" parent="." index="9"]
+script = ExtResource( 12 )
+
+[node name="Hexpane_Window" parent="MMC-CenterAtrium/Marker_HexpaneWindow" index="0" instance=ExtResource( 2 )]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 
-[node name="Hexpane_Window" parent="Markers/Marker_HexpaneWindow001" index="0" instance=ExtResource( 2 )]
+[node name="Hexpane_Window" parent="MMC-CenterAtrium/Marker_HexpaneWindow001" index="0" instance=ExtResource( 2 )]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 
-[node name="Hexpane_Window" parent="Markers/Marker_HexpaneWindow002" index="0" instance=ExtResource( 2 )]
+[node name="Hexpane_Window" parent="MMC-CenterAtrium/Marker_HexpaneWindow002" index="0" instance=ExtResource( 2 )]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 
-[node name="Hexpane_Window" parent="Markers/Marker_HexpaneWindow003" index="0" instance=ExtResource( 2 )]
+[node name="Hexpane_Window" parent="MMC-CenterAtrium/Marker_HexpaneWindow003" index="0" instance=ExtResource( 2 )]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="." index="10"]
@@ -126,7 +131,18 @@ extents = Vector3( 44.0007, 28.3008, 50.1673 )
 box_projection = true
 
 [node name="CenterAtriumWalls_LOD1" parent="LOD1" index="1"]
-material/1 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
+material/1 = ExtResource( 6 )
+material/2 = ExtResource( 13 )
+material/3 = ExtResource( 5 )
+material/4 = ExtResource( 8 )
+material/5 = ExtResource( 4 )
+
+[node name="CenterAtrium_Levels_Stairs_LOD1" parent="LOD1/CenterAtriumWalls_LOD1" index="0"]
+visible = false
+
+[node name="GlazingBigAtriumWest_LOD1" parent="LOD1/CenterAtriumWalls_LOD1" index="1"]
+visible = false
 
 [node name="LOD2" parent="." index="12"]
 visible = false

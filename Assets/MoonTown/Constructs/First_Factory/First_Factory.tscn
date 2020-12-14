@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/First_Factory/First_Factory.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Pressurized_Factories/PressurizedHangar_Regular.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/MoonTown/Models/Lava_Tanks/Lava_Tank_Small.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/MoonTown/Models/Tower_Radiators/TowerRadiator_2x.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/MoonTown/Models/Spider_Crane/Spider_Crane.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Script/Graphics/MultiMeshConverter.gd" type="Script" id=8]
 
 [node name="First_Factory" instance=ExtResource( 1 )]
 
@@ -25,40 +26,43 @@ use_in_baked_light = true
 [node name="SideOpenHangar_M" parent="LOD0/HangarFoundationSmall/FirstHangar" index="1"]
 use_in_baked_light = true
 
-[node name="Lava_Tank_Large" parent="Markers/Empty_LavaTank_Large" index="0" instance=ExtResource( 4 )]
+[node name="MMC-FirstFactory" parent="." index="2"]
+script = ExtResource( 8 )
+
+[node name="Lava_Tank_Large" parent="MMC-FirstFactory/Empty_LavaTank_Large" index="0" instance=ExtResource( 4 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 
-[node name="Lava_Tank_Large" parent="Markers/Empty_LavaTank_Large001" index="0" instance=ExtResource( 4 )]
+[node name="Lava_Tank_Large" parent="MMC-FirstFactory/Empty_LavaTank_Large001" index="0" instance=ExtResource( 4 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 
-[node name="Lava_Tank_Large" parent="Markers/Empty_LavaTank_Large002" index="0" instance=ExtResource( 4 )]
+[node name="Lava_Tank_Large" parent="MMC-FirstFactory/Empty_LavaTank_Large002" index="0" instance=ExtResource( 4 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 
-[node name="Lava_Tank_Large" parent="Markers/Empty_LavaTank_Large003" index="0" instance=ExtResource( 4 )]
+[node name="Lava_Tank_Large" parent="MMC-FirstFactory/Empty_LavaTank_Large003" index="0" instance=ExtResource( 4 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 
-[node name="Lava_Tank_Small" parent="Markers/Empty_LavaTank_Tall" index="0" instance=ExtResource( 5 )]
+[node name="Lava_Tank_Small" parent="MMC-FirstFactory/Empty_LavaTank_Tall" index="0" instance=ExtResource( 5 )]
 
-[node name="PressurizedHangar_Regular" parent="Markers/Empty_PressurizedHangar" index="0" instance=ExtResource( 2 )]
+[node name="PressurizedHangar_Regular" parent="MMC-FirstFactory/Empty_PressurizedHangar" index="0" instance=ExtResource( 2 )]
 
-[node name="PressurizedHangar_Regular" parent="Markers/Empty_PressurizedHangar001" index="0" instance=ExtResource( 2 )]
+[node name="PressurizedHangar_Regular" parent="MMC-FirstFactory/Empty_PressurizedHangar001" index="0" instance=ExtResource( 2 )]
 transform = Transform( -3.25841e-07, 0, -2, 0, 2, 0, 2, 0, -3.25841e-07, 0, 0, 0 )
 
-[node name="Spider_Crane" parent="Markers/Empty_SpiderCrane" index="0" instance=ExtResource( 7 )]
+[node name="Spider_Crane" parent="MMC-FirstFactory/Empty_SpiderCrane" index="0" instance=ExtResource( 7 )]
 
-[node name="TowerRadiator_2x" parent="Markers/Empty_TowerRadiator2x" index="0" instance=ExtResource( 6 )]
+[node name="TowerRadiator_2x" parent="MMC-FirstFactory/Empty_TowerRadiator2x" index="0" instance=ExtResource( 6 )]
 
-[node name="TowerRadiator_2x" parent="Markers/Empty_TowerRadiator2x001" index="0" instance=ExtResource( 6 )]
+[node name="TowerRadiator_2x" parent="MMC-FirstFactory/Empty_TowerRadiator2x001" index="0" instance=ExtResource( 6 )]
 
-[node name="TowerRadiator_2x" parent="Markers/Empty_TowerRadiator2x002" index="0" instance=ExtResource( 6 )]
+[node name="TowerRadiator_2x" parent="MMC-FirstFactory/Empty_TowerRadiator2x002" index="0" instance=ExtResource( 6 )]
 
-[node name="TowerRadiator_2x" parent="Markers/Empty_TowerRadiator2x003" index="0" instance=ExtResource( 6 )]
+[node name="TowerRadiator_2x" parent="MMC-FirstFactory/Empty_TowerRadiator2x003" index="0" instance=ExtResource( 6 )]
 
-[node name="TowerRadiator_2x" parent="Markers/Empty_TowerRadiator2x004" index="0" instance=ExtResource( 6 )]
+[node name="TowerRadiator_2x" parent="MMC-FirstFactory/Empty_TowerRadiator2x004" index="0" instance=ExtResource( 6 )]
 
-[node name="TowerRadiator_2x" parent="Markers/Empty_TowerRadiator2x005" index="0" instance=ExtResource( 6 )]
+[node name="TowerRadiator_2x" parent="MMC-FirstFactory/Empty_TowerRadiator2x005" index="0" instance=ExtResource( 6 )]
 
-[node name="TowerRadiator_2x" parent="Markers/Empty_TowerRadiator2x006" index="0" instance=ExtResource( 6 )]
+[node name="TowerRadiator_2x" parent="MMC-FirstFactory/Empty_TowerRadiator2x006" index="0" instance=ExtResource( 6 )]
 
 [node name="HangarFoundationSmall001" parent="LOD1" index="1"]
 material/0 = ExtResource( 3 )

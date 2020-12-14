@@ -414,6 +414,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/InteractorComponent.gd"
 }, {
+"base": "Reference",
+"class": "LoadingSignals",
+"language": "GDScript",
+"path": "res://Script/Manager/SignalsManager/LoadingSignals.gd"
+}, {
 "base": "Spatial",
 "class": "LodModel",
 "language": "GDScript",
@@ -429,10 +434,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Manager/SignalsManager/MenuSignals.gd"
 }, {
+"base": "Reference",
+"class": "MeshFactoryData",
+"language": "GDScript",
+"path": "res://Script/Graphics/MeshFactoryData.gd"
+}, {
 "base": "RayCast",
 "class": "MouseSimulatingRayCast",
 "language": "GDScript",
 "path": "res://Script/GameLogic/MouseSimulatingRayCast/MouseSimulatingRayCast.gd"
+}, {
+"base": "LodModel",
+"class": "MultiMeshConverter",
+"language": "GDScript",
+"path": "res://Script/Graphics/MultiMeshConverter.gd"
 }, {
 "base": "NPCBase",
 "class": "MwNPC",
@@ -696,10 +711,13 @@ _global_script_class_icons={
 "Interactable": "",
 "InteractorArea": "",
 "InteractorComponent": "",
+"LoadingSignals": "",
 "LodModel": "",
 "LodSignals": "",
 "MenuSignals": "",
+"MeshFactoryData": "",
 "MouseSimulatingRayCast": "",
+"MultiMeshConverter": "",
 "MwNPC": "",
 "MwNavigator": "",
 "MwNode": "",
@@ -752,6 +770,7 @@ Helpers="*res://Script/Manager/Helpers.gd"
 CmdLineArgs="*res://Script/Manager/CmdLineArgs.gd"
 Signals="*res://Script/Manager/SignalsManager/SignalsManager.gd"
 Groups="*res://Script/Manager/GroupsManager/GroupsManager.gd"
+MultiMeshFactory="*res://Script/Manager/Graphics/MultiMeshFactory.tscn"
 Scene="*res://Script/Manager/SceneManager/SceneManager.gd"
 Network="*res://Script/Network/NetworkManager/NetworkManager.gd"
 VisibilityManager="*res://Script/Manager/VisualTriggerManager/VisibilityManager.tscn"
@@ -769,8 +788,10 @@ formats/gzip/compression_level=5
 [debug]
 
 settings/crash_handler/message=""
+settings/gdscript/max_call_stack=4096
 gdscript/warnings/unused_signal=false
 gdscript/warnings/return_value_discarded=false
+settings/visual_script/max_call_stack=4096
 settings/gameplay/humans_can_fly=true
 
 [display]
@@ -2203,6 +2224,20 @@ radial_menu={
 file_logging/enable_file_logging=true
 file_logging/max_log_files=30
 
+[memory]
+
+limits/multithreaded_server/rid_pool_prealloc=240
+limits/message_queue/max_size_kb=2048
+
+[network]
+
+limits/debugger_stdout/max_chars_per_second=4096
+limits/debugger_stdout/max_messages_per_frame=1000
+limits/debugger_stdout/max_errors_per_second=10000
+limits/debugger_stdout/max_warnings_per_second=10000
+limits/websocket_server/max_in_buffer_kb=128
+limits/websocket_server/max_out_buffer_kb=128
+
 [physics]
 
 3d/physics_engine="Bullet"
@@ -2210,6 +2245,7 @@ file_logging/max_log_files=30
 
 [rendering]
 
+threads/thread_model=2
 quality/filters/anisotropic_filter_level=16
 quality/shadows/filter_mode=2
 quality/reflections/irradiance_max_size=256

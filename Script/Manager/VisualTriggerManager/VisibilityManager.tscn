@@ -4,5 +4,4 @@
 
 [node name="VisibilityManager" type="Spatial"]
 script = ExtResource( 1 )
-log_lod_changes = true
 log_vt_changes = true

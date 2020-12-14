@@ -1,0 +1,158 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/mw_graphics_profiler/profiler_interface.gd" type="Script" id=1]
+
+[node name="Control" type="ScrollContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 70 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Paths" type="VBoxContainer" parent="HSplitContainer"]
+margin_right = 258.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer" type="Control" parent="HSplitContainer/Paths"]
+margin_right = 258.0
+margin_bottom = 5.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="HSC" type="HBoxContainer" parent="HSplitContainer/Paths"]
+margin_top = 9.0
+margin_right = 258.0
+margin_bottom = 41.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VS" type="VSeparator" parent="HSplitContainer/Paths/HSC"]
+margin_right = 4.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 32 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="HSplitContainer/Paths/HSC"]
+margin_left = 8.0
+margin_right = 258.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 250, 32 )
+size_flags_horizontal = 3
+text = "Path"
+align = 1
+valign = 1
+
+[node name="Data" type="VBoxContainer" parent="HSplitContainer"]
+margin_left = 270.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer" type="Control" parent="HSplitContainer/Data"]
+margin_right = 1650.0
+margin_bottom = 5.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="HSC" type="HBoxContainer" parent="HSplitContainer/Data"]
+margin_top = 9.0
+margin_right = 1650.0
+margin_bottom = 41.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VS" type="VSeparator" parent="HSplitContainer/Data/HSC"]
+margin_right = 4.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="HSplitContainer/Data/HSC"]
+margin_left = 8.0
+margin_right = 407.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 100, 32 )
+size_flags_horizontal = 3
+text = "Used in objects"
+align = 1
+valign = 1
+
+[node name="VS2" type="VSeparator" parent="HSplitContainer/Data/HSC"]
+margin_left = 411.0
+margin_right = 415.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title2" type="Label" parent="HSplitContainer/Data/HSC"]
+margin_left = 419.0
+margin_right = 819.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 100, 32 )
+size_flags_horizontal = 3
+text = "Vertex Count
+(Single mesh)"
+align = 1
+valign = 1
+
+[node name="VS3" type="VSeparator" parent="HSplitContainer/Data/HSC"]
+margin_left = 823.0
+margin_right = 827.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title3" type="Label" parent="HSplitContainer/Data/HSC"]
+margin_left = 831.0
+margin_right = 1230.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 100, 32 )
+size_flags_horizontal = 3
+text = "Vertex Count
+(Across all objects)"
+align = 1
+valign = 1
+
+[node name="VS4" type="VSeparator" parent="HSplitContainer/Data/HSC"]
+margin_left = 1234.0
+margin_right = 1238.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title4" type="Label" parent="HSplitContainer/Data/HSC"]
+margin_left = 1242.0
+margin_right = 1642.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 100, 32 )
+size_flags_horizontal = 3
+text = "Draw Calls"
+align = 1
+valign = 1
+
+[node name="VS5" type="VSeparator" parent="HSplitContainer/Data/HSC"]
+margin_left = 1646.0
+margin_right = 1650.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

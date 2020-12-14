@@ -19,7 +19,7 @@
 [ext_resource path="res://Tree/Interface/MainMenu/MenuParent.gd" type="Script" id=17]
 [ext_resource path="res://SceneComponent/Interface/MainMenu/Destination.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Tree/Interface/MainMenu/QuitMenu.gd" type="Script" id=19]
-[ext_resource path="res://Tree/Interface/MainMenu/OptionsOld/Settings.tscn" type="PackedScene" id=20]
+[ext_resource path="res://SceneComponent/Interface/GraphicsSettings/GraphicsSettings.tscn" type="PackedScene" id=20]
 [ext_resource path="res://SceneComponent/Interface/CustomControls/CustomControls.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Assets/Interface/MainMenu/Style/MM_Empty.tres" type="StyleBox" id=22]
 [ext_resource path="res://Assets/Interface/MainMenu/Style/MM_PanelMain.tres" type="StyleBox" id=23]
@@ -33,6 +33,8 @@
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconLibrary.png" type="Texture" id=31]
 [ext_resource path="res://SceneComponent/Interface/Hud/Apps/NPC/NPCApp.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=33]
+
+
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.588235 )

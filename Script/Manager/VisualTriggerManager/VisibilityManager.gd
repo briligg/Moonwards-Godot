@@ -13,9 +13,13 @@ signal queue_requested(fref)
 # For debugging purposes
 export(bool) var disable_all_triggers = false
 
+export(bool) var disable_default_lod = false
+
 export(bool) var log_lod_changes = false
 
 export(bool) var log_vt_changes = false
+
+export(bool) var pause_on_error = false
 ####
 
 # The maximum  amount of LOD changes to be performed every frame
@@ -40,8 +44,11 @@ func _ready():
 	connect("queue_requested", self, "queue_thread_work")
 	
 # Register a lod model to context 
-func update_context(node: LodModel):
-	current_lod_context[node] = node.lod_state
+func update_context(node):
+	if node is LodModel:
+		current_lod_context[node] = node.lod_state
+	else:
+		current_lod_context[node] = node.visible
 
 func queue_thread_work(fref: FuncRef):
 	worker_thread.queue_thread_work(fref)

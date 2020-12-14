@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Fourth_Gallery/Fourth_Gallery.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Tube_Habs/TubeHab_Mirror.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Script/Graphics/MultiMeshConverter.gd" type="Script" id=3]
 [ext_resource path="res://Assets/MoonTown/Models/Tube_Habs/TubeHab_Long_Mirror.tscn" type="PackedScene" id=4]
 
 [node name="Fourth_Gallery" instance=ExtResource( 1 )]
@@ -10,6 +11,9 @@
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -82.4016, -95.4751, 0 )
 omni_range = 82.2553
 omni_attenuation = 2.21914
+
+[node name="Markers" parent="." index="4"]
+script = ExtResource( 3 )
 
 [node name="TubeHab_Long_Mirror" parent="Markers/Marker_TubeHab2_Long-Mirror-167" index="0" instance=ExtResource( 4 )]
 transform = Transform( 1.667, 0, 0, 0, 1.667, 0, 0, 0, 1.667, 0, 0, 0 )

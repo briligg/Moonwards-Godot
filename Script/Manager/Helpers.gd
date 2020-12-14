@@ -139,7 +139,12 @@ func save_user_file() -> void :
 	user_file.save(SAVE_LOCATION)
 
 func reparent(node, new_parent, keep_world_pos = false):
-	var pos = node.global_transform.origin
+	if node.get("global_transform") == null:
+		keep_world_pos = false
+	
+	var pos = Vector3()
+	if keep_world_pos: 
+		pos = node.global_transform.origin
 	var p = node.get_parent()
 	p.remove_child(node)
 	new_parent.add_child(node)
