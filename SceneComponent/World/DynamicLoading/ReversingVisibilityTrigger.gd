@@ -106,7 +106,7 @@ func _process_lod_node(node, visibility_state)-> void:
 func _validate_paths(path_list: Array):
 	for path in path_list:
 		if get_node(path) == null:
-			Log.error(self, "", "Path %s is inavlid in RVT %s." %[path, self.name])
+			Log.error(self, "_validate_paths", "Path %s is inavlid in RVT %s." %[path, self.name])
 			path_list.erase(path)
 			if VisibilityManager.pause_on_error:
 				assert(false)
