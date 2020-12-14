@@ -121,7 +121,7 @@ margin_right = 444.0
 margin_bottom = 45.0
 focus_neighbour_right = NodePath("../Button_Apps")
 size_flags_horizontal = 3
-text = "DESTINATION"
+text = "PLAY"
 
 [node name="Button_Avatar" type="Button" parent="VBoxContainer/TabButtons"]
 margin_left = 464.0
