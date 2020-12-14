@@ -17,7 +17,8 @@ var editable_actions : Array = [
 	"chat_toggle_size", "chat_page_up", "chat_page_down"
 ]
 
-var is_capture_mode : bool = false
+#Whether the mouse is captured or not.
+var is_capture_mode : bool = false setget ,is_mouse_captured
 
 func _input(event):
 	if event.is_action_pressed("mouse_toggle"):
@@ -73,6 +74,10 @@ func get_action_string(action_name : String) -> String :
 	var event_string : String
 	event_string = OS.get_scancode_string(event_scancode)
 	return event_string
+
+#Return true if the mouse is captured.
+func is_mouse_captured() -> bool :
+	return is_capture_mode
 
 #Load the user file which stores all the player's personal settings.
 func load_user_file() -> void :

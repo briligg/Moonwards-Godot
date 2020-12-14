@@ -38,7 +38,7 @@ const SLOWEST_POSSIBLE_FLIGHT_SPEED : float = 0.05
 
 
 func _init().("Camera", true):
-	pass
+	mouse_respond = Helpers.is_mouse_captured()
 	
 func _ready() -> void:
 	#Stop camera rotation when mouse is active.
