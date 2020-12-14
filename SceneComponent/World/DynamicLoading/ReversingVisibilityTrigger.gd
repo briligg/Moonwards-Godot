@@ -56,19 +56,35 @@ func process_visibility()-> void:
 	is_set = true;
 	for path in show_lod0_list:
 		var node = get_node(path)
-		_process_visibility_recursive(node, VisibilityManager.LodState.LOD0)
+		#The node path is invalid. Let Logger know.
+		if node == null :
+			Log.error(self, "process_visibility", "%s LOD0 path is invalid for %s." % [str(path), self.name])
+		else :
+			_process_visibility_recursive(node, VisibilityManager.LodState.LOD0)
 
 	for path in show_lod1_list:
 		var node = get_node(path)
-		_process_visibility_recursive(node, VisibilityManager.LodState.LOD1)
+		#The node path is invalid. Let Logger know.
+		if node == null :
+			Log.error(self, "process_visibility", "%s LOD1 path is invalid for %s." % [str(path), self.name])
+		else :
+			_process_visibility_recursive(node, VisibilityManager.LodState.LOD1)
 
 	for path in show_lod2_list:
 		var node = get_node(path)
-		_process_visibility_recursive(node, VisibilityManager.LodState.LOD2)
+		#The node path is invalid. Let Logger know.
+		if node == null :
+			Log.error(self, "process_visibility", "%s LOD2 path is invalid for %s." % [str(path), self.name])
+		else :
+			_process_visibility_recursive(node, VisibilityManager.LodState.LOD2)
 
 	for path in hide_list:
 		var node = get_node(path)
-		_process_visibility_recursive(node, VisibilityManager.LodState.HIDDEN)
+		#The node path is invalid. Let Logger know.
+		if node == null :
+			Log.error(self, "process_visibility", "%s HIDELOD path is invalid for %s." % [str(path), self.name])
+		else :
+			_process_visibility_recursive(node, VisibilityManager.LodState.HIDDEN)
 
 
 func reverse_visibility()-> void:
@@ -87,7 +103,6 @@ func _process_visibility_recursive(node, visibility_state)-> void:
 	if node is LodModel:
 		node.call_deferred("set_lod", visibility_state)
 		_process_lod_node(node, visibility_state)
-		
 	var children = node.get_children()
 	if children.empty():
 		return
@@ -105,7 +120,7 @@ func _process_lod_node(node, visibility_state)-> void:
 func _validate_paths(path_list: Array):
 	for path in path_list:
 		if get_node(path) == null:
-			Log.error(self, "", "Path %s is inavlid in RVT %s." %[path, self.name])
+			Log.error(self, "_validate_paths", "Path %s is inavlid in RVT %s." %[path, self.name])
 			path_list.erase(path)
 			if VisibilityManager.pause_on_error:
 				assert(false)

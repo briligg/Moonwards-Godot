@@ -124,8 +124,17 @@ script = ExtResource( 7 )
 
 [node name="Hexpane_Window" parent="MMC-FirstAtrium/Marker_HexWindow2" index="0" instance=ExtResource( 3 )]
 
+[node name="Marker_HexWindow3" parent="MMC-FirstAtrium" index="4"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -83.9307, 6.73393, -2.14111 )
+
 [node name="Hexpane_Window" parent="MMC-FirstAtrium/Marker_HexWindow3" index="0" instance=ExtResource( 3 )]
 
+[node name="Marker_HexWindow4" parent="MMC-FirstAtrium" index="5"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -83.9307, 3.58696, 6.19141 )
+
 [node name="Hexpane_Window" parent="MMC-FirstAtrium/Marker_HexWindow4" index="0" instance=ExtResource( 3 )]
+
+[node name="Marker_HexWindow5" parent="MMC-FirstAtrium" index="6"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -83.9307, 3.58573, -10.3247 )
 
 [node name="Hexpane_Window" parent="MMC-FirstAtrium/Marker_HexWindow5" index="0" instance=ExtResource( 3 )]
