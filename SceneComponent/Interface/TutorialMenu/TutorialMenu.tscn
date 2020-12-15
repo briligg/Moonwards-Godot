@@ -10,7 +10,7 @@
 [ext_resource path="res://Assets/Interface/Fonts/Exo2/Exo2-Medium.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://SceneComponent/Interface/TutorialMenu/TextFormatter.gd" type="Script" id=9]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -22,15 +22,15 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 corner_detail = 18
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 19
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 8 )
 
-[sub_resource type="Theme" id=2]
-default_font = SubResource( 1 )
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
 
 [node name="TutorialMenu" type="Panel" groups=[
 "TutorialMenu",
@@ -39,7 +39,7 @@ anchor_left = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.92
 theme = ExtResource( 2 )
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 1 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -64,7 +64,7 @@ anchor_right = 0.98
 anchor_bottom = 0.94
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource( 2 )
+theme = SubResource( 3 )
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -72,26 +72,27 @@ __meta__ = {
 
 [node name="Text" type="Label" parent="VWithTheme"]
 margin_right = 921.0
-margin_bottom = 131.0
+margin_bottom = 157.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
 text = "Move around by using the %s%s%s%s keys. %s to jump.
-Toggle mouse cursor by pressing %s.
+You can rotate the camera when the mouse cursor is disabled.
+Toggle the mouse cursor by right clicking your mouse or by pressing %s.
 
 The top right corner of the screen will let you know when you can interact with something. Try walking up close to the pink orb and left clicking the mouse with the cursor on it."
 autowrap = true
 
 [node name="OrbAndStair" type="HBoxContainer" parent="VWithTheme"]
-margin_top = 135.0
+margin_top = 161.0
 margin_right = 921.0
-margin_bottom = 342.0
+margin_bottom = 360.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="OrbStair" type="TextureRect" parent="VWithTheme/OrbAndStair"]
 margin_right = 458.0
-margin_bottom = 207.0
+margin_bottom = 199.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 4 )
@@ -101,7 +102,7 @@ stretch_mode = 6
 [node name="OrbStair2" type="TextureRect" parent="VWithTheme/OrbAndStair"]
 margin_left = 462.0
 margin_right = 921.0
-margin_bottom = 207.0
+margin_bottom = 199.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 3 )
@@ -109,26 +110,26 @@ expand = true
 stretch_mode = 6
 
 [node name="Text2" type="Label" parent="VWithTheme"]
-margin_top = 346.0
+margin_top = 364.0
 margin_right = 921.0
-margin_bottom = 408.0
+margin_bottom = 424.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
-text = "Right click the mouse to easily read screens.
- Left click the mouse to interact with the screens."
+text = "You can interact with screens by left clicking the mouse with the cursor on them.
+Read the screens easily by toggling first person mode with the %s button."
 autowrap = true
 
 [node name="Screens" type="HBoxContainer" parent="VWithTheme"]
-margin_top = 412.0
+margin_top = 428.0
 margin_right = 921.0
-margin_bottom = 619.0
+margin_bottom = 627.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Screen1" type="TextureRect" parent="VWithTheme/Screens"]
 margin_right = 458.0
-margin_bottom = 207.0
+margin_bottom = 199.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 6 )
@@ -138,7 +139,7 @@ stretch_mode = 6
 [node name="Screen2" type="TextureRect" parent="VWithTheme/Screens"]
 margin_left = 462.0
 margin_right = 921.0
-margin_bottom = 207.0
+margin_bottom = 199.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 5 )
@@ -146,9 +147,9 @@ expand = true
 stretch_mode = 6
 
 [node name="Text3" type="Label" parent="VWithTheme"]
-margin_top = 623.0
+margin_top = 631.0
 margin_right = 921.0
-margin_bottom = 702.0
+margin_bottom = 710.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
@@ -158,7 +159,7 @@ You can find this tutorial there if you need it."
 autowrap = true
 
 [node name="HelpButton" type="TextureRect" parent="VWithTheme"]
-margin_top = 706.0
+margin_top = 714.0
 margin_right = 921.0
 margin_bottom = 914.0
 size_flags_horizontal = 3
