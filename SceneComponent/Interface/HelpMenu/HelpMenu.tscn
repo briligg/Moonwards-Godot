@@ -109,18 +109,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VSeparator2" type="VSeparator" parent="Alignment/HelpMenu/InitialMenu"]
-margin_right = 846.0
-margin_bottom = 33.0
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.05
-custom_styles/separator = SubResource( 1 )
-custom_constants/separation = 0
-
 [node name="Keys" type="RichTextLabel" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 49.0
 margin_right = 846.0
-margin_bottom = 728.0
+margin_bottom = 725.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Right click to toggle between mouse cursor on or off.
@@ -160,37 +151,37 @@ Scroll Chat down: %s
 script = ExtResource( 9 )
 
 [node name="TutorialMenu" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 744.0
+margin_top = 741.0
 margin_right = 846.0
-margin_bottom = 779.0
+margin_bottom = 776.0
 text = "Tutorial Menu"
 
 [node name="GotoMap" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 795.0
+margin_top = 792.0
 margin_right = 846.0
-margin_bottom = 830.0
+margin_bottom = 827.0
 text = "How to use Map"
 
 [node name="GotoEvent" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 846.0
+margin_top = 843.0
 margin_right = 846.0
-margin_bottom = 881.0
+margin_bottom = 878.0
 text = "How to setup events"
 
 [node name="GotoApps" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 897.0
+margin_top = 894.0
 margin_right = 846.0
-margin_bottom = 932.0
+margin_bottom = 929.0
 text = "What are apps?"
 
 [node name="GotoRecording" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 948.0
+margin_top = 945.0
 margin_right = 846.0
-margin_bottom = 983.0
+margin_bottom = 980.0
 text = "how to record screen"
 
 [node name="VSeparator" type="VSeparator" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 999.0
+margin_top = 996.0
 margin_right = 846.0
 margin_bottom = 1033.0
 size_flags_vertical = 3
