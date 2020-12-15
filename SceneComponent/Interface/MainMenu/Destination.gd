@@ -6,8 +6,8 @@ signal joined_master()
 signal joined_server(server_ip_address_string)
 signal started_custom_server()
 
-onready var ip_address : TextEdit = $HBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer/TextEdit_Address
-onready var port_text : TextEdit = $HBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer/TextEdit_Port
+onready var ip_address : TextEdit = $HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer/TextEdit_Address
+onready var port_text : TextEdit = $HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer/TextEdit_Port
 #What the main server IP is.
 const MAIN_SERVER_IP : String = "45.77.1.84"
 const DEFAULT_PORT : int = 5000

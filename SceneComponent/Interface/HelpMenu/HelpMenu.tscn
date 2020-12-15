@@ -23,6 +23,9 @@ rect_min_size = Vector2( 257, 0 )
 theme = ExtResource( 3 )
 custom_styles/panel = ExtResource( 7 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Alignment" type="VBoxContainer" parent="."]
 anchor_left = 0.01
@@ -106,55 +109,79 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VSeparator2" type="VSeparator" parent="Alignment/HelpMenu/InitialMenu"]
-margin_right = 846.0
-margin_bottom = 33.0
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.05
-custom_styles/separator = SubResource( 1 )
-custom_constants/separation = 0
-
 [node name="Keys" type="RichTextLabel" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 49.0
 margin_right = 846.0
-margin_bottom = 728.0
+margin_bottom = 725.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Text gets overwritten by script."
+text = "Right click to toggle between mouse cursor on or off.
+Turning off the mouse cursor lets you move the camera around.
+
+Left click to interact with Interactables or screens.
+
+Get a closer view of things by going into first person mode
+Toggle First Person mode: %s
+
+Move forwards: %s
+Move backwards: %s
+Move left: %s
+Move right: %s
+Jump: %s
+
+To get around quickly use human flight mode
+Toggle Human Flight: %s
+Fly up: %s
+Fly down: %s
+
+To move the camera around to check things out.
+Toggle Free Camera: %s
+Fly up: %s
+Fly down: %s
+Change camera movement speed by scrolling with the mouse.
+
+Interact with objects while in a vehicle by bringing up the Interacts Menu
+Toggle Interacts Menu: %s
+
+Get chat controls by hitting CTRL+H
+Toggle chat visibility: CTRL+2
+Toggle chat vertical size: %s
+Scroll Chat up: %s
+Scroll Chat down: %s
+"
 script = ExtResource( 9 )
 
-[node name="GotoMap" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 744.0
+[node name="TutorialMenu" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
+margin_top = 741.0
 margin_right = 846.0
-margin_bottom = 779.0
+margin_bottom = 776.0
+text = "Tutorial Menu"
+
+[node name="GotoMap" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
+margin_top = 792.0
+margin_right = 846.0
+margin_bottom = 827.0
 text = "How to use Map"
 
 [node name="GotoEvent" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 795.0
+margin_top = 843.0
 margin_right = 846.0
-margin_bottom = 830.0
+margin_bottom = 878.0
 text = "How to setup events"
 
 [node name="GotoApps" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 846.0
+margin_top = 894.0
 margin_right = 846.0
-margin_bottom = 881.0
+margin_bottom = 929.0
 text = "What are apps?"
 
 [node name="GotoRecording" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 897.0
+margin_top = 945.0
 margin_right = 846.0
-margin_bottom = 932.0
+margin_bottom = 980.0
 text = "how to record screen"
 
-[node name="TutorialMenu" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 948.0
-margin_right = 846.0
-margin_bottom = 983.0
-text = "Tutorial Menu"
-
 [node name="VSeparator" type="VSeparator" parent="Alignment/HelpMenu/InitialMenu"]
-margin_top = 999.0
+margin_top = 996.0
 margin_right = 846.0
 margin_bottom = 1033.0
 size_flags_vertical = 3

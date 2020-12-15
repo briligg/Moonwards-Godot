@@ -11,6 +11,11 @@
 [node name="PlayerHud" type="Spatial"]
 script = ExtResource( 4 )
 
+[node name="OverHud" type="CanvasLayer" parent="."]
+layer = 9
+
+[node name="TooltipDisplay" parent="OverHud" instance=ExtResource( 7 )]
+
 [node name="Hud" parent="." instance=ExtResource( 8 )]
 
 [node name="InteractDisplay" parent="." instance=ExtResource( 2 )]
@@ -20,5 +25,3 @@ script = ExtResource( 4 )
 [node name="FlightSpeedDisplay" parent="." instance=ExtResource( 5 )]
 
 [node name="Reticle" parent="." instance=ExtResource( 6 )]
-
-[node name="TooltipDisplay" parent="." instance=ExtResource( 7 )]
