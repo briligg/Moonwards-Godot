@@ -66,17 +66,10 @@ margin_bottom = 176.0
 Label_text = "Jump"
 action_to_edit = "jump"
 
-[node name="interact_with_closest" parent="HBox/Sub1" instance=ExtResource( 3 )]
+[node name="use" parent="HBox/Sub1" instance=ExtResource( 3 )]
 margin_top = 190.0
 margin_right = 272.0
 margin_bottom = 214.0
-Label_text = "Interact"
-action_to_edit = "interact_with_closest"
-
-[node name="use" parent="HBox/Sub1" instance=ExtResource( 3 )]
-margin_top = 228.0
-margin_right = 272.0
-margin_bottom = 252.0
 Label_text = "Interacts Menu"
 action_to_edit = "use"
 
@@ -89,9 +82,9 @@ Label_text = "Get unstuck"
 action_to_edit = "player_back_in_time"
 
 [node name="toggle_first_person" parent="HBox/Sub1" instance=ExtResource( 3 )]
-margin_top = 266.0
+margin_top = 228.0
 margin_right = 272.0
-margin_bottom = 290.0
+margin_bottom = 252.0
 Label_text = "Toggle perspective"
 action_to_edit = "toggle_first_person"
 
@@ -120,15 +113,15 @@ Label_text = "Toggle Human Flight"
 action_to_edit = "toggle_fly"
 
 [node name="HSeparator8" type="HSeparator" parent="HBox/Sub1"]
-margin_top = 304.0
+margin_top = 266.0
 margin_right = 272.0
-margin_bottom = 308.0
+margin_bottom = 270.0
 custom_styles/separator = ExtResource( 4 )
 
 [node name="DefaultControls" type="Button" parent="HBox/Sub1"]
-margin_top = 322.0
+margin_top = 284.0
 margin_right = 272.0
-margin_bottom = 346.0
+margin_bottom = 308.0
 size_flags_vertical = 9
 text = "Set to default"
 
