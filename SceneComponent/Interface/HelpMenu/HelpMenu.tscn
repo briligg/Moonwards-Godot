@@ -23,6 +23,9 @@ rect_min_size = Vector2( 257, 0 )
 theme = ExtResource( 3 )
 custom_styles/panel = ExtResource( 7 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Alignment" type="VBoxContainer" parent="."]
 anchor_left = 0.01
@@ -120,7 +123,40 @@ margin_right = 846.0
 margin_bottom = 728.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Text gets overwritten by script."
+text = "Right click to toggle mouse being enabled.
+Disabling mouse lets you move the camera around.
+
+Left click to interact with Interactables or screens.
+
+Get a closer view of things by going into first person mode
+Toggle First Person mode: %s
+
+Move forwards: %s
+Move backwards: %s
+Move left: %s
+Move right: %s
+Jump: %s
+
+To get around quickly use human flight mode
+Toggle Human Flight: %s
+Fly up: %s
+Fly down: %s
+
+To move the camera around to check things out.
+Toggle Free Camera: %s
+Fly up: %s
+Fly down: %s
+Change camera movement speed by scrolling with the mouse.
+
+Interact with objects while in a vehicle by bringing up the Interacts Menu
+Toggle Interacts Menu: %s
+
+Get chat controls by hitting CTRL+H
+Toggle chat visibility: CTRL+2
+Toggle chat vertical size: %s
+Scroll Chat up: %s
+Scroll Chat down: %s
+"
 script = ExtResource( 9 )
 
 [node name="GotoMap" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
