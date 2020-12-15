@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://SceneComponent/Interface/TutorialMenu/TutorialMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Interface/MainMenu.tres" type="Theme" id=2]
@@ -9,6 +9,18 @@
 [ext_resource path="res://Assets/Interface/TutorialMenu/Pictures/HelpMenuButtonShowcase.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Interface/Fonts/Exo2/Exo2-Medium.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://SceneComponent/Interface/TutorialMenu/TextFormatter.gd" type="Script" id=9]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 18
 
 [sub_resource type="DynamicFont" id=1]
 size = 19
@@ -27,6 +39,7 @@ anchor_left = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.92
 theme = ExtResource( 2 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -64,10 +77,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
 text = "Move around by using the %s%s%s%s keys. %s to jump.
-Toggle first person mode by pressing %s.
-Toggle mouse cursor by right clicking the mouse or pressing %s.
+Toggle mouse cursor by pressing %s.
 
-Aim at the floating pink jewels or the stairs and left click the mouse or press %s to interact with them."
+The top right corner of the screen will let you know when you can interact with something. Try walking up close to the pink orb and left clicking the mouse with the cursor on it."
 autowrap = true
 
 [node name="OrbAndStair" type="HBoxContainer" parent="VWithTheme"]
@@ -103,8 +115,8 @@ margin_bottom = 408.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
-text = "The screens around the neighborhood can be clicked. 
-Use the mouse or aim at them in first person mode and left click to use them."
+text = "Right click the mouse to easily read screens.
+ Left click the mouse to interact with the screens."
 autowrap = true
 
 [node name="Screens" type="HBoxContainer" parent="VWithTheme"]

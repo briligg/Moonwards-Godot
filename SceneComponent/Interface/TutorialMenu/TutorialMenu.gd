@@ -32,6 +32,9 @@ func toggle() -> void :
 	#If we are now visible. Hide all other menus.
 	if visible :
 		Hud.hide(Hud.flags.RelevantToTutorial)
+		
+		#Update the text to reflect actual controls.
+		$VWithTheme.call_deferred("format_text")
 	
 	#Bring up the other menus if I am being hidden.
 	else :
