@@ -44,7 +44,7 @@ func _integrate_server(_args) -> void:
 		return
 	rset_unreliable("srv_pos", srv_pos)
 #	rset_unreliable("srv_vel", srv_vel)
-#	rset_unreliable("look_dir", look_dir)
+	rset_unreliable("look_dir", look_dir)
 	
 func _integrate_client(_args) -> void:
 	if !get_tree().network_peer:
