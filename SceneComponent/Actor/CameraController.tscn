@@ -6,6 +6,8 @@
 script = ExtResource( 1 )
 
 [node name="Camera" type="Camera" parent="."]
+fov = 60.0
+near = 0.15
 far = 35000.0
 
 [node name="Pivot" type="Spatial" parent="."]
