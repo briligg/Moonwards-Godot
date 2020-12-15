@@ -123,8 +123,8 @@ margin_right = 846.0
 margin_bottom = 728.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Right click to toggle mouse being enabled.
-Disabling mouse lets you move the camera around.
+text = "Right click to toggle between mouse cursor on or off.
+Turning off the mouse cursor lets you move the camera around.
 
 Left click to interact with Interactables or screens.
 
@@ -159,35 +159,35 @@ Scroll Chat down: %s
 "
 script = ExtResource( 9 )
 
-[node name="GotoMap" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
+[node name="TutorialMenu" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
 margin_top = 744.0
 margin_right = 846.0
 margin_bottom = 779.0
-text = "How to use Map"
+text = "Tutorial Menu"
 
-[node name="GotoEvent" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
+[node name="GotoMap" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
 margin_top = 795.0
 margin_right = 846.0
 margin_bottom = 830.0
-text = "How to setup events"
+text = "How to use Map"
 
-[node name="GotoApps" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
+[node name="GotoEvent" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
 margin_top = 846.0
 margin_right = 846.0
 margin_bottom = 881.0
-text = "What are apps?"
+text = "How to setup events"
 
-[node name="GotoRecording" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
+[node name="GotoApps" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
 margin_top = 897.0
 margin_right = 846.0
 margin_bottom = 932.0
-text = "how to record screen"
+text = "What are apps?"
 
-[node name="TutorialMenu" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
+[node name="GotoRecording" type="Button" parent="Alignment/HelpMenu/InitialMenu"]
 margin_top = 948.0
 margin_right = 846.0
 margin_bottom = 983.0
-text = "Tutorial Menu"
+text = "how to record screen"
 
 [node name="VSeparator" type="VSeparator" parent="Alignment/HelpMenu/InitialMenu"]
 margin_top = 999.0
