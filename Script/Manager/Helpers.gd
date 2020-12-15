@@ -12,7 +12,7 @@ var user_file : ConfigFile = ConfigFile.new()
 #These are the actions that are editable.
 var editable_actions : Array = [
 	"move_forwards", "move_backwards", "move_left", "move_right",
-	"jump", "interact_with_closest", "use", "toggle_first_person",
+	"jump", "use", "toggle_first_person",
 	"fly_up", "fly_down", "toggle_camera_fly", "mouse_toggle",
 	"chat_toggle_size", "chat_page_up", "chat_page_down"
 ]
