@@ -28,6 +28,9 @@ const HEAD_HEIGHT : float = 0.8
 #If I should respond to the mouse or not.
 var mouse_respond : bool = true
 
+#True when the mouse has been captured.
+var mouse_just_toggled : bool = false
+
 #Determines if I should freely fly or not.
 var _is_flying : bool = false 
 #How fast the player is flying.
@@ -73,10 +76,11 @@ func _input(event):
 	if MwInput.is_chat_active:
 		return
 	
-	if event is InputEventMouseMotion:
-		var mouse_vec : Vector2 = event.get_relative()
-		yaw = fmod(yaw - mouse_vec.x * mouse_sensitivity, 360.0)
-		pitch = max(min(pitch - mouse_vec.y * mouse_sensitivity , max_pitch), -max_pitch)
+	if event is InputEventMouseMotion :
+		if not mouse_just_toggled :
+			var mouse_vec : Vector2 = event.get_relative()
+			yaw = fmod(yaw - mouse_vec.x * mouse_sensitivity, 360.0)
+			pitch = max(min(pitch - mouse_vec.y * mouse_sensitivity , max_pitch), -max_pitch)
 	
 	#Check to see if the player has started camera free fly.
 	elif event.is_action_pressed("toggle_camera_fly") :
@@ -101,6 +105,9 @@ func _input(event):
 #Called by signal. If true, do not rotate the camera.
 func _respond_to_mouse(mouse_active : bool) -> void :
 	mouse_respond = mouse_active
+	mouse_just_toggled = !mouse_active
+	if mouse_just_toggled :
+		yield(get_tree().create_timer(0.3), "timeout")
 
 func _update_cam_pos(delta : float = 0.016667) -> void:
 	#The player is in camera fly mode.
