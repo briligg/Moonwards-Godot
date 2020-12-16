@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Tree/Interface/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/BackgroundCycler/BackgroundCycler.tscn" type="PackedScene" id=2]
@@ -35,7 +35,88 @@
 [ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=33]
 [ext_resource path="res://Tree/Interface/MainMenu/Links.gd" type="Script" id=34]
 
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+bg_color = Color( 0, 0, 0, 0.588235 )
+border_width_left = 6
+border_width_top = 6
+border_width_right = 2
+border_width_bottom = 6
+border_color = Color( 0.717647, 0.717647, 0.717647, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+shadow_color = Color( 0.227451, 0.227451, 0.227451, 0.6 )
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 1, 1, 1, 0.807843 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.8, 0.8, 0.8, 0.937255 )
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 3.0
+expand_margin_right = 3.0
+expand_margin_top = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 0.588235 )
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color( 0.717647, 0.717647, 0.717647, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color( 0.227451, 0.227451, 0.227451, 0.6 )
+shadow_size = 7
+
 [sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 0.588235 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0, 0, 0, 0.588235 )
 border_width_left = 2
 border_width_top = 2
@@ -47,11 +128,11 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 corner_detail = 18
 
-[sub_resource type="StyleBoxEmpty" id=2]
+[sub_resource type="StyleBoxEmpty" id=7]
 
-[sub_resource type="StyleBoxEmpty" id=3]
+[sub_resource type="StyleBoxEmpty" id=8]
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=9]
 script/source = "extends WindowDialog
 
 func _on_NPCs_pressed():
@@ -558,8 +639,9 @@ __meta__ = {
 }
 
 [node name="Label_Version" type="Label" parent="VBoxContainer/AboutSection/LabelAndLinks"]
+margin_top = 6.0
 margin_right = 229.0
-margin_bottom = 22.0
+margin_bottom = 28.0
 size_flags_horizontal = 3
 text = "Game Version 0.0.1     Sites:  "
 __meta__ = {
@@ -569,23 +651,44 @@ __meta__ = {
 [node name="Twitter" type="Button" parent="VBoxContainer/AboutSection/LabelAndLinks"]
 margin_left = 237.0
 margin_right = 466.0
-margin_bottom = 22.0
+margin_bottom = 35.0
 size_flags_horizontal = 3
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 4 )
 text = "Twitter"
 
 [node name="Reddit" type="Button" parent="VBoxContainer/AboutSection/LabelAndLinks"]
 margin_left = 474.0
 margin_right = 703.0
-margin_bottom = 22.0
+margin_bottom = 35.0
 size_flags_horizontal = 3
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 4 )
 text = "Reddit"
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="Discord" type="Button" parent="VBoxContainer/AboutSection/LabelAndLinks"]
 margin_left = 711.0
 margin_right = 940.0
-margin_bottom = 22.0
+margin_bottom = 35.0
 size_flags_horizontal = 3
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 4 )
 text = "Discord"
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="Label_Info" type="Label" parent="VBoxContainer/AboutSection"]
 anchor_left = 1.0
@@ -803,7 +906,7 @@ margin_bottom = 540.0
 rect_min_size = Vector2( 150, 180 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 6 )
 
 [node name="Tab" type="TabContainer" parent="HBoxContainer/Panel"]
 margin_left = 2.0
@@ -822,7 +925,7 @@ anchor_bottom = 1.0
 margin_right = 14.0
 margin_bottom = 536.0
 rect_min_size = Vector2( 14, 0 )
-custom_styles/separator = SubResource( 2 )
+custom_styles/separator = SubResource( 7 )
 
 [node name="StartGame" type="VBoxContainer" parent="HBoxContainer/Panel/Tab/DestinationTab"]
 margin_left = 18.0
@@ -834,7 +937,7 @@ custom_constants/separation = 33
 margin_right = 300.0
 margin_bottom = 8.0
 rect_min_size = Vector2( 0, 8 )
-custom_styles/separator = SubResource( 3 )
+custom_styles/separator = SubResource( 8 )
 
 [node name="JoinMainServer" type="Button" parent="HBoxContainer/Panel/Tab/DestinationTab/StartGame"]
 margin_top = 41.0
@@ -891,7 +994,7 @@ anchor_bottom = 1.0
 margin_right = 14.0
 margin_bottom = 536.0
 rect_min_size = Vector2( 14, 0 )
-custom_styles/separator = SubResource( 2 )
+custom_styles/separator = SubResource( 7 )
 
 [node name="UserSettings" parent="HBoxContainer/Panel/Tab/AvatarTab" instance=ExtResource( 9 )]
 anchor_right = 0.0
@@ -926,7 +1029,7 @@ margin_top = -460.0
 margin_right = 877.0
 margin_bottom = 461.0
 window_title = "NPC Editor"
-script = SubResource( 4 )
+script = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
