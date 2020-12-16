@@ -35,7 +35,7 @@
 [ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=33]
 [ext_resource path="res://Tree/Interface/MainMenu/Links.gd" type="Script" id=34]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 0.0
 content_margin_right = 0.0
 content_margin_top = 0.0
@@ -58,7 +58,7 @@ expand_margin_bottom = 8.0
 shadow_color = Color( 0.227451, 0.227451, 0.227451, 0.6 )
 shadow_size = 7
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 1, 1, 1, 0.807843 )
 border_width_left = 2
 border_width_top = 2
@@ -75,7 +75,7 @@ expand_margin_right = 3.0
 expand_margin_top = 3.0
 expand_margin_bottom = 3.0
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0, 0, 0, 0.588235 )
 border_width_left = 6
 border_width_top = 6
@@ -94,14 +94,14 @@ expand_margin_bottom = 2.0
 shadow_color = Color( 0.227451, 0.227451, 0.227451, 0.6 )
 shadow_size = 7
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0, 0, 0, 0.588235 )
 border_width_left = 2
 border_width_top = 2
@@ -639,52 +639,64 @@ __meta__ = {
 }
 
 [node name="Label_Version" type="Label" parent="VBoxContainer/AboutSection/LabelAndLinks"]
-margin_top = 6.0
-margin_right = 229.0
-margin_bottom = 28.0
+margin_top = 2.0
+margin_right = 228.0
+margin_bottom = 24.0
 size_flags_horizontal = 3
 text = "Game Version 0.0.1     Sites:  "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Twitter" type="Button" parent="VBoxContainer/AboutSection/LabelAndLinks"]
-margin_left = 237.0
-margin_right = 466.0
-margin_bottom = 35.0
+[node name="Source" type="Button" parent="VBoxContainer/AboutSection/LabelAndLinks"]
+margin_left = 236.0
+margin_right = 406.0
+margin_bottom = 26.0
 size_flags_horizontal = 3
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/focus = SubResource( 2 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "Source"
+
+[node name="Twitter" type="Button" parent="VBoxContainer/AboutSection/LabelAndLinks"]
+margin_left = 414.0
+margin_right = 584.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
 text = "Twitter"
 
 [node name="Reddit" type="Button" parent="VBoxContainer/AboutSection/LabelAndLinks"]
-margin_left = 474.0
-margin_right = 703.0
-margin_bottom = 35.0
+margin_left = 592.0
+margin_right = 762.0
+margin_bottom = 26.0
 size_flags_horizontal = 3
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/focus = SubResource( 2 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
 text = "Reddit"
 __meta__ = {
 "_editor_description_": ""
 }
 
 [node name="Discord" type="Button" parent="VBoxContainer/AboutSection/LabelAndLinks"]
-margin_left = 711.0
+margin_left = 770.0
 margin_right = 940.0
-margin_bottom = 35.0
+margin_bottom = 26.0
 size_flags_horizontal = 3
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/focus = SubResource( 2 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
 text = "Discord"
 __meta__ = {
 "_editor_description_": ""
