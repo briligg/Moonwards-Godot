@@ -72,7 +72,10 @@ func reverse_visibility()-> void:
 	
 	for node in _previous_states.keys():
 		var visibility_state = _previous_states[node]
-		_reverse_node_visibility(node, visibility_state)
+		if visibility_state:
+			_reverse_node_visibility(node, visibility_state)
+		else:
+			_reverse_node_visibility(node, VisibilityManager.default_lod_state)
 	_previous_states.clear()
 
 func _reverse_node_visibility(node, visibility_state):
