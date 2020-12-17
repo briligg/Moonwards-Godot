@@ -133,10 +133,10 @@ func main_logic_routine(phys_state):
 func update_anim_state(_phys_state : PhysicsDirectBodyState):
 	if is_flying:
 		entity.state.state = ActorEntityState.State.FLY
-	elif is_jumping or !entity.is_grounded and !is_climbing:
-		entity.state.state = ActorEntityState.State.IN_AIR
 	elif is_climbing:
 		entity.state.state = ActorEntityState.State.CLIMBING
+	elif is_jumping or !entity.is_grounded and !is_climbing:
+		entity.state.state = ActorEntityState.State.IN_AIR
 	elif abs(entity.velocity.length()) > 0:
 		entity.state.state = ActorEntityState.State.MOVING
 	elif abs(entity.velocity.y) > 0.1 or !entity.is_grounded:
@@ -247,7 +247,6 @@ func start_climb_stairs(target_stairs : VerticalStairs) -> void:
 	entity.custom_integrator = true
 	entity.stairs = target_stairs
 	is_climbing = true
-	
 	#Get which direction I should face when climbing the stairs.
 	var kb_pos = entity.global_transform.origin
 	entity.climb_look_direction = entity.stairs.get_look_direction(kb_pos)
