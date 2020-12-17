@@ -83,6 +83,17 @@ var _functions = {
 			{"_label_title" : "Output 3", "_type" : Nodes.TYPE_ANY }
 		]
 	},
+	"pick_random" : {
+		"_category" : "misc",
+		"_input_ports" : [
+			{"_label_title":"Input", "_type" : Nodes.TYPE_ANY}
+		],
+		"_output_ports" : [
+			{"_label_title" : "Output 1", "_type" : Nodes.TYPE_ANY },
+			{"_label_title" : "Output 2", "_type" : Nodes.TYPE_ANY },
+			{"_label_title" : "Output 3", "_type" : Nodes.TYPE_ANY }
+		]
+	},
 	"parallel_trigger" : {
 		"_category" : "misc",
 		"_input_ports" : [
@@ -157,6 +168,24 @@ var _functions = {
 		"_output_ports" : [
 			{"_label_title":"","_type":TYPE_NIL},
 			]
+	}, 
+	"follow" : {
+		"_category" : "actions",
+		"_input_ports" : [
+			{"_label_title":"Character","_type":"CLASS_CHARACTER"},
+			],
+		"_output_ports" : [
+			{"_label_title":"","_type":TYPE_NIL},
+			]
+	}, 
+	"stop_follow" : {
+		"_category" : "actions",
+		"_input_ports" : [
+			{"_label_title":"Trigger","_type":Nodes.TYPE_ANY},
+			],
+		"_output_ports" : [
+			{"_label_title":"","_type":TYPE_NIL},
+			]
 	} 
 }
 
@@ -176,7 +205,7 @@ var _stimulus = {
 	},
 	#This section is for user designed signals
 	"interacted_by" :{
-		"_output_name": "Interactor",
+		"_output_name": "Character",
 		"_output_type": "CLASS_CHARACTER",
 	},
 	"stopped_working" :{
@@ -194,6 +223,10 @@ var _stimulus = {
 	"state_changed" :{
 		"_output_name": "Trigger",
 		"_output_type": Nodes.TYPE_ANY,
+	},
+	"dialog_answered" :{
+		"_output_name": "Last Dialog",
+		"_output_type": TYPE_STRING,
 	},
 	
 }

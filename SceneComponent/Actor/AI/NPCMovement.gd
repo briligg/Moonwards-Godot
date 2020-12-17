@@ -22,12 +22,13 @@ var world_ref : WorldNavigator = null
 var path : Array = []
 var objective : Vector3 = Vector3.ZERO
 var delta_time : float = 0.0
+var delta_following : float = 3.4
 
 var current_target : GSAIAgentLocation = GSAIAgentLocation.new() 
 var facing_target : GSAIAgentLocation = GSAIAgentLocation.new()
 var special_target : GSAISteeringAgent = GSAISteeringAgent.new()
 var current_path : GSAIPath = GSAIPath.new([Vector3(1,1,1), Vector3(2,2,5)])
-
+var following : Spatial = null
 
 
 # First, we setup our NPCs personal space, so they don't hit each other
@@ -168,6 +169,11 @@ func _process_server(delta):
 	follow_path_manual(delta)
 	
 	
+	if following:
+		delta_following += delta
+		if delta_following > 4:
+			delta_following = 0
+			get_navpath(following.translation)
 		
 func _handle_npc_input(acceleration : GSAITargetAcceleration, _delta : float):
 	update_agent(acceleration.linear, acceleration.angular)
