@@ -191,5 +191,9 @@ var _stimulus = {
 		"_output_name": "Trigger",
 		"_output_type": Nodes.TYPE_ANY,
 	},
+	"state_changed" :{
+		"_output_name": "Trigger",
+		"_output_type": Nodes.TYPE_ANY,
+	},
 	
 }

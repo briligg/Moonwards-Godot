@@ -3,6 +3,7 @@ class_name NPCBase
 
 signal next_state(force)
 signal on_ready(none)
+signal state_changed(forced)
 var destination : Vector3 = Vector3.ZERO
 var has_destination : bool = false
 var is_occpuied : bool = false
@@ -122,7 +123,7 @@ func _change_behavior(behavior : ConfigFile):
 			connection.get("from_port"),
 			connection.get("to"), 
 			connection.get("to_port"))
-		
+	_emit_with_delay("state_changed")
 func _clean_function_name(f_name)->String:
 	#This section ahead cleans up the node name to get the function name instead
 	f_name = f_name.replace("@", "")
