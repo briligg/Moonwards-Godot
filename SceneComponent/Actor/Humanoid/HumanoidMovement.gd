@@ -244,6 +244,13 @@ func start_climb_stairs(target_stairs : VerticalStairs) -> void:
 	if is_climbing:
 		return
 	
+	#Disable entity collision so that no issues happen with multiple players
+	#climbing stairs at once.
+	entity.set_collision_mask_bit(0, false)
+	entity.set_collision_layer_bit(0, false)
+	entity.set_collision_mask_bit(1, false)
+	entity.set_collision_layer_bit(1, false)
+	
 	entity.custom_integrator = true
 	entity.stairs = target_stairs
 	is_climbing = true
@@ -283,6 +290,12 @@ func start_climb_stairs(target_stairs : VerticalStairs) -> void:
 func stop_climb_stairs(_phys_state : PhysicsDirectBodyState, is_stairs_top) -> void :
 	is_climbing = false
 	entity.climb_point = 0
+	
+	#Turn collisions back on so the player can collide with things.
+	entity.set_collision_mask_bit(0, true)
+	entity.set_collision_layer_bit(0, true)
+	entity.set_collision_mask_bit(1, true)
+	entity.set_collision_layer_bit(1, true)
 
 	if is_stairs_top:
 		var push_force = entity.model.transform.basis.z.normalized() * 2
