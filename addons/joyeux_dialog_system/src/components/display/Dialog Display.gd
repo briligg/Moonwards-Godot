@@ -20,6 +20,9 @@ var next_node : String = ""
 var character_name : String = ""
 var name_override : String = "" #For use with MwNPCs
 
+var last_node : String = ""
+
+
 func _ready():
 	load_dialogs(dialog, name_override)
 	
@@ -55,7 +58,9 @@ func load_dialogs(dialog : String, name_override : String = ""):
 func evaluate_node(node : String) -> String:
 	if node == "":
 		self.visible = false
-		emit_signal("finished")
+		emit_signal("finished", dialogs.get(last_node).get("title"))
+	else:
+		last_node = node
 	if dialogs.has(node):
 		set_name(dialogs.get(node).get("name_override"))
 		set_text(dialogs.get(node).get("content"))
