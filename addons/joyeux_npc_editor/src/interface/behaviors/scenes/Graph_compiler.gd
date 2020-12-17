@@ -23,22 +23,22 @@ func clear_graph() -> void:
 
 func load_nodes() -> void:
 	var connections = OutputFile.get_value("ai_config", "connections")
-	for name in ["from", "to"]:
+	for names in ["from", "to"]:
 		
 		for connection in connections:
 			#First load and create the nodes
-			var filtered = Nodes.filter_node_name(connection.get(name))
-			var unfiltered = connection.get(name)
+			var filtered = Nodes.filter_node_name(connection.get(names))
+			var unfiltered = connection.get(names)
 			var type 
 			for cat in Nodes.Graphs:
 				if Nodes.Graphs.get(cat).has(filtered):
 					type = cat
 			var offset = OutputFile.get_value("node_offsets", unfiltered)
-			if not has_node(connection.get(name)):
+			if not has_node(unfiltered):
 				add_node(type, unfiltered, offset)
 			for child in get_node(unfiltered).get_child_count():
 				var variables = OutputFile.get_value("variables", unfiltered)
-				if child < variables.size():
+				if child <= variables.size():
 					recursive_set_variable(
 						get_node(unfiltered).get_child(child),
 						variables[child])
@@ -111,7 +111,7 @@ func recursive_set_variable(node : Node, variable):
 		for child in node.get_children():
 			var found = recursive_set_variable(child, variable)
 			if found == OK:
-				return 
+				continue
 	return 
 	
 
