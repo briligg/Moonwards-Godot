@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/wave_03_cc0-11505__transitking__wavesound.ogg-0d878a5b3d4a5651956ad558c9d57353.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Ambience/Water/wave_03_cc0-11505__transitking__wavesound.ogg"
+dest_files=[ "res://.import/wave_03_cc0-11505__transitking__wavesound.ogg-0d878a5b3d4a5651956ad558c9d57353.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
