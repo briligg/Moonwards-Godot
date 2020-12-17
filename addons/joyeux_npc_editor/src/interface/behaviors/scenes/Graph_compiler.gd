@@ -11,9 +11,9 @@ var OutputFile : ConfigFile = ConfigFile.new()
 onready var save = $Save
 func _ready() -> void:
 	connect("node_selected", self, "_on_node_selected")
-	for type in range (0,27):
+#100 is overkill for simple NPCs, this should be changed to something dynamic
+	for type in range (0,100): 
 		add_valid_connection_type(28,type)
-#		add_valid_connection_type(type, 28)
 
 func clear_graph() -> void:
 	for child in get_children():
