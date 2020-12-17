@@ -1,85 +1,91 @@
 [variables]
 
 States=[  ]
-parallel_trigger=[ null, null ]
 CLAYER=[  ]
+stopped_working=[ null ]
+parallel_trigger=[ null, null ]
 parallel_trigger2=[ null, null ]
 parallel_trigger3=[ null, null ]
 parallel_trigger4=[ null, null ]
-match5=[ null, "OTHERS" ]
-match3=[ null, "PERSON" ]
-match4=[ null, "ENTERTAINMENT" ]
+match5=[ null, "ENTERTAINMENT" ]
+match4=[ null, "WORK" ]
 request_rejected=[ null ]
-request_workstation2=[ null, 0 ]
-request_workstation6=[ null, 1 ]
-request_workstation5=[ null, 3 ]
-request_workstation4=[ null, 2 ]
-request_workstation3=[ null, 4 ]
-set_objective=[ null ]
-force_next_state=[ null ]
-stopped_working=[ null ]
 workstation_assigned=[ null ]
-Save=[  ]
 interacted_by=[ null ]
-trigger_dialog=[ "res://Assets/Dialogs/Busy.mtalk" ]
 on_ready=[ null ]
+match=[ null, "OTHERS" ]
+request_workstation2=[ null, 4 ]
+request_workstation5=[ null, 2 ]
+request_workstation4=[ null, 3 ]
+request_workstation3=[ null, 1 ]
+force_next_state=[ null ]
+set_objective=[ null ]
+trigger_dialog=[ "res://test.mtalk" ]
 request_workstation=[ null, 0 ]
-match2=[ null, "FOOD" ]
+request_workstation6=[ null, 0 ]
+state_changed=[ null ]
 Behaviors=[  ]
-match=[ null, "WORK" ]
+request_workstation7=[ null, 0 ]
+Save=[  ]
+match2=[ null, "PERSON" ]
+match3=[ null, "FOOD" ]
 GraphEditFilter=[  ]
 
 [node_signals]
 
+stopped_working=[ "stopped_working" ]
 parallel_trigger=[ "parallel_trigger_output_0", "parallel_trigger_output_1" ]
 parallel_trigger2=[ "parallel_trigger2_output_0", "parallel_trigger2_output_1" ]
 parallel_trigger3=[ "parallel_trigger3_output_0", "parallel_trigger3_output_1" ]
 parallel_trigger4=[ "parallel_trigger4_output_0", "parallel_trigger4_output_1" ]
 match5=[ "match5_output_0" ]
-match3=[ "match3_output_0" ]
 match4=[ "match4_output_0" ]
 request_rejected=[ "request_rejected" ]
+workstation_assigned=[ "workstation_assigned" ]
+interacted_by=[ "interacted_by" ]
+on_ready=[ "on_ready" ]
+match=[ "match_output_0" ]
 request_workstation2=[  ]
-request_workstation6=[  ]
 request_workstation5=[  ]
 request_workstation4=[  ]
 request_workstation3=[  ]
-set_objective=[  ]
 force_next_state=[  ]
-stopped_working=[ "stopped_working" ]
-workstation_assigned=[ "workstation_assigned" ]
-interacted_by=[ "interacted_by" ]
+set_objective=[  ]
 trigger_dialog=[  ]
-on_ready=[ "on_ready" ]
 request_workstation=[  ]
+request_workstation6=[  ]
+state_changed=[ "state_changed" ]
+request_workstation7=[  ]
 match2=[ "match2_output_0" ]
-match=[ "match_output_0" ]
+match3=[ "match3_output_0" ]
 
 [node_offsets]
 
+stopped_working=Vector2( -640, 100 )
 parallel_trigger=Vector2( -220, 100 )
 parallel_trigger2=Vector2( 40, 20 )
 parallel_trigger3=Vector2( 40, 200 )
 parallel_trigger4=Vector2( 40, 360 )
 match5=Vector2( 340, 420 )
-match3=Vector2( 340, 180 )
 match4=Vector2( 340, 300 )
 request_rejected=Vector2( -660, -80 )
+workstation_assigned=Vector2( -660, 300 )
+interacted_by=Vector2( -680, 520 )
+on_ready=Vector2( -660, 680 )
+match=Vector2( 340, -40 )
 request_workstation2=Vector2( 740, 420 )
-request_workstation6=Vector2( 740, -60 )
 request_workstation5=Vector2( 740, 60 )
 request_workstation4=Vector2( 740, 180 )
 request_workstation3=Vector2( 740, 300 )
-set_objective=Vector2( -320, 320 )
 force_next_state=Vector2( -240, -80 )
-stopped_working=Vector2( -640, 100 )
-workstation_assigned=Vector2( -660, 300 )
-interacted_by=Vector2( -680, 520 )
+set_objective=Vector2( -320, 320 )
 trigger_dialog=Vector2( -360, 480 )
-on_ready=Vector2( -660, 680 )
 request_workstation=Vector2( -360, 640 )
+request_workstation6=Vector2( 740, -60 )
+state_changed=Vector2( -660, 820 )
+request_workstation7=Vector2( -360, 800 )
 match2=Vector2( 340, 60 )
-match=Vector2( 340, -40 )
+match3=Vector2( 340, 180 )
 
 [ai_config]
 
@@ -172,5 +178,10 @@ connections=[ {
 "from": "match",
 "from_port": 0,
 "to": "request_workstation6",
+"to_port": 0
+}, {
+"from": "state_changed",
+"from_port": 0,
+"to": "request_workstation7",
 "to_port": 0
 } ]

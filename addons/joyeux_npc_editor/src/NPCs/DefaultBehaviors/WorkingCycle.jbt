@@ -1,8 +1,8 @@
 [variables]
 
-CLAYER=[  ]
-Behaviors=[  ]
 States=[  ]
+Save=[  ]
+CLAYER=[  ]
 stopped_working=[ null ]
 parallel_trigger=[ null, null ]
 parallel_trigger2=[ null, null ]
@@ -26,8 +26,10 @@ set_objective=[ null ]
 trigger_dialog=[ "res://Assets/Dialogs/Busy.mtalk" ]
 request_workstation=[ null, 2 ]
 request_workstation6=[ null, 1 ]
+state_changed=[ null ]
+Behaviors=[  ]
+request_workstation7=[ null, 2 ]
 GraphEditFilter=[  ]
-Save=[  ]
 
 [node_signals]
 
@@ -54,6 +56,8 @@ set_objective=[  ]
 trigger_dialog=[  ]
 request_workstation=[  ]
 request_workstation6=[  ]
+state_changed=[ "state_changed" ]
+request_workstation7=[  ]
 
 [node_offsets]
 
@@ -80,6 +84,8 @@ set_objective=Vector2( -320, 320 )
 trigger_dialog=Vector2( -360, 480 )
 request_workstation=Vector2( -360, 640 )
 request_workstation6=Vector2( 740, -60 )
+state_changed=Vector2( -660, 800 )
+request_workstation7=Vector2( -360, 760 )
 
 [ai_config]
 
@@ -172,5 +178,10 @@ connections=[ {
 "from": "match",
 "from_port": 0,
 "to": "request_workstation6",
+"to_port": 0
+}, {
+"from": "state_changed",
+"from_port": 0,
+"to": "request_workstation7",
 "to_port": 0
 } ]
