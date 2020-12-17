@@ -182,6 +182,10 @@ initial_state = "WorkingCycle"
 [node name="NPC5" parent="Navigation" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2581, -7.5555, -3.61078 )
 
+[node name="AIHandler" parent="Navigation/NPC5" index="9"]
+NPC_File = "res://Assets/Characters/Steve.jsm"
+initial_state = "Help_me"
+
 [node name="SpawnPoints" type="Spatial" parent="."]
 
 [node name="1" type="Position3D" parent="SpawnPoints"]
@@ -194,3 +198,5 @@ transform = Transform( 0.0777281, 0, -0.996975, 0, 1, 0, 0.996975, 0, 0.0777281,
 [editable path="Navigation/NPC4"]
 
 [editable path="Navigation/NPC3"]
+
+[editable path="Navigation/NPC5"]
