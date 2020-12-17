@@ -658,7 +658,7 @@ custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 3 )
 custom_styles/disabled = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
-text = "Source"
+text = "Github"
 
 [node name="Twitter" type="Button" parent="VBoxContainer/AboutSection/LabelAndLinks"]
 margin_left = 414.0
