@@ -106,20 +106,21 @@ func _remove_mesh_instances(factory_data):
 	var freeable_instances = []
 	
 	for instance in factory_data.instance_arr:
-		if instance.get_child_count() > 0 and instance != null:
-			var inst_parent = instance.get_parent()
-			# Create and add a new placeholder to replace original instance
-			var new_inst = Spatial.new()
-			new_inst.global_transform = instance.global_transform
-			inst_parent.add_child(new_inst)
-			
-			for child in instance.get_children():
-				Helpers.reparent(child, new_inst, true)
-			
-			# remove the instance from the tree
-			inst_parent.remove_child(instance)
-			new_inst.name = inst_parent.name
-		freeable_instances.append(instance)
+		if instance != null:
+			if instance.get_child_count() > 0:
+				var inst_parent = instance.get_parent()
+				# Create and add a new placeholder to replace original instance
+				var new_inst = Spatial.new()
+				new_inst.global_transform = instance.global_transform
+				inst_parent.add_child(new_inst)
+				
+				for child in instance.get_children():
+					Helpers.reparent(child, new_inst, true)
+				
+				# remove the instance from the tree
+				inst_parent.remove_child(instance)
+				new_inst.name = inst_parent.name
+			freeable_instances.append(instance)
 		
 	for freeable in freeable_instances:
 		freeable.free()
