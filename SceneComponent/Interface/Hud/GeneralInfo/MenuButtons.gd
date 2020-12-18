@@ -2,6 +2,10 @@ extends VBoxContainer
 
 
 func _main_menu_pressed() -> void :
+	Network.network_instance.disconnect_instance()
+	Network.network_instance.world.queue_free()
+	Network.network_instance.queue_free()
+	yield(get_tree(), "physics_frame")
 	Scene.change_scene_to_async(Scene.main_menu)
 
 func _quit_pressed() -> void :
