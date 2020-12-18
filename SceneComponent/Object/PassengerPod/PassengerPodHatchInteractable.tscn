@@ -12,6 +12,7 @@ script = ExtResource( 2 )
 script = ExtResource( 1 )
 display_info = "Open Hatch"
 title = "Hatch"
+network_mode = 3
 
 [node name="CollisionShape" type="CollisionShape" parent="Interactable"]
 shape = SubResource( 1 )
