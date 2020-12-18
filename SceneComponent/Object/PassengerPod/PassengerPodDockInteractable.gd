@@ -245,19 +245,19 @@ puppet func set_physics_mode(mode):
 
 func sync_for_new_player(peer_id):
 	if get_tree().is_network_server():
-		var col_positions = []
+		var col_transforms = []
 		for col in collision_shapes:
-			col_positions.append(col.global_transform.origin)
+			col_transforms.append(col.global_transform)
 		if is_docked:
 			placeholder_node.get_node(self.name).rpc_id(peer_id, "_dock_for_new_player", docked_to.get_path(), 
-					pod.global_transform.origin, col_positions, 
-					hatch_collision.global_transform.origin)
+					pod.global_transform, col_transforms, 
+					hatch_collision.global_transform)
 		else:
-			rpc("_syncpos_for_new_player", pod.global_transform.origin, 
-					col_positions, 
-					hatch_collision.global_transform.origin)
+			rpc("_syncpos_for_new_player", pod.global_transform, 
+					col_transforms, 
+					hatch_collision.global_transform)
 
-puppet func _dock_for_new_player(rover_path, _pod_pos, col_pos_arr, col_hatch_pos):
+puppet func _dock_for_new_player(rover_path, _pod_xfm, col_xfm_arr, col_hatch_xfm):
 	$Interactable.title = "Undock Passenger Pod"
 	var rover = get_node(rover_path)
 	_reparent(pod, rover)
@@ -266,10 +266,10 @@ puppet func _dock_for_new_player(rover_path, _pod_pos, col_pos_arr, col_hatch_po
 	pod.transform.origin.y -= HALF_HEIGHT + .1
 	for i in range(collision_shapes.size()):
 		_reparent(collision_shapes[i], rover)
-		collision_shapes[i].global_transform.origin = col_pos_arr[i]
+		collision_shapes[i].global_transform = col_xfm_arr[i]
 		
 	_reparent(hatch_collision, rover)
-	hatch_collision.global_transform.origin = col_hatch_pos
+	hatch_collision.global_transform = col_hatch_xfm
 	generate_placeholder()
 	docked_to = rover
 	is_docked = true
