@@ -22,11 +22,11 @@ func _ready() -> void:
 	_join_server()
 
 func _join_server() -> void:
-	var peer = NetworkedMultiplayerENet.new()
-	peer.create_client(ip, port)
-	peer.always_ordered = Network.IS_ALWAYS_ORDERED
-	peer.compression_mode = Network.COMPRESS_MODE
-	get_tree().set_network_peer(peer)
+	self.multiplayer_peer = NetworkedMultiplayerENet.new()
+	self.multiplayer_peer.create_client(ip, port)
+	self.multiplayer_peer.always_ordered = Network.IS_ALWAYS_ORDERED
+	self.multiplayer_peer.compression_mode = Network.COMPRESS_MODE
+	get_tree().set_network_peer(self.multiplayer_peer)
 	self.peer_id = get_tree().get_network_unique_id()
 
 func _connected_ok():

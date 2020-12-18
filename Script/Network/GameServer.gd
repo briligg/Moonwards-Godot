@@ -5,8 +5,6 @@ var port: int = 0
 var max_players: int = 0
 var is_host_player: bool = false
 
-var server_peer: NetworkedMultiplayerENet = NetworkedMultiplayerENet.new()
-
 func _init(_port: int, _max_players: int, _is_host_player: bool = false):
 	self.port = _port
 	self.max_players = _max_players
@@ -54,11 +52,11 @@ master func initialize_entity_data(name, colors, gender : int):
 	Signals.Network.emit_signal(NetworkSignals.NEW_PLAYER_POST_LOAD, peer_id)
 
 func _host_game() -> void:
-	var err = server_peer.create_server(port, max_players)
+	var err = self.multiplayer_peer.create_server(port, max_players)
 	if err == OK:
-		get_tree().set_network_peer(server_peer)
-		server_peer.always_ordered = Network.IS_ALWAYS_ORDERED
-		server_peer.compression_mode = Network.COMPRESS_MODE
+		get_tree().set_network_peer(self.multiplayer_peer)
+		self.multiplayer_peer.always_ordered = Network.IS_ALWAYS_ORDERED
+		self.multiplayer_peer.compression_mode = Network.COMPRESS_MODE
 	elif err == ERR_CANT_CREATE:
 		Log.critical(self, "", "Could not create server peer.")
 	elif err == ERR_ALREADY_EXISTS:

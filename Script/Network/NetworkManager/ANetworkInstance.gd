@@ -14,6 +14,8 @@ var entities: Dictionary = {}
 
 var peer_id: int = -1
 
+var multiplayer_peer: NetworkedMultiplayerENet
+
 func _ready() -> void:
 	world = yield(Scene.change_scene_to_async(Scene.world_scene), "scene_changed")
 	yield(Signals.Loading, Signals.Loading.WORLD_POST_READY)
@@ -26,9 +28,8 @@ func _ready() -> void:
 	is_initialized = true
 	emit_signal("initialized")
 
-# virtual function called  when `initialized` is fired.
-func _start():
-	pass
+func disconnect_instance():
+	multiplayer_peer.close_connection()
 
 # `PUPPETSYNC`
 puppetsync func remove_player(_peer_id: int) -> void:
