@@ -274,8 +274,8 @@ puppet func _dock_for_new_player(rover_path, _pod_xfm, col_xfm_arr, col_hatch_xf
 	docked_to = rover
 	is_docked = true
 
-puppet func _syncpos_for_new_player(pod_pos, col_pos_arr, col_hatch_pos):
-	pod.global_transform.origin = pod_pos
+puppet func _syncpos_for_new_player(pod_xfm, col_pos_arr, col_hatch_pos):
+	pod.global_transform = pod_xfm
 	for i in range(collision_shapes.size()):
 		collision_shapes[i].global_transform.origin = col_pos_arr[i]
 	hatch_collision.global_transform.origin = col_hatch_pos
