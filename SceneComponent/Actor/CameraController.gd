@@ -3,6 +3,8 @@
 extends AComponent
 class_name CameraController
 
+const JOYPAD_DEADZONE = 0.09
+
 onready var camera: Camera = $Camera
 onready var pivot: Spatial = $Pivot
 
@@ -40,6 +42,7 @@ const CHANGE_FLY_SPEED_BY : float = 2.0
 const SLOWEST_POSSIBLE_FLIGHT_SPEED : float = 0.05
 
 
+
 func _init().("Camera", true):
 	mouse_respond = Helpers.is_mouse_captured()
 	
@@ -52,7 +55,7 @@ func _ready() -> void:
 	_update_cam_pos()
 	camera.set_as_toplevel(true)
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	#Set the camera back to regular mode if it is not the current camera.
 	if not camera.is_current() :
 		#Turn on the model if we were first person.
@@ -71,16 +74,44 @@ func _process(_delta: float) -> void:
 	
 	if not _is_flying and not overriden:
 		entity.look_dir = global_transform.origin - _get_cam_normal() * dist
+		
+	var joypad_vec = Vector2()
+	if Input.get_connected_joypads().size() > 0:
+
+		if OS.get_name() == "Windows":
+			joypad_vec = Vector2(Input.get_joy_axis(0, 2), Input.get_joy_axis(0, 3))
+		elif OS.get_name() == "X11":
+			joypad_vec = Vector2(Input.get_joy_axis(0, 3), Input.get_joy_axis(0, 4))
+		elif OS.get_name() == "OSX":
+			joypad_vec = Vector2(Input.get_joy_axis(0, 3), Input.get_joy_axis(0, 4))
+
+		if joypad_vec.length() < JOYPAD_DEADZONE:
+			joypad_vec = Vector2(0, 0)
+		else:
+			joypad_vec = joypad_vec.normalized() * ((joypad_vec.length() - JOYPAD_DEADZONE) / (1 - JOYPAD_DEADZONE))
+		
+		if MwInput.is_chat_active:
+			return
+		if joypad_vec.length() > JOYPAD_DEADZONE:
+			yaw = fmod(yaw - joypad_vec.x * mouse_sensitivity * (800*delta), 360.0)
+			pitch = max(min(pitch - joypad_vec.y * mouse_sensitivity  * (800*delta), max_pitch), -max_pitch)
 
 func _input(event):
 	if MwInput.is_chat_active:
 		return
+
+	var mouse_vec : Vector2 = Vector2.ZERO
 	
+	if event is InputEventJoypadMotion:
+		mouse_vec = Vector2(mouse_sensitivity, mouse_sensitivity)
+		mouse_vec.y -= event.get_action_strength("look_up") 
+		mouse_vec.y += event.get_action_strength("look_down") 
+		mouse_vec.x += event.get_action_strength("look_right") 
+		mouse_vec.x -= event.get_action_strength("look_left") 
+		
 	if event is InputEventMouseMotion :
 		if not mouse_just_toggled :
-			var mouse_vec : Vector2 = event.get_relative()
-			yaw = fmod(yaw - mouse_vec.x * mouse_sensitivity, 360.0)
-			pitch = max(min(pitch - mouse_vec.y * mouse_sensitivity , max_pitch), -max_pitch)
+			mouse_vec = event.get_relative()
 	
 	#Check to see if the player has started camera free fly.
 	elif event.is_action_pressed("toggle_camera_fly") :
@@ -88,6 +119,8 @@ func _input(event):
 		
 		Signals.Entities.emit_signal(Signals.Entities.FREE_CAMERA_SET, _is_flying)
 	
+	yaw = fmod(yaw - mouse_vec.x * mouse_sensitivity, 360.0)
+	pitch = max(min(pitch - mouse_vec.y * mouse_sensitivity , max_pitch), -max_pitch)
 	#Change flight speed when in flight mode.
 	if _is_flying :
 		if event.is_action_pressed("zoom_in", true) :
