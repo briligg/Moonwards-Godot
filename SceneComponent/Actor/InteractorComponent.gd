@@ -83,12 +83,36 @@ func _unhandled_input(event: InputEvent) -> void:
 	if MwInput.is_chat_active or !enabled:
 		return
 	if entity.owner_peer_id == Network.network_instance.peer_id:
+		
 		if (event is InputEventMouseMotion) and (event != null):
 			_latest_mouse_motion = event
+			
+		
+		if (event is InputEventJoypadMotion):
+			var nw = InputEventMouseMotion.new()
+			if event.axis == JOY_AXIS_2:
+				nw.relative.x = event.axis_value 
+			if event.axis == JOY_AXIS_3:
+				nw.relative.y = event.axis_value 
+			_latest_mouse_motion = nw
+			
+		InputEventMouseMotion
 		if event.is_action_pressed("left_click"):
-			_latest_mouse_click = event
+			if event is InputEventJoypadButton:
+				var nw := InputEventMouseButton.new()
+				nw.pressed = true
+				nw.button_index = BUTTON_LEFT
+				_latest_mouse_click = nw
+			else:
+				_latest_mouse_click = event
 		elif event.is_action_released("left_click") :
-			_latest_mouse_release = event
+			if event is InputEventJoypadButton:
+				var nw := InputEventMouseButton.new()
+				nw.pressed = false
+				nw.button_index = BUTTON_LEFT
+				_latest_mouse_click = nw
+			else:
+				_latest_mouse_release = event
 		
 		elif event.is_action_pressed("scroll_up") || event.is_action_pressed("scroll_down") :
 			_latest_mouse_scroll = event
