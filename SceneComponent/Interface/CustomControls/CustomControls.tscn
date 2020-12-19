@@ -158,6 +158,20 @@ margin_bottom = 138.0
 Label_text = "Flying Camera"
 action_to_edit = "toggle_camera_fly"
 
+[node name="maneuver_raise" parent="HBox/Sub2" instance=ExtResource( 3 )]
+margin_top = 152.0
+margin_right = 272.0
+margin_bottom = 176.0
+Label_text = "Raise Rover Legs"
+action_to_edit = "maneuver_raise"
+
+[node name="maneuver_lower" parent="HBox/Sub2" instance=ExtResource( 3 )]
+margin_top = 190.0
+margin_right = 272.0
+margin_bottom = 214.0
+Label_text = "Lower Rover Legs"
+action_to_edit = "maneuver_lower"
+
 [node name="Save" type="Button" parent="."]
 anchor_top = 1.0
 anchor_right = 1.0
