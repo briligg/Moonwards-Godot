@@ -14,7 +14,7 @@ var entities: Dictionary = {}
 
 var peer_id: int = -1
 
-var multiplayer_peer: NetworkedMultiplayerENet
+var multiplayer_peer: NetworkedMultiplayerENet = NetworkedMultiplayerENet.new()
 
 func _ready() -> void:
 	world = yield(Scene.change_scene_to_async(Scene.world_scene), "scene_changed")
