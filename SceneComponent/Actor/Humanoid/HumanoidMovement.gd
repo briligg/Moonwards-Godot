@@ -251,9 +251,14 @@ func start_climb_stairs(target_stairs : VerticalStairs) -> void:
 	entity.set_collision_mask_bit(1, false)
 	entity.set_collision_layer_bit(1, false)
 	
+	#Setup necessary variables.
 	entity.custom_integrator = true
 	entity.stairs = target_stairs
 	is_climbing = true
+	
+	#Unset variables that should be unset.
+	entity.climb_point = -1
+	
 	#Get which direction I should face when climbing the stairs.
 	var kb_pos = entity.global_transform.origin
 	entity.climb_look_direction = entity.stairs.get_look_direction(kb_pos)
