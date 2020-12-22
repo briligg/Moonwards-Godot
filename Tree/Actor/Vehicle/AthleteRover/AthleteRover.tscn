@@ -27,7 +27,7 @@ continuous_cd = true
 script = ExtResource( 10 )
 
 [node name="Interactor" parent="." instance=ExtResource( 2 )]
-disable_ray_cast = true
+ray_cast_length = 200.0
 
 [node name="CollisionShape" type="CollisionShape" parent="Interactor"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.27213, 0 )

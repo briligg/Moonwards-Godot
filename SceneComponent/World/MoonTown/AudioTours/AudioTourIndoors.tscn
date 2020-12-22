@@ -115,6 +115,7 @@ transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 945.979, -9.28398, 519.527 )
 
 [node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Outdoor1" instance=ExtResource( 6 )]
 transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
+max_interact_distance = 1000.0
 display_info = "play outdoor audio tour 1"
 title = "Outdoor Audio Tour 1"
 audio_file = ExtResource( 24 )
@@ -124,6 +125,7 @@ transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 393.806, 52.6985, 876.467 )
 
 [node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Outdoor2" instance=ExtResource( 6 )]
 transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
+max_interact_distance = 1000.0
 display_info = "play outdoor audio tour 2"
 title = "Outdoor Audio Tour 2"
 audio_file = ExtResource( 21 )
@@ -133,6 +135,7 @@ transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 188.555, 67.2892, 845.646 )
 
 [node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Outdoor3" instance=ExtResource( 6 )]
 transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
+max_interact_distance = 1000.0
 display_info = "play outdoor audio tour 3"
 title = "Outdoor Audio Tour 3"
 audio_file = ExtResource( 19 )
@@ -142,6 +145,7 @@ transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -280.222, 110.55, 751.34 )
 
 [node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Outdoor4" instance=ExtResource( 6 )]
 transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
+max_interact_distance = 1000.0
 display_info = "play outdoor audio tour 4"
 title = "Outdoor Audio Tour 4"
 audio_file = ExtResource( 16 )
@@ -151,6 +155,7 @@ transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -3327.42, -1460.31, -94.8163 )
 
 [node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Outdoor5" instance=ExtResource( 6 )]
 transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
+max_interact_distance = 1000.0
 display_info = "play outdoor audio tour 5"
 title = "Outdoor Audio Tour 5"
 audio_file = ExtResource( 14 )
@@ -159,6 +164,7 @@ audio_file = ExtResource( 14 )
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -1660.02, -1058.34, -329.491 )
 
 [node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Outdoor6" instance=ExtResource( 6 )]
+max_interact_distance = 1000.0
 display_info = "play outdoor audio tour 6"
 title = "Outdoor Audio Tour 6"
 audio_file = ExtResource( 2 )
@@ -167,6 +173,7 @@ audio_file = ExtResource( 2 )
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 22.6379, 113.043, -390.113 )
 
 [node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Outdoor7" instance=ExtResource( 6 )]
+max_interact_distance = 1000.0
 display_info = "play outdoor audio tour 7"
 title = "Outdoor Audio Tour 7"
 audio_file = ExtResource( 13 )
@@ -175,6 +182,7 @@ audio_file = ExtResource( 13 )
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 226.557, 119.344, -454.913 )
 
 [node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Outdoor8" instance=ExtResource( 6 )]
+max_interact_distance = 1000.0
 display_info = "play outdoor audio tour 8"
 title = "Outdoor Audio Tour 8"
 audio_file = ExtResource( 22 )
@@ -183,6 +191,7 @@ audio_file = ExtResource( 22 )
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 678.204, 110.409, -376.065 )
 
 [node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Outdoor9" instance=ExtResource( 6 )]
+max_interact_distance = 1000.0
 display_info = "play outdoor audio tour 9"
 title = "Outdoor Audio Tour 9"
 audio_file = ExtResource( 18 )
@@ -191,6 +200,7 @@ audio_file = ExtResource( 18 )
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 757.125, 387.477, -2351.99 )
 
 [node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Outdoor10" instance=ExtResource( 6 )]
+max_interact_distance = 1000.0
 display_info = "play outdoor audio tour 10"
 title = "Outdoor Audio Tour 10"
 audio_file = ExtResource( 17 )
@@ -199,6 +209,7 @@ audio_file = ExtResource( 17 )
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 4170.9, -420.808, -6138.28 )
 
 [node name="AudioSphere" parent="Audio-Tour-Markers/Audio_Tour_Marker_Outdoor11" instance=ExtResource( 6 )]
+max_interact_distance = 1000.0
 display_info = "play outdoor audio tour 11"
 title = "Outdoor Audio Tour 11"
 audio_file = ExtResource( 20 )
