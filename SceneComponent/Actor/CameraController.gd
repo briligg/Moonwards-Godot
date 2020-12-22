@@ -3,8 +3,6 @@
 extends AComponent
 class_name CameraController
 
-const JOYPAD_DEADZONE = 0.09
-
 onready var camera: Camera = $Camera
 onready var pivot: Spatial = $Pivot
 
@@ -67,6 +65,10 @@ func _process(delta: float) -> void:
 	if is_first_person :
 		entity.get_node("Model").visible = false
 	
+	#Do nothing if chat is active
+	if MwInput.is_chat_active:
+		return
+	
 	var _new_rot = Vector3(deg2rad(pitch), deg2rad(yaw), 0.0)
 	if not overriden && mouse_respond :
 		camera.set_rotation(_new_rot)
@@ -74,27 +76,18 @@ func _process(delta: float) -> void:
 	
 	if not _is_flying and not overriden:
 		entity.look_dir = global_transform.origin - _get_cam_normal() * dist
-		
+	
+	#Get the direction the player is turning to look from key input.
 	var joypad_vec = Vector2()
-	if Input.get_connected_joypads().size() > 0:
+	joypad_vec.x = -Input.get_action_strength("look_left") + Input.get_action_strength("look_right")
+	joypad_vec.y = -Input.get_action_strength("look_up") + Input.get_action_strength("look_down")
 
-		if OS.get_name() == "Windows":
-			joypad_vec = Vector2(Input.get_joy_axis(0, 2), Input.get_joy_axis(0, 3))
-		elif OS.get_name() == "X11":
-			joypad_vec = Vector2(Input.get_joy_axis(0, 3), Input.get_joy_axis(0, 4))
-		elif OS.get_name() == "OSX":
-			joypad_vec = Vector2(Input.get_joy_axis(0, 3), Input.get_joy_axis(0, 4))
-
-		if joypad_vec.length() < JOYPAD_DEADZONE:
-			joypad_vec = Vector2(0, 0)
-		else:
-			joypad_vec = joypad_vec.normalized() * ((joypad_vec.length() - JOYPAD_DEADZONE) / (1 - JOYPAD_DEADZONE))
-		
-		if MwInput.is_chat_active:
-			return
-		if joypad_vec.length() > JOYPAD_DEADZONE:
-			yaw = fmod(yaw - joypad_vec.x * mouse_sensitivity * (800*delta), 360.0)
-			pitch = max(min(pitch - joypad_vec.y * mouse_sensitivity  * (800*delta), max_pitch), -max_pitch)
+	if joypad_vec.length() > 1 :
+		joypad_vec = joypad_vec.normalized()
+	
+	if joypad_vec.length() > 0.01 :
+		yaw = fmod(yaw - joypad_vec.x * mouse_sensitivity * (800*delta), 360.0)
+		pitch = max(min(pitch - joypad_vec.y * mouse_sensitivity  * (800*delta), max_pitch), -max_pitch)
 
 func _input(event):
 	if MwInput.is_chat_active:

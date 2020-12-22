@@ -105,10 +105,21 @@ func _unhandled_input(event: InputEvent) -> void:
 			else:
 				_latest_mouse_release = event
 		
-		if event.is_action_pressed("scroll_up") || event.is_action_pressed("scroll_down") :
-			_latest_mouse_scroll = event
-		else :
-			_latest_mouse_scroll = null
+		elif event.is_action("scroll_up") :
+			if event.is_action_pressed("scroll_up") :
+				var mouse_scroll : InputEventMouseButton = InputEventMouseButton.new()
+				mouse_scroll.button_index = BUTTON_WHEEL_UP
+				_latest_mouse_scroll = mouse_scroll
+			elif event.is_action_released("scroll_up") :
+				_latest_mouse_scroll = null
+		
+		elif event.is_action("scroll_down") :
+			if event.is_action_pressed("scroll_down") :
+				var mouse_scroll : InputEventMouseButton = InputEventMouseButton.new()
+				mouse_scroll.button_index = BUTTON_WHEEL_DOWN
+				_latest_mouse_scroll = mouse_scroll
+			elif event.is_action_released("scroll_down") :
+				_latest_mouse_scroll = null
 
 func _physics_process(_delta: float) -> void:
 	if entity.owner_peer_id == Network.network_instance.peer_id:
