@@ -102,13 +102,6 @@ func _input(event):
 
 	var mouse_vec : Vector2 = Vector2.ZERO
 	
-	if event is InputEventJoypadMotion:
-		mouse_vec = Vector2(mouse_sensitivity, mouse_sensitivity)
-		mouse_vec.y -= event.get_action_strength("look_up") 
-		mouse_vec.y += event.get_action_strength("look_down") 
-		mouse_vec.x += event.get_action_strength("look_right") 
-		mouse_vec.x -= event.get_action_strength("look_left") 
-		
 	if event is InputEventMouseMotion :
 		if not mouse_just_toggled :
 			mouse_vec = event.get_relative()

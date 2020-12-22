@@ -86,14 +86,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		if (event is InputEventMouseMotion) and (event != null):
 			_latest_mouse_motion = event
-		
-		if (event is InputEventJoypadMotion):
-			var nw = InputEventMouseMotion.new()
-			if event.axis == JOY_AXIS_2:
-				nw.relative.x = event.axis_value 
-			if event.axis == JOY_AXIS_3:
-				nw.relative.y = event.axis_value 
-			_latest_mouse_motion = nw
 			
 		if event.is_action_pressed("left_click"):
 			if event is InputEventJoypadButton:
@@ -113,8 +105,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			else:
 				_latest_mouse_release = event
 		
-		elif event.is_action_pressed("scroll_up") || event.is_action_pressed("scroll_down") :
+		if event.is_action_pressed("scroll_up") || event.is_action_pressed("scroll_down") :
 			_latest_mouse_scroll = event
+		else :
+			_latest_mouse_scroll = null
 
 func _physics_process(_delta: float) -> void:
 	if entity.owner_peer_id == Network.network_instance.peer_id:
@@ -161,7 +155,8 @@ func _try_update_interact():
 			_prev_frame_collider = result
 		
 		#Let the new object know if we are scrolling with the scroll wheel.
-		result.emit_signal("input_event", camera, _latest_mouse_scroll, interactor_ray.get_collision_point(), interactor_ray.get_collision_normal(), 0)
+		if not _latest_mouse_scroll == null :
+			result.emit_signal("input_event", camera, _latest_mouse_scroll, interactor_ray.get_collision_point(), interactor_ray.get_collision_normal(), 0)
 	
 	else:
 		if _prev_frame_collider != null:
@@ -205,7 +200,7 @@ func _make_hud_display_interactable(interactable : Interactable = null) -> void 
 		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_SHOWN, 
 				interactable.display_info, disable_ray_cast)
 		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_INTERACT, true)
-				
+
 #Called by signal. When false, do not allow the player to press interact. When true, player can interact.
 func _set_can_interact(set_can_interact : bool) -> void :
 	can_interact = set_can_interact
