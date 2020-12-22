@@ -86,7 +86,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		if (event is InputEventMouseMotion) and (event != null):
 			_latest_mouse_motion = event
-			
 		
 		if (event is InputEventJoypadMotion):
 			var nw = InputEventMouseMotion.new()
@@ -96,7 +95,6 @@ func _unhandled_input(event: InputEvent) -> void:
 				nw.relative.y = event.axis_value 
 			_latest_mouse_motion = nw
 			
-		InputEventMouseMotion
 		if event.is_action_pressed("left_click"):
 			if event is InputEventJoypadButton:
 				var nw := InputEventMouseButton.new()
@@ -105,12 +103,13 @@ func _unhandled_input(event: InputEvent) -> void:
 				_latest_mouse_click = nw
 			else:
 				_latest_mouse_click = event
+		
 		elif event.is_action_released("left_click") :
 			if event is InputEventJoypadButton:
 				var nw := InputEventMouseButton.new()
 				nw.pressed = false
 				nw.button_index = BUTTON_LEFT
-				_latest_mouse_click = nw
+				_latest_mouse_release = nw
 			else:
 				_latest_mouse_release = event
 		
@@ -179,10 +178,12 @@ func _try_request_interact():
 			var camera = get_tree().get_root().get_camera()
 			result.emit_signal("input_event", camera, _latest_mouse_release, interactor_ray.get_collision_point(), interactor_ray.get_collision_normal(), 0)
 		_latest_mouse_release = null
+		
+		#Do not let anything else know that the mouse has been released.
+		return
 	
 	if !_latest_mouse_click:
 		return
-	
 	
 	if result is Interactable:
 		if interactor_ray.global_transform.origin.distance_to(interactor_ray.get_collision_point()) < result.max_interact_distance:
