@@ -24,9 +24,9 @@ func _ready() -> void:
 	world.connect("tree_exited", self, "_on_world_closed")
 	entities_container = Node.new()
 	entities_container.name = "entities"
-	world.add_child(entities_container)
+	world.call_deferred("add_child", entities_container)
 	is_initialized = true
-	emit_signal("initialized")
+	call_deferred("emit_signal", "initialized")
 
 func disconnect_instance():
 	multiplayer_peer.close_connection()
@@ -43,6 +43,10 @@ puppetsync func remove_player(_peer_id: int) -> void:
 # Adds a new player to the game
 # `entity_data` `EntityData` (or dictionary in serialized form) type
 puppetsync func add_player(entity_data) -> void:
+	# Safely calling it
+	call_deferred("_add_player_to_tree", entity_data)
+	
+func _add_player_to_tree(entity_data)-> void:
 	Log.trace(self, "", "ADDING ENTITY %s %s" %[entity_data.peer_id, entity_data.entity_name])
 	# Temporary until generic component instancing is available
 	if entity_data.is_empty == true:

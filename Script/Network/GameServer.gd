@@ -48,7 +48,7 @@ master func initialize_entity_data(name, colors, gender : int):
 	# Resume spawning the player.
 	entities[entity_data.peer_id] = entity_data
 	crpc(self, "add_player", entity_data.serialize(), [peer_id])
-	Log.trace(self, "", "SERVER CONNECTED: %s" %peer_id)
+	Log.trace(self, "initialize_entity_data", "SERVER CONNECTED: %s" %peer_id)
 	Signals.Network.emit_signal(NetworkSignals.NEW_PLAYER_POST_LOAD, peer_id)
 
 func _host_game() -> void:
@@ -58,9 +58,9 @@ func _host_game() -> void:
 		self.multiplayer_peer.always_ordered = Network.IS_ALWAYS_ORDERED
 		self.multiplayer_peer.compression_mode = Network.COMPRESS_MODE
 	elif err == ERR_CANT_CREATE:
-		Log.critical(self, "", "Could not create server peer.")
+		Log.critical(self, "_host_game", "Could not create server peer.")
 	elif err == ERR_ALREADY_EXISTS:
-		Log.error(self, "", "Server peer already exists.")
+		Log.error(self, "_host_game", "Server peer already exists.")
 
 func _start_session() -> void:
 	Log.trace(self, "", "Server instance started.")
@@ -79,7 +79,6 @@ func _get_spawn() -> Vector3:
 	var spawns = world.get_node("SpawnPoints").get_children()
 	var spawn = spawns[rand_range(0, spawns.size() - 1)]
 	return spawn.global_transform.origin
-#	return Vector3(100, 100, -210)
 
 func _player_connected(peer_id) -> void:
 	Log.trace(self, "", "CONNECTION INITIATED: %s" %peer_id)

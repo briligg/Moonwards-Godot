@@ -36,11 +36,13 @@ func _connected_ok():
 
 func _server_disconnected():
 	Log.trace(self, "", "DISCONNECTED.")
+	disconnect_instance()
 	get_tree().change_scene(Scene.main_menu)
 	self.queue_free()
 
 func _connected_fail():
 	Log.warning(self, "", "CONNECTION FAILED!")
+	disconnect_instance()
 	get_tree().change_scene(Scene.main_menu)
 	self.queue_free()
 
