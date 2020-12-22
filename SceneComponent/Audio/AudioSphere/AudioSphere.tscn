@@ -59,7 +59,9 @@ collision_layer = 32768
 collision_mask = 0
 script = ExtResource( 1 )
 display_info = "play audio recording"
+title = "Play Audio Track"
 is_networked = false
+is_sync_for_new_player = false
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
