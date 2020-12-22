@@ -590,6 +590,11 @@ _global_script_classes=[ {
 "path": "res://Assets/SharedAssets/Shaders/StochasticTextureNode.gd"
 }, {
 "base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeStochasticTriplanar",
+"language": "GDScript",
+"path": "res://Assets/SharedAssets/Shaders/StochasticTriplanarNode.gd"
+}, {
+"base": "VisualShaderNodeCustom",
 "class": "VisualShaderNodeUVEdit",
 "language": "GDScript",
 "path": "res://Assets/SharedAssets/Shaders/CustomUVNode.gd"
@@ -746,6 +751,7 @@ _global_script_class_icons={
 "VisualShaderNodeParallaxMapping": "",
 "VisualShaderNodeScalarHeightMix": "",
 "VisualShaderNodeStochasticTexture": "",
+"VisualShaderNodeStochasticTriplanar": "",
 "VisualShaderNodeUVEdit": "",
 "VisualShaderNodeUVPanner": "",
 "VisualShaderNodeVectorHeightMix": "",
@@ -2012,11 +2018,13 @@ move_right={
 scroll_up={
 "deadzone": 0.5,
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":4,"pressed":false,"doubleclick":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":10,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
 scroll_down={
 "deadzone": 0.5,
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":5,"pressed":false,"doubleclick":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":11,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
 left_click={
