@@ -88,6 +88,10 @@ func _process(delta: float) -> void:
 	if joypad_vec.length() > 0.01 :
 		yaw = fmod(yaw - joypad_vec.x * mouse_sensitivity * (800*delta), 360.0)
 		pitch = max(min(pitch - joypad_vec.y * mouse_sensitivity  * (800*delta), max_pitch), -max_pitch)
+		var joy_new_rot = Vector3(deg2rad(pitch), deg2rad(yaw), 0.0)
+		if not overriden :
+			camera.set_rotation(joy_new_rot)
+		_update_cam_pos()
 
 func _input(event):
 	if MwInput.is_chat_active:
