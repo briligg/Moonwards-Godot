@@ -30,8 +30,6 @@ func update_title(text):
 		Label_text = text
 		$Label.text = text
 
-
-
 func _enter_tree() -> void:
 	var is_key = false
 	if not $Confirm.get_cancel().is_connected("pressed",self,"_on_Cancel"):

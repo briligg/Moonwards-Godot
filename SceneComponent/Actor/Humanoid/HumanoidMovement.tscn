@@ -5,7 +5,6 @@
 [node name="HumanoidMovement" type="Spatial"]
 script = ExtResource( 1 )
 enabled = true
-climb_speed = 1.5
 movement_speed = 5.0
 
 [node name="OnGround" type="RayCast" parent="."]

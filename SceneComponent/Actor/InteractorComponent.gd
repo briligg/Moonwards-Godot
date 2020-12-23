@@ -53,6 +53,10 @@ func _ready() -> void :
 	Signals.Menus.connect(Signals.Menus.SET_MOUSE_TO_CAPTURED, self, "_mouse_captured")
 	
 	interactor_ray.add_exception(entity)
+	
+	#Create a mouse motion because of a bug workaround.
+	_latest_mouse_motion = InputEventMouseMotion.new()
+	_latest_mouse_motion.relative = Vector2(1,1)
 
 	#Listen for the Interactor Area signals if there is a collision shape child.
 	var has_collision : bool
@@ -83,15 +87,43 @@ func _unhandled_input(event: InputEvent) -> void:
 	if MwInput.is_chat_active or !enabled:
 		return
 	if entity.owner_peer_id == Network.network_instance.peer_id:
+		
 		if (event is InputEventMouseMotion) and (event != null):
 			_latest_mouse_motion = event
-		if event.is_action_pressed("left_click"):
-			_latest_mouse_click = event
-		elif event.is_action_released("left_click") :
-			_latest_mouse_release = event
 		
-		elif event.is_action_pressed("scroll_up") || event.is_action_pressed("scroll_down") :
-			_latest_mouse_scroll = event
+		if event.is_action_pressed("left_click"):
+			if event is InputEventMouseButton :
+				_latest_mouse_click = event
+			else:
+				var nw := InputEventMouseButton.new()
+				nw.pressed = true
+				nw.button_index = BUTTON_LEFT
+				_latest_mouse_click = nw
+		
+		elif event.is_action_released("left_click") :
+			if event is InputEventMouseButton :
+				_latest_mouse_release = event
+			else:
+				var nw := InputEventMouseButton.new()
+				nw.pressed = false
+				nw.button_index = BUTTON_LEFT
+				_latest_mouse_release = nw
+		
+		elif event.is_action("scroll_up") :
+			if event.is_action_pressed("scroll_up") :
+				var mouse_scroll : InputEventMouseButton = InputEventMouseButton.new()
+				mouse_scroll.button_index = BUTTON_WHEEL_UP
+				_latest_mouse_scroll = mouse_scroll
+			elif event.is_action_released("scroll_up") :
+				_latest_mouse_scroll = null
+		
+		elif event.is_action("scroll_down") :
+			if event.is_action_pressed("scroll_down") :
+				var mouse_scroll : InputEventMouseButton = InputEventMouseButton.new()
+				mouse_scroll.button_index = BUTTON_WHEEL_DOWN
+				_latest_mouse_scroll = mouse_scroll
+			elif event.is_action_released("scroll_down") :
+				_latest_mouse_scroll = null
 
 func _physics_process(_delta: float) -> void:
 	if entity.owner_peer_id == Network.network_instance.peer_id:
@@ -138,7 +170,8 @@ func _try_update_interact():
 			_prev_frame_collider = result
 		
 		#Let the new object know if we are scrolling with the scroll wheel.
-		result.emit_signal("input_event", camera, _latest_mouse_scroll, interactor_ray.get_collision_point(), interactor_ray.get_collision_normal(), 0)
+		if not _latest_mouse_scroll == null :
+			result.emit_signal("input_event", camera, _latest_mouse_scroll, interactor_ray.get_collision_point(), interactor_ray.get_collision_normal(), 0)
 	
 	else:
 		if _prev_frame_collider != null:
@@ -155,10 +188,12 @@ func _try_request_interact():
 			var camera = get_tree().get_root().get_camera()
 			result.emit_signal("input_event", camera, _latest_mouse_release, interactor_ray.get_collision_point(), interactor_ray.get_collision_normal(), 0)
 		_latest_mouse_release = null
+		
+		#Do not let anything else know that the mouse has been released.
+		return
 	
 	if !_latest_mouse_click:
 		return
-	
 	
 	if result is Interactable:
 		if interactor_ray.global_transform.origin.distance_to(interactor_ray.get_collision_point()) < result.max_interact_distance:
@@ -180,7 +215,7 @@ func _make_hud_display_interactable(interactable : Interactable = null) -> void 
 		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_SHOWN, 
 				interactable.display_info, disable_ray_cast)
 		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_INTERACT, true)
-				
+
 #Called by signal. When false, do not allow the player to press interact. When true, player can interact.
 func _set_can_interact(set_can_interact : bool) -> void :
 	can_interact = set_can_interact
