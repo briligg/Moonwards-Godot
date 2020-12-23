@@ -15,7 +15,8 @@ var editable_actions : Array = [
 	"jump", "use", "toggle_first_person",
 	"fly_up", "fly_down", "toggle_camera_fly", "mouse_toggle",
 	"chat_toggle_size", "chat_page_up", "chat_page_down", "toggle_fly",
-	"maneuver_lower", "maneuver_raise"
+	"maneuver_lower", "maneuver_raise", "look_up", "look_down", "look_left",
+	"look_right", "left_click"
 ]
 
 #Whether the mouse is captured or not.

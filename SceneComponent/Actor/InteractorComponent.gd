@@ -53,6 +53,10 @@ func _ready() -> void :
 	Signals.Menus.connect(Signals.Menus.SET_MOUSE_TO_CAPTURED, self, "_mouse_captured")
 	
 	interactor_ray.add_exception(entity)
+	
+	#Create a mouse motion because of a bug workaround.
+	_latest_mouse_motion = InputEventMouseMotion.new()
+	_latest_mouse_motion.relative = Vector2(1,1)
 
 	#Listen for the Interactor Area signals if there is a collision shape child.
 	var has_collision : bool
@@ -86,24 +90,24 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		if (event is InputEventMouseMotion) and (event != null):
 			_latest_mouse_motion = event
-			
+		
 		if event.is_action_pressed("left_click"):
-			if event is InputEventJoypadButton:
+			if event is InputEventMouseButton :
+				_latest_mouse_click = event
+			else:
 				var nw := InputEventMouseButton.new()
 				nw.pressed = true
 				nw.button_index = BUTTON_LEFT
 				_latest_mouse_click = nw
-			else:
-				_latest_mouse_click = event
 		
 		elif event.is_action_released("left_click") :
-			if event is InputEventJoypadButton:
+			if event is InputEventMouseButton :
+				_latest_mouse_release = event
+			else:
 				var nw := InputEventMouseButton.new()
 				nw.pressed = false
 				nw.button_index = BUTTON_LEFT
 				_latest_mouse_release = nw
-			else:
-				_latest_mouse_release = event
 		
 		elif event.is_action("scroll_up") :
 			if event.is_action_pressed("scroll_up") :

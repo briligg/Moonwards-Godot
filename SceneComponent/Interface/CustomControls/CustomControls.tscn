@@ -28,7 +28,7 @@ __meta__ = {
 [node name="Sub1" type="VBoxContainer" parent="HBox"]
 margin_left = 674.0
 margin_right = 946.0
-margin_bottom = 346.0
+margin_bottom = 498.0
 custom_constants/separation = 14
 
 [node name="move_forwards" parent="HBox/Sub1" instance=ExtResource( 3 )]
@@ -59,118 +59,138 @@ margin_bottom = 138.0
 Label_text = "Move Right"
 action_to_edit = "move_right"
 
-[node name="jump" parent="HBox/Sub1" instance=ExtResource( 3 )]
+[node name="look_up" parent="HBox/Sub1" instance=ExtResource( 3 )]
 margin_top = 152.0
 margin_right = 272.0
 margin_bottom = 176.0
-Label_text = "Jump"
-action_to_edit = "jump"
+Label_text = "Look Up"
+action_to_edit = "look_up"
 
-[node name="use" parent="HBox/Sub1" instance=ExtResource( 3 )]
+[node name="look_down" parent="HBox/Sub1" instance=ExtResource( 3 )]
 margin_top = 190.0
 margin_right = 272.0
 margin_bottom = 214.0
-Label_text = "Interacts Menu"
-action_to_edit = "use"
+Label_text = "Look Down"
+action_to_edit = "look_down"
 
-[node name="player_back_in_time" parent="HBox/Sub1" instance=ExtResource( 3 )]
-visible = false
-margin_top = 252.0
-margin_right = 272.0
-margin_bottom = 276.0
-Label_text = "Get unstuck"
-action_to_edit = "player_back_in_time"
-
-[node name="toggle_first_person" parent="HBox/Sub1" instance=ExtResource( 3 )]
+[node name="look_left" parent="HBox/Sub1" instance=ExtResource( 3 )]
 margin_top = 228.0
 margin_right = 272.0
 margin_bottom = 252.0
-Label_text = "Toggle perspective"
-action_to_edit = "toggle_first_person"
+Label_text = "Look Left"
+action_to_edit = "look_left"
 
-[node name="RadialMenu" parent="HBox/Sub1" instance=ExtResource( 3 )]
-visible = false
-margin_top = 288.0
-margin_right = 288.0
-margin_bottom = 312.0
-Label_text = "Actions/Expressions"
-action_to_edit = "radial_menu"
-
-[node name="FlyCamera" parent="HBox/Sub1" instance=ExtResource( 3 )]
-visible = false
-margin_top = 296.0
-margin_right = 288.0
-margin_bottom = 320.0
-Label_text = "Enable Fly Camera"
-action_to_edit = "toggle_camera_fly"
-
-[node name="toggle_fly" parent="HBox/Sub1" instance=ExtResource( 3 )]
+[node name="look_right" parent="HBox/Sub1" instance=ExtResource( 3 )]
 margin_top = 266.0
 margin_right = 272.0
 margin_bottom = 290.0
-Label_text = "Toggle Human Flight"
-action_to_edit = "toggle_fly"
+Label_text = "Look Right"
+action_to_edit = "look_right"
 
-[node name="HSeparator8" type="HSeparator" parent="HBox/Sub1"]
+[node name="jump" parent="HBox/Sub1" instance=ExtResource( 3 )]
 margin_top = 304.0
 margin_right = 272.0
-margin_bottom = 308.0
+margin_bottom = 328.0
+Label_text = "Jump"
+action_to_edit = "jump"
+
+[node name="HSeparator8" type="HSeparator" parent="HBox/Sub1"]
+margin_top = 342.0
+margin_right = 272.0
+margin_bottom = 346.0
 custom_styles/separator = ExtResource( 4 )
 
 [node name="DefaultControls" type="Button" parent="HBox/Sub1"]
-margin_top = 322.0
+margin_top = 360.0
 margin_right = 272.0
-margin_bottom = 346.0
+margin_bottom = 384.0
 size_flags_vertical = 9
 text = "Set to default"
 
 [node name="Sub2" type="VBoxContainer" parent="HBox"]
 margin_left = 974.0
 margin_right = 1246.0
-margin_bottom = 346.0
+margin_bottom = 498.0
 custom_constants/separation = 14
 
-[node name="fly_up" parent="HBox/Sub2" instance=ExtResource( 3 )]
+[node name="left_click" parent="HBox/Sub2" instance=ExtResource( 3 )]
 margin_top = 0.0
 margin_right = 272.0
 margin_bottom = 24.0
+Label_text = "Left Click"
+action_to_edit = "left_click"
+
+[node name="fly_up" parent="HBox/Sub2" instance=ExtResource( 3 )]
+margin_top = 38.0
+margin_right = 272.0
+margin_bottom = 62.0
 Label_text = "Fly upwards"
 action_to_edit = "fly_up"
 
 [node name="fly_down" parent="HBox/Sub2" instance=ExtResource( 3 )]
-margin_top = 38.0
+margin_top = 76.0
 margin_right = 272.0
-margin_bottom = 62.0
+margin_bottom = 100.0
 Label_text = "Fly downwards"
 action_to_edit = "fly_down"
 
 [node name="mouse_toggle" parent="HBox/Sub2" instance=ExtResource( 3 )]
-margin_top = 76.0
+margin_top = 114.0
 margin_right = 272.0
-margin_bottom = 100.0
+margin_bottom = 138.0
 Label_text = "Toggle Mouse"
 action_to_edit = "mouse_toggle"
 
 [node name="toggle_camera_fly" parent="HBox/Sub2" instance=ExtResource( 3 )]
-margin_top = 114.0
+margin_top = 152.0
 margin_right = 272.0
-margin_bottom = 138.0
+margin_bottom = 176.0
 Label_text = "Flying Camera"
 action_to_edit = "toggle_camera_fly"
 
 [node name="maneuver_raise" parent="HBox/Sub2" instance=ExtResource( 3 )]
-margin_top = 152.0
+margin_top = 190.0
 margin_right = 272.0
-margin_bottom = 176.0
+margin_bottom = 214.0
 Label_text = "Raise Rover Legs"
 action_to_edit = "maneuver_raise"
 
 [node name="maneuver_lower" parent="HBox/Sub2" instance=ExtResource( 3 )]
-margin_top = 190.0
+margin_top = 228.0
 margin_right = 272.0
-margin_bottom = 214.0
+margin_bottom = 252.0
 Label_text = "Lower Rover Legs"
 action_to_edit = "maneuver_lower"
+
+[node name="use" parent="HBox/Sub2" instance=ExtResource( 3 )]
+margin_top = 266.0
+margin_right = 272.0
+margin_bottom = 290.0
+Label_text = "Interacts Menu"
+action_to_edit = "use"
+
+[node name="toggle_first_person" parent="HBox/Sub2" instance=ExtResource( 3 )]
+margin_top = 304.0
+margin_right = 272.0
+margin_bottom = 328.0
+Label_text = "Toggle perspective"
+action_to_edit = "toggle_first_person"
+
+[node name="RadialMenu" parent="HBox/Sub2" instance=ExtResource( 3 )]
+visible = false
+margin_left = -300.0
+margin_top = 288.0
+margin_right = -12.0
+margin_bottom = 312.0
+Label_text = "Actions/Expressions"
+action_to_edit = "radial_menu"
+
+[node name="toggle_fly" parent="HBox/Sub2" instance=ExtResource( 3 )]
+margin_top = 342.0
+margin_right = 272.0
+margin_bottom = 366.0
+Label_text = "Toggle Human Flight"
+action_to_edit = "toggle_fly"
 
 [node name="Save" type="Button" parent="."]
 anchor_top = 1.0
