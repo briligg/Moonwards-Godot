@@ -1,3 +1,4 @@
+tool
 extends Control
 
 
@@ -14,7 +15,7 @@ onready var two : TextureRect = get_node("2")
 onready var timer : Timer = $Timer
 
 #These are the textures that we will be loading
-var textures : Array = []
+export var textures : Array = []
 var current_texture : int = 0
 
 #Determines which texture to we are suppose to change.
@@ -41,21 +42,25 @@ func _next_picture() -> void :
 			anim.play("Modulate")
 
 #Load the StreamTextures to display them later.
+#The stream textures have to be loaded into the array to work with exports.
 func _ready() -> void :
 	#Set the timer's wait time based on what the developer specified.
 	timer.wait_time = image_wait_time
 	timer.start()
 	
-	var dir : Directory = Directory.new()
-	dir.open(FILE_LOC)
-	dir.list_dir_begin(true)
-	var next_file : String = dir.get_next()
-	while next_file != "" :
-		if not next_file.get_extension() == "import" : #Don't load the import files
-			var stream : StreamTexture = load(FILE_LOC + next_file)
-			textures.append(stream)
+	if Engine.editor_hint :
+		textures.clear()
 		
-		next_file = dir.get_next()
+		var dir : Directory = Directory.new()
+		dir.open(FILE_LOC)
+		dir.list_dir_begin(true)
+		var next_file : String = dir.get_next()
+		while next_file != "" :
+			if not next_file.get_extension() == "import" : #Don't load the import files
+				var stream : StreamTexture = load(FILE_LOC + next_file)
+				textures.append(stream)
+			
+			next_file = dir.get_next()
 	
 	#Shuffle the textures around.
 	randomize()
