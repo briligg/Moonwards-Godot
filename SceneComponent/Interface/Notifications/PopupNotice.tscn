@@ -42,8 +42,10 @@ anchor_left = 0.04
 anchor_top = 0.04
 anchor_right = 0.96
 anchor_bottom = 0.76
+focus_mode = 2
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
+selection_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
