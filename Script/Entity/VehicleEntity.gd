@@ -25,8 +25,8 @@ puppet var velocity: float = 0.0
 func _process_server(_delta: float) -> void:
 	if !get_tree().network_peer:
 		return
-	rset_unreliable("srv_pos", srv_pos)
-	rset_unreliable("srv_basis", srv_basis)
+	Network.crset_unreliable(self, "srv_pos", srv_pos, [1])
+	Network.crset_unreliable(self, "srv_basis", srv_basis, [1])
 #	rset("velocity", velocity)
 	
 func _process_client(_delta: float) -> void:

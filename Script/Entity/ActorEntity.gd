@@ -42,9 +42,9 @@ var is_grounded: bool
 func _integrate_server(_args) -> void:
 	if !get_tree().network_peer:
 		return
-	rset_unreliable("srv_pos", srv_pos)
+	Network.crset_unreliable(self, "srv_pos", srv_pos, [1])
 #	rset_unreliable("srv_vel", srv_vel)
-	rset_unreliable("look_dir", look_dir)
+	Network.crset_unreliable(self, "look_dir", look_dir, [1])
 	
 func _integrate_client(_args) -> void:
 	if !get_tree().network_peer:
