@@ -9,6 +9,7 @@ func _ready() -> void  :
 
 func activate() -> void :
 	get_parent().get_node("MouseBlock").show()
+	$Button.grab_focus()
 	show()
 
 func deactivate() -> void :
