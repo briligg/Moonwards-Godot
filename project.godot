@@ -107,7 +107,7 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "EnumHelper",
 "language": "GDScript",
-"path": "res://Script/Manager/HelperClasses/EnumHelper.gd"
+"path": "res://Script/Manager/Helpers/EnumHelper.gd"
 }, {
 "base": "HBoxContainer",
 "class": "FileLabel",
@@ -534,6 +534,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/GameLogic/Tooltip/TooltipData.gd"
 }, {
+"base": "Reference",
+"class": "UIHelper",
+"language": "GDScript",
+"path": "res://Script/Manager/Helpers/UIHelper.gd"
+}, {
 "base": "AEntity",
 "class": "VehicleEntity",
 "language": "GDScript",
@@ -740,6 +745,7 @@ _global_script_class_icons={
 "TextPopup": "",
 "ThreadWorker": "",
 "TooltipData": "",
+"UIHelper": "",
 "VehicleEntity": "",
 "VerticalStairs": "",
 "VisualShaderNodeCheapContrast": "",
@@ -773,7 +779,7 @@ config/windows_native_icon="res://icon.ico"
 
 WorldConstants="*res://Script/Manager/WorldConstants.gd"
 Log="*res://Tree/Manager/Log.tscn"
-Helpers="*res://Script/Manager/Helpers.tscn"
+Helpers="*res://Script/Manager/Helpers/Helpers.tscn"
 CmdLineArgs="*res://Script/Manager/CmdLineArgs.gd"
 Signals="*res://Script/Manager/SignalsManager/SignalsManager.gd"
 Groups="*res://Script/Manager/GroupsManager/GroupsManager.gd"

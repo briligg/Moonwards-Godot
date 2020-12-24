@@ -5,7 +5,7 @@ const SAVE_LOCATION : String = "user://Moonwards/user_settings.ini"
 const SAVE_FOLDER : String = "user://Moonwards/"
 
 var Enum = EnumHelper.new()
-
+var UI = UIHelper.new(self)
 #The file that the player uses.
 var user_file : ConfigFile = ConfigFile.new()
 
@@ -32,8 +32,6 @@ func _input(event):
 #Load the user file. Create it if it does not exist.
 func _init() -> void :
 	load_user_file()
-
-
 
 #Decide whether the mouse should be captured or not.
 func capture_mouse(capture_mouse : bool) -> void :
@@ -141,12 +139,6 @@ func save_user_file() -> void :
 		user_file.set_value(action, "scancode", array[1])
 	
 	user_file.save(SAVE_LOCATION)
-
-#Create a popup in the center of the screen that alerts the player.
-func show_notice(popup_text : String) -> void :
-	var center_notice : Panel = $Layer/CenterNotice
-	center_notice.activate()
-	center_notice.set_text(popup_text)
 
 func reparent(node, new_parent, keep_world_pos = false):
 	if node.get("global_transform") == null:
