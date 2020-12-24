@@ -773,7 +773,7 @@ config/windows_native_icon="res://icon.ico"
 
 WorldConstants="*res://Script/Manager/WorldConstants.gd"
 Log="*res://Tree/Manager/Log.tscn"
-Helpers="*res://Script/Manager/Helpers.gd"
+Helpers="*res://Script/Manager/Helpers.tscn"
 CmdLineArgs="*res://Script/Manager/CmdLineArgs.gd"
 Signals="*res://Script/Manager/SignalsManager/SignalsManager.gd"
 Groups="*res://Script/Manager/GroupsManager/GroupsManager.gd"
