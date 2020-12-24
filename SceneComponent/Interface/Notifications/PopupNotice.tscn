@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Interface/MainMenu.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Interface/StyleBoxes/TooltipDisplayBackgroundPanel.tres" type="StyleBox" id=2]
 [ext_resource path="res://SceneComponent/Interface/Notifications/PopupNotice.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Interface/Fonts/dejavu/DejaVuSans.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 4 )
 
 [node name="PopupNotice" type="CanvasLayer"]
 layer = 128
@@ -32,14 +37,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Text" type="Label" parent="CenterNotice"]
+[node name="Text" type="RichTextLabel" parent="CenterNotice"]
 anchor_left = 0.04
 anchor_top = 0.04
 anchor_right = 0.96
 anchor_bottom = 0.76
-align = 1
-valign = 1
-autowrap = true
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

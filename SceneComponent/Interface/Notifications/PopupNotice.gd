@@ -7,4 +7,4 @@ func _pressed() -> void :
 	self.queue_free()
 
 func set_text(new_text : String) -> void :
-	$CenterNotice/Text.text = new_text
+	$CenterNotice/Text.bbcode_text = new_text
