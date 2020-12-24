@@ -8,7 +8,7 @@ const DEFAULT_PORT: int = 5000
 const DEFAULT_MAX_PLAYERS: int = 100
 const IS_ALWAYS_ORDERED = false
 const COMPRESS_MODE = NetworkedMultiplayerENet.COMPRESS_ZSTD
-var network_instance = null
+var network_instance: ANetworkInstance = null
 
 # This is to be moved to a more full system once persistence is setup
 var self_meta_data = {
@@ -69,12 +69,12 @@ func crpc_unreliable(caller: Node, method: String, val):
 	network_instance.crpc_unreliable(caller, method, val)
 
 # Controlled RSET Wrapper with added control.
-func crset(caller: Node, method: String, val):
-	network_instance.crset(caller, method, val)
+func crset(caller: Node, method: String, val, exclude_list = []):
+	network_instance.crset(caller, method, val, exclude_list)
 
 # Controlled RSET Wrapper with added control.
-func crset_unreliable(caller: Node, method: String, val):
-	network_instance.crset_unreliable(caller, method, val)
+func crset_unreliable(caller: Node, method: String, val, exclude_list = []):
+	network_instance.crset_unreliable(caller, method, val, exclude_list)
 
 # Controlled signal RPC
 func crpc_signal(instance: Node, sig_name: String, param):

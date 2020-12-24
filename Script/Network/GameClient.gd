@@ -11,11 +11,6 @@ func _init(_ip: String, _port: int):
 	self.port = _port
 
 func _ready() -> void:
-	# because inheritence is broken on yields
-	# yielding on a parent class' _ready returns it to the inheriting class' _ready
-	if !self.is_initialized:
-		yield(self, "initialized")
-		
 	get_tree().connect("connected_to_server", self, "_connected_ok")
 	get_tree().connect("connection_failed", self, "_connected_fail")
 	get_tree().connect("server_disconnected", self, "_server_disconnected")
@@ -26,25 +21,40 @@ func _join_server() -> void:
 	self.multiplayer_peer.create_client(ip, port)
 	self.multiplayer_peer.always_ordered = Network.IS_ALWAYS_ORDERED
 	self.multiplayer_peer.compression_mode = Network.COMPRESS_MODE
+	
 	get_tree().set_network_peer(self.multiplayer_peer)
 	self.peer_id = get_tree().get_network_unique_id()
 
 func _connected_ok():
-	rpc_id(1, "initialize_entity_data", Network.self_meta_data.name, 
-		Network.self_meta_data.colors, Network.self_meta_data.gender)
-	Log.trace(self, "", "CONNECTED.")
+	Log.trace(self, "_connected_ok", "Connection to the server successful.")
+	rpc_id(1, "request_join_server", WorldConstants.VERSION)
 
+func _connected_fail():
+	Log.warning(self, "_connected_fail", "Connection to the server failed!")
+	disconnect_instance()
+	get_tree().change_scene(Scene.main_menu)
+	Helpers.UI.show_notice("[center]Connection to the server was unsuccessful.\n"
+			+ "The server might be temporarily unavailable, or your internet connection may be down.[/center]")
+	self.queue_free()
+	
 func _server_disconnected():
 	Log.trace(self, "", "DISCONNECTED.")
 	disconnect_instance()
 	get_tree().change_scene(Scene.main_menu)
 	self.queue_free()
 
-func _connected_fail():
-	Log.warning(self, "", "CONNECTION FAILED!")
+puppet func accept_join_server():
+	Log.trace(self, "", "Connection to server accepted.")
+	load_world()
+	yield(self, "world_loaded")
+
+	rpc_id(1, "initialize_entity_data", Network.self_meta_data.name, 
+		Network.self_meta_data.colors, Network.self_meta_data.gender)
+
+puppet func decline_join_server(message):
+	Log.trace(self, "refuse_join_server", message)
+	Helpers.UI.show_notice("%s" %message)
 	disconnect_instance()
-	get_tree().change_scene(Scene.main_menu)
-	self.queue_free()
 
 # The initial loading of all existing entities upon connection.
 puppet func initial_client_load_entities(entities_data: Array) -> void:
