@@ -56,6 +56,29 @@ func center_mouse() -> void :
 	#Let everything know that the mouse is now visible
 	Signals.Menus.emit_signal("set_mouse_to_captured", false)
 
+func setup_text_with_links(text : String) -> String :
+	#Check if the message has a link in it.
+	var has_link : int = text.find("://")
+	while has_link != -1 :
+		#Get the starting position of the next link.
+		# warning-ignore:narrowing_conversion
+		var web_link_position : int = max(0, text.rfind(" ", has_link) + 1)
+		
+		#Add the tags at the beginning.
+		text = text.insert(web_link_position, "[color=#3A3AFF][url]")
+		
+		#Either place the closing brackets at the end
+		#of the message or find the end of the url and place it there.
+		var end_of_url_at : int = text.find(" ", web_link_position + 20)
+		if end_of_url_at > -1 :
+			text = text.insert(end_of_url_at, "[/url][/color]")
+			has_link = text.find("://", 14 + end_of_url_at)
+		else :
+			text += "[/url][/color]"
+			has_link = -1
+	
+	return text
+
 #Get an action from the InputMap. Returns string for InputEventType and it's action identifier.
 func get_action(action_name : String) -> Array :
 	var event : InputEvent = InputMap.get_action_list(action_name)[0]
