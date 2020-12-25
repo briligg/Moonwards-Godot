@@ -19,16 +19,9 @@ func handle_input() -> void:
 	
 	if Input.is_action_pressed("jump"):
 		entity.input.y += 1
-		
-	if Input.is_action_pressed("move_forwards"):
-		entity.input.z += 1
-	elif Input.is_action_pressed("move_backwards"):
-		entity.input.z += -1
-		
-	if Input.is_action_pressed("move_left"):
-		entity.input.x += 1
-	elif Input.is_action_pressed("move_right"):
-		entity.input.x += -1
+	
+	entity.input.z = -Input.get_action_strength("move_backwards") + Input.get_action_strength("move_forwards")
+	entity.input.x = -Input.get_action_strength("move_right") + Input.get_action_strength("move_left")
 
 func set_ignore_inputs(ignore_bool : bool) -> void :
 	ignore_inputs = ignore_bool

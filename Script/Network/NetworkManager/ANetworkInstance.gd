@@ -3,6 +3,7 @@ class_name ANetworkInstance
 # Base class for client and server instances
 
 signal initialized
+signal world_loaded
 
 var is_initialized: bool = false
 
@@ -17,6 +18,9 @@ var peer_id: int = -1
 var multiplayer_peer: NetworkedMultiplayerENet = NetworkedMultiplayerENet.new()
 
 func _ready() -> void:
+	pass
+
+func load_world() -> void:
 	world = yield(Scene.change_scene_to_async(Scene.world_scene), "scene_changed")
 	yield(Signals.Loading, Signals.Loading.WORLD_POST_READY)
 	
@@ -24,9 +28,10 @@ func _ready() -> void:
 	world.connect("tree_exited", self, "_on_world_closed")
 	entities_container = Node.new()
 	entities_container.name = "entities"
-	world.add_child(entities_container)
+	world.call_deferred("add_child", entities_container)
 	is_initialized = true
-	emit_signal("initialized")
+	call_deferred("emit_signal", "initialized")
+	call_deferred("emit_signal", "world_loaded")
 
 func disconnect_instance():
 	multiplayer_peer.close_connection()
@@ -43,6 +48,10 @@ puppetsync func remove_player(_peer_id: int) -> void:
 # Adds a new player to the game
 # `entity_data` `EntityData` (or dictionary in serialized form) type
 puppetsync func add_player(entity_data) -> void:
+	# Safely calling it
+	call_deferred("_add_player_to_tree", entity_data)
+	
+func _add_player_to_tree(entity_data)-> void:
 	Log.trace(self, "", "ADDING ENTITY %s %s" %[entity_data.peer_id, entity_data.entity_name])
 	# Temporary until generic component instancing is available
 	if entity_data.is_empty == true:
@@ -79,16 +88,16 @@ func crpc_unreliable(caller: Node, method: String, args = [], exclude_list: Arra
 			caller.rpc_unreliable_id(client.peer_id, method, args)
 
 # Controlled RSET Wrapper with added control.
-func crset(caller: Node, method: String, args = [], exclude_list: Array = []):
+func crset(caller: Node, method: String, val, exclude_list: Array = []):
 	for client in entities.values():
 		if not exclude_list.has(client.peer_id):
-			caller.rset_id(client.peer_id, method, args)
+			caller.rset_id(client.peer_id, method, val)
 
 # Controlled RSET Wrapper with added control.
-func crset_unreliable(caller: Node, method: String, args = [], exclude_list: Array = []):
+func crset_unreliable(caller: Node, method: String, val, exclude_list: Array = []):
 	for client in entities.values():
 		if not exclude_list.has(client.peer_id):
-			caller.rset_id(client.peer_id, method, args)
+			caller.rset_id(client.peer_id, method, val)
 
 ### Figure out a better way to handle this, if godot allows
 func crpc_signal(instance: Object, sig_name: String, param = null):

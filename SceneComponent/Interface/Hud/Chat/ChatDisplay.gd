@@ -20,24 +20,7 @@ func add_message(new_message : String ) -> void :
 	colon_position += 25 #Add the new color bbcode character count.
 	
 	#Check if the message has a link in it.
-	var web_link_position : int = new_message.find("://")
-	while web_link_position != -1 :
-		#Get the starting position of the link.
-		# warning-ignore:narrowing_conversion
-		web_link_position = max(0, new_message.rfind(" ", web_link_position))
-		
-		new_message = new_message.insert(web_link_position + 1, "[color=#0000CA][url]")
-		
-		#Either place the closing brackets at the end
-		#of the message or find the end of the url and place it there.
-		var end_of_url : int = new_message.find(" ", web_link_position + 1)
-		if end_of_url > -1 :
-			new_message = new_message.insert(end_of_url, "[/url][/color]")
-		else :
-			new_message += "[/url][/color]"
-		
-		#Find if there is another link in the message.
-		web_link_position = new_message.find("://", end_of_url)
+	new_message = Helpers.setup_text_with_links(new_message)
 	
 	#Remove old messages. Do this before adding in the new message
 	#to allow people to read the old messages even if there is too much
