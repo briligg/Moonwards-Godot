@@ -1,6 +1,5 @@
 name: "godot-ci export"
 on:
-  release:
   push:
     tags:
       - v*
