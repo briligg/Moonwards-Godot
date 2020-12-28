@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/UI_chat.ogg-4e2582d7d460d34644c0ea0ec32bc0ce.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/UI/UI_chat.ogg"
+dest_files=[ "res://.import/UI_chat.ogg-4e2582d7d460d34644c0ea0ec32bc0ce.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
