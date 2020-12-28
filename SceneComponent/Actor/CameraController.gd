@@ -65,14 +65,14 @@ func _process(delta: float) -> void:
 	if is_first_person :
 		entity.get_node("Model").visible = false
 	
-	#Do nothing if chat is active
-	if MwInput.is_chat_active:
-		return
-	
 	var _new_rot = Vector3(deg2rad(pitch), deg2rad(yaw), 0.0)
 	if not overriden && mouse_respond :
 		camera.set_rotation(_new_rot)
 	_update_cam_pos()
+	
+	#Do nothing if chat is active
+	if MwInput.is_chat_active:
+		return
 	
 	if not _is_flying and not overriden:
 		entity.look_dir = global_transform.origin - _get_cam_normal() * dist
