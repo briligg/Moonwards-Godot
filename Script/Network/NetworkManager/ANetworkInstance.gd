@@ -35,6 +35,7 @@ func load_world() -> void:
 
 func disconnect_instance():
 	multiplayer_peer.close_connection()
+	multiplayer_peer = NetworkedMultiplayerENet.new()
 
 # `PUPPETSYNC`
 puppetsync func remove_player(_peer_id: int) -> void:

@@ -6,6 +6,8 @@ export(String) var Test
 var ip: String = ""
 var port: int = 0
 
+var is_version_approved: bool = false
+
 func _init(_ip: String, _port: int):
 	self.ip = _ip
 	self.port = _port
@@ -27,7 +29,13 @@ func _join_server() -> void:
 
 func _connected_ok():
 	Log.trace(self, "_connected_ok", "Connection to the server successful.")
-	rpc_id(1, "request_join_server", WorldConstants.VERSION)
+	# Request version approval if we just connected
+	if !is_version_approved:
+		rpc_id(1, "request_join_server", WorldConstants.VERSION)
+	# Join the server after loading, if we're already approved.
+	else:
+		rpc_id(1, "initialize_entity_data", Network.self_meta_data.name, 
+				Network.self_meta_data.colors, Network.self_meta_data.gender)
 
 func _connected_fail():
 	Log.warning(self, "_connected_fail", "Connection to the server failed!")
@@ -45,11 +53,11 @@ func _server_disconnected():
 
 puppet func accept_join_server():
 	Log.trace(self, "", "Connection to server accepted.")
+	disconnect_instance()
+	is_version_approved = true
 	load_world()
 	yield(self, "world_loaded")
-
-	rpc_id(1, "initialize_entity_data", Network.self_meta_data.name, 
-		Network.self_meta_data.colors, Network.self_meta_data.gender)
+	_join_server()
 
 puppet func decline_join_server(message):
 	Log.trace(self, "refuse_join_server", message)
