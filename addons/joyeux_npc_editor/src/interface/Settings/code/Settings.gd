@@ -35,11 +35,13 @@ func _on_default_changing(which : String):
 	else:
 		match which:
 			"project":
-				default_project.text = result
-				Nodes.override_default(0, result) #0 is for project
+				if default_project.text != "res://addons/joyeux_npc_editor/src/NPCs/DefaultBehaviors/":
+					default_project.text = result
+					Nodes.override_default(0, result) #0 is for project
 			"user":
-				default_user.text = result
-				Nodes.override_default(1, result) #1 is for user
+				if default_user.text != str(OS.get_user_data_dir()+"/behaviors"):
+					default_user.text = result
+					Nodes.override_default(1, result) #1 is for user
 func _on_FileDialog_dir_selected(dir):
 	emit_signal("confirm_or_cancel", dir)
 

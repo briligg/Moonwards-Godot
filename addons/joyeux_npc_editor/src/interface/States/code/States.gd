@@ -79,6 +79,7 @@ func list_behaviors():
 		BehaviorList.add_item(names)
 
 func load_behaviors_in(path : String) -> void:
+	path = path.trim_suffix(".")
 	if path == "." or path == ".." or path == "":
 		return
 	var Dir = Directory.new()

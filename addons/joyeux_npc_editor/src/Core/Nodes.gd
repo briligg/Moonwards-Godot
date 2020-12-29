@@ -82,6 +82,8 @@ func load_custom_paths():
 		behavior_paths[1] = Conf.get_value("overrides", "1")
 	
 	for key in Conf.get_section_keys("behaviors"):
+		if key == "0" or key == "1":
+			continue
 		if not behavior_paths.has(Conf.get_value("behaviors", key)):
 			behavior_paths.append(Conf.get_value("behaviors", key))
 
