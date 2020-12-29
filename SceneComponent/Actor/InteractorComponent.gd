@@ -30,10 +30,15 @@ var _latest_mouse_motion: InputEventMouseMotion
 var _latest_mouse_click: InputEventMouseButton
 var _latest_mouse_release: InputEventMouseButton
 var _latest_mouse_scroll : InputEventMouseButton
+
 # what we collided with last frame
 var _prev_frame_collider
 #When chatting, do not interact with objects.
 var can_interact : bool = true
+
+#These two determine when we are both in first person and mouse captured.
+#They let us interact with things from the crosshair correctly.
+var is_first_person : bool = false
 
 var has_focus : bool = false
 
@@ -47,11 +52,12 @@ func _ready() -> void :
 	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_STARTED, self, "_set_can_interact", [false])
 	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_FINISHED, self, "_set_can_interact", [true])
 	
+	Signals.Hud.connect(Signals.Hud.SET_FIRST_PERSON, self, "_set_first_person")
+	
 	interactor_ray.add_exception(entity)
 	
 	#Create a mouse motion because of a bug workaround.
 	_latest_mouse_motion = InputEventMouseMotion.new()
-	_latest_mouse_motion.relative = Vector2(1,1)
 
 	#Listen for the Interactor Area signals if there is a collision shape child.
 	var has_collision : bool
@@ -132,15 +138,24 @@ func _physics_process(_delta: float) -> void:
 			_try_update_interact()
 			_try_request_interact()
 
+#Called when first person is changed.
+func _set_first_person(first_person : bool) -> void :
+	is_first_person = first_person
+
 # Try to update the interaction state & UI display.
 func _try_update_interact():
 	#Get where to cast to and cast to it.
 	var camera = get_tree().get_root().get_camera()
-	var from = camera.project_ray_origin(_latest_mouse_motion.position)
-	var to = from + camera.project_ray_normal(
-			_latest_mouse_motion.position) * ray_cast_length
-	interactor_ray.global_transform.origin = from
-	interactor_ray.cast_to = interactor_ray.to_local(to)
+	if Helpers.is_mouse_captured() && is_first_person :
+		interactor_ray.cast_to = Vector3.FORWARD * ray_cast_length
+		interactor_ray.global_transform.origin = get_tree().get_root().get_camera().project_ray_origin(Helpers.get_center_of_screen())
+		interactor_ray.rotation_degrees = get_tree().get_root().get_camera().rotation_degrees
+	else :
+		var from = camera.project_ray_origin(_latest_mouse_motion.position)
+		var to = from + camera.project_ray_normal(
+				_latest_mouse_motion.position) * ray_cast_length
+		interactor_ray.global_transform.origin = from
+		interactor_ray.cast_to = interactor_ray.to_local(to)
 	
 	var result = interactor_ray.get_collider()
 	
