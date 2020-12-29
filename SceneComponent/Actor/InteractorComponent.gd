@@ -165,9 +165,6 @@ func _try_update_interact():
 	elif result is Area :
 		#If we are colliding with a new object, let the old object know.
 		if _prev_frame_collider != result :
-			if _prev_frame_collider != null:
-				_prev_frame_collider.emit_signal("mouse_exited")
-			
 			result.emit_signal("mouse_entered")
 			_prev_frame_collider = result
 		
@@ -177,7 +174,6 @@ func _try_update_interact():
 	
 	else:
 		if _prev_frame_collider != null:
-			_prev_frame_collider.emit_signal("mouse_exited")
 			_prev_frame_collider = null
 		_make_hud_display_interactable(null)
 
