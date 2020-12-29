@@ -100,6 +100,11 @@ func get_action_string(action_name : String) -> String :
 	event_string = OS.get_scancode_string(event_scancode)
 	return event_string
 
+func get_center_of_screen() -> Vector2 :
+	var window_size = OS.window_size
+	var return_vec : Vector2 = Vector2(window_size.x * 0.5, window_size.y * 0.5)
+	return return_vec
+
 #Return true if the mouse is captured.
 func is_mouse_captured() -> bool :
 	return is_capture_mode
