@@ -156,6 +156,7 @@ func _try_update_interact():
 				_latest_mouse_motion.position) * ray_cast_length
 		interactor_ray.global_transform.origin = from
 		interactor_ray.cast_to = interactor_ray.to_local(to)
+		interactor_ray.rotation_degrees = Vector3.ZERO
 	
 	var result = interactor_ray.get_collider()
 	
