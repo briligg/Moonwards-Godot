@@ -35,9 +35,6 @@ var _prev_frame_collider
 #When chatting, do not interact with objects.
 var can_interact : bool = true
 
-#When the mouse is not captured avoid pressing touchscreen with this ray cast.
-var touchscreen_clickable : bool = false
-
 var has_focus : bool = false
 
 #This function is required by AComponent.
@@ -49,8 +46,6 @@ func _ready() -> void :
 	#Listen for when chat starts and stops to know when to avoid interacting.
 	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_STARTED, self, "_set_can_interact", [false])
 	Signals.Hud.connect(Signals.Hud.CHAT_TYPING_FINISHED, self, "_set_can_interact", [true])
-	
-	Signals.Menus.connect(Signals.Menus.SET_MOUSE_TO_CAPTURED, self, "_mouse_captured")
 	
 	interactor_ray.add_exception(entity)
 	
@@ -89,7 +84,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if entity.owner_peer_id == Network.network_instance.peer_id:
 		
-		if (event is InputEventMouseMotion) and (event != null):
+		#Right clicks should do nothing to screens.
+		if event is InputEventMouseButton && event.button_index == 2 :
+			get_tree().set_input_as_handled()
+		
+		if (event is InputEventMouseMotion) :
 			_latest_mouse_motion = event
 		
 		if event.is_action_pressed("left_click"):
@@ -135,11 +134,6 @@ func _physics_process(_delta: float) -> void:
 
 # Try to update the interaction state & UI display.
 func _try_update_interact():
-	#We need mouse motion to determine what we are colliding with.
-	#Do nothing if mouse motion has not been set.
-#	if !_latest_mouse_motion:
-#		return
-	
 	#Get where to cast to and cast to it.
 	var camera = get_tree().get_root().get_camera()
 	var from = camera.project_ray_origin(_latest_mouse_motion.position)
@@ -182,7 +176,7 @@ func _try_request_interact():
 	#If we have released the mouse left click, let the touchscreen know.
 	var result = interactor_ray.get_collider()
 	if _latest_mouse_release :
-		if result is Area && touchscreen_clickable :
+		if result is Area  :
 			var camera = get_tree().get_root().get_camera()
 			result.emit_signal("input_event", camera, _latest_mouse_release, interactor_ray.get_collision_point(), interactor_ray.get_collision_normal(), 0)
 		_latest_mouse_release = null
@@ -199,7 +193,7 @@ func _try_request_interact():
 			player_requested_interact(result)
 	
 	#If result is an Area listening for mouse event's, let it know we clicked.
-	elif result is Area && touchscreen_clickable :
+	elif result is Area :
 		var camera = get_tree().get_root().get_camera()
 		result.emit_signal("input_event", camera, _latest_mouse_click, interactor_ray.get_collision_point(), interactor_ray.get_collision_normal(), 0)
 	
@@ -218,10 +212,6 @@ func _make_hud_display_interactable(interactable : Interactable = null) -> void 
 #Called by signal. When false, do not allow the player to press interact. When true, player can interact.
 func _set_can_interact(set_can_interact : bool) -> void :
 	can_interact = set_can_interact
-
-#Prevent touchscreen double clicks.
-func _mouse_captured(mouse_captured : bool) -> void :
-	touchscreen_clickable  = mouse_captured
 
 #Return interactable detected by the ray.
 func get_interactable() -> Interactable :
