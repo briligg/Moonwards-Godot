@@ -83,6 +83,7 @@ func _ready() -> void :
 	if grab_focus_at_ready && is_net_owner() :
 		grab_focus()
 
+#Read input and pass it onto Interactable or Touchscreen.
 func _unhandled_input(event: InputEvent) -> void:
 	if MwInput.is_chat_active or !enabled:
 		return
@@ -125,6 +126,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			elif event.is_action_released("scroll_down") :
 				_latest_mouse_scroll = null
 
+#This processes stuff for the ray.
 func _physics_process(_delta: float) -> void:
 	if entity.owner_peer_id == Network.network_instance.peer_id:
 		if !disable_ray_cast and can_interact:
@@ -135,8 +137,8 @@ func _physics_process(_delta: float) -> void:
 func _try_update_interact():
 	#We need mouse motion to determine what we are colliding with.
 	#Do nothing if mouse motion has not been set.
-	if !_latest_mouse_motion:
-		return
+#	if !_latest_mouse_motion:
+#		return
 	
 	#Get where to cast to and cast to it.
 	var camera = get_tree().get_root().get_camera()
@@ -192,6 +194,7 @@ func _try_request_interact():
 		#Do not let anything else know that the mouse has been released.
 		return
 	
+	#Do nothing if the player has not clicked anything.
 	if !_latest_mouse_click:
 		return
 	
@@ -224,7 +227,7 @@ func _set_can_interact(set_can_interact : bool) -> void :
 func _mouse_captured(mouse_captured : bool) -> void :
 	touchscreen_clickable  = mouse_captured
 
-#Return the closest interactable.
+#Return interactable detected by the ray.
 func get_interactable() -> Interactable :
 	return interactor_ray.get_interactable()
 
