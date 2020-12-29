@@ -31,8 +31,8 @@ master func request_join_server(client_version):
 		rpc_id(get_tree().get_rpc_sender_id(), "accept_join_server")
 	else:
 		rpc_id(get_tree().get_rpc_sender_id(), "decline_join_server", 
-				"[center]The server you are trying to connect to is running a more up to date version of the game.\n\n"
-				+ "Grab the latest version from [color=#00d1ff][url=<https://moonwards.com/download>]https://moonwards.com/download[/url][/color][/center]")
+				"[center]The server you are trying to connect to is running a more up to date version of the game.[/center]\n\n"
+				+ "[center]Grab the latest version from [color=#00d1ff][url=<https://moonwards.com/download>]https://moonwards.com/download[/url][/color][/center]")
 		Log.trace(self, "", "Client request refused.")
 	
 master func initialize_entity_data(name, colors, gender : int):
