@@ -44,7 +44,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 max_interact_distance = 200.0
-display_info = "Screen"
+display_info = "touch screen"
 title = "Screen"
 is_networked = false
 is_sync_for_new_player = false
