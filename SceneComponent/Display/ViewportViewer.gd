@@ -9,8 +9,7 @@
 	can click on the display.
 """
 
-tool
-extends Spatial
+extends Interactable
 
 # Member variables
 export(PackedScene) var content = null
@@ -20,12 +19,15 @@ export(bool) var track_camera = false
 export(bool) var hologram = false
 
 onready var screen: Node = self
-onready var collision_box: CollisionShape = get_node("Area/CollisionShape")
+onready var collision_box: CollisionShape = get_node("CollisionShape")
 onready var viewport: Node = get_node("Viewport")
 
 var screen_parent: Node = null
 
 var content_instance = null
+
+func _interaction_occured(interactor) -> void :
+	Signals.Hud.emit_signal(Signals.Hud.START_ELEMENT_WINDOW, content_instance)
 
 #When track_camera is on, rotate myself to face the camera at all times.
 func _process(_delta : float) -> void :
@@ -38,10 +40,12 @@ func _ready():
 	content_instance = content.instance()
 	viewport.add_child(content_instance)
 	
-	get_node("Area").connect("input_event", self, "_on_area_input_event")
+	connect("input_event", self, "_on_area_input_event")
+	#If we are interacted with, start windowed mode.
+	connect("interacted_by", self, "_interaction_occured")
 	
 	#Adjust the scale of the collision shape to what the developer specified.
-	$Area/CollisionShape.scale = Vector3(mesh_size.x / 1745, mesh_size.y / 1728 ,1)
+	collision_box.scale = Vector3(mesh_size.x / 1745, mesh_size.y / 1728 ,1)
 	#Adjust the viewport screen size based on what the dev specified.
 	$Viewport.size = viewport_size
 	
@@ -50,10 +54,10 @@ func _ready():
 		set_process(false)
 	
 	if hologram:
-		var mat = $Area/CollisionShape/Quad.get_surface_material(0)
+		var mat = $CollisionShape/Quad.get_surface_material(0)
 		mat.albedo_color.a = 0.7
 		mat.flags_transparent = true
-		$Area/CollisionShape/Quad.set_surface_material(0, mat)
+		$CollisionShape/Quad.set_surface_material(0, mat)
 
 # Mouse events for Area
 func _on_area_input_event(_camera, event, click_pos, _click_normal, _shape_idx):

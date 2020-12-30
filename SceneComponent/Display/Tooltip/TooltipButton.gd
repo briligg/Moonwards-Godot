@@ -1,4 +1,4 @@
-extends Spatial
+extends Interactable
 
 #Buttons for the TooltipData to use.
 var tooltip_data : TooltipData = TooltipData.new()
@@ -12,7 +12,6 @@ onready var mesh : MeshInstance = $Model/Spatial
 
 export var bbtext_fields : PoolStringArray = []
 
-export var title : String
 
 func _hovered(hovered_over : bool) -> void :
 	if hovered_over :

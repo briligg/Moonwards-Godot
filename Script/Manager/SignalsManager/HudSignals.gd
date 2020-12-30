@@ -22,6 +22,7 @@ const NEW_INTERACTOR_GRABBED_FOCUS : String = "new_interactor_grabbed_focus"
 const SET_FIRST_PERSON : String = "set_first_person"
 const SET_FIRST_PERSON_POSSIBLE_CLICK : String = "set_first_person_possible_click"
 const SET_FIRST_PERSON_POSSIBLE_INTERACT : String = "set_first_person_possible_interact"
+const START_ELEMENT_WINDOW : String = "start_element_window"
 const TOOLTIP_MENU_DISPLAYED : String = "tooltip_menu_displayed"
 
 # Define the actual signal.
@@ -44,4 +45,5 @@ signal new_interactor_grabbed_focus(new_interactor_component_node)
 signal set_first_person(is_active_bool)
 signal set_first_person_possible_click(click_is_possible_bool)
 signal set_first_person_possible_interact(interact_is_possible_bool)
+signal start_element_window(new_scene_node)
 signal tooltip_menu_displayed(tooltip_data)
