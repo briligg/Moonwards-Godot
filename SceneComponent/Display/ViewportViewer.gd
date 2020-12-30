@@ -26,6 +26,9 @@ var screen_parent: Node = null
 
 var content_instance = null
 
+func _interaction_occured(interactor) -> void :
+	Signals.Hud.emit_signal(Signals.Hud.START_ELEMENT_WINDOW, content_instance)
+
 #When track_camera is on, rotate myself to face the camera at all times.
 func _process(_delta : float) -> void :
 	var camera : Camera = get_tree().root.get_camera()
@@ -38,6 +41,8 @@ func _ready():
 	viewport.add_child(content_instance)
 	
 	connect("input_event", self, "_on_area_input_event")
+	#If we are interacted with, start windowed mode.
+	connect("interacted_by", self, "_interaction_occured")
 	
 	#Adjust the scale of the collision shape to what the developer specified.
 	collision_box.scale = Vector3(mesh_size.x / 1745, mesh_size.y / 1728 ,1)

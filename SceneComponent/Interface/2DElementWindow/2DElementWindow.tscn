@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Interface/MainMenu.tres" type="Theme" id=1]
+[ext_resource path="res://SceneComponent/Interface/2DElementWindow/2DElementWindow.gd" type="Script" id=2]
+
+[node name="2DElementWindow" type="CanvasLayer"]
+layer = 127
+script = ExtResource( 2 )
+
+[node name="Viewport" type="Viewport" parent="."]
+disable_3d = true
+usage = 0
+
+[node name="Panel" type="Panel" parent="Viewport"]
+anchor_top = 0.08
+anchor_right = 1.0
+anchor_bottom = 0.8
+margin_top = 27.92
+margin_bottom = 27.92
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
