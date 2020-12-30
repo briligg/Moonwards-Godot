@@ -162,29 +162,26 @@ func _try_update_interact():
 	
 	#Let the previous collider know we left if a new one has replaced it's focus.
 	if result != _prev_frame_collider && _prev_frame_collider != null :
-		_prev_frame_collider.emit_signal("mouse_exited")
+			_prev_frame_collider.emit_signal("mouse_exited")
 	
 	# Call interactable APIs
 	if result is Interactable:
 		if interactor_ray.global_transform.origin.distance_to(interactor_ray.get_collision_point()) < result.max_interact_distance:
 			_make_hud_display_interactable(result)
-			result.emit_signal("mouse_entered")
+			
+			#If we are colliding with a new object, let the old object know.
+			if _prev_frame_collider != result :
+				result.emit_signal("mouse_entered")
+			
+			#Scroll if the player requested to do so.
+			if not _latest_mouse_scroll == null :
+				result.emit_signal("input_event", camera, _latest_mouse_scroll, interactor_ray.get_collision_point(), interactor_ray.get_collision_normal(), 0)
+			
 			_prev_frame_collider = result
-	
-	#If result is an Area it may be a Touchscreen or a Clickable.
-	elif result is Area :
-		#If we are colliding with a new object, let the old object know.
-		if _prev_frame_collider != result :
-			result.emit_signal("mouse_entered")
-			_prev_frame_collider = result
-		
-		#Let the new object know if we are scrolling with the scroll wheel.
-		if not _latest_mouse_scroll == null :
-			result.emit_signal("input_event", camera, _latest_mouse_scroll, interactor_ray.get_collision_point(), interactor_ray.get_collision_normal(), 0)
-	
+
+	#We are not colliding with anything this frame.
 	else:
-		if _prev_frame_collider != null:
-			_prev_frame_collider = null
+		_prev_frame_collider = null
 		_make_hud_display_interactable(null)
 
 # Try to request an interaction.
@@ -192,7 +189,7 @@ func _try_request_interact():
 	#If we have released the mouse left click, let the touchscreen know.
 	var result = interactor_ray.get_collider()
 	if _latest_mouse_release :
-		if result is Area  :
+		if result is Interactable  :
 			var camera = get_tree().get_root().get_camera()
 			result.emit_signal("input_event", camera, _latest_mouse_release, interactor_ray.get_collision_point(), interactor_ray.get_collision_normal(), 0)
 		_latest_mouse_release = null
@@ -207,12 +204,11 @@ func _try_request_interact():
 	if result is Interactable:
 		if interactor_ray.global_transform.origin.distance_to(interactor_ray.get_collision_point()) < result.max_interact_distance:
 			player_requested_interact(result)
+			
+			var camera = get_tree().get_root().get_camera()
+			result.emit_signal("input_event", camera, _latest_mouse_click, interactor_ray.get_collision_point(), interactor_ray.get_collision_normal(), 0)
 	
-	#If result is an Area listening for mouse event's, let it know we clicked.
-	elif result is Area :
-		var camera = get_tree().get_root().get_camera()
-		result.emit_signal("input_event", camera, _latest_mouse_click, interactor_ray.get_collision_point(), interactor_ray.get_collision_normal(), 0)
-	
+	#Finally set the latest_mouse_click in a way that lets us know we handled it.
 	_latest_mouse_click = null
 
 

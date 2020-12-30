@@ -36,8 +36,18 @@ emission_texture = SubResource( 4 )
 uv2_scale = Vector3( 3, 3, 3 )
 uv2_triplanar = true
 
-[node name="Screen" type="Spatial"]
+[node name="Screen" type="Area"]
+collision_layer = 2147484672
+collision_mask = 0
 script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+max_interact_distance = 200.0
+display_info = "Screen"
+title = "Screen"
+is_networked = false
+is_sync_for_new_player = false
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 1920, 1080 )
@@ -46,15 +56,11 @@ hdr = false
 usage = 0
 gui_snap_controls_to_pixels = false
 
-[node name="Area" type="Area" parent="."]
-collision_layer = 2147484672
-collision_mask = 0
-
-[node name="CollisionShape" type="CollisionShape" parent="Area"]
+[node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1.1, 0, 0, 0, 0.625, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
-[node name="Quad" type="MeshInstance" parent="Area/CollisionShape"]
+[node name="Quad" type="MeshInstance" parent="CollisionShape"]
 transform = Transform( 0.909091, -1.92331e-07, -1.34513e-14, 0, -4.37114e-08, 1.6, -1.74846e-07, -1, -6.99382e-08, 0, 0, 0 )
 mesh = SubResource( 3 )
 material/0 = SubResource( 5 )
