@@ -16,6 +16,10 @@ func format_text() -> void :
 		Helpers.get_action_string("move_backwards"),
 		Helpers.get_action_string("move_right"),
 		Helpers.get_action_string("jump"),
+		Helpers.get_action_string("look_left"),
+		Helpers.get_action_string("look_right"),
+		Helpers.get_action_string("look_down"),
+		Helpers.get_action_string("look_up"),
 		Helpers.get_action_string("mouse_toggle")
 	]
 	$Text.text = original_text % array
