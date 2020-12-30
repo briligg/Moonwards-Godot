@@ -31,8 +31,8 @@ jobs:
           mkdir -v -p build/win64
           ls
           cd $GITHUB_WORKSPACE
-          godot -v --export "Windows Desktop" /build/win64/${EXPORT_NAME}-Win64.exe
-          zip /build/win64/${EXPORT_NAME}-Win64.zip /build/win64/${EXPORT_NAME}-Win64.exe
+          godot -v --export "Windows Desktop" build/win64/${EXPORT_NAME}-Win64.exe
+          zip build/win64/${EXPORT_NAME}-Win64.zip build/win64/${EXPORT_NAME}-Win64.exe
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -50,7 +50,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} 
-          asset_path: /build/win64/${EXPORT_NAME}-Win64.zip
+          asset_path: build/win64/${EXPORT_NAME}-Win64.zip
           asset_name: ${EXPORT_NAME}-Win64.zip
           asset_content_type: application/zip
 
@@ -72,8 +72,8 @@ jobs:
         run: |
           mkdir -v -p build/linux
           cd $GITHUB_WORKSPACE
-          godot -v --export "Linux/X11 Full" /build/linux/$EXPORT_NAME.x86_64
-          zip /build/linux/${EXPORT_NAME}-Linux.zip /build/linux/$EXPORT_NAME.x86_64
+          godot -v --export "Linux/X11 Full" build/linux/$EXPORT_NAME.x86_64
+          zip build/linux/${EXPORT_NAME}-Linux.zip build/linux/$EXPORT_NAME.x86_64
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -91,7 +91,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} 
-          asset_path: /build/linux/${EXPORT_NAME}-Linux.zip
+          asset_path: build/linux/${EXPORT_NAME}-Linux.zip
           asset_name: ${EXPORT_NAME}-Linux.zip
           asset_content_type: application/zip
 
@@ -113,7 +113,7 @@ jobs:
         run: |
           mkdir -v -p build/mac
           cd $GITHUB_WORKSPACE
-          godot -v --export "Mac OSX Full" /build/mac/${EXPORT_NAME}-Mac.zip
+          godot -v --export "Mac OSX Full" build/mac/${EXPORT_NAME}-Mac.zip
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -131,6 +131,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} 
-          asset_path: /build/mac/${EXPORT_NAME}-Mac.zip
+          asset_path: build/mac/${EXPORT_NAME}-Mac.zip
           asset_name: ${EXPORT_NAME}-Mac.zip
           asset_content_type: application/zip
