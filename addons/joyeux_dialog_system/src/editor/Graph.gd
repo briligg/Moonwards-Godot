@@ -119,7 +119,11 @@ func create_node(text: String = "", input : String = "", override : String = "",
 	popbutton.connect("pressed", text_popup, "popup_centered")
 	node.add_child(popbutton)
 	node.add_child(text_popup)
+	connect("tree_exiting", text_popup, "queue_free")
 	add_child(node)
+
+func _exit_tree():
+	ChoiceNode.free()
 
 func _on_GraphEdit_delete_nodes_request():
 	for child in get_children():

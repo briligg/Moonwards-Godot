@@ -6,11 +6,11 @@
 margin_right = 122.0
 margin_bottom = 113.0
 title = "Choice"
-slot/0/left_enabled = false
-slot/0/left_type = 0
+slot/0/left_enabled = true
+slot/0/left_type = 1
 slot/0/left_color = Color( 1, 1, 1, 1 )
 slot/0/right_enabled = false
-slot/0/right_type = 0
+slot/0/right_type = 1
 slot/0/right_color = Color( 1, 1, 1, 1 )
 slot/1/left_enabled = false
 slot/1/left_type = 0
