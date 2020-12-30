@@ -66,13 +66,16 @@ anchor_bottom = 0.992
 grow_vertical = 0
 custom_styles/pressed = ExtResource( 10 )
 pressed = true
-text = "Popup at start:"
+text = "Show tutorial at start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VWithTheme" type="VBoxContainer" parent="."]
 anchor_left = 0.02
 anchor_top = 0.02
 anchor_right = 0.98
-anchor_bottom = 0.94
+anchor_bottom = 0.92
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource( 3 )
@@ -83,27 +86,28 @@ __meta__ = {
 
 [node name="Text" type="Label" parent="VWithTheme"]
 margin_right = 921.0
-margin_bottom = 157.0
+margin_bottom = 183.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
 text = "Move around by using the %s%s%s%s keys. %s to jump.
-You can rotate the camera when the mouse cursor is disabled.
+You can rotate the camera with %s %s %s %s.
+The mouse will rotate the camera when the cursor is disabled.
 Toggle the mouse cursor by right clicking your mouse or by pressing %s.
 
 The top right corner of the screen will let you know when you can interact with something. Try walking up close to the pink orb and left clicking the mouse with the cursor on it."
 autowrap = true
 
 [node name="OrbAndStair" type="HBoxContainer" parent="VWithTheme"]
-margin_top = 161.0
+margin_top = 187.0
 margin_right = 921.0
-margin_bottom = 360.0
+margin_bottom = 372.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="OrbStair" type="TextureRect" parent="VWithTheme/OrbAndStair"]
 margin_right = 458.0
-margin_bottom = 199.0
+margin_bottom = 185.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 4 )
@@ -113,7 +117,7 @@ stretch_mode = 6
 [node name="OrbStair2" type="TextureRect" parent="VWithTheme/OrbAndStair"]
 margin_left = 462.0
 margin_right = 921.0
-margin_bottom = 199.0
+margin_bottom = 185.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 3 )
@@ -121,9 +125,9 @@ expand = true
 stretch_mode = 6
 
 [node name="Text2" type="Label" parent="VWithTheme"]
-margin_top = 364.0
+margin_top = 376.0
 margin_right = 921.0
-margin_bottom = 424.0
+margin_bottom = 432.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
@@ -132,15 +136,15 @@ Read the screens easily by toggling first person mode with the %s button."
 autowrap = true
 
 [node name="Screens" type="HBoxContainer" parent="VWithTheme"]
-margin_top = 428.0
+margin_top = 436.0
 margin_right = 921.0
-margin_bottom = 627.0
+margin_bottom = 621.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Screen1" type="TextureRect" parent="VWithTheme/Screens"]
 margin_right = 458.0
-margin_bottom = 199.0
+margin_bottom = 185.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 6 )
@@ -150,7 +154,7 @@ stretch_mode = 6
 [node name="Screen2" type="TextureRect" parent="VWithTheme/Screens"]
 margin_left = 462.0
 margin_right = 921.0
-margin_bottom = 199.0
+margin_bottom = 185.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 5 )
@@ -158,9 +162,9 @@ expand = true
 stretch_mode = 6
 
 [node name="Text3" type="Label" parent="VWithTheme"]
-margin_top = 631.0
+margin_top = 625.0
 margin_right = 921.0
-margin_bottom = 710.0
+margin_bottom = 704.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
@@ -170,9 +174,9 @@ You can find this tutorial there if you need it."
 autowrap = true
 
 [node name="HelpButton" type="TextureRect" parent="VWithTheme"]
-margin_top = 714.0
+margin_top = 708.0
 margin_right = 921.0
-margin_bottom = 914.0
+margin_bottom = 894.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 7 )
