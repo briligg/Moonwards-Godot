@@ -5,7 +5,7 @@ extends Spatial
 const DOCKABLE_POD_INFO : String = "Dock the passenger pod to the airlock"
 const DOCKABLE_POD_TITLE : String = "Dock Passenger Pod"
 const DROPPABLE_POD_TITLE : String = "Drop Passenger Pod"
-const DROPPABLE_POD_INFO : String = "Drop the passenger pod onto the ground"
+const DROPPABLE_POD_INFO : String = "Drop the passenger pod onto the ground. Get near an airlock to dock the pod instead."
 const GRABBABLE_POD_INFO : String = "Pick up the pod with the rover and carry it around."
 const GRABBABLE_POD_TITLE : String = "Grab Passenger Pod"
 
