@@ -21,7 +21,7 @@ collision_mask = 32768
 script = ExtResource( 1 )
 max_interact_distance = 15.0
 display_info = "Dock"
-title = "Passenger Pod"
+title = "Make the rover pick up the passenger vessel. If at an airlock, the rover will dock the pod to it."
 network_mode = 2
 
 [node name="CollisionShape" type="CollisionShape" parent="Interactable"]
