@@ -2,6 +2,12 @@ extends Spatial
 
 #### Some spaghetti code this is! A masterpiece, composed by yours truely.
 #### Seriously though, refactor this as soon as you get the chance.
+const DOCKABLE_POD_INFO : String = "Dock the passenger pod to the airlock"
+const DOCKABLE_POD_TITLE : String = "Dock Passenger Pod"
+const DROPPABLE_POD_TITLE : String = "Drop Passenger Pod"
+const DROPPABLE_POD_INFO : String = "Drop the passenger pod onto the ground. Get near an airlock to dock the pod instead."
+const GRABBABLE_POD_INFO : String = "Pick up the pod with the rover and carry it around."
+const GRABBABLE_POD_TITLE : String = "Grab Passenger Pod"
 
 onready var hatch_collision = get_parent().get_node("HatchCollisionShape")
 # The latch that goes into the airlock door
@@ -22,6 +28,8 @@ var collision_shapes: Array
 
 # Is docked to a rover?
 var is_docked = false
+#True when airlock is in range for docking.
+var near_airlock : bool = true
 # Are we currently in the process of docking or undocking?
 var is_docking = false
 
@@ -44,11 +52,10 @@ func _ready() -> void:
 		collision_shapes.append(get_node(path))
 	
 	$Interactable.owning_entity = self.pod
-	$Interactable.display_info = "Dock to rover"
+	$Interactable.display_info = GRABBABLE_POD_INFO
 	$Interactable.connect("interacted_by", self, "interacted_by")
 	$Interactable.connect("sync_for_new_player", self, "sync_for_new_player")
-	$Interactable.title = "Dock Passenger Pod"
-	$Interactable.display_info = ""
+	$Interactable.title = GRABBABLE_POD_TITLE
 	orig_parent = pod.get_parent()
 	$AirlockDetector.connect("area_entered", self, "_on_area_entered")
 	$AirlockDetector.connect("area_exited", self, "_on_area_exited")
@@ -109,7 +116,13 @@ func align_and_dock_with(rover):
 
 	
 func dock_with(rover):
-	$Interactable.title = "Undock Passenger Pod"
+	if near_airlock :
+		$Interactable.title = DOCKABLE_POD_TITLE
+		$Interactable.display_info = DOCKABLE_POD_INFO
+	else :
+		$Interactable.title = DROPPABLE_POD_TITLE
+		$Interactable.display_info = DROPPABLE_POD_INFO
+	
 	_reparent(pod, rover)
 	var target_xfm = rover.get_node("DockLatch").transform
 	pod.transform = target_xfm
@@ -127,13 +140,15 @@ puppet func pup_dock_with(rover_path):
 	var rover = get_node(rover_path)
 	dock_with(rover)
 
+#This gets called whenever the pod is dropped.
 func undock():
 	is_docking = true
 	if placeholder_node:
 		placeholder_node.queue_free()
 	yield(get_tree(), "physics_frame")
 	
-	$Interactable.title = "Dock Passenger Pod"
+	$Interactable.title = GRABBABLE_POD_TITLE
+	$Interactable.display_info = GRABBABLE_POD_INFO
 	_reparent(pod, orig_parent, true)
 	
 	pod.global_transform = docked_to.get_node("DockLatch").global_transform
@@ -220,15 +235,21 @@ func _lerp_to_coroutine(rover: Node, source: Vector3, target: Vector3, speed: fl
 
 func _on_area_entered(area):
 	if area is AirlockDoorInteractable:
+		near_airlock = true
 		if area.is_dock_door:
 			_dock_door_interactable = area
-			$Interactable.display_info = "Undock Passenger Pod from the rover and into the airlock door"
+			#Check if the rover has the pod.
+			if is_docked :
+				$Interactable.display_info = DOCKABLE_POD_INFO
+				$Interactable.title = DOCKABLE_POD_TITLE
 
 func _on_area_exited(area):
 	yield(get_tree(), "physics_frame")
 	if area == _dock_door_interactable:
 		if !area.overlaps_area($AirlockDetector):
-			$Interactable.display_info = ""
+			near_airlock = false
+			$Interactable.title = DROPPABLE_POD_TITLE
+			$Interactable.display_info = DROPPABLE_POD_INFO
 			_dock_door_interactable = null
 
 func _reparent(node, new_parent, keep_world_pos = false):
@@ -258,7 +279,8 @@ func sync_for_new_player(peer_id):
 					hatch_collision.global_transform)
 
 puppet func _dock_for_new_player(rover_path, _pod_xfm, col_xfm_arr, col_hatch_xfm):
-	$Interactable.title = "Undock Passenger Pod"
+	$Interactable.title = GRABBABLE_POD_TITLE
+	$Interactable.display_info = GRABBABLE_POD_INFO
 	var rover = get_node(rover_path)
 	_reparent(pod, rover)
 	var target_xfm = rover.get_node("DockLatch").transform

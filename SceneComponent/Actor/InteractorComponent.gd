@@ -218,7 +218,12 @@ func _try_request_interact():
 
 func _make_hud_display_interactable(interactable : Interactable = null) -> void :
 	if interactable == null :
-		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_HIDDEN)
+		#Hide Interactable display if we do not use an area.
+		if interactor_area == null :
+			Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_HIDDEN)
+		else :
+			Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_SHOWN, 
+					"%s to open interactions menu" % Helpers.get_action_string("use"), true)
 		Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON_POSSIBLE_INTERACT, false)
 	else :
 		Signals.Hud.emit_signal(Signals.Hud.INTERACTABLE_DISPLAY_SHOWN, 
