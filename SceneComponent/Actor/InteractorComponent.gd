@@ -276,6 +276,12 @@ func relay_signal(attribute = null, signal_name = "interactable_made_impossible"
 master func request_interact(args : Array) -> void :
 	Log.warning(self, "", "Client %s requested an interaction" %entity.owner_peer_id)
 	var interactable = get_node(args[1])
+	
+	#Do nothing if the passed Interactable is not correct.
+	if not interactable is Interactable :
+		Log.error(self, "request_interact", "Node path passed as Interactable is invalid.")
+		return
+	
 	Log.warning(self, "", "Interact mode: %s" %interactable.network_mode)
 	match interactable.network_mode:
 		interactable.NetworkMode.CLIENT_SERVER:
