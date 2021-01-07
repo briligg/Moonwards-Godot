@@ -275,6 +275,10 @@ func relay_signal(attribute = null, signal_name = "interactable_made_impossible"
 # This is always run on the server, after a client requests a specific interact.
 master func request_interact(args : Array) -> void :
 	Log.warning(self, "", "Client %s requested an interaction" %entity.owner_peer_id)
+	#Check that args is the proper size.
+	if args.size() < 2 :
+		return
+	
 	var interactable = get_node(args[1])
 	
 	#Do nothing if the passed Interactable is not correct.
