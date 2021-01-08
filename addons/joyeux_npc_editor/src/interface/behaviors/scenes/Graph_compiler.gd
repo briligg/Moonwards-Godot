@@ -14,6 +14,8 @@ func _ready() -> void:
 #100 is overkill for simple NPCs, this should be changed to something dynamic
 	for type in range (0,100): 
 		add_valid_connection_type(28,type)
+		#Set from any to all types too, for getting variables
+		add_valid_connection_type(type, 28)
 
 func clear_graph() -> void:
 	for child in get_children():
@@ -122,14 +124,30 @@ func compile(connections):
 	for child in get_child_count():
 		var node_info : Array = []
 		node = get_child(child) #These are most of the time GraphNodes
-		
-		var nodevars : Array = [] # Here the variables will be stored
-		for child2 in node.get_children(): #For each children in the GraphNode
-			if node is GraphNode: #Checks if it's actuallly a GraphNode
+		if not node is GraphNode: #Checks if it's actuallly a GraphNode
+			continue
+		else:
+			var nodevars : Array = [] # Here the variables will be stored
+			for child2 in node.get_children(): #For each children in the GraphNode
 				var found = recursive_get_variable(child2)
 				nodevars.append(found)
-		OutputFile.set_value("variables", node.name, nodevars)
-		if node is GraphNode:
+			
+			for connection in connections:
+				if connection.get("to") == node.name:
+					if connection.get("from").begins_with("get_variable"):
+						if nodevars[connection.get("to_port")] == null:
+							var getvarnode = get_node(connection.get("from"))
+							var getnodevars : Array = [] # Here the variables will be stored
+							for children in getvarnode.get_children(): #For each children in the GraphNode
+								var found = recursive_get_variable(children)
+								getnodevars.append(found)
+							nodevars.remove(connection.get("to_port"))
+							nodevars.insert(connection.get("to_port"), str("_s_getselfvar_",getnodevars[1]))
+						else:
+							print("port is not null!, value is:",nodevars[connection.get("to_port")] )
+				
+			OutputFile.set_value("variables", node.name, nodevars)
+			
 			for inputs in max(
 					node.get_connection_output_count(),
 					node.get_connection_input_count()):
