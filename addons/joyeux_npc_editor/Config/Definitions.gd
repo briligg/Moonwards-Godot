@@ -57,6 +57,16 @@ var _functions = {
 			{"_label_title":"Value","_type":Nodes.TYPE_ANY},
 			]
 	},  
+	"swap_input_for_variable" : {
+		"_category" : "misc",
+		"_input_ports" : [
+			{"_label_title":"Trigger","_type":Nodes.TYPE_ANY},
+			{"_label_title":"_s_text_edit","_type":TYPE_NIL},
+			],
+		"_output_ports" : [
+			{"_label_title":"Value","_type":Nodes.TYPE_ANY},
+			]
+	},  
 	"property_check" : {
 		"_category" : "inhibitors",
 		"_code" : "FuncRef?", #This hasn't been implemented yet

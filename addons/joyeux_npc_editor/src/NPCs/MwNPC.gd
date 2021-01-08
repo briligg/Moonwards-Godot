@@ -79,6 +79,11 @@ func tri_v_decision(input, signals, variables):
 	elif maximum == weigth3:
 		_emit_signal_from_port(input, signals, 3)
 
+func swap_input_for_variable(input, signals, variables):
+	var varname = _get_variable_from_port(variables, 1)
+	var varvalue = _get_var_or_meta(varname)
+	_emit_signal_from_port(varvalue, signals, 0)
+
 func play_global_sound(input, signals, variables):
 	var path = _get_variable_from_port(variables, 0)
 	var sound_player = AudioStreamPlayer.new()
