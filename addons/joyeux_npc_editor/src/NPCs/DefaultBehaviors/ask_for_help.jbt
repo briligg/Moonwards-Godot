@@ -1,0 +1,39 @@
+[variables]
+
+interacted_by=[ null ]
+parallel_trigger3=[ null, null ]
+trigger_dialog=[ "res://Assets/Dialogs/Help_me.mtalk" ]
+set_variable=[ null, "latest_interactor" ]
+
+[node_signals]
+
+interacted_by=[ "interacted_by" ]
+parallel_trigger3=[ "parallel_trigger3_output_0", "parallel_trigger3_output_1" ]
+trigger_dialog=[  ]
+set_variable=[  ]
+
+[node_offsets]
+
+interacted_by=Vector2( -500, 120 )
+parallel_trigger3=Vector2( -240, 120 )
+trigger_dialog=Vector2( 80, 80 )
+set_variable=Vector2( 80, 140 )
+
+[ai_config]
+
+connections=[ {
+"from": "interacted_by",
+"from_port": 0,
+"to": "parallel_trigger3",
+"to_port": 0
+}, {
+"from": "parallel_trigger3",
+"from_port": 0,
+"to": "trigger_dialog",
+"to_port": 0
+}, {
+"from": "parallel_trigger3",
+"from_port": 1,
+"to": "set_variable",
+"to_port": 0
+} ]
