@@ -20,6 +20,7 @@ export(String) var initial_state : String = ""
 func _ready():
 	randomize()
 	_load_states(NPC_File)
+	connect("next_state", self, "_next_state")
 	_emit_with_delay("on_ready")
 
 func _emit_with_delay(signl : String)->void:
@@ -190,5 +191,6 @@ func _undefine_connection(behavior : ConfigFile):
 	for connection in behavior.get_value("ai_config", "connections", []):
 		var function = _clean_function_name(connection.get("to"))
 		for signals in behavior.get_section_keys("node_signals"):
-			if is_connected(signals, self, function):
-				disconnect(signals, self, function)
+			for sign_al in behavior.get_value("node_signals", signals, ""):
+				if is_connected(sign_al, self, function):
+					disconnect(sign_al, self, function)

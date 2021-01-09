@@ -106,8 +106,7 @@ func trigger_dialog(input, _signals, variables):
 	dialog_display.dialog = path
 	dialog_display.name_override = character_name 
 	actor.add_child(dialog_display)
-	dialog_display.connect("finished", self, "_on_dialog_answer")
-	dialog_display.connect("finished", dialog_display, "queue_free")
+	dialog_display.connect("finished", self, "_on_dialog_answer", [dialog_display])
 
 func request_workstation(input, _signals, variables):
 	if worker.current_station != null:
@@ -141,6 +140,6 @@ func find_workstation(input, signals, variables):
 func set_objective(input, _signals, _variables):
 	navigator.get_navpath(input) #Input should be Vector3
 
-func _on_dialog_answer(input):
-	print(input)
+func _on_dialog_answer(input, object_to_free):
 	emit_signal("dialog_answered", input)
+	object_to_free.queue_free()

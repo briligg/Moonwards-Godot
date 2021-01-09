@@ -1,6 +1,6 @@
 extends Control
 
-signal finished
+signal finished(string)
 
 onready var Controls = $HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls
 onready var CharName = $HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/CharName
