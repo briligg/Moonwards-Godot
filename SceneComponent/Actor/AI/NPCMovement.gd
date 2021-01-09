@@ -170,10 +170,12 @@ func _process_server(delta):
 	
 	
 	if following:
+		var loc = following.to_global(following.translation)
+		loc = get_parent().to_local(loc)
 		delta_following += delta
 		if delta_following > 4:
 			delta_following = 0
-			get_navpath(following.translation)
+			get_navpath(loc)
 		
 func _handle_npc_input(acceleration : GSAITargetAcceleration, _delta : float):
 	update_agent(acceleration.linear, acceleration.angular)

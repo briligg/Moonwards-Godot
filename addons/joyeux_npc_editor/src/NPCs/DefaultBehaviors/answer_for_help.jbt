@@ -3,66 +3,66 @@
 dialog_answered=[ null ]
 parallel_trigger=[ null, null ]
 parallel_trigger2=[ null, null ]
+swap_input_for_variable=[ null, "latest_interactor" ]
 match=[ null, "Thanks!" ]
 match3=[ null, "I'll be waiting" ]
 match2=[ null, "Sorry!" ]
-swap_input_for_variable=[ null, "latest_interactor" ]
-follow=[ null ]
 parallel_trigger4=[ null, null ]
 parallel_trigger5=[ null, null ]
+swap_input_for_variable2=[ null, "latest_interactor" ]
 match4=[ null, "Carry on" ]
 match5=[ null, "I'll try on my own" ]
+interacted_by=[ null ]
+follow=[ null ]
 follow2=[ null ]
 force_next_state2=[ null ]
 trigger_dialog=[ "res://Assets/Dialogs/following.mtalk" ]
-interacted_by=[ null ]
-stop_follow2=[ null ]
-stop_follow=[ null ]
-swap_input_for_variable2=[ null, "latest_interactor" ]
+force_next_state=[ null ]
+force_next_state3=[ null ]
 
 [node_signals]
 
 dialog_answered=[ "dialog_answered" ]
 parallel_trigger=[ "parallel_trigger_output_0", "parallel_trigger_output_1" ]
 parallel_trigger2=[ "parallel_trigger2_output_0", "parallel_trigger2_output_1" ]
+swap_input_for_variable=[ "swap_input_for_variable_output_0" ]
 match=[ "match_output_0" ]
 match3=[ "match3_output_0" ]
 match2=[ "match2_output_0" ]
-swap_input_for_variable=[ "swap_input_for_variable_output_0" ]
-follow=[  ]
 parallel_trigger4=[ "parallel_trigger4_output_0", "parallel_trigger4_output_1" ]
 parallel_trigger5=[ "parallel_trigger5_output_0", "parallel_trigger5_output_1" ]
+swap_input_for_variable2=[ "swap_input_for_variable2_output_0" ]
 match4=[ "match4_output_0" ]
 match5=[ "match5_output_0" ]
+interacted_by=[ "interacted_by" ]
+follow=[  ]
 follow2=[  ]
 force_next_state2=[  ]
 trigger_dialog=[  ]
-interacted_by=[ "interacted_by" ]
-stop_follow2=[  ]
-stop_follow=[  ]
-swap_input_for_variable2=[ "swap_input_for_variable2_output_0" ]
+force_next_state=[  ]
+force_next_state3=[  ]
 
 [node_offsets]
 
 dialog_answered=Vector2( -480, -240 )
 parallel_trigger=Vector2( -160, -420 )
 parallel_trigger2=Vector2( -160, -340 )
+swap_input_for_variable=Vector2( 600, -540 )
 match=Vector2( 220, -540 )
 match3=Vector2( 220, -460 )
 match2=Vector2( 220, -380 )
-swap_input_for_variable=Vector2( 600, -540 )
-follow=Vector2( 900, -540 )
 parallel_trigger4=Vector2( -160, -260 )
 parallel_trigger5=Vector2( -160, -180 )
+swap_input_for_variable2=Vector2( 600, -260 )
 match4=Vector2( 220, -240 )
 match5=Vector2( 220, -160 )
+interacted_by=Vector2( -460, 40 )
+follow=Vector2( 900, -540 )
 follow2=Vector2( 900, -240 )
 force_next_state2=Vector2( 600, -140 )
 trigger_dialog=Vector2( 260, 40 )
-interacted_by=Vector2( -460, 40 )
-stop_follow2=Vector2( 600, -360 )
-stop_follow=Vector2( 600, -440 )
-swap_input_for_variable2=Vector2( 600, -260 )
+force_next_state=Vector2( 600, -360 )
+force_next_state3=Vector2( 600, -440 )
 
 [ai_config]
 
@@ -95,16 +95,6 @@ connections=[ {
 "from": "match",
 "from_port": 0,
 "to": "swap_input_for_variable",
-"to_port": 0
-}, {
-"from": "match3",
-"from_port": 0,
-"to": "stop_follow",
-"to_port": 0
-}, {
-"from": "match2",
-"from_port": 0,
-"to": "stop_follow2",
 "to_port": 0
 }, {
 "from": "parallel_trigger2",
@@ -150,5 +140,15 @@ connections=[ {
 "from": "interacted_by",
 "from_port": 0,
 "to": "trigger_dialog",
+"to_port": 0
+}, {
+"from": "match2",
+"from_port": 0,
+"to": "force_next_state",
+"to_port": 0
+}, {
+"from": "match3",
+"from_port": 0,
+"to": "force_next_state3",
 "to_port": 0
 } ]
