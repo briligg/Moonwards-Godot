@@ -22,6 +22,7 @@ export(float) var dock_door_clearance = 1.5
 
 export(float) var dock_anim_speed = 0.022
 
+##WHAT
 export(Array, NodePath) var collision_paths
 var collision_shapes: Array
 
@@ -64,15 +65,20 @@ func interacted_by(interactor):
 	if is_docking:
 		return
 	if interactor.is_in_group("athlete_rover"):
+		#Be grabbed by the rover.
 		if !is_docked:
-			call_deferred("align_and_dock_with", interactor)
+			call_deferred("align_and_be_grabbed_by", interactor)
+		
+		#We are being carried by a rover.
 		elif is_docked and interactor == docked_to:
+			#We are near an airlock.
 			if _dock_door_interactable != null and !_dock_door_interactable.is_docked_to:
-				call_deferred("undock_to_airlock", interactor)
+				call_deferred("dock_to_airlock", interactor)
+			
 			else:
-				rpc("pup_undock")
+				rpc("pup_drop")
 				rpc("set_physics_mode", RigidBody.MODE_RIGID)
-				call_deferred("undock")
+				call_deferred("drop")
 				pod.mode = RigidBody.MODE_RIGID
 
 func generate_placeholder():
@@ -86,7 +92,8 @@ func generate_placeholder():
 	placeholder_node.add_child(placeholder_comp)
 	placeholder_comp.name = self.name
 
-func align_and_dock_with(rover):
+#This is called so the Rover can pick up the pod.
+func align_and_be_grabbed_by(rover):
 	if _dock_door_interactable:
 		_dock_door_interactable.request_close()
 
@@ -100,9 +107,9 @@ func align_and_dock_with(rover):
 			pod_anchor.global_transform.origin, dock_anim_speed) and is_docking):
 		yield(get_tree(), "physics_frame")
 	
-	rpc("pup_dock_with", rover.get_path())
+	rpc("pup_grab", rover.get_path())
 	rpc("set_physics_mode", RigidBody.MODE_STATIC)
-	dock_with(rover)
+	grab(rover)
 	pod.mode = RigidBody.MODE_STATIC
 	
 	# If we're docked to the door or nearby, go backwards a little to give room for movement.
@@ -114,35 +121,8 @@ func align_and_dock_with(rover):
 	rover.mode = RigidBody.MODE_RIGID
 	is_docking = false
 
-	
-func dock_with(rover):
-	if near_airlock :
-		$Interactable.title = DOCKABLE_POD_TITLE
-		$Interactable.display_info = DOCKABLE_POD_INFO
-	else :
-		$Interactable.title = DROPPABLE_POD_TITLE
-		$Interactable.display_info = DROPPABLE_POD_INFO
-	
-	_reparent(pod, rover)
-	var target_xfm = rover.get_node("DockLatch").transform
-	pod.transform = target_xfm
-	pod.transform.origin.y -= HALF_HEIGHT + .1
-	for col in collision_shapes:
-		_reparent(col, rover, true)
-	_reparent(hatch_collision, rover, true)
-	if placeholder_node == null:
-		generate_placeholder()
-	
-	docked_to = rover
-	is_docked = true
-	
-puppet func pup_dock_with(rover_path):
-	var rover = get_node(rover_path)
-	dock_with(rover)
-
 #This gets called whenever the pod is dropped.
-func undock():
-	is_docking = true
+func drop():
 	if placeholder_node:
 		placeholder_node.queue_free()
 	yield(get_tree(), "physics_frame")
@@ -165,11 +145,41 @@ func undock():
 	is_docked = false
 	is_docking = false
 
-puppet func pup_undock():
-	undock()
+puppet func pup_drop():
+	drop()
+
+#Called when an object is picking up the pod.
+func grab(rover_node) -> void :
+	if near_airlock :
+		$Interactable.title = DOCKABLE_POD_TITLE
+		$Interactable.display_info = DOCKABLE_POD_INFO
+	else :
+		$Interactable.title = DROPPABLE_POD_TITLE
+		$Interactable.display_info = DROPPABLE_POD_INFO
+	
+	_reparent(pod, rover_node)
+	var target_xfm = rover_node.get_node("DockLatch").transform
+	pod.transform = target_xfm
+	pod.transform.origin.y -= HALF_HEIGHT + .1
+	for col in collision_shapes:
+		_reparent(col, rover_node, true)
+	_reparent(hatch_collision, rover_node, true)
+	if placeholder_node == null:
+		generate_placeholder()
+	
+	docked_to = rover_node
+	is_docked = true
+
+puppet func pup_grab(rover_path) -> void :
+	var rover = get_node(rover_path)
+	grab(rover)
 
 # Undock from rover and into the airlock
-func undock_to_airlock(rover):
+func dock_to_airlock(rover):
+	#Do nothing if we are already attempting to dock.
+	if is_docking :
+		return
+	
 	is_docking = true
 	
 	rover.mode = RigidBody.MODE_KINEMATIC
@@ -193,9 +203,9 @@ func undock_to_airlock(rover):
 	while(!_lerp_to_coroutine(rover, airlock_latch.global_transform.origin, targz, dock_anim_speed) and is_docking):
 		yield(get_tree(), "physics_frame")
 	
-	rpc("pup_undock")
-	undock()
-	# Because undock will reset this.
+	rpc("pup_drop")
+	drop()
+	# Because drop will reset this.
 	is_docking = true
 	rpc("set_physics_mode", RigidBody.MODE_STATIC)
 	pod.mode = RigidBody.MODE_STATIC
@@ -278,6 +288,7 @@ func sync_for_new_player(peer_id):
 					col_transforms, 
 					hatch_collision.global_transform)
 
+#Attach myself either to an airlock or vehicle for the new player.
 puppet func _dock_for_new_player(rover_path, _pod_xfm, col_xfm_arr, col_hatch_xfm):
 	$Interactable.title = GRABBABLE_POD_TITLE
 	$Interactable.display_info = GRABBABLE_POD_INFO
@@ -296,6 +307,7 @@ puppet func _dock_for_new_player(rover_path, _pod_xfm, col_xfm_arr, col_hatch_xf
 	docked_to = rover
 	is_docked = true
 
+#The pod is just laying on the ground?
 puppet func _syncpos_for_new_player(pod_xfm, col_pos_arr, col_hatch_pos):
 	pod.global_transform = pod_xfm
 	for i in range(collision_shapes.size()):
