@@ -77,8 +77,8 @@ func interacted_by(interactor):
 			
 			else:
 				rpc("pup_drop")
+				pup_drop()
 				rpc("set_physics_mode", RigidBody.MODE_RIGID)
-				call_deferred("drop")
 				pod.mode = RigidBody.MODE_RIGID
 
 func generate_placeholder():
@@ -94,6 +94,9 @@ func generate_placeholder():
 
 #This is called so the Rover can pick up the pod.
 func align_and_be_grabbed_by(rover):
+	if is_docking:
+		return
+	
 	if _dock_door_interactable:
 		_dock_door_interactable.request_close()
 
@@ -109,7 +112,7 @@ func align_and_be_grabbed_by(rover):
 	
 	rpc("pup_grab", rover.get_path())
 	rpc("set_physics_mode", RigidBody.MODE_STATIC)
-	grab(rover)
+	pup_grab(rover.get_path())
 	pod.mode = RigidBody.MODE_STATIC
 	
 	# If we're docked to the door or nearby, go backwards a little to give room for movement.
@@ -143,10 +146,9 @@ func drop():
 	
 	docked_to = null
 	is_docked = false
-	is_docking = false
 
 puppet func pup_drop():
-	drop()
+	call_deferred("drop")
 
 #Called when an object is picking up the pod.
 func grab(rover_node) -> void :
@@ -172,7 +174,7 @@ func grab(rover_node) -> void :
 
 puppet func pup_grab(rover_path) -> void :
 	var rover = get_node(rover_path)
-	grab(rover)
+	call_deferred("grab", rover)
 
 # Undock from rover and into the airlock
 func dock_to_airlock(rover):
@@ -204,9 +206,7 @@ func dock_to_airlock(rover):
 		yield(get_tree(), "physics_frame")
 	
 	rpc("pup_drop")
-	drop()
-	# Because drop will reset this.
-	is_docking = true
+	pup_drop()
 	rpc("set_physics_mode", RigidBody.MODE_STATIC)
 	pod.mode = RigidBody.MODE_STATIC
 	
