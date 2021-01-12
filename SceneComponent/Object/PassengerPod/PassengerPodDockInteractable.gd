@@ -27,15 +27,15 @@ export(Array, NodePath) var collision_paths
 var collision_shapes: Array
 
 
-# Is docked to a rover?
-var is_docked = false
+# True when something is carrying me.
+var being_carried = false
 #True when airlock is in range for docking.
 var near_airlock : bool = true
-# Are we currently in the process of docking or undocking?
+# Are we currently in the process of animating?
 var is_docking = false
 
-# The rover it's docked to, if any
-var docked_to: AEntity
+# The rover it's carried by, if any
+var carried_by: AEntity
 
 # Original parent of the pod at spawn
 var orig_parent
@@ -66,11 +66,11 @@ func interacted_by(interactor):
 		return
 	if interactor.is_in_group("athlete_rover"):
 		#Be grabbed by the rover.
-		if !is_docked:
+		if !being_carried:
 			call_deferred("align_and_be_grabbed_by", interactor)
 		
 		#We are being carried by a rover.
-		elif is_docked and interactor == docked_to:
+		elif being_carried and interactor == carried_by:
 			#We are near an airlock.
 			if _dock_door_interactable != null and !_dock_door_interactable.is_docked_to:
 				call_deferred("dock_to_airlock", interactor)
@@ -135,7 +135,7 @@ func drop():
 	$Interactable.display_info = GRABBABLE_POD_INFO
 	_reparent(pod, orig_parent, true)
 	
-	pod.global_transform = docked_to.get_node("DockLatch").global_transform
+	pod.global_transform = carried_by.get_node("DockLatch").global_transform
 	pod.global_transform.origin.y -= HALF_HEIGHT + .1
 	
 	for col in collision_shapes:
@@ -145,8 +145,8 @@ func drop():
 	_reparent(hatch_collision, pod)
 	hatch_collision.global_transform = hxfm
 	
-	docked_to = null
-	is_docked = false
+	carried_by = null
+	being_carried = false
 
 puppet func pup_drop():
 	call_deferred("drop")
@@ -170,8 +170,8 @@ func grab(rover_node) -> void :
 	if placeholder_node == null:
 		generate_placeholder()
 	
-	docked_to = rover_node
-	is_docked = true
+	carried_by = rover_node
+	being_carried = true
 
 puppet func pup_grab(rover_path) -> void :
 	var rover = get_node(rover_path)
@@ -251,7 +251,7 @@ func _on_area_entered(area):
 		if area.is_dock_door:
 			_dock_door_interactable = area
 			#Check if the rover has the pod.
-			if is_docked :
+			if being_carried :
 				$Interactable.display_info = DOCKABLE_POD_INFO
 				$Interactable.title = DOCKABLE_POD_TITLE
 
@@ -281,8 +281,8 @@ func sync_for_new_player(peer_id):
 		var col_transforms = []
 		for col in collision_shapes:
 			col_transforms.append(col.global_transform)
-		if is_docked:
-			placeholder_node.get_node(self.name).rpc_id(peer_id, "_dock_for_new_player", docked_to.get_path(), 
+		if being_carried:
+			placeholder_node.get_node(self.name).rpc_id(peer_id, "_dock_for_new_player", carried_by.get_path(), 
 					pod.global_transform, col_transforms, 
 					hatch_collision.global_transform)
 		else:
@@ -306,8 +306,8 @@ puppet func _dock_for_new_player(rover_path, _pod_xfm, col_xfm_arr, col_hatch_xf
 	_reparent(hatch_collision, rover)
 	hatch_collision.global_transform = col_hatch_xfm
 	generate_placeholder()
-	docked_to = rover
-	is_docked = true
+	carried_by = rover
+	being_carried = true
 
 #The pod is just laying on the ground?
 puppet func _syncpos_for_new_player(pod_xfm, col_pos_arr, col_hatch_pos):
