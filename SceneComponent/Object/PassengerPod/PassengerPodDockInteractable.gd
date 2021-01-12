@@ -282,7 +282,7 @@ func sync_for_new_player(peer_id):
 		for col in collision_shapes:
 			col_transforms.append(col.global_transform)
 		if being_carried:
-			placeholder_node.get_node(self.name).rpc_id(peer_id, "_dock_for_new_player", carried_by.get_path(), 
+			placeholder_node.get_node(self.name).rpc_id(peer_id, "_get_grabbed_for_new_player", carried_by.get_path(), 
 					pod.global_transform, col_transforms, 
 					hatch_collision.global_transform)
 		else:
@@ -291,7 +291,7 @@ func sync_for_new_player(peer_id):
 					hatch_collision.global_transform)
 
 #Attach myself either to an airlock or vehicle for the new player.
-puppet func _dock_for_new_player(rover_path, _pod_xfm, col_xfm_arr, col_hatch_xfm):
+puppet func _get_grabbed_for_new_player(rover_path, _pod_xfm, col_xfm_arr, col_hatch_xfm):
 	$Interactable.title = GRABBABLE_POD_TITLE
 	$Interactable.display_info = GRABBABLE_POD_INFO
 	var rover = get_node(rover_path)
