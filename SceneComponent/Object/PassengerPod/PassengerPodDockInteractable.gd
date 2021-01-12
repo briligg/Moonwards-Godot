@@ -75,6 +75,7 @@ func interacted_by(interactor):
 			if _dock_door_interactable != null and !_dock_door_interactable.is_docked_to:
 				call_deferred("dock_to_airlock", interactor)
 			
+			#I am not near an airlock and being carried by the rover. Get dropped.
 			else:
 				rpc("pup_drop")
 				pup_drop()
@@ -117,9 +118,9 @@ func align_and_be_grabbed_by(rover):
 	
 	# If we're docked to the door or nearby, go backwards a little to give room for movement.
 #	if _dock_door_interactable:
-	var targz = rover.global_transform.origin - (rover.global_transform.basis.z).normalized() * dock_door_clearance
-	while(!_lerp_to_coroutine(rover, rover.global_transform.origin, targz, dock_anim_speed) and is_docking):
-		yield(get_tree(), "physics_frame")
+#	var targz = rover.global_transform.origin - (rover.global_transform.basis.z).normalized() * dock_door_clearance
+#	while(!_lerp_to_coroutine(rover, rover.global_transform.origin, targz, dock_anim_speed) and is_docking):
+#		yield(get_tree(), "physics_frame")
 	
 	rover.mode = RigidBody.MODE_RIGID
 	is_docking = false
@@ -210,15 +211,16 @@ func dock_to_airlock(rover):
 	rpc("set_physics_mode", RigidBody.MODE_STATIC)
 	pod.mode = RigidBody.MODE_STATIC
 	
-	targ = rover.global_transform.origin - (rover.global_transform.basis.z).normalized() * dock_door_clearance
-	var dir
-	while(is_docking):
-		targ = rover.global_transform.origin - (rover.global_transform.basis.z).normalized() * dock_door_clearance
-		dir = (targ - rover.global_transform.origin).normalized()
-		rover.global_translate(dir * 0.016)
-		if rover.global_transform.origin.distance_to(targ) <= 0.05:
-			break
-		yield(get_tree(), "physics_frame")
+#	targ = rover.global_transform.origin - (rover.global_transform.basis.z).normalized() * dock_door_clearance
+#	var dir
+#	while(is_docking):
+#		targ = rover.global_transform.origin - (rover.global_transform.basis.z).normalized() * dock_door_clearance
+#		dir = (targ - rover.global_transform.origin).normalized()
+#		rover.global_translate(dir * 0.016)
+#		if rover.global_transform.origin.distance_to(targ) <= 0.05:
+#			is_docking = false
+#			break
+#		yield(get_tree(), "physics_frame")
 		
 	if _dock_door_interactable:
 		_dock_door_interactable.request_open()
