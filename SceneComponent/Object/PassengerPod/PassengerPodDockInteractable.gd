@@ -286,7 +286,7 @@ func sync_for_new_player(peer_id):
 					pod.global_transform, col_transforms, 
 					hatch_collision.global_transform)
 		else:
-			rpc("_syncpos_for_new_player", pod.global_transform, 
+			rpc_id(peer_id, "_syncpos_for_new_player", pod.global_transform, 
 					col_transforms, 
 					hatch_collision.global_transform)
 
