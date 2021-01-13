@@ -73,7 +73,7 @@ func interacted_by(interactor):
 		elif being_carried and interactor == carried_by:
 			#We are near an airlock.
 			if _dock_door_interactable != null and !_dock_door_interactable.is_docked_to:
-				call_deferred("dock_to_airlock", interactor)
+				dock_to_airlock(interactor)
 			
 			#I am not near an airlock and being carried by the rover. Get dropped.
 			else:
@@ -128,8 +128,8 @@ func align_and_be_grabbed_by(rover):
 #This gets called whenever the pod is dropped.
 func drop():
 	if placeholder_node:
-		placeholder_node.queue_free()
-	yield(get_tree(), "physics_frame")
+		placeholder_node.name = "QueuedForFreeing"
+#	yield(get_tree(), "physics_frame")
 	
 	$Interactable.title = GRABBABLE_POD_TITLE
 	$Interactable.display_info = GRABBABLE_POD_INFO
@@ -144,6 +144,9 @@ func drop():
 	var hxfm = hatch_collision.global_transform
 	_reparent(hatch_collision, pod)
 	hatch_collision.global_transform = hxfm
+	
+	if placeholder_node:
+		placeholder_node.queue_free()
 	
 	carried_by = null
 	being_carried = false
