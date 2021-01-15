@@ -1,7 +1,7 @@
 [node_routes]
 
 Help_me2="res://addons/joyeux_npc_editor/src/NPCs/DefaultBehaviors/WorkingCycle.jbt"
-Help_me="res://addons/joyeux_npc_editor/src/NPCs/DefaultBehaviors/Help_me.jbt"
+Help_me="res://addons/joyeux_npc_editor/src/NPCs/DefaultBehaviors/WorkingCycle.jbt"
 ask_for_help="res://addons/joyeux_npc_editor/src/NPCs/DefaultBehaviors/ask_for_help.jbt"
 answer_for_help="res://addons/joyeux_npc_editor/src/NPCs/DefaultBehaviors/answer_for_help.jbt"
 
@@ -35,4 +35,4 @@ pants_color=Color( 0, 0.00842285, 0.539063, 1 )
 hair_color=Color( 0.265625, 0.192993, 0, 1 )
 skin_color=Color( 0.53125, 0.444092, 0.332031, 1 )
 shoes_color=Color( 0.351563, 0.351563, 0.351563, 1 )
-gender=0
+gender=1

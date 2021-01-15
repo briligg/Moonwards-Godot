@@ -36,8 +36,8 @@ func _init(file:= "", state:= ""):
 
 func load_colors():
 	var colors = [skin_color, hair_color, shirt_color, pants_color, shoes_color]
-	actor.get_component("ModelComponent").set_colors(colors)
 	actor.get_component("ModelComponent").set_gender(gender)
+	actor.get_component("ModelComponent").set_colors(colors)
 	actor.get_component("NametagComponent").call_deferred("set_name",character_name)
 	
 func property_check(input, signals, variables):
@@ -127,6 +127,7 @@ func pick_random(input, signals, _variables):
 			_emit_signal_from_port(input, signals, 0)
 
 func follow(input, _signals, _variables):
+	print("Set to follow: ", input, "with location: ", input.translation)
 	navigator.following = input
 
 func stop_follow(_input, _signals, _variables):
