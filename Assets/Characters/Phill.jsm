@@ -1,7 +1,7 @@
 [node_routes]
 
 WorkingBusy="res://addons/joyeux_npc_editor/src/NPCs/DefaultBehaviors/WorkingBusy.jbt"
-WorkingBusy2="res://addons/joyeux_npc_editor/src/NPCs/DefaultBehaviors/WorkingBusy.jbt"
+WorkingBusy2="res://addons/joyeux_npc_editor/src/NPCs/DefaultBehaviors/WorkingCycle.jbt"
 
 [config]
 
@@ -21,6 +21,7 @@ pants_color=Color( 0, 0.566406, 0.526581, 1 )
 hair_color=Color( 0.312896, 0.808594, 0.296906, 1 )
 skin_color=Color( 0.96875, 0.948174, 0.87793, 1 )
 shoes_color=Color( 0, 0, 0, 1 )
+gender=1
 
 [offsets]
 
