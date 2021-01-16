@@ -9,7 +9,7 @@ Run the command `git init`
 
 Then run the command `git lfs install`
 
-After that you can clone the repository normally.
+After that you can clone the repository normally. You will need the Godot game engine to run the game from the clone, available at https://godotengine.org/download
 
 Documentation for the project is at 
 https://docs.moonwards.com
