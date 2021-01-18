@@ -127,6 +127,12 @@ func align_and_be_grabbed_by(rover):
 
 #This gets called whenever the pod is dropped.
 func drop():
+	#Check that we are being carried by something.
+	if carried_by == null :
+		return
+	elif not carried_by.has_node("DockLatch") :
+		return
+	
 	if placeholder_node:
 		placeholder_node.name = "QueuedForFreeing"
 #	yield(get_tree(), "physics_frame")
