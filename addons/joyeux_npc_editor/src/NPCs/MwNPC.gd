@@ -14,9 +14,9 @@ enum Gender {
 
 const DialogDisplay = preload("res://addons/joyeux_dialog_system/src/components/display/Dialog Display.tscn")
 
-signal interacted_by(something)
-signal workstation_assigned(which)
-signal dialog_answered(what)
+signal interacted_by(player)
+signal workstation_assigned(where)
+signal dialog_answered(last_dialog_title)
 
 export(String) var character_name
 
