@@ -256,6 +256,10 @@ var _stimulus = {
 		"_output_name": "Trigger",
 		"_output_type": Nodes.TYPE_ANY,
 	},
+	"destination_reached" :{
+		"_output_name": "Destination name",
+		"_output_type": TYPE_STRING,
+	},
 	"dialog_answered" :{
 		"_output_name": "Last Dialog",
 		"_output_type": TYPE_STRING,

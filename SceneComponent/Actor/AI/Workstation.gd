@@ -23,6 +23,7 @@ export(bool) var usable_by_players : bool = false
 export(bool) var uses_queue : bool = false
 export(bool) var call_best_first : bool = false
 export(bool) var gives_xp : bool = false
+export(String) var destination_id = ""
 export(int) var maximum_progress : int = 100
 export(CATEGORY) var category : int = CATEGORY.WORK
 export(String) var subcategory : String = ""
@@ -116,8 +117,12 @@ func request_workstation(worker : Worker) -> bool:
 func _on_body_entered(entity) -> void:
 	if entity == get_parent():
 		return
+	if entity.get_component("AI handler") == null:
+		return
 	var worker : Worker = entity.get_component("AI handler").worker
 	if worker:
+		if destination_id != "":
+			entity.get_component("AI handler").BehaviorTree.emit_signal("destination_reached", destination_id)
 		if worker == current_worker:
 			entity.get_component("NPCInput").get_navpath(translation)
 			worker.start_working(self)

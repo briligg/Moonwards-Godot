@@ -17,6 +17,7 @@ const DialogDisplay = preload("res://addons/joyeux_dialog_system/src/components/
 signal interacted_by(player)
 signal workstation_assigned(where)
 signal dialog_answered(last_dialog_title)
+signal destination_reached(name_id)
 
 export(String) var character_name
 
