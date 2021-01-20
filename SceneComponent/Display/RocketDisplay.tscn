@@ -146,7 +146,7 @@ tracks/10/keys = {
 "values": [ false ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Control/VBoxContainer/MainWindow/Control/Info1:visible")
+tracks/11/path = NodePath("Control/Control/Info1:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -158,7 +158,7 @@ tracks/11/keys = {
 "values": [ false ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Control/VBoxContainer/MainWindow/Control/Info2:visible")
+tracks/12/path = NodePath("Control/Control/Info2:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -170,7 +170,7 @@ tracks/12/keys = {
 "values": [ false ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Control/VBoxContainer/MainWindow/Control/Info3:visible")
+tracks/13/path = NodePath("Control/Control/Info3:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -182,7 +182,7 @@ tracks/13/keys = {
 "values": [ false ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Control/VBoxContainer/MainWindow/Control/Info4:visible")
+tracks/14/path = NodePath("Control/Control/Info4:visible")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -194,7 +194,7 @@ tracks/14/keys = {
 "values": [ false ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Control/VBoxContainer/MainWindow/Control/Info5:visible")
+tracks/15/path = NodePath("Control/Control/Info5:visible")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -306,7 +306,7 @@ tracks/6/keys = {
 "values": [ false ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Control/VBoxContainer/MainWindow/Control/Info1:visible")
+tracks/7/path = NodePath("Control/Control/Info1:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -318,7 +318,7 @@ tracks/7/keys = {
 "values": [ false, true ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Control/VBoxContainer/MainWindow/Control/Info2:visible")
+tracks/8/path = NodePath("Control/Control/Info2:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -515,7 +515,7 @@ tracks/13/keys = {
 "values": [ true ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Control/VBoxContainer/MainWindow/Control/Info1:visible")
+tracks/14/path = NodePath("Control/Control/Info1:visible")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -527,7 +527,7 @@ tracks/14/keys = {
 "values": [ false ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Control/VBoxContainer/MainWindow/Control/Info2:visible")
+tracks/15/path = NodePath("Control/Control/Info2:visible")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -539,7 +539,7 @@ tracks/15/keys = {
 "values": [ false, true ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Control/VBoxContainer/MainWindow/Control/Info3:visible")
+tracks/16/path = NodePath("Control/Control/Info3:visible")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -662,7 +662,7 @@ tracks/8/keys = {
 "values": [ Vector3( 0, 0, 16.539 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Control/VBoxContainer/MainWindow/Control/Info2:visible")
+tracks/9/path = NodePath("Control/Control/Info2:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -674,7 +674,7 @@ tracks/9/keys = {
 "values": [ false ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Control/VBoxContainer/MainWindow/Control/Info3:visible")
+tracks/10/path = NodePath("Control/Control/Info3:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -686,7 +686,7 @@ tracks/10/keys = {
 "values": [ false, true ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Control/VBoxContainer/MainWindow/Control/Info4:visible")
+tracks/11/path = NodePath("Control/Control/Info4:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -821,7 +821,7 @@ tracks/9/keys = {
 "values": [ Vector3( 0, 0, 14.289 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Control/VBoxContainer/MainWindow/Control/Info3:visible")
+tracks/10/path = NodePath("Control/Control/Info3:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -833,7 +833,7 @@ tracks/10/keys = {
 "values": [ false ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Control/VBoxContainer/MainWindow/Control/Info4:visible")
+tracks/11/path = NodePath("Control/Control/Info4:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -845,7 +845,7 @@ tracks/11/keys = {
 "values": [ false, true ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Control/VBoxContainer/MainWindow/Control/Info5:visible")
+tracks/12/path = NodePath("Control/Control/Info5:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -994,7 +994,7 @@ tracks/10/keys = {
 "values": [ Vector3( 0, 0, 13.387 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Control/VBoxContainer/MainWindow/Control/Info4:visible")
+tracks/11/path = NodePath("Control/Control/Info4:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -1006,7 +1006,7 @@ tracks/11/keys = {
 "values": [ false ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Control/VBoxContainer/MainWindow/Control/Info5:visible")
+tracks/12/path = NodePath("Control/Control/Info5:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -1175,47 +1175,44 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Controller/Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
+[node name="PreviousButton" type="Button" parent="Controller/Control"]
+anchor_left = 0.8
+anchor_right = 0.88
+anchor_bottom = 0.03
+rect_min_size = Vector2( 100, 50 )
+size_flags_vertical = 4
+text = "Next"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainWindow" type="HBoxContainer" parent="Controller/Control/VBoxContainer"]
-margin_right = 1920.0
-margin_bottom = 1080.0
-rect_min_size = Vector2( 0, 500 )
-mouse_filter = 2
-size_flags_vertical = 3
-alignment = 1
-
-[node name="PreviousButton" type="Button" parent="Controller/Control/VBoxContainer/MainWindow"]
-margin_top = 515.0
-margin_right = 100.0
-margin_bottom = 565.0
+[node name="NextButton" type="Button" parent="Controller/Control"]
+anchor_left = 0.92
+anchor_right = 1.0
+anchor_bottom = 0.03
 rect_min_size = Vector2( 100, 50 )
 size_flags_vertical = 4
 text = "Next"
 
-[node name="Control" type="VBoxContainer" parent="Controller/Control/VBoxContainer/MainWindow"]
-margin_left = 104.0
-margin_right = 1816.0
-margin_bottom = 1080.0
+[node name="Control" type="VBoxContainer" parent="Controller/Control"]
+anchor_left = 0.6
+anchor_top = 0.06
+anchor_right = 1.0
+anchor_bottom = 0.9
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Info1" type="Label" parent="Controller/Control/VBoxContainer/MainWindow/Control"]
-margin_top = 927.0
-margin_right = 1712.0
-margin_bottom = 1080.0
+[node name="Info1" type="Label" parent="Controller/Control/Control"]
+margin_right = 768.0
+margin_bottom = 323.0
 text = "We've dreamed since the space age began of rockets that get the oxygen needed to burn their fuel from the air, instead of having to carry it as liquid oxygen (LOX). This design by John Bucknell takes a fresh approach to that. The whole base of the rocket scoops in and accelerates the air towards a single combustion chamber. In this version, a nuclear reactor heats liquid hydrogen, which blows into that chamber and ignites with that air. The combined thrust achieved allows the rocket to carry more than a third of its mass as payload."
 autowrap = true
 
-[node name="Info2" type="Label" parent="Controller/Control/VBoxContainer/MainWindow/Control"]
+[node name="Info2" type="Label" parent="Controller/Control/Control"]
 visible = false
 margin_top = 995.0
 margin_right = 1712.0
@@ -1223,7 +1220,7 @@ margin_bottom = 1080.0
 text = "These fan blades rotate at mean speeds of 1.5 Mach, compressing the air drawn through them. Hot hydrogen gas blows in here and ignites with the compressed air. As speed increases, the fan blades rotate to maintain the air intake at the right volume and the shock wave at the right place."
 autowrap = true
 
-[node name="Info3" type="Label" parent="Controller/Control/VBoxContainer/MainWindow/Control"]
+[node name="Info3" type="Label" parent="Controller/Control/Control"]
 visible = false
 margin_top = 1006.0
 margin_right = 1712.0
@@ -1231,7 +1228,7 @@ margin_bottom = 1028.0
 text = "The air inlet is made of many overlapping slats, allowing it to open and close like a flower. As the atmosphere gets thinner with altitude, it dilates to maintain ideal air inflow."
 autowrap = true
 
-[node name="Info4" type="Label" parent="Controller/Control/VBoxContainer/MainWindow/Control"]
+[node name="Info4" type="Label" parent="Controller/Control/Control"]
 visible = false
 margin_top = 1032.0
 margin_right = 1712.0
@@ -1239,22 +1236,13 @@ margin_bottom = 1054.0
 text = "The nozzle controlling outflow must also adjust to keep the right pressure in the combustion chamber. It dilates at high altitude and in vacuum  to maximize  expansion of the gasses backwards."
 autowrap = true
 
-[node name="Info5" type="Label" parent="Controller/Control/VBoxContainer/MainWindow/Control"]
+[node name="Info5" type="Label" parent="Controller/Control/Control"]
 visible = false
 margin_top = 1058.0
 margin_right = 1712.0
 margin_bottom = 1080.0
 text = "Once the rocket reaches space, the inlet closes, so that the hot hydrogen is force backwards instead of also expanding forwards and reducing forwards thrust. Now all thrust comes from the nuclear reactor heating that hydrogen."
 autowrap = true
-
-[node name="NextButton" type="Button" parent="Controller/Control/VBoxContainer/MainWindow"]
-margin_left = 1820.0
-margin_top = 515.0
-margin_right = 1920.0
-margin_bottom = 565.0
-rect_min_size = Vector2( 100, 50 )
-size_flags_vertical = 4
-text = "Next"
 
 [node name="CameraPivot" type="Spatial" parent="Controller"]
 transform = Transform( 0.766044, -0.368688, 0.52654, 0, 0.819152, 0.573576, -0.642787, -0.439385, 0.627506, 0, 11.295, 0.245176 )
@@ -1322,7 +1310,7 @@ local_coords = false
 process_material = SubResource( 19 )
 draw_pass_1 = ExtResource( 3 )
 [connection signal="interacted_by" from="Controller/Interactable" to="Controller" method="_on_Interactable_interacted_by"]
-[connection signal="pressed" from="Controller/Control/VBoxContainer/MainWindow/PreviousButton" to="Controller" method="previous_stage"]
-[connection signal="pressed" from="Controller/Control/VBoxContainer/MainWindow/NextButton" to="Controller" method="next_stage"]
+[connection signal="pressed" from="Controller/Control/PreviousButton" to="Controller" method="previous_stage"]
+[connection signal="pressed" from="Controller/Control/NextButton" to="Controller" method="next_stage"]
 
 [editable path="Controller/Rocket"]
