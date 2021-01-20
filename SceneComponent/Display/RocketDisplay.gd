@@ -9,8 +9,8 @@ onready var camera : Node = get_node(camera_path)
 onready var main_ui : Node = $Control
 onready var display_animation_player : Node = $AnimationPlayer
 onready var rocket_animation_player : Node = $Rocket/RocketBody/ThrustFanBlades_Opt/AnimationPlayer
-onready var previous_button : Node = $Control/VBoxContainer/MainWindow/PreviousButton
-onready var next_button : Node = $Control/VBoxContainer/MainWindow/NextButton
+onready var previous_button : Node = $Control/PreviousButton
+onready var next_button : Node = $Control/NextButton
 onready var camera_pivot : Node = $CameraPivot
 onready var camera_position : Node = $CameraPivot/CameraPosition
 
