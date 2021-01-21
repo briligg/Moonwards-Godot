@@ -48,6 +48,21 @@ func property_check(input, signals, variables):
 	if input.has(filter):
 		_emit_signal_from_port(input.get(filter), signals, 0)
 
+
+func continue_if_true(input, signals, variables):
+	var truth_value = bool(_get_variable_from_port(variables, 1))
+	if truth_value:
+		_emit_signal_from_port(input, signals, 0)
+		
+func continue_if_false(input, signals, variables):
+	var truth_value = _get_variable_from_port(variables, 1)
+	if truth_value == null:
+		truth_value = false
+	truth_value = bool(truth_value)
+	if not truth_value:
+		_emit_signal_from_port(input, signals, 0)
+				
+
 func match(input, signals, variables):
 	#Checks if input matches with the variable input, if it does
 	#calls the next node

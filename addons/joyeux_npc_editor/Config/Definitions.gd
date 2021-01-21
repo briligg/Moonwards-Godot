@@ -113,6 +113,26 @@ var _functions = {
 			{"_label_title" : "Output 3", "_type" : Nodes.TYPE_ANY }
 		]
 	},
+	"continue_if_true" : {
+		"_category" : "inhibitors",
+		"_input_ports" : [
+			{"_label_title":"Value In", "_type" : Nodes.TYPE_ANY},
+			{"_label_title":"Variable", "_type" : TYPE_BOOL},
+		],
+		"_output_ports" : [
+			{"_label_title" : "Value Out", "_type" : Nodes.TYPE_ANY },
+		]
+	},
+	"continue_if_false" : {
+		"_category" : "inhibitors",
+		"_input_ports" : [
+			{"_label_title":"Value In", "_type" : Nodes.TYPE_ANY},
+			{"_label_title":"Variable", "_type" : TYPE_BOOL},
+		],
+		"_output_ports" : [
+			{"_label_title" : "Value Out", "_type" : Nodes.TYPE_ANY },
+		]
+	},
 	"pick_random" : {
 		"_category" : "misc",
 		"_input_ports" : [
