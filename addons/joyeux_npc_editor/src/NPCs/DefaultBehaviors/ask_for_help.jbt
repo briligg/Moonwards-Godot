@@ -1,38 +1,45 @@
 [variables]
 
-interacted_by=[ null ]
 parallel_trigger3=[ null, null ]
 parallel_trigger=[ null, null ]
 set_variable=[ null, "latest_interactor" ]
 trigger_dialog=[ "res://Assets/Dialogs/Help_me.mtalk" ]
 force_next_state=[ null ]
+continue_if_false=[ null, "_s_getselfvar_reached_the_pool" ]
+continue_if_true=[ null, "_s_getselfvar_reached_the_pool" ]
+interacted_by=[ null ]
+get_variable=[ null, "reached_the_pool" ]
+trigger_dialog2=[ "res://Assets/Dialogs/thanks.mtalk" ]
 
 [node_signals]
 
-interacted_by=[ "interacted_by" ]
 parallel_trigger3=[ "parallel_trigger3_output_0", "parallel_trigger3_output_1" ]
 parallel_trigger=[ "parallel_trigger_output_0", "parallel_trigger_output_1" ]
 set_variable=[  ]
 trigger_dialog=[  ]
 force_next_state=[  ]
+continue_if_false=[ "continue_if_false_output_0" ]
+continue_if_true=[ "continue_if_true_output_0" ]
+interacted_by=[ "interacted_by" ]
+get_variable=[ "get_variable_output_0" ]
+trigger_dialog2=[  ]
 
 [node_offsets]
 
-interacted_by=Vector2( -500, 120 )
 parallel_trigger3=Vector2( -240, 120 )
 parallel_trigger=Vector2( -240, 200 )
 set_variable=Vector2( 140, 120 )
 trigger_dialog=Vector2( 140, 200 )
 force_next_state=Vector2( 140, 260 )
+continue_if_false=Vector2( -540, 120 )
+continue_if_true=Vector2( -540, 0 )
+interacted_by=Vector2( -860, 60 )
+get_variable=Vector2( -840, 140 )
+trigger_dialog2=Vector2( -220, 0 )
 
 [ai_config]
 
 connections=[ {
-"from": "interacted_by",
-"from_port": 0,
-"to": "parallel_trigger3",
-"to_port": 0
-}, {
 "from": "parallel_trigger3",
 "from_port": 0,
 "to": "set_variable",
@@ -51,5 +58,35 @@ connections=[ {
 "from": "parallel_trigger",
 "from_port": 1,
 "to": "force_next_state",
+"to_port": 0
+}, {
+"from": "interacted_by",
+"from_port": 0,
+"to": "continue_if_false",
+"to_port": 0
+}, {
+"from": "continue_if_false",
+"from_port": 0,
+"to": "parallel_trigger3",
+"to_port": 0
+}, {
+"from": "get_variable",
+"from_port": 0,
+"to": "continue_if_false",
+"to_port": 1
+}, {
+"from": "get_variable",
+"from_port": 0,
+"to": "continue_if_true",
+"to_port": 1
+}, {
+"from": "interacted_by",
+"from_port": 0,
+"to": "continue_if_true",
+"to_port": 0
+}, {
+"from": "continue_if_true",
+"from_port": 0,
+"to": "trigger_dialog2",
 "to_port": 0
 } ]
