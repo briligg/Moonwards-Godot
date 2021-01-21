@@ -1,18 +1,22 @@
 extends Spatial
 
 export(NodePath) var camera_path : NodePath
+export var bbtext_fields : PoolStringArray = []
 
 const MAX_STAGES : int = 5
 const TRANSITION_DURATION : float = 1.0
 
 onready var camera : Node = get_node(camera_path)
-onready var main_ui : Node = $Control
+onready var main_ui : Node = $Control/TooltipDisplay
 onready var display_animation_player : Node = $AnimationPlayer
 onready var rocket_animation_player : Node = $Rocket/RocketBody/ThrustFanBlades_Opt/AnimationPlayer
-onready var previous_button : Node = $Control/PreviousButton
-onready var next_button : Node = $Control/NextButton
+onready var previous_button : Node = $Control/TooltipDisplay/Vert/Top/PageLeft
+onready var next_button : Node = $Control/TooltipDisplay/Vert/Top/PageRight
 onready var camera_pivot : Node = $CameraPivot
 onready var camera_position : Node = $CameraPivot/CameraPosition
+onready var page_node : Label = $Control/TooltipDisplay/Vert/Bottom/Page
+onready var text : RichTextLabel = $Control/TooltipDisplay/Vert/TextHolder/BBText
+onready var title_node : Label = $Control/TooltipDisplay/Vert/Top/Title
 
 var _current_stage : int = 1
 var _transition_timer : float = TRANSITION_DURATION
@@ -25,9 +29,12 @@ var _interactor : Node
 func _ready() -> void:
 	set_process_input(false)
 	main_ui.visible = false
+	next_button.connect("pressed", self, "next_stage")
+	previous_button.connect("pressed", self, "previous_stage")
 	display_animation_player.connect("animation_finished", self, "animation_finished")
 	#Make sure the rocket is in a display position regardless of how it's saved.
 	display_animation_player.play("Stage0")
+	title_node.text = "Bucknell Rocket"
 
 
 func _process(delta : float) -> void:
@@ -68,6 +75,7 @@ func activate() -> void:
 	main_ui.visible = true
 	
 	_return_camera = get_tree().root.get_camera()
+	camera.fov = _return_camera.fov
 	camera.global_transform = _return_camera.global_transform
 
 	camera.current = true
@@ -127,7 +135,10 @@ func _go_to_current_stage() -> void:
 		next_button.disabled = true
 		
 		display_animation_player.play("Stage" + str(_current_stage))
+		page_node.text = str(_current_stage) + "/" + str(bbtext_fields.size())
+		text.text = bbtext_fields[_current_stage - 1]
 	else:
+		main_ui.visible = false
 		display_animation_player.play("Stage0")
 
 	_go_to_camera_stage()
