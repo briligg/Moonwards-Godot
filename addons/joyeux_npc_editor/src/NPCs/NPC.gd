@@ -149,7 +149,7 @@ func _change_behavior(behavior : ConfigFile):
 func _clean_function_name(f_name)->String:
 	#This section ahead cleans up the node name to get the function name instead
 	f_name = f_name.replace("@", "")
-	for number in range (0, 9):
+	for number in range (0, 10):
 		f_name = f_name.replace(str(number), "")
 	return f_name
 
@@ -171,7 +171,7 @@ func _define_connection(behavior : ConfigFile, from : String, from_port : int , 
 				funcarr.set_instance(self)
 				funcarr.set_function("_get_var_or_meta")
 				newvalue.append(funcarr)
-				newvalue.append(vars.trim_suffix("_s_getselfvar_"))
+				newvalue.append(vars.trim_prefix("_s_getselfvar_"))
 		variables.append(newvalue)
 		
 	#add the signals related to this node to the bindings
