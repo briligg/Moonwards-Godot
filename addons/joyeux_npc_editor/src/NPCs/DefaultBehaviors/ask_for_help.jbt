@@ -1,53 +1,69 @@
 [variables]
 
-parallel_trigger3=[ null, null ]
 parallel_trigger=[ null, null ]
+continue_if_false=[ null, "_s_getselfvar_reached_the_pool" ]
+continue_if_true=[ null, "_s_getselfvar_reached_the_pool" ]
 set_variable=[ null, "latest_interactor" ]
 trigger_dialog=[ "res://Assets/Dialogs/Help_me.mtalk" ]
 force_next_state=[ null ]
-continue_if_false=[ null, "_s_getselfvar_reached_the_pool" ]
-continue_if_true=[ null, "_s_getselfvar_reached_the_pool" ]
+trigger_dialog2=[ "res://Assets/Dialogs/thanks.mtalk" ]
+parallel_trigger3=[ null, null ]
 interacted_by=[ null ]
 get_variable=[ null, "reached_the_pool" ]
-trigger_dialog2=[ "res://Assets/Dialogs/thanks.mtalk" ]
+get_variable2=[ null, "reached_the_pool" ]
+interacted_by2=[ null ]
 
 [node_signals]
 
-parallel_trigger3=[ "parallel_trigger3_output_0", "parallel_trigger3_output_1" ]
 parallel_trigger=[ "parallel_trigger_output_0", "parallel_trigger_output_1" ]
+continue_if_false=[ "continue_if_false_output_0" ]
+continue_if_true=[ "continue_if_true_output_0" ]
 set_variable=[  ]
 trigger_dialog=[  ]
 force_next_state=[  ]
-continue_if_false=[ "continue_if_false_output_0" ]
-continue_if_true=[ "continue_if_true_output_0" ]
+trigger_dialog2=[  ]
+parallel_trigger3=[ "parallel_trigger3_output_0", "parallel_trigger3_output_1" ]
 interacted_by=[ "interacted_by" ]
 get_variable=[ "get_variable_output_0" ]
-trigger_dialog2=[  ]
+get_variable2=[ "get_variable2_output_0" ]
+interacted_by2=[ "interacted_by" ]
 
 [node_offsets]
 
-parallel_trigger3=Vector2( -240, 120 )
 parallel_trigger=Vector2( -240, 200 )
+continue_if_false=Vector2( -540, 120 )
+continue_if_true=Vector2( -540, 0 )
 set_variable=Vector2( 140, 120 )
 trigger_dialog=Vector2( 140, 200 )
 force_next_state=Vector2( 140, 260 )
-continue_if_false=Vector2( -540, 120 )
-continue_if_true=Vector2( -540, 0 )
-interacted_by=Vector2( -860, 60 )
-get_variable=Vector2( -840, 140 )
 trigger_dialog2=Vector2( -220, 0 )
+parallel_trigger3=Vector2( -240, 100 )
+interacted_by=Vector2( -860, -80 )
+get_variable=Vector2( -820, 220 )
+get_variable2=Vector2( -840, 20 )
+interacted_by2=Vector2( -840, 140 )
 
 [ai_config]
 
 connections=[ {
-"from": "parallel_trigger3",
+"from": "get_variable",
 "from_port": 0,
-"to": "set_variable",
+"to": "continue_if_false",
+"to_port": 1
+}, {
+"from": "interacted_by",
+"from_port": 0,
+"to": "continue_if_true",
+"to_port": 0
+}, {
+"from": "continue_if_true",
+"from_port": 0,
+"to": "trigger_dialog2",
 "to_port": 0
 }, {
 "from": "parallel_trigger3",
-"from_port": 1,
-"to": "parallel_trigger",
+"from_port": 0,
+"to": "set_variable",
 "to_port": 0
 }, {
 "from": "parallel_trigger",
@@ -60,33 +76,23 @@ connections=[ {
 "to": "force_next_state",
 "to_port": 0
 }, {
-"from": "interacted_by",
-"from_port": 0,
-"to": "continue_if_false",
-"to_port": 0
-}, {
 "from": "continue_if_false",
 "from_port": 0,
 "to": "parallel_trigger3",
 "to_port": 0
 }, {
-"from": "get_variable",
-"from_port": 0,
-"to": "continue_if_false",
-"to_port": 1
-}, {
-"from": "get_variable",
-"from_port": 0,
-"to": "continue_if_true",
-"to_port": 1
-}, {
-"from": "interacted_by",
-"from_port": 0,
-"to": "continue_if_true",
+"from": "parallel_trigger3",
+"from_port": 1,
+"to": "parallel_trigger",
 "to_port": 0
 }, {
-"from": "continue_if_true",
+"from": "get_variable2",
 "from_port": 0,
-"to": "trigger_dialog2",
+"to": "continue_if_true",
+"to_port": 1
+}, {
+"from": "interacted_by2",
+"from_port": 0,
+"to": "continue_if_false",
 "to_port": 0
 } ]
