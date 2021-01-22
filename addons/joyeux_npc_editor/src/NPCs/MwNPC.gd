@@ -50,7 +50,11 @@ func property_check(input, signals, variables):
 
 
 func continue_if_true(input, signals, variables):
-	var truth_value = bool(_get_variable_from_port(variables, 1))
+	var truth_value = _get_variable_from_port(variables, 1)
+	if truth_value == null:
+		truth_value = false
+	elif truth_value is String or truth_value is int or truth_value is float:
+		truth_value = bool(truth_value)
 	if truth_value:
 		_emit_signal_from_port(input, signals, 0)
 		
