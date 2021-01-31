@@ -41,6 +41,7 @@ linear_speed_max = 5.0
 linear_acceleration_max = 0.5
 arrival_tolerance = 0.6
 deceleration_radius = 6.8
+uses_GSAIPATH = true
 
 [node name="Workstation" parent="." instance=ExtResource( 8 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )

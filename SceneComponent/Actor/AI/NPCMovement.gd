@@ -100,7 +100,7 @@ func _enter_tree():
 	Face2.is_enabled = false
 	Evade = GSAIEvade.new(Agent, special_target)
 	Pursue = GSAIPursue.new(Agent, special_target)
-	Follow = GSAIFollowPath.new(Agent, current_path, 0.7)
+	Follow = GSAIFollowPath.new(Agent, current_path, 0.6, 0.5)
 	LookAhead = GSAILookWhereYouGo.new(Agent, true)
 
 func _init().("NPCInput", false):
@@ -126,10 +126,10 @@ func _ready():
 	PathBlend.add(LookAhead, 1)
 	PathBlend.add(Avoid, 1) 
 	# The order these are added has importance so the NPC behaves like this:
-	Priority.add(Face2)
 	Priority.add(PathBlend) #3 : Follow a path
 	Priority.add(FollowBlend)#Priority 1: Follow who I am supposed to (if i am supposed to)
 	Priority.add(FleeBlend)#2: Run away if i am supposed to
+	Priority.add(Face2)
 	
 	
 func is_far_from_target() -> bool:
@@ -145,13 +145,14 @@ func is_far_from_target() -> bool:
 		
 	return false
 
-func _process_server(delta):
+func follow_path_manual(delta):
 	if PathBlend and FollowBlend and FleeBlend and Priority:
 		if (current_target.position - entity.translation).length() < arrival_tolerance:# and not uses_GSAIPATH:
 			var temp = path.pop_front()
 			if temp != null:
 				delta_time = 0
-				update_target(temp)
+				if not uses_GSAIPATH:
+					update_target(temp)
 			else:
 				entity.input = Vector3.ZERO
 				delta_time = 0
@@ -162,6 +163,11 @@ func _process_server(delta):
 				delta_time = 0
 			Priority.calculate_steering(acceleration)
 			_handle_npc_input(acceleration, delta)
+
+func _process_server(delta):
+	follow_path_manual(delta)
+	
+	
 		
 func _handle_npc_input(acceleration : GSAITargetAcceleration, _delta : float):
 	update_agent(acceleration.linear, acceleration.angular)
