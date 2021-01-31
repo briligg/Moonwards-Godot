@@ -9,7 +9,8 @@
 [ext_resource path="res://Assets/Interface/Textures/MoonwardsLogo2020_HeavyOutline_500px.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Interface/StyleBoxes/ChatLineEdit.tres" type="StyleBox" id=8]
 [ext_resource path="res://addons/joyeux_npc_editor/src/interface/behaviors/code/Behaviour_tree_editor.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Assets/Interface/MainMenu.tres" type="Theme" id=10]
+[ext_resource path="res://Assets/Interface/MainMoonwardsTheme.tres" type="Theme" id=10]
+
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.588235 )

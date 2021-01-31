@@ -2,7 +2,7 @@
 
 [ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/HelpPanel.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/HelpMenu/HelpMenu.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Interface/MainMenu.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Interface/MainMoonwardsTheme.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/Interface/Textures/LeftArrowHover.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Interface/Textures/LeftArrowNormal.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Interface/Textures/LeftArrowButtonPressed.png" type="Texture" id=6]
@@ -10,6 +10,7 @@
 [ext_resource path="res://SceneComponent/Interface/HelpMenu/InitialMenu.gd" type="Script" id=8]
 [ext_resource path="res://SceneComponent/Interface/HelpMenu/Keys.gd" type="Script" id=9]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconClear.png" type="Texture" id=10]
+
 
 [sub_resource type="StyleBoxEmpty" id=1]
 

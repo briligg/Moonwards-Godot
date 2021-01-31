@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Tree/Interface/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/BackgroundCycler/BackgroundCycler.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Interface/MainMenu.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Interface/MainMoonwardsTheme.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/Interface/Textures/MoonwardsLogo2020_HeavyOutline_500px.png" type="Texture" id=4]
 [ext_resource path="res://Tree/Interface/MainMenu/About/About.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Tree/Interface/MainMenu/MainMenuHBox.gd" type="Script" id=6]
@@ -34,6 +34,7 @@
 [ext_resource path="res://SceneComponent/Interface/Hud/Apps/NPC/NPCApp.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=33]
 [ext_resource path="res://Tree/Interface/MainMenu/Links.gd" type="Script" id=34]
+
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 0.0
