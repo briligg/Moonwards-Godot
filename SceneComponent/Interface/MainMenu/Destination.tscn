@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconCreateServer.png" type="Texture" id=1]
 [ext_resource path="res://SceneComponent/Interface/MainMenu/Destination.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Interface/MainMenu/Style/MMD_Theme/MMD_Theme.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Interface/MainMoonwardsTheme.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconOfficialServer.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconJoinServer.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Interface/MoonwardsPrimeButton.tres" type="Theme" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.364706, 0.364706, 0.364706, 0.854902 )
@@ -25,6 +26,7 @@ margin_right = 1913.0
 margin_bottom = 1073.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 3 )
 custom_constants/separation = 62
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
@@ -38,6 +40,7 @@ margin_right = 922.0
 margin_bottom = 531.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 6 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer2/Button_JoinMaster"]
 anchor_right = 1.0
@@ -67,7 +70,6 @@ margin_right = 922.0
 margin_bottom = 531.0
 size_flags_horizontal = 3
 size_flags_vertical = 8
-theme = ExtResource( 3 )
 text = "JOIN PUBLIC GAME"
 align = 1
 __meta__ = {
@@ -80,6 +82,7 @@ margin_right = 922.0
 margin_bottom = 1066.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 6 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer2/Button_CreateServer"]
 anchor_right = 1.0
@@ -109,7 +112,6 @@ margin_top = 475.0
 margin_right = 922.0
 margin_bottom = 531.0
 size_flags_vertical = 10
-theme = ExtResource( 3 )
 text = "PLAY PRIVATE GAME"
 align = 1
 __meta__ = {
@@ -128,13 +130,13 @@ margin_right = 922.0
 margin_bottom = 531.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 6 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/Button_JoinServer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 3 )
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -157,7 +159,6 @@ margin_top = 475.0
 margin_right = 922.0
 margin_bottom = 531.0
 size_flags_vertical = 8
-theme = ExtResource( 3 )
 text = "JOIN PRIVATE GAME"
 align = 1
 __meta__ = {
@@ -183,40 +184,40 @@ margin_bottom = 528.0
 
 [node name="Label3" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer"]
 margin_right = 922.0
-margin_bottom = 14.0
+margin_bottom = 35.0
 text = "ADDRESS IP"
 
 [node name="TextEdit_Address" type="TextEdit" parent="HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer"]
-margin_top = 18.0
+margin_top = 39.0
 margin_right = 922.0
-margin_bottom = 114.0
+margin_bottom = 126.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "127.0.0.1"
 
 [node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer"]
-margin_top = 118.0
+margin_top = 130.0
 margin_right = 922.0
-margin_bottom = 214.0
+margin_bottom = 218.0
 size_flags_vertical = 3
 
 [node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer"]
-margin_top = 218.0
+margin_top = 222.0
 margin_right = 922.0
-margin_bottom = 232.0
+margin_bottom = 257.0
 text = "PORT"
 
 [node name="TextEdit_Port" type="TextEdit" parent="HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer"]
-margin_top = 236.0
+margin_top = 261.0
 margin_right = 922.0
-margin_bottom = 332.0
+margin_bottom = 348.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "5000"
 caret_block_mode = true
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer"]
-margin_top = 336.0
+margin_top = 352.0
 margin_right = 922.0
 margin_bottom = 528.0
 size_flags_vertical = 3

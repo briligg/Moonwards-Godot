@@ -1,0 +1,31 @@
+[gd_resource type="Theme" load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Interface/MainMenu/Style/MMD_Theme/MMD_TextFlat.tres" type="StyleBox" id=1]
+[ext_resource path="res://Assets/Interface/MainMenu/Style/MM_ButtonStyleFocus.tres" type="StyleBox" id=2]
+[ext_resource path="res://Assets/Interface/MainMenu/Style/MM_Theme/MM_ButtonNormalPressed.tres" type="StyleBox" id=3]
+[ext_resource path="res://Assets/Interface/Fonts/MainMenu_Header_Roboto.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/Interface/MainMenu/Style/MM_Theme/MM_ButtonNormal.tres" type="StyleBox" id=5]
+[ext_resource path="res://Assets/Interface/MainMenu/Style/MM_Theme/MM_ButtonNormalHover.tres" type="StyleBox" id=6]
+
+[resource]
+default_font = ExtResource( 4 )
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 0.254902, 0.768627, 0.298039, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = ExtResource( 2 )
+Button/styles/hover = ExtResource( 6 )
+Button/styles/normal = ExtResource( 5 )
+Button/styles/pressed = ExtResource( 3 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = null
+Label/styles/normal = ExtResource( 1 )
