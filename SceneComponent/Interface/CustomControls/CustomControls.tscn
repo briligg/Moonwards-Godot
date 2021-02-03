@@ -29,7 +29,7 @@ __meta__ = {
 [node name="Sub1" type="VBoxContainer" parent="HBox"]
 margin_left = 674.0
 margin_right = 946.0
-margin_bottom = 494.0
+margin_bottom = 386.0
 custom_constants/separation = 14
 
 [node name="move_forwards" parent="HBox/Sub1" instance=ExtResource( 3 )]
@@ -105,7 +105,7 @@ text = "Set to default"
 [node name="Sub2" type="VBoxContainer" parent="HBox"]
 margin_left = 974.0
 margin_right = 1246.0
-margin_bottom = 494.0
+margin_bottom = 386.0
 custom_constants/separation = 14
 
 [node name="left_click" parent="HBox/Sub2" instance=ExtResource( 3 )]
@@ -198,4 +198,12 @@ text = "Save settings"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="DefaultsPopup" type="ConfirmationDialog" parent="."]
+margin_right = 239.0
+margin_bottom = 94.0
+popup_exclusive = true
+window_title = "Defaults pressed"
+dialog_text = "Do you want to set all controls to default? 
+This cannot be undone."
 [connection signal="pressed" from="Save" to="." method="save_pressed"]
