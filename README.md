@@ -14,6 +14,9 @@ After that you can clone the repository normally. You will need the Godot game e
 Documentation for the project is at 
 https://docs.moonwards.com
 
+If you would like to comment on or inquire about Moonwards, consider joining our Discord server, at https://discord.gg/YWYN45wqyT
+
+Or you can try the subreddit at https://www.reddit.com/r/Moonwards/
 
     
 
