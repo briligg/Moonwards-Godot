@@ -11,7 +11,6 @@
 [ext_resource path="res://SceneComponent/Interface/HelpMenu/Keys.gd" type="Script" id=9]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconClear.png" type="Texture" id=10]
 
-
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="HelpPanel" type="Panel" groups=[
