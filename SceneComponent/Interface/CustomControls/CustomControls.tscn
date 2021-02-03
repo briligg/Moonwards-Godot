@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/Interface/MainMenu/Style/MM_Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Interface/MainMoonwardsTheme.tres" type="Theme" id=1]
 [ext_resource path="res://SceneComponent/Interface/CustomControls/CustomControls.gd" type="Script" id=2]
 [ext_resource path="res://SceneComponent/Interface/CustomControls/control_option_component.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Interface/MainMenu/Style/MM_Empty.tres" type="StyleBox" id=4]
+[ext_resource path="res://Assets/Interface/Fonts/ThemeForFont/Minus7.tres" type="Theme" id=5]
 
 [node name="Controls" type="Control"]
 anchor_right = 1.0
@@ -19,6 +19,7 @@ __meta__ = {
 anchor_top = 0.04
 anchor_right = 1.0
 anchor_bottom = 0.04
+theme = ExtResource( 5 )
 custom_constants/separation = 28
 alignment = 1
 __meta__ = {
@@ -28,151 +29,145 @@ __meta__ = {
 [node name="Sub1" type="VBoxContainer" parent="HBox"]
 margin_left = 674.0
 margin_right = 946.0
-margin_bottom = 498.0
+margin_bottom = 494.0
 custom_constants/separation = 14
 
 [node name="move_forwards" parent="HBox/Sub1" instance=ExtResource( 3 )]
 margin_top = 0.0
 margin_right = 272.0
-margin_bottom = 24.0
+margin_bottom = 26.0
 Label_text = "Move forwards"
 action_to_edit = "move_forwards"
 
 [node name="move_backwards" parent="HBox/Sub1" instance=ExtResource( 3 )]
-margin_top = 38.0
+margin_top = 40.0
 margin_right = 272.0
-margin_bottom = 62.0
+margin_bottom = 66.0
 Label_text = "Move Backwards"
 action_to_edit = "move_backwards"
 
 [node name="move_left" parent="HBox/Sub1" instance=ExtResource( 3 )]
-margin_top = 76.0
+margin_top = 80.0
 margin_right = 272.0
-margin_bottom = 100.0
+margin_bottom = 106.0
 Label_text = "Move Left"
 action_to_edit = "move_left"
 
 [node name="move_right" parent="HBox/Sub1" instance=ExtResource( 3 )]
-margin_top = 114.0
+margin_top = 120.0
 margin_right = 272.0
-margin_bottom = 138.0
+margin_bottom = 146.0
 Label_text = "Move Right"
 action_to_edit = "move_right"
 
 [node name="look_up" parent="HBox/Sub1" instance=ExtResource( 3 )]
-margin_top = 152.0
+margin_top = 160.0
 margin_right = 272.0
-margin_bottom = 176.0
+margin_bottom = 186.0
 Label_text = "Look Up"
 action_to_edit = "look_up"
 
 [node name="look_down" parent="HBox/Sub1" instance=ExtResource( 3 )]
-margin_top = 190.0
+margin_top = 200.0
 margin_right = 272.0
-margin_bottom = 214.0
+margin_bottom = 226.0
 Label_text = "Look Down"
 action_to_edit = "look_down"
 
 [node name="look_left" parent="HBox/Sub1" instance=ExtResource( 3 )]
-margin_top = 228.0
+margin_top = 240.0
 margin_right = 272.0
-margin_bottom = 252.0
+margin_bottom = 266.0
 Label_text = "Look Left"
 action_to_edit = "look_left"
 
 [node name="look_right" parent="HBox/Sub1" instance=ExtResource( 3 )]
-margin_top = 266.0
+margin_top = 280.0
 margin_right = 272.0
-margin_bottom = 290.0
+margin_bottom = 306.0
 Label_text = "Look Right"
 action_to_edit = "look_right"
 
 [node name="jump" parent="HBox/Sub1" instance=ExtResource( 3 )]
-margin_top = 304.0
-margin_right = 272.0
-margin_bottom = 328.0
-Label_text = "Jump"
-action_to_edit = "jump"
-
-[node name="HSeparator8" type="HSeparator" parent="HBox/Sub1"]
-margin_top = 342.0
+margin_top = 320.0
 margin_right = 272.0
 margin_bottom = 346.0
-custom_styles/separator = ExtResource( 4 )
+Label_text = "Jump"
+action_to_edit = "jump"
 
 [node name="DefaultControls" type="Button" parent="HBox/Sub1"]
 margin_top = 360.0
 margin_right = 272.0
-margin_bottom = 384.0
+margin_bottom = 386.0
 size_flags_vertical = 9
 text = "Set to default"
 
 [node name="Sub2" type="VBoxContainer" parent="HBox"]
 margin_left = 974.0
 margin_right = 1246.0
-margin_bottom = 498.0
+margin_bottom = 494.0
 custom_constants/separation = 14
 
 [node name="left_click" parent="HBox/Sub2" instance=ExtResource( 3 )]
 margin_top = 0.0
 margin_right = 272.0
-margin_bottom = 24.0
+margin_bottom = 26.0
 Label_text = "Left Click"
 action_to_edit = "left_click"
 
 [node name="fly_up" parent="HBox/Sub2" instance=ExtResource( 3 )]
-margin_top = 38.0
+margin_top = 40.0
 margin_right = 272.0
-margin_bottom = 62.0
+margin_bottom = 66.0
 Label_text = "Fly upwards"
 action_to_edit = "fly_up"
 
 [node name="fly_down" parent="HBox/Sub2" instance=ExtResource( 3 )]
-margin_top = 76.0
+margin_top = 80.0
 margin_right = 272.0
-margin_bottom = 100.0
+margin_bottom = 106.0
 Label_text = "Fly downwards"
 action_to_edit = "fly_down"
 
 [node name="mouse_toggle" parent="HBox/Sub2" instance=ExtResource( 3 )]
-margin_top = 114.0
+margin_top = 120.0
 margin_right = 272.0
-margin_bottom = 138.0
+margin_bottom = 146.0
 Label_text = "Toggle Mouse"
 action_to_edit = "mouse_toggle"
 
 [node name="toggle_camera_fly" parent="HBox/Sub2" instance=ExtResource( 3 )]
-margin_top = 152.0
+margin_top = 160.0
 margin_right = 272.0
-margin_bottom = 176.0
+margin_bottom = 186.0
 Label_text = "Flying Camera"
 action_to_edit = "toggle_camera_fly"
 
 [node name="maneuver_raise" parent="HBox/Sub2" instance=ExtResource( 3 )]
-margin_top = 190.0
+margin_top = 200.0
 margin_right = 272.0
-margin_bottom = 214.0
+margin_bottom = 226.0
 Label_text = "Raise Rover Legs"
 action_to_edit = "maneuver_raise"
 
 [node name="maneuver_lower" parent="HBox/Sub2" instance=ExtResource( 3 )]
-margin_top = 228.0
+margin_top = 240.0
 margin_right = 272.0
-margin_bottom = 252.0
+margin_bottom = 266.0
 Label_text = "Lower Rover Legs"
 action_to_edit = "maneuver_lower"
 
 [node name="use" parent="HBox/Sub2" instance=ExtResource( 3 )]
-margin_top = 266.0
+margin_top = 280.0
 margin_right = 272.0
-margin_bottom = 290.0
+margin_bottom = 306.0
 Label_text = "Interacts Menu"
 action_to_edit = "use"
 
 [node name="toggle_first_person" parent="HBox/Sub2" instance=ExtResource( 3 )]
-margin_top = 304.0
+margin_top = 320.0
 margin_right = 272.0
-margin_bottom = 328.0
+margin_bottom = 346.0
 Label_text = "Toggle perspective"
 action_to_edit = "toggle_first_person"
 
@@ -186,9 +181,9 @@ Label_text = "Actions/Expressions"
 action_to_edit = "radial_menu"
 
 [node name="toggle_fly" parent="HBox/Sub2" instance=ExtResource( 3 )]
-margin_top = 342.0
+margin_top = 360.0
 margin_right = 272.0
-margin_bottom = 366.0
+margin_bottom = 386.0
 Label_text = "Toggle Human Flight"
 action_to_edit = "toggle_fly"
 
