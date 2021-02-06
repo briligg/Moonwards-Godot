@@ -144,12 +144,12 @@ transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -
 category = 2
 
 [node name="Workstation10" parent="Navigation" instance=ExtResource( 6 )]
-transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -136.106, -93.3533, -73.6209 )
+transform = Transform( 0.989536, 0, -0.144287, 0, 1, 0, 0.144287, 0, 0.989536, -132.715, -93.3533, -73.6209 )
 destination_id = "Pool"
 category = 2
 
 [node name="CollisionShape" parent="Navigation/Workstation10" index="0"]
-transform = Transform( 1.5264, 0, 0, 0, 1.5264, 0, 0, 0, 1.5264, 2.31609, 1.42735, 3.8519 )
+transform = Transform( 1.5264, 0, 0, 0, 1.5264, 0, 0, 0, 1.5264, -0.327347, 1.42735, 4.23735 )
 shape = SubResource( 2 )
 
 [node name="Workstation3" parent="Navigation" instance=ExtResource( 6 )]
