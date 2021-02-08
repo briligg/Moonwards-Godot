@@ -186,7 +186,6 @@ script = ExtResource( 9 )
 margin_top = 287.0
 margin_right = 572.0
 margin_bottom = 308.0
-mouse_filter = 2
 editable = false
 placeholder_text = "Press 'CTRL+H' for help."
 placeholder_alpha = 1.0
