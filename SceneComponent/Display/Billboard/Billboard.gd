@@ -20,8 +20,8 @@ var slide_size: int = 0
 
 #Listen to the buttons and verify that slides are setup correctly.
 func _ready() -> void :
-	slide_control.connect("next_pressed", self, "_on_next_pressed")
-	slide_control.connect("prev_pressed", self, "_on_prev_pressed")
+	slide_control.connect("next_pressed", self, "_on_next_pressed", [false])
+	slide_control.connect("prev_pressed", self, "_on_prev_pressed", [false])
 	
 	if texture_slides.size() != text_slides.size():
 		Log.error(self, "_ready", "Texture array size is not the same as text array size.")
@@ -35,8 +35,14 @@ func _ready() -> void :
 		slide_control.set_texture(texture_slides[0])
 	screen.screen_parent = self
 	
+	#Update the billboard for new players.
+	Signals.Network.connect(NetworkSignals.NEW_PLAYER_POST_LOAD, self, "sync_for_new_player")
+	
 #Go to next slide. Cycle to beginning if already at last slide.
-func _on_next_pressed() -> void :
+remote func _on_next_pressed(called_from_network : bool = true) -> void :
+	if not called_from_network :
+		rpc("_on_next_pressed")
+	
 	if slide_size <= 0:
 		return
 	#If we have more slides to go to, go to the next one.
@@ -50,7 +56,10 @@ func _on_next_pressed() -> void :
 	slide_control.set_text(text_slides[slide_index])
 
 #Go to previous slide. Cycle to the last slide if at the first slide already.
-func _on_prev_pressed() -> void :
+remote func _on_prev_pressed(called_from_network : bool = true) -> void :
+	if not called_from_network :
+		rpc("_on_prev_pressed")
+	
 	if slide_size <= 0:
 		return
 	#Move to the previous slide if there are still previous slides remaining.
@@ -63,3 +72,10 @@ func _on_prev_pressed() -> void :
 	slide_control.set_texture(texture_slides[slide_index])
 	slide_control.set_text(text_slides[slide_index])
 
+func sync_for_new_player(peer_id) -> void :
+	rpc_id(peer_id, "sync_presentation", slide_index)
+
+puppet func sync_presentation(_slide_index : int) -> void :
+	slide_control.set_texture(texture_slides[_slide_index])
+	slide_control.set_text(text_slides[_slide_index])
+	slide_index = _slide_index
