@@ -99,5 +99,3 @@ text = "Hello World!sdfsdfsdfsdf"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="NextBtn" to="." method="_on_next_pressed"]
-[connection signal="pressed" from="PrevBtn" to="." method="_on_prev_pressed"]

@@ -35,8 +35,17 @@ func _ready() -> void :
 		slide_control.set_texture(texture_slides[0])
 	screen.screen_parent = self
 	
+	#Update the billboard for new players.
+	Signals.Network.connect(NetworkSignals.NEW_PLAYER_POST_LOAD, self, "sync_for_new_player")
+	
 #Go to next slide. Cycle to beginning if already at last slide.
 func _on_next_pressed() -> void :
+	if not is_network_master() :
+		rpc("_on_next_pressed_server")
+	else :
+		_on_next_pressed_server()
+
+puppet func _on_next_pressed_client() -> void :
 	if slide_size <= 0:
 		return
 	#If we have more slides to go to, go to the next one.
@@ -49,8 +58,20 @@ func _on_next_pressed() -> void :
 	slide_control.set_texture(texture_slides[slide_index])
 	slide_control.set_text(text_slides[slide_index])
 
+master func _on_next_pressed_server() -> void :
+	Log.trace(self, "_on_next_pressed_server", "Player pressed next button on %s" % name)
+	rpc("_on_next_pressed_client")
+	#Update for server as well.
+	_on_next_pressed_client()
+
 #Go to previous slide. Cycle to the last slide if at the first slide already.
 func _on_prev_pressed() -> void :
+	if not is_network_master() :
+		rpc("_on_prev_pressed_server")
+	else :
+		_on_prev_pressed_server()
+
+puppet func _on_prev_pressed_client() -> void :
 	if slide_size <= 0:
 		return
 	#Move to the previous slide if there are still previous slides remaining.
@@ -63,3 +84,16 @@ func _on_prev_pressed() -> void :
 	slide_control.set_texture(texture_slides[slide_index])
 	slide_control.set_text(text_slides[slide_index])
 
+master func _on_prev_pressed_server() -> void :
+	Log.trace(self, "_on_prev_pressed_server", "Player pressed prev button on %s" % name)
+	rpc("_on_prev_pressed_client")
+	_on_prev_pressed_client()
+
+#Called by server's network manager to update newcomer's billboards.
+func sync_for_new_player(peer_id) -> void :
+	rpc_id(peer_id, "sync_presentation", slide_index)
+
+puppet func sync_presentation(_slide_index : int) -> void :
+	slide_control.set_texture(texture_slides[_slide_index])
+	slide_control.set_text(text_slides[_slide_index])
+	slide_index = _slide_index
