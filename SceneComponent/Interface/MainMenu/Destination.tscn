@@ -6,43 +6,40 @@
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconOfficialServer.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconJoinServer.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Interface/MoonwardsPrimeButton.tres" type="Theme" id=6]
-[ext_resource path="res://Assets/Interface/Fonts/Tres/Minus7.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Assets/Interface/Fonts/ThemeForFont/Minus7.tres" type="Theme" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.364706, 0.364706, 0.364706, 0.854902 )
 border_width_bottom = 3
 
-[sub_resource type="Theme" id=2]
-default_font = ExtResource( 7 )
-
 [node name="Destination" type="PanelContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 3 )
+custom_styles/panel = SubResource( 2 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 1913.0
-margin_bottom = 1073.0
+margin_right = 1920.0
+margin_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 6 )
 custom_constants/separation = 62
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
-margin_right = 922.0
-margin_bottom = 1066.0
+margin_right = 929.0
+margin_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Button_JoinMaster" type="Button" parent="HBoxContainer/VBoxContainer2"]
-margin_right = 922.0
-margin_bottom = 531.0
+margin_right = 929.0
+margin_bottom = 538.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 6 )
@@ -58,10 +55,10 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2/Button_JoinMaster/VBoxContainer"]
-margin_left = 389.0
-margin_top = 163.0
-margin_right = 533.0
-margin_bottom = 307.0
+margin_left = 392.0
+margin_top = 167.0
+margin_right = 536.0
+margin_bottom = 311.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 texture = ExtResource( 4 )
@@ -70,9 +67,9 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/Button_JoinMaster/VBoxContainer"]
-margin_top = 475.0
-margin_right = 922.0
-margin_bottom = 531.0
+margin_top = 482.0
+margin_right = 929.0
+margin_bottom = 538.0
 size_flags_horizontal = 3
 size_flags_vertical = 8
 text = "JOIN PUBLIC GAME"
@@ -82,9 +79,9 @@ __meta__ = {
 }
 
 [node name="Button_CreateServer" type="Button" parent="HBoxContainer/VBoxContainer2"]
-margin_top = 535.0
-margin_right = 922.0
-margin_bottom = 1066.0
+margin_top = 542.0
+margin_right = 929.0
+margin_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 6 )
@@ -101,10 +98,10 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2/Button_CreateServer/VBoxContainer"]
-margin_left = 389.0
-margin_top = 59.0
-margin_right = 533.0
-margin_bottom = 203.0
+margin_left = 392.0
+margin_top = 61.0
+margin_right = 536.0
+margin_bottom = 205.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 texture = ExtResource( 1 )
@@ -113,9 +110,9 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/Button_CreateServer/VBoxContainer"]
-margin_top = 475.0
-margin_right = 922.0
-margin_bottom = 531.0
+margin_top = 482.0
+margin_right = 929.0
+margin_bottom = 538.0
 size_flags_vertical = 10
 text = "PLAY PRIVATE GAME"
 align = 1
@@ -124,15 +121,15 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-margin_left = 984.0
-margin_right = 1906.0
-margin_bottom = 1066.0
+margin_left = 991.0
+margin_right = 1920.0
+margin_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Button_JoinServer" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_right = 922.0
-margin_bottom = 531.0
+margin_right = 929.0
+margin_bottom = 538.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 6 )
@@ -148,10 +145,10 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/Button_JoinServer/VBoxContainer"]
-margin_left = 389.0
-margin_top = 163.0
-margin_right = 533.0
-margin_bottom = 307.0
+margin_left = 392.0
+margin_top = 167.0
+margin_right = 536.0
+margin_bottom = 311.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 texture = ExtResource( 5 )
@@ -160,9 +157,9 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Button_JoinServer/VBoxContainer"]
-margin_top = 475.0
-margin_right = 922.0
-margin_bottom = 531.0
+margin_top = 482.0
+margin_right = 929.0
+margin_bottom = 538.0
 size_flags_vertical = 8
 text = "JOIN PRIVATE GAME"
 align = 1
@@ -171,63 +168,50 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 535.0
-margin_right = 922.0
-margin_bottom = 1066.0
+margin_top = 542.0
+margin_right = 929.0
+margin_bottom = 1080.0
 size_flags_vertical = 3
 
 [node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_right = 922.0
-margin_bottom = 531.0
+margin_right = 929.0
+margin_bottom = 538.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer3"]
-margin_right = 922.0
-margin_bottom = 528.0
-theme = SubResource( 2 )
+margin_right = 929.0
+margin_bottom = 535.0
+theme = ExtResource( 7 )
 
 [node name="Label3" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer"]
-margin_right = 922.0
-margin_bottom = 38.0
+margin_right = 929.0
+margin_bottom = 26.0
 text = "ADDRESS IP"
 
 [node name="TextEdit_Address" type="TextEdit" parent="HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer"]
-margin_top = 42.0
-margin_right = 922.0
-margin_bottom = 128.0
+margin_top = 30.0
+margin_right = 929.0
+margin_bottom = 265.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "127.0.0.1"
 
-[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer"]
-margin_top = 132.0
-margin_right = 922.0
-margin_bottom = 218.0
-size_flags_vertical = 3
-
 [node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer"]
-margin_top = 222.0
-margin_right = 922.0
-margin_bottom = 260.0
+margin_top = 269.0
+margin_right = 929.0
+margin_bottom = 295.0
 text = "PORT"
 
 [node name="TextEdit_Port" type="TextEdit" parent="HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer"]
-margin_top = 264.0
-margin_right = 922.0
-margin_bottom = 351.0
+margin_top = 299.0
+margin_right = 929.0
+margin_bottom = 535.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "5000"
 caret_block_mode = true
-
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer"]
-margin_top = 355.0
-margin_right = 922.0
-margin_bottom = 528.0
-size_flags_vertical = 3
-size_flags_stretch_ratio = 2.0
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/Button_JoinMaster" to="." method="_joined_master"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/Button_CreateServer" to="." method="_started_custom_server"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Button_JoinServer" to="." method="_joined_server"]
