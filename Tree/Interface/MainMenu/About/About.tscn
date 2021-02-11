@@ -1,47 +1,48 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/Interface/MainMenu/Style/MM_StyleSeparator.tres" type="StyleBox" id=1]
-
+[ext_resource path="res://Assets/Interface/MainMoonwardsTheme.tres" type="Theme" id=2]
 
 [node name="About" type="PanelContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Parent" type="HBoxContainer" parent="."]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 1913.0
-margin_bottom = 1073.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 1918.0
+margin_bottom = 1078.0
 alignment = 1
 
 [node name="Credits" type="VBoxContainer" parent="Parent"]
-margin_right = 951.0
-margin_bottom = 1066.0
+margin_right = 956.0
+margin_bottom = 1076.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="Parent/Credits"]
-margin_right = 951.0
-margin_bottom = 31.0
+margin_right = 956.0
+margin_bottom = 69.0
 text = "CREDITS
 "
 
 [node name="HSeparator2" type="HSeparator" parent="Parent/Credits"]
-margin_top = 35.0
-margin_right = 951.0
-margin_bottom = 55.0
+margin_top = 73.0
+margin_right = 956.0
+margin_bottom = 93.0
 custom_styles/separator = ExtResource( 1 )
 custom_constants/separation = 20
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Parent/Credits"]
-margin_top = 59.0
-margin_right = 951.0
-margin_bottom = 1066.0
+margin_top = 97.0
+margin_right = 956.0
+margin_bottom = 1076.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Team: 
@@ -59,29 +60,29 @@ Contributors:
 	Pedro \"Paavs\" Oliveira"
 
 [node name="License" type="VBoxContainer" parent="Parent"]
-margin_left = 955.0
-margin_right = 1906.0
-margin_bottom = 1066.0
+margin_left = 960.0
+margin_right = 1916.0
+margin_bottom = 1076.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="Parent/License"]
-margin_right = 951.0
-margin_bottom = 31.0
+margin_right = 956.0
+margin_bottom = 69.0
 text = "LICENSE
 "
 
 [node name="HSeparator2" type="HSeparator" parent="Parent/License"]
-margin_top = 35.0
-margin_right = 951.0
-margin_bottom = 55.0
+margin_top = 73.0
+margin_right = 956.0
+margin_bottom = 93.0
 custom_styles/separator = ExtResource( 1 )
 custom_constants/separation = 20
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Parent/License"]
-margin_top = 59.0
-margin_right = 951.0
-margin_bottom = 1066.0
+margin_top = 97.0
+margin_right = 956.0
+margin_bottom = 1076.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Copyright 2019-2020 Moonwards
