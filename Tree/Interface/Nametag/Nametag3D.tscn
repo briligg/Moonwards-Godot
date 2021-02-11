@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Tree/Interface/Nametag/Nametag3D.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Interface/Fonts/NametagFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/Interface/Nametag3D.tres" type="Theme" id=3]
 [ext_resource path="res://Script/ViewportWorkaround/ViewportTextureWorkaround.gd" type="Script" id=4]
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=1]
 resource_local_to_scene = true
 flags_unshaded = true
 flags_fixed_size = true
@@ -21,21 +20,21 @@ distance_fade_mode = 2
 distance_fade_min_distance = 15.0
 distance_fade_max_distance = 14.5
 
-[sub_resource type="QuadMesh" id=3]
+[sub_resource type="QuadMesh" id=2]
 flip_faces = true
 size = Vector2( 0.75, -0.3 )
 
-[sub_resource type="Environment" id=4]
+[sub_resource type="Environment" id=3]
 ambient_light_color = Color( 0.101961, 0.101961, 0.101961, 1 )
 
-[sub_resource type="World" id=5]
-environment = SubResource( 4 )
+[sub_resource type="World" id=4]
+environment = SubResource( 3 )
 
 [node name="Nametag3D" type="MeshInstance"]
 transform = Transform( -1, 3.25841e-07, 3.25841e-07, -3.25841e-07, -1, 0, -3.25841e-07, 1.06173e-13, -1, 0, 0.41, 0 )
-material_override = SubResource( 2 )
+material_override = SubResource( 1 )
 cast_shadow = 0
-mesh = SubResource( 3 )
+mesh = SubResource( 2 )
 material/0 = null
 script = ExtResource( 1 )
 __meta__ = {
@@ -45,7 +44,7 @@ __meta__ = {
 [node name="NametagHolder" type="Viewport" parent="."]
 size = Vector2( 1000, 600 )
 own_world = true
-world = SubResource( 5 )
+world = SubResource( 4 )
 transparent_bg = true
 hdr = false
 disable_3d = true
@@ -69,7 +68,6 @@ grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource( 3 )
-custom_fonts/font = ExtResource( 2 )
 text = "Hello World"
 align = 1
 valign = 3
