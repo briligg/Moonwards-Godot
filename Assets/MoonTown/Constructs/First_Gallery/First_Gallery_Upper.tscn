@@ -366,49 +366,31 @@ text_slides = [ "1. We have big plans for how you can use this space. It’s goi
 [node name="Airlock_Bay_Entrance_Frame" parent="LOD0" index="1"]
 layers = 992
 
-[node name="Carousel-Cable" parent="LOD0" index="8"]
+[node name="Carousel-Cable" parent="LOD0" index="4"]
 layers = 992
 
-[node name="First_Gallery_Upper_Exterior" parent="LOD0" index="9"]
+[node name="FirstGalleryAnchors_N001" parent="LOD0" index="7"]
 layers = 992
 
-[node name="FirstGalleryAnchors_N001" parent="LOD0" index="10"]
+[node name="FirstGalleryAnchors_S001" parent="LOD0" index="8"]
 layers = 992
 
-[node name="FirstGalleryAnchors_S001" parent="LOD0" index="11"]
+[node name="FirstGalleryConduitTop000" parent="LOD0" index="9"]
 layers = 992
 
-[node name="FirstGalleryConduitTop000" parent="LOD0" index="12"]
+[node name="MoonwardsBoothMain_Opt" parent="LOD0" index="23"]
 layers = 992
 
-[node name="MoonwardsBoothMain_Opt" parent="LOD0" index="28"]
+[node name="MoonwardsOfficeSublevel_Opt" parent="LOD0" index="24"]
 layers = 992
 
-[node name="MoonwardsOfficeSublevel_Opt" parent="LOD0" index="29"]
+[node name="Passage-Mouth-North-BigAtrium-FirstGalley003" parent="LOD0" index="26"]
 layers = 992
 
-[node name="Passage-Mouth-North-BigAtrium-FirstGalley003" parent="LOD0" index="31"]
+[node name="Passage-Mouth-North-BigAtrium-FirstGalley_Opt" parent="LOD0" index="27"]
 layers = 992
 
-[node name="Passage-Mouth-North-BigAtrium-FirstGalley_Opt" parent="LOD0" index="32"]
-layers = 992
-
-[node name="ScooterRamp_1" parent="LOD0" index="38"]
-layers = 992
-
-[node name="ScooterRamp_2" parent="LOD0" index="39"]
-layers = 992
-
-[node name="ScooterRamp_3" parent="LOD0" index="40"]
-layers = 992
-
-[node name="ScooterRamp_4" parent="LOD0" index="41"]
-layers = 992
-
-[node name="ScooterRamp_5" parent="LOD0" index="42"]
-layers = 992
-
-[node name="SupportCable000" parent="LOD0" index="43"]
+[node name="SupportCable000" parent="LOD0" index="35"]
 layers = 992
 
 [node name="LOD1" parent="." index="5"]

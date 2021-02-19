@@ -340,6 +340,8 @@ function = 31
 
 [resource]
 code = "shader_type spatial;
+render_mode specular_schlick_ggx;
+
 uniform vec4 Color_A : hint_color;
 uniform vec3 UVScale_A;
 uniform sampler2D Albedo_A;
@@ -914,7 +916,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -1335, 133 )
+graph_offset = Vector2( -2930.58, 375 )
 nodes/fragment/0/position = Vector2( 400, 200 )
 nodes/fragment/7/node = SubResource( 86 )
 nodes/fragment/7/position = Vector2( -2000, 140 )
