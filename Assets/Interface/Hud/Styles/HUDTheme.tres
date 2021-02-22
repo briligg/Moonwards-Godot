@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Interface/Hud/Styles/Panel_StyleboxFlat.tres" type="StyleBox" id=1]
 [ext_resource path="res://Assets/Interface/Hud/Styles/Container_StyleboxFlat.tres" type="StyleBox" id=2]
-[ext_resource path="res://Assets/Interface/Fonts/HUD_Roboto.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Interface/Fonts/Tres/RobotoNormal.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/Interface/Hud/Styles/LabelBig_StyleboxFlat.tres" type="StyleBox" id=4]
 [ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsTabFg.tres" type="StyleBox" id=5]
 [ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsTabBg.tres" type="StyleBox" id=6]
@@ -17,6 +17,8 @@
 [ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsVScrollBarGrabberHighlighted.tres" type="StyleBox" id=15]
 [ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsVScrollBarGrabber.tres" type="StyleBox" id=16]
 [ext_resource path="res://Assets/Interface/StyleBoxes/MoonwardsVScrollBarGrabberPressed.tres" type="StyleBox" id=17]
+
+
 
 [resource]
 default_font = ExtResource( 3 )
