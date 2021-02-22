@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Tree/Interface/Hud/Hud.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/Hud/ChatComponent.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Interface/HUDTheme.tres" type="Theme" id=3]
 [ext_resource path="res://SceneComponent/Interface/Hud/Apps/ToolsBar/ToolsBar.tscn" type="PackedScene" id=4]
 [ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/GeneralInfo.tscn" type="PackedScene" id=5]
 [ext_resource path="res://SceneComponent/Interface/Hud/Radial/RadialSelector.tscn" type="PackedScene" id=6]
