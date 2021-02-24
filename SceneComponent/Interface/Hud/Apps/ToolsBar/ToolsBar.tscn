@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://Assets/Interface/Hud/Styles/ToolsBarTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Interface/HUDTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconVideoCamera.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconLibrary.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Interface/Fonts/Tres/RobotoMinus10.tres" type="DynamicFont" id=4]
@@ -19,8 +19,6 @@
 [ext_resource path="res://SceneComponent/Interface/Hud/Apps/ToolsBar/PanelPopup.gd" type="Script" id=17]
 [ext_resource path="res://SceneComponent/Interface/Hud/Apps/ToolsBar/HelpButton.gd" type="Script" id=18]
 [ext_resource path="res://Assets/Interface/Hud/Styles/ToolsBarButtonPanelDisabled.tres" type="StyleBox" id=19]
-
-
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 4 )
