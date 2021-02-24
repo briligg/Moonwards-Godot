@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Interface/Fonts/InteractsMenuDescription.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Assets/Interface/InteractsMenu.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/Interface/MainMoonwardsTheme.tres" type="Theme" id=2]
 [ext_resource path="res://addons/joyeux_dialog_system/src/components/display/Dialog Display.gd" type="Script" id=3]
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Control
 
 func _ready():
@@ -17,7 +17,7 @@ func resize_space():
 	rect_size.x = rect_min_size.x
 "
 
-[sub_resource type="GDScript" id=1]
+[sub_resource type="GDScript" id=2]
 script/source = "extends PanelContainer
 
 onready var options = $CenterContainer/Options
@@ -46,7 +46,7 @@ func get_text_answer() -> String:
 	return answer
 "
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=3]
 script/source = "extends VBoxContainer
 
 var font = preload(\"res://Assets/Interface/Fonts/InteractsMenuDescription.tres\")
@@ -75,7 +75,7 @@ func clear():
 		child.queue_free()
 "
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=4]
 script/source = "extends HBoxContainer
 onready var Text = $Text
 signal text_input(text)
@@ -111,7 +111,7 @@ margin_right = 580.0
 margin_bottom = 1080.0
 rect_min_size = Vector2( 580, 0 )
 size_flags_vertical = 3
-script = SubResource( 4 )
+script = SubResource( 1 )
 
 [node name="VBC" type="VBoxContainer" parent="HBC"]
 margin_left = 584.0
@@ -183,12 +183,12 @@ __meta__ = {
 [node name="CurrentText" type="RichTextLabel" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
 margin_top = 47.0
 margin_right = 1120.0
-margin_bottom = 284.0
+margin_bottom = 272.0
 size_flags_vertical = 3
 text = "Lorem ipsum dolor sit amet consectetur adipiscing elit, tristique a aliquam euismod et vestibulum cum, quisque auctor commodo egestas torquent iaculis. Inceptos hendrerit gravida conubia mi placerat feugiat curabitur platea, molestie primis lacus duis vehicula cras pharetra, habitasse libero fermentum netus morbi leo rutrum. Magna ultricies dignissim lacinia ligula etiam consequat molestie risus imperdiet aenean senectus arcu, accumsan est interdum mauris cum semper egestas faucibus ac convallis fames, dis rutrum et ad elementum nec neque massa tempor potenti felis."
 
 [node name="Controls" type="HBoxContainer" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer"]
-margin_top = 288.0
+margin_top = 276.0
 margin_right = 1120.0
 margin_bottom = 311.0
 __meta__ = {
@@ -197,46 +197,46 @@ __meta__ = {
 
 [node name="Spacer1" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls"]
 margin_right = 20.0
-margin_bottom = 23.0
+margin_bottom = 35.0
 rect_min_size = Vector2( 20, 0 )
 
 [node name="Auto" type="Button" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls"]
 margin_left = 24.0
-margin_right = 61.0
-margin_bottom = 23.0
+margin_right = 82.0
+margin_bottom = 35.0
 text = "Auto"
 
 [node name="Spacer2" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls"]
-margin_left = 65.0
-margin_right = 85.0
-margin_bottom = 23.0
+margin_left = 86.0
+margin_right = 106.0
+margin_bottom = 35.0
 rect_min_size = Vector2( 20, 0 )
 
 [node name="Skip" type="Button" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls"]
-margin_left = 89.0
-margin_right = 122.0
-margin_bottom = 23.0
+margin_left = 110.0
+margin_right = 162.0
+margin_bottom = 35.0
 text = "Skip"
 
 [node name="Spacer3" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls"]
-margin_left = 126.0
-margin_right = 146.0
-margin_bottom = 23.0
+margin_left = 166.0
+margin_right = 186.0
+margin_bottom = 35.0
 rect_min_size = Vector2( 20, 0 )
 
 [node name="Pause" type="Button" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls"]
-margin_left = 150.0
-margin_right = 196.0
-margin_bottom = 23.0
+margin_left = 190.0
+margin_right = 263.0
+margin_bottom = 35.0
 focus_mode = 0
 toggle_mode = true
 enabled_focus_mode = 0
 text = "Pause"
 
 [node name="Spacer4" type="Control" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls"]
-margin_left = 200.0
-margin_right = 1079.0
-margin_bottom = 23.0
+margin_left = 267.0
+margin_right = 1058.0
+margin_bottom = 35.0
 rect_min_size = Vector2( 20, 0 )
 size_flags_horizontal = 3
 __meta__ = {
@@ -244,9 +244,9 @@ __meta__ = {
 }
 
 [node name="Next" type="Button" parent="HBC/VBC/TextContainer/HBoxContainer/VBoxContainer/Controls"]
-margin_left = 1083.0
+margin_left = 1062.0
 margin_right = 1120.0
-margin_bottom = 23.0
+margin_bottom = 35.0
 focus_mode = 0
 toggle_mode = true
 enabled_focus_mode = 0
@@ -292,7 +292,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = SubResource( 1 )
+script = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -309,7 +309,7 @@ margin_left = 958.0
 margin_top = 538.0
 margin_right = 958.0
 margin_bottom = 538.0
-script = SubResource( 2 )
+script = SubResource( 3 )
 
 [node name="TextInput" type="HBoxContainer" parent="Brancher/CenterContainer"]
 visible = false
@@ -317,7 +317,7 @@ margin_left = 742.0
 margin_top = 517.0
 margin_right = 1173.0
 margin_bottom = 558.0
-script = SubResource( 3 )
+script = SubResource( 4 )
 
 [node name="Label" type="Label" parent="Brancher/CenterContainer/TextInput"]
 margin_top = 3.0
