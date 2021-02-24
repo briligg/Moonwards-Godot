@@ -2,13 +2,12 @@
 
 [ext_resource path="res://Assets/Interface/HUDTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconUsers.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme_Small.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconMail.png" type="Texture" id=4]
 [ext_resource path="res://SceneComponent/Interface/MenuPanel/MenuPanel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Interface/Fonts/ThemeForFont/RobotoMinus10.tres" type="Theme" id=6]
 [ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/GeneralInfo.gd" type="Script" id=7]
 [ext_resource path="res://SceneComponent/Interface/TutorialMenu/TutorialMenu.tscn" type="PackedScene" id=8]
 [ext_resource path="res://SceneComponent/Interface/HelpMenu/HelpMenu.tscn" type="PackedScene" id=9]
-
 
 [node name="GeneralInfo" type="Control"]
 anchor_right = 1.0
@@ -25,23 +24,27 @@ visible = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 size_flags_horizontal = 3
-theme = ExtResource( 3 )
+theme = ExtResource( 6 )
 custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
-margin_right = 59.0
-margin_bottom = 24.0
+margin_right = 69.0
+margin_bottom = 36.0
 
 [node name="Panel" type="Panel" parent="HBoxContainer/MarginContainer"]
-margin_right = 59.0
-margin_bottom = 24.0
+margin_right = 69.0
+margin_bottom = 36.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label_Time" type="Label" parent="HBoxContainer/MarginContainer"]
-margin_right = 59.0
-margin_bottom = 24.0
+margin_top = 6.0
+margin_right = 69.0
+margin_bottom = 30.0
 text = "10:45"
 align = 1
 valign = 1
@@ -51,20 +54,21 @@ __meta__ = {
 }
 
 [node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
-margin_left = 69.0
-margin_right = 175.0
-margin_bottom = 24.0
+margin_left = 79.0
+margin_right = 195.0
+margin_bottom = 36.0
 
 [node name="Panel" type="Panel" parent="HBoxContainer/MarginContainer2"]
-margin_right = 106.0
-margin_bottom = 24.0
+margin_right = 116.0
+margin_bottom = 36.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label_Location" type="Label" parent="HBoxContainer/MarginContainer2"]
-margin_right = 106.0
-margin_bottom = 24.0
+margin_top = 6.0
+margin_right = 116.0
+margin_bottom = 30.0
 text = "LOCATION"
 align = 1
 valign = 1
@@ -75,36 +79,36 @@ __meta__ = {
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="."]
 margin_top = 30.0
-theme = ExtResource( 3 )
+theme = ExtResource( 6 )
 custom_constants/separation = 10
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer3"]
-margin_right = 52.0
-margin_bottom = 27.0
+margin_right = 66.0
+margin_bottom = 31.0
 
 [node name="Panel" type="Panel" parent="HBoxContainer3/MarginContainer"]
-margin_right = 52.0
-margin_bottom = 27.0
+margin_right = 66.0
+margin_bottom = 31.0
 grow_horizontal = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer3/MarginContainer"]
-margin_right = 52.0
-margin_bottom = 27.0
+margin_right = 66.0
+margin_bottom = 31.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer3/MarginContainer/HBoxContainer"]
-margin_right = 27.0
-margin_bottom = 27.0
+margin_right = 31.0
+margin_bottom = 31.0
 alignment = 1
 
 [node name="Button_FriendsOnline" type="Button" parent="HBoxContainer3/MarginContainer/HBoxContainer/VBoxContainer"]
-margin_right = 27.0
-margin_bottom = 27.0
+margin_right = 31.0
+margin_bottom = 31.0
 icon = ExtResource( 2 )
 flat = true
 
@@ -118,10 +122,10 @@ expand = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="HBoxContainer3/MarginContainer/HBoxContainer"]
-margin_left = 31.0
-margin_top = 1.0
-margin_right = 52.0
-margin_bottom = 25.0
+margin_left = 35.0
+margin_top = 3.0
+margin_right = 66.0
+margin_bottom = 27.0
 text = "0"
 valign = 1
 __meta__ = {
@@ -129,30 +133,30 @@ __meta__ = {
 }
 
 [node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer3"]
-margin_left = 62.0
-margin_right = 114.0
-margin_bottom = 27.0
+margin_left = 76.0
+margin_right = 142.0
+margin_bottom = 31.0
 
 [node name="Panel" type="Panel" parent="HBoxContainer3/MarginContainer2"]
-margin_right = 52.0
-margin_bottom = 27.0
+margin_right = 66.0
+margin_bottom = 31.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer3/MarginContainer2"]
-margin_right = 52.0
-margin_bottom = 27.0
+margin_right = 66.0
+margin_bottom = 31.0
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer3/MarginContainer2/HBoxContainer"]
-margin_right = 27.0
-margin_bottom = 27.0
+margin_right = 31.0
+margin_bottom = 31.0
 alignment = 1
 
 [node name="Button_Messages" type="Button" parent="HBoxContainer3/MarginContainer2/HBoxContainer/VBoxContainer"]
-margin_right = 27.0
-margin_bottom = 27.0
+margin_right = 31.0
+margin_bottom = 31.0
 icon = ExtResource( 4 )
 flat = true
 
@@ -166,10 +170,10 @@ expand = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="HBoxContainer3/MarginContainer2/HBoxContainer"]
-margin_left = 31.0
-margin_top = 1.0
-margin_right = 52.0
-margin_bottom = 25.0
+margin_left = 35.0
+margin_top = 3.0
+margin_right = 66.0
+margin_bottom = 27.0
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
