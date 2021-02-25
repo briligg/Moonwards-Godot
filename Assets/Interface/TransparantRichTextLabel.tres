@@ -1,0 +1,24 @@
+[gd_resource type="Theme" load_steps=3 format=2]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[resource]
+RichTextLabel/colors/default_color = Color( 1, 1, 1, 1 )
+RichTextLabel/colors/font_color_selected = Color( 0.49, 0.49, 0.49, 1 )
+RichTextLabel/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+RichTextLabel/colors/selection_color = Color( 0.1, 0.1, 1, 0.8 )
+RichTextLabel/constants/line_separation = 1
+RichTextLabel/constants/shadow_as_outline = 0
+RichTextLabel/constants/shadow_offset_x = 1
+RichTextLabel/constants/shadow_offset_y = 1
+RichTextLabel/constants/table_hseparation = 3
+RichTextLabel/constants/table_vseparation = 3
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = null
+RichTextLabel/styles/focus = SubResource( 6 )
+RichTextLabel/styles/normal = SubResource( 7 )

@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://Assets/Interface/Hud/Styles/Apps/HUDApps.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Interface/BuildingApp.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Building/T_IconPlanes.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconFace.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Building/T_IconArea_Alt.png" type="Texture" id=4]
@@ -29,6 +29,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
 script = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer_MainTools" type="HBoxContainer" parent="."]
 anchor_left = 0.4

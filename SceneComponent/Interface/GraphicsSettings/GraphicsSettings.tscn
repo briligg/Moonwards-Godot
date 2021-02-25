@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://SceneComponent/Interface/GraphicsSettings/GraphicsSettings.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Interface/MainMoonwardsTheme.tres" type="Theme" id=2]
 
 [node name="GraphicsSettings" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -20,16 +22,16 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="LodTransition"]
-margin_top = 36.0
-margin_right = 143.0
-margin_bottom = 50.0
+margin_top = 25.0
+margin_right = 259.0
+margin_bottom = 60.0
 text = "Lod Transition period: "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextEdit" type="TextEdit" parent="LodTransition"]
-margin_left = 147.0
+margin_left = 263.0
 margin_right = 345.0
 margin_bottom = 86.0
 rect_min_size = Vector2( 60, 0 )

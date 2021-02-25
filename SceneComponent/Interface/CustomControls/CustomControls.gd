@@ -2,6 +2,21 @@ extends Control
 
 
 func _defaults_pressed() -> void :
+	$DefaultsPopup.popup_centered()
+
+func _ready() -> void :
+	var button : Button = $HBox/Sub1/DefaultControls
+	button.connect("pressed", self, "_defaults_pressed")
+	
+	#Listen for confirmation from the default buttons.
+	$DefaultsPopup.connect("confirmed", self, "set_to_default")
+
+func save_pressed():
+	Helpers.save_user_file()
+	
+func set_to_default() -> void :
+	$DefaultsPopup.hide()
+	
 	InputMap.load_from_globals()
 	
 	#Go through all control buttons and set them to default.
@@ -13,11 +28,3 @@ func _defaults_pressed() -> void :
 			child.update_labels()
 	
 	save_pressed()
-
-func _ready() -> void :
-	var button : Button = $HBox/Sub1/DefaultControls
-	button.connect("pressed", self, "_defaults_pressed")
-
-
-func save_pressed():
-	Helpers.save_user_file()

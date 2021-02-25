@@ -1,30 +1,24 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://SceneComponent/Display/RocketDisplay/CameraControl.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Display/RocketDisplay.gd" type="Script" id=2]
 [ext_resource path="res://SceneComponent/Display/RocketDisplay/FireParticleMesh.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://Script/GameLogic/Interact/Interactable/Interactable.gd" type="Script" id=4]
 [ext_resource path="res://Assets/MoonTown/Models/Bucknell_Rocket/SCTR_Bucknell_Opt.tscn" type="PackedScene" id=5]
-[ext_resource path="res://SceneComponent/Display/RocketDisplay/RocketTheme.tres" type="Theme" id=6]
+[ext_resource path="res://Assets/Interface/MainMoonwardsTheme.tres" type="Theme" id=6]
 [ext_resource path="res://SceneComponent/Display/RocketDisplay/fire_particle.png" type="Texture" id=7]
 [ext_resource path="res://SceneComponent/Display/RocketDisplay/RocketEngines.wav" type="AudioStream" id=8]
-[ext_resource path="res://Assets/Interface/Fonts/TooltipDisplay/TooltipDisplayMono.tres" type="DynamicFont" id=9]
-[ext_resource path="res://Assets/Interface/Fonts/TooltipDisplay/TooltipDisplayNormal.tres" type="DynamicFont" id=10]
 [ext_resource path="res://Assets/Interface/StyleBoxes/TooltipDisplayBackgroundPanel.tres" type="StyleBox" id=11]
-[ext_resource path="res://Assets/Interface/Fonts/TooltipDisplayButton.tres" type="DynamicFont" id=12]
+[ext_resource path="res://Assets/Interface/Fonts/ThemeForFont/Minus7.tres" type="Theme" id=12]
 [ext_resource path="res://Assets/Interface/StyleBoxes/TooltipDisplayHSeparator.tres" type="StyleBox" id=13]
-[ext_resource path="res://Assets/Interface/Fonts/TooltipDisplay/TooltipDisplayItalics.tres" type="DynamicFont" id=14]
-[ext_resource path="res://Assets/Interface/Fonts/TooltipDisplay/TooltipDisplayBold.tres" type="DynamicFont" id=15]
-[ext_resource path="res://Assets/Interface/TooltipDisplay.tres" type="Theme" id=16]
-[ext_resource path="res://Assets/Interface/Fonts/TooltipDisplay/TooltipDisplayBoldItalics.tres" type="DynamicFont" id=17]
 
 [sub_resource type="CylinderShape" id=1]
 radius = 5.0
 height = 40.0
 
-[sub_resource type="StyleBoxEmpty" id=20]
+[sub_resource type="StyleBoxEmpty" id=2]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Rocket:rotation_degrees")
 tracks/0/interp = 1
@@ -170,7 +164,7 @@ tracks/11/keys = {
 "values": [ 1.0 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 length = 2.0
 step = 0.05
 tracks/0/type = "value"
@@ -270,7 +264,7 @@ tracks/7/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 length = 3.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Rocket/Particles:emitting")
@@ -443,7 +437,7 @@ tracks/13/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Rocket:rotation_degrees")
@@ -554,7 +548,7 @@ tracks/8/keys = {
 "values": [ Vector3( 0, 0, 16.539 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Rocket:rotation_degrees")
@@ -677,7 +671,7 @@ tracks/9/keys = {
 "values": [ Vector3( 0, 0, 14.289 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Rocket:rotation_degrees")
@@ -814,7 +808,7 @@ tracks/10/keys = {
 "values": [ Vector3( 0, 0, 13.387 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:blend_shapes/Key 1")
 tracks/0/interp = 1
@@ -828,7 +822,7 @@ tracks/0/keys = {
 "values": [ 1.0, 0.0 ]
 }
 
-[sub_resource type="SpatialMaterial" id=9]
+[sub_resource type="SpatialMaterial" id=10]
 params_cull_mode = 2
 albedo_color = Color( 0, 0, 0, 0.95 )
 metallic = 0.31
@@ -836,10 +830,10 @@ roughness = 0.28
 transmission_enabled = true
 transmission = Color( 0.556863, 0.552941, 0.552941, 1 )
 
-[sub_resource type="SpatialMaterial" id=10]
+[sub_resource type="SpatialMaterial" id=11]
 albedo_color = Color( 0.494118, 0.494118, 0.494118, 1 )
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 length = 3.0
 loop = true
 step = 0.05
@@ -856,32 +850,6 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
 }
 
-[sub_resource type="Animation" id=12]
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:blend_shapes/Key 1")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 1.0, 0.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:blend_shapes/Key 2")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1.0 ]
-}
-
 [sub_resource type="Animation" id=13]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:blend_shapes/Key 1")
@@ -893,6 +861,32 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
+"values": [ 1.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:blend_shapes/Key 2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=14]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:blend_shapes/Key 1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
 "values": [ 0.0, 1.0 ]
 }
 tracks/1/type = "value"
@@ -908,7 +902,7 @@ tracks/1/keys = {
 "values": [ 1.0, 0.0 ]
 }
 
-[sub_resource type="SpatialMaterial" id=14]
+[sub_resource type="SpatialMaterial" id=15]
 flags_transparent = true
 flags_unshaded = true
 vertex_color_use_as_albedo = true
@@ -918,20 +912,20 @@ albedo_texture = ExtResource( 7 )
 proximity_fade_enable = true
 proximity_fade_distance = 0.1
 
-[sub_resource type="Gradient" id=15]
+[sub_resource type="Gradient" id=16]
 colors = PoolColorArray( 1, 1, 1, 1, 1, 0.682617, 0, 1 )
 
-[sub_resource type="GradientTexture" id=16]
-gradient = SubResource( 15 )
+[sub_resource type="GradientTexture" id=17]
+gradient = SubResource( 16 )
 
-[sub_resource type="Curve" id=17]
+[sub_resource type="Curve" id=18]
 max_value = 2.0
 _data = [ Vector2( 0, 0 ), 0.0, 0.983804, 0, 0, Vector2( 1, 0.9714 ), -6.22616, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=18]
-curve = SubResource( 17 )
+[sub_resource type="CurveTexture" id=19]
+curve = SubResource( 18 )
 
-[sub_resource type="ParticlesMaterial" id=19]
+[sub_resource type="ParticlesMaterial" id=20]
 flag_align_y = true
 flag_rotate_y = true
 direction = Vector3( 0, 0, 1 )
@@ -942,8 +936,8 @@ angular_velocity = 1.0
 linear_accel = 15.0
 angle = 720.0
 scale = 0.1
-scale_curve = SubResource( 18 )
-color_ramp = SubResource( 16 )
+scale_curve = SubResource( 19 )
+color_ramp = SubResource( 17 )
 
 [node name="RocketDisplay" type="Spatial"]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
@@ -982,7 +976,6 @@ margin_top = -3.32
 margin_bottom = -0.52002
 grow_horizontal = 0
 grow_vertical = 0
-theme = ExtResource( 16 )
 custom_styles/panel = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1005,7 +998,7 @@ alignment = 1
 margin_right = 82.0
 margin_bottom = 36.0
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 12 )
+theme = ExtResource( 12 )
 text = "Prev"
 
 [node name="Title" type="Label" parent="Controller/Control/TooltipDisplay/Vert/Top"]
@@ -1024,7 +1017,7 @@ margin_left = 505.0
 margin_right = 588.0
 margin_bottom = 36.0
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 12 )
+theme = ExtResource( 12 )
 text = "Next"
 
 [node name="HSeparator" type="HSeparator" parent="Controller/Control/TooltipDisplay/Vert"]
@@ -1047,7 +1040,7 @@ margin_right = 7.0
 margin_bottom = 886.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.3
-custom_styles/separator = SubResource( 20 )
+custom_styles/separator = SubResource( 2 )
 
 [node name="BBText" type="RichTextLabel" parent="Controller/Control/TooltipDisplay/Vert/TextHolder"]
 margin_left = 11.0
@@ -1056,11 +1049,6 @@ margin_bottom = 886.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 24.0
-custom_fonts/mono_font = ExtResource( 9 )
-custom_fonts/bold_italics_font = ExtResource( 17 )
-custom_fonts/italics_font = ExtResource( 14 )
-custom_fonts/bold_font = ExtResource( 15 )
-custom_fonts/normal_font = ExtResource( 10 )
 bbcode_enabled = true
 
 [node name="HSeparator2" type="HSeparator" parent="Controller/Control/TooltipDisplay/Vert"]
@@ -1098,12 +1086,12 @@ transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0 )
 near = 0.01
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Controller"]
-anims/Stage0 = SubResource( 2 )
-anims/Stage1 = SubResource( 3 )
-anims/Stage2 = SubResource( 4 )
-anims/Stage3 = SubResource( 5 )
-anims/Stage4 = SubResource( 6 )
-anims/Stage5 = SubResource( 7 )
+anims/Stage0 = SubResource( 3 )
+anims/Stage1 = SubResource( 4 )
+anims/Stage2 = SubResource( 5 )
+anims/Stage3 = SubResource( 6 )
+anims/Stage4 = SubResource( 7 )
+anims/Stage5 = SubResource( 8 )
 
 [node name="EngineSound" type="AudioStreamPlayer3D" parent="Controller"]
 transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0 )
@@ -1117,24 +1105,24 @@ transform = Transform( 1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8743e-06, 8.23752, -1.14441e-05 )
 
 [node name="AnimationPlayer" parent="Controller/Rocket/RocketBody/PYBB_Nozzle_Opt" index="0"]
-anims/NozzleOpen = SubResource( 8 )
+anims/NozzleOpen = SubResource( 9 )
 
 [node name="RocketScoop" parent="Controller/Rocket/RocketBody" index="1"]
-material/0 = SubResource( 9 )
+material/0 = SubResource( 10 )
 
 [node name="ThrustFanBlades_Opt" parent="Controller/Rocket/RocketBody" index="2"]
 transform = Transform( 0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 3.63588e-06, -1.8605, -2.38419e-07 )
-material_override = SubResource( 10 )
+material_override = SubResource( 11 )
 
 [node name="AnimationPlayer" parent="Controller/Rocket/RocketBody/ThrustFanBlades_Opt" index="0"]
-anims/BladesRotate = SubResource( 11 )
+anims/BladesRotate = SubResource( 12 )
 
 [node name="VariableInlet" parent="Controller/Rocket/RocketBody" index="3"]
 "blend_shapes/Key 1" = 0.0
 
 [node name="AnimationPlayer" parent="Controller/Rocket/RocketBody/VariableInlet" index="0"]
-anims/InletClose = SubResource( 12 )
-anims/InletOpen = SubResource( 13 )
+anims/InletClose = SubResource( 13 )
+anims/InletOpen = SubResource( 14 )
 
 [node name="OmniLight" parent="Controller/Rocket" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.612558, 0 )
@@ -1143,13 +1131,13 @@ omni_range = 0.5
 
 [node name="Particles" type="Particles" parent="Controller/Rocket"]
 transform = Transform( 1, -1.89464e-15, 8.28172e-23, 0, -4.37114e-08, -1, 1.89464e-15, 1, -4.37114e-08, 1.50621e-06, -24.9801, -4.10773e-06 )
-material_override = SubResource( 14 )
+material_override = SubResource( 15 )
 cast_shadow = 0
 emitting = false
 lifetime = 0.2
 visibility_aabb = AABB( -4, -4, -4, 8, 8, 80.18 )
 local_coords = false
-process_material = SubResource( 19 )
+process_material = SubResource( 20 )
 draw_pass_1 = ExtResource( 3 )
 [connection signal="interacted_by" from="Controller/Interactable" to="Controller" method="_on_Interactable_interacted_by"]
 

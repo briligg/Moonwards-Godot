@@ -1,141 +1,36 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Tree/Interface/Hud/LoadingScreen/LoadingScreen.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/BackgroundCycler/BackgroundCycler.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Interface/Fonts/MainMenuFont.tres" type="DynamicFont" id=3]
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0, 0, 0, 0.784314 )
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0, 0, 0, 0.588235 )
-
-[sub_resource type="StyleBoxFlat" id=4]
-content_margin_left = 5.0
-content_margin_right = 5.0
-content_margin_top = 5.0
-content_margin_bottom = 5.0
-bg_color = Color( 0, 0, 0, 0.792157 )
-
-[sub_resource type="StyleBoxFlat" id=5]
-content_margin_left = 5.0
-content_margin_right = 5.0
-content_margin_top = 5.0
-content_margin_bottom = 5.0
-bg_color = Color( 0.105882, 0.105882, 0.105882, 1 )
-
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0, 0, 0, 0.588235 )
-
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.101961, 0.101961, 0.101961, 0.901961 )
-
-[sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0, 0, 0, 0.588235 )
-
-[sub_resource type="StyleBoxFlat" id=10]
-content_margin_left = 10.0
-content_margin_right = 10.0
-content_margin_top = 10.0
-content_margin_bottom = 10.0
-bg_color = Color( 0.120504, 0.120504, 0.120504, 0.588235 )
-
-[sub_resource type="StyleBoxEmpty" id=11]
-
-[sub_resource type="StyleBoxFlat" id=12]
-content_margin_left = 10.0
-content_margin_right = 10.0
-bg_color = Color( 0, 0, 0, 0.588235 )
-
-[sub_resource type="Theme" id=13]
-default_font = ExtResource( 3 )
-Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
-Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
-Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
-Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
-Button/constants/hseparation = 20
-Button/fonts/font = ExtResource( 3 )
-Button/styles/disabled = SubResource( 1 )
-Button/styles/focus = null
-Button/styles/hover = SubResource( 2 )
-Button/styles/normal = SubResource( 3 )
-Button/styles/pressed = null
-Label/colors/font_color = Color( 1, 1, 1, 1 )
-Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
-Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-Label/constants/line_spacing = 3
-Label/constants/shadow_as_outline = 0
-Label/constants/shadow_offset_x = 1
-Label/constants/shadow_offset_y = 1
-Label/fonts/font = null
-Label/styles/normal = SubResource( 4 )
-LineEdit/colors/clear_button_color = Color( 0.878431, 0.878431, 0.878431, 1 )
-LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
-LineEdit/colors/cursor_color = Color( 0.941176, 0.941176, 0.941176, 1 )
-LineEdit/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
-LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
-LineEdit/colors/selection_color = Color( 0.490196, 0.490196, 0.490196, 1 )
-LineEdit/constants/minimum_spaces = 12
-LineEdit/fonts/font = null
-LineEdit/icons/clear = null
-LineEdit/styles/focus = null
-LineEdit/styles/normal = SubResource( 5 )
-LineEdit/styles/read_only = null
-Panel/styles/panel = SubResource( 6 )
-Panel/styles/panelf = SubResource( 6 )
-Panel/styles/panelnc = SubResource( 6 )
-ProgressBar/colors/font_color = Color( 0.941176, 0.941176, 0.941176, 1 )
-ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
-ProgressBar/fonts/font = null
-ProgressBar/styles/bg = SubResource( 7 )
-ProgressBar/styles/fg = null
-RichTextLabel/colors/default_color = Color( 0.878431, 0.878431, 0.878431, 1 )
-RichTextLabel/colors/font_color_selected = Color( 0.490196, 0.490196, 0.490196, 1 )
-RichTextLabel/colors/font_color_shadow = Color( 0, 0, 0, 0 )
-RichTextLabel/colors/selection_color = Color( 0.1, 0.1, 1, 0.8 )
-RichTextLabel/constants/line_separation = 1
-RichTextLabel/constants/shadow_as_outline = 0
-RichTextLabel/constants/shadow_offset_x = 1
-RichTextLabel/constants/shadow_offset_y = 1
-RichTextLabel/constants/table_hseparation = 3
-RichTextLabel/constants/table_vseparation = 3
-RichTextLabel/fonts/bold_font = null
-RichTextLabel/fonts/bold_italics_font = null
-RichTextLabel/fonts/italics_font = null
-RichTextLabel/fonts/mono_font = null
-RichTextLabel/fonts/normal_font = null
-RichTextLabel/styles/focus = null
-RichTextLabel/styles/normal = SubResource( 8 )
-TabContainer/colors/font_color_bg = Color( 0.690196, 0.690196, 0.690196, 1 )
-TabContainer/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
-TabContainer/colors/font_color_fg = Color( 0.941176, 0.941176, 0.941176, 1 )
-TabContainer/constants/hseparation = 4
-TabContainer/constants/label_valign_bg = 2
-TabContainer/constants/label_valign_fg = 0
-TabContainer/constants/side_margin = 8
-TabContainer/constants/top_margin = 24
-TabContainer/fonts/font = null
-TabContainer/icons/decrement = null
-TabContainer/icons/decrement_highlight = null
-TabContainer/icons/increment = null
-TabContainer/icons/increment_highlight = null
-TabContainer/icons/menu = null
-TabContainer/icons/menu_highlight = null
-TabContainer/styles/panel = SubResource( 9 )
-TabContainer/styles/tab_bg = SubResource( 10 )
-TabContainer/styles/tab_disabled = SubResource( 11 )
-TabContainer/styles/tab_fg = SubResource( 12 )
+[ext_resource path="res://Assets/Interface/MainMoonwardsTheme.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/9.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/10.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/12.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/17.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/20.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/15.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/1.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/16.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/2.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/22.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/11.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/13.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/4.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/19.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/23.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/5.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/14.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/18.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/6.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/8.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/21.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/7.png" type="Texture" id=26]
 
 [node name="LoadingScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = SubResource( 13 )
+theme = ExtResource( 3 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -143,6 +38,7 @@ __meta__ = {
 
 [node name="Background2" parent="." instance=ExtResource( 2 )]
 image_wait_time = 3.7
+textures = [ ExtResource( 4 ), ExtResource( 18 ), ExtResource( 10 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 20 ), ExtResource( 23 ), ExtResource( 5 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 26 ), ExtResource( 6 ), ExtResource( 19 ), ExtResource( 24 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 17 ) ]
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0

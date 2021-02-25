@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/MenuButtons.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/Hud/GeneralInfo/Panel.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Interface/Textures/LeftArrowHover.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Interface/Textures/LeftArrowButtonPressed.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/Tools/T_IconClear.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Interface/MainMoonwardsTheme.tres" type="Theme" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Controls"
@@ -176,6 +177,7 @@ anchor_top = 0.2
 anchor_right = 0.6
 anchor_bottom = 0.8
 mouse_filter = 2
+theme = ExtResource( 9 )
 custom_styles/panel = ExtResource( 3 )
 script = ExtResource( 2 )
 __meta__ = {
@@ -225,21 +227,21 @@ __meta__ = {
 }
 
 [node name="Controls" type="Button" parent="VBoxContainer"]
-margin_top = 271.0
+margin_top = 248.0
 margin_right = 345.0
-margin_bottom = 291.0
+margin_bottom = 283.0
 text = "Controls"
 
 [node name="MainMenu" type="Button" parent="VBoxContainer"]
-margin_top = 314.0
+margin_top = 306.0
 margin_right = 345.0
-margin_bottom = 334.0
+margin_bottom = 341.0
 text = "Main Menu"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
-margin_top = 357.0
+margin_top = 364.0
 margin_right = 345.0
-margin_bottom = 377.0
+margin_bottom = 399.0
 text = "Quit game"
 
 [node name="Controls" parent="." instance=ExtResource( 4 )]

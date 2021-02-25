@@ -1,9 +1,9 @@
 [gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://Assets/Interface/Hud/Styles/ToolsBarTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Interface/HUDTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconVideoCamera.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconLibrary.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Interface/Fonts/HUD_Roboto_Small.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/Interface/Fonts/Tres/RobotoMinus10.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconAI.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconBuilding_Alt.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconShareBig.png" type="Texture" id=7]

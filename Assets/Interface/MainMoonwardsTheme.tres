@@ -1,6 +1,6 @@
-[gd_resource type="Theme" load_steps=18 format=2]
+[gd_resource type="Theme" load_steps=19 format=2]
 
-[ext_resource path="res://Assets/Interface/Fonts/MainMenuFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Interface/Fonts/Tres/StandardFontSize.tres" type="DynamicFont" id=1]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
@@ -10,7 +10,6 @@ border_width_right = 1
 border_width_bottom = 1
 
 [sub_resource type="StyleBoxFlat" id=2]
-content_margin_left = 20.0
 bg_color = Color( 0, 0, 0, 0.588235 )
 border_width_left = 6
 border_width_top = 6
@@ -30,10 +29,14 @@ shadow_color = Color( 0.227451, 0.227451, 0.227451, 0.6 )
 shadow_size = 7
 
 [sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
 bg_color = Color( 0, 0, 0, 0.588235 )
 border_width_left = 6
 border_width_top = 6
-border_width_right = 6
+border_width_right = 2
 border_width_bottom = 6
 border_color = Color( 0.717647, 0.717647, 0.717647, 1 )
 border_blend = true
@@ -41,16 +44,14 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
-expand_margin_left = 2.0
-expand_margin_right = 2.0
-expand_margin_top = 2.0
-expand_margin_bottom = 2.0
+expand_margin_left = 5.0
+expand_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
 shadow_color = Color( 0.227451, 0.227451, 0.227451, 0.6 )
 shadow_size = 7
 
 [sub_resource type="StyleBoxFlat" id=4]
-content_margin_left = 70.0
-content_margin_bottom = 5.0
 bg_color = Color( 0, 0, 0, 0.588235 )
 border_width_left = 2
 border_width_top = 2
@@ -106,9 +107,22 @@ bg_color = Color( 0.0705882, 0.0705882, 0.0705882, 0.729412 )
 
 [sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0, 0, 0, 0.588235 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 18
 
 [sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.0901961, 0.0901961, 0.0901961, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
 
 [sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0.101961, 0.101961, 0.101961, 0.901961 )
@@ -133,6 +147,9 @@ content_margin_left = 10.0
 content_margin_right = 10.0
 bg_color = Color( 0, 0, 0, 0.588235 )
 
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.0470588, 0.0470588, 0.0470588, 0.854902 )
+
 [resource]
 default_font = ExtResource( 1 )
 Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
@@ -140,7 +157,7 @@ Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
 Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 Button/constants/hseparation = 20
-Button/fonts/font = ExtResource( 1 )
+Button/fonts/font = null
 Button/styles/disabled = SubResource( 1 )
 Button/styles/focus = SubResource( 2 )
 Button/styles/hover = SubResource( 3 )
@@ -170,6 +187,7 @@ LineEdit/styles/read_only = null
 Panel/styles/panel = SubResource( 9 )
 Panel/styles/panelf = SubResource( 9 )
 Panel/styles/panelnc = SubResource( 9 )
+PanelContainer/styles/panel = SubResource( 9 )
 PopupMenu/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 PopupMenu/colors/font_color_accel = Color( 0.7, 0.7, 0.7, 0.8 )
 PopupMenu/colors/font_color_disabled = Color( 0.4, 0.4, 0.4, 0.8 )
@@ -229,3 +247,42 @@ TabContainer/styles/panel = SubResource( 13 )
 TabContainer/styles/tab_bg = SubResource( 14 )
 TabContainer/styles/tab_disabled = SubResource( 15 )
 TabContainer/styles/tab_fg = SubResource( 16 )
+TextEdit/colors/background_color = Color( 0, 0, 0, 0 )
+TextEdit/colors/bookmark_color = Color( 0.08, 0.49, 0.98, 1 )
+TextEdit/colors/brace_mismatch_color = Color( 1, 0.2, 0.2, 1 )
+TextEdit/colors/breakpoint_color = Color( 0.8, 0.8, 0.4, 0.2 )
+TextEdit/colors/caret_background_color = Color( 0, 0, 0, 1 )
+TextEdit/colors/caret_color = Color( 0.88, 0.88, 0.88, 1 )
+TextEdit/colors/code_folding_color = Color( 0.8, 0.8, 0.8, 0.8 )
+TextEdit/colors/completion_background_color = Color( 0.17, 0.16, 0.2, 1 )
+TextEdit/colors/completion_existing_color = Color( 0.87, 0.87, 0.87, 0.13 )
+TextEdit/colors/completion_font_color = Color( 0.67, 0.67, 0.67, 1 )
+TextEdit/colors/completion_scroll_color = Color( 1, 1, 1, 1 )
+TextEdit/colors/completion_selected_color = Color( 0.26, 0.26, 0.27, 1 )
+TextEdit/colors/current_line_color = Color( 0.25, 0.25, 0.26, 0.8 )
+TextEdit/colors/executing_line_color = Color( 0.2, 0.8, 0.2, 0.4 )
+TextEdit/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+TextEdit/colors/font_color_readonly = Color( 0.88, 0.88, 0.88, 0.5 )
+TextEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+TextEdit/colors/function_color = Color( 0.4, 0.64, 0.81, 1 )
+TextEdit/colors/line_number_color = Color( 0.67, 0.67, 0.67, 0.4 )
+TextEdit/colors/mark_color = Color( 1, 0.4, 0.4, 0.4 )
+TextEdit/colors/member_variable_color = Color( 0.9, 0.31, 0.35, 1 )
+TextEdit/colors/number_color = Color( 0.92, 0.58, 0.2, 1 )
+TextEdit/colors/safe_line_number_color = Color( 0.67, 0.78, 0.67, 0.6 )
+TextEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+TextEdit/colors/symbol_color = Color( 0.94, 0.94, 0.94, 1 )
+TextEdit/colors/word_highlighted_color = Color( 0.8, 0.9, 0.9, 0.15 )
+TextEdit/constants/completion_lines = 7
+TextEdit/constants/completion_max_width = 50
+TextEdit/constants/completion_scroll_width = 3
+TextEdit/constants/line_spacing = 4
+TextEdit/fonts/font = null
+TextEdit/icons/fold = null
+TextEdit/icons/folded = null
+TextEdit/icons/space = null
+TextEdit/icons/tab = null
+TextEdit/styles/completion = null
+TextEdit/styles/focus = null
+TextEdit/styles/normal = SubResource( 17 )
+TextEdit/styles/read_only = null

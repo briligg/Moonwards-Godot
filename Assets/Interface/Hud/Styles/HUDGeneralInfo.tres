@@ -2,8 +2,10 @@
 
 [ext_resource path="res://Assets/Interface/Hud/Styles/Panel_StyleboxFlat.tres" type="StyleBox" id=1]
 [ext_resource path="res://Assets/Interface/Hud/Styles/Container_StyleboxFlat.tres" type="StyleBox" id=2]
-[ext_resource path="res://Assets/Interface/Fonts/HUD_Roboto.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Interface/Fonts/Tres/RobotoNormal.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/Interface/Hud/Styles/LabelBig_StyleboxFlat.tres" type="StyleBox" id=4]
+
+
 
 [sub_resource type="StyleBoxFlat" id=1]
 

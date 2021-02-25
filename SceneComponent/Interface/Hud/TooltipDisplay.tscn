@@ -1,17 +1,44 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://SceneComponent/Interface/Hud/TooltipDisplay.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Interface/TooltipDisplay.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/Interface/MainMoonwardsTheme.tres" type="Theme" id=2]
 [ext_resource path="res://Assets/Interface/StyleBoxes/TooltipDisplayBackgroundPanel.tres" type="StyleBox" id=3]
 [ext_resource path="res://Assets/Interface/StyleBoxes/TooltipDisplayHSeparator.tres" type="StyleBox" id=4]
-[ext_resource path="res://Assets/Interface/Fonts/TooltipDisplay/TooltipDisplayItalics.tres" type="DynamicFont" id=5]
-[ext_resource path="res://Assets/Interface/Fonts/TooltipDisplay/TooltipDisplayBold.tres" type="DynamicFont" id=6]
-[ext_resource path="res://Assets/Interface/Fonts/TooltipDisplay/TooltipDisplayNormal.tres" type="DynamicFont" id=7]
-[ext_resource path="res://Assets/Interface/Fonts/TooltipDisplay/TooltipDisplayBoldItalics.tres" type="DynamicFont" id=8]
-[ext_resource path="res://Assets/Interface/Fonts/TooltipDisplay/TooltipDisplayMono.tres" type="DynamicFont" id=9]
-[ext_resource path="res://Assets/Interface/Fonts/TooltipDisplayButton.tres" type="DynamicFont" id=10]
+[ext_resource path="res://Assets/Interface/Fonts/dejavu/DejaVuSans.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Assets/Interface/Fonts/dejavu/DejaVuSerif-BoldItalic.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Assets/Interface/Fonts/dejavu/DejaVuSansMono.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Assets/Interface/Fonts/dejavu/DejaVuSerif-Italic.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Assets/Interface/Fonts/dejavu/DejaVuSans-Bold.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Assets/Interface/Fonts/ThemeForFont/Minus7.tres" type="Theme" id=10]
 
 [sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+resource_name = "Mono"
+size = 14
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=3]
+resource_name = "BoldItalic"
+size = 14
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+resource_name = "Italic"
+size = 14
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=5]
+resource_name = "Bold"
+size = 14
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=6]
+resource_name = "Sans"
+size = 14
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 5 )
 
 [node name="TooltipDisplay" type="PanelContainer"]
 visible = false
@@ -48,7 +75,7 @@ alignment = 1
 margin_right = 82.0
 margin_bottom = 36.0
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 10 )
+theme = ExtResource( 10 )
 text = "Prev"
 
 [node name="Title" type="Label" parent="Vert/Top"]
@@ -67,7 +94,7 @@ margin_left = 505.0
 margin_right = 588.0
 margin_bottom = 36.0
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 10 )
+theme = ExtResource( 10 )
 text = "Next"
 
 [node name="HSeparator" type="HSeparator" parent="Vert"]
@@ -99,11 +126,11 @@ margin_bottom = 886.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 24.0
-custom_fonts/mono_font = ExtResource( 9 )
-custom_fonts/bold_italics_font = ExtResource( 8 )
-custom_fonts/italics_font = ExtResource( 5 )
-custom_fonts/bold_font = ExtResource( 6 )
-custom_fonts/normal_font = ExtResource( 7 )
+custom_fonts/mono_font = SubResource( 2 )
+custom_fonts/bold_italics_font = SubResource( 3 )
+custom_fonts/italics_font = SubResource( 4 )
+custom_fonts/bold_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 6 )
 bbcode_enabled = true
 
 [node name="HSeparator2" type="HSeparator" parent="Vert"]
@@ -134,4 +161,5 @@ margin_left = 490.0
 margin_right = 588.0
 margin_bottom = 37.0
 size_flags_horizontal = 3
+theme = ExtResource( 10 )
 text = "Close"

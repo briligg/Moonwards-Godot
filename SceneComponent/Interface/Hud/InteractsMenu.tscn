@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://SceneComponent/Interface/Hud/InteractsMenu.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Interface/InteractsMenu.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/Interface/MainMoonwardsTheme.tres" type="Theme" id=2]
 [ext_resource path="res://Assets/Interface/StyleBoxes/InteractsMenuPanel.tres" type="StyleBox" id=3]
 [ext_resource path="res://Assets/Interface/StyleBoxes/InteractsMenuDescriptionPanel.tres" type="StyleBox" id=4]
+[ext_resource path="res://Assets/Interface/Fonts/ThemeForFont/StandardMinus11.tres" type="Theme" id=5]
+[ext_resource path="res://Assets/Interface/Fonts/ThemeForFont/Minus7.tres" type="Theme" id=6]
 
 [node name="InteractsMenu" type="PanelContainer"]
 visible = false
@@ -41,6 +43,7 @@ anchor_right = 0.95
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 5 )
 custom_constants/separation = 20
 __meta__ = {
 "_edit_use_anchors_": false
@@ -72,3 +75,4 @@ margin_bottom = 912.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.1
+theme = ExtResource( 6 )

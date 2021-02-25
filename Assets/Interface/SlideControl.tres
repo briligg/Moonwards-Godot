@@ -1,8 +1,10 @@
 [gd_resource type="Theme" load_steps=19 format=2]
 
-[ext_resource path="res://Assets/Interface/Fonts/MainMenuFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Interface/Fonts/Tres/StandardFontSize.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Themes/Fonts/Exo2/Exo2-Medium.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Interface/Fonts/Slide2DControlFont.tres" type="DynamicFont" id=3]
+
+
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )

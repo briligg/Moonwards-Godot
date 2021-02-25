@@ -1,20 +1,15 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://Tree/Interface/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/BackgroundCycler/BackgroundCycler.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Interface/MainMenu.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Interface/MainMoonwardsTheme.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/Interface/Textures/MoonwardsLogo2020_HeavyOutline_500px.png" type="Texture" id=4]
 [ext_resource path="res://Tree/Interface/MainMenu/About/About.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Tree/Interface/MainMenu/MainMenuHBox.gd" type="Script" id=6]
-[ext_resource path="res://Assets/Interface/StyleBoxes/ChatLineEdit.tres" type="StyleBox" id=7]
-[ext_resource path="res://Tree/Interface/MainMenu/MainMenuTab.gd" type="Script" id=8]
 [ext_resource path="res://Tree/Interface/UserSettings/UserSettings.tscn" type="PackedScene" id=9]
-[ext_resource path="res://addons/joyeux_npc_editor/src/interface/behaviors/code/Behaviour_tree_editor.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconAbout_Menu.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconSettings_Menu.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconPower_Menu.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Interface/MainMenu/Style/MM_Theme.tres" type="Theme" id=14]
-[ext_resource path="res://Assets/Interface/MainMenu/Style/MM_Theme_Footer.tres" type="Theme" id=15]
+[ext_resource path="res://Assets/Interface/Fonts/ThemeForFont/Minus7.tres" type="Theme" id=14]
 [ext_resource path="res://Assets/Interface/MainMenu/Style/MM_Theme_Header.tres" type="Theme" id=16]
 [ext_resource path="res://Tree/Interface/MainMenu/MenuParent.gd" type="Script" id=17]
 [ext_resource path="res://SceneComponent/Interface/MainMenu/Destination.tscn" type="PackedScene" id=18]
@@ -27,13 +22,35 @@
 [ext_resource path="res://Tree/Interface/MainMenu/FullWindow.gd" type="Script" id=25]
 [ext_resource path="res://Tree/Interface/MainMenu/Apps.gd" type="Script" id=26]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconAI.png" type="Texture" id=27]
-[ext_resource path="res://Assets/Interface/MainMenu/Style/MMD_Theme/MMD_Theme.tres" type="Theme" id=28]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconBuilding_Alt.png" type="Texture" id=29]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconEvent.png" type="Texture" id=30]
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconLibrary.png" type="Texture" id=31]
 [ext_resource path="res://SceneComponent/Interface/Hud/Apps/NPC/NPCApp.tscn" type="PackedScene" id=32]
-[ext_resource path="res://Assets/Interface/Hud/Styles/HUDTheme.tres" type="Theme" id=33]
 [ext_resource path="res://Tree/Interface/MainMenu/Links.gd" type="Script" id=34]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/21.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/18.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/23.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/20.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/17.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/15.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/11.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/14.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/3.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/4.png" type="Texture" id=44]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/5.png" type="Texture" id=45]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/6.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/8.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/19.png" type="Texture" id=48]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/9.png" type="Texture" id=49]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/13.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/1.png" type="Texture" id=51]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/2.png" type="Texture" id=52]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/16.png" type="Texture" id=53]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/10.png" type="Texture" id=54]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/12.png" type="Texture" id=55]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/7.png" type="Texture" id=56]
+[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/22.png" type="Texture" id=57]
+[ext_resource path="res://Assets/Interface/MoonwardsPrimeButton.tres" type="Theme" id=62]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 0.0
@@ -116,29 +133,6 @@ expand_margin_right = 4.0
 expand_margin_top = 4.0
 expand_margin_bottom = 4.0
 
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0, 0, 0, 0.588235 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 18
-
-[sub_resource type="StyleBoxEmpty" id=7]
-
-[sub_resource type="StyleBoxEmpty" id=8]
-
-[sub_resource type="GDScript" id=9]
-script/source = "extends WindowDialog
-
-func _on_NPCs_pressed():
-	popup_centered_clamped(Vector2(1920,1080))
-"
-
 [node name="MainMenu" type="CanvasLayer" groups=[
 "MainMenu",
 ]]
@@ -146,6 +140,8 @@ layer = 10
 script = ExtResource( 1 )
 
 [node name="Background" parent="." instance=ExtResource( 2 )]
+image_wait_time = 6.0
+textures = [ ExtResource( 46 ), ExtResource( 48 ), ExtResource( 52 ), ExtResource( 40 ), ExtResource( 36 ), ExtResource( 45 ), ExtResource( 57 ), ExtResource( 43 ), ExtResource( 37 ), ExtResource( 44 ), ExtResource( 47 ), ExtResource( 41 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 35 ), ExtResource( 38 ), ExtResource( 51 ), ExtResource( 39 ), ExtResource( 56 ), ExtResource( 50 ), ExtResource( 42 ), ExtResource( 49 ), ExtResource( 55 ) ]
 
 [node name="VBoxContainer" type="Control" parent="."]
 anchor_right = 1.0
@@ -154,7 +150,7 @@ margin_left = 20.0
 margin_top = 20.0
 margin_right = -20.0
 margin_bottom = -20.0
-theme = ExtResource( 14 )
+theme = ExtResource( 3 )
 script = ExtResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -237,7 +233,6 @@ anchor_right = 1.0
 anchor_bottom = 0.96
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 14 )
 custom_styles/panel = ExtResource( 23 )
 tabs_visible = false
 __meta__ = {
@@ -254,6 +249,7 @@ margin_right = -2.0
 margin_bottom = -2.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 62 )
 
 [node name="Destination" parent="VBoxContainer/TabContainer/Destination" instance=ExtResource( 18 )]
 anchor_right = 0.0
@@ -301,7 +297,7 @@ margin_right = -2.0
 margin_bottom = -2.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 14 )
+theme = ExtResource( 62 )
 script = ExtResource( 26 )
 
 [node name="ButtonGrid" type="GridContainer" parent="VBoxContainer/TabContainer/Apps"]
@@ -348,7 +344,6 @@ anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_vertical = 10
-theme = ExtResource( 28 )
 text = "MAKE ENTITY"
 align = 1
 __meta__ = {
@@ -391,7 +386,6 @@ anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_vertical = 10
-theme = ExtResource( 28 )
 text = "MAKE BUILDING"
 align = 1
 __meta__ = {
@@ -434,7 +428,6 @@ anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_vertical = 10
-theme = ExtResource( 28 )
 text = "SETUP EVENT"
 align = 1
 __meta__ = {
@@ -478,7 +471,6 @@ anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_vertical = 10
-theme = ExtResource( 28 )
 text = "OPEN LIBRARY"
 align = 1
 __meta__ = {
@@ -625,7 +617,7 @@ text = "Cancel"
 anchor_top = 0.98
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 15 )
+theme = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -639,9 +631,8 @@ __meta__ = {
 }
 
 [node name="Label_Version" type="Label" parent="VBoxContainer/AboutSection/LabelAndLinks"]
-margin_top = 2.0
-margin_right = 228.0
-margin_bottom = 24.0
+margin_right = 232.0
+margin_bottom = 26.0
 size_flags_horizontal = 3
 text = "Game Version 0.0.1     Sites:  "
 __meta__ = {
@@ -649,8 +640,8 @@ __meta__ = {
 }
 
 [node name="Source" type="Button" parent="VBoxContainer/AboutSection/LabelAndLinks"]
-margin_left = 236.0
-margin_right = 406.0
+margin_left = 240.0
+margin_right = 409.0
 margin_bottom = 26.0
 size_flags_horizontal = 3
 custom_styles/hover = SubResource( 1 )
@@ -661,8 +652,8 @@ custom_styles/normal = SubResource( 5 )
 text = "Github"
 
 [node name="Twitter" type="Button" parent="VBoxContainer/AboutSection/LabelAndLinks"]
-margin_left = 414.0
-margin_right = 584.0
+margin_left = 417.0
+margin_right = 586.0
 margin_bottom = 26.0
 size_flags_horizontal = 3
 custom_styles/hover = SubResource( 1 )
@@ -673,8 +664,8 @@ custom_styles/normal = SubResource( 5 )
 text = "Twitter"
 
 [node name="Reddit" type="Button" parent="VBoxContainer/AboutSection/LabelAndLinks"]
-margin_left = 592.0
-margin_right = 762.0
+margin_left = 594.0
+margin_right = 763.0
 margin_bottom = 26.0
 size_flags_horizontal = 3
 custom_styles/hover = SubResource( 1 )
@@ -688,7 +679,7 @@ __meta__ = {
 }
 
 [node name="Discord" type="Button" parent="VBoxContainer/AboutSection/LabelAndLinks"]
-margin_left = 770.0
+margin_left = 771.0
 margin_right = 940.0
 margin_bottom = 26.0
 size_flags_horizontal = 3
@@ -745,10 +736,11 @@ icon = ExtResource( 13 )
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 33 )
+theme = ExtResource( 3 )
 script = ExtResource( 25 )
 
 [node name="NPCEditor" parent="FullWindow" instance=ExtResource( 32 )]
+theme = ExtResource( 14 )
 
 [node name="Logo" type="TextureRect" parent="."]
 visible = false
@@ -798,269 +790,4 @@ text = "About"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-visible = false
-anchor_left = 0.1
-anchor_top = 0.3
-anchor_right = 0.9
-anchor_bottom = 0.8
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource( 3 )
-custom_constants/separation = 120
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-margin_right = 161.0
-margin_bottom = 540.0
-custom_constants/separation = 20
-alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Destination" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 115.0
-margin_right = 161.0
-margin_bottom = 150.0
-focus_neighbour_left = NodePath("../../../Quit")
-focus_neighbour_top = NodePath("../Display")
-focus_neighbour_right = NodePath("../../../About")
-focus_neighbour_bottom = NodePath("../Avatar")
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "  Destination  "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Avatar" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 170.0
-margin_right = 105.0
-margin_bottom = 205.0
-focus_neighbour_left = NodePath("../../../Quit")
-focus_neighbour_top = NodePath("../Destination")
-focus_neighbour_right = NodePath("../../../About")
-focus_neighbour_bottom = NodePath("../Controls")
-size_flags_horizontal = 0
-text = "  Avatar  "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Controls" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 225.0
-margin_right = 126.0
-margin_bottom = 260.0
-focus_neighbour_left = NodePath("../../../Quit")
-focus_neighbour_top = NodePath("../Avatar")
-focus_neighbour_right = NodePath("../../../About")
-focus_neighbour_bottom = NodePath("../Apps")
-size_flags_horizontal = 0
-disabled = true
-text = "  Controls  "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NPCs" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 280.0
-margin_right = 131.0
-margin_bottom = 315.0
-focus_neighbour_left = NodePath("../../../Quit")
-focus_neighbour_top = NodePath("../Controls")
-focus_neighbour_right = NodePath("../../../About")
-focus_neighbour_bottom = NodePath("../Display")
-size_flags_horizontal = 0
-text = " NPC Editor"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Apps" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 335.0
-margin_right = 87.0
-margin_bottom = 370.0
-focus_neighbour_left = NodePath("../../../Quit")
-focus_neighbour_top = NodePath("../Controls")
-focus_neighbour_right = NodePath("../../../About")
-focus_neighbour_bottom = NodePath("../Display")
-size_flags_horizontal = 0
-disabled = true
-text = "  Apps  "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Display" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 390.0
-margin_right = 114.0
-margin_bottom = 425.0
-focus_neighbour_left = NodePath("../../../Quit")
-focus_neighbour_top = NodePath("../Apps")
-focus_neighbour_right = NodePath("../../../About")
-focus_neighbour_bottom = NodePath("../Destination")
-size_flags_horizontal = 0
-disabled = true
-text = "  Display  "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel" type="PanelContainer" parent="HBoxContainer"]
-margin_left = 281.0
-margin_right = 1536.0
-margin_bottom = 540.0
-rect_min_size = Vector2( 150, 180 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_styles/panel = SubResource( 6 )
-
-[node name="Tab" type="TabContainer" parent="HBoxContainer/Panel"]
-margin_left = 2.0
-margin_top = 2.0
-margin_right = 1253.0
-margin_bottom = 538.0
-tabs_visible = false
-use_hidden_tabs_for_min_size = true
-script = ExtResource( 8 )
-
-[node name="DestinationTab" type="HBoxContainer" parent="HBoxContainer/Panel/Tab"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="HSeparator" type="HSeparator" parent="HBoxContainer/Panel/Tab/DestinationTab"]
-margin_right = 14.0
-margin_bottom = 536.0
-rect_min_size = Vector2( 14, 0 )
-custom_styles/separator = SubResource( 7 )
-
-[node name="StartGame" type="VBoxContainer" parent="HBoxContainer/Panel/Tab/DestinationTab"]
-margin_left = 18.0
-margin_right = 318.0
-margin_bottom = 536.0
-custom_constants/separation = 33
-
-[node name="HSeparator" type="HSeparator" parent="HBoxContainer/Panel/Tab/DestinationTab/StartGame"]
-margin_right = 300.0
-margin_bottom = 8.0
-rect_min_size = Vector2( 0, 8 )
-custom_styles/separator = SubResource( 8 )
-
-[node name="JoinMainServer" type="Button" parent="HBoxContainer/Panel/Tab/DestinationTab/StartGame"]
-margin_top = 41.0
-margin_right = 190.0
-margin_bottom = 76.0
-size_flags_horizontal = 0
-text = "Join Main Server"
-
-[node name="StartCustomServer" type="Button" parent="HBoxContainer/Panel/Tab/DestinationTab/StartGame"]
-margin_top = 109.0
-margin_right = 234.0
-margin_bottom = 144.0
-size_flags_horizontal = 0
-text = "Start Custom Server"
-
-[node name="JoinServer" type="Button" parent="HBoxContainer/Panel/Tab/DestinationTab/StartGame"]
-margin_top = 177.0
-margin_right = 127.0
-margin_bottom = 212.0
-size_flags_horizontal = 0
-text = "Join Server"
-
-[node name="InputServer" type="VBoxContainer" parent="HBoxContainer/Panel/Tab/DestinationTab/StartGame"]
-margin_top = 245.0
-margin_right = 300.0
-margin_bottom = 314.0
-custom_constants/separation = -6
-
-[node name="Label" type="Label" parent="HBoxContainer/Panel/Tab/DestinationTab/StartGame/InputServer"]
-margin_right = 300.0
-margin_bottom = 35.0
-text = "ipv4 address:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Ipv4Address" type="TextEdit" parent="HBoxContainer/Panel/Tab/DestinationTab/StartGame/InputServer"]
-margin_top = 29.0
-margin_right = 300.0
-margin_bottom = 69.0
-rect_min_size = Vector2( 300, 40 )
-size_flags_horizontal = 2
-size_flags_vertical = 2
-custom_styles/focus = ExtResource( 7 )
-custom_styles/normal = ExtResource( 7 )
-text = "45.77.54.168"
-
-[node name="AvatarTab" type="HBoxContainer" parent="HBoxContainer/Panel/Tab"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="HSeparator" type="HSeparator" parent="HBoxContainer/Panel/Tab/AvatarTab"]
-margin_right = 14.0
-margin_bottom = 536.0
-rect_min_size = Vector2( 14, 0 )
-custom_styles/separator = SubResource( 7 )
-
-[node name="UserSettings" parent="HBoxContainer/Panel/Tab/AvatarTab" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 18.0
-margin_right = 1251.0
-margin_bottom = 536.0
-
-[node name="EmptyOtherTab" type="Control" parent="HBoxContainer/Panel/Tab"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="About" parent="HBoxContainer" instance=ExtResource( 5 )]
-visible = false
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 968.0
-margin_right = 1536.0
-margin_bottom = 540.0
-focus_neighbour_left = NodePath("../../Quit")
-focus_neighbour_top = NodePath("../VBoxContainer/Display")
-focus_neighbour_bottom = NodePath("../VBoxContainer/Destination")
-
-[node name="NPCEditor" type="WindowDialog" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -877.0
-margin_top = -460.0
-margin_right = 877.0
-margin_bottom = 461.0
-window_title = "NPC Editor"
-script = SubResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NPCEditor" parent="NPCEditor" instance=ExtResource( 10 )]
-margin_bottom = 1.0
 [connection signal="pressed" from="About" to="." method="_on_About_pressed"]
-[connection signal="focus_entered" from="HBoxContainer/VBoxContainer/Destination" to="HBoxContainer" method="_button_highlighted" binds= [ "Destination" ]]
-[connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/Destination" to="HBoxContainer" method="_button_highlighted" binds= [ "Destination" ]]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/Destination" to="HBoxContainer/Panel/Tab" method="_on_StartGame_pressed"]
-[connection signal="focus_entered" from="HBoxContainer/VBoxContainer/Avatar" to="HBoxContainer" method="_button_highlighted" binds= [ "Avatar" ]]
-[connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/Avatar" to="HBoxContainer" method="_button_highlighted" binds= [ "Avatar" ]]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/Avatar" to="HBoxContainer/Panel/Tab" method="_on_Avatar_pressed"]
-[connection signal="focus_entered" from="HBoxContainer/VBoxContainer/Controls" to="HBoxContainer" method="_button_highlighted" binds= [ "Controls" ]]
-[connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/Controls" to="HBoxContainer" method="_button_highlighted" binds= [ "Controls" ]]
-[connection signal="focus_entered" from="HBoxContainer/VBoxContainer/NPCs" to="HBoxContainer" method="_button_highlighted" binds= [ "NPCs" ]]
-[connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/NPCs" to="HBoxContainer" method="_button_highlighted" binds= [ "NPCs" ]]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/NPCs" to="NPCEditor" method="_on_NPCs_pressed"]
-[connection signal="focus_entered" from="HBoxContainer/VBoxContainer/Apps" to="HBoxContainer" method="_button_highlighted" binds= [ "Apps" ]]
-[connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/Apps" to="HBoxContainer" method="_button_highlighted" binds= [ "Apps" ]]
-[connection signal="focus_entered" from="HBoxContainer/VBoxContainer/Display" to="HBoxContainer" method="_button_highlighted" binds= [ "Display" ]]
-[connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/Display" to="HBoxContainer" method="_button_highlighted" binds= [ "Display" ]]
