@@ -5,10 +5,19 @@ class_name MwNPC
 This is the actual class to be edited, extends the NPCBase and has the functions
 that appear in the Definitions file.
 """
+
+enum Gender {
+	Male,
+	Female
+}
+
+
 const DialogDisplay = preload("res://addons/joyeux_dialog_system/src/components/display/Dialog Display.tscn")
 
-signal interacted_by(something)
-signal workstation_assigned(which)
+signal interacted_by(player)
+signal workstation_assigned(where)
+signal dialog_answered(last_dialog_title)
+signal destination_reached(name_id)
 
 export(String) var character_name
 
@@ -17,6 +26,7 @@ export(Color) var pants_color
 export(Color) var hair_color
 export(Color) var skin_color
 export(Color) var shoes_color
+export(Gender) var gender 
 var actor : Spatial = null
 var worker : Worker = null
 var navigator : NPCInput = null
@@ -27,6 +37,7 @@ func _init(file:= "", state:= ""):
 
 func load_colors():
 	var colors = [skin_color, hair_color, shirt_color, pants_color, shoes_color]
+	actor.get_component("ModelComponent").set_gender(gender)
 	actor.get_component("ModelComponent").set_colors(colors)
 	actor.get_component("NametagComponent").call_deferred("set_name",character_name)
 	
@@ -36,6 +47,25 @@ func property_check(input, signals, variables):
 	var filter = _get_variable_from_port(variables, 1)
 	if input.has(filter):
 		_emit_signal_from_port(input.get(filter), signals, 0)
+
+
+func continue_if_true(input, signals, variables):
+	var truth_value = _get_variable_from_port(variables, 1)
+	if truth_value == null:
+		truth_value = false
+	elif truth_value is String or truth_value is int or truth_value is float:
+		truth_value = bool(truth_value)
+	if truth_value:
+		_emit_signal_from_port(input, signals, 0)
+		
+func continue_if_false(input, signals, variables):
+	var truth_value = _get_variable_from_port(variables, 1)
+	if truth_value == null:
+		truth_value = false
+	truth_value = bool(truth_value)
+	if not truth_value:
+		_emit_signal_from_port(input, signals, 0)
+				
 
 func match(input, signals, variables):
 	#Checks if input matches with the variable input, if it does
@@ -69,6 +99,11 @@ func tri_v_decision(input, signals, variables):
 	elif maximum == weigth3:
 		_emit_signal_from_port(input, signals, 3)
 
+func swap_input_for_variable(input, signals, variables):
+	var varname = _get_variable_from_port(variables, 1)
+	var varvalue = _get_var_or_meta(varname)
+	_emit_signal_from_port(varvalue, signals, 0)
+
 func play_global_sound(input, signals, variables):
 	var path = _get_variable_from_port(variables, 0)
 	var sound_player = AudioStreamPlayer.new()
@@ -77,7 +112,7 @@ func play_global_sound(input, signals, variables):
 	actor.add_child(sound_player)
 	sound_player.play()
 
-func play_3d_sound(input, signals, variables):
+func play_3d_sound(input, _signals, variables):
 	var path = _get_variable_from_port(variables, 0)
 	var sound_player = AudioStreamPlayer3D.new()
 	sound_player.stream = load(path)
@@ -85,19 +120,38 @@ func play_3d_sound(input, signals, variables):
 	actor.add_child(sound_player)
 	sound_player.play()
 
-func trigger_dialog(input, signals, variables):
+func trigger_dialog(input, _signals, variables):
 	var path = _get_variable_from_port(variables, 0)
 	var dialog_display = DialogDisplay.instance()
 	dialog_display.dialog = path
 	dialog_display.name_override = character_name 
 	actor.add_child(dialog_display)
-	dialog_display.connect("finished", dialog_display, "queue_free")
+	dialog_display.connect("finished", self, "_on_dialog_answer", [dialog_display])
 
-func request_workstation(input, signals, variables):
+func request_workstation(input, _signals, variables):
 	if worker.current_station != null:
 		return
 	var filter = _get_variable_from_port(variables, 1)
 	navigator.world_ref.request_workstation(worker, filter)
+	
+func pick_random(input, signals, _variables):
+	var chosen = rand_range(0, 3)
+	match int(chosen):
+		0:
+			_emit_signal_from_port(input, signals, 0)
+		1:
+			_emit_signal_from_port(input, signals, 1)
+		2:
+			_emit_signal_from_port(input, signals, 2)
+		3:
+			_emit_signal_from_port(input, signals, 0)
+
+func follow(input, _signals, _variables):
+	print("Set to follow: ", input, "with location: ", input.translation)
+	navigator.following = input
+
+func stop_follow(_input, _signals, _variables):
+	navigator.following = null
 
 func find_workstation(input, signals, variables):
 	var filter = _get_variable_from_port(variables, 1)
@@ -106,3 +160,7 @@ func find_workstation(input, signals, variables):
 	
 func set_objective(input, _signals, _variables):
 	navigator.get_navpath(input) #Input should be Vector3
+
+func _on_dialog_answer(input, object_to_free):
+	emit_signal("dialog_answered", input)
+	object_to_free.queue_free()

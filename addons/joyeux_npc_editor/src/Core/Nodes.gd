@@ -225,7 +225,7 @@ func _color_from_class(id : String) -> Color:
 	return color
 
 func filter_node_name(unfiltered : String) -> String:
-	for i in range(0,9):
+	for i in range(0,10):
 		unfiltered = unfiltered.replace(str(i),"")
 	unfiltered = unfiltered.replace("@","")
 	unfiltered = unfiltered.replace(":", "")

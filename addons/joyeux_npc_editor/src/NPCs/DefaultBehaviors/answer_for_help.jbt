@@ -1,0 +1,285 @@
+[variables]
+
+get_variable=[ null, "reached_the_pool" ]
+parallel_trigger=[ null, null ]
+swap_input_for_variable=[ null, "latest_interactor" ]
+match=[ null, "Thanks!" ]
+swap_input_for_variable2=[ null, "latest_interactor" ]
+match4=[ null, "Carry on" ]
+parallel_trigger3=[ null, null ]
+parallel_trigger6=[ null, null ]
+parallel_trigger7=[ null, null ]
+parallel_trigger5=[ null, null ]
+parallel_trigger2=[ null, null ]
+parallel_trigger4=[ null, null ]
+destination_reached=[ null ]
+interacted_by=[ null ]
+get_variable2=[ null, "reached_the_pool" ]
+continue_if_false2=[ null, "_s_getselfvar_reached_the_pool" ]
+dialog_answered=[ null ]
+match5=[ null, "I'll try on my own" ]
+continue_if_false=[ null, "_s_getselfvar_reached_the_pool" ]
+match3=[ null, "I'll be waiting" ]
+match2=[ null, "Sorry!" ]
+match6=[ null, "Pool" ]
+parallel_trigger8=[ null, null ]
+parallel_trigger9=[ null, null ]
+follow=[ null ]
+follow2=[ null ]
+stop_follow=[ null ]
+force_next_state2=[ null ]
+force_next_state3=[ null ]
+stop_follow2=[ null ]
+stop_follow3=[ null ]
+trigger_dialog=[ "res://Assets/Dialogs/following.mtalk" ]
+force_next_state=[ null ]
+set_variable=[ null, "reached_the_pool" ]
+stop_follow4=[ null ]
+force_next_state4=[ null ]
+
+[node_signals]
+
+get_variable=[ "get_variable_output_0" ]
+parallel_trigger=[ "parallel_trigger_output_0", "parallel_trigger_output_1" ]
+swap_input_for_variable=[ "swap_input_for_variable_output_0" ]
+match=[ "match_output_0" ]
+swap_input_for_variable2=[ "swap_input_for_variable2_output_0" ]
+match4=[ "match4_output_0" ]
+parallel_trigger3=[ "parallel_trigger3_output_0", "parallel_trigger3_output_1" ]
+parallel_trigger6=[ "parallel_trigger6_output_0", "parallel_trigger6_output_1" ]
+parallel_trigger7=[ "parallel_trigger7_output_0", "parallel_trigger7_output_1" ]
+parallel_trigger5=[ "parallel_trigger5_output_0", "parallel_trigger5_output_1" ]
+parallel_trigger2=[ "parallel_trigger2_output_0", "parallel_trigger2_output_1" ]
+parallel_trigger4=[ "parallel_trigger4_output_0", "parallel_trigger4_output_1" ]
+destination_reached=[ "destination_reached" ]
+interacted_by=[ "interacted_by" ]
+get_variable2=[ "get_variable2_output_0" ]
+continue_if_false2=[ "continue_if_false2_output_0" ]
+dialog_answered=[ "dialog_answered" ]
+match5=[ "match5_output_0" ]
+continue_if_false=[ "continue_if_false_output_0" ]
+match3=[ "match3_output_0" ]
+match2=[ "match2_output_0" ]
+match6=[ "match6_output_0" ]
+parallel_trigger8=[ "parallel_trigger8_output_0", "parallel_trigger8_output_1" ]
+parallel_trigger9=[ "parallel_trigger9_output_0", "parallel_trigger9_output_1" ]
+follow=[  ]
+follow2=[  ]
+stop_follow=[  ]
+force_next_state2=[  ]
+force_next_state3=[  ]
+stop_follow2=[  ]
+stop_follow3=[  ]
+trigger_dialog=[  ]
+force_next_state=[  ]
+set_variable=[  ]
+stop_follow4=[  ]
+force_next_state4=[  ]
+
+[node_offsets]
+
+get_variable=Vector2( -740, -320 )
+parallel_trigger=Vector2( -160, -420 )
+swap_input_for_variable=Vector2( 600, -600 )
+match=Vector2( 220, -600 )
+swap_input_for_variable2=Vector2( 600, -480 )
+match4=Vector2( 220, -480 )
+parallel_trigger3=Vector2( 600, -240 )
+parallel_trigger6=Vector2( 600, -120 )
+parallel_trigger7=Vector2( 600, -360 )
+parallel_trigger5=Vector2( -160, -180 )
+parallel_trigger2=Vector2( -160, -340 )
+parallel_trigger4=Vector2( -160, -260 )
+destination_reached=Vector2( -620, 260 )
+interacted_by=Vector2( -780, 0 )
+get_variable2=Vector2( -740, 100 )
+continue_if_false2=Vector2( -460, 20 )
+dialog_answered=Vector2( -780, -420 )
+match5=Vector2( 220, -240 )
+continue_if_false=Vector2( -480, -380 )
+match3=Vector2( 220, -120 )
+match2=Vector2( 220, -360 )
+match6=Vector2( -180, 220 )
+parallel_trigger8=Vector2( 160, 140 )
+parallel_trigger9=Vector2( 160, 240 )
+follow=Vector2( 960, -600 )
+follow2=Vector2( 960, -480 )
+stop_follow=Vector2( 960, -240 )
+force_next_state2=Vector2( 960, -180 )
+force_next_state3=Vector2( 960, -60 )
+stop_follow2=Vector2( 960, -360 )
+stop_follow3=Vector2( 960, -120 )
+trigger_dialog=Vector2( -40, 40 )
+force_next_state=Vector2( 960, -300 )
+set_variable=Vector2( 500, 100 )
+stop_follow4=Vector2( 500, 200 )
+force_next_state4=Vector2( 500, 280 )
+
+[ai_config]
+
+connections=[ {
+"from": "get_variable",
+"from_port": 0,
+"to": "continue_if_false",
+"to_port": 1
+}, {
+"from": "parallel_trigger",
+"from_port": 0,
+"to": "match",
+"to_port": 0
+}, {
+"from": "swap_input_for_variable",
+"from_port": 0,
+"to": "follow",
+"to_port": 0
+}, {
+"from": "match",
+"from_port": 0,
+"to": "swap_input_for_variable",
+"to_port": 0
+}, {
+"from": "swap_input_for_variable2",
+"from_port": 0,
+"to": "follow2",
+"to_port": 0
+}, {
+"from": "match4",
+"from_port": 0,
+"to": "swap_input_for_variable2",
+"to_port": 0
+}, {
+"from": "parallel_trigger3",
+"from_port": 0,
+"to": "stop_follow",
+"to_port": 0
+}, {
+"from": "parallel_trigger3",
+"from_port": 1,
+"to": "force_next_state2",
+"to_port": 0
+}, {
+"from": "parallel_trigger6",
+"from_port": 1,
+"to": "force_next_state3",
+"to_port": 0
+}, {
+"from": "parallel_trigger7",
+"from_port": 0,
+"to": "stop_follow2",
+"to_port": 0
+}, {
+"from": "parallel_trigger6",
+"from_port": 0,
+"to": "stop_follow3",
+"to_port": 0
+}, {
+"from": "parallel_trigger5",
+"from_port": 0,
+"to": "match5",
+"to_port": 0
+}, {
+"from": "parallel_trigger2",
+"from_port": 0,
+"to": "match4",
+"to_port": 0
+}, {
+"from": "parallel_trigger4",
+"from_port": 0,
+"to": "match2",
+"to_port": 0
+}, {
+"from": "parallel_trigger5",
+"from_port": 1,
+"to": "match3",
+"to_port": 0
+}, {
+"from": "destination_reached",
+"from_port": 0,
+"to": "match6",
+"to_port": 0
+}, {
+"from": "interacted_by",
+"from_port": 0,
+"to": "continue_if_false2",
+"to_port": 0
+}, {
+"from": "get_variable2",
+"from_port": 0,
+"to": "continue_if_false2",
+"to_port": 1
+}, {
+"from": "continue_if_false2",
+"from_port": 0,
+"to": "trigger_dialog",
+"to_port": 0
+}, {
+"from": "dialog_answered",
+"from_port": 0,
+"to": "continue_if_false",
+"to_port": 0
+}, {
+"from": "parallel_trigger7",
+"from_port": 1,
+"to": "force_next_state",
+"to_port": 0
+}, {
+"from": "match5",
+"from_port": 0,
+"to": "parallel_trigger3",
+"to_port": 0
+}, {
+"from": "continue_if_false",
+"from_port": 0,
+"to": "parallel_trigger",
+"to_port": 0
+}, {
+"from": "parallel_trigger",
+"from_port": 1,
+"to": "parallel_trigger2",
+"to_port": 0
+}, {
+"from": "parallel_trigger2",
+"from_port": 1,
+"to": "parallel_trigger4",
+"to_port": 0
+}, {
+"from": "parallel_trigger4",
+"from_port": 1,
+"to": "parallel_trigger5",
+"to_port": 0
+}, {
+"from": "match3",
+"from_port": 0,
+"to": "parallel_trigger6",
+"to_port": 0
+}, {
+"from": "match2",
+"from_port": 0,
+"to": "parallel_trigger7",
+"to_port": 0
+}, {
+"from": "match6",
+"from_port": 0,
+"to": "parallel_trigger8",
+"to_port": 0
+}, {
+"from": "parallel_trigger8",
+"from_port": 1,
+"to": "parallel_trigger9",
+"to_port": 0
+}, {
+"from": "parallel_trigger8",
+"from_port": 0,
+"to": "set_variable",
+"to_port": 0
+}, {
+"from": "parallel_trigger9",
+"from_port": 0,
+"to": "stop_follow4",
+"to_port": 0
+}, {
+"from": "parallel_trigger9",
+"from_port": 1,
+"to": "force_next_state4",
+"to_port": 0
+} ]

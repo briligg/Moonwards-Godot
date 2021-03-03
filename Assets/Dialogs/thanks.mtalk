@@ -1,0 +1,23 @@
+[offsets]
+
+Start=Vector2( 0, 0 )
+GraphNode=Vector2( 360, 20 )
+
+[dialogs]
+
+GraphNode={
+"content": "Thank you for helping me out, I'll be around here. ",
+"name_override": "",
+"next": "",
+"title": "Thanks!"
+}
+
+[config]
+
+connections=[ {
+"from": "Start",
+"from_port": 0,
+"to": "GraphNode",
+"to_port": 0
+} ]
+character_name="Default"

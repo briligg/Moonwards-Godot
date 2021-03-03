@@ -37,6 +37,36 @@ var CLASS_WORKSTATION = {
 #_s_ prefix indicates the label would be replaced with a special component
 #This prefix only works in the input label.
 var _functions = {
+	"set_variable" : {
+		"_category" : "misc",
+		"_input_ports" : [
+			{"_label_title":"Value","_type":Nodes.TYPE_ANY},
+			{"_label_title":"_s_text_edit","_type":TYPE_NIL},
+			],
+		"_output_ports" : [
+			{"_label_title":"","_type":TYPE_NIL},
+			]
+	},
+	"get_variable" : {
+		"_category" : "misc",
+		"_input_ports" : [
+			{"_label_title":"","_type":TYPE_NIL},
+			{"_label_title":"_s_text_edit","_type":TYPE_NIL},
+			],
+		"_output_ports" : [
+			{"_label_title":"Value","_type":Nodes.TYPE_ANY},
+			]
+	},  
+	"swap_input_for_variable" : {
+		"_category" : "misc",
+		"_input_ports" : [
+			{"_label_title":"Trigger","_type":Nodes.TYPE_ANY},
+			{"_label_title":"_s_text_edit","_type":TYPE_NIL},
+			],
+		"_output_ports" : [
+			{"_label_title":"Value","_type":Nodes.TYPE_ANY},
+			]
+	},  
 	"property_check" : {
 		"_category" : "inhibitors",
 		"_code" : "FuncRef?", #This hasn't been implemented yet
@@ -78,6 +108,37 @@ var _functions = {
 		],
 		"_output_ports" : [
 			{"_label_title" : "", "_type" : TYPE_NIL },
+			{"_label_title" : "Output 1", "_type" : Nodes.TYPE_ANY },
+			{"_label_title" : "Output 2", "_type" : Nodes.TYPE_ANY },
+			{"_label_title" : "Output 3", "_type" : Nodes.TYPE_ANY }
+		]
+	},
+	"continue_if_true" : {
+		"_category" : "inhibitors",
+		"_input_ports" : [
+			{"_label_title":"Value In", "_type" : Nodes.TYPE_ANY},
+			{"_label_title":"Variable", "_type" : TYPE_BOOL},
+		],
+		"_output_ports" : [
+			{"_label_title" : "Value Out", "_type" : Nodes.TYPE_ANY },
+		]
+	},
+	"continue_if_false" : {
+		"_category" : "inhibitors",
+		"_input_ports" : [
+			{"_label_title":"Value In", "_type" : Nodes.TYPE_ANY},
+			{"_label_title":"Variable", "_type" : TYPE_BOOL},
+		],
+		"_output_ports" : [
+			{"_label_title" : "Value Out", "_type" : Nodes.TYPE_ANY },
+		]
+	},
+	"pick_random" : {
+		"_category" : "misc",
+		"_input_ports" : [
+			{"_label_title":"Input", "_type" : Nodes.TYPE_ANY}
+		],
+		"_output_ports" : [
 			{"_label_title" : "Output 1", "_type" : Nodes.TYPE_ANY },
 			{"_label_title" : "Output 2", "_type" : Nodes.TYPE_ANY },
 			{"_label_title" : "Output 3", "_type" : Nodes.TYPE_ANY }
@@ -157,7 +218,27 @@ var _functions = {
 		"_output_ports" : [
 			{"_label_title":"","_type":TYPE_NIL},
 			]
-	} 
+	}, 
+	"follow" : {
+		"_category" : "actions",
+		"_input_ports" : [
+			{"_label_title":"Character","_type":"CLASS_CHARACTER"},
+			],
+		"_output_ports" : [
+			{"_label_title":"","_type":TYPE_NIL},
+			]
+	}, 
+	"stop_follow" : {
+		"_category" : "actions",
+		"_input_ports" : [
+			{"_label_title":"Trigger","_type":Nodes.TYPE_ANY},
+			],
+		"_output_ports" : [
+			{"_label_title":"","_type":TYPE_NIL},
+			]
+		
+	},
+	
 }
 
 var _stimulus = {
@@ -176,7 +257,7 @@ var _stimulus = {
 	},
 	#This section is for user designed signals
 	"interacted_by" :{
-		"_output_name": "Interactor",
+		"_output_name": "Character",
 		"_output_type": "CLASS_CHARACTER",
 	},
 	"stopped_working" :{
@@ -194,6 +275,14 @@ var _stimulus = {
 	"state_changed" :{
 		"_output_name": "Trigger",
 		"_output_type": Nodes.TYPE_ANY,
+	},
+	"destination_reached" :{
+		"_output_name": "Destination name",
+		"_output_type": TYPE_STRING,
+	},
+	"dialog_answered" :{
+		"_output_name": "Last Dialog",
+		"_output_type": TYPE_STRING,
 	},
 	
 }

@@ -1,0 +1,82 @@
+[offsets]
+
+GraphNode=Vector2( 280, 80 )
+ChoiceNode=Vector2( 480, 100 )
+GraphNode3=Vector2( 760, 100 )
+GraphNode4=Vector2( 760, 220 )
+GraphNode2=Vector2( 760, -20 )
+Start=Vector2( 20, 100 )
+
+[dialogs]
+
+GraphNode={
+"content": "Hey! It's nice to see friendly faces around, I just got here and I'm very confused. Could you help me find the pool?",
+"name_override": "",
+"next": "ChoiceNode",
+"title": "Hello!"
+}
+GraphNode3={
+"content": "Oh it's ok, I'll try to find it myself in the meantime, but if we see again I'll be glad to follow you.",
+"name_override": "",
+"next": "",
+"title": "I'll be waiting"
+}
+GraphNode4={
+"content": "Oh, sorry! Go ahead, I'm sure I'll be able to find it. ",
+"name_override": "",
+"next": "",
+"title": "Sorry!"
+}
+GraphNode2={
+"content": "Great! I really appreciate it. ",
+"name_override": "",
+"next": "",
+"title": "Thanks!"
+}
+
+[choices]
+
+ChoiceNode=[ "Sure!", "Perhaps later", "Sorry, I'm busy right now" ]
+
+[choices_triggers]
+
+ChoiceNode=[ {
+"name": "Sure!",
+"triggers": "GraphNode2"
+}, {
+"name": "Perhaps later",
+"triggers": "GraphNode3"
+}, {
+"name": "Sorry, I'm busy right now",
+"triggers": "GraphNode4"
+} ]
+
+[config]
+
+connections=[ {
+"from": "Start",
+"from_port": 0,
+"to": "GraphNode",
+"to_port": 0
+}, {
+"from": "GraphNode",
+"from_port": 0,
+"to": "ChoiceNode",
+"to_port": 0
+}, {
+"from": "ChoiceNode",
+"from_port": 0,
+"to": "GraphNode2",
+"to_port": 0
+}, {
+"from": "ChoiceNode",
+"from_port": 1,
+"to": "GraphNode3",
+"to_port": 0
+}, {
+"from": "ChoiceNode",
+"from_port": 2,
+"to": "GraphNode4",
+"to_port": 0
+} ]
+character_name="Default"

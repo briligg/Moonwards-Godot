@@ -1,0 +1,67 @@
+[offsets]
+
+Start=Vector2( 0, 0 )
+ChoiceNode=Vector2( 480, -40 )
+GraphNode=Vector2( 260, -20 )
+GraphNode2=Vector2( 720, -40 )
+GraphNode3=Vector2( 740, 40 )
+
+[choices]
+
+ChoiceNode=[ "Stop following", "Nothing" ]
+
+[choices_triggers]
+
+ChoiceNode=[ {
+"name": "Stop following",
+"triggers": "GraphNode2"
+}, {
+"name": "Nothing",
+"triggers": "GraphNode3"
+} ]
+
+[dialogs]
+
+GraphNode={
+"content": "Is something wrong? Are we there yet?",
+"name_override": "",
+"next": "ChoiceNode",
+"title": "Hey!"
+}
+GraphNode2={
+"content": "It's alright, I'll try on my own, thanks for the bit of help!",
+"name_override": "",
+"next": "",
+"title": "I'll try on my own"
+}
+GraphNode3={
+"content": "Good! I'm right behind you",
+"name_override": "",
+"next": "",
+"title": "Carry on"
+}
+
+[config]
+
+connections=[ {
+"from": "Start",
+"from_port": 0,
+"to": "GraphNode",
+"to_port": 0
+}, {
+"from": "GraphNode",
+"from_port": 0,
+"to": "ChoiceNode",
+"to_port": 0
+}, {
+"from": "ChoiceNode",
+"from_port": 0,
+"to": "GraphNode2",
+"to_port": 0
+}, {
+"from": "ChoiceNode",
+"from_port": 1,
+"to": "GraphNode3",
+"to_port": 0
+} ]
+character_name="Default"

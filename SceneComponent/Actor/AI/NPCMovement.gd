@@ -22,12 +22,13 @@ var world_ref : WorldNavigator = null
 var path : Array = []
 var objective : Vector3 = Vector3.ZERO
 var delta_time : float = 0.0
+var delta_following : float = 3.4
 
 var current_target : GSAIAgentLocation = GSAIAgentLocation.new() 
 var facing_target : GSAIAgentLocation = GSAIAgentLocation.new()
 var special_target : GSAISteeringAgent = GSAISteeringAgent.new()
 var current_path : GSAIPath = GSAIPath.new([Vector3(1,1,1), Vector3(2,2,5)])
-
+var following : Spatial = null
 
 
 # First, we setup our NPCs personal space, so they don't hit each other
@@ -126,9 +127,9 @@ func _ready():
 	PathBlend.add(LookAhead, 1)
 	PathBlend.add(Avoid, 1) 
 	# The order these are added has importance so the NPC behaves like this:
-	Priority.add(PathBlend) #3 : Follow a path
 	Priority.add(FollowBlend)#Priority 1: Follow who I am supposed to (if i am supposed to)
 	Priority.add(FleeBlend)#2: Run away if i am supposed to
+	Priority.add(PathBlend) #3 : Follow a path
 	Priority.add(Face2)
 	
 	
@@ -146,6 +147,13 @@ func is_far_from_target() -> bool:
 	return false
 
 func follow_path_manual(delta):
+	if following != null:
+		var loc = following.global_transform.origin
+		loc = get_parent().get_parent().to_local(loc)
+		delta_following += delta
+		if delta_following > 2.0:
+			delta_following = 0.0
+			get_navpath(loc)
 	if PathBlend and FollowBlend and FleeBlend and Priority:
 		if (current_target.position - entity.translation).length() < arrival_tolerance:# and not uses_GSAIPATH:
 			var temp = path.pop_front()
@@ -164,10 +172,12 @@ func follow_path_manual(delta):
 			Priority.calculate_steering(acceleration)
 			_handle_npc_input(acceleration, delta)
 
+
 func _process_server(delta):
 	follow_path_manual(delta)
 	
 	
+
 		
 func _handle_npc_input(acceleration : GSAITargetAcceleration, _delta : float):
 	update_agent(acceleration.linear, acceleration.angular)
