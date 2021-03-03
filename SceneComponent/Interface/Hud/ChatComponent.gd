@@ -1,7 +1,11 @@
 extends MwSpatial
 onready var chatbox = $Chat
 
+#How long to wait before removing a message.
+export var message_ttl : int = 7200
+
 #History of chat messages.
+var history_timers : Array = []
 var history : PoolStringArray = PoolStringArray()
 
 func _init():
@@ -25,7 +29,22 @@ master func _send_chat_message(message: String) -> void:
 	Log.trace(self, "", "Sending chat message: %s" % m)
 	crpc("_receive_chat_message", m)
 	
+	#Add the message to the history. Start a timer to remove the message when it becomes too old.
 	history.append(m)
+	var timer : Timer = Timer.new()
+	add_child(timer)
+	timer.wait_time = message_ttl
+	timer.start()
+	timer.connect("timeout", self, "pop_history", [timer])
+	history_timers.append(timer)
+
+func pop_history(timer : Timer) -> void :
+	history.remove(0)
+	history_timers.remove(0)
+	if has_node(timer.get_path()) :
+		timer.queue_free()
+	else :
+		Log.error(self, "pop_history", "%s's should have had the calling timer as a child. This error might cause a memory leak" % get_path())
 
 master func sync_new_chat(chat_id : int) -> void :
 	rpc_id(chat_id, "client_chat_sync", history)
