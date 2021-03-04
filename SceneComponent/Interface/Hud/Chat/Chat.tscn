@@ -12,7 +12,6 @@
 [ext_resource path="res://Assets/Interface/Textures/MaterialDesign/T_IconChat.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Interface/Fonts/ThemeForFont/StandardMinus11.tres" type="Theme" id=11]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "Visibility"
 tracks/0/type = "value"
