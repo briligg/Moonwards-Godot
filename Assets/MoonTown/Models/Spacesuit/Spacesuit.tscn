@@ -3,3 +3,9 @@
 [ext_resource path="res://Assets/MoonTown/Models/Spacesuit/Spacesuit.glb" type="PackedScene" id=1]
 
 [node name="Spacesuit" instance=ExtResource( 1 )]
+
+[node name="Skeleton" parent="Female_Player" index="0"]
+bones/1/bound_children = [ NodePath("BoneAttachment") ]
+
+[node name="BoneAttachment" parent="Female_Player/Skeleton" index="0"]
+transform = Transform( 0.999947, 0.00371153, -0.00955485, -0.00644433, 0.952516, -0.304421, 0.00797128, 0.304466, 0.95249, 0.000732289, 0.869696, -0.0469174 )

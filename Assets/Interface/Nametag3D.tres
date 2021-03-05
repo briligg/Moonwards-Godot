@@ -1,6 +1,5 @@
-[gd_resource type="Theme" load_steps=19 format=2]
+[gd_resource type="Theme" load_steps=18 format=2]
 
-[ext_resource path="res://Assets/Interface/Fonts/MainMenuFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Interface/StyleBoxes/NametagPanel.tres" type="StyleBox" id=2]
 [ext_resource path="res://Assets/Interface/Fonts/Tres/NametagFont.tres" type="DynamicFont" id=3]
 
@@ -149,7 +148,7 @@ Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
 Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 Button/constants/hseparation = 20
-Button/fonts/font = ExtResource( 1 )
+Button/fonts/font = null
 Button/styles/disabled = SubResource( 1 )
 Button/styles/focus = SubResource( 2 )
 Button/styles/hover = SubResource( 3 )
