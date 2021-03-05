@@ -8,4 +8,4 @@
 bones/1/bound_children = [ NodePath("BoneAttachment") ]
 
 [node name="BoneAttachment" parent="Female_Player/Skeleton" index="0"]
-transform = Transform( 0.999947, 0.00371153, -0.00955485, -0.00644433, 0.952516, -0.304421, 0.00797128, 0.304466, 0.95249, 0.000732289, 0.869696, -0.0469174 )
+transform = Transform( 1, 4.83169e-13, 2.38418e-07, 7.2513e-08, 0.952626, -0.304144, -2.27124e-07, 0.304144, 0.952626, 2.84217e-14, 0.870343, -0.0475719 )
