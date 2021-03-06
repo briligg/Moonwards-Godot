@@ -112,6 +112,10 @@ func _integrate_server(args):
 		return
 	main_logic_routine(phys_state)
 
+#I should never be disabled.
+func disable() -> void :
+	enabled = true
+
 func main_logic_routine(phys_state):
 	reset_input()
 	if self.enabled:
