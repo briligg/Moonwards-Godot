@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/First_Gallery_Upper.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Carousel/Carousel.tscn" type="PackedScene" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://Assets/SharedAssets/Textures/ImageTextures/MoonTown2.png" type="Texture" id=22]
 [ext_resource path="res://Assets/SharedAssets/Textures/ImageTextures/movie-making.png" type="Texture" id=23]
 [ext_resource path="res://Assets/SharedAssets/Textures/ImageTextures/LibraryAssetCollection.png" type="Texture" id=24]
+[ext_resource path="res://Script/Graphics/MultiMeshConverter.gd" type="Script" id=25]
 
 [node name="First_Gallery_Upper" instance=ExtResource( 1 )]
 
@@ -378,69 +379,19 @@ layers = 992
 [node name="FirstGalleryConduitTop000" parent="LOD0" index="9"]
 layers = 992
 
-[node name="MoonwardsBoothMain_Opt" parent="LOD0" index="23"]
+[node name="MoonwardsBoothMain_Opt" parent="LOD0" index="32"]
 layers = 992
 
-[node name="MoonwardsOfficeSublevel_Opt" parent="LOD0" index="24"]
+[node name="MoonwardsOfficeSublevel_Opt" parent="LOD0" index="33"]
 layers = 992
 
-[node name="Passage-Mouth-North-BigAtrium-FirstGalley003" parent="LOD0" index="26"]
+[node name="Passage-Mouth-North-BigAtrium-FirstGalley003" parent="LOD0" index="35"]
 layers = 992
 
-[node name="Passage-Mouth-North-BigAtrium-FirstGalley_Opt" parent="LOD0" index="27"]
+[node name="Passage-Mouth-North-BigAtrium-FirstGalley_Opt" parent="LOD0" index="36"]
 layers = 992
 
-[node name="SupportCable000" parent="LOD0" index="35"]
-layers = 992
-
-[node name="LOD1" parent="." index="5"]
-visible = false
-
-[node name="First_Gallery_Upper_Beams001" parent="LOD1" index="0"]
-layers = 992
-
-[node name="First_Gallery_Upper_Exterior001" parent="LOD1" index="1"]
-layers = 992
-
-[node name="First_Gallery_Upper_Floors001" parent="LOD1" index="2"]
-layers = 992
-
-[node name="First_Gallery_Upper_Roof001" parent="LOD1" index="3"]
-layers = 992
-
-[node name="First_Gallery_Upper_Walls001" parent="LOD1" index="4"]
-layers = 992
-use_in_baked_light = true
-
-[node name="FirstGalleryColumns-Top002" parent="LOD1" index="5"]
-layers = 992
-
-[node name="FirstGalleryConduitUpper002" parent="LOD1" index="6"]
-layers = 992
-
-[node name="Passage-Mouth-North-BigAtrium-FirstGalley_Opt001" parent="LOD1" index="7"]
-layers = 992
-
-[node name="LOD2" parent="." index="6"]
-visible = false
-
-[node name="First_Gallery_Upper_Beams002" parent="LOD2" index="0"]
-layers = 992
-
-[node name="First_Gallery_Upper_Exterior002" parent="LOD2" index="1"]
-layers = 992
-
-[node name="First_Gallery_Upper_Floors002" parent="LOD2" index="2"]
-layers = 992
-
-[node name="First_Gallery_Upper_Roof002" parent="LOD2" index="3"]
-layers = 992
-
-[node name="First_Gallery_Upper_Walls002" parent="LOD2" index="4"]
-layers = 992
-use_in_baked_light = true
-
-[node name="Passage-Mouth-North-BigAtrium-FirstGalley_Opt002" parent="LOD2" index="5"]
+[node name="SupportCable000" parent="LOD0" index="46"]
 layers = 992
 
 [node name="Floors_First_Gallery" parent="Collision-Shapes" index="4"]
@@ -457,7 +408,7 @@ stairs_step_count = 18
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07, 0, 0 )
 stairs_step_count = 18
 
-[node name="Marker_Vertical-Stairs002" parent="." index="11"]
+[node name="Marker_Vertical-Stairs002" parent="." index="12"]
 transform = Transform( 0.0777978, 0, 0.996969, 0, 1, 0, -0.996969, 0, 0.0777978, 35.2925, -17.2804, -2.95547 )
 
 [node name="Vertical-Stairs-2a" parent="Marker_Vertical-Stairs002" index="0" instance=ExtResource( 4 )]
@@ -528,7 +479,7 @@ stairs_step_count = 20
 transform = Transform( 1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 1.07, 0, 0 )
 stairs_step_count = 19
 
-[node name="Marker_Rocket_Display" parent="." index="20"]
+[node name="Marker_Rocket_Display" parent="." index="21"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4549, -15.5153, -1.94232 )
 
 [node name="RocketDisplay" parent="Marker_Rocket_Display" index="0" instance=ExtResource( 5 )]
@@ -537,7 +488,10 @@ transform = Transform( -1.62921e-06, 0, 10, 0, 10, 0, -10, 0, -1.62921e-06, 0, 0
 [node name="Neighborhood-1" parent="Marker_Neighborhood" index="0" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0473042, -0.0408044, 0.0451846 )
 
-[node name="Marker_SharedFaciliites" parent="." index="22"]
+[node name="Marker_SharedFaciliites" parent="." index="23"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.608, -5.248, 3.042 )
 
 [node name="Shared-Facilities-1" parent="Marker_SharedFaciliites" index="0" instance=ExtResource( 7 )]
+
+[node name="Androids" parent="." index="26"]
+script = ExtResource( 25 )
