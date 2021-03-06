@@ -111,7 +111,7 @@ func _integrate_server(args):
 		update_server_values(phys_state)
 		return
 	main_logic_routine(phys_state)
-	
+
 func main_logic_routine(phys_state):
 	reset_input()
 	if self.enabled:

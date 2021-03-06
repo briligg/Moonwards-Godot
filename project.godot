@@ -69,6 +69,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/CameraController.gd"
 }, {
+"base": "AComponent",
+"class": "ControllableBodyComponent",
+"language": "GDScript",
+"path": "res://SceneComponent/Actor/ControllableBodyComponent.gd"
+}, {
 "base": "Spatial",
 "class": "Custom_Wheel",
 "language": "GDScript",
@@ -652,6 +657,7 @@ _global_script_class_icons={
 "AudioSignals": "",
 "BehaviorNode": "",
 "CameraController": "",
+"ControllableBodyComponent": "",
 "Custom_Wheel": "",
 "DoubleLabel": "",
 "DropDown": "",
