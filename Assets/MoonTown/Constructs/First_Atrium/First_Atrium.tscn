@@ -145,14 +145,24 @@ transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -83.930
 [node name="Hexpane_Window" parent="MMC-FirstAtrium/Marker_HexWindow5" index="0" instance=ExtResource( 3 )]
 
 [node name="VerticalStairs1" parent="MMC-FirstAtrium/Marker_Vertical-Stairs-1" index="0" instance=ExtResource( 4 )]
+stair_bottom_length = 2.4
 stairs_step_count = 2
+generate_editor_visual = true
 
 [node name="VerticalStairs" parent="MMC-FirstAtrium/Marker_Vertical-Stairs-2" index="0" instance=ExtResource( 4 )]
+stair_bottom_length = 2.4
 stairs_step_count = 2
 
 [node name="VerticalStairs3" parent="MMC-FirstAtrium/Marker_Vertical-Stairs-3" index="0" instance=ExtResource( 4 )]
+stair_bottom_length = 2.4
 stairs_step_count = 2
 
 [node name="VerticalStairsTunnelTop" parent="MMC-FirstAtrium/Marker_VerticalStair_TunnelTop" index="0" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 stairs_step_count = 4
+
+[node name="LOD1" parent="." index="11"]
+visible = false
+
+[node name="LOD2" parent="." index="12"]
+visible = false

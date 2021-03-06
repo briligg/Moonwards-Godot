@@ -24,12 +24,14 @@ material/0 = ExtResource( 4 )
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 display_info = "Interactable"
 title = "Title"
+stair_bottom_length = 2.4
 stairs_step_count = 3
 
 [node name="VerticalStairs_Pair_Top_S2" parent="Marker_VerticalStairs_Pair_Top_S" index="1" instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 1.497 )
 display_info = "Interactable"
 title = "Title"
+stair_bottom_length = 2.4
 stairs_step_count = 3
 
 [node name="Marker_VerticalStairs_Top_N" parent="." index="5"]
@@ -38,19 +40,22 @@ transform = Transform( 0.98945, 0, -0.144874, 0, 1, 0, 0.144874, 0, 0.98945, 7.7
 [node name="VerticalStairs_Top_N" parent="Marker_VerticalStairs_Top_N" index="0" instance=ExtResource( 2 )]
 display_info = "Interactable"
 title = "Title"
+stair_bottom_length = 2.4
 stairs_step_count = 3
 
 [node name="VerticalStairs_Pair_Pool_N" parent="Marker_VerticalStairs_Pair_Pool_N" index="0" instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0 )
 display_info = "Interactable"
 title = "Title"
-stairs_step_count = 9
+stair_bottom_length = 2.4
+stairs_step_count = 12
 
 [node name="VerticalStairs_Pair_Pool_N2" parent="Marker_VerticalStairs_Pair_Pool_N" index="1" instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, -1.497 )
 display_info = "Interactable"
 title = "Title"
-stairs_step_count = 9
+stair_bottom_length = 2.4
+stairs_step_count = 12
 
 [node name="VerticalStairs_Pool_S" parent="Marker_VerticalStairs_Pool_S" index="0" instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0 )
@@ -76,13 +81,13 @@ stairs_step_count = 1
 [node name="VerticalStairs_Pair_Entrance" parent="Marker_VerticalStairs_Pair_Entrance" index="0" instance=ExtResource( 2 )]
 display_info = "Interactable"
 title = "Title"
-stairs_step_count = 11
+stairs_step_count = 13
 
 [node name="VerticalStairs_Pair_Entrance2" parent="Marker_VerticalStairs_Pair_Entrance" index="1" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.497, 0, 0 )
 display_info = "Interactable"
 title = "Title"
-stairs_step_count = 11
+stairs_step_count = 13
 
 [node name="LOD1" parent="." index="11"]
 visible = false
