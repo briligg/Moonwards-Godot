@@ -59,7 +59,7 @@ blend_point_4/node = SubResource( 12 )
 blend_point_4/pos = Vector2( 0, 0 )
 
 [sub_resource type="AnimationNodeBlendTree" id=14]
-graph_offset = Vector2( -171.282, -7.77084 )
+graph_offset = Vector2( -126.282, 202.979 )
 nodes/Animation/node = SubResource( 1 )
 nodes/Animation/position = Vector2( 320, 240 )
 nodes/ClimbDirection/node = SubResource( 2 )
@@ -77,12 +77,11 @@ nodes/State/position = Vector2( 680, 100 )
 nodes/Walking/node = SubResource( 13 )
 nodes/Walking/position = Vector2( 320, 40 )
 nodes/output/position = Vector2( 1020, 160 )
-node_connections = [ "output", 0, "State", "State", 0, "Walking", "State", 1, "Animation", "State", 2, "ClimbDirection", "ClimbProgressUp", 0, "ClimbUp", "ClimbDirection", 0, "ClimbProgressUp", "ClimbDirection", 1, "ClimbProgressDown", "ClimbProgressDown", 0, "ClimbDown" ]
+node_connections = [ "output", 0, "State", "ClimbDirection", 0, "ClimbProgressUp", "ClimbDirection", 1, "ClimbProgressDown", "ClimbProgressDown", 0, "ClimbDown", "ClimbProgressUp", 0, "ClimbUp", "State", 0, "Walking", "State", 1, "Animation", "State", 2, "ClimbDirection" ]
 
 [node name="AnimationTree" type="AnimationTree"]
 tree_root = SubResource( 14 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/ClimbDirection/current = 0
 parameters/ClimbProgressDown/seek_position = 1.0
 parameters/ClimbProgressUp/seek_position = 1.0
