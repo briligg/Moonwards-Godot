@@ -5,7 +5,7 @@
 [ext_resource path="res://SceneComponent/Display/Billboard/Billboard.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tree/World/World.gd" type="Script" id=4]
 [ext_resource path="res://SceneComponent/Display/Tooltip/TooltipButton.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Tree/Actor/Player/Astronaut.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Tree/Actor/Player/Spacesuit.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/SharedAssets/Textures/ImageTextures/Intro-Slide-5.png" type="Texture" id=7]
 [ext_resource path="res://Assets/SharedAssets/Textures/ImageTextures/Intro-Slide-2.png" type="Texture" id=8]
 [ext_resource path="res://Assets/SharedAssets/Textures/ImageTextures/Intro-Slide-1.png" type="Texture" id=9]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Assets/SharedAssets/Textures/ImageTextures/RoverRace.png" type="Texture" id=19]
 [ext_resource path="res://Assets/SharedAssets/Textures/ImageTextures/MoonTown2.png" type="Texture" id=20]
 [ext_resource path="res://Assets/SharedAssets/Textures/ImageTextures/LibraryAssetCollection.png" type="Texture" id=21]
+
 
 [node name="TestScene" type="Spatial"]
 script = ExtResource( 4 )
