@@ -84,6 +84,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/GameLogic/Detect/Detectable/Detectable.gd"
 }, {
+"base": "Area",
+"class": "Detector",
+"language": "GDScript",
+"path": "res://Script/GameLogic/Detect/Detector/Detector.gd"
+}, {
 "base": "HBoxContainer",
 "class": "DoubleLabel",
 "language": "GDScript",
@@ -665,6 +670,7 @@ _global_script_class_icons={
 "ControllableBodyComponent": "",
 "Custom_Wheel": "",
 "Detectable": "",
+"Detector": "",
 "DoubleLabel": "",
 "DropDown": "",
 "DynamicVisibilityTrigger": "",

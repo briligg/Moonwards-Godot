@@ -1,4 +1,5 @@
 extends Area
+class_name Detector
 
 const DETECTED = "detected"
 signal detected()
