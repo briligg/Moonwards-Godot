@@ -13,6 +13,7 @@ script = ExtResource( 2 )
 required_entity = NodePath("Spacesuit")
 
 [node name="Interactable" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.910354, 0 )
 script = ExtResource( 1 )
 display_info = "Equip what is inside the station"
 title = "Equip"
@@ -22,6 +23,7 @@ network_mode = 3
 shape = SubResource( 1 )
 
 [node name="Detector" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.922918, 0 )
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 3 )
