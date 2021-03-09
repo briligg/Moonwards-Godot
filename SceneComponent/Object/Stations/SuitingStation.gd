@@ -18,3 +18,14 @@ func _ready() :
 	detector.connect(detector.DETECTED, self, "_detected")
 	
 	detector.set_required_entity(get_node(required_entity))
+	
+	var interact : Interactable = $Interactable
+	interact.connect("interacted_by", self, "_relay_interaction")
+
+func _relay_interaction(interactor : AEntity) -> void :
+	var entity : AEntity = get_node(required_entity)
+	if entity.has_node("ControllableBodyComponent") :
+		entity.get_node("ControllableBodyComponent").interact_with(interactor)
+	
+	else :
+		Log.error(self, "_relay_interaction", "%s required entity failed to have the correct node" % get_path())

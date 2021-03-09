@@ -72,3 +72,6 @@ func _been_interacted(interactor : Node) -> void :
 	is_being_controlled = true
 	
 	VisibilityManager.switch_context()
+
+func interact_with(aentity : AEntity) -> void :
+	$Interactable.interact_with(aentity)
