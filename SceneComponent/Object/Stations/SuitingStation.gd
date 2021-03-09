@@ -3,6 +3,9 @@ extends Spatial
 
 export var required_entity : NodePath 
 
+#The player currently inside the suit.
+var suited_human : AEntity
+
 onready var interactable : Interactable = $Interactable
 
 
@@ -24,8 +27,19 @@ func _ready() :
 
 func _relay_interaction(interactor : AEntity) -> void :
 	var entity : AEntity = get_node(required_entity)
-	if entity.has_node("ControllableBodyComponent") :
-		entity.get_node("ControllableBodyComponent").interact_with(interactor)
+	
+	if entity == interactor && suited_human != null :
+		entity.get_node("ControllableBodyComponent").interact_with(suited_human)
+		suited_human.enable()
+		suited_human.show()
+		suited_human = null
+	
+	elif entity.has_node("ControllableBodyComponent") :
+		suited_human = interactor
+		entity.get_node("ControllableBodyComponent").interact_with(suited_human)
+		
+		suited_human.disable()
+		suited_human.hide()
 	
 	else :
 		Log.error(self, "_relay_interaction", "%s required entity failed to have the correct node" % get_path())
