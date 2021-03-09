@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://SceneComponent/Actor/Humanoid/HumanoidInput.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SceneComponent/Interface/Nametag/NametagComponent.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://SceneComponent/Actor/AnchorMovement.tscn" type="PackedScene" id=10]
 [ext_resource path="res://SceneComponent/Actor/ModelComponent.tscn" type="PackedScene" id=11]
 [ext_resource path="res://SceneComponent/Actor/ControllableBodyComponent.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Script/GameLogic/Detect/Detectable/Detectable.gd" type="Script" id=13]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.35
@@ -21,6 +22,9 @@ absorbent = true
 [sub_resource type="CapsuleShape" id=2]
 radius = 0.23
 height = 1.22402
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 1, 1.15043, 1 )
 
 [node name="Spacesuit" type="RigidBody"]
 collision_layer = 3
@@ -40,7 +44,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.766189, 0 )
 allow_first_person = true
 dist = 3.0
 hide_in_first_person = false
-head_height = 0.8
 
 [node name="HumanoidInput" parent="." instance=ExtResource( 1 )]
 
@@ -73,3 +76,11 @@ visible = false
 mesh_path = NodePath("../../Astronaut/Model/Female_Player/Skeleton/FemaleBody-LOD0")
 
 [node name="ControllableBodyComponent" parent="." instance=ExtResource( 12 )]
+direct_interaction_capable = false
+
+[node name="Detectable" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.917301, 0 )
+script = ExtResource( 13 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Detectable"]
+shape = SubResource( 3 )

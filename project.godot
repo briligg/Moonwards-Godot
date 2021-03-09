@@ -2279,6 +2279,7 @@ look_right={
 3d_physics/layer_11="FP Clickables"
 3d_physics/layer_16="Interactions"
 3d_physics/layer_17="Workstations"
+3d_physics/layer_20="Detections"
 
 [logging]
 

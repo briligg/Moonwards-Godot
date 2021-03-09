@@ -2,6 +2,9 @@ extends AComponent
 class_name ControllableBodyComponent
 
 
+#Determines if the player can interact directly with the body.
+export(bool) var direct_interaction_capable : bool = true
+
 var original_peer_id : int = -1
 var controller_peer_id : int = -1
 
@@ -20,9 +23,13 @@ func _ready() -> void :
 	original_peer_id = entity.owner_peer_id
 	controller_peer_id = entity.owner_peer_id
 	
-	$Interactable.connect("interacted_by", self, "been_interacted")
+	#Disable collisions if you are not suppose to interact directly with the component.
+	if not direct_interaction_capable :
+		$Interactable.set_active(false)
+	
+	$Interactable.connect("interacted_by", self, "_been_interacted")
 
-func been_interacted(interactor : Node) -> void :
+func _been_interacted(interactor : Node) -> void :
 	#Return control to human player.
 	if  interactor.owner_peer_id == self.controller_peer_id :
 		#Disable my entity and get interactor ready.
