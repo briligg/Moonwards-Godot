@@ -54,7 +54,8 @@ func _been_interacted(interactor : Node) -> void :
 		return
 	
 	#Do nothing when someone else is already controlling me.
-	if is_being_controlled :
+	#Also do nothing if the interacting body is a spacesuit lol. Temp solution until Interactors have their own layering system.
+	if is_being_controlled  :
 		return
 	
 	#Give control to the new interactor..

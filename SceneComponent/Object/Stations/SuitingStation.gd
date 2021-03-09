@@ -28,12 +28,18 @@ func _ready() :
 func _relay_interaction(interactor : AEntity) -> void :
 	var entity : AEntity = get_node(required_entity)
 	
+	#Return control to the human that started me.
 	if entity == interactor && suited_human != null :
 		entity.get_node("ControllableBodyComponent").interact_with(suited_human)
 		suited_human.enable()
 		suited_human.show()
 		suited_human = null
 	
+	#Do nothing if the interactor is another spacesuit.
+	elif interactor.has_node("ControllableBodyComponent") :
+		return
+	
+	#Take control of a spacesuit. Make sure that the interactor is a human.
 	elif entity.has_node("ControllableBodyComponent") :
 		suited_human = interactor
 		entity.get_node("ControllableBodyComponent").interact_with(suited_human)
