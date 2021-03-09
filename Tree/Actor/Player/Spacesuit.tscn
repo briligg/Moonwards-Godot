@@ -20,8 +20,8 @@ bounce = 0.1
 absorbent = true
 
 [sub_resource type="CapsuleShape" id=2]
-radius = 0.23
-height = 1.22402
+radius = 0.437657
+height = 1.08466
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 1, 1.15043, 1 )
@@ -54,7 +54,7 @@ movement_speed = 4.2
 [node name="AnimationController" parent="." instance=ExtResource( 4 )]
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0175913, 0.839999, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0175913, 0.967364, 0 )
 shape = SubResource( 2 )
 __meta__ = {
 "_editor_description_": ""
