@@ -56,3 +56,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.95283, -6.12617, 0 )
 
 [node name="SuitingStation" parent="." instance=ExtResource( 22 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.83298, -5.97229, -1.32654 )
+required_entity = NodePath("../Astronaut")

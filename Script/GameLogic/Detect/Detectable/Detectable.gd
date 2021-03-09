@@ -1,4 +1,5 @@
 extends Area
+class_name Detectable
 
 
 func _init():
