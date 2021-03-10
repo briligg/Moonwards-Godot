@@ -5,89 +5,17 @@
 
 [node name="Spacesuit" instance=ExtResource( 1 )]
 
-[node name="FemaleBody-LOD0" parent="Female_Player" index="0"]
+[node name="Skeleton" parent="Female_Player" index="0"]
+bones/1/bound_children = [ NodePath("BoneAttachment") ]
+
+[node name="BoneAttachment" parent="Female_Player/Skeleton" index="0"]
+transform = Transform( 0.999964, 0.000480933, -0.00852231, -0.00305284, 0.952523, -0.304451, 0.00797128, 0.304466, 0.95249, 2.84217e-14, 0.86929, -0.0470916 )
+
+[node name="FemaleBody-LOD0" parent="Female_Player/Skeleton" index="1"]
 visible = false
 
-[node name="MaleBody-LOD0" parent="Female_Player" index="1"]
+[node name="MaleBody-LOD0" parent="Female_Player/Skeleton" index="2"]
 visible = false
-
-[node name="spine" parent="Female_Player/Root" index="0"]
-transform = Transform( 0.999964, 0.000480563, -0.00852219, 0.00797128, 0.304466, 0.95249, 0.00305245, -0.952523, 0.304451, -3.38514e-07, -0.0470916, -0.86929 )
-
-[node name="spine001" parent="Female_Player/Root/spine" index="0"]
-transform = Transform( 0.999418, -0.0338367, 0.00426241, 0.0324863, 0.98258, 0.182977, -0.0103795, -0.182732, 0.983108, -8.50743e-15, 0.102386, 1.11759e-08 )
-
-[node name="spine002" parent="Female_Player/Root/spine/spine001" index="0"]
-transform = Transform( 1, 3.07654e-08, -2.36178e-07, -3.1914e-11, 0.991639, 0.129039, 2.38173e-07, -0.129039, 0.991639, 1.60113e-15, 0.100785, 5.58794e-09 )
-
-[node name="spine003" parent="Female_Player/Root/spine/spine001/spine002" index="0"]
-transform = Transform( 1, -9.31316e-10, 2.38419e-07, 1.28385e-08, 0.998752, -0.0499474, -2.38075e-07, 0.0499474, 0.998752, 1.37643e-21, 0.140851, -5.95419e-09 )
-
-[node name="spine005" parent="Female_Player/Root/spine/spine001/spine002/spine003" index="0"]
-transform = Transform( 1, -2.598e-08, 1.88548e-09, 2.60308e-08, 0.994045, -0.108968, 9.56739e-10, 0.108968, 0.994045, -5.26322e-15, 0.169805, 2.34189e-08 )
-
-[node name="spine006" parent="Female_Player/Root/spine/spine001/spine002/spine003/spine005" index="0"]
-transform = Transform( 1, 3.57762e-08, -2.35601e-07, 9.24157e-10, 0.988077, 0.153963, 2.383e-07, -0.153963, 0.988077, 7.74927e-15, 0.0760238, -2.85983e-08 )
-
-[node name="upper_armL" parent="Female_Player/Root/spine/spine001/spine002/spine003/shoulderL" index="0"]
-transform = Transform( -0.746642, -0.11278, 0.655597, -0.619643, 0.476445, -0.623733, -0.242011, -0.87194, -0.425617, 0.00385821, 0.145191, -0.000504622 )
-
-[node name="forearmL" parent="Female_Player/Root/spine/spine001/spine002/spine003/shoulderL/upper_armL" index="0"]
-transform = Transform( 0.777886, 0.541933, -0.318123, -0.535236, 0.306128, -0.787278, -0.329266, 0.782683, 0.528195, -1.88911e-08, 0.250018, -6.4982e-09 )
-
-[node name="handL" parent="Female_Player/Root/spine/spine001/spine002/spine003/shoulderL/upper_armL/forearmL" index="0"]
-transform = Transform( 0.668107, -0.336486, 0.663634, 0.597569, 0.774069, -0.209116, -0.443334, 0.536279, 0.718234, -3.68094e-08, 0.231782, -1.40423e-08 )
-
-[node name="upper_armR" parent="Female_Player/Root/spine/spine001/spine002/spine003/shoulderR" index="0"]
-transform = Transform( -0.30472, 0.24217, -0.92114, 0.945501, 0.193464, -0.261917, 0.114779, -0.95075, -0.287925, -0.00385824, 0.145191, -0.000504375 )
-
-[node name="forearmR" parent="Female_Player/Root/spine/spine001/spine002/spine003/shoulderR/upper_armR" index="0"]
-transform = Transform( 0.59233, -0.547531, 0.591062, 0.540764, -0.273649, -0.795419, 0.59726, 0.790776, 0.133994, 4.70549e-09, 0.250019, 5.34368e-08 )
-
-[node name="handR" parent="Female_Player/Root/spine/spine001/spine002/spine003/shoulderR/upper_armR/forearmR" index="0"]
-transform = Transform( 0.903709, -0.261427, -0.339066, 0.305819, 0.948388, 0.083871, 0.29964, -0.179488, 0.937016, 9.05572e-08, 0.231782, -1.49714e-08 )
-
-[node name="thighL" parent="Female_Player/Root/spine" index="1"]
-transform = Transform( 0.994577, 0.0352101, -0.0978573, -0.00530833, -0.92253, -0.385892, -0.103863, 0.384317, -0.917347, 0.0844574, 0.0495053, 0.0229144 )
-
-[node name="shinL" parent="Female_Player/Root/spine/thighL" index="0"]
-transform = Transform( 1, -3.92748e-08, -2.33453e-07, 2.28995e-10, 0.986302, -0.164949, 2.36734e-07, 0.164949, 0.986302, -1.48136e-08, 0.448961, 5.95734e-10 )
-
-[node name="footL" parent="Female_Player/Root/spine/thighL/shinL" index="0"]
-transform = Transform( 0.999983, 0.00031017, 0.00576614, -0.00540466, 0.401883, 0.915675, -0.0020333, -0.915691, 0.401878, 4.11347e-10, 0.401177, 2.76678e-10 )
-
-[node name="thighR" parent="Female_Player/Root/spine" index="2"]
-transform = Transform( 0.996387, -0.0265787, 0.0806627, 0.00613305, -0.92477, -0.380478, 0.0847067, 0.379596, -0.92127, -0.0844574, 0.0495054, 0.0229143 )
-
-[node name="shinR" parent="Female_Player/Root/spine/thighR" index="0"]
-transform = Transform( 1, -1.70902e-08, -2.29424e-07, -1.74298e-08, 0.988743, -0.149625, 2.29399e-07, 0.149625, 0.988743, 8.7697e-11, 0.448961, -1.6981e-09 )
-
-[node name="footR" parent="Female_Player/Root/spine/thighR/shinR" index="0"]
-transform = Transform( 0.999983, -0.000310284, -0.00576613, 0.00540469, 0.401884, 0.915675, 0.00203319, -0.915691, 0.401879, 1.56992e-09, 0.401177, 1.568e-09 )
-
-[node name="foot_IKL" parent="Female_Player/Root" index="1"]
-transform = Transform( 1.24217, 2.75854e-07, -3.36533e-07, 3.4708e-07, -0.999944, 0.0106144, -4.14625e-07, -0.0106209, -0.999329, 0.10491, -0.00298303, -0.0622561 )
-
-[node name="Knee_PoleL" parent="Female_Player/Root/foot_IKL" index="0"]
-transform = Transform( 1, 2.80415e-07, 1.11314e-05, 2.04972e-07, -0.999977, 0.00680137, 1.1113e-05, -0.0067891, -1.00178, 3.16605e-08, -0.0971375, 0.400377 )
-
-[node name="foot_IKR" parent="Female_Player/Root" index="2"]
-transform = Transform( 1.24217, -2.75855e-07, -4.41244e-07, -3.36814e-07, -0.999944, 0.0106144, -5.52045e-07, -0.0106209, -0.999329, -0.10491, -0.00298303, -0.062256 )
-
-[node name="Knee_PoleR" parent="Female_Player/Root/foot_IKR" index="0"]
-transform = Transform( 1, -2.72142e-07, -1.11285e-05, -1.9672e-07, -0.999977, 0.00680137, -1.111e-05, -0.0067891, -1.00178, 6.12088e-09, -0.0971375, 0.400377 )
-
-[node name="hand_IKL" parent="Female_Player/Root" index="3"]
-transform = Transform( 0.263519, 0.123293, -0.956744, 0.0170709, -0.992239, -0.123166, -0.964519, 0.0161237, -0.263575, 0.167504, -0.0285648, -0.971256 )
-
-[node name="hand_IKR" parent="Female_Player/Root" index="4"]
-transform = Transform( 0.26352, -0.123293, 0.956744, -0.017071, -0.99224, -0.123166, 0.964519, 0.0161238, -0.263576, -0.111942, 0.108649, -1.08759 )
-
-[node name="Elbow_PoleL" parent="Female_Player/Root" index="5"]
-transform = Transform( 0.99944, 0.0229789, -3.89312e-07, 0.0229721, -0.999736, -8.94899e-09, -3.89299e-07, 6.61249e-13, -1, 0.241006, -0.301296, -1.24028 )
-
-[node name="Elbow_PoleR" parent="Female_Player/Root" index="6"]
-transform = Transform( 0.99944, -0.0229789, -3.89312e-07, -0.0229721, -0.999736, 8.94899e-09, -3.89299e-07, -6.61249e-13, -1, -0.110599, -0.0448338, -1.18867 )
 
 [node name="AnimationTree" parent="." index="2" instance=ExtResource( 2 )]
 active = true

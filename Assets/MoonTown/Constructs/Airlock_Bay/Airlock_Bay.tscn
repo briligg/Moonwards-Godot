@@ -231,7 +231,13 @@ transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -70.826
 
 [node name="SuitingStation" parent="Spacesuits/Spacesuit008" index="0" instance=ExtResource( 6 )]
 
+[node name="Spacesuit009" parent="Spacesuits" index="7"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -70.8261, 1.55959, -5.2923 )
+
 [node name="SuitingStation" parent="Spacesuits/Spacesuit009" index="0" instance=ExtResource( 6 )]
+
+[node name="Spacesuit010" parent="Spacesuits" index="8"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -50.8306, 1.55959, -6.39372 )
 
 [node name="SuitingStation" parent="Spacesuits/Spacesuit010" index="0" instance=ExtResource( 6 )]
 
