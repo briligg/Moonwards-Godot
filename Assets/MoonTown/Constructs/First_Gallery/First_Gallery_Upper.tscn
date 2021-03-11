@@ -415,7 +415,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07, 0, 0 )
 stair_bottom_length = 2.4
 stairs_step_count = 24
 
-[node name="Marker_Vertical-Stairs002" parent="." index="12"]
+[node name="Marker_Vertical-Stairs002" parent="." index="11"]
 transform = Transform( 0.0777978, 0, 0.996969, 0, 1, 0, -0.996969, 0, 0.0777978, 35.2925, -17.2804, -2.95547 )
 
 [node name="Vertical-Stairs-2a" parent="Marker_Vertical-Stairs002" index="0" instance=ExtResource( 4 )]
@@ -464,7 +464,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07, 0, 0 )
 stair_bottom_length = 2.4
 stairs_step_count = 24
 
-[node name="Marker_Vertical-Stairs007" parent="." index="17"]
+[node name="Marker_Vertical-Stairs007" parent="." index="16"]
 transform = Transform( 0.996969, 0, -0.0777979, 0, 1, 0, 0.0777979, 0, 0.996969, -38.565, -17.2798, 5.83889 )
 
 [node name="Vertical-Stairs-7a" parent="Marker_Vertical-Stairs007" index="0" instance=ExtResource( 4 )]
@@ -506,7 +506,7 @@ stairs_step_count = 27
 transform = Transform( 1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 1.07, 0, 0 )
 stairs_step_count = 27
 
-[node name="Marker_Rocket_Display" parent="." index="21"]
+[node name="Marker_Rocket_Display" parent="." index="20"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4549, -15.5153, -1.94232 )
 
 [node name="RocketDisplay" parent="Marker_Rocket_Display" index="0" instance=ExtResource( 5 )]
@@ -515,7 +515,7 @@ transform = Transform( -1.62921e-06, 0, 10, 0, 10, 0, -10, 0, -1.62921e-06, 0, 0
 [node name="Neighborhood-1" parent="Marker_Neighborhood" index="0" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0473042, -0.0408044, 0.0451846 )
 
-[node name="Marker_SharedFaciliites" parent="." index="23"]
+[node name="Marker_SharedFaciliites" parent="." index="22"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.608, -5.248, 3.042 )
 
 [node name="Shared-Facilities-1" parent="Marker_SharedFaciliites" index="0" instance=ExtResource( 7 )]
