@@ -59,7 +59,9 @@ func _relay_interaction(interactor : AEntity) -> void :
 func _suit_control_lost(component) -> void :
 	component.get_parent().global_transform.origin = global_transform.origin
 	component.get_parent().rotation_degrees = Vector3.ZERO
-	component.get_parent().look_dir = Vector3.FORWARD
+	component.get_parent().rset("look_dir", Vector3.FORWARD)
+	component.get_parent().rset_id(1, "mlook_dir", Vector3.FORWARD)
+	
 
 
 

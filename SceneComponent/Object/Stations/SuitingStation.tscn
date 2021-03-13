@@ -17,6 +17,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.910354, 0 )
 script = ExtResource( 1 )
 display_info = "Equip what is inside the station"
 title = "Equip"
+is_networked = false
 network_mode = 3
 
 [node name="CollisionShape2" type="CollisionShape" parent="Interactable"]
