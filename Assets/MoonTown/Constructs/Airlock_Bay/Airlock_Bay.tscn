@@ -200,91 +200,109 @@ transform = Transform( -4.88762e-07, 0, -3, 0, 3, 0, 3, 0, -4.88762e-07, 0, 0, 0
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -130.831, 1.55959, -6.39372 )
 
 [node name="SuitingStation" parent="Spacesuits/Spacesuit" index="0" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="Spacesuit001" parent="Spacesuits" index="1"]
 transform = Transform( -1.84251e-07, 0, -1, 0, 1, 0, 1.13093, 0, -1.62921e-07, -130.831, 1.55959, -5.2923 )
 
 [node name="SuitingStation" parent="Spacesuits/Spacesuit001" index="0" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="Spacesuit004" parent="Spacesuits" index="2"]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -110.829, 1.55959, -6.39372 )
 
 [node name="SuitingStation" parent="Spacesuits/Spacesuit004" index="0" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="Spacesuit005" parent="Spacesuits" index="3"]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -110.829, 1.55959, -5.2923 )
 
 [node name="SuitingStation" parent="Spacesuits/Spacesuit005" index="0" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="Spacesuit006" parent="Spacesuits" index="4"]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -90.8276, 1.55959, -6.39372 )
 
 [node name="SuitingStation" parent="Spacesuits/Spacesuit006" index="0" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="Spacesuit007" parent="Spacesuits" index="5"]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -90.8276, 1.55959, -5.2923 )
 
 [node name="SuitingStation" parent="Spacesuits/Spacesuit007" index="0" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="Spacesuit008" parent="Spacesuits" index="6"]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -70.8261, 1.55959, -6.39372 )
 
 [node name="SuitingStation" parent="Spacesuits/Spacesuit008" index="0" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="Spacesuit009" parent="Spacesuits" index="7"]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -70.8261, 1.55959, -5.2923 )
 
 [node name="SuitingStation" parent="Spacesuits/Spacesuit009" index="0" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="Spacesuit010" parent="Spacesuits" index="8"]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -50.8306, 1.55959, -6.39372 )
 
 [node name="SuitingStation" parent="Spacesuits/Spacesuit010" index="0" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="Spacesuit011" parent="Spacesuits" index="9"]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -50.8306, 1.55959, -5.2923 )
 
 [node name="SuitingStation" parent="Spacesuits/Spacesuit011" index="0" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="Spacesuit012" parent="Spacesuits" index="10"]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -53.9355, 1.55959, 5.43545 )
 
 [node name="SuitingStation" parent="Spacesuits/Spacesuit012" index="0" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="Spacesuit013" parent="Spacesuits" index="11"]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -53.9355, 1.55959, 6.53687 )
 
 [node name="SuitingStation" parent="Spacesuits/Spacesuit013" index="0" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="Spacesuit014" parent="Spacesuits" index="12"]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -73.97, 1.55959, 5.43545 )
 
 [node name="SuitingStation" parent="Spacesuits/Spacesuit014" index="0" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="Spacesuit015" parent="Spacesuits" index="13"]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -73.97, 1.55959, 6.53687 )
 
 [node name="SuitingStation" parent="Spacesuits/Spacesuit015" index="0" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="Spacesuit016" parent="Spacesuits" index="14"]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -94.0046, 1.55959, 5.43545 )
 
 [node name="SuitingStation" parent="Spacesuits/Spacesuit016" index="0" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="Spacesuit017" parent="Spacesuits" index="15"]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -94.0046, 1.55959, 6.53687 )
 
 [node name="SuitingStation" parent="Spacesuits/Spacesuit017" index="0" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="Spacesuit018" parent="Spacesuits" index="16"]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -114.039, 1.55959, 5.43545 )
 
 [node name="SuitingStation" parent="Spacesuits/Spacesuit018" index="0" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -2.38419e-06, 0, 0 )
 
 [node name="Spacesuit019" parent="Spacesuits" index="17"]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -114.039, 1.55959, 6.53687 )
 
 [node name="SuitingStation" parent="Spacesuits/Spacesuit019" index="0" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="LOD1" parent="." index="25"]
 visible = false
