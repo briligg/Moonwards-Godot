@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://SceneComponent/Actor/Humanoid/HumanoidInput.tscn" type="PackedScene" id=1]
+[ext_resource path="res://SceneComponent/Interface/Nametag/NametagComponent.tscn" type="PackedScene" id=2]
 [ext_resource path="res://SceneComponent/Actor/CameraController.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SceneComponent/Actor/Humanoid/AnimationController.tscn" type="PackedScene" id=4]
 [ext_resource path="res://SceneComponent/Actor/Humanoid/HumanoidMovement.tscn" type="PackedScene" id=5]
@@ -76,3 +77,6 @@ script = ExtResource( 13 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Detectable"]
 shape = SubResource( 3 )
+
+[node name="NametagComponent" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.21618, 0 )
