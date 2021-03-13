@@ -24,6 +24,10 @@ func _ready() :
 	
 	var interact : Interactable = $Interactable
 	interact.connect("interacted_by", self, "_relay_interaction")
+	
+	#Listen to the spacesuit for when the entity removes control.
+	var comp = $Spacesuit/ControllableBodyComponent
+	comp.connect(comp.CONTROL_LOST, self, "_suit_control_lost", [comp])
 
 func _relay_interaction(interactor : AEntity) -> void :
 	var entity : AEntity = get_node(required_entity)
@@ -34,6 +38,7 @@ func _relay_interaction(interactor : AEntity) -> void :
 		suited_human.enable()
 		suited_human.show()
 		suited_human = null
+		#Suit_control_lost will get called as well.
 	
 	#Do nothing if the interactor is another spacesuit.
 	elif interactor.has_node("ControllableBodyComponent") :
@@ -49,3 +54,12 @@ func _relay_interaction(interactor : AEntity) -> void :
 	
 	else :
 		Log.error(self, "_relay_interaction", "%s required entity failed to have the correct node" % get_path())
+
+#Called from a signal.
+func _suit_control_lost(component) -> void :
+	component.get_parent().global_transform.origin = global_transform.origin
+	component.get_parent().rotation_degrees = Vector3.ZERO
+	component.get_parent().look_dir = Vector3.FORWARD
+
+
+
