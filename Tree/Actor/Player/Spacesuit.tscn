@@ -37,6 +37,7 @@ axis_lock_angular_z = true
 script = ExtResource( 6 )
 
 [node name="Model" parent="." instance=ExtResource( 7 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="CameraController" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.766189, 0 )
