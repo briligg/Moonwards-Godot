@@ -56,6 +56,8 @@ func _been_interacted(interactor : Node) -> void :
 		VisibilityManager.reverse_context()
 		
 		emit_signal(CONTROL_LOST)
+		var net : NetworkSignals = Signals.Network
+		net.disconnect(net.CLIENT_DISCONNECTED, self, "_client_disconnected")
 		return
 	
 	#Do nothing when someone else is already controlling me.
@@ -78,6 +80,15 @@ func _been_interacted(interactor : Node) -> void :
 	is_being_controlled = true
 	
 	VisibilityManager.switch_context()
+	
+	#Handle when the player disconnects
+	var net : NetworkSignals = Signals.Network
+	net.connect(net.CLIENT_DISCONNECTED, self, "_client_disconnected")
+
+func _client_disconnected(peer_id) -> void :
+	#If controlling entity disconnects, return control to normal.
+	if peer_id == entity.owner_peer_id :
+		_been_interacted(entity)
 
 func interact_with(aentity : AEntity) -> void :
 	$Interactable.interact_with(aentity)

@@ -8,3 +8,4 @@ script = ExtResource( 2 )
 
 [node name="Interactable" type="Area" parent="."]
 script = ExtResource( 1 )
+network_mode = 2
