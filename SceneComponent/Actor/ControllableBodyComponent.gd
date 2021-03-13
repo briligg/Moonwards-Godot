@@ -5,6 +5,10 @@ class_name ControllableBodyComponent
 #Determines if the player can interact directly with the body.
 export(bool) var direct_interaction_capable : bool = true
 
+#Emitted when someone has lost control of me. Either from interaction or disconnect
+signal control_lost()
+const CONTROL_LOST = "control_lost"
+
 var original_peer_id : int = -1
 var controller_peer_id : int = -1
 
@@ -48,9 +52,10 @@ func _been_interacted(interactor : Node) -> void :
 		controlling_entity.get_component("Camera").camera.current = true
 		controlling_entity.get_component("Interactor").grab_focus()
 		
-		
 		#Let visibility manager know we switched context.
 		VisibilityManager.reverse_context()
+		
+		emit_signal(CONTROL_LOST)
 		return
 	
 	#Do nothing when someone else is already controlling me.
