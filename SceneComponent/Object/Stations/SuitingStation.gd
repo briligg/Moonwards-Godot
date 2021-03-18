@@ -51,6 +51,9 @@ func _relay_interaction(interactor : AEntity) -> void :
 		
 		suited_human.disable()
 		suited_human.hide()
+		
+		#Allow the spacesuit to move around.
+		entity.mode = RigidBody.MODE_CHARACTER
 	
 	else :
 		Log.error(self, "_relay_interaction", "%s required entity failed to have the correct node" % get_path())
@@ -62,6 +65,8 @@ func _suit_control_lost(component) -> void :
 	component.get_parent().rset("look_dir", Vector3.FORWARD)
 	component.get_parent().rset_id(1, "mlook_dir", Vector3.FORWARD)
 	
+	var my_entity : AEntity = get_node(required_entity)
+	my_entity.mode = RigidBody.MODE_STATIC
 
 
 

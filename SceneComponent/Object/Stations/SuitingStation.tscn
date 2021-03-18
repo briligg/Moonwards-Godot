@@ -33,3 +33,4 @@ script = ExtResource( 3 )
 shape = SubResource( 1 )
 
 [node name="Spacesuit" parent="." instance=ExtResource( 4 )]
+mode = 1
