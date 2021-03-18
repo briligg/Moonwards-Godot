@@ -9,6 +9,10 @@ export(bool) var direct_interaction_capable : bool = true
 signal control_lost()
 const CONTROL_LOST = "control_lost"
 
+#Emitted when someone takes control of me.
+signal control_taken(aentity_taking_control)
+const CONTROL_TAKEN = "control_taken"
+
 var original_peer_id : int = -1
 var controller_peer_id : int = -1
 
@@ -48,7 +52,6 @@ func _been_interacted(interactor : Node) -> void :
 		#Let visibility manager know we switched context.
 		VisibilityManager.reverse_context()
 		
-		emit_signal(CONTROL_LOST)
 		var net : NetworkSignals = Signals.Network
 		net.disconnect(net.CLIENT_DISCONNECTED, self, "_client_disconnected")
 		return
@@ -83,6 +86,8 @@ sync func _sync_return_control() -> void :
 	entity.owner_peer_id = original_peer_id
 	controller_peer_id = original_peer_id
 	is_being_controlled = false
+	
+	emit_signal(CONTROL_LOST)
 
 #Called when someone else takes control of me.
 sync func _sync_take_control(interactor_path : NodePath) -> void :
@@ -98,6 +103,8 @@ sync func _sync_take_control(interactor_path : NodePath) -> void :
 	entity.get_component("NametagComponent").set_name(interactor.entity_name)
 	entity.enable()
 	is_being_controlled = true
+	
+	emit_signal(CONTROL_TAKEN, interactor)
 
 func _client_disconnected(peer_id) -> void :
 	#If controlling entity disconnects, return control to normal.
