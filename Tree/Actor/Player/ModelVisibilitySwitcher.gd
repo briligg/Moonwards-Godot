@@ -24,11 +24,14 @@ func _control_taken(taker : AEntity) -> void :
 		model = models_parent.get_node("FemaleBody-LOD0")
 		my_model = get_node(MODEL_PATH+"FemaleBody-LOD0")
 	
-	#Switch visibility.
-	model.hide()
+	#Switch visibility to my model. I do not need to call taker model
 	my_model.show()
 	
 	#Update the model to have correct materials.
 	for i in range(0,4) :
 		var prop : String = "material/%s"%str(i)
 		my_model.set(prop, model.get(prop))
+
+func _control_lost() -> void :
+	get_node(MODEL_PATH+"MaleBody-LOD0").hide()
+	get_node(MODEL_PATH+"FemaleBody-LOD0").hide()
