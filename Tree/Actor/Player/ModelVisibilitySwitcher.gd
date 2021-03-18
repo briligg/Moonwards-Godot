@@ -27,3 +27,8 @@ func _control_taken(taker : AEntity) -> void :
 	#Switch visibility.
 	model.hide()
 	my_model.show()
+	
+	#Update the model to have correct materials.
+	for i in range(0,4) :
+		var prop : String = "material/%s"%str(i)
+		my_model.set(prop, model.get(prop))
