@@ -2,6 +2,7 @@ extends Spatial
 
 
 export var required_entity : NodePath 
+export var prop_path : NodePath = "../Spacesuit_Prop"
 
 #The player currently inside the suit.
 var suited_human : AEntity
@@ -68,10 +69,17 @@ func _suit_control_lost(component) -> void :
 	
 	var my_entity : AEntity = get_node(required_entity)
 	my_entity.mode = RigidBody.MODE_KINEMATIC
+	
+	#Show the prop again.
+	my_entity.hide()
+	get_node(prop_path).show()
 
 func _suit_control_taken(_interactor : AEntity) -> void :
 	var my_entity : AEntity = get_node(required_entity)
 	my_entity.mode = RigidBody.MODE_CHARACTER
+	
+	get_node(required_entity).show()
+	get_node(prop_path).hide()
 
 
 
