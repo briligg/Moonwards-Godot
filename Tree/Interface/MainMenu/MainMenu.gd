@@ -3,9 +3,6 @@ extends CanvasLayer
 	MainMenu Singleton Scene Script
 """
 
-#Const variable nodes.
-onready var CUSTOM_SERVER_ADDRESS_FIELD : TextEdit = get_node( "HBoxContainer/Panel/Tab/DestinationTab/StartGame/InputServer/Ipv4Address") setget _crash
-
 #The two nodes I need to handle.
 onready var start : Control = $VBoxContainer
 onready var full_window : Tabs = $FullWindow

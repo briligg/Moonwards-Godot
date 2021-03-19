@@ -141,7 +141,7 @@ script = ExtResource( 1 )
 
 [node name="Background" parent="." instance=ExtResource( 2 )]
 image_wait_time = 6.0
-textures = [ ExtResource( 46 ), ExtResource( 48 ), ExtResource( 52 ), ExtResource( 40 ), ExtResource( 36 ), ExtResource( 45 ), ExtResource( 57 ), ExtResource( 43 ), ExtResource( 37 ), ExtResource( 44 ), ExtResource( 47 ), ExtResource( 41 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 35 ), ExtResource( 38 ), ExtResource( 51 ), ExtResource( 39 ), ExtResource( 56 ), ExtResource( 50 ), ExtResource( 42 ), ExtResource( 49 ), ExtResource( 55 ) ]
+textures = [ ExtResource( 55 ), ExtResource( 39 ), ExtResource( 45 ), ExtResource( 50 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 37 ), ExtResource( 54 ), ExtResource( 51 ), ExtResource( 46 ), ExtResource( 38 ), ExtResource( 49 ), ExtResource( 53 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 57 ), ExtResource( 48 ), ExtResource( 40 ), ExtResource( 43 ), ExtResource( 47 ), ExtResource( 56 ), ExtResource( 42 ), ExtResource( 52 ) ]
 
 [node name="VBoxContainer" type="Control" parent="."]
 anchor_right = 1.0

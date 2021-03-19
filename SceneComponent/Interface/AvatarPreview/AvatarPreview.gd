@@ -11,7 +11,6 @@ var _shirt_mat : SpatialMaterial
 var _skin_mat : SpatialMaterial
 var _hair_mat : SpatialMaterial
 var _shoes_mat : SpatialMaterial
-var _selected_mat : SpatialMaterial = load("res://Tree/Interface/MainMenu/OptionsOld/selected.material")
 
 
 func _ready() -> void:
