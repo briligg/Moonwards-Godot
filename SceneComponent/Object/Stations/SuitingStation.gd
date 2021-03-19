@@ -28,6 +28,7 @@ func _ready() :
 	#Listen to the spacesuit for when the entity removes control.
 	var comp = $Spacesuit/ControllableBodyComponent
 	comp.connect(comp.CONTROL_LOST, self, "_suit_control_lost", [comp])
+	comp.connect(comp.CONTROL_TAKEN, self, "_suit_control_taken")
 
 func _relay_interaction(interactor : AEntity) -> void :
 	var entity : AEntity = get_node(required_entity)
@@ -66,7 +67,12 @@ func _suit_control_lost(component) -> void :
 	component.get_parent().rset_id(1, "mlook_dir", Vector3.FORWARD)
 	
 	var my_entity : AEntity = get_node(required_entity)
-	my_entity.mode = RigidBody.MODE_STATIC
+	my_entity.mode = RigidBody.MODE_KINEMATIC
+
+func _suit_control_taken(_interactor : AEntity) -> void :
+	var my_entity : AEntity = get_node(required_entity)
+	my_entity.mode = RigidBody.MODE_CHARACTER
+
 
 
 
