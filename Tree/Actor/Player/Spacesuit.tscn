@@ -51,6 +51,7 @@ hide_in_first_person = false
 [node name="HumanoidMovement" parent="." instance=ExtResource( 5 )]
 initial_jump_velocity = 1.9
 movement_speed = 4.2
+can_climb_stairs = false
 
 [node name="AnimationController" parent="." instance=ExtResource( 4 )]
 
