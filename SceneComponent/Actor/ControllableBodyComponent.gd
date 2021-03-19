@@ -118,10 +118,10 @@ func sync_for_new_player(peer_id) -> void :
 	if not controlling_entity == null :
 		rpc_id(peer_id, "sync_to_master", controlling_entity.get_path())
 	else :
-		rpc_id(peer_id, "sync_to_master", null)
+		rpc_id(peer_id, "sync_to_master")
 
-puppet func sync_to_master(entity_path : NodePath) -> void :
-	if not entity_path == null :
+puppet func sync_to_master(entity_path : NodePath = self.get_path()) -> void :
+	if not entity_path == self.get_path() :
 		controlling_entity = get_tree().get_root().get_node(entity_path)
 		_sync_take_control(entity_path)
 		is_being_controlled = true
