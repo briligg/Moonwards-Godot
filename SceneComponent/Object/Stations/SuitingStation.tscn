@@ -1,14 +1,22 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Script/GameLogic/Interact/Interactable/Interactable.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Object/Stations/SuitingStation.gd" type="Script" id=2]
 [ext_resource path="res://Script/GameLogic/Detect/Detector/Detector.gd" type="Script" id=3]
 [ext_resource path="res://Tree/Actor/Player/Spacesuit.tscn" type="PackedScene" id=4]
-[ext_resource path="res://SceneComponent/Display/ViewportViewer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Script/ViewportWorkaround/ViewportTextureWorkaround.gd" type="Script" id=5]
 [ext_resource path="res://SceneComponent/Object/Stations/SuitingDisplay.tscn" type="PackedScene" id=6]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 1.15043, 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+flags_unshaded = true
+params_billboard_mode = 1
+
+[sub_resource type="QuadMesh" id=4]
+size = Vector2( 2.5, 1.5 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Idle"
@@ -55,14 +63,23 @@ shape = SubResource( 1 )
 visible = false
 mode = 3
 
-[node name="Display" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.994433, 0 )
+[node name="Display" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 visible = false
-content = ExtResource( 6 )
-mesh_size = Vector2( 1920, 1080 )
-viewport_size = Vector2( 1920, 1080 )
-track_camera = false
-hologram = false
+material_override = SubResource( 3 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Viewport" type="Viewport" parent="Display"]
+size = Vector2( 1920, 1080 )
+transparent_bg = true
+hdr = false
+usage = 0
+gui_snap_controls_to_pixels = false
+script = ExtResource( 5 )
+
+[node name="SuitingDisplay" parent="Display/Viewport" instance=ExtResource( 6 )]
+flip_v = true
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 method_call_mode = 1

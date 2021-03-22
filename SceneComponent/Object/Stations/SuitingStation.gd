@@ -9,6 +9,8 @@ var suited_human : AEntity
 
 onready var interactable : Interactable = $Interactable
 
+var is_being_controlled : bool = false
+
 
 func _detected() -> void :
 	interactable.set_active(true)
@@ -50,7 +52,7 @@ func _relay_interaction(interactor : AEntity) -> void :
 		return
 	
 	#Take control of a spacesuit. Make sure that the interactor is a human.
-	elif entity.has_node("ControllableBodyComponent") :
+	elif entity.has_node("ControllableBodyComponent") && not is_being_controlled :
 		suited_human = interactor
 		entity.get_node("ControllableBodyComponent").interact_with(suited_human)
 		
@@ -73,6 +75,8 @@ func _suit_control_lost(component) -> void :
 	component.get_parent().rset("look_dir", Vector3.FORWARD)
 	component.get_parent().rset_id(1, "mlook_dir", Vector3.FORWARD)
 	
+	is_being_controlled = false
+	
 	var my_entity : AEntity = get_node(required_entity)
 	my_entity.mode = RigidBody.MODE_KINEMATIC
 	
@@ -83,6 +87,8 @@ func _suit_control_lost(component) -> void :
 func _suit_control_taken(_interactor : AEntity) -> void :
 	var my_entity : AEntity = get_node(required_entity)
 	my_entity.mode = RigidBody.MODE_CHARACTER
+	
+	is_being_controlled = true
 	
 	get_node(required_entity).show()
 	get_node(prop_path).hide()
