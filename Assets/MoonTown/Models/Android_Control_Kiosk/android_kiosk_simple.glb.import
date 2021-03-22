@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/android_control_kiosk.glb-1809fa8a6c0ecaf5eb2af85fb5a4b582.scn"
+path="res://.import/android_kiosk_simple.glb-4c109f8785d4e511819a5d5b538ffc3e.scn"
 
 [deps]
 
-source_file="res://Assets/MoonTown/Models/Android_Control_Kiosk/android_control_kiosk.glb"
-dest_files=[ "res://.import/android_control_kiosk.glb-1809fa8a6c0ecaf5eb2af85fb5a4b582.scn" ]
+source_file="res://Assets/MoonTown/Models/Android_Control_Kiosk/android_kiosk_simple.glb"
+dest_files=[ "res://.import/android_kiosk_simple.glb-4c109f8785d4e511819a5d5b538ffc3e.scn" ]
 
 [params]
 
