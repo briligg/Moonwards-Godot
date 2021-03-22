@@ -41,6 +41,9 @@ func _relay_interaction(interactor : AEntity) -> void :
 		suited_human.show()
 		suited_human = null
 		#Suit_control_lost will get called as well.
+		
+		$Display.hide()
+		$Anim.stop()
 	
 	#Do nothing if the interactor is another spacesuit.
 	elif interactor.has_node("ControllableBodyComponent") :
@@ -56,6 +59,9 @@ func _relay_interaction(interactor : AEntity) -> void :
 		
 		#Allow the spacesuit to move around.
 		entity.mode = RigidBody.MODE_CHARACTER
+		
+		$Display.show()
+		$Anim.play("Idle")
 	
 	else :
 		Log.error(self, "_relay_interaction", "%s required entity failed to have the correct node" % get_path())

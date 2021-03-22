@@ -1,12 +1,31 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Script/GameLogic/Interact/Interactable/Interactable.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Object/Stations/SuitingStation.gd" type="Script" id=2]
 [ext_resource path="res://Script/GameLogic/Detect/Detector/Detector.gd" type="Script" id=3]
 [ext_resource path="res://Tree/Actor/Player/Spacesuit.tscn" type="PackedScene" id=4]
+[ext_resource path="res://SceneComponent/Display/ViewportViewer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://SceneComponent/Object/Stations/SuitingDisplay.tscn" type="PackedScene" id=6]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 1.15043, 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Idle"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Display:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1, 0 ), Vector3( 0, 0.9, 0 ) ]
+}
 
 [node name="SuitingStation" type="Spatial"]
 script = ExtResource( 2 )
@@ -35,3 +54,16 @@ shape = SubResource( 1 )
 [node name="Spacesuit" parent="." instance=ExtResource( 4 )]
 visible = false
 mode = 3
+
+[node name="Display" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.994433, 0 )
+visible = false
+content = ExtResource( 6 )
+mesh_size = Vector2( 1920, 1080 )
+viewport_size = Vector2( 1920, 1080 )
+track_camera = false
+hologram = false
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+method_call_mode = 1
+anims/Idle = SubResource( 2 )
