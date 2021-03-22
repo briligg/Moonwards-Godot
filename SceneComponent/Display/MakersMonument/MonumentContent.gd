@@ -54,6 +54,12 @@ func stop() -> void:
 	if animation_players[idx].is_playing():
 		animation_players[idx].stop(false)
 
+func stop_audio() -> void :
+	audio_player.stop()
+	
+	#I no longer need to listen for the signal until I start playing again.
+	var audiosig : AudioSignals = Signals.Audio
+	audiosig.disconnect("solo_audio_stream_begun", self, "stop_audio")
 
 func _on_animation_finished(_name: String) -> void:
 	for b in containers[idx].get_children():
@@ -164,6 +170,12 @@ func _on_button_up(sound: String) -> void:
 		stream.loop = false
 		audio_player.stream = stream
 		audio_player.play()
+		
+		var audiosig : AudioSignals = Signals.Audio
+		audiosig.emit_signal("solo_audio_stream_begun")
+		
+		#Listen in case another soloist starts.
+		audiosig.connect("solo_audio_stream_begun", self, "stop_audio")
 	else:
 		Log.warning(self, "_on_button_up", "Cannot load audio resource on path: "
 				+ str(AUDIO_PATH + sound))
