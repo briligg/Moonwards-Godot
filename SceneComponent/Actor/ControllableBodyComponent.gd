@@ -4,6 +4,7 @@ class_name ControllableBodyComponent
 
 #Determines if the player can interact directly with the body.
 export(bool) var direct_interaction_capable : bool = true
+export(bool) var hide_interactor_entity : bool = true
 
 #Emitted when someone has lost control of me. Either from interaction or disconnect
 signal control_lost()
@@ -38,19 +39,12 @@ func _ready() -> void :
 	$Interactable.connect("interacted_by", self, "_been_interacted")
 	$Interactable.connect("sync_for_new_player", self, "sync_for_new_player")
 
+#Only runs on the server.
 func _been_interacted(interactor : Node) -> void :
 	#Return control to human player.
 	if  interactor.owner_peer_id == self.controller_peer_id :
 		#Disable my entity and get interactor ready.
 		rpc("_sync_return_control")
-
-		#Hand control back to the original actor.
-		entity.get_component("Camera").camera.current = false
-		controlling_entity.get_component("Camera").camera.current = true
-		controlling_entity.get_component("Interactor").grab_focus()
-		
-		#Let visibility manager know we switched context.
-		VisibilityManager.reverse_context()
 		
 		var net : NetworkSignals = Signals.Network
 		net.disconnect(net.CLIENT_DISCONNECTED, self, "_client_disconnected")
@@ -67,7 +61,7 @@ func _been_interacted(interactor : Node) -> void :
 	
 	entity.get_component("Camera").camera.current = true
 	entity.get_component("Interactor").grab_focus()
-	crpc("_sync_take_control", interactor.get_path())
+	rpc("_sync_take_control", interactor.get_path())
 	
 	VisibilityManager.switch_context()
 	
@@ -75,6 +69,7 @@ func _been_interacted(interactor : Node) -> void :
 	var net : NetworkSignals = Signals.Network
 	net.connect(net.CLIENT_DISCONNECTED, self, "_client_disconnected")
 
+#Called for everyone when someone returns control.
 sync func _sync_return_control() -> void :
 	entity.disable()
 	controlling_entity.enable()
@@ -89,15 +84,28 @@ sync func _sync_return_control() -> void :
 	
 	emit_signal(CONTROL_LOST)
 
-#Called when someone else takes control of me.
+#Called for everyone when someone takes control of me.
 sync func _sync_take_control(interactor_path : NodePath) -> void :
+	var sender_id : int = get_tree().get_rpc_sender_id()
+	
+	#Have the acting client perform it's logic to take control on it's side.
+	if sender_id == controller_peer_id :
+		#Hand control back to the original actor.
+		entity.get_component("Camera").camera.current = false
+		controlling_entity.get_component("Camera").camera.current = true
+		controlling_entity.get_component("Interactor").grab_focus()
+	
+		#Let visibility manager know we switched context.
+		VisibilityManager.reverse_context()
+	
 	var interactor = get_tree().get_root().get_node(interactor_path)
 	#Give control to the new interactor..
 	entity.owner_peer_id = interactor.owner_peer_id
 	controller_peer_id = interactor.owner_peer_id
 	
 	interactor.disable()
-	interactor.hide()
+	if hide_interactor_entity :
+		interactor.hide()
 	controlling_entity = interactor
 	entity.get_component("NametagComponent").show()
 	entity.get_component("NametagComponent").set_name(interactor.entity_name)
@@ -121,7 +129,15 @@ func sync_for_new_player(peer_id) -> void :
 		rpc_id(peer_id, "sync_to_master")
 
 puppet func sync_to_master(entity_path : NodePath = self.get_path()) -> void :
+	#Have an entity take control if necessary.
 	if not entity_path == self.get_path() :
+		#Check that the path is valid.
+		if get_tree().get_root().has_node(entity_path) :
+			Log.error(self, "sync_to_master", "Passed entity_path %s does not have an entity" % str(entity_path))
+			return
+			
 		controlling_entity = get_tree().get_root().get_node(entity_path)
 		_sync_take_control(entity_path)
 		is_being_controlled = true
+		if hide_interactor_entity :
+			controlling_entity.hide()

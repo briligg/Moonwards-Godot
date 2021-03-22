@@ -8,8 +8,7 @@ export var prop_path : NodePath = "../Spacesuit_Prop"
 var suited_human : AEntity
 
 onready var interactable : Interactable = $Interactable
-
-var is_being_controlled : bool = false
+onready var spacesuit_interactable = $Spacesuit/ControllableBodyComponent/Interactable
 
 
 func _detected() -> void :
@@ -38,10 +37,8 @@ func _relay_interaction(interactor : AEntity) -> void :
 	
 	#Return control to the human that started me.
 	if entity == interactor && suited_human != null :
-		entity.get_node("ControllableBodyComponent").interact_with(suited_human)
-		suited_human.enable()
-		suited_human.show()
-		suited_human = null
+		interactor.get_component("Interactor").player_requested_interact(spacesuit_interactable)
+		
 		#Suit_control_lost will get called as well.
 		
 		$Display.hide()
@@ -51,16 +48,12 @@ func _relay_interaction(interactor : AEntity) -> void :
 	elif interactor.has_node("ControllableBodyComponent") :
 		return
 	
-	#Take control of a spacesuit. Make sure that the interactor is a human.
-	elif entity.has_node("ControllableBodyComponent") && not is_being_controlled :
+	#Take control of a spacesuit. Make sure that the interactor is a human. and nothing else is controlling the suit
+	elif entity.has_node("ControllableBodyComponent")  && suited_human == null:
 		suited_human = interactor
-		entity.get_node("ControllableBodyComponent").interact_with(suited_human)
+		interactor.get_component("Interactor").player_requested_interact(spacesuit_interactable)
 		
 		suited_human.disable()
-		suited_human.hide()
-		
-		#Allow the spacesuit to move around.
-		entity.mode = RigidBody.MODE_CHARACTER
 		
 		$Display.show()
 		$Anim.play("Idle")
@@ -75,10 +68,12 @@ func _suit_control_lost(component) -> void :
 	component.get_parent().rset("look_dir", Vector3.FORWARD)
 	component.get_parent().rset_id(1, "mlook_dir", Vector3.FORWARD)
 	
-	is_being_controlled = false
-	
 	var my_entity : AEntity = get_node(required_entity)
 	my_entity.mode = RigidBody.MODE_KINEMATIC
+	
+	suited_human.enable()
+	suited_human.show()
+	suited_human = null
 	
 	#Show the prop again.
 	my_entity.hide()
@@ -88,7 +83,8 @@ func _suit_control_taken(_interactor : AEntity) -> void :
 	var my_entity : AEntity = get_node(required_entity)
 	my_entity.mode = RigidBody.MODE_CHARACTER
 	
-	is_being_controlled = true
+	suited_human = _interactor
+	suited_human.hide()
 	
 	get_node(required_entity).show()
 	get_node(prop_path).hide()
