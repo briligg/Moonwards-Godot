@@ -41,8 +41,12 @@ func _ready() -> void :
 
 #Only runs on the server.
 func _been_interacted(interactor : Node) -> void :
+	#Get who sent this interaction.
+	var sender_id : int = get_tree().get_rpc_sender_id()
+	
 	#Return control to human player.
 	if  interactor.owner_peer_id == self.controller_peer_id :
+		rpc_id(sender_id, "_sync_return_control_acting_player")
 		#Disable my entity and get interactor ready.
 		rpc("_sync_return_control")
 		
@@ -51,16 +55,11 @@ func _been_interacted(interactor : Node) -> void :
 		return
 	
 	#Do nothing when someone else is already controlling me.
-	#Also do nothing if the interacting body is a spacesuit lol. Temp solution until Interactors have their own layering system.
 	if is_being_controlled  :
 		return
 	
-	#Give control to the new interactor..
-	if interactor.has_node("HumanoidInput") :
-		interactor.get_node("HumanoidInput").disable()
-	
-	entity.get_component("Camera").camera.current = true
-	entity.get_component("Interactor").grab_focus()
+	#Will this always go according to order?
+	rpc_id(sender_id, "sync_take_control_acting_player", interactor.get_path())
 	rpc("_sync_take_control", interactor.get_path())
 	
 	VisibilityManager.switch_context()
@@ -70,7 +69,7 @@ func _been_interacted(interactor : Node) -> void :
 	net.connect(net.CLIENT_DISCONNECTED, self, "_client_disconnected")
 
 #Called for everyone when someone returns control.
-sync func _sync_return_control() -> void :
+puppetsync func _sync_return_control() -> void :
 	entity.disable()
 	controlling_entity.enable()
 	controlling_entity.show()
@@ -82,25 +81,39 @@ sync func _sync_return_control() -> void :
 	controller_peer_id = original_peer_id
 	is_being_controlled = false
 	
+	controlling_entity = null
+	
 	emit_signal(CONTROL_LOST)
 
+#This is called when I am being controlled by the local player.
+puppet func _sync_return_control_acting_player() -> void :
+	#Stop my current camera and hand it back to player's main AEntity.
+	entity.get_component("Camera").camera.current =false
+	
+	#Check that no errors occured that left controlling_entity null
+	if controlling_entity == null :
+		Log.error(self, "_sync_return_control_acting_player", "Spacesuit attempted to return control with a null controlling entity %s" % get_path())
+		return
+		
+	#Give the controlling player back it's control.
+	controlling_entity.get_component("Camera").camera.current = true
+	controlling_entity.get_component("Interactor").grab_focus()
+
+	#Let visibility manager know we switched context.
+	VisibilityManager.reverse_context()
+	
+	#Give control to the new interactor..
+	if controlling_entity.has_node("HumanoidInput") :
+		controlling_entity.get_node("HumanoidInput").disable()
+
 #Called for everyone when someone takes control of me.
-sync func _sync_take_control(interactor_path : NodePath) -> void :
-	var sender_id : int = get_tree().get_rpc_sender_id()
-	
-	#Have the acting client perform it's logic to take control on it's side.
-	if sender_id == controller_peer_id :
-		#Hand control back to the original actor.
-		entity.get_component("Camera").camera.current = false
-		controlling_entity.get_component("Camera").camera.current = true
-		controlling_entity.get_component("Interactor").grab_focus()
-	
-		#Let visibility manager know we switched context.
-		VisibilityManager.reverse_context()
-	
+puppetsync  func _sync_take_control(interactor_path : NodePath) -> void :
+	#Get AEntity taking control.
 	if not get_tree().get_root().has_node(interactor_path) :
-		get_tree().quit()
-	var interactor = get_tree().get_root().get_node(interactor_path)
+		Log.error(self, "_sync_take_control", "Interacting AEntity not found for %s" % get_path())
+		return
+	var interactor : AEntity = get_tree().get_root().get_node(interactor_path)
+	
 	#Give control to the new interactor..
 	entity.owner_peer_id = interactor.owner_peer_id
 	controller_peer_id = interactor.owner_peer_id
@@ -115,6 +128,25 @@ sync func _sync_take_control(interactor_path : NodePath) -> void :
 	is_being_controlled = true
 	
 	emit_signal(CONTROL_TAKEN, interactor)
+
+#Called for the player actually performing the action.
+puppet func _sync_take_control_acting_player(interactor_path : NodePath) -> void :
+	#Get AEntity taking control.
+	if not get_tree().get_root().has_node(interactor_path) :
+		Log.error(self, "_sync_take_control", "Interacting AEntity not found for %s" % get_path())
+		return
+	var interactor : AEntity = get_tree().get_root().get_node(interactor_path)
+	
+	entity.get_component("Camera").camera.current = true
+	interactor.get_component("Camera").camera.current = false
+	entity.get_component("Interactor").grab_focus()
+
+	#Let visibility manager know we switched context.
+	VisibilityManager.switch_context()
+	
+	#Give control to the new interactor..
+	if interactor.has_node("HumanoidInput") :
+		interactor.get_node("HumanoidInput").disable()
 
 func _client_disconnected(peer_id) -> void :
 	#If controlling entity disconnects, return control to normal.

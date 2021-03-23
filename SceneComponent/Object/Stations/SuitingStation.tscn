@@ -10,16 +10,15 @@
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 1.15043, 1 )
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=2]
 flags_transparent = true
 flags_unshaded = true
 params_billboard_mode = 1
 
-[sub_resource type="QuadMesh" id=4]
+[sub_resource type="QuadMesh" id=3]
 size = Vector2( 2.5, 1.5 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "Idle"
+[sub_resource type="Animation" id=4]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -45,7 +44,6 @@ script = ExtResource( 1 )
 display_info = "Equip what is inside the station"
 title = "Equip"
 is_networked = false
-network_mode = 3
 
 [node name="CollisionShape2" type="CollisionShape" parent="Interactable"]
 shape = SubResource( 1 )
@@ -66,8 +64,8 @@ mode = 3
 [node name="Display" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 visible = false
-material_override = SubResource( 3 )
-mesh = SubResource( 4 )
+material_override = SubResource( 2 )
+mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Viewport" type="Viewport" parent="Display"]
@@ -83,4 +81,4 @@ flip_v = true
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 method_call_mode = 1
-anims/Idle = SubResource( 2 )
+anims/Idle = SubResource( 4 )
