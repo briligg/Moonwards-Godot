@@ -24,7 +24,7 @@ var is_being_controlled : bool = false
 var controlling_entity : AEntity = null
 
 #Necessary for components.
-func _init().("ControllableBodyRelay", true) -> void :
+func _init().("ControllableBodyComponent", true) -> void :
 	pass
 
 func _ready() -> void :
