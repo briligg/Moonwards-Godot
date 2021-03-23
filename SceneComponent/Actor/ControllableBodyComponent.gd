@@ -151,7 +151,7 @@ puppet func _sync_take_control_acting_player(interactor_path : NodePath) -> void
 func _client_disconnected(peer_id) -> void :
 	#If controlling entity disconnects, return control to normal.
 	if peer_id == entity.owner_peer_id :
-		_been_interacted(entity)
+		rpc("_sync_return_control")
 
 func interact_with(aentity : AEntity) -> void :
 	$Interactable.interact_with(aentity)
@@ -167,9 +167,8 @@ puppet func sync_to_master(entity_path : NodePath = self.get_path()) -> void :
 	#Have an entity take control if necessary.
 	if not entity_path == self.get_path() :
 		#Check that the path is valid.
-		if get_tree().get_root().has_node(entity_path) :
+		if not get_tree().get_root().has_node(entity_path) :
 			Log.error(self, "sync_to_master", "Passed entity_path %s does not have an entity" % str(entity_path))
 			return
 			
-		controlling_entity = get_tree().get_root().get_node(entity_path)
 		call_deferred("_sync_take_control", entity_path)

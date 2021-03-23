@@ -62,7 +62,7 @@ func _relay_interaction(interactor : AEntity) -> void :
 		Log.error(self, "_relay_interaction", "%s required entity failed to have the correct node" % get_path())
 
 #Called from a signal.
-func _suit_control_lost(component) -> void :
+func _suit_control_lost(component : AComponent) -> void :
 	component.get_parent().global_transform.origin = global_transform.origin
 	component.get_parent().rotation_degrees = Vector3.ZERO
 	component.get_parent().rset("look_dir", Vector3.FORWARD)
@@ -71,8 +71,9 @@ func _suit_control_lost(component) -> void :
 	var my_entity : AEntity = get_node(required_entity)
 	my_entity.mode = RigidBody.MODE_KINEMATIC
 	
-	suited_human.enable()
-	suited_human.show()
+	if not suited_human.is_queued_for_deletion() || suited_human == null:
+		suited_human.enable()
+		suited_human.show()
 	suited_human = null
 	
 	#Show the prop again.
