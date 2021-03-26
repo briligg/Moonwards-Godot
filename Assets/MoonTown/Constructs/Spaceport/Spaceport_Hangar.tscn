@@ -17,3 +17,11 @@ material/0 = ExtResource( 4 )
 [node name="TowerRadiator_3x" parent="Markers002/Marker_TowerRad_2" index="0" instance=ExtResource( 3 )]
 
 [node name="TowerRadiator_3x" parent="Markers002/Marker_TowerRad_3" index="0" instance=ExtResource( 3 )]
+
+[node name="TowerRadiator_3x" parent="Markers002/Marker_TowerRad_4" index="0" instance=ExtResource( 3 )]
+
+[node name="TowerRadiator_3x" parent="Markers002/Marker_TowerRad_5" index="0" instance=ExtResource( 3 )]
+
+[node name="TowerRadiator_3x" parent="Markers002/Marker_TowerRad_6" index="0" instance=ExtResource( 3 )]
+
+[node name="TowerRadiator_3x" parent="Markers002/Marker_TowerRad_7" index="0" instance=ExtResource( 3 )]
