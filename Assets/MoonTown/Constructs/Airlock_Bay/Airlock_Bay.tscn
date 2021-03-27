@@ -372,12 +372,13 @@ transform = Transform( 0.559555, 0, -0.828794, 0, 1, 0, 0.828794, 0, 0.559555, -
 [node name="Android-Prop" parent="Androids/Android001" index="0" instance=ExtResource( 7 )]
 
 [node name="Android" parent="Androids" index="7"]
-transform = Transform( 0.503714, 0, -0.863871, 0, 1, 0, 0.863871, 0, 0.503714, -155.044, 1.60482, 4.69359 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -155.044, 1.60482, 4.69359 )
 
 [node name="Android-Prop" parent="Androids/Android" index="0" instance=ExtResource( 7 )]
 visible = false
 
 [node name="Android" parent="Androids/Android" index="1" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.90735e-06 )
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="." index="26"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -79.0365, 3.18574, -2.24032 )

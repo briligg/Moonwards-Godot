@@ -31,9 +31,9 @@ can_sleep = false
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 script = ExtResource( 6 )
-enable_on_spawn = true
 
 [node name="Model" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.821796, 0, -0.569781, 0, 1, 0, 0.569781, 0, 0.821796, 0, 0, 0 )
 
 [node name="CameraController" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.766189, 0 )

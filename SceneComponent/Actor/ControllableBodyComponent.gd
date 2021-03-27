@@ -112,7 +112,7 @@ puppetsync  func _sync_take_control(interactor_path : NodePath) -> void :
 	if not get_tree().get_root().has_node(interactor_path) :
 		Log.error(self, "_sync_take_control", "Interacting AEntity not found for %s" % get_path())
 		return
-	var interactor : AEntity = get_tree().get_root().get_node(interactor_path)
+	var interactor : ActorEntity = get_tree().get_root().get_node(interactor_path)
 	
 	#Give control to the new interactor..
 	entity.owner_peer_id = interactor.owner_peer_id
@@ -126,6 +126,13 @@ puppetsync  func _sync_take_control(interactor_path : NodePath) -> void :
 	entity.get_component("NametagComponent").set_name(interactor.entity_name)
 	entity.enable()
 	is_being_controlled = true
+	
+	#Make the entity have a global transformation so no bugs happen with parent rotation.
+	var trans : Basis = interactor.model.global_transform.basis
+	trans.x.x = 1
+	trans.y.y  = 1
+	trans.z.z = 1
+	interactor.model.global_transform.basis = trans
 	
 	emit_signal(CONTROL_TAKEN, interactor)
 
