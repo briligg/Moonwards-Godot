@@ -346,30 +346,61 @@ transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0
 [node name="Spacesuit_Prop" parent="Spacesuits/Spacesuit019" index="1" instance=ExtResource( 4 )]
 
 [node name="Android002" parent="Androids" index="0"]
-transform = Transform( -0.888353, 0, 0.459161, 0, 1, 0, -0.459161, 0, -0.888353, -164.731, 1.60482, 15.0474 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -164.731, 1.60482, 15.0474 )
 
 [node name="Android-Prop" parent="Androids/Android002" index="0" instance=ExtResource( 7 )]
+visible = false
+
+[node name="Android" parent="Androids/Android002" index="1" instance=ExtResource( 10 )]
 
 [node name="Android003" parent="Androids" index="1"]
-transform = Transform( 0.769567, 0, -0.638566, 0, 1, 0, 0.638566, 0, 0.769567, -159.024, 1.60482, 13.474 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -159.024, 1.60482, 13.474 )
 
 [node name="Android-Prop" parent="Androids/Android003" index="0" instance=ExtResource( 7 )]
+visible = false
+
+[node name="Android" parent="Androids/Android003" index="1" instance=ExtResource( 10 )]
 
 [node name="Android004" parent="Androids" index="2"]
-transform = Transform( 0.725795, 0, -0.687911, 0, 1, 0, 0.687911, 0, 0.725795, -161.809, 1.60482, 10.9195 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -161.809, 1.60482, 10.9195 )
 
 [node name="Android-Prop" parent="Androids/Android004" index="0" instance=ExtResource( 7 )]
+visible = false
+
+[node name="Android" parent="Androids/Android004" index="1" instance=ExtResource( 10 )]
+
+[node name="Android005" parent="Androids" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -157.135, 1.60482, 11.4157 )
 
 [node name="Android-Prop" parent="Androids/Android005" index="0" instance=ExtResource( 7 )]
+visible = false
+
+[node name="Android" parent="Androids/Android005" index="1" instance=ExtResource( 10 )]
+
+[node name="Android006" parent="Androids" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -159.966, 1.60482, 8.73113 )
 
 [node name="Android-Prop" parent="Androids/Android006" index="0" instance=ExtResource( 7 )]
+visible = false
+
+[node name="Android" parent="Androids/Android006" index="1" instance=ExtResource( 10 )]
+visible = false
 
 [node name="Android007" parent="Androids" index="5"]
-transform = Transform( 0.559555, 0, -0.828794, 0, 1, 0, 0.828794, 0, 0.559555, -153.087, 1.60482, 7.92676 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -153.087, 1.60482, 7.92676 )
 
 [node name="Android-Prop" parent="Androids/Android007" index="0" instance=ExtResource( 7 )]
+visible = false
+
+[node name="Android" parent="Androids/Android007" index="1" instance=ExtResource( 10 )]
+
+[node name="Android001" parent="Androids" index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -161.26, 1.60482, 16.83 )
 
 [node name="Android-Prop" parent="Androids/Android001" index="0" instance=ExtResource( 7 )]
+visible = false
+
+[node name="Android" parent="Androids/Android001" index="1" instance=ExtResource( 10 )]
 
 [node name="Android" parent="Androids" index="7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -155.044, 1.60482, 4.69359 )
