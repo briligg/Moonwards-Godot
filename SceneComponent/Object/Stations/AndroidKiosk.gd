@@ -1,8 +1,6 @@
 extends Spatial
 
 
-export(NodePath) var android_to_control 
-
 
 func _interaction(interactor : AEntity) -> void :
 	var comp : InteractorComponent =interactor.get_component("Interactor")
