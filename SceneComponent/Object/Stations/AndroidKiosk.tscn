@@ -8,7 +8,6 @@ extents = Vector3( 0.757595, 1.16771, 1 )
 
 [node name="AndroidKiosk" type="Spatial"]
 script = ExtResource( 2 )
-android_to_control = null
 
 [node name="Interactable" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24819, 0 )
