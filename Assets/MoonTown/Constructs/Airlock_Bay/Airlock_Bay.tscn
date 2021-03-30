@@ -445,7 +445,6 @@ visible = false
 visible = false
 
 [node name="AndroidKiosk" parent="Android-Kiosk-Row" index="0" instance=ExtResource( 9 )]
-android_to_control = NodePath("../../Androids/Android/Android")
 
 [node name="android_kiosk_simple_row" parent="Android-Kiosk-Row/AndroidKiosk" index="0" instance=ExtResource( 8 )]
 

@@ -54,6 +54,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/GameLogic/AnchorMovementData.gd"
 }, {
+"base": "Control",
+"class": "AppContainer",
+"language": "GDScript",
+"path": "res://Tree/Interface/Hud/AppsContainer.gd"
+}, {
 "base": "Reference",
 "class": "AudioSignals",
 "language": "GDScript",
@@ -664,6 +669,7 @@ _global_script_class_icons={
 "AirlockDoorInteractable": "",
 "AnchorMovementComponent": "",
 "AnchorMovementData": "",
+"AppContainer": "",
 "AudioSignals": "",
 "BehaviorNode": "",
 "CameraController": "",
