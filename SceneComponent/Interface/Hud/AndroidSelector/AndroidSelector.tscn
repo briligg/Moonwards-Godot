@@ -35,8 +35,8 @@ script = ExtResource( 4 )
 [node name="Exit" type="TextureButton" parent="AndroidSpotShowcase"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_right = 70.0
-margin_bottom = 70.0
+margin_right = 40.0
+margin_bottom = 40.0
 grow_horizontal = 0
 texture_normal = ExtResource( 5 )
 expand = true
