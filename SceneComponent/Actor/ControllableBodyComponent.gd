@@ -168,9 +168,6 @@ func _client_disconnected(peer_id) -> void :
 	if peer_id == entity.owner_peer_id :
 		rpc("_sync_return_control")
 
-func interact_with(aentity : AEntity) -> void :
-	$Interactable.interact_with(aentity)
-
 #Handled only on the server.
 func sync_for_new_player(peer_id) -> void :
 	if not controlling_entity == null :
