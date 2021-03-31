@@ -38,6 +38,14 @@ func _ready() -> void :
 	
 	$Interactable.connect("interacted_by", self, "_been_interacted")
 	$Interactable.connect("sync_for_new_player", self, "sync_for_new_player")
+	
+	call_deferred("_ready_deferred")
+
+#Move any collision shape node from the root node to the Interactable
+func _ready_deferred() -> void :
+	for child in get_children() :
+		if child is CollisionShape :
+			Helpers.reparent(child, $Interactable)
 
 #Only runs on the server.
 func _been_interacted(interactor : Node) -> void :
