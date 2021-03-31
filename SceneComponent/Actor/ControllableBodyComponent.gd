@@ -6,6 +6,9 @@ class_name ControllableBodyComponent
 export(bool) var direct_interaction_capable : bool = true
 export(bool) var hide_interactor_entity : bool = true
 
+export(String) var interactable_title = "interactable_title"
+export(String) var interactable_info = "interactable_info"
+
 #Emitted when someone has lost control of me. Either from interaction or disconnect
 signal control_lost()
 const CONTROL_LOST = "control_lost"
@@ -38,6 +41,10 @@ func _ready() -> void :
 	
 	$Interactable.connect("interacted_by", self, "_been_interacted")
 	$Interactable.connect("sync_for_new_player", self, "sync_for_new_player")
+	
+	#Set the Interactable's parameters.
+	$Interactable.set_display_info(interactable_info)
+	$Interactable.set_title(interactable_title)
 	
 	call_deferred("_ready_deferred")
 
