@@ -44,7 +44,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3263, -2.00908, -4.79457 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, 2 )
 
 [node name="1" type="Position3D" parent="SpawnPoints"]
-transform = Transform( 0.352086, 0, -1.99945, 0, -4, 0, -14.9959, 0, -0.0469447, 0, 0, 0 )
+transform = Transform( 0.352086, 0, -1.99945, 0, -4, 0, -14.9959, 0, -0.0469447, -165.615, 4.73215, 16.9935 )
 
 [node name="welcome-presentation" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.990938, 0, 0.134315, 0, 1, 0, -0.134315, 0, 0.990938, 9.98435, -4.16826, -12.6557 )
