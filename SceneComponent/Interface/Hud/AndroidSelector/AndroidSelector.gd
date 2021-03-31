@@ -11,11 +11,16 @@ func _ready():
 	sig.connect(sig.ANDROID_KIOSK_INTERACTED, self, "_sig_display")
 	
 	sig.connect(sig.ANDROID_SPOT_CREATED, self, "_spot_created")
+	
+	$AndroidSpotShowcase/Exit.connect("pressed", self, "_exit_pressed")
 
 func android_selected(android) -> void :
 	var interactable : Interactable = android.get_component("ControllableBodyComponent").get_node("Interactable")
 	var interactor_comp : InteractorComponent = interactor.get_component("Interactor")
 	interactor_comp.player_requested_interact(interactable)
+	parent.revert_active_app()
+
+func _exit_pressed() -> void :
 	parent.revert_active_app()
 
 #Bring up the panel for the player to select from.
