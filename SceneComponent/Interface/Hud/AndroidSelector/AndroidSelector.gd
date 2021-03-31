@@ -18,9 +18,12 @@ func android_selected(android) -> void :
 	interactor_comp.player_requested_interact(interactable)
 	parent.revert_active_app()
 
+#Bring up the panel for the player to select from.
 func _sig_display(_interactor : AEntity) -> void :
 	interactor = _interactor
 	parent.change_app(self.get_name(), true)
+	
+	Helpers.capture_mouse(false)
 
-func _spot_created(spatial : Spatial, android : ActorEntity, text : String) -> void :
+func _spot_created(_spatial : Spatial, android : ActorEntity, text : String) -> void :
 	showcase.add_spot(android, text)
