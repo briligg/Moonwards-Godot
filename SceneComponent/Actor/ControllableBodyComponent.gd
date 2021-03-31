@@ -63,7 +63,8 @@ func _been_interacted(interactor : Node) -> void :
 		return
 	
 	#Do nothing when someone else is already controlling me.
-	if is_being_controlled  :
+	#Also do nothing if the other interactor is a ControllableBodyComponent
+	if is_being_controlled  || interactor.has_node("ControllableBodyComponent") :
 		return
 	
 	#Will this always go according to order?
