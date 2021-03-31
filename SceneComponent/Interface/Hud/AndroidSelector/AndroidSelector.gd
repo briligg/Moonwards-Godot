@@ -22,5 +22,5 @@ func _sig_display(_interactor : AEntity) -> void :
 	interactor = _interactor
 	parent.change_app(self.get_name(), true)
 
-func _spot_created(spatial : Spatial, android : ActorEntity, color : Color) -> void :
-	showcase.add_spot(android)
+func _spot_created(spatial : Spatial, android : ActorEntity, text : String) -> void :
+	showcase.add_spot(android, text)

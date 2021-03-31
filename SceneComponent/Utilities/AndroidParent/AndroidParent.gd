@@ -8,4 +8,4 @@ func _ready() -> void :
 
 func _ready_deferred() -> void :
 	var hud_sig : HudSignals = Signals.Hud
-	hud_sig.emit_signal(hud_sig.ANDROID_SPOT_CREATED, self, $Android, Color(1,1,1))
+	hud_sig.emit_signal(hud_sig.ANDROID_SPOT_CREATED, self, $Android, name)
