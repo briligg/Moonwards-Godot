@@ -1,7 +1,7 @@
 extends Spatial
 
 
-
+#Only happens locally.
 func _interaction(interactor : AEntity) -> void :
 	var signals : HudSignals = Signals.Hud
 	signals.emit_signal(signals.ANDROID_KIOSK_INTERACTED, interactor)

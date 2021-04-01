@@ -13,6 +13,7 @@ script = ExtResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24819, 0 )
 script = ExtResource( 1 )
 is_networked = false
+is_sync_for_new_player = false
 
 [node name="CollisionShape" type="CollisionShape" parent="Interactable"]
 shape = SubResource( 1 )
