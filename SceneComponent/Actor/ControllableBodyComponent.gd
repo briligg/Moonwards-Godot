@@ -3,6 +3,7 @@ class_name ControllableBodyComponent
 
 
 #Determines if the player can interact directly with the body.
+export(bool) var direct_interact_at_start : bool = false
 export(bool) var direct_interaction_capable : bool = true
 export(bool) var hide_interactor_entity : bool = true
 
@@ -37,6 +38,10 @@ func _ready() -> void :
 	
 	#Disable collisions if you are not suppose to interact directly with the component.
 	if not direct_interaction_capable :
+		$Interactable.set_active(false)
+	elif direct_interact_at_start && direct_interaction_capable :
+		$Interactable.set_active(true)
+	else :
 		$Interactable.set_active(false)
 	
 	$Interactable.connect("interacted_by", self, "_been_interacted")
@@ -87,8 +92,9 @@ func _been_interacted(interactor : Node) -> void :
 #Called for everyone when someone returns control.
 puppetsync func _sync_return_control() -> void :
 	entity.disable()
-	controlling_entity.enable()
-	controlling_entity.show()
+	if not controlling_entity == null :
+		controlling_entity.enable()
+		controlling_entity.show()
 	
 	entity.get_component("NametagComponent").hide()
 	entity.get_component("Interactor").disable()
@@ -121,6 +127,9 @@ puppet func _sync_return_control_acting_player() -> void :
 	#Give control to the new interactor..
 	if controlling_entity.has_node("HumanoidInput") :
 		controlling_entity.get_node("HumanoidInput").disable()
+	
+	if direct_interaction_capable :
+		$Interactable.monitoring = false
 
 #Called for everyone when someone takes control of me.
 puppetsync  func _sync_take_control(interactor_path : NodePath) -> void :
@@ -170,6 +179,10 @@ puppet func _sync_take_control_acting_player(interactor_path : NodePath) -> void
 	#Give control to the new interactor..
 	if interactor.has_node("HumanoidInput") :
 		interactor.get_node("HumanoidInput").disable()
+	
+	#Let the player exit the controllable body component.
+	if direct_interaction_capable :
+		$Interactable.set_active(true)
 
 func _client_disconnected(peer_id) -> void :
 	#If controlling entity disconnects, return control to normal.
