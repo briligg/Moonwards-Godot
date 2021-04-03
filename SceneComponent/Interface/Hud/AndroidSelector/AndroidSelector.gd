@@ -30,5 +30,5 @@ func _sig_display(_interactor : AEntity) -> void :
 	
 	Helpers.capture_mouse(false)
 
-func _spot_created(_spatial : Spatial, android : ActorEntity, text : String) -> void :
-	showcase.add_spot(android, text)
+func _spot_created(spatial : Spatial, android : ActorEntity, text : String) -> void :
+	showcase.add_spot(android, text, spatial)

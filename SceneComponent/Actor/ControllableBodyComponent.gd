@@ -108,7 +108,7 @@ puppetsync func _sync_return_control() -> void :
 	emit_signal(CONTROL_LOST)
 
 #This is called when I am being controlled by the local player.
-puppet func _sync_return_control_acting_player() -> void :
+puppetsync func _sync_return_control_acting_player() -> void :
 	#Stop my current camera and hand it back to player's main AEntity.
 	entity.get_component("Camera").camera.current =false
 	
@@ -163,7 +163,7 @@ puppetsync  func _sync_take_control(interactor_path : NodePath) -> void :
 
 #Called for the player actually performing the action.
 
-puppet func _sync_take_control_acting_player(interactor_path : NodePath) -> void :
+puppetsync func _sync_take_control_acting_player(interactor_path : NodePath) -> void :
 	#Get AEntity taking control.
 	if not get_tree().get_root().has_node(interactor_path) :
 		Log.error(self, "_sync_take_control", "Interacting AEntity not found for %s" % get_path())
