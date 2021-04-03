@@ -14,6 +14,7 @@ func _ready():
 	
 	$AndroidSpotShowcase/Exit.connect("pressed", self, "_exit_pressed")
 
+#An android has been selected from the menu.
 func android_selected(android) -> void :
 	var interactable : Interactable = android.get_component("ControllableBodyComponent").get_node("Interactable")
 	var interactor_comp : InteractorComponent = interactor.get_component("Interactor")
@@ -30,5 +31,6 @@ func _sig_display(_interactor : AEntity) -> void :
 	
 	Helpers.capture_mouse(false)
 
+#Whenever a new android spot is created, it should call this section
 func _spot_created(spatial : Spatial, android : ActorEntity, text : String) -> void :
 	showcase.add_spot(android, text, spatial)
