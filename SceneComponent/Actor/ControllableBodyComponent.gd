@@ -80,7 +80,7 @@ func _been_interacted(interactor : Node) -> void :
 		return
 	
 	#Will this always go according to order?
-	rpc_id(sender_id, "sync_take_control_acting_player", interactor.get_path())
+	rpc_id(sender_id, "_sync_take_control_acting_player", interactor.get_path())
 	rpc("_sync_take_control", interactor.get_path())
 	
 	VisibilityManager.switch_context()
@@ -129,7 +129,7 @@ puppet func _sync_return_control_acting_player() -> void :
 		controlling_entity.get_node("HumanoidInput").disable()
 	
 	if direct_interaction_capable :
-		$Interactable.monitoring = false
+		$Interactable.set_active(false)
 
 #Called for everyone when someone takes control of me.
 puppetsync  func _sync_take_control(interactor_path : NodePath) -> void :
@@ -162,6 +162,7 @@ puppetsync  func _sync_take_control(interactor_path : NodePath) -> void :
 	emit_signal(CONTROL_TAKEN, interactor)
 
 #Called for the player actually performing the action.
+
 puppet func _sync_take_control_acting_player(interactor_path : NodePath) -> void :
 	#Get AEntity taking control.
 	if not get_tree().get_root().has_node(interactor_path) :
