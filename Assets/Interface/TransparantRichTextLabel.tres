@@ -1,8 +1,8 @@
 [gd_resource type="Theme" load_steps=3 format=2]
 
-[sub_resource type="StyleBoxEmpty" id=6]
+[sub_resource type="StyleBoxEmpty" id=1]
 
-[sub_resource type="StyleBoxEmpty" id=7]
+[sub_resource type="StyleBoxEmpty" id=2]
 
 [resource]
 RichTextLabel/colors/default_color = Color( 1, 1, 1, 1 )
@@ -20,5 +20,5 @@ RichTextLabel/fonts/bold_italics_font = null
 RichTextLabel/fonts/italics_font = null
 RichTextLabel/fonts/mono_font = null
 RichTextLabel/fonts/normal_font = null
-RichTextLabel/styles/focus = SubResource( 6 )
-RichTextLabel/styles/normal = SubResource( 7 )
+RichTextLabel/styles/focus = SubResource( 1 )
+RichTextLabel/styles/normal = SubResource( 2 )

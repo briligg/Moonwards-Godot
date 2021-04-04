@@ -26,6 +26,10 @@ func _process_server(_delta):
 	if not(get_tree().is_network_server() and entity.owner_peer_id == get_tree().get_network_unique_id()):
 		update_animation(_delta)
 
+#I should never be disabled.
+func disable() -> void :
+	enabled = true
+
 func update_animation(_delta):
 	if entity.state.state == ActorEntityState.State.IN_AIR:
 		entity.animation_tree.set("parameters/State/current", 1)

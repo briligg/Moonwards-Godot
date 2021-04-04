@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Astronaut.glb-cf4d9d8afd49bac9a8f9f7a37289b33e.scn"
+path="res://.import/Android.glb-f646eb753f61f1910e4bb4464df8f6bd.scn"
 
 [deps]
 
-source_file="res://Assets/MoonTown/Models/Astronaut/Astronaut.glb"
-dest_files=[ "res://.import/Astronaut.glb-cf4d9d8afd49bac9a8f9f7a37289b33e.scn" ]
+source_file="res://Assets/MoonTown/Models/Android/Android.glb"
+dest_files=[ "res://.import/Android.glb-f646eb753f61f1910e4bb4464df8f6bd.scn" ]
 
 [params]
 

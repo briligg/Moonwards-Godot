@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Tree/Interface/Hud/Hud.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/Hud/ChatComponent.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Tree/Interface/Hud/AppsContainer.gd" type="Script" id=14]
 [ext_resource path="res://Assets/Interface/Hud/Shaders/Blur_Material.tres" type="Material" id=15]
 [ext_resource path="res://Assets/Interface/Textures/T_UI_White.png" type="Texture" id=16]
+[ext_resource path="res://SceneComponent/Interface/Hud/AndroidSelector/AndroidSelector.tscn" type="PackedScene" id=17]
 [ext_resource path="res://SceneComponent/Interface/Hud/Apps/Map/MapApp.tscn" type="PackedScene" id=18]
 
 [node name="Hud" type="CanvasLayer"]
@@ -72,6 +73,9 @@ visible = false
 visible = false
 
 [node name="GraphicNovelApp" parent="Apps" instance=ExtResource( 7 )]
+visible = false
+
+[node name="AndroidSelector" parent="Apps" instance=ExtResource( 17 )]
 visible = false
 
 [node name="RadialBackground" type="TextureRect" parent="."]

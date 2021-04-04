@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Models/Android/Android.glb" type="PackedScene" id=1]
+[ext_resource path="res://Assets/MoonTown/Models/Human_Model/HumanAnimationTree.tscn" type="PackedScene" id=2]
+
+[node name="Android" instance=ExtResource( 1 )]
+transform = Transform( 0.846258, 0, 0.532773, 0, 1, 0, -0.532773, 0, 0.846258, 0, 0, 0 )
+
+[node name="AnimationTree" parent="." index="2" instance=ExtResource( 2 )]
+active = true

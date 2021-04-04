@@ -6,6 +6,7 @@ export(float) var initial_jump_velocity = 2.2
 export(float) var climb_speed = 1.5
 export(float) var movement_speed = 3
 export(float) var gravity = 1.625
+export(bool) var can_climb_stairs = true
 
 onready var on_ground : Node = $OnGround
 onready var normal_detect : Node = $NormalDetect
@@ -111,7 +112,11 @@ func _integrate_server(args):
 		update_server_values(phys_state)
 		return
 	main_logic_routine(phys_state)
-	
+
+#I should never be disabled.
+func disable() -> void :
+	enabled = true
+
 func main_logic_routine(phys_state):
 	reset_input()
 	if self.enabled:
@@ -241,7 +246,7 @@ func disable_ground_cast_for_seconds(duration = 0.0):
 # to be moved elsewhere and possibly reworked.
 func start_climb_stairs(target_stairs : VerticalStairs) -> void:
 	#Do nothing if the player is already in climbing state.
-	if is_climbing:
+	if is_climbing || not can_climb_stairs :
 		return
 	
 	#Disable entity collision so that no issues happen with multiple players

@@ -12,6 +12,8 @@ export(float) var dist: float = .5
 export(float) var max_pitch: float = 55
 export(float) var max_pitch_fp_increase = 30
 export(float) var cull_col_distance: float = 0.1
+export(bool) var hide_in_first_person : bool = true
+export(float) var head_height = 0.8
 onready var excluded_cull_bodies = [entity]
 
 #What max pitch value we started with.
@@ -23,7 +25,6 @@ var pitch: float = 0.0
 
 #This determines if I am in fps mode.
 var is_first_person : bool = false
-const HEAD_HEIGHT : float = 0.8
 
 #If I should respond to the mouse or not.
 var mouse_respond : bool = true
@@ -62,7 +63,7 @@ func _process(delta: float) -> void:
 		return
 	
 	#Turn off the model if we are in first person mode.
-	if is_first_person :
+	if is_first_person && hide_in_first_person :
 		entity.get_node("Model").visible = false
 	
 	var _new_rot = Vector3(deg2rad(pitch), deg2rad(yaw), 0.0)
@@ -122,8 +123,7 @@ func _input(event):
 	
 	#Check if the player wants to switch to first person.
 	if event.is_action_pressed("toggle_first_person") && camera.is_current() && allow_first_person :
-		if entity.has_node("Model") :
-			_set_first_person(!is_first_person)
+		_set_first_person(!is_first_person)
 
 #Called by signal. If true, do not rotate the camera.
 func _respond_to_mouse(mouse_active : bool) -> void :
@@ -158,8 +158,8 @@ func _update_cam_pos(delta : float = 0.016667) -> void:
 	
 	var new_cam_pos
 	if is_first_person :
-		new_cam_pos = global_transform.origin #+ _get_cam_normal()
-		new_cam_pos.y += HEAD_HEIGHT
+		new_cam_pos = global_transform.origin
+		new_cam_pos.y += head_height
 	else :
 		new_cam_pos = global_transform.origin - _get_cam_normal() * dist
 	
@@ -173,7 +173,7 @@ func _update_cam_pos(delta : float = 0.016667) -> void:
 		inside_body.y = 0
 		var cam_pos_holder : Vector3 = new_cam_pos
 		cam_pos_holder.y = 0
-		new_cam_pos.y += HEAD_HEIGHT - (((max(0.01,cam_pos_holder.distance_to(inside_body)) / dist)) * HEAD_HEIGHT)
+		new_cam_pos.y += head_height - (((max(0.01,cam_pos_holder.distance_to(inside_body)) / dist)) * head_height)
 
 	camera.global_transform.origin = new_cam_pos
 	pass
@@ -181,7 +181,11 @@ func _update_cam_pos(delta : float = 0.016667) -> void:
 #Set whether we are in first person or not.
 func _set_first_person(become_first_person : bool) -> void :
 	is_first_person = become_first_person
-	entity.get_node("Model").visible = !become_first_person
+	if entity.has_node("Model") :
+		if hide_in_first_person :
+			entity.get_node("Model").visible = !become_first_person
+		else :
+			entity.get_node("Model").visible = true
 	
 	#Increase the amount of possible pitch
 	if become_first_person :
@@ -189,7 +193,7 @@ func _set_first_person(become_first_person : bool) -> void :
 	else :
 		max_pitch = max_pitch_start
 	
-	#Hud Reticle should be active when in first person mode.
+	#Let everyone know I have entered first person mode.
 	Signals.Hud.emit_signal(Signals.Hud.SET_FIRST_PERSON, is_first_person)
 
 # Ray normal from the exact center of the viewport

@@ -3,12 +3,12 @@ extends Interactable
 class_name VerticalStairs
 
 var climb_points = []
-var step_size = 0.535
+var step_size = 0.395
 
 export(Mesh) var stair_step_mesh
 export(Mesh) var stair_top_mesh
 export(Mesh) var stair_bottom_mesh
-export(float) var stair_step_length = 0.54
+export(float) var stair_step_length = 0.4
 export(float) var stair_bottom_length = 2.52
 export(float) var stair_width = 0.34
 export(float) var stair_top_length = 1

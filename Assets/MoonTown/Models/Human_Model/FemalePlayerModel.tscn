@@ -224,3 +224,4 @@ material/4 = null
 material/5 = null
 
 [node name="AnimationTree" parent="." index="2" instance=ExtResource( 2 )]
+active = true

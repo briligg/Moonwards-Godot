@@ -5,6 +5,12 @@ class_name HudSignals
 const name = "Hud"
 
 # Define the signal's string name.
+const ANDROID_KIOSK_INTERACTED : String = "android_kiosk_interacted"
+signal android_kiosk_interacted(interacting_entity_aentity)
+
+const ANDROID_SPOT_CREATED : String = "android_spot_created"
+signal android_spot_created(new_spot_spatial, android_to_control_actorentity, button_text_string)
+
 const CHAT_TYPING_STARTED : String = "chat_typing"
 const CHAT_TYPING_FINISHED : String = "chat_finished_typing"
 const EXTRA_INFO_DISPLAYED : String = "extra_info_displayed"

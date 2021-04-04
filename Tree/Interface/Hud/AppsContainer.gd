@@ -1,4 +1,5 @@
 extends Control
+class_name AppContainer
 
 
 signal app_changed(old_app, new_app)
