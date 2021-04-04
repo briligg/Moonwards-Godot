@@ -17,12 +17,12 @@ friction = 0.35
 bounce = 0.1
 absorbent = true
 
-[sub_resource type="CapsuleShape" id=2]
-radius = 0.437657
-height = 1.08466
-
 [sub_resource type="CapsuleShape" id=3]
 radius = 0.700662
+
+[sub_resource type="CapsuleShape" id=4]
+radius = 0.23
+height = 1.22402
 
 [node name="Android" type="RigidBody"]
 collision_layer = 3
@@ -53,13 +53,6 @@ movement_speed = 8.0
 
 [node name="AnimationController" parent="." instance=ExtResource( 4 )]
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0175913, 0.967364, 0 )
-shape = SubResource( 2 )
-__meta__ = {
-"_editor_description_": ""
-}
-
 [node name="Interactor" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68742, 0 )
 grab_focus_at_ready = true
@@ -81,3 +74,10 @@ shape = SubResource( 3 )
 [node name="NametagComponent" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.21618, 0 )
 visible = false
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0175913, 0.839999, 0 )
+shape = SubResource( 4 )
+__meta__ = {
+"_editor_description_": ""
+}
