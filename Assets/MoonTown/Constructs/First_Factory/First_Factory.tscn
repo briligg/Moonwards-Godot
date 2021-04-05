@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/First_Factory/First_Factory.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Pressurized_Factories/PressurizedHangar_Regular.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/MoonTown/Models/Tower_Radiators/TowerRadiator_2x.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/MoonTown/Models/Spider_Crane/Spider_Crane.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Script/Graphics/MultiMeshConverter.gd" type="Script" id=8]
+[ext_resource path="res://Assets/MoonTown/Models/Android-Depot/Android_Depot.tscn" type="PackedScene" id=9]
 
 [node name="First_Factory" instance=ExtResource( 1 )]
 
@@ -28,6 +29,8 @@ use_in_baked_light = true
 
 [node name="MMC-FirstFactory" parent="." index="2"]
 script = ExtResource( 8 )
+
+[node name="Android_Depot" parent="MMC-FirstFactory/Android-Depot" index="0" instance=ExtResource( 9 )]
 
 [node name="Lava_Tank_Large" parent="MMC-FirstFactory/Empty_LavaTank_Large" index="0" instance=ExtResource( 4 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
