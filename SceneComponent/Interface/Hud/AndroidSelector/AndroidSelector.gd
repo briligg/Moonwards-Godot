@@ -32,5 +32,6 @@ func _sig_display(_interactor : AEntity) -> void :
 	Helpers.capture_mouse(false)
 
 #Whenever a new android spot is created, it should call this section
-func _spot_created(spatial : Spatial, android : ActorEntity, text : String) -> void :
+func _spot_created(spatial : Spatial, text : String) -> void :
+	var android : ActorEntity = spatial.get_android()
 	showcase.add_spot(android, text, spatial)
