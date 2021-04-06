@@ -21,7 +21,12 @@ func _ready() -> void :
 		var comp : ControllableBodyComponent = android.get_component("ControllableBodyComponent")
 		comp.connect("control_lost", self, "_android_returned")
 		comp.connect("control_taken", self, "_android_taken")
+		
+		ready_once = false
 
 func _ready_deferred() -> void :
 	var hud_sig : HudSignals = Signals.Hud
-	hud_sig.emit_signal(hud_sig.ANDROID_SPOT_CREATED, self, android, "Hab Android")
+	hud_sig.emit_signal(hud_sig.ANDROID_SPOT_CREATED, self,  "Hab Android")
+
+func get_android() -> ActorEntity :
+	return android
