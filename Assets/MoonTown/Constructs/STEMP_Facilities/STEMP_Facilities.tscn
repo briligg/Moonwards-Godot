@@ -7,11 +7,12 @@
 [ext_resource path="res://Assets/MoonTown/Models/Solar_Thermal_Mirror_Sets/Solar_Thermal_Mirror_Set_Center_Circuit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/MoonTown/Models/Stirling_Free_Piston/Stirling_Free_Piston.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/MoonTown/Models/Radio_Dish_Deep_Space/Radio_Dish_Deep_Space.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/MoonTown/Models/Android-Depot/Android_Depot.tscn" type="PackedScene" id=8]
+[ext_resource path="res://SceneComponent/Object/AndroidDepot/AndroidDepot.tscn" type="PackedScene" id=8]
 
 [node name="STEMP_Facilities" instance=ExtResource( 1 )]
 
-[node name="Android_Depot" parent="MMC-BoatRads-STEMP/Android Depot" index="0" instance=ExtResource( 8 )]
+[node name="AndroidDepot" parent="MMC-BoatRads-STEMP/Android Depot" index="0" instance=ExtResource( 8 )]
+spot_title = "STEMP Facilities Android"
 
 [node name="Boat_Radiator" parent="MMC-BoatRads-STEMP/Marker_BoatRad" index="0" instance=ExtResource( 2 )]
 

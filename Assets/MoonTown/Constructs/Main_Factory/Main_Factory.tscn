@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/MoonTown/Models/Pressurized_Factories/PressurizedHangar_Giant.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/MoonTown/Models/Lava_Tanks/Lava_Tank_Large.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/MoonTown/Models/Tower_Radiators/TowerRadiator_3x.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/MoonTown/Models/Android-Depot/Android_Depot.tscn" type="PackedScene" id=5]
+[ext_resource path="res://SceneComponent/Object/AndroidDepot/AndroidDepot.tscn" type="PackedScene" id=5]
 
 [node name="Main_Factory" instance=ExtResource( 1 )]
 
@@ -68,4 +68,5 @@ omni_attenuation = 1.27456
 
 [node name="TowerRadiator_3x" parent="MMC-MainFactory/TowerRad_3x_Marker009" index="0" instance=ExtResource( 4 )]
 
-[node name="Android_Depot" parent="Android Depot" index="0" instance=ExtResource( 5 )]
+[node name="AndroidDepot" parent="Android Depot" index="0" instance=ExtResource( 5 )]
+spot_title = "Main Factory Android"
