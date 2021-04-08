@@ -16,11 +16,7 @@ func _ready():
 
 #An android has been selected from the menu.
 func android_selected(spatial : Spatial) -> void :
-	var android : ActorEntity = spatial.get_android()
-	
-	var interactable : Interactable = android.get_component("ControllableBodyComponent").get_node("Interactable")
-	var interactor_comp : InteractorComponent = interactor.get_component("Interactor")
-	interactor_comp.player_requested_interact(interactable)
+	spatial.request_android(interactor)
 	parent.revert_active_app()
 
 func _exit_pressed() -> void :
