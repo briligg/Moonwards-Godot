@@ -12,13 +12,13 @@ script = ExtResource( 2 )
 [node name="Holder" type="Spatial" parent="."]
 
 [node name="AndroidParent" parent="Holder" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.682742, 2.12605, -0.421481 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.61454, 2.12605, -1.52344 )
 auto_spot_create = false
 
 [node name="AndroidParent2" parent="Holder" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.720706, 2.16649, -0.932147 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.381172, 2.16649, -0.666128 )
 auto_spot_create = false
 
 [node name="AndroidParent3" parent="Holder" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.724166, 2.15535, -1.33522 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.724166, 2.15535, -2.39507 )
 auto_spot_create = false
