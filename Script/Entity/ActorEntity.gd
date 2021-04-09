@@ -28,10 +28,13 @@ master var mlook_dir setget set_mlook_dir
 # `REMOTE`
 # Look dir of our actor
 puppet var look_dir: Vector3 = Vector3.FORWARD
+var prev_look_dir : Vector3 = Vector3.FORWARD
 
 # `PUPPET`
 # The world position of this entity on the server
 puppet var srv_pos: Vector3 = Vector3.ZERO
+var prev_srv_pos : Vector3 = Vector3.ZERO
+const DISTANCE_SRV_POS = 0.05 #How far the prev pos must be from srv_pos before  networking.
 #puppet var srv_vel: Vector3 = Vector3.ZERO
 
 # Velocity of the actor
@@ -44,8 +47,12 @@ func _integrate_server(_args) -> void:
 		return
 #	Network.crset_unreliable(self, "srv_pos", srv_pos, [1])
 #	Network.crset_unreliable(self, "look_dir", look_dir, [1])
-	rset_unreliable("srv_pos", srv_pos)
-	rset_unreliable("look_dir", look_dir)
+	if srv_pos.distance_to(prev_srv_pos) > DISTANCE_SRV_POS :
+		rset_unreliable("srv_pos", srv_pos)
+		prev_srv_pos = srv_pos
+	if prev_look_dir != look_dir :
+		rset_unreliable("look_dir", look_dir)
+		prev_look_dir = look_dir
 #	rset_unreliable("srv_vel", srv_vel)
 	
 func _integrate_client(_args) -> void:
