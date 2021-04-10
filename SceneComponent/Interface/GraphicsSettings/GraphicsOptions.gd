@@ -4,7 +4,6 @@ extends OptionButton
 signal low_selected()
 signal high_selected()
 
-
 func _item_selected(index : int) -> void :
 	if index == 0 :
 		emit_signal("low_selected")

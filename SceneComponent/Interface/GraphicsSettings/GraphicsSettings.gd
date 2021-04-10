@@ -6,6 +6,9 @@ const QUALITY = "rendering/quality/"
 var list : Array = ProjectSettings.get_property_list()
 
 
+const GRAPHICS_FILE = Helpers.SAVE_FOLDER+"graphics"
+
+
 func _high_selected() -> void :
 	_pj_set(QUALITY + "intended_usage/framebuffer_allocation", 2)
 	
@@ -48,11 +51,35 @@ func _high_selected() -> void :
 	
 	text = QUALITY+"depth/"
 	_pj_set(text+"hdr", true)
+	
+	var file : File = File.new()
+	file.open(GRAPHICS_FILE, file.WRITE)
+	file.store_line("high")
+	file.close()
+	
+	Log.trace(self, "_low_selected", "Graphics settings have been set to high.")
 
 func _ready() -> void :
 	var graphics = $LodTransition2/GraphicsOptions
 	graphics.connect("low_selected", self, "_low_selected")
 	graphics.connect("high_selected", self, "_high_selected")
+	
+	#Load the settings at start.
+	var file : File = File.new()
+	file.open(GRAPHICS_FILE, file.READ_WRITE)
+	var setting : String = file.get_line()
+	
+	#Assume low settings should file be incorrect.
+	if setting == "high" :
+		graphics.selected = 1
+		_high_selected()
+	elif setting == "low" :
+		_low_selected()
+	#File is incorrect. Set to default.
+	else :
+		_low_selected()
+	
+	file.close()
 
 #Set the graphics settings as low as possible.
 func _low_selected() -> void :
@@ -97,7 +124,14 @@ func _low_selected() -> void :
 	
 	text = QUALITY+"depth/"
 	_pj_set(text+"hdr", false)
+
+	var file : File = File.new()
+	file.open(GRAPHICS_FILE, file.WRITE)
+	file.store_line("low")
+	file.close()
 	
+	#Let everyone know graphics was changed.
+	Log.trace(self, "_low_selected", "Graphics settings have been set to low.")
 
 #Helper function for setting ProjectSettings with less typing.
 func _pj_set(property : String, value) -> void :
