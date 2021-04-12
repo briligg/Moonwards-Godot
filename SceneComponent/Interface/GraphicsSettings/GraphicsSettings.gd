@@ -2,6 +2,7 @@ extends Control
 
 
 const QUALITY = "rendering/quality/"
+const LIMITS = "rendering/limits/"
 
 var list : Array = ProjectSettings.get_property_list()
 
@@ -51,6 +52,11 @@ func _high_selected() -> void :
 	
 	text = QUALITY+"depth/"
 	_pj_set(text+"hdr", true)
+	
+	text = LIMITS+"rendering/"
+	_pj_set(text+"max_renderable_elements", 60000)
+	_pj_set(text+"max_renderable_lights", 4096)
+	_pj_set(text+"max_renderable_reflections", 1024)
 	
 	var file : File = File.new()
 	file.open(GRAPHICS_FILE, file.WRITE)
@@ -124,6 +130,11 @@ func _low_selected() -> void :
 	
 	text = QUALITY+"depth/"
 	_pj_set(text+"hdr", false)
+	
+	text = LIMITS+"rendering/"
+	_pj_set(text+"max_renderable_elements", 1024)
+	_pj_set(text+"max_renderable_lights", 16)
+	_pj_set(text+"max_renderable_reflections", 8)
 
 	var file : File = File.new()
 	file.open(GRAPHICS_FILE, file.WRITE)
