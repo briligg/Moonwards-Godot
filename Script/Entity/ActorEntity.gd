@@ -69,6 +69,15 @@ func _integrate_forces(new_state):
 	emit_signal("on_forces_integrated", new_state)
 	invoke_network_based("_integrate_server", "_integrate_client", [new_state])
 
+#Let newcomers know my positions.
+func _ready() -> void :
+	var net : NetworkSignals = Signals.Network
+	net.connect(net.NEW_PLAYER_POST_LOAD, self, "_sync_for_new_player")
+
+func _sync_for_new_player(peer_id : int) -> void :
+	rset_id(peer_id, "srv_pos", srv_pos)
+	rset_id(peer_id, "look_dir", look_dir)
+
 func invoke_network_based(server_func: String, client_func: String, args):
 	if !get_tree().network_peer:
 		return
