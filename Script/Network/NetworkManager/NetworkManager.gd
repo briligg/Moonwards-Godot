@@ -39,8 +39,8 @@ func _set_game_server(is_host_player: bool = false) -> void:
 	root.call_deferred("add_child", network_instance)
 	
 	#Turn networking on when everything has been loaded.
-	network_instance.connect("world_loaded", self, "_set_networking_activity")
-	network_instance.connect("disconnected_instance", self, "_set_networking_activity")
+	network_instance.connect("world_loaded", self, "_set_networking_activity", [true])
+	network_instance.connect("disconnected_instance", self, "_set_networking_activity", [false])
 
 func _set_game_client(_ip, _port) -> void:
 	var root = get_tree().get_root()
@@ -49,7 +49,8 @@ func _set_game_client(_ip, _port) -> void:
 	root.call_deferred("add_child", network_instance)
 	
 	#Turn networking on when everything has been loaded.
-	network_instance.connect("world_loaded", self, "_start_networking")
+	network_instance.connect("world_loaded", self, "_set_networking_activity", [true])
+	network_instance.connect("disconnected_instance", self, "_set_networking_activity", [false])
 
 func _set_self_colors(colors: Array) -> void:
 	self_meta_data.colors = colors

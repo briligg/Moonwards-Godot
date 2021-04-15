@@ -44,7 +44,7 @@ func enable() -> void:
 	Log.trace(self, "enable", "Component %s has been enabled" %comp_name)
 
 func invoke_network_based(server_func: String, client_func: String, args, call_client_on_hosted_srv = false):
-	if !get_tree().network_peer:
+	if not Network.is_networking_active() ||  !get_tree().network_peer:
 		return
 	if get_tree().is_network_server() and entity.owner_peer_id == get_tree().get_network_unique_id():
 		call(server_func, args)
@@ -56,7 +56,7 @@ func invoke_network_based(server_func: String, client_func: String, args, call_c
 		call(client_func, args)
 
 func _process_network(delta) -> void:
-	if !get_tree().network_peer:
+	if not Network.is_networking_active() ||  !get_tree().network_peer:
 		return
 	if get_tree().is_network_server() and entity.owner_peer_id == get_tree().get_network_unique_id():
 		_process_server(delta)

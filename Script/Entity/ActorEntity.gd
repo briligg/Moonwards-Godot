@@ -56,7 +56,7 @@ func _integrate_server(_args) -> void:
 #	rset_unreliable("srv_vel", srv_vel)
 	
 func _integrate_client(_args) -> void:
-	if !get_tree().network_peer:
+	if not Network.is_networking_active() || !get_tree().network_peer:
 		return
 	# This needs to be validated on the server side.
 	# Figure out a way to do that as godot doesn't have it out of the box
@@ -79,7 +79,7 @@ func _sync_for_new_player(peer_id : int) -> void :
 	rset_id(peer_id, "look_dir", look_dir)
 
 func invoke_network_based(server_func: String, client_func: String, args):
-	if !get_tree().network_peer:
+	if not Network.is_networking_active() ||  !get_tree().network_peer:
 		return
 	if get_tree().is_network_server() and self.owner_peer_id == get_tree().get_network_unique_id():
 		call(server_func, args)
