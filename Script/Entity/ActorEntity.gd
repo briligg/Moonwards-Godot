@@ -75,6 +75,8 @@ func _ready() -> void :
 	net.connect(net.NEW_PLAYER_POST_LOAD, self, "_sync_for_new_player")
 
 func _sync_for_new_player(peer_id : int) -> void :
+	#Wait for a while to see to wait for the player to finish properly loading.
+	yield(get_tree().create_timer(0.8), "timeout")
 	rset_id(peer_id, "srv_pos", srv_pos)
 	rset_id(peer_id, "look_dir", look_dir)
 
