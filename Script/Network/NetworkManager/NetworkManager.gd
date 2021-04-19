@@ -92,5 +92,9 @@ func crset_unreliable(caller: Node, method: String, val, exclude_list = []):
 func crpc_signal(instance: Node, sig_name: String, param):
 	network_instance.crpc_signal(instance, sig_name, param)
 
+#Provides a more intuitive function name for getting the peer_id of the local instance.
+func get_local_peer_id() -> int :
+	return get_tree().get_network_unique_id()
+
 func is_networking_active() -> bool :
 	return networking_active
