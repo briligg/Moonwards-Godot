@@ -45,15 +45,13 @@ var is_grounded: bool
 func _integrate_server(_args) -> void:
 	if !get_tree().network_peer:
 		return
-#	Network.crset_unreliable(self, "srv_pos", srv_pos, [1])
-#	Network.crset_unreliable(self, "look_dir", look_dir, [1])
+
 	if srv_pos.distance_to(prev_srv_pos) > DISTANCE_SRV_POS :
 		rset_unreliable("srv_pos", srv_pos)
 		prev_srv_pos = srv_pos
 	if prev_look_dir != look_dir :
 		rset_unreliable("look_dir", look_dir)
 		prev_look_dir = look_dir
-#	rset_unreliable("srv_vel", srv_vel)
 	
 func _integrate_client(_args) -> void:
 	if not Network.is_networking_active() || !get_tree().network_peer:
