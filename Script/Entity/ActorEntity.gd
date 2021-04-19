@@ -74,11 +74,14 @@ func _ready() -> void :
 	var net : NetworkSignals = Signals.Network
 	net.connect(net.NEW_PLAYER_POST_LOAD, self, "_sync_for_new_player")
 
+puppet func _sync_client_to_server(new_srv_pos : Vector3, new_look_dir : Vector3, new_global_pos : Vector3) -> void :
+	global_transform.origin = new_global_pos
+	srv_pos = new_srv_pos
+	look_dir = new_look_dir
+
 func _sync_for_new_player(peer_id : int) -> void :
 	#Wait for a while to see to wait for the player to finish properly loading.
-	yield(get_tree().create_timer(0.8), "timeout")
-	rset_id(peer_id, "srv_pos", srv_pos)
-	rset_id(peer_id, "look_dir", look_dir)
+	rpc_id(peer_id, "_sync_client_to_server", srv_pos, look_dir, global_transform.origin)
 
 func invoke_network_based(server_func: String, client_func: String, args):
 	if not Network.is_networking_active() ||  !get_tree().network_peer:
