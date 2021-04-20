@@ -42,6 +42,18 @@ var velocity = Vector3()
 
 var is_grounded: bool
 
+#The client will tell the server to sync itself up at start.
+var _client_sync : bool = true
+
+#This function will wait for a while before telling the server to sync the client.
+func _client_tells_server_to_sync() -> void :
+	yield(get_tree().create_timer(8), "timeout")
+	rpc("_client_wants_to_sync", Network.get_local_peer_id())
+
+master func _client_wants_to_sync(client_peer_id : int) -> void :
+	rset_id(client_peer_id, "srv_pos", srv_pos)
+	rset_id(client_peer_id, "look_dir", look_dir)
+
 func _integrate_server(_args) -> void:
 	if !get_tree().network_peer:
 		return
@@ -62,6 +74,11 @@ func _integrate_client(_args) -> void:
 	if self.owner_peer_id == get_tree().get_network_unique_id():
 		rset_id(1, "input", input)
 		rset_id(1, "mlook_dir", look_dir)
+	
+	if _client_sync :
+		_client_sync = false
+		if not Network.is_network_master() :
+			_client_tells_server_to_sync()
 
 func _integrate_forces(new_state):
 	emit_signal("on_forces_integrated", new_state)
