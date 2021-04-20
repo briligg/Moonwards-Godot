@@ -32,7 +32,7 @@ var prev_look_dir : Vector3 = Vector3.FORWARD
 
 # `PUPPET`
 # The world position of this entity on the server
-puppet var srv_pos: Vector3 = Vector3.ZERO
+puppet var srv_pos: Vector3 = transform.origin
 var prev_srv_pos : Vector3 = Vector3.ZERO
 const DISTANCE_SRV_POS = 0.05 #How far the prev pos must be from srv_pos before  networking.
 #puppet var srv_vel: Vector3 = Vector3.ZERO
