@@ -47,7 +47,10 @@ var _client_sync : bool = true
 
 #This function will wait for a while before telling the server to sync the client.
 func _client_tells_server_to_sync() -> void :
-	yield(get_tree().create_timer(8), "timeout")
+	#Randomly generate a wait time for when to sync
+	var wait : float = (randi() % 6) + 8
+	
+	yield(get_tree().create_timer(wait), "timeout")
 	rpc("_client_wants_to_sync", Network.get_local_peer_id())
 
 master func _client_wants_to_sync(client_peer_id : int) -> void :
