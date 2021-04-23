@@ -3,7 +3,7 @@ class_name HumanoidMovement
 
 # Component for kinematic movement
 export(float) var initial_jump_velocity = 2.2
-export(float) var climb_speed = 1.5
+export(float) var climb_speed = 1.6
 export(float) var movement_speed = 3
 export(float) var gravity = 1.625
 export(bool) var can_climb_stairs = true
