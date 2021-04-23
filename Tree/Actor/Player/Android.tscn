@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://SceneComponent/Actor/Humanoid/HumanoidInput.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SceneComponent/Interface/Nametag/NametagComponent.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/MoonTown/Models/Android/Android.tscn" type="PackedScene" id=7]
 [ext_resource path="res://SceneComponent/Actor/InteractorComponent.tscn" type="PackedScene" id=8]
 [ext_resource path="res://SceneComponent/Actor/Debug/HumanoidMovementDebug.tscn" type="PackedScene" id=9]
+[ext_resource path="res://SceneComponent/Actor/AnchorMovement.tscn" type="PackedScene" id=10]
 [ext_resource path="res://SceneComponent/Actor/ModelComponent.tscn" type="PackedScene" id=11]
 [ext_resource path="res://SceneComponent/Actor/ControllableBodyComponent.tscn" type="PackedScene" id=12]
 
@@ -17,10 +18,10 @@ friction = 0.35
 bounce = 0.1
 absorbent = true
 
-[sub_resource type="CapsuleShape" id=3]
+[sub_resource type="CapsuleShape" id=2]
 radius = 0.700662
 
-[sub_resource type="CapsuleShape" id=4]
+[sub_resource type="CapsuleShape" id=3]
 radius = 0.23
 height = 1.22402
 
@@ -69,7 +70,7 @@ interactable_info = "stop using the android"
 
 [node name="CollisionShape" type="CollisionShape" parent="ControllableBodyComponent"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1.04347, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="NametagComponent" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.21618, 0 )
@@ -77,7 +78,9 @@ visible = false
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0175913, 0.839999, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="AnchorMovement" parent="." instance=ExtResource( 10 )]
