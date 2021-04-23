@@ -43,7 +43,7 @@ func _init() -> void :
 
 func _ready() -> void :
 	connect("area_entered", self, "_area_entered")
-	connect("area_left", self, "_area_left")
+	connect("area_exited", self, "_area_left")
 	
 	call_deferred("_check_detections_helper")
 
