@@ -32,7 +32,7 @@ func _process_server(_delta: float) -> void:
 #	rset("velocity", velocity)
 	
 func _process_client(_delta: float) -> void:
-	if !get_tree().network_peer || !enabled:
+	if not Network.is_networking_active() || !get_tree().network_peer || !enabled:
 		return
 	# This needs to be validated on the server side.
 	# Figure out a way to do that as godot doesn't have it out of the box

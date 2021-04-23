@@ -4,6 +4,7 @@ class_name ANetworkInstance
 
 signal initialized
 signal world_loaded
+signal disconnected_instance()
 
 var is_initialized: bool = false
 
@@ -36,6 +37,7 @@ func load_world() -> void:
 func disconnect_instance():
 	multiplayer_peer.close_connection()
 	multiplayer_peer = NetworkedMultiplayerENet.new()
+	emit_signal("disconnected_instance")
 
 # `PUPPETSYNC`
 puppetsync func remove_player(_peer_id: int) -> void:

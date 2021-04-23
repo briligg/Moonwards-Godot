@@ -10,6 +10,8 @@ const IS_ALWAYS_ORDERED = true
 const COMPRESS_MODE = NetworkedMultiplayerENet.COMPRESS_ZSTD
 var network_instance: ANetworkInstance = null
 
+var networking_active : bool = false setget ,is_networking_active
+
 # This is to be moved to a more full system once persistence is setup
 var self_meta_data = {
 	"name" : "No name set",
@@ -36,11 +38,19 @@ func _set_game_server(is_host_player: bool = false) -> void:
 	network_instance.name = "NetworkInstance"
 	root.call_deferred("add_child", network_instance)
 	
+	#Turn networking on when everything has been loaded.
+	network_instance.connect("world_loaded", self, "_set_networking_activity", [true])
+	network_instance.connect("disconnected_instance", self, "_set_networking_activity", [false])
+
 func _set_game_client(_ip, _port) -> void:
 	var root = get_tree().get_root()
 	network_instance = GameClient.new(_ip, _port)
 	network_instance.name = "NetworkInstance"
 	root.call_deferred("add_child", network_instance)
+	
+	#Turn networking on when everything has been loaded.
+	network_instance.connect("world_loaded", self, "_set_networking_activity", [true])
+	network_instance.connect("disconnected_instance", self, "_set_networking_activity", [false])
 
 func _set_self_colors(colors: Array) -> void:
 	self_meta_data.colors = colors
@@ -50,7 +60,9 @@ func _set_self_gender(gender : int) -> void :
 
 func _set_self_name(name: String) -> void:
 	self_meta_data.name = name
-	
+
+func _set_networking_activity(activity : bool) -> void :
+	networking_active = activity
 ## Networking API - to be better written in C++
 
 func get_sender_entity() -> EntityData:
@@ -79,3 +91,10 @@ func crset_unreliable(caller: Node, method: String, val, exclude_list = []):
 # Controlled signal RPC
 func crpc_signal(instance: Node, sig_name: String, param):
 	network_instance.crpc_signal(instance, sig_name, param)
+
+#Provides a more intuitive function name for getting the peer_id of the local instance.
+func get_local_peer_id() -> int :
+	return get_tree().get_network_unique_id()
+
+func is_networking_active() -> bool :
+	return networking_active

@@ -18,13 +18,15 @@ func interacted_by(body):
 func attach_anchor(body):
 	if body is AEntity:
 		body.movement_anchor_data.attach(self)
-		body.get_component("AnchorMovement").set_status_visibility(true)
+		if body.has_node("AnchorMovement") :
+			body.get_component("AnchorMovement").set_status_visibility(true)
 		attached_to = body
  
 func detach_anchor(body):
 	if body is AEntity:
 		body.movement_anchor_data.detach()
-		body.get_component("AnchorMovement").set_status_visibility(false)
+		if body.has_node("AnchorMovement") :
+			body.get_component("AnchorMovement").set_status_visibility(false)
 		attached_to = null
 
 func sync_for_new_player(peer_id):
