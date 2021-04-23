@@ -12,6 +12,7 @@
 [node name="STEMP_Facilities" instance=ExtResource( 1 )]
 
 [node name="AndroidDepot" parent="MMC-BoatRads-STEMP/Android Depot" index="0" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05965, 1.30566, 0.454582 )
 spot_title = "STEMP Facilities Android"
 
 [node name="Boat_Radiator" parent="MMC-BoatRads-STEMP/Marker_BoatRad" index="0" instance=ExtResource( 2 )]
