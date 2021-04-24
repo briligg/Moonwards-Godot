@@ -68,5 +68,8 @@ omni_attenuation = 1.27456
 
 [node name="TowerRadiator_3x" parent="MMC-MainFactory/TowerRad_3x_Marker009" index="0" instance=ExtResource( 4 )]
 
+[node name="Android Depot" parent="." index="7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.12093, 29.3288, -423.505 )
+
 [node name="AndroidDepot" parent="Android Depot" index="0" instance=ExtResource( 5 )]
 spot_title = "Main Factory Android"
