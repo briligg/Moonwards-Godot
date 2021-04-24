@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Spaceport/Spaceport.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Launch_Pad/Launch_Pad.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Assets/MoonTown/Constructs/Spaceport/Spaceport_Hangar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/MoonTown/Constructs/Spaceport/Spaceport_Roads.tres" type="Material" id=6]
 [ext_resource path="res://Script/Graphics/MultiMeshConverter.gd" type="Script" id=7]
+[ext_resource path="res://SceneComponent/Object/AndroidDepot/AndroidDepot.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/MoonTown/Models/Boat_Radiator/Boat_Radiator.tscn" type="PackedScene" id=9]
 
 [node name="Spaceport" instance=ExtResource( 1 )]
 
@@ -52,3 +54,7 @@ script = ExtResource( 7 )
 [node name="NuclearPodShip" parent="Markers/Marker_PodshipG" index="0" instance=ExtResource( 3 )]
 
 [node name="NuclearPodShip" parent="Markers/Marker_PodshipH" index="0" instance=ExtResource( 3 )]
+
+[node name="AndroidDepot" parent="Android Depot" index="0" instance=ExtResource( 8 )]
+
+[node name="Boat_Radiator" parent="Optimized" index="0" instance=ExtResource( 9 )]

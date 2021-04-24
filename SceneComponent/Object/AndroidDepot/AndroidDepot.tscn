@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/MoonTown/Models/Android-Depot/Android_Depot.tscn" type="PackedScene" id=1]
+[ext_resource path="res://SceneComponent/Object/AndroidDepot/AndroidDepot.gd" type="Script" id=2]
+[ext_resource path="res://SceneComponent/Utilities/AndroidParent/AndroidParent.tscn" type="PackedScene" id=4]
+
+[node name="AndroidDepot" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Android_Depot" parent="." instance=ExtResource( 1 )]
+
+[node name="Holder" type="Spatial" parent="."]
+
+[node name="AndroidParent" parent="Holder" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.61454, 2.12605, -1.52344 )
+auto_spot_create = false
+
+[node name="AndroidParent2" parent="Holder" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.381172, 2.16649, -0.666128 )
+auto_spot_create = false
+
+[node name="AndroidParent3" parent="Holder" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.724166, 2.15535, -2.39507 )
+auto_spot_create = false
