@@ -334,6 +334,15 @@ void fragment() {
 // VectorOp:10
 	vec3 n_out10p0 = n_out7p0 * n_out8p0;
 
+// TextureUniform:177
+	vec3 n_out177p0;
+	float n_out177p1;
+	{
+		vec4 n_tex_read = texture(Heightmap_A, n_out10p0.xy);
+		n_out177p0 = n_tex_read.rgb;
+		n_out177p1 = n_tex_read.a;
+	}
+
 // ParallaxMapping:175
 	float n_in175p2 = 0.03500;
 	float n_in175p3 = 1.00000;
