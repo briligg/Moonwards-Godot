@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Center_Atrium.glb-20d6d20e59522c5f63ded02a31f1f0bb.scn"
+path="res://.import/apolloi_11_cm.fbx-ac3e5befd44f907a0c741637b15c74d3.scn"
 
 [deps]
 
-source_file="res://Assets/MoonTown/Constructs/Center_Atrium/Center_Atrium.glb"
-dest_files=[ "res://.import/Center_Atrium.glb-20d6d20e59522c5f63ded02a31f1f0bb.scn" ]
+source_file="res://Assets/MoonTown/Models/Apollo_11_Command_Module/apolloi_11_cm.fbx"
+dest_files=[ "res://.import/apolloi_11_cm.fbx-ac3e5befd44f907a0c741637b15c74d3.scn" ]
 
 [params]
 
@@ -16,7 +16,7 @@ nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
-nodes/use_legacy_names=true
+nodes/use_legacy_names=false
 materials/location=1
 materials/storage=1
 materials/keep_on_reimport=true
