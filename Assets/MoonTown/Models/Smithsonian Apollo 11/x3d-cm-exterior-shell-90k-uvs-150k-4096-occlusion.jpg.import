@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/x3d-cm-exterior-shell-90k-uvs-150k-4096-occlusion.jpg-5ac86ec12a7c95c9d7176c46cf96b0fd.s3tc.stex"
+path.etc2="res://.import/x3d-cm-exterior-shell-90k-uvs-150k-4096-occlusion.jpg-5ac86ec12a7c95c9d7176c46cf96b0fd.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://Assets/MoonTown/Models/Smithsonian Apollo 11/x3d-cm-exterior-shell-90k-uvs-150k-4096-occlusion.jpg"
+dest_files=[ "res://.import/x3d-cm-exterior-shell-90k-uvs-150k-4096-occlusion.jpg-5ac86ec12a7c95c9d7176c46cf96b0fd.s3tc.stex", "res://.import/x3d-cm-exterior-shell-90k-uvs-150k-4096-occlusion.jpg-5ac86ec12a7c95c9d7176c46cf96b0fd.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=1
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
