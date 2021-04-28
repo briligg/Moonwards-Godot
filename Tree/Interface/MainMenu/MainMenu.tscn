@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Tree/Interface/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/BackgroundCycler/BackgroundCycler.tscn" type="PackedScene" id=2]
@@ -37,7 +37,6 @@
 [ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/14.png" type="Texture" id=42]
 [ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/3.png" type="Texture" id=43]
 [ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/4.png" type="Texture" id=44]
-[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/5.png" type="Texture" id=45]
 [ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/6.png" type="Texture" id=46]
 [ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/8.png" type="Texture" id=47]
 [ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/19.png" type="Texture" id=48]
@@ -49,7 +48,6 @@
 [ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/10.png" type="Texture" id=54]
 [ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/12.png" type="Texture" id=55]
 [ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/7.png" type="Texture" id=56]
-[ext_resource path="res://Assets/Interface/Textures/MainMenuBackgrounds/22.png" type="Texture" id=57]
 [ext_resource path="res://Assets/Interface/MoonwardsPrimeButton.tres" type="Theme" id=62]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -140,8 +138,7 @@ layer = 10
 script = ExtResource( 1 )
 
 [node name="Background" parent="." instance=ExtResource( 2 )]
-image_wait_time = 6.0
-textures = [ ExtResource( 55 ), ExtResource( 39 ), ExtResource( 45 ), ExtResource( 50 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 37 ), ExtResource( 54 ), ExtResource( 51 ), ExtResource( 46 ), ExtResource( 38 ), ExtResource( 49 ), ExtResource( 53 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 57 ), ExtResource( 48 ), ExtResource( 40 ), ExtResource( 43 ), ExtResource( 47 ), ExtResource( 56 ), ExtResource( 42 ), ExtResource( 52 ) ]
+textures = [ ExtResource( 43 ), ExtResource( 35 ), ExtResource( 47 ), ExtResource( 51 ), ExtResource( 44 ), ExtResource( 54 ), ExtResource( 52 ), ExtResource( 49 ), ExtResource( 36 ), ExtResource( 39 ), ExtResource( 53 ), ExtResource( 40 ), ExtResource( 56 ), ExtResource( 46 ), ExtResource( 50 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 48 ), ExtResource( 55 ), ExtResource( 37 ) ]
 
 [node name="VBoxContainer" type="Control" parent="."]
 anchor_right = 1.0
@@ -790,4 +787,5 @@ text = "About"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="About" to="." method="_on_About_pressed"]
