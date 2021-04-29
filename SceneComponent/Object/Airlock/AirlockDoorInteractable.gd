@@ -46,6 +46,9 @@ puppet func netsync_door(val):
 		emit_signal("opened")
 
 func sync_for_new_player(peer_id):
+	#Major hack to prevent premature calling
+	yield(get_tree().create_timer(10), "timeout")
+	Log.trace(self, "sync_for_new_player", "Attempting sync %s for player %s" % [get_path(), str(peer_id)])
 	rpc_id(peer_id, "netsync_door", is_open )
 
 puppet func request_close():
