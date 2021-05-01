@@ -60,9 +60,9 @@ func update_climb_animation(_delta):
 	
 	#Determine where we should be setting our feet when climbing.
 	if entity.climb_point % 2 == 0:
-		climb_progress = abs((2.0 if climb_direction > 0.0 else 0.0) - abs((kb_pos.y - entity.climb_points[entity.climb_point].y) / entity.stairs.step_size))
+		climb_progress = abs((1.5 if climb_direction > 0.0 else 0.0) - abs((kb_pos.y - entity.climb_points[entity.climb_point].y) / entity.stairs.step_size))
 	else:
-		climb_progress = abs((2.0 if climb_direction > 0.0 else 0.0) - (1.0 + abs(kb_pos.y - entity.climb_points[entity.climb_point].y) / entity.stairs.step_size))
+		climb_progress = abs((1.5 if climb_direction > 0.0 else 0.0) - (1.0 + abs(kb_pos.y - entity.climb_points[entity.climb_point].y) / entity.stairs.step_size))
 	
 	#Which direction we are traveling in.
 	var forward_amount = entity.input.z
