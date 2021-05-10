@@ -15,16 +15,15 @@
 [ext_resource path="res://Assets/MoonTown/Models/Android_Control_Kiosk/android_kiosk_simple.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Script/Graphics/MultiMeshConverter.gd" type="Script" id=28]
 
-[sub_resource type="StreamTexture" id=2]
+[sub_resource type="StreamTexture" id=1]
 flags = 7
 load_path = "res://.import/CLIMB2021.png-816a8f5150464fcc8377c8550c24fd55.s3tc.stex"
 
-[sub_resource type="StreamTexture" id=3]
+[sub_resource type="StreamTexture" id=2]
 flags = 7
 load_path = "res://.import/Reactors-Teacup-Factories.png-99e24a9b23de98657ced98e319e9cdee.s3tc.stex"
 
-[sub_resource type="Animation" id=1]
-resource_name = "spin"
+[sub_resource type="Animation" id=3]
 length = 8.0
 loop = true
 tracks/0/type = "value"
@@ -358,24 +357,19 @@ transform = Transform( 0.407119, 0, -0.734571, 0, 0.6, 0, 0.440743, 0, 0.678532,
 bbtext_fields = PoolStringArray( "This is the entrance to the giant wheel thing hanging underneath this floor. It\'s a carousel designed to spin at a speed that pushes people on its outer rim against the wall with a force equal to Earth gravity. In that case, the wall is used as a floor. It is angled so that the outward force due to being spun and the downward force of lunar gravity together have the net effect that you can stand on that surface as though it was quite level. You might call it the spin floor, as it\'s the surface people use to move around when the carousel is spun up.", "Every person in this neighborhood spends a few hours here every day. It can carry all of them at the same time, though that\'s a little crowded. How much time would actually need to be spent in artificial gravity by a long-term lunar resident will not be known until quite extensive testing has been done, hopefully in a space station in Earth orbit, well before anyone goes to the moon with the intention of living there. The uneducated guess here is that it takes about 3 hours a day to stay healthy, for the average person. People usually do it whenever fits best in their day, sometimes in two or three separate sessions. So the carousel is spinning most of the time, with usually less than 15 people on it together. It stops every 3 hours to let people on and off, but once accustomed to its motion, most people can get on or off while its moving.", "Exercise is an essential activity done while on the carousel. Jumping around a lot is unpopular though. Carousels are only 16 meters in radius; when standing, your head is experiencing a tenth less centrifugal force than your feet are. Moving around also involves changes in the forces on you that are quite discernible. Even old hands have trouble not feeling nauseous if they move too vigorously. Slow movements are the way to go - yoga, free weights, tai chi, stuff like that. Aside from exercising, people hang out or do desk work." )
 title = "Artificial gravity carousel"
 
-[node name="ScooterRamp-tooltip" parent="Tooltips" index="7" instance=ExtResource( 15 )]
-transform = Transform( -0.0691371, 0, 0.990394, 0, 0.5, 0, -0.495197, 0, -0.138274, -39.8971, -15.6876, -17.7693 )
-bbtext_fields = PoolStringArray( "These exist for the wheeled robots and the scooters. Transport of goods within the habitats is done by autonomous robots. People ride scooters when they go far enough - altogether the habs are many kilometers long. The ramp surface has a deep grill-like texture on it that meshes with the standard wheels used on all such machines, otherwise they wouldn\'t have enough friction to climb up a slope this steep. It\'s awkward for people to use them but they sometimes do. Going up, they can get toe-holds in the grill texture, but going down, they have to sort of hop and slide." )
-title = "Scooter Ramps"
-
-[node name="Foundation-tooltip" parent="Tooltips" index="8" instance=ExtResource( 15 )]
+[node name="Foundation-tooltip" parent="Tooltips" index="7" instance=ExtResource( 15 )]
 transform = Transform( -0.00112393, 0.693191, -0.720753, 0.0581569, 0.719579, 0.691971, 0.998307, -0.041139, -0.0411226, -78.3957, -87.4824, -11.7187 )
 bbtext_fields = PoolStringArray( "The gently undulating topology of the bottom of this habitat was created over a much flatter structure underneath, which in turn was built a short distance above the floor of the trench this hab was built inside of. Dotted all over the space between the floor of this hab and the floor of the trench are hundreds of posts specially designed to damp the shaking of moonquakes. Powder regolith is packed in the space between them, and in fact all around the whole structure in a space between the shell and the faces of the trench. The glass and stone materials the outer shell of the hab is made of can stand a lot of vibration, but not much shaking. Any cracking would lead to loss of air, and accumulated cracks could make that air loss expensive. At the same time, small cracks are hard to find. Repairing such cracks is simple, but you have to find them first. Isolating the hab from the shaking of moonquakes was deemed the better approach.", "We have very limited data on moonquakes, just what was recorded for a few years by a few seismometers set up by the Apollo astronauts. Those spotted many small moonquakes every lunar month, they are of no consequence. Up to a few times a year, there were shallow moonquakes that occur within about 30 km of the surface. The strongest of those was magnitude 5.1. A good estimate is that a hab placed at random on the moon \'can expect a shallow moonquake of body wave magnitude greater than 4.5 within a range of 100 km about once in 400 years\' (from Benaroya, Building Habitats on the Moon). As these habs were designed to last centuries, adequate protection was important." )
 title = " Foundations and moonquakes"
 
-[node name="HeatExchanger-tooltip" parent="Tooltips" index="9" instance=ExtResource( 15 )]
+[node name="HeatExchanger-tooltip" parent="Tooltips" index="8" instance=ExtResource( 15 )]
 transform = Transform( 0.593327, 0, -0.148724, 0, 0.6, 0, 0.0892345, 0, 0.988879, -75.6368, -85.9388, -27.0905 )
 bbtext_fields = PoolStringArray( "The thing above that looks like a giant straw is used to absorb heat from the air. The walls of the tube are filled with coils of smaller tubes filled with coolant. That coolant is pumped around and returns to this box, which is full of equipment that transfers the heat in that coolant to the coolant in a separate circuit, which runs down the borehole underneath this structure and then out to a trench beside it. Those boreholes also contain the cables that anchor to their walls, and connect at the top to the cables within the columns that meet behind each of these heat pump structures. The column cables are holding down the roof and helping stabilize the walls of the habitat, counteracting the outward pressure of the air. The boreholes descend 100 m into the ground.", "Here near the top of the hab, the ground is made mostly of dirt, with some rocks mixed in. The dirt here is highly insulating, heat moves through it extremely badly. The boreholes are large enough that smaller branch boreholes can be drilled out of them to the sides. Some were created to increase the anchoring capacity of the boreholes. To make cooling effective this close to the rim of the crater, one branch of each borehole had to be routed to trenches extending away from the exterior of the hab. Each one of these upper heat pumps has one, containing a radiator, and underneath it, a heavy slab of slag. The trenches are uncovered whenever sunlight doesn\'t reach the radiator, which thanks to the walls of the trench means for 25 days of every 30. For the 5 days it does, the heat being shed from the hab is directed into the slab. For the rest of the time, the radiator radiates it into space.", "As you move down through the gallery habs, ever more of the surrounding ground is composed of buried boulders. If one can judge by the topology of the crater, true bedrock is just under the surface starting about a kilometer and a half below the altitude of the rim. Though heat doesn\'t move through rock very fast, being thermally connected to the very bedrock of the moon\'s crust bridges the habs to a nearly inexhaustible heat sink that\'s -20 degrees Celsius. So, in the lower reaches of the galleries, these heat pumps connect to a conduit running to several points where it was feasible to sink boreholes all the way to the bedrock. Once enough such boreholes were created, conduits were laid back up to the rim, to the atrium habs and Teacup hab, to supplement their existing radiator systems." )
 title = "Heat Pumps and Foundation Piles"
 
 [node name="welcome-presentation" parent="." index="2" instance=ExtResource( 8 )]
 transform = Transform( 0.921063, 0, -0.389413, 0, 1, 0, 0.389413, 0, 0.921063, -15.7297, -27.0304, -8.84299 )
-texture_slides = [ SubResource( 2 ), ExtResource( 9 ), SubResource( 3 ) ]
+texture_slides = [ SubResource( 1 ), ExtResource( 9 ), SubResource( 2 ) ]
 text_slides = [ "This is our first year. Moon Town is still early in its development. Drawing in people interested in collaborating on building a realistic lunar town is crucial to the project. Sound like that could be you? Then we are here to serve you.", "Submissions will be set up in Center Atrium. It's two floors down and through the hall on the right. They are set up on the ground floor, starting by the Apollo 11 CM.", "Look around, and know that everything here is meant to be improved by those with knowledge. Things will have more and better added media, like this slideshow, rich tooltips, and animations. Eventually things will be truly part of the game, operated by players." ]
 
 [node name="Airlock_Bay_Entrance_Frame" parent="LOD0" index="1"]
@@ -490,7 +484,7 @@ transform = Transform( 1, 0, 6.51683e-07, 0, 1, 0, -6.51683e-07, 0, 1, 0, 0, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Marker_Carousel/Carousel" index="2"]
 autoplay = "spin"
-anims/spin = SubResource( 1 )
+anims/spin = SubResource( 3 )
 
 [node name="Vertical-Stairs-1a" parent="Marker_Vertical-Stairs001" index="0" instance=ExtResource( 4 )]
 stair_bottom_length = 2.4

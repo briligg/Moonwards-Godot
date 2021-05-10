@@ -25,16 +25,31 @@ interior = true
 [node name="Airlock_Bay" instance=ExtResource( 1 )]
 
 [node name="RoverAirlockTooltip" parent="." index="0" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -91.0821, 3.0775, -4.73075 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -86.3444, 3.0775, -4.82365 )
 bbtext_fields = PoolStringArray( "Through this airlock there is a passenger pod, and a rover that carries it around. At the end of the pod there is a sign you can click on that will let you drive the rover. Better to hang on to a pole by clicking on one, and then clicking the Drive Rover sign. (If it\'s hard to select switch to first person for a better view - press 1 for that.) You can either have the rover pick up the pod (press C and then choose Dock from the list) and drive around carrying it, or you can just drive the rover off, using the WASD keys and the space bar to jump.                                 If you carry the pod, it can have a bunch of people in it at the same time. So if you are here with friends, I recommend one of you drives, and the others enjoy the ride. Happy trails!" )
 title = "Drive the rover outside"
 
 [node name="RoverAirlockTooltip2" parent="." index="1" instance=ExtResource( 3 )]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -74.4019, 3.0775, 4.97622 )
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -69.4835, 3.0775, 5.02492 )
 bbtext_fields = PoolStringArray( "Through this airlock there is a passenger pod, and a rover that carries it around. At the end of the pod there is a sign you can click on that will let you drive the rover. Better to hang on to a pole by clicking on one, and then clicking the Drive Rover sign. (If it\'s hard to select press  switch to first person for a better view - press 1 for that.) You can either have the rover pick up the pod (press C and then choose Dock from the list) and drive around carrying it, or you can just drive the rover off, using the WASD keys and the space bar to jump.                                 If you carry the pod, it can have a bunch of people in it at the same time. So if you are here with friends, I recommend one of you drives, and the others enjoy the ride. Happy trails!" )
 title = "Drive the rover outside"
 
-[node name="OmniLight" type="OmniLight" parent="." index="3"]
+[node name="GarageAirlock-Tooltip" parent="." index="2" instance=ExtResource( 3 )]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -31.8032, 5.38868, 0.029593 )
+bbtext_fields = PoolStringArray( "This airlock defines the maximum size of an object that can be brought into the habitats. It can fit something over 8 meters wide and tall, and up to 20 m long. Almost everything inside the habs was made outside, on the surface and in the factories, so this airlock is used fairly often to bring in some large piece of infrastructure - water tanks and treatment equipment for the neighborhoods, the artificial gravity carousels (in pieces), large heat exchangers (like the tubular ones in the next hab). People\'s homes are fabricated outside and brought in through here, usually in one piece. The lower floor of the Airlock Bay is mostly used by robots handling traffic of this kind. Sometimes they need to prepare an item for further transport through the habs, or do some assembly that\'s easier done in this out-of-the-way area. ", "Occasionally, some machine will be brought into this airlock so that it can be examined and worked on directly by a person in a shirt-sleeve environment. As robots and androids advance, this is rarely necessary, but it provides a more intuitive work environment the engineers sometimes prefer." )
+title = "The Garage Airlock"
+
+[node name="CapsuleSpacesuit-Tooltip" parent="." index="3" instance=ExtResource( 3 )]
+transform = Transform( 0.997852, -0.0208288, -0.0621061, -0.00100608, 0.943116, -0.332462, 0.065498, 0.331811, 0.941069, -132.752, 2.96713, -7.36594 )
+bbtext_fields = PoolStringArray( "Ok, this spacesuit is different from anything you\'ve seen before. Hard-body spacesuits with metal ring joints allow good mobility and a capacity to hold a high pressure atmosphere inside a suit. That\'s what has been done with most of the Artemis spacesuit. It allows the wearer to avoid hours of breathing pure oxygen before suiting up and going outside, which is necessary with today\'s suits to avoid \'the bends\' - tiny nitrogen bubbles in the blood that are really painful and possibly deadly. This design is all hard body. (Including the legs, but you can\'t see that because they are protected by a rubber and fabric sleeve against particles entering the joints - and the exoskeleton powered assistance) Making the whole top half one single piece is done because no matter what you do with hard body pieces, hands are a problem. And also there are a few unpleasant things about using a spacesuit. ", "The pressure in a spacesuit makes bending your fingers a lot more difficult. In current spacesuits your hands get tired after a while. Supposing that can be overcome with exoskeleton assistance, you still are wearing thick gloves. Designing to avoid that isn\'t possible even by Moon Town\'s time. Having a helmet on also imposes a lot of restrictions. Sure, today\'s spacesuits have tricks so you can scratch your nose with a stick and a piece of velcro, and later Apollo spacesuits even had food sticks available from a little holder the astronauts could reach with their mouths. Let\'s consider the advantages of this alternative.", "You have two robotic arms that you move and use by having the position of gloves on your hands read and multiplied to apply to the larger scale of the exterior arms. This gives you longer reach, greater strength, and greater agility. The gloves use haptic feedback to allow you to feel texture on what the robot hands touch, much more than you\'d get through the thickness of a regular spacesuit glove. You can stretch your arms, scratch anything but your legs, eat a sandwich. The capsule half and the legs each come in 3 sizes, and the fit is still comfortable for 99% of people. The clear canopy does double duty as a viewscreen, and with hands free it\'s easier to do complicated computer work than it would be using a helmet screen and controls integrated into spacesuit gloves.", "The suit has a parasol, like the androids have. The shade provided extends the time you can be in the sun by maybe 30%. If some accident knocks you over, and the suit has lost power, as a last ditch you can use the little stick arms to roll and get to your feet yourself. Then if necessary you can disengage the exoskeleton legs and walk back to an airlock yourself. That last point is, in fact, why this whole thing isn\'t a slender capsule with robotic limbs - but also there is something nice about walking yourself, though it be assisted by an exoskeleton (which also means you can walk very quickly)." )
+title = "Capsule Spacesuit"
+
+[node name="AndroidKiosk-Tooltip" parent="." index="4" instance=ExtResource( 3 )]
+transform = Transform( 0.567907, 0, -0.30368, 0, 0.644004, 0, 0.30368, 0, 0.567907, -163.538, 2.45088, 18.55 )
+bbtext_fields = PoolStringArray( "Androids can move considerably faster than people, are a fair bit stronger, and you can control one from anywhere. Rather than go outside yourself, which takes a lot longer and is more cumbersome, people often choose to experience the surface virtually through an android. They will even sometimes do this to quickly get something done in another, distant habitat. In this case, the interface is simple, just a headset that shows you what the android sees and hears (which only includes vibrations due to contact if it is outside). The kiosk reads the position of your body and has the android simulate your movements. Small, stylized leg movements are interpreted as walking, running, or jumping. Various voice commands are used for extra functions - zooming vision, infrared vision, autopilot to a named destination, things like that.", "On the top floor of this hab is an example of the full-body version of an android interface, you can find out more about that there. This station will allow you to take control of an android at one of several locations, some of which are far away and could take 10 or 15 minutes to reach if it was necessary to get a vehicle first and then drive there. As the town matures there will be stations for controlling androids scattered all over it, and individuals could have their own portable interface for their own personal android. Androids will return to their depot after a while if unused. If you tap into one before that time you will \'appear\' in an odd spot, because the person before you left the android wherever they were using it." )
+title = "Remote Control of Androids"
+
+[node name="OmniLight" type="OmniLight" parent="." index="6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.2322, 4.9519, -0.00354957 )
 light_energy = 0.58
 light_indirect_energy = 0.5
@@ -43,7 +58,7 @@ shadow_enabled = true
 omni_range = 19.7
 omni_attenuation = 0.5
 
-[node name="OmniLight2" type="OmniLight" parent="." index="4"]
+[node name="OmniLight2" type="OmniLight" parent="." index="7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -90.9008, 4.17155, -0.00354957 )
 light_energy = 0.28
 light_indirect_energy = 0.5
@@ -52,7 +67,7 @@ shadow_enabled = true
 omni_range = 27.0
 omni_attenuation = 1.93187
 
-[node name="OmniLight5" type="OmniLight" parent="." index="5"]
+[node name="OmniLight5" type="OmniLight" parent="." index="8"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -71.077, 4.17155, -0.00354957 )
 light_energy = 0.28
 light_indirect_energy = 0.5
@@ -61,7 +76,7 @@ shadow_enabled = true
 omni_range = 37.8
 omni_attenuation = 1.93187
 
-[node name="OmniLight3" type="OmniLight" parent="." index="6"]
+[node name="OmniLight3" type="OmniLight" parent="." index="9"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -129.666, 4.53356, -0.00354957 )
 light_energy = 0.5
 light_indirect_energy = 0.55
@@ -70,7 +85,7 @@ shadow_enabled = true
 omni_range = 26.0
 omni_attenuation = 1.6245
 
-[node name="OmniLight6" type="OmniLight" parent="." index="7"]
+[node name="OmniLight6" type="OmniLight" parent="." index="10"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -101.862, -1.73966, -2.3743 )
 light_energy = 0.5
 light_indirect_energy = 0.55
@@ -79,7 +94,7 @@ shadow_enabled = true
 omni_range = 55.4
 omni_attenuation = 1.6245
 
-[node name="OmniLight7" type="OmniLight" parent="." index="8"]
+[node name="OmniLight7" type="OmniLight" parent="." index="11"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.8586, -1.73966, 3.7801 )
 light_energy = 0.5
 light_indirect_energy = 0.55
@@ -88,7 +103,7 @@ shadow_enabled = true
 omni_range = 55.4
 omni_attenuation = 1.6245
 
-[node name="OmniLight4" type="OmniLight" parent="." index="9"]
+[node name="OmniLight4" type="OmniLight" parent="." index="12"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -156.741, 4.53356, 11.8596 )
 light_color = Color( 0.803922, 0.847059, 0.54902, 1 )
 light_energy = 2.31
@@ -99,73 +114,73 @@ shadow_bias = -2.41
 omni_range = 26.0
 omni_attenuation = 1.6245
 
-[node name="OmniLight8" type="OmniLight" parent="." index="10"]
+[node name="OmniLight8" type="OmniLight" parent="." index="13"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.6126, 3.71949, 10.6758 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 5.4
 
-[node name="OmniLight9" type="OmniLight" parent="." index="11"]
+[node name="OmniLight9" type="OmniLight" parent="." index="14"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -71.4018, 3.71949, 10.6758 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
 
-[node name="OmniLight10" type="OmniLight" parent="." index="12"]
+[node name="OmniLight10" type="OmniLight" parent="." index="15"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -91.3464, 3.71949, 10.6758 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
 
-[node name="OmniLight11" type="OmniLight" parent="." index="13"]
+[node name="OmniLight11" type="OmniLight" parent="." index="16"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -111.291, 3.71949, 10.6758 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
 
-[node name="OmniLight12" type="OmniLight" parent="." index="14"]
+[node name="OmniLight12" type="OmniLight" parent="." index="17"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -128.097, 3.71949, -9.31476 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
 
-[node name="OmniLight13" type="OmniLight" parent="." index="15"]
+[node name="OmniLight13" type="OmniLight" parent="." index="18"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -108.46, 3.71949, -9.31476 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
 
-[node name="OmniLight14" type="OmniLight" parent="." index="16"]
+[node name="OmniLight14" type="OmniLight" parent="." index="19"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6467, 3.71949, -9.31476 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
 
-[node name="OmniLight15" type="OmniLight" parent="." index="17"]
+[node name="OmniLight15" type="OmniLight" parent="." index="20"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68.3908, 3.71949, -9.31476 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
 
-[node name="OmniLight16" type="OmniLight" parent="." index="18"]
+[node name="OmniLight16" type="OmniLight" parent="." index="21"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48.3117, 3.71949, -9.31476 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
 
-[node name="OmniLight17" type="OmniLight" parent="." index="19"]
+[node name="OmniLight17" type="OmniLight" parent="." index="22"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.2966, 3.71949, 0.6678 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
 
-[node name="OmniLight18" type="OmniLight" parent="." index="20"]
+[node name="OmniLight18" type="OmniLight" parent="." index="23"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.49894, 3.71949, 0.6678 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
 
-[node name="GIProbe" type="GIProbe" parent="." index="21"]
+[node name="GIProbe" type="GIProbe" parent="." index="24"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -86.8261, 0.707192, -0.536925 )
 visible = false
 subdiv = 0
@@ -390,20 +405,15 @@ visible = false
 [node name="AndroidParent" parent="Androids/Android" index="1" instance=ExtResource( 5 )]
 title = "Hab Android"
 
-[node name="ReflectionProbe" type="ReflectionProbe" parent="." index="26"]
+[node name="ReflectionProbe" type="ReflectionProbe" parent="." index="29"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -79.0365, 3.18574, -2.24032 )
 extents = Vector3( 83.2733, 9.83605, 13.9452 )
 enable_shadows = true
 
-[node name="GarageAirlock-Tooltip" parent="." index="27" instance=ExtResource( 3 )]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -31.8032, 5.38868, 0.029593 )
-bbtext_fields = PoolStringArray( "This airlock defines the maximum size of an object that can be brought into the habitats. It can fit something over 8 meters wide and tall, and up to 20 m long. Almost everything inside the habs was made outside, on the surface and in the factories, so this airlock is used fairly often to bring in some large piece of infrastructure - water tanks and treatment equipment for the neighborhoods, the artificial gravity carousels (in pieces), large heat exchangers (like the tubular ones in the next hab). People\'s homes are fabricated outside and brought in through here, usually in one piece. The lower floor of the Airlock Bay is mostly used by robots handling traffic of this kind. Sometimes they need to prepare an item for further transport through the habs, or do some assembly that\'s easier done in this out-of-the-way area. ", "Occasionally, some machine will be brought into this airlock so that it can be examined and worked on directly by a person in a shirt-sleeve environment. As robots and androids advance, this is rarely necessary, but it provides a more intuitive work environment the engineers sometimes prefer." )
-title = "The Garage Airlock"
-
-[node name="LOD1" parent="." index="28"]
+[node name="LOD1" parent="." index="30"]
 visible = false
 
-[node name="LOD2" parent="." index="29"]
+[node name="LOD2" parent="." index="31"]
 visible = false
 
 [node name="AndroidKiosk" parent="Android-Kiosk-Row" index="0" instance=ExtResource( 9 )]
