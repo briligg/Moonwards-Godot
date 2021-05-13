@@ -19,3 +19,5 @@ network_mode = 2
 
 [node name="CollisionShape" type="CollisionShape" parent="Interactable"]
 shape = SubResource( 1 )
+
+[node name="ResetRoverTimer" type="Timer" parent="."]

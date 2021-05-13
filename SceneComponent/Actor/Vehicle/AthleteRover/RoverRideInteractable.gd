@@ -8,6 +8,7 @@ puppetsync var is_ridable = true
 puppetsync var controller_peer_id = -1
 
 onready var interactable = $Interactable
+onready var timer : Timer = $ResetRoverTimer
 
 func _init().("RoverRideInteractable", false):
 	pass
@@ -17,6 +18,8 @@ func _ready() -> void:
 	interactable.display_info = "Take control of the rover"
 	interactable.title = "Athlete Rover"
 	Signals.Network.connect(NetworkSignals.CLIENT_DISCONNECTED, self, "_client_disconnected")
+	
+	timer.connect("timeout", self, "_reset_rover")
 
 # This only runs on the server.
 func interacted_by(e) -> void:
@@ -27,14 +30,23 @@ func interacted_by(e) -> void:
 		if e is VehicleEntity :
 			return
 		
+		#Take control.
 		if self.controller_peer_id == -1:
 			rpc_id(get_tree().get_rpc_sender_id(), "deferred_take_control", path)
 			rpc("update_control_state", get_tree().get_rpc_sender_id(), false)
+			
+			#Stop the timer until the player has taken control of the rover again.
+			timer.stop()
 
+	#Return control
 	elif !self.is_ridable:
 		if get_tree().get_rpc_sender_id() == self.controller_peer_id:
 			rpc_id(get_tree().get_rpc_sender_id(), "deferred_return_control", path)
 			rpc("update_control_state", -1, true)
+			
+			#Start the timer so that the Rover will spawn at the starting location if it timeouts.
+			timer.start(1)
+			
 	update_network()
 
 puppetsync func deferred_take_control(path):
@@ -92,5 +104,9 @@ func _client_disconnected(peer_id):
 	if peer_id == controller_peer_id:
 		update_control_state(-1, true)
 		update_network()
-	
-	
+		timer.stop()
+
+#Called by signal when the timer has expired.
+func _reset_rover() -> void :
+	pass
+#	entity.transform.origin = Vector3(0,0,0)
