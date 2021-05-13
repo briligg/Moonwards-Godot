@@ -1,6 +1,8 @@
 extends AComponent
 
 
+onready var original_pos : Vector3 = entity.transform.origin
+
 var interactee
 var interactee_cam
 
@@ -108,5 +110,5 @@ func _client_disconnected(peer_id):
 
 #Called by signal when the timer has expired.
 func _reset_rover() -> void :
-	pass
-#	entity.transform.origin = Vector3(0,0,0)
+	entity.transform.origin = original_pos
+	timer.stop()
