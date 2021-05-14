@@ -47,7 +47,7 @@ func interacted_by(e) -> void:
 			rpc("update_control_state", -1, true)
 			
 			#Start the timer so that the Rover will spawn at the starting location if it timeouts.
-			timer.start(1)
+			timer.start(69)
 			
 	update_network()
 
@@ -101,7 +101,6 @@ func sync_for_new_player(peer_id):
 	rset_id(peer_id, "is_ridable", is_ridable)
 	rset_id(peer_id, "controller_peer_id", controller_peer_id)
 	
-
 func _client_disconnected(peer_id):
 	if peer_id == controller_peer_id:
 		update_control_state(-1, true)
