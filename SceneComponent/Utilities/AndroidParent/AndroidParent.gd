@@ -7,14 +7,17 @@ export var auto_spot_create : bool = true
 
 
 onready var android : ActorEntity = $Android
+onready var timer : Timer = $ResetTimer
 
 signal android_returned()
 signal android_taken()
 
 func _android_returned() -> void :
+	timer.start(69)
 	emit_signal("android_returned")
 
 func _android_taken(_interactor : AEntity) -> void :
+	timer.stop()
 	emit_signal("android_taken")
 
 var ready_once : bool = true
@@ -27,6 +30,8 @@ func _ready() -> void :
 		comp.connect("control_lost", self, "_android_returned")
 		comp.connect("control_taken", self, "_android_taken")
 		
+		timer.connect("timeout", self, "_reset_android")
+		
 		ready_once = false
 
 func _ready_deferred() -> void :
@@ -34,6 +39,10 @@ func _ready_deferred() -> void :
 		return
 	var hud_sig : HudSignals = Signals.Hud
 	hud_sig.emit_signal(hud_sig.ANDROID_SPOT_CREATED, self,  title)
+
+func _reset_android() -> void :
+	android.transform.origin = Vector3(0,0,0)
+	timer.stop()
 
 func request_android(_interactor : ActorEntity) -> ActorEntity :
 	var interactor : InteractorComponent = _interactor.get_component("Interactor")
