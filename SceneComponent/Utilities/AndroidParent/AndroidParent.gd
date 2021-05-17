@@ -13,7 +13,7 @@ signal android_returned()
 signal android_taken()
 
 func _android_returned() -> void :
-	timer.start(69)
+	timer.start(1800)
 	emit_signal("android_returned")
 
 func _android_taken(_interactor : AEntity) -> void :
