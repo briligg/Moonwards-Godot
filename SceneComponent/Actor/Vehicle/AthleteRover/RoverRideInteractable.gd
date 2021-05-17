@@ -47,7 +47,7 @@ func interacted_by(e) -> void:
 			rpc("update_control_state", -1, true)
 			
 			#Start the timer so that the Rover will spawn at the starting location if it timeouts.
-			timer.start(69)
+			timer.start(1800)
 			
 	update_network()
 
