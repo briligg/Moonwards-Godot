@@ -440,15 +440,6 @@ void fragment() {
 // VectorOp:10
 	vec3 n_out10p0 = n_out7p0 * n_out8p0;
 
-// TextureUniform:20
-	vec3 n_out20p0;
-	float n_out20p1;
-	{
-		vec4 n_tex_read = texture(Rough_A, n_out10p0.xy);
-		n_out20p0 = n_tex_read.rgb;
-		n_out20p1 = n_tex_read.a;
-	}
-
 // ParallaxMapping:163
 	float n_in163p2 = 0.10000;
 	float n_in163p3 = 4.00000;
@@ -458,15 +449,6 @@ void fragment() {
 	vec3 n_out163p0;
 	{
 		n_out163p0 = ParallaxMapping_Simple(n_out10p0,Rough_A,n_in163p2,n_in163p6,n_in163p3,n_in163p4,n_in163p5,VERTEX,NORMAL,TANGENT,BINORMAL);
-	}
-
-// TextureUniform:12
-	vec3 n_out12p0;
-	float n_out12p1;
-	{
-		vec4 n_tex_read = texture(Albedo_A, n_out163p0.xy);
-		n_out12p0 = n_tex_read.rgb;
-		n_out12p1 = n_tex_read.a;
 	}
 
 // StochasticTexture:165
@@ -576,15 +558,6 @@ void fragment() {
 
 // VectorOp:68
 	vec3 n_out68p0 = n_out7p0 * n_out67p0;
-
-// TextureUniform:66
-	vec3 n_out66p0;
-	float n_out66p1;
-	{
-		vec4 n_tex_read = texture(Albedo_B, n_out68p0.xy);
-		n_out66p0 = n_tex_read.rgb;
-		n_out66p1 = n_tex_read.a;
-	}
 
 // StochasticTexture:166
 	vec3 n_out166p0;
@@ -721,15 +694,6 @@ void fragment() {
 // ScalarUniform:57
 	float n_out57p0 = Rough_Mult_B;
 
-// TextureUniform:21
-	vec3 n_out21p0;
-	float n_out21p1;
-	{
-		vec4 n_tex_read = texture(Rough_B, n_out68p0.xy);
-		n_out21p0 = n_tex_read.rgb;
-		n_out21p1 = n_tex_read.a;
-	}
-
 // StochasticTexture:167
 	vec3 n_out167p0;
 	{
@@ -777,28 +741,10 @@ void fragment() {
 		n_out164p0 = ParallaxMapping_Simple(n_out10p0,Rough_A,n_in164p2,n_in164p6,n_in164p3,n_in164p4,n_in164p5,VERTEX,NORMAL,TANGENT,BINORMAL);
 	}
 
-// TextureUniform:31
-	vec3 n_out31p0;
-	float n_out31p1;
-	{
-		vec4 n_tex_read = texture(NormalMap_A, n_out164p0.xy);
-		n_out31p0 = n_tex_read.rgb;
-		n_out31p1 = n_tex_read.a;
-	}
-
 // StochasticTexture:169
 	vec3 n_out169p0;
 	{
 		n_out169p0 = STexComplexB(NormalMap_A,n_out164p0);
-	}
-
-// TextureUniform:32
-	vec3 n_out32p0;
-	float n_out32p1;
-	{
-		vec4 n_tex_read = texture(NormalMap_B, n_out68p0.xy);
-		n_out32p0 = n_tex_read.rgb;
-		n_out32p1 = n_tex_read.a;
 	}
 
 // StochasticTexture:170

@@ -345,15 +345,6 @@ void fragment() {
 // VectorOp:10
 	vec3 n_out10p0 = n_out7p0 * n_out8p0;
 
-// TextureUniform:177
-	vec3 n_out177p0;
-	float n_out177p1;
-	{
-		vec4 n_tex_read = texture(Heightmap_A, n_out10p0.xy);
-		n_out177p0 = n_tex_read.rgb;
-		n_out177p1 = n_tex_read.a;
-	}
-
 // ParallaxMapping:175
 	float n_in175p2 = 0.03500;
 	float n_in175p3 = 1.00000;
@@ -475,15 +466,6 @@ void fragment() {
 
 // VectorOp:68
 	vec3 n_out68p0 = n_out7p0 * n_out67p0;
-
-// TextureUniform:182
-	vec3 n_out182p0;
-	float n_out182p1;
-	{
-		vec4 n_tex_read = texture(Heightmap_B, n_out68p0.xy);
-		n_out182p0 = n_tex_read.rgb;
-		n_out182p1 = n_tex_read.a;
-	}
 
 // ParallaxMapping:176
 	float n_in176p2 = 0.05000;

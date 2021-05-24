@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/First_Factory/First_Factory.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Pressurized_Factories/PressurizedHangar_Regular.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/MoonTown/Models/Spider_Crane/Spider_Crane.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Script/Graphics/MultiMeshConverter.gd" type="Script" id=8]
 [ext_resource path="res://Assets/MoonTown/Models/Android-Depot/Android_Depot.tscn" type="PackedScene" id=9]
+[ext_resource path="res://SceneComponent/Display/Tooltip/TooltipButton.tscn" type="PackedScene" id=10]
 
 [node name="First_Factory" instance=ExtResource( 1 )]
 
@@ -31,6 +32,11 @@ use_in_baked_light = true
 script = ExtResource( 8 )
 
 [node name="Android_Depot" parent="MMC-FirstFactory/Android-Depot" index="0" instance=ExtResource( 9 )]
+
+[node name="TooltipButton" parent="MMC-FirstFactory/Android-Depot" index="1" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-08, 0, 1, 0, 0.5, 0, -0.5, 0, -4.37114e-08, 1.108, 0.952586, -0.420517 )
+bbtext_fields = PoolStringArray( "This is a depot where androids are stored. There are many of these scattered around the town. They go to the nearest such depot when they need aren\'t needed. While awaiting a new job, they recharge their batteries, refreeze their thermal control ice packs, update their data files and software, and are checked for damage. If damaged, most repairs or parts swaps can happen on the ground floor of the depot, before they are raised to the 2nd floor with the rest of the androids in standby. There are other points around where androids can charge up or swap ice packs, but repairs are all either done in one of these depots, or in a larger repair shop if they are really messed up.         Depots tap into the chillers and power supplies of nearby buildings. Ocassionally they may have an independant radiator of their own if they are so far from a building that it makes more sense. In most cases parts are quickly swapped or adjusted and the android is ready to go again in a few minutes." )
+title = "Android Depot"
 
 [node name="Lava_Tank_Large" parent="MMC-FirstFactory/Empty_LavaTank_Large" index="0" instance=ExtResource( 4 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )

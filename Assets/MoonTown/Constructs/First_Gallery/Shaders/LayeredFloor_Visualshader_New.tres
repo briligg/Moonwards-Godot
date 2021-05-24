@@ -555,15 +555,6 @@ void fragment() {
 // VectorOp:10
 	vec3 n_out10p0 = n_out7p0 * n_out8p0;
 
-// TextureUniform:12
-	vec3 n_out12p0;
-	float n_out12p1;
-	{
-		vec4 n_tex_read = texture(Albedo_A, n_out10p0.xy);
-		n_out12p0 = n_tex_read.rgb;
-		n_out12p1 = n_tex_read.a;
-	}
-
 // StochasticTexture:145
 	vec3 n_out145p0;
 	{
@@ -685,15 +676,6 @@ void fragment() {
 
 // VectorOp:68
 	vec3 n_out68p0 = n_out7p0 * n_out67p0;
-
-// TextureUniform:66
-	vec3 n_out66p0;
-	float n_out66p1;
-	{
-		vec4 n_tex_read = texture(Albedo_B, n_out68p0.xy);
-		n_out66p0 = n_tex_read.rgb;
-		n_out66p1 = n_tex_read.a;
-	}
 
 // StochasticTexture:146
 	vec3 n_out146p0;
@@ -888,15 +870,6 @@ void fragment() {
 // ScalarUniform:56
 	float n_out56p0 = Rough_Mult_A;
 
-// TextureUniform:20
-	vec3 n_out20p0;
-	float n_out20p1;
-	{
-		vec4 n_tex_read = texture(Rough_A, n_out10p0.xy);
-		n_out20p0 = n_tex_read.rgb;
-		n_out20p1 = n_tex_read.a;
-	}
-
 // StochasticTexture:147
 	vec3 n_out147p0;
 	{
@@ -913,15 +886,6 @@ void fragment() {
 
 // ScalarUniform:57
 	float n_out57p0 = Rough_Mult_B;
-
-// TextureUniform:21
-	vec3 n_out21p0;
-	float n_out21p1;
-	{
-		vec4 n_tex_read = texture(Rough_B, n_out68p0.xy);
-		n_out21p0 = n_tex_read.rgb;
-		n_out21p1 = n_tex_read.a;
-	}
 
 // StochasticTexture:148
 	vec3 n_out148p0;
@@ -982,28 +946,10 @@ void fragment() {
 	float n_in49p2 = 1.00000;
 	float n_out49p0 = clamp(n_out139p0, n_in49p1, n_in49p2);
 
-// TextureUniform:31
-	vec3 n_out31p0;
-	float n_out31p1;
-	{
-		vec4 n_tex_read = texture(NormalMap_A, n_out10p0.xy);
-		n_out31p0 = n_tex_read.rgb;
-		n_out31p1 = n_tex_read.a;
-	}
-
 // StochasticTexture:149
 	vec3 n_out149p0;
 	{
 		n_out149p0 = STexComplexB(NormalMap_A,n_out10p0);
-	}
-
-// TextureUniform:32
-	vec3 n_out32p0;
-	float n_out32p1;
-	{
-		vec4 n_tex_read = texture(NormalMap_B, n_out68p0.xy);
-		n_out32p0 = n_tex_read.rgb;
-		n_out32p1 = n_tex_read.a;
 	}
 
 // StochasticTexture:150
