@@ -378,6 +378,10 @@ visible = false
 [node name="AndroidParent" parent="Androids/Android003" index="1" instance=ExtResource( 5 )]
 title = "Hab Android"
 
+[node name="TooltipButton" parent="Androids/Android003" index="2" instance=ExtResource( 3 )]
+bbtext_fields = PoolStringArray( "Androids are among the most common robots in Moon Town. Their advantage is that people can operate them remotely in a very natural and pleasing way, while also being strong and adaptable to many useful kinds of work when they aren\'t hosting a human user. The ones here are mostly on call to help with things going in and out of the airlocks. Androids ordinarily move at a pace quite a bit faster than a person. They rarely fall, posessing superhuman precision, agility, and sensory acuity. They can run at a clip of about 50 km/h but rarely do so indoors for safety reasons.", "The clear faceplate on their heads is a viewscreen that normally projects the face of the operator onto the screen. The little gold cylinder sticking out the top of their heads is a neatly folded parasol using an origami design so that a large disk shaped parasol can be stored easily in a small space. Because of the intensity of the sun and the difficulty of shedding heat in a vacuum, the parasol is an important tool allowing the android to keep itself mostly in the shade as it goes about outside in the daytime. The cylinder on its back is for similar purposes - it is an icepack that its internal coolant loops all lead to. It can be swapped out quickly at any of many stations or depots for a fresh one. The android\'s body is stuffed with batteries. They are shaped to fit in any space not taken up by motors, actuators, sensors, processors, or artificial muscles. It is able to do a lot of work before needing to recharge, completing what a human would regard as a work shift on a single charge almost always. If needed, it can charge up completely in only a few minutes. " )
+title = "Androids"
+
 [node name="Android004" parent="Androids" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -161.809, 1.60482, 10.9195 )
 
