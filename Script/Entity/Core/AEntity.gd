@@ -1,17 +1,8 @@
 extends MwSpatial
 class_name AEntity
 
-enum EntityType {
-	Undefined,
-	Player,
-	NPC,
-	Vehicle,
-	StaticObject,
-}
 
 export(bool) var enable_on_spawn = false
-
-var entity_type = EntityType.Undefined
 
 var enabled = false setget set_enabled
 
