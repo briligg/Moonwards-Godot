@@ -2,6 +2,9 @@ extends MwSpatial
 class_name AEntity
 
 
+#This is the node that contains all the Epis.
+onready var epis : Node = $EPIs
+
 export(bool) var enable_on_spawn = false
 
 var enabled = false setget set_enabled
@@ -52,6 +55,13 @@ func enable_on_owner() -> void:
 	Log.trace(self, "enable_on_owner", "Entity id:%s, name:%s has been enabled on owner" 
 			%[entity_id, entity_name])
 	enabled = true
+
+func request_epi(epi_name : String) -> EPIBase :
+	if epis.has_node(epi_name) :
+		var return_epi = epis.get_node(epi_name)
+		return return_epi
+	else :
+		return EPIManager.get_dummy_epi(epi_name)
 
 func set_enabled(val: bool) -> void:
 	if val:
