@@ -1,0 +1,24 @@
+[remap]
+
+importer="texture_array"
+type="TextureArray"
+path="res://.import/Airlock_Bay.exr-b09476754c2a71f0cb1ac9abd6a85091.texarr"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Assets/MoonTown/Constructs/Airlock_Bay/Airlock_Bay.exr"
+dest_files=[ "res://.import/Airlock_Bay.exr-b09476754c2a71f0cb1ac9abd6a85091.texarr" ]
+
+[params]
+
+compress/mode=0
+compress/no_bptc_if_rgb=false
+flags/repeat=false
+flags/filter=true
+flags/mipmaps=false
+flags/srgb=false
+slices/horizontal=1
+slices/vertical=1

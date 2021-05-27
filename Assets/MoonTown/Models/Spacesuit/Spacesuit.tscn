@@ -9,13 +9,25 @@
 bones/1/bound_children = [ NodePath("BoneAttachment") ]
 
 [node name="BoneAttachment" parent="Female_Player/Skeleton" index="0"]
-transform = Transform( 0.999962, 0.000864979, -0.00864507, -0.00345602, 0.952523, -0.304448, 0.00797128, 0.304466, 0.95249, 5.68434e-14, 0.86929, -0.0470916 )
+transform = Transform( 1, 4.26326e-13, 2.38418e-07, 7.2513e-08, 0.952626, -0.304144, -2.27124e-07, 0.304144, 0.952626, 2.84217e-14, 0.870343, -0.0475719 )
+
+[node name="Spacesuit_Capsule" parent="Female_Player/Skeleton/BoneAttachment" index="0"]
+use_in_baked_light = true
 
 [node name="FemaleBody-LOD0" parent="Female_Player/Skeleton" index="1"]
 visible = false
+use_in_baked_light = true
 
 [node name="MaleBody-LOD0" parent="Female_Player/Skeleton" index="2"]
 visible = false
+use_in_baked_light = true
+
+[node name="Spacesuit_Legs" parent="Female_Player/Skeleton" index="3"]
+use_in_baked_light = true
 
 [node name="AnimationTree" parent="." index="2" instance=ExtResource( 2 )]
 active = true
+
+[node name="BakedLightmap" type="BakedLightmap" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.950425, 0 )
+extents = Vector3( 0.499944, 1.06535, 0.508632 )

@@ -9,18 +9,7 @@
 [ext_resource path="res://Assets/MoonTown/Models/Android/Android-Prop.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/MoonTown/Models/Android_Control_Kiosk/android_kiosk_simple_row.tscn" type="PackedScene" id=8]
 [ext_resource path="res://SceneComponent/Object/Stations/AndroidKiosk.tscn" type="PackedScene" id=9]
-
-[sub_resource type="GIProbeData" id=1]
-bounds = AABB( -90.892, -14.32, -15.3547, 181.784, 28.64, 30.7094 )
-cell_size = 2.84037
-to_cell_xform = Transform( 0.352066, 0, 0, 0, 0.352066, 0, 0, 0, 0.352066, 32, 5.04159, 5.40588 )
-dynamic_data = PoolIntArray( 0, 7, 64, 16, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1065353216, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
-dynamic_range = 8
-energy = 1.29
-bias = 1.5
-normal_bias = 0.0
-propagation = 0.2
-interior = true
+[ext_resource path="res://Assets/MoonTown/Constructs/Airlock_Bay/Airlock_Bay.lmbake" type="BakedLightmapData" id=10]
 
 [node name="Airlock_Bay" instance=ExtResource( 1 )]
 
@@ -49,7 +38,12 @@ transform = Transform( 0.567907, 0, -0.30368, 0, 0.644004, 0, 0.30368, 0, 0.5679
 bbtext_fields = PoolStringArray( "Androids can move considerably faster than people, are a fair bit stronger, and you can control one from anywhere. Rather than go outside yourself, which takes a lot longer and is more cumbersome, people often choose to experience the surface virtually through an android. They will even sometimes do this to quickly get something done in another, distant habitat. In this case, the interface is simple, just a headset that shows you what the android sees and hears (which only includes vibrations due to contact if it is outside). The kiosk reads the position of your body and has the android simulate your movements. Small, stylized leg movements are interpreted as walking, running, or jumping. Various voice commands are used for extra functions - zooming vision, infrared vision, autopilot to a named destination, things like that.", "On the top floor of this hab is an example of the full-body version of an android interface, you can find out more about that there. This station will allow you to take control of an android at one of several locations, some of which are far away and could take 10 or 15 minutes to reach if it was necessary to get a vehicle first and then drive there. As the town matures there will be stations for controlling androids scattered all over it, and individuals could have their own portable interface for their own personal android. Androids will return to their depot after a while if unused. If you tap into one before that time you will \'appear\' in an odd spot, because the person before you left the android wherever they were using it." )
 title = "Remote Control of Androids"
 
-[node name="OmniLight" type="OmniLight" parent="." index="6"]
+[node name="Android-Tooltip" parent="." index="5" instance=ExtResource( 3 )]
+transform = Transform( 0.37704, 0, -0.656783, 0, 0.5, 0, 0.328392, 0, 0.75408, -159.495, 2.4417, 12.9437 )
+bbtext_fields = PoolStringArray( "Androids are among the most common robots in Moon Town. Their advantage is that people can operate them remotely in a very natural and pleasing way, while also being strong and adaptable to many useful kinds of work when they aren\'t hosting a human user. The ones here are mostly on call to help with things going in and out of the airlocks. Androids ordinarily move at a pace quite a bit faster than a person. They rarely fall, posessing superhuman precision, agility, and sensory acuity. They can run at a clip of about 50 km/h but rarely do so indoors for safety reasons.", "The clear faceplate on their heads is a viewscreen that normally projects the face of the operator onto the screen. The little gold cylinder sticking out the top of their heads is a neatly folded parasol using an origami design so that a large disk shaped parasol can be stored easily in a small space. Because of the intensity of the sun and the difficulty of shedding heat in a vacuum, the parasol is an important tool allowing the android to keep itself mostly in the shade as it goes about outside in the daytime. The cylinder on its back is for similar purposes - it is an icepack that its internal coolant loops all lead to. It can be swapped out quickly at any of many stations or depots for a fresh one. The android\'s body is stuffed with batteries. They are shaped to fit in any space not taken up by motors, actuators, sensors, processors, or artificial muscles. It is able to do a lot of work before needing to recharge, completing what a human would regard as a work shift on a single charge almost always. If needed, it can charge up completely in only a few minutes. " )
+title = "Androids"
+
+[node name="OmniLight" type="OmniLight" parent="." index="7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.2322, 4.9519, -0.00354957 )
 light_energy = 0.58
 light_indirect_energy = 0.5
@@ -57,8 +51,11 @@ light_specular = 0.65
 shadow_enabled = true
 omni_range = 19.7
 omni_attenuation = 0.5
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="OmniLight2" type="OmniLight" parent="." index="7"]
+[node name="OmniLight2" type="OmniLight" parent="." index="8"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -90.9008, 4.17155, -0.00354957 )
 light_energy = 0.28
 light_indirect_energy = 0.5
@@ -66,8 +63,11 @@ light_specular = 0.45
 shadow_enabled = true
 omni_range = 27.0
 omni_attenuation = 1.93187
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="OmniLight5" type="OmniLight" parent="." index="8"]
+[node name="OmniLight5" type="OmniLight" parent="." index="9"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -71.077, 4.17155, -0.00354957 )
 light_energy = 0.28
 light_indirect_energy = 0.5
@@ -75,8 +75,11 @@ light_specular = 0.45
 shadow_enabled = true
 omni_range = 37.8
 omni_attenuation = 1.93187
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="OmniLight3" type="OmniLight" parent="." index="9"]
+[node name="OmniLight3" type="OmniLight" parent="." index="10"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -129.666, 4.53356, -0.00354957 )
 light_energy = 0.5
 light_indirect_energy = 0.55
@@ -84,8 +87,11 @@ light_specular = 0.3
 shadow_enabled = true
 omni_range = 26.0
 omni_attenuation = 1.6245
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="OmniLight6" type="OmniLight" parent="." index="10"]
+[node name="OmniLight6" type="OmniLight" parent="." index="11"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -101.862, -1.73966, -2.3743 )
 light_energy = 0.5
 light_indirect_energy = 0.55
@@ -93,8 +99,11 @@ light_specular = 0.3
 shadow_enabled = true
 omni_range = 55.4
 omni_attenuation = 1.6245
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="OmniLight7" type="OmniLight" parent="." index="11"]
+[node name="OmniLight7" type="OmniLight" parent="." index="12"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.8586, -1.73966, 3.7801 )
 light_energy = 0.5
 light_indirect_energy = 0.55
@@ -102,8 +111,11 @@ light_specular = 0.3
 shadow_enabled = true
 omni_range = 55.4
 omni_attenuation = 1.6245
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="OmniLight4" type="OmniLight" parent="." index="12"]
+[node name="OmniLight4" type="OmniLight" parent="." index="13"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -156.741, 4.53356, 11.8596 )
 light_color = Color( 0.803922, 0.847059, 0.54902, 1 )
 light_energy = 2.31
@@ -113,83 +125,108 @@ light_bake_mode = 0
 shadow_bias = -2.41
 omni_range = 26.0
 omni_attenuation = 1.6245
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="OmniLight8" type="OmniLight" parent="." index="13"]
+[node name="OmniLight8" type="OmniLight" parent="." index="14"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.6126, 3.71949, 10.6758 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 5.4
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="OmniLight9" type="OmniLight" parent="." index="14"]
+[node name="OmniLight9" type="OmniLight" parent="." index="15"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -71.4018, 3.71949, 10.6758 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="OmniLight10" type="OmniLight" parent="." index="15"]
+[node name="OmniLight10" type="OmniLight" parent="." index="16"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -91.3464, 3.71949, 10.6758 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="OmniLight11" type="OmniLight" parent="." index="16"]
+[node name="OmniLight11" type="OmniLight" parent="." index="17"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -111.291, 3.71949, 10.6758 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="OmniLight12" type="OmniLight" parent="." index="17"]
+[node name="OmniLight12" type="OmniLight" parent="." index="18"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -128.097, 3.71949, -9.31476 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="OmniLight13" type="OmniLight" parent="." index="18"]
+[node name="OmniLight13" type="OmniLight" parent="." index="19"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -108.46, 3.71949, -9.31476 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="OmniLight14" type="OmniLight" parent="." index="19"]
+[node name="OmniLight14" type="OmniLight" parent="." index="20"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6467, 3.71949, -9.31476 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="OmniLight15" type="OmniLight" parent="." index="20"]
+[node name="OmniLight15" type="OmniLight" parent="." index="21"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68.3908, 3.71949, -9.31476 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="OmniLight16" type="OmniLight" parent="." index="21"]
+[node name="OmniLight16" type="OmniLight" parent="." index="22"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48.3117, 3.71949, -9.31476 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="OmniLight17" type="OmniLight" parent="." index="22"]
+[node name="OmniLight17" type="OmniLight" parent="." index="23"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.2966, 3.71949, 0.6678 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="OmniLight18" type="OmniLight" parent="." index="23"]
+[node name="OmniLight18" type="OmniLight" parent="." index="24"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.49894, 3.71949, 0.6678 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 10.7
-
-[node name="GIProbe" type="GIProbe" parent="." index="24"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -86.8261, 0.707192, -0.536925 )
-visible = false
-subdiv = 0
-extents = Vector3( 90.892, 14.32, 15.3547 )
-dynamic_range = 8
-energy = 1.29
-propagation = 0.2
-interior = true
-data = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Airlock" parent="MMC/Marker_Airlock_N1" index="0" instance=ExtResource( 2 )]
 
@@ -378,10 +415,6 @@ visible = false
 [node name="AndroidParent" parent="Androids/Android003" index="1" instance=ExtResource( 5 )]
 title = "Hab Android"
 
-[node name="TooltipButton" parent="Androids/Android003" index="2" instance=ExtResource( 3 )]
-bbtext_fields = PoolStringArray( "Androids are among the most common robots in Moon Town. Their advantage is that people can operate them remotely in a very natural and pleasing way, while also being strong and adaptable to many useful kinds of work when they aren\'t hosting a human user. The ones here are mostly on call to help with things going in and out of the airlocks. Androids ordinarily move at a pace quite a bit faster than a person. They rarely fall, posessing superhuman precision, agility, and sensory acuity. They can run at a clip of about 50 km/h but rarely do so indoors for safety reasons.", "The clear faceplate on their heads is a viewscreen that normally projects the face of the operator onto the screen. The little gold cylinder sticking out the top of their heads is a neatly folded parasol using an origami design so that a large disk shaped parasol can be stored easily in a small space. Because of the intensity of the sun and the difficulty of shedding heat in a vacuum, the parasol is an important tool allowing the android to keep itself mostly in the shade as it goes about outside in the daytime. The cylinder on its back is for similar purposes - it is an icepack that its internal coolant loops all lead to. It can be swapped out quickly at any of many stations or depots for a fresh one. The android\'s body is stuffed with batteries. They are shaped to fit in any space not taken up by motors, actuators, sensors, processors, or artificial muscles. It is able to do a lot of work before needing to recharge, completing what a human would regard as a work shift on a single charge almost always. If needed, it can charge up completely in only a few minutes. " )
-title = "Androids"
-
 [node name="Android004" parent="Androids" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -161.809, 1.60482, 10.9195 )
 
@@ -413,6 +446,9 @@ title = "Hab Android"
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -79.0365, 3.18574, -2.24032 )
 extents = Vector3( 83.2733, 9.83605, 13.9452 )
 enable_shadows = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="LOD1" parent="." index="30"]
 visible = false
@@ -427,3 +463,8 @@ visible = false
 [node name="AndroidKiosk" parent="Android-Kiosk-Row001" index="0" instance=ExtResource( 9 )]
 
 [node name="android_kiosk_simple_row" parent="Android-Kiosk-Row001/AndroidKiosk" index="0" instance=ExtResource( 8 )]
+
+[node name="BakedLightmap" type="BakedLightmap" parent="." index="34"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.1031, 0, 3.29583 )
+extents = Vector3( 166.92, 16.1862, 82.5724 )
+light_data = ExtResource( 10 )
