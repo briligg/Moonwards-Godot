@@ -2306,8 +2306,9 @@ file_logging/max_log_files=30
 
 [memory]
 
-limits/multithreaded_server/rid_pool_prealloc=240
-limits/message_queue/max_size_kb=2048
+limits/multithreaded_server/rid_pool_prealloc=480
+limits/message_queue/max_size_kb=8000
+limits/command_queue/multithreading_queue_size_kb=512
 
 [network]
 
