@@ -22,12 +22,6 @@ omni_attenuation = 1.56917
 [node name="HangarFoundationSmall" parent="LOD0" index="0"]
 material/0 = ExtResource( 3 )
 
-[node name="FirstHangar" parent="LOD0/HangarFoundationSmall" index="1"]
-use_in_baked_light = true
-
-[node name="SideOpenHangar_M" parent="LOD0/HangarFoundationSmall/FirstHangar" index="1"]
-use_in_baked_light = true
-
 [node name="MMC-FirstFactory" parent="." index="2"]
 script = ExtResource( 8 )
 
@@ -78,3 +72,7 @@ material/0 = ExtResource( 3 )
 
 [node name="HangarFoundationSmall002" parent="LOD2" index="1"]
 material/0 = ExtResource( 3 )
+
+[node name="BakedLightmap" type="BakedLightmap" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 162.509, 29.8722, -96.5239 )
+extents = Vector3( 184.592, 74.5853, 121.407 )

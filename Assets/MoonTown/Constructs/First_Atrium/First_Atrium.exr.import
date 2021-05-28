@@ -1,0 +1,24 @@
+[remap]
+
+importer="texture_array"
+type="TextureArray"
+path="res://.import/First_Atrium.exr-90f808e93cfa281805bed760f1b6ffe8.texarr"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Assets/MoonTown/Constructs/First_Atrium/First_Atrium.exr"
+dest_files=[ "res://.import/First_Atrium.exr-90f808e93cfa281805bed760f1b6ffe8.texarr" ]
+
+[params]
+
+compress/mode=0
+compress/no_bptc_if_rgb=false
+flags/repeat=false
+flags/filter=true
+flags/mipmaps=false
+flags/srgb=false
+slices/horizontal=1
+slices/vertical=2

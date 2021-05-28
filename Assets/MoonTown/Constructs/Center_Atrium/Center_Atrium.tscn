@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Center_Atrium/Center_Atrium.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Android/Android.tscn" type="PackedScene" id=2]
@@ -20,17 +20,6 @@
 
 [sub_resource type="QuadMesh" id=1]
 size = Vector2( 8, 30 )
-
-[sub_resource type="GIProbeData" id=2]
-bounds = AABB( -45.6825, -30.536, -52.471, 91.365, 61.072, 104.942 )
-cell_size = 0.819859
-to_cell_xform = Transform( 1.21972, 0, 0, 0, 1.21972, 0, 0, 0, 1.21972, 55.7199, 37.2454, 64 )
-dynamic_data = PoolIntArray( 0, 8, 128, 128, 128, 1, 0, 3, 5, 3, 7, 5, 8, 10, 12, 10, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
-dynamic_range = 4
-energy = 0.17
-bias = 1.5
-normal_bias = 0.0
-propagation = 0.66
 
 [node name="Center_Atrium" instance=ExtResource( 1 )]
 
@@ -108,14 +97,7 @@ light_specular = 0.1
 omni_range = 76.0
 omni_attenuation = 2.0
 
-[node name="GIProbe" type="GIProbe" parent="." index="5"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39774, 1.54666, -30.6783 )
-extents = Vector3( 45.6825, 30.536, 52.471 )
-energy = 0.17
-propagation = 0.66
-data = SubResource( 2 )
-
-[node name="Markers" parent="." index="7"]
+[node name="Markers" parent="." index="6"]
 script = ExtResource( 12 )
 
 [node name="Android-Prop" parent="Markers/Android LOD0" index="0" instance=ExtResource( 14 )]
@@ -188,11 +170,12 @@ visible = false
 [node name="GlazingBigAtriumWest_LOD1" parent="LOD1/CenterAtriumWalls_LOD1" index="1"]
 visible = false
 
-[node name="LOD2" parent="." index="9"]
+[node name="LOD2" parent="." index="8"]
 visible = false
 
-[node name="ReflectionProbe" type="ReflectionProbe" parent="." index="10"]
+[node name="ReflectionProbe" type="ReflectionProbe" parent="." index="9"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8179, -29.9222 )
+visible = false
 max_distance = 10.0
 extents = Vector3( 44.0007, 28.3008, 50.1673 )
 box_projection = true
