@@ -35,6 +35,13 @@ func get_component(_name: String) -> Node:
 		return components[_name]
 	else:
 		return null
+
+#Require that the passed epi name is present in the entity or crash the game.
+func demand_epi(epi_name : String) -> EPIBase :
+	assert(epis.has_node(epi_name))
+	var return_epi : EPIBase = epis.get_node(epi_name)
+	return return_epi
+
 func disable() -> void:
 	for comp in components.values():
 		comp.disable()
@@ -56,6 +63,8 @@ func enable_on_owner() -> void:
 			%[entity_id, entity_name])
 	enabled = true
 
+#Typical way of getting an epi. Return the requested epi if I have it or return a 
+#functioning epi that is not used otherwise.
 func request_epi(epi_name : String) -> EPIBase :
 	if epis.has_node(epi_name) :
 		var return_epi = epis.get_node(epi_name)

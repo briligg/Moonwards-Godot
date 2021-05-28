@@ -14,7 +14,7 @@ const PLAYER_SCENE: PackedScene = preload("res://Tree/Actor/Player/HumanPlayer.t
 const LOADING_SCREEN: PackedScene = preload("res://Tree/Interface/Hud/LoadingScreen/LoadingScreen.tscn")
 
 # Returns the instanced scene after it's added to the `SceneTree`
-func change_scene_to_async(path: String) -> Node:
+func change_scene_to_async(path: String) -> Node :
 	_change_scene(LOADING_SCREEN.instance())
 	var loader = ResourceThreadedLoader.new(path)
 	loader.connect("finished_loading", self, "_on_scene_ready")
