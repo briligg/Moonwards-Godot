@@ -1,0 +1,24 @@
+[remap]
+
+importer="texture_array"
+type="TextureArray"
+path="res://.import/First_Gallery_Lower_UpperPart.exr-f6aad0721b073aeaca5a5f6c39029430.texarr"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Assets/MoonTown/Constructs/First_Gallery/First_Gallery_Lower_UpperPart.exr"
+dest_files=[ "res://.import/First_Gallery_Lower_UpperPart.exr-f6aad0721b073aeaca5a5f6c39029430.texarr" ]
+
+[params]
+
+compress/mode=0
+compress/no_bptc_if_rgb=false
+flags/repeat=false
+flags/filter=true
+flags/mipmaps=false
+flags/srgb=false
+slices/horizontal=1
+slices/vertical=1
