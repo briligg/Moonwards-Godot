@@ -1,6 +1,8 @@
 extends AMovementController
 class_name HumanoidMovement
 
+onready var input : InputEPI = entity.request_epi(EPIManager.INPUT_EPI)
+
 # Component for kinematic movement
 export(float) var initial_jump_velocity = 2.2
 export(float) var climb_speed = 1.5
@@ -52,6 +54,11 @@ func _ready() -> void:
 	normal_detect.add_exception(entity)
 	
 	entity.connect("on_forces_integrated", self, "_integrate_forces")
+#
+#	call_deferred("_ready_deferred")
+#
+#func _ready_deferred() -> void :
+#	input = entity.request_epi(EPIManager.INPUT_EPI)
 
 func is_grounded() -> bool:
 	if !is_groundcast_enabled:
@@ -61,7 +68,6 @@ func is_grounded() -> bool:
 
 func _integrate_forces(state):
 	invoke_network_based("_integrate_server", "_integrate_client", [state])
-
 
 func _integrate_client(args):
 	var phys_state = args[0]
@@ -174,8 +180,8 @@ func calculate_slope():
 	dbg_ground_slope_center = + rad2deg(acos(dbg_ground_normal.dot(Vector3.UP)))
 
 func calculate_horizontal(_phys_state : PhysicsDirectBodyState):
-	horizontal_vector += entity.input.z * entity.model.transform.basis.z
-	horizontal_vector += entity.input.x * entity.model.transform.basis.x
+	horizontal_vector += input.input.z * entity.model.transform.basis.z
+	horizontal_vector += input.input.x * entity.model.transform.basis.x
 
 	if dbg_ground_slope > 1:
 		var slide_direction = horizontal_vector.slide(dbg_ground_normal)

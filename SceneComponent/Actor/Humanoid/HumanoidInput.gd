@@ -1,6 +1,8 @@
 extends AComponent
 class_name InputController
 
+onready var input : InputEPI = entity.demand_epi(EPIManager.INPUT_EPI)
+
 var ignore_inputs : bool = false
 
 func _init().("HumanoidInput", true):
@@ -18,10 +20,10 @@ func handle_input() -> void:
 		return
 	
 	if Input.is_action_pressed("jump"):
-		entity.input.y += 1
+		input.jump(1)
 	
-	entity.input.z = -Input.get_action_strength("move_backwards") + Input.get_action_strength("move_forwards")
-	entity.input.x = -Input.get_action_strength("move_right") + Input.get_action_strength("move_left")
+	input.input.z = -Input.get_action_strength("move_backwards") + Input.get_action_strength("move_forwards")
+	input.input.x = -Input.get_action_strength("move_right") + Input.get_action_strength("move_left")
 
 func set_ignore_inputs(ignore_bool : bool) -> void :
 	ignore_inputs = ignore_bool
