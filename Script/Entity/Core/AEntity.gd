@@ -2,9 +2,6 @@ extends MwSpatial
 class_name AEntity
 
 
-#This is the node that contains all the Epis.
-onready var epis : Node = $EPIs
-
 export(bool) var enable_on_spawn = false
 
 var enabled = false setget set_enabled
@@ -37,9 +34,10 @@ func get_component(_name: String) -> Node:
 		return null
 
 #Require that the passed epi name is present in the entity or crash the game.
+#If this crashes, it could be that the EPIs node is not present as a child.
 func demand_epi(epi_name : String) -> EPIBase :
-	assert(epis.has_node(epi_name))
-	var return_epi : EPIBase = epis.get_node(epi_name)
+	assert($EPIs.has_node(epi_name))
+	var return_epi : EPIBase = $EPIs.get_node(epi_name)
 	return return_epi
 
 func disable() -> void:
@@ -65,9 +63,10 @@ func enable_on_owner() -> void:
 
 #Typical way of getting an epi. Return the requested epi if I have it or return a 
 #functioning epi that is not used otherwise.
+#If this crashes, it could be that the EPIs node is not present as a child.
 func request_epi(epi_name : String) -> EPIBase :
-	if epis.has_node(epi_name) :
-		var return_epi = epis.get_node(epi_name)
+	if $EPIs.has_node(epi_name) :
+		var return_epi = $EPIs.get_node(epi_name)
 		return return_epi
 	else :
 		return EPIManager.get_dummy_epi(epi_name)

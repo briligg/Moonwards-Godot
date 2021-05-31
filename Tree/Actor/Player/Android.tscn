@@ -36,6 +36,8 @@ axis_lock_angular_x = true
 axis_lock_angular_z = true
 script = ExtResource( 6 )
 
+[node name="EPIs" type="Node" parent="."]
+
 [node name="Model" parent="." instance=ExtResource( 7 )]
 transform = Transform( 0.821796, 0, -0.569781, 0, 1, 0, 0.569781, 0, 0.821796, 0, 0, 0 )
 

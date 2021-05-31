@@ -4,6 +4,7 @@ class_name InputEPI
 signal jump_pressed(force_float)
 const JUMP_PRESSED = "jump_pressed"
 
+#Which direction the player wants to move.
 var input : Vector3 = Vector3.ZERO setget set_input, get_input
 
 #Where the camera is pointing.
