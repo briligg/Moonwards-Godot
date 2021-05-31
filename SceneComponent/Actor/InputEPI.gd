@@ -5,10 +5,18 @@ signal jump_pressed(force_float)
 const JUMP_PRESSED = "jump_pressed"
 
 #Which direction the player wants to move.
-var input : Vector3 = Vector3.ZERO setget set_input, get_input
+master var input : Vector3 = Vector3.ZERO setget set_input, get_input
 
 #Where the camera is pointing.
 var look_dir : Vector3 = Vector3.FORWARD setget set_look_dir, get_look_dir
+
+func _process(delta : float) -> void : 
+	if not Network.is_networking_active() || !get_tree().network_peer:
+		return
+	# This needs to be validated on the server side.
+	# Figure out a way to do that as godot doesn't have it out of the box
+	# Setgetters are an option, try to find a cleaner way.
+	rset_id(1, "input", input)
 
 func get_look_dir() -> Vector3 :
 	return look_dir
