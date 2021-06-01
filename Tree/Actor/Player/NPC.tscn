@@ -24,6 +24,8 @@ can_sleep = false
 script = ExtResource( 6 )
 enable_on_spawn = true
 
+[node name="EPIs" type="Node" parent="."]
+
 [node name="AnimationController" parent="." instance=ExtResource( 4 )]
 
 [node name="CollisionShape" type="CollisionShape" parent="."]

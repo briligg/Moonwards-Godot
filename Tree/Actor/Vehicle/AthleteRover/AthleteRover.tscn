@@ -26,6 +26,8 @@ mass = 1500.0
 continuous_cd = true
 script = ExtResource( 10 )
 
+[node name="EPIs" type="Node" parent="."]
+
 [node name="Interactor" parent="." instance=ExtResource( 2 )]
 ray_cast_length = 1000.0
 
@@ -147,6 +149,14 @@ script = ExtResource( 4 )
 [node name="Model" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0 )
 
+[node name="Legs" parent="Model" index="0"]
+bones/3/bound_children = [  ]
+bones/7/bound_children = [  ]
+bones/11/bound_children = [  ]
+bones/15/bound_children = [  ]
+bones/19/bound_children = [  ]
+bones/23/bound_children = [  ]
+
 [node name="WheelBackLBoneAttachment" parent="Model/Legs" index="2"]
 transform = Transform( 0.00490884, 0.798927, -0.601408, 0.999981, -0.00614417, 4.65661e-09, -0.00369515, -0.601397, -0.798942, 15.7619, 6.13141, -11.8435 )
 
@@ -166,5 +176,4 @@ transform = Transform( -1, -2.03814e-08, -5.96101e-08, -5.04201e-08, 1, 2.41584e
 transform = Transform( -1, -6.11162e-08, 2.50441e-06, -2.03768e-07, 1, 3.12639e-13, -2.58496e-06, -3.31399e-08, -1, 19.5691, 6.13141, -0.00983331 )
 
 [editable path="RoverRideInteractable"]
-
 [editable path="Model"]
