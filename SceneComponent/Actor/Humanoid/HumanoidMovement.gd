@@ -170,7 +170,7 @@ func reset_input():
 
 func handle_input() -> void:
 	# Adding a timeout after the jump makes sure the jump velocity is consistent and not triggered multiple times.
-	if entity.state.state != ActorEntityState.State.IN_AIR and entity.input.y > 0:
+	if entity.state.state != ActorEntityState.State.IN_AIR and input.input.y > 0:
 		vertical_vector.y = 1
 
 func calculate_slope():

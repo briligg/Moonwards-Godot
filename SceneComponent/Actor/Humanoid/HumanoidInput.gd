@@ -13,6 +13,7 @@ func _ready() -> void:
 	
 func _process_client(_delta: float) -> void:
 	entity.input = Vector3.ZERO
+	input.input = Vector3.ZERO
 	handle_input()
 
 func handle_input() -> void:

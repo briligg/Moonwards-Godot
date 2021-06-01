@@ -28,6 +28,7 @@ func get_input() -> Vector3 :
 func jump(force_float : float) -> void :
 	force_float = clamp(force_float, 0, 1) #Prevent values outside range.
 	emit_signal(JUMP_PRESSED, force_float)
+	input.y = force_float
 
 func set_look_dir(new_look_dir : Vector3) -> void :
 	look_dir = new_look_dir
