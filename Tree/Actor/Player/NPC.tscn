@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://SceneComponent/Actor/AI/NPCMovement.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/Nametag/NametagComponent.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://SceneComponent/Actor/AI/Workstation.tscn" type="PackedScene" id=8]
 [ext_resource path="res://SceneComponent/Actor/AI/MwAI.gd" type="Script" id=9]
 [ext_resource path="res://SceneComponent/Actor/ModelComponent.gd" type="Script" id=10]
+[ext_resource path="res://SceneComponent/Actor/SwitchContextEPI.tscn" type="PackedScene" id=11]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.287522
@@ -25,6 +26,8 @@ script = ExtResource( 6 )
 enable_on_spawn = true
 
 [node name="EPIs" type="Node" parent="."]
+
+[node name="SwitchContextEPI" parent="EPIs" instance=ExtResource( 11 )]
 
 [node name="AnimationController" parent="." instance=ExtResource( 4 )]
 
