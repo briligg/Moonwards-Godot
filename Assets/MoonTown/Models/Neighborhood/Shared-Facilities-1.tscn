@@ -5,6 +5,48 @@
 
 [node name="Shared-Facilities-1" instance=ExtResource( 1 )]
 
+[node name="Bathroom-Stalls" parent="LOD0" index="0"]
+use_in_baked_light = true
+
+[node name="Cabinets" parent="LOD0" index="1"]
+use_in_baked_light = true
+
+[node name="Cookers" parent="LOD0" index="2"]
+use_in_baked_light = true
+
+[node name="Dining-Bar" parent="LOD0" index="3"]
+use_in_baked_light = true
+
+[node name="Door-Bathroom" parent="LOD0" index="4"]
+use_in_baked_light = true
+
+[node name="Door-Baths" parent="LOD0" index="5"]
+use_in_baked_light = true
+
+[node name="Door-Laundry" parent="LOD0" index="6"]
+use_in_baked_light = true
+
+[node name="Door-Workshop" parent="LOD0" index="7"]
+use_in_baked_light = true
+
+[node name="DrinkingWater" parent="LOD0" index="8"]
+use_in_baked_light = true
+
+[node name="Folding-Tables" parent="LOD0" index="9"]
+use_in_baked_light = true
+
+[node name="Fridge-and-Cold-Room" parent="LOD0" index="10"]
+use_in_baked_light = true
+
+[node name="GrayWater" parent="LOD0" index="11"]
+use_in_baked_light = true
+
+[node name="Internal-Walls" parent="LOD0" index="12"]
+use_in_baked_light = true
+
+[node name="Kitchen-funtiture" parent="LOD0" index="13"]
+use_in_baked_light = true
+
 [node name="Marker-Toilet-1" parent="LOD0" index="14"]
 transform = Transform( -0.0487802, 0, -0.99881, 0, 1, 0, 0.99881, 0, -0.0487802, 10.0017, -2.39285, -2.5641 )
 
@@ -21,6 +63,33 @@ transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 12.0621
 
 [node name="Toilet_Mark2" parent="LOD0/Marker-Toilet-3" index="0" instance=ExtResource( 2 )]
 transform = Transform( 0.998824, 0, -0.0484837, 0, 1, 0, 0.0484837, 0, 0.998824, 0, 0, 0 )
+
+[node name="Shower-Cubicle" parent="LOD0" index="17"]
+use_in_baked_light = true
+
+[node name="Showers" parent="LOD0" index="18"]
+use_in_baked_light = true
+
+[node name="Showers003" parent="LOD0" index="19"]
+use_in_baked_light = true
+
+[node name="Sink" parent="LOD0" index="20"]
+use_in_baked_light = true
+
+[node name="Stairs-Main" parent="LOD0" index="21"]
+use_in_baked_light = true
+
+[node name="Stools" parent="LOD0" index="22"]
+use_in_baked_light = true
+
+[node name="Utility-Room" parent="LOD0" index="23"]
+use_in_baked_light = true
+
+[node name="Vents" parent="LOD0" index="24"]
+use_in_baked_light = true
+
+[node name="Walls" parent="LOD0" index="25"]
+use_in_baked_light = true
 
 [node name="LOD1" parent="." index="1"]
 visible = false

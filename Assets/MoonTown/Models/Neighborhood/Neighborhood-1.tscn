@@ -56,6 +56,96 @@ transform = Transform( -0.178033, 0.00796599, -0.453891, 0.00891698, 0.199801, 0
 bbtext_fields = PoolStringArray( "This little kitchen is about as elaborate at they get in these homes. On the shelves at left are various appliances and utensils. Two of the shelves have boards that slide out to create counters. The sink below has a cover so the area there can be used as a counter too. To the right is a 3 drawer fridge, and on top of that is a microwave oven. If you are organized about it, it\'s enough to make good meals. The price of having all this in your own home is the giant black air filtration system hanging above you. Moon Town takes air quality very seriously. If odors aren\'t captured and filtered out at the source, it can take hours before they are no longer noticeable. If all homes were creating cooking odors, smells would hang in the air all the time, despite the hefty advanced air filters that are part of each neighborhood\'s shared facilities.", "Most homes do have a cooler, a small microwave, and a cupboard with a few dishes and implements. It\'s nice to not have to go to the kitchen or wait for robot service every time you want some tea or a snack. A home with a fridge this spacious and advanced is one that gets a lot of goodies delivered from Earth, probably including expensive rarities. The sides and the clear glass of the drawers is vacuum-core insulation, one of the moon\'s specialty products. Though creating the vacuum layer in the middle of each panel is easy on the moon, it isn\'t so easy to craft the reinforced dimpled glass layers on either side of the vacuum. They have to be able to handle the air pressure of the habs, and bumps and falls and such, without the seal protecting the vacuum leaking even a little. If even a tiny amount of air filtered in, it would be enough to eliminate the insulating effect of the vacuum completely." )
 title = "Kitchenette"
 
+[node name="Cables" parent="LOD0" index="0"]
+use_in_baked_light = true
+
+[node name="Dwelling" parent="LOD0" index="1"]
+use_in_baked_light = true
+
+[node name="Dwelling001" parent="LOD0" index="2"]
+use_in_baked_light = true
+
+[node name="Dwelling002" parent="LOD0" index="3"]
+use_in_baked_light = true
+
+[node name="Dwelling003" parent="LOD0" index="4"]
+use_in_baked_light = true
+
+[node name="Dwelling004" parent="LOD0" index="5"]
+use_in_baked_light = true
+
+[node name="Dwelling005" parent="LOD0" index="6"]
+use_in_baked_light = true
+
+[node name="Dwelling007" parent="LOD0" index="7"]
+use_in_baked_light = true
+
+[node name="Dwelling008" parent="LOD0" index="8"]
+use_in_baked_light = true
+
+[node name="Dwelling009" parent="LOD0" index="9"]
+use_in_baked_light = true
+
+[node name="Dwelling010" parent="LOD0" index="10"]
+use_in_baked_light = true
+
+[node name="Dwelling011" parent="LOD0" index="11"]
+use_in_baked_light = true
+
+[node name="Dwelling012" parent="LOD0" index="12"]
+use_in_baked_light = true
+
+[node name="Dwelling013" parent="LOD0" index="13"]
+use_in_baked_light = true
+
+[node name="Dwelling014" parent="LOD0" index="14"]
+use_in_baked_light = true
+
+[node name="Dwelling015" parent="LOD0" index="15"]
+use_in_baked_light = true
+
+[node name="Dwelling016" parent="LOD0" index="16"]
+use_in_baked_light = true
+
+[node name="Dwelling017" parent="LOD0" index="17"]
+use_in_baked_light = true
+
+[node name="Dwelling018" parent="LOD0" index="18"]
+use_in_baked_light = true
+
+[node name="Dwelling019" parent="LOD0" index="19"]
+use_in_baked_light = true
+
+[node name="Dwelling020" parent="LOD0" index="20"]
+use_in_baked_light = true
+
+[node name="Dwelling021" parent="LOD0" index="21"]
+use_in_baked_light = true
+
+[node name="Dwelling022" parent="LOD0" index="22"]
+use_in_baked_light = true
+
+[node name="Dwelling023" parent="LOD0" index="23"]
+use_in_baked_light = true
+
+[node name="Dwelling024" parent="LOD0" index="24"]
+use_in_baked_light = true
+
+[node name="Dwelling025" parent="LOD0" index="25"]
+use_in_baked_light = true
+
+[node name="Garden" parent="LOD0" index="26"]
+use_in_baked_light = true
+
+[node name="Neighborhood-cables" parent="LOD0" index="27"]
+use_in_baked_light = true
+
+[node name="Stairs" parent="LOD0" index="28"]
+use_in_baked_light = true
+
+[node name="Tree" parent="LOD0" index="29"]
+use_in_baked_light = true
+
 [node name="Example-Dwelling-1" parent="." index="5" instance=ExtResource( 2 )]
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="." index="6"]

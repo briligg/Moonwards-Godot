@@ -5,7 +5,82 @@
 
 [node name="Example-Dwelling-1" instance=ExtResource( 1 )]
 
+[node name="AirConditioning" parent="LOD0" index="0"]
+use_in_baked_light = true
+
+[node name="Bed" parent="LOD0" index="1"]
+use_in_baked_light = true
+
+[node name="Bed-Rails" parent="LOD0" index="2"]
+use_in_baked_light = true
+
+[node name="Bookcase" parent="LOD0" index="3"]
+use_in_baked_light = true
+
+[node name="Circle" parent="LOD0" index="4"]
+use_in_baked_light = true
+
+[node name="CoatRack" parent="LOD0" index="5"]
+use_in_baked_light = true
+
+[node name="Drain" parent="LOD0" index="6"]
+use_in_baked_light = true
+
+[node name="Example-Dwelling" parent="LOD0" index="7"]
+use_in_baked_light = true
+
+[node name="Example-Dwelling001" parent="LOD0" index="8"]
+use_in_baked_light = true
+
+[node name="Folding-Table" parent="LOD0" index="9"]
+use_in_baked_light = true
+
+[node name="Fridge" parent="LOD0" index="10"]
+use_in_baked_light = true
+
+[node name="Home-Oven" parent="LOD0" index="11"]
+use_in_baked_light = true
+
+[node name="Home-Washroom-Stall" parent="LOD0" index="12"]
+use_in_baked_light = true
+
+[node name="Iceboc-Heatsink" parent="LOD0" index="13"]
+use_in_baked_light = true
+
+[node name="Kitchen-Cabinet" parent="LOD0" index="14"]
+use_in_baked_light = true
+
+[node name="KitchenSink" parent="LOD0" index="15"]
+use_in_baked_light = true
+
+[node name="Mirror" parent="LOD0" index="16"]
+use_in_baked_light = true
+
+[node name="Plumbing" parent="LOD0" index="17"]
+use_in_baked_light = true
+
+[node name="Shelves" parent="LOD0" index="18"]
+use_in_baked_light = true
+
+[node name="Stools-4legs" parent="LOD0" index="19"]
+use_in_baked_light = true
+
 [node name="Toilet-Dwelling" parent="LOD0" index="20"]
 transform = Transform( 0.86537, 0, 0.501133, 0, 1, 0, -0.501133, 0, 0.86537, -1.59228, 2.83805, -11.2914 )
 
 [node name="Toilet_Mark2" parent="LOD0/Toilet-Dwelling" index="0" instance=ExtResource( 2 )]
+
+[node name="Ventilation-Hood" parent="LOD0" index="21"]
+use_in_baked_light = true
+
+[node name="Viewscreen" parent="LOD0" index="22"]
+use_in_baked_light = true
+
+[node name="Water-Tank-Cuboid001" parent="LOD0" index="23"]
+use_in_baked_light = true
+
+[node name="Water-Tank-Cuboid002" parent="LOD0" index="24"]
+use_in_baked_light = true
+
+[node name="Wet-vac" parent="LOD0" index="25"]
+use_in_baked_light = true
