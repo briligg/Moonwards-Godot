@@ -1,0 +1,232 @@
+[gd_scene format=2]
+
+[node name="Lighting" type="Spatial"]
+
+[node name="ReflectionProbe3" type="ReflectionProbe" parent="."]
+transform = Transform( 0.991524, 0, -0.129921, 0, 1, 0, 0.129921, 0, 0.991524, 0, -37.8816, 0 )
+layers = 992
+max_distance = 1.0
+extents = Vector3( 50, 25.1995, 20 )
+origin_offset = Vector3( -2.23517e-10, 0, 0 )
+box_projection = true
+enable_shadows = true
+cull_mask = 1048544
+
+[node name="ReflectionProbe2" type="ReflectionProbe" parent="."]
+transform = Transform( 0.85267, -0.510363, -0.111727, 0.506037, 0.859959, -0.0663069, 0.129921, 1.93597e-08, 0.991524, -114.747, -77.752, -13.5297 )
+layers = 992
+max_distance = 1.0
+extents = Vector3( 100, 40, 25 )
+origin_offset = Vector3( -2.23517e-10, 0, 0 )
+box_projection = true
+enable_shadows = true
+cull_mask = 1048544
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -0.0237343, 0.999718, 0, -0.999718, -0.0237343, 34.933, 15.9705, 2.85919 )
+light_color = Color( 0.996078, 0.996078, 0.909804, 1 )
+light_energy = 2.79
+light_bake_mode = 2
+shadow_enabled = true
+spot_range = 27.0
+spot_angle = 60.0
+
+[node name="SpotLight2" type="SpotLight" parent="."]
+transform = Transform( -0.522103, 0.307888, 0.79537, 0.168957, 0.951423, -0.257388, -0.83598, 1.78244e-08, -0.54876, 32.8579, 2.3537, -1.89228 )
+light_bake_mode = 2
+shadow_enabled = true
+spot_range = 22.7919
+
+[node name="SpotLight3" type="SpotLight" parent="."]
+transform = Transform( 0.750574, 0.0450565, 0.659249, 0.168957, 0.951423, -0.257388, -0.638821, 0.304573, 0.7065, 32.8579, -0.482118, -1.89228 )
+light_bake_mode = 2
+shadow_enabled = true
+spot_range = 41.1
+spot_attenuation = 1.23114
+spot_angle = 60.0
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7987, -0.838776, 7.21863 )
+light_bake_mode = 2
+omni_range = 6.2
+omni_attenuation = 1.62451
+
+[node name="OmniLight2" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3709, -1.48773, 4.03956 )
+light_bake_mode = 2
+omni_range = 6.2
+omni_attenuation = 1.62451
+
+[node name="OmniLight3" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4464, 4.01104, 1.66033 )
+light_bake_mode = 2
+omni_range = 6.2
+omni_attenuation = 1.62451
+
+[node name="OmniLight5" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01665, -2.0871, -0.184663 )
+light_color = Color( 0.979858, 1, 0.882812, 1 )
+light_energy = 1.57
+light_bake_mode = 2
+shadow_enabled = true
+omni_range = 6.2
+omni_attenuation = 1.62451
+
+[node name="OmniLight4" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4846, 0.66864, -2.66167 )
+light_bake_mode = 2
+omni_range = 6.2
+omni_attenuation = 1.62451
+
+[node name="SpotLight4" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.0484836, 0.998824, 0, -0.998824, 0.0484836, 0, 16.5803, 0 )
+light_color = Color( 0.992157, 1, 0.941176, 1 )
+light_energy = 0.85
+light_bake_mode = 2
+shadow_enabled = true
+spot_range = 38.1389
+spot_attenuation = 1.1487
+spot_angle = 70.0
+
+[node name="SpotLight6" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -0.0840951, -0.996458, 0, 0.996458, -0.0840951, -10.6275, -1.40659, 0 )
+light_color = Color( 0.992157, 1, 0.941176, 1 )
+light_energy = 0.85
+light_bake_mode = 2
+shadow_enabled = true
+spot_range = 38.1389
+spot_attenuation = 1.1487
+spot_angle = 70.0
+
+[node name="SpotLight5" type="SpotLight" parent="."]
+transform = Transform( 0.10681, 0.283145, 0.953111, -0.0318439, 0.959077, -0.281349, -0.993769, -0.000299796, 0.111456, -23.2593, 2.99705, -3.075 )
+light_energy = 1.3
+light_bake_mode = 2
+shadow_enabled = true
+spot_range = 46.9
+spot_attenuation = 0.965937
+spot_angle = 53.4
+spot_angle_attenuation = 0.840897
+
+[node name="SpotLight7" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 34.5115, -5.36765, -3.56495 )
+light_bake_mode = 2
+shadow_enabled = true
+spot_angle = 70.0
+
+[node name="SpotLight9" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 40.4303, -5.36765, -6.53485 )
+light_bake_mode = 2
+shadow_enabled = true
+spot_range = 3.68427
+spot_angle = 56.2
+
+[node name="SpotLight8" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 30.6645, -5.36765, 3.3062 )
+light_bake_mode = 2
+shadow_enabled = true
+spot_angle = 70.0
+
+[node name="SpotLight10" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 33.0475, -5.44141, 11.0083 )
+light_bake_mode = 2
+shadow_enabled = true
+spot_range = 6.63072
+spot_angle = 67.9965
+
+[node name="SpotLight11" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -0.0376728, 0.99929, 0, -0.99929, -0.0376728, -24.7928, -8.61302, 0.109541 )
+light_bake_mode = 2
+shadow_enabled = true
+spot_range = 14.9115
+spot_angle = 60.0
+
+[node name="OmniLight6" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.528, -117.103, -21.3071 )
+light_energy = 1.11
+light_indirect_energy = 3.27
+light_specular = 0.08
+light_bake_mode = 2
+shadow_enabled = true
+omni_range = 42.4
+omni_attenuation = 1.8025
+
+[node name="OmniLight7" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -99.528, -69.1032, -19.3071 )
+light_color = Color( 0.984314, 0.988235, 0.956863, 1 )
+light_energy = 0.75
+light_indirect_energy = 2.94
+light_specular = 0.08
+light_bake_mode = 2
+shadow_enabled = true
+omni_range = 50.9
+omni_attenuation = 1.56917
+
+[node name="SpotLight" type="SpotLight" parent="OmniLight7"]
+transform = Transform( 0.927045, 0.139229, -0.348142, 0.352331, -0.00585562, 0.935857, 0.12826, -0.990243, -0.0544831, -19.7546, 23.2322, 2.32202 )
+light_bake_mode = 2
+shadow_enabled = true
+spot_range = 28.2316
+spot_angle = 56.9111
+
+[node name="SpotLight2" type="SpotLight" parent="OmniLight7"]
+transform = Transform( 0.872027, 0.0457049, -0.48732, 0.489459, -0.0814285, 0.868216, 0, -0.995631, -0.0933784, 42.9652, 4.37205, 8.22209 )
+light_color = Color( 0.992157, 0.992157, 0.992157, 1 )
+light_energy = 1.57
+light_bake_mode = 2
+shadow_enabled = true
+spot_range = 23.1823
+spot_attenuation = 0.659754
+spot_angle = 56.6
+spot_angle_attenuation = 1.86607
+
+[node name="OmniLight" type="OmniLight" parent="OmniLight7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.3268, -7.01611, 0 )
+light_color = Color( 0.968719, 1, 0.839844, 1 )
+light_bake_mode = 2
+omni_range = 25.8224
+
+[node name="OmniLight8" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.52802, -56.7779, -3.30708 )
+light_color = Color( 0.984314, 0.988235, 0.956863, 1 )
+light_energy = 0.3
+light_indirect_energy = 2.54
+light_specular = 0.08
+light_bake_mode = 2
+omni_range = 110.0
+omni_attenuation = 1.56917
+
+[node name="SpotLight12" type="SpotLight" parent="."]
+transform = Transform( -0.0205411, 0, -0.999789, 0, 1, 0, 0.999789, 0, -0.0205411, -88.4828, -19.7902, -10.4508 )
+light_energy = 3.93
+light_bake_mode = 2
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_reverse_cull_face = true
+spot_range = 52.7651
+spot_angle = 60.0
+
+[node name="OmniLight9" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0327, -22.8558, -6.15027 )
+light_color = Color( 0.996078, 1, 0.913725, 1 )
+light_bake_mode = 2
+shadow_enabled = true
+omni_range = 14.2
+omni_attenuation = 1.18921
+
+[node name="OmniLight" type="OmniLight" parent="OmniLight9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4596, -4.11851, 3.05449 )
+light_color = Color( 0.984314, 0.988235, 0.976471, 1 )
+light_bake_mode = 2
+
+[node name="OmniLight2" type="OmniLight" parent="OmniLight9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4256, -4.11851, 4.86791 )
+light_color = Color( 0.984314, 0.988235, 0.976471, 1 )
+light_bake_mode = 2
+shadow_enabled = true
+
+[node name="OmniLight3" type="OmniLight" parent="OmniLight9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.9761, -3.73037, 6.52738 )
+light_color = Color( 1, 0.976471, 0.913725, 1 )
+light_bake_mode = 2
+omni_range = 10.0642
