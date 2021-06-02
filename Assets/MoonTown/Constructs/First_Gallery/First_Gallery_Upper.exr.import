@@ -21,4 +21,4 @@ flags/filter=true
 flags/mipmaps=false
 flags/srgb=false
 slices/horizontal=1
-slices/vertical=9
+slices/vertical=6
