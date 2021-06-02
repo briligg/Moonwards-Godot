@@ -337,7 +337,7 @@ func update_stairs_climbing(_delta : float, phys_state : PhysicsDirectBodyState)
 		entity.climb_point -= 1
 	
 	#Make it easier to read which direction we are climbing.
-	var input_direction = entity.input.z
+	var input_direction = input.input.z
 	
 	#Stop climbing at the top of the stairs.
 	var top_offset : float = 0.4
@@ -350,4 +350,4 @@ func update_stairs_climbing(_delta : float, phys_state : PhysicsDirectBodyState)
 		stop_climb_stairs(phys_state, false)
 		return
 	
-	phys_state.set_linear_velocity(Vector3.UP * climb_speed * entity.input.z)
+	phys_state.set_linear_velocity(Vector3.UP * climb_speed * input.input.z)
