@@ -73,7 +73,6 @@ func _process_client(_delta: float) -> void:
 	pass
 
 func set_enabled(val: bool) -> void:
-	
 	if val == false:
 		disable()
 	elif val == true:

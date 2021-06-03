@@ -109,6 +109,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://SceneComponent/World/DynamicLoading/DynamicVisibilityTrigger.gd"
 }, {
+"base": "Node",
+"class": "EPIBase",
+"language": "GDScript",
+"path": "res://Script/Component/Core/EPIBase.gd"
+}, {
 "base": "Reference",
 "class": "EntityData",
 "language": "GDScript",
@@ -404,6 +409,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://SceneComponent/Actor/Humanoid/HumanoidInput.gd"
 }, {
+"base": "EPIBase",
+"class": "InputEPI",
+"language": "GDScript",
+"path": "res://SceneComponent/Actor/InputEPI.gd"
+}, {
 "base": "InspectorGadgetBase",
 "class": "InspectorGadget",
 "language": "GDScript",
@@ -680,6 +690,7 @@ _global_script_class_icons={
 "DoubleLabel": "",
 "DropDown": "",
 "DynamicVisibilityTrigger": "",
+"EPIBase": "",
 "EntityData": "",
 "EntitySignals": "",
 "EnumDropDown": "",
@@ -739,6 +750,7 @@ _global_script_class_icons={
 "HumanoidMovement": "",
 "HumanoidMovementDebug": "",
 "InputController": "",
+"InputEPI": "",
 "InspectorGadget": "",
 "InspectorGadgetBase": "",
 "InspectorGadgetUtil": "",
@@ -816,6 +828,7 @@ Hud="*res://Script/Manager/HudManager/HudManager.gd"
 Nodes="*res://addons/joyeux_npc_editor/src/Core/Nodes.gd"
 ReflectMaterialManager="*res://addons/Silicon.vfx.planar_reflection/reflect_material_manager.gd"
 MwInput="*res://Script/Manager/InputManager/MwInputManager.tscn"
+EPIManager="*res://Script/Manager/EPIManager/EPIManager.tscn"
 
 [compression]
 

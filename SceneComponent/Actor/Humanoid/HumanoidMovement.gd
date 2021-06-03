@@ -1,6 +1,8 @@
 extends AMovementController
 class_name HumanoidMovement
 
+onready var input : InputEPI = entity.request_epi(EPIManager.INPUT_EPI)
+
 # Component for kinematic movement
 export(float) var initial_jump_velocity = 2.2
 export(float) var climb_speed = 1.5
@@ -52,6 +54,11 @@ func _ready() -> void:
 	normal_detect.add_exception(entity)
 	
 	entity.connect("on_forces_integrated", self, "_integrate_forces")
+#
+#	call_deferred("_ready_deferred")
+#
+#func _ready_deferred() -> void :
+#	input = entity.request_epi(EPIManager.INPUT_EPI)
 
 func is_grounded() -> bool:
 	if !is_groundcast_enabled:
@@ -61,7 +68,6 @@ func is_grounded() -> bool:
 
 func _integrate_forces(state):
 	invoke_network_based("_integrate_server", "_integrate_client", [state])
-
 
 func _integrate_client(args):
 	var phys_state = args[0]
@@ -164,7 +170,7 @@ func reset_input():
 
 func handle_input() -> void:
 	# Adding a timeout after the jump makes sure the jump velocity is consistent and not triggered multiple times.
-	if entity.state.state != ActorEntityState.State.IN_AIR and entity.input.y > 0:
+	if entity.state.state != ActorEntityState.State.IN_AIR and input.input.y > 0:
 		vertical_vector.y = 1
 
 func calculate_slope():
@@ -174,8 +180,8 @@ func calculate_slope():
 	dbg_ground_slope_center = + rad2deg(acos(dbg_ground_normal.dot(Vector3.UP)))
 
 func calculate_horizontal(_phys_state : PhysicsDirectBodyState):
-	horizontal_vector += entity.input.z * entity.model.transform.basis.z
-	horizontal_vector += entity.input.x * entity.model.transform.basis.x
+	horizontal_vector += input.input.z * entity.model.transform.basis.z
+	horizontal_vector += input.input.x * entity.model.transform.basis.x
 
 	if dbg_ground_slope > 1:
 		var slide_direction = horizontal_vector.slide(dbg_ground_normal)
@@ -331,7 +337,7 @@ func update_stairs_climbing(_delta : float, phys_state : PhysicsDirectBodyState)
 		entity.climb_point -= 1
 	
 	#Make it easier to read which direction we are climbing.
-	var input_direction = entity.input.z
+	var input_direction = input.input.z
 	
 	#Stop climbing at the top of the stairs.
 	var top_offset : float = 0.4
@@ -344,4 +350,4 @@ func update_stairs_climbing(_delta : float, phys_state : PhysicsDirectBodyState)
 		stop_climb_stairs(phys_state, false)
 		return
 	
-	phys_state.set_linear_velocity(Vector3.UP * climb_speed * entity.input.z)
+	phys_state.set_linear_velocity(Vector3.UP * climb_speed * input.input.z)
