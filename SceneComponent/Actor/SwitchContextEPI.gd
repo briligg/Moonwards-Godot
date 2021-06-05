@@ -10,7 +10,7 @@ signal context_taken()
 const CONTEXT_TAKEN = "context_taken"
 
 func take_context_from(old_context : SwitchContextEPI = null) -> void :
-	if old_context == null :
+	if old_context == null || is_dummy :
 		return
 	
 	old_context.emit_signal(old_context.CONTEXT_LOST)
