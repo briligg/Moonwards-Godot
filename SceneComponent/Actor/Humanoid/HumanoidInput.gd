@@ -2,6 +2,7 @@ extends AComponent
 class_name InputController
 
 onready var input : InputEPI = entity.demand_epi(EPIManager.INPUT_EPI)
+onready var switch_context : SwitchContextEPI = entity.request_epi(EPIManager.SWITCH_CONTEXT_EPI)
 
 var ignore_inputs : bool = false
 
@@ -11,6 +12,10 @@ func _init().("HumanoidInput", true):
 func _ready() -> void:
 	Signals.Entities.connect(Signals.Entities.FREE_CAMERA_SET, self, "set_ignore_inputs")
 	
+	#Start accepting input when context is given.
+	switch_context.connect(switch_context.CONTEXT_TAKEN, self, "enable")
+	switch_context.connect(switch_context.CONTEXT_LOST, self, "disable")
+
 func _process_client(_delta: float) -> void:
 	entity.input = Vector3.ZERO
 	input.input = Vector3.ZERO

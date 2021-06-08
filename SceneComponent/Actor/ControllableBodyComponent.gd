@@ -1,6 +1,8 @@
 extends AComponent
 class_name ControllableBodyComponent
 
+#Used EPIs.
+onready var switch_context : SwitchContextEPI = entity.request_epi(EPIManager.SWITCH_CONTEXT_EPI)
 
 #Determines if the player can interact directly with the body.
 export(bool) var direct_interact_at_start : bool = false
@@ -17,6 +19,9 @@ const CONTROL_LOST = "control_lost"
 #Emitted when someone takes control of me.
 signal control_taken(aentity_taking_control)
 const CONTROL_TAKEN = "control_taken"
+
+#What the interactor's context is so we can successfully return it.
+var interactors_context : SwitchContextEPI
 
 var original_peer_id : int = -1
 var controller_peer_id : int = -1
@@ -124,10 +129,6 @@ puppetsync func _sync_return_control_acting_player() -> void :
 	#Let visibility manager know we switched context.
 	VisibilityManager.reverse_context()
 	
-	#Give control to the new interactor..
-	if controlling_entity.has_node("HumanoidInput") :
-		controlling_entity.get_node("HumanoidInput").disable()
-	
 	if direct_interaction_capable :
 		$Interactable.set_active(false)
 
@@ -162,7 +163,6 @@ puppetsync  func _sync_take_control(interactor_path : NodePath) -> void :
 	emit_signal(CONTROL_TAKEN, interactor)
 
 #Called for the player actually performing the action.
-
 puppetsync func _sync_take_control_acting_player(interactor_path : NodePath) -> void :
 	#Get AEntity taking control.
 	if not get_tree().get_root().has_node(interactor_path) :
@@ -170,16 +170,11 @@ puppetsync func _sync_take_control_acting_player(interactor_path : NodePath) -> 
 		return
 	var interactor : AEntity = get_tree().get_root().get_node(interactor_path)
 	
-	entity.get_component("Camera").camera.current = true
-	interactor.get_component("Camera").camera.current = false
-	entity.get_component("Interactor").grab_focus()
+	switch_context.take_context_from(interactor.request_epi(EPIManager.SWITCH_CONTEXT_EPI))
+	interactors_context = interactor.request_epi(EPIManager.SWITCH_CONTEXT_EPI)
 
 	#Let visibility manager know we switched context.
 	VisibilityManager.switch_context()
-	
-	#Give control to the new interactor..
-	if interactor.has_node("HumanoidInput") :
-		interactor.get_node("HumanoidInput").disable()
 	
 	#Let the player exit the controllable body component.
 	if direct_interaction_capable :
