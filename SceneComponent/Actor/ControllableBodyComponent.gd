@@ -101,9 +101,7 @@ puppetsync func _sync_return_control() -> void :
 		controlling_entity.enable()
 		controlling_entity.show()
 	
-	entity.get_component("NametagComponent").hide()
-	entity.get_component("Interactor").disable()
-	entity.get_component("HumanoidInput").disable()
+
 	entity.owner_peer_id = original_peer_id
 	controller_peer_id = original_peer_id
 	is_being_controlled = false
@@ -148,8 +146,6 @@ puppetsync  func _sync_take_control(interactor_path : NodePath) -> void :
 	if hide_interactor_entity :
 		interactor.hide()
 	controlling_entity = interactor
-	entity.get_component("NametagComponent").show()
-	entity.get_component("NametagComponent").set_name(interactor.entity_name)
 	entity.enable()
 	is_being_controlled = true
 	
