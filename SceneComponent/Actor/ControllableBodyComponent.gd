@@ -73,7 +73,7 @@ func _been_interacted(interactor : Node) -> void :
 	if  interactor.owner_peer_id == self.controller_peer_id :
 		rpc_id(sender_id, "_sync_return_control_acting_player")
 		#Disable my entity and get interactor ready.
-		rpc("_sync_return_control")
+		rpc("_sync_return_control", interactor.entity_name)
 		
 		var net : NetworkSignals = Signals.Network
 		net.disconnect(net.CLIENT_DISCONNECTED, self, "_client_disconnected")
@@ -101,7 +101,6 @@ puppetsync func _sync_return_control() -> void :
 		controlling_entity.enable()
 		controlling_entity.show()
 	
-
 	entity.owner_peer_id = original_peer_id
 	controller_peer_id = original_peer_id
 	is_being_controlled = false
@@ -112,17 +111,14 @@ puppetsync func _sync_return_control() -> void :
 
 #This is called when I am being controlled by the local player.
 puppetsync func _sync_return_control_acting_player() -> void :
-	#Stop my current camera and hand it back to player's main AEntity.
-	entity.get_component("Camera").camera.current =false
-	
 	#Check that no errors occured that left controlling_entity null
 	if controlling_entity == null :
 		Log.error(self, "_sync_return_control_acting_player", "Spacesuit attempted to return control with a null controlling entity %s" % get_path())
 		return
-		
-	#Give the controlling player back it's control.
-	controlling_entity.get_component("Camera").camera.current = true
-	controlling_entity.get_component("Interactor").grab_focus()
+	
+	#Return context to the controlling entity.
+	var controller : SwitchContextEPI = controlling_entity.demand_epi(EPIManager.SWITCH_CONTEXT_EPI)
+	controller.take_context_from(switch_context, controlling_entity.entity_name)
 
 	#Let visibility manager know we switched context.
 	VisibilityManager.reverse_context()
@@ -138,7 +134,7 @@ puppetsync  func _sync_take_control(interactor_path : NodePath) -> void :
 		return
 	var interactor : ActorEntity = get_tree().get_root().get_node(interactor_path)
 	
-	#Give control to the new interactor..
+	#Give control to the new interactor.
 	entity.owner_peer_id = interactor.owner_peer_id
 	controller_peer_id = interactor.owner_peer_id
 	
@@ -166,7 +162,7 @@ puppetsync func _sync_take_control_acting_player(interactor_path : NodePath) -> 
 		return
 	var interactor : AEntity = get_tree().get_root().get_node(interactor_path)
 	
-	switch_context.take_context_from(interactor.request_epi(EPIManager.SWITCH_CONTEXT_EPI))
+	switch_context.take_context_from(interactor.request_epi(EPIManager.SWITCH_CONTEXT_EPI), interactor.entity_name)
 	interactors_context = interactor.request_epi(EPIManager.SWITCH_CONTEXT_EPI)
 
 	#Let visibility manager know we switched context.
