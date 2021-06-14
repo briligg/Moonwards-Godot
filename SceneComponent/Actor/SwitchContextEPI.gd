@@ -13,6 +13,8 @@ const CONTEXT_TAKEN = "context_taken"
 
 var previous_context : SwitchContextEPI = null
 
+#Only networked aspect is passing the player name for  the newly controlled entity.
+
 puppetsync func give_context_through_network(player_name : String) -> void :
 	emit_signal(CONTEXT_DATA_GIVEN, player_name)
 
@@ -24,6 +26,11 @@ func take_context_from(old_context : SwitchContextEPI = null, player_name : Stri
 	
 	else : 
 		if old_context != null && not old_context.is_dummy :
+			#MacGyver
+			if previous_context != null :
+				Log.debug(self, "yep" , "%s " % previous_context.get_path())
+			
+			Log.debug(self, "switching context now", "switched context")
 			previous_context = old_context
 			old_context.emit_signal(old_context.CONTEXT_LOST)
 		emit_signal(CONTEXT_TAKEN)

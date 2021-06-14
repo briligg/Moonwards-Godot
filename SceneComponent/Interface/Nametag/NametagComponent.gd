@@ -2,10 +2,10 @@ extends AComponent
 
 onready var switch_context : SwitchContextEPI = entity.request_epi(EPIManager.SWITCH_CONTEXT_EPI)
 
-func _init().("NametagComponent", false):
+func _init().("NametagComponent", false) :
 	pass
-	
-func _ready() -> void:
+
+func _ready() -> void :
 	call_deferred("set_name", entity.entity_name)
 	
 	#Only be visible if I am not over the main player
@@ -19,5 +19,5 @@ func context_data_given(player_name : String) -> void :
 	set_name(player_name)
 	visible = true
 
-func set_name(name) -> void:
+func set_name(name) -> void :  
 	$Nametag3D.set_name(name)

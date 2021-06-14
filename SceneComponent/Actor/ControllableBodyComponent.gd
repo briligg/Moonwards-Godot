@@ -73,7 +73,7 @@ func _been_interacted(interactor : Node) -> void :
 	if  interactor.owner_peer_id == self.controller_peer_id :
 		rpc_id(sender_id, "_sync_return_control_acting_player")
 		#Disable my entity and get interactor ready.
-		rpc("_sync_return_control", interactor.entity_name)
+		rpc("_sync_return_control")
 		
 		var net : NetworkSignals = Signals.Network
 		net.disconnect(net.CLIENT_DISCONNECTED, self, "_client_disconnected")
