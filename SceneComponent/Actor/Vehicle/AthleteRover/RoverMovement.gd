@@ -1,7 +1,7 @@
 extends AComponent
 
 #EPIs
-onready var input : InputEPI = entity.request_epi(EPIManager.INPUT_EPI)
+onready var input : InputEPI = entity.demand_epi(EPIManager.INPUT_EPI)
 
 # Control properties
 export var engine_power: float = 11000.0 # At most 6x the weight
@@ -31,6 +31,8 @@ func _init().("RoverMovement", false):
 func _ready() -> void:
 	# Distribute power equally amongst the powered wheels
 	power_per_wheel = engine_power / 6.0 # This is still recommended to have as 6 (6 wheels) even as 4WD
+	
+	input.connect(input.JUMP_PRESSED, self, "on_jump_pressed")
 
 func _process_server(delta: float) -> void:
 	# Decrease jump cooldown
@@ -65,7 +67,7 @@ func _process_client(_delta: float) -> void:
 		entity.global_transform.origin = p
 		entity.global_transform.basis = b
 
-func on_jump_pressed() -> void:
+func on_jump_pressed(_force : float = 0) -> void:
 	if (_jump_timer > 0.0):
 		return # Jump still on cooldown
 	_jump_timer = jump_cooldown
