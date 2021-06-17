@@ -407,7 +407,7 @@ _global_script_classes=[ {
 "base": "AComponent",
 "class": "InputController",
 "language": "GDScript",
-"path": "res://SceneComponent/Actor/Humanoid/HumanoidInput.gd"
+"path": "res://SceneComponent/Actor/Player/Input/InputComponent.gd"
 }, {
 "base": "EPIBase",
 "class": "InputEPI",

@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/MoonTown/Models/Athlete_Rover/AthleteRover-BallJoints_v4_model.tscn" type="PackedScene" id=6]
 [ext_resource path="res://SceneComponent/Actor/Vehicle/AthleteRover/RoverMovement.tscn" type="PackedScene" id=7]
 [ext_resource path="res://SceneComponent/Actor/Vehicle/AthleteRover/RoverRideInteractable.tscn" type="PackedScene" id=8]
-[ext_resource path="res://SceneComponent/Actor/Humanoid/HumanoidInput.tscn" type="PackedScene" id=9]
+[ext_resource path="res://SceneComponent/Actor/Player/Input/InputComponent.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Tree/Actor/Vehicle/AthleteRover/AthleteRover.gd" type="Script" id=10]
 [ext_resource path="res://SceneComponent/Actor/Vehicle/AthleteRover/RoverWheel.tscn" type="PackedScene" id=11]
 [ext_resource path="res://SceneComponent/Actor/SwitchContextEPI.tscn" type="PackedScene" id=12]
@@ -170,7 +170,7 @@ transform = Transform( -1, -2.03814e-08, -5.96101e-08, -5.04201e-08, 1, 2.41584e
 [node name="WheelMiddleLBoneAttachment" parent="Model/Legs" index="7"]
 transform = Transform( -1, -6.11162e-08, 2.50441e-06, -2.03768e-07, 1, 3.12639e-13, -2.58496e-06, -3.31399e-08, -1, 19.5691, 6.13141, -0.00983331 )
 
-[node name="RoverInput" parent="." instance=ExtResource( 9 )]
+[node name="InputComponent" parent="." instance=ExtResource( 9 )]
 
 [editable path="RoverRideInteractable"]
 [editable path="Model"]
