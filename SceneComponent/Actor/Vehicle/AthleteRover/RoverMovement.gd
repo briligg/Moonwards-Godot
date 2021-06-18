@@ -39,8 +39,8 @@ func _process_server(delta: float) -> void:
 	if (_jump_timer > 0.0):
 		_jump_timer = max(_jump_timer - delta, 0.0)
 	
-	var front_target: float = input.input.y * max_steering_angle
-	var back_target: float = input.input.y * -max_steering_angle
+	var front_target: float = input.input.x * max_steering_angle
+	var back_target: float = input.input.x * -max_steering_angle
 	
 	# In order: LF, RF, LB, RB
 	entity.wheels[0].rotation_degrees.y = lerp(entity.wheels[0].rotation_degrees.y, front_target, 
@@ -53,10 +53,10 @@ func _process_server(delta: float) -> void:
 		(1.0 - exp(-steering_speed * delta)))
 	
 	# 4 wheel drive, middle wheels do not exert engine force - can be changed, but works well
-	entity.wheels[0].apply_engine_force(input.input.x * entity.global_transform.basis.z * power_per_wheel)# * delta)
-	entity.wheels[3].apply_engine_force(input.input.x * entity.global_transform.basis.z * power_per_wheel)# * delta)
-	entity.wheels[2].apply_engine_force(input.input.x * entity.global_transform.basis.z * power_per_wheel / 1.5)# * delta)
-	entity.wheels[5].apply_engine_force(input.input.x * entity.global_transform.basis.z * power_per_wheel / 1.5)# * delta)
+	entity.wheels[0].apply_engine_force(input.input.z * entity.global_transform.basis.z * power_per_wheel)# * delta)
+	entity.wheels[3].apply_engine_force(input.input.z * entity.global_transform.basis.z * power_per_wheel)# * delta)
+	entity.wheels[2].apply_engine_force(input.input.z * entity.global_transform.basis.z * power_per_wheel / 1.5)# * delta)
+	entity.wheels[5].apply_engine_force(input.input.z * entity.global_transform.basis.z * power_per_wheel / 1.5)# * delta)
 	entity.srv_pos = entity.global_transform.origin
 	entity.srv_basis = entity.global_transform.basis
 
