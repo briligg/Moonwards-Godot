@@ -469,6 +469,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Graphics/MeshFactoryData.gd"
 }, {
+"base": "EPIBase",
+"class": "ModelEPI",
+"language": "GDScript",
+"path": "res://SceneComponent/Actor/ModelEPI.gd"
+}, {
 "base": "RayCast",
 "class": "MouseSimulatingRayCast",
 "language": "GDScript",
@@ -767,6 +772,7 @@ _global_script_class_icons={
 "LodSignals": "",
 "MenuSignals": "",
 "MeshFactoryData": "",
+"ModelEPI": "",
 "MouseSimulatingRayCast": "",
 "MultiMeshConverter": "",
 "MwNPC": "",
