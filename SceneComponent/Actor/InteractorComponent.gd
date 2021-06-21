@@ -1,6 +1,8 @@
 extends AComponent
 class_name InteractorComponent
 
+onready var switch_context : SwitchContextEPI = entity.request_epi(EPIManager.SWITCH_CONTEXT_EPI)
+
 #These allow us to call signals using actual variables instead of strings.
 #const FOCUS_ROLLBACK : String = "focus_returned"
 const INTERACTABLE_ENTERED_REACH : String = "interactable_entered_reach"
@@ -58,6 +60,9 @@ func _ready() -> void :
 	
 	#Create a mouse motion because of a bug workaround.
 	_latest_mouse_motion = InputEventMouseMotion.new()
+	
+	switch_context.connect(switch_context.CONTEXT_TAKEN, self, "grab_focus")
+	switch_context.connect(switch_context.CONTEXT_LOST, self, "lost_focus")
 
 	#Listen for the Interactor Area signals if there is a collision shape child.
 	var has_collision : bool

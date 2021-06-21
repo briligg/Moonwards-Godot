@@ -3,6 +3,8 @@
 extends AComponent
 class_name CameraController
 
+onready var switch_context : SwitchContextEPI = entity.request_epi(EPIManager.SWITCH_CONTEXT_EPI)
+
 onready var camera: Camera = $Camera
 onready var pivot: Spatial = $Pivot
 
@@ -53,6 +55,8 @@ func _ready() -> void:
 	pitch = 0.0
 	_update_cam_pos()
 	camera.set_as_toplevel(true)
+	
+	switch_context.connect(switch_context.CONTEXT_TAKEN, self, "enable")
 
 func _process(delta: float) -> void:
 	#Set the camera back to regular mode if it is not the current camera.

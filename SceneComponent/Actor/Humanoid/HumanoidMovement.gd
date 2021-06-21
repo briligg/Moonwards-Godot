@@ -54,11 +54,6 @@ func _ready() -> void:
 	normal_detect.add_exception(entity)
 	
 	entity.connect("on_forces_integrated", self, "_integrate_forces")
-#
-#	call_deferred("_ready_deferred")
-#
-#func _ready_deferred() -> void :
-#	input = entity.request_epi(EPIManager.INPUT_EPI)
 
 func is_grounded() -> bool:
 	if !is_groundcast_enabled:
