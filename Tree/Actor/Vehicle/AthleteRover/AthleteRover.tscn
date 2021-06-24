@@ -13,6 +13,7 @@
 [ext_resource path="res://SceneComponent/Actor/Vehicle/AthleteRover/RoverWheel.tscn" type="PackedScene" id=11]
 [ext_resource path="res://SceneComponent/Actor/SwitchContextEPI.tscn" type="PackedScene" id=12]
 [ext_resource path="res://SceneComponent/Actor/InputEPI.tscn" type="PackedScene" id=13]
+[ext_resource path="res://SceneComponent/Actor/ModelEPI.tscn" type="PackedScene" id=14]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1.50316, 3.24684, 1.96365 )
@@ -32,6 +33,8 @@ script = ExtResource( 10 )
 
 [node name="SwitchContextEPI" parent="EPIs" instance=ExtResource( 12 )]
 [node name="InputEPI" parent="EPIs" instance=ExtResource( 13 )]
+
+[node name="ModelEPI" parent="EPIs" instance=ExtResource( 13 )]
 
 [node name="Interactor" parent="." instance=ExtResource( 2 )]
 ray_cast_length = 1000.0
