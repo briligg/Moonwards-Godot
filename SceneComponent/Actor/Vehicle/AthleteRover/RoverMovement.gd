@@ -1,5 +1,8 @@
 extends AComponent
 
+#EPIs
+onready var input : InputEPI = entity.demand_epi(EPIManager.INPUT_EPI)
+
 # Control properties
 export var engine_power: float = 11000.0 # At most 6x the weight
 export var max_steering_angle: float = 15.0 # Wheel steering angle
@@ -28,14 +31,16 @@ func _init().("RoverMovement", false):
 func _ready() -> void:
 	# Distribute power equally amongst the powered wheels
 	power_per_wheel = engine_power / 6.0 # This is still recommended to have as 6 (6 wheels) even as 4WD
+	
+	input.connect(input.JUMP_PRESSED, self, "on_jump_pressed")
 
 func _process_server(delta: float) -> void:
 	# Decrease jump cooldown
 	if (_jump_timer > 0.0):
 		_jump_timer = max(_jump_timer - delta, 0.0)
 	
-	var front_target: float = entity.input.y * max_steering_angle
-	var back_target: float = entity.input.y * -max_steering_angle
+	var front_target: float = input.input.x * max_steering_angle
+	var back_target: float = input.input.x * -max_steering_angle
 	
 	# In order: LF, RF, LB, RB
 	entity.wheels[0].rotation_degrees.y = lerp(entity.wheels[0].rotation_degrees.y, front_target, 
@@ -48,10 +53,10 @@ func _process_server(delta: float) -> void:
 		(1.0 - exp(-steering_speed * delta)))
 	
 	# 4 wheel drive, middle wheels do not exert engine force - can be changed, but works well
-	entity.wheels[0].apply_engine_force(entity.input.x * entity.global_transform.basis.z * power_per_wheel)# * delta)
-	entity.wheels[3].apply_engine_force(entity.input.x * entity.global_transform.basis.z * power_per_wheel)# * delta)
-	entity.wheels[2].apply_engine_force(entity.input.x * entity.global_transform.basis.z * power_per_wheel / 1.5)# * delta)
-	entity.wheels[5].apply_engine_force(entity.input.x * entity.global_transform.basis.z * power_per_wheel / 1.5)# * delta)
+	entity.wheels[0].apply_engine_force(input.input.z * entity.global_transform.basis.z * power_per_wheel)# * delta)
+	entity.wheels[3].apply_engine_force(input.input.z * entity.global_transform.basis.z * power_per_wheel)# * delta)
+	entity.wheels[2].apply_engine_force(input.input.z * entity.global_transform.basis.z * power_per_wheel / 1.5)# * delta)
+	entity.wheels[5].apply_engine_force(input.input.z * entity.global_transform.basis.z * power_per_wheel / 1.5)# * delta)
 	entity.srv_pos = entity.global_transform.origin
 	entity.srv_basis = entity.global_transform.basis
 
@@ -62,7 +67,7 @@ func _process_client(_delta: float) -> void:
 		entity.global_transform.origin = p
 		entity.global_transform.basis = b
 
-func on_jump_pressed() -> void:
+func on_jump_pressed(_force : float = 0) -> void:
 	if (_jump_timer > 0.0):
 		return # Jump still on cooldown
 	_jump_timer = jump_cooldown

@@ -63,7 +63,7 @@ func enable_on_owner() -> void:
 
 #Typical way of getting an epi. Return the requested epi if I have it or return a 
 #functioning epi that is not used otherwise.
-#If this crashes, it could be that the EPIs node is not present as a child.
+#If this crashes, it could be that the EPIs node is not present as a child in EPIManager.
 func request_epi(epi_name : String) -> EPIBase :
 	if $EPIs.has_node(epi_name) :
 		var return_epi = $EPIs.get_node(epi_name)

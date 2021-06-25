@@ -51,7 +51,6 @@ func take_control(e):
 	
 	# Entity being the rover
 	entity.get_component("Camera").camera.current = true
-	entity.get_component("RoverInput").enabled = true
 	entity.get_component("Interactor").grab_focus()
 	
 #	update_control_state(Network.network_instance.peer_id, false)
@@ -59,7 +58,6 @@ func take_control(e):
 func return_control(_e) -> void:
 	interactable.display_info = "Take control of the rover"
 	entity.get_component("Camera").camera.current = false
-	entity.get_component("RoverInput").enabled = false
 	
 #	update_control_state(-1, true)
 	

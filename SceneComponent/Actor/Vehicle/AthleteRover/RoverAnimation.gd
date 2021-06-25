@@ -1,5 +1,7 @@
 extends AComponent
 
+#The class beneath uses InputEPI via demand.
+onready var input : InputEPI = entity.demand_epi(EPIManager.INPUT_EPI)
 
 onready var armature: Skeleton = $"../Model/Legs"
 
@@ -127,7 +129,7 @@ func setup_movement() -> void:
 		
 		# Create instances and store in legs array
 		legs.append(
-			Proc_Leg_Rover.new(entity, ik_ee[i][0], _ik_ee_offset, _ik_ee_rot_offset,
+			Proc_Leg_Rover.new(input, entity, ik_ee[i][0], _ik_ee_offset, _ik_ee_rot_offset,
 			home_target[i][0], home_target[i][1], wheel_mesh[i],
 			wheel_rotation_scale, wheel_contact_speed, wheel_return_speed,
 			raise_anim_offset, lower_anim_offset, leg_lift_offset,
@@ -136,6 +138,8 @@ func setup_movement() -> void:
 
 # Represents a procedural animated leg
 class Proc_Leg_Rover:
+	var input : InputEPI
+	
 	var last_ee_pos: Vector3
 	
 	var entity
@@ -159,12 +163,13 @@ class Proc_Leg_Rover:
 	var lower_anim_offset: float
 	var leg_lift_offset: float
 	
-	func _init(base_parent: Spatial, _ik_ee: Spatial, _ik_ee_pos_offset: Vector3, _ik_ee_rot_offset: Vector3,
+	func _init(input_epi : InputEPI, base_parent: Spatial, _ik_ee: Spatial, _ik_ee_pos_offset: Vector3, _ik_ee_rot_offset: Vector3,
 	_home_target: Spatial, _home_target_i_pos: Vector3, _wheel_mesh: MeshInstance,
 	_wheel_rotation_scale: float, _wheel_contact_speed: float, _wheel_return_speed: float,
 	_raise_anim_offset: float, _lower_anim_offset: float, _leg_lift_offset: float,
 	_raise_anim_speed: float, _lower_anim_speed: float, _leg_lift_anim_speed: float
 	) -> void:
+		input = input_epi
 		
 		entity = base_parent
 		ik_ee = _ik_ee
@@ -231,21 +236,21 @@ class Proc_Leg_Rover:
 	
 	
 	func handle_maneuver(delta: float) -> void:
-		if entity.anim_state == entity.Anim_States.RAISE:
+		if input.is_leg_state(input.Leg_Anim_States.RAISE) :
 			var dir: Vector3 = Vector3(0.0, home_target_i_pos.y, 0.0).direction_to(home_target_i_pos)
 			var target_pos_xz: Vector3 = home_target_i_pos + dir * raise_anim_offset
 			var target_pos: Vector3 = Vector3(target_pos_xz.x, home_target_i_pos.y + raise_anim_offset, target_pos_xz.z)
 			
 			home_target.translation = lerp(home_target.translation, target_pos, (1.0 - exp(-raise_anim_speed * delta)))
 			
-		elif entity.anim_state == entity.Anim_States.LOWER:
+		elif input.is_leg_state(input.Leg_Anim_States.LOWER) :
 			var dir: Vector3 = Vector3(0.0, home_target_i_pos.y, 0.0).direction_to(home_target_i_pos)
 			var target_pos_xz: Vector3 = home_target_i_pos + dir * lower_anim_offset
 			var target_pos: Vector3 = Vector3(target_pos_xz.x, home_target_i_pos.y + lower_anim_offset, target_pos_xz.z)
 			
 			home_target.translation = lerp(home_target.translation, target_pos, (1.0 - exp(-lower_anim_speed * delta)))
 			
-		elif entity.anim_state == entity.Anim_States.LIFT_LEG:
+		elif input.is_leg_state(input.Leg_Anim_States.LIFT_LEG) :
 			if home_target == entity.wheels[0]:
 				var target_pos: Vector3 = Vector3(home_target_i_pos.x, 
 					home_target_i_pos.y + leg_lift_offset, home_target_i_pos.z)
