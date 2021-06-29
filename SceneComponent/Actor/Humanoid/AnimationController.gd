@@ -1,5 +1,7 @@
 extends AComponent
 
+onready var Model : ModelEPI = entity.demand_epi(EPIManager.MODEL_EPI)
+
 enum anim_state {
 	ON_GROUND = 0,
 	FLAILING = 1,
@@ -44,8 +46,8 @@ func update_animation(_delta):
 		update_walk_animation(_delta)
 
 func update_walk_animation(_delta):
-	var forward = entity.model.global_transform.basis.z
-	var left = entity.model.global_transform.basis.x
+	var forward = Model.model.global_transform.basis.z
+	var left = Model.model.global_transform.basis.x
 	var flat_velocity = Vector3(entity.velocity.x, 0.0, entity.velocity.z)
 	
 	var forward_amount = forward.dot(flat_velocity)

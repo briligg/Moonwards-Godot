@@ -42,9 +42,7 @@ script = ExtResource( 6 )
 [node name="SwitchContextEPI" parent="EPIs" instance=ExtResource( 13 )]
 
 [node name="ModelEPI" parent="EPIs" instance=ExtResource( 14 )]
-fields = PoolStringArray( "Skin_Color", "Hair_Color", "Shirt_Color", "Pants_Color", "Shoes_Color" )
-
-[node name="Model" parent="." instance=ExtResource( 7 )]
+fields = PoolStringArray( "Gender_Int", "Colors_Array" )
 
 [node name="CameraController" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.766189, 0 )
@@ -77,6 +75,7 @@ visible = false
 [node name="AnchorMovement" parent="." instance=ExtResource( 10 )]
 
 [node name="ModelComponent" parent="." instance=ExtResource( 11 )]
-mesh_path = NodePath("../Model/Female_Player/Skeleton/FemaleBody-LOD0")
 
-[editable path="Model"]
+[node name="Model" parent="ModelComponent" instance=ExtResource( 7 )]
+
+[editable path="ModelComponent/Model"]

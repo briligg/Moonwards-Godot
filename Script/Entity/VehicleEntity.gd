@@ -4,8 +4,6 @@ class_name VehicleEntity
 
 ## Spatial Entity common data
 
-onready var model = $Model
-
 # `MASTER`
 # Input vector
 master var input: Vector3 = Vector3.ZERO

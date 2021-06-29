@@ -1,11 +1,17 @@
 extends AComponent
 
+#EPI components
+onready var Model : ModelEPI = entity.demand_epi(EPIManager.MODEL_EPI)
+
 # Temporary until this is done dynamically.
 export (NodePath) var mesh_path : NodePath
 onready var mesh: MeshInstance = get_node(mesh_path)
 
 func _init().("ModelComponent", false):
 	pass
+
+func _ready() -> void :
+	Model.set_model($Model)
 
 func set_colors(colors: Array = []) -> void:
 	if colors.size() == 0:

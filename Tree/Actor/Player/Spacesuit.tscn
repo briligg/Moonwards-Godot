@@ -49,9 +49,6 @@ script = ExtResource( 6 )
 
 [node name="ModelEPI" parent="EPIs" instance=ExtResource( 17 )]
 
-[node name="Model" parent="." instance=ExtResource( 7 )]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
-
 [node name="CameraController" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.766189, 0 )
 allow_first_person = true
@@ -81,7 +78,13 @@ grab_focus_at_ready = true
 [node name="HumanoidMovementDebug" parent="." instance=ExtResource( 9 )]
 
 [node name="ModelComponent" parent="." instance=ExtResource( 11 )]
+enabled = false
+comp_name = ""
+require_net_owner = false
 mesh_path = NodePath("../../Astronaut/Model/Female_Player/Skeleton/FemaleBody-LOD0")
+
+[node name="Model" parent="ModelComponent" instance=ExtResource( 7 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="ControllableBodyComponent" parent="." instance=ExtResource( 12 )]
 direct_interaction_capable = false

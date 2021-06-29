@@ -9,6 +9,9 @@ const FIELD_SET : String = "field_set"
 export(PoolStringArray) var fields : PoolStringArray = PoolStringArray()
 var field_data_array : Array = []
 
+#Called at component start to set the model.
+var model : Spatial = null setget set_model, get_model
+
 
 func _ready() -> void :
 	for field in fields :
@@ -23,6 +26,8 @@ func _get_default_type(field_name : String) :
 		return true
 	elif check == "Int" :
 		return 0
+	elif check == "Array" :
+		return []
 	else :
 		#Crash if the field is not inputted correctly.
 		Log.critical(self, "_get_default_type", "Field entry %s in epi %s is invalid." % [field_name, get_path() ])
@@ -40,6 +45,15 @@ func assume_set_field(field_name : String, value) -> void :
 	field_data_array[at] = value
 	emit_signal(FIELD_SET, value)
 
+func demand_get_field(field_name) :
+	var at : int = _find_field(field_name)
+	if at == - 1 :
+		Log.critical(self, "demand_set_field", "%s had the field %s demanded to be set but field was not there" % [get_path(), field_name])
+		assert(true == false) #Make sure to crash when debugging.
+		return
+	
+	return field_data_array[at]
+
 #For when that field must be present for everything to work correctly. Crash if field is not present.
 func demand_set_field(field_name : String, value) -> void :
 	var at : int = _find_field(field_name)
@@ -52,6 +66,9 @@ func demand_set_field(field_name : String, value) -> void :
 	field_data_array[at] = value
 	emit_signal(FIELD_SET, value)
 
+func get_model() :
+	return model
+
 #Intended for calling outside the entity. Does not emit an error or crash if the field is not present.
 func request_set_field(field_name : String, value) -> void :
 	var at : int = _find_field(field_name)
@@ -61,6 +78,10 @@ func request_set_field(field_name : String, value) -> void :
 	#We do have the field so set it to the passed value argument.
 	field_data_array[at] = value
 	emit_signal(FIELD_SET, value)
+
+#Set the model from a component.
+func set_model(new_model) -> void :
+	model = new_model
 
 func _find_field(field_name) -> int :
 	var at : int = 0

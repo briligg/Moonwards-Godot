@@ -71,9 +71,9 @@ func _add_player_to_tree(entity_data)-> void:
 	entities_container.add_child(e)
 	e.enable_on_owner()
 	e.global_transform.origin = entity_data.initial_pos
-	var model = e.get_component("ModelComponent")
-	model.set_gender(entity_data.gender)
-	model.set_colors(entity_data.colors)
+	var Model = e.demand_epi(EPIManager.MODEL_EPI)
+	Model.demand_set_field("Gender_Int", entity_data.gender)
+	Model.demand_set_field("Colors_Array", entity_data.colors)
 	
 ### Networking API
 ## See if we can move this to it's own script.
