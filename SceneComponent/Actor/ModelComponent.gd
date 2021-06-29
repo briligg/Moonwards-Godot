@@ -16,8 +16,8 @@ func _ready() -> void :
 	call_deferred("_ready_deferred")
 
 func _ready_deferred() -> void :
-	set_colors(Model.request_get_field("Colors_Array"))
 	set_gender(Model.request_get_field("Gender_Int"))
+	set_colors(Model.request_get_field("Colors_Array"))
 
 func set_colors(colors: Array = []) -> void:
 	if colors.size() == 0:
