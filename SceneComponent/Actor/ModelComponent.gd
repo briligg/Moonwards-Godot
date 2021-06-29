@@ -12,6 +12,12 @@ func _init().("ModelComponent", false):
 
 func _ready() -> void :
 	Model.set_model($Model)
+	
+	call_deferred("_ready_deferred")
+
+func _ready_deferred() -> void :
+	set_colors(Model.request_get_field("Colors_Array"))
+	set_gender(Model.request_get_field("Gender_Int"))
 
 func set_colors(colors: Array = []) -> void:
 	if colors.size() == 0:

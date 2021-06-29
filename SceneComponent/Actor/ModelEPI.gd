@@ -69,6 +69,13 @@ func demand_set_field(field_name : String, value) -> void :
 func get_model() :
 	return model
 
+func request_get_field(field_name) :
+	var at : int = _find_field(field_name)
+	if at == -1 :
+		return _get_default_type(field_name)
+	
+	return field_data_array[at]
+
 #Intended for calling outside the entity. Does not emit an error or crash if the field is not present.
 func request_set_field(field_name : String, value) -> void :
 	var at : int = _find_field(field_name)

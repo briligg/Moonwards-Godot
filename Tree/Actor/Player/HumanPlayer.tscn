@@ -75,6 +75,7 @@ visible = false
 [node name="AnchorMovement" parent="." instance=ExtResource( 10 )]
 
 [node name="ModelComponent" parent="." instance=ExtResource( 11 )]
+mesh_path = NodePath("Model/Female_Player/Skeleton/FemaleBody-LOD0")
 
 [node name="Model" parent="ModelComponent" instance=ExtResource( 7 )]
 
