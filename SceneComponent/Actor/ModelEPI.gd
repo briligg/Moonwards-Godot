@@ -10,7 +10,7 @@ export(PoolStringArray) var fields : PoolStringArray = PoolStringArray()
 var field_data_array : Array = []
 
 #Called at component start to set the model.
-var model : Spatial = null setget set_model, get_model
+onready var model : Spatial = $Model setget set_model, get_model
 
 
 func _ready() -> void :

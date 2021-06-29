@@ -4,3 +4,5 @@
 
 [node name="ModelEPI" type="Node"]
 script = ExtResource( 1 )
+
+[node name="Model" type="Spatial" parent="."]

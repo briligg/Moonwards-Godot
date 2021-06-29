@@ -1,6 +1,8 @@
 extends AComponent
 class_name HumanoidMovementDebug
 
+onready var Model : ModelEPI = entity.request_epi(EPIManager.MODEL_EPI)
+
 var is_flying: bool = false
 var movement_input: Vector3 = Vector3()
 export(float) var fly_speed = 6
@@ -79,10 +81,10 @@ func _rotate_body() -> void:
 	var o = entity.global_transform.origin
 	var t = entity.look_dir
 	var theta = atan2(o.x - t.x, o.z - t.z)
-	entity.model.set_rotation(Vector3(0, theta, 0))
+	Model.model.set_rotation(Vector3(0, theta, 0))
 
 func _update_movement(delta):
-	var mov = movement_input.z * entity.model.transform.basis.z
-	mov += movement_input.x * entity.model.transform.basis.x
+	var mov = movement_input.z * Model.model.transform.basis.z
+	mov += movement_input.x * Model.model.transform.basis.x
 	mov.y = movement_input.y
 	entity.global_transform.origin += mov * delta * fly_speed * fly_speed_mul
