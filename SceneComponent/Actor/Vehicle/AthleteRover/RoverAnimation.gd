@@ -3,7 +3,7 @@ extends AComponent
 #The class beneath uses InputEPI via demand.
 onready var input : InputEPI = entity.demand_epi(EPIManager.INPUT_EPI)
 
-onready var armature: Skeleton = $"../Model/Legs"
+onready var armature: Skeleton = $"../ModelComponent/Model/Legs"
 
 var legs: Array = [] # Holds an instance of Proc_Leg_Rover for each leg
 
@@ -99,12 +99,12 @@ func setup_movement() -> void:
 				$"../right_back_wheel".transform.origin.z)],
 	]
 	var wheel_mesh: Array = [
-		$"../Model/Legs/WheelFrontLBoneAttachment/Leg-FrontLWheel",
-		$"../Model/Legs/WheelMiddleLBoneAttachment/Leg-MiiddleLWheel",
-		$"../Model/Legs/WheelBackLBoneAttachment/Leg-BackLWheel",
-		$"../Model/Legs/WheelFrontRBoneAttachment/Leg-FrontRWheel",
-		$"../Model/Legs/WheellMiddleRBoneAttachment/Leg-MiddleRWheel",
-		$"../Model/Legs/WheelBackRBoneAttachment/Leg-BackRWheel",
+		$"../ModelComponent/Model/Legs/WheelFrontLBoneAttachment/Leg-FrontLWheel",
+		$"../ModelComponent/Model/Legs/WheelMiddleLBoneAttachment/Leg-MiiddleLWheel",
+		$"../ModelComponent/Model/Legs/WheelBackLBoneAttachment/Leg-BackLWheel",
+		$"../ModelComponent/Model/Legs/WheelFrontRBoneAttachment/Leg-FrontRWheel",
+		$"../ModelComponent/Model/Legs/WheellMiddleRBoneAttachment/Leg-MiddleRWheel",
+		$"../ModelComponent/Model/Legs/WheelBackRBoneAttachment/Leg-BackRWheel",
 	]
 	
 	legs = []
