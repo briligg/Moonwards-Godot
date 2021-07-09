@@ -4,6 +4,7 @@ extends AComponent
 class_name CameraController
 
 onready var switch_context : SwitchContextEPI = entity.request_epi(EPIManager.SWITCH_CONTEXT_EPI)
+onready var Model : ModelEPI = entity.request_epi(EPIManager.MODEL_EPI)
 
 onready var camera: Camera = $Camera
 onready var pivot: Spatial = $Pivot
@@ -63,12 +64,12 @@ func _process(delta: float) -> void:
 	if not camera.is_current() :
 		#Turn on the model if we were first person.
 		if allow_first_person :
-			entity.get_node("Model").visible = true
+			Model.visible = true
 		return
 	
 	#Turn off the model if we are in first person mode.
 	if is_first_person && hide_in_first_person :
-		entity.get_node("Model").visible = false
+		Model.visible = false
 	
 	var _new_rot = Vector3(deg2rad(pitch), deg2rad(yaw), 0.0)
 	if not overriden && mouse_respond :
@@ -187,9 +188,9 @@ func _set_first_person(become_first_person : bool) -> void :
 	is_first_person = become_first_person
 	if entity.has_node("Model") :
 		if hide_in_first_person :
-			entity.get_node("Model").visible = !become_first_person
+			Model.visible = !become_first_person
 		else :
-			entity.get_node("Model").visible = true
+			Model.visible = true
 	
 	#Increase the amount of possible pitch
 	if become_first_person :

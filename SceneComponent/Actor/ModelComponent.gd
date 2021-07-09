@@ -12,6 +12,8 @@ func _init().("ModelComponent", false):
 
 func _ready() -> void :
 	Model.set_model($Model)
+	Model.set_animation_player($Model/AnimationPlayer)
+	Model.set_animation_tree($Model/AnimationTree)
 	
 	call_deferred("_ready_deferred")
 

@@ -12,6 +12,12 @@ var field_data_array : Array = []
 #Called at component start to set the model.
 onready var model : Spatial = $Model setget set_model, get_model
 
+#Temporary placement of animation node hodlers.
+var animation : AnimationPlayer
+var animation_tree : AnimationTree
+
+var visible : bool = true setget set_model_visibility, get_model_visibility
+
 
 func _ready() -> void :
 	for field in fields :
@@ -69,6 +75,9 @@ func demand_set_field(field_name : String, value) -> void :
 func get_model() :
 	return model
 
+func get_model_visibility() -> bool :
+	return visible
+
 func request_get_field(field_name) :
 	var at : int = _find_field(field_name)
 	if at == -1 :
@@ -86,9 +95,20 @@ func request_set_field(field_name : String, value) -> void :
 	field_data_array[at] = value
 	emit_signal(FIELD_SET, value)
 
+#Set the animation player from a component.
+func set_animation_player(new_animation_player : AnimationPlayer) -> void :
+	animation = new_animation_player
+
+#Set the animation tree from a component.
+func set_animation_tree(new_animation_tree : AnimationTree) -> void :
+	animation_tree = new_animation_tree
+
 #Set the model from a component.
 func set_model(new_model) -> void :
 	model = new_model
+
+func set_model_visibility(become_visible : bool) -> void :
+	model.visible = become_visible
 
 func _find_field(field_name) -> int :
 	var at : int = 0
