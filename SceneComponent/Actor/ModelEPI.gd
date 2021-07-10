@@ -12,7 +12,7 @@ var field_data_array : Array = []
 #Called at component start to set the model.
 onready var model : Spatial = $Model setget set_model, get_model
 
-#Temporary placement of animation node hodlers.
+#Temporary placement of animation node holders.
 var animation : AnimationPlayer
 var animation_tree : AnimationTree
 
