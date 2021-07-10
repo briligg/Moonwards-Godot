@@ -1,5 +1,7 @@
 extends AComponent
 
+onready var Humanoid : HumanoidEntityEPI = entity.request_epi(EPIManager.HUMANOID_ENTITY_EPI)
+
 enum anim_state {
 	ON_GROUND = 0,
 	FLAILING = 1,
