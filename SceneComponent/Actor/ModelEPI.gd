@@ -13,8 +13,8 @@ var field_data_array : Array = []
 onready var model : Spatial = $Model setget set_model, get_model
 
 #Temporary placement of animation node holders.
-var animation : AnimationPlayer
-var animation_tree : AnimationTree
+onready var animation : AnimationPlayer = $Model/AnimationPlayer
+onready var animation_tree : AnimationTree = $Model/AnimationTree
 
 var visible : bool = true setget set_model_visibility, get_model_visibility
 
