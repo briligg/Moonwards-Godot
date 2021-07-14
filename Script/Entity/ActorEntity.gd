@@ -6,9 +6,6 @@ signal on_forces_integrated(state)
 
 ## Spatial Entity common data
 
-onready var model = $Model
-onready var animation = $Model/AnimationPlayer
-onready var animation_tree = $Model/AnimationTree
 var stairs = null
 var climb_point = -1
 var climb_points : Array = []

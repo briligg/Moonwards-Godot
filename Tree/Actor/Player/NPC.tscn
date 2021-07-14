@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://SceneComponent/Actor/AI/NPCMovement.gd" type="Script" id=1]
 [ext_resource path="res://SceneComponent/Interface/Nametag/NametagComponent.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://SceneComponent/Actor/AI/MwAI.gd" type="Script" id=9]
 [ext_resource path="res://SceneComponent/Actor/ModelComponent.gd" type="Script" id=10]
 [ext_resource path="res://SceneComponent/Actor/SwitchContextEPI.tscn" type="PackedScene" id=11]
+[ext_resource path="res://SceneComponent/Actor/ModelEPI.tscn" type="PackedScene" id=12]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.287522
@@ -28,6 +29,8 @@ enable_on_spawn = true
 [node name="EPIs" type="Node" parent="."]
 
 [node name="SwitchContextEPI" parent="EPIs" instance=ExtResource( 11 )]
+
+[node name="ModelEPI" parent="EPIs" instance=ExtResource( 12 )]
 
 [node name="AnimationController" parent="." instance=ExtResource( 4 )]
 
@@ -53,8 +56,6 @@ usable_by_players = true
 maximum_progress = 20
 category = 3
 
-[node name="Model" parent="." instance=ExtResource( 7 )]
-
 [node name="Nametag" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70766, 0 )
 
@@ -64,7 +65,9 @@ overriden = true
 [node name="ModelComponent" type="Spatial" parent="."]
 script = ExtResource( 10 )
 enabled = true
-mesh_path = NodePath("../Model/Female_Player/Skeleton/FemaleBody-LOD0")
+mesh_path = NodePath("Model/Female_Player/Skeleton/FemaleBody-LOD0")
+
+[node name="Model" parent="ModelComponent" instance=ExtResource( 7 )]
 
 [node name="HumanoidMovement" parent="." instance=ExtResource( 5 )]
 
@@ -75,4 +78,4 @@ NPC_File = "res://Assets/Characters/Phill.jsm"
 initial_state = "WorkingBusy"
 Interactable_Path = NodePath("../Workstation")
 
-[editable path="Model"]
+[editable path="ModelComponent/Model"]

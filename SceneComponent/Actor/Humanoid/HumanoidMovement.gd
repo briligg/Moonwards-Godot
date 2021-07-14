@@ -2,6 +2,7 @@ extends AMovementController
 class_name HumanoidMovement
 
 onready var input : InputEPI = entity.request_epi(EPIManager.INPUT_EPI)
+onready var Model : ModelEPI = entity.request_epi(EPIManager.MODEL_EPI)
 
 # Component for kinematic movement
 export(float) var initial_jump_velocity = 2.2
@@ -157,7 +158,7 @@ func rotate_body(_phys_state : PhysicsDirectBodyState) -> void:
 	var o = entity.global_transform.origin
 	var t = entity.look_dir
 	var theta = atan2(o.x - t.x, o.z - t.z)
-	entity.model.set_rotation(Vector3(0, theta, 0))
+	Model.model.set_rotation(Vector3(0, theta, 0))
 
 func reset_input():
 	horizontal_vector = Vector3()
@@ -175,8 +176,8 @@ func calculate_slope():
 	dbg_ground_slope_center = + rad2deg(acos(dbg_ground_normal.dot(Vector3.UP)))
 
 func calculate_horizontal(_phys_state : PhysicsDirectBodyState):
-	horizontal_vector += input.input.z * entity.model.transform.basis.z
-	horizontal_vector += input.input.x * entity.model.transform.basis.x
+	horizontal_vector += input.input.z * Model.model.transform.basis.z
+	horizontal_vector += input.input.x * Model.model.transform.basis.x
 
 	if dbg_ground_slope > 1:
 		var slide_direction = horizontal_vector.slide(dbg_ground_normal)
@@ -289,7 +290,7 @@ func start_climb_stairs(target_stairs : VerticalStairs) -> void:
 	#Rotate the model to best fit the stairs.
 	var a = entity.global_transform
 	var target_transform = a.looking_at(entity.global_transform.origin - entity.climb_look_direction, Vector3(0, 1, 0))
-	entity.model.transform.basis = target_transform.basis
+	Model.model.transform.basis = target_transform.basis
 	
 	#Automatically move towards the climbing point horizontally when you first grab on.
 	entity.global_transform.origin = entity.stairs.climb_points[entity.climb_point]
@@ -309,7 +310,7 @@ func stop_climb_stairs(_phys_state : PhysicsDirectBodyState, is_stairs_top) -> v
 	entity.set_collision_layer_bit(1, true)
 
 	if is_stairs_top:
-		var push_force = entity.model.transform.basis.z.normalized() * 2
+		var push_force = Model.model.transform.basis.z.normalized() * 2
 		entity.set_linear_velocity(push_force)
 
 	entity.custom_integrator = false

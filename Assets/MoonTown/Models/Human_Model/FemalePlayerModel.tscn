@@ -211,6 +211,7 @@ bind/20/bone = -1
 bind/20/pose = Transform( 1, 6.55576e-07, -2.68128e-07, 4.64297e-07, -0.320852, 0.947133, 5.34886e-07, -0.947129, -0.320852, -0.0844575, 0.0229671, 0.0584628 )
 
 [node name="FemalePlayerModel" instance=ExtResource( 1 )]
+script = null
 
 [node name="Male_Player_LOD0" type="MeshInstance" parent="Female_Player/Skeleton" index="1"]
 visible = false

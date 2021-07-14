@@ -2,6 +2,8 @@ extends Node
 
 const INPUT_EPI : String = "InputEPI"
 
+const MODEL_EPI : String = "ModelEPI"
+
 const SWITCH_CONTEXT_EPI = "SwitchContextEPI"
 
 

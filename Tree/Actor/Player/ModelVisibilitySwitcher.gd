@@ -1,6 +1,6 @@
 extends Node
 
-const MODEL_PATH  = "../Model/Female_Player/Skeleton/"
+const MODEL_PATH  = "../ModelComponent/Model/Female_Player/Skeleton/"
 
 #Temporary solution for showing the model.
 #This lets us keep ControllableBodyComponenet modular.
@@ -12,7 +12,7 @@ func _ready() -> void :
 
 func _control_taken(taker : AEntity) -> void :
 	#Setup variables for easy model access.
-	var models_parent = taker.get_node("Model/Female_Player/Skeleton")
+	var models_parent = taker.get_node("ModelComponent/Model/Female_Player/Skeleton")
 	var model : MeshInstance #Taler's model
 	var my_model : MeshInstance
 	

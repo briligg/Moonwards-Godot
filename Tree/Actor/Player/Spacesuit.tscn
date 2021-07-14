@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://SceneComponent/Actor/Player/Input/InputComponent.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SceneComponent/Interface/Nametag/NametagComponent.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://SceneComponent/Actor/AnchorMovement.tscn" type="PackedScene" id=14]
 [ext_resource path="res://SceneComponent/Actor/InputEPI.tscn" type="PackedScene" id=15]
 [ext_resource path="res://SceneComponent/Actor/SwitchContextEPI.tscn" type="PackedScene" id=16]
+[ext_resource path="res://SceneComponent/Actor/ModelEPI.tscn" type="PackedScene" id=17]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.35
@@ -46,8 +47,7 @@ script = ExtResource( 6 )
 
 [node name="SwitchContextEPI" parent="EPIs" instance=ExtResource( 16 )]
 
-[node name="Model" parent="." instance=ExtResource( 7 )]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
+[node name="ModelEPI" parent="EPIs" instance=ExtResource( 17 )]
 
 [node name="CameraController" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.766189, 0 )
@@ -78,7 +78,13 @@ grab_focus_at_ready = true
 [node name="HumanoidMovementDebug" parent="." instance=ExtResource( 9 )]
 
 [node name="ModelComponent" parent="." instance=ExtResource( 11 )]
+enabled = false
+comp_name = ""
+require_net_owner = false
 mesh_path = NodePath("../../Astronaut/Model/Female_Player/Skeleton/FemaleBody-LOD0")
+
+[node name="Model" parent="ModelComponent" instance=ExtResource( 7 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 
 [node name="ControllableBodyComponent" parent="." instance=ExtResource( 12 )]
 direct_interaction_capable = false

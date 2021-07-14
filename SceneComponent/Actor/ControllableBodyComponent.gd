@@ -146,11 +146,12 @@ puppetsync  func _sync_take_control(interactor_path : NodePath) -> void :
 	is_being_controlled = true
 	
 	#Make the entity have a global transformation so no bugs happen with parent rotation.
-	var trans : Basis = interactor.model.global_transform.basis
+	var model = interactor.request_epi(EPIManager.MODEL_EPI).model
+	var trans : Basis = model.global_transform.basis
 	trans.x.x = 1
 	trans.y.y  = 1
 	trans.z.z = 1
-	interactor.model.global_transform.basis = trans
+	model.global_transform.basis = trans
 	
 	emit_signal(CONTROL_TAKEN, interactor)
 
