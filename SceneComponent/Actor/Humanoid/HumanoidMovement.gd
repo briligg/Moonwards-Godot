@@ -1,6 +1,7 @@
 extends AMovementController
 class_name HumanoidMovement
 
+onready var Humanoid : HumanoidEntityEPI = entity.request_epi(EPIManager.HUMANOID_ENTITY_EPI)
 onready var input : InputEPI = entity.request_epi(EPIManager.INPUT_EPI)
 
 # Component for kinematic movement
@@ -138,17 +139,17 @@ func main_logic_routine(phys_state):
 
 func update_anim_state(_phys_state : PhysicsDirectBodyState):
 	if is_flying:
-		entity.state.state = ActorEntityState.State.FLY
+		Humanoid.state.state = ActorEntityState.State.FLY
 	elif is_climbing:
-		entity.state.state = ActorEntityState.State.CLIMBING
+		Humanoid.state.state = ActorEntityState.State.CLIMBING
 	elif is_jumping or !entity.is_grounded and !is_climbing:
-		entity.state.state = ActorEntityState.State.IN_AIR
+		Humanoid.state.state = ActorEntityState.State.IN_AIR
 	elif abs(entity.velocity.length()) > 0:
-		entity.state.state = ActorEntityState.State.MOVING
+		Humanoid.state.state = ActorEntityState.State.MOVING
 	elif abs(entity.velocity.y) > 0.1 or !entity.is_grounded:
-		entity.state.state = ActorEntityState.State.IN_AIR
+		Humanoid.state.state = ActorEntityState.State.IN_AIR
 	else:
-		entity.state.state = ActorEntityState.State.IDLE
+		Humanoid.state.state = ActorEntityState.State.IDLE
 
 func rotate_body(_phys_state : PhysicsDirectBodyState) -> void:
 	if is_climbing:
@@ -165,7 +166,7 @@ func reset_input():
 
 func handle_input() -> void:
 	# Adding a timeout after the jump makes sure the jump velocity is consistent and not triggered multiple times.
-	if entity.state.state != ActorEntityState.State.IN_AIR and input.input.y > 0:
+	if Humanoid.state.state != ActorEntityState.State.IN_AIR and input.input.y > 0:
 		vertical_vector.y = 1
 
 func calculate_slope():

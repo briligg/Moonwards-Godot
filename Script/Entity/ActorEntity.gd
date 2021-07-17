@@ -14,10 +14,6 @@ var climb_point = -1
 var climb_points : Array = []
 var climb_look_direction = Vector3.FORWARD
 
-# The current `state` of the entity. 
-# Contains metadata in regards to what entity is currently doing.
-var state: ActorEntityState = ActorEntityState.new()
-
 # `MASTER`
 # Input vector
 master var input: Vector3 = Vector3.ZERO

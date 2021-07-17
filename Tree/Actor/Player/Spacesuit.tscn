@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://SceneComponent/Actor/Player/Input/InputComponent.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SceneComponent/Interface/Nametag/NametagComponent.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://SceneComponent/Actor/AnchorMovement.tscn" type="PackedScene" id=14]
 [ext_resource path="res://SceneComponent/Actor/InputEPI.tscn" type="PackedScene" id=15]
 [ext_resource path="res://SceneComponent/Actor/SwitchContextEPI.tscn" type="PackedScene" id=16]
+[ext_resource path="res://SceneComponent/Actor/HumanoidEntityEPI.tscn" type="PackedScene" id=17]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.35
@@ -45,6 +46,8 @@ script = ExtResource( 6 )
 [node name="InputEPI" parent="EPIs" instance=ExtResource( 15 )]
 
 [node name="SwitchContextEPI" parent="EPIs" instance=ExtResource( 16 )]
+
+[node name="HumanoidEntityEPI" parent="EPIs" instance=ExtResource( 17 )]
 
 [node name="Model" parent="." instance=ExtResource( 7 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )

@@ -1,5 +1,7 @@
 extends AComponent
 
+onready var Humanoid : HumanoidEntityEPI = entity.request_epi(EPIManager.HUMANOID_ENTITY_EPI)
+
 enum anim_state {
 	ON_GROUND = 0,
 	FLAILING = 1,
@@ -31,14 +33,14 @@ func disable() -> void :
 	enabled = true
 
 func update_animation(_delta):
-	if entity.state.state == ActorEntityState.State.IN_AIR:
+	if Humanoid.state.state == ActorEntityState.State.IN_AIR:
 		entity.animation_tree.set("parameters/State/current", 1)
-	elif entity.state.state == ActorEntityState.State.CLIMBING:
+	elif Humanoid.state.state == ActorEntityState.State.CLIMBING:
 		entity.animation_tree.set("parameters/State/current", 2)
 	else:
 		entity.animation_tree.set("parameters/State/current", 0)
 
-	if entity.state.state == ActorEntityState.State.CLIMBING:
+	if Humanoid.state.state == ActorEntityState.State.CLIMBING:
 		update_climb_animation(_delta)
 	else:
 		update_walk_animation(_delta)
